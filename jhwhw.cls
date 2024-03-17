@@ -52,12 +52,12 @@
 \renewcommand{\theProblemNum}{\arabic{ProblemNum}}
 \renewcommand{\theSubProblemNum}{\alph{SubProblemNum}}
 
-\newcommand*{\anyproblem}[1]{\newpage\section*{#1}}
-\newcommand*{\problem}[1]{\stepcounter{ProblemNum} %
-   \anyproblem{Problem \theProblemNum. \; #1}}
-\newcommand*{\soln}[1]{\subsection*{#1}}
-\newcommand*{\solution}{\soln{Solution}}
-\renewcommand*{\part}{\stepcounter{SubProblemNum} %
+\newcommand*{\problem}[1]{\stepcounter{ProblemNum}
+   \newpage\section*{Problem \theProblemNum. \; #1}}
+
+\newcommand*{\solution}{\subsection*{Solution}}
+
+\renewcommand*{\part}{\stepcounter{SubProblemNum}
   \subsubsection*{Part (\theSubProblemNum)}}
 
 \renewcommand{\theenumi}{(\alph{enumi})}
@@ -71,13 +71,9 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
-% Swap the definition of \abs* and \norm*, so that \abs
-% and \norm resizes the size of the brackets, and the 
-% starred version does not.
 \makeatletter
 \let\oldabs\abs
 \def\abs{\@ifstar{\oldabs}{\oldabs*}}
-%
 \let\oldnorm\norm
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
@@ -96,18 +92,10 @@
 
 \usepackage{amssymb}
 \usepackage{amsmath}
+
 \usepackage{tikz}
+\usepackage{pgfplots}
 \usetikzlibrary{arrows}
 \usetikzlibrary{intersections}
 
 \newcommand*{\case}[2]{\noindent\textbf{Case #1: #2}}
-
-\usepackage{pgfplots}
-
-\newcommand*{\ShowIntersection}[2]{
-\fill 
-    [name intersections={of=#1 and #2, name=i, total=\t}] 
-    [red, opacity=1, every node/.style={above left, black, opacity=1}] 
-    \foreach \s in {1,...,\t}{(i-\s) circle (2pt)
-        node [above left] {\s}};
-}
