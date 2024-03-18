@@ -9,10 +9,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{jhwhw}[2009/02/11 Justin Wilson's Homework Class]
 
-\LoadClass[letterpaper, 12pt]{report}
+\LoadClass[a4paper, 12pt]{article}
 
 \RequirePackage{fancyhdr}
-\RequirePackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\RequirePackage[a4paper]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{empheq}
 \RequirePackage{ifthen}
@@ -86,7 +86,12 @@
 
 \let\boxm\tcboxmath
 
-\newcommand*{\boxt}[1]{\begin{center}\boxm{\text{#1}}\end{center}}
+\newcommand*{\boxt}[1]{
+  \begin{center}
+    \boxm{
+      \text{#1}
+      }
+  \end{center}}
 
 \numberwithin{equation}{ProblemNum}
 
@@ -95,7 +100,12 @@
 
 \usepackage{tikz}
 \usepackage{pgfplots}
+
 \usetikzlibrary{arrows}
 \usetikzlibrary{intersections}
 
-\newcommand*{\case}[2]{\noindent\textbf{Case #1: #2}}
+\newcommand*{\case}[2]{
+  \noindent\textbf{Case #1: #2}
+  }
+  
+\pgfplotsset{compat=1.18}
