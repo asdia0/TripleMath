@@ -12,7 +12,7 @@
 \LoadClass[a4paper, 12pt]{article}
 
 \RequirePackage{fancyhdr}
-\RequirePackage[a4paper]{geometry}
+\RequirePackage[a4paper,width=160mm,top=25mm,bottom=25mm]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{empheq}
 \RequirePackage{ifthen}
