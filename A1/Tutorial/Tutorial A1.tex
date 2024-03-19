@@ -179,18 +179,18 @@
 
             \begin{center}
                 \begin{tikzpicture}
-                    \draw[-latex] (-5,0) -- (4,0) node[right]{$x$};
+                    \draw[-latex] (-4,0) -- (3,0) node[right]{$x$};
                     \foreach \x in  {-3, 0, 2}
                     \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
                     \foreach \x in {-3, 0, 2}
                     \draw[shift={(\x,-3pt)}] node[below] 
                     {$\x$};
-                    \draw[very thick, -o, color=red] (-5, 0) -- (-2.9, 0);
-                    \draw[very thick, o-o, color=red] (-0.1, 0) -- (2.1, 0);
-                    \node[anchor=south, align=center] at (-4, 0) {$-$};
+                    \draw[very thick, -o, color=red] (-4, 0) -- (-2.88, 0);
+                    \draw[very thick, o-o, color=red] (-0.12, 0) -- (2.12, 0);
+                    \node[anchor=south, align=center] at (-3.5, 0) {$-$};
                     \node[anchor=south, align=center] at (-1.5, 0) {$+$};
                     \node[anchor=south, align=center] at (1, 0) {$-$};
-                    \node[anchor=south, align=center] at (3, 0) {$+$};
+                    \node[anchor=south, align=center] at (2.5, 0) {$+$};
                 \end{tikzpicture}
             \end{center}
 
@@ -210,20 +210,18 @@
 
             \begin{center}
                 \begin{tikzpicture}
-                    \draw[-latex] (-5,0) -- (3,0) node[right]{$x$};
-                    \foreach \x in  {-3, 0, 1}
-                    \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
-                    \foreach \x in {-3, 0, 1}
-                    \draw[shift={(\x,-3pt)}] node[below] 
-                    {$\x$};
-                    \draw[very thick, -*, color=red] (-5, 0) -- (-2.9, 0);
-                    \draw[very thick, *-, color=red] (0.9, 0) -- (2.9, 0);
+                    \draw[-latex] (-4,0) -- (2,0) node[right]{$x$};
+                    \foreach \x in  {-3, 0, 1} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
+                    \foreach \x in {-3, 0, 1} \draw[shift={(\x,-3pt)}] node[below] {$\x$};
+
+                    \draw[very thick, -*, color=red] (-4, 0) -- (-2.88, 0);
+                    \draw[very thick, *-, color=red] (0.88, 0) -- (1.9, 0);
                     \path [draw=red, fill=red] (0,0) circle (3pt);
 
-                    \node[anchor=south, align=center] at (-4, 0) {$+$};
+                    \node[anchor=south, align=center] at (-3.5, 0) {$+$};
                     \node[anchor=south, align=center] at (-1.5, 0) {$-$};
                     \node[anchor=south, align=center] at (0.5, 0) {$-$};
-                    \node[anchor=south, align=center] at (2, 0) {$+$};
+                    \node[anchor=south, align=center] at (1.5, 0) {$+$};
                 \end{tikzpicture}
             \end{center}
 
