@@ -25,7 +25,7 @@ def SampleValue(lowerBound, upperBound):
 
     return sample
 
-def FormatExpression(inequality):
+def FormatExpression(expression):
     replacements = {
         " " : "",
         "+" : " + ",
@@ -40,9 +40,9 @@ def FormatExpression(inequality):
     }
 
     for key in replacements:
-        inequality = inequality.replace(key, replacements[key])
+        expression = expression.replace(key, replacements[key])
 
-    return inequality
+    return expression
 
 def SolutionToRanges(solvedInequality):
     ranges = []
