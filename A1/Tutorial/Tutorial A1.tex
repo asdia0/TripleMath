@@ -504,11 +504,8 @@
                         ymax=10,
                         legend cell align={left},
                         legend pos=outer north east,
-                        after end axis/.code={
-                            \path (axis cs:0,0) 
-                                node [anchor=north] {$O$};
-                            }
-                        ]
+                        after end axis/.code={\path (axis cs:0,0) node [anchor=north] {$O$};}]
+                        
                         \addplot[red!50, name path=f1] {abs(3*x+1)};
 
                         \addlegendentry{$y=\abs{3x+1}$};
