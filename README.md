@@ -31,4 +31,5 @@ Calculates all points of interest given a system of equations. Points of interes
 - Intersections
 
 > [!NOTE]
-> Note that an equation $y = f(x)$ must be inputted as `f(x) - y`. In the case of multiple equations, separate each equation with a `|` character.
+> Note that all equations $y = f(x)$ must be inputted in the form `f(x) - y`.
+> To input multiple equations, separate each equation with a `|` character.
