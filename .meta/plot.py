@@ -154,6 +154,7 @@ if __name__ == "__main__":
     for point in GetCriticalPoints(isolatedEquations):
         print(f"\t{point}")
 
-    print("Intersections:")
-    for point in GetIntersections(isolatedEquations):
+    intersections = GetIntersections(isolatedEquations)
+    print(f"Intersections ({len(intersections)}):")
+    for point in intersections:
         print(f"\t{point}")
