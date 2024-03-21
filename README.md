@@ -6,7 +6,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 ### A1: Equations and Inequalities
 
-- [Tutorial A1](A1/Tutorial/Tutorial%20A1.pdf)
+- [Tutorial A1](A/A1/Tutorial/Tutorial%20A1.pdf)
 - Assignment A1
 
 ### A2: Numerical Methods
