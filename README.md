@@ -2,26 +2,36 @@
 
 Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
-## Outline (A)
+## Outline
 
-### A1: Equations and Inequalities
+### Group A
+
+#### A1: Equations and Inequalities
 
 - [Tutorial A1](A/A1/Tutorial/Tutorial%20A1.pdf)
 - Assignment A1
 
-### A2: Numerical Methods
+#### A2: Numerical Methods of Finding Roots
 
-### A3: Series and Sequences
+#### A3: Sequences and Series I
 
-## Outline (B)
+### Group B
 
-## Scripts 
+#### B1: Graphs and Transformations I
 
-### `numberLine.py`
+#### B2: Graphs and Transformations II
+
+#### B3: Functions
+
+
+
+### Scripts 
+
+### [`numberLine.py`](.meta/numberLine.py)
 
 Generates the $\LaTeX$ code for the number line of a given polynomial.
 
-### `plot.py`
+### [`plot.py`](.meta/plot.py)
 
 Calculates all points of interest given a system of equations. Points of interest include:
 
