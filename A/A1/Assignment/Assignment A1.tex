@@ -1,0 +1,219 @@
+\documentclass{jhwhw}
+
+\title{Assignment A1\\Equations and Inequalities}
+\author{Eytan Chong}
+\date{2024-02-27}
+
+\begin{document}
+    \problem{}
+        A traveller just returned from Germany, France and Spain. The amount (in dollars) that he spent each day on housing, food and incidental expenses in each country are shown in the table below.
+
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{|c|c|c|c|}
+            \hline
+            \textbf{Country} & \textbf{Housing} & \textbf{Food} & \textbf{Incidental Expenses}  \\\hline
+            Germany & 28      & 30   & 14                   \\\hline
+            France  & 23      & 25   & 8                    \\\hline
+            Spain   & 19      & 22   & 12 \\\hline                  
+            \end{tabular}
+        \end{table}
+
+        The traveller's records of the trip indicate a total of \$191 spent for housing, \$430 for food and \$180 for incidental expenses. Calculate the number of days the traveller spent in each country.
+
+        He did his account again and the amount spent on food is \$337. Is this record correct? Why?
+
+    \solution
+        Let $g$, $f$ and $s$ represent the number of days the traveller spent in Germany, France and Spain respectively. 
+
+        \begin{equation*}
+            \begin{cases}
+                \begin{aligned}
+                    28g + 23f + 19s &= 391\\
+                    30g + 25f + 22s &= 430\\
+                    14g + 8f + 12s &= 180\\
+                \end{aligned}
+            \end{cases}
+        \end{equation*}
+
+        \begin{center}
+            $g=4$, $f=8$, $s=5$
+        \end{center}
+
+        \boxt{
+            The traveller spent 4 days in Germany, 8 days in France and 5 days in Spain.
+        }
+
+        \begin{equation*}
+            \begin{cases}
+                \begin{aligned}
+                    28g + 23f + 19s &= 391\\
+                    30g + 25f + 22s &= 337\\
+                    14g + 8f + 12s &= 180\\
+                \end{aligned}
+            \end{cases}
+        \end{equation*}
+
+        \begin{center}
+            $g=66$, $f=-27$, $s=-44$
+        \end{center}
+
+        \boxt{
+            The record is incorrect as $f$ and $s$ must be positive.
+        }
+
+    \problem{}
+        \begin{enumerate}
+            \item Solve algebraically $x^2 - 9 \geq (x+3)\left(x^2 - 3x + 1\right)$.
+            \item Solve algebraically $\dfrac{7-2x}{3-x^2} \leq 1$.
+        \end{enumerate}
+
+    \solution
+        \part 
+            \begin{alignat*}{2}
+                &&x^2-9 &\geq (x+3)\left(x^2 - 3x + 1\right) \\
+                \implies &&(x+3)(x-3) &\geq (x+3)\left(x^2 - 3x + 1\right) \\
+                \implies &&(x+3)\left(x^2 - 4x + 4\right) &\leq 0 \\
+                \implies &&(x+3)(x-2)^2 &\leq 0
+            \end{alignat*}
+
+            \begin{center}
+                \begin{tikzpicture}
+                        \draw[-latex] (-4.0,0) -- (3,0) node[right]{$x$};
+                        \foreach \x in {2,-3.0} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
+                        \foreach \x in {2,-3} \draw[shift={(\x,-3pt)}] node[below]  {$\x$};
+                        \draw[very thick, -*, color=red] (-4.0, 0) -- (-2.88, 0);
+                        \path [draw=red, fill=red] (2,0) circle (3pt);
+                        \node[anchor=south, align=center] at (-3.5, 0) {$-$};
+                        \node[anchor=south, align=center] at (-0.5, 0) {$+$};
+                        \node[anchor=south, align=center] at (2.5, 0) {$+$};
+                \end{tikzpicture}
+            \end{center}
+
+            \boxt{
+                $x \leq -3 \lor x = 2$
+            }
+
+        \part
+            \begin{alignat*}{2}
+                &&\dfrac{7-2x}{3-x^2} &\leq 1, \qquad x \neq \pm\sqrt3 \\
+                \implies &&\dfrac{7-2x}{3-x^2} - \dfrac{3-x^2}{3-x^2} &\leq 0\\
+                \implies&& \dfrac{x^2-2x+4}{3-x^2} &\leq 0
+            \end{alignat*}
+
+            Observe that $x^2 - 2x + 4 = (x-1)^2 + 3 > 0$. Hence,
+
+            \begin{alignat*}{2}
+                &&\dfrac1{3-x^2} &\leq 0\\
+                &&3-x^2 &\leq 0
+            \end{alignat*}
+
+            \begin{center}
+                \begin{tikzpicture}
+                        \draw[-latex] (-2.732,0) -- (2.732,0) node[right]{$x$};
+                        \foreach \x in {1.732,-1.732} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
+                        \draw[shift={(1.732,-3pt)}] node[below]  {$\sqrt3$};
+                        \draw[shift={(-1.732,-3pt)}] node[below]  {$-\sqrt3$};
+                        \draw[very thick, -*, color=red] (-2.732, 0) -- (-1.612, 0);
+                        \draw[very thick, *-, color=red] (1.612, 0) -- (2.632, 0);
+                        \node[anchor=south, align=center] at (-2.232, 0) {$-$};
+                        \node[anchor=south, align=center] at (0.0, 0) {$+$};
+                        \node[anchor=south, align=center] at (2.232, 0) {$-$};
+                \end{tikzpicture}
+            \end{center}
+
+            \boxt{
+                $x < -\sqrt3 \lor x > \sqrt3$
+            }
+
+    \problem{}
+        \begin{itemize}
+            \item Without using a calculator, solve the inequality $\dfrac{3x+4}{x^2+3x+2} \geq \dfrac{1}{x+2}$.
+            \item Hence, deduce the set of values of $x$ that satisfies $\dfrac{3\abs{x}+4}{x^2+3\abs{x}+2} \geq \dfrac{1}{\abs{x}+2}$.
+        \end{itemize}
+
+    \solution
+        \part
+            \begin{alignat*}{2}
+                &&\dfrac{3x+4}{x^2+3x+2} &\geq \dfrac{1}{x+2}, \qquad x \neq -2 \\
+                \implies&& \dfrac{3x+4}{(x+2)(x+1)} &\geq \dfrac{1}{x+2}, \qquad x \neq -1 \\
+                \implies&& (3x+4)(x+2)(x+1) &\geq (x+2)(x+1)^2 \\
+                \implies&& (x+2)(x+1)(2x+3) &\geq 0\\
+            \end{alignat*}
+
+            \begin{center}
+                \begin{tikzpicture}
+                        \draw[-latex] (-6,0) -- (0,0) node[right]{$x$};
+                        \foreach \x in {-1.5,-2,-1} \draw[shift={(2*\x,0)}] (0pt,3pt) -- (0pt,-3pt);
+                        \foreach \x in {-1.5,-2,-1} \draw[shift={(2*\x,-3pt)}] node[below]  {$\x$};
+                        \draw[very thick, o-*, color=red] (-4.12, 0) -- (-2.88, 0);
+                        \draw[very thick, o-, color=red] (-2.12, 0) -- (-0.1, 0);
+                        \node[anchor=south, align=center] at (-5, 0) {$-$};
+                        \node[anchor=south, align=center] at (-3.5, 0) {$+$};
+                        \node[anchor=south, align=center] at (-2.5, 0) {$-$};
+                        \node[anchor=south, align=center] at (-1, 0) {$+$};
+                \end{tikzpicture}
+            \end{center}
+
+            \boxt{
+                $-2 < x \leq -\dfrac32 \lor x > -1$
+            }
+
+        \part
+            Observe that $\abs{x}^2 = x^2$. Hence, with the map $x \mapsto \abs{x}$, we obtain
+
+            \begin{equation*}
+                -2 < \abs{x} \leq -\dfrac32 \lor \abs{x} > -1
+            \end{equation*}
+
+            Since $\abs{x} > 0$, we have that $\abs{x} > -1$ is satisfied for all real $x$.
+
+            \boxt{
+                $x \in \mathbb{R}$
+            }
+
+    \problem{}
+        On the same diagram, sketch the graphs of $y = 4\abs{x}$ and $y = x^2 - 2x + 3$. Hence or otherwise, solve the inequality $4\abs{x} \geq x^2 - 2x + 3$.
+
+    \solution
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -3:7,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xtick=\empty,
+                    ytick={3},
+                    yticklabels={3},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    
+                    \addplot[red!50, name path=f1] {4*abs(x)};
+
+                    \addlegendentry{$y = 4\abs{x}$};
+
+                    \addplot[blue!50, name path=f2] {x^2-2*x+3)};
+
+                    \addlegendentry{$y = x^2-2x+3$};
+
+                    \fill [name intersections={of=f1 and f2,by={E1, E2}}] (E1) circle[radius=2.5pt] node[anchor=south west, fill=white, opacity = 0.6, text opacity=1] {$(0.551, 2.20)$};
+
+                    \fill (E2) circle[radius=2.5pt] node[anchor=south east] {$(5.45, 21.8)$};
+
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \boxt{
+            $0.551 \leq x \leq 5.45$
+        }
+        
+\end{document}
