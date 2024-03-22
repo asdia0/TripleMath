@@ -8,8 +8,8 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 #### A1: Equations and Inequalities
 
-- [Tutorial A1](Group A/Chapter A1/Tutorial A1/Tutorial%20A1.pdf)
-- [Assignment A1](Group A/Chapter A1/Assignment A1/Assignment%20A1.pdf)
+- [Tutorial A1](Group%20A/Chapter%20A1/Tutorial%20A1/Tutorial%20A1.pdf)
+- [Assignment A1](Group%20A/Chapter%20A1/Assignment%20A1/Assignment%20A1.pdf)
 
 #### A2: Numerical Methods of Finding Roots
 
