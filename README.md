@@ -27,11 +27,11 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 ### Scripts 
 
-### [`numberLine.py`](.meta/numberLine.py)
+### [`numberLine.py`](.meta/Scripts/numberLine.py)
 
 Generates the $\LaTeX$ code for the number line of a given polynomial.
 
-### [`plot.py`](.meta/plot.py)
+### [`plot.py`](.meta/Scripts/plot.py)
 
 Calculates all points of interest given a system of equations. Points of interest include:
 
