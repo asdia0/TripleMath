@@ -50,7 +50,7 @@ def SolutionToRanges(solvedInequality):
     for solution in str(solvedInequality).split(" ∪ "):
         # Solution is a single value
         if solution[0] == "{":
-            value = int(TrimEdges(solution))
+            value = ToDecimal(TrimEdges(solution))
             ranges.append(Range("*", "*", value, value))
             continue
 
@@ -58,7 +58,7 @@ def SolutionToRanges(solvedInequality):
         lowerArrow = solution[0]
         upperArrow = solution[-1]
 
-        bounds = [None if "∞" in str(x) else FractionToDecimal(x) for x in TrimEdges(solution).split(", ")]
+        bounds = [None if "∞" in str(x) else ToDecimal(x) for x in TrimEdges(solution).split(", ")]
 
         lowerArrow = BracketToArrow(lowerArrow, bounds[0])
         upperArrow = BracketToArrow(upperArrow, bounds[1])
@@ -66,6 +66,12 @@ def SolutionToRanges(solvedInequality):
         ranges.append(Range(lowerArrow, upperArrow, bounds[0], bounds[1]))
 
     return ranges
+
+def ToDecimal(expr):
+    if "√" in expr:
+        expr = expr.replace("√", "sqrt(")
+        expr += ')'
+    return round(float(sympify(expr).evalf()), 3)
 
 def TrimEdges(string):
     return (string[1:])[:-1]
@@ -91,12 +97,9 @@ def BracketToArrow(bracket, bound):
         return "*"
     return ""
 
-def FractionToDecimal(fraction):
-    return round(float(Fraction(fraction)), 3)
-
 def GenerateLatex(polynomial, ranges):
     linesFront = ["\\begin{center}", "\t\\begin{tikzpicture}"]
-    linesBack = ["\t\\end{tikzpicture}", "\\begin{center}"]
+    linesBack = ["\t\\end{tikzpicture}", "\\end{center}"]
     linesMiddle = []
 
     bounds = [r.lowerBound for r in ranges if r.lowerBound is not None] + [r.upperBound for r in ranges if r.upperBound is not None]
@@ -104,9 +107,9 @@ def GenerateLatex(polynomial, ranges):
 
     globalMin = min(bounds)
     globalMax = max(bounds)
-    linesMiddle.append(f"\\draw[-latex] ({globalMin - 1},0) -- ({globalMax + 1},0) node[right]{{$x$}}")
+    linesMiddle.append(f"\\draw[-latex] ({globalMin - 1},0) -- ({globalMax + 1},0) node[right]{{$x$}};")
     linesMiddle.append(f"\\foreach \\x in {{{','.join([str(bound) for bound in bounds])}}} \\draw[shift={{(\\x,0)}}] (0pt,3pt) -- (0pt,-3pt);")
-    linesMiddle.append(f"\\foreach \\x in {{{','.join([str(bound) for bound in bounds])}}} \\draw[shift={{(\\x,-3pt)}}] node[below]  {{$\\x$}}")
+    linesMiddle.append(f"\\foreach \\x in {{{','.join([str(bound) for bound in bounds])}}} \\draw[shift={{(\\x,-3pt)}}] node[below]  {{$\\x$}};")
 
     for r in ranges:
         if r.lowerBound != r.upperBound:
@@ -117,7 +120,7 @@ def GenerateLatex(polynomial, ranges):
     bounds.sort()
     bounds.insert(0, None)
     bounds.append(None)
-    print(bounds)
+
     for i in range(0, len(bounds)-1):
         value = 0
         
