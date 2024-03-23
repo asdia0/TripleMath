@@ -47,18 +47,22 @@
 \fi
 
 \newcounter{ProblemNum}
-\newcounter{SubProblemNum}[ProblemNum]
+\newcounter{PartNum}[ProblemNum]
+\newcounter{SubPartNum}[PartNum]
 
 \renewcommand{\theProblemNum}{\arabic{ProblemNum}}
-\renewcommand{\theSubProblemNum}{\alph{SubProblemNum}}
+\renewcommand{\thePartNum}{\alph{PartNum}}
+\renewcommand{\theSubPartNum}{\roman{SubPartNum}}
 
 \newcommand*{\problem}[1]{\stepcounter{ProblemNum}
    \newpage\section*{Problem \theProblemNum. \; #1}}
 
 \newcommand*{\solution}{\subsection*{Solution}}
 
-\renewcommand*{\part}{\stepcounter{SubProblemNum}
-  \subsubsection*{Part (\theSubProblemNum)}}
+\renewcommand*{\part}{\stepcounter{PartNum}
+  \subsubsection*{Part (\thePartNum)}}
+  
+\newcommand*{\subpart}{\stepcounter{SubPartNum}\medskip\noindent\textbf{Subpart (\theSubPartNum)}\newline\indent}
 
 \renewcommand{\theenumi}{(\alph{enumi})}
 \renewcommand{\labelenumi}{\theenumi}
@@ -92,6 +96,26 @@
       \text{#1}
       }
   \end{center}}
+  
+\newcommand*{\der}[2]{
+\dfrac{d#1}{d#2}
+}
+
+\newcommand*{\tosf}[1]{
+\text{ (#1 s.f.)}
+}
+
+\newcommand*{\todp}[1]{
+\text{ (#1 d.p.)}
+}
+
+\newcommand*{\nrm}[2]{
+#1 - \dfrac{#2(#1)}{#2^\prime(#1)}
+}
+  
+\newcommand*{\reject}[1]{
+\qquad \text{(rej. #1)}
+}
 
 \numberwithin{equation}{ProblemNum}
 
@@ -109,3 +133,27 @@
   }
   
 \pgfplotsset{compat=1.18}
+
+\usetikzlibrary{decorations.markings}
+
+\def\MarkLt{4pt}
+\def\MarkSep{2pt}
+
+\tikzset{
+  TwoMarks/.style={
+    postaction={decorate,
+      decoration={
+        markings,
+        mark=at position #1 with
+          {
+              \begin{scope}[xslant=0.2]
+              \draw[line width=\MarkSep,white,-] (0pt,-\MarkLt) -- (0pt,\MarkLt) ;
+              \draw[-] (-0.5*\MarkSep,-\MarkLt) -- (-0.5*\MarkSep,\MarkLt) ;
+              \draw[-] (0.5*\MarkSep,-\MarkLt) -- (0.5*\MarkSep,\MarkLt) ;
+              \end{scope}
+          }
+       }
+    }
+  },
+  TwoMarks/.default={0.5},
+}
