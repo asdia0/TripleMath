@@ -157,3 +157,7 @@
   },
   TwoMarks/.default={0.5},
 }
+
+\usepackage{xcolor}
+\colorlet{plotRed}{red!50}
+\colorlet{plotBlue}{blue!50}
