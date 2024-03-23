@@ -94,11 +94,11 @@
                                 node [anchor=south east] {$O$};
                             }
                         ]
-                        \addplot[red!50] {ln(x)};
+                        \addplot[plotRed] {ln(x)};
 
                         \addlegendentry{$y=\ln x$};
 
-                        \addplot[blue!50] {1/e * x};
+                        \addplot[plotBlue] {1/e * x};
 
                         \addlegendentry{$y=\frac1e x$};
 
@@ -196,7 +196,7 @@
 
                     \draw[thick,black!70,TwoMarks=0.1] (1.5,0) -- (1.8,0);
 
-                    \addplot[red!50] {x^3-x^2-x-1};
+                    \addplot[plotRed] {x^3-x^2-x-1};
 
                     \addlegendentry{$y=x^3-x^2-x-1$};
 
@@ -288,9 +288,9 @@
 
                         \draw[thick,black!70,TwoMarks=0.1] (pi, 0) -- (pi + 0.3,0);
 
-                        \addplot[red!50, domain=pi:3*pi/2-0.01] {tan(\x r)};
+                        \addplot[plotRed, domain=pi:3*pi/2-0.01] {tan(\x r)};
 
-                        \addplot[red!50, domain=3*pi/2+0.01:5*pi/2-0.01] {tan(\x r)};
+                        \addplot[plotRed, domain=3*pi/2+0.01:5*pi/2-0.01] {tan(\x r)};
 
                         \draw[dotted, very thick] (axis cs:3*pi/2, -10) -- (axis cs:3*pi/2, 10);
                         \node[anchor=north west] at (axis cs:3*pi/2, 10) {$x = \dfrac32 \pi$};
@@ -323,11 +323,11 @@
                             }
                         ]
                         
-                        \addplot[red!50, name path=f1] {ln(x-1)};
+                        \addplot[plotRed, name path=f1] {ln(x-1)};
 
                         \addlegendentry{$y = \ln{(x-1)}$};
 
-                        \addplot[blue!50, name path=f2] {-2*x};
+                        \addplot[plotBlue, name path=f2] {-2*x};
 
                         \addlegendentry{$y = -2x$};
 
@@ -497,7 +497,7 @@
                         }
                     ]
                     
-                    \addplot[red!50] {3*e^(-x) -x};
+                    \addplot[plotRed] {3*e^(-x) -x};
 
                     \addlegendentry{$y = 3e^{-x} -x$};
 
@@ -541,7 +541,7 @@
                         }
                     ]
                     
-                    \addplot[red!50] {x/5 - ln(x+2)};
+                    \addplot[plotRed] {x/5 - ln(x+2)};
 
                     \addlegendentry{$y = \tfrac15 x - \ln(x+2)$};
 
@@ -638,7 +638,7 @@
                             }
                         ]
                         
-                        \addplot[red!50, unbounded coords=jump] {1/x};
+                        \addplot[plotRed, unbounded coords=jump] {1/x};
 
                         \addlegendentry{$y = 1/x$};
                     \end{axis} 
@@ -666,7 +666,7 @@
                             }
                         ]
                         
-                        \addplot[red!50, unbounded coords=jump] {cos(\x r)};
+                        \addplot[plotRed, unbounded coords=jump] {cos(\x r)};
 
                         \addlegendentry{$y = \cos(x)$};
                     \end{axis} 
@@ -726,7 +726,7 @@
                             }
                         ]
                         
-                        \addplot[red!50] {sec(\x r)^2 - e^x};
+                        \addplot[plotRed] {sec(\x r)^2 - e^x};
 
                         \addlegendentry{$y = \sec^2{x} - e^x$};
 

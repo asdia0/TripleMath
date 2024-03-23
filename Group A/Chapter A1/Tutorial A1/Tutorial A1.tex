@@ -506,11 +506,11 @@
                         legend pos=outer north east,
                         after end axis/.code={\path (axis cs:0,0) node [anchor=north] {$O$};}]
                         
-                        \addplot[red!50, name path=f1] {abs(3*x+1)};
+                        \addplot[plotRed, name path=f1] {abs(3*x+1)};
 
                         \addlegendentry{$y=\abs{3x+1}$};
 
-                        \addplot[blue!50, name path=f2] {(4*x+3)^2};
+                        \addplot[plotBlue, name path=f2] {(4*x+3)^2};
 
                         \addlegendentry{$y=(4x+3)^2$};
 
@@ -546,11 +546,11 @@
                                 node [anchor=north west] {$O$};
                             }
                         ]
-                        \addplot[red!50, name path=f1] {abs(3*x+1)};
+                        \addplot[plotRed, name path=f1] {abs(3*x+1)};
 
                         \addlegendentry{$y=\abs{3x+1}$};
 
-                        \addplot[blue!50, name path=f2] {abs(2*x + 7)};
+                        \addplot[plotBlue, name path=f2] {abs(2*x + 7)};
 
                         \addlegendentry{$y=\abs{2x+7}$};
 
@@ -585,11 +585,11 @@
                                 node [anchor=north] {$O$};
                             }
                         ]
-                        \addplot[red!50, name path=f1] {abs(x-2)};
+                        \addplot[plotRed, name path=f1] {abs(x-2)};
 
                         \addlegendentry{$y=\abs{x-2}$};
 
-                        \addplot[blue!50, name path=f2] {x + abs(x)};
+                        \addplot[plotBlue, name path=f2] {x + abs(x)};
 
                         \addlegendentry{$y=x+\abs{x}$};
 
@@ -622,11 +622,11 @@
                                 node [anchor=south east] {$O$};
                             }
                         ]
-                        \addplot[red!50, name path=f1] {5*x^2 + 4*x -3};
+                        \addplot[plotRed, name path=f1] {5*x^2 + 4*x -3};
 
                         \addlegendentry{$y=5x^2+4x-3$};
 
-                        \addplot[blue!50, name path=f2] {ln(x+1)};
+                        \addplot[plotBlue, name path=f2] {ln(x+1)};
 
                         \addlegendentry{$y=\ln(x+1)$};
 
@@ -671,11 +671,11 @@
                             node [anchor=north east] {$O$};
                         }
                     ]
-                    \addplot[red!50, name path=f1] {abs(x-20)};
+                    \addplot[plotRed, name path=f1] {abs(x-20)};
 
                     \addlegendentry{$y = \abs{x-20}$};
 
-                    \addplot[blue!50, name path=f2, unbounded coords=jump] {50 /x};
+                    \addplot[plotBlue, name path=f2, unbounded coords=jump] {50 /x};
 
                     \addlegendentry{$y=x^{-1}$};
 
@@ -869,7 +869,7 @@
                         \path [draw=red, fill=red] (axis cs:2, 136) circle (3pt) node[anchor=south west] {$(2, 136)$};
 
 
-                        \addplot[red!50, domain=0:4.92] {-16*x^2 + 64*x + 72)};
+                        \addplot[plotRed, domain=0:4.92] {-16*x^2 + 64*x + 72)};
 
                         \addlegendentry{$h = -16t^2 + 64t+72$};
 
@@ -934,11 +934,11 @@
                             node [anchor=north east] {$O$};
                         }
                     ]
-                    \addplot[red!50, name path=f1] {2000 * (1.05)^(x-1)};
+                    \addplot[plotRed, name path=f1] {2000 * (1.05)^(x-1)};
 
                     \addlegendentry{$y = 2000(1.05)^{x-1}$};
 
-                    \addplot[blue!50, name path=f2] {300*x};
+                    \addplot[plotBlue, name path=f2] {300*x};
 
                     \addlegendentry{$y=300x$};
 
