@@ -13,16 +13,34 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 #### A2: Numerical Methods of Finding Roots
 
+- [Tutorial A2](Group%20A/Chapter%20A2/Tutorial%20A2/Tutorial%20A2.pdf)
+- Assignment A2
+
 #### A3: Sequences and Series I
+
+- Tutorial A3
 
 ### Group B
 
 #### B1: Graphs and Transformations I
 
+- Tutorial B1A
+- Tutorial B1B
+- Assignment B1
+
 #### B2: Graphs and Transformations II
+
+- Tutorial B2
+- Assignment B2
 
 #### B3: Functions
 
+- Tutorial B3
+- Assignment B3
+
+#### B4: Differentiation
+
+- Tutorial B4
 
 
 ### Scripts 
