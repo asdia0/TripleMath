@@ -1,0 +1,31 @@
+\begin{center}
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            ymajorticks=false,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[red!50, name path=f1, unbounded coords = jump] {2000 * (1.05)^(x-1)};
+
+            \addlegendentry{$y = 2000(1.05)^{x-1}$};
+
+            \addplot[blue!50, name path=f2] {300*x};
+
+            \addlegendentry{$y=300x$};
+
+            \fill [name intersections={of=f1 and f2,by={E1}}] (E1) circle[radius=2.5pt] node[anchor=south east, fill=white, opacity = 0.6, text opacity=1] {$(10.7, 3210)$};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
