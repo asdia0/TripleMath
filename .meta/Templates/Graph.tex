@@ -11,17 +11,16 @@
             ylabel = {$y$},
             legend cell align={left},
             legend pos=outer north east,
-            ymajorticks=false,
             after end axis/.code={
                 \path (axis cs:0,0) 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[red!50, name path=f1, unbounded coords = jump] {2000 * (1.05)^(x-1)};
+            \addplot[plotRed, name path=f1, unbounded coords = jump] {2000 * (1.05)^(x-1)};
 
             \addlegendentry{$y = 2000(1.05)^{x-1}$};
 
-            \addplot[blue!50, name path=f2] {300*x};
+            \addplot[plotBlue, name path=f2] {300*x};
 
             \addlegendentry{$y=300x$};
 

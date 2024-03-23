@@ -200,9 +200,9 @@
 
                     \addlegendentry{$y=x^3-x^2-x-1$};
 
-                    \draw[dotted, very thick] (2.4, 0) -- (2.4, 4.644);
+                    \draw[dotted, thick] (2.4, 0) -- (2.4, 4.644);
 
-                    \addplot[dotted, very thick] {11.48 * (x-2.4) + 4.644};
+                    \addplot[dotted, thick] {11.48 * (x-2.4) + 4.644};
 
                 \end{axis}
             \end{tikzpicture}
@@ -292,7 +292,7 @@
 
                         \addplot[plotRed, domain=3*pi/2+0.01:5*pi/2-0.01] {tan(\x r)};
 
-                        \draw[dotted, very thick] (axis cs:3*pi/2, -10) -- (axis cs:3*pi/2, 10);
+                        \draw[dotted, thick] (axis cs:3*pi/2, -10) -- (axis cs:3*pi/2, 10);
                         \node[anchor=north west] at (axis cs:3*pi/2, 10) {$x = \dfrac32 \pi$};
 
                         \addlegendentry{$y=\tan x$};
@@ -333,7 +333,7 @@
 
                         \fill [name intersections={of=f1 and f2,by={E1}}] (E1) circle[radius=2.5pt] node[anchor=west] {$(1.109, -2.218)$};
 
-                        \draw[dotted, very thick] (axis cs:1, -4) -- (axis cs:1, 1);
+                        \draw[dotted, thick] (axis cs:1, -4) -- (axis cs:1, 1);
 
                         \node[anchor=north west] at (1, 0.75) {$x = 1$};
                     \end{axis}
@@ -501,7 +501,7 @@
 
                     \addlegendentry{$y = 3e^{-x} -x$};
 
-                    \draw[dotted, very thick] (axis cs:0.5, 1.32) -- (axis cs:4, -3.945);
+                    \draw[dotted, thick] (axis cs:0.5, 1.32) -- (axis cs:4, -3.945);
 
                     \draw[dotted] (axis cs:0.5, 0) -- (axis cs:0.5, 1.32);
 
@@ -547,7 +547,7 @@
 
                     \fill (3, -1.009) circle[radius=2.5pt] node[anchor=south east] {$M$};
 
-                    \addplot[dotted, very thick] {1/5 * (x-3) - 1.009};
+                    \addplot[dotted, thick] {1/5 * (x-3) - 1.009};
                 \end{axis} 
             \end{tikzpicture}
         \end{center}
@@ -732,7 +732,7 @@
 
                         \draw[dotted] (0.5, 0) -- (0.5, -0.35);
 
-                        \addplot[dotted, very thick] {-0.23 * (x - 0.5) - 0.35};
+                        \addplot[dotted, thick] {-0.23 * (x - 0.5) - 0.35};
                     \end{axis} 
                 \end{tikzpicture}
             \end{center}
