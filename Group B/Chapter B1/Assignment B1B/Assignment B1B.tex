@@ -1,0 +1,170 @@
+\documentclass{jhwhw}
+
+\title{Assignment B1B\\Graphs and Transformations I}
+\author{Eytan Chong}
+\date{2024-03-01}
+
+\begin{document}
+    \problem{}
+        Without using a calculator, sketch the graphs of the conics in parts (a), (b) and $c$.
+
+        \begin{enumerate}
+            \item $3x^2 + 2y^2 = 6$
+            \item $x^2 + y^2 + 4x - 2y - 20 = 0$
+            \item $4(y-1)^2 - x^2 = 4$
+        \end{enumerate}
+
+        \noindent State a transformation that will transform the graph of (a) to a circle with centre $(0, 0)$ and radius $\sqrt3$.
+
+    \solution
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {sqrt(2), -sqrt(2)},
+                        ytick = {sqrt(3), -sqrt(3)},
+                        xticklabels = {$\sqrt {2}$, $-\sqrt{2}$},
+                        yticklabels = {$\sqrt {3}$, $-\sqrt{3}$},
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        xmin=-3,
+                        xmax=3,
+                        ymax=2,
+                        ymin=-2,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+
+                        \addplot[plotRed] (0, 0) ellipse[x radius = 1.414, y radius = 1.73];
+
+                        \addlegendentry{$3x^2 + 2y^2 = 6$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        xmin=-9,
+                        xmax=4,
+                        ymax=7,
+                        ymin=-4,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+
+                        \addplot[plotRed] (-2,1) circle[radius=5];
+
+                        \addlegendentry{$x^2 + y^2 + 4x - 2y - 20 = 0$};
+
+                        \fill (-2,1) circle[radius=2.5pt] node[anchor=south east] {$(-2,1)$};
+
+                        \draw[dotted, thick] (-2, 1) -- (-2,-4);
+                        
+                        \draw (-2,-2) node[anchor=east] {$5$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+        
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain=-7:7,
+                        axis y line=middle,
+                        axis x line=middle,
+                        ytick = {-2},
+                        xtick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+
+                        \addplot[plotRed] {-1+sqrt(1 + (x/2)^2)};
+
+                        \addplot[plotRed] {-1-sqrt(1 + (x/2)^2)};
+
+                        \addlegendentry{$4(y-1)^2 - x^2 = 4$};
+
+                        \addplot[dotted, thick] {1/2 * x - 1};
+
+
+                        \addplot[dotted, thick] {-x/2 - 1};
+
+                        \draw node[anchor=south,rotate=40] at (-4.5, -3.4) {$y = \tfrac12x-1$};
+
+                        \draw node[anchor=south, rotate=-40] at (4.5, -3.4) {$y = -\tfrac12x - 1$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+        \boxt{
+            $x \mapsto \sqrt{\dfrac23}x$
+        }
+
+    \problem{}
+        The curve $C$ has paramteric equations
+
+        \begin{equation*}
+            x = t^2 + 4t, \, y = t^3 + t^2
+        \end{equation*}
+
+        \noindent Sketch the curve for $-2 \leq t \leq 1$, stating the axial intercepts.
+
+    \solution
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-3},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-5,
+                    ymax=3,
+                    xmin=-5,
+                    xmax=6,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed] [domain=-2:1,samples=100]({x^2+4*x},{x^3+x^2});
+
+                    \addlegendentry{$x = t^2 + 4t, \, y = t^3 + t^2$};
+
+                    \fill (-4, -4) circle[radius=2.5 pt] node[anchor=west] {$(-4,4)$};
+
+                    \fill (5, 2) circle[radius=2.5 pt] node[anchor=east] {$(5,2)$};
+
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+\end{document}

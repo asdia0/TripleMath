@@ -27,7 +27,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 - [Tutorial B1A](/Group%20B/Chapter%20B1/Tutorial%20B1A/Tutorial%20B1A.pdf)
 - [Tutorial B1B](/Group%20B/Chapter%20B1/Tutorial%20B1B/Tutorial%20B1B.pdf)
 - [Assignment B1A](/Group%20B/Chapter%20B1/Assignment%20B1A/Assignment%20B1A.pdf)
-- Assignment B1B
+- [Assignment B1B](/Group%20B/Chapter%20B1/Assignment%20B1B/Assignment%20B1B.pdf)
 
 #### B2: Graphs and Transformations II
 
