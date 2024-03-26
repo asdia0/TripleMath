@@ -20,6 +20,9 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 - [Tutorial A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf)
 
+#### A4: Sequences and Series II
+- Tutorial A4
+
 ### Group B
 
 #### B1: Graphs and Transformations I
