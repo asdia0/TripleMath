@@ -84,18 +84,18 @@
 
 \usepackage[most]{tcolorbox}
 
-\tcbset{colback=white, colframe=black, arc=0pt,outer arc=0pt,
-        highlight math style={enhanced, colframe=black,colback=white,boxsep=0pt}
-        }
+%\tcbset{colback=white, colframe=black, arc=0pt,outer arc=0pt,
+%        highlight math style={enhanced, colframe=black,colback=white,boxsep=0pt}
+%        }
+		
+% \let\boxm\tcboxmath
 
-\let\boxm\tcboxmath
-
-\newcommand*{\boxt}[1]{
-  \begin{center}
-    \boxm{
-      \text{#1}
-      }
-  \end{center}}
+% \newcommand*{\boxt}[1]{
+%  \begin{center}
+%    \boxm{
+%      \text{#1}
+%      }
+%  \end{center}}
   
 \newcommand*{\der}[2]{
 \dfrac{d#1}{d#2}
@@ -121,6 +121,8 @@
 
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
+
 
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -161,3 +163,16 @@
 \usepackage{xcolor}
 \colorlet{plotRed}{red!50}
 \colorlet{plotBlue}{blue!50}
+\colorlet{plotGreen}{green}
+\colorlet{plotBlack}{black!50}
+
+\usepackage{varwidth}
+\usepackage{fbox}
+		
+\newcommand*{\boxt}[1]{
+\begin{center}
+	\fbox{\begin{varwidth}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+		#1
+	\end{varwidth}}
+\end{center}
+}
