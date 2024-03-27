@@ -34,7 +34,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 #### B2: Graphs and Transformations II
 
-- Tutorial B2
+- [Tutorial B2](/Group%20B/Chapter%20B2/Tutorial%20B2/Tutorial%20B2.pdf)
 - Assignment B2
 
 #### B3: Functions
