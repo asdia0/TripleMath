@@ -19,9 +19,11 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 #### A3: Sequences and Series I
 
 - [Tutorial A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf)
+- Assignment A3
 
 #### A4: Sequences and Series II
 - Tutorial A4
+- Assignment A4
 
 ### Group B
 
@@ -35,7 +37,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 #### B2: Graphs and Transformations II
 
 - [Tutorial B2](/Group%20B/Chapter%20B2/Tutorial%20B2/Tutorial%20B2.pdf)
-- Assignment B2
+- [Assignment B2](/Group%20B/Chapter%20B2/Assignment%20B2/Assignment%20B2.pdf)
 
 #### B3: Functions
 
@@ -45,6 +47,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 #### B4: Differentiation
 
 - Tutorial B4
+- Assignment B4
 
 
 ### Scripts 
