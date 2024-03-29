@@ -101,6 +101,10 @@
 \dfrac{d#1}{d#2}
 }
 
+\newcommand*{\derm}[3]{
+\dfrac{d^{#3}#1}{d#2^{#3}}
+}
+
 \newcommand*{\tosf}[1]{
 \text{ (#1 s.f.)}
 }
@@ -114,8 +118,15 @@
 }
   
 \newcommand*{\reject}[1]{
-\qquad \text{(rej. #1)}
+\qquad \text{(rej. \ensuremath{#1})}
 }
+
+\newcommand*{\inv}[1]{
+#1^{-1}
+}
+
+\newcommand*{\ran}[1]{R_{#1}}
+\newcommand*{\dom}[1]{D_{#1}}
 
 \numberwithin{equation}{ProblemNum}
 
