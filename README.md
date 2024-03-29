@@ -41,7 +41,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 #### B3: Functions
 
-- Tutorial B3
+- [Tutorial B3](/Group%20B/Chapter%20B3/Tutorial%20B3/Tutorial%20B3.pdf)
 - Assignment B3
 
 #### B4: Differentiation
