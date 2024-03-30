@@ -46,7 +46,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 #### B4: Differentiation
 
-- Tutorial B4
+- [Tutorial B4](/Group%20B/Chapter%20B4/Tutorial%20B4/Tutorial%20B4.pdf)
 - Assignment B4
 
 
