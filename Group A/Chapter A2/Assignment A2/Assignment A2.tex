@@ -1,0 +1,57 @@
+\documentclass{jhwhw}
+
+\title{Assignment A2\\Numerical Methods of Finding Roots}
+\author{Eytan Chong}
+\date{2024-03-18}
+
+\begin{document}
+    \problem{}
+        By considering the graphs of $y = \cos x$ and $y = -\dfrac14 x$, or otherwise, show that the equation $x + 4\cos x = 0$ has one negative root and two positive roots.
+
+        Use linear interpolation, once only, on the interval $[-1.5, 1]$ to find an approximation to the negative root of the equation $x + 4\cos x = 0$ correct to 2 decimal places.
+
+        % TODO: Graph
+
+        The diagram shows part of the graph of $y = x + 4\cos x$ near the larger positive root, $\alpha$, of the equation $x + 4\cos x = 0$. Explain why, when using the Newton-Raphson method to find $\alpha$, an initial approximation which is smaller than $\alpha$ may not be satisfactory.
+
+        Use the Newton-Raphson method to find $\alpha$ correct to 2 significant figures. You should demonstrate that your answer has the required accuracy.
+
+    \solution
+
+    \problem{}
+        Find the coordinates of the stationary points on the graph $y = x^3 + x^2$. Sketch the graph and hence write down the set of values of the constant $k$ for which the equatoin $x^3 + x^2 = k$ has three distinct real roots.
+
+        The positive root of the equation $x^3 + x^2 = 0.1$ is denoted by $\alpha$.
+
+        \begin{enumerate}
+            \item Find a first approximation to $\alpha$ by linear interpolation on the interval $0 \leq x \leq 1$.
+            \item With the aid of a suitable figure, indicate why, in this case, linear interpolation does not give a good approximation to $\alpha$.
+            \item Find an alternative first approximation to $\alpha$ by using the fact that if $x$ is small then $x^3$ is negligible when compared to $x^2$.
+        \end{enumerate}
+
+    \solution
+        \part
+
+        \part
+
+        \part
+
+    \problem{}
+        The equation $2\cos x - x =0$ has a root $\alpha$ in the interval $[1, 1.2]$. Iterations of the form $x_{n+1} = F(x_n)$ are based on each of the following rearrangements of the equation:
+
+        \begin{enumerate}
+            \item $x = 2\cos x$
+            \item $x = \cos x + \dfrac12 x$
+            \item $x = \dfrac23 (\cos x + x)$
+        \end{enumerate}
+
+        \noindent Determine which iteration will converge to $\alpha$ and illustrate your answer by a `staircase' or `cobweb' diagram. Use the most appropriate iteration with $x_1 = 1$, to find $\alpha$ to 4 significant figures. You should demonstrate that your answer has the required accuracy.
+
+    \solution
+        \part
+
+        \part
+
+        \part
+
+\end{document}
