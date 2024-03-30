@@ -22,7 +22,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 - Assignment A3
 
 #### A4: Sequences and Series II
-- Tutorial A4
+- [Tutorial A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf)
 - Assignment A4
 
 ### Group B
