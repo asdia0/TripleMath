@@ -10,7 +10,33 @@
 
         Use linear interpolation, once only, on the interval $[-1.5, 1]$ to find an approximation to the negative root of the equation $x + 4\cos x = 0$ correct to 2 decimal places.
 
-        % TODO: Graph
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {3.595},
+                    xticklabels = {$\alpha$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=2.3,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:2.3,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+
+                    \draw[thick,black!70,TwoMarks=0.1] (2.4,0) -- (2.6,0);
+                    
+                    \addplot[plotRed, domain=2.5:4] {x + 4*cos(\x r)};
+        
+                    \addlegendentry{$y = x+4\cos x$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
 
         The diagram shows part of the graph of $y = x + 4\cos x$ near the larger positive root, $\alpha$, of the equation $x + 4\cos x = 0$. Explain why, when using the Newton-Raphson method to find $\alpha$, an initial approximation which is smaller than $\alpha$ may not be satisfactory.
 
