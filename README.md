@@ -19,7 +19,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 #### A3: Sequences and Series I
 
 - [Tutorial A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf)
-- Assignment A3
+- [Assignment A3](/Group%20A/Chapter%20A3/Assignment%20A3/Assignment%20A3.pdf)
 
 #### A4: Sequences and Series II
 - [Tutorial A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf)
