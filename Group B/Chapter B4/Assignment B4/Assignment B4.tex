@@ -1,0 +1,117 @@
+\documentclass{jhwhw}
+
+\title{Assignment B4\\Differentiation}
+\author{Eytan Chong}
+\date{2024-04-03}
+
+\begin{document}
+    \problem{}
+        Differentiate the following with respect to $x$.
+
+        \begin{enumerate}
+            \item $\ln \dfrac{x^3}{\sqrt{1+x^2}}$
+            \item $\arctan{\dfrac{x^2}2}$
+            \item $e^{2x}\sec x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \der{}{x} \ln \dfrac{x^3}{\sqrt{1+x^2}} &= \der{}{x} 3\ln x - \dfrac12 \ln (1+x^2)\\
+                &= 3\cdot\dfrac1x-\dfrac12\cdot\dfrac1{1+x^2}\cdot2x\\
+                &= \dfrac3x-\dfrac{x}{1+x^2}
+            \end{align*}
+
+            \boxt{
+                $\der{}{x} \ln \dfrac{x^3}{\sqrt{1+x^2}} = \dfrac3x-\dfrac{x}{1+x^2}$
+            }
+
+        \part
+            \begin{align*}
+                \der{}{x} \arctan{\dfrac{x^2}2} &= \dfrac1{1+(\tfrac{x^2}2)}\cdot\dfrac12 \cdot 2x\\
+                &= \dfrac1{1+\tfrac{x^4}4}\cdot x\\
+                &= \dfrac{4x}{4+x^4}
+            \end{align*}
+
+            \boxt{
+                $\der{}{x} \arctan{\dfrac{x^2}2} = \dfrac{4x}{4+x^4}$
+            }
+
+        \part
+            \begin{align*}
+                \der{}{x} e^{2x}\sec x &= e^{2x}\sec x \tan x + \sec x \cdot e^{2x} \cdot 2\\
+                &= e^{2x} \sec x\, (\tan x + 2)
+            \end{align*}
+
+            \boxt{
+                $\der{}{x} e^{2x}\sec x = e^{2x} \sec x\, (\tan x + 2)$
+            }
+
+    \problem{}
+        Find the gradient of the curve $x^3 + xy^2 = 5y$ at the point where $x=1$ and $0 < y < 1$, leaving your answer to 3 significant figures.
+
+    \solution
+        Substituting $x=1$ into the given equation,
+
+        \begin{alignat*}{2}
+            &&1^4 + 1\cdot y^2 &= 5y\\
+            \implies&&y^2-5y+1&=0\\
+            \implies&&y &= \dfrac{-(-5)\pm\sqrt{5^2-4}}{2\cdot1}\\
+            && &= \dfrac{5\pm\sqrt{21}}2
+        \end{alignat*}
+
+        Since $0 < y < 1$, we reject $y = \dfrac{5+\sqrt{21}}2$ and take $y = \dfrac{5-\sqrt{21}}2 = 0.20871 \tosf{5}$.
+
+        Implicitly differentiating the given equation,
+
+        \begin{alignat}{2}
+            &&3x^2+x\cdot2y\cdot y^\prime + y^2 &= 5y^\prime \nonumber\\
+            &&2xy\cdot y^\prime - 5y^\prime &= -3x^2-y^2 \nonumber\\
+            \implies&&y^\prime(2xy-5)&=-3x^2-y^2 \nonumber\\
+            \implies&&y^\prime &= \dfrac{-3x^2-y^2}{2xy-5}\label{P2-1}
+        \end{alignat}
+
+        Substituting $x=1$ and $y=0.20871$ into Equation~\ref{P2-1}, 
+
+        \begin{align*}
+            y^\prime &= \dfrac{-3\cdot1^2-0.20871^2}{2\cdot 1 \cdot 0.20871-5}\\
+            &= 0.664 \tosf{3}
+        \end{align*}
+
+        \boxt{
+            The gradient of the curve is 0.664.
+        }
+
+    \problem{}
+        A curve $C$ has parametric equations
+
+        \begin{equation*}
+            x = \sin^3 \theta, \, y = 3 \sin^2 \theta \cos \theta, \qquad 0 \leq \theta \leq \dfrac12 \pi
+        \end{equation*}
+
+        Show that $\der{y}{x} = a\cot \theta + b\tan \theta$, where $a$ and $b$ are values to be determined.
+
+    \solution
+        \begin{equation*}
+            \der{x}{\theta} = 3\sin^2\theta\cos\theta
+        \end{equation*}
+
+        \begin{align*}
+            \der{y}{\theta} &= 3\left(\sin^2\theta \cdot -\sin\theta + \cos\theta \cdot (2\sin\theta\cos\theta) \right)\\
+            &= 3(2\sin\theta\cos^2\theta-\sin^3\theta)
+        \end{align*}
+
+        \begin{align*}
+            \der{y}{x} &= \der{y}{\theta} \cdot \der{\theta}{x}\\
+            &= \der{y}{\theta} \cdot \left(\der{x}{\theta}\right)^{-1}\\
+            &= \dfrac{3(2\sin\theta\cos^2\theta-\sin^3\theta)}{3\sin^2\theta\cos\theta}\\
+            &= \dfrac{2\cos^2\theta-\sin^2\theta}{\sin\theta\cos\theta}\\
+            &= \dfrac{2\cos^2\theta}{\sin\theta\cos\theta} - \dfrac{\sin^2\theta}{\sin\theta\cos\theta}\\
+            &= \dfrac{2\cos\theta}{\sin\theta} - \dfrac{\sin\theta}{\cos\theta}\\
+            &= 2\cot\theta - \tan\theta
+        \end{align*}
+
+        \boxt{
+            $a = 2$, $b=-1$
+        }
+\end{document}
