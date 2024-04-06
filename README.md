@@ -52,7 +52,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 #### B5: Applications of Differentiation
 
 - [Tutorial B5A](/Group%20B/Chapter%20B5/Tutorial%20B5A/Tutorial%20B5A.pdf)
-- Tutorial B5B
+- [Tutorial B5B](/Group%20B/Chapter%20B5/Tutorial%20B5B/Tutorial%20B5B.pdf)
 - Assignment B5A
 - Assignment B5B
 
