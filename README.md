@@ -8,9 +8,18 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | Index | Chapter | Tutorials | Assignments |
 | :---: | ------- | --------- | ----------- |
 | A1 | Equations and Inequalities | [T-A1](/Group%20A/Chapter%20A1/Tutorial%20A1/Tutorial%20A1.pdf) | [A-A1](/Group%20A/Chapter%20A1/Assignment%20A1/Assignment%20A1.pdf) |
-| A2 | Numerical Methods of Finding Roots | [T-A2](/Group%20A/Chapter%20A2/Tutorial%20A2/Tutorial%20A2.pdf) | A-A2 |
+| A2 | Numerical Methods of Finding Roots | [T-A2](/Group%20A/Chapter%20A2/Tutorial%20A2/Tutorial%20A2.pdf) | |
 | A3 | Sequences and Series I | [T-A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf) | [A-A3](/Group%20A/Chapter%20A3/Assignment%20A3/Assignment%20A3.pdf) |
-| A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | A-A4 |
+| A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | |
+| A5 | Recurrence Relations | | | 
+| A6 | Polar Coordinates | | |
+| A7 | Vectors I | | |
+| A8 | Vectors II | | |
+| A9 | Vectors III | | |
+| A10 | Complex Numbers (H2 MA) | | |
+| A11 | Complex Numbers (H2 FM) | | |
+| A12 | Permutations and Combinations | | |
+| A13 | Probability | | |
 
 ### Group B
 | Index | Chapter | Tutorials | Assignments |
@@ -20,6 +29,14 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | B3 | Functions | [T-B3](/Group%20B/Chapter%20B3/Tutorial%20B3/Tutorial%20B3.pdf) | [A-B3](/Group%20B/Chapter%20B3/Assignment%20B3/Assignment%20B3.pdf) |
 | B4 | Differentiation | [T-B4](/Group%20B/Chapter%20B4/Tutorial%20B4/Tutorial%20B4.pdf) | [A-B4](/Group%20B/Chapter%20B4/Assignment%20B4/Assignment%20B4.pdf) |
 | B5 | Applications of Differentation | [T-B5A](/Group%20B/Chapter%20B5/Tutorial%20B5A/Tutorial%20B5A.pdf), [T-B5B](/Group%20B/Chapter%20B5/Tutorial%20B5B/Tutorial%20B5B.pdf) | A-B5A, A-B5B |
+| B6 | Maclaurin Series | | |
+| B7 | Integration Techniques | | |
+| B8 | Applications of Integration I | | |
+| B9 | Applications of Integration II | | |
+| B10 | Trapezium and Simpson's Rule | | |
+| B11 | Functions of Two Variables | | |
+| B12 | Functional Differential Equations (H2 MA) | | |
+| B13 | Functional Differential Equations (H2 FM) | | |
 
 ### Scripts 
 
