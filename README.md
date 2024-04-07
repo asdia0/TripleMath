@@ -5,56 +5,21 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 ## Outline
 
 ### Group A
-
-#### A1: Equations and Inequalities
-
-- [Tutorial A1](/Group%20A/Chapter%20A1/Tutorial%20A1/Tutorial%20A1.pdf)
-- [Assignment A1](/Group%20A/Chapter%20A1/Assignment%20A1/Assignment%20A1.pdf)
-
-#### A2: Numerical Methods of Finding Roots
-
-- [Tutorial A2](/Group%20A/Chapter%20A2/Tutorial%20A2/Tutorial%20A2.pdf)
-- Assignment A2
-
-#### A3: Sequences and Series I
-
-- [Tutorial A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf)
-- [Assignment A3](/Group%20A/Chapter%20A3/Assignment%20A3/Assignment%20A3.pdf)
-
-#### A4: Sequences and Series II
-- [Tutorial A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf)
-- Assignment A4
+| Index | Chapter | Tutorials | Assignments |
+| :---: | ------- | --------- | ----------- |
+| A1 | Equations and Inequalities | [T-A1](/Group%20A/Chapter%20A1/Tutorial%20A1/Tutorial%20A1.pdf) | [A-A1](/Group%20A/Chapter%20A1/Assignment%20A1/Assignment%20A1.pdf) |
+| A2 | Numerical Methods of Finding Roots | [T-A2](/Group%20A/Chapter%20A2/Tutorial%20A2/Tutorial%20A2.pdf) | A-A2 |
+| A3 | Sequences and Series I | [T-A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf) | [A-A3](/Group%20A/Chapter%20A3/Assignment%20A3/Assignment%20A3.pdf) |
+| A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | A-A4 |
 
 ### Group B
-
-#### B1: Graphs and Transformations I
-
-- [Tutorial B1A](/Group%20B/Chapter%20B1/Tutorial%20B1A/Tutorial%20B1A.pdf)
-- [Tutorial B1B](/Group%20B/Chapter%20B1/Tutorial%20B1B/Tutorial%20B1B.pdf)
-- [Assignment B1A](/Group%20B/Chapter%20B1/Assignment%20B1A/Assignment%20B1A.pdf)
-- [Assignment B1B](/Group%20B/Chapter%20B1/Assignment%20B1B/Assignment%20B1B.pdf)
-
-#### B2: Graphs and Transformations II
-
-- [Tutorial B2](/Group%20B/Chapter%20B2/Tutorial%20B2/Tutorial%20B2.pdf)
-- [Assignment B2](/Group%20B/Chapter%20B2/Assignment%20B2/Assignment%20B2.pdf)
-
-#### B3: Functions
-
-- [Tutorial B3](/Group%20B/Chapter%20B3/Tutorial%20B3/Tutorial%20B3.pdf)
-- [Assignment B3](/Group%20B/Chapter%20B3/Assignment%20B3/Assignment%20B3.pdf)
-
-#### B4: Differentiation
-
-- [Tutorial B4](/Group%20B/Chapter%20B4/Tutorial%20B4/Tutorial%20B4.pdf)
-- [Assignment B4](/Group%20B/Chapter%20B4/Assignment%20B4/Assignment%20B4.pdf)
-
-#### B5: Applications of Differentiation
-
-- [Tutorial B5A](/Group%20B/Chapter%20B5/Tutorial%20B5A/Tutorial%20B5A.pdf)
-- [Tutorial B5B](/Group%20B/Chapter%20B5/Tutorial%20B5B/Tutorial%20B5B.pdf)
-- Assignment B5A
-- Assignment B5B
+| Index | Chapter | Tutorials | Assignments |
+| :---: | ------- | --------- | ----------- |
+| B1 | Graphs and Transformations I | [T-B1A](/Group%20B/Chapter%20B1/Tutorial%20B1A/Tutorial%20B1A.pdf), [T-B1B](/Group%20B/Chapter%20B1/Tutorial%20B1B/Tutorial%20B1B.pdf) | [A-B1A](/Group%20B/Chapter%20B1/Assignment%20B1A/Assignment%20B1A.pdf), [A-B1B](/Group%20B/Chapter%20B1/Assignment%20B1B/Assignment%20B1B.pdf) |
+| B2 | Graphs and Transformations II | [T-B2](/Group%20B/Chapter%20B2/Tutorial%20B2/Tutorial%20B2.pdf) | [A-B2](/Group%20B/Chapter%20B2/Assignment%20B2/Assignment%20B2.pdf) |
+| B3 | Functions | [T-B3](/Group%20B/Chapter%20B3/Tutorial%20B3/Tutorial%20B3.pdf) | [A-B3](/Group%20B/Chapter%20B3/Assignment%20B3/Assignment%20B3.pdf) |
+| B4 | Differentiation | [T-B4](/Group%20B/Chapter%20B4/Tutorial%20B4/Tutorial%20B4.pdf) | [A-B4](/Group%20B/Chapter%20B4/Assignment%20B4/Assignment%20B4.pdf) |
+| B5 | Applications of Differentation | [T-B5A](/Group%20B/Chapter%20B5/Tutorial%20B5A/Tutorial%20B5A.pdf), [T-B5B](/Group%20B/Chapter%20B5/Tutorial%20B5B/Tutorial%20B5B.pdf) | A-B5A, A-B5B |
 
 ### Scripts 
 
