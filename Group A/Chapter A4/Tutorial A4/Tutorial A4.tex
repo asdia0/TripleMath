@@ -355,47 +355,17 @@
             }
 
         \part
-            Note that $S_n < S$ for even $n$, and $S_n > S$ for odd $n$.
-
-            \smallskip
-
-            \case{1}{$n = 2k, \, k \in \mathbb{Z}^+$}
             \begin{alignat*}{2}
                 &&\abs{S_n - S} &< 0.001\% S\\
-                \implies&&S - S_n &< \dfrac{0.001}{100} S\\
-                \implies&&\dfrac34 - S_n &< \dfrac1{100000}\cdot\dfrac34\\
-                \implies&&S_n &> \dfrac34 \left(1 - \dfrac1{100000} \right)\\
-                \implies&&\dfrac34 \left(1 - \left(-\dfrac13\right)^n\right) &> \dfrac34 \left(1 - \dfrac1{100000} \right)\\
-                \implies&&- \left(-\dfrac13\right)^n &> - \dfrac1{100000}\\
-                \implies&&\left(-\dfrac13\right)^n &< \dfrac1{100000}\\
-                \implies&&\left(-\dfrac13\right)^{2k} &< \dfrac1{100000}\\
-                \implies&&\left(\dfrac19\right)^{k} &< \dfrac1{100000}\\
-                \implies&&9^{k} &> 100000\\
-                \implies&&k &> \log_{9} 100000 = 5.24 \tosf{3}\\
-                \implies&&n &> 10.5
+                \implies&&\abs{\dfrac{S_n - S}S} &< \dfrac{0.001}{100}\\
+                \implies&&\abs{\dfrac{\tfrac34(1 - (-\tfrac13)^n)}{\tfrac34} - 1} &< \dfrac1{100000}\\
+                \implies&&\abs{-\left(-\dfrac13\right)^n} &< \dfrac1{100000}\\
+                \implies&&\left(\dfrac13\right)^n &< \dfrac1{10000}\\
+                \implies&&n &> \log_{\tfrac13}\dfrac1{100000}\\
+                && &= 10.5
             \end{alignat*}
 
-            Hence, if $n$ is even, then the least value of $n$ is 12.
-
-            \smallskip
-
-            \case{2}{$n = 2k-1, \, k \in \mathbb{Z}^+$}
-            \begin{alignat*}{2}
-                &&\abs{S_n - S} &< 0.001\% S\\
-                \implies&&S_n - S &< \dfrac{0.001}{100} S\\
-                \implies&&S_n - \dfrac34&< \dfrac1{100000}\cdot\dfrac34\\
-                \implies&&S_n &< \dfrac34 \left(1 + \dfrac1{100000} \right)\\
-                \implies&&\dfrac34 \left(1 - \left(-\dfrac13\right)^n\right) &< \dfrac34 \left(1 + \dfrac1{100000} \right)\\
-                \implies&&- \left(-\dfrac13\right)^n &< \dfrac1{100000}\\
-                \implies&&-\left(-\dfrac13\right)^{2k-1} &< \dfrac1{100000}\\
-                \implies&&3\left(\dfrac19\right)^{k} &< \dfrac1{100000}\\
-                \implies&&\dfrac1{9^k} &< \dfrac1{300000}\\
-                \implies&& 9^k &> 300000\\
-                \implies&& k &> \log_9 300000 = 5.74 \tosf{3}\\
-                \implies&& n &> 10.5
-            \end{alignat*}
-
-            Hence, if $n$ is odd, then the least value of $n$ is 11.
+            Since $n \in \mathbb{N}$, the least value of $n$ is 11.
 
             \boxt{
                 The least value of $n$ is 11.

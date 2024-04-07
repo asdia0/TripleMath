@@ -661,7 +661,7 @@
             \end{tikzpicture}    
         \end{center}
 
-        Let the origin be the tip of the cone. Since the sphere has radius 1 unit, the point $(r, h)$ lies on the circle $x^2 + (y-1)^2 = 1$.
+        Let the origin be the tip of the cone. Since the sphere has radius 1 unit, the circle is given by the equation $x^2 + (y-1)^2 = 1$. Since the point $(r, h)$ lies on the circle,
         \begin{alignat}{2}
             &&r^2 + (h-1)^2 &= 1\nonumber\\
             \implies&&r^2 + h^2 - 2h + 1 &= 1\nonumber\\
@@ -679,10 +679,10 @@
             \end{alignat*}
 
             Let the volume of the cone be $V(r) = \dfrac13 \pi r^2 h$. Differentiating $V(r)$,
-
             \begin{align*}
                 V^\prime(r) &= \dfrac13 \pi (r^2 h^\prime + h \cdot 2r)\\
                 &= \dfrac13 \pi \left(\left(2h - h^2\right)\left(\dfrac{r}{1-h}\right) + 2hr\right)\\
+                &= \dfrac13 \pi \left(hr\cdot\dfrac{2 - h}{1-h} + 2hr\right)\\
                 &= \dfrac13 \pi rh \left(\dfrac{2 - h}{1-h} + 2\right)\\
                 &= \dfrac13 \cdot \dfrac{\pi rh}{1-h}(2 - h + 2(1-h))\\
                 &= \dfrac13 \cdot \dfrac{\pi rh}{1-h}(2 - h + 2-2h)\\
@@ -690,7 +690,6 @@
             \end{align*}
 
             Consider the stationary values of $V(r)$. For stationary values, $V^\prime(r) = 0$.
-
             \begin{alignat*}{2}
                 &&V^\prime(r) &= 0\\
                 \implies&& \dfrac13 \cdot \dfrac{\pi rh}{1-h}(4-3h) &= 0\\
@@ -739,7 +738,7 @@
                 \implies&&\sin 2\theta &= \pm \sqrt{1-(h-1)^2}
             \end{alignat*}
 
-            Since $0 < \theta < \dfrac{\pi}2$, we take $\sin 2\theta = \sqrt{1 - (h-1)^2}$.
+            Since $0 < \theta < \dfrac{\pi}2$, we know $\sin 2\theta > 0$. We thus take $\sin 2\theta = \sqrt{1 - (h-1)^2}$.
             
             Implicitly differentiating $2\cos^2\theta = h$ with respect to $h$,
 
@@ -860,7 +859,10 @@
             &= -0.0680 \tosf{3}
         \end{align*}
 
-        The depth of the liquid is decreasing at a rate of 0.0680 cm/s 3 minutes after the start of the experiment.
+        \boxt{
+            The depth of the liquid is decreasing at a rate of 0.0680 cm/s 3 minutes after the start of the experiment.
+        }
+
 
     \problem{}
         A particle is projected from the origin $O$ and it moes freely under gravity in the $x$-$y$ plane. At time $t$ s after projection, the particle is at the point $(x,y)$ where $x=30t$ and $y=20t-5t^2$, with $x$ and $y$ measured in meteres.
