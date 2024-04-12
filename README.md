@@ -42,6 +42,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 | Worksheet | Chapter(s) |
 | --------- | :--------: |
+| [Timed Practice 1](/Misc/Timed%20Practice%201/Timed%20Practice%201.pdf) | A4, B1 |
 | [Timed Practice 2](/Misc/Timed%20Practice%202/Timed%20Practice%202.pdf) | A2 |
 
 ### Scripts 
