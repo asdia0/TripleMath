@@ -1,0 +1,261 @@
+\documentclass{jhwhw}
+
+\title{Assignment B5B\\Applications of Differentation}
+\author{Eytan Chong}
+\date{2024-04-11}
+
+\begin{document}
+    \problem{}
+        Sketch the curve with parametric equations
+
+        \begin{equation*}
+            x = 3t, \, y = \dfrac3t
+        \end{equation*}
+
+        \noindent The point $P$ on the curve has parameter $t = 2$. The normal at $P$ meets the curve again at the point $Q$.
+
+        \begin{enumerate}
+            \item Show that the normal at $P$ has equation $2y = 8x - 45$.
+            \item Find the value of $t$ at $Q$.
+        \end{enumerate}
+
+    \solution
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -10:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] ({3*x}, {3/x});
+
+                    \addlegendentry{$x = 3t$, $y = \tfrac3t$}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \part
+            Consider $\der{y}{x}$.
+
+            \begin{align*}
+                \der{y}{x} &= \der{y}{t} \cdot \der{t}{x}\\
+                &= \der{y}{t} \cdot \left(\der{x}{t}\right)^{-1}\\
+                &= \left(-\dfrac3{t^2}\right)\cdot \dfrac13\\
+                &= -\dfrac1{t^2}
+            \end{align*}
+
+            Hence, the tangent to the curve has gradient $-\dfrac1{t^2}$, whence the normal to the curve has gradient $\dfrac{-1}{-\tfrac1{t^2}} = t^2$. Thus, the normal to the curve at $P$ has gradient $2^2 = 4$. Note that $P$ has coordinates $\left(3 \cdot 2, \dfrac32\right) = \left(6, \dfrac32\right)$. Using the point-slope formula,
+
+            \begin{alignat*}{2}
+                &&y - \dfrac32 &= 4(x - 6)\\
+                \implies&&y - \dfrac32 &= 4x - 24\\
+                \implies&&y &= 4x - 24 + \dfrac32\\
+                \implies&&2y &= 8x - 48 + 3\\
+                && &= 8x - 45
+            \end{alignat*}
+
+            Thus, the normal at $P$ has equation $2y = 8x - 45$.
+
+        \part
+            Observe that $x = 3t \implies t = \dfrac{x}3 \implies y = \dfrac3{\tfrac{x}3} = \dfrac9x$. Substituting $y = \dfrac9x$ into the equation of the normal at $P$,
+
+            \begin{alignat*}{2}
+                &&2 \cdot \dfrac9x &= 8x - 45\\
+                \implies&&\dfrac{18}x &= 8x - 45\\
+                \implies&&18 &= 8x^2 - 45x\\
+                \implies&&8x^2 - 45x - 18 &= 0\\
+                \implies&&(x-6)(8x+3) &= 0
+            \end{alignat*}
+
+            Hence $x = -\dfrac38$ at $Q$. Note that we reject $x=6$ since $x=6$ at $P$. Thus, $t = \dfrac{-\tfrac38}3 = -\dfrac18$ at $Q$.
+
+            \boxt{
+                $t = -\dfrac18$
+            }
+
+    \problem{}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw (0, 0) -- (3, 0);
+
+                \draw (0, 5) -- (3, 5);
+
+                \draw[dotted, thick] (0, 0) -- (0, 5);
+
+                \draw[dotted, thick] (3, 0) -- (3, 5);
+
+                \draw (3, 0) arc (-90:90:2.5);
+
+                \draw (0, 0) arc (90:-90:-2.5);
+
+                \node[anchor=west] at (0, 2.5) {$y$};
+
+                \node[anchor=north] at (1.5, 5) {$x$};
+            \end{tikzpicture}
+        \end{center}
+
+        \noindent A pond with a constant depth of 1 m is being designed for a park. The pond comprises a rectangle $x$ m by $y$ m and two semicircles of diameter $y$ m, as shown in the diagram. The cost to build a boundary around the pond is \$30 per metre for straight parts and \$60 per metre for the semicircular parts. Given that the budget for the boundary is fixed at \$6000, using differentation or otherwise, find in terms of $\pi$, the exact values of $x$ and $y$ which give the pond a maximum volume.
+
+    \solution
+        Observe that the total length of the straight parts is $2x$ m and the total length of the semicircular parts is $2 \cdot \dfrac12 \pi y = \pi y$ m. Hence,
+        \begin{alignat*}{2}
+            &&30 \cdot 2x + 60 \cdot \pi y &= 6000\\
+            \implies&&60x + 60 \pi y &= 6000\\
+            \implies&&x + \pi y &= 100\\
+            \implies&&x &= 100 - \pi y
+        \end{alignat*}
+
+        Let $V(y)$ m$^3$ be the volume of the pond.
+        \begin{align*}
+            V(y) &= 1 \cdot \left(\pi \left(\dfrac{y}2\right)^2 + xy\right)\\
+            &= \dfrac{\pi}4 y^2 + xy\\
+            &= \dfrac{\pi}4 y^2 + (100 - \pi y )y\\
+            &= \dfrac{\pi}4 y^2 + 100y - \pi y^2\\
+            &= - \dfrac{3}4 \pi y^2 + 100y
+        \end{align*}
+
+        Consider the stationary points of $V(y)$. For stationary points, $V^\prime(y) = 0$.
+        \begin{alignat*}{2}
+            &&V^\prime(y) &= 0\\
+            \implies&&-\dfrac34 \pi \cdot 2y + 100 &= 0\\
+            \implies&& y &= \dfrac{200}3 \pi
+        \end{alignat*}
+
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{|c|c|c|c|}
+            \hline
+            $y$ & $\left(\dfrac{200}3 \pi\right)^-$ & $\dfrac{200}3 \pi$ & $\left(\dfrac{200}3 \pi\right)^+$ \\\hline
+            $V^\prime(y)$ & +ve   & 0 & -ve   \\[1ex]\hline
+            \end{tabular}
+        \end{table}
+
+        By the First Derivative Test, the maximum volume of the pond is achieved when $y = \dfrac{200}3 \pi$. Thus, $x = 100 - \pi y = \dfrac{100}3$.
+
+        \boxt{
+            $x = \dfrac{100}3$, $y = \dfrac{200}3 \pi$
+        }
+
+    \problem{}
+        A circular cylinder is expanding in such a way that, at time $t$ seconds, the length of the cylinder is $20x$ cm and the area of the cross-section is $x$ cm$^2$. Given that, when $x=5$, the area of the cross-section is increasing at a rate of $0.025$ cm$^2$s$^{-1}$, find the rate of increase at this instant of
+
+        \begin{enumerate}
+            \item the length of the cylinder,
+            \item the volume of the cylinder,
+            \item the radius of the cylinder.
+        \end{enumerate}
+
+    \solution
+        Let $A = x$ cm$^2$ be the cross-sectional area of the cylinder. Then $\der{A}{t} = \der{A}{x} \cdot\der{x}{t} = \der{x}{t}$, whence $\left.\der{A}{t}\right|_{x=5} = \left.\der{x}{t}\right|_{x=5} = 0.025$.
+
+        \part
+            Let $L = 20x$ cm be the length of the cylinder. Then $\der{L}{t} = \der{L}{x} \cdot \der{x}{t} = 20\cdot \der{x}{t}$. Hence, $\left.\der{L}{t}\right|_{x=5} = \left.\left(20\cdot\der{x}{t}\right)\right|_{x=5} = 20 \cdot 0.025 = 0.5$.
+
+            \boxt{
+                The length of the cylinder is increasing at a rate of 0.5 cm/s.
+            }
+
+        \part
+            Let $V = AL = 20x^2$ cm$^3$ be the volume of the cylinder. Then $\der{V}{t} = \der{V}{x} \cdot \der{x}{t} = 40x \cdot \der{x}{t}$. Hence, $\left.\der{V}{t}\right|_{x=5}= \left.\left(40x\cdot\der{x}{t}\right)\right|_{x=5} = 40\cdot5\cdot0.025 = 5$.
+
+            \boxt{
+                The volume of the cylinder is increasing at a rate of 5 cm/s.
+            }
+
+        \part
+            Let $R$ cm be the radius of the cylinder. Since $\pi R^2 = A = x$, we have $R = \sqrt{\dfrac{x}\pi}= \dfrac{\sqrt{x}}{\sqrt\pi}$. Hence, $\der{R}{t} = \der{R}{x} \cdot \der{x}{t} = \dfrac{1}{\sqrt\pi} \cdot \dfrac1{2\sqrt{x}} \cdot \der{x}{t}$. Thus, $\left.\der{R}{t}\right|_{x=5} = \left.\left(\dfrac{1}{\sqrt\pi} \cdot \dfrac1{2\sqrt{x}} \cdot \der{x}{t}\right)\right|_{x=5} = \dfrac{1}{\sqrt\pi} \cdot \dfrac1{2\sqrt{5}} \cdot 0.025 = 0.00315 \tosf{3}$.
+            
+            \boxt{
+                The radius of the cylinder is increasing at a rate of 0.00315 cm/s.
+            }
+
+    \problem{}
+        The curve $C$ has equation $2^{-y} = x$. The point $A$ on $C$ has $x$-coordinate $a$ where $a > 0$. Show that $\der{y}{x} = -\dfrac1{a\ln2}$ at $A$ and find the equation of the tangent to $C$ at $A$. Hence find the equation of the tangent to $C$ which passes through the origin.
+        
+        The straight line $y = mx$ intersects $C$ at 2 distinct points. Write down the range of values of $m$.
+
+    \solution
+        Implicitly differentiating the given equation,
+
+        \begin{alignat*}{2}
+            &&2^{-y} \cdot \ln 2 \cdot -y^\prime &= 1\\
+            \implies&&x \cdot \ln 2 \cdot -y^\prime &= 1\\
+            \implies&&y^\prime &= -\dfrac{1}{x \ln 2}
+        \end{alignat*}
+
+        At $A$, $x = a$. Hence, $\der{y}{x} = -\dfrac{1}{a \ln 2}$.
+
+        \medskip
+
+        Note that $2^{-y} = x \implies y = -\log_2{x}$. Hence, $A$ has coordinates $(a, -\log_2{a})$. Using the point-slope formula, the tangent to $C$ at $A$ has equation
+        
+        \begin{alignat*}{2}
+            &&y-(-\log_2{a}) &= -\dfrac1{a\ln2}(x-a)\\
+            \implies&&y &= -\dfrac{x}{a\ln2} + \dfrac1{\ln2} - \log_2{a}\\
+            && &= -\dfrac{x}{a\ln2} + \dfrac1{\ln2} - \dfrac{\ln a}{\ln 2}\\
+            && &= -\dfrac{x}{a\ln2} + \dfrac{1 - \ln a}{\ln2}
+        \end{alignat*}
+
+        \boxt{
+            The tangent to $C$ at $A$ has equation $y = -\dfrac{x}{a\ln2} + \dfrac{1 - \ln a}{\ln2}$.
+        }
+
+        Consider the straight line $y = mx$ that is tangent to $C$ and passes through the origin.
+
+        \begin{alignat*}{2}
+            &&0 &= -\dfrac{0}{a\ln2} + \dfrac{1 - \ln a}{\ln2}\\
+            \implies&&1-\ln a &= 0\\
+            \implies&&a &= e
+        \end{alignat*}
+
+        Hence, the equation of the tangent to $C$ that passes through the origin is $y = -\dfrac{x}{e\ln 2}$.
+
+        Consider the graph of $2^{-y} = x$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {-ln(x)/ln(2)};
+        
+                    \addlegendentry{$2^{-y} = x$};
+
+                    \addplot[plotBlue] {-x/(e*ln(2))};
+
+                    \addlegendentry{$y = -\frac{x}{e\ln2}$}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        Hence, $m$ must be strictly between $-\dfrac{1}{e\ln2}$ and 0.
+
+        \boxt{
+            $m \in \left(-\dfrac1{e\ln2}, 0\right)$
+        }
+
+\end{document}
