@@ -29,7 +29,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | B3 | Functions | [T-B3](/Group%20B/Chapter%20B3/Tutorial%20B3/Tutorial%20B3.pdf) | [A-B3](/Group%20B/Chapter%20B3/Assignment%20B3/Assignment%20B3.pdf) |
 | B4 | Differentiation | [T-B4](/Group%20B/Chapter%20B4/Tutorial%20B4/Tutorial%20B4.pdf) | [A-B4](/Group%20B/Chapter%20B4/Assignment%20B4/Assignment%20B4.pdf) |
 | B5 | Applications of Differentation | [T-B5A](/Group%20B/Chapter%20B5/Tutorial%20B5A/Tutorial%20B5A.pdf), [T-B5B](/Group%20B/Chapter%20B5/Tutorial%20B5B/Tutorial%20B5B.pdf) | [A-B5A](/Group%20B/Chapter%20B5/Assignment%20B5A/Assignment%20B5A.pdf), [A-B5B](/Group%20B/Chapter%20B5/Assignment%20B5B/Assignment%20B5B.pdf) |
-| B6 | Maclaurin Series | | |
+| B6 | Maclaurin Series | [T-B6](/Group%20B/Chapter%20B6/Tutorial%20B6/Tutorial%20B6.pdf) | |
 | B7 | Integration Techniques | | |
 | B8 | Applications of Integration I | | |
 | B9 | Applications of Integration II | | |
