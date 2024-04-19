@@ -11,7 +11,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | A2 | Numerical Methods of Finding Roots | [T-A2](/Group%20A/Chapter%20A2/Tutorial%20A2/Tutorial%20A2.pdf) | [A-A2](/Group%20A/Chapter%20A2/Assignment%20A2/Assignment%20A2.pdf) |
 | A3 | Sequences and Series I | [T-A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf) | [A-A3](/Group%20A/Chapter%20A3/Assignment%20A3/Assignment%20A3.pdf) |
 | A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | |
-| A5 | Recurrence Relations | [T-A5](/Group%20A/Chapter%20A5/Tutorial%20A5/Tutorial%20A5.pdf) | | 
+| A5 | Recurrence Relations | [T-A5](/Group%20A/Chapter%20A5/Tutorial%20A5/Tutorial%20A5.pdf) | [A-A5](/Group%20A/Chapter%20A5/Assignment%20A5/Assignment%20A5.pdf) | 
 | A6 | Polar Coordinates | | |
 | A7 | Vectors I | | |
 | A8 | Vectors II | | |
