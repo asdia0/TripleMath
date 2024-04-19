@@ -2,9 +2,7 @@
 
 Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
-## Outline
-
-### Group A
+## Group A
 | Index | Chapter | Tutorials | Assignments |
 | :---: | ------- | --------- | ----------- |
 | A1 | Equations and Inequalities | [T-A1](/Group%20A/Chapter%20A1/Tutorial%20A1/Tutorial%20A1.pdf) | [A-A1](/Group%20A/Chapter%20A1/Assignment%20A1/Assignment%20A1.pdf) |
@@ -21,7 +19,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | A12 | Permutations and Combinations | | |
 | A13 | Probability | | |
 
-### Group B
+## Group B
 | Index | Chapter | Tutorials | Assignments |
 | :---: | ------- | --------- | ----------- |
 | B1 | Graphs and Transformations I | [T-B1A](/Group%20B/Chapter%20B1/Tutorial%20B1A/Tutorial%20B1A.pdf), [T-B1B](/Group%20B/Chapter%20B1/Tutorial%20B1B/Tutorial%20B1B.pdf) | [A-B1A](/Group%20B/Chapter%20B1/Assignment%20B1A/Assignment%20B1A.pdf), [A-B1B](/Group%20B/Chapter%20B1/Assignment%20B1B/Assignment%20B1B.pdf) |
@@ -38,28 +36,9 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | B12 | Functional Differential Equations (H2 MA) | | |
 | B13 | Functional Differential Equations (H2 FM) | | |
 
-#### Misc
+## Misc
 
 | Worksheet | Chapter(s) |
 | --------- | :--------: |
 | [Timed Practice 1](/Misc/Timed%20Practice%201/Timed%20Practice%201.pdf) | A4, B1 |
 | [Timed Practice 2](/Misc/Timed%20Practice%202/Timed%20Practice%202.pdf) | A2 |
-
-### Scripts 
-
-#### [`numberLine.py`](/.meta/Scripts/numberLine.py)
-
-Generates the $\LaTeX$ code for the number line of a given polynomial.
-
-#### [`plot.py`](/.meta/Scripts/plot.py)
-
-Calculates all points of interest given a system of equations. Points of interest include:
-
-- $x$-Intercepts
-- $y$-Intercepts
-- Critical points
-- Intersections
-
-> [!NOTE]
-> Note that all equations $y = f(x)$ must be inputted in the form `f(x) - y`.
-> To input multiple equations, separate each equation with a `|` character.
