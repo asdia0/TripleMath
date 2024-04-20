@@ -187,3 +187,11 @@
 	\end{varwidth}}
 \end{center}
 }
+
+\usepackage{cases}
+
+\renewcommand{\Re}[1]{\mathfrak{Re}\left\{#1\right\}}
+\renewcommand{\Im}[1]{\mathfrak{Im}\left\{#1\right\}}
+\newcommand*{\coord}[2]{\left(#1, #2\right)}
+\usepackage{enumerate}
+\usepgfplotslibrary{polar}

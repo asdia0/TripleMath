@@ -1,0 +1,28 @@
+\begin{center}
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:2*pi,
+            samples = 100,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xmin=-2,
+            xmax=2,
+            ymin=-2,
+            ymax=2,
+            xlabel = {$\theta=0$},
+            ylabel = {$\theta = \frac\pi2$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[color=plotRed,data cs=polarrad] { 0.5 * x};
+
+            \addlegendentry{$r = \frac12 \theta$};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
