@@ -254,7 +254,9 @@
                         axis y line=middle,
                         axis x line=middle,
                         xtick = {-2, 2},
+                        xticklabels = {2, 2},
                         ytick = {-2, 2},
+                        yticklabels = {2, 2},
                         xmin=-3.5,
                         xmax=3.5,
                         ymin=-3.5,
@@ -315,9 +317,9 @@
                         axis y line=middle,
                         axis x line=middle,
                         xtick = {pi, -pi/2},
-                        xticklabels = {$\pi$, $-\frac12 \pi$},
+                        xticklabels = {$\pi$, $\frac12 \pi$},
                         ytick = {pi/4, -3*pi/4},
-                        yticklabels = {$\frac14 \pi$, $-\frac34 \pi$},
+                        yticklabels = {$\frac14 \pi$, $\frac34 \pi$},
                         xmin=-3.5,
                         xmax=3.5,
                         ymin=-3.5,
@@ -401,7 +403,7 @@
         \end{center}
     
     \solution
-        Observe that the curve is symmetryic about the $y$-axis. Further observe that $\dfrac\theta3 \in [0, 2\pi) \implies \theta \in [0, 6\pi)$.
+        Observe that the curve is symmetric about the $y$-axis. Further observe that $\dfrac\theta3 \in [0, 2\pi)$, hence we take $\theta \in [0, 6\pi)$.
         
         For $x$-intercepts, $y = 0 \implies r\sin\theta = 0 \implies \theta = n\pi$, where $n \in \mathbb{Z}$. Due to the symmetry of the curve, we consider only $n = 0, 2, 4$.
 
@@ -494,19 +496,19 @@
                 $y = x\tan\alpha - 2\sec\alpha$
             }
 
-            When $\alpha = \dfrac\pi4$, we have $y = x\tan\dfrac\pi4 - 2\sec\dfrac\pi4 = x - \sqrt{2}$.
+            When $\alpha = \dfrac\pi4$, we have $y = x\tan\dfrac\pi4 - 2\sec\dfrac\pi4 = x - 2\sqrt{2}$.
 
             \begin{center}
                 \begin{tikzpicture}[trim axis left, trim axis right]
                     \begin{axis}[
-                        domain = sqrt(2)-4:sqrt(2),
+                        domain = -sqrt(2):3*sqrt(2),
                         samples = 101,
                         axis y line=middle,
                         axis x line=middle,
-                        xtick = {-sqrt(2)},
-                        xticklabels = {$-\sqrt2$},
-                        ytick = {sqrt(2)},
-                        yticklabels = {$\sqrt2$},
+                        xtick = {2*sqrt(2)},
+                        xticklabels = {$2\sqrt2$},
+                        ytick = {-2*sqrt(2)},
+                        yticklabels = {$-2\sqrt2$},
                         xlabel = {$x$},
                         ylabel = {$y$},
                         legend cell align={left},
@@ -516,7 +518,7 @@
                                 node [anchor=north east] {$O$};
                             }
                         ]
-                        \addplot[plotRed] {x + sqrt(2)};
+                        \addplot[plotRed] {x - 2*sqrt(2)};
             
                         \addlegendentry{$r = \frac2{\cos\theta\sin\alpha - \sin\theta\cos\alpha}$};
                     \end{axis}
@@ -543,6 +545,7 @@
                         axis y line=middle,
                         axis x line=middle,
                         xtick = {-1, 1},
+                        xticklabels = {1, 1},
                         ytick = \empty,
                         xmin=-2,
                         xmax=2,
@@ -627,7 +630,7 @@
                     axis y line=middle,
                     axis x line=middle,
                     xtick = {-e^(-pi), 1},
-                    xticklabels = {$\coord{-e^{-2\pi}}{\pi}$, $\coord{1}{0}$},
+                    xticklabels = {$\coord{e^{-2\pi}}{\pi}$, $\coord{1}{0}$},
                     ytick = {e^(-pi/2)},
                     yticklabels = {$\coord{e^{-\pi}}{\frac{\pi}2}$},
                     xmax=1.1,
@@ -660,13 +663,7 @@
             &= 4
         \end{align*}
 
-        Integrating with respect to $\theta$,
-        \begin{alignat*}{2}
-            &&\int \der{r}{\theta}\, d\theta &= \int 4 \, d\theta\\
-            \implies&&r &= 4\theta + C
-        \end{alignat*}
-
-        Evaluating the above equation at $t=0$, we see that $10 = 4\cdot 0 + C \implies C = 10$. Thus,
+        Integrating with respect to $\theta$, we have $r = 4\theta + C$. Evaluating the equation at $t=0$, we see that $10 = 4\cdot 0 + C \implies C = 10$. Thus,
 
         \boxt{
             $r = 4\theta + 10$
@@ -682,16 +679,16 @@
                     axis y line=middle,
                     axis x line=middle,
                     xtick = {10, -4*pi-10, 8*pi + 10},
-                    xticklabels = {$10$, $-4\pi-10$, $8\pi+10$},
+                    xticklabels = {$10$, $4\pi+10$, $8\pi+10$},
                     ytick = {2*pi + 10, -6*pi - 10},
-                    yticklabels = {$2\pi + 10$, $-6\pi-10$},
+                    yticklabels = {$2\pi + 10$, $6\pi+10$},
                     xlabel = {$\theta=0$},
                     ylabel = {$\theta = \frac\pi2$},
                     legend cell align={left},
                     legend pos=outer north east,
                     after end axis/.code={
                         \path (axis cs:0,0) 
-                            node [anchor=south west] {$O$};
+                            node [anchor=north east] {$O$};
                         }
                     ]
 
@@ -771,9 +768,9 @@
                     axis y line=middle,
                     axis x line=middle,
                     xtick = {e^pi, -e^(pi/2)},
-                    xticklabels = {$ae^\pi$, $-ae^{\frac12 \pi}$},
+                    xticklabels = {$ae^\pi$, $ae^{\frac12 \pi}$},
                     ytick = {e^(pi/4), -e^(3*pi/4)},
-                    yticklabels = {$ae^{\tfrac14 \pi}$, $-ae^{\frac34 \pi}$},
+                    yticklabels = {$ae^{\tfrac14 \pi}$, $ae^{\frac34 \pi}$},
                     xmin=-6,
                     xmax=25,
                     ymin=-12,
@@ -1013,13 +1010,10 @@
             \implies&&r^2 - 6r - 6y &= 0\\
             \implies&&r &= \dfrac{-(-6) \pm \sqrt{(-6)^2 - 4(1)(-6y)}}{2(1)}\\
             && &= 3 \pm \sqrt{9 + 6y}\\
-            \implies&&r^2 &= 9 \pm 2\cdot3\sqrt{9+ 6y} + (9 + 6y)\\
-            \implies&&x^2 + y^2 &= 18 + 6y \pm 6\sqrt{9+6y}\\
-            \implies&&\pm\sqrt{9+6y} &= \dfrac16 \left(x^2 + y^2 - 18 - 6y\right)\\
-            \implies&&9 + 6y &=  \dfrac1{36} \left(x^2 + y^2 - 18 - 6y\right)^2
+            \implies&&9 + 6y &= (r-3)^2
         \end{alignat*}
 
-        Observe that $\left(x^2 + y^2 - 18 - 6y\right)^2 \geq 0$. Hence, $9 + 6y \geq 0 \implies y \geq -1.5$. Thus, the furthest distance the audience has to be from the stage is $\abs{-1.5} + 3 = 4.5$ m.
+        Observe that $(r-3)^2 \geq 0$. Hence, $9 + 6y \geq 0 \implies y \geq -1.5$. Thus, the furthest distance the audience has to be from the stage is $\abs{-1.5} + 3 = 4.5$ m.
 
         \boxt{
             4.5 m
