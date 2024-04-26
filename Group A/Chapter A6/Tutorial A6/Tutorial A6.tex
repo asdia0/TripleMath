@@ -1070,10 +1070,10 @@
                 \implies&&\cos2\theta &= -\dfrac12
             \end{alignat*}
 
-            Note that $0 \leq 2\theta \leq 2\pi$. Hence, $2\theta = \dfrac23 \pi, \dfrac43\pi$, whence $\theta = \dfrac13\pi, \dfrac23\pi$.
+            Note that $0 \leq 2\theta \leq 2\pi$. Hence, $2\theta = \dfrac23 \pi, \dfrac43\pi$, whence $\theta = \dfrac13\pi, \dfrac23\pi$. For full lines, we also have $\theta = \dfrac23 \pi$ and $\theta = \dfrac53 \pi$.
 
             \boxt{
-                $\theta = \dfrac13\pi, \dfrac23\pi$
+                $\theta = \dfrac13\pi$, $\dfrac23\pi$, $\dfrac43\pi$, $\dfrac53\pi$
             }
         
         \part
@@ -1101,11 +1101,7 @@
                         xlabel = {$\theta=0$},
                         ylabel = {$\theta = \frac\pi2$},
                         legend cell align={left},
-                        legend pos=outer north east,
-                        after end axis/.code={
-                            \path (axis cs:0,0) 
-                                node [anchor=north east] {$O$};
-                            }
+                        legend pos=outer north east
                         ]
                         \addplot[plotRed,data cs=polarrad] {sqrt(1 + 2*cos(2*\x r))};
             
@@ -1119,9 +1115,13 @@
 
                         \fill (-1.22, -0.70) circle[radius=2.5 pt];
 
+                        \fill (0, 0) circle[radius=2.5 pt];
+
                         \node[anchor=west] at (-1.22, -0.70) {$\coord{\sqrt2a}{\frac16 \pi}$};
 
                         \node[anchor=east] at (1.22, 0.70) {$\coord{\sqrt2a}{\frac76 \pi}$};
+
+                        \node[anchor=north west] at (0, 0) {$\coord{0}{0}$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
