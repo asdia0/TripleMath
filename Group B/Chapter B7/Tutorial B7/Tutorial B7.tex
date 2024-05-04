@@ -1,0 +1,829 @@
+\documentclass{jhwhw}
+
+\title{Tutorial B7\\Integration Techniques}
+\author{Eytan Chong}
+\date{2024-04-29}
+
+\begin{document}
+    \problem{}
+        Find
+
+        \begin{enumerate}
+            \item $\displaystyle\int \dfrac1{\sqrt{3-2x}}  \d x$
+            \item $\displaystyle\int \dfrac1{3-2x}  \d x$
+            \item $\displaystyle\int \dfrac1{3-2x^2}  \d x$
+            \item $\displaystyle\int \dfrac1{\sqrt{3-2x^2}}  \d x$
+            \item $\displaystyle\int \dfrac{x}{\sqrt{3-2x^2}}  \d x$
+            \item $\displaystyle\int \dfrac1{3+4x+2x^2}  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \dfrac1{\sqrt{3-2x}}  \d x &= -\dfrac12 \int \dfrac1{\sqrt u}  \d u \usub{u &= 3 - 2x \\ \d u &= -2x  \d x\\ \d x &= -\tfrac12  \d u}\\
+                &= -\dfrac12 \cdot 2 u^{\frac12} + C\\
+                &= -u^{\frac12} + C\\
+                &= -(3-2x)^{\frac12} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{\sqrt{3-2x}}  \d x = -(3-2x)^{\frac12} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac1{3-2x}  \d x &= -\dfrac12 \int \dfrac1{u}  \d u \usub{u &= 3 - 2x \\ \d u &= -2x  \d x\\ \d x &= -\tfrac12  \d u}\\
+                &= -\dfrac12 \ln \abs{u} + C\\
+                &= -\dfrac12 \ln \abs{3 - 2x} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{3-2x}  \d x = -\dfrac12 \ln \abs{3 - 2x} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac1{3-2x^2}  \d x &= \dfrac12 \int \dfrac1{\frac32 - x^2}  \d x\\
+                &= \dfrac12 \cdot \left(1 \Big/ 2 \sqrt{\frac32}\right) \ln \left( \dfrac{\sqrt{\frac32} + x}{\sqrt{\frac32} - x} \right) + C\\
+                &= \dfrac1{2\sqrt6} \ln \left( \dfrac{\sqrt3 + \sqrt2 x}{\sqrt3 - \sqrt2 x} \right) + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{3-2x^2}  \d x = \dfrac1{2\sqrt6} \ln \left( \dfrac{\sqrt3 + \sqrt2 x}{\sqrt3 - \sqrt2 x} \right) + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac1{\sqrt{3-2x^2}}  \d x &= \dfrac1{\sqrt2} \int \dfrac1{\sqrt{\frac32 - x^2}}  \d x\\
+                &= \dfrac1{\sqrt2} \arcsin\left(x \Big/ \sqrt{\frac32}\right) + C\\
+                &= \dfrac{\sqrt2}2 \arcsin\left(\dfrac{\sqrt6 x}{3}\right) + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{\sqrt{3-2x^2}}  \d x = \dfrac{\sqrt2}2 \arcsin\left(\dfrac{\sqrt6 x}{3}\right) + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac{x}{\sqrt{3-2x^2}}  \d x &= -\dfrac14 \int \dfrac1{\sqrt {u}} \d u \usub{u &= 3-2x^2 \\ \d u &= -4x  \d x \\ x\d x &= -\tfrac14  \d u}\\
+                &= -\dfrac14 \cdot 2 u^{\frac12} + C\\
+                &= -\dfrac12 \sqrt{3 - 2x^2} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{x}{\sqrt{3-2x^2}}  \d x = -\dfrac12 \sqrt{3 - 2x^2} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac1{3+4x+2x^2}  \d x &= \int \dfrac1{2(x+1)^2 + 1}  \d x\\
+                &= \dfrac12 \int \dfrac1{(x+1)^2 + \frac12}  \d x\\
+                &= \dfrac12 \cdot \left(1 \Big/ {\sqrt{\frac12}}\right) \arctan \left(\dfrac{x+1}{1 \Big/ \sqrt{\frac12}}\right) + C\\
+                &= \dfrac{\sqrt2}2 \arctan \left(\sqrt2 (x + 1)\right) + C
+            \end{align*}
+
+            \boxt{
+               $\displaystyle\int \dfrac1{3+4x+2x^2}  \d x = \dfrac{\sqrt2}2 \arctan \left(\sqrt2 (x + 1)\right) + C$ 
+            }
+
+    \problem{}
+        Find
+
+        \begin{enumerate}
+            \item $\displaystyle\int \dfrac{\sec^2 3x}{\tan 3x}  \d x$
+            \item $\displaystyle\int \cos (3x + \alpha)  \d x$, where $\alpha$ is a constant
+            \item $\displaystyle\int \cos^2 3x  \d x$
+            \item $\displaystyle\int e^{1-2x}  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \dfrac{\sec^2 3x}{\tan 3x}  \d x &= \int \dfrac{1 + \tan^2 3x}{\tan 3x}  \d x\\
+                &= \int \left(\cot 3x + \tan 3x\right) \d x\\
+                &= \dfrac13 \ln \sin 3x + \dfrac13 \ln \sec 3x + C\\
+                &= \dfrac13 \left(\ln \sin 3x + \ln \sec 3x \right) + C\\
+                &= \dfrac13 \ln \left(\sin 3x \sec 3x\right) + C\\
+                &= \dfrac13 \ln \tan 3x + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{\sec^2 3x}{\tan 3x}  \d x = \dfrac13 \ln \tan 3x + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \cos (3x + \alpha)  \d x &= \dfrac13 \int \cos u  \d u \usub{u &= 3x + \alpha \\ \d u &= 3 \d x\\\d x &= \tfrac13  \d u}\\
+                &= \dfrac13 \sin u + C\\
+                &= \dfrac13 \sin(3x + \alpha) + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \cos (3x + \alpha)  \d x = \dfrac13 \sin(3x + \alpha) + C$
+            }
+
+        \part
+            Recall that $cos^2\theta = \dfrac{1 + \cos2\theta}2$. Hence, $\cos^2 3x = \dfrac{1 + \cos 6x}2$.
+
+            \begin{align*}
+                \int \cos^2 3x  \d x &= \int \dfrac{1 + \cos 6x}2  \d x\\
+                &= \dfrac12 \int (1 + \cos6x)  \d x\\
+                &= \dfrac12 \left(x + \dfrac16 \sin6x\right) + C\\
+                &= \dfrac12 x + \dfrac1{12} \sin6x + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \cos^2 3x  \d x = \dfrac12 x + \dfrac1{12} \sin6x + C$
+            }
+
+        \part
+            \begin{align*}
+                \int e^{1-2x}  \d x &= -\dfrac12 \int e^u \d u \usub{u &= 1-2x \\ \d u &= -2\d x \\ \d x &= -\tfrac12  \d u}\\
+                &= -\dfrac12 e^u + C\\
+                &= -\dfrac12 e^{1-2x} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int e^{1-2x}  \d x = -\dfrac12 e^{1-2x} + C$
+            }
+
+    \problem{}
+        Find
+
+        \begin{enumerate}
+            \item $\displaystyle\int 2x\sqrt{3x^2 - 5}  \d x$
+            \item $\displaystyle\int \dfrac{x^2 - 1}{\sqrt{x^3 - 3x}}  \d x$
+            \item $\displaystyle\int \sin x \sqrt{\cos x}  \d x$
+            \item $\displaystyle\int e^{2x} (1 - e^{2x})^4  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int 2x\sqrt{3x^2 - 5}  \d x &= \dfrac16 \int 2\sqrt{u}  \d u \usub{u &= 3x^2 - 5 \\ \d u &= 6x  \d x \\ x \d x &= \tfrac16  \d u}\\
+                &= \dfrac13 \int \sqrt{u}  \d u\\
+                &= \dfrac13 \cdot \dfrac23 u^{\frac32} + C\\
+                &= \dfrac29 u^{\frac32} + C\\
+                &= \dfrac29 \left(3x^2 - 5\right)^{\frac32} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int 2x\sqrt{3x^2 - 5}  \d x = \dfrac29 \left(3x^2 - 5\right)^{\frac32} + C$
+            }
+            
+        \part
+            \begin{align*}
+                \int \dfrac{x^2 - 1}{\sqrt{x^3 - 3x}}  \d x &= \dfrac13 \int \dfrac{\d u}{\sqrt{u}} \usub{u &= x^3 - 3x\\\d u &= 3x^2 - 3 \d x\\x^2 - 1  \d x &= \tfrac13 \d u}\\
+                &= \dfrac13 \left( 2u^{\tfrac12} \right) + C\\
+                &= \dfrac23 \sqrt{x^3 - 3x} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{x^2 - 1}{\sqrt{x^3 - 3x}}  \d x = \dfrac23 \sqrt{x^3 - 3x} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \sin x \sqrt{\cos x}  \d x &= - \int \sqrt{u}  \d u \usub{u &= \cos x\\\d u &= -\sin x  \d x\\\sin x  \d x &= -\d u}\\
+                &= -\dfrac23 u^{\tfrac32} + C\\
+                &= -\dfrac23 (\cos x)^{\tfrac32} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \sin x \sqrt{\cos x}  \d x = -\dfrac23 (\cos x)^{\tfrac32} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int e^{2x}(1 - e^{2x})^4  \d x &= -\dfrac12 \int u^4  \d u \usub{u &= 1 - e^{2x}\\\d u &= -2e^{2x}  \d x\\e^{2x}  \d x &= -\tfrac12  \d u}\\
+                &= -\dfrac12 \cdot \dfrac{u^5}{5} + C\\
+                &= -\dfrac1{10} (1 - e^{2x})^5 + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int e^{2x}(1 - e^{2x})^4  \d x = -\dfrac1{10} (1 - e^{2x})^5 + C$
+            }
+
+    \problem{}
+        Find
+
+        \begin{enumerate}
+            \item $\displaystyle\int \dfrac1{\sqrt{x}(1- \sqrt{x})}  \d x$
+            \item $\displaystyle\int \dfrac{3x}{x+3}  \d x$
+            \item $\displaystyle\int \dfrac{\sin x + \cos x}{\sin x - \cos x}  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \dfrac1{\sqrt{x}(1- \sqrt{x})}  \d x &= -2 \int \dfrac1{u}  \d u\usub{u &= 1 - \sqrt{x}\\\d u &= -\tfrac1{2\sqrt x}  \d x\\\tfrac1{\sqrt{x}}  \d x &= -2  \d u}\\
+                &= -2 \ln \abs{u} + C\\
+                &= -2 \ln \abs{1 - \sqrt{x}} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{\sqrt{x}(1- \sqrt{x})}  \d x = -2 \ln \abs{1 - \sqrt{x}} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac{3x}{x+3}  \d x &= \int \left(3 - \dfrac9{x+3} \right)\d x\\
+                &= 3x - 9\ln\abs{x+3} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{3x}{x+3}  \d x = 3x - 9\ln\abs{x+3} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac{\sin x + \cos x}{\sin x - \cos x}\d x &= \int \dfrac1{u}  \d u \usub{u &= \sin x - \cos x\\\d u &= \cos x + \sin x  \d x}\\
+                &= \ln \abs{u} + C\\
+                &= \ln \abs{\sin x - \cos x} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{\sin x + \cos x}{\sin x - \cos x}\d x = \ln \abs{\sin x - \cos x} + C$
+            }
+
+    \problem{}
+        Find 
+
+        \begin{enumerate}
+            \item $\displaystyle\int \dfrac{e^{-\sqrt{x}}}{\sqrt{x}}  \d x$
+            \item $\displaystyle\int (\sin x)(\cos x)(e^{\cos 2x})  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \dfrac{e^{-\sqrt{x}}}{\sqrt{x}}  \d x &= -2\int e^{u}  \d u \usub{u &= -\sqrt{x}\\\d u &= -\tfrac1{2\sqrt{x}}  \d x\\\tfrac1{\sqrt{x}}  \d x &= -2  \d u}\\
+                &= -2e^u + C\\
+                &= -2e^{-\sqrt{x}} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{e^{-\sqrt{x}}}{\sqrt{x}}  \d x = -2e^{-\sqrt{x}} + C$
+            }
+
+        \part
+            \begin{align*}
+                \int (\sin x)(\cos x)(e^{\cos 2x})  \d x &= \dfrac12 \int \sin 2x \cdot e^{\cos 2x} \d x\\ &= -\dfrac14 \int e^u  \d u \usub{u &= \cos 2x\\\d u &= -2\sin 2x  \d x\\\sin 2x  \d x &= -\tfrac12  \d u}\\
+                &= -\dfrac14 e^u + C\\
+                &= -\dfrac14 e^{\cos 2x} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int (\sin x)(\cos x)(e^{\cos 2x})  \d x = -\dfrac14 e^{\cos 2x} + C$
+            }
+    \problem{}
+        Find
+
+        \begin{enumerate}
+            \item $\displaystyle\int \tan^2 2x  \d x$
+            \item $\displaystyle\int \dfrac1{1 + \cos 2t}  \d t$
+            \item $\displaystyle\int \sin\left(\dfrac52\theta\right)\cos\left(\dfrac12\theta\right)  d\theta$
+            \item $\displaystyle\int \tan^4 x  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \tan^2 2x  \d x &= \int \left(\sec^2 2x - 1\right)  \d x\\
+                &= \dfrac12 \tan 2x - x + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \tan^2 2x  \d x = \dfrac12 \tan 2x - x + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac1{1 + \cos 2t}  \d t &= \int \dfrac1{1 + (2\cos^2 t - 1)}  \d t\\
+                &= \dfrac12 \int \dfrac1{\cos^2 t}  \d t\\
+                &= \dfrac12 \int \sec^2 t  \d t\\
+                &= \dfrac12 \tan t + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{1 + \cos 2t}  \d t = \dfrac12 \tan t + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \sin\left(\dfrac52\theta\right)\cos\left(\dfrac12\theta\right)  d\theta &= \dfrac12 \int \left(\sin\left(\dfrac52 \theta + \dfrac12 \theta\right) + \sin\left(\dfrac52\theta - \dfrac12 \theta\right)\right)  d\theta\\
+                &= \dfrac12 \int \left(\sin 3\theta + \sin2\theta\right)  d\theta\\
+                &= \dfrac12 \left( -\dfrac13 \cos3\theta - \dfrac12 \cos2\theta \right) + C\\
+                &= -\dfrac16 \cos 3\theta - \dfrac14 \cos2\theta + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \sin\left(\dfrac52\theta\right)\cos\left(\dfrac12\theta\right)  d\theta = -\dfrac16 \cos 3\theta - \dfrac14 \cos2\theta + C$
+            }
+
+        \part
+            Note that
+            \begin{equation*}
+                \int \tan^2 x  \d x = \tan x - x + C
+            \end{equation*}
+
+            \noindent and 
+            \begin{align*}
+                \int \tan^2 x \sec^2 x  \d x &= \int u^2  \d u \usub{u &= \tan x\\\d u &= \sec^2 x  \d x}\\
+                &= \dfrac13 u^3 + C\\
+                &= \dfrac13 \tan^3 x + C
+            \end{align*}
+
+            Hence,
+            \begin{align*}
+                \int \tan^4 x  \d x &= \int \tan^2 x \cdot \tan^2 x  \d x\\
+                &= \int \tan^2 x \left(\sec^2 x - 1\right)  \d x\\
+                &= \int \left(\tan^2 x \sec^2 x - \tan^2 \right) \d x\\
+                &= \dfrac13 \tan^3 x - \left(\tan x - x\right) + C\\
+                &= \dfrac13 \tan^3 x - \tan x + x + C
+            \end{align*}
+
+            \boxt{
+                $\int \tan^4 x  \d x = \dfrac13 \tan^3 x - \tan x + x + C$
+            }
+
+    \problem{}
+        Find
+
+        \begin{enumerate}
+            \item $\displaystyle\int \dfrac1{4x^2 + 2x + 10}  \d x$
+            \item $\displaystyle\int \dfrac{x^2}{1 - x^2}  \d x$
+            \item $\displaystyle\int \dfrac1{\sqrt{3 + 2x - x^2}}  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \dfrac1{4x^2 + 2x + 10}  \d x &= \int \dfrac1{\left(2x + \frac12\right)^2 + \frac{39}4}  \d x\\
+                &= 4 \int \dfrac1{\left(4x + 1\right)^2 + 39}  \d x\\
+                &= 4 \cdot \dfrac14 \cdot \dfrac1{\sqrt{39}} \arctan \left(\dfrac{4x+1}{\sqrt{39}}\right) + C\\
+                &= \dfrac1{\sqrt{39}} \arctan \left(\dfrac{4x+1}{\sqrt{39}}\right) + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{4x^2 + 2x + 10}  \d x = \dfrac1{\sqrt{39}} \arctan \left(\dfrac{4x+1}{\sqrt{39}}\right) + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac{x^2}{1 - x^2}  \d x &= \int \left(\dfrac1{1 - x^2} - 1\right) \d x\\
+                &= \dfrac1{2}\ln\left(\dfrac{1 + x}{1 - x}\right) - x + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{x^2}{1 - x^2}  \d x = \dfrac1{2}\ln\left(\dfrac{1 + x}{1 - x}\right) - x + C$
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac1{\sqrt{3 + 2x - x^2}}  \d x &= \int \dfrac1{\sqrt{2^2 - (x-1)^2}}  \d x\\
+                &= \arcsin\left(\dfrac{x-1}{2}\right) + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{\sqrt{3 + 2x - x^2}}  \d x = \arcsin\left(\dfrac{x-1}{2}\right) + C$
+            }
+
+    \problem{}
+        Evaluate the following without the use of graphic calculator:
+
+        \begin{enumerate}
+            \item $\displaystyle\int_{\frac13 \pi}^{\frac23 \pi} 4\cot\dfrac{x}2 \csc^2\dfrac{x}2  \d x$
+            \item $\displaystyle\int_0^4 \dfrac{x+2}{\sqrt{2x+1}}  \d x$
+            \item $\displaystyle\int_0^1 \dfrac2{(1+x)(1+x^2)} \d x$
+            \item $\displaystyle\int_{-4}^{-2} \dfrac{x^3 + 2}{x^2 - 1}  \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int_{\frac13 \pi}^{\frac23 \pi} 4\cot\dfrac{x}2 \csc^2\dfrac{x}2  \d x &= -4\int_{\frac13 \pi}^{\frac23 \pi} -\cot\dfrac{x}2 \csc\dfrac{x}2 \cdot \csc\left(\dfrac12 x\right)  \d x\usub{u &= \csc \tfrac{x}2\\\d u &= -\tfrac12\cot\tfrac{x}2 \csc\tfrac{x}2\\2\d u &= -\cot\tfrac{x}2 \csc\tfrac{x}2\\x = \tfrac13\pi &\implies u = 2\\x = \tfrac23\pi &\implies u = \tfrac2{\sqrt3}}\\
+                &= -8 \int_{2}^{\tfrac2{\sqrt3}} u  \d u\\
+                &= -8 \eval{\dfrac12 u^2}{2}{\tfrac2{\sqrt3}}\\
+                &= \dfrac{32}3
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_{\frac13 \pi}^{\frac23 \pi} 4\cot\dfrac{x}2 \csc^2\dfrac{x}2  \d x = \dfrac{32}3$
+            }
+
+        \part
+            \begin{align*}
+                \int_0^4 \dfrac{x+2}{\sqrt{2x+1}}  \d x &= \int_0^4 \dfrac{\tfrac12 (2x+1) + \tfrac32}{\sqrt{2x+1}}  \d x\\
+                &= \dfrac12 \int_0^4 \left(\dfrac{2x+1}{\sqrt{2x+1}} + \dfrac3{\sqrt{2x +1}}\right)  \d x\\
+                &= \dfrac12 \int_0^4 \left(\sqrt{2x+1} + \dfrac3{\sqrt{2x +1}}\right)  \d x \usub{u &= 2x+1\\\d u &= 2\d x\\\d x &= \tfrac12  \d u\\x = 0 &\implies u = 1\\x = 4 &\implies u = 9}\\
+                &= \dfrac14 \int_1^9 \left(\sqrt{u} + \dfrac3{\sqrt{u}}\right)  \d u\\
+                &= \dfrac14 \eval{\dfrac{u^{\tfrac32}}{3/2} + \dfrac{3u^{\tfrac12}}{1/2}}{1}{9}\\
+                &= \dfrac{22}3
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_0^4 \dfrac{x+2}{\sqrt{2x+1}}  \d x = \dfrac{22}3$
+            }
+
+        \part
+            \begin{align*}
+                \int_0^1 \dfrac2{(1+x)(1+x^2)} \d x &= \int_0^1 \left(\dfrac1{1+x} + \dfrac1{1+x^2} - \dfrac{x}{1 + x^2}\right)\d x\\
+                &= \eval{\ln \abs{1 + x}}01 + \eval{\arctan x}01 - \int_0^1 \dfrac{x}{1 + x^2}  \d x\usub{u &= 1+x^2\\\d u&=2x\d x\\x\d x&=\tfrac12  \d u\\x = 0 &\implies u = 1\\x = 1 &\implies u = 2}\\
+                &= \ln 2 + \dfrac{\pi}4 - \dfrac12 \int_1^2 \dfrac1{u} \d u\\
+                &= \ln 2 + \dfrac{\pi}4 - \dfrac12 \eval{\ln \abs{u}}{1}{2}\\
+                &= \ln 2 + \dfrac{\pi}4 - \dfrac12 \ln 2\\
+                &= \dfrac12 \ln 2 + \dfrac\pi4
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_0^1 \dfrac2{(1+x)(1+x^2)} \d x = \dfrac12\ln2 + \dfrac\pi4$
+            }
+
+        \part
+            \begin{align*}
+                \int_{-4}^{-2} \dfrac{x^3 + 2}{x^2 - 1}  \d x &= \int_{-4}^{-2} \left(x + \dfrac{x+2}{x^2 - 1}\right) \d x\\
+                &= \eval{\dfrac{x^2}2}{-4}{-2} + \int_{-4}^{-2} \dfrac{x+2}{(x-1)(x+1)} \d x\\
+                &= -6 + \int_{-4}^{-2} \left(\dfrac{3/2}{x-1} - \dfrac{1/2}{x+1}\right) \d x\\
+                &= -6 + \eval{\dfrac32 \ln \abs{x-1} - \dfrac12 \ln \abs{x+1}}{-4}{-2}\\
+                &= -6 + 2\ln3 - \dfrac32 \ln 5
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_{-4}^{-2} \dfrac{x^3 + 2}{x^2 - 1}  \d x = -6 + 2\ln3 - \dfrac32 \ln 5$
+            }
+
+    \problem{}
+        Using the given substitution, find
+
+        \begin{enumerate}
+            \item $\displaystyle\int \dfrac{x}{(2x+3)^3}  \d x$ \hfill $[u = 2x+3]$
+            \item $\displaystyle\int \dfrac1{e^x + 4e^{-x}}  \d x$ \hfill $[u = e^x]$
+            \item $\displaystyle\int_0^{\sqrt2} \sqrt{4 - y^2}  \d y$ \hfill $[y = 2\sin\theta]$
+            \item $\displaystyle\int_0^{\frac\pi2} \dfrac1{1 + \sin\theta}  \d \theta$ \hfill $\left[t = \tan \dfrac\theta2\right]$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \dfrac{x}{(2x+3)^3}  \d x &= \dfrac14 \int \dfrac{u-3}{u^3}  \d x \usub{u &= 2x + 3\\x &= (u-3)/2\\d x &= \tfrac12 \d u}\\
+                &= \dfrac14 \int \left(\dfrac1{u^2} - \dfrac3{u^3}\right) \d u\\
+                &= \dfrac14 \left(\dfrac{u^{-1}}{-1} - \dfrac{3u^{-2}}{-2} \right) + C\\
+                &= \dfrac38 (2x+3)^{-2} - \dfrac14 (2x+3)^{-1} + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac{x}{(2x+3)^3}  \d x = \dfrac38 (2x+3)^{-2} - \dfrac14 (2x+3)^{-1} + C$             
+            }
+
+        \part
+            \begin{align*}
+                \int \dfrac1{e^x + 4e^{-x}}  \d x &= \int \dfrac{e^x}{e^{2x} + 4} \d x \\
+                &= \int \dfrac{u}{u^2 + 4} \cdot \dfrac1{u} \d u \usub{u &= e^x\\\ln u &= x\\d x &= \tfrac1{u} \d u}\\
+                &= \int \dfrac1{u^2 + 2^2} \d u\\
+                &= \dfrac12 \arctan \left(\dfrac{u}2\right) + C\\
+                &= \dfrac12 \arctan \left(\dfrac{e^x}2\right)+ C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \dfrac1{e^x + 4e^{-x}}  \d x = \dfrac12 \arctan \left(\dfrac{e^x}2\right)+ C$
+            }
+
+        \part
+            \begin{align*}
+                \int_0^{\sqrt2} \sqrt{4 - y^2}  \d y &= 2\int_0^{\frac\pi4} \cos\theta\sqrt{4 - (2\sin\theta)^2} \d \theta \usub{y &= 2\sin\theta\\\d y &= 2 \cos\theta \d \theta\\y = 0 &\implies \theta=0\\y = \sqrt{2} &\implies \theta = \pi /4}\\
+                &= 2\int_0^{\frac\pi4} \cos\theta\sqrt{4 - 4\sin^2\theta}\d \theta\\
+                &= 4\int_0^{\frac\pi4} \cos\theta\sqrt{1 - \sin^2\theta}\d \theta\\
+                &= 4\int_0^{\frac\pi4} \cos^2\theta \d \theta\\
+                &= 4\int_0^{\frac\pi4} \dfrac{1 + \cos 2\theta}{2} \d \theta\\
+                &= 2 \eval{\theta + \dfrac12 \sin2\theta}{0}{\tfrac\pi4}\\
+                &= 1 + \dfrac\pi2
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_0^{\sqrt2} \sqrt{4 - y^2}  \d y = 1 + \dfrac\pi2$
+            }
+
+        \part
+            Consider the substitution $t = \tan \dfrac\theta2 \implies \theta = 2\arctan t$. Hence, $\d \theta = \dfrac{2}{1 + t^2} \d t$. Also note that $\sin \theta = \sin (2\arctan t) = 2\sin(\arctan t)\cos(\arctan t) = 2\cdot\dfrac{t}{\sqrt{1+t^2}}\cdot\dfrac{1}{\sqrt{1+t^2}} = \dfrac{2t}{1+t^2}$.
+
+            \begin{align*}
+                \int_0^{\tfrac\pi2} \dfrac1{1 + \sin\theta}  \d \theta &= \int_0^1 \dfrac{2 / (1+t^2)}{1 + 2t/(1+t^2)} \d u\usub{t &= \tan\tfrac\theta2\\\theta = 0 &\implies t = 
+                0\\\theta = \tfrac\pi2 &\implies t = 1}\\
+                &= 2\int_0^1 \dfrac{1}{t^2 + 2t + 1} \d t\\
+                &= 2\int_0^1 \dfrac1{(t+1)^2} \d t\\
+                &= 2 \eval{-\dfrac1{t+1}}{0}{1}\\
+                &= 1
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_0^{\tfrac\pi2} \dfrac1{1 + \sin\theta}  \d \theta = 1$
+            }
+
+    \problem{}
+        Find
+        
+        \begin{enumerate}
+            \item $\displaystyle\int \ln(2x + 1) \d x$
+            \item $\displaystyle\int x \arctan(x^2) \d x$
+            \item $\displaystyle\int e^{-2x}\cos2x \d x$
+            \item $\displaystyle\int_0^2 x^2e^{-x} \d x$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \ln (2x + 1) \d x &= \dfrac12 \int \ln u \d u \usub{u &= 2x + 1\\\d u &= 2 \d x\\\d x &= \tfrac12 \d u}
+            \end{align*}
+
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & \ln u & 1 \\
+                    - & \tfrac1{u} & u \\\bottomrule
+                \end{array}
+            \end{equation*}
+
+            \begin{align*}
+                \int \ln (2x + 1) \d x &= \dfrac12 \left(u\ln u - \int u \cdot \dfrac1{u} \d u\right)\\
+                &= \dfrac12 \left(u\ln u - u\right) + C\\
+                &= \dfrac12 \left((2x + 1)\ln(2x+1) - (2x+1)\right) + C\\
+                &= x\ln(2x+1) + \dfrac12 \ln (2x+1) - x + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int \ln (2x + 1) \d x = x\ln(2x+1) + \dfrac12 \ln (2x+1) - x + C$
+            }
+
+        \part
+            \begin{align*}
+                \int x \arctan(x^2)  \d x &= \dfrac12 \int \arctan u \d u \usub{u &= x^2\\d u &= 2x \d x\\x \d x&= \tfrac12 \d u}
+            \end{align*}
+
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & \arctan u & 1 \\
+                    - & \tfrac{1}{1 + u^2} & u \\\bottomrule
+                \end{array}
+            \end{equation*}
+
+            \begin{align*}
+                \int x \arctan(x^2)  \d x &= \dfrac12 \left( u \arctan u - \int \dfrac{u}{1 + u^2} \d u\right) \usub{v &= 1 + u^2\\\d v &= 2u \d u\\u \d u&=\tfrac12 \d v}\\
+                &= \dfrac12 \left(u \arctan u - \dfrac12 \int \dfrac1{v} \d v\right)\\
+                &= \dfrac12 \left(u \arctan u - \dfrac12 \ln \abs{v} \right) + C\\
+                &= \dfrac12 \left(u \arctan u - \dfrac12 \ln (1 + u^2) \right) + C\\
+                &= \dfrac12 \left(x^2 \arctan x^2 - \dfrac12 \ln (1 + x^4) \right) + C\\
+                &= \dfrac12 x^2 \arctan x^2 - \dfrac14 \ln (1 + x^4) + C
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int x \arctan(x^2) \d x = \dfrac12 x^2 \arctan x^2 - \dfrac14 \ln (1 + x^4) + C$
+            }
+
+        \part
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & e^{-2x} & \cos 2x \\
+                    - & -2e^{-2x} & \frac12\sin 2x  \\
+                    + & 4e^{-2x} & -\frac14\cos 2x \\\bottomrule
+                \end{array}
+            \end{equation*}
+            \begin{alignat*}{2}
+                &&\int e^{-2x}\cos2x \d x &= \dfrac12 e^{-2x}\sin2x - \dfrac12 e^{-2x}\cos2x - \int e^{-2x}\cos2x \d x\\
+                \implies&&2\int e^{-2x}\cos2x \d x &= \dfrac12 e^{-2x}\sin2x - \dfrac12 e^{-2x}\cos2x + C\\
+                \implies&&\int e^{-2x}\cos2x \d x &= \dfrac12\left(\dfrac12 e^{-2x}\sin2x - \dfrac12 e^{-2x}\cos2x\right) + C\\
+                && &= \dfrac14 e^{-2x}\sin2x - \dfrac14 e^{-2x}\cos2x + C
+            \end{alignat*}
+
+            \boxt{
+                $\displaystyle\int e^{-2x}\cos2x \d x = \dfrac14 e^{-2x}\sin2x - \dfrac14 e^{-2x}\cos2x + C$
+            }
+
+        \part
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & x^2 & e^{-x} \\
+                    - & 2x & -e^{-x}  \\
+                    + & 2 & e^{-x} \\
+                    - & 0 & -e^{-x}\\\bottomrule
+                \end{array}
+            \end{equation*}
+            \begin{align*}
+               \int_0^2 x^2e^{-x} \d x &= \eval{-x^2 e^{-x} - 2xe^{-x} - 2e^{-x}}{0}{2}\\
+               &= 2 - 10e^{-2}
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_0^2 x^2e^{-x} \d x = 2 - 10e^{-2}$
+            }
+
+    \problem{}
+        \begin{enumerate}
+            \item Show that $\der{}{x} \ln(\sec x + \tan x) = \sec x$.
+            \item Find $\displaystyle\int x \sin x  \d x$.
+            \item Find the exact value of $\displaystyle\int_0^{\frac14 \pi} (x\sin x)\ln(\sec x + \tan x) \d x$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \der{}{x} \ln(\sec x + \tan x) &= \dfrac{\sec x \tan x + \sec^2 x}{\sec x + \tan x}\\
+                &= \sec x \cdot \dfrac{\tan x + \sec x}{\sec x + \tan x}\\
+                &= \sec x
+            \end{align*}
+
+        \part
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & x & \sin x \\
+                    - & 1 & -\cos x  \\
+                    + & 0 & -\sin x \\\bottomrule
+                \end{array}
+            \end{equation*}
+            \boxt{
+                $\displaystyle\int x \sin x \d x = -x\cos x + \sin x + C$
+            }
+        \newpage
+        \part
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & \ln(\sec x + \tan x) & x\sin x \\
+                    - & \sec x & -x\cos x + \sin x  \\\bottomrule
+                \end{array}
+            \end{equation*}
+            \begin{align*}
+                & \int_0^{\tfrac\pi4} (x\sin x)\ln(\sec x + \tan x) \d x\\
+                &\mspace{25 mu}= \eval{\ln(\sec x + \tan x)\left(-x\cos x + \sin x\right)}{0}{\frac\pi4} - \int_0^{\tfrac\pi4} \sec x \left(-x\cos x + \sin x\right) \d x\\
+                &\mspace{25 mu}= \eval{\ln(\sec x + \tan x)\left(-x\cos x + \sin x\right)}{0}{\frac\pi4} - \int_0^{\tfrac\pi4} \left(-x + \tan x\right) \d x\\
+                &\mspace{25 mu}= \eval{\ln(\sec x + \tan x)\left(-x\cos x + \sin x\right)-\dfrac{x^2}2 - \ln \abs{\cos x}}{0}{\frac\pi4}\\
+                &\mspace{25 mu}= \dfrac{\sqrt2}2\left(1 - \dfrac\pi4\right)\ln(\sqrt2 + 1) + \dfrac{\pi^2}{32} - \dfrac12 \ln 2
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_0^{\tfrac\pi4} (x\sin x)\ln(\sec x + \tan x) \d x = \dfrac{\sqrt2}2\left(1 - \dfrac\pi4\right)\ln(\sqrt2 + 1) + \dfrac{\pi^2}{32} - \dfrac12 \ln 2$
+            }
+
+    \problem{}
+        \begin{enumerate}
+            \item Use the fact that $7\cos x - 4\sin x = \dfrac32 (\cos x + \sin x) + \dfrac{11}2 (\cos x - \sin x)$ to find the exact value of $\displaystyle\int_0^{\frac\pi2} \dfrac{7\cos x - 4\sin x}{\cos x + \sin x}  \d x$.
+            \item Use integration by parts to find the exact value of $\displaystyle\int_1^e (\ln x)^2  \d x$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int_0^{\frac\pi2} \dfrac{7\cos x - 4\sin x}{\cos x + \sin x} \d x &= \int_0^{\frac\pi2} \dfrac{\tfrac32 (\cos x + \sin x) + \tfrac{11}2 (\cos x - \sin x)}{\cos x + \sin x} \d x\\
+                &= \dfrac12\int_0^{\frac\pi2} \dfrac{3(\cos x + \sin x) + 11(\cos x - \sin x)}{\cos x + \sin x} \d x\\
+                &= \dfrac12 \int_0^{\frac\pi2} \left(3 + 11 \cdot \dfrac{\cos x - \sin x}{\cos x + \sin x}\right) \d x\\
+                &= \dfrac12 \eval{3x + 11\ln\abs{\cos x + \sin x}}{0}{\frac\pi2}\\
+                &= \dfrac34 \pi
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_0^{\frac\pi2} \dfrac{7\cos x - 4\sin x}{\cos x + \sin x}  \d x = \dfrac34 \pi$
+            }
+
+        \part
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & \ln x & \ln x \\
+                    - & \tfrac1{x} & x\ln x - x \\\bottomrule
+                \end{array}
+            \end{equation*}
+            \begin{align*}
+                \int_1^e (\ln x)^2  \d x &= \eval{\ln x \left(x \ln x - x\right)}1e - \int_1^e \dfrac1{x} \left(x \ln x - x\right) \d x\\
+                &= \eval{\ln x \left(x \ln x - x\right)}1e - \int_1^e \left(\ln x - 1\right) \d x\\
+                &= \eval{\ln x \left(x \ln x - x\right) - (x \ln x - x - x)}1e\\
+                &= e - 2
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_1^e (\ln x)^2  \d x = e - 2$
+            }
+
+    \problem{}
+        \begin{enumerate}
+            \item Solve the inequality $x^2 + 2x - 3 < 0$.
+            \item Without using the graphing calculator, evaluate
+            \begin{enumerate}
+                \item $\displaystyle\int_{-4}^4 \abs{x^2 + 2x - 3} \d x$
+                \item $\displaystyle\int_0^2 x\abs{x^2 + 2x - 3} \d x$
+            \end{enumerate}
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{alignat*}{2}
+                &&x^2 + 2x - 3 &< 0\\
+                \implies&&(x+1)^2 - 4 &< 0\\
+                \implies&&(x+1)^2 &< 4\\
+                \implies&&-2 < x+1 < 2\\
+                \implies&&-3 < x < 1
+            \end{alignat*}
+
+            \boxt{
+                $-3 < x < 1$
+            }
+
+        \part
+            \subpart
+                Let $F(x) = \int \left(x^2 + 2x - 3\right)\d x = \tfrac13 x^3 + x^2 - 3x + C$. Then,
+                \begin{align*}
+                    &\int_{-4}^4 \abs{x^2 + 2x - 3} \d x\\
+                    &\mspace{25 mu}= \int_{-4}^{-3} \abs{x^2 + 2x - 3} \d x + \int_{-3}^1 \abs{x^2 + 2x - 3} \d x + \int_1^4 \abs{x^2 + 2x - 3} \d x\\
+                    &\mspace{25 mu}= \int_{-4}^{-3} x^2 + 2x - 3 \d x - \int_{-3}^1 x^2 + 2x - 3 \d x + \int_1^4 x^2 + 2x - 3 \d x\\
+                    &\mspace{25 mu}= \Big(F(-3) - F(-4)\Big) - \Big(F(1) - F(-3)\Big) + \Big(F(4) - F(1)\Big)\\
+                    &\mspace{25 mu}= 40
+                \end{align*}
+
+                \boxt{
+                    $\displaystyle\int_{-4}^4 \abs{x^2 + 2x - 3} \d x = 40$
+                }
+            
+            \newpage
+            \subpart
+                Let $F(x) = \int x \left(x^2 + 2x - 3\right) \d x = \tfrac14 x^4 + \tfrac23 x^3 - \tfrac32 x^2 + C$. Then,
+                \begin{align*}
+                    \int_0^2 x\abs{x^2 + 2x - 3} \d x &= \int_0^1 x\abs{x^2 + 2x - 3} \d x + \int_1^2 x\abs{x^2 + 2x - 3} \d x\\
+                    &= -\int_0^1 x(x^2 + 2x - 3) \d x + \int_1^2 x(x^2 + 2x - 3) \d x\\
+                    &= -\Big(F(1) - F(0)\Big) + \Big(F(2) - F(1)\Big)\\
+                    &= \dfrac92
+                \end{align*}
+
+                \boxt{
+                    $\displaystyle\int_0^2 x\abs{x^2 + 2x - 3} \d x = \dfrac92$
+                }
+
+    \problem{}
+        The indefinite integral $\displaystyle\int \dfrac{P(x)}{x^3 + 1}  \d x$, where $P(x)$ is a polynomial in $x$, is denoted by $I$.
+        
+        \begin{enumerate}
+            \item Find $I$ when $P(x) = x^2$.
+            \item By writing $x^3 + 1 = (x+1)\left(x^2 + Ax + B\right)$, where $A$ and $B$ are constants, find $I$ when
+            \begin{enumerate}
+                \item $P(x) = x^2 - x + 1$
+                \item $P(x) = x + 1$
+            \end{enumerate}
+            \item Using the results of parts (a) and (b), or otherwise, find $I$ when $P(x) = 1$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int \dfrac{x^2}{x^3 + 1} \d x &= \dfrac13 \int \dfrac1{u} \d u \usub{u &= x^3 + 1\\\d u &= 3x^2 \d x\\x^2 \d x &= \tfrac13 \d u}\\
+                &= \dfrac13 \ln \abs{u} + C\\
+                &= \dfrac13 \ln \abs{x^3 + 1} + C
+            \end{align*}
+
+            \boxt{
+                $I = \dfrac13 \ln \abs{x^3 + 1} + C$
+            }
+
+        \part
+            \begin{equation*}
+                x^3 + 1 = (x+1)\left(x^2 - x + 1\right)
+            \end{equation*}
+
+            \subpart
+                \begin{align*}
+                    \int \dfrac{x^2 - x + 1}{x^3 + 1} \d x &= \int \dfrac{x^2 - x + 1}{(x+1)\left(x^2 - x + 1\right)} \d x\\
+                    &= \int \dfrac1{x+1} \d x\\
+                    &= \ln \abs{x+1} + C
+                \end{align*}
+
+                \boxt{
+                    $I = \ln\abs{x+1} + C$
+                }
+
+            \subpart
+                \begin{align*}
+                    \int \dfrac{x+1}{x^3 + 1} \d x &= \int \dfrac{x+1}{(x+1)\left(x^2 - x + 1\right)} \d x\\
+                    &= \int \dfrac1{x^2 - x + 1} \d x\\
+                    &= \int \dfrac1{(x-\tfrac12)^2 + \tfrac34} \d x\\
+                    &= \dfrac1{\sqrt{3/4}} \arctan \left( \dfrac{x - \tfrac12}{\sqrt{3/4}}\right) + C\\
+                    &= \dfrac2{\sqrt3}\arctan \left(\dfrac{2x-1}{\sqrt3}\right) + C
+                \end{align*}
+
+                \boxt{
+                    $I = \dfrac2{\sqrt3}\arctan \left(\dfrac{2x-1}{\sqrt3}\right) + C$
+                }
+
+        \part
+            Observe that $1 = \dfrac12 \left((x^2 - x + 1) - x^2 + (x+1)\right)$. Hence,
+
+            \begin{align*}
+                \int \dfrac1{x^3 + 1} \d x &= \dfrac12\left(\int\dfrac{x^2 - x + 1}{x^3 + 1} \d x - \int\dfrac{x^2}{x^3 + 1} \d x + \int\dfrac{x+1}{x^3 + 1} \d x\right)\\
+                &= \dfrac12 \left(\ln \abs{x+1} - \dfrac13 \ln\abs{x^3 + 1} + \dfrac2{\sqrt3}\arctan \left(\dfrac{2x-1}{\sqrt3}\right)\right) + C\\
+                &= \dfrac12\ln \abs{x+1} - \dfrac16 \ln\abs{x^3 + 1} + \dfrac1{\sqrt3}\arctan \left(\dfrac{2x-1}{\sqrt3}\right) + C
+            \end{align*}
+
+            \boxt{
+                $I = \dfrac12\ln \abs{x+1} - \dfrac16 \ln\abs{x^3 + 1} + \dfrac1{\sqrt3}\arctan \left(\dfrac{2x-1}{\sqrt3}\right) + C$
+            }
+\end{document}
