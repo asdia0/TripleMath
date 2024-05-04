@@ -497,7 +497,7 @@
         It is given that $y = \dfrac1{1 + \sin 2x}$. Show that, when $x = 0$, $\derm{y}{x}2 = 8$. Find the first three terms of the Maclaurin series for $y$.
 
         \begin{enumerate}
-            \item Use the series to obtain an approximate value for $\int\limits_{-0.1}^{0.1} y \, dx$, leaving your answer as a fraction in its lowest terms.
+            \item Use the series to obtain an approximate value for $\int\limits_{-0.1}^{0.1} y \d x$, leaving your answer as a fraction in its lowest terms.
             \item Find the first two terms of the Maclaurin series for $\der{y}x$.
             \item Write down the equation of the tangent at the point where $x = 0$ on the curve $y = \dfrac1{1 + \sin 2x}$.
         \end{enumerate}
@@ -527,13 +527,13 @@
 
         \part
             \begin{align*}
-                \int_{-0.1}^{0.1} y \, dx &\approx \int_{-0.1}^{0.1} \left(1 - 2x + 4x^2 \right)\, dx\\
-                &= \left.\left[x - 2 \cdot \dfrac12 x^2 + 4 \cdot \dfrac13 x^3\right]\right|_{-0.1}^{0.1}\\
+                \int_{-0.1}^{0.1} y \d x &\approx \int_{-0.1}^{0.1} \left(1 - 2x + 4x^2 \right) \d x\\
+                &= \eval{x - 2 \cdot \dfrac12 x^2 + 4 \cdot \dfrac13 x^3}{-0.1}{0.1}\\
                 &= \dfrac{76}{275}
             \end{align*}
 
             \boxt{
-                $\int_{-0.1}^{0.1} y \, dx \approx \dfrac{76}{275}$
+                $\int_{-0.1}^{0.1} y \d x \approx \dfrac{76}{275}$
             }
 
         \part
