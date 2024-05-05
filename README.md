@@ -11,7 +11,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | |
 | A5 | Recurrence Relations | [T-A5](/Group%20A/Chapter%20A5/Tutorial%20A5/Tutorial%20A5.pdf) | [A-A5](/Group%20A/Chapter%20A5/Assignment%20A5/Assignment%20A5.pdf) | 
 | A6 | Polar Coordinates | [T-A6](/Group%20A/Chapter%20A6/Tutorial%20A6/Tutorial%20A6.pdf) | [A-A6](/Group%20A/Chapter%20A6/Assignment%20A6/Assignment%20A6.pdf) |
-| A7 | Vectors I | | |
+| A7 | Vectors I | [T-A7](/Group%20A/Chapter%20A7/Tutorial%20A7/Tutorial%20A7.pdf) | |
 | A8 | Vectors II | | |
 | A9 | Vectors III | | |
 | A10 | Complex Numbers (H2 MA) | | |
