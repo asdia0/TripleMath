@@ -74,34 +74,34 @@
 
                 Implicitly differentiating Equation~\ref{P3-1},
                 \begin{alignat}{2}
-                    &&e^{-y}\cdot (-y^\prime) &= -\sin x\notag\\
-                    \implies&&y^\prime e^{-y} &= \sin x\label{P3-2}
+                    &&e^{-y}\cdot (-y') &= -\sin x\notag\\
+                    \implies&&y' e^{-y} &= \sin x\label{P3-2}
                 \end{alignat}
 
                 Implicitly differentiating Equation~\ref{P3-2},
                 \begin{alignat}{2}
-                    &&y^\prime e^{-y}\cdot (-y^\prime) + e^{-y} \cdot y^{\prime\prime} &= \cos x\notag\\
-                    \implies&&y^\prime e^{-y}\cdot (-y^\prime) + e^{-y} \cdot y^{\prime\prime} &= e^{-y}\notag\\
-                    \implies&&y^{\prime\prime} - (y^\prime)^2 &= 0\label{P3-3}
+                    &&y' e^{-y}\cdot (-y') + e^{-y} \cdot y'' &= \cos x\notag\\
+                    \implies&&y' e^{-y}\cdot (-y') + e^{-y} \cdot y'' &= e^{-y}\notag\\
+                    \implies&&y'' - (y')^2 &= 0\label{P3-3}
                 \end{alignat}
 
                 Implicitly differentiating Equation~\ref{P3-3},
                 \begin{alignat}{2}
-                    &&y^{(3)} - 2\cdot y^\prime \cdot y^{\prime\prime} &= 0\notag\\
-                    \implies&&y^{(3)} &= 2 y^{\prime\prime} y^\prime\label{P3-4}
+                    &&y^{(3)} - 2\cdot y' \cdot y'' &= 0\notag\\
+                    \implies&&y^{(3)} &= 2 y'' y'\label{P3-4}
                 \end{alignat}
 
             \part
                 Implicitly differentiating Equation~\ref{P3-4},
                 \begin{equation}
-                    y^{(4)} = 2\left(y^{(3)}y^\prime + (y^{\prime\prime})^2\right)\label{P3-5}
+                    y^{(4)} = 2\left(y^{(3)}y' + (y'')^2\right)\label{P3-5}
                 \end{equation}
 
                 Substituting $x = 0$ into Equations~\ref{P3-1},~\ref{P3-2},~\ref{P3-3},~\ref{P3-4} and~\ref{P3-5}, we see that
                 \begin{align*}
                     y &= 0\\
-                    y^\prime &= 0\\
-                    y^{\prime\prime} &= 1\\
+                    y' &= 0\\
+                    y'' &= 1\\
                     y^{(3)} &= 0\\
                     y^{(4)} &= 2
                 \end{align*}
