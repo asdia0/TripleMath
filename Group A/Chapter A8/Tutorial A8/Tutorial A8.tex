@@ -1,0 +1,692 @@
+\documentclass{jhwhw}
+
+\title{Tutorial A8\\Vectors II}
+\author{Eytan Chong}
+\date{2024-05-09}
+
+\begin{document}
+    \problem{}
+        For each of the following, write down a vector equivalent of the line $l$ and convert it to parametric and Cartesian forms.
+
+        \begin{enumerate}
+            \item $l$ passes through the point with position vector $-\vec i + \vec k$ and is parallel to the vector $\vec i + \vec j$.
+            \item $l$ passes through the points $P\coordiii1{-1}3$ and $Q\coordiii21{-2}$.
+            \item $l$ passes through the origin and is parallel to the line $m: \vec r = \cveciii1{-1}3 + \lambda \cveciii123, \, \lambda \in \mathbb{R}$.
+            \item $l$ is the $x$-axis.
+            \item $l$ passes through the point $C\coordiii4{-1}2$ and is parallel to the $z$-axis.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{equation*}
+                \begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+                    \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+                    \textbf{Vector} & \vec r = \cveciii{-1}01 + \lambda \cveciii110, \, \lambda \in \mathbb{R} \\
+                    \textbf{Parametric} & \begin{cases}
+                        x = \lambda - 1\\
+                        y = \lambda\\
+                        z = 1
+                    \end{cases} \\
+                    \textbf{Cartesian} & x + 1 = y, \, z = 1 \\\bottomrule
+                \end{array}
+            \end{equation*}
+
+        \part
+            \begin{equation*}
+                \begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+                    \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+                    \textbf{Vector} & \vec r = \cveciii1{-1}3 + \lambda \cveciii12{-5}, \, \lambda \in \mathbb{R} \\
+                    \textbf{Parametric} & \begin{cases}
+                        x = \lambda + 1\\
+                        y = 2\lambda - 1\\
+                        z = -5\lambda + 3
+                    \end{cases} \\
+                    \textbf{Cartesian} & x-1 = \dfrac{y+1}2 = \dfrac{3-z}{5}\\\bottomrule
+                \end{array}
+            \end{equation*}
+
+        \part
+        \begin{equation*}
+            \begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+                \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+                \textbf{Vector} & \vec r = \lambda \cveciii123, \, \lambda \in \mathbb{R} \\
+                \textbf{Parametric} & \begin{cases}
+                    x = \lambda\\
+                    y = 2\lambda\\
+                    z = 3\lambda
+                \end{cases} \\
+                \textbf{Cartesian} & x = \dfrac{y}2 = \dfrac{z}3\\\bottomrule
+            \end{array}
+        \end{equation*}
+
+        \part
+            \begin{equation*}
+                \begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+                    \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+                    \textbf{Vector} & \vec r = \lambda \cveciii100, \, \lambda \in \mathbb{R} \\
+                    \textbf{Parametric} & \begin{cases}
+                        x = \lambda\\
+                        y = 0\\
+                        z = 0
+                    \end{cases} \\
+                    \textbf{Cartesian} & x \in \mathbb{R}, \, y = 0, \, z = 0 \\\bottomrule
+                \end{array}
+            \end{equation*}
+
+        \part
+            \begin{equation*}
+                \begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+                    \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+                    \textbf{Vector} & \vec r = \cveciii4{-1}2 + \lambda \cveciii001, \, \lambda \in \mathbb{R} \\
+                    \textbf{Parametric} & \begin{cases}
+                        x = 4\\
+                        y = -1\\
+                        z = \lambda + 2
+                    \end{cases} \\
+                    \textbf{Cartesian} & x = 4, \, y = -1, \, z \in \mathbb{R} \\\bottomrule
+                \end{array}
+            \end{equation*}
+
+    \problem{}
+        For each of the following, determine if $l_1$ and $l_2$ are parallel, intersecting or skew. In the case of intersecting lines, find the position vector of the point of intersection. In addition, find the acute angle between the lines $l_1$ and $l_2$.
+
+        \begin{enumerate}
+            \item $l_1 : x-1 = -y = z-2$ and $l_2 : \dfrac{x-2}2 = -\dfrac{y+1}2 = \dfrac{z-4}{2}$
+            \item $l_1 : \vec r = \cveciii100 + \alpha\cveciii4{-2}{-3}, \, \alpha \in \mathbb{R}$ and $l_2 : \vec r = \cveciii0{10}1 + \beta \cveciii381$
+            \item $l_1 : \vec r = (\vec i - 5 \vec k) + \lambda(\vec i - \vec j + \vec k), \, \lambda \in \mathbb{R}$ and $l_2 : \vec r = (\vec i - \vec j + \vec k) + \mu(5 \vec i - 4 \vec j - \vec k), \, \mu \in \mathbb{R}$
+        \end{enumerate}
+
+    \solution
+        \part
+            Note that $l_1$ and $l_2$ have vector form
+            \begin{equation*}
+                l_1 : \vec r = \cveciii102 + \lambda\cveciii1{-1}1, \, \lambda \in \mathbb{R} \text{ and } l_2 : \vec r = \cveciii214 + \mu\cveciii2{-2}{2}, \, \mu \in \mathbb{R}
+            \end{equation*}
+            Since $\cveciii2{-2}2 = 2\cveciii1{-1}1$, $l_1$ and $l_2$ are parallel. Since $\cveciii102 \neq \cveciii214 + \mu\cveciii2{-2}2$ for all real $\mu$, $l_1$ and $l_2$ are distinct.
+
+            \boxt{
+                Distinct parallel lines. $\theta = 0$.
+            }
+
+        \part
+            Since $\cveciii4{-2}3 \neq \beta \cveciii381$ for all real $\beta$, $l_1$ and $l_2$ are not parallel.
+
+            Consider $l_1 = l_2$.
+            \begin{alignat*}{2}
+                &&l_1 &= l_2\\
+                \implies&&\cveciii100 + \alpha\cveciii4{-2}{-3} &= \cveciii0{10}1 + \beta \cveciii381\\
+                \implies&&\alpha\cveciii4{-2}{-3} - \beta\cveciii381 &= \cveciii{-1}{10}1
+            \end{alignat*}
+            This gives the following system:
+            \begin{equation*}
+                \begin{cases}
+                    4\alpha - 3\beta &= -1\\
+                    -2\alpha - 8\beta &= 10\\
+                    -3\alpha - \beta &= 1
+                \end{cases}
+            \end{equation*}
+            There are no solutions to the above system. Hence, $l_1$ and $l_2$ do not intersect and are hence skew.
+
+            Let $\theta$ be the acute angle between $l_1$ and $l_2$.
+            \begin{alignat*}{2}
+                &&\cos\theta &= \dfrac{\abs{\cveciii4{-2}{-3} \cdot \cveciii381}}{\abs{\cveciii4{-2}{-3}} \abs{\cveciii381}}\\
+                && &= \dfrac{7}{\sqrt{2146}}\\
+                \implies&&\theta &= 1.42 \tosf{3}
+            \end{alignat*}
+
+            \boxt{
+                Skew lines. $\theta = 1.42$.
+            }
+
+        \part
+            Note that $l_1$ and $l_2$ have vector form
+            \begin{equation*}
+                l_1 : \vec r = \cveciii10{-5} + \lambda \cveciii1{-1}1 \text{ and } l_2 : \vec r = \cveciii1{-1}1 + \mu \cveciii5{-4}{-1}
+            \end{equation*}
+
+            Since $\cveciii1{-1}1 \neq \mu \cveciii5{-4}{-1}$ for all real $\mu$, $l_1$ and $l_2$ are not parallel.
+
+            Consider $l_1 = l_2$.
+            \begin{alignat*}{2}
+                &&l_1 &= l_2\\
+                \implies&&\cveciii10{-5} + \lambda \cveciii1{-1}1 &= \cveciii1{-1}1 + \mu \cveciii5{-4}{-1}\\
+                \implies&&\lambda\cveciii1{-1}1 - \mu\cveciii5{-4}{-1} &= \cveciii0{-1}6
+            \end{alignat*}
+            This gives the following system:
+            \begin{equation*}
+                \begin{cases}
+                    \lambda - 5\mu &= 0\\
+                    -\lambda + 4\mu &= -1\\
+                    \lambda + \mu &= 6
+                \end{cases}
+            \end{equation*}
+            The above system has the unique solution $\lambda = 5$ and $\mu = 1$. Hence, $l_1$ and $l_2$ intersect at $\cveciii10{-5} + 5\cveciii1{-1}1 = \cveciii6{-5}0$.
+
+            Let $\theta$ be the acute angle between $l_1$ and $l_2$.
+            \begin{alignat*}{2}
+                &&\cos\theta &= \dfrac{\abs{\cveciii1{-1}1 \cdot \cveciii5{-4}{-1}}}{\abs{\cveciii1{-1}1} \abs{\cveciii5{-4}{-1}}}\\
+                && &= \dfrac8{3\sqrt{14}}\\
+                \implies&&\theta &= 0.777 \tosf{3}
+            \end{alignat*}
+
+            \boxt{
+                Intersecting lines. $\cveciii6{-5}0$. $\theta = 0.777$.
+            }
+
+    \problem{}
+        \begin{enumerate}
+            \item Find the shortest distance from the point $\coordiii123$ to the line with equation $\vec r = 3\vec i + 2\vec j + 4\vec k + \lambda(\vec i + 2\vec j + 2\vec k), \, \lambda \in \mathbb{R}$.
+            \item Find the length of projection of $4\vec i - 5 \vec j + 6 \vec k$ onto the line with equation $\dfrac{x+5}4 = \dfrac{y-5}3 = 10-2z$.
+            \item Find the projection of $4\vec i - 5 \vec j + 6 \vec k$ onto the line with equation $\dfrac{x+5}4 = \dfrac{y-5}3 = 10-2z$.
+        \end{enumerate}
+
+    \solution
+        \part
+            Let $\overrightarrow{OP} = \cveciii123$ and $\overrightarrow{OA} = \cveciii324$. We have that $A$ is on the line with equation
+
+            \begin{equation*}
+                \vec r = \cveciii324 + \lambda\cveciii122,\, \lambda \in \mathbb{R}
+            \end{equation*}
+
+            Note that $\overrightarrow{AP} = \overrightarrow{OP} - \overrightarrow{OA} = \cveciii123 - \cveciii324 = \cveciii{-2}0{-1}$.
+
+            \begin{align*}
+                \text{Shortest distance} &= \dfrac{\abs{\cveciii{-2}0{-1} \times \cveciii122}}{\abs{\cveciii122}}\\
+                &= \dfrac1{\sqrt{1^2 + 2^2 + 2^2}} \abs{\cveciii2{-3}{-4}}\\
+                &= \dfrac{\sqrt{2^2 + (-3)^2 + (-4)^2}}3\\
+                &= \dfrac{\sqrt{29}}3
+            \end{align*}
+
+            \boxt{
+                The shortest distance is $\dfrac{\sqrt{29}}3$ units.
+            }
+
+        \part
+            Note that the line has vector form
+            \begin{align*}
+                \vec r &= \cveciii{-5}55 + \lambda \cveciii43{-\frac12}\\
+                &= \cveciii{-5}55 + \lambda \cveciii86{-1}, \, \lambda \in \mathbb{R}
+            \end{align*}
+
+            \begin{align*}
+                \text{Length of projection} &= \dfrac{\abs{\cveciii4{-5}6 \cdot \cveciii86{-1}}}{\abs{\cveciii86{-1}}}\\
+                &= \dfrac{4}{\sqrt{101}}
+            \end{align*}
+
+            \boxt{
+                The length of projection is $\dfrac4{\sqrt{101}}$ units.
+            }
+
+        \part
+            \begin{align*}
+                \text{Projection} &= \dfrac{\cveciii4{-5}6 \cdot \cveciii86{-1}}{\abs{\cveciii86{-1}}} \cdot \dfrac{\cveciii86{-1}}{\abs{\cveciii86{-1}}}\\
+                &= \dfrac{-4}{101} \cveciii86{-1}
+            \end{align*}
+
+    \problem{}
+        The points $P$ and $Q$ have coordinates $\coordiii0{-1}{-1}$ and $\coordiii301$ respectively, and the equations of the lines $l_1$ and $l_2$ are given by
+
+        \begin{equation*}
+            l_1 : \vec r = \cveciii01{-3} + \lambda\cveciii01{-1}, \, \lambda \in \mathbb{R} \text{ and } l_2 : \vec r = \cveciii{-3}31 + \mu \cveciii2{-1}0, \, \mu \in \mathbb{R} 
+        \end{equation*}
+
+        \begin{enumerate}
+            \item Show that $P$ lies on $l_1$ but not on $l_2$.
+            \item Determine if $l_2$ passes through $Q$.
+            \item Find the coordinates of the foot of the perpendicular from $P$ to $l_2$. Hence, or otherwise, find the perpendicular distance from $P$ to $l_2$.
+            \item Find the length of projection of $\overrightarrow{PQ}$ onto $l_2$.
+        \end{enumerate}
+
+    \solution
+        We have that $\overrightarrow{OP} = \cveciii0{-1}{-1}$ and $\overrightarrow{OQ} = \cveciii301$.
+
+        \part
+            When $\lambda = -2$, we have $\cveciii01{-3} - 2\cveciii01{-1} = \cveciii0{-1}{-1} = \overrightarrow{OP}$. Hence, $P$ lies on $l_1$.
+
+            Observe that all points on $l_2$ have a $z$-coordinate of 1. Since $P$ has a $z$-coordinate of $-1$, $P$ does not lie on $l_2$.
+
+        \part
+            When $\mu = 3$, we have $\cveciii{-3}31 + 3\cveciii2{-1}0 = \cveciii301 = \overrightarrow{OQ}$. Hence, $l_2$ passes through $Q$.
+
+            \boxt{
+                $l_2$ passes through $Q$.
+            }
+
+        \part
+            Let the foot of the perpendicular from $P$ to $l_2$ be $F$. Since $F$ is on $l_2$, we have that $\overrightarrow{OF} = \cveciii{-3}31 + \mu\cveciii2{-1}0$ for some real $\mu$. We also have that $\overrightarrow{PF} \cdot \cveciii2{-1}0 = 0$.
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                &&\overrightarrow{PF} \cdot \cveciii2{-1}0 &= 0\\
+                \implies&&\left(\overrightarrow{OF} - \overrightarrow{OP}\right) \cdot \cveciii2{-1}0 &= 0\\
+                \implies&&\left(\cveciii{-3}31 + \mu\cveciii2{-1}0 - \cveciii0{-1}{-1}\right) \cdot \cveciii2{-1}0 &= 0\\
+                \implies&&\left(\cveciii{-3}42 + \mu\cveciii2{-1}0\right) \cdot \cveciii2{-1}0 &= 0\\
+                \implies&&\cveciii{-3}42 \cdot \cveciii2{-1}0 + \mu\cveciii2{-1}0 \cdot \cveciii2{-1}0 &= 0\\
+                \implies&&-10 + 5m &= 0\\
+                \implies&&m &= 2
+            \end{alignat*}}
+            Hence, $\overrightarrow{OF} = \cveciii{-3}31 + 2\cveciii3{-1}0 = \cveciii111$.
+
+            \boxt{
+                $F\coordiii111$
+            }
+            \begin{align*}
+                \text{Perpendicular distance} &= \abs{\overrightarrow{PF}}\\
+                &= \abs{\overrightarrow{OF} - \overrightarrow{OP}}\\
+                &= \abs{\cveciii111 - \cveciii0{-1}{-1}}\\
+                &= \abs{\cveciii122}\\
+                &= \sqrt{1^2 + 2^2 + 2^2}\\
+                &= 3
+            \end{align*}
+
+            \boxt{
+                The perpendicular distance from $P$ to $l_2$ is 3 units.
+            }
+
+        \part
+            Note that $\overrightarrow{PQ} = \overrightarrow{OQ} - \overrightarrow{OP} = \cveciii301 - \cveciii0{-1}{-1} = \cveciii312$.
+
+            {\allowdisplaybreaks
+            \begin{align*}
+                \text{Length of projection} &= \dfrac{\abs{\cveciii312 \cdot \cveciii2{-1}0}}{\abs{\cveciii2{-1}0}}\\
+                &= \dfrac{\abs{6 - 1 + 0}}{\sqrt{2^2 + (-1)^2 + 0^2}}\\
+                &= \dfrac5{\sqrt 5}\\
+                &= \sqrt{5}
+            \end{align*}}
+
+            \boxt{
+                The length of projection of $\overrightarrow{PQ}$ onto $l_2$ is $\sqrt5$ units.
+            }
+
+    \problem{}
+        The lines $l_1$ and $l_2$ have equations
+
+        \begin{equation*}
+            \vec r = \cveciii012 + s\cveciii103 \text{ and } \vec r = \cveciii{-2}31 + t\cveciii210
+        \end{equation*}
+
+        \noindent respectively. Find the position vectors of the points $P$ on $l_1$ and $Q$ on $l_2$ such that $O$, $P$ and $Q$ are collinear, where $O$ is the origin.
+
+    \solution
+        We have that $\overrightarrow{OP} = \cveciii012 + s\cveciii103$ and $\overrightarrow{OQ} = \cveciii{-2}31 + t\cveciii210$ for some reals $s$ and $t$. For $O$, $P$ and $Q$ to be collinear, we need $\overrightarrow{OP} = \lambda \overrightarrow{OQ}$ for some real $\lambda$.
+        \begin{alignat*}{2}
+            &&\cveciii012 + s\cveciii103 &= \lambda\left(\cveciii{-2}31 + t\cveciii210\right)\\
+            \implies&&\cveciii{s}1{2 + 3s} &= \lambda\cveciii{-2+2t}{3+t}1
+        \end{alignat*}
+        This gives use the system:
+        \begin{equation*}
+            \begin{cases}
+                s &= \lambda (-2 + 2t)\\
+                1 &= \lambda(3 + t)\\
+                2 + 3s &= \lambda 
+            \end{cases}
+        \end{equation*}
+        Substituing the third equation into the first two gives the reduced system:
+        \begin{equation*}
+            \begin{cases}
+                s &= (2+3s)(-2+2t)\\
+                1 &= (2+3s)(3+t)
+            \end{cases}
+        \end{equation*}
+        Substracting twice of the second equation from the first yields
+        \begin{alignat*}{2}
+            &&s - 2 &= (2+3s)(-2+2t) - 2(2+3s)(3+t)\\
+            && &= (2+3s)(-2+2t) - (2+3s)(6+2t)\\
+            && &= (2+3s)(-2+2t - (6+2t))\\
+            && &= -8(2+3s)\\
+            && &= -16 - 24s\\
+            \implies&&25s &= -14\\
+            \implies&&s &= -\dfrac{14}{25}
+        \end{alignat*}
+        It quickly follows that $t = \dfrac18$. Hence,
+        \begin{align*}
+            \overrightarrow{OP} &= \cveciii012 - \dfrac{14}{25}\cveciii103\\
+            &= \dfrac1{25}\cveciii0{25}{50} - \dfrac1{25}\cveciii{14}0{42}\\
+            &= \dfrac1{25}\cveciii{-14}{25}{8}\\
+            \overrightarrow{OQ} &= \cveciii{-2}31 + \dfrac18\cveciii210\\
+            &= \dfrac18 \cveciii{-16}{24}{8} + \dfrac18 \cveciii210\\
+            &= \dfrac18 \cveciii{-14}{25}8
+        \end{align*}
+
+        \boxt{
+            $\overrightarrow{OP} = \dfrac1{25}\cveciii{-14}{25}{8}$, $\overrightarrow{OQ} = \dfrac18 \cveciii{-14}{25}8$
+        }
+        
+    \problem{}
+        Relative to the origin $O$, the poiints $A$, $B$ and $C$ have position vectors $5\vec i + 4\vec j + 10\vec k$, $-4\vec i + 4\vec j - 2\vec k$ and $-5\vec i + 9\vec j + 5\vec k$ respectively.
+
+        \begin{enumerate}
+            \item Find the Cartesian equation of the line $AB$.
+            \item Find the length of projection of $\overrightarrow{AC}$ onto the line $AB$. Hence find the perpendicular distance from $C$ to the line $AB$.
+            \item Find the position vector of the foot $N$ of the perpendicular from $C$ to the line $AB$.
+            \item The point $D$ is such that it is a reflection of point $C$ about the line $AB$. Find the position vector of $D$.
+        \end{enumerate}
+
+    \solution
+        We have that $\overrightarrow{OA} = \cveciii54{10}$, $\overrightarrow{OB} = \cveciii{-4}4{-2}$ and $\overrightarrow{OC} = \cveciii{-5}95$.
+
+        \part
+            Note that $\overrightarrow{AB} = \overrightarrow{OB} - \overrightarrow{OA} = \cveciii{-4}4{-2} - \cveciii54{10} = \cveciii{-9}0{-12} = -3\cveciii304$. The line $AB$ hence has the vector form
+
+            \begin{equation*}
+                \vec r = \cveciii54{10} + \lambda\cveciii304, \, \lambda \in \mathbb{R}
+            \end{equation*}
+
+            The line $AB$ thus has the Cartesian form
+
+            \boxt{
+                $\dfrac{x-5}{3} = \dfrac{z-10}4,\,y=4$
+            }
+
+        \part
+            Note that $\overrightarrow{AC} = \overrightarrow{OC} - \overrightarrow{OA} = \cveciii{-5}95 - \cveciii54{10} = \cveciii{-10}5{-5} = -5\cveciii2{-1}1$.
+
+            \begin{align*}
+                \text{Length of projection} &= \dfrac{\abs{\overrightarrow{AC} \cdot \overrightarrow{AB}}}{\abs{\overrightarrow{AB}}}\\
+                &= \dfrac1{-3\sqrt{3^2 + 0^2 + 4^2}} \abs{-5\cveciii2{-1}1 \cdot -3\cveciii304}\\
+                &= 10
+            \end{align*}
+
+            \boxt{
+                The perpendicular distance from $C$ to the line $AB$ is 10 units.
+            }
+
+        \part
+            Let $\overrightarrow{AN} = \lambda \cveciii{-9}0{-12}$ for some real $\lambda$ such that $\abs{\overrightarrow{AN}} = 10$.
+            \begin{alignat*}{2}
+                &&\overrightarrow{AN} &= 10\\
+                \implies&&\lambda \cdot -3\sqrt{3^2 + 0^2 + 4^2} &= 10\\
+                \implies&&\lambda &= \dfrac23
+            \end{alignat*}
+            Hence, $\overrightarrow{AN} = \dfrac23 \cveciii{-9}0{-12} = \cveciii{-6}0{-8}$. Thus, $\overrightarrow{ON} = \overrightarrow{OA} + \overrightarrow{AN} = \cveciii54{10}+\cveciii{-6}0{-8} = \cveciii{-1}42$.
+
+            \boxt{
+                $\overrightarrow{ON} = \cveciii{-1}42$
+            }
+
+        \part
+            Note that $\overrightarrow{NC} = \overrightarrow{OC} - \overrightarrow{ON} = \cveciii{-5}95 - \cveciii{-1}42 = \cveciii{-4}53$. Since $D$ is the reflection of $C$ about $AB$, we have that $\overrightarrow{ND} = -\overrightarrow{NC}$.
+
+            \begin{align*}
+                \overrightarrow{OD} &= \overrightarrow{ON} + \overrightarrow{ND}\\
+                &= \overrightarrow{ON} - \overrightarrow{NC}\\
+                &= \cveciii{-1}42 - \cveciii{-4}53\\
+                &= \cveciii3{-1}{-1}
+            \end{align*}
+
+            \boxt{
+                $\overrightarrow{OD} = \cveciii3{-1}{-1}$
+            }
+
+    \problem{}
+        The points $A$ and $B$ have coordinates $\coordiii09c$ and $\coordiii{d}5{-2}$ respectively, where $c$ and $d$ are constants. The line $l$ has equation $\dfrac{x+3}{-1} = \dfrac{y-1}4 = \dfrac{z-5}3$.
+
+        \begin{enumerate}
+            \item Given that $d = \dfrac{22}7$ and the line $AB$ intersects $l$, find the value of $c$. Find also the coordinates of the foot of the perpendicular from $A$ to $l$.
+            \item Given instead that the lines $AB$ and $l$ are parallel, state the value of $c$ and $d$ and find the shortest distance between the lines $AB$ and $l$.
+        \end{enumerate}
+
+    \solution
+        We have that $\overrightarrow{OA} = \cveciii09c$ and $\overrightarrow{OB} = \cveciii{d}5{-2}$. We also have that $l$ is given by the vector $\vec r = \cveciii{-3}15 + \lambda \cveciii{-1}43$ for $\lambda \in \mathbb{R}$.
+
+        Note that $\overrightarrow{AB} = \overrightarrow{OB} - \overrightarrow{OA} = \cveciii{d}{-4}{-2-c}$. Hence, the line $AB$ is given by the vector $\vec r_{AB} = \cveciii{d}5{-2} + \mu \cveciii{d}{-4}{-2-c}$ for $\mu \in \mathbb{R}$.
+
+        \part
+            Consider the direction vectors of $AB$ and $l$. Since $\cveciii{\frac{22}7}{-4}{-2-c} \neq \lambda\cveciii{-1}43$ for all real $\lambda$ and $c$, the lines $AB$ and $l$ are not parallel. Hence, $AB$ and $l$ intersect at only one point. Thus, there must be a unique solution to $\vec r = \vec r_{AB}$.
+            \begin{alignat*}{2}
+                &&\vec r &= \vec r_{AB}\\
+                \implies&&\cveciii{-3}15 + \lambda \cveciii{-1}43 &= \cveciii{\frac{22}7}5{-2} + \mu \cveciii{\frac{22}7}{-4}{-2-c}\\
+                \implies&&\cveciii{-21}{7}{35} + \lambda \cveciii{-1}43 &= \cveciii{22}{35}{-14} + \mu \cveciii{22}{-28}{-14-7c}\\
+                \implies&&\lambda \cveciii{-1}43 - \mu\cveciii{22}{-28}{-14-7c} &= \cveciii{43}{28}{-49}
+            \end{alignat*}
+            This gives the following system:
+            \begin{align*}
+                \begin{cases}
+                    -\lambda - 22 \mu &= 43\\
+                    4\lambda + 28\mu &= 28\\
+                    3\lambda + (14 + 7c)\mu &= -49
+                \end{cases}
+            \end{align*}
+
+            Solving the first two equations gives $\lambda = \dfrac{91}3$ and $\mu = -\dfrac{10}3$. It follows from the third equation that $c = 4$.
+
+            \boxt{
+                $c = 4$
+            }
+
+            Let $F$ be the foot of the perpendicular from $A$ to $l$. We have that $\overrightarrow{OF} = \cveciii{-3}15 + \lambda\cveciii{-1}43$ for some real $\lambda$. We also have that $\overrightarrow{AF} \cdot \cveciii{-1}43 = 0$.
+            \begin{alignat*}{2}
+                &&\overrightarrow{AF} \cdot \cveciii{-1}43 &= 0\\
+                \implies&&\left(\overrightarrow{OF} - \overrightarrow{OA}\right) \cdot \cveciii{-1}43 &= 0\\
+                \implies&&\left(\cveciii{-3}15 + \lambda\cveciii{-1}43 - \cveciii094\right) \cdot \cveciii{-1}43 &= 0\\
+                \implies&&\left(\cveciii{-3}{-8}1 + \lambda\cveciii{-1}43\right) \cdot \cveciii{-1}43 &= 0\\
+                \implies&&\cveciii{-3}{-8}1 \cdot \cveciii{-1}43 + \lambda\cveciii{-1}43 \cdot \cveciii{-1}43 &= 0\\
+                \implies&&-26 + 26\lambda&= 0\\
+                \implies&&\lambda &= 1
+            \end{alignat*}
+
+            Hence, $\overrightarrow{OF} = \cveciii{-3}15 + \lambda\cveciii{-1}43 = \cveciii{-4}58$.
+
+            \boxt{
+                The foot of the perpendicular from $A$ to $l$ has coordinates $\coordiii{-4}58$.
+            }
+
+        \part
+            Given that $AB$ is parallel to $l$, one of their direction vectors must be a scalar multiple of the other. Hence, for some real $\lambda$,
+            \begin{equation*}
+                \cveciii{-1}4{3} = \lambda\cveciii{d}{-4}{-2-c}
+            \end{equation*}
+            It is obvious that $\lambda = -1$, whence $c = 1$ and $d = 1$.
+
+            \boxt{
+                $c = 1$, $d = 1$
+            }
+
+            Note that the direction vector of $l$ and $AB$ is $\cveciii{-1}43$. Further note that $\coordiii{-3}15$ is on $l$ and $\coordiii15{-2}$ is on $AB$.
+
+            \begin{align*}
+                \text{Shortest distance between $AB$ and $l$} &= \dfrac{\abs{\cveciii{-1}43 \times \left(\cveciii15{-2} - \cveciii{-3}15\right)}}{\abs{\cveciii{-1}43}}\\
+                &= \dfrac{1}{\sqrt{(-1)^2 + 4^2 + 3^2}} \abs{\cveciii{-1}43 \times \cveciii44{-7}}\\
+                &= \dfrac1{\sqrt{26}} \abs{\cveciii{-40}{-5}{-20}}\\
+                &= \dfrac1{\sqrt{26}} \abs{-5\cveciii814}\\
+                &= \dfrac{5 \sqrt{8^2 + 1^2 + 4^2}}{\sqrt{26}}\\
+                &= \dfrac{45}{\sqrt{26}}
+            \end{align*}
+
+            \boxt{
+                The shortest distance between $AB$ and $l$ is $\dfrac{45}{\sqrt{26}}$ units.
+            }
+    
+    \problem{}
+        The equation of the line $L$ is $\vec r = \cveciii137 + t\cveciii2{-1}5$, $t \in \mathbb{R}$. The points $A$ and $B$ have position vectors $\cveciii93{26}$ and $\cveciii{13}9\alpha$ respectively. The line $L$ intersects the line through $A$ and $B$ at $P$.
+
+        \begin{enumerate}
+            \item Find $\alpha$ and the acute angle between line $L$ and $AB$.
+        \end{enumerate}
+
+        \noindent The point $C$ has position vector $\cveciii251$ and the foot of the perpendicular from $C$ to $L$ is $Q$.
+
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item Find the position vector of $Q$. Hence find the shortest distance from $C$ to $L$.
+            \item Find the position vector of the point of reflection of the point $C$ about the line $L$. Hence, find the reflection of the line passing through $C$ and the point $\coordiii137$ about the line $L$.
+        \end{enumerate}
+
+    \solution
+        \part
+            We have that $\overrightarrow{OA} = \cveciii93{26}$ and $\overrightarrow{OB} = \cveciii{13}9\alpha$. Hence, $\overrightarrow{AB} = \overrightarrow{OB} - \overrightarrow{OA} = \cveciii46{\alpha - 26}$. The line $AB$ is thus given by $\vec r_{AB} = \cveciii93{26} + u\cveciii46{\alpha - 26}$ for $u \in \mathbb{R}$. Note that $AB$ is not parallel to $L$. Hence, $\overrightarrow{OP}$ is the only solution to the equation $\vec r = \vec r_{AB}$.
+            \begin{alignat*}{2}
+                &&\cveciii137 + t\cveciii2{-1}5 &= \cveciii93{26} + u\cveciii46{\alpha - 26}\\
+                \implies&&t\cveciii2{-1}5 - u\cveciii46{\alpha - 26} &= \cveciii80{19}
+            \end{alignat*}
+            This gives the following system:
+            \begin{align*}
+                \begin{cases}
+                    2t - 4u &= 8\\
+                    -t - 6u &= 0\\
+                    5t - (\alpha - 26)u &= 19
+                \end{cases}
+            \end{align*}
+            Solving the first two equations gives $t = 3$ and $u = -\dfrac12$. It follows from the third equation that $\alpha = 34$.
+
+            \boxt{
+                $\alpha = 34$
+            }
+
+            Let the acute angle between $L$ and $AB$ be $\theta$.
+            \begin{alignat*}{2}
+                &&\cos\theta &= \dfrac{\abs{\cveciii2{-1}5 \cdot \cveciii468}}{\abs{\cveciii2{-1}5} \abs{\cveciii468}}\\
+                && &= \dfrac{42}{\sqrt{30} \sqrt{116}}\\
+                \implies&&\theta &= \arccos \dfrac{42}{\sqrt{30} \sqrt{116}}\\
+                && &= 44.6^{\circ} \todp{1}
+            \end{alignat*}
+
+            \boxt{
+                $\theta = 44.6^{\circ} \todp{1}$
+            }
+        
+        \part
+            Since $Q$ is on $L$, we have that $\overrightarrow{OQ} = \cveciii137 + t\cveciii2{-1}5$ for some real $t$. Further, since $\overrightarrow{CQ} \perp L$, we have that $\overrightarrow{CQ} \cdot \cveciii2{-1}5 = 0$.
+            \begin{alignat*}{2}
+                &&\overrightarrow{CQ} \cdot \cveciii2{-1}5 &= 0\\
+                \implies&&\left(\overrightarrow{OQ} - \overrightarrow{OC}\right) \cdot \cveciii2{-1}5 &= 0\\
+                \implies&&\left(\cveciii137 + t\cveciii2{-1}5 - \cveciii251\right) \cdot \cveciii2{-1}5 &= 0\\
+                \implies&&\left(\cveciii{-1}{-2}6 + t\cveciii2{-1}5\right) \cdot \cveciii2{-1}5 &= 0\\
+                \implies&&\cveciii{-1}{-2}6 \cdot \cveciii2{-1}5 + t\cveciii2{-1}5 \cdot \cveciii2{-1}5 &= 0\\
+                \implies&&30 + 30t &= 0\\
+                \implies&&t &= 1
+            \end{alignat*}
+            Hence, $\overrightarrow{OQ} = \cveciii137 + \cveciii2{-1}5 = \cveciii{-1}42$.
+            \boxt{
+                $\overrightarrow{OQ} = \cveciii{-1}42$
+            }
+
+            \begin{align*}
+                \text{Shortest distance from $C$ to $L$} &= \abs{\overrightarrow{CQ}}\\
+                &= \abs{\cveciii{-1}42 - \cveciii251}\\
+                &= \abs{\cveciii{-3}{-1}1}\\
+                &= \sqrt{(-3)^2 + (-1)^2 + 1^2}\\
+                &= \sqrt{11}
+            \end{align*}
+
+            \boxt{
+                The shortest distance from $C$ to $L$ is $\sqrt{11}$ units.
+            }
+
+        \part
+            Let $C'$ be the reflection of $C$ about $L$.
+            \begin{align*}
+                \overrightarrow{OC'} &= \overrightarrow{OQ} - \overrightarrow{QC}\\
+                &= \overrightarrow{OQ} + \overrightarrow{CQ}\\
+                &= \cveciii{-1}42 + \cveciii{-3}{-1}1\\
+                &= \cveciii{-4}33
+            \end{align*}
+
+            \boxt{
+                $\overrightarrow{OC'} = \cveciii{-4}33$
+            }
+
+            Note that $\coordiii137$ is on $L$ and is hence invariant under a reflection about $L$. Let the reflection about $L$ of the line passing through $C$ and $\coordiii137$ be $L'$. Since $\cveciii{-4}33 - \cveciii137 = \cveciii{-5}0{-4} = -\cveciii504$, $L'$ has direction vector $\cveciii504$. Thus, $L'$ is given by $\vec r' = \cveciii137 + \lambda \cveciii504$ for $\lambda \in \mathbb{R}$.
+
+            \boxt{
+                $L' : \vec r' = \cveciii137 + \lambda \cveciii504, \, \lambda \in \mathbb{R}$
+            }
+
+    \problem{}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw (0, 0) -- (6, 0);
+                \draw (0, 0) -- (4, 3);
+                \draw (6, 0) -- (10, 3);
+                \draw (4, 3) -- (10, 3);
+
+                \draw (0, 0) -- (5, 6);
+                \draw (6, 0) -- (5, 6);
+                \draw (4, 3) -- (5, 6);
+                \draw (10, 3) -- (5, 6);
+
+                \node[anchor=north east] at (0, 0) {$A$};
+                \node[anchor=north west] at (6, 0) {$B$};
+                \node[anchor=west] at (10, 3) {$C$};
+                \node[anchor=south east] at (4, 3) {$D$};
+                \node[anchor=south] at (5, 6) {$V$};
+
+                \node[anchor=north east] at (5, 1.5) {$O$};
+                \draw[very thick, ->] (5, 1.5) -- (6, 1.5);
+                \draw[very thick, ->] (5, 1.5) -- (5.8, 2.1);
+                \draw[very thick, ->] (5, 1.5) -- (5, 2.5);
+
+                \node[anchor=west] at (6, 1.5) {$\vec i$};
+                \node[anchor=south west] at (5.8, 2.1) {$\vec j$};
+                \node[anchor=south] at (5, 2.5) {$\vec k$};
+
+                \draw[dotted] (5, 1.5) -- (5, 6);
+            \end{tikzpicture}
+        \end{center}
+        In the diagram, $O$ is the origin of the square base $ABCD$ of a right pyramid with vertex $V$. The perpendicular unit vectors $\vec i$, $\vec j$ and $\vec k$ are parallel to $AB$, $AD$ and $OV$ respectively. The length of $AB$ is 4 units and the length of $OV$ is $2h$ units. $P$, $Q$, $M$ and $N$ are the mid-points of $AB$, $BC$, $CV$ and $VA$ respectively. The point $O$ is taken as the origin for position vectors.
+
+        Show that the equation of the line $PM$ may be expressed as $\vec r = \cveciii0{-2}0 + t\cveciii13h$, where $t$ is a parameter.
+
+        \begin{enumerate}
+            \item Find an equation for the line $QN$.
+            \item Show that the lines $PM$ and $QN$ intersect and that the position vector $\overrightarrow{OX}$ of their point of intersection is $\vec r = \dfrac12 \cveciii1{-1}h$.
+            \item Given that $OX$ is perpendicular to $VB$, find the value of $h$ and calculate the acute angle between $PM$ and $QN$, giving your answer correct to the nearest $0.1^{\circ}$.
+        \end{enumerate}
+
+    \solution
+        We are given that $\overrightarrow{OP} = \cveciii0{-2}0$, $\overrightarrow{OC} = \cveciii220$ and $\overrightarrow{OV} = \cveciii00{2h}$. Hence $\overrightarrow{CV} = \overrightarrow{OV} - \overrightarrow{OC} = \cveciii{-2}{-2}{2h}$. Thus, $\overrightarrow{CM} = \dfrac12 \overrightarrow{CV} = \cveciii{-1}{-1}h$. Since $\overrightarrow{OM} = \overrightarrow{OC} + \overrightarrow{CM} = \cveciii11h$, we have that $\overrightarrow{PM} = \overrightarrow{OM} - \overrightarrow{OP} = \cveciii13h$. Thus, $PM$ is given by
+        \begin{equation*}
+            \vec r = \cveciii0{-2}0 + t\cveciii13h, \, t \in \mathbb{R}
+        \end{equation*}
+
+        \part
+            Since $\overrightarrow{OM} = \cveciii11h$, by symmetry, $\overrightarrow{ON} = \cveciii{-1}{-1}h$. Given that $\overrightarrow{OQ} = \cveciii200$, we have that $\overrightarrow{QN} = \overrightarrow{ON} - \overrightarrow{OQ} = \cveciii{-3}{-1}h$. Thus, $QN$ is given by
+
+            \boxt{
+                $\vec r = \cveciii200 + u\cveciii{-3}{-1}h, \, u \in \mathbb{R}$
+            }
+
+        \part
+            Consider $PM = QN$.
+            \begin{alignat*}{2}
+                &&PM &= QN\\
+                \implies&&\cveciii0{-2}0 + t\cveciii13h &= \cveciii200 + u\cveciii{-3}{-1}h\\
+                \implies&&t\cveciii13h - u\cveciii{-3}{-1}h &= \cveciii220
+            \end{alignat*}
+            This gives the following system:
+            \begin{equation*}
+                \begin{cases}
+                    t + 3u &= 2\\
+                    3t + u &= 2\\
+                    th - uh &= 0
+                \end{cases}
+            \end{equation*}
+            From the first two equations, we see that $t = \dfrac12$ and $u = \dfrac12$, which is consistent with the third equation. Hence, $\overrightarrow{OX} = \cveciii0{-2}0 + \dfrac12 \cveciii13h = \dfrac12 \cveciii1{-1}h$.
+
+        \part
+            Note that $\overrightarrow{OB} = \cveciii2{-2}6$, whence $\overrightarrow{VB} = \overrightarrow{OB} - \overrightarrow{OV} = \cveciii2{-2}{-2h}$. Since $OX$ is perpendicular to $VB$, we have that $\overrightarrow{OX} \cdot \overrightarrow{VB} = 0$.
+            \begin{alignat*}{2}
+                &&\overrightarrow{OX} \cdot \overrightarrow{VB} &= 0\\
+                \implies&&\dfrac12 \cveciii1{-1}h \cdot 2 \cveciii1{-1}{-h} &= 0\\
+                \implies&&1 + 1 - h^2 &= 0\\
+                \implies&&h^2 &= 2
+            \end{alignat*}
+            We hence have that $h = \sqrt2$. Note that we reject $h = -\sqrt2$ since $h > 0$.
+
+            \boxt{
+                $h = \sqrt2$
+            }
+
+            Let the acute angle between $PM$ and $QN$ be $\theta$.
+            \begin{alignat*}{2}
+                &&\cos\theta &= \dfrac{\abs{\overrightarrow{PM} \cdot \overrightarrow{QN}}}{\abs{\overrightarrow{PM}}\abs{\overrightarrow{QN}}}\\
+                && &= \dfrac{1}{\sqrt{1^2 + 3^2 + \sqrt{2}^2}} \cdot \frac1{\sqrt{(-3)^2 + (-1)^2 + \sqrt{2}^2}} \cdot \abs{\cveciii13{\sqrt2} \cdot \cveciii{-3}{-1}{\sqrt2}}\\
+                && &= \dfrac1{\sqrt{12}}\cdot\dfrac1{\sqrt{12}}\cdot\abs{-3 - 3 + 2}\\
+                && &= \dfrac13\\
+                \implies&&\theta &= \arccos \dfrac13\\
+                && &= 70.5^{\circ} \todp{1}
+            \end{alignat*}
+
+            \boxt{
+                $\theta = 70.5^{\circ} \todp{1}$
+            }
+\end{document}
