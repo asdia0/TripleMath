@@ -29,7 +29,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | B5 | Applications of Differentation | [T-B5A](/Group%20B/Chapter%20B5/Tutorial%20B5A/Tutorial%20B5A.pdf), [T-B5B](/Group%20B/Chapter%20B5/Tutorial%20B5B/Tutorial%20B5B.pdf) | [A-B5A](/Group%20B/Chapter%20B5/Assignment%20B5A/Assignment%20B5A.pdf), [A-B5B](/Group%20B/Chapter%20B5/Assignment%20B5B/Assignment%20B5B.pdf) |
 | B6 | Maclaurin Series | [T-B6](/Group%20B/Chapter%20B6/Tutorial%20B6/Tutorial%20B6.pdf) | [A-B6](/Group%20B/Chapter%20B6/Assignment%20B6/Assignment%20B6.pdf) |
 | B7 | Integration Techniques | [T-B7](/Group%20B/Chapter%20B7/Tutorial%20B7/Tutorial%20B7.pdf) | [A-B7](/Group%20B/Chapter%20B7/Assignment%20B7/Assignment%20B7.pdf) |
-| B8 | Applications of Integration I | | |
+| B8 | Applications of Integration I | [T-B8](/Group%20B/Chapter%20B8/Tutorial%20B8/Tutorial%20B8.pdf) | |
 | B9 | Applications of Integration II | | |
 | B10 | Trapezium and Simpson's Rule | | |
 | B11 | Functions of Two Variables | | |
