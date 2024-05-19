@@ -57,10 +57,10 @@
             \implies&&(3\lambda - 2)(3\lambda - 4) &= 0
         \end{alignat*}
 
-        Hence, $\lambda = \dfrac23, \dfrac43$.
+        Hence, $\lambda = \dfrac23, \dfrac43$. However, we must reject $\lambda = \dfrac43$ since $6 - 6\lambda = \dfrac{\abs{\vec p}}{\sqrt{2}} > 0 \implies \lambda < 1$.
 
         \boxt{
-            $\lambda = \dfrac23, \dfrac43$
+            $\lambda = \dfrac23$
         }
 
     \problem{}
@@ -77,19 +77,14 @@
             \begin{alignat*}{2}
                 &&\vec a &= (\vec a \cdot \vec b) \vec b\\
                 \implies&&\vec a &= (\vec a \cdot \lambda \vec a) \lambda \vec a\\
-                \implies&&\vec a &= \lambda^2 \vec a\\
-                \implies&&\lambda^2 &= 1
+                \implies&&\vec a &= \lambda^2 \abs{\vec a}^2 \vec a\\
+                \implies&&\lambda^2\abs{\vec a}^2 &= 1\\
+                \implies&&\lambda\abs{\vec a} &= \pm 1\\
+                \implies&&\lambda &= \pm \dfrac1{\abs{\vec a}}\\
+                \implies&&\vec b &= \pm \dfrac{\vec a}{\abs{\vec a}}\\
+                \implies&&\vec b &= \pm \hat{\vec a}\\
+                \implies&&\abs{\vec b} &= 1
             \end{alignat*}
-
-            Hence, $\lambda = \pm 1$, whence $\vec b = \pm \vec a$. Let $A= \abs{\vec a} = \abs{\vec b}$. Note that the cosine of the angle between $\vec a$ and $\vec b$ is $\pm 1$.
-            \begin{align*}
-                A &= \abs{a}\\
-                &= \abs{(\vec a \cdot \vec b)\vec b}\\
-                &= \abs{\vec a \cdot \vec b} \abs{\vec b}\\
-                &= \abs{\vec a} \abs{\vec b} \abs{\pm 1} \abs{\vec b}\\
-                &= A^3
-            \end{align*}
-            Hence, $A = 1$. Note that we reject $A = 0$ since $\vec a$ is a non-zero vector. Thus, $\abs{\vec b} = 1$.
 
             \boxt{
                 $\abs{\vec b} = 1$
