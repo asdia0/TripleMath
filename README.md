@@ -36,10 +36,16 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | B12 | Functional Differential Equations (H2 MA) | | |
 | B13 | Functional Differential Equations (H2 FM) | | |
 
+## Exams
+
+| Exam | Chapter(s) |
+| ---- | :--------: |
+| [FM WA1](/Exams/FM%20WA1/FM%20WA1.pdf) | A2, A3, A4 | 
+| [MA WA1](/Exams/MA%20WA1/MA%20WA1.pdf) | A1, B1, B3 |
+
 ## Misc
 
 | Worksheet | Chapter(s) |
 | --------- | :--------: |
 | [Timed Practice 1](/Misc/Timed%20Practice%201/Timed%20Practice%201.pdf) | A4, B1 |
 | [Timed Practice 2](/Misc/Timed%20Practice%202/Timed%20Practice%202.pdf) | A2 |
-| [FM WA1](/Misc/FM%20WA1/FM%20WA1.pdf) | A2, A3, A4 | 
