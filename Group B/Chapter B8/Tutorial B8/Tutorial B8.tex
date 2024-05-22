@@ -504,17 +504,18 @@
         Calculate the area enclosed by the petals of the curve $r = \sin2\theta$ where $r \geq 0$.
 
     \solution
+        Note that $r \geq 0 \implies \sin2\theta \geq 0 \implies r \in \left[0, \dfrac\pi2\right] \cup \left[\pi, \dfrac{3\pi}2\right]$.
         \begin{align*}
-            \area &= \dfrac12 \int_0^{2\pi} \sin^2 2\theta \d \theta \usub{u &= 2\theta\\\d u &= 2 \d \theta\\\theta = 0 &\implies u = 0\\\theta = 2\pi &\implies u = 4\pi}\\
-            &= \dfrac14 \int_0^{4\pi} \sin^2 u \d u\\
-            &= \dfrac14 \int_0^{4\pi} \dfrac{1 - \cos 2u}2 \d u\\
-            &= \dfrac18 \int_0^{4\pi} \left(1 - \cos 2u\right) \d u\\
-            &= \dfrac18 \eval{u - \dfrac{\sin 2u}2}{0}{4\pi}\\
-            &= \dfrac\pi2
+            \area &= 2 \cdot \dfrac12 \int_0^{\pi/2} \sin^2 2\theta \d \theta \usub{u &= 2\theta\\\d u &= 2 \d \theta\\\theta = 0 &\implies u = 0\\\theta = \dfrac\pi2 &\implies u = \pi}\\
+            &= \dfrac12 \int_0^{\pi} \sin^2 u \d u\\
+            &= \dfrac12 \int_0^{\pi} \dfrac{1 - \cos 2u}2 \d u\\
+            &= \dfrac14 \int_0^{\pi} \left(1 - \cos 2u\right) \d u\\
+            &= \dfrac14 \eval{u - \dfrac{\sin 2u}2}{0}{\pi}\\
+            &= \dfrac\pi4
         \end{align*}
 
         \boxt{
-            The area enclosed is $\dfrac\pi2$ units$^2$.
+            The area enclosed is $\dfrac\pi4$ units$^2$.
         }
 
     \problem{}
@@ -1175,7 +1176,7 @@
                     ]
                     \addplot[color=plotRed,data cs=polarrad, domain=0:pi/2] {(5*cos(\x r)^2*sin(\x r)^2)/(cos(\x r)^5 + sin(\x r)^5)};
         
-                    \addlegendentry{$r = \tfrac{5b\cos^2\theta\sin^2\theta}{\cos^5\theta + \sin^5\theta}$};
+                    \addlegendentry{$C$};
                 \end{axis}
             \end{tikzpicture}
         \end{center}
