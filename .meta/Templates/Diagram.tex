@@ -1,0 +1,42 @@
+\begin{center}
+    \begin{tikzpicture}
+        \coordinate[label=left:$A$] (A) at (0, 0);
+        \coordinate[label=right:$B$] (B) at (6, 0);
+        \coordinate[label=right:$C$] (C) at (7.5, 1.5);
+        \coordinate[label=above right:$D$] (D) at (1.5, 1.5);
+        \coordinate[label=left:$E$] (E) at (0, 4);
+        \coordinate[label=right:$F$] (F) at (6, 4);
+        \coordinate[label=below right:$G$] (G) at (7.5, 5.5);
+        \coordinate[label=below right:$H$] (H) at (1.5, 5.5);
+        \coordinate[label=above:$L$] (L) at (0.75, 6);
+        \coordinate[label=above:$M$] (M) at (6.75, 6);
+
+        \draw (A) -- (B);
+        \draw (B) -- (C);
+        \draw (B) -- (F);
+        \draw (F) -- (G);
+        \draw (C) -- (G);
+        \draw (A) -- (E);
+        \draw (E) -- (F);
+        \draw[dotted] (A) -- (D);
+        \draw[dotted] (D) -- (C);
+        \draw[dotted] (D) -- (H);
+        \draw[dotted] (E) -- (H);
+        \draw[dotted] (H) -- (G);
+        \draw (E) -- (L);
+        \draw[dotted] (L) -- (H);
+        \draw (F) -- (M);
+        \draw (M) -- (G);
+        \draw (L) -- (M);
+
+        \draw pic [draw, angle radius=12mm, "$\theta$"] {angle = H--E--L};
+
+        \draw[very thick, ->] (A) -- (1, 0) node[anchor=north] {$\vec i$};
+        \draw[very thick, ->] (A) -- (0.707, 0.707) node[anchor=west] {$\vec j$};
+        \draw[very thick, ->] (A) -- (0, 1) node[anchor=east] {$\vec k$};
+
+        \node[anchor=north] at ($(A)!0.5!(B)$) {3 m};
+        \node[anchor=west] at ($(B)!0.5!(C)$) {2 m};
+        \node[anchor=west] at ($(C)!0.5!(G)$) {2 m};
+    \end{tikzpicture}
+\end{center}
