@@ -599,15 +599,14 @@
             }
 
         \part
-            Note that $x^2 + y^2 = 12 \implies x^2 = 12 - y^2$. Also note that when $x = 0$, $y = \sqrt{12}$.
+            Note that when the curves intersect at $x = \sqrt{3}$, we have $y = 3$. Furthermore, when $x = 0$, we have $y = \sqrt{12}$. Also note that $x^2 + y^2 = 12 \implies x^2 = 12 - y^2$.
             \begin{align*}
-                \volume &= \pi\int_0^{\sqrt{12}} \left(\left(12 - y^2\right) - y\right) \d y\\
-                &= \pi \eval{12 y - \dfrac13 y^3 - \dfrac12 y^2}{0}{\sqrt{12}}\\
-                &= \pi \left(16 \sqrt{3} - 6\right)
+                \volume &= \pi\int_0^{3} y \d y + \pi \int_{3}^{\sqrt{12}} \left(12 - y^2\right) \d y\\
+                &= \pi\left(16\sqrt{3} - \dfrac{45}2\right)
             \end{align*}
 
             \boxt{
-                The solid has a volume of $\pi\left(16\sqrt3 - 6\right)$ units$^3$.
+                The solid has a volume of $\pi\left(16\sqrt{3} - \dfrac{45}2\right)$ units$^3$.
             }
 
     \problem{}
