@@ -1,0 +1,400 @@
+\documentclass{jhwhw}
+
+\title{ASRJC 9649/2023/JC1/MYE}
+\author{Eytan Chong}
+\date{2024-06-02}
+
+\begin{document}
+    \problem{}
+        It is given that $f(r) = \dfrac1{(r+1)(r+2)}$.
+
+        \begin{enumerate}
+            \item Show that $f(r-1) - f(r) = \dfrac2{r(r+1)(r+2)}$ and find $\sum\limits_{r = 1}^n \dfrac1{r(r+1)(r+2)}$ in terms of $n$.
+            \item \begin{enumerate}
+                \item Deduce the exact value of $\sum\limits_{r = 1}^\infty \dfrac1{r(r+1)(r+2)}$.
+                \item For $n > 3$, deduce an expression for $\sum\limits_{r = 3}^{N-1} \dfrac1{r(r-1)(r-2)}$ in terms of $N$.
+            \end{enumerate}
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                f(r-1) - f(r) &= \dfrac1{(r-1+1)(r-1+2)} - \dfrac1{(r+1)(r+2)}\\
+                &= \dfrac1{r(r+1)} - \dfrac1{(r+1)(r+2)}\\
+                &= \dfrac{(r+2)-r}{r(r+1)(r+2)}\\
+                &= \dfrac2{r(r+1)(r+2)}
+            \end{align*}
+
+            \begin{align*}
+                \sum_{r=1}^n \dfrac1{r(r+1)(r+2)} &= \dfrac12 \sum_{r=1}^n \dfrac2{r(r+1)(r+2)}\\
+                &= \dfrac12 \sum_{r=1}^n \Big(f(r-1) - f(r)\Big)\\
+                &= \dfrac12 \left(\sum_{r=1}^n f(r-1) - \sum_{r=1}^n f(r)\right)\\
+                &= \dfrac12 \left(\sum_{r=0}^{n-1} f(r) - \sum_{r=1}^n f(r)\right)\\
+                &= \dfrac12 \left(\left[f(0) + \sum_{r=1}^{n-1} f(r)\right] - \left[\sum_{r=1}^{n-1} f(r) + f(n)\right]\right)\\
+                &= \dfrac12 \Big(f(0) - f(n)\Big)\\
+                &= \dfrac12 \left(\dfrac1{1 \cdot 2} - \dfrac1{(n+1)(n+2)}\right)\\
+                &= \dfrac14 - \dfrac1{2(n+1)(n+2)}
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\sum\limits_{r=1}^n \dfrac1{r(r+1)(r+2)} = \dfrac14 - \dfrac1{2(n+1)(n+2)}$
+            }
+
+        \part
+            \subpart
+                \begin{align*}
+                    \sum_{r=1}^\infty \dfrac1{r(r+1)(r+2)} &= \lim_{n \to \infty} \sum_{r=1}^n \dfrac1{r(r+1)(r+2)}\\
+                    &= \lim_{n \to \infty} \left(\dfrac14 - \dfrac1{2(n+1)(n+2)}\right)\\
+                    &= \dfrac14
+                \end{align*}
+
+                \boxt{
+                    $\displaystyle\sum\limits_{r=1}^\infty \dfrac1{r(r+1)(r+2)} = \dfrac14$
+                }
+
+            \subpart
+                \begin{align*}
+                    \sum_{r = 3}^{N-1} \dfrac1{r(r-1)(r-2)} &= \sum_{r = 1}^{N-3} \dfrac1{(r+2)(r+1)r}\\
+                    &= \dfrac14 - \dfrac1{2(N-3+1)(N-3+2)}\\
+                    &= \dfrac14 - \dfrac1{2(N-2)(N-1)} 
+                \end{align*}
+
+                \boxt{
+                    $\displaystyle\sum\limits_{r = 3}^{N-1} \dfrac1{r(r-1)(r-2)} = \dfrac14 - \dfrac1{2(N-2)(N-1)}$
+                }
+
+    \problem{}
+        \begin{enumerate}
+            \item A geometric progression $G$ has positive first term $a$, a common ratio $r$ and sum to infinity $S$. The sum to infinity of the even-numbered terms of $G$, i.e. the second, fourth, sixth, $\ldots$ terms, is $-\dfrac12 S$.
+            \begin{enumerate}
+                \item Find the value of $r$.
+                \item In another geometric progression $H$, each term is the modulus of the corresponding term of $G$. Given that the third term of $G$ is 2, show that the sum to infinity of $H$ is 27.
+            \end{enumerate}
+            \item An arithmetic progression has first term 1000 and common difference $-1.4$. Determine, with clear workings, the value of the first negative term of the sequence and the sum of all the positive terms.
+        \end{enumerate}
+
+    \solution
+        \part
+            \subpart
+
+                \noindent Let the $n$th term of $G$ be $a_n = ar^{n-1}$. Since the sum to infinity of $S$ exists, $\abs{r} < 1$.
+                \begin{align*}
+                    \sum_{n=1}^\infty a_{2n} &= \sum_{n=1}^\infty ar^{2n-1}\\
+                    &= \dfrac{a}{r} \sum_{n=1}^\infty \left(r^2\right)^n\\
+                    &= \dfrac{a}{r} \cdot \dfrac{r^2}{1-r^2}\\
+                    &= \dfrac{ar}{1-r^2}
+                \end{align*}
+                Note that $S = \dfrac{a}{1-r}$. Thus, we have
+                \begin{alignat*}{2}
+                    &&-\dfrac12 \cdot \dfrac{a}{1-r} &= \dfrac{ar}{1-r^2}\\
+                    \implies&&-\dfrac12 \cdot \dfrac1{1-r} &= \dfrac{r}{1-r^2}\\
+                    \implies&&1-r^2 &= -2r(1-r)\\
+                    \implies&&3r^2 - 2r - 1 &= 0\\
+                    \implies&&(3r+1)(r-1) &= 0
+                \end{alignat*}
+                Hence, $r = -\dfrac13$. Note that we reject $r = 1$ since $\abs{r} < 1$.
+
+                \boxt{
+                    $r = -\dfrac13$
+                }
+
+            \subpart
+                
+                \noindent Since $a_3 = 2 = a\left(-\dfrac13\right)^2$, we have $a = 18$. Let the $n$th term of $H$ be $b_n = \abs{a_n} = \abs{18 \left(-\dfrac13\right)^{n-1}} = 18 \left(\dfrac13\right)^{n-1}$. Hence, the sum to infinity of $H$ is given by
+                \begin{equation*}
+                    \sum_{n=1}^\infty b_n = \dfrac{18}{1-1/3} = 27
+                \end{equation*}
+
+        \part
+            Let the $n$th term of the arithmetic progression be $a_n = 1000 - 1.4(n-1) = 1001.4 - 1.4n$. Consider $a_n < 0$.
+            \begin{alignat*}{2}
+                &&a_n &< 0\\
+                \implies&&1001.4 - 1.4n &< 0\\
+                \implies&&1.4n &> 1001.4\\
+                \implies&&n &> \dfrac{1001.4}{1.4}\\
+                && &= 715.3
+            \end{alignat*}
+            Hence, the first negative term of the sequence is achieved when $n = 716$. Thus, the value of the first negative term is $a_{716} = 1001.4 - 1.4\cdot716 = -1$.
+
+            \boxt{
+                The value of the first negative term is $-1$.
+            }
+            \begin{align*}
+                \sum_{n=1}^{715} a_n &= \sum_{n=1}^{715} \Big(1001.4 - 1.4n\Big)\\
+                &= 1001.4 \cdot 715 - 1.4 \cdot \dfrac{715\cdot716}{2}\\
+                &= 357643
+            \end{align*}
+
+            \boxt{
+                The sum of all the positive terms is 357643.
+            }
+
+    \problem{}
+        \textbf{Omitted.}
+
+    \problem{}
+        Referring to the pole $O$, the curve $C$ has polar equation $r = \cot \theta$, where $\dfrac\pi6 < \theta < \dfrac\pi2$.
+        
+        \begin{enumerate}
+            \item Sketch the curve $C$.
+            \item Show that $\der{y}{x} = \dfrac1{r(r^2 + 2)}$. Determine the exact range of values of the gradient of $C$.
+            \item Obtain a Cartesian equation of $C$ in the form $y = f(x)$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = pi/6:pi/2,
+                        samples = 100,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = \empty,
+                        xmin=-0.1,
+                        xmax=2,
+                        ymin=-0.1,
+                        ymax=1,
+                        xlabel = {$\theta=0$},
+                        ylabel = {$\theta = \frac\pi2$},
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[color=plotRed,data cs=polarrad] {1/tan(\x r)};
+            
+                        \addlegendentry{$C$};
+
+                        \draw (1.5, 0.866) circle[radius=2.5pt] node[anchor=west] {$\coord{\dfrac\pi6}{\sqrt3}$};
+
+                        \draw (0, 0) circle[radius=2.5pt];
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+        \part
+            Note that $\der{r}{\theta} = -\csc^2 \theta = -(1 + r^2)$.
+            \begin{align*}
+                \der{y}{x} &= \dfrac{\der{r}{\theta}\sin\theta + r\cos\theta}{\der{r}{\theta}\cos\theta - r\sin\theta}\\
+                &= \dfrac{-(1+r^2)\sin\theta + r\cos\theta}{-(1+r^2)\cos\theta - r\sin\theta}\\
+                &= \dfrac{-(1+r^2) + r\cot\theta}{-(1+r^2)\cot\theta - r}\\
+                &= \dfrac{-(1+r^2) + r^2}{-(1+r^2)r - r}\\
+                &= \dfrac{(1+r^2) - r^2}{(1+r^2)r + r}\\
+                &= \dfrac1{r(2+r^2)}
+            \end{align*}
+            Observe that $r \in (0, \sqrt{3})$. Since $\der{y}{x} = \dfrac1{r(r^2 + 2)}$ is continuous and decreasing on the interval $(0, \sqrt{3})$, we have $\der{y}{x} \in \left(\dfrac1{\sqrt3(\sqrt{3}^2 + 2)}, \infty\right) = \left(\dfrac1{5\sqrt{3}}, \infty\right)$.
+
+            \boxt{
+                $\der{y}{x} \in \left(\dfrac1{5\sqrt{3}}, \infty\right)$
+            }
+
+        \part
+            \begin{alignat*}{2}
+                    &&r &= \cot\theta\\
+                    \implies&&r\sin\theta &= \cos\theta\\
+                    \implies&&y &= \cos \arctan \dfrac{y}{x}\\
+                    && &= \dfrac{x}{\sqrt{x^2 + y^2}}\\
+                    \implies&&y^2 &= \dfrac{x^2}{x^2 + y^2}\\
+                    \implies&&y^2 \left(x^2 + y^2\right) &= x^2\\
+                    \implies&&y^4 + x^2y^2 - x^2 &= 0\\
+                    \implies&&y^2 &= \dfrac{-x^2 + \sqrt{x^4 + 4x^2}}2 \tag{$\ast$}\\
+                    \implies&&y &= \sqrt{\dfrac{-x^2 + \sqrt{x^4 + 4x^2}}2} \tag{$\ast$}
+            \end{alignat*}
+            Note that in the steps marked ($\ast$), we reject the negative branch since $y^2 \geq 0$ and $y > 0$ in the given domain. 
+
+            \boxt{
+                $y = \sqrt{\dfrac{-x^2 + \sqrt{x^4 + 4x^2}}2}$
+            }
+
+    \problem{}
+        Relative to an origin $O$, an object is placed at point $P$ with coordinates $\coordiii{-4}{c}{c}$, where $c$ is a positive real constant, and there is a mirror plane with equation $x + y + z = 1$. It is known that the shortest distance between $P$ and the mirror is $3\sqrt3$.
+
+        \begin{enumerate}
+            \item Show that $c = 7$.
+        \end{enumerate}
+    
+        \noindent A point $A$ has coordinates $\coordiii{-15}{17}5$.
+
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item Find the coordinates of $A'$, the point of reflection of $A$ in the mirror.
+        \end{enumerate}
+
+        \noindent A laser beam is directed from $A$ towards a point on the mirror and is reflected to reach the object at $P$.
+
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item Find the acute angle that the laser beam makes with the mirror.
+        \end{enumerate}
+    
+    \solution
+        \part
+            We have that the mirror is defined by the vector equation $\vec r \cdot \cveciii111 = 1$. Note that the point with position vector $\cveciii100$ is on the mirror. Thus,
+            \begin{align*}
+                \text{Shortest distance between $P$ and mirror} &= \dfrac{\abs{\left[\cveciii{-4}{c}{c} - \cveciii100\right] \cdot \cveciii111}}{\abs{\cveciii111}}\\
+                &= \dfrac1{\sqrt3} \abs{\cveciii{-5}{c}{c} \cdot \cveciii111}\\
+                &= \dfrac{\sqrt3}{3} \abs{-5+2c}
+            \end{align*}
+            We are given that the shortest distance between $P$ and the mirror is $3\sqrt3$ units. Hence,
+            \begin{alignat*}{2}
+                &&\dfrac{\sqrt3}3 \abs{-5+2c} &= 3\sqrt3\\
+                \implies&&\abs{-5+2c} &= 9
+            \end{alignat*}
+            \case{1}{} $-5 + 2c > 0 \implies -5+2c = 9 \implies c = 7$.
+
+            \case{2}{} $-5 + 2c < 0 \implies -5+2c = -9 \implies c = -2$ which cannot be since $c$ is positive. Hence, $c = 7$ as required.
+
+        \part
+            Let $F$ be a point on the mirror (i.e. $\overrightarrow{OF} \cdot \cveciii111 = 1$) such that $\overrightarrow{AF} = \lambda \cveciii111$ for some $\lambda \in \mathbb{R}$.
+            \begin{alignat*}{2}
+                &&\overrightarrow{AF} &= \lambda \cveciii111\\
+                \implies&&\overrightarrow{OF} - \cveciii{-15}{17}5 &= \lambda\cveciii111\\
+                \implies&&\Big[\overrightarrow{OF} - \cveciii{-15}{17}5\Big] \cdot \cveciii111 &= \lambda\cveciii111 \cdot \cveciii111\\
+                \implies&&\overrightarrow{OF} \cdot \cveciii111 - \cveciii{-15}{17}5 \cdot \cveciii111 &= \lambda \cveciii111 \cdot \cveciii111\\
+                \implies&&1 - 7 &= 3\lambda\\
+                \implies&&\lambda &= -2\\
+                \implies&&\overrightarrow{AF} &= -2\cveciii111
+            \end{alignat*}
+            Note that since $A'$ is the reflection of $A$ in the mirror, $\overrightarrow{AF} = \overrightarrow{FA'}$.
+            \begin{alignat*}{2}
+                &&\overrightarrow{AF} &= \overrightarrow{FA'}\\
+                \implies&&\overrightarrow{AA'} &= 2\overrightarrow{AF}\\
+                \implies&&\overrightarrow{OA'} - \overrightarrow{OA} &= 2\overrightarrow{AF}\\
+                \implies&&\overrightarrow{OA'} - \cveciii{-15}{17}5 &= 2\cdot -2\cveciii111\\
+                \implies&&\overrightarrow{OA'} &= \cveciii{-4}{-4}{-4} + \cveciii{-15}{17}5\\
+                && &= \cveciii{-19}{13}1
+            \end{alignat*}
+            \boxt{
+                $A'\coordiii{-19}{13}1$
+            }
+
+        \part
+            Let $\theta$ be the acute angle the laser beam makes with the mirror. Note that $\overrightarrow{A'P} = \cveciii{15}{-6}6 = 3\cveciii5{-2}2$. Hence, the line $A'P$ has direction vector $\cveciii5{-2}2$.
+            \begin{alignat*}{2}
+                &&\sin\theta &= \dfrac{\abs{\cveciii5{-2}2 \cdot \cveciii111}}{\abs{\cveciii5{-2}2}\abs{\cveciii111}}\\
+                && &= \dfrac{5}{\sqrt{99}}\\
+                \implies&&\theta &= 0.527 \tosf{3}
+            \end{alignat*}
+
+            \boxt{
+                The laser beams makes an acute angle of $0.527$ with the mirror.
+            }
+    \problem{}
+        \textbf{Omitted.}
+
+    \problem{}
+        A straight street of width 20 metres is bounded on its parallel sides by two vertical walls, one of height 13 metres, the other of height 8 metres. The intensity of light at point $P$ at ground level on the street is proportional to the angle $\theta$ radians, where $\theta = \angle APB$ as shown in the cross-sectional diagram below.
+
+        \begin{center}
+            \begin{tikzpicture}
+                \coordinate[label=below:$P$] (P) at (0, 0);
+                \coordinate[label=above:$A$] (A) at (-3, 4);
+                \coordinate[label=above:$B$] (B) at (7, 13/2);
+                \coordinate (AF) at (-3, 0);
+                \coordinate (BF) at (7, 0);
+
+                \draw (AF)--(BF);
+                \draw (AF)--(A);
+                \draw (BF)--(B);
+                \draw (P)--(A);
+                \draw (P)--(B);
+
+                \draw pic [draw, angle radius=12mm, "$\theta$"] {angle = B--P--A};
+        
+                \node[anchor=east] at ($(A)!0.5!(AF)$) {8 m};
+                \node[anchor=west] at ($(B)!0.5!(BF)$) {13 m};
+                \node[anchor=north] at ($(AF)!0.5!(P)$) {$x$ m};
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+            \item Given that the distance of $P$ from the base of the wall of height 8 metres is $x$ metres ($0 \leq x \leq 20$), show that
+            \begin{equation*}
+                \theta = \arctan \dfrac{x}8 + \arctan \dfrac{20-x}{13}
+            \end{equation*}
+            \item Find an expression for $\der{\theta}{x}$.
+            \item Hence, determine the value of $x$ corresponding to the maximum light intensity at $P$. Give your answer to four significant figures. You need not justify that the value of $x$ obtained gives the maximum light intensity at $P$.
+            \item Find the minimum value of $\theta$ as $x$ varies.
+            \item The point $P$ moves across the street from the base of $A$ to the base of $B$ with speed $0.5$ ms$^{-1}$. Determine the rate of change of $\theta$ with respect to time when $P$ is at the midpoint of the street.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{center}
+                \begin{tikzpicture}
+                    \coordinate[label=below:$P$] (P) at (0, 0);
+                    \coordinate[label=above:$A$] (A) at (-3, 4);
+                    \coordinate[label=above:$B$] (B) at (7, 13/2);
+                    \coordinate (AF) at (-3, 0);
+                    \coordinate (BF) at (7, 0);
+                    \coordinate (PA) at (0, 4);
+                    \coordinate (PB) at (0, 13/2);
+
+                    \draw (AF)--(BF);
+                    \draw (AF)--(A);
+                    \draw (BF)--(B);
+                    \draw (P)--(A);
+                    \draw (P)--(B);
+                    \draw[dotted] (PB) -- (P);
+                    \draw[dotted] (A) -- (PA);
+                    \draw[dotted] (B) -- (PB);
+
+                    \draw pic [draw, angle radius=12mm, "$\phi_1$"] {angle = AF--A--P};
+                    \draw pic [draw, angle radius=12mm, "$\phi_2$"] {angle = P--B--BF};
+                    \draw pic [draw, angle radius=12mm, "$\phi_1$"] {angle = PA--P--A};
+                    \draw pic [draw, angle radius=14mm, "$\phi_2$"] {angle = B--P--PB};
+            
+                    \node[anchor=east] at ($(A)!0.5!(AF)$) {8 m};
+                    \node[anchor=west] at ($(B)!0.5!(BF)$) {13 m};
+                    \node[anchor=north] at ($(AF)!0.5!(P)$) {$x$ m};
+                    \node[anchor=north] at ($(BF)!0.5!(P)$) {$(20-x)$ m};
+                \end{tikzpicture}
+            \end{center}
+
+            \noindent Consider the diagram above. It is clear that $\theta = \phi_1 + \phi_2$. Observe that $\tan \phi_1 = \dfrac{x}8$ and $\tan \phi_2 = \dfrac{20-x}{13}$. Thus, $\theta = \arctan \dfrac{x}8 + \arctan \dfrac{20-x}{13}$.
+
+        \part
+            \begin{align*}
+                \der{\theta}{x} &= \dfrac1{1+\left(\frac{x}8\right)^2}\cdot\dfrac18 + \dfrac1{1+\left(\frac{20-x}{13}\right)^2} \cdot \left(-\dfrac1{13}\right)\\
+                &= \dfrac{8^2}{8^2 + x^2} \cdot \dfrac18 + \dfrac{13^2}{13^2 + (20-x)^2} \cdot \left(-\dfrac1{13}\right)\\
+                &= \dfrac{8}{x^2 + 64} + \dfrac{13}{(20-x)^2 + 169}
+            \end{align*}
+
+        \part
+            At stationary points, $\der{\theta}{x} = 0$. Hence,
+            \begin{equation*}
+                \dfrac{8}{x^2 + 64} + \dfrac{13}{(20-x)^2 + 169} = 0
+            \end{equation*}
+            From G.C, we have $x = 10.05$ and $x = -74.05 \tosf{4}$. Since $0 \leq x \leq 20$, we take $x = 10.05$.
+
+            \boxt{
+                $x = 10.05 \tosf{4}$
+            }
+
+        \part
+            Since there is only one stationary point in the interval $[0, 20]$ and it is a maximum, the minimum value of $\theta$ occurs either at $x = 0$ or $x = 20$, i.e. the extreme ends of the interval.
+            \begin{align*}
+                x = 0 &: \theta = \arctan \frac{20}{13} = 0.994 \tosf{3}\\
+                x = 20 &: \theta = \arctan \frac{20}8 = 1.19 \tosf{3}
+            \end{align*}
+
+            \boxt{
+                The minimum value of $\theta$ is $0.994$.
+            }
+
+        \part
+            Let the time elapsed be $t$ s. We have $\der{x}{t} = 0.5$. Also note that when $P$ is at the midpoint of the street, $x = 10$.
+            \begin{align*}
+                \left.\der{\theta}{t}\right|_{x=10} &= \left.\der{\theta}{x} \cdot \der{x}{t}\right|_{x=10}\\
+                &= \left(\dfrac{8}{10^2 + 64} + \dfrac{13}{(20-10)^2 + 169}\right) \cdot 0.5\\
+                &= 0.000227 \tosf{3}
+            \end{align*}
+            
+            \boxt{
+                The rate of change of $\theta$ is $0.000227$ rad per second.
+            }
+\end{document}

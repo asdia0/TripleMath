@@ -50,3 +50,4 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | [Timed Practice 1](/Misc/Timed%20Practice%201/Timed%20Practice%201.pdf) | A4, B1 |
 | [Timed Practice 2](/Misc/Timed%20Practice%202/Timed%20Practice%202.pdf) | A2 |
 | [Vectors Practice Questions](/Misc/Vectors%20Practice%20Questions/Vectors%20Practice%20Questions.pdf) | A7, A8 |
+| [ASRJC 9649 2023 JC1 MYE](/Misc/ASRJC%209649%202023%20JC1%20MYE/ASRJC%209649%202023%20JC1%20MYE.pdf) | |
