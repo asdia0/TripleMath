@@ -50,7 +50,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            Consider the above diagram. Since $\abs{\vec a} = \abs{\vec b}$, they form a rhombus. Recall that the diagonals of a rhombus bisect opposite angles. Thus, the sum $\vec a + \vec b$ bisects $\angle AOB$ and is hence parallel to $\overrightarrow{OC}$.
+            Consider the above diagram. Since $\abs{\hat{\vec a}} = \abs{\hat{\vec b}}$, they form a rhombus. Recall that the diagonals of a rhombus bisect opposite angles. Thus, the sum $\hat{\vec a} + \hat{\vec b}$ bisects $\angle AOB$ and is hence parallel to $\overrightarrow{OC}$.
 
             \begin{center}
                 \begin{tikzpicture}
@@ -131,7 +131,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            By the Ratio Theorem, $\overrightarrow{OC} = \dfrac15 \vec a + \dfrac45 \vec b$. Since $F$ lies on $OA$, it has the direction vector $\dfrac15 \vec a$. Thus, OF, the length of projection of $\vec c$ on $\vec a$, is $\dfrac15 \abs{\vec a}$.
+            By the Ratio Theorem, $\overrightarrow{OC} = \dfrac15 \vec a + \dfrac45 \vec b$. Since $F$ lies on $OA$, it has the direction vector $\dfrac15 \vec a$. Thus, $OF$, the length of projection of $\vec c$ on $\vec a$, is $\dfrac15 \abs{\vec a}$.
 
             \boxt{
                 The length of projection of $\vec c$ on $\vec a$ is $\dfrac15 \abs{\vec a}$.
@@ -570,8 +570,6 @@
                     \draw (C) -- (B);
                     \draw (B) -- (A);
                     \draw (O) -- (D);
-
-                    \fill (O) circle[radius=2.5pt];
                 \end{tikzpicture}
             \end{center}
 
@@ -595,8 +593,6 @@
                     \draw (B) -- (A);
                     \draw (O) -- (B);
                     \draw[dotted] (B) -- (F);
-
-                    \fill (O) circle[radius=2.5pt];
 
                     \draw pic [draw, angle radius=5mm, ""] {angle = O--C--B};
                     \draw pic [draw, angle radius=5mm, ""] {angle = A--O--B};
