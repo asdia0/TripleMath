@@ -18,12 +18,11 @@
             \implies&&\lambda \vec b \cdot \vec b + (\vec a - \vec c) \cdot \vec b&= 0\\
             \implies&&\lambda \abs{\vec b}^2 &= (\vec c - \vec a) \cdot \vec b\\
             \implies&&\lambda &= \dfrac{(\vec c - \vec a) \cdot \vec b}{\abs{\vec b}^2}\\
-            \implies&&\overrightarrow{OF} &= \vec a + \dfrac{(\vec c - \vec a) \cdot \vec b}{\abs{\vec b}^2} \, \vec b\\
-            && &= \vec a + \left((\vec c - \vec a) \cdot \hat{\vec b}\right) \hat{\vec b}
+            \implies&&\overrightarrow{OF} &= \vec a + \dfrac{(\vec c - \vec a) \cdot \vec b}{\abs{\vec b}^2} \, \vec b
         \end{alignat*}
 
         \boxt{
-            $\overrightarrow{OF} = \vec a + \left((\vec c - \vec a) \cdot \hat{\vec b}\right) \hat{\vec b}$
+            $\overrightarrow{OF} = \vec a + \dfrac{(\vec c - \vec a) \cdot \vec b}{\abs{\vec b}^2} \, \vec b$
         }
 
     \problem{}
@@ -51,7 +50,7 @@
             \end{alignat*}
 
             \boxt{
-                $\overrightarrow{CP} = \cveciii22{-4}$
+                $\overrightarrow{CP} = 2\vec i + 2\vec j - 4\vec k$
             }
 
         \part
@@ -134,22 +133,18 @@
             \end{alignat*}
             This gives the following system:
             \begin{equation*}
-                \begin{cases}
-                    2\mu + 2\lambda &= 2\\
-                    \mu + 4\lambda &= 0\\
-                    \mu - \lambda &= 1
-                \end{cases}
+                \systeme{2\mu + 2\lambda = 2, \mu - 4\lambda = 0, \mu + \lambda = 1}
             \end{equation*}
-            \noindent which has the unique solution $\mu = \dfrac45$ and $\lambda = -\dfrac15$. Thus, the intersection point $P$ has position vector $\cveciii30{-2} - \dfrac15\cveciii{-2}4{-1} = \dfrac15\cveciii{17}{-4}{-4}$ and thus has coordinates $\coordiii{\dfrac{17}5}{-\dfrac45}{-\dfrac95}$.
+            \noindent which has the unique solution $\mu = \dfrac45$ and $\lambda = \dfrac15$. Thus, the intersection point $P$ has position vector $\cveciii30{-2} + \dfrac15\cveciii{-2}4{-1} = \dfrac15\cveciii{13}{4}{-11}$ and thus has coordinates $\coordiii{\dfrac{13}5}{\dfrac45}{-\dfrac{11}5}$.
 
             \boxt{
-                $\coordiii{\dfrac{17}5}{-\dfrac45}{-\dfrac95}$
+                $\coordiii{\dfrac{13}5}{\dfrac45}{-\dfrac{11}5}$
             }
 
         \part
             Let $\theta$ be the acute angle between $l_1$ and $l_2$.
             \begin{alignat*}{2}
-                &&\cos\theta &= \dfrac{\abs{\cveciii{-2}41 \cdot \cveciii211}}{\abs{\cveciii{-2}41} \abs{\cveciii211}}\\
+                &&\cos\theta &= \dfrac{\abs{\cveciii{-2}4{-1} \cdot \cveciii211}}{\abs{\cveciii{-2}4{-1}} \abs{\cveciii211}}\\
                 && &= \dfrac{\abs{-4 + 4 - 1}}{\sqrt{21}\cdot\sqrt{6}}\\
                 && &= \dfrac1{\sqrt{126}}\\
                 \implies&&\theta &= \arccos \dfrac1{\sqrt{126}}\\
