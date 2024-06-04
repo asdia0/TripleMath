@@ -52,3 +52,4 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | [Vectors Practice Questions](/Misc/Vectors%20Practice%20Questions/Vectors%20Practice%20Questions.pdf) | A7, A8 |
 | [ASRJC 9649 2023 JC1 MYE](/Misc/ASRJC%209649%202023%20JC1%20MYE/ASRJC%209649%202023%20JC1%20MYE.pdf) | |
 | [EJC 9649 2023 JC1 MYE](/Misc/EJC%209649%202023%20JC1%20MYE/EJC%209649%202023%20JC1%20MYE.pdf) | |
+| [HCI 9649 2023 JC1 MYE](/Misc/HCI%209649%202023%20JC1%20MYE/HCI%209649%202023%20JC1%20MYE.pdf) | |
