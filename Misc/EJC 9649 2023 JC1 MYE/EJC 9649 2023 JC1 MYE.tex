@@ -88,9 +88,11 @@
             \noindent \textbf{Conjecture.} For all $n \in \mathbb{N}$, $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$.
 
         \part
-            \textbf{Base Case.} $n = 1 : f^1(x) = 2 - \dfrac1x = \dfrac{2x - 1}{x - 0}$. 
+            Let $P_n$ be the statement that $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$ for $n \in \mathbb{N}$.
+
+            \noindent \textbf{Base Case.} $n = 1 : f^1(x) = 2 - \dfrac1x = \dfrac{2x - 1}{x - 0}$. Hence, $P_1$ is true.
             
-            \noindent \textbf{Inductive Hypothesis.} For some $k \in \mathbb{N}$, $f^k(x) = \dfrac{(k+1)x - k}{kx - (k-1)}$.
+            \noindent \textbf{Inductive Hypothesis.} Assume $P_k$ is true for some $k \in \mathbb{N}$.
 
             \noindent \textbf{Inductive Step.} Consider $f^{k+1}(x)$.
             \begin{align*}
@@ -101,7 +103,7 @@
                 &= \dfrac{(k+2)x - (k+1)}{(k+1) - k}
             \end{align*}
 
-            \noindent Thus, $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$ for all $n \in \mathbb{N}$.
+            \noindent Hence, $P_k \implies P_{k+1}$. Since $P_1$ is true, by induction, $P_n$ is true for all $n \in \mathbb{N}$.
 
         \part
             Since $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$ for all $n \in \mathbb{N}$, we have the restriction $nx - (n-1) \neq 0 \implies x \neq \dfrac{n-1}{n}$. Hence,
