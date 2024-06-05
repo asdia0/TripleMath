@@ -1,0 +1,371 @@
+\documentclass{jhwhw}
+
+\title{RI 9649 JC1 MYE}
+\author{Eytan Chong}
+\date{2024-06-05}
+
+\begin{document}
+    \problem{}
+        \begin{enumerate}
+            \item Find, in terms of $n$, $\displaystyle\sum\limits_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right)$.
+            \item Give a reason why the series $\displaystyle\sum\limits_{r=2}^\infty \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right)$ converges, and write down its value.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \sum_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) &= \sum_{r=2}^n \left[\left(\dfrac12\right)^r + \dfrac12 \left(\dfrac1{r-1} - \dfrac1{r+1}\right)\right]\\
+                &= \dfrac14 \cdot \dfrac{1 - (1/2)^{n-1}}{1 - 1/2} + \dfrac12 \left(\sum_{r=2}^n \dfrac1{r-1} - \sum_{r=2}^n \dfrac1{r+1}\right)\\
+                &= \dfrac12 - \dfrac1{2^n} + \dfrac12\left(\sum_{r=1}^{n-1} \dfrac1r - \sum_{r=3}^{n+1} \dfrac1r\right)\\
+                &= \dfrac12 - \dfrac1{2^n} + \dfrac12\left[\left(\dfrac11 + \dfrac12 + \sum_{r=3}^{n-1} \dfrac1r\right) - \left(\sum_{r=3}^{n-1} \dfrac1r + \dfrac1n + \dfrac1{n+1}\right)\right]\\
+                &= \dfrac12 - \dfrac1{2^n} + \dfrac12\left(\dfrac11 + \dfrac12 - \dfrac1n - \dfrac1{n+1}\right)\\
+                &= \dfrac54 - \dfrac1{2^n} - \dfrac1{2n} - \dfrac1{2n + 2}
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\sum\limits_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) = \dfrac54 - \dfrac1{2^n} - \dfrac1{2n} - \dfrac1{2n + 2}$
+            }
+
+        \part
+            \begin{align*}
+                \sum_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) &= \lim_{n \to \infty}\sum_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right)\\
+                &= \lim_{n \to \infty} \left(\dfrac54 - \dfrac1{2^n} - \dfrac1{2n} - \dfrac1{2n + 2}\right)\\
+                &= \dfrac54
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\sum\limits_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) = \dfrac54$
+            }
+
+    \problem{}
+        The curve $C$ has equation $y = \dfrac{x^2 + ax}{x - a}$, where $a$ is a positive constant.
+
+        \medskip
+
+        \noindent Sketch $C$, indicating clearly the equations of any asymptotes, the coordinates of turning points and the coordinates of the points where the curve crosses the axes.
+
+        \medskip
+
+        \noindent State the set of values that $y$ can take.
+
+    \solution
+        \textbf{Asymptotes.} Note that
+        \begin{equation*}
+            y = \dfrac{x^2 + ax}{x-a} = x + 2a + \dfrac{2a^2}{x-a}
+        \end{equation*}
+        Hence, $C$ has oblique asymptote $y = x + 2a$ and vertical asymptote $x = a$.
+
+        \medskip
+
+        \noindent \textbf{Turning Points.} Observe that $\der{y}{x} = \der{}{x} \left(x + 2a + \dfrac{2a^2}{x-a}\right) = 1 - \dfrac{2a^2}{(x-a)^2}$. For stationary points, $\der{y}{x} = 0$.
+        \begin{alignat*}{2}
+            &&\der{y}{x} &= 0\\
+            \implies&&1 - \dfrac{2a^2}{(x-a)^2} &= 0\\
+            \implies&&(x-a)^2 &= 2a^2\\
+            \implies&&x-a &= \pm a\sqrt2\\
+            \implies&&x &= a \pm a\sqrt2\\
+            && &= a\left(1 \pm \sqrt2\right)
+        \end{alignat*}
+        Substituting $x = a\left(1 \pm \sqrt2\right)$ into the equation of $C$, we have
+        \begin{align*}
+            y &= \dfrac{\left[a\left(1 \pm \sqrt2\right)\right]^2 + a\cdot a\left(1 \pm \sqrt2\right)}{a\left(1 \pm \sqrt2\right) - a}\\
+            &= a \left[\dfrac{\left[\left(1 \pm \sqrt2\right)\right]^2 + \left(1 \pm \sqrt2\right)}{\left(1 \pm \sqrt2\right) - 1}\right]\\
+            &= a \left[\dfrac{\left(1 \pm 2\sqrt2 + 2\right) + \left(1 \pm \sqrt2\right)}{\pm \sqrt2}\right]\\
+            &= a \left(\dfrac{4 \pm 3\sqrt2}{\pm \sqrt2}\right)\\
+            &= a\left(3 \pm 2\sqrt2\right)
+        \end{align*}
+        From the First Derivative Test, we see that $C$ obtains a minimum at $\coord{a + a\sqrt2}{3a + 2a\sqrt2}$ and a maximum at $\coord{a - a\sqrt2}{3a - 2a\sqrt2}$. 
+
+        \medskip
+
+        \noindent \textbf{Axial Intercepts.} When $x = 0$, we have $y = 0$. Consider $y = 0$.
+        \begin{alignat*}{2}
+            &&\dfrac{x^2 + ax}{x-a} &= 0\\
+            \implies&&x^2 + ax &= 0\\
+            \implies&&x(x + a) &= 0
+        \end{alignat*}
+        Hence, $x = 0$ or $x = -a$. Thus, $C$ intercepts the axes at $\coord00$ and $\coord{-a}0$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -3:7,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-1},
+                    xticklabels = {$-a$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-2,
+                    ymax=8,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north west] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f1, unbounded coords = jump] {x + 2 + 2/(x-1)};
+
+                    \addplot[dotted] {x + 2};
+
+                    \draw[dotted] (1, 8) -- (1, -2) node[anchor=south west] {$x = a$};
+        
+                    \addlegendentry{$C$};
+
+                    \fill (-0.414, 0.172) circle[radius=2.5pt] node[anchor=south] {$\coord{a - a\sqrt2}{3a - 2a\sqrt2}$};
+                    \fill (2.414, 5.83) circle[radius=2.5pt];
+
+                    \node[anchor=north] at (2.614, 5.83) {$\coord{a + a\sqrt2}{3a + 2a\sqrt2}$};
+
+                    \node[rotate=35] at (1.5, 3) {$y = x+2a$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \boxt{
+            $y$ can take on values in $\mathbb{R} \setminus \left(3a - 2a\sqrt2, 3a + 2a\sqrt2\right)$.
+        }
+
+    \problem{}
+        Sketch the curve $C$ with equation $4x^2 + y^2 = 1$ where $y \geq 0$. The region $R$ is described as the region bounded by the $x$-axis and $C$.
+
+        \medskip
+
+        \noindent Use differentiation to find the area of the largest rectangle that can be inscribed in the region $R$.
+
+    \solution
+        Observe that $4x^2 + y^2 = 1$ describes an ellipse centered at the origin with horizontal radius $\dfrac12$ and vertical radius 1.
+
+        \begin{center}            
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-0.5, 0.5, -0.354, 0.354},
+                    xticklabels = {$-\frac12$, $\frac12$, $-a$, $a$},
+                    ytick = {1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=0,
+                    ymax=1.1,
+                    xmin=-0.6,
+                    xmax=0.6,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed] (0, 0) ellipse[x radius=0.5, y radius=1];
+
+                    \addlegendentry{$C$};
+
+                    \draw[dotted] (-0.354, 0) -- (-0.354, 0.707);
+                    \draw[dotted] (0.354, 0) -- (0.354, 0.707);
+                    \draw[dotted] (-0.354, 0.707) -- (0.354, 0.707);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        Let the rectangle have base $2a$, where $a \geq 0$. When $x = a$, $y = \sqrt{1 - 4a^2}$. Thus, the rectangle has height $\sqrt{1 - 4a^2}$. Let $A(a) = 2a\sqrt{1 - 4a^2}$ be the area of the rectangle. Consider $A'(a) = 0$.
+        \begin{alignat*}{2}
+            &&A'(a) &= 0\\
+            \implies&&2\left(a \cdot \dfrac{8a}{2\sqrt{1-4a^2}} + \sqrt{1 - 4a^2}\right) &= 0\\
+            \implies&&2\left(\sqrt{1 - 4a^2} - \dfrac{4a^2}{1-4a^2}\right) &= 0\\
+            \implies&&2 \cdot \dfrac{\left(1-4a^2\right) - 4a^2}{\sqrt{1-4a^2}} &= 0\\
+            \implies&&1 - 8a^2 &= 0\\
+            \implies&&a &= \dfrac1{\sqrt8}
+        \end{alignat*}
+        Hence, $A(a)$ has a staionary point at $a = \dfrac1{\sqrt8}$.
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|}
+            \hline
+            $a$ & $\left(\dfrac1{\sqrt8}\right)^-$ & $\dfrac1{\sqrt8}$ & $\left(\dfrac1{\sqrt8}\right)^+$ \\\hline
+            $A'(a)$ & +ve   & 0 & -ve   \\\hline
+            \end{tabular}
+        \end{table}
+        \noindent By the First Derivative Test, we see that $A(a)$ achieves a maximum at $a = \dfrac1{\sqrt8}$. Hence,
+        \begin{align*}
+            \text{Maximum area} &= A\left(\dfrac1{\sqrt8}\right)\\
+            &= 2\cdot\dfrac1{\sqrt8}\sqrt{1 - 4\cdot\dfrac18}\\
+            &= \dfrac12 
+        \end{align*}
+
+        \boxt{
+            The area of the largest rectangle is $\dfrac12$ units$^2$.
+        }
+
+    \problem{}
+        \begin{enumerate}
+            \item Obtain the expansion of $(9 - x)^{5/2}\left(1 + 3x^2\right)^{5/2}$ up to and including the term in $x^3$. Give the coefficients as exact fractions in their simplest form.
+            \item Find the set of values of $x$ for which the expansion in part (a) is valid.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                &(9 - x)^{5/2}\left(1 + 3x^2\right)^{5/2}\\
+                &= 9^{5/2}\left(1 - \dfrac19 x\right)^{5/2}\left(1 + 3x^2\right)^{5/2}\\
+                &= 3^5 \left[1 + \dfrac{5/2}{1!} \left(-\dfrac{x}9\right)^1 + \dfrac{5/2 \cdot 3/2}{2!} \left(-\dfrac{x}9\right)^2 + \dfrac{5/2 \cdot 3.2 \cdot 1/2}{3!} \left(-\dfrac{x}9\right)^3 + \ldots\right]\\
+                &\hspace{2.25em}\left[1 + \dfrac{5/2}{1!}\left(3x^2\right)^1 + \ldots\right]\\
+                &= \left(243 - \dfrac{135}2 x + \dfrac{45}8 x^2 - \dfrac5{48} x^3 + \ldots\right)\left(1 + \dfrac{15}2 x^2 + \ldots\right)\\
+                &= \left(243 - \dfrac{135}2 x + \dfrac{45}8 x^2 - \dfrac5{48} x^3\right) + \left(243\cdot\dfrac{15}2 x^2 - \dfrac{135}2 \cdot \dfrac{15}2 x^3\right) + \ldots\\
+                &= 243 - \dfrac{135}2 x + \left(\dfrac{45}8 + 243\cdot\dfrac{15}2\right) x^2 - \left(\dfrac5{48} + \dfrac{135}2 \cdot \dfrac{15}2\right) x^3 + \ldots\\
+                &= 243 - \dfrac{135}2 x + \dfrac{14625}{8} x^2 + \dfrac{24305}{48} x^3 + \ldots
+            \end{align*}
+
+            \boxt{
+                $(9 - x)^{5/2}\left(1 + 3x^2\right)^{5/2} = 243 - \dfrac{135}2 x + \dfrac{14625}{8} x^2 + \dfrac{24305}{48} x^3 + \ldots$
+            }
+
+        \part
+            Note that the expansion of $\left(1 - \dfrac19 x\right)^{5/2}$ is valid for $\abs{-\dfrac19 x} < 1 \implies x < 9$, while the expansion of $\left(1 + 3x^2\right)^{5/2}$ is valid for $\abs{3x^2} < 1 \implies x^2 < \dfrac13 \implies -\dfrac1{\sqrt3} < x < \dfrac1{\sqrt3}$. Putting both inequalities together, we have $x \in \left(-\dfrac1{\sqrt3}, \dfrac1{\sqrt3}\right)$.
+
+            \boxt{
+                The expression is valid for $x \in \left(-\dfrac1{\sqrt3}, \dfrac1{\sqrt3}\right)$
+            }
+
+    \problem{}
+        \textbf{Omitted.}
+
+    \problem{}
+        \textbf{Omitted.}
+
+    \problem{}
+        \begin{enumerate}
+            \item Given that $u_1 = \dfrac72$ and $u_n = \dfrac12 u_{n-1} + n^2$ for $n \geq 2$, prove by mathematical induction that $u_n = 2n^2 - 4n + 6 - \left(\dfrac12\right)^n$ for all positive integers $n$.
+            \item \textbf{Omitted.}
+        \end{enumerate}
+
+    \solution
+        \part
+            Let $P_n$ be the statement that $u_n = 2n^2 - 4n + 6 - \left(\dfrac12\right)^n$, where $n \in \mathbb{N}$.
+
+            \noindent \textbf{Base Case.} $n = 1: u_1 = 2\cdot1^2 - 4\cdot1 + 6 - \left(\dfrac12\right)^1 = \dfrac72$. Hence, $P_1$ is true.
+
+            \noindent \textbf{Inductive Hypothesis.} Assume $P_k$ is true for some $k \in \mathbb{N}$.
+
+            \noindent \textbf{Inductive Step.} Consider $u_{n+1}$.
+            \begin{align*}
+                u_{k+1} &= \dfrac12 u_k + (k+1)^2\\
+                &= \dfrac12 \left[2k^2 -4k + 6 - \left(\dfrac12\right)^k\right] + (k+1)^2\\
+                &= k^2 - 2k + 3 - \left(\dfrac12\right)^{k+1} + (k+1)^2\\
+                &= \Big[\left(k^2 + 2k + 1\right) - 2k - 1\Big] -2k + 3 - \left(\dfrac12\right)^{k+1} + (k+1)^2\\
+                &= 2(k+1)^2 - 4k + 2 - \left(\dfrac12\right)^{k+1}\\
+                &= 2(k+1)^2 - \Big[(4k + 4) - 4\Big] + 2 - \left(\dfrac12\right)^{k+1}\\
+                &= 2(k+1)^2 - 4(k+1) + 6 - \left(\dfrac12\right)^{k+1}
+            \end{align*}
+            Hence $P_k \implies P_{k+1}$. Since $P_1$ is true, by induction, $P_n$ is true for all $n \in \mathbb{N}$.
+
+    \problem{}
+        \begin{enumerate}
+            \item On the 1st of January 2023, Mr Yu visited his newly acquired fishing farm for the first time and there were 2000 fish. His planned business model is such that on the last day of
+            each month, 30\% of the fish in the farm are sold off and another 150 fish are added in.
+
+            Based on the above information, Mr Yu wants to come up with a recurrence relation to predict the number of fish in his farm on the first day of subsequent months.
+
+            \begin{enumerate}
+                \item Mr Yu visits his farm once a month on the first day of every month. Let $u_n$ be the number of fish in his farm on his nth visit. Given that $u_1 = 2000$, write down a recurrence relation for $u_n$.
+                \item Solve the recurrence relation in part (i), leaving your answer in terms of $n$.
+            \end{enumerate}
+
+            Mr Yu's friend Mr Sia, who owns a prawn farm, found out about his model and informed him that he did not take into account the fish breeding and dying off. Upon checking past records, Mr Yu found that the number of fish reduced by 25\% each month, due to the nett effect of breeding and dying off. With this additional information, Mr Yu adjusts his model to take this into account before the selling off and adding of fish is done. From the end of February 2023 onwards, the monthly sales percentage is adjusted to $p$\%.
+
+            \begin{enumerate}
+                \setcounter{enumii}{2}
+                \item Given that the number of added fish remains at 150 and the number of fish in the long term steadies at 375, find the value of $p$.
+            \end{enumerate}
+
+            \item Mr Sia shares that he only sells his prawns when the number of prawns in his farm reach $60000$, due to his superior breeding method. The initial population of prawns in his farm, on 1st January 2023 was 3000 and the population on 1st February 2023 was 3500.
+            
+            It is known from previous years that the increase in prawn population from month $n$ to month ($n+1$) is twice the increase from month ($n-1$) to month $n$.
+
+            Let $P_n$ denote the population of prawns n months after 1st January 2023.
+
+            Given that $P_0 = 3000$, find an expression for $P_n$ in terms of $n$. Hence state the month and year when Mr Sia sells his prawns with at least 3000 prawns in his farm for the breeding cycle to start again.
+        \end{enumerate}
+
+    \solution
+        \part
+            \subpart
+                \boxt{
+                    $u_n = \dfrac7{10} u_{n-1} + 150$, $u_1 = 2000$
+                }
+
+            \subpart
+            
+                \noindent Let $k$ be the constant such that $u_n + k = \dfrac7{10} (u_{n-1} + k)$. Then $-\dfrac3{10} k = 150 \implies k = -500$.
+                \begin{alignat*}{2}
+                    &&u_n - 500 &= \dfrac7{10} (u_{n-1} - 500)\\
+                    && &= \left(\dfrac7{10}\right)^{n-1} (u_1 - 500)\\
+                    && &= 1500\left(\dfrac7{10}\right)^{n-1}\\
+                    \implies&&u_n &= 1500\left(\dfrac7{10}\right)^{n-1} + 500
+                \end{alignat*}
+
+                \boxt{
+                    $u_n = 1500\left(\dfrac7{10}\right)^{n-1} + 500$
+                }
+
+            \subpart
+
+                \noindent With the new information, we have the following revised recurrence relation for $u_n$:
+                \begin{equation*}
+                    u_n = \left(1 - \dfrac{p}{100}\right) \cdot \dfrac{75}{100} \cdot u_{n-1} + 150
+                \end{equation*}
+                We also have $\lim_{n \to \infty} u_n = 375$. Hence,
+                \begin{alignat*}{2}
+                    &&u_n &= \left(1 - \dfrac{p}{100}\right) \cdot \dfrac{75}{100} \cdot u_{n-1} + 150\\
+                    \implies&&\lim_{n \to \infty} u_n &= \lim_{n \to \infty} \left[\left(1 - \dfrac{p}{100}\right) \cdot \dfrac{75}{100} \cdot u_{n-1} + 150\right]\\
+                    \implies&&375 &= \left(1 - \dfrac{p}{100}\right) \cdot \dfrac{75}{100} \cdot 375 + 150\\
+                    \implies&&1 - \dfrac{p}{100} &= \dfrac45\\
+                    \implies&&p &= 20
+                \end{alignat*}
+                \boxt{
+                    $p = 20$
+                }
+
+        \part
+            We have $P_n - P_{n-1} = 2(P_{n-1} - P_{n-2})$. Rearranging, we have the recurrence relation
+            \begin{equation*}
+                P_n = 3P_{n-1} - 2P_{n-2}
+            \end{equation*}
+            Consider the characteristic equation of the above recurrence relation.
+            \begin{alignat*}{2}
+                &&x^2 - 3x + 2 &= 0\\
+                \implies&&(x-2)(x-1) &= 0
+            \end{alignat*}
+            Hence, the roots of the characteristic equation are 1 and 2. Thus,
+            \begin{align*}
+                P_n &= A\cdot1^n + B\cdot2^n\\
+                &= A + B\cdot2^n
+            \end{align*}
+            By considering $P_0$ and $P_1$, we have the following system:
+            \begin{equation*}
+                \systeme{A + B = 3000, A + 2B = 35000}
+            \end{equation*}
+            whence $A = 2500$ and $B = 500$. Thus,
+            \begin{equation*}
+                P_n = 2500 + 500 \cdot 2^n
+            \end{equation*}
+            Note that Mr Sia only sells his prawns when $P_n \geq 60000$. We hence consider $P_n \geq 60000$.
+            \begin{alignat*}{2}
+                &&P_n &\geq 60000\\
+                \implies&&2500 + 500 \cdot 2^n &\geq 60000\\
+                \implies&&2^n &\geq 115\\
+                \implies&&n &\geq \log_2 115\\
+                && &= 6.8 \tosf{2}
+            \end{alignat*}
+            Since $n \in \mathbb{N}$, the least $n$ is $7$. Hence, Mr Sia will sell his prawns in August 2023.
+
+            \boxt{
+                Mr Sia will sell his prawns in August 2023.
+            }
+
+\end{document}
