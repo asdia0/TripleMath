@@ -1,0 +1,652 @@
+\documentclass{jhwhw}
+
+\title{VJC 9649 2023 JC1 MYE}
+\author{Eytan Chong}
+\date{2024-06-06}
+
+\begin{document}
+    \problem{}
+        The graph of the first derivative of a function $f$ is shown in the diagram below. It is symmetrical about the origin $O$ and approaches the lines $y = 0.5$ and $y = -0.5$ for large values of $x$. Sketch the graph of $y = f(x)$ given that it has a pair of asymptotes that intersect at the origin.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -0.12:0.12,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=110,
+                    ymin=-110,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {atan(\x r)};
+        
+                    \addlegendentry{$y = f'(x)$};
+
+                    \addplot[dotted, thick] {-90};
+                    \addplot[dotted, thick] {90};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+    \solution
+        \begin{alignat*}{2}
+            &&\lim\limits_{x \to \pm \infty} f'(x) &= \pm \dfrac12\\
+            \implies&&\lim\limits_{x \to \pm \infty} \int f'(x) \d x &= \int \pm \dfrac12 x \d x\\
+            \implies&&\lim\limits_{x \to \pm \infty} f(x) &= \pm \dfrac12 x + C
+        \end{alignat*}
+        Hence, $f(x)$ has asymptotes $y = \pm \dfrac12 x + C$, for some arbitrary constant $C$. Since both asymptotes meet at the origin, $C = 0$, whence $f(x)$ has asymptotes $y = \pm \dfrac12 x$.
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -0.12:0.12,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=0,
+                    ymax=3,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x * atan(\x r) + 0.5 * ln(1 + x^2) + 1};
+        
+                    \addlegendentry{$y = f(x)$};
+
+                    \addplot[dotted] {90 * x};
+                    \addplot[dotted] {-90 * x};
+
+                    \node[rotate=55] at (1.3/90, 1) {$y = \frac12 x$};
+
+                    \node[rotate=-55] at (-1.3/90, 1) {$y = -\frac12 x$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+    \problem{}
+        The terms in the sequence $u_0$, $u_1$, $u_2$, $\ldots$ satsify the recurrence relation
+        \begin{equation*}
+            u_{n+2} - u_{n+1} = r(u_{n+1} - u_n)
+        \end{equation*}
+        where $r$ is a non-zero constant.
+        
+        \begin{enumerate}
+            \item Find the general solution of this recurrence relation.
+            \item Given that $u_0 = 0$ and the sequence converges to a finite value $L$, find an expression for $u_n$ in terms of $L$, $n$ and $r$. State a necessary condition on $r$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{alignat*}{2}
+                &&u_{n+2} - u_{n+1} &= r(u_{n+1} - u_n)\\
+                \implies&&u_{n_2} &= (1 + r)u_{n+1} - ru_n
+            \end{alignat*}
+            Consider the characteristic equation of the above recurrence relation.
+            \begin{alignat*}{2}
+                &&x^2 - (1+r)x + r &= 0\\
+                \implies&&(x - 1)(x - r) &= 0
+            \end{alignat*}
+            Hence, the roots of the characteristic equation are 1 and $r$. Thus, the general solution of the recurrence relation is given by
+            \begin{align*}
+                u_n &= A\cdot1^n + B\cdot r^n\\
+                &= A + B\cdot r^n
+            \end{align*}
+            
+            \boxt{
+                $u_n = A + B \cdot r^n$
+            }
+
+        \part
+            When $n = 0$, we have
+            \begin{alignat*}{2}
+                &&A + B &= 0\\
+                \implies&&B &= -A
+            \end{alignat*}
+            Since the sequence converges to a finite value, we know $\abs{r} < 1$. Hence, considering $n \to \infty$, we have
+            \begin{align*}
+                L &= \lim_{n \to \infty} \left(A + Br^n\right)\\
+                &= A\\
+            \end{align*}
+            whence $B = -A = -L$. Putting everything together, we have
+            \boxt{
+                $u_n = L - Lr^n, \, \abs{r} < 1$
+            }
+
+    \problem{}
+        A curve is defined parametrically by $x = \dfrac{t^2}{1 + t^2}$, $y = t^3 - \lambda t$, where $\lambda$ is a positive constant.
+
+        \begin{enumerate}
+            \item Sketch the curve, stating the equation of its asymptote.
+            \item Find in terms of $\lambda$, the $x$-coordinate of the point $P$ where the curve intersects itself.
+            \item Show that the area of the region bounded by the curve between $P$ and the origin is given by an integral of the form
+            \begin{equation*}
+                4\int_0^{f(\lambda)} g(t^2) \d t
+            \end{equation*}
+            where $f(\lambda)$ is a function of $\lambda$ and $g(t^2)$ is a function of $t^2$ to be determined.
+        \end{enumerate}
+
+    \solution
+        \part
+            Note that $\lim_{t \to \pm \infty} x = \lim_{t \to \pm \infty} \dfrac{t^2}{1 + t^2} = 1$. Hence, the curve has a vertical asymptote with equation $x = 1$.
+
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = -3:3,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        xmax=1.1,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] ({x^2/(1 + x^2)}, {x^3 - 4*x});
+            
+                        \addlegendentry{$x = \frac{t^2}{1 + t^2}$, $y = t^3 - \lambda t$};
+
+                        \draw[dotted] (1, -15) -- (1, 15) node[anchor=north east, rotate=90] {$x = 1$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}    
+
+        \part
+            From the graph, the curve intersects itself when $y = 0$ and $x \neq 0 \implies t \neq 0$.
+            \begin{alignat*}{2}
+                &&y &= 0\\
+                \implies&&t^3 - \lambda t &= 0\\
+                \implies&&t^2 - \lambda &= 0
+            \end{alignat*}
+            Hence, $\lambda = t^2$, whence $x = \dfrac{t^2}{1 + t^2} = \dfrac{\lambda}{1 + \lambda}$.
+            \boxt{
+                $x = \dfrac{\lambda}{1 + \lambda}$
+            }
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = -sqrt(2):sqrt(2),
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        xmax=2/3+0.1,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] ({x^2/(1 + x^2)}, {x^3 - 2*x});
+            
+                        \addlegendentry{$x = \frac{t^2}{1 + t^2}$, $y = t^3 - \lambda t$};
+
+                        \fill (2/3, 0) circle[radius=2.5pt] node[anchor=north west] {$P$};
+
+                        \node at (0.4, 0.5) {$R$};
+                        \node at (0.4, -0.5) {$S$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center} 
+
+            \noindent Let the region bounded by the curve between $P$ and the origin be $A$. Let $R$ be the region of $A$ where $y \geq 0$. Let $S$ be the region of $A$ where $y \leq 0$. By symmetry, $\area R = \area S$. Hence,
+            \begin{equation*}
+                \area A = 2\area R
+            \end{equation*}
+            We will consider only region $R$ for the rest of the solution. Note that $R$ is bounded by the part of the curve where $-\sqrt \lambda \leq t \leq 0$. Also note that
+            \begin{alignat*}{2}
+                &&\der{x}{t} &= \der{}{t} \dfrac{t^2}{1 + t^2}\\
+                && &= \dfrac{(1+t^2) \cdot 2t - t^2 \cdot 2t}{(1+t^2)^2}\\
+                && &= \dfrac{2t}{(1+t^2)^2}\\
+                \implies&&\d x &= \dfrac{2t}{(1+t^2)^2} \d t
+            \end{alignat*}
+            Hence,
+            \begin{align*}
+                \area A &= 2 \area R\\
+                &= 2 \int_0^{-\sqrt{\lambda}} y \d x\\
+                &= 2 \int_0^{-\sqrt{\lambda}} \left(t^3 - \lambda t\right) \cdot \dfrac{2t}{(1+t^2)^2} \d t\\
+                &= 4 \int_0^{-\sqrt{\lambda}}\dfrac{t^4 - \lambda t^2}{(1+t^2)^2} \d t\\
+                &= 4 \int_0^{-\sqrt{\lambda}}\dfrac{t^2 \left(t^2 - \lambda\right)}{(1+t^2)^2} \d t
+            \end{align*}
+            Hence,
+            \boxt{
+                $f(\lambda) = -\sqrt{\lambda}$, $g(t^2) = \dfrac{t^2 \left(t^2 - \lambda\right)}{(1+t^2)^2}$
+            }
+
+    \problem{}
+        It is given that the equation $1 + \cos(\pi x) - 2\sqrt{x} = 0$ has a root $\alpha$ in the interval $[0, 1]$.
+
+        \begin{enumerate}
+            \item Use linear interpolation once on the interval $[0, 1]$ to obtain an approximation $x_1$ to $\alpha$.
+            \item Using $x_1$ as an initial estimate, apply the Newton-Raphson method to find $\alpha$, correct to 2 decimal places.
+            \item With the help of an appropriate graph, explain how Newton-Raphson method using another initial estimate $x_1^\ast$ in the interval $[0, 1]$ fails to give an approximation to $\alpha$.
+        \end{enumerate}
+    
+    \solution
+        Let $f(x) = 1 + \cos(\pi x) - 2\sqrt{x}$.
+
+        \part
+            Using linear interpolation on the interval $[0, 1]$,
+            \begin{equation*}
+                x_1 = \dfrac{1 \cdot f(0) - 0 \cdot f(1)}{f(0) - f(1)} = \dfrac12
+            \end{equation*}
+            \boxt{
+                $x_1 = \dfrac12$
+            }
+
+        \part
+            Note that $f'(x) = -\sin(\pi x) \cdot \pi - \dfrac2{2 \sqrt{x}} = -\pi\sin(\pi x) - \dfrac1{\sqrt{x}}$.
+            \begin{alignat*}{2}
+                && x_1 &= \dfrac12 \\
+                \implies&&x_2 &= \nrm{x_1}{f} = 0.40908\\
+                \implies&&x_3 &= \nrm{x_2}{f} = 0.40964\\
+                \implies&&x_4 &= \nrm{x_3}{f} = 0.40964
+            \end{alignat*}
+            Since $f(0.405) = 0.02 > 0$ and $f(0.415) = -0.02 < 0$, $\alpha \in (0.405, 0.415)$. Thus,
+            \boxt{
+                $\alpha = 0.41 \todp{2}$
+            }
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:1,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {1},
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        xmin=-1.1,
+                        xmax=1.1,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {1 + cos(pi * \x r) - 2*sqrt(x)};
+            
+                        \addlegendentry{$y =f(x)$};
+
+                        \draw[dotted] (1, 0) -- (1, -2);
+
+                        \addplot[domain=-1.1:1.1] {-1 - x};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+            \noindent When $x_1^\ast = 1$,the tangent to the curve intersects the $x$-axis at a negative $x$-value, thus giving a negative $x_2$. Since $f(x)$ is only defined for $x \geq 0$ due to the presence of $\sqrt{x}$, $f(x_2)$ and thus $x_3$ will be undefined. Hence, the Newton-Raphson method will fail to given an approximation to $\alpha$.
+
+    \problem{}
+        \begin{enumerate}
+            \item For a positive constant $a$, there is an angle $\phi$ such that $\sin \phi = a$ and $\dfrac\pi2 < \phi < \pi$.
+            
+            Evaluate $\displaystyle\int_{-1}^0 \dfrac1{\sqrt{1 - a^2x^2}} \d x$, leaving your answer in terms of $a$, $\phi$ and $\pi$.
+            \item Using the substitution $t = \tan \dfrac{x}2$, show that
+            \begin{equation*}
+                \int \dfrac{\cos x}{1 + \cos x - \sin x} \d x = \int \dfrac{1 + t}{1 + t^2} \d t
+            \end{equation*}
+            Hence determine $\displaystyle\int \dfrac{\cos x}{1 + \cos x - \sin x} \d x$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int_{-1}^0 \dfrac1{\sqrt{1 - a^2x^2}} \d x &= \int_{-1}^0 \dfrac1{\sqrt{1 - (ax)^2}} \d x\usub{u &= ax\\\d u &= a \d x}\\
+                &= \dfrac1a \int_{-a}^0 \dfrac1{\sqrt{1 - u^2}} \d x\\
+                &= \dfrac1a \eval{\arcsin u}{-a}{0}\\
+                &= \dfrac1a \cdot -\arcsin(-a)\\
+                &= \dfrac{\arcsin a}{a}\\
+                &= \dfrac{\pi - \phi}{a}
+            \end{align*}
+
+            \boxt{
+                $\displaystyle\int_{-1}^0 \dfrac1{\sqrt{1 - a^2x^2}} \d x = \dfrac{\pi - \phi}{a}$
+            }
+
+        \part
+            Consider the substitution $t = \tan \dfrac{x}2$.
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                &&\sin x &= \dfrac{2\sin \frac{x}2 \cos \frac{x}2}{\cos^2 \frac{x}2 + \sin^2 \frac{x}2}\\
+                && &= \dfrac{2\tan \frac{x}2}{1 + \tan^2 \frac{x}2}\\
+                && &= \dfrac{2t}{1 + t^2}\\
+                &&\cos x &= \dfrac{\cos^2 \frac{x}2 - \sin^2\frac{x}2}{\cos^2 \frac{x}2 + \sin^2\frac{x}2}\\
+                && &= \dfrac{1 - \tan^2 \frac{x}2}{1 + \tan^2 \frac{x}2}\\
+                && &= \dfrac{1 - t^2}{1 + t^2}
+            \end{alignat*}
+            }
+            Also note that
+            \begin{alignat*}{2}
+                &&t &= \tan \dfrac{x}2\\
+                \implies&&\d t &= \dfrac12 \sec^2 \dfrac{x}2 \d x\\
+                \implies&&\d t &= \dfrac12 \left(1 + \tan^2 \dfrac{x}2\right) \d x\\
+                && &= \dfrac12 (1 + t^2) \d x\\
+                \implies&&\d x &= \dfrac2{1 + t^2} \d t
+            \end{alignat*}
+            Hence,
+            \begin{align*}
+                \int \dfrac{\cos x}{1 + \cos x - \sin x} \d x &= \int \dfrac{\frac{1 - t^2}{1 + t^2}}{1 + \frac{1 - t^2}{1 + t^2} - \frac{2t}{1 + t^2}} \cdot \dfrac2{1 + t^2} \d t\\
+                &= \int \dfrac{2 \cdot \frac{1 - t^2}{1 + t^2}}{(1 + t^2) + (1 - t^2) - 2t} \d t\\
+                &= \int \dfrac{2 \cdot \frac{1 - t^2}{1 + t^2}}{2 - 2t} \d t\\
+                &= \int \dfrac{\frac{1 - t^2}{1 + t^2}}{1 - t} \d t\\
+                &= \int \dfrac{\frac{(1 - t)(1 + t)}{1 + t^2}}{1 - t} \d t\\
+                &= \int \dfrac{1 + t}{1 + t^2} \d t \qed\\
+                &= \int \left(\dfrac1{1 + t^2} + \dfrac{t}{1 + t^2}\right) \d t\\
+                &= \int \left(\dfrac1{1 + t^2} + \dfrac12 \cdot \dfrac{2t}{1 + t^2}\right) \d t\\
+                &= \arctan t + \dfrac12 \ln \abs{1 + t^2} + C\\
+                &= \arctan\left(\tan \dfrac{x}{2}\right) + \dfrac12 \ln \abs{1 + \tan^2 \dfrac{x}2} + C\\
+                &= \dfrac{x}{2} + \dfrac12 \ln \abs{\sec^2 \dfrac{x}2} + C\\
+                &= \dfrac{x}{2} + \ln \abs{\sec \dfrac{x}2} + C
+            \end{align*}
+            \boxt{
+                $\displaystyle\int \dfrac{\cos x}{1 + \cos x - \sin x} \d x = \dfrac{x}{2} + \ln \abs{\sec \dfrac{x}2} + C$
+            }
+
+    \problem{}
+        The curve $G$ has equation $y = \dfrac{x^2 - 2kx + k}{x - k}$, where $k$ is a non-zero constant and $k \neq 1$.
+        
+        \begin{enumerate}
+            \item State, in terms of $k$, the equations of the asymptotes of $G$.
+            \item Determine the set of values for which $G$ as two stationary points.
+            \item Give a sketch of $G$ for $k > 1$, stating in terms of $k$, the coordinates of the point of intersection of its asymptotes.
+            \item With the help of your sketch in part (c), determine, in exact form, the value of $m$ ($m < 0$) such that the line $y = m(x-k)$ is a line of symmetry of $G$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                y &= \dfrac{x^2 - 2kx + k}{x - k}\\
+                &= \dfrac{x^2 - 2kx + k^2 + k - k^2}{x - k}\\
+                &= \dfrac{(x-k)^2 + k - k^2}{x - k}\\
+                &= x - k + \dfrac{k - k^2}{x - k}
+            \end{align*}
+            Hence, $G$ has oblique asymptote $y = x - k$ and vertical asymptote $x = k$.
+            
+            \boxt{
+                $y = x - k$, $x = k$
+            }
+
+        \part
+            For stationary points, $\der{y}{x} = 0$.
+            \begin{alignat*}{2}
+                &&\der{y}{x} &= 0\\
+                \implies&& 1 - \dfrac{k-k^2}{(x-k)^2} &= 0\\
+                \implies&&(x-k)^2 &= k - k^2\\
+                \implies&&x - k &= \pm \sqrt{k - k^2}
+            \end{alignat*}
+            For $G$ to have two stationary points, $k - k^2 > 0$, whence $0 < k < 1$.
+            
+            \boxt{
+                $\{k \in \mathbb{R}: 0 < k < 1\}$
+            }
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = -5:5,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        ymin=-5,
+                        ymax=5,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed, unbounded coords = jump] {x - 1.5 - (0.75)/(x - 1.5)};
+            
+                        \addlegendentry{$G$};
+            
+                        \fill (1.5, 0) circle[radius=2.5pt] node[anchor=north west] {$\coord{k}0$};
+
+                        \draw[dotted] (1.5, -5) -- (1.5, 5) node[anchor=north west] {$x = k$};
+
+                        \addplot[dotted] {x - 1.5};
+                        \node[rotate=36] at (4, 3]) {$y = x - k$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        width=9cm,height=9cm,
+                        domain = -2:4,
+                        samples = 121,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {1.5},                        
+                        xticklabels = {$k$},
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        ymin=-3,
+                        ymax=3,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed, unbounded coords = jump] {x - 1.5 - (0.75)/(x - 1.5)};
+            
+                        \addlegendentry{$G$};
+
+                        \addplot[plotBlue] {(1 - 1.414) * (x - 1.5)};
+
+                        \addlegendentry{$l$};
+
+                        \addplot[dotted] {x - 1.5};
+                        \draw[dotted] (1.5, -5) -- (1.5, 5);
+                        
+                        \coordinate (K) at (1.5, 0);
+                        \coordinate (P1) at (0.772, 0.302);
+                        \coordinate (A) at (0, -1.5);
+                        \coordinate (B) at (1.5, 2);
+                        \coordinate (C) at (2.5, 1);
+
+                        \draw pic [draw, angle radius=8mm, "$\theta$"] {angle = P1--K--A};
+                        \draw pic [draw, angle radius=7mm, "$\theta$"] {angle = B--K--P1};
+                        \draw pic [draw, angle radius=8mm, "$\frac\pi4$"] {angle = C--K--B};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+            \noindent Let $l$ be the line with equation $y = m(x-k)$. Since $l$ is a line of symmetry of $G$, $l$ bisects the angle between the asymptotes. Since the asymptote $y = x - k$ makes an angle $\dfrac\pi4$ with the point $\coord{k}0$, we have
+            \begin{equation*}
+                \theta + \theta + \dfrac\pi4 = \pi
+            \end{equation*}
+            whence $\theta = \dfrac38 \pi$. Thus, $l$ makes an angle $\theta + \dfrac\pi4 = \dfrac78 \pi$ with the point $\coord{k}0$, giving it a gradient of $\tan \dfrac78 \pi$. Hence,
+
+            \boxt{
+                $m = \tan \dfrac78 \pi$
+            }
+
+    \problem{}
+        \textbf{Omitted.}
+
+    \problem{}
+        \textbf{Omitted.}
+
+    \problem{}
+        It is given that $I_n = \displaystyle\int_0^\pi \cos^n (2\theta) \d \theta$, where $n$ is a positive integer.
+
+        \begin{enumerate}
+            \item Without using the calculator, evaluate $I_2$.
+            \item For $n > 3$, show that $I_n = \dfrac{n-1}{n} I_{n-2}$.
+            \item Deduce that for all odd values of $n$, $I_n$ is independent of $n$.
+            \item For even values of $n$, show that
+            \begin{equation*}
+                I_n = \dfrac{n! \, \pi}{2^n \Big[\left(\dfrac{n}2 \right)!\Big]^2}
+            \end{equation*}
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                I_2 &= \int_0^\pi \cos^2 (2\theta) \d \theta\\
+                &= \int_0^\pi \dfrac{\cos 4\theta + 1}2 \d \theta \usub{u &= 4\theta\\\d u &= 4 \d \theta}\\
+                &= \int_0^{4\pi} \dfrac{\cos u + 1}{8} \d u\\
+                &= \dfrac18 \eval{\sin u + u}{0}{4\pi}\\
+                &= \dfrac\pi2
+            \end{align*}
+
+            \boxt{
+                $I_2 = \dfrac\pi2$
+            }
+
+        \part
+            \begin{align*}
+                I_n &= \int_0^\pi \cos^n 2\theta \d \theta\\
+                &= \int_0^\pi \cos 2\theta \cos^{n-1} 2\theta \d \theta
+            \end{align*}
+            Note that $\der{}{\theta} \cos^{n-1} 2\theta = -2(n-1) \sin 2\theta \cos^{n-2} 2\theta$. Integrating by parts, we have
+            \begin{equation*}
+                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & \cos^{n-1} 2\theta & \cos 2\theta \\
+                    - & -2(n-1) \sin 2\theta \cos^{n-2} 2\theta & \dfrac12 \sin 2\theta \\\bottomrule
+                \end{array}
+            \end{equation*}
+            \begin{alignat*}{2}
+                &&I_n &= \eval{\dfrac12 \sin 2\theta \cos^{n-1} 2\theta}{0}{\pi} + (n-1) \int_0^\pi \sin^2 2\theta \cos^{n-2} 2\theta \d \theta\\
+                && &= (n-1) \int_0^\pi \sin^2 2\theta \cos^{n-2} 2\theta \d \theta\\
+                && &= (n-1) \int_0^\pi \left(1 - \cos^2 2\theta\right) \cos^{n-2} 2\theta \d \theta\\
+                && &= (n-1) \int_0^\pi \left(\cos^{n-2} 2\theta  - \cos^n 2\theta\right) \d \theta\\
+                && &= (n-1) \left(I_{n-2} - I_n\right)\\
+                \implies&&n I_n &= (n-1)I_{n-2}\\
+                \implies&&I_n &= \dfrac{n-1}n I_{n-2}
+            \end{alignat*}
+
+        \part
+            Note that $I_1 = \displaystyle\int_0^\pi \cos 2\theta \d \theta = \dfrac12 \eval{\sin 2\theta}{0}{\pi} = 0$. For all odd $n$, $I_n$ will eventually reduce to $I_1$ with the recurrence relation derived above. Hence, $I_n = 0$ for odd $n$, which is independent of $n$.
+
+        \part
+            \begin{align*}
+                I_n &= \dfrac{n-1}n I_{n-2}\\
+                &= \dfrac{n-1}n \cdot \dfrac{n-3}{n-2} I_{n-4}\\
+                &= \dfrac{n-1}n \cdot \dfrac{n-3}{n-2} \cdot \dfrac{n-5}{n-4} I_{n-6}\\
+                &= \dfrac{n-1}n \cdot \dfrac{n-3}{n-2} \cdot \dfrac{n-5}{n-4} \cdot \ldots \cdot \dfrac34 I_{2}\\
+                &= \dfrac{n-1}n \cdot \dfrac{n-3}{n-2} \cdot \dfrac{n-5}{n-4} \cdot \ldots \cdot \dfrac34 \cdot \dfrac\pi2\\
+                &= \dfrac{(n-1)(n-3)(n-5)\cdot\ldots\cdot3\cdot1}{n(n-2)(n-4)\cdot\ldots\cdot4\cdot2} \cdot \pi\\
+                &= \dfrac{n(n-1)(n-2)(n-3)(n-4)(n-5)\cdot\ldots\cdot4\cdot3\cdot2\cdot1}{\Big[n(n-2)(n-4)\cdot\ldots\cdot4\cdot2\Big]^2} \cdot \pi\\
+                &= \dfrac{n! \, \pi}{\Big[n(n-2)(n-4)\cdot\ldots\cdot4\cdot2\Big]^2}
+            \end{align*}
+            However, we have
+            {\allowdisplaybreaks
+            \begin{align*}
+                n(n-2)(n-4)\cdot\ldots\cdot2 &= \left(2 \cdot \dfrac{n}2\right)\left(2 \cdot \dfrac{n-2}2\right)\left(2 \cdot \dfrac{n-4}2\right)\cdot\ldots\cdot(2 \cdot 1)\\
+                &= 2^{n/2} \left[\left(\dfrac{n}2\right)\left(\dfrac{n-2}2\right)\left(\dfrac{n-4}2\right)\cdot\ldots\cdot 1\right]\\
+                &= 2^{n/2} \left[\left(\dfrac{n}2\right)\left(\dfrac{n}2 - 1\right)\left(\dfrac{n}2 - 2\right)\cdot\ldots\cdot 1)\right]\\
+                &= 2^{n/2} \left(\dfrac{n}2\right)!
+            \end{align*}
+            }
+            Hence,
+            \begin{align*}
+                I_n &= \dfrac{n! \, \pi}{\left[2^{n/2} \left(\dfrac{n}2\right)!\right]^2}\\
+                &= \dfrac{n! \, \pi}{2^n \left[\left(\dfrac{n}2\right)!\right]^2}\\
+            \end{align*}
+
+    \problem{}
+        In a membership drive, a fitness club is trying to recruit new members. The sales manager models the number of members that the club has at the end of each month assuming that a certain portion $p$ ($0 < p < 1$) of its members in the previous month will be lost to competitors, and that it will recruit a constant number, $k$, of new members in each month. 
+        
+        Let $M_n$ ($n \geq 1$) be the number of members that the club has $n$ months after the start of the membership drive.
+
+        \begin{enumerate}
+            \item Write down an expression for $M_{n+1}$ in terms of $M_n$.
+            \item Given that the club has 500 members at the end of the first month, determine $M_n$ in terms of $n$, $p$ and $k$.
+        \end{enumerate}
+
+        \noindent The sales manager sets a target for the club membership to reach 750 by the end of 6 months.
+
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item Given that $k = 80$, show that to meet its target, the club needs to retain approximately 95\% of its members, month-by-month.
+            \item Given that the club can only retain 90\% of its members, month-by-month, find the least number of members it must recruit each month to meet or exceed its target.
+        \end{enumerate}
+
+    \solution
+        \part
+            \boxt{
+                $M_{n+1} = (1-p)M_n + k$
+            }
+
+        \part
+            Let $q$ be the constant such that $M_{n+1} + q = (1-p)(M_n + q)$. Then $(1-p)q - q = k \implies q = -\dfrac{k}{p}$.
+            \begin{alignat*}{2}
+                &&M_{n+1} -\dfrac{k}{p} &= (1-p)\left(M_n -\dfrac{k}{p}\right)\\
+                \implies&&M_n - \dfrac{k}{p} &= (1-p)^{n-1} \left(M_1 -\dfrac{k}{p}\right)\\
+                && &= (1-p)^{n-1} \left(500 -\dfrac{k}{p}\right)\\
+                \implies&&M_n &= (1-p)^{n-1} \left(500 -\dfrac{k}{p}\right) + \dfrac{k}{p}
+            \end{alignat*}
+
+            \boxt{
+                $M_n = (1-p)^{n-1} \left(500 -\dfrac{k}{p}\right) + \dfrac{k}{p}$
+            }
+
+        \part
+            Consider $M_6 \geq 750$ with $k = 80$.
+            \begin{alignat*}{2}
+                &&M_6 &\geq 750\\
+                \implies&&(1-p)^{5} \left(500 -\dfrac{80}{p}\right) + \dfrac{80}{p} &\geq 750
+            \end{alignat*}
+            From G.C., $p = 0.0495 \tosf{3}$. Hence, the club needs to retain $(1-p) = 95.05\%$ of its members, month-by-month.
+
+        \part
+            Consider $M_6 \geq 750$ with $p = 0.10$.
+            \begin{alignat*}{2}
+                &&M_6 &\geq 750\\
+                \implies&&(1-p)^{5} \left(500 -\dfrac{k}{0.10}\right) + \dfrac{k}{0.10} &\geq 750
+            \end{alignat*}
+            From G.C., $k > 111.05 \todp{2}$. Since $k \in \mathbb{N}$, the least $k$ is 112.
+
+            \boxt{
+                The club must recruit at least 112 members each month.
+            }
+
+    \problem{}
+        \textbf{Omitted.}
+\end{document}
