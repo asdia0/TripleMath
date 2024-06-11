@@ -1,13 +1,13 @@
 %=====================================================================
-% jhwhw.cls
-% Provide jhwhw.cls class
+% echw.cls
+% Based on the echw class.
 %=====================================================================
 
 %=====================================================================
 % Identification
 %=====================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jhwhw}[2009/02/11 Justin Wilson's Homework Class]
+\ProvidesClass{echw}[2024/06/12 Eytan Chong's Homework Class]
 
 \LoadClass[a4paper, 12pt]{article}
 
@@ -17,15 +17,14 @@
 \RequirePackage{empheq}
 \RequirePackage{ifthen}
 
-
 %=====================================================================
 % Commands
 %=====================================================================
 
-  \setlength{\headheight}{15pt}
-  \lhead{\@author}\chead{\@title}\rhead{\@date}
-  \lfoot{}\cfoot{\thepage}\rfoot{}
-  \pagestyle{fancy}
+\setlength{\headheight}{15pt}
+\lhead{\@author}\chead{\@title}\rhead{\@date}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+\pagestyle{fancy}
 
 \ifx\pdfoutput\undefined                         %LaTeX
   \RequirePackage[ps2pdf,bookmarks=true]{hyperref}
@@ -68,12 +67,48 @@
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumii}{\roman{enumii}}
 
-% CUSTOM DEFNS
+\numberwithin{equation}{ProblemNum}
 
+
+%=====================================================================
+% Packages
+%=====================================================================
+
+\usepackage{accents}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bigstrut}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{cases}
+\usepackage{enumerate}
+\usepackage{fbox}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{systeme}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{xcolor}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, intersections, angles, quotes, calc, decorations.markings}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{polar, fillbetween}
+
+%=====================================================================
+% Custom Definitions
+%=====================================================================
+
+% Absolute Value
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+% Norm
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
-\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
-\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \makeatletter
 \let\oldabs\abs
@@ -82,76 +117,115 @@
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
 
-\usepackage[most]{tcolorbox}
+% Ceiling
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 
-%\tcbset{colback=white, colframe=black, arc=0pt,outer arc=0pt,
-%        highlight math style={enhanced, colframe=black,colback=white,boxsep=0pt}
-%        }
-		
-% \let\boxm\tcboxmath
+% Floor
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
-% \newcommand*{\boxt}[1]{
-%  \begin{center}
-%    \boxm{
-%      \text{#1}
-%      }
-%  \end{center}}
-  
+% Differential Sign
+\renewcommand{\d}[1]{\mathop{\mathrm{d}#1}}
+
+% First Derivative
 \newcommand*{\der}[2]{
-\dfrac{d#1}{d#2}
+\dfrac{\mathrm{d} #1}{\mathrm{d} #2}
 }
 
+% Higher-Order Derivatives
 \newcommand*{\derm}[3]{
-\dfrac{d^{#3}#1}{d#2^{#3}}
+\dfrac{\mathrm{d}^{#3} #1}{\mathrm{d} {#2}^{#3}}
 }
 
+% To n Significant Figures
 \newcommand*{\tosf}[1]{
 \text{ (#1 s.f.)}
 }
 
+% To n Decimal Places
 \newcommand*{\todp}[1]{
 \text{ (#1 d.p.)}
 }
 
+% Newton-Raphson Method
 \newcommand*{\nrm}[2]{
 #1 - \dfrac{#2(#1)}{#2^\prime(#1)}
 }
-  
+
+% Reject  
 \newcommand*{\reject}[1]{
 \qquad \text{(rej. \ensuremath{#1})}
 }
 
+% Inverse Function
 \newcommand*{\inv}[1]{
 #1^{-1}
 }
 
+% Range
 \newcommand*{\ran}[1]{R_{#1}}
+
+% Domain
 \newcommand*{\dom}[1]{D_{#1}}
 
-\numberwithin{equation}{ProblemNum}
-
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-
-
-\usepackage{tikz}
-\usepackage{pgfplots}
-
-\usetikzlibrary{arrows}
-\usetikzlibrary{intersections}
-
+% Cases
 \newcommand*{\case}[2]{
   \noindent\textbf{Case #1: #2}
-  }
-  
-\pgfplotsset{compat=1.18}
+}
 
-\usetikzlibrary{decorations.markings}
+% Real Part
+\renewcommand{\Re}[1]{\mathfrak{Re}\left\{#1\right\}}
 
+% Imaginary Part
+\renewcommand{\Im}[1]{\mathfrak{Im}\left\{#1\right\}}
+
+% 2D Coordinate
+\newcommand*{\coord}[2]{\left(#1, #2\right)}
+
+% 3D Coordinate
+\newcommand*{\coordiii}[3]{\left(#1, #2, #3\right)}
+
+% U-Substitution
+\newcommand{\usub}[1]{\tag*{\colorbox{orange!20}{$\begin{aligned}#1\end{aligned}$}}}
+
+% Evaluation of Integral
+\newcommand{\eval}[3]{\left[#1\right]_{#2}^{#3}}
+
+% Boldface Vectors
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+% 2D Column Vectors
+\newcommand*{\cvecii}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+
+% 3D Column Vectors
+\newcommand*{\cveciii}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+
+% Boldface Matrix
+\newcommand{\matr}[1]{\bm{#1}}
+
+% Area Operator
+\DeclareMathOperator{\area}{Area}
+
+% Volume Operator
+\DeclareMathOperator{\volume}{Volume}
+
+% Custom Colours
+\colorlet{plotRed}{red!50}
+\colorlet{plotBlue}{blue!50}
+\colorlet{plotGreen}{green}
+\colorlet{plotBlack}{black!50}
+
+% Box for Solutions
+\newcommand*{\boxt}[1]{
+\begin{center}
+	\fbox{\begin{varwidth}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+		#1
+	\end{varwidth}}
+\end{center}
+}
+
+% Graphs - Two Marks
 \def\MarkLt{4pt}
 \def\MarkSep{2pt}
-
 \tikzset{
   TwoMarks/.style={
     postaction={decorate,
@@ -170,28 +244,3 @@
   },
   TwoMarks/.default={0.5},
 }
-
-\usepackage{xcolor}
-\colorlet{plotRed}{red!50}
-\colorlet{plotBlue}{blue!50}
-\colorlet{plotGreen}{green}
-\colorlet{plotBlack}{black!50}
-
-\usepackage{varwidth}
-\usepackage{fbox}
-		
-\newcommand*{\boxt}[1]{
-\begin{center}
-	\fbox{\begin{varwidth}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
-		#1
-	\end{varwidth}}
-\end{center}
-}
-
-\usepackage{cases}
-
-\renewcommand{\Re}[1]{\mathfrak{Re}\left\{#1\right\}}
-\renewcommand{\Im}[1]{\mathfrak{Im}\left\{#1\right\}}
-\newcommand*{\coord}[2]{\left(#1, #2\right)}
-\usepackage{enumerate}
-\usepgfplotslibrary{polar}
