@@ -58,12 +58,12 @@
                     && &= -\dfrac{b^2}a + c
                 \end{alignat*}
 
-                Since $a > 0$, the graph of $y$ is concave upwards. Thus, there is a maximum point at $\left(\dfrac{b}{a}, -\dfrac{b^2}a + c\right)$.
+                Since $a > 0$, the graph of $y$ is concave upwards. Thus, there is a maximum point at $\bp{\dfrac{b}{a}, -\dfrac{b^2}a + c}$.
 
                 \boxt{There is maximum point at $\bp{\dfrac{b}{a}, -\dfrac{b^2}a + c}$.}
 
             \part
-                Since the turning point $\left(\dfrac{b}{a}, -\dfrac{b^2}a + c\right)$  lies on the line $y=x$, 
+                Since the turning point $\bp{\dfrac{b}{a}, -\dfrac{b^2}a + c}$  lies on the line $y=x$, 
 
                 \begin{alignat*}{2}
                     &&\dfrac{b}{a} &= -\dfrac{b^2}a + c\\
@@ -84,12 +84,12 @@
                     \centering
                     \begin{tabular}{|c|c|c|c|}
                     \hline
-                    $b$ & $\left(-\dfrac12\right)^-$ & $-\dfrac12$ & $\left(-\dfrac12\right)^+$ \\\hline
+                    $b$ & $\bp{-\dfrac12}^-$ & $-\dfrac12$ & $\bp{-\dfrac12}^+$ \\\hline
                     $\der{c}{b}$ & -ve   & 0 & +ve   \\[1ex]\hline
                     \end{tabular}
                 \end{table}
 
-                By the First Derivative Test, $c$ achieves a minimum when $b = -\dfrac12$. Observe that when $b = -\dfrac12$, we have $c = \dfrac1a \left(-\dfrac12 + \left(-\dfrac12\right)^2\right) = -\dfrac1{4a}$. Thus, $c \geq -\dfrac1{4a}$ whatever the value of $b$.
+                By the First Derivative Test, $c$ achieves a minimum when $b = -\dfrac12$. Observe that when $b = -\dfrac12$, we have $c = \dfrac1a \bp{-\dfrac12 + \bp{-\dfrac12}^2} = -\dfrac1{4a}$. Thus, $c \geq -\dfrac1{4a}$ whatever the value of $b$.
 
             \part
                 Since the curve passes through $(0, 6)$, it is obvious to see that $c = 6$. Furthermore, since the curve has a turning point at $(2, 2)$, we know that $\dfrac{b}{a} = 2$ and $-\dfrac{b^2}a + c = 2$.
@@ -184,15 +184,15 @@
         \problem{}
             The curve $C$ has equation
 
-            \begin{equation*}
+            \[
                 x - y = (x+y)^2
-            \end{equation*}
+            \]
 
              It is given that $C$ has only one turning point.
 
             \begin{enumerate}
                 \item Show that $1 + \der{y}{x} = \dfrac{2}{2x + 2y + 1}$.
-                \item Hence, or otherwise, show that $\der[2]{y}{x} = -\left(1 + \der{y}{x}\right)^2$.
+                \item Hence, or otherwise, show that $\der[2]{y}{x} = -\bp{1 + \der{y}{x}}^2$.
                 \item Hence, state, with a reason, whether the turning point is a maximum or a minimum.
             \end{enumerate}
 
@@ -200,7 +200,7 @@
             \part
                 Implicitly differentiating the given equation,
                 \begin{alignat}{2}
-                    &&1 - \der{y}{x} &= 2(x+y)\left(1 + \der{y}{x}\right)\nonumber\\
+                    &&1 - \der{y}{x} &= 2(x+y)\bp{1 + \der{y}{x}}\nonumber\\
                     \implies&&1 - \der{y}{x} &= (2x + 2y) + (2x + 2y)\der{y}{x}\nonumber\\
                     \implies&&(2x+2y+1)\der{y}{x} &= 1 - (2x+2y)\nonumber\\
                     \implies&&\der{y}{x} &= \dfrac{1-(2x+2y)}{2x+2y+1}\nonumber\\
@@ -212,11 +212,11 @@
             \part
                 Implicitly differentiating Equation~\ref{P4-1},                 
                 \begin{alignat*}{2}
-                    \der[2]{y}{x} &= -\dfrac{2}{(2x+2y+1)^2} \left(2 + 2\der{y}{x}\right)\\
-                    &= -\dfrac{2^2}{(2x+2y+1)^2} \left(1 + \der{y}{x} \right)\\
-                    &= -(\dfrac{2}{2x+2y+1})^2\left(1 + \der{y}{x}\right)\\
-                    &= -\left(1 + \der{y}{x}\right)^2\left(1 + \der{y}{x}\right)\\
-                    &= -\left(1 + \der{y}{x}\right)^3
+                    \der[2]{y}{x} &= -\dfrac{2}{(2x+2y+1)^2} \bp{2 + 2\der{y}{x}}\\
+                    &= -\dfrac{2^2}{(2x+2y+1)^2} \bp{1 + \der{y}{x} }\\
+                    &= -(\dfrac{2}{2x+2y+1})^2\bp{1 + \der{y}{x}}\\
+                    &= -\bp{1 + \der{y}{x}}^2\bp{1 + \der{y}{x}}\\
+                    &= -\bp{1 + \der{y}{x}}^3
                 \end{alignat*}
 
             \part

@@ -70,10 +70,10 @@
 
             Consider the $n$th partial sum of the circumferences.
             \begin{align*}
-                \sum_{k=1}^n 2\pi r_k &= 2\pi \sum_{k=1}^n \left(1 + \dfrac14 (n-1)\right)\\
-                &= 2\pi \left(n + \dfrac14 \cdot \dfrac{n(n+1)}2 - \dfrac14 n\right)\\
-                &= 2\pi \left(\dfrac34 n + \dfrac18 n(n+1)\right)\\
-                &= \dfrac14 \pi \left(6n + n(n+1)\right)\\
+                \sum_{k=1}^n 2\pi r_k &= 2\pi \sum_{k=1}^n \bp{1 + \dfrac14 (n-1)}\\
+                &= 2\pi \bp{n + \dfrac14 \cdot \dfrac{n(n+1)}2 - \dfrac14 n}\\
+                &= 2\pi \bp{\dfrac34 n + \dfrac18 n(n+1)}\\
+                &= \dfrac14 \pi \bp{6n + n(n+1)}\\
                 &= \dfrac14 \pi (n^2 + 7n)
             \end{align*}
 
@@ -178,9 +178,9 @@
     \problem{}
         The graphs of $y = \dfrac13 (2^x)$ and $y=x$ intersect at $x = \a$ and $x=\b$ where $\a < \b$. A sequence of real numbers $x_1, x_2, x_3, \ldots$ satisfies the recurrence relation
 
-        \begin{equation*}
+        \[
             x_{n+1} = \dfrac13 (2^{x_n}), \qquad n \geq 1
-        \end{equation*}
+        \]
 
         \begin{enumerate}
             \item Prove algebraically that, if the sequence converges, then it converges to either $\a$ or $\b$.

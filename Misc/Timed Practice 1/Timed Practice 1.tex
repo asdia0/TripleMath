@@ -6,44 +6,44 @@
 
 \begin{document}
     \problem{}
-        Find $\displaystyle\sum\limits_{r = 0}^n \left(n^2 + 1 - 3r\right)$ in terms of $n$, giving your answer in factorized form.
+        Find $\displaystyle\sum\limits_{r = 0}^n \bp{n^2 + 1 - 3r}$ in terms of $n$, giving your answer in factorized form.
 
     \solution
         \begin{align*}
-            \sum_{r = 0}^n \left(n^2 + 1 - 3r\right) &= (n+1)(n^2 + 1) + 3 \cdot \dfrac{n(n+1)}2\\
-            &= (n+1)\left(n^2 + \dfrac32 n + 1\right)\\
+            \sum_{r = 0}^n \bp{n^2 + 1 - 3r} &= (n+1)(n^2 + 1) + 3 \cdot \dfrac{n(n+1)}2\\
+            &= (n+1)\bp{n^2 + \dfrac32 n + 1}\\
             &= \dfrac12 (n+1)(2n^2 + 3n + 2)
         \end{align*}
 
-        \boxt{$\displaystyle\sum\limits_{r = 0}^n \left(n^2 + 1 - 3r\right) = \dfrac12 (n+1)(2n^2 + 3n + 2)$}
+        \boxt{$\displaystyle\sum\limits_{r = 0}^n \bp{n^2 + 1 - 3r} = \dfrac12 (n+1)(2n^2 + 3n + 2)$}
 
     \problem{}
-        Given that $\displaystyle\sum\limits_{k=1}^n k!\left(k^2 + 1\right) = (n+1)!\,n$, find $\displaystyle\sum\limits_{k=1}^{n-1} (k+1)!\left(k^2 + 2k + 2\right)$.
+        Given that $\displaystyle\sum\limits_{k=1}^n k!\bp{k^2 + 1} = (n+1)!\,n$, find $\displaystyle\sum\limits_{k=1}^{n-1} (k+1)!\bp{k^2 + 2k + 2}$.
 
     \solution
         \begin{align*}
-            \sum_{k=1}^{n-1} (k+1)!\left(k^2 + 2k + 2\right) &= \sum_{k-1=1}^{k-1=n-1} \left((k-1)+1\right)!\left((k-1)^2 + 2(k-1) + 2\right)\\
-            &= \sum_{k=2}^{n} k! \left(k^2 + 1\right)\\
-            &= \sum_{k=1}^{n} k! \left(k^2 + 1\right) - 1! \left(1^2 + 1\right)\\
+            \sum_{k=1}^{n-1} (k+1)!\bp{k^2 + 2k + 2} &= \sum_{k-1=1}^{k-1=n-1} \bp{(k-1)+1}!\bp{(k-1)^2 + 2(k-1) + 2}\\
+            &= \sum_{k=2}^{n} k! \bp{k^2 + 1}\\
+            &= \sum_{k=1}^{n} k! \bp{k^2 + 1} - 1! \bp{1^2 + 1}\\
             &= (n+1)! \, n - 2
         \end{align*}
 
-        \boxt{$\displaystyle\sum\limits_{k=1}^{n-1} (k+1)!\left(k^2 + 2k + 2\right) = (n+1)! \, n - 2$}
+        \boxt{$\displaystyle\sum\limits_{k=1}^{n-1} (k+1)!\bp{k^2 + 2k + 2} = (n+1)! \, n - 2$}
 
     \problem{}
-        Given that $\displaystyle\sum\limits_{r=1}^n = \dfrac16 n(n+1)(2n+1)$, find $\displaystyle\sum\limits_{r=N+1}^{2N} \left(7^{r+1} + 3r^2\right)$ in terms of $N$, simplifying your answer.
+        Given that $\displaystyle\sum\limits_{r=1}^n = \dfrac16 n(n+1)(2n+1)$, find $\displaystyle\sum\limits_{r=N+1}^{2N} \bp{7^{r+1} + 3r^2}$ in terms of $N$, simplifying your answer.
 
     \solution
         \begin{align*}
-            \sum_{r=N+1}^{2N} \left(7^{r+1} + 3r^2\right) &= \sum_{r=N+1}^{2N} 7^{r+1} + 3\sum_{r=N+1}^{2N} r^2 \\
-            &= \dfrac{7^{(N+1)+1}(7^N - 1)}{7-1} + 3\left(\sum_{r=1}^{2N} r^2 - \sum_{r=1}^{N} r^2\right)\\
-            &= \dfrac{7^{N+2}(7^N - 1)}{6} + 3\left(\dfrac16 (2N)(2N+1)(2 \cdot 2N + 1) - \dfrac16 N(N+1)(2N+1)\right)\\
-            &= \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12\left(2N(2N+1)(4N + 1) - N(N+1)(2N+1)\right)\\
+            \sum_{r=N+1}^{2N} \bp{7^{r+1} + 3r^2} &= \sum_{r=N+1}^{2N} 7^{r+1} + 3\sum_{r=N+1}^{2N} r^2 \\
+            &= \dfrac{7^{(N+1)+1}(7^N - 1)}{7-1} + 3\bp{\sum_{r=1}^{2N} r^2 - \sum_{r=1}^{N} r^2}\\
+            &= \dfrac{7^{N+2}(7^N - 1)}{6} + 3\bp{\dfrac16 (2N)(2N+1)(2 \cdot 2N + 1) - \dfrac16 N(N+1)(2N+1)}\\
+            &= \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12\bp{2N(2N+1)(4N + 1) - N(N+1)(2N+1)}\\
             &= \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12 N(2N+1)(2 \cdot (4N + 1) - (N+1))\\
             &= \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12 N(2N+1)(7N+1)
         \end{align*}
 
-        \boxt{$\displaystyle\sum\limits_{r=N+1}^{2N} \left(7^{r+1} + 3r^2\right) = \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12 N(2N+1)(7N+1)$}
+        \boxt{$\displaystyle\sum\limits_{r=N+1}^{2N} \bp{7^{r+1} + 3r^2} = \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12 N(2N+1)(7N+1)$}
 
     \problem{}
         Let $f(r) = \dfrac3{r-1}$.
@@ -67,11 +67,11 @@
             \begin{align*}
                 S_N = \sum_{r=2}^N \dfrac1{r(r-1)}
                 &= -\dfrac13 \sum_{r=2}^N -\dfrac{3}{r(r-1)}\\
-                &= -\dfrac13 \left(\sum_{r=2}^N f(r+1) - \sum_{r=2}^N f(r) \right)\\
-                &= -\dfrac13 \left(\sum_{r=3}^{N+1} f(r) - \sum_{r=2}^N f(r) \right)\\
-                &= -\dfrac13 \left(\left(\sum_{r=3}^{N} f(r) + f(N+1)\right) - \left(f(2) + \sum_{r=3}^N f(r) \right)\right)\\
-                &= -\dfrac13 \left(f(N+1) - f(2)\right)\\
-                &= -\dfrac13 \left(\dfrac3{N+1-1} - \dfrac3{2-1}\right)\\
+                &= -\dfrac13 \bp{\sum_{r=2}^N f(r+1) - \sum_{r=2}^N f(r) }\\
+                &= -\dfrac13 \bp{\sum_{r=3}^{N+1} f(r) - \sum_{r=2}^N f(r) }\\
+                &= -\dfrac13 \bp{\bp{\sum_{r=3}^{N} f(r) + f(N+1)} - \bp{f(2) + \sum_{r=3}^N f(r) }}\\
+                &= -\dfrac13 \bp{f(N+1) - f(2)}\\
+                &= -\dfrac13 \bp{\dfrac3{N+1-1} - \dfrac3{2-1}}\\
                 &= 1 - \dfrac1N
             \end{align*}
 
@@ -80,7 +80,7 @@
         \part
             Consider $\lim\limits_{n \to \infty} S_n$.
             \begin{align*}
-                \lim_{n \to \infty} S_n &= \lim_{n \to \infty} \left(1 - \dfrac1N\right)\\
+                \lim_{n \to \infty} S_n &= \lim_{n \to \infty} \bp{1 - \dfrac1N}\\
                 &= 1 - 0\\
                 &= 1
             \end{align*}
@@ -112,7 +112,7 @@
          By using your graph in part (b) and considering a suitable graph whose Cartesian equation is to be stated, find the positive value of $h$ such that the equation
 
         \[
-            \left(\dfrac{4\l - x^2}{hx^2 + h\l}\right)^2 = 1 + \dfrac{x^2}{\l}
+            \bp{\dfrac{4\l - x^2}{hx^2 + h\l}}^2 = 1 + \dfrac{x^2}{\l}
         \]
         where $\l < 0$, has only one real root. State the value of the real root for this value of $h$.
 
@@ -184,12 +184,12 @@
 
             \newpage
 
-            Consider $\left(\dfrac{4\l - x^2}{hx^2 + h\l}\right)^2 = 1 + \dfrac{x^2}{\l}$.
+            Consider $\bp{\dfrac{4\l - x^2}{hx^2 + h\l}}^2 = 1 + \dfrac{x^2}{\l}$.
 
             \begin{alignat*}{2}
-                &&\left(\dfrac{4\l - x^2}{hx^2 + h\l}\right)^2 &= 1 + \dfrac1{x^2}{\l}\\
-                \implies&&\left(\dfrac1h \cdot \dfrac{4\l - x^2}{x^2 + \l}\right)^2 &= 1 + \dfrac{x^2}\l\\
-                \implies&&\left(\dfrac1h \cdot y\right)^2 &= 1 + \dfrac{x^2}\l\\
+                &&\bp{\dfrac{4\l - x^2}{hx^2 + h\l}}^2 &= 1 + \dfrac1{x^2}{\l}\\
+                \implies&&\bp{\dfrac1h \cdot \dfrac{4\l - x^2}{x^2 + \l}}^2 &= 1 + \dfrac{x^2}\l\\
+                \implies&&\bp{\dfrac1h \cdot y}^2 &= 1 + \dfrac{x^2}\l\\
                 \implies&&\dfrac{y^2}{h^2} &= 1 + \dfrac{x^2}\l\\
                 \implies&&- \dfrac{x^2}\l + \dfrac{y^2}{h^2} &= 1\\
                 \implies&&- \dfrac{x^2}{\sqrt{\l}^2} + \dfrac{y^2}{h^2} &= 1

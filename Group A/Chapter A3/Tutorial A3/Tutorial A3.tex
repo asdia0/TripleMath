@@ -9,7 +9,7 @@
         Determine the behaviour of the following sequences.
 
         \begin{enumerate}
-            \item $u_n = 3\left(\dfrac12\right)^{n-1}$
+            \item $u_n = 3\bp{\dfrac12}^{n-1}$
             \item $v_n = 2 - n$
             \item $t_n = (-1)^n$
             \item $w_n = 4$
@@ -33,8 +33,8 @@
 
     \solution
         \begin{align*}
-            \sum_{n=10}^{50} 2n &= 2\left(\sum_{n=1}^{50} n - \sum_{n=1}^{9} n\right) \\
-            &= 2 \left( \dfrac{50\cdot51}2 - \dfrac{9\cdot10}2 \right)\\
+            \sum_{n=10}^{50} 2n &= 2\bp{\sum_{n=1}^{50} n - \sum_{n=1}^{9} n} \\
+            &= 2 \bp{ \dfrac{50\cdot51}2 - \dfrac{9\cdot10}2 }\\
             &= 2460
         \end{align*}
 
@@ -106,7 +106,7 @@
     \problem{}
         The sum of the first $n$ terms, $S_n$, is given by
         \[
-            S_n = \dfrac12 - \left(\dfrac12\right)^{n+1}
+            S_n = \dfrac12 - \bp{\dfrac12}^{n+1}
         \]
 
         \begin{enumerate}
@@ -120,19 +120,19 @@
         \part
             \begin{align*}
                 u_n &= S_{n} - S_{n-1}\\
-                &= \dfrac12 - \left(\dfrac12\right)^{n+1} - \left(\dfrac12 - \left(\dfrac12\right)^{n}\right)\\
-                &= \left(\dfrac12\right)^{n} - \left(\dfrac12\right)^{n+1} \\
-                &= \left(\dfrac12\right)^{n}\left(1 - \dfrac12\right)\\
-                &= \dfrac12 \cdot \left(\dfrac12\right)^{n}\\
-                &= \left(\dfrac12\right)^{n+1}
+                &= \dfrac12 - \bp{\dfrac12}^{n+1} - \bp{\dfrac12 - \bp{\dfrac12}^{n}}\\
+                &= \bp{\dfrac12}^{n} - \bp{\dfrac12}^{n+1} \\
+                &= \bp{\dfrac12}^{n}\bp{1 - \dfrac12}\\
+                &= \dfrac12 \cdot \bp{\dfrac12}^{n}\\
+                &= \bp{\dfrac12}^{n+1}
             \end{align*}
 
-            \boxt{$u_n$ = $\left(\dfrac12\right)^{n+1}$}
+            \boxt{$u_n$ = $\bp{\dfrac12}^{n+1}$}
 
         \part
             \textbf{Test for Geometric Progression:}
             \begin{align*}
-                \dfrac{u_{n+1}}{u_n} &= \dfrac{\left(\dfrac12\right)^{n+2}}{\left(\dfrac12\right)^{n+1}} \\
+                \dfrac{u_{n+1}}{u_n} &= \dfrac{\bp{\dfrac12}^{n+2}}{\bp{\dfrac12}^{n+1}} \\
                 &= \dfrac12
             \end{align*}
 
@@ -140,7 +140,7 @@
             \boxt{The first term is $\dfrac14$ and the common ratio is $\dfrac12$.}
 
         \part
-            Consider $\lim_{n \to \infty} S_n = \lim_{n \to \infty} \dfrac12 - \left(\dfrac12\right)^{n+1}$. As $n \to \infty$, we see that $\left(\dfrac12\right)^{n+1} \to 0$. Hence, $S_n$ converges to $\dfrac12$.
+            Consider $\lim_{n \to \infty} S_n = \lim_{n \to \infty} \dfrac12 - \bp{\dfrac12}^{n+1}$. As $n \to \infty$, we see that $\bp{\dfrac12}^{n+1} \to 0$. Hence, $S_n$ converges to $\dfrac12$.
 
     \problem{}
         The first term of an arithmetic series is $\ln x$ and the $r$th term is $\ln{xk^{r-1}}$, where $k$ is a real constant. Show that the sum of the first $n$ terms of the series is $S_n = \dfrac{n}2 \ln{x^2k^{n-1}}$. If $k = 1$ and $x \neq 1$, find the sum of the series $e^{S_1} + e^{S_2} + e^{S_3} + \ldots + e^{S_n}$.
@@ -157,7 +157,7 @@
         \begin{align*}
             \sum_{r=1}^n u_r &= \sum_{r=1}^n (\ln x + (r-1)\ln k) \\
             &= n\ln x + \ln k \sum_{r=1}^n (r-1)\\
-            &= n\ln x + \ln k \left(\dfrac{n(n+1)}2 - n \right)\\
+            &= n\ln x + \ln k \bp{\dfrac{n(n+1)}2 - n }\\
             &= \dfrac{n}2 (2\ln x  +(n-1)\ln k)\\
             &= \dfrac{n}2 (\ln x^2 + \ln k^{n-1})\\
             &= \dfrac{n}2 \ln{x^2k^{n-1}}
@@ -182,14 +182,14 @@
         A baker wants to bake a 1-metre tall birthday cake. It comprises 10 cylindrical cakes each of equal height 10 cm. The diameter of the cake at the lowest layer is 30 cm. The diameter of each subsequent layer is 4\% less than the diameter of the cake below. Find the volume of this cake in cm$^3$, giving your answer to the nearest integer.
 
     \solution
-        Let $d_1, d_2, \ldots d_{10}$ be the diameters of each cylindrical cake such that $d_{n+1} = \dfrac{96}{100}d_n$ and $d_1 = 30$. We thus have the closed form $d_n = 30\left(\dfrac{96}{100}\right)^{n-1}$. Let the cake have a volume of $V$ cm$^3$. Then,
+        Let $d_1, d_2, \ldots d_{10}$ be the diameters of each cylindrical cake such that $d_{n+1} = \dfrac{96}{100}d_n$ and $d_1 = 30$. We thus have the closed form $d_n = 30\bp{\dfrac{96}{100}}^{n-1}$. Let the cake have a volume of $V$ cm$^3$. Then,
         \begin{align*}
-            V &= \sum_{n=1}^{10} 10\pi \left(\dfrac{d_n}2\right)^2 \\
+            V &= \sum_{n=1}^{10} 10\pi \bp{\dfrac{d_n}2}^2 \\
             &= \dfrac{5\pi}2 \sum_{n=1}^{10} d^2_n \\
-            &= \dfrac{5\pi}2 \sum_{n=1}^{10} \left(30\left(\dfrac{96}{100}\right)^{n-1}\right)^2\\
-            &= 2250\pi \sum_{n=1}^{10} \left(\dfrac{96}{100}\right)^{2n-2}\\
-            &= 2250\pi \left(\dfrac{96}{100}\right)^{-2} \sum_{n=1}^{10} \left(\left(\dfrac{96}{100}\right)^2\right)^{n}\\
-            &= 2250\pi \left(\dfrac{96}{100}\right)^{-2} \dfrac{\left(\dfrac{96}{100}\right)^2 \left(1 - \left(\left(\dfrac{96}{100}\right)^2\right)^{10}\right)}{1-\left(\dfrac{96}{100}\right)^2}\\
+            &= \dfrac{5\pi}2 \sum_{n=1}^{10} \bp{30\bp{\dfrac{96}{100}}^{n-1}}^2\\
+            &= 2250\pi \sum_{n=1}^{10} \bp{\dfrac{96}{100}}^{2n-2}\\
+            &= 2250\pi \bp{\dfrac{96}{100}}^{-2} \sum_{n=1}^{10} \bp{\bp{\dfrac{96}{100}}^2}^{n}\\
+            &= 2250\pi \bp{\dfrac{96}{100}}^{-2} \dfrac{\bp{\dfrac{96}{100}}^2 \bp{1 - \bp{\bp{\dfrac{96}{100}}^2}^{10}}}{1-\bp{\dfrac{96}{100}}^2}\\
             &= 50309
         \end{align*}
 
@@ -379,7 +379,7 @@
 
                 \boxt{After 10 years, he will have at least \$$12x$ in his account for the first time.}
         \part
-            After $n$ years, the woman will have \$$ny$ in her account. Hence, the interest she gains after $n$ years is $0.05ny$. Hence, the total interest she will gain is $\sum_{k=1}^n \dfrac{1}{20}ny = \dfrac{1}{20} \cdot \dfrac{n(n+1)}2 \cdot y = \dfrac{1}{40} n(n+1)y$. 
+            After $n$ years, the woman will have \$$ny$ in her account. Hence, the interest she gains after $n$ years is $0.05ny$. Hence, the total interest she will gain is $\displaystyle\sum_{k=1}^n \dfrac{1}{20}ny = \dfrac{1}{20} \cdot \dfrac{n(n+1)}2 \cdot y = \dfrac{1}{40} n(n+1)y$. 
 
     \problem{}
         The sum, $S_n$, of the first $n$ terms of a sequence $U_1, U_2, U_3, \ldots$ is given by
@@ -395,7 +395,7 @@
 
     \solution
         \part
-            \begin{equation*}
+            \[
                 \begin{aligned}
                     S_n &= \dfrac{n}2 (c-7n)\\
                     &= \dfrac{n}2 (-7(n+1) +7+c)\\
@@ -403,7 +403,7 @@
                     &= -7 \sum_{k=1}^n k + \dfrac{7+c}2 \sum_{k=1}^n 1\\
                     &= \sum_{k=1}^n (-7n + \dfrac{7+c}2)
                 \end{aligned}
-            \end{equation*}
+            \]
 
             \boxt{$U_n = -7n + \dfrac{7+c}2$}
 

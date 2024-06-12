@@ -245,7 +245,7 @@
             
                         \addlegendentry{$x^2 + 2x + 2y + 4 = 0$};
 
-                        \fill (-1, -1.5) circle[radius=2.5 pt] node[anchor=north east, fill=white, opacity = 0.6, text opacity=1] {$\left(-1, -\dfrac32\right)$};
+                        \fill (-1, -1.5) circle[radius=2.5 pt] node[anchor=north east, fill=white, opacity = 0.6, text opacity=1] {$\bp{-1, -\dfrac32}$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
@@ -492,9 +492,9 @@
             
                         \addlegendentry{$y = x + 2\sin x$};
 
-                        \fill (2.094, 3.826) circle[radius=2.5 pt] node[anchor=south] {$\left(\dfrac23 \pi, 3.83\right)$};
+                        \fill (2.094, 3.826) circle[radius=2.5 pt] node[anchor=south] {$\bp{\dfrac23 \pi, 3.83}$};
 
-                        \fill (4.189, 2.457) circle[radius=2.5 pt] node[anchor=north] {$\left(\dfrac43 \pi, 2.46\right)$};
+                        \fill (4.189, 2.457) circle[radius=2.5 pt] node[anchor=north] {$\bp{\dfrac43 \pi, 2.46}$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
@@ -555,7 +555,7 @@
             
                         \addlegendentry{$y = xe^{-x}$};
                         
-                        \fill (1, 1/e) circle[radius=2.5 pt] node[anchor=south west] {$\left(1, \dfrac1e\right)$};
+                        \fill (1, 1/e) circle[radius=2.5 pt] node[anchor=south west] {$\bp{1, \dfrac1e}$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
@@ -585,9 +585,9 @@
             
                         \addlegendentry{$y = xe^{-x^2}$};
                         
-                        \fill (0.707, 0.429) circle[radius=2.5 pt] node[anchor=west] {$\left(\dfrac{1}{\sqrt{2}}, \dfrac1{\sqrt2e}\right)$};
+                        \fill (0.707, 0.429) circle[radius=2.5 pt] node[anchor=west] {$\bp{\dfrac{1}{\sqrt{2}}, \dfrac1{\sqrt2e}}$};
 
-                        \fill (-0.707, -0.429) circle[radius=2.5 pt] node[anchor=east] {$\left(-\dfrac{1}{\sqrt{2}}, -\dfrac1{\sqrt2e}\right)$};
+                        \fill (-0.707, -0.429) circle[radius=2.5 pt] node[anchor=east] {$\bp{-\dfrac{1}{\sqrt{2}}, -\dfrac1{\sqrt2e}}$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
@@ -654,13 +654,13 @@
 
     \solution
         \part
-            \begin{equation*}
+            \[
                 \begin{aligned}
                     y &= \dfrac{ax^2+bx}{x+2} \\
                     &= \dfrac{(ax + b-2a)(x+2) - 2(b-2a)}{x+2}\\
                     &= ax+b-2a - \dfrac{2(b-2a)}{x+2}
                 \end{aligned}
-            \end{equation*}
+            \]
 
             Since $C$ has an asymptote $y = 1-2x$, we have $a = -2$ and $b-2a = 1$, whence $b = -3$.
 
@@ -836,16 +836,16 @@
         \part
             Note that $x = 0$ is always a root of $\dfrac{x}{x^2-5x+4} = kx$. We thus aim to find the value of $k$ such that $\dfrac{x}{x^2-5x+4} = kx$ has only one non-zero root. 
 
-            We observe that if $k > 0$, $y=kx$ will intersect with $y = \dfrac{x}{x^2-5x+4}$ at least twice: before $x=1$ and after $x=4$. In order to have only one non-zero root, we must force the intersection point that comes before $x=1$ to be at the origin $(0, 0)$. Hence, $k$ is tangential to $C$ at $(0, 0)$, thus giving $k = \left.\der{C}{x}\right|_{x=0}$.
+            We observe that if $k > 0$, $y=kx$ will intersect with $y = \dfrac{x}{x^2-5x+4}$ at least twice: before $x=1$ and after $x=4$. In order to have only one non-zero root, we must force the intersection point that comes before $x=1$ to be at the origin $(0, 0)$. Hence, $k$ is tangential to $C$ at $(0, 0)$, thus giving $k = \evalder{\der{C}{x}}{x=0}$.
 
-            \begin{equation*}
+            \[
                 \begin{aligned}
-                    k &= \left.\der{C}{x}\right|_{x=0}\\
-                    &= \left.\der{}{x}\dfrac{x}{x^2-5x+4}\right|_{x=0} \\
-                    &= \left.\dfrac{3x^2-10x+4}{(x^2-5x+4)^2}\right|_{x=0} \\
+                    k &= \evalder{\der{C}{x}}{x=0}\\
+                    &= \evalder{\der{}{x}\dfrac{x}{x^2-5x+4}}{x=0} \\
+                    &= \evalder{\dfrac{3x^2-10x+4}{(x^2-5x+4)^2}}{x=0} \\
                     &= \dfrac14
                 \end{aligned}
-            \end{equation*}
+            \]
 
             \boxt{$k = \dfrac14$}
 \end{document}

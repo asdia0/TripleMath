@@ -20,10 +20,10 @@
 
         Substituting $x = \dfrac1{14}$,
         \begin{alignat*}{2}
-            &&(1 + 2 \cdot \dfrac1{14})^{-\tfrac13} &= 1 - \dfrac23 \cdot \dfrac1{14} + \dfrac89 \left(\dfrac1{14}\right)^2 + \ldots\\
-            \implies&& \left(\dfrac87\right)^{-\tfrac13} &\approx \dfrac{422}{441}\\
-            \implies&& \left(\dfrac78\right)^{\tfrac13} &\approx \dfrac{422}{441}\\
-            \implies&& \left(7\right)^{\tfrac13} \cdot \dfrac12 &\approx \dfrac{422}{441}\\
+            &&(1 + 2 \cdot \dfrac1{14})^{-\tfrac13} &= 1 - \dfrac23 \cdot \dfrac1{14} + \dfrac89 \bp{\dfrac1{14}}^2 + \ldots\\
+            \implies&& \bp{\dfrac87}^{-\tfrac13} &\approx \dfrac{422}{441}\\
+            \implies&& \bp{\dfrac78}^{\tfrac13} &\approx \dfrac{422}{441}\\
+            \implies&& \bp{7}^{\tfrac13} \cdot \dfrac12 &\approx \dfrac{422}{441}\\
             \implies&& \sqrt[3]7 &\approx \dfrac{844}{441}\\
             && &= 1.9138 \tosf{5}
         \end{alignat*}
@@ -32,9 +32,9 @@
 
     \problem{}
         In the triangle $ABC$, $AB = 1$, $BC = 3$ and angle $ABC = \t$ radians. Given that $\t$ is a sufficiently small angle, show that
-        \begin{equation*}
+        \[
             AC \approx (4 + 3\t^2)^{\tfrac12} \approx a + b\t^2
-        \end{equation*}
+        \]
          for constants $a$ and $b$ to be determined.
 
     \solution
@@ -46,11 +46,11 @@
         \end{alignat*}
         Since $\t$ is sufficiently small, $\cos \t \approx 1 - \dfrac{\t^2}{2}$. Hence,
         \begin{alignat*}{2}
-            &&AC^2 &\approx 10 - 6\left(1 - \dfrac{\t^2}{2}\right)\\
+            &&AC^2 &\approx 10 - 6\bp{1 - \dfrac{\t^2}{2}}\\
             && &= 4 + 3\t^2\\
             \implies&&AC &\approx (4+3\t^2)^{\tfrac12}\\
-            && &= 2\left(1 + \dfrac34 \t^2\right)^{\tfrac12}\\
-            && &\approx 2 \left(1 + \dfrac12 \cdot \dfrac34 \t^2\right)\\
+            && &= 2\bp{1 + \dfrac34 \t^2}^{\tfrac12}\\
+            && &\approx 2 \bp{1 + \dfrac12 \cdot \dfrac34 \t^2}\\
             && &= 2 + \dfrac34 \t^2
         \end{alignat*}
 
@@ -94,7 +94,7 @@
             \part
                 Implicitly differentiating Equation~\ref{P3-4},
                 \begin{equation}
-                    y^{(4)} = 2\left(y^{(3)}y' + (y'')^2\right)\label{P3-5}
+                    y^{(4)} = 2\bp{y^{(3)}y' + (y'')^2}\label{P3-5}
                 \end{equation}
 
                 Substituting $x = 0$ into Equations~\ref{P3-1},~\ref{P3-2},~\ref{P3-3},~\ref{P3-4} and~\ref{P3-5}, we see that
@@ -105,7 +105,7 @@
                     y^{(3)} &= 0\\
                     y^{(4)} &= 2
                 \end{align*}
-                Thus, $\left.\der[4]{y}{x}\right|_{x=0} = 2$.
+                Thus, $\evalder{\der[4]{y}{x}}{x=0} = 2$.
                 \begin{align*}
                     \ln \sec x &= \sum_{n=0}^\infty \dfrac{y^{(n)}}{n!}x^n\\
                     &= \dfrac12 x^2 + \dfrac1{12} x^4 + \ldots 
@@ -113,7 +113,7 @@
 
                 Substituting $x = \dfrac\pi4$,
                 \begin{alignat*}{2}
-                    &&\ln \sec \dfrac\pi4 &= \dfrac12 \left(\dfrac\pi4\right)^2 + \dfrac1{12} \left(\dfrac\pi4\right)^4 + \ldots\\
+                    &&\ln \sec \dfrac\pi4 &= \dfrac12 \bp{\dfrac\pi4}^2 + \dfrac1{12} \bp{\dfrac\pi4}^4 + \ldots\\
                     \implies&&\ln \sqrt2 &= \dfrac{\pi^2}{32} + \dfrac{\pi^2}{3072} + \ldots\\
                     \implies&&\dfrac12 \ln 2 &= \dfrac{\pi^2}{32} + \dfrac{\pi^2}{3072} + \ldots\\
                     \implies&&\ln 2 &= \dfrac{\pi^2}{16} + \dfrac{\pi^2}{1536} + \ldots\\

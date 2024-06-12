@@ -8,7 +8,7 @@
     \problem{}
         \begin{enumerate}
             \item Given that $f(x) = e^{\cos x}$, find $f(0)$, $f'(0)$ and $f''(0)$. Hence, write down the first two non-zero terms in the MacLaurin series for $f(x)$. Give the coefficients in terms of $e$.
-            \item Given that $g(x) = \tan\left(2x + \dfrac14 \pi \right)$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence, find the first three terms in the MacLaurin series of $g(x)$.
+            \item Given that $g(x) = \tan{2x + \dfrac14 \pi }$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence, find the first three terms in the MacLaurin series of $g(x)$.
         \end{enumerate}
 
     \solution
@@ -40,9 +40,9 @@
 
         \part
             \begin{alignat*}{2}
-                &&g(x) &= \tan\left(2x + \dfrac14 \pi \right)\\
-                \implies&&g'(x) &= \sec^2 \left(2x + \dfrac14 \pi \right) \cdot 2\\
-                && &= 2\left(1 + \tan^2\left(2x + \dfrac14 \pi \right)\right)\\
+                &&g(x) &= \tan{2x + \dfrac14 \pi }\\
+                \implies&&g'(x) &= \sec^2 \bp{2x + \dfrac14 \pi } \cdot 2\\
+                && &= 2\bp{1 + \tan^2\bp{2x + \dfrac14 \pi }}\\
                 && &= 2 + 2g^2(x)\\
                 \implies&&g''(x) &= 2 \cdot 2g(x) \cdot g'(x)\\
                 && &= 4g(x)g'(x)
@@ -86,7 +86,7 @@
             \begin{alignat}{2}
                 &&(1+2x)\cdot 2y \cdot y' + y^2\cdot2 &= 8(1+3x)^7 \cdot 3\nonumber\\
                 \implies&&(1+2x)\cdot y \cdot y' + y^2 &= 12(1+3x)^7\nonumber\\
-                \implies&&y\left((1+2x)\cdot y' + y\right) &= 12(1+3x)^7\label{P2-1-3}\\\nonumber
+                \implies&&y\bp{(1+2x)\cdot y' + y} &= 12(1+3x)^7\label{P2-1-3}\\\nonumber
             \end{alignat}
 
             Implicitly differentiating Equation~\ref{P2-1-3},
@@ -156,7 +156,7 @@
 
             \boxt{$\dfrac{\sin 2x}{2 + 3x} = x - \dfrac32 x^2 + \dfrac{19}{12}x^3+\ldots$}
 
-            Note that the denominator can be rewritten as $2\left(1 + \dfrac32 x \right)$. Hence, the series is only valid when $\abs{\dfrac32 x} < 1 \implies -\dfrac23 < x < \dfrac23$.
+            Note that the denominator can be rewritten as $2\bp{1 + \dfrac32 x }$. Hence, the series is only valid when $\abs{\dfrac32 x} < 1 \implies -\dfrac23 < x < \dfrac23$.
 
 
     \problem{}
@@ -176,25 +176,25 @@
         Hence,
         \begin{align*}
             \ln{1 + \cos x} &= \sum_{n=0}^\infty (-1)^n \dfrac{\cos^{n+1} x}{n+1}\\
-            &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} \left(\sum_{k=0}^\infty \dfrac{(-1)^k}{(2k)!} x^{2k} \right)^{n+1}
+            &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} \bp{\sum_{k=0}^\infty \dfrac{(-1)^k}{(2k)!} x^{2k} }^{n+1}
         \end{align*}
 
-        Consider $\left(\sum_{k=0}^\infty \dfrac{(-1)^k}{(2k)!} x^{2k} \right)^{n+1}$, which is equivalent to
+        Consider $\bp{\sum_{k=0}^\infty \dfrac{(-1)^k}{(2k)!} x^{2k} }^{n+1}$, which is equivalent to
 
-        \begin{equation*}
-            \underbrace{\left(1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots \right)\left(1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots \right)\ldots\left(1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots \right)}_\text{$(n + 1)$ copies}
-        \end{equation*}
+        \[
+            \underbrace{\bp{1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots }\bp{1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots }\ldots\bp{1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots }}_\text{$(n + 1)$ copies}
+        \]
 
         The constant term is clearly $1$. Now consider the coefficient of the $x^2$ term. The only to obtain an $x^2$ term is to select a constant term ($1$) from $n$ copies, and an $x^2$ term ($-\dfrac{x^2}{2!}$) from the remaining copy. There are $\displaystyle\binom{n+1}{1} = n+1$ ways to do this. Hence, the coefficient of the $x^2$ term is $(n+1) \cdot 1 \cdot -\dfrac{1}{2!} = -\dfrac{n+1}2$.
 
         Now consider the coefficient of the $x^4$ term. There are two ways to obtain an $x^4$ term. The first way is to select a constant term ($1$) from $n$ copies, and an $x^4$ term ($\dfrac{x^4}{4!}$) from the remaining copy. There are $\displaystyle\binom{n+1}1 = n+1$ ways to do this, which contributes $(n+1) \cdot 1 \cdot \dfrac{1}{4!} = \dfrac{n+1}{24}$ to the coefficient of $x^4$.
 
-        The second way to obtain an $x^4$ term is to select an $x^2$ term ($-\dfrac{x^2}{2!}$) from 2 copies and a constant term ($1$) from the remaining copies. There are $\displaystyle \binom{n+1}{2} = \dfrac{(n+1)n}2$ ways to do this, which further contributes $\dfrac{(n+1)n}2 \cdot 1 \cdot \left(-\dfrac{1}{2!}\right)^2 = \dfrac{n(n+1)}8$ to the coefficient of $x^4$. Hence, the coefficient of $x^4$ is given by $\dfrac{n+1}{24} + \dfrac{n(n+1)}8 = \dfrac{(n+1)(3n + 1)}{24}$. 
+        The second way to obtain an $x^4$ term is to select an $x^2$ term ($-\dfrac{x^2}{2!}$) from 2 copies and a constant term ($1$) from the remaining copies. There are $\displaystyle \binom{n+1}{2} = \dfrac{(n+1)n}2$ ways to do this, which further contributes $\dfrac{(n+1)n}2 \cdot 1 \cdot \bp{-\dfrac{1}{2!}}^2 = \dfrac{n(n+1)}8$ to the coefficient of $x^4$. Hence, the coefficient of $x^4$ is given by $\dfrac{n+1}{24} + \dfrac{n(n+1)}8 = \dfrac{(n+1)(3n + 1)}{24}$. 
 
         Thus, up to and including the term in $x^4$,
         \begin{align*}
-            \ln{1 + \cos x} &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} \left(1 - \dfrac{n+1}2 x^2 + \dfrac{(n+1)(3n+1)}{24} + \ldots\right)\\
-            &= \sum_{n=0}^\infty (-1)^n \left(\dfrac1{n+1} - \dfrac12 x^2 + \dfrac{3n+1}{24}x^4 + \ldots\right)\\
+            \ln{1 + \cos x} &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} \bp{1 - \dfrac{n+1}2 x^2 + \dfrac{(n+1)(3n+1)}{24} + \ldots}\\
+            &= \sum_{n=0}^\infty (-1)^n \bp{\dfrac1{n+1} - \dfrac12 x^2 + \dfrac{3n+1}{24}x^4 + \ldots}\\
             &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} - \dfrac12 x^2 \sum_{n=0}^\infty (-1)^n + \dfrac{3}{24} x^4 \sum_{n=0}^\infty n(-1)^n + \dfrac1{24} x^4 \sum_{n=0}^\infty (-1)^n + \ldots
         \end{align*}
 
@@ -205,7 +205,7 @@
             &= \ln 2
         \end{align*}
 
-        Now consider the Abel regularization of $\sum\limits_{n=0}^\infty (-1)^n$.
+        Now consider the Abel regularization of $\displaystyle\sum\limits_{n=0}^\infty (-1)^n$.
         \begin{align*}
             \sum_{n=0}^\infty (-1)^n &= \lim_{x \to 1^-} \sum_{n=0}^\infty (-1)^n x^n\\
             &= \lim_{x \to 1^-} \sum_{n=0}^\infty (-x)^n\\
@@ -213,7 +213,7 @@
             &= \dfrac12
         \end{align*}
 
-        Now observe that $\sum\limits_{n=0}^\infty x^n$ is absolutely convergent for $\abs{x} < 1$. Hence,
+        Now observe that $\displaystyle\sum\limits_{n=0}^\infty x^n$ is absolutely convergent for $\abs{x} < 1$. Hence,
 
         \begin{align*}
             \sum_{n=0}^\infty nx^{n-1} &= \sum_{n=0}^\infty \der{}{x} x^n\\
@@ -224,11 +224,11 @@
 
         Multiplying by $x$ on both sides gives
 
-        \begin{equation*}
+        \[
             \sum_{n=0}^\infty nx^n = \dfrac{x}{(1-x)^2}
-        \end{equation*}
+        \]
 
-        Hence, the Abel regularization of $\sum\limits_{n=0}^\infty n(-1)^n$ is given by
+        Hence, the Abel regularization of $\displaystyle\sum\limits_{n=0}^\infty n(-1)^n$ is given by
         \begin{align*}
             \sum_{n=0}^\infty n(-1)^n &= \lim_{x \to 1^-} \sum_{n=0}^\infty n(-1)^n x^n\\
             &= \lim_{x \to 1^-} \sum_{n=0}^\infty n(-x)^n\\
@@ -247,7 +247,7 @@
     \problem{}
         \begin{enumerate}
             \item Find the first three terms of the MacLaurin series for $e^x (1 + \sin 2x)$.
-            \item It is given that the first two terms of this series are equal to the first two terms in the series expansion, in ascending powers of $x$, of $\left(1 + \dfrac43 x\right)^n$. Find $n$ and show that the third terms in each of these series are equal.
+            \item It is given that the first two terms of this series are equal to the first two terms in the series expansion, in ascending powers of $x$, of $\bp{1 + \dfrac43 x}^n$. Find $n$ and show that the third terms in each of these series are equal.
         \end{enumerate}
         
     \solution
@@ -260,10 +260,10 @@
                 && &= e^x + \Im{e^{x(1+2i)}}\\
                 \implies && f^{(n)}(x) &= e^x + \Im{\der[n]{}{x} e^{x(1+2i)}}\\
                 && &= e^x + \Im{(1+2i)^n e^{x(1+2i)}}\\
-                && &= e^x + \Im{\left(\sqrt 5 e^{i \arctan 2}\right)^n e^{x(1+2i)}}\\
+                && &= e^x + \Im{\bp{\sqrt 5 e^{i \arctan 2}}^n e^{x(1+2i)}}\\
                 && &= e^x + \Im{5^{\frac{n}2} e^{in \arctan 2} e^{x(1+2i)}}\\
                 && &= e^x + 5^{\frac{n}2} e^{x} \Im{ e^{i(n \arctan 2 + 2x)} }\\
-                && &= e^x + 5^{\frac{n}2} e^{x} \sin{\left(n \arctan 2 + 2x\right)}\\
+                && &= e^x + 5^{\frac{n}2} e^{x} \sin{\bp{n \arctan 2 + 2x}}\\
                 \implies && f^{(n)}(0) &= 1 + 5^{\frac{n}2} e^{x} \sin{(n \arctan 2)}
             \end{alignat*}
 
@@ -275,7 +275,7 @@
                 && &= 1 + \sqrt5 \cdot \dfrac{2}{\sqrt5}\\
                 && &= 3\\
                 &&f^{(2)}(0) &= 1 + 5^{\frac{2}2} e^{x} \sin{(2 \arctan 2)}\\
-                && &= 1 + 5 \cdot 2\sin\left(\arctan 2\right) \cos\left(\arctan 2\right)\\
+                && &= 1 + 5 \cdot 2\sin{\arctan 2} \cos{\arctan 2}\\
                 && &= 1 + 5 \cdot 2 \cdot \dfrac{2}{\sqrt5} \cdot \dfrac1{\sqrt5}\\
                 && &= 5
             \end{alignat*}
@@ -292,16 +292,16 @@
         \part
             By the Binomial Theorem,
             \begin{align*}
-                \left(1 + \dfrac43x\right)^n &= \sum_{k=0}^n \binom{n}{k} \left(\dfrac43 x\right)^k  1^{n-k}\\
-                &= \sum_{k=0}^n \binom{n}{k} \left(\dfrac43 \right)^k x^k\\
-                &= \binom{n}{0} \left(\dfrac43 \right)^0 x^0 + \binom{n}{1} \left(\dfrac43 \right)^1 x^1 + \ldots\\
+                \bp{1 + \dfrac43x}^n &= \sum_{k=0}^n \binom{n}{k} \bp{\dfrac43 x}^k  1^{n-k}\\
+                &= \sum_{k=0}^n \binom{n}{k} \bp{\dfrac43 }^k x^k\\
+                &= \binom{n}{0} \bp{\dfrac43 }^0 x^0 + \binom{n}{1} \bp{\dfrac43 }^1 x^1 + \ldots\\
                 &= 1 + \dfrac43 nx + \ldots
             \end{align*}
 
-            Comparing the coefficient of $x$ terms, we have $3 = \dfrac43 n$, whence $n = \dfrac94$. Hence, the third term is in the expansion of $\left(1 + \dfrac43x\right)^n$ is given by
+            Comparing the coefficient of $x$ terms, we have $3 = \dfrac43 n$, whence $n = \dfrac94$. Hence, the third term is in the expansion of $\bp{1 + \dfrac43x}^n$ is given by
 
             \begin{align*}
-                \binom{\frac94}{2} \left(\dfrac43 \right)^2 x^2 &= \dfrac{\frac94(\frac94-1)}{2}  \left(\dfrac43\right)^2 x^2\\
+                \binom{\frac94}{2} \bp{\dfrac43 }^2 x^2 &= \dfrac{\frac94(\frac94-1)}{2}  \bp{\dfrac43}^2 x^2\\
                 &= \dfrac52 x^2
             \end{align*}
 
@@ -309,7 +309,7 @@
 
     \problem{}
         \begin{enumerate}
-            \item Show that the first three non-zero terms in the expansion of $\left(\dfrac8{x^3} - 1\right)^{\tfrac13}$ in ascending powers of $x$ are in the form $\dfrac{a}x + bx^2 + cx^5$, where $a$, $b$ and $c$ are constants to be determined.
+            \item Show that the first three non-zero terms in the expansion of $\bp{\dfrac8{x^3} - 1}^{\tfrac13}$ in ascending powers of $x$ are in the form $\dfrac{a}x + bx^2 + cx^5$, where $a$, $b$ and $c$ are constants to be determined.
             \item By putting $x = \dfrac23$ in your result, obtain an approximation for $\sqrt[3]{26}$ in the form of a fraction in its lowest terms.
 
             A student put $x = 6$ into the expansion to obtain an approximation of $\sqrt[3]{26}$. Comment on the suitability of this choice of $x$ for the approximation of $\sqrt[3]{26}$.
@@ -318,24 +318,24 @@
     \solution
         \part
             \begin{align*}
-                \left(\dfrac8{x^3} - 1\right)^{\tfrac13} &= \dfrac2x \left(1 - \dfrac{x^3}8\right)^{\tfrac13}\\ 
-                &= \dfrac2x \sum_{k=0}^\infty \binom{\frac13}{k} \left(- \dfrac{x^3}8\right)^k\\
-                &= \dfrac2x \left(\binom{\frac13}{0} \left(- \dfrac{x^3}8\right)^0 + \binom{\frac13}{1} \left(- \dfrac{x^3}8\right)^1 + \binom{\frac13}{2} \left(- \dfrac{x^3}8\right)^2 + \ldots \right)\\
-                &= \dfrac2x \left(1 + \dfrac13 \cdot - \dfrac{x^3}8 + \dfrac{\frac13 (\frac13 - 1)}{2} \cdot \dfrac{x^6}{64} + \ldots \right)\\
+                \bp{\dfrac8{x^3} - 1}^{\tfrac13} &= \dfrac2x \bp{1 - \dfrac{x^3}8}^{\tfrac13}\\ 
+                &= \dfrac2x \sum_{k=0}^\infty \binom{\frac13}{k} \bp{- \dfrac{x^3}8}^k\\
+                &= \dfrac2x \bp{\binom{\frac13}{0} \bp{- \dfrac{x^3}8}^0 + \binom{\frac13}{1} \bp{- \dfrac{x^3}8}^1 + \binom{\frac13}{2} \bp{- \dfrac{x^3}8}^2 + \ldots }\\
+                &= \dfrac2x \bp{1 + \dfrac13 \cdot - \dfrac{x^3}8 + \dfrac{\frac13 (\frac13 - 1)}{2} \cdot \dfrac{x^6}{64} + \ldots }\\
                 &= \dfrac2x - \dfrac{x^2}{12} - \dfrac{x^5}{288} + \ldots
             \end{align*}
 
         \part
             Evaluating the above equation at $x = \dfrac23$,
             \begin{alignat*}{2}
-                && \left(\dfrac8{\left(\frac23\right)^3} - 1\right)^{\tfrac13} &= \dfrac2{\tfrac23} - \dfrac{\left(\frac23\right)^2}{12} - \dfrac{\left(\frac23\right)^5}{288} + \ldots\\
+                && \bp{\dfrac8{\bp{\frac23}^3} - 1}^{\tfrac13} &= \dfrac2{\tfrac23} - \dfrac{\bp{\frac23}^2}{12} - \dfrac{\bp{\frac23}^5}{288} + \ldots\\
                 \implies && \sqrt[3]{26} &= 3 - \dfrac1{27} - \dfrac1{2187}\\
                 && &= \dfrac{6479}{2187}
             \end{alignat*}
 
             \boxt{$\sqrt[3]{26} = \dfrac{6479}{2187}$}
 
-            Since $\abs{6} > 1$, the binomial expansion of $ \left(\dfrac8{x^3} - 1\right)^{\tfrac13}$ does not hold. Hence, $x = 6$ is not an appropriate choice.
+            Since $\abs{6} > 1$, the binomial expansion of $ \bp{\dfrac8{x^3} - 1}^{\tfrac13}$ does not hold. Hence, $x = 6$ is not an appropriate choice.
 
     \problem{}
         Let $f(x) = e^x \sin x$.
@@ -388,23 +388,23 @@
                 && &= \Im{e^{x(1 + i)}}\\
                 \implies&&f^{(n)}(x) &= \Im{\der[n]{}{x} e^{x(1 + i)}}\\
                 && &= \Im{(1+i)^n e^{x(1 + i)}}\\
-                && &= \Im{\left(\sqrt2 e^{i\tfrac{\pi}4}\right)^n e^{x(1 + i)}}\\
+                && &= \Im{\bp{\sqrt2 e^{i\tfrac{\pi}4}}^n e^{x(1 + i)}}\\
                 && &= \Im{2^{\tfrac{n}2} e^x e^{i\tfrac{\pi}4 n} e^{ix}}\\
-                && &= 2^{\tfrac{n}2} e^x \Im{e^{i\left(\tfrac{\pi}4 n + x\right)}}\\
-                && &= 2^{\tfrac{n}2} e^x \sin{\left(\tfrac{\pi}4 n + x\right)}
+                && &= 2^{\tfrac{n}2} e^x \Im{e^{i\bp{\tfrac{\pi}4 n + x}}}\\
+                && &= 2^{\tfrac{n}2} e^x \sin{\bp{\tfrac{\pi}4 n + x}}
             \end{alignat*}
 
             Evaluating $f^{(n)}(x)$ at $x = 0$,
-            \begin{equation*}
-                f^{(n)}(x) = 2^{\tfrac{n}2}\sin{\left(\tfrac{\pi}4 n\right)}
-            \end{equation*}
+            \[
+                f^{(n)}(x) = 2^{\tfrac{n}2}\sin{\bp{\tfrac{\pi}4 n}}
+            \]
 
             Hence,
             \begin{align*}
-                f(0) &=  2^{\tfrac{0}2}\sin{\left(\tfrac{\pi}4 \cdot 0\right)} = 0\\
-                f'(0) &=  2^{\tfrac{1}2}\sin{\left(\tfrac{\pi}4 \cdot 1\right)} = 1\\
-                f''(0) &=  2^{\tfrac{2}2}\sin{\left(\tfrac{\pi}4 \cdot 2\right)} = 2\\
-                f^{(3)}(0) &=  2^{\tfrac{3}2}\sin{\left(\tfrac{\pi}4 \cdot 2\right)} = 2
+                f(0) &=  2^{\tfrac{0}2}\sin{\bp{\tfrac{\pi}4 \cdot 0}} = 0\\
+                f'(0) &=  2^{\tfrac{1}2}\sin{\bp{\tfrac{\pi}4 \cdot 1}} = 1\\
+                f''(0) &=  2^{\tfrac{2}2}\sin{\bp{\tfrac{\pi}4 \cdot 2}} = 2\\
+                f^{(3)}(0) &=  2^{\tfrac{3}2}\sin{\bp{\tfrac{\pi}4 \cdot 2}} = 2
             \end{align*}
 
             Thus,
@@ -458,9 +458,9 @@
                 \implies&&x &\geq -1.96
             \end{alignat*}
 
-            \case{2}{$-\left(f(x) - g(x)\right) \leq 0.5$}
+            \case{2}{$-\bp{f(x) - g(x)} \leq 0.5$}
             \begin{alignat*}{2}
-                &&-\left(f(x) - g(x)\right) &\leq 0.5\\
+                &&-\bp{f(x) - g(x)} &\leq 0.5\\
                 \implies&&g(x) - f(x) &\leq 0.5\\
                 \implies&&x + x^2 + \dfrac13 x^3 - e^x \sin x &\leq 0.5\\
                 \implies&&x &\leq 1.56
@@ -484,8 +484,8 @@
             && y &= \dfrac1{1 + \sin 2x} \label{P7-1} \\
             \implies&&y' &= -\dfrac1{(1+\sin 2x)^2} \cdot (\cos 2x \cdot 2)\nonumber\\
             && &= -2 y^2\cos 2x \label{P7-2}\\
-            \implies&&y'' &= -2 \left(\cos 2x \cdot 2y\cdot y' + y^2 \cdot -\sin 2x \cdot 2\right)\nonumber\\
-            && &= -4\left(y\cdot y' \cos 2x - y^2\sin 2x  \right)\label{P7-3}
+            \implies&&y'' &= -2 \bp{\cos 2x \cdot 2y\cdot y' + y^2 \cdot -\sin 2x \cdot 2}\nonumber\\
+            && &= -4\bp{y\cdot y' \cos 2x - y^2\sin 2x  }\label{P7-3}
         \end{alignat}
         
         From Equations~\ref{P7-1},~\ref{P7-2} and~\ref{P7-3},
@@ -504,8 +504,8 @@
 
         \part
             \begin{align*}
-                \int_{-0.1}^{0.1} y \d x &\approx \int_{-0.1}^{0.1} \left(1 - 2x + 4x^2 \right) \d x\\
-                &= \eval{x - 2 \cdot \dfrac12 x^2 + 4 \cdot \dfrac13 x^3}{-0.1}{0.1}\\
+                \int_{-0.1}^{0.1} y \d x &\approx \int_{-0.1}^{0.1} \bp{1 - 2x + 4x^2 } \d x\\
+                &= \evalint{x - 2 \cdot \dfrac12 x^2 + 4 \cdot \dfrac13 x^3}{-0.1}{0.1}\\
                 &= \dfrac{76}{275}
             \end{align*}
 
@@ -514,7 +514,7 @@
         \part
             \begin{align*}
                 y' &= \der{}{x} y\\
-                &= \der{}{x} \left(1 - 2x + 4x^2 + \ldots\right)\\
+                &= \der{}{x} \bp{1 - 2x + 4x^2 + \ldots}\\
                 &= -2 + 8x + \ldots
             \end{align*}
 
@@ -557,8 +557,8 @@
             Implicitly differentiating Equation~\ref{P8-3},
             \begin{alignat}{2}
                 &&y''\sqrt{1-4x^2} + y'\dfrac{1}{2\sqrt{1 - 4x^2}} \cdot -8x &= 2y'\nonumber\\
-                \implies&& \left(1 -4x^2\right)y''  - 4xy' &= 2y' \sqrt{1-4x^2}\nonumber\\
-                && &= 2 \left(\dfrac{2y}{\sqrt{1-4x^2}}\right) 
+                \implies&& \bp{1 -4x^2}y''  - 4xy' &= 2y' \sqrt{1-4x^2}\nonumber\\
+                && &= 2 \bp{\dfrac{2y}{\sqrt{1-4x^2}}} 
                 \sqrt{1-4x^2}\nonumber\\
                 && &= 4y\label{P8-4}
             \end{alignat}
@@ -590,7 +590,7 @@
         \part
             Consider $y = e^{\tfrac{\pi}2} \implies \arcsin 2x = \dfrac{\pi}2 \implies x = \dfrac12\cdot \sin \dfrac{\pi}2 = \dfrac12$. Hence, substituting $x = \dfrac12$ in the MacLaurin series for $y$,
             \begin{align*}
-                e^{\tfrac{\pi}2} &\approx 1 + 2\cdot\dfrac12 + 2\left(\dfrac12\right)^2 + \dfrac83 \left(\dfrac12\right)^3\\
+                e^{\tfrac{\pi}2} &\approx 1 + 2\cdot\dfrac12 + 2\bp{\dfrac12}^2 + \dfrac83 \bp{\dfrac12}^3\\
                 &= \dfrac{17}6
             \end{align*}
 
@@ -623,7 +623,7 @@
 
             Implicitly differentiating Equation~\ref{P9-2},
             \begin{alignat}{2}
-                &&-2\left(y''\sin 2x + y'\cos 2x \cdot 2 \right) + \left(y'' \cdot -\sin 2x \cdot 2 + y^{(3)} \cos 2x\right) &= -2y''\nonumber\\
+                &&-2\bp{y''\sin 2x + y'\cos 2x \cdot 2 } + \bp{y'' \cdot -\sin 2x \cdot 2 + y^{(3)} \cos 2x} &= -2y''\nonumber\\
                 \implies&&-4 y' \cos 2x -3y''\sin 2x  + y^{(3)}\cos 2x &= -2 y''\label{P9-3}
             \end{alignat}
 
@@ -646,9 +646,9 @@
 
         \part
             Observe that
-            \begin{equation*}
+            \[
                 \dfrac{1-\sin x}{\cos x} = \sec x - \tan x
-            \end{equation*}
+            \]
 
             Since $\sec x$ is even, $\sec x$ only contributes even powers of $x$ to the power series expansion of $\dfrac{1-\sin x}{\cos x}$. Likewise, since $\tan x$ is odd, $\tan x$ only contributes odd powers of $x$ to the power series expansion of $\dfrac{1-\sin x}{\cos x}$.
 
@@ -666,7 +666,7 @@
                 \implies&&g'(x) &= \sec^2(x)\\
                 && &= f^2(x)\\
                 \implies&&g''(x) &= 2f(x)f'(x)\\
-                \implies&&g^{(3)}(x) &= 2f(x)f''(x) + 2\left(f'(x)\right)^2
+                \implies&&g^{(3)}(x) &= 2f(x)f''(x) + 2\bp{f'(x)}^2
             \end{alignat*}
 
             Evaluating the above derivatives at $x = 0$, we have
@@ -681,7 +681,7 @@
             \begin{align*}
                 \dfrac{1 - \sin x}{\cos x} &= \sec x - \tan x\\
                 &= \sum_{n = 0}^\infty \dfrac{f^{(n)}(0)}{n!}x^n - \sum_{n=0}^\infty \dfrac{g^{(n)}(0)}{n!} x^n\\
-                &= \left(1 + \dfrac12 x^2 + \ldots \right) - \left(x + \dfrac13 x^3 + \ldots\right)\\
+                &= \bp{1 + \dfrac12 x^2 + \ldots } - \bp{x + \dfrac13 x^3 + \ldots}\\
                 &= 1 - x + \dfrac12 x^2 - \dfrac13 x^3 + \ldots
             \end{align*}
 
@@ -690,18 +690,18 @@
         \part
             \begin{align*}
                 a(\tan 2x - \sec 2x) + b &= -a(\sec 2x - \tan 2x) + b\\
-                &= -a \left( 1 - 2x + \dfrac12 (2x)^2 - \dfrac13 (2x)^3 + \ldots\right) + b\\
-                &\approx -a \left( 1 - 2x + \dfrac12 (2x)^2 - \dfrac13 (2x)^3\right) + b\\
-                &= -a \left( 1 - 2x + 2x^2 - \dfrac83 x^3\right) + b\\
-                &= a \left(-1 + 2x - 2x^2 + \dfrac83 x^3\right) + b\\
-                &= a \left(-1 + \dfrac12 \left(f(x) - 1\right)\right) + b\\
+                &= -a \bp{ 1 - 2x + \dfrac12 (2x)^2 - \dfrac13 (2x)^3 + \ldots} + b\\
+                &\approx -a \bp{ 1 - 2x + \dfrac12 (2x)^2 - \dfrac13 (2x)^3} + b\\
+                &= -a \bp{ 1 - 2x + 2x^2 - \dfrac83 x^3} + b\\
+                &= a \bp{-1 + 2x - 2x^2 + \dfrac83 x^3} + b\\
+                &= a \bp{-1 + \dfrac12 \bp{f(x) - 1}} + b\\
                 &= -\dfrac32 a + b + \dfrac{a}2 f(x)
             \end{align*}
 
             Hence,
-            \begin{equation*}
+            \[
                 \dfrac{a}2 f(x) - \dfrac32 a + b \approx a(\tan 2x - \sec 2x) + b
-            \end{equation*}
+            \]
         
             In order to obtain an approximation for $f(x)$, we need $\dfrac{a}2 = 1$ and $-\dfrac32 a + b = 0$, whence $a = 2$ and $b = 3$.
 
@@ -712,9 +712,9 @@
 
     \solution
         \begin{alignat*}{2}
-            &&13-59\sin x &= 10\left(2 - \cos 2x\right)\\
-            && &= 10\left(2 - \left(1-2\sin^2 x\right)\right)\\
-            && &= 10 \left(1 + 2\sin^2 x\right)\\
+            &&13-59\sin x &= 10\bp{2 - \cos 2x}\\
+            && &= 10\bp{2 - \bp{1-2\sin^2 x}}\\
+            && &= 10 \bp{1 + 2\sin^2 x}\\
             && &= 10 + 20\sin^2 x \\
             \implies&&20\sin^2 x + 59 \sin x - 3 &= 0\\
             \implies&&(20 \sin x - 1)(\sin x + 3) &= 0
@@ -724,13 +724,13 @@
         
         \boxt{$x \approx \dfrac1{20}$}
     \problem{}
-        In triangle $ABC$, angle $A = \dfrac{\pi}3$ radians, angle $B = \left(\dfrac{\pi}3 + x\right)$ radians and angle $C = \left(\dfrac{\pi}3 - x\right)$ radians, where $x$ is small. The lengths of the sides $BC$, $CA$ and $AB$ are denoted by $a$, $b$ and $c$ respectively. Show that $b-c \approx \dfrac{2ax}{\sqrt{3}}$.
+        In triangle $ABC$, angle $A = \dfrac{\pi}3$ radians, angle $B = \bp{\dfrac{\pi}3 + x}$ radians and angle $C = \bp{\dfrac{\pi}3 - x}$ radians, where $x$ is small. The lengths of the sides $BC$, $CA$ and $AB$ are denoted by $a$, $b$ and $c$ respectively. Show that $b-c \approx \dfrac{2ax}{\sqrt{3}}$.
 
     \solution
         By the sine rule,
-        \begin{equation*}
+        \[
             \dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}
-        \end{equation*}
+        \]
 
         Hence,
         \begin{align*}
@@ -740,9 +740,9 @@
 
         This gives
         \begin{align*}
-            b-c &= \dfrac{2a}{\sqrt3} \left(\sin B - \sin C\right)\\
-            &= \dfrac{2a}{\sqrt3} \left(\sin\left(\dfrac{\pi}3 + x\right) - \sin\left(\dfrac{\pi}3 - x\right)\right)\\
-            &= \dfrac{2a}{\sqrt3} \left(\left(\sin\dfrac{\pi}3\cos x + \cos\dfrac{\pi}3 \sin x \right)- \left(\sin\dfrac{\pi}3\cos x - \cos \dfrac{\pi}3 \sin x \right)\right)\\
+            b-c &= \dfrac{2a}{\sqrt3} \bp{\sin B - \sin C}\\
+            &= \dfrac{2a}{\sqrt3} \bp{\sin{\dfrac{\pi}3 + x} - \sin{\dfrac{\pi}3 - x}}\\
+            &= \dfrac{2a}{\sqrt3} \bp{\bp{\sin\dfrac{\pi}3\cos x + \cos\dfrac{\pi}3 \sin x }- \bp{\sin\dfrac{\pi}3\cos x - \cos \dfrac{\pi}3 \sin x }}\\
             &= \dfrac{2a}{\sqrt3} \cdot 2\cos\dfrac{\pi}3 \sin x\\
             &= \dfrac{2a}{\sqrt3} \cdot 2\cdot\dfrac12 \sin x\\
             &= \dfrac{2a}{\sqrt3} \sin x
@@ -751,7 +751,7 @@
         Since $x$ is small, $\sin x \approx x$. Hence, $b-c \approx \dfrac{2ax}{\sqrt{3}}$.
 
     \problem{}
-        D'Alembert's ratio test states that a series of the form $\sum\limits_{r = 0}^\infty a_r$ converges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} < 1$, and diverges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} > 1$. When $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} = 1$, the test is inconclusive. Using the test, explain why the series $\displaystyle\sum\limits_{r=0}^\infty \dfrac{x^r}{r!}$ converges for all real values of $x$ and state the sum to infinity of this series, in terms of $x$.
+        D'Alembert's ratio test states that a series of the form $\displaystyle\sum\limits_{r = 0}^\infty a_r$ converges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} < 1$, and diverges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} > 1$. When $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} = 1$, the test is inconclusive. Using the test, explain why the series $\displaystyle\sum\limits_{r=0}^\infty \dfrac{x^r}{r!}$ converges for all real values of $x$ and state the sum to infinity of this series, in terms of $x$.
 
     \solution
         Let $a_n = \dfrac{x^n}{n!}$ and consider $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{n}}$.

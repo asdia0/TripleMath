@@ -48,10 +48,9 @@
             \item $y=f(2x)$
             \item $y=f(x+3)$
             \item $y = 1 - f(x)$
-            \item $y = 3f\left(\dfrac{x}2 - 1\right)$
+            \item $y = 3f\bp{\dfrac{x}2 - 1}$
         \end{enumerate}
-
-         stating, in each case, the coordinates of the points corresponding to $A$, $B$, $C$ and $D$.
+        stating, in each case, the coordinates of the points corresponding to $A$, $B$, $C$ and $D$.
 
     \solution
         \part
@@ -82,11 +81,11 @@
 
                         \fill (0,1) circle[radius = 2.5pt] node[anchor=west] {$A(0, 1)$};
 
-                        \fill (1, 0) circle[radius = 2.5pt] node[anchor=north] {$B\left(\tfrac12, 0\right)$};
+                        \fill (1, 0) circle[radius = 2.5pt] node[anchor=north] {$B\bp{\tfrac12, 0}$};
 
                         \fill (2,1) circle[radius = 2.5pt] node[anchor=south] {$C(1, 1)$};
 
-                        \fill (3,0) circle[radius = 2.5pt] node[anchor=south west] {$D\left(\tfrac32, 0\right)$};
+                        \fill (3,0) circle[radius = 2.5pt] node[anchor=south west] {$D\bp{\tfrac32, 0}$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
@@ -191,7 +190,7 @@
 
                         \addplot[plotRed, domain=6:8] {-3/2 * x+12};
             
-                        \addlegendentry{$y = 3f\left(\tfrac{x}{2} - 1\right)$};
+                        \addlegendentry{$y = 3f\bp{\tfrac{x}{2} - 1}$};
 
                         \fill (2, 3) circle[radius = 2.5pt] node[anchor=west] {$A(2, 3)$};
 
@@ -305,11 +304,11 @@
             \end{tikzpicture}
         \end{center}
 
-        Sketch on separate diagrams the graphs of the following curves, labelling each curve clearly, indicating the horizontal asymptotes and showing the coordinates of the points corresponding to points $A$, $B$, $C$ and $D$.
+        Sketch on separate diagrams the graphs of the following curves, labelling each curve clearly, indicating the horizontal asymptotes and showing the coordinates of the points corresponding to the points $A$, $B$, $C$ and $D$.
         
         \begin{enumerate}
             \item $y = f(x+1)$
-            \item $y = f\left(\dfrac{x}2\right)$
+            \item $y = f\bp{\dfrac{x}2}$
             \item $y = 2f(x) - 2$
         \end{enumerate}
 
@@ -385,7 +384,7 @@
 
                         \addplot[plotRed, domain=2:8] {(e^(0.5) * (x/2) * e^(-0.5 * (x/2)^2)) + 1};
 
-                        \addlegendentry{$y = f\left(\tfrac{x}2\right)$};
+                        \addlegendentry{$y = f\bp{\tfrac{x}2}$};
 
                         \fill (-4, -1) circle[radius=2.5 pt] node[anchor=north] {$A(-4, -1)$};
 
@@ -964,14 +963,14 @@
     \problem{}
         A curve $C_1$ is defined by the parametric equations
 
-        \begin{equation*}
+        \[
             x = t(t+2), \, y = 2(t+1)
-        \end{equation*}
+        \]
 
         \begin{enumerate}
             \item Find the axial intercepts of the curve.
             \item Sketch $C_1$.
-            \item A curve $C_2$ is defined by the parametric equations $x = t(t+2), \, y = t+1$. Describe a geometrical transformation which maps $C_1$ to $C_2$. Hence sketch the curve $C_2$ in the same diagram as $C_1$.
+            \item A curve $C_2$ is defined by the parametric equations $x = t(t+2), \, y = t+1$. Describe a geometrical transformation which maps $C_1$ to $C_2$. Hence, sketch the curve $C_2$ in the same diagram as $C_1$.
             \item Show that the Cartesian equation of the curve $C_1$ is given by $y^2 = 4(x+1)$.
         \end{enumerate}
 

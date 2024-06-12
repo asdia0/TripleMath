@@ -16,7 +16,7 @@
 
         \boxt{$\der{y}{x} = 6x^2 + 6x + 6$}
 
-        Observe that $\der{y}{x} = 6x^2 + 6x+6 = 6\left(x + \dfrac12\right)^2 + \dfrac{18}4$. For all $x \in \R$, we have $\left(x + \dfrac12\right)^2 \geq 0$. Hence, $\der{y}{x} > 0$. Thus, $y$ is increasing for all real values of $x$.
+        Observe that $\der{y}{x} = 6x^2 + 6x+6 = 6\bp{x + \dfrac12}^2 + \dfrac{18}4$. For all $x \in \R$, we have $\bp{x + \dfrac12}^2 \geq 0$. Hence, $\der{y}{x} > 0$. Thus, $y$ is increasing for all real values of $x$.
 
     \problem{}
         Find, by differentiation, the $x$-coordinates of all the stationary points on the curve $y = \dfrac{x^3}{(x+1)^2}$ stating, with reasons, the nature of each point.
@@ -82,10 +82,10 @@
         \begin{align*}
             f'(x) &= 4\cos\dfrac{x}2 - \cos x- 4\\
             &= 4\cos \dfrac{x}2 - (2\cos^2 \dfrac{x}2 - 1) - 4\\
-            &= -2\left(\cos\dfrac{x}2 - 1\right)^2 - 1
+            &= -2\bp{\cos\dfrac{x}2 - 1}^2 - 1
         \end{align*}
 
-        Observe that for all $x \in \R$, $\left(\cos\dfrac{x}2 - 1\right)^2 \geq 0$. Hence, $f'(x) < 0$ for all real values of $x$. Thus, $f(x)$ is strictly decreasing on $\R$.
+        Observe that for all $x \in \R$, $\bp{\cos\dfrac{x}2 - 1}^2 \geq 0$. Hence, $f'(x) < 0$ for all real values of $x$. Thus, $f(x)$ is strictly decreasing on $\R$.
 
         Note that $f(0) = 8\sin 0 - \sin 0 - 4 \cdot 0 = 0$. Since $f(x)$ is strictly decreasing, for all $x > 0$, $f(x) < f(0) = 0$.
 
@@ -352,15 +352,15 @@
 
     \problem{}
         \begin{enumerate}
-            \item Given that $y=ax\sqrt{x+2}$ where $a > 0$, find $\der{y}{x}$, expressing your answer as a single algebraic fraction. Hence show that the curve $y = ax\sqrt{x+2}$ has only one turning point, and state its coordinates in exact form.
+            \item Given that $y=ax\sqrt{x+2}$ where $a > 0$, find $\der{y}{x}$, expressing your answer as a single algebraic fraction. Hence, show that the curve $y = ax\sqrt{x+2}$ has only one turning point, and state its coordinates in exact form.
             \item Sketch the graph of $y = f'(x)$, where $f(x) = ax\sqrt{x+2}$, where $a > 0$.
         \end{enumerate}
 
     \solution
         \part
             \begin{align*}
-                \der{y}{x} &= a \left(x \cdot \dfrac1{2\sqrt{x+2}} + \sqrt{x+2} \right)\\
-                &= a \left(\dfrac{x}{2\sqrt{x+2}} + \dfrac{2(x+2)}{2\sqrt{x+2}}\right)\\
+                \der{y}{x} &= a \bp{x \cdot \dfrac1{2\sqrt{x+2}} + \sqrt{x+2} }\\
+                &= a \bp{\dfrac{x}{2\sqrt{x+2}} + \dfrac{2(x+2)}{2\sqrt{x+2}}}\\
                 &= \dfrac{a(3x+4)}{2\sqrt{x+2}}
             \end{align*}
 
@@ -380,7 +380,7 @@
                 \centering
                 \begin{tabular}{|c|c|c|c|}
                 \hline
-                $x$          & $\left(-\dfrac43\right)^-$ & $-\dfrac43$ & $\left(-\dfrac43\right)^+$ \\\hline
+                $x$          & $\bp{-\dfrac43}^-$ & $-\dfrac43$ & $\bp{-\dfrac43}^+$ \\\hline
                 $\der{y}{x}$ & -ve   & 0 & +ve   \\[1ex]\hline
                 \end{tabular}
             \end{table}
@@ -466,7 +466,7 @@
 
     \solution
         \part
-            From $t = 0$ to $t = 11$, $P$ speeds up and reaches a top speed of 5 ms$^{-1}$. From $t=11$ to $t=15$, $P$ slows down. At $t=15$, $P$ is instantanteously at rest. From $t=15$ to $t=21$, $P$ speeds up and moves in the opposite direction, reaching a top speed of 4 ms$^{-1}$. From $t=21$ to $t=25$, $P$ slows down. At $t=25$, $P$ is instantanteously at rest.
+            From $t = 0$ to $t = 11$, $P$ speeds up and reaches a top speed of 5 ms$^{-1}$. From $t=11$ to $t=15$, $P$ slows down. At $t=15$, $P$ is instantaneously at rest. From $t=15$ to $t=21$, $P$ speeds up and moves in the opposite direction, reaching a top speed of 4 ms$^{-1}$. From $t=21$ to $t=25$, $P$ slows down. At $t=25$, $P$ is instantaneously at rest.
 
         \part
             \begin{center}
@@ -503,15 +503,15 @@
             \end{center}
 
     \problem{}
-        The function $f$ defined by $f(x) = \ln x - 2\left(x-\dfrac12\right)$, where $x \in \R, x > 0$. Find $f'(x)$ and show that the function is decreasing for $x > \dfrac12$. Hence show that for $x > \dfrac12$, $2\left(x - \dfrac12\right) - \ln x > \ln 2$.
+        The function $f$ defined by $f(x) = \ln x - 2\bp{x-\dfrac12}$, where $x \in \R, x > 0$. Find $f'(x)$ and show that the function is decreasing for $x > \dfrac12$. Hence, show that for $x > \dfrac12$, $2\bp{x - \dfrac12} - \ln x > \ln 2$.
 
     \solution
-        \begin{equation*}
+        \[
             f' = \dfrac1x - 2
-        \end{equation*}
+        \]
 
         When $x > \dfrac12$, $\dfrac1x < 2 \implies \dfrac1x - 2<0$. Thus, $f'(x) < 0$, whence $f(x)$ is decreasing.
 
-        Note that $f\left(\dfrac12\right) = \ln \dfrac12 - 2\left(\dfrac12 - \dfrac12\right) = -\ln2$. Since $f(x)$ is decreasing for all $x > \dfrac12$, $f(x) < f\left(\dfrac12\right) = -\ln 2 \implies \ln x - 2\left(x - \dfrac12\right) < -\ln2 \implies 2\left(x - \dfrac12\right) - \ln x > \ln 2$.
+        Note that $f\bp{\dfrac12} = \ln \dfrac12 - 2\bp{\dfrac12 - \dfrac12} = -\ln2$. Since $f(x)$ is decreasing for all $x > \dfrac12$, $f(x) < f\bp{\dfrac12} = -\ln 2 \implies \ln x - 2\bp{x - \dfrac12} < -\ln2 \implies 2\bp{x - \dfrac12} - \ln x > \ln 2$.
 
 \end{document}

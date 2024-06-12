@@ -25,9 +25,9 @@
         \part
             Let $k$ be a constant such that $u_n + k = 3(u_{n-1} + k)$. Then $2k = 7 \implies k = \dfrac72$. Hence,
             \begin{alignat*}{2}
-                &&u_n + \dfrac72 &= 3\left(u_{n-1} + \dfrac72\right)\\
-                \implies&&u_n + \dfrac72 &= 3^n \left(u_0 + \dfrac72\right)\\
-                \implies&&u_n &= 3^n\left(5 + \dfrac72\right) - \dfrac72\\
+                &&u_n + \dfrac72 &= 3\bp{u_{n-1} + \dfrac72}\\
+                \implies&&u_n + \dfrac72 &= 3^n \bp{u_0 + \dfrac72}\\
+                \implies&&u_n &= 3^n\bp{5 + \dfrac72} - \dfrac72\\
                 && &= \dfrac{17}2 \cdot3^n  - \dfrac72
             \end{alignat*}
 
@@ -53,9 +53,9 @@
             \end{alignat*}
 
             Hence, 2 and 3 are the roots of the characteristic equation. Thus,
-            \begin{equation*}
+            \[
                 u_n = A\cdot2^n + B\cdot3^n
-            \end{equation*}
+            \]
 
             Since $u_0 = 1$,            
             \begin{alignat}{2}
@@ -81,9 +81,9 @@
             \end{alignat*}
 
             Hence, $-2$ and 2 are the roots of the characteristic equation. Thus,
-            \begin{equation*}
+            \[
                 u_n = A\cdot (-2)^n + B\cdot2^n
-            \end{equation*}
+            \]
 
             Since $u_0 = 0$,
             \begin{alignat}{2}
@@ -109,9 +109,9 @@
             \end{alignat*}
 
             Hence, 2 is the only root of the characteristic equation. Thus,
-            \begin{equation*}
+            \[
                 u_n = (A + Bn)2^n
-            \end{equation*}
+            \]
 
             Since $u_0 = 6$,
             \begin{alignat*}{2}
@@ -166,24 +166,24 @@
                 &= \dfrac{2 \pm \sqrt{-4}}{2}\\
                 &= \dfrac{2 \pm 4i}{2}\\
                 &= 1 \pm 2i\\
-                &= \sqrt{2} \exp\left({\pm i \dfrac{\pi}4}\right)
+                &= \sqrt{2} \exp\bp{\pm i \dfrac{\pi}4}}
             \end{align*}
 
             Hence,
             \[
-                u_n = A \cdot \sqrt{2}^n \cos \left(\dfrac{\pi}4 n \right) + B \cdot \sqrt{2}^n \sin \left(\dfrac{\pi}4 n\right)
+                u_n = A \cdot \sqrt{2}^n \cos{\dfrac{\pi}4 n } + B \cdot \sqrt{2}^n \sin{\dfrac{\pi}4 n}
             \]
 
             Since $u_0 = 2$,            
             \begin{alignat*}{2}
-                && A \cdot \sqrt{2}^0 \cos \left(\dfrac{\pi}4 \cdot 0 \right) + B \cdot \sqrt{2}^0 \sin \left(\dfrac{\pi}4 \cdot 0\right) &= 2\\
+                && A \cdot \sqrt{2}^0 \cos{\dfrac{\pi}4 \cdot 0 } + B \cdot \sqrt{2}^0 \sin{\dfrac{\pi}4 \cdot 0} &= 2\\
                 \implies&& A \cdot 1 \cdot 1 + B \cdot 1 \cdot 0 &= 2\\
                 \implies&& A &= 2
             \end{alignat*}
 
             Since $u_1 = 6$,
             \begin{alignat*}{2}
-                && A \cdot \sqrt{2}^1 \cos \left(\dfrac{\pi}4 \cdot 1 \right) + B \cdot \sqrt{2}^1 \sin \left(\dfrac{\pi}4 \cdot 1\right) &= 6\\
+                && A \cdot \sqrt{2}^1 \cos{\dfrac{\pi}4 \cdot 1 } + B \cdot \sqrt{2}^1 \sin{\dfrac{\pi}4 \cdot 1} &= 6\\
                 \implies&& A \cdot \sqrt{2} \cdot \dfrac{1}{\sqrt2} + B \cdot \sqrt{2} \cdot \dfrac{1}{\sqrt2} &= 6\\
                 \implies&& A + B &= 6\\
                 \implies&& B &= 4
@@ -191,18 +191,18 @@
 
             Since $A = 2$ and $B = 4$,
             \begin{align*}
-                u_n &= 2 \cdot \sqrt{2}^n \cos \left(\dfrac{\pi}4 n \right) + 4 \cdot \sqrt{2}^n \sin \left(\dfrac{\pi}4 n\right)\\
-                &= \sqrt{2}^{n+2} \cos \left(\dfrac{\pi}4 n \right) + \sqrt{2}^{n+4} \sin \left(\dfrac{\pi}4 n\right)
+                u_n &= 2 \cdot \sqrt{2}^n \cos{\dfrac{\pi}4 n } + 4 \cdot \sqrt{2}^n \sin{\dfrac{\pi}4 n}\\
+                &= \sqrt{2}^{n+2} \cos{\dfrac{\pi}4 n } + \sqrt{2}^{n+4} \sin{\dfrac{\pi}4 n}
             \end{align*}
 
     \problem{}
         \begin{enumerate}
             \item A sequence is defined by the formula $b_n = \dfrac{n!n!}{(2n)!}\cdot2^n$, where $n \in \Z^+$. Show that the sequence satisfies the recurrence relation $b_{n+1} = \dfrac{n+1}{2n+1} b_n$.
             \item A sequence is defined recursively by the formula
-            \begin{equation*}
+            \[
                 u_{n+1} = 2u_n + 3, \qquad n \in \Z_0^+, \, u_0 = a
-            \end{equation*}
-            Show that $u_n = 2^na+3\left(2^n - 1\right)$.
+            \]
+            Show that $u_n = 2^na+3\bp{2^n - 1}$.
         \end{enumerate}
 
     \solution
@@ -225,7 +225,7 @@
                 && &= 2^n(a + 3)\\
                 \implies&&u_n &= 2^n(a + 3) -3\\
                 && &= a \cdot 2^n + 3 \cdot 2^n - 3\\
-                && &= a \cdot 2^n + 3\left(2^n - 1\right)
+                && &= a \cdot 2^n + 3\bp{2^n - 1}
             \end{alignat*}
 
     \problem{}
@@ -251,7 +251,7 @@
 
         \part
             \begin{align*}
-                \lim_{n \to \infty} x_n &= \lim_{n \to \infty} \left(0.9^n (x_0 - 900) + 900\right) \\
+                \lim_{n \to \infty} x_n &= \lim_{n \to \infty} \bp{0.9^n (x_0 - 900) + 900} \\
                 &=  \lim_{n \to \infty} (0 (x_0 - 900) + 900) \\
                 &= 900
             \end{align*}
@@ -285,27 +285,27 @@
 
             Hence, $-\dfrac3{10}$ and $\dfrac32$ are the roots of the characteristic equation. Thus,
             \[
-                P_n = A  \left(-\dfrac3{10}\right)^n + B \left(\dfrac32\right)^n
+                P_n = A  \bp{-\dfrac3{10}}^n + B \bp{\dfrac32}^n
             \]
 
             Since $P_0 = 0$,
             \begin{alignat}{2}
-                &&A  \left(-\dfrac3{10}\right)^0 + B \left(\dfrac32\right)^0 &= 0\nonumber\\
+                &&A  \bp{-\dfrac3{10}}^0 + B \bp{\dfrac32}^0 &= 0\nonumber\\
                 \implies&&A + B &= 0\label{P5-1}
             \end{alignat}
 
             Since $P_1 = 100000$,
             \begin{alignat}{2}
-                &&A  \left(-\dfrac3{10}\right)^1 + B \left(\dfrac32\right)^1 &= 100000\nonumber\\
+                &&A  \bp{-\dfrac3{10}}^1 + B \bp{\dfrac32}^1 &= 100000\nonumber\\
                 \implies&&-3A + 15B &= 1000000\label{P5-2}
             \end{alignat}
 
             Solving Equation~\ref{P5-1} and~\ref{P5-2} simultaneously, we have $A = -\dfrac{500000}9$ and $B = \dfrac{500000}9$. Thus,
             \[
-                P_n = \dfrac{500000}9 \left(\left(\dfrac32\right)^n - \left(-\dfrac3{10}\right)^n\right)
+                P_n = \dfrac{500000}9 \bp{\bp{\dfrac32}^n - \bp{-\dfrac3{10}}^n}
             \]
 
-            \boxt{There will be \$$\left(\dfrac{500000}9 \left(\left(\dfrac32\right)^n - \left(-\dfrac3{10}\right)^n\right)\right)$ in the account after $n$ years.}
+            \boxt{There will be \$$\bp{\dfrac{500000}9 \bp{\bp{\dfrac32}^n - \bp{-\dfrac3{10}}^n}}$ in the account after $n$ years.}
 
     \problem{}
         A pair of rabbits does not breed until they are two months old. After they are two months old, each pair of rabbit produces another pair each month.
@@ -322,34 +322,34 @@
         \part
             Consider the characteristic equation of $f_n$, $x^2 - x - 1 = 0$. Using the quadratic formula, the roots of the characteristic equation are $\dfrac{1 + \sqrt5}{2}$ and $\dfrac{1 - \sqrt5}{2}$.
             \[
-                f_n = A \left(\dfrac{1 + \sqrt5}{2}\right)^n + B \left(\dfrac{1 - \sqrt5}{2}\right)^n
+                f_n = A \bp{\dfrac{1 + \sqrt5}{2}}^n + B \bp{\dfrac{1 - \sqrt5}{2}}^n
             \]
 
             Since $f_1 = 1$,
             \begin{alignat}{2}
-                &&A \left(\dfrac{1 + \sqrt5}{2}\right)^1 + B  \left(\dfrac{1 - \sqrt5}{2}\right)^1 &= 1\nonumber\\
+                &&A \bp{\dfrac{1 + \sqrt5}{2}}^1 + B  \bp{\dfrac{1 - \sqrt5}{2}}^1 &= 1\nonumber\\
                 \implies&&A (1 + \sqrt5) + B (1 - \sqrt5) &= 2\nonumber\\
                 \implies&&(A + B) + \sqrt5(A - B) &= 2\label{P6-1}
             \end{alignat}
 
             Since $f_2 = 1$,
             \[
-                A \left(\dfrac{1 + \sqrt5}{2}\right)^2 + B \left(\dfrac{1 - \sqrt5}{2}\right)^2 = 1
+                A \bp{\dfrac{1 + \sqrt5}{2}}^2 + B \bp{\dfrac{1 - \sqrt5}{2}}^2 = 1
             \]
 
             Since $\dfrac{1 + \sqrt5}{2}$ and $\dfrac{1 - \sqrt5}{2}$ are both roots of $x^2 - x - 1 = 0$, they both satisfy the equation $x^2 = x + 1$. Hence,
             \begin{alignat}{2}
-                && A \left(\dfrac{1 + \sqrt5}{2} + 1\right) + B \left(\dfrac{1 - \sqrt5}{2} + 1\right) &= 1\nonumber\\
+                && A \bp{\dfrac{1 + \sqrt5}{2} + 1} + B \bp{\dfrac{1 - \sqrt5}{2} + 1} &= 1\nonumber\\
                 \implies&& A (1 + \sqrt5 + 2) + B (1 - \sqrt5 + 2) &= 2\nonumber\\
                 \implies&&3(A + B) + \sqrt5 (A - B) &= 2\label{P6-2}
             \end{alignat}
 
             From Equations~\ref{P6-1} and~\ref{P6-2}, we see that $A + B = 0 \implies A = -B$, and $\sqrt5 (A - B) = 2 \implies A = \dfrac2{\sqrt5} + B$. Thus, $-B = \dfrac2{\sqrt5} + B \implies B = -\dfrac1{\sqrt5} \implies A = \dfrac1{\sqrt5}$. Hence,
             \[
-                f_n = \dfrac1{\sqrt5} \left(\dfrac{1 + \sqrt5}{2}\right)^n - \dfrac1{\sqrt5} \left(\dfrac{1 - \sqrt5}{2}\right)^n
+                f_n = \dfrac1{\sqrt5} \bp{\dfrac{1 + \sqrt5}{2}}^n - \dfrac1{\sqrt5} \bp{\dfrac{1 - \sqrt5}{2}}^n
             \]
 
-            \boxt{After $n$ months, there will be $\left(\dfrac1{\sqrt5} \left(\dfrac{1 + \sqrt5}{2}\right)^n - \dfrac1{\sqrt5} \left(\dfrac{1 - \sqrt5}{2}\right)^n \right)$ pairs of rabbits.}
+            \boxt{After $n$ months, there will be $\bp{\dfrac1{\sqrt5} \bp{\dfrac{1 + \sqrt5}{2}}^n - \dfrac1{\sqrt5} \bp{\dfrac{1 - \sqrt5}{2}}^n }$ pairs of rabbits.}
 
     \problem{}
         For $n \in \bc{2^j \colon j \in \Z, j \geq 1}$, it is given that $T_n = 3T_{\tfrac{n}2} + 17$, where $T_1 = 4$. By considering the substitution $n = 2^i$ and another suitable substitution, show that the recurrence relation can be expressed in the form
@@ -377,9 +377,9 @@
 
         Let $k$ be a constant such that $t_i + k = 3(t_{i-1} + k)$. Then $2k = 17 \implies k = \dfrac{17}2$. Hence,
         \begin{alignat*}{2}
-            &&t_i + \dfrac{17}2 &= 3\left(t_{i-1} + \dfrac{17}2\right)\\
-            \implies&&t_i + \dfrac{17}2 &= 3^i \left(t_0 + \dfrac{17}2\right)\\
-            && &= 3^i \left(4 + \dfrac{17}2\right)\\
+            &&t_i + \dfrac{17}2 &= 3\bp{t_{i-1} + \dfrac{17}2}\\
+            \implies&&t_i + \dfrac{17}2 &= 3^i \bp{t_0 + \dfrac{17}2}\\
+            && &= 3^i \bp{4 + \dfrac{17}2}\\
             && &= 3^i \cdot \dfrac{25}2\\
             \implies&&t_i &= \dfrac{25}2 \cdot 3^i - \dfrac{17}2\\
             \implies&&T_{2^i} &= \dfrac{25}2 \cdot 3^i - \dfrac{17}2\\
@@ -395,7 +395,7 @@
         \]
 
         \begin{enumerate}
-            \item Given that $a_n = k\left(5^n\right)$ satisfies the recurrent relation, find the value of the constant $k$.
+            \item Given that $a_n = k\bp{5^n}$ satisfies the recurrent relation, find the value of the constant $k$.
             \item Hence, by considering the sequence $\bc{b_n}$ where $b_n = a_n - k(5^n)$, find the particular solution to the recurrence relation for which $a_1 = 2$.
         \end{enumerate}
 
@@ -403,7 +403,7 @@
         \part
             \begin{alignat*}{2}
                 &&a_{n+1} &= 2a_n + 5^n\\
-                \implies&&k\left(5^{n+1}\right) &= 2\cdot k\left(5^n\right) + 5^n\\
+                \implies&&k\bp{5^{n+1}} &= 2\cdot k\bp{5^n} + 5^n\\
                 \implies&&5k \cdot 5^n &= 2k \cdot 5^n + 5^n\\
                 \implies&&5k &= 2k + 1\\
                 \implies&&3k &= 1\\
@@ -414,10 +414,10 @@
 
         \part
             \begin{align*}
-                b_n &= a_n - k\left(5^n\right)\\
+                b_n &= a_n - k\bp{5^n}\\
                 &= a_n - \dfrac13 \cdot 5^n\\
                 &= 2a_{n-1} + 5^{n-1} - \dfrac13 \cdot 5^n\\
-                &= 2\left(a_{n-1} - \dfrac13 \cdot 5^{n-1}\right) + \dfrac23 \cdot 5^{n-1} + 5^{n-1} - \dfrac13 \cdot 5^n\\
+                &= 2\bp{a_{n-1} - \dfrac13 \cdot 5^{n-1}} + \dfrac23 \cdot 5^{n-1} + 5^{n-1} - \dfrac13 \cdot 5^n\\
                 &= 2b_{n-1} + \dfrac53 \cdot 5^{n-1} - \dfrac13 \cdot 5^n\\
                 &= 2b_{n-1} + \dfrac53 \cdot 5^{n-1} - \dfrac53 \cdot 5^{n-1}\\
                 &= 2b_{n-1}
@@ -429,11 +429,11 @@
                 &&b_n &= \dfrac13 \cdot 2^{n-1}\\
                 \implies&&a_n - \dfrac13 \cdot 5^n &= \dfrac13 \cdot 2^{n-1}\\
                 \implies&&a_n &= \dfrac13 \cdot 2^{n-1} + \dfrac13 \cdot 5^n\\
-                && &= \dfrac13 \left(\dfrac12 2^n + 5^n \right)\\
-                && &= \dfrac16 \left(2^n + 2 \cdot 5^n \right)
+                && &= \dfrac13 \bp{\dfrac12 2^n + 5^n }\\
+                && &= \dfrac16 \bp{2^n + 2 \cdot 5^n }
             \end{alignat*}
 
-            \boxt{$a_n = \dfrac16 \left(2^n + 2 \cdot 5^n \right)$}
+            \boxt{$a_n = \dfrac16 \bp{2^n + 2 \cdot 5^n }$}
 
     \problem{}
         The sequence $\bc{X_n}$ is given by
@@ -461,37 +461,37 @@
             x &= \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4\cdot1\cdot4}}{2\cdot1}\\
             &= \dfrac{2 \pm \sqrt{4 \cdot -3}}{2}\\
             &= 1 \pm \sqrt{3}i\\
-            &= \sqrt{1 + \sqrt{3}^2} \exp{\left(i \arctan{\dfrac{\pm{\sqrt3}}1}\right)}\\
-            &= 2 \exp \left(\pm i \dfrac{\pi}3\right)
+            &= \sqrt{1 + \sqrt{3}^2} \exp{\bp{i \arctan{\dfrac{\pm{\sqrt3}}1}}}\\
+            &= 2 \exp \bp{\pm i \dfrac{\pi}3}
         \end{align*}
 
         Thus, we can express $L_n$ as
         \begin{align*}
-            L_n &= A \cdot 2^n \cos \left(\dfrac{\pi}3 n\right) + B \cdot 2^n \sin \left(\dfrac{\pi}3 n\right)\\
-            &= 2^n \left(A \cos \left(\dfrac{\pi}3 n\right) + B \sin \left(\dfrac{\pi}3 n\right)\right)
+            L_n &= A \cdot 2^n \cos{\dfrac{\pi}3 n} + B \cdot 2^n \sin{\dfrac{\pi}3 n}\\
+            &= 2^n \bp{A \cos{\dfrac{\pi}3 n} + B \sin{\dfrac{\pi}3 n}}
         \end{align*}
 
         Thus,
-        \boxt{$X_n = \exp{2^n \left(A \cos \left(\dfrac{\pi}3 n\right) + B \sin \left(\dfrac{\pi}3 n\right)\right)}$}
+        \boxt{$X_n = \exp{2^n \bp{A \cos{\dfrac{\pi}3 n} + B \sin{\dfrac{\pi}3 n}}}$}
 
     \problem{}
         The sequence $\bc{X_n}$ is given by $X_1 = 2$, $X_2 = 15$ and
         \[
-            X_{n+2} = 5\left(1 + \dfrac1{n+2}\right)X_{n+1} - 6\left(1 + \dfrac2{n+1}\right)X_n, \qquad n \geq 1
+            X_{n+2} = 5\bp{1 + \dfrac1{n+2}}X_{n+1} - 6\bp{1 + \dfrac2{n+1}}X_n, \qquad n \geq 1
         \]
 
          By dividing the recurrence relation throughout by $n+3$, use a suitable substitution to determine $X_n$ as a function of $n$.
 
     \solution
         \begin{alignat*}{2}
-            &&X_{n+2} &= 5\left(1 + \dfrac1{n+2}\right)X_{n+1} - 6\left(1 + \dfrac2{n+1}\right)X_n\\
-            \implies&&\dfrac1{n+3}X_{n+2} &= \dfrac1{n+3} \cdot 5\left(1 + \dfrac1{n+2}\right)X_{n+1} - \dfrac1{n+3} \cdot 6\left(1 + \dfrac2{n+1}\right)X_n\\
-            && &= 5\left(\dfrac1{n+3} + \dfrac1{(n+2)(n+3)}\right)X_{n+1} - 6\left(\dfrac1{n+3} + \dfrac2{(n+1)(n+3)}\right)X_n
+            &&X_{n+2} &= 5\bp{1 + \dfrac1{n+2}}X_{n+1} - 6\bp{1 + \dfrac2{n+1}}X_n\\
+            \implies&&\dfrac1{n+3}X_{n+2} &= \dfrac1{n+3} \cdot 5\bp{1 + \dfrac1{n+2}}X_{n+1} - \dfrac1{n+3} \cdot 6\bp{1 + \dfrac2{n+1}}X_n\\
+            && &= 5\bp{\dfrac1{n+3} + \dfrac1{(n+2)(n+3)}}X_{n+1} - 6\bp{\dfrac1{n+3} + \dfrac2{(n+1)(n+3)}}X_n
         \end{alignat*}
 
         Note that $\dfrac1{(n+2)(n+3)} = \dfrac1{n+2} - \dfrac1{n+3}$ and $\dfrac{2}{(n+1)(n+3)} = \dfrac1{n+1} - \dfrac1{n+3}$. Thus,
         \begin{alignat*}{2}
-            &&\dfrac1{n+3}X_{n+2} &= 5\left(\dfrac1{n+3} + \dfrac1{n+2} - \dfrac1{n+3}\right)X_{n+1} - 6\left(\dfrac1{n+3} + \dfrac1{n+1} - \dfrac1{n+3}\right)X_n\\
+            &&\dfrac1{n+3}X_{n+2} &= 5\bp{\dfrac1{n+3} + \dfrac1{n+2} - \dfrac1{n+3}}X_{n+1} - 6\bp{\dfrac1{n+3} + \dfrac1{n+1} - \dfrac1{n+3}}X_n\\
             \implies&& &= 5\cdot \dfrac1{n+2} \cdot X_{n+1} - 6\cdot \dfrac1{n+1} \cdot X_n
         \end{alignat*}
 
@@ -509,24 +509,24 @@
         Thus, 2 and 3 are the roots of the characteristic equation. Hence,
         \begin{alignat*}{2}
             &&Y_n &= A \cdot 2^n + B \cdot 3^n\\
-            \implies&&X_n &= (n+1)\left(A \cdot 2^n + B \cdot 3^n\right)
+            \implies&&X_n &= (n+1)\bp{A \cdot 2^n + B \cdot 3^n}
         \end{alignat*}
 
         Since $X_1 = 2$,
         \begin{alignat}{2}
-            &&(1+1)\left(A \cdot 2^1 + B \cdot 3^1\right) &= 2\nonumber\\
+            &&(1+1)\bp{A \cdot 2^1 + B \cdot 3^1} &= 2\nonumber\\
             \implies&&2A + 3B &= 1\label{P10-1}
         \end{alignat}
 
         Since $X_2 = 15$,
         \begin{alignat}{2}
-            &&(2+1)\left(A \cdot 2^2 + B \cdot 3^2\right)\nonumber\\
+            &&(2+1)\bp{A \cdot 2^2 + B \cdot 3^2}\nonumber\\
             \implies&&4A + 9B &= 5\label{P10-2}
         \end{alignat}
 
         Solving Equations~\ref{P10-1} and~\ref{P10-2} simultaneously, we have $A = -1$ and $B = 1$. Thus,
 
-        \boxt{$X_n = (n+1)\left(3^n - 2^n\right)$}
+        \boxt{$X_n = (n+1)\bp{3^n - 2^n}$}
 
     \problem{}
         A logistics company set up an online platform providing delivery services to users on a monthly paid subscription basis. The company's sales manager models the number of subscribers that the company has at the end of each month. She notes that approximately 10\% of the existing subscribers leave each month, and that there will be a constant number $k$ of new subscribers in each subsequent month after the first.
@@ -560,24 +560,24 @@
             \boxt{$T_{n+1} = 0.9T_n + k$}
 
         \part
-            Let $m$ be a constant such that $T_{n+1} + m = 0.9\left(T_n + m\right)$. Then $-0.1m = k \implies m = -10k$. Hence,
+            Let $m$ be a constant such that $T_{n+1} + m = 0.9\bp{T_n + m}$. Then $-0.1m = k \implies m = -10k$. Hence,
             \begin{alignat*}{2}
-                &&T_{n+1} - 10k &= 0.9\left(T_n - 10k\right)\\
-                \implies&&T_{n} - 10k &= 0.9^{n-1} \left(T_0 - 10k\right)\\
-                && &= 0.9^{n-1} \left(250 -10k\right)\\
-                \implies&&T_n &= 0.9^{n-1} \left(250 - 10k\right) + 10k
+                &&T_{n+1} - 10k &= 0.9\bp{T_n - 10k}\\
+                \implies&&T_{n} - 10k &= 0.9^{n-1} \bp{T_0 - 10k}\\
+                && &= 0.9^{n-1} \bp{250 -10k}\\
+                \implies&&T_n &= 0.9^{n-1} \bp{250 - 10k} + 10k
             \end{alignat*}
 
-            \boxt{$T_n = 0.9^{n-1} \left(250 - 10k\right) + 10k$}
+            \boxt{$T_n = 0.9^{n-1} \bp{250 - 10k} + 10k$}
 
         \part
             \begin{alignat*}{2}
                 &&T_{12} &\geq 350\\
-                \implies&&0.9^{12-1} \left(250 - 10k\right) + 10k &\geq 350\\
+                \implies&&0.9^{12-1} \bp{250 - 10k} + 10k &\geq 350\\
                 \implies&&0.9^{11} \cdot 250 - 0.9^{11} \cdot 10k + 10k &\geq 350\\
                 \implies&&-0.9^{11} \cdot 10k + 10k &\geq 350 - 0.9^{11} \cdot 250\\
-                \implies&&\left(1-0.9^{11}\right) 10k &\geq 350 - 0.9^{11} \cdot 250\\
-                \implies&& k &\geq \dfrac{350 - 0.9^{11} \cdot 250}{10 \left(1-0.9^{11}\right)}\\
+                \implies&&\bp{1-0.9^{11}} 10k &\geq 350 - 0.9^{11} \cdot 250\\
+                \implies&& k &\geq \dfrac{350 - 0.9^{11} \cdot 250}{10 \bp{1-0.9^{11}}}\\
                 && &= 39.6 \tosf{3}
             \end{alignat*}
 
@@ -588,7 +588,7 @@
         \part
             Since $k = 50$,
             \begin{align*}
-                T_n &= 0.9^{n-1} \left(250 - 10\cdot50\right) + 10\cdot50\\
+                T_n &= 0.9^{n-1} \bp{250 - 10\cdot50} + 10\cdot50\\
                 &= -250 \cdot 0.9^{n-1} + 500\\
                 &= -250 \cdot \dfrac1{0.9} \cdot 0.9^n + 500\\
                 &= -\dfrac{2500}9 \cdot 0.9^n + 500
@@ -597,18 +597,18 @@
             Let \$$S_m$ be the total revenue for the first $m$ months.
             \begin{align*}
                 S_m &= 10 \sum_{n=1}^m T_n\\
-                &= 10 \sum_{n=1}^m \left(-\dfrac{2500}9 \cdot 0.9^n + 500\right) \\
-                &= 10 \left(-\dfrac{2500}9 \cdot \dfrac{0.9 (0.9^m - 1)}{0.9 - 1} + 500m\right)\\
-                &= 10\left(2500 \left(0.9^m - 1\right) + 500m\right)\\
-                &= 25000 \left(0.9^m - 1\right) + 5000m
+                &= 10 \sum_{n=1}^m \bp{-\dfrac{2500}9 \cdot 0.9^n + 500} \\
+                &= 10 \bp{-\dfrac{2500}9 \cdot \dfrac{0.9 (0.9^m - 1)}{0.9 - 1} + 500m}\\
+                &= 10\bp{2500 \bp{0.9^m - 1} + 500m}\\
+                &= 25000 \bp{0.9^m - 1} + 5000m
             \end{align*}
 
             Note that the total cost for the first $m$ months is \$$4000m$. Hence, the total profit for the first $m$ months is given by \$$(S_m - 4000m)$.
             \begin{alignat*}{2}
                 &&S_m - 4000m &\geq 0\\
-                \implies&&25000 \left(0.9^m - 1\right) + 5000m - 4000m &\geq 0\\
-                \implies&&25000 \left(0.9^m - 1\right) + 1000m &\geq 0\\
-                \implies&&25 \left(0.9^m - 1\right) + m &\geq 0\\
+                \implies&&25000 \bp{0.9^m - 1} + 5000m - 4000m &\geq 0\\
+                \implies&&25000 \bp{0.9^m - 1} + 1000m &\geq 0\\
+                \implies&&25 \bp{0.9^m - 1} + m &\geq 0\\
                 \implies&&m &\geq 22.7 \tosf{3}
             \end{alignat*}
 
@@ -618,8 +618,8 @@
 
         \part
             \begin{align*}
-                \lim_{n \to \infty} T_n &= \lim_{n \to \infty} \left( 0.9^{n-1} (250 - 10 \cdot 50) + 10 \cdot 50\right)\\
-                &= \lim_{n \to \infty} \left( -250 \cdot 0.9^{n-1} + 500\right)\\
+                \lim_{n \to \infty} T_n &= \lim_{n \to \infty} \bp{ 0.9^{n-1} (250 - 10 \cdot 50) + 10 \cdot 50}\\
+                &= \lim_{n \to \infty} \bp{ -250 \cdot 0.9^{n-1} + 500}\\
                 &= -250 \cdot 0 + 500\\
                 &= 500
             \end{align*}

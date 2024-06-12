@@ -22,8 +22,8 @@
             Implicitly differentiating the given equation,
 
             \begin{alignat*}{2}
-                &&2(x+2y)\left(1 + 2y'\right) + 6(x-y)(1 - y') &= 0\\
-                &&(x+2y)\left(1 + 2y'\right) + 3(x-y)(1 - y') &= 0\\
+                &&2(x+2y)\bp{1 + 2y'} + 6(x-y)(1 - y') &= 0\\
+                &&(x+2y)\bp{1 + 2y'} + 3(x-y)(1 - y') &= 0\\
                 \implies&& x + 2xy' + 2y + 4y\cdot y' + 3x - 3x\cdot y' - 3y + 3y\cdot y' &= 0\\
                 \implies&& (-x + 7y)y' + 4x - y &= 0\\
                 \implies&& y' &= \dfrac{y-4x}{7y-x}
@@ -72,7 +72,7 @@
                 \boxt{$x = \pm \sqrt7$}
 
     \problem{}
-        A piece of wire of length 8 cm is cut into two piece, one of length $x$ cm, the other of length $(8-x)$ cm. The piece of length $x$ cm is bent to form a circle with circumference $x$ cm. The other piece is bent to form a square with perimeter $(8-x)$ cm. Show that, as $x$ varies, the sum of the areas enclosed by these two pieces of wire is a minimum when the radius of the circle is $\dfrac4{4+\pi}$ cm.
+        A piece of wire of length 8 cm is cut into two pieces, one of length $x$ cm, the other of length $(8-x)$ cm. The piece of length $x$ cm is bent to form a circle with circumference $x$ cm. The other piece is bent to form a square with perimeter $(8-x)$ cm. Show that, as $x$ varies, the sum of the areas enclosed by these two pieces of wire is a minimum when the radius of the circle is $\dfrac4{4+\pi}$ cm.
 
     \solution
         Let the radius of the circle be $r$ cm. Then we have $x = 2\pi r \implies r = \dfrac{x}{2\pi}$. Let the side length of the square be $s$ cm. Then we have $8-x=4s \implies s = 2-\dfrac{x}4$.
@@ -81,17 +81,17 @@
 
         \begin{align*}
             A(x) &= \pi r^2 + s^2\\
-            &= \pi \left(\dfrac{x}{2\pi}\right)^2 + \left(2-\dfrac{x}4\right)^2\\
-            &= \dfrac1{4\pi}x^2 + \left(4 - x + \dfrac1{16}x^2\right)\\
-            &= \left(\dfrac1{4\pi} + \dfrac1{16}\right)x^2 - x + 4
+            &= \pi \bp{\dfrac{x}{2\pi}}^2 + \bp{2-\dfrac{x}4}^2\\
+            &= \dfrac1{4\pi}x^2 + \bp{4 - x + \dfrac1{16}x^2}\\
+            &= \bp{\dfrac1{4\pi} + \dfrac1{16}}x^2 - x + 4
         \end{align*}
 
         Consider the stationary points of $A(x)$. For stationary points, $A'(x) = 0$.
 
         \begin{alignat*}{2}
             &&A'(x) &= 0\\
-            \implies&&\left(\dfrac1{4\pi} + \dfrac1{16}\right)\cdot 2x - 1 &= 0\\
-            \implies&&\left(\dfrac1{2\pi} + \dfrac1{8}\right)x - 1 &= 0\\
+            \implies&&\bp{\dfrac1{4\pi} + \dfrac1{16}}\cdot 2x - 1 &= 0\\
+            \implies&&\bp{\dfrac1{2\pi} + \dfrac1{8}}x - 1 &= 0\\
             \implies&& x &= \dfrac1{\tfrac1{2\pi} + \tfrac1{8}}\\
             && &= \dfrac{16\pi}{8 + 2\pi}\\
             && &=\dfrac{8\pi}{4 + \pi}
@@ -101,7 +101,7 @@
             \centering
             \begin{tabular}{|c|c|c|c|}
             \hline
-            $x$ & $\left(\dfrac{8\pi}{4 + \pi}\right)^-$ & $\dfrac{8\pi}{4 + \pi}$ & $\left(\dfrac{8\pi}{4 + \pi}\right)^+$ \\\hline
+            $x$ & $\bp{\dfrac{8\pi}{4 + \pi}}^-$ & $\dfrac{8\pi}{4 + \pi}$ & $\bp{\dfrac{8\pi}{4 + \pi}}^+$ \\\hline
             $\der{A}{x}$ & -ve   & 0 & +ve   \\[1ex]\hline
             \end{tabular}
         \end{table}
@@ -109,11 +109,11 @@
         Hence, the minimum value of $A(x)$ is achieved when $x = \dfrac{8\pi}{4 + \pi}$, whence $r = \dfrac{1}{2\pi} \cdot \dfrac{8\pi}{4 + \pi} = \dfrac{4}{4+\pi}$ cm.
 
     \problem{}
-        A spherical balloon is being inflated in such a way that its volume is increasing at a constant rate of 150 cm$^3$s$^{-1}$. At time $t$ seconds, the radisu of the balloon is $r$ cm.
+        A spherical balloon is being inflated in such a way that its volume is increasing at a constant rate of 150 cm$^3$s$^{-1}$. At time $t$ seconds, the radius of the balloon is $r$ cm.
 
         \begin{enumerate}
             \item Find $\der{r}{t}$ when $r = 50$.
-            \item Find the rate of increase of the surface area of the baloon when its radius is 50 cm.
+            \item Find the rate of increase of the surface area of the balloon when its radius is 50 cm.
         \end{enumerate}
 
     \solution
@@ -124,7 +124,7 @@
 
             \begin{align*}
                 \der{r}{t} &= \der{r}{V} \cdot \der{V}{t}\\
-                &= \left(\der{V}{r}\right)^{-1} \cdot \der{V}{t}\\
+                &= \bp{\der{V}{r}}^{-1} \cdot \der{V}{t}\\
                 &= \dfrac1{150} \cdot 4 \pi r^2\\
                 &= \dfrac{75}{2\pi r^2}
             \end{align*}
@@ -132,7 +132,7 @@
             Evaluating $\der{r}{t}$ at $r=50$,
 
             \begin{align*}
-                \left.\der{r}{t}\right|_{r=50} &= \dfrac{75}{2 \pi \cdot 50^2}\\
+                \evalder{\der{r}{t}}{r=50} &= \dfrac{75}{2 \pi \cdot 50^2}\\
                 &= \dfrac3{200\pi}
             \end{align*}
 
@@ -143,7 +143,7 @@
 
             \begin{alignat*}{2}
                 &&\der{A}{t} &= \der{A}{r} \cdot \der{r}{t}\\
-                &&\left.\der{A}{t}\right|_{r=50} &= \left.\left(\der{A}{r} \cdot \der{r}{t}\right)\right|_{r=50}\\
+                &&\evalder{\der{A}{t}}{r=50} &= \evalder{\bp{\der{A}{r} \cdot \der{r}{t}}}{r=50}\\
                 && &= 8\pi\cdot50 \cdot \dfrac3{200\pi}\\
                 && &= 6
             \end{alignat*}
@@ -162,7 +162,7 @@
 
         Implicitly differentiating, we get $\dfrac{25}9 \cdot 2y \cdot y' = 2x \implies \dfrac{25}9 \cdot y \cdot y' = x$.
 
-        Since the normal is parallel to $y =x$, the tangent is perpendicular is perpendicular to $y=x$. Hence, the tangent is parallel to $y = -x$, whence $y' = -1$.
+        Since the normal is parallel to $y =x$, the tangent is perpendicular to $y=x$. Hence, the tangent is parallel to $y = -x$, whence $y' = -1$.
 
         \begin{alignat*}{2}
             \dfrac{25}9 \cdot y \cdot -1 &= x\\
@@ -172,15 +172,15 @@
         Substituting $y = -\dfrac9{25}x$ into Equation~\ref{P4-1},
 
         \begin{alignat*}{2}
-            &&\dfrac{25}9 \left(-\dfrac9{25}x\right)^2+25 &= x^2\\
+            &&\dfrac{25}9 \bp{-\dfrac9{25}x}^2+25 &= x^2\\
             \implies&&\dfrac{9}{25} + 25 &= x^2\\
             \implies&&\dfrac{16}{25}x^2 &= 25\\
-            \implies&&\left(\dfrac45 x\right)^2 &= 5^2\\
+            \implies&&\bp{\dfrac45 x}^2 &= 5^2\\
             \implies&&\dfrac45 x &= \pm 5\\
             \implies&& x &= \pm \dfrac{25}4
         \end{alignat*}
 
-        Observe that for $-\dfrac12\pi < \t < \dfrac12\pi$, $x=5\sec\t \geq 5$. We thus reject $x = -\dfrac{25}4$. Hence, $x=\dfrac{25}4$, whence $y = -\dfrac{9}{25} \cdot \dfrac{25}4 = -\dfrac{9}4$. The coordinate of the required point is thus $\left(\dfrac{25}4, -\dfrac94\right)$.
+        Observe that for $-\dfrac12\pi < \t < \dfrac12\pi$, $x=5\sec\t \geq 5$. We thus reject $x = -\dfrac{25}4$. Hence, $x=\dfrac{25}4$, whence $y = -\dfrac{9}{25} \cdot \dfrac{25}4 = -\dfrac{9}4$. The coordinate of the required point is thus $\bp{\dfrac{25}4, -\dfrac94}$.
         
         \boxt{$\bp{\dfrac{25}4, -\dfrac94}$}
 
@@ -193,7 +193,7 @@
 
         \begin{enumerate}
             \item Find the equation of the tangent to the curve at the point $(p^2, \dfrac2p)$, simplifying your answer.
-            \item Hence find the coordinates of the points $Q$ and $R$ where this tangent meets the $x$- and $y$-axes respectively.
+            \item Hence, find the coordinates of the points $Q$ and $R$ where this tangent meets the $x$- and $y$-axes respectively.
             \item The point $F$ is the mid-point of $QR$. Find a Cartesian equation of the curve traced by $F$ as $p$ varies.
         \end{enumerate}
 
@@ -203,7 +203,7 @@
 
             \begin{align*}
                 \der{y}{x} &= \der{y}{t} \cdot \der{t}{x} \\
-                &= \der{y}{t} \cdot \left(\der{x}{t}\right)^2\\
+                &= \der{y}{t} \cdot \bp{\der{x}{t}}^2\\
                 &= -\dfrac{2}{t^2} \cdot \dfrac1{2t}\\
                 &= -\dfrac1{t^3}
             \end{align*}
@@ -211,8 +211,8 @@
             At the point $p^2, \dfrac2p$, $t = p$, whence $\der{y}{x} = -\dfrac{1}{p^3}$. Using the point-slope formula, the tangent to the curve is given by the equation
             
             \begin{alignat*}{2}
-                &&y - \dfrac2p &= -\dfrac1{p^3}\left(x - p^2\right)\\
-                \implies&&y &= \dfrac{2}p -\dfrac1{p^3}\left(x - p^2\right)\\
+                &&y - \dfrac2p &= -\dfrac1{p^3}\bp{x - p^2}\\
+                \implies&&y &= \dfrac{2}p -\dfrac1{p^3}\bp{x - p^2}\\
                 && &= \dfrac{2}p -\dfrac1{p^3}x + \dfrac1p\\
                 && &= \dfrac{3}p -\dfrac1{p^3}x
             \end{alignat*}
@@ -235,27 +235,27 @@
                     &= \dfrac3p
                 \end{align*}
 
-                Hence, $R\left(0, \dfrac3p\right)$.
+                Hence, $R\bp{0, \dfrac3p}$.
 
-            \boxt{$Q(3p^2, 0)$, $R\left(0, \dfrac3p\right)$}
+            \boxt{$Q(3p^2, 0)$, $R\bp{0, \dfrac3p}$}
 
         \part
             \begin{align*}
-                F &= \left(\dfrac12 \cdot 3p^2, \dfrac12 \cdot \dfrac3p\right)\\
-                &= \left(\dfrac32 p^2, \dfrac3{2p}\right)
+                F &= \bp{\dfrac12 \cdot 3p^2, \dfrac12 \cdot \dfrac3p}\\
+                &= \bp{\dfrac32 p^2, \dfrac3{2p}}
             \end{align*}
 
             As $p$ varies, $F$ traces a curve given by the parametric equations $x = \dfrac32 p^2$, $y = \dfrac3{2p}$. Observe that $p = \dfrac3{2y}$.
 
             \begin{alignat*}{2}
-                &&x &= \dfrac32 \left(\dfrac3{2y}\right)^2\\
-                && &= \left(\dfrac32\right)^3 \dfrac1{y^2}\\
-                \implies&&y^2 &= \left(\dfrac32\right)^3 \dfrac1x\\
-                \implies&&y &= \pm\sqrt{\left(\dfrac32\right)^3  \dfrac1x}\\
-                \implies&&y &= \pm \left(\dfrac32\right)^{\tfrac32}  \dfrac1{\sqrt{x}}
+                &&x &= \dfrac32 \bp{\dfrac3{2y}}^2\\
+                && &= \bp{\dfrac32}^3 \dfrac1{y^2}\\
+                \implies&&y^2 &= \bp{\dfrac32}^3 \dfrac1x\\
+                \implies&&y &= \pm\sqrt{\bp{\dfrac32}^3  \dfrac1x}\\
+                \implies&&y &= \pm \bp{\dfrac32}^{\tfrac32}  \dfrac1{\sqrt{x}}
             \end{alignat*}
 
-            \boxt{$y = \pm \left(\dfrac32\right)^{\tfrac32}  \dfrac1{\sqrt{x}}$}
+            \boxt{$y = \pm \bp{\dfrac32}^{\tfrac32}  \dfrac1{\sqrt{x}}$}
 
     \problem{}
         \begin{center}
@@ -279,31 +279,31 @@
          A new flower-bed is being designed for a large garden. The flower-bed will occupy a rectangle $x$ m by $y$ m together with a semicircle of diameter $x$ m, as shown in the diagram. A low wall will be built around the flowerbed. The time needed to build the wall will be 3 hours per metre for the straight parts and 9 hours per metre for the semicircular part. Given that a total time of 180 hours is taken to build the wall, find, using differentiation, the values of $x$ and $y$ which give a flower-bed of maximum area.
 
     \solution
-        Observe that the length of the straight parts is $(2y + x)$ m, while the length of the semicicular part is $\dfrac12 \cdot 2\pi\left(\dfrac{x}2\right) = \dfrac12 \pi x$ m. Since a total time of 180 hours is taken to build the wall,
+        Observe that the length of the straight parts is $(2y + x)$ m, while the length of the semicircular part is $\dfrac12 \cdot 2\pi\bp{\dfrac{x}2} = \dfrac12 \pi x$ m. Since a total time of 180 hours is taken to build the wall,
 
         \begin{alignat*}{2}
-            &&3 (2y + x) + 9\left(\dfrac12 \pi x\right) &= 180\\
-            \implies&& (2y + x) + 3\left(\dfrac12 \pi x\right) &= 60\\
+            &&3 (2y + x) + 9\bp{\dfrac12 \pi x} &= 180\\
+            \implies&& (2y + x) + 3\bp{\dfrac12 \pi x} &= 60\\
             \implies&&2y + x + \dfrac32 \pi x &= 60\\
             \implies&&4y + 2x + 3\pi x &= 120\\
             \implies&&(2 + 3\pi)x &= 120-4y\\
             \implies&& x &= \dfrac{120-4y}{2+3\pi}
         \end{alignat*}
 
-        Let $A(y)$ be the total area enclosed by the garden, in m$^2$. Observe that $A(y) = xy + \dfrac12 \pi \left(\dfrac{x}2\right)^2 = xy + \dfrac18 \pi x^2$. Also note that $x' = -\dfrac4{2 + 3\pi}$. Now, consider the stationary points of $A(y)$. For stationary points, $A'(y) = 0$.
+        Let $A(y)$ be the total area enclosed by the garden, in m$^2$. Observe that $A(y) = xy + \dfrac12 \pi \bp{\dfrac{x}2}^2 = xy + \dfrac18 \pi x^2$. Also note that $x' = -\dfrac4{2 + 3\pi}$. Now, consider the stationary points of $A(y)$. For stationary points, $A'(y) = 0$.
 
         \begin{alignat*}{2}
             &&A'(y) &= 0\\
-            \implies&&\left(x' y + x\right) + \dfrac18 \pi (2x \cdot x') &= 0\\
+            \implies&&\bp{x' y + x} + \dfrac18 \pi (2x \cdot x') &= 0\\
             \implies&&x' y + x + \dfrac14 \pi (x \cdot x') &= 0
         \end{alignat*}
 
         Substituting $x = \dfrac{120-4y}{2+3\pi}$ and $x' = -\dfrac4{2 + 3\pi}$,
 
         \begin{alignat*}{2}
-            &&-\dfrac4{2 + 3\pi} \cdot y + \dfrac{120-4y}{2+3\pi} + \dfrac14 \pi \left(\dfrac{120-4y}{2+3\pi} \cdot -\dfrac4{2 + 3\pi}\right) &= 0\\
-            \implies&&-4 \cdot y + (120-4y) + \dfrac14 \pi \left(\dfrac{120-4y}{2+3\pi} \cdot -4\right) &= 0\\
-            \implies&&120 - 8y - \pi \left(\dfrac{120-4y}{2+3\pi}\right) &= 0\\
+            &&-\dfrac4{2 + 3\pi} \cdot y + \dfrac{120-4y}{2+3\pi} + \dfrac14 \pi \bp{\dfrac{120-4y}{2+3\pi} \cdot -\dfrac4{2 + 3\pi}} &= 0\\
+            \implies&&-4 \cdot y + (120-4y) + \dfrac14 \pi \bp{\dfrac{120-4y}{2+3\pi} \cdot -4} &= 0\\
+            \implies&&120 - 8y - \pi \bp{\dfrac{120-4y}{2+3\pi}} &= 0\\
             \implies&&120(2+3\pi) - 8(2+3\pi)y - \pi(120-4y) &= 0\\
             \implies&&240 + 360\pi - 16y - 24\pi y - 120\pi + 4\pi y &= 0\\
             \implies&&240 + 240\pi - 16y - 20\pi y &= 0\\
@@ -381,7 +381,7 @@
             \begin{align}
                 A &= \dfrac12 \cdot 4\pi r^2 + 2\pi r h + \pi r^2\nonumber\\
                 &= 3\pi r^2 + 2\pi rh\nonumber\\
-                &= 3\pi r^2 + 2\pi r\left(\dfrac{k}{\pi r^2}-\dfrac23 r\right)\nonumber\\
+                &= 3\pi r^2 + 2\pi r\bp{\dfrac{k}{\pi r^2}-\dfrac23 r}\nonumber\\
                 &= 3\pi r^2 + \dfrac{2k}{r}-\dfrac43 \pi r^2\nonumber\\
                 &= \dfrac53\pi r^2 + \dfrac{2k}{r}\label{P7-3}
             \end{align}
@@ -409,7 +409,7 @@
             Substituting $r = \sqrt[3]{\dfrac{3k}{5\pi}}$ into Equation~\ref{P7-1},
 
             \begin{alignat*}{2}
-                &&\dfrac23 \pi \left(\dfrac{3k}{5\pi}\right) + \pi r^2 h &= k\\
+                &&\dfrac23 \pi \bp{\dfrac{3k}{5\pi}} + \pi r^2 h &= k\\
                 \implies&&\dfrac{2}{5}k + \pi r^2h &= k\\
                 \implies&&\pi r^2 h &= \dfrac{3}{5}k\\
                 \implies&&r^2 h &= \dfrac{3k}{5\pi}\\
@@ -447,7 +447,7 @@
                 \end{tabular}
             \end{table}
 
-            Hence, $f(r)$ attains a minimum when $r = \dfrac6{\sqrt\pi}$. Since $f\left(\dfrac6{\sqrt\pi}\right) < 0$ and $f(0) > 0$, there exist positive $r_1$ and  $r_2$ such that $r_1 < r_2$ and $f(r_1) = f(r_2) = 0$. There are hence two possible values of $r$, which are $3.04$ and $3.72$ respectively.
+            Hence, $f(r)$ attains a minimum when $r = \dfrac6{\sqrt\pi}$. Since $f\bp{\dfrac6{\sqrt\pi}} < 0$ and $f(0) > 0$, there exist positive $r_1$ and  $r_2$ such that $r_1 < r_2$ and $f(r_1) = f(r_2) = 0$. There are hence two possible values of $r$, which are $3.04$ and $3.72$ respectively.
 
             From Equation~\ref{P7-2}, we know that $h= \dfrac{200}{\pi r^2} - \dfrac23 r$. When $r = 3.04$, $h = 4.88 > r$. When $r = 3.72$, $h = 2.12 < r$. Thus, given that $r < h$, $r = 3.04$ and $h = 4.88$.
 
@@ -508,7 +508,7 @@
             \boxt{$y = \arctan \dfrac3x$}
 
         \part
-            Observe that $\tan (y + \t) = \dfrac9x$. 
+            Observe that $\tan(y + \t) = \dfrac9x$. 
 
             \begin{alignat*}{2}
                 &&\tan (y + \t) &= \dfrac9x\\
@@ -530,12 +530,12 @@
                 \implies&&\t'&=\dfrac{-6x^2 + 162}{(x^2+27)^2\sec^2\t}
             \end{alignat*}
 
-            Using the identity $\tan^2 \t + 1 = \sec^2\t$, we have $\sec^2\t = \left(\dfrac{6x}{x^2+27}\right)^2 + 1$.
+            Using the identity $\tan^2 \t + 1 = \sec^2\t$, we have $\sec^2\t = \bp{\dfrac{6x}{x^2+27}}^2 + 1$.
 
             \begin{align*}
-                \t' &= \dfrac{-6x^2 + 162}{(x^2+27)^2\left(\left(\dfrac{6x}{x^2+27}\right)^2 + 1\right)}\\
-                &= \dfrac{-6x^2 + 162}{(6x)^2 + \left(x^2+27\right)^2}\\
-                &= \dfrac{-6x^2 + 162}{36x^2 + \left(x^2+27\right)^2}
+                \t' &= \dfrac{-6x^2 + 162}{(x^2+27)^2\bp{\bp{\dfrac{6x}{x^2+27}}^2 + 1}}\\
+                &= \dfrac{-6x^2 + 162}{(6x)^2 + \bp{x^2+27}^2}\\
+                &= \dfrac{-6x^2 + 162}{36x^2 + \bp{x^2+27}^2}
             \end{align*}
 
             For stationary points, $\t' = 0$. Hence,
@@ -641,7 +641,6 @@
         \end{alignat}
 
         \part
-
             Implicitly differentiating Equation~\ref{P9-1},
             \begin{alignat*}{2}
                 &&2r &= 2h' - 2h\cdot h'\\
@@ -653,9 +652,9 @@
             Let the volume of the cone be $V(r) = \dfrac13 \pi r^2 h$. Differentiating $V(r)$,
             \begin{align*}
                 V'(r) &= \dfrac13 \pi (r^2 h' + h \cdot 2r)\\
-                &= \dfrac13 \pi \left(\left(2h - h^2\right)\left(\dfrac{r}{1-h}\right) + 2hr\right)\\
-                &= \dfrac13 \pi \left(hr\cdot\dfrac{2 - h}{1-h} + 2hr\right)\\
-                &= \dfrac13 \pi rh \left(\dfrac{2 - h}{1-h} + 2\right)\\
+                &= \dfrac13 \pi \bp{\bp{2h - h^2}\bp{\dfrac{r}{1-h}} + 2hr}\\
+                &= \dfrac13 \pi \bp{hr\cdot\dfrac{2 - h}{1-h} + 2hr}\\
+                &= \dfrac13 \pi rh \bp{\dfrac{2 - h}{1-h} + 2}\\
                 &= \dfrac13 \cdot \dfrac{\pi rh}{1-h}(2 - h + 2(1-h))\\
                 &= \dfrac13 \cdot \dfrac{\pi rh}{1-h}(2 - h + 2-2h)\\
                 &= \dfrac13 \cdot \dfrac{\pi rh}{1-h}(4-3h)
@@ -669,7 +668,7 @@
                 \implies&& h &= \dfrac43
             \end{alignat*}
 
-            Substituting $h = \dfrac43$ into Equation~\ref{P9-1}, we obtain $r^2 = 2\cdot\dfrac43 - \left(\dfrac43\right)^2  = \dfrac89$, whence $r = \dfrac{2\sqrt2}3$ (we reject $r = -\dfrac{2\sqrt2}3$ as $r > 0$).
+            Substituting $h = \dfrac43$ into Equation~\ref{P9-1}, we obtain $r^2 = 2\cdot\dfrac43 - \bp{\dfrac43}^2  = \dfrac89$, whence $r = \dfrac{2\sqrt2}3$ (we reject $r = -\dfrac{2\sqrt2}3$ as $r > 0$).
 
             \begin{table}[h]
                 \centering
@@ -681,9 +680,8 @@
             \end{table}
 
             Hence, the maximum volume is achieved when $r =\dfrac{2\sqrt2}3$. 
-
             \begin{align*}
-                V\left(\dfrac{2\sqrt2}3\right) &= \dfrac13 \pi \cdot \dfrac89 \cdot \dfrac43\\
+                V\bp{\dfrac{2\sqrt2}3} &= \dfrac13 \pi \cdot \dfrac89 \cdot \dfrac43\\
                 &= \dfrac{32}{81}\pi
             \end{align*}
 
@@ -691,7 +689,6 @@
 
         \part
             From the diagram, we see that $\cos\t = \dfrac{h}{\sqrt{r^2 + h^2}}$.
-
             \begin{alignat*}{2}
                 &&\cos\t &= \dfrac{h}{\sqrt{r^2 + h^2}}\\
                 \implies&&\cos^2\t &= \dfrac{h^2}{r^2 + h^2}\\
@@ -711,25 +708,23 @@
             Since $0 < \t < \dfrac{\pi}2$, we know $\sin 2\t > 0$. We thus take $\sin 2\t = \sqrt{1 - (h-1)^2}$.
             
             Implicitly differentiating $2\cos^2\t = h$ with respect to $h$,
-
             \begin{alignat*}{2}
                 &&2\cdot 2 \cos\t \cdot -\sin\t \cdot \der{\t}{h} &= 1\\
-                \implies&&\der{\t}h &= \dfrac{1}{-4\sin\t\cos\t}\\
+                \implies&&\der{\t}{h} &= \dfrac{1}{-4\sin\t\cos\t}\\
                 && &= \dfrac1{-2\sin 2\t}\\
                 && &= \dfrac1{-2 \sqrt{1 - (h-1)^2}}
             \end{alignat*}
             \begin{align*}
-                \der{\t}{t} &= \der{\t}h \cdot \der{h}r \cdot \der{r}V \cdot \der{V}t\\
-                &= \der{\t}h \cdot \der{h}r \cdot \left(\der{V}r\right)^{-1} \cdot \der{V}t\\
-                &= \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac{r}{1-h} \cdot \left(\dfrac13 \cdot \dfrac{\pi rh}{1-h} (4-3h) \right)^{-1} \cdot \der{V}t\\
-                &= \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac{r}{1-h} \cdot 3 \cdot \dfrac{1-h}{\pi rh(4-3h)}  \cdot \der{V}t\\
-                &= \dfrac3{\pi} \cdot \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac1{h(4-3h)}  \cdot \der{V}t
+                \der{\t}{t} &= \der{\t}{h} \cdot \der{h}{r} \cdot \der{r}{V} \cdot \der{V}{t}\\
+                &= \der{\t}{h} \cdot \der{h}{r} \cdot \bp{\der{V}{r}}^{-1} \cdot \der{V}{t}\\
+                &= \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac{r}{1-h} \cdot \bp{\dfrac13 \cdot \dfrac{\pi rh}{1-h} (4-3h)}^{-1} \cdot \der{V}{t}\\
+                &= \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac{r}{1-h} \cdot 3 \cdot \dfrac{1-h}{\pi rh(4-3h)}  \cdot \der{V}{t}\\
+                &= \dfrac3{\pi} \cdot \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac1{h(4-3h)}  \cdot \der{V}{t}
             \end{align*}
 
-            Evaluating $\der{\t}t$ at $h = \dfrac32$,
-
+            Evaluating $\der{\t}{t}$ at $h = \dfrac32$,
             \begin{align*}
-                \left.\der{\t}t\right|_{h = \tfrac32} &= \dfrac3{\pi} \cdot \dfrac1{-2 \sqrt{1 - (\tfrac32-1)^2}} \cdot \dfrac1{\tfrac32(4-3\cdot\tfrac32)}  \cdot 6\\
+                \evalder{\der{\t}{t}}{h = \tfrac32} &= \dfrac3{\pi} \cdot \dfrac1{-2 \sqrt{1 - (\tfrac32-1)^2}} \cdot \dfrac1{\tfrac32(4-3\cdot\tfrac32)}  \cdot 6\\
                 &= \dfrac{18}{\pi} \cdot -\dfrac1{\sqrt{3}} \cdot -\dfrac43\\
                 &= \dfrac{24}{\pi} \cdot \dfrac{\sqrt 3}{3}\\
                 &= \dfrac{8\sqrt{3}}{\pi}
@@ -760,7 +755,7 @@
             \end{tikzpicture}    
         \end{center}
 
-         A hollow cone of semi-vertical angle $45^\circ$ is held with its axis vertical and vertex downwards. At the beginning of an experiment, it is follows with 390 cm$^3$ of liquid. The liquid runs out thorugh a small hole at the vertex at a constant rate of 2 cm$^3$/s. 
+         A hollow cone of semi-vertical angle $45^\circ$ is held with its axis vertical and vertex downwards. At the beginning of an experiment, it is follows with 390 cm$^3$ of liquid. The liquid runs out through a small hole at the vertex at a constant rate of 2 cm$^3$/s. 
 
         Find the rate at which the depth of the liquid is decreasing 3 minutes after the start of the experiment.
 
@@ -791,9 +786,9 @@
 
         Let the volume of liquid be $V = \dfrac13 \pi r^2 h$ cm$^3$. From the diagram, we have $r = h$. Thus,
 
-        \begin{equation*}
+        \[
             V = \dfrac13 \pi h^3
-        \end{equation*}
+        \]
 
         Differentiating $V$ with respect to $h$,
 
@@ -802,11 +797,11 @@
             &= \pi h^2
         \end{align*}
 
-        Let $t$ be the time since the start of the experiment in seconds. Consider $\der{h}t$.
+        Let $t$ be the time since the start of the experiment in seconds. Consider $\der{h}{t}$.
 
         \begin{align*}
-            \der{h}t &= \der{h}V \cdot \der{V}t\\
-            &= \left(\der{h}V\right)^{-1} \cdot \der{V}t\\
+            \der{h}{t} &= \der{h}{V} \cdot \der{V}{t}\\
+            &= \bp{\der{h}{V}}^{-1} \cdot \der{V}{t}\\
             &= \dfrac1{\pi h^2} \cdot -2\\
             &= \dfrac{-2}{\pi h^2}
         \end{align*}
@@ -822,8 +817,8 @@
         Evaluating $\der{h}{t}$ at $t =180$,
 
         \begin{align*}
-            \left.\der{h}t\right|_{t = 180} &= \left.\der{h}t\right|_{h = \sqrt[3]{\tfrac{90}{\pi}}}\\
-            &= \dfrac{-2}{\pi \left(\sqrt[3]{\tfrac{90}{\pi}}\right)^2}\\
+            \evalder{\der{h}{t}}{t = 180} &= \evalder{\der{h}{t}}{h = \sqrt[3]{\tfrac{90}{\pi}}}\\
+            &= \dfrac{-2}{\pi \bp{\sqrt[3]{\tfrac{90}{\pi}}}^2}\\
             &= -0.0680 \tosf{3}
         \end{align*}
 
@@ -831,13 +826,13 @@
 
 
     \problem{}
-        A particle is projected from the origin $O$ and it moes freely under gravity in the $x$-$y$ plane. At time $t$ s after projection, the particle is at the point $(x,y)$ where $x=30t$ and $y=20t-5t^2$, with $x$ and $y$ measured in meteres.
+        A particle is projected from the origin $O$, and it moves freely under gravity in the $x$-$y$ plane. At time $t$ s after projection, the particle is at the point $(x,y)$ where $x=30t$ and $y=20t-5t^2$, with $x$ and $y$ measured in metres.
 
         \begin{enumerate}
             \item Given that the particle passes through two points $A$ and $B$ which are at a distance 15 m above the $x$-axis, find the time taken for the particle to travel from $A$ to $B$. Find also the distance $AB$.
             \item It is known that the particle always travels in a direction tangential to its path. Show that, when $x=10$, the particle is travelling at an angle of $\arctan \dfrac59$ above the horizontal.
             
-            The speed of the particle is given by $\sqrt{\left(\der{x}{t}\right)^2 + \left(\der{y}{t}\right)^2}$. Find the speed of the particle when $x = 10$.
+            The speed of the particle is given by $\sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2}$. Find the speed of the particle when $x = 10$.
             \item Show that the equation of trajectory is $y = \dfrac23 x - \dfrac1{180} x^2$.
         \end{enumerate}
         
@@ -873,7 +868,7 @@
 
             \begin{align*}
                 \der{y}{x} &= \der{y}{t} \cdot \der{t}{x}\\
-                &= \der{y}t \cdot \left(\der{x}{t}\right)^{-1}\\
+                &= \der{y}t \cdot \bp{\der{x}{t}}^{-1}\\
                 &= (20 - 10t) \cdot \dfrac{1}{30}\\
                 &= \dfrac{2-t}{3}
             \end{align*}
@@ -881,14 +876,14 @@
             When $x = 10$, $t = \dfrac13$. Evaluating $\der{y}{x}$ at $t = \dfrac13$,
 
             \begin{align*}
-                \left.\der{y}{x}\right|_{t = \tfrac13} &= \dfrac{2-\tfrac13}{3}\\
+                \evalder{\der{y}{x}}{t = \tfrac13} &= \dfrac{2-\tfrac13}{3}\\
                 &= \dfrac59
             \end{align*}
 
             Hence, the line tangent to the curve at $x=10$ has gradient $\dfrac59$. Thus, the particle is travelling at an angle of $\arctan\dfrac59$ above the horizontal when $x=10$.
 
             \begin{align*}
-                \left.\sqrt{\left(\der{x}{t}\right)^2 + \left(\der{y}{t}\right)^2}\right|_{t=\tfrac13} &= \sqrt{30^2 + (20 - \tfrac{10}3)^2}\\
+                \evalder{\sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2}}{t=\tfrac13} &= \sqrt{30^2 + (20 - \tfrac{10}3)^2}\\
                 &= 34.3 \tosf{3}
             \end{align*}
 
@@ -898,7 +893,7 @@
             Note that $t = \dfrac{x}{30}$. Hence,
             \begin{align*}
                 y &= 20t - 5t^2\\
-                &= 20\cdot\dfrac{x}{30} - 5\left(\dfrac{x}{30}\right)^2\\
+                &= 20\cdot\dfrac{x}{30} - 5\bp{\dfrac{x}{30}}^2\\
                 &= \dfrac23 x - \dfrac1{180}x^2
             \end{align*}
 \end{document}

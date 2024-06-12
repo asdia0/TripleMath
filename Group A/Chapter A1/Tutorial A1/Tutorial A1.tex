@@ -83,7 +83,7 @@
 
     \solution
         Since $AB = 40$, we have $A(-20, 0)$ and $B(20, 0)$. We also know $(0, 10)$ lies on the circle. Substituting these points into Equation~\ref{E::P2},
-        \begin{equation*}
+        \[
             \begin{cases}
                 \begin{aligned}
                     -20a + c &= -400\\
@@ -91,7 +91,7 @@
                     10b + c &= -100\\
                 \end{aligned}
             \end{cases}
-        \end{equation*}
+        \]
 
         Solving the system of equations,
 
@@ -168,9 +168,9 @@
 
         \part
 
-            \begin{equation*}
+            \[
                 x^2(x-1)(x+3) \geq 0
-            \end{equation*}
+            \]
 
             \begin{center}
                 \begin{tikzpicture}
@@ -360,13 +360,13 @@
 
     \solution
         Observe that
-            \begin{equation*}
+            \[
                 \begin{aligned}
                     x^2 + x + 1 &= x^2 + x + \bp{\dfrac12}^2 - \bp{\dfrac12}^2 + 1 \\
                     &= \bp{x + \dfrac12}^2 + \dfrac34 \\
                     &> 0
                 \end{aligned}
-            \end{equation*}
+            \]
 
         Thus, the inequality reduces to $\dfrac1{x^2+x-2} < 0$.
         \begin{alignat*}{2}
@@ -402,7 +402,7 @@
             \item $\abs{3x+1} < (4x+3)^2$
             \item $\abs{3x+1} \geq \abs{2x+7}$
             \item $\abs{x-2} \geq x + \abs{x}$
-            \item $5x^2 + 4x - 3 > \ln{(x+1)}$
+            \item $5x^2 + 4x - 3 > \ln{x+1}$
         \end{enumerate}
 
     \solution
@@ -743,7 +743,7 @@
                             }
                         ]
 
-                        \path [draw=red, fill=red] (axis cs:2, 136) circle (3pt) node[anchor=south west] {$(2, 136)$};
+                        \fill (2, 136) circle (3pt) node[anchor=south west] {$(2, 136)$};
 
                         \addplot[plotRed, domain=0:4.92] {-16*x^2 + 64*x + 72)};
 

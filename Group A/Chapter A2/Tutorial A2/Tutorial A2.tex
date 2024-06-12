@@ -58,8 +58,8 @@
         \part
             Using the point slope formula, we see that the equation of the tangent at the point $(e,1)$ is given by
             \begin{alignat*}{2}
-                &&y - 1 &= \left. \der{y}{x}\right|_{x=e} (x - e) \\
-                \implies && y &= \left. \dfrac1x \right|_{x=e}(x-e) + 1 \\
+                &&y - 1 &= \evalder{\der{y}{x}}{x=e} (x - e) \\
+                \implies && y &= \evalder{\dfrac1x}{x=e}(x-e) + 1 \\
                 \implies && y &= \dfrac1e (x-e) + 1 \\
                 \implies && y &= \dfrac1e x
             \end{alignat*}
@@ -112,12 +112,12 @@
             \boxt{Larger root: $n = 4$}
 
             Using linear interpolation, we have that $\a$ is approximately equal to $x_1$, where
-            \begin{equation*}
+            \[
                 \begin{aligned}
                     x_1 &= \dfrac{1f(2) - 2f(1)}{f(2) - f(1)} \\
                     &= 1.9 \todp{1}
                 \end{aligned}
-            \end{equation*}
+            \]
 
             \boxt{First approximation = 1.9}
 
@@ -228,12 +228,12 @@
     \solution
         \part
             Let the root of $f(x) = 0$ be $\a$. Using linear interpolation on the interval $[4, 5]$, we have
-            \begin{equation*}
+            \[
                 \begin{aligned}
                     \a &= \dfrac{4f(5) - 5f(4)}{f(5) - f(4)} \\
                     &= 4.255 \todp{3} 
                 \end{aligned}
-            \end{equation*}
+            \]
 
             \boxt{$\a = 4.255 \todp3$}
 
@@ -375,7 +375,7 @@
             Let $g_1(x) = \dfrac13 (15-x^3)$. Then $g'_1(x) = -x$. For values of $x$ near 2, $\abs{g'_1(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_1(x_n)$ will diverge. Thus, $g_1(x)$ is unsuitable.
 
         \part
-            Let $g_2(x) = \dfrac{15}{x^2 + 3}$. Then $g'_2(x) = \dfrac{-30x}{\left(x^2 + 3\right)^2}$. For values of $x$ near 2, $\abs{g'_2(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_2(x_n)$ will diverge. Thus, $g_2(x)$ is unsuitable.
+            Let $g_2(x) = \dfrac{15}{x^2 + 3}$. Then $g'_2(x) = \dfrac{-30x}{\bp{x^2 + 3}^2}$. For values of $x$ near 2, $\abs{g'_2(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_2(x_n)$ will diverge. Thus, $g_2(x)$ is unsuitable.
 
         \part
             Let $g_3(x) = (15-3x)^{\tfrac13}$. Then $g'_3(x) = -(15-3x)^{-\tfrac23}$. For values of $x$ near 2, $\abs{g'_3(x)} < 1$. Hence, the iterative formula $x_{n+1} = g_3(x_n)$ will converge. Thus, $g_3(x)$ is suitable.
@@ -510,10 +510,10 @@
         Using $a$ as an initial value, carry out one application of the Newton-Raphson method to obtain another approximation to the positive root, giving your answer to 2 decimal places.
 
     \solution
-        Let the $x$-coordinate of $M$ be $x_M$. Since $M$ is a minimum, we know that $\left. \der{y}{x} \right|_{x = x_M} = 0$.        
+        Let the $x$-coordinate of $M$ be $x_M$. Since $M$ is a minimum, we know that $\evalder{\der{y}{x}}{x = x_M} = 0$.        
         \begin{alignat*}{2}
-            &&\left. \der{y}{x} \right|_{x = x_M} &= 0\\
-            \implies&& \left. \dfrac15 - \dfrac1{x+2}\right|_{x = x_M} &= 0 \\
+            && \evalder{\der{y}{x}}{x = x_M} &= 0\\
+            \implies&& \evalder{\dfrac15 - \dfrac1{x+2}}{x = x_M} &= 0 \\
             \implies&& \dfrac15 - \dfrac1{x_M+2} &= 0 \\
             \implies&& x_M &= 3
         \end{alignat*}
@@ -537,12 +537,12 @@
 
         Let $f(x) = \dfrac15 x - \ln{x+2}$. Using linear interpolation on the interval $[8, 20]$, we have
 
-        \begin{equation*}
+        \[
             \begin{aligned}
                 a &= \dfrac{8f(20) - 20f(8)}{f(20) - f(8)} \\
                 &= 13.2
             \end{aligned}
-        \end{equation*}
+        \]
 
         \boxt{$a = 13.2 \todp{1}$}
 
@@ -616,12 +616,12 @@
 
         \part
             Let $f(x) = \sec^2{x} - e^x$. Using linear interpolation on the interval $[1.5, 2.5]$,
-            \begin{equation*}
+            \[
                 \begin{aligned}
                     a &= \dfrac{1.5f(2.5)-2.5f(1.5)}{f(2.5) - f(1.5)} \\
                     &= 1.06
                 \end{aligned}
-            \end{equation*}
+            \]
 
             \boxt{$a = 1.06 \todp{2}$}
 

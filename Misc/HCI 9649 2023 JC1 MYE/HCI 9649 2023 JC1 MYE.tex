@@ -52,7 +52,7 @@
                 ON &= OP\cos\t\\
                 &= (2a\cos\t)\cos\t\\
                 &= 2a\cos^2\t\\
-                &= a\left(2\cos^2\t - 1 + 1\right)\\
+                &= a\bp{2\cos^2\t - 1 + 1}\\
                 &= a(\cos2\t + 1)
             \end{align*}
 
@@ -60,9 +60,9 @@
 
     \problem{}
         The sequence $\bc{u_n}$ is given by the recurrence relation
-        \begin{equation*}
+        \[
             u_{n+2} = 5u_{n+1} - 6u_n, \, n \in \Z^+
-        \end{equation*}
+        \]
         together with terms $u_1 = a$ and $u_2 = b$.
 
         \begin{enumerate}
@@ -78,13 +78,13 @@
                 \implies&&(x-2)(x-3) &= 0
             \end{alignat*}
             Hence, the roots of the characteristic equation are 2 and 3. Thus,
-            \begin{equation*}
+            \[
                 u_n = A\cdot2^n + B\cdot3^n
-            \end{equation*}
+            \]
             Substituting $n = 1$ and $n=2$, we have
-            \begin{equation*}
+            \[
                 \systeme[AB]{2A + 3B = a, 4A + 9B=b}
-            \end{equation*}
+            \]
             which has solution $A = \dfrac{3a-b}2$ and $B = \dfrac{b-2a}3$. Thus,
             \boxt{$u_n = \dfrac{3a-b}2\cdot2^n + \dfrac{b-2a}3\cdot3^n$}
 
@@ -93,7 +93,7 @@
             \begin{alignat*}{2}
                 &&u_{n+2} &= 5u_{n+1} - 6u_{n}\\
                 \implies&&\dfrac{u_{n+2}}{u_{n+1}} &= 5 - 6 \cdot \dfrac{u_{n}}{u_{n+1}}\\
-                \implies&&\lim_{n \to \infty}\dfrac{u_{n+2}}{u_{n+1}} &= \lim_{n \to \infty}\left(5 - 6 \cdot \dfrac{u_{n}}{u_{n+1}}\right)\\
+                \implies&&\lim_{n \to \infty}\dfrac{u_{n+2}}{u_{n+1}} &= \lim_{n \to \infty}\bp{5 - 6 \cdot \dfrac{u_{n}}{u_{n+1}}}\\
                 \implies&& L &= 5 - \dfrac6L\\
                 \implies&&L^2 -5L + 6 &= 0\\
                 \implies&&(L-2)(L-3) &= 0\\
@@ -121,14 +121,14 @@
                 \implies&&AP^2 \cdot BP^2 &= a^4\\
                 \implies&&\Big((x-a)^2 + y^2\Big)\Big((x+a)^2 + y^2\Big) &= a^4\\
                 \implies&&(x-a)^2(x+a)^2 + y^2(x+a)^2 + y^2(x-a)^2 + y^4 &= a^4\\
-                \implies&&\left(x^2 - a^2\right)^2 + y^2\Big((x+a)^2 + (x-a)^2\Big) + y^4&= a^4\\
-                \implies&&\left(x^4 -2a^2x^2 + a^4\right) + y^2\Big(\left(x^2 + 2ax + a^2\right) + \left(x^2 - 2ax + a^2\right)\Big) + y^4&= a^4\\
+                \implies&&\bp{x^2 - a^2}^2 + y^2\Big((x+a)^2 + (x-a)^2\Big) + y^4&= a^4\\
+                \implies&&\bp{x^4 -2a^2x^2 + a^4} + y^2\Big(\bp{x^2 + 2ax + a^2} + \bp{x^2 - 2ax + a^2}\Big) + y^4&= a^4\\
                 \implies&&x^4 -2a^2x^2 + 2y^2\Big(x^2 + a^2\Big) + y^4 &= 0\\
                 \implies&&x^4 -2a^2x^2 + 2x^2y^2 + 2a^2y^2 + y^4 &= 0\\
-                \implies&&\left(x^4  + 2x^2y^2 + y^4\right) + \left(2a^2y^2 -2a^2x^2\right)&= 0\\
-                \implies&&\left(x^2 + y^2\right)^2 + 2a^2\left(y^2 - x^2\right)&= 0\\
-                \implies&&\left(r^2\right)^2 + 2a^2\left((r\sin\t)^2 - (r\cos\t)^2\right)&= 0\\
-                \implies&&r^4 + 2a^2r^2\left(\sin^2\t - \cos^2\t\right)&= 0\\
+                \implies&&\bp{x^4  + 2x^2y^2 + y^4} + \bp{2a^2y^2 -2a^2x^2}&= 0\\
+                \implies&&\bp{x^2 + y^2}^2 + 2a^2\bp{y^2 - x^2}&= 0\\
+                \implies&&\bp{r^2}^2 + 2a^2\bp{(r\sin\t)^2 - (r\cos\t)^2}&= 0\\
+                \implies&&r^4 + 2a^2r^2\bp{\sin^2\t - \cos^2\t}&= 0\\
                 \implies&&r^4 - 2a^2r^2\cos2\t&= 0\\
                 \implies&&r^2 - 2a^2\cos2\t&= 0\\
                 \implies&&r^2 &= 2a^2\cos2\t
@@ -181,7 +181,7 @@
                 \text{Area} &= 2 \cdot \dfrac12 \int_{-\pi/4}^{\pi/4} r^2 \d \t\\
                 &= \int_{-\pi/4}^{\pi/4} 2a^2\cos2\t \d \t \usub{u &= 2\t\\du &= 2 \d \t}\\
                 &= a^2 \int_{-\pi/2}^{\pi/2} \cos u \d u\\
-                &= a^2 \eval{\sin u}{-\pi/2}{\pi/2}\\
+                &= a^2 \evalint{\sin u}{-\pi/2}{\pi/2}\\
                 &= 2a^2
             \end{align*}
 
@@ -248,46 +248,46 @@
                 \int_0^1 ye^{2y-1} \d y &= \dfrac1e \int_0^1 ye^{2y} \d y \usub{u &= 2y\\du &= 2 \d y}\\
                 &= \dfrac1{4e} \int_0^2 ue^{u} \d u
             \end{align*}
-            \begin{equation*}
+            \[
                 \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
                     & D & I \\\cmidrule{1-3}
                     + & u & e^u \\
                     - & 1 & e^u \\
                     + & 0 & e^u \\\bottomrule
                 \end{array}
-              \end{equation*}
+              \]
               \begin{align*}
-                \int_0^1 ye^{2y-1} \d y &= \dfrac1{4e} \eval{ue^u - e^u}{0}{2}\\
-                &= \dfrac1{4e} \left(e^2 + 1\right)\\
-                &= \dfrac14 \left(e + e^{-1}\right)
+                \int_0^1 ye^{2y-1} \d y &= \dfrac1{4e} \evalint{ue^u - e^u}{0}{2}\\
+                &= \dfrac1{4e} \bp{e^2 + 1}\\
+                &= \dfrac14 \bp{e + e^{-1}}
               \end{align*}
 
-              \boxt{$\displaystyle\int_0^1 ye^{2y-1} \d y = \dfrac14 \left(e + e^{-1}\right)$}
+              \boxt{$\displaystyle\int_0^1 ye^{2y-1} \d y = \dfrac14 \bp{e + e^{-1}}$}
 
         \part
             Let $I = \displaystyle\int_{e^{-1}}^e (\ln x + 1)^2 \d x$. Observe that the volume of the solid generated when $T$ is rotated completely about the $x$-axis is given by
             \begin{align*}
-                \text{Volume}_T &= \int_{e^{-1}}^e \left(\dfrac{1 + \ln x}2\right)^2 \d x\\
+                \text{Volume}_T &= \int_{e^{-1}}^e \bp{\dfrac{1 + \ln x}2}^2 \d x\\
                 &= \dfrac\pi4 \int_{e^{-1}}^e (\ln x + 1)^2 \d x\\
                 &= \dfrac\pi4 I
             \end{align*}
             Note that when the entire rectangle is rotated completely about the $x$-axis, its volume is given by $\pi e$. Hence,
             \begin{alignat*}{2}
                 &&\text{Volume}_S + \text{Volume}_T &= \pi e\\
-                \implies&&2\pi \cdot \dfrac14 \left(e - e^{-1}\right) + \dfrac\pi4 I &= \pi e\\
-                \implies&&2\left(e + e^{-1}\right) + I &= 4e\\
-                \implies&&I &= 4e - 2\left(e + e^{-1}\right)\\
-                && &= 2\left(e - e^{-1}\right)
+                \implies&&2\pi \cdot \dfrac14 \bp{e - e^{-1}} + \dfrac\pi4 I &= \pi e\\
+                \implies&&2\bp{e + e^{-1}} + I &= 4e\\
+                \implies&&I &= 4e - 2\bp{e + e^{-1}}\\
+                && &= 2\bp{e - e^{-1}}
             \end{alignat*}
 
-            \boxt{$\displaystyle\int_{e^{-1}}^e (\ln x + 1)^2 \d x = 2\left(e - e^{-1}\right)$}
+            \boxt{$\displaystyle\int_{e^{-1}}^e (\ln x + 1)^2 \d x = 2\bp{e - e^{-1}}$}
 
         \part
             Note that $2y = 1 + \ln x \implies \der{y}{x} = \dfrac1{2x}$. Hence,
             {\allowdisplaybreaks
             \begin{align*}
-                \text{Surface area} &= 2\pi \int_{e^{-1}}^e y\sqrt{1 + \left(\der{y}{x}\right)^2} \d x\\
-                &= 2\pi \int_{e^{-1}}^e \left(\dfrac{1 + \ln x}2\right)\sqrt{1 + \left(\dfrac1{2x}\right)^2} \d x\\
+                \text{Surface area} &= 2\pi \int_{e^{-1}}^e y\sqrt{1 + \bp{\der{y}{x}}^2} \d x\\
+                &= 2\pi \int_{e^{-1}}^e \bp{\dfrac{1 + \ln x}2}\sqrt{1 + \bp{\dfrac1{2x}}^2} \d x\\
                 &= 10.3 \tosf{3}
             \end{align*}}
 
@@ -306,7 +306,7 @@
         \begin{enumerate}
             \item To find an approximate value for $\a$, the following rearrangements of $g(x) = 0$ are suggested as a basis for the iteration method of the form $x_{n+1} = f(x_n)$.
             \begin{itemize}
-                \item $x = \dfrac14 \left(x^{3/2} - 1\right)^2$
+                \item $x = \dfrac14 \bp{x^{3/2} - 1}^2$
                 \item $x = 2 + \dfrac1{\sqrt{x}}$
                 \item $x = x^{5/2} - x^{3/2}$
             \end{itemize}
@@ -317,9 +317,9 @@
             \end{enumerate}
             \item \begin{enumerate}
                 \item Show that a Newton-Raphson iteration method for the root $\a$ is given by
-                \begin{equation*}
+                \[
                     x_{n+1} = \dfrac{x_n^{3/2} + 2x_n^{1/2} + 2}{3x_n^{1/2} - 2x_n^{-1/2}}
-                \end{equation*}
+                \]
                 \item Explain why the Newton-Raphson iteration method fails when the initial value $x_0$ is less than or equal to $\dfrac23$.
             \end{enumerate}
         \end{enumerate}
@@ -331,12 +331,12 @@
             \centering
             \begin{tabular}{|c|c|c|c|}
             \hline
-            $y$ & $\left(\sqrt{\dfrac23}\right)^-$ & $\sqrt{\dfrac23}$ & $\left(\sqrt{\dfrac23}\right)^+$ \\\hline
+            $y$ & $\bp{\sqrt{\dfrac23}}^-$ & $\sqrt{\dfrac23}$ & $\bp{\sqrt{\dfrac23}}^+$ \\\hline
             $h'(y)$ & -ve   & 0 & +ve   \\\hline
             \end{tabular}
         \end{table}
         
-         From the First Derivative Test, we see that $y = \sqrt{\dfrac23}$ is a minimum point. Hence, $h(y)$ is strictly decreasing on the interval $\left[0, \sqrt{\dfrac23}\right)$ and strictly increasing on the interval $\left(\sqrt{\dfrac23}, \infty\right)$. Since $h(0) = -1 < 0$, we have that $h(y) < 0$ for all $y \leq \sqrt{\dfrac23}$. Since $h(y)$ is strictly increasing for $y > \sqrt{\dfrac23}$, and $h\left(\sqrt{\dfrac23}\right) < 0$, $h(y)$ has only one real root. Thus, $g(x)$ has only one real root.
+         From the First Derivative Test, we see that $y = \sqrt{\dfrac23}$ is a minimum point. Hence, $h(y)$ is strictly decreasing on the interval $\left[0, \sqrt{\dfrac23}\right)$ and strictly increasing on the interval $\bp{\sqrt{\dfrac23}, \infty}$. Since $h(0) = -1 < 0$, we have that $h(y) < 0$ for all $y \leq \sqrt{\dfrac23}$. Since $h(y)$ is strictly increasing for $y > \sqrt{\dfrac23}$, and $h\bp{\sqrt{\dfrac23}} < 0$, $h(y)$ has only one real root. Thus, $g(x)$ has only one real root.
 
         Observe that $g(2)\,g(3) = (-1)(0.732) < 0$. Hence, $\a \in (2, 3)$. Thus,
         
@@ -345,10 +345,10 @@
         \part
             \subpart
 
-                \case{1}{$f(x) = \dfrac14 \left(x^{3/2} - 1\right)^2$}
+                \case{1}{$f(x) = \dfrac14 \bp{x^{3/2} - 1}^2$}
                 \begin{align*}
-                    f'(x) &= \dfrac14 \cdot 2\left(x^{3/2} - 1\right)\cdot\dfrac32 x^{1/2}\\
-                    &= \dfrac34 x^{1/2}\left(x^{3/2} - 1\right)
+                    f'(x) &= \dfrac14 \cdot 2\bp{x^{3/2} - 1}\cdot\dfrac32 x^{1/2}\\
+                    &= \dfrac34 x^{1/2}\bp{x^{3/2} - 1}
                 \end{align*}
                 Note that for all $x \in (2, 3)$, $\abs{f'(x)} > 1$. Hence, the iteration may not converge.
 
@@ -448,7 +448,7 @@
                     x_{n+1} &= x_n - \dfrac{g(x_n)}{g'(x_n)}\\
                     &= x_n - \dfrac{x_n^{3/2} - 2x_n^{1/2} - 1}{\frac32 x_n^{1/2} - x_n^{-1/2}}\\
                     &= x_n - \dfrac{2x_n^{3/2} - 4x_n^{1/2} - 2}{3 x_n^{1/2} - 2x_n^{-1/2}}\\
-                    &= \dfrac{x_n\left(3 x_n^{1/2} - 2x_n^{-1/2}\right) - \left(2x_n^{3/2} - 4x_n^{1/2} - 2\right)}{3 x_n^{1/2} - 2x_n^{-1/2}}\\
+                    &= \dfrac{x_n\bp{3 x_n^{1/2} - 2x_n^{-1/2}} - \bp{2x_n^{3/2} - 4x_n^{1/2} - 2}}{3 x_n^{1/2} - 2x_n^{-1/2}}\\
                     &= \dfrac{x_n^{3/2} + 2x_n^{1/2} + 2}{3x_n^{1/2} - 2x_n^{-1/2}}
                 \end{align*}
 
@@ -570,17 +570,17 @@
                 &&\cos \angle CPG &= \dfrac{PG}{PC} &\implies&& \cos 2\t &= \dfrac{PG}{a} &\implies&& PG &= a\cos2\t
             \end{alignat*}
             Since $x = OF - PG$, we have
-            \begin{equation*}
+            \[
                 x = 2a\cos\t - a\cos2\t
-            \end{equation*}
+            \]
             \begin{alignat*}{8}
-                &&\cos \angle OCF &= \dfrac{CF}{OC} &\implies&& \cos \left(\dfrac\pi2 - \t\right) &= \dfrac{CF}{2a} &\implies&& CF &= 2a\sin\t\\
-                &&\cos \angle PCG &= \dfrac{CG}{PC} &\implies&& \cos \left(\dfrac\pi2 - 2\t\right) &= \dfrac{CG}{a} &\implies&& CG &= a\sin2\t
+                &&\cos \angle OCF &= \dfrac{CF}{OC} &\implies&& \cos{\dfrac\pi2 - \t} &= \dfrac{CF}{2a} &\implies&& CF &= 2a\sin\t\\
+                &&\cos \angle PCG &= \dfrac{CG}{PC} &\implies&& \cos{\dfrac\pi2 - 2\t} &= \dfrac{CG}{a} &\implies&& CG &= a\sin2\t
             \end{alignat*}
             Since $y = CF - CG$, we have
-            \begin{equation*}
+            \[
                 y = 2a\sin\t - a\sin2\t
-            \end{equation*}
+            \]
             Hence, the path of $P$ can be represented by
             \begin{align*}
                 x &= 2a\cos\t - a\cos2\t\\
@@ -632,24 +632,24 @@
         \part
             Note that we have $\der{x}{\t} = -2a\sin\t + 2a\sin2\t$ and $\der{y}{\t} = 2a\cos\t - 2a\cos2\t$. Thus, 
             \begin{align*}
-                \left(\der{x}{\t}\right)^2 &+ \left(\der{y}{\t}\right)^2\\
-                &= \left(-2a\sin\t + 2a\sin2\t\right)^2 + \left(2a\cos\t - 2a\cos2\t\right)^2\\
-                &= 4a^2\Big[\left(-\sin\t + \sin2\t\right)^2 + \left(\cos\t - \cos2\t\right)^2\Big]\\
+                \bp{\der{x}{\t}}^2 &+ \bp{\der{y}{\t}}^2\\
+                &= \bp{-2a\sin\t + 2a\sin2\t}^2 + \bp{2a\cos\t - 2a\cos2\t}^2\\
+                &= 4a^2\Big[\bp{-\sin\t + \sin2\t}^2 + \bp{\cos\t - \cos2\t}^2\Big]\\
                 &= 4a^2\Big[\sin^2\t - 2\sin\t\sin2\t + \sin^2 2\t + \cos^2\t - 2\cos\t\cos2\t + \cos^2 2\t\Big]\\
-                &= 4a^2\Big[\left(\sin^2\t + \cos^2\t\right) + \left(\sin^2 2\t + \cos^2 2\t\right) - 2\left(\sin\t\sin2\t + \cos\t\cos2\t\right)\Big]\\
-                &= 4a^2\left(1 + 1 - 2\cos\t\right)\\
-                &= 8a^2\left(1 - \cos\t\right)
+                &= 4a^2\Big[\bp{\sin^2\t + \cos^2\t} + \bp{\sin^2 2\t + \cos^2 2\t} - 2\bp{\sin\t\sin2\t + \cos\t\cos2\t}\Big]\\
+                &= 4a^2\bp{1 + 1 - 2\cos\t}\\
+                &= 8a^2\bp{1 - \cos\t}
             \end{align*}
             Hence, the length of the path of $P$ is given by
             {\allowdisplaybreaks
             \begin{align*}
-                \text{Length} &= \int_0^{2\pi} \sqrt{\left(\der{x}{\t}\right)^2 + \left(\der{y}{\t}\right)^2} \d \t\\
+                \text{Length} &= \int_0^{2\pi} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t\\
                 &= \int_0^{2\pi} \sqrt{8a^2(1 - \cos\t)} \d \t\\
                 &= \sqrt8 a \int_0^{2\pi} \sqrt{1 - \cos\t}\d \t\\
-                &= \sqrt8 a \int_0^{2\pi} \sqrt{2\sin^2 \left(\dfrac\t2\right)}\d \t\\
-                &= 4 a \int_0^{2\pi} \sin \left(\dfrac\t2\right) \d \t \usub{u &= \t/2\\\d u &= \d \t/2}\\
+                &= \sqrt8 a \int_0^{2\pi} \sqrt{2\sin^2 \bp{\dfrac\t2}}\d \t\\
+                &= 4 a \int_0^{2\pi} \sin{\dfrac\t2} \d \t \usub{u &= \t/2\\\d u &= \d \t/2}\\
                 &= 8 a \int_0^{\pi} \sin u \d \t\\
-                &= 8 a \eval{-\cos u}{0}{\pi}\\
+                &= 8 a \evalint{-\cos u}{0}{\pi}\\
                 &= 16a
             \end{align*}}
 
@@ -661,12 +661,12 @@
     \problem{}
         To promote Earth Day, the Earth Day Network organizes an event that will be held for $n$ consecutive days. Cash prizes will be awarded to participants throughout the event, with one lucky participant chosen each day. Let the budget for the cash prizes by \$$m$.
         
-        The amount of cash prize given out on the first day is a sum of \$10 and $\dfrac17$ of the remaining budget, i.e. \$$\left(10 + \dfrac17 (m - 10)\right)$. The amount of cash prize given out on the second day is a sum of \$20 and $\dfrac17$ of the remaining budget. In general, the amount of cash prize given out on the $k$th day is a sum of \$$10k$ and $\dfrac17$ of the remaining budget. Let $u_k$ denote the amount of cash prize given out on the $k$th day, with $1 \leq k \leq n$, $k \in \Z^+$.
+        The amount of cash prize given out on the first day is a sum of \$10 and $\dfrac17$ of the remaining budget, i.e. \$$\bp{10 + \dfrac17 (m - 10)}$. The amount of cash prize given out on the second day is a sum of \$20 and $\dfrac17$ of the remaining budget. In general, the amount of cash prize given out on the $k$th day is a sum of \$$10k$ and $\dfrac17$ of the remaining budget. Let $u_k$ denote the amount of cash prize given out on the $k$th day, with $1 \leq k \leq n$, $k \in \Z^+$.
 
         \begin{enumerate}
             \item Write down the expression for $u_k$, in terms of $u_1, u_2, \ldots, u_{k-1}$.
             \item By considering $u_{k+1} - u_k$, show that $u_{k+1} = \dfrac67 u_k + \dfrac{60}7$.
-            \item Find $u_k$ in the form $u_k = p\left(\dfrac67\right)^k (m - 360) + q$, where $p$ and $q$ are constants to be determined.
+            \item Find $u_k$ in the form $u_k = p\bp{\dfrac67}^k (m - 360) + q$, where $p$ and $q$ are constants to be determined.
         \end{enumerate}
 
          It is given that $m = 4000$.
@@ -688,7 +688,7 @@
             {\allowdisplaybreaks
             \begin{alignat*}{2}
                 &&u_{k+1} - u_k &= 10(k+1) + \dfrac17 \Big(m - 10(k+1) - (u_1 + u_2 + \ldots + u_k)\Big)\\
-                && &\hspace{1.8em}- \left(10k + \dfrac17 \Big(m - 10k - (u_1 + u_2 + \ldots + u_{k-1})\Big)\right)\\
+                && &\hspace{1.8em}- \bp{10k + \dfrac17 \Big(m - 10k - (u_1 + u_2 + \ldots + u_{k-1})\Big)}\\
                 && &= 10 + \dfrac17(-10 - u_k)\\
                 && &= \dfrac{60}7 - \dfrac17 u_k\\
                 \implies&&u_{k+1} &= \dfrac{60}7 + \dfrac67 u_k
@@ -698,26 +698,26 @@
             Let $x$ be the constant such that $u_k + x = \dfrac67 (u_{k-1} + x)$. Then $-\dfrac17 x = \dfrac{60}7 \implies x = -60$.
             \begin{alignat*}{2}
                 &&u_k -60 &= \dfrac67 (u_{k-1} - 60)\\
-                && &= \left(\dfrac67\right)^{k-1} (u_1 - 60)\\
-                \implies&&u_k &= \left(\dfrac67\right)^{k-1} \left(10 + \dfrac17 (m - 10) - 60\right) + 60\\
-                && &= \left(\dfrac67\right)^{k-1} \left(\dfrac17 m - \dfrac{360}7\right) + 60\\
-                && &= \left(\dfrac67\right)^k \cdot \dfrac76 \left(\dfrac17 m - \dfrac{360}7\right) + 60\\
-                && &= \dfrac16 \left(\dfrac67\right)^k \left( m - 360\right) + 60\\
+                && &= \bp{\dfrac67}^{k-1} (u_1 - 60)\\
+                \implies&&u_k &= \bp{\dfrac67}^{k-1} \bp{10 + \dfrac17 (m - 10) - 60} + 60\\
+                && &= \bp{\dfrac67}^{k-1} \bp{\dfrac17 m - \dfrac{360}7} + 60\\
+                && &= \bp{\dfrac67}^k \cdot \dfrac76 \bp{\dfrac17 m - \dfrac{360}7} + 60\\
+                && &= \dfrac16 \bp{\dfrac67}^k \bp{ m - 360} + 60\\
             \end{alignat*}
 
-            \boxt{$u_k = \dfrac16 \left(\dfrac67\right)^k \left( m - 360\right) + 60$}
+            \boxt{$u_k = \dfrac16 \bp{\dfrac67}^k \bp{ m - 360} + 60$}
 
         \part
             Let $S_n$ be the total amount of cash prizes given out in $n$ days.
             \begin{align*}
                 S_n &= \sum_{k=1}^n u_k\\
-                &= \sum_{k=1}^n \left(\dfrac16 \left(\dfrac67\right)^k \left( m - 360\right) + 60\right)\\
+                &= \sum_{k=1}^n \bp{\dfrac16 \bp{\dfrac67}^k \bp{ m - 360} + 60}\\
                 &= \dfrac{m-360}6 \cdot \dfrac67 \cdot \dfrac{1 - (6/7)^n}{1 - 6/7} + 60n\\
-                &= (m-360) \left(1 - \left(\dfrac67\right)^n\right) + 60n
+                &= (m-360) \bp{1 - \bp{\dfrac67}^n} + 60n
             \end{align*}
             Substituting $m = 4000$ and $n = 14$, we have
             \begin{align*}
-                S_{14} &= (4000 - 360) \left(1 - \left(\dfrac67\right)^{14}\right) + 60\cdot14\\
+                S_{14} &= (4000 - 360) \bp{1 - \bp{\dfrac67}^{14}} + 60\cdot14\\
                 &= 4059
             \end{align*}
             Since $S_{14} > 4000 = m$, there is not enough money to pay out the cash prizes for 14 days, or 2 weeks.
@@ -728,24 +728,24 @@
             Consider $u_k < \dfrac5{100}m = 200$.
             \begin{alignat*}{2}
                 &&u_k &< 200\\
-                \implies&&\dfrac16 \left(\dfrac67\right)^k \left(4000 - 360\right) + 60 &< 200\\
-                \implies&&\left(\dfrac67\right)^k &< \dfrac3{13}\\
+                \implies&&\dfrac16 \bp{\dfrac67}^k \bp{4000 - 360} + 60 &< 200\\
+                \implies&&\bp{\dfrac67}^k &< \dfrac3{13}\\
                 \implies&&k &> \log_{6/7} \dfrac3{13}\\
                 && &= 9.5 \tosf{2}
             \end{alignat*}
 
-            Note that $S_{13} = (4000 - 360) \left(1 - \left(\dfrac67\right)^{13}\right) + 60\cdot13 = 3929 < 4000 = m$. Hence,
+            Note that $S_{13} = (4000 - 360) \bp{1 - \bp{\dfrac67}^{13}} + 60\cdot13 = 3929 < 4000 = m$. Hence,
             \boxt{$\bc{k \in \N : 10 \leq k \leq 13}$}
 
         \part
             Consider $S_{14} \leq m$.
             \begin{alignat*}{2}
                 &&S_{14} &\leq m\\
-                \implies&&(m-360) \left(1 - \left(\dfrac67\right)^{14}\right) + 60\cdot14 &\leq m\\
-                \implies&&m\left(1 - \left(\dfrac67\right)^{14}\right) - 360\left(1 - \left(\dfrac67\right)^{14}\right) + 840 &\leq m\\
-                \implies&&m - m\left(\dfrac67\right)^{14} -m &\leq 360\left(1 - \left(\dfrac67\right)^{14}\right) - 840\\
-                \implies&&- m\left(\dfrac67\right)^{14} &\leq 360\left(1 - \left(\dfrac67\right)^{14}\right) - 840\\
-                \implies&& m &\geq \dfrac{840 - 360\left(1 - (6/7)^{14}\right)}{(6/7)^{14}}\\
+                \implies&&(m-360) \bp{1 - \bp{\dfrac67}^{14}} + 60\cdot14 &\leq m\\
+                \implies&&m\bp{1 - \bp{\dfrac67}^{14}} - 360\bp{1 - \bp{\dfrac67}^{14}} + 840 &\leq m\\
+                \implies&&m - m\bp{\dfrac67}^{14} -m &\leq 360\bp{1 - \bp{\dfrac67}^{14}} - 840\\
+                \implies&&- m\bp{\dfrac67}^{14} &\leq 360\bp{1 - \bp{\dfrac67}^{14}} - 840\\
+                \implies&& m &\geq \dfrac{840 - 360\bp{1 - (6/7)^{14}}}{(6/7)^{14}}\\
                 && &= 4514.285
             \end{alignat*}
 

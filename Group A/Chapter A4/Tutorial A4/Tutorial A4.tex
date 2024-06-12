@@ -22,7 +22,7 @@
             \boxt{True}
 
         \part
-            Summation is distributive. Since $\sum\limits_{r = 1}^n 5$ is not equal to $5$ in general, the equality does not hold.
+            Summation is distributive. Since $\displaystyle\sum\limits_{r = 1}^n 5$ is not equal to $5$ in general, the equality does not hold.
 
             \boxt{False}
 
@@ -79,12 +79,12 @@
 
         \part
             \begin{align*}
-                1 - \dfrac12 + \dfrac14 - \dfrac18 + \ldots \text{ to $n$ terms} &= \sum_{r = 1}^n \left( -\dfrac12\right)^{r-1}\\
-                &= \sum_{r = 0}^{n-1} \left( -\dfrac12\right)^{(r+1)-1}\\
-                &= \sum_{r = 0}^{n-1} \left( -\dfrac12\right)^{r}
+                1 - \dfrac12 + \dfrac14 - \dfrac18 + \ldots \text{ to $n$ terms} &= \sum_{r = 1}^n \bp{ -\dfrac12}^{r-1}\\
+                &= \sum_{r = 0}^{n-1} \bp{ -\dfrac12}^{(r+1)-1}\\
+                &= \sum_{r = 0}^{n-1} \bp{ -\dfrac12}^{r}
             \end{align*}
 
-            \boxt{$\displaystyle1 - \dfrac12 + \dfrac14 - \dfrac18 + \ldots \text{ to $n$ terms} = \sum\limits_{r = 1}^n \left( -\dfrac12\right)^{r-1} = \sum\limits_{r = 0}^{n-1} \left( -\dfrac12\right)^{r}$}
+            \boxt{$\displaystyle1 - \dfrac12 + \dfrac14 - \dfrac18 + \ldots \text{ to $n$ terms} = \sum\limits_{r = 1}^n \bp{ -\dfrac12}^{r-1} = \sum\limits_{r = 0}^{n-1} \bp{ -\dfrac12}^{r}$}
 
         \part
             \begin{align*}
@@ -101,8 +101,8 @@
         \begin{enumerate}
             \item $\displaystyle\sum\limits_{r=1}^{50} (2r-7)$
             \item $\displaystyle\sum\limits_{r=1}^a (1-a-r)$
-            \item $\displaystyle\sum\limits_{r=2}^n \left(\ln r + 3^r\right)$
-            \item $\displaystyle\sum\limits_{r=1}^\infty \left(\dfrac{2^r-1}{3^r}\right)$
+            \item $\displaystyle\sum\limits_{r=2}^n \bp{\ln r + 3^r}$
+            \item $\displaystyle\sum\limits_{r=1}^\infty \bp{\dfrac{2^r-1}{3^r}}$
         \end{enumerate}
 
     \solution
@@ -128,58 +128,58 @@
 
         \part
             \begin{align*}
-                \sum\limits_{r=2}^n \left(\ln r + 3^r\right) &= \sum\limits_{r=2}^n \ln r + \sum\limits_{r=2}^n 3^r\\
+                \sum\limits_{r=2}^n \bp{\ln r + 3^r} &= \sum\limits_{r=2}^n \ln r + \sum\limits_{r=2}^n 3^r\\
                 &= \ln n! + \sum\limits_{r=1}^{n-1} 3^{r+1}\\
                 &= \ln n! + 3\sum\limits_{r=1}^{n-1} 3^r\\
                 &= \ln n! + 3 \cdot \dfrac{3(3^{n-1} - 1)}{3-1}\\
-                &= \ln n! +\dfrac92 \left(3^{n-1} - 1\right)
+                &= \ln n! +\dfrac92 \bp{3^{n-1} - 1}
             \end{align*}
 
-            \boxt{$\displaystyle\sum\limits_{r=2}^n \left(\ln r + 3^r\right) = \ln n! +\dfrac92 \left(3^{n-1} - 1\right)$}
+            \boxt{$\displaystyle\sum\limits_{r=2}^n \bp{\ln r + 3^r} = \ln n! +\dfrac92 \bp{3^{n-1} - 1}$}
 
         \part
             \begin{align*}
-                \sum\limits_{r=1}^\infty \left(\dfrac{2^r-1}{3^r}\right) &= \sum\limits_{r=1}^\infty \dfrac{2^r}{3^r} - \sum\limits_{r=1}^\infty \dfrac1{3^r}\\
-                &= \sum\limits_{r=1}^\infty \left(\dfrac23\right)^r - \sum\limits_{r=1}^\infty \left(\dfrac1{3}\right)^r\\
+                \sum\limits_{r=1}^\infty \bp{\dfrac{2^r-1}{3^r}} &= \sum\limits_{r=1}^\infty \dfrac{2^r}{3^r} - \sum\limits_{r=1}^\infty \dfrac1{3^r}\\
+                &= \sum\limits_{r=1}^\infty \bp{\dfrac23}^r - \sum\limits_{r=1}^\infty \bp{\dfrac1{3}}^r\\
                 &= \dfrac{\tfrac23}{1-\tfrac23} - \dfrac{\tfrac13}{1- \tfrac13}\\
                 &= \dfrac32
             \end{align*}
 
-            \boxt{$\displaystyle\sum\limits_{r=1}^\infty \left(\dfrac{2^r-1}{3^r}\right) = \dfrac32$}
+            \boxt{$\displaystyle\sum\limits_{r=1}^\infty \bp{\dfrac{2^r-1}{3^r}} = \dfrac32$}
 
     \problem{}
         The $n$th term of a series is $2^{n-2} + 3n$. Find the sum of the first $N$ terms.
 
     \solution
         \begin{align*}
-            \sum\limits_{r = 1}^N \left(2^{r-2} + 3r\right) &= \sum\limits_{r = 1}^N 2^{r-2} + 3\sum\limits_{r = 1}^N r\\
-            &= \dfrac{2^{1-2}\left(2^N - 1\right)}{2-1} + \dfrac{3N(N+1)}2\\
+            \sum\limits_{r = 1}^N \bp{2^{r-2} + 3r} &= \sum\limits_{r = 1}^N 2^{r-2} + 3\sum\limits_{r = 1}^N r\\
+            &= \dfrac{2^{1-2}\bp{2^N - 1}}{2-1} + \dfrac{3N(N+1)}2\\
             &= \dfrac{2^N - 1}{2} + \dfrac{3N(N+1)}2\\
-            &= \dfrac12 \left(2^N + 3N^2 + 3N - 1\right)
+            &= \dfrac12 \bp{2^N + 3N^2 + 3N - 1}
         \end{align*}
 
-        \boxt{The sum of the first $N$ terms is $\dfrac12 \left(2^N + 3N^2 + 3N - 1\right)$}
+        \boxt{The sum of the first $N$ terms is $\dfrac12 \bp{2^N + 3N^2 + 3N - 1}$}
 
     \problem{}
-        The $r$th term, $u_r$, of a series is given by $u_r = \left(\dfrac13\right)^{3r-2} + \left(\dfrac13\right)^{3r-1}$. Express $\sum\limits_{r=1}^n u_r$ in the form $A\left(1 - \dfrac{B}{27^n}\right)$, where $A$ and $B$ are constants. Deduce the sum to infinity of the series.
+        The $r$th term, $u_r$, of a series is given by $u_r = \bp{\dfrac13}^{3r-2} + \bp{\dfrac13}^{3r-1}$. Express $\displaystyle\sum\limits_{r=1}^n u_r$ in the form $A\bp{1 - \dfrac{B}{27^n}}$, where $A$ and $B$ are constants. Deduce the sum to infinity of the series.
 
     \solution
         \begin{align*}
-            \sum\limits_{r=1}^n u_r &= \sum\limits_{r=1}^n \left(\left(\dfrac13\right)^{3r-2} + \left(\dfrac13\right)^{3r-1}\right)\\
-            &= \sum\limits_{r=1}^n \left(\dfrac13\right)^{3r-2} + \sum\limits_{r=1}^n \left(\dfrac13\right)^{3r-1}\\
-            &= 9\sum\limits_{r=1}^n \left(\dfrac13\right)^{3r} + 3\sum\limits_{r=1}^n \left(\dfrac13\right)^{3r}\\
-            &= 12\sum\limits_{r=1}^n \left(\dfrac13\right)^{3r}\\
-            &= 12\sum\limits_{r=1}^n \left(\dfrac1{27}\right)^{r}\\
+            \sum\limits_{r=1}^n u_r &= \sum\limits_{r=1}^n \bp{\bp{\dfrac13}^{3r-2} + \bp{\dfrac13}^{3r-1}}\\
+            &= \sum\limits_{r=1}^n \bp{\dfrac13}^{3r-2} + \sum\limits_{r=1}^n \bp{\dfrac13}^{3r-1}\\
+            &= 9\sum\limits_{r=1}^n \bp{\dfrac13}^{3r} + 3\sum\limits_{r=1}^n \bp{\dfrac13}^{3r}\\
+            &= 12\sum\limits_{r=1}^n \bp{\dfrac13}^{3r}\\
+            &= 12\sum\limits_{r=1}^n \bp{\dfrac1{27}}^{r}\\
             &= 12 \cdot \dfrac{\tfrac1{27}(1-(\tfrac1{27})^n)}{1-\tfrac1{27}}\\
             &= 12 \cdot \dfrac{1-(\tfrac1{27})^n}{27 - 1}\\
-            &= \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)
+            &= \dfrac{6}{13} \bp{1-\dfrac1{27^n}}
         \end{align*}
 
-        \boxt{$\displaystyle\sum\limits_{r=1}^n u_r = \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)$}
+        \boxt{$\displaystyle\sum\limits_{r=1}^n u_r = \dfrac{6}{13} \bp{1-\dfrac1{27^n}}$}
 
         \begin{align*}
             \sum\limits_{r=1}^\infty u_r &= \lim_{n \to \infty} \sum\limits_{r=1}^n u_r\\
-            &= \lim_{n \to \infty} \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)\\
+            &= \lim_{n \to \infty} \dfrac{6}{13} \bp{1-\dfrac1{27^n}}\\
             &= \dfrac{6}{13} (1-0)\\
             &= \dfrac6{13}
         \end{align*}
@@ -187,7 +187,7 @@
         \boxt{$\displaystyle\sum\limits_{r=1}^\infty u_r = \dfrac6{13}$}
 
     \problem{}
-        The $r$th term, $u_r$, of a series is given by $u_r = \ln \dfrac{r}{r+1}$. Find $\sum\limits_{r=1}^n u_r$ in terms of $n$. Comment on whether the series converges.
+        The $r$th term, $u_r$, of a series is given by $u_r = \ln \dfrac{r}{r+1}$. Find $\displaystyle\sum\limits_{r=1}^n u_r$ in terms of $n$. Comment on whether the series converges.
 
     \solution
         \begin{align*}
@@ -205,7 +205,7 @@
         Observe that as $n \to \infty$, $\ln \dfrac1{n+1} \to \ln 0$. Hence, $\displaystyle\sum\limits_{r=1}^n u_r$ diverges to infinity. Thus, $u_n$ does not converge.
 
     \problem{}
-        Given that $\sum\limits_{r=1}^n r^2 = \dfrac{n}6 (n+1)(2n+1)$, without using the GC, find the following sums.
+        Given that $\displaystyle\sum\limits_{r=1}^n r^2 = \dfrac{n}6 (n+1)(2n+1)$, without using the GC, find the following sums.
 
         \begin{enumerate}
             \item $\displaystyle\sum\limits_{r=0}^n (r(r+4) + n)$
@@ -216,13 +216,13 @@
     \solution
         \part
             \begin{align*}
-                \sum\limits_{r=0}^n (r(r+4) + n) &= \sum\limits_{r=0}^n \left(r^2 + 4r + n\right) \\
+                \sum\limits_{r=0}^n (r(r+4) + n) &= \sum\limits_{r=0}^n \bp{r^2 + 4r + n} \\
                 &= \sum\limits_{r=0}^n r^2 + 4\sum\limits_{r=0}^n r +n \sum\limits_{r=0}^n 1 \\
                 &= \sum\limits_{r=1}^n r^2 + 4\sum\limits_{r=1}^n r +n \sum\limits_{r=0}^n 1 \\
                 &= \dfrac{n}6 (n+1)(2n+1) + 4 \cdot \dfrac{n(n+1)}2 + n(n+1) \\
                 &= \dfrac{n}6 (n+1)(2n+1) + 2n(n+1) + n(n+1) \\
-                &= (n+1)\left( \dfrac{n}6 (2n+1) + 2n + n\right)\\
-                &= \dfrac{n}6 (n+1)\left(2n+1 + 12 + 6\right)\\
+                &= (n+1)\bp{ \dfrac{n}6 (2n+1) + 2n + n}\\
+                &= \dfrac{n}6 (n+1)\bp{2n+1 + 12 + 6}\\
                 &= \dfrac{n}6 (n+1)(2n+19)
             \end{align*}
 
@@ -232,22 +232,22 @@
             \begin{align*}
                 \sum\limits_{r=n+1}^{2n} (2r-1)^2 &= \sum\limits_{r=1}^{n} (2(r+n)-1)^2\\\
                 &= \sum\limits_{r=1}^{n} (2r + 2n-1)^2\\
-                &= \sum\limits_{r=1}^{n} \left(4r^2 + 4(2n-1)r + (2n-1)^2\right)\\
+                &= \sum\limits_{r=1}^{n} \bp{4r^2 + 4(2n-1)r + (2n-1)^2}\\
                 &= 4\sum\limits_{r=1}^{n} r^2 + 4(2n-1)\sum\limits_{r=1}^{n} r + (2n-1)^2\sum\limits_{r=1}^{n}1\\
                 &= 4 \cdot\dfrac{n}6 (n+1)(2n+1) + 4(2n-1)\dfrac{n(n+1)}2 + n(2n-1)^2\\
                 &= \dfrac{2}3 \cdot n(n+1)(2n+1) + 2n(2n-1)(n+1) + n(2n-1)^2\\
-                &= \dfrac13 n \left(2(n+1)(2n+1) + 6(2n-1)(n+1) + 3(2n-1)^2\right)\\
-                &= \dfrac13 n \left(4n^2 +4n + 2n + 2 + 12n^2 -6n + 12n -6 + 12n^2 -12n +3\right)\\
-                &= \dfrac13 n \left(28n^2 -1 \right)
+                &= \dfrac13 n \bp{2(n+1)(2n+1) + 6(2n-1)(n+1) + 3(2n-1)^2}\\
+                &= \dfrac13 n \bp{4n^2 +4n + 2n + 2 + 12n^2 -6n + 12n -6 + 12n^2 -12n +3}\\
+                &= \dfrac13 n \bp{28n^2 -1 }
             \end{align*}
 
-            \boxt{$\displaystyle\sum\limits_{r=n+1}^{2n} (2r-1)^2 = \dfrac13 n \left(28n^2 -1 \right)$}
+            \boxt{$\displaystyle\sum\limits_{r=n+1}^{2n} (2r-1)^2 = \dfrac13 n \bp{28n^2 -1 }$}
 
         \part
             \begin{align*}
                 \sum\limits_{r=-15}^{20} r(r-2) &= \sum\limits_{r=1}^{36} (r-16)((r-16)-2)\\
                 &= \sum\limits_{r=1}^{36} (r-16)(r-18)\\
-                &= \sum\limits_{r=1}^{36} \left(r^2 - 34r + 288\right)\\
+                &= \sum\limits_{r=1}^{36} \bp{r^2 - 34r + 288}\\
                 &= \sum\limits_{r=1}^{36} r^2 - 34\sum\limits_{r=1}^{36}r + 288 \sum\limits_{r=1}^{36} 1\\
                 &= \dfrac{36}6 \cdot (36+1)(2\cdot36 + 1) - 34 \cdot \dfrac{36 \cdot 37}2 + 288 \cdot 36\\
                 &= 3930
@@ -267,7 +267,7 @@
     \solution
         \begin{align*}
             S &= \sum\limits_{r=0}^\infty \dfrac{(x-2)^r}{3^r}\\
-            &= \sum\limits_{r=0}^\infty \left(\dfrac{x-2}3 \right)^r
+            &= \sum\limits_{r=0}^\infty \bp{\dfrac{x-2}3 }^r
         \end{align*}
 
         For $S$ to converge, we must have $\abs{\dfrac{x-2}3} < 1$.
@@ -283,7 +283,7 @@
         \part
             When $x=1$, 
             \begin{align*}
-                S &= \sum\limits_{r=0}^\infty \left(-\dfrac{1}3 \right)^r \\
+                S &= \sum\limits_{r=0}^\infty \bp{-\dfrac{1}3 }^r \\
                 &= \dfrac{1}{1-(-\tfrac13)}\\
                 &= \dfrac34
             \end{align*}
@@ -293,22 +293,22 @@
         \part
             \begin{align*}
                 S_n &= \sum\limits_{r=0}^{n-1} \dfrac{(-1)^r}{3^r}\\
-                &= \sum\limits_{r=0}^{n-1} \left(-\dfrac{1}3 \right)^r\\
-                &= \sum\limits_{r=1}^{n} \left(-\dfrac{1}3 \right)^{r-1}\\
-                &= -3 \sum\limits_{r=1}^{n} \left(-\dfrac{1}3 \right)^{r}\\
+                &= \sum\limits_{r=0}^{n-1} \bp{-\dfrac{1}3 }^r\\
+                &= \sum\limits_{r=1}^{n} \bp{-\dfrac{1}3 }^{r-1}\\
+                &= -3 \sum\limits_{r=1}^{n} \bp{-\dfrac{1}3 }^{r}\\
                 &= -3 \cdot \dfrac{-\tfrac13 (1 - (-\tfrac13)^{n})}{1-(-\tfrac13)}\\
-                &= \dfrac34 \left(1 - \left(-\dfrac13\right)^n\right)
+                &= \dfrac34 \bp{1 - \bp{-\dfrac13}^n}
             \end{align*}
 
-            \boxt{$S_n = \dfrac34 \left(1 - \left(-\dfrac13\right)^n\right)$}
+            \boxt{$S_n = \dfrac34 \bp{1 - \bp{-\dfrac13}^n}$}
 
         \part
             \begin{alignat*}{2}
                 &&\abs{S_n - S} &< 0.001\% S\\
                 \implies&&\abs{\dfrac{S_n - S}S} &< \dfrac{0.001}{100}\\
                 \implies&&\abs{\dfrac{\tfrac34(1 - (-\tfrac13)^n)}{\tfrac34} - 1} &< \dfrac1{100000}\\
-                \implies&&\abs{-\left(-\dfrac13\right)^n} &< \dfrac1{100000}\\
-                \implies&&\left(\dfrac13\right)^n &< \dfrac1{10000}\\
+                \implies&&\abs{-\bp{-\dfrac13}^n} &< \dfrac1{100000}\\
+                \implies&&\bp{\dfrac13}^n &< \dfrac1{10000}\\
                 \implies&&n &> \log_{\tfrac13}\dfrac1{100000}\\
                 && &= 10.5
             \end{alignat*}
@@ -359,10 +359,10 @@
 
     \solution
         \begin{align*}
-            \sum\limits_{n=1}^N u_n &= \sum\limits_{n=1}^N \left(e^{nx} - e^{(n+1)x}\right)\\
+            \sum\limits_{n=1}^N u_n &= \sum\limits_{n=1}^N \bp{e^{nx} - e^{(n+1)x}}\\
             &= \sum_{n=1}^N e^{nx} - \sum_{n=1}^N e^{(n+1)x}\\
             &= \sum_{n=1}^N e^{nx} - \sum_{n=2}^{N+1} e^{nx}\\
-            &= \left(e^x + \sum_{n=2}^N e^{nx}\right) - \left(\sum_{n=2}^{N} e^{nx} + e^{(N+1)x}\right)\\
+            &= \bp{e^x + \sum_{n=2}^N e^{nx}} - \bp{\sum_{n=2}^{N} e^{nx} + e^{(N+1)x}}\\
             &= e^x - e^{(N+1)x}\\
             &= e^x(1 - e^{Nx})
         \end{align*}
@@ -393,7 +393,7 @@
         \boxt{When $x < 0$, the sum to infinity is $e^x$.}
 
     \problem{}
-        Given that $r$ is a positive integer and $f(r) = \dfrac1{r^2}$, express $f(r) - f(r+1)$ as a single fraction. Hence, prove that $\displaystyle\sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) = 1 - \dfrac1{(4n+1)^2}$. Give a reason why the series is convergent and state the sum to infinity. Find $\displaystyle\sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right)$.
+        Given that $r$ is a positive integer and $f(r) = \dfrac1{r^2}$, express $f(r) - f(r+1)$ as a single fraction. Hence, prove that $\displaystyle\sum\limits_{r=1}^{4n} \bp{\dfrac{2r+1}{r^2(r+1)^2}} = 1 - \dfrac1{(4n+1)^2}$. Give a reason why the series is convergent and state the sum to infinity. Find $\displaystyle\sum\limits_{r=2}^{4n} \bp{\dfrac{2r-1}{r^2(r-1)^2}}$.
 
     \solution
         \begin{align*}
@@ -405,21 +405,21 @@
         \boxt{$f(r) - f(r+1) = \dfrac{2r+1}{r^2(r+1)^2}$}
 
         \begin{align*}
-            \sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) &= \sum\limits_{r=1}^{4n} (f(r) - f(r+1))\\
+            \sum\limits_{r=1}^{4n} \bp{\dfrac{2r+1}{r^2(r+1)^2}} &= \sum\limits_{r=1}^{4n} (f(r) - f(r+1))\\
             &= \sum\limits_{r=1}^{4n} f(r) - \sum\limits_{r=1}^{4n} f(r+1)\\
             &= \sum\limits_{r=1}^{4n} f(r) - \sum\limits_{r=2}^{4n+1} f(r)\\
-            &= \left(f(1) + \sum\limits_{r=2}^{4n} f(r)\right) - \left(\sum\limits_{r=2}^{4n} f(r) + f(4n+1)\right)\\
+            &= \bp{f(1) + \sum\limits_{r=2}^{4n} f(r)} - \bp{\sum\limits_{r=2}^{4n} f(r) + f(4n+1)}\\
             &= f(1) - f(4n+1)\\
             &= 1 - \dfrac{1}{(4n+1)^2}
         \end{align*}
 
-        As $r \to \infty$, $\displaystyle\sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) = 1 - \dfrac{1}{(4n+1)^2} \to 1$. Hence, the series is convergent and converges to 1.
+        As $r \to \infty$, $\displaystyle\sum\limits_{r=1}^{4n} \bp{\dfrac{2r+1}{r^2(r+1)^2}} = 1 - \dfrac{1}{(4n+1)^2} \to 1$. Hence, the series is convergent and converges to 1.
 
         \boxt{The sum to infinity is 1.}
 
         \begin{align*}
-            \sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right) &= \sum\limits_{r=1}^{4n-1} \left(\dfrac{2(r+1)-1}{(r+1)^2 \, r^2}\right)\\
-            &= \sum\limits_{r=1}^{4n-1} \left(\dfrac{2r+1}{r^2(r+1)^2}\right)\\
+            \sum\limits_{r=2}^{4n} \bp{\dfrac{2r-1}{r^2(r-1)^2}} &= \sum\limits_{r=1}^{4n-1} \bp{\dfrac{2(r+1)-1}{(r+1)^2 \, r^2}}\\
+            &= \sum\limits_{r=1}^{4n-1} \bp{\dfrac{2r+1}{r^2(r+1)^2}}\\
             &= \sum\limits_{r=1}^{4n-1} (f(r) - f(r+1))\\
             &= \sum\limits_{r=1}^{4n} (f(r) - f(r+1)) - (f(4n) - f(4n+1))\\
             &= 1 - f(4n+1) - (f(4n) - f(4n+1))\\
@@ -428,7 +428,7 @@
             &= 1 - \dfrac1{16n^2}
         \end{align*}
 
-        \boxt{$\displaystyle\sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right) = 1 - \dfrac1{16n^2}$}
+        \boxt{$\displaystyle\sum\limits_{r=2}^{4n} \bp{\dfrac{2r-1}{r^2(r-1)^2}} = 1 - \dfrac1{16n^2}$}
 
     \problem{}
         \begin{enumerate}
@@ -466,31 +466,31 @@
 
         \part
             \begin{align}
-                &\sum\limits_{r=1}^n \dfrac1{(2r+1)(2r+3)(2r+5)}\nonumber\\ &= \sum\limits_{r=1}^n \left(\dfrac{1}{8(2r+1)} - \dfrac{1}{4(2r+3)} + \dfrac{1}{8(2r+5)}\right)\nonumber\\
+                &\sum\limits_{r=1}^n \dfrac1{(2r+1)(2r+3)(2r+5)}\nonumber\\ &= \sum\limits_{r=1}^n \bp{\dfrac{1}{8(2r+1)} - \dfrac{1}{4(2r+3)} + \dfrac{1}{8(2r+5)}}\nonumber\\
                 &= \dfrac18 \sum\limits_{r=1}^n \dfrac{1}{2r+1} - \dfrac14 \sum\limits_{r=1}^n\dfrac{1}{2r+3} + \dfrac18 \sum\limits_{r=1}^n\dfrac{1}{2r+5}\nonumber\\
-                &= \left(\dfrac18 \sum\limits_{r=1}^n \dfrac{1}{2r+1} - \dfrac18 \sum\limits_{r=1}^n\dfrac{1}{2r+3}\right)+ \left(\dfrac18 \sum\limits_{r=1}^n\dfrac{1}{2r+5} - \dfrac18 \sum\limits_{r=1}^n\dfrac{1}{2r+3}\right)\nonumber\\
-                &= \dfrac18 \left(\left(\sum\limits_{r=1}^n \dfrac{1}{2r+1} -\sum\limits_{r=1}^n\dfrac{1}{2r+3}\right)+ \left(\sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}\right)\right)\label{P12-1}
+                &= \bp{\dfrac18 \sum\limits_{r=1}^n \dfrac{1}{2r+1} - \dfrac18 \sum\limits_{r=1}^n\dfrac{1}{2r+3}}+ \bp{\dfrac18 \sum\limits_{r=1}^n\dfrac{1}{2r+5} - \dfrac18 \sum\limits_{r=1}^n\dfrac{1}{2r+3}}\nonumber\\
+                &= \dfrac18 \bp{\bp{\sum\limits_{r=1}^n \dfrac{1}{2r+1} -\sum\limits_{r=1}^n\dfrac{1}{2r+3}}+ \bp{\sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}}}\label{P12-1}
             \end{align}
 
             Consider $\displaystyle\sum\limits_{r=1}^n \dfrac{1}{2r+1} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}$.
             \begin{align}
                 \sum\limits_{r=1}^n \dfrac{1}{2r+1} - \sum\limits_{r=1}^n\dfrac{1}{2r+3} &= \sum\limits_{r=1}^n \dfrac{1}{2r+1} - \sum\limits_{r=2}^{n+1}\dfrac{1}{2r+1}\nonumber\\
-                &= \left(\dfrac13 + \sum\limits_{r=2}^n\dfrac{1}{2r+1}\right) - \left(\sum\limits_{r=2}^n\dfrac{1}{2r+1} + \dfrac{1}{2(n+1) + 1}\right)\nonumber\\
+                &= \bp{\dfrac13 + \sum\limits_{r=2}^n\dfrac{1}{2r+1}} - \bp{\sum\limits_{r=2}^n\dfrac{1}{2r+1} + \dfrac{1}{2(n+1) + 1}}\nonumber\\
                 &= \dfrac13 - \dfrac1{2n+3}\label{P12-2}
             \end{align}
 
             Consider $\displaystyle\sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}$.
             \begin{align}
                 \sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3} &= \sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=0}^{n-1}\dfrac{1}{2r+5}\nonumber\\
-                &= \left(\sum\limits_{r=0}^n \dfrac{1}{2r+5} - \dfrac15\right) - \left(\sum\limits_{r=0}^n \dfrac{1}{2r+5} - \dfrac1{2n+5} \right)\nonumber\\
+                &= \bp{\sum\limits_{r=0}^n \dfrac{1}{2r+5} - \dfrac15} - \bp{\sum\limits_{r=0}^n \dfrac{1}{2r+5} - \dfrac1{2n+5} }\nonumber\\
                 &= \dfrac1{2n+5} - \dfrac15\label{P12-3}
             \end{align}
 
             Substituting Equations~\ref{P12-2} and~\ref{P12-3} into Equation~\ref{P12-1}, we have
             \begin{align*}
-                \sum\limits_{r=1}^n \dfrac1{(2r+1)(2r+3)(2r+5)} &= \dfrac18 \left(\dfrac13 - \dfrac1{2n+3} + \dfrac1{2n+5} - \dfrac15\right)\\
-                &= \dfrac18 \left(\dfrac2{15} - \dfrac1{2n+3} + \dfrac1{2n+5}\right)\\
-                &= \dfrac18 \left(\dfrac2{15} - \dfrac{2}{(2n+3)(2n+5)}\right)\\
+                \sum\limits_{r=1}^n \dfrac1{(2r+1)(2r+3)(2r+5)} &= \dfrac18 \bp{\dfrac13 - \dfrac1{2n+3} + \dfrac1{2n+5} - \dfrac15}\\
+                &= \dfrac18 \bp{\dfrac2{15} - \dfrac1{2n+3} + \dfrac1{2n+5}}\\
+                &= \dfrac18 \bp{\dfrac2{15} - \dfrac{2}{(2n+3)(2n+5)}}\\
                 &= \dfrac1{60} - \dfrac1{4(2n+3)(2n+5)}
             \end{align*}
 

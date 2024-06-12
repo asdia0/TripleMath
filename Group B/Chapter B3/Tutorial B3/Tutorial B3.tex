@@ -161,7 +161,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{$\ran{h} = [ 0, \infty)$ }
+            \boxt{$\ran{h} = [\,0, \infty)$}
 
     \problem{}
         For each of the following functions, sketch its graph and determine if the function is one-one. If it is, find its inverse in a similar form.
@@ -262,9 +262,9 @@
     \problem{}
         The function $f$ is defined by
 
-        \begin{equation*}
+        \[
             f \colon x \mapsto x + \dfrac1{x}, \, x \neq 0
-        \end{equation*}
+        \]
 
         \begin{enumerate}
             \item Sketch the graph of $f$ and explain why $\inv{f}$ does not exist.
@@ -346,16 +346,16 @@
                 \implies&&x &= \dfrac12 (y \pm \sqrt{y^2 - 4})
             \end{alignat*}
 
-            Note that $f(2) = \dfrac52$. Since $2 = \dfrac12 \left(\tfrac52 + \sqrt{\left(\tfrac52\right)^2 - 4}\right)$ and $2 \neq \dfrac12 \left(\tfrac52 - \sqrt{\left(\tfrac52\right)^2 - 4}\right)$, we reject $x = \dfrac12 (y - \sqrt{y^2 - 4})$. Hence, $\inv h(x) = \dfrac12 (x + \sqrt{x^2 - 4})$. Note that $\dom{\inv f} = \ran f = [2, \infty)$. Thus,
+            Note that $f(2) = \dfrac52$. Since $2 = \dfrac12 \bp{\tfrac52 + \sqrt{\bp{\tfrac52}^2 - 4}}$ and $2 \neq \dfrac12 \bp{\tfrac52 - \sqrt{\bp{\tfrac52}^2 - 4}}$, we reject $x = \dfrac12 (y - \sqrt{y^2 - 4})$. Hence, $\inv h(x) = \dfrac12 (x + \sqrt{x^2 - 4})$. Note that $\dom{\inv f} = \ran f = [2, \infty)$. Thus,
 
-            \boxt{$\inv h \colon x \mapsto \dfrac12\left(x + \sqrt{x^2-4} \right), \, x \geq 2$}
+            \boxt{$\inv h \colon x \mapsto \dfrac12\bp{x + \sqrt{x^2-4} }, \, x \geq 2$}
     
     \problem{}
         The function $f$ is defined as follows:
 
-        \begin{equation*}
+        \[
             f \colon x \mapsto x^3 + x - 7, \, x \in \R
-        \end{equation*}
+        \]
 
         \begin{enumerate}
             \item By using a graphical method or otherwise, show that the inverse of $f$ exists.
@@ -454,15 +454,15 @@
         \part
             \begin{alignat*}{2}
                 &&[\inv f(x)]' &= \dfrac1{f'(\inv f(x))}\\
-                \implies&&\left.[\inv f(x)]'\right|_{x = p} &= \left.\dfrac1{f'(\inv f(x))}\right|_{x=p}\\
-                \implies&&\dfrac14 &= \left.\dfrac1{f'(\inv f(x))}\right|_{x=p}\\
-                \implies&&\left.f'(\inv f(x))\right|_{x=p} &= 4\\
+                \implies&&\evalder{[\inv f(x)]'}{x = p} &= \evalder{\dfrac1{f'(\inv f(x))}}{x=p}\\
+                \implies&&\dfrac14 &= \evalder{\dfrac1{f'(\inv f(x))}}{x=p}\\
+                \implies&&\\evalder{f'(\inv f(x))}{x=p} &= 4\\
             \end{alignat*}
 
             Note that $f'(x) = 3x^2 + 1$.
             \begin{alignat*}{2}
-                \implies&&\left(\left.3\cdot\inv f(x)^2 + 1\right)\right|_{x=p} &= 4\\
-                \implies&&3\cdot\inv f(p)^2 + 1 &= 4\\
+                \implies&&\evalder{\bp{3\inv f(x)^2 + 1}}{x=p} &= 4\\
+                \implies&&3\inv f(p)^2 + 1 &= 4\\
                 \implies&&\inv f(p)^2 &= 1\\
                 \implies&&\inv f(p) &= \pm 1\\
             \end{alignat*}
@@ -591,13 +591,13 @@
             \end{align*}
 
         \part
-            Note that $h(x) = (x-1)^2 -2$. Hence, $\inv h(x) = 1 + \sqrt{x+2}$ (we reject $\inv h(x) = 1 - \sqrt{x+2}$ since $\ran{\inv h} = \dom h = \R^+$). Further note that $\inv g = e^x - 2$.
+            Note that $h(x) = (x-1)^2 -2$. Hence, $\inv h(x) = 1 + \sqrt{x+2}$ (we reject $\inv h(x) = 1 - \sqrt{x+2}$ since $\ran{\inv h} = \dom h = \R^+$). Also note that $\inv g = e^x - 2$.
             \begin{alignat*}{2}
                 &&hg(a) &= -1.5\\
                 \implies&&g(a) &= \inv{h}(-1.5)\\
                 && &= 1 + \sqrt{-1.5 + 2}\\
                 && &= 1 + \dfrac1{\sqrt{2}}\\
-                \implies&&a &= \inv{g}\left(1 + \dfrac1{\sqrt{2}}\right)\\
+                \implies&&a &= \inv{g}\bp{1 + \dfrac1{\sqrt{2}}}\\
                 && &= e^{1 + \tfrac1{\sqrt{2}}} - 2
             \end{alignat*}
 
@@ -620,7 +620,7 @@
         \part
             Note that $\ran g = \R \setminus \bc{0}$ and $\dom g = \R$. Hence, $\ran g \subseteq \dom g$. Thus, $fg$ exists.
             \begin{align*}
-                fg(x) &= f\left(\dfrac4x\right)\\
+                fg(x) &= f\bp{\dfrac4x}\\
                 &= 3 - \dfrac4x
             \end{align*}
 
@@ -634,7 +634,7 @@
 
         \part
             \begin{align*}
-                g^2(x) &= g\left(\dfrac4x\right)\\
+                g^2(x) &= g\bp{\dfrac4x}\\
                 &= \dfrac4{\tfrac4x}\\
                 &= x
             \end{align*}
@@ -651,7 +651,7 @@
 
             \begin{align*}
                 g^{2017} &= g^{2016}(g(x))\\
-                &= \left({g^2}\right)^{1008}(g(x))\\
+                &= \bp{g^2}}^{1008}(g(x))\\
                 &= g(x)\\
                 &= \dfrac4x
             \end{align*}
@@ -671,13 +671,13 @@
     \problem{}
         The function $f$ is defined by
 
-        \begin{equation*}
+        \[
             f(x) =
             \begin{cases}
                 2x+1, & 0 \leq x < 2\\
                 (x-4)^2+1, & 2 \leq x < 4
             \end{cases}
-        \end{equation*}
+        \]
 
          It is further given that $f(x) = f(x+4)$ for all real values of $x$.
 
@@ -760,14 +760,14 @@
                 \item Show that if $f^2(x) = x$ then $x^3 - 4x^2 + 4x - 1 = 0$. Hence, find the value of $x$ for which $f^2(x) = x$. Explain why this value of $x$ satisfies the equation $f(x) = \inv f(x)$.
             \end{enumerate}
             \item The function $g$, with domain the set of non-negative integers, is given by
-            \begin{equation*}
+            \[
                 g(n) =
                 \begin{cases}
                     1, & n = 0\\
-                    2 + g\left(\dfrac12 n\right), & n \text{ even}\\
+                    2 + g\bp{\dfrac12 n}, & n \text{ even}\\
                     1 + g(n-1), & n \text{ odd}
                 \end{cases}
-            \end{equation*}
+            \]
             \begin{enumerate}
                 \item Find $g(4)$, $g(7)$ and $g(12)$.
                 \item Does $g$ have an inverse? Justify your answer.
@@ -813,7 +813,7 @@
                     \implies&& &= x(x-2)\\
                     \implies&& x &= (x(x-2))^2\\
                     \implies&& x(x-2)^2 &= 1 \qquad (\because x \neq 0)\\
-                    \implies&& x\left(x^2 -4x + 4 \right) &= 1 \\
+                    \implies&& x\bp{x^2 -4x + 4 } &= 1 \\
                     \implies&& x^3 -4x^2 + 4x  &= 1 \\
                     \implies&& x^3 -4x^2 + 4x -1 &= 0 \\
                 \end{alignat*}
@@ -823,13 +823,13 @@
                 \begin{alignat*}{2}
                     &&f^2(x) &= x\\
                     \implies&&x^3 -4x^2 + 4x -1 &= 0 \\
-                    \implies&&(x-1)\left(x^2-3x+1\right) &= 0
+                    \implies&&(x-1)\bp{x^2-3x+1} &= 0
                 \end{alignat*}
 
-                Hence, $x = 1$ or $\left(x^2-3x+1\right) = 0$. However, since $x \geq 2$, $x$ cannot be 1. We thus consider $\left(x^2-3x+1\right) = 0$.
+                Hence, $x = 1$ or $\bp{x^2-3x+1} = 0$. However, since $x \geq 2$, $x$ cannot be 1. We thus consider $\bp{x^2-3x+1} = 0$.
 
                 \begin{alignat*}{2}
-                    &&\left(x^2-3x+1\right) &= 0\\
+                    &&\bp{x^2-3x+1} &= 0\\
                     \implies&&x &= \dfrac{3 \pm \sqrt{5}}{2}
                 \end{alignat*}
 

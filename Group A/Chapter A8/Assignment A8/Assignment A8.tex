@@ -13,7 +13,7 @@
         
         \begin{alignat*}{2}
             &&\oa{CF} \cdot \vec b &= 0\\
-            \implies&&\left(\oa{OF} - \oa{OC}\right) \cdot \vec b &= 0\\
+            \implies&&\bp{\oa{OF} - \oa{OC}} \cdot \vec b &= 0\\
             \implies&&(\vec a + \l \vec b - \vec c) \cdot \vec b &= 0\\
             \implies&&\l \vec b \cdot \vec b + (\vec a - \vec c) \cdot \vec b&= 0\\
             \implies&&\l \abs{\vec b}^2 &= (\vec c - \vec a) \cdot \vec b\\
@@ -40,7 +40,7 @@
             By the Ratio Theorem,
             \begin{alignat*}{2}
                 &&\oa{OP} &= \dfrac{2\,\oa{OB} + \oa{OA}}{1 + 2}\\
-                && &= \dfrac13 \left(2\cveciii030 + \cveciii600\right)\\
+                && &= \dfrac13 \bp{2\cveciii030 + \cveciii600}\\
                 && &= \cveciii220\\
                 \implies&&\oa{CP} &= \oa{OP} - \oa{OC}\\
                 && &= \cveciii220 - \cveciii004\\
@@ -59,9 +59,9 @@
 
             Note that $\oa{CP} = \cveciii22{-4} = 2\cveciii11{-2}$. Hence, $CP$ is given by
 
-            \begin{equation*}
+            \[
                 \vec r = \cveciii004 + u\cveciii11{-2}, \, u \in \R
-            \end{equation*}
+            \]
 
             \boxt{$CP: \vec r = 4\vec k + u(\vec i + \vec j - 2\vec k), \, u \in \R$}
 
@@ -105,13 +105,13 @@
 
     \solution
         We have that
-        \begin{equation*}
+        \[
             l_1 : \vec r = \cveciii30{-2} + \l\cveciii{-2}4{-1}, \, \l \in \R
-        \end{equation*}
+        \]
          and
-        \begin{equation*}
+        \[
             l_2 : \vec r = \cveciii10{-3} + \m\cveciii211, \, \m \in \R
-        \end{equation*}
+        \]
 
         \part
             Consider $l_1 = l_2$.
@@ -121,9 +121,9 @@
                 \implies&&\m\cveciii211 - \l\cveciii{-2}4{-1} &= \cveciii201
             \end{alignat*}
             This gives the following system:
-            \begin{equation*}
+            \[
                 \systeme{2\m + 2\l = 2, \m - 4\l = 0, \m + \l = 1}
-            \end{equation*}
+            \]
              which has the unique solution $\m = \dfrac45$ and $\l = \dfrac15$. Thus, the intersection point $P$ has position vector $\cveciii30{-2} + \dfrac15\cveciii{-2}4{-1} = \dfrac15\cveciii{13}{4}{-11}$ and thus has coordinates $\bp{\dfrac{13}5, \dfrac45, -\dfrac{11}5}$.
 
             \boxt{$\bp{\dfrac{13}5, \dfrac45, -\dfrac{11}5}$}
@@ -142,7 +142,7 @@
 
             Note that
             \begin{alignat*}{2}
-                AP &= \sqrt{\left(\dfrac{17}5 - 3\right)^2 + \left(-\dfrac45 - 0\right)^2 + \left(-\dfrac95 - (-2)\right)^2}\\
+                AP &= \sqrt{\bp{\dfrac{17}5 - 3}^2 + \bp{-\dfrac45 - 0}^2 + \bp{-\dfrac95 - (-2)}^2}\\
                 &= \sqrt{\dfrac{21}{25}}\\
                 &= \dfrac{\sqrt{21}}5
             \end{alignat*}
@@ -150,7 +150,7 @@
             Since $\sin\t = \dfrac{AN}{AP}$, we have that $AN = AP\sin\t$.
             \begin{align*}
                 AN &= \dfrac{\sqrt{21}}5 \sin \arccos \dfrac1{\sqrt{126}}\\
-                &= \dfrac{\sqrt{21}}5 \cdot \dfrac{\sqrt{\left(\sqrt{126}\right)^2 - 1}}{\sqrt{126}}\\
+                &= \dfrac{\sqrt{21}}5 \cdot \dfrac{\sqrt{\bp{\sqrt{126}}^2 - 1}}{\sqrt{126}}\\
                 &= \dfrac{\sqrt{21}}5 \cdot \dfrac{\sqrt{125}}{\sqrt{126}}\\
                 &= \dfrac{\sqrt{21}}5 \cdot \dfrac{5\sqrt{5}}{\sqrt{6} \cdot \sqrt{21}}\\
                 &= \dfrac{\sqrt{5}}{\sqrt6}\\
@@ -163,8 +163,8 @@
             Since $N$ is on $l_2$, we have that $\oa{ON}= \cveciii10{03} + \m\cveciii211$ for some real $\m$.
             \begin{alignat*}{2}
                 &&\oa{AN} \cdot \cveciii211 &= 0\\
-                \implies&&\left(\oa{ON} - \oa{OA}\right) \cdot \cvecii211 &= 0\\
-                \implies&&\left(\cveciii10{-3} + \m\cveciii211 - \cveciii30{-2}\right) \cdot \cveciii211 &= 0\\
+                \implies&&\bp{\oa{ON} - \oa{OA}} \cdot \cvecii211 &= 0\\
+                \implies&&\bp{\cveciii10{-3} + \m\cveciii211 - \cveciii30{-2}} \cdot \cveciii211 &= 0\\
                 \implies&&\cveciii{-2+2\m}{\m}{-1+\m} \cdot \cveciii211 &= 0\\
                 \implies&&2(-2 + 2\m) + \m + (-1 + \m) &= 0\\
                 \implies&&\m &= \dfrac56\\
