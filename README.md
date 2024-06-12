@@ -1,6 +1,6 @@
 # DoubleMath
 
-Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
+Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documents use the `echw` class file, which can be downloaded [here](https://github.com/asdia0/echw).
 
 ## Group A
 | Index | Chapter | Tutorials | Assignments |
@@ -50,8 +50,39 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 | [Timed Practice 1](/Misc/Timed%20Practice%201/Timed%20Practice%201.pdf) | A4, B1 |
 | [Timed Practice 2](/Misc/Timed%20Practice%202/Timed%20Practice%202.pdf) | A2 |
 | [Vectors Practice Questions](/Misc/Vectors%20Practice%20Questions/Vectors%20Practice%20Questions.pdf) | A7, A8 |
-| [ASRJC 9649 2023 JC1 MYE](/Misc/ASRJC%209649%202023%20JC1%20MYE/ASRJC%209649%202023%20JC1%20MYE.pdf) | |
-| [EJC 9649 2023 JC1 MYE](/Misc/EJC%209649%202023%20JC1%20MYE/EJC%209649%202023%20JC1%20MYE.pdf) | |
-| [HCI 9649 2023 JC1 MYE](/Misc/HCI%209649%202023%20JC1%20MYE/HCI%209649%202023%20JC1%20MYE.pdf) | |
-| [RI 9649 2023 JC1 MYE](/Misc/RI%209649%202023%20JC1%20MYE/RI%209649%202023%20JC1%20MYE.pdf) | |
-| [VJC 9649 2023 JC1 MYE](/Misc/VJC%209649%202023%20JC1%20MYE/VJC%209649%202023%20JC1%20MYE.pdf) | |
+
+
+### Practice Papers
+
+<table style="text-align: center; vertical-align: middle;">
+    <thead>
+        <tr>
+            <th>Syllabus</th>
+            <th>Year</th>
+            <th>Level</th>
+            <th>Exam</th>
+            <th>School</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=5>9649</td>
+            <td rowspan=5>2023</td>
+            <td rowspan=5>JC1</td>
+            <td rowspan=5>MYE</td>
+            <td><a href="/Misc/ASRJC%209649%202023%20JC1%20MYE/ASRJC%209649%202023%20JC1%20MYE.pdf">ASRJC</a></td>
+        </tr>
+        <tr>
+            <td><a href="/Misc/EJC%209649%202023%20JC1%20MYE/EJC%209649%202023%20JC1%20MYE.pdf">EJC</a></td>
+        </tr>
+        <tr>
+            <td><a href="/Misc/HCI%209649%202023%20JC1%20MYE/HCI%209649%202023%20JC1%20MYE.pdf">HCI</a></td>
+        </tr>
+        <tr>
+            <td><a href="/Misc/RI%209649%202023%20JC1%20MYE/RI%209649%202023%20JC1%20MYE.pdf">RI</a></td>
+        </tr>
+        <tr>
+            <td><a href="/Misc/VJC%209649%202023%20JC1%20MYE/VJC%209649%202023%20JC1%20MYE.pdf">VJC</a></td>
+        </tr>
+    </tbody>
+</table>
