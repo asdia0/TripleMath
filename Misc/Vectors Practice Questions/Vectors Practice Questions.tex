@@ -10,7 +10,7 @@
     
         \begin{enumerate}
             \item The point $C$ with position vector $c$ is on the plane $OAB$ such that $OC$ bisects the angle $AOB$. Show that $\left(\dfrac{\vec a}{\abs{\vec a}} - \dfrac{\vec b}{\abs{\vec b}}\right) \cdot \vec c = 0$.
-            \item The lines $AB$ and $OC$ intersect at $P$. By first verifying that $\overrightarrow{OC}$ is parallel to $\dfrac{\vec a}{\abs{\vec a}} + \dfrac{\vec b}{\abs{\vec b}}$, show that the ratio of $AP:PB = \abs{\vec a} : \abs{\vec b}$.
+            \item The lines $AB$ and $OC$ intersect at $P$. By first verifying that $\oa{OC}$ is parallel to $\dfrac{\vec a}{\abs{\vec a}} + \dfrac{\vec b}{\abs{\vec b}}$, show that the ratio of $AP:PB = \abs{\vec a} : \abs{\vec b}$.
         \end{enumerate}
         
     \solution
@@ -50,7 +50,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            Consider the above diagram. Since $\abs{\hat{\vec a}} = \abs{\hat{\vec b}}$, they form a rhombus. Recall that the diagonals of a rhombus bisect opposite angles. Thus, the sum $\hat{\vec a} + \hat{\vec b}$ bisects $\angle AOB$ and is hence parallel to $\overrightarrow{OC}$.
+            Consider the above diagram. Since $\abs{\hat{\vec a}} = \abs{\hat{\vec b}}$, they form a rhombus. Recall that the diagonals of a rhombus bisect opposite angles. Thus, the sum $\hat{\vec a} + \hat{\vec b}$ bisects $\angle AOB$ and is hence parallel to $\oa{OC}$.
 
             \begin{center}
                 \begin{tikzpicture}
@@ -83,26 +83,26 @@
 
             Consider the above diagram. We have $Q$ on $OB$ such that $OA = OQ$. We also have $R$ such that $OA \parallel QR$ and $OA = AR$. From the earlier discussion, $P$ is the intersection of $OR$ and $AB$.
 
-            Now observe that $\triangle OBP$ is similar to $\triangle RAP$. Let $\lambda$ be the scale factor of $\triangle RAP$ with respect to $\triangle OBP$. We hence have
+            Now observe that $\triangle OBP$ is similar to $\triangle RAP$. Let $\l$ be the scale factor of $\triangle RAP$ with respect to $\triangle OBP$. We hence have
             \begin{alignat*}{2}
-                &&\abs{\vec a} = OA = AR = \lambda OB = \lambda \abs{\vec b} &\text{ and } AP = \lambda BP\\
-                \implies&&\dfrac{\abs{\vec a}}{\abs{\vec b}} = \lambda &\text{ and } \dfrac{AP}{BP} = \lambda
+                &&\abs{\vec a} = OA = AR = \l OB = \l \abs{\vec b} &\text{ and } AP = \l BP\\
+                \implies&&\dfrac{\abs{\vec a}}{\abs{\vec b}} = \l &\text{ and } \dfrac{AP}{BP} = \l
             \end{alignat*}
             Thus, $\dfrac{\abs{\vec a}}{\abs{\vec b}} = \dfrac{AP}{BP}$, whence $AP:PB = \abs{\vec a} : \abs{\vec b}$.
 
     \problem{AJC Prelim 9758/2017/01/Q9}
-        The position vectors of $A$, $B$ and $C$ with respect to the origin $O$ are $\vec a$, $\vec b$ and $\vec c$ respectively. It is given that $\overrightarrow{AC} = 4\overrightarrow{CB}$ and $\abs{\vec a + \vec b}^2 = \abs{\vec a}^2 + \abs{\vec b}^2$.
+        The position vectors of $A$, $B$ and $C$ with respect to the origin $O$ are $\vec a$, $\vec b$ and $\vec c$ respectively. It is given that $\oa{AC} = 4\oa{CB}$ and $\abs{\vec a + \vec b}^2 = \abs{\vec a}^2 + \abs{\vec b}^2$.
 
         \begin{enumerate}
             \item By considering $(\vec a + \vec b)\cdot(\vec a + \vec b)$, show that $\vec a$ and $\vec b$ are perpendicular.
             \item Find the length of the projection of $\vec c$ on $\vec a$ in terms of $\abs{\vec a}$.
-            \item Given that $F$ is the foot of the perpendicular from $C$ to $OA$ and $\vec f$ denotes the position vector $\overrightarrow{OF}$, state the geometrical meaning of $\abs{\vec c \times \vec f}$.
+            \item Given that $F$ is the foot of the perpendicular from $C$ to $OA$ and $\vec f$ denotes the position vector $\oa{OF}$, state the geometrical meaning of $\abs{\vec c \times \vec f}$.
             \item Two points $X$ and $Y$ move along line segments $OA$ and $AB$ respectively such that
             \begin{align*}
-                \overrightarrow{OX} &= (\cos 3t)\vec i + (\sin 3t)\vec j + \dfrac12 \vec k\\
-                \overrightarrow{OY} &= (\sin t)\vec i + (\cos t)\vec j - 2\vec k
+                \oa{OX} &= (\cos 3t)\vec i + (\sin 3t)\vec j + \dfrac12 \vec k\\
+                \oa{OY} &= (\sin t)\vec i + (\cos t)\vec j - 2\vec k
             \end{align*}
-            where $t$ is a real parameter, $0 \leq t \leq 2\pi$. By expressing the scalar product of $\overrightarrow{OX}$ and $\overrightarrow{OY}$ in the form of $p\sin(qt) + r$ where $p$, $q$ and $r$ are real values to be determined, find the greatest value of the angle $XOY$.
+            where $t$ is a real parameter, $0 \leq t \leq 2\pi$. By expressing the scalar product of $\oa{OX}$ and $\oa{OY}$ in the form of $p\sin(qt) + r$ where $p$, $q$ and $r$ are real values to be determined, find the greatest value of the angle $XOY$.
         \end{enumerate}
 
     \solution
@@ -131,25 +131,23 @@
                 \end{tikzpicture}
             \end{center}
 
-            By the Ratio Theorem, $\overrightarrow{OC} = \dfrac15 \vec a + \dfrac45 \vec b$. Since $F$ lies on $OA$, it has the direction vector $\dfrac15 \vec a$. Thus, $OF$, the length of projection of $\vec c$ on $\vec a$, is $\dfrac15 \abs{\vec a}$.
+            By the Ratio Theorem, $\oa{OC} = \dfrac15 \vec a + \dfrac45 \vec b$. Since $F$ lies on $OA$, it has the direction vector $\dfrac15 \vec a$. Thus, $OF$, the length of projection of $\vec c$ on $\vec a$, is $\dfrac15 \abs{\vec a}$.
 
-            \boxt{
-                The length of projection of $\vec c$ on $\vec a$ is $\dfrac15 \abs{\vec a}$.
-            }
+            \boxt{The length of projection of $\vec c$ on $\vec a$ is $\dfrac15 \abs{\vec a}$.}
 
         \part
             $\abs{\vec c \times \vec f}$ is the area of a parallelogram defined by $\vec c$ and $\vec f$.
 
         \part
-            We have $\overrightarrow{OX} = \cveciii{\cos 3t}{\sin 3t}{1/2}$ and $\overrightarrow{OY} = \cveciii{\sin t}{\cos t}{-2}$. Hence,
+            We have $\oa{OX} = \cveciii{\cos 3t}{\sin 3t}{1/2}$ and $\oa{OY} = \cveciii{\sin t}{\cos t}{-2}$. Hence,
             \begin{align*}
-                \overrightarrow{OX} \cdot \overrightarrow{OY} &= \cveciii{\cos 3t}{\sin 3t}{1/2} \cdot \cveciii{\sin t}{\cos t}{-2}\\
+                \oa{OX} \cdot \oa{OY} &= \cveciii{\cos 3t}{\sin 3t}{1/2} \cdot \cveciii{\sin t}{\cos t}{-2}\\
                 &= \cos 3t \sin t + \sin 3t \cos t - 1\\
                 &= \sin 4t - 1
             \end{align*}
             From the geometric definition of the scalar product, we have
             \begin{alignat*}{2}
-                &&\overrightarrow{OX} \cdot \overrightarrow{OY} &= \abs{\cveciii{\cos 3t}{\sin 3t}{1/2}} \abs{ \cveciii{\sin t}{\cos t}{-2}} \cos \angle XOY\\
+                &&\oa{OX} \cdot \oa{OY} &= \abs{\cveciii{\cos 3t}{\sin 3t}{1/2}} \abs{ \cveciii{\sin t}{\cos t}{-2}} \cos \angle XOY\\
                 \implies&&\sin 4t - 1 &= \sqrt{\cos^2 3t + \sin^2 3t + \left(\dfrac12\right)^2} \sqrt{\sin^2 t + \cos^2 t + (-2)^2} \cos \angle XOY\\
                 && &= \sqrt{1 + \dfrac14} \sqrt{1 + 4} \cos \angle XOY\\
                 && &= \dfrac52 \cos \angle XOY\\
@@ -162,9 +160,7 @@
                 && &= 2.50 \tosf{3}                
             \end{alignat*}
 
-            \boxt{
-                The greatest value of $\angle XOY$ is $2.50$.
-            }
+            \boxt{The greatest value of $\angle XOY$ is $2.50$.}
 
     \problem{CJC Prelim 9758/2017/02/Q2}
         Referred to the origin $O$, the points $A$, $B$, $P$ and $Q$ have position vectors $\vec a$, $\vec b$, $\vec p$ and $\vec q$ respectively, such that $\abs{\vec a} = 2$, $\vec b$ is a unit vector, and the angle between $\vec a$ and $\vec b$ is $\dfrac\pi4$.
@@ -174,12 +170,12 @@
             \item Find $\abs{\vec a \times \vec b}$, leaving your answer in exact form.
         \end{enumerate}
 
-        \noindent It is also given that $\vec p = 3\vec a + (\mu + 2)\vec b$ and $\vec q = (\mu + 3)\vec a + \mu \vec b$, where $\mu \in \mathbb{R}$.
+         It is also given that $\vec p = 3\vec a + (\m + 2)\vec b$ and $\vec q = (\m + 3)\vec a + \m \vec b$, where $\m \in \R$.
 
         \begin{enumerate}
             \setcounter{enumi}{2}
-            \item Show that $\vec p \times \vec q = \left(\mu^2 + 2\mu + 6\right)(\vec b \times \vec a)$.
-            \item Hence find the smallest area of the triangle $OPQ$ as $\mu$ varies.
+            \item Show that $\vec p \times \vec q = \left(\m^2 + 2\m + 6\right)(\vec b \times \vec a)$.
+            \item Hence, find the smallest area of the triangle $OPQ$ as $\m$ varies.
         \end{enumerate}
 
     \solution
@@ -187,40 +183,35 @@
             $\abs{\vec b \cdot \vec a}$ is the area of the parallelogram defined by $\vec b$ and $\vec a$.
 
         \part
-            Let $\theta = \dfrac\pi4$ be the angle between $\vec a$ and $\vec b$.
+            Let $\t = \dfrac\pi4$ be the angle between $\vec a$ and $\vec b$.
             \begin{align*}
-                \abs{\vec a \times \vec b} &= \abs{\vec a} \abs{\vec b} \sin \theta\\
+                \abs{\vec a \times \vec b} &= \abs{\vec a} \abs{\vec b} \sin \t\\
                 &= 2 \cdot 1 \cdot \sin \dfrac\pi4\\
                 &= \sqrt2
             \end{align*}
 
-            \boxt{
-                $\abs{\vec a \times \vec b} = \sqrt2$
-            }
+            \boxt{$\abs{\vec a \times \vec b} = \sqrt2$}
 
         \part
             \begin{align*}
-                \vec p \times \vec q &= \Big[3\vec a + (\mu + 2)\vec b \Big] \times \Big[(\mu + 3)\vec a + \mu \vec b\Big]\\
-                &= 3(\mu + 3)\vec a \times \vec a + 3\mu\vec a \times \vec b + (\mu + 2)(\mu + 3)\vec b \times \vec a + \mu(\mu + 2)\vec b \times \vec b\\
-                &= 3\mu\vec a \times \vec b + (\mu + 2)(\mu + 3)\vec b \times \vec a\\
-                &= -3\mu\vec b \times \vec a + \left(\mu^2 + 5\mu + 6\right)\vec b \times \vec a\\
-                &= \left(\mu^2 + 2\mu + 6\right)\vec b \times \vec a
+                \vec p \times \vec q &= \Big[3\vec a + (\m + 2)\vec b \Big] \times \Big[(\m + 3)\vec a + \m \vec b\Big]\\
+                &= 3(\m + 3)\vec a \times \vec a + 3\m\vec a \times \vec b + (\m + 2)(\m + 3)\vec b \times \vec a + \m(\m + 2)\vec b \times \vec b\\
+                &= 3\m\vec a \times \vec b + (\m + 2)(\m + 3)\vec b \times \vec a\\
+                &= -3\m\vec b \times \vec a + \left(\m^2 + 5\m + 6\right)\vec b \times \vec a\\
+                &= \left(\m^2 + 2\m + 6\right)\vec b \times \vec a
             \end{align*}
 
         \part
             {\allowdisplaybreaks
             \begin{align*}
                 \min \area \triangle OPQ &= \min \dfrac12 \abs{\vec p \times \vec q}\\
-                &= \min \dfrac12 \abs{\mu^2 + 2\mu + 6} \abs{\vec b \times \vec a}\\
-                &= \min \dfrac12 \abs{(\mu + 1)^2 + 5} \sqrt{2}\\
+                &= \min \dfrac12 \abs{\m^2 + 2\m + 6} \abs{\vec b \times \vec a}\\
+                &= \min \dfrac12 \abs{(\m + 1)^2 + 5} \sqrt{2}\\
                 &= \dfrac12 \cdot 5 \cdot \sqrt{2}\\
                 &= \dfrac{5}{\sqrt{2}}
-            \end{align*}
-            }
+            \end{align*}}
 
-            \boxt{
-                The smallest area of $\triangle OPQ$ is $\dfrac5{\sqrt2}$ units$^2$.
-            }
+            \boxt{The smallest area of $\triangle OPQ$ is $\dfrac5{\sqrt2}$ units$^2$.}
 
     \problem{IJC Prelim 9758/2017/01/Q3}
         The vectors $\vec p$ and $\vec q$ are given by $\vec p = 2\vec i + \vec j + a\vec k$ and $\vec q = b\vec i + \vec j$, where $a$ and $b$ are non-zero constants.
@@ -229,7 +220,7 @@
             \item Find $(2\vec p - 5\vec q) \times (2\vec p + 5\vec q)$ in terms of $a$ and $b$.
         \end{enumerate}
 
-        \noindent Given that the $\vec i$- and $\vec j-$ components of the answer to part (a) are equal, find the value of $b$. Use the value of $b$ you have found to solve parts (b) and (c).
+         Given that the $\vec i$- and $\vec j-$ components of the answer to part (a) are equal, find the value of $b$. Use the value of $b$ you have found to solve parts (b) and (c).
 
         \begin{enumerate}
             \setcounter{enumi}{1}
@@ -249,9 +240,7 @@
                 &= 20 \cveciii{-a}{ab}{2-b}
             \end{align*}
 
-            \boxt{
-                $(2\vec p - 5\vec q) \times (2\vec p + 5\vec q) = 20 \cveciii{-a}{ab}{2-b}$
-            }
+            \boxt{$(2\vec p - 5\vec q) \times (2\vec p + 5\vec q) = 20 \cveciii{-a}{ab}{2-b}$}
 
             Since the $\vec i$- and $\vec j$-components are equal, we have
             \begin{alignat*}{2}
@@ -261,9 +250,7 @@
             \end{alignat*}
             We thus have $b = -1$. Note that we reject $a = 0$ since $a$ is non-zero.
 
-            \boxt{
-                $b = -1$
-            }
+            \boxt{$b = -1$}
 
         \part
             \begin{alignat*}{2}
@@ -276,9 +263,7 @@
                 \implies&&a &= \pm \sqrt{\dfrac72}
             \end{alignat*}
 
-            \boxt{
-                $a = \pm \sqrt{\dfrac72}$
-            }
+            \boxt{$a = \pm \sqrt{\dfrac72}$}
 
         \part
             Since $2\vec p - 5\vec q$ and $2\vec p + 5\vec q$, their dot product is 0.
@@ -295,66 +280,58 @@
 
             Note that we reject $\abs{\vec p} = -\dfrac5{\sqrt2}$ since $\abs{\vec p} \geq 0$.
 
-            \boxt{
-                $\abs{\vec p} = \dfrac5{\sqrt2}$
-            }
+            \boxt{$\abs{\vec p} = \dfrac5{\sqrt2}$}
 
     \problem{JJC Prelim 9758/2017/01/Q6}
         With respect to the origin $O$, the position vectors of the points $U$, $V$ and $W$ are $\vec u$, $\vec v$ and $\vec w$ respectively. The mid-points of the sides $VW$, $WU$ and $UV$ of the triangle $UVW$ are $M$, $N$ and $P$ respectively.
 
         \begin{enumerate}
-            \item Show that $\overrightarrow{UM} = \dfrac12 (\vec v + \vec w - 2\vec u)$.
-            \item Find the vector equations of the lines $UM$ and $VN$. Hence show that the position vector of the point of intersection, $G$, of $UM$ and $VN$ is $\dfrac13 (\vec u + \vec v + \vec w)$.
+            \item Show that $\oa{UM} = \dfrac12 (\vec v + \vec w - 2\vec u)$.
+            \item Find the vector equations of the lines $UM$ and $VN$. Hence, show that the position vector of the point of intersection, $G$, of $UM$ and $VN$ is $\dfrac13 (\vec u + \vec v + \vec w)$.
         \end{enumerate}
 
     \solution
         \part
             By the Midpoint Theorem,
             \begin{alignat*}{2}
-                &&\overrightarrow{OM} &= \dfrac12 (\vec v + \vec w)\\
-                \implies&&\overrightarrow{OU} + \overrightarrow{UM} &= \dfrac12 (\vec v + \vec w)\\
-                \implies&&\overrightarrow{UM} &= \dfrac12 (\vec v + \vec w) - \vec u\\
+                &&\oa{OM} &= \dfrac12 (\vec v + \vec w)\\
+                \implies&&\oa{OU} + \oa{UM} &= \dfrac12 (\vec v + \vec w)\\
+                \implies&&\oa{UM} &= \dfrac12 (\vec v + \vec w) - \vec u\\
                 && &= \dfrac12 (\vec v + \vec w - 2\vec u)
             \end{alignat*}
 
         \part
             Note that the line $UM$ has direction vector $\vec v + \vec w - 2\vec u$ and passes through $U$ Hence,
-            \boxt{
-                $l_{UM} : \vec r = \vec u + \lambda (\vec v + \vec w - 2\vec u), \, \lambda \in \mathbb{R}$
-            }
-            From the Midpoint Theorem, we have $\overrightarrow{ON} = \dfrac12(\vec w + \vec u)$. Thus, $\overrightarrow{VN} = \overrightarrow{ON} - \overrightarrow{OV} = \dfrac12(\vec w + \vec u - 2\vec v)$. Thus, line $VN$ has direction vector $\vec w + \vec u - 2\vec v$ and passes through $V$.
-            \boxt{
-                $l_{VN} : \vec r = \vec v + \mu (\vec w + \vec u - 2\vec v), \, \mu \in \mathbb{R}$
-            }
+            \boxt{$l_{UM} : \vec r = \vec u + \l (\vec v + \vec w - 2\vec u), \, \l \in \R$}
+            From the Midpoint Theorem, we have $\oa{ON} = \dfrac12(\vec w + \vec u)$. Thus, $\oa{VN} = \oa{ON} - \oa{OV} = \dfrac12(\vec w + \vec u - 2\vec v)$. Thus, line $VN$ has direction vector $\vec w + \vec u - 2\vec v$ and passes through $V$.
+            \boxt{$l_{VN} : \vec r = \vec v + \m (\vec w + \vec u - 2\vec v), \, \m \in \R$}
             Consider $l_{UM} = l_{VN}$.
             \begin{alignat*}{2}
                 &&l_{UM} &= l_{VN}\\
-                \implies&&\vec u + \lambda (\vec v + \vec w - 2\vec u) &= \vec v + \mu (\vec w + \vec u - 2\vec v)\\
-                \implies&&(1 -2\lambda)\vec u + \lambda \vec v + \lambda \vec w &= \mu \vec u + (1 - 2\mu)\vec v + \mu \vec w
+                \implies&&\vec u + \l (\vec v + \vec w - 2\vec u) &= \vec v + \m (\vec w + \vec u - 2\vec v)\\
+                \implies&&(1 -2\l)\vec u + \l \vec v + \l \vec w &= \m \vec u + (1 - 2\m)\vec v + \m \vec w
             \end{alignat*}
             Comparing coefficients of $\vec u$, $\vec v$ and $\vec w$ terms, we have the system:
             \begin{equation*}
-                \systeme{1-2\lambda=\mu,\lambda=1-2\mu,\lambda=\mu}
+                \systeme{1-2\l=\m,\l=1-2\m,\l=\m}
             \end{equation*}
-            which has solution $\lambda = \mu = \dfrac13$. Thus,
+            which has solution $\l = \m = \dfrac13$. Thus,
             \begin{align*}
-                \overrightarrow{OG} &= \vec v + \dfrac13(\vec w + \vec u - \vec v)\\
+                \oa{OG} &= \vec v + \dfrac13(\vec w + \vec u - \vec v)\\
                 &= \dfrac13(\vec u + \vec v + \vec w)
             \end{align*}
-            \boxt{
-               $\overrightarrow{OG} = \dfrac13(\vec u + \vec v + \vec w)$ 
-            }
+            \boxt{$\oa{OG} = \dfrac13(\vec u + \vec v + \vec w)$}
             
 
     \problem{MI Prelim 9740/2017/01/Q5}
-        A line $L$ passes through the points $A\coordiii3{-1}0$ and $B\coordiii{11}{11}4$.
+        A line $L$ passes through the points $(3, -1, 0)$ and $B(11, 11, 4)$.
         
         \begin{enumerate}
             \item Find the angle between $L$ and the $y$-axis.
-            \item State the geometrical meaning of $\abs{\overrightarrow{OB} \cdot \cveciii001}$.
+            \item State the geometrical meaning of $\abs{\oa{OB} \cdot \cveciii001}$.
         \end{enumerate}
 
-        \noindent The point $F\coordiii{2a+1}{a}{a-1}$ is a point on $L$, where $a$ is a positive constant. The point $P$ is such that $\overrightarrow{PF} = \cveciii302$ and the area of the triangle $AFP$ is $\sqrt{\dfrac{59}2}$ units$^2$.
+         The point $F(2a+1, a, a-1)$ is a point on $L$, where $a$ is a positive constant. The point $P$ is such that $\oa{PF} = \cveciii302$ and the area of the triangle $AFP$ is $\sqrt{\dfrac{59}2}$ units$^2$.
 
         \begin{enumerate}
             \setcounter{enumi}{2}
@@ -364,52 +341,46 @@
 
     \solution
         \part
-            Note that $\overrightarrow{AB} = \overrightarrow{OB} - \overrightarrow{OA} = \cveciii{11}{11}4 - \cveciii3{-1}0 = \cveciii8{12}4 = 4\cveciii231$. Since $L$ passes through $A$, it has the vector equation
+            Note that $\oa{AB} = \oa{OB} - \oa{OA} = \cveciii{11}{11}4 - \cveciii3{-1}0 = \cveciii8{12}4 = 4\cveciii231$. Since $L$ passes through $A$, it has the vector equation
             \begin{equation*}
-                L : \vec r = \cveciii3{-1}0 + \lambda\cveciii231, \, \lambda \in \mathbb{R}
+                L : \vec r = \cveciii3{-1}0 + \l\cveciii231, \, \l \in \R
             \end{equation*}
-            Observe that the $y$-axis has vector equation $\vec r = \mu\cveciii010$, where $\mu \in \mathbb{R}$. Let $\theta$ be the angle between $L$ and the $y$-axis.
+            Observe that the $y$-axis has vector equation $\vec r = \m\cveciii010$, where $\m \in \R$. Let $\t$ be the angle between $L$ and the $y$-axis.
             \begin{alignat*}{2}
-                &&\cos\theta &= \dfrac{\cveciii231 \cdot \cveciii010}{\abs{\cveciii231}\abs{\cveciii010}}\\
+                &&\cos\t &= \dfrac{\cveciii231 \cdot \cveciii010}{\abs{\cveciii231}\abs{\cveciii010}}\\
                 && &= \dfrac{3}{\sqrt{14}}\\
-                \implies&&\theta &= \arccos \dfrac3{\sqrt14}\\
+                \implies&&\t &= \arccos \dfrac3{\sqrt14}\\
                 && &= 0.641 \tosf{3}
             \end{alignat*}
 
-            \boxt{
-                The angle between $L$ and the $y$-axis is $0.641$.
-            }
+            \boxt{The angle between $L$ and the $y$-axis is $0.641$.}
 
         \part
-            $\abs{\overrightarrow{OB} \cdot \cveciii001}$ is the length of projection of $\overrightarrow{OB}$ on the $z$-axis.
+            $\abs{\oa{OB} \cdot \cveciii001}$ is the length of projection of $\oa{OB}$ on the $z$-axis.
 
         \part
             Since $F$ is on the line $L$, we have that
             \begin{equation*}
-                \cveciii{2a+1}{a}{a-1} = \cveciii3{-1}0 + \lambda\cveciii231
+                \cveciii{2a+1}{a}{a-1} = \cveciii3{-1}0 + \l\cveciii231
             \end{equation*}
-            for some $\lambda \in \mathbb{R}$. This gives the system
+            for some $\l \in \R$. This gives the system
             \begin{equation*}
-                \systeme{2a+1=3+2\lambda, a=-1+3\lambda,a-1=\lambda}
+                \systeme{2a+1=3+2\l, a=-1+3\l,a-1=\l}
             \end{equation*}
-            which has solution $a = 2$, $\lambda = 1$.
+            which has solution $a = 2$, $\l = 1$.
 
-            \boxt{
-                $a = 2$
-            }
+            \boxt{$a = 2$}
 
         \part
             Since $\triangle AFP$ and $\triangle FCP$ have the same height, the length of the bases of both triangles are in the same ratio as their area. Hence, $AF : CF = \area \triangle AFP : \area \triangle FCP = 2 : 1$.
 
-            \boxt{
-                $AF : CF = 2 : 1$
-            }
+            \boxt{$AF : CF = 2 : 1$}
 
     \problem{MJC Prelim 9578/2017/01/Q4}
         \begin{enumerate}
             \item The points $A$ and $B$ relative to the origin $O$ have position vectors $3\vec i - \vec j + 3\vec k$ and $-3\vec i + 2\vec j$ respectively. 
             \begin{enumerate}
-                \item Find the angle between $\overrightarrow{OA}$ and $\overrightarrow{OB}$.
+                \item Find the angle between $\oa{OA}$ and $\oa{OB}$.
                 \item Hence or otherwise, find the shortest distance from $B$ to line $OA$.
             \end{enumerate}
             \item The points $C$, $D$ and $E$ relative to the origin $O$ have non-zero and non-parallel position vectors $\vec c$, $\vec d$ and $\vec e$ respectively. Given that $(\vec c \times \vec d) \cdot \vec e = 0$, state with reason(s) the relationship between $O$, $C$, $D$ and $E$.
@@ -419,17 +390,15 @@
         \part
             \subpart
 
-                \noindent We have $\overrightarrow{OA} = \cveciii3{-1}3$ and $\overrightarrow{OB} = \cveciii{-3}20$. Let $\theta$ be the angle between $\overrightarrow{OA}$ and $\overrightarrow{OB}$.
+                 We have $\oa{OA} = \cveciii3{-1}3$ and $\oa{OB} = \cveciii{-3}20$. Let $\t$ be the angle between $\oa{OA}$ and $\oa{OB}$.
                 \begin{alignat*}{2}
-                    &&\cos \theta &= \dfrac{\cveciii3{-1}3 \cdot \cveciii{-3}20}{\abs{\cveciii3{-1}3} \abs{\cveciii{-3}20}}\\
+                    &&\cos \t &= \dfrac{\cveciii3{-1}3 \cdot \cveciii{-3}20}{\abs{\cveciii3{-1}3} \abs{\cveciii{-3}20}}\\
                     && &= -\dfrac{11}{\sqrt{247}}\\
-                    \implies&&\theta &= \arccos \left(-\dfrac{11}{\sqrt{247}}\right)\\
+                    \implies&&\t &= \arccos \left(-\dfrac{11}{\sqrt{247}}\right)\\
                     && &= 2.35 \tosf{3} 
                 \end{alignat*}
 
-                \boxt{
-                    The angle between $\overrightarrow{OA}$ and $\overrightarrow{OB}$ is $2.35$.
-                }
+                \boxt{The angle between $\oa{OA}$ and $\oa{OB}$ is $2.35$.}
 
             \subpart
                 \begin{center}
@@ -457,34 +426,30 @@
                     && &= 2.58 \tosf{3}
                 \end{alignat*}
 
-                \boxt{
-                    The shortest distance from $B$ to the line $OA$ is $2.58$ units.
-                }
+                \boxt{The shortest distance from $B$ to the line $OA$ is $2.58$ units.}
 
         \part
-            Recall that $(\vec c \times \vec d) \cdot \vec e$ is the volume of the parallelpiped defined by $\vec c$, $\vec d$ and $\vec e$. Since the volume is 0 and all three vectors are non-zero and non-parallel, they must be coplanar.
+            Recall that $(\vec c \times \vec d) \cdot \vec e$ is the volume of the parallelepiped defined by $\vec c$, $\vec d$ and $\vec e$. Since the volume is 0 and all three vectors are non-zero and non-parallel, they must be coplanar.
 
     \problem{NJC Prelim 9758/2017/01/Q1}
-        Given that $\vec p = 2\vec i + \alpha\vec j + \vec k$ and $\vec q = \alpha\vec i + \vec j + 6\vec k$, where $\alpha$ is a real constant and $\vec w$ is the position vector of a variable point $W$ relative to the origin such that $\vec w \times \vec p = \vec q$.
+        Given that $\vec p = 2\vec i + \a\vec j + \vec k$ and $\vec q = \a\vec i + \vec j + 6\vec k$, where $\a$ is a real constant and $\vec w$ is the position vector of a variable point $W$ relative to the origin such that $\vec w \times \vec p = \vec q$.
 
         \begin{enumerate}
-            \item Find the value of $\alpha$.
-            \item Find the set of vectors $\vec w$ in the form $\{\vec w : \vec w = \vec a + \lambda \vec b, \, \lambda \in \mathbb{R}\}$.
+            \item Find the value of $\a$.
+            \item Find the set of vectors $\vec w$ in the form $\bc{\vec w : \vec w = \vec a + \l \vec b, \, \l \in \R}$.
         \end{enumerate}
 
     \solution
         \part
-            We have $\vec p = \cveciii2{\alpha}1$ and $\vec q = \cveciii{\alpha}16$. Since $\vec w \times \vec p = \vec q$, the vectors $\vec w$, $\vec p$ and $\vec q$ are pairwise orthogonal. Hence,
+            We have $\vec p = \cveciii2{\a}1$ and $\vec q = \cveciii{\a}16$. Since $\vec w \times \vec p = \vec q$, the vectors $\vec w$, $\vec p$ and $\vec q$ are pairwise orthogonal. Hence,
             \begin{alignat*}{2}
                 &&\vec p \cdot \vec q &= 0\\
-                \implies&&\cveciii2{\alpha}1 \cdot \cveciii{\alpha}16 &= 0\\
-                \implies&&2\alpha + \alpha + 6 &= 0\\
-                \implies&&\alpha &= -2
+                \implies&&\cveciii2{\a}1 \cdot \cveciii{\a}16 &= 0\\
+                \implies&&2\a + \a + 6 &= 0\\
+                \implies&&\a &= -2
             \end{alignat*}
 
-            \boxt{
-                $\alpha = -2$
-            }
+            \boxt{$\a = -2$}
 
         \part
             Let $\vec w = \cveciii{x}{y}{z}$.
@@ -505,11 +470,9 @@
                     z = t
                 \end{cases}
             \end{equation*}
-            Thus, $\vec w = \cveciii{-1}{-2}0 + \lambda\cveciii2{-2}1$, where $\lambda \in \mathbb{R}$.
+            Thus, $\vec w = \cveciii{-1}{-2}0 + \l\cveciii2{-2}1$, where $\l \in \R$.
 
-            \boxt{
-                $\left\{\vec w : \vec w = \cveciii{-1}{-2}0 + \lambda\cveciii2{-2}1, \, \lambda \in \mathbb{R}\right\}$
-            }
+            \boxt{$\bc{\vec w : \vec w = \cveciii{-1}{-2}0 + \l\cveciii2{-2}1, \, \l \in \R}$}
 
     \problem{NJC Prelim 9758/2017/01/Q8}
         \begin{center}
@@ -527,34 +490,32 @@
                 \fill (O) circle[radius=2.5pt];
             \end{tikzpicture}
         \end{center}
-        \noindent The diagram above shows the cross-section of a sphere containing the centre $O$ of the sphere. The points $A$, $B$ and $C$ are on the circumference of the cross-section with the line segment $AC$ passing through $O$. It is given that $\overrightarrow{OA} = \vec a$ and $\overrightarrow{OB} = \vec b$.
+         The diagram above shows the cross-section of a sphere containing the centre $O$ of the sphere. The points $A$, $B$ and $C$ are on the circumference of the cross-section with the line segment $AC$ passing through $O$. It is given that $\oa{OA} = \vec a$ and $\oa{OB} = \vec b$.
 
         \begin{enumerate}
-            \item Find $\overrightarrow{BC}$ in terms of $\vec a$ and $\vec b$.
-            \item $D$ is a point on $BC$ such that $\triangle OCD$ is similar to $\triangle ACB$. Find $\overrightarrow{OD}$ in terms of $\vec a$ and $\vec b$.
+            \item Find $\oa{BC}$ in terms of $\vec a$ and $\vec b$.
+            \item $D$ is a point on $BC$ such that $\triangle OCD$ is similar to $\triangle ACB$. Find $\oa{OD}$ in terms of $\vec a$ and $\vec b$.
         \end{enumerate}
 
-        \noindent Point $B$ lies on the $x$-$z$ plane and has a positive $z$-component. It is also given that $\overrightarrow{OC} = \cveciii200$ and $\angle OCB = \dfrac\pi6$.
+         Point $B$ lies on the $x$-$z$ plane and has a positive $z$-component. It is also given that $\oa{OC} = \cveciii200$ and $\angle OCB = \dfrac\pi6$.
 
         \begin{enumerate}
             \setcounter{enumi}{2}
-            \item Show that $\overrightarrow{OB} = \cveciii{-1}0{\sqrt3}$.
+            \item Show that $\oa{OB} = \cveciii{-1}0{\sqrt3}$.
             \item Hence, determine whether the line passing through $O$ and $B$ and the line $\dfrac{x-2}3 = \dfrac{y}3 = z-1$ are skew.
         \end{enumerate}
 
     \solution
         \part
-            By symmetry, we have $\overrightarrow{OC} = -\overrightarrow{OA}$. Hence,
+            By symmetry, we have $\oa{OC} = -\oa{OA}$. Hence,
             \begin{alignat*}{2}
-                &&\overrightarrow{OC} &= -\overrightarrow{OA}\\
-                \implies&&\overrightarrow{OB} + \overrightarrow{BC} &= -\overrightarrow{OA}\\
-                \implies&&\overrightarrow{BC} &= -\overrightarrow{OA} - \overrightarrow{OB}\\
+                &&\oa{OC} &= -\oa{OA}\\
+                \implies&&\oa{OB} + \oa{BC} &= -\oa{OA}\\
+                \implies&&\oa{BC} &= -\oa{OA} - \oa{OB}\\
                 && &= -\vec a - \vec b
             \end{alignat*}
 
-            \boxt{
-                $\overrightarrow{BC} = -\vec a - \vec b$
-            }
+            \boxt{$\oa{BC} = -\vec a - \vec b$}
 
         \part
             \begin{center}
@@ -573,10 +534,8 @@
                 \end{tikzpicture}
             \end{center}
 
-            \noindent Since $\triangle OCD$ is similar to $\triangle ACB$, we have $\dfrac12 = \dfrac{OC}{AC} = \dfrac{OD}{AB} \implies OD = \dfrac12 AB$. Since $\overrightarrow{AB} = \vec b - \vec a$, we have
-            \boxt{
-                $\overrightarrow{OD} = \dfrac12 (\vec b - \vec a)$
-            }
+             Since $\triangle OCD$ is similar to $\triangle ACB$, we have $\dfrac12 = \dfrac{OC}{AC} = \dfrac{OD}{AB} \implies OD = \dfrac12 AB$. Since $\oa{AB} = \vec b - \vec a$, we have
+            \boxt{$\oa{OD} = \dfrac12 (\vec b - \vec a)$}
 
         \part
             \begin{center}
@@ -603,41 +562,37 @@
                 \end{tikzpicture}
             \end{center}
 
-            \noindent It is given that $\angle OCB = \dfrac\pi6$. Since the angle at the centre is twice the angle at the circumference, we have $\angle AOB = 2 \angle OCB = \dfrac\pi3$. Since $OB = OA$, it must be that $\triangle OAB$ is equilateral. Let $F$ be the foot of the perpendicular from $B$ to $OA$. Note that $OB = OC = 2$. Thus, $\cos \angle AOB = \dfrac{OF}{OB} \implies OF = 1 \implies \overrightarrow{OF} = \cveciii{-1}00$. Further note that $\sin \angle AOB = \dfrac{FB}{OB} \implies FB = \sqrt{3}$. Since $\overrightarrow{OB}$ has a positive $z$-component, we have
+             It is given that $\angle OCB = \dfrac\pi6$. Since the angle at the centre is twice the angle at the circumference, we have $\angle AOB = 2 \angle OCB = \dfrac\pi3$. Since $OB = OA$, it must be that $\triangle OAB$ is equilateral. Let $F$ be the foot of the perpendicular from $B$ to $OA$. Note that $OB = OC = 2$. Thus, $\cos \angle AOB = \dfrac{OF}{OB} \implies OF = 1 \implies \oa{OF} = \cveciii{-1}00$. Further, note that $\sin \angle AOB = \dfrac{FB}{OB} \implies FB = \sqrt{3}$. Since $\oa{OB}$ has a positive $z$-component, we have
             \begin{align*}
-                \overrightarrow{OB} &= \overrightarrow{OF} + \overrightarrow{FB}\\
+                \oa{OB} &= \oa{OF} + \oa{FB}\\
                 &= \cveciii{-1}00 + \cveciii00{\sqrt3}\\
                 &= \cveciii{-1}0{\sqrt3}
             \end{align*}
 
-            \boxt{
-                $\overrightarrow{OB} = \cveciii{-1}0{\sqrt3}$
-            }
+            \boxt{$\oa{OB} = \cveciii{-1}0{\sqrt3}$}
             
         \part
             Observe that the line with Cartesian equation $\dfrac{x-2}3 = \dfrac{y}3 = z-1$ has vector equation
             \begin{equation*}
-                l_C : \vec r = \cveciii201 + \lambda \cveciii331, \, \lambda \in \mathbb{R}
+                l_C : \vec r = \cveciii201 + \l \cveciii331, \, \l \in \R
             \end{equation*}
             Also note that the line $OB$ has equation
             \begin{equation*}
-                l_{OB} : \vec r = \mu\cveciii{-1}0{\sqrt3}, \, \mu \in \mathbb{R}
+                l_{OB} : \vec r = \m\cveciii{-1}0{\sqrt3}, \, \m \in \R
             \end{equation*}
             Consider $l_C = l_{OB}$.
             \begin{alignat*}{2}
                 &&l_C &= l_{OB}\\
-                \implies&&\cveciii201 + \lambda \cveciii331 &= \mu\cveciii{-1}0{\sqrt3}\\
-                \implies&&\mu\cveciii{-1}0{\sqrt3} - \lambda \cveciii331 &= \cveciii201
+                \implies&&\cveciii201 + \l \cveciii331 &= \m\cveciii{-1}0{\sqrt3}\\
+                \implies&&\m\cveciii{-1}0{\sqrt3} - \l \cveciii331 &= \cveciii201
             \end{alignat*}
             This gives the system
             \begin{equation*}
-                \systeme{-\mu-3\lambda=2,-3\lambda=0,\sqrt3 \mu-\lambda=1}
+                \systeme{-\m-3\l=2,-3\l=0,\sqrt3 \m-\l=1}
             \end{equation*}
             which has no solutions. Hence, the line are skew.
             
-            \boxt{
-                The lines are skew.
-            }
+            \boxt{The lines are skew.}
 
     \problem{NYJC Prelim 9758/2017/02/Q1}
         The position vectors of points $A$ and $B$ with respect to the origin $O$ are $\vec a$ and $\vec b$ respectively where $\vec a$ and $\vec b$ are non-zero vectors. Point $C$ lies on $OA$ produced such that $4OA = AC$ and point $D$ lies on $OB$ produced such that $OB = BD$. The line $BC$ and $AD$ meet at the point $M$.
@@ -649,33 +604,29 @@
 
     \solution
         \part
-            \boxt{
-                $\vec a$ and $\vec b$ must be non-parallel.
-            }
+            \boxt{$\vec a$ and $\vec b$ must be non-parallel.}
 
-            \noindent Note that $\overrightarrow{OC} = 5\vec a$ and $\overrightarrow{OD} = 2\vec b$. Hence, $\overrightarrow{AD} = 2\vec b - \vec a$ and $\overrightarrow{BC} = 5\vec a - \vec b$. Thus, the lines $AD$ and $BC$ have vector equations
+             Note that $\oa{OC} = 5\vec a$ and $\oa{OD} = 2\vec b$. Hence, $\oa{AD} = 2\vec b - \vec a$ and $\oa{BC} = 5\vec a - \vec b$. Thus, the lines $AD$ and $BC$ have vector equations
             \begin{align*}
-                l_{AD} : \vec r &= \vec a + \lambda(2\vec b - \vec a), \, \lambda \in \mathbb{R}\\
-                l_{BC} : \vec r &= \vec b + \mu(5\vec a - \vec b), \, \mu \in \mathbb{R}
+                l_{AD} : \vec r &= \vec a + \l(2\vec b - \vec a), \, \l \in \R\\
+                l_{BC} : \vec r &= \vec b + \m(5\vec a - \vec b), \, \m \in \R
             \end{align*}
             Consider $l_{AD} = l_{BC}$.
             \begin{alignat*}{2}
                 &&l_{AD} &= l_{BC}\\
-                \implies&&\vec a + \lambda(2\vec b - \vec a) &= \vec b + \mu(5\vec a - \vec b)
+                \implies&&\vec a + \l(2\vec b - \vec a) &= \vec b + \m(5\vec a - \vec b)
             \end{alignat*}
             Comparing coefficients of $\vec a$ and $\vec b$, we have the system
             \begin{equation*}
-                \systeme{1-\lambda=5\mu,2\lambda=1-\mu}
+                \systeme{1-\l=5\m,2\l=1-\m}
             \end{equation*}
-            which has solution $\lambda = \dfrac49$ and $\mu = \dfrac19$. Thus,
+            which has solution $\l = \dfrac49$ and $\m = \dfrac19$. Thus,
             \begin{align*}
-                \overrightarrow{OM} &= \vec b + \dfrac19 (5\vec a - \vec b)\\
+                \oa{OM} &= \vec b + \dfrac19 (5\vec a - \vec b)\\
                 &= \dfrac59 \vec a + \dfrac89 \vec b
             \end{align*}
 
-            \boxt{
-                $\overrightarrow{OM} = \dfrac59 \vec a + \dfrac89 \vec b$
-            }
+            \boxt{$\oa{OM} = \dfrac59 \vec a + \dfrac89 \vec b$}
 
         \part
             \begin{center}
@@ -696,9 +647,9 @@
                 \end{tikzpicture}
             \end{center}
             
-            \noindent Let $F$ be the foot of the perpendicular of $M$ to $OC$. Observe that $\overrightarrow{OM} = \dfrac59 \vec a + \dfrac89 \vec b - \vec a = -\dfrac49 \vec a + \dfrac89 \vec b$ and $\overrightarrow{AC} = 5\vec a - \vec a = 4\vec a$.
+             Let $F$ be the foot of the perpendicular of $M$ to $OC$. Observe that $\oa{OM} = \dfrac59 \vec a + \dfrac89 \vec b - \vec a = -\dfrac49 \vec a + \dfrac89 \vec b$ and $\oa{AC} = 5\vec a - \vec a = 4\vec a$.
             \begin{alignat*}{2}
-                &&\abs{\overrightarrow{AM} \times \overrightarrow{AC}} &= 2 \area \triangle AMC\\
+                &&\abs{\oa{AM} \times \oa{AC}} &= 2 \area \triangle AMC\\
                 \implies&&\abs{\left(-\dfrac49 \vec a + \dfrac89 \vec b\right) \times 4\vec a} &= 2 \cdot \dfrac12 \cdot FM \cdot AC\\
                 \implies&&\abs{-\dfrac{16}9\vec a \times \vec a + 4 \cdot \dfrac89 \vec b \times \vec a} &= FM \cdot \abs{4 \vec a}\\
                 \implies&&4 \cdot \dfrac89 \cdot \abs{\vec b \times \vec a} &= 4 \cdot FM\\
@@ -706,12 +657,10 @@
                 && &=  \dfrac89 \abs{\vec a \times \vec b}
             \end{alignat*}
 
-            \boxt{
-                The shortest distance of $M$ from the line $OC$ is $\dfrac89 \abs{\vec a \times \vec b}$ units.
-            }
+            \boxt{The shortest distance of $M$ from the line $OC$ is $\dfrac89 \abs{\vec a \times \vec b}$ units.}
 
     \problem{PJC Prelim 9758/2017/02/Q1}
-        Referred to the origin $O$, points $A$ and $B$ have position vectors $\vec a$ and $\vec b$ respectively. Point $P$ lies on $OA$ produced such that $OA : AP = 1 : \lambda$. Point $Q$ lies on $OB$, between $O$ and $B$, such that $OQ:QB = 3:1$. The mid-point of $PB$ is $M$. Show that the ratio of the area of triangle $OPM$ to the area of triangle $OQM$ is independent of $\lambda$.
+        Referred to the origin $O$, points $A$ and $B$ have position vectors $\vec a$ and $\vec b$ respectively. Point $P$ lies on $OA$ produced such that $OA : AP = 1 : \l$. Point $Q$ lies on $OB$, between $O$ and $B$, such that $OQ:QB = 3:1$. The mid-point of $PB$ is $M$. Show that the ratio of the area of triangle $OPM$ to the area of triangle $OQM$ is independent of $\l$.
 
     \solution
         \begin{center}
@@ -737,7 +686,7 @@
             \end{tikzpicture}
         \end{center}
 
-        \noindent Let the area of $\triangle OPM$, $\triangle OQM$ and $\triangle BQM$ be $X$, $Y$ and $Z$ respectively. Since $\triangle OPM$ and $\triangle BOM$ share the same height and $BM = MP$, we have
+         Let the area of $\triangle OPM$, $\triangle OQM$ and $\triangle BQM$ be $X$, $Y$ and $Z$ respectively. Since $\triangle OPM$ and $\triangle BOM$ share the same height and $BM = MP$, we have
         \begin{equation*}
             X = Y + Z
         \end{equation*}
@@ -745,7 +694,7 @@
         \begin{equation*}
             Y = 3Z
         \end{equation*}
-        Thus, $X = Y + \dfrac13 Y$, whence $\dfrac{\area \triangle OPM}{\area \triangle OQM} = \dfrac{X}{Y} = \dfrac43$. Thus, the required ratio is independent of $\lambda$.
+        Thus, $X = Y + \dfrac13 Y$, whence $\dfrac{\area \triangle OPM}{\area \triangle OQM} = \dfrac{X}{Y} = \dfrac43$. Thus, the required ratio is independent of $\l$.
 
     \problem{RI Prelim 9758/2017/02/Q1}
         Referred to the origin $O$, the points $A$, $B$ and $C$ have position vectors $\vec a$, $\vec b$ and $\vec c$ respectively such that
@@ -757,16 +706,16 @@
 
         \begin{enumerate}
             \item Given that $M$ is the mid-point of $AC$, use a vector product to find the exact area of triangle $ABM$.
-            \item Find the position vector of the point $N$ on the line $AB$ such that $\overrightarrow{MN}$ is perpendicular to $\overrightarrow{AB}$.
+            \item Find the position vector of the point $N$ on the line $AB$ such that $\oa{MN}$ is perpendicular to $\oa{AB}$.
         \end{enumerate}
 
     \solution
         We have $\vec a = \cveciii23{-1}$, $\vec b = \cveciii5{-2}3$ and $\vec c = \cveciii41{-2}$.
 
         \part
-            By the Midpoint Theorem, $\overrightarrow{OM} = \dfrac12 (\vec a + \vec c) = \cveciii32{-3/2}$. Thus, $\overrightarrow{AM} = \cveciii1{-1}{-1/2}$. We also have $\overrightarrow{AB} = \cveciii3{-5}4$. Hence,
+            By the Midpoint Theorem, $\oa{OM} = \dfrac12 (\vec a + \vec c) = \cveciii32{-3/2}$. Thus, $\oa{AM} = \cveciii1{-1}{-1/2}$. We also have $\oa{AB} = \cveciii3{-5}4$. Hence,
             \begin{align*}
-                \area \triangle ABM &= \dfrac12 \abs{\overrightarrow{AM} \times \overrightarrow{AB}}\\
+                \area \triangle ABM &= \dfrac12 \abs{\oa{AM} \times \oa{AB}}\\
                 &= \dfrac12 \abs{\cveciii1{-1}{-1/2} \times \cveciii3{-5}4}\\
                 &= \dfrac14 \abs{\cveciii{-2}2{1} \times \cveciii3{-5}4}\\
                 &= \dfrac12 \abs{\cveciii{13}{11}4}\\
@@ -774,29 +723,25 @@
                 &= \dfrac{3\sqrt{34}}4
             \end{align*}
 
-            \boxt{
-                $\area \triangle ABM = \dfrac{3\sqrt{34}}4$ units$^2$
-            }
+            \boxt{$\area \triangle ABM = \dfrac{3\sqrt{34}}4$ units$^2$}
 
         \part
             Note that the line $AB$ has vector equation
             \begin{equation*}
-                l_{AB} : \vec r = \cveciii23{-1} + \lambda\cveciii3{-5}4, \, \lambda \in \mathbb{R}
+                l_{AB} : \vec r = \cveciii23{-1} + \l\cveciii3{-5}4, \, \l \in \R
             \end{equation*}
-            Since $\overrightarrow{MN}$ is perpendicular to $\overrightarrow{AB}$, we have
+            Since $\oa{MN}$ is perpendicular to $\oa{AB}$, we have
             \begin{alignat*}{2}
-                &&\overrightarrow{MN} \cdot \overrightarrow{AB} &= 0\\
-                \implies&&\left(\overrightarrow{ON} - \overrightarrow{OM}\right) \cdot \cveciii3{-5}4 &= 0\\
-                \implies&&\left[\cveciii23{-1} + \lambda\cveciii3{-5}4 - \cveciii32{-3/2}\right] \cdot \cveciii3{-5}4 &= 0\\
-                \implies&&\left[\cveciii{-1}1{1/2} + \lambda\cveciii3{-5}4\right] \cdot \cveciii3{-5}4 &= 0\\
-                \implies&&\cveciii{-1}1{1/2} \cdot \cveciii3{-5}4 + \lambda\cveciii3{-5}4 \cdot \cveciii3{-5}4 &= 0\\
-                \implies&&-6 + 50\lambda &= 0\\
-                \implies&&\lambda &= \dfrac3{25}
+                &&\oa{MN} \cdot \oa{AB} &= 0\\
+                \implies&&\left(\oa{ON} - \oa{OM}\right) \cdot \cveciii3{-5}4 &= 0\\
+                \implies&&\left[\cveciii23{-1} + \l\cveciii3{-5}4 - \cveciii32{-3/2}\right] \cdot \cveciii3{-5}4 &= 0\\
+                \implies&&\left[\cveciii{-1}1{1/2} + \l\cveciii3{-5}4\right] \cdot \cveciii3{-5}4 &= 0\\
+                \implies&&\cveciii{-1}1{1/2} \cdot \cveciii3{-5}4 + \l\cveciii3{-5}4 \cdot \cveciii3{-5}4 &= 0\\
+                \implies&&-6 + 50\l &= 0\\
+                \implies&&\l &= \dfrac3{25}
             \end{alignat*}
 
-            Hence, $\overrightarrow{ON} = \cveciii23{-1} + \dfrac3{25}\cveciii3{-5}4 = \dfrac1{25} \cveciii{59}{60}{-13}$.
+            Hence, $\oa{ON} = \cveciii23{-1} + \dfrac3{25}\cveciii3{-5}4 = \dfrac1{25} \cveciii{59}{60}{-13}$.
 
-            \boxt{
-                $\overrightarrow{ON} = \dfrac1{25} \cveciii{59}{60}{-13}$
-            }
+            \boxt{$\oa{ON} = \dfrac1{25} \cveciii{59}{60}{-13}$}
 \end{document}

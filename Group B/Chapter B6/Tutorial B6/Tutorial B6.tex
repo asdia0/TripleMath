@@ -1,14 +1,14 @@
 \documentclass{echw}
 
-\title{Tutorial B6\\Maclaurin Series}
+\title{Tutorial B6\\MacLaurin Series}
 \author{Eytan Chong}
 \date{2024-04-15}
 
 \begin{document}
     \problem{}
         \begin{enumerate}
-            \item Given that $f(x) = e^{\cos x}$, find $f(0)$, $f'(0)$ and $f''(0)$. Hence write down the first two non-zero terms in the Maclaurin series for $f(x)$. Give the coefficients in terms of $e$.
-            \item Given that $g(x) = \tan\left(2x + \dfrac14 \pi \right)$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence find the first three terms in the Maclaurin series of $g(x)$.
+            \item Given that $f(x) = e^{\cos x}$, find $f(0)$, $f'(0)$ and $f''(0)$. Hence, write down the first two non-zero terms in the MacLaurin series for $f(x)$. Give the coefficients in terms of $e$.
+            \item Given that $g(x) = \tan\left(2x + \dfrac14 \pi \right)$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence, find the first three terms in the MacLaurin series of $g(x)$.
         \end{enumerate}
 
     \solution
@@ -36,9 +36,7 @@
                 &= e - \dfrac{e}{2}x^2 + \ldots
             \end{align*}
 
-            \boxt{
-                $f(x) = e - \dfrac{e}{2}x^2 + \ldots$
-            }
+            \boxt{$f(x) = e - \dfrac{e}{2}x^2 + \ldots$}
 
         \part
             \begin{alignat*}{2}
@@ -66,12 +64,10 @@
                 &= 1 + 4x + 8x^2 + \ldots
             \end{align*}
 
-            \boxt{
-                $g(x) = 1 + 4x + 8x^2 + \ldots$
-            }
+            \boxt{$g(x) = 1 + 4x + 8x^2 + \ldots$}
 
     \problem{}
-        Find the first three non-zero terms of the Maclaurin series for the following in ascending powers of $x$. In each case, find the range of values of $x$ for which the series is valid.
+        Find the first three non-zero terms of the MacLaurin series for the following in ascending powers of $x$. In each case, find the range of values of $x$ for which the series is valid.
 
         \begin{enumerate}
             \item $\dfrac{(1+3x)^4}{\sqrt{1+2x}}$
@@ -113,15 +109,11 @@
                 &= 1 + 11x + \dfrac{87}2 x^2 + \ldots
             \end{align*}
 
-            \boxt{
-                $\dfrac{(1+3x)^4}{\sqrt{1+2x}} = 1 + 11x + \dfrac{87}2 x^2 + \ldots$
-            }
+            \boxt{$\dfrac{(1+3x)^4}{\sqrt{1+2x}} = 1 + 11x + \dfrac{87}2 x^2 + \ldots$}
 
             Note that the series is valid only when $\abs{2x} < 1 \implies -\dfrac12 < x < \dfrac12$.
 
-            \boxt{
-                $-\dfrac12 < x < \dfrac12$
-            }
+            \boxt{$-\dfrac12 < x < \dfrac12$}
 
         \part
             \begin{alignat}{2}
@@ -162,33 +154,28 @@
                 &= x - \dfrac32 x^2 + \dfrac{19}{12}x^3+\ldots
             \end{align*}
 
-            \boxt{
-                $\dfrac{\sin 2x}{2 + 3x} = x - \dfrac32 x^2 + \dfrac{19}{12}x^3+\ldots$
-            }
+            \boxt{$\dfrac{\sin 2x}{2 + 3x} = x - \dfrac32 x^2 + \dfrac{19}{12}x^3+\ldots$}
 
             Note that the denominator can be rewritten as $2\left(1 + \dfrac32 x \right)$. Hence, the series is only valid when $\abs{\dfrac32 x} < 1 \implies -\dfrac23 < x < \dfrac23$.
 
 
     \problem{}
-        Find the Maclaurin series of $\ln (1 + \cos x)$, up to and including the term in $x^4$.
+        Find the MacLaurin series of $\ln{1 + \cos x}$, up to and including the term in $x^4$.
 
     \solution
         Recall that 
-
-        \begin{equation*}
-            \ln (1 + x) = \sum_{n=0}^\infty (-1)^n \dfrac{x^{n+1}}{n+1}
-        \end{equation*}
+        \[
+            \ln{1+x} = \sum_{n=0}^\infty (-1)^n \dfrac{x^{n+1}}{n+1}
+        \]
 
         and 
-
-        \begin{equation*}
+        \[
             \cos x = \sum_{n=0}^\infty \dfrac{(-1)^n}{(2n)!} x^{2n}
-        \end{equation*}
+        \]
 
         Hence,
-
         \begin{align*}
-            \ln (1 + \cos x) &= \sum_{n=0}^\infty (-1)^n \dfrac{\cos^{n+1} x}{n+1}\\
+            \ln{1 + \cos x} &= \sum_{n=0}^\infty (-1)^n \dfrac{\cos^{n+1} x}{n+1}\\
             &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} \left(\sum_{k=0}^\infty \dfrac{(-1)^k}{(2k)!} x^{2k} \right)^{n+1}
         \end{align*}
 
@@ -198,15 +185,15 @@
             \underbrace{\left(1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots \right)\left(1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots \right)\ldots\left(1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} + \ldots \right)}_\text{$(n + 1)$ copies}
         \end{equation*}
 
-        The constant term is clearly $1$. Now consider the coefficient of the $x^2$ term. The only to obtain a $x^2$ term is to select a constant term ($1$) from $n$ copies, and a $x^2$ term ($-\dfrac{x^2}{2!}$) from the remaining copy. There are $\displaystyle\binom{n+1}{1} = n+1$ ways to do this. Hence, the coefficient of the $x^2$ term is $(n+1) \cdot 1 \cdot -\dfrac{1}{2!} = -\dfrac{n+1}2$.
+        The constant term is clearly $1$. Now consider the coefficient of the $x^2$ term. The only to obtain an $x^2$ term is to select a constant term ($1$) from $n$ copies, and an $x^2$ term ($-\dfrac{x^2}{2!}$) from the remaining copy. There are $\displaystyle\binom{n+1}{1} = n+1$ ways to do this. Hence, the coefficient of the $x^2$ term is $(n+1) \cdot 1 \cdot -\dfrac{1}{2!} = -\dfrac{n+1}2$.
 
-        Now consider the coefficient of the $x^4$ term. The are two ways to obtain a $x^4$ term. The first way is to select a constant term ($1$) from $n$ copies, and a $x^4$ term ($\dfrac{x^4}{4!}$) from the remaining copy. There are $\displaystyle\binom{n+1}1 = n+1$ ways to do this, which contributes $(n+1) \cdot 1 \cdot \dfrac{1}{4!} = \dfrac{n+1}{24}$ to the coefficient of $x^4$.
+        Now consider the coefficient of the $x^4$ term. There are two ways to obtain an $x^4$ term. The first way is to select a constant term ($1$) from $n$ copies, and an $x^4$ term ($\dfrac{x^4}{4!}$) from the remaining copy. There are $\displaystyle\binom{n+1}1 = n+1$ ways to do this, which contributes $(n+1) \cdot 1 \cdot \dfrac{1}{4!} = \dfrac{n+1}{24}$ to the coefficient of $x^4$.
 
-        The second way to obtain a $x^4$ term is to select a $x^2$ term ($-\dfrac{x^2}{2!}$) from 2 copies and a constant term ($1$) from the remaining copies. There are $\displaystyle \binom{n+1}{2} = \dfrac{(n+1)n}2$ ways to do this, which further contributes $\dfrac{(n+1)n}2 \cdot 1 \cdot \left(-\dfrac{1}{2!}\right)^2 = \dfrac{n(n+1)}8$ to the coefficient of $x^4$. Hence, the coefficient of $x^4$ is given by $\dfrac{n+1}{24} + \dfrac{n(n+1)}8 = \dfrac{(n+1)(3n + 1)}{24}$. 
+        The second way to obtain an $x^4$ term is to select an $x^2$ term ($-\dfrac{x^2}{2!}$) from 2 copies and a constant term ($1$) from the remaining copies. There are $\displaystyle \binom{n+1}{2} = \dfrac{(n+1)n}2$ ways to do this, which further contributes $\dfrac{(n+1)n}2 \cdot 1 \cdot \left(-\dfrac{1}{2!}\right)^2 = \dfrac{n(n+1)}8$ to the coefficient of $x^4$. Hence, the coefficient of $x^4$ is given by $\dfrac{n+1}{24} + \dfrac{n(n+1)}8 = \dfrac{(n+1)(3n + 1)}{24}$. 
 
         Thus, up to and including the term in $x^4$,
         \begin{align*}
-            \ln (1 + \cos x) &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} \left(1 - \dfrac{n+1}2 x^2 + \dfrac{(n+1)(3n+1)}{24} + \ldots\right)\\
+            \ln{1 + \cos x} &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} \left(1 - \dfrac{n+1}2 x^2 + \dfrac{(n+1)(3n+1)}{24} + \ldots\right)\\
             &= \sum_{n=0}^\infty (-1)^n \left(\dfrac1{n+1} - \dfrac12 x^2 + \dfrac{3n+1}{24}x^4 + \ldots\right)\\
             &= \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} - \dfrac12 x^2 \sum_{n=0}^\infty (-1)^n + \dfrac{3}{24} x^4 \sum_{n=0}^\infty n(-1)^n + \dfrac1{24} x^4 \sum_{n=0}^\infty (-1)^n + \ldots
         \end{align*}
@@ -214,7 +201,7 @@
         Observe that
         \begin{align*}
             \sum_{n=0}^\infty \dfrac{(-1)^n}{n+1} &= \sum_{n=0}^\infty (-1)^n \dfrac{1^{n+1}}{n+1}\\
-            &= \ln(1 + 1)\\
+            &= \ln{1 + 1}\\
             &= \ln 2
         \end{align*}
 
@@ -251,17 +238,15 @@
 
         Finally,
         \begin{align*}
-            \ln (1 + \cos x) &= \ln 2 - \dfrac12 x^2 \cdot \dfrac12 + \dfrac{3}{24} x^4 \cdot -\dfrac14 + \dfrac1{24} x^4 \cdot\dfrac12 + \ldots\\
+            \ln{1 + \cos x} &= \ln 2 - \dfrac12 x^2 \cdot \dfrac12 + \dfrac{3}{24} x^4 \cdot -\dfrac14 + \dfrac1{24} x^4 \cdot\dfrac12 + \ldots\\
             &= \ln 2 - \dfrac14 x^2 - \dfrac1{96}x^4 + \ldots
         \end{align*}
 
-        \boxt{
-            $\ln (1 + \cos x) = \ln 2 - \dfrac14 x^2 - \dfrac1{96}x^4 + \ldots$
-        }
+        \boxt{$\ln{1 + \cos x} = \ln 2 - \dfrac14 x^2 - \dfrac1{96}x^4 + \ldots$}
      
     \problem{}
         \begin{enumerate}
-            \item Find the first three terms of the Maclaurin series for $e^x (1 + \sin 2x)$.
+            \item Find the first three terms of the MacLaurin series for $e^x (1 + \sin 2x)$.
             \item It is given that the first two terms of this series are equal to the first two terms in the series expansion, in ascending powers of $x$, of $\left(1 + \dfrac43 x\right)^n$. Find $n$ and show that the third terms in each of these series are equal.
         \end{enumerate}
         
@@ -273,7 +258,7 @@
                 && &= e^x + e^x \Im{e^{i2x}}\\
                 && &= e^x + \Im{e^x e^{i2x}}\\
                 && &= e^x + \Im{e^{x(1+2i)}}\\
-                \implies && f^{(n)}(x) &= e^x + \Im{\derm{}{x}{n} e^{x(1+2i)}}\\
+                \implies && f^{(n)}(x) &= e^x + \Im{\der[n]{}{x} e^{x(1+2i)}}\\
                 && &= e^x + \Im{(1+2i)^n e^{x(1+2i)}}\\
                 && &= e^x + \Im{\left(\sqrt 5 e^{i \arctan 2}\right)^n e^{x(1+2i)}}\\
                 && &= e^x + \Im{5^{\frac{n}2} e^{in \arctan 2} e^{x(1+2i)}}\\
@@ -302,9 +287,7 @@
                 &= 1 + 3x + \dfrac52 x^2 + \ldots
             \end{align*}
 
-            \boxt{
-                $e^x(1 + \sin 2x) = 1 + 3x + \dfrac52 x^2 + \ldots$
-            }
+            \boxt{$e^x(1 + \sin 2x) = 1 + 3x + \dfrac52 x^2 + \ldots$}
 
         \part
             By the Binomial Theorem,
@@ -350,9 +333,7 @@
                 && &= \dfrac{6479}{2187}
             \end{alignat*}
 
-            \boxt{
-                $\sqrt[3]{26} = \dfrac{6479}{2187}$
-            }
+            \boxt{$\sqrt[3]{26} = \dfrac{6479}{2187}$}
 
             Since $\abs{6} > 1$, the binomial expansion of $ \left(\dfrac8{x^3} - 1\right)^{\tfrac13}$ does not hold. Hence, $x = 6$ is not an appropriate choice.
 
@@ -364,7 +345,7 @@
             \item Find the series expansion of $f(x)$ in ascending powers of $x$, up to and including the term in $x^3$.
         \end{enumerate}
 
-        \noindent Denote the answer to part (b) by $g(x)$.
+         Denote the answer to part (b) by $g(x)$.
 
         \begin{enumerate}
             \setcounter{enumi}{2}
@@ -405,7 +386,7 @@
                 && &= e^x \Im{e^{ix}}\\
                 && &= \Im{e^x e^{ix}}\\
                 && &= \Im{e^{x(1 + i)}}\\
-                \implies&&f^{(n)}(x) &= \Im{\derm{}{x}n e^{x(1 + i)}}\\
+                \implies&&f^{(n)}(x) &= \Im{\der[n]{}{x} e^{x(1 + i)}}\\
                 && &= \Im{(1+i)^n e^{x(1 + i)}}\\
                 && &= \Im{\left(\sqrt2 e^{i\tfrac{\pi}4}\right)^n e^{x(1 + i)}}\\
                 && &= \Im{2^{\tfrac{n}2} e^x e^{i\tfrac{\pi}4 n} e^{ix}}\\
@@ -433,9 +414,7 @@
                 &= x + x^2 + \dfrac13 x^3 + \ldots
             \end{align*}
 
-            \boxt{
-                $f(x) = x + x^2 + \dfrac13 x^3 + \ldots$
-            }
+            \boxt{$f(x) = x + x^2 + \dfrac13 x^3 + \ldots$}
 
         \part
             \begin{center}
@@ -489,16 +468,14 @@
 
             Putting both inequalities together, we have
 
-            \boxt{
-                $-1.96 \leq x \leq 1.56$
-            }
+            \boxt{$-1.96 \leq x \leq 1.56$}
 
     \problem{}
-        It is given that $y = \dfrac1{1 + \sin 2x}$. Show that, when $x = 0$, $\derm{y}{x}2 = 8$. Find the first three terms of the Maclaurin series for $y$.
+        It is given that $y = \dfrac1{1 + \sin 2x}$. Show that, when $x = 0$, $\der[2]{y}{x} = 8$. Find the first three terms of the MacLaurin series for $y$.
 
         \begin{enumerate}
-            \item Use the series to obtain an approximate value for $\int\limits_{-0.1}^{0.1} y \d x$, leaving your answer as a fraction in its lowest terms.
-            \item Find the first two terms of the Maclaurin series for $\der{y}x$.
+            \item Use the series to obtain an approximate value for $\displaystyle\int\limits_{-0.1}^{0.1} y \d x$, leaving your answer as a fraction in its lowest terms.
+            \item Find the first two terms of the MacLaurin series for $\der{y}x$.
             \item Write down the equation of the tangent at the point where $x = 0$ on the curve $y = \dfrac1{1 + \sin 2x}$.
         \end{enumerate}
 
@@ -532,9 +509,7 @@
                 &= \dfrac{76}{275}
             \end{align*}
 
-            \boxt{
-                $\int_{-0.1}^{0.1} y \d x \approx \dfrac{76}{275}$
-            }
+            \boxt{$\displaystyle\int_{-0.1}^{0.1} y \d x \approx \dfrac{76}{275}$}
 
         \part
             \begin{align*}
@@ -543,9 +518,7 @@
                 &= -2 + 8x + \ldots
             \end{align*}
 
-            \boxt{
-                $y' = -2 + 8x + \ldots$
-            }
+            \boxt{$y' = -2 + 8x + \ldots$}
 
         \part
             Using the point-slope formula,            
@@ -554,18 +527,16 @@
                 \implies&&y &= -2x + 1
             \end{alignat*}
 
-            \boxt{
-                $y = -2x + 1$
-            }
+            \boxt{$y = -2x + 1$}
 
     \problem{}
         It is given that $y = e^{\arcsin 2x}$.
         
         
         \begin{enumerate}
-            \item Show that $(1-4x^2)\derm{y}{x}2 - 4x\der{y}x=4y$.
-            \item By further differentiating this result, find the Maclaurin series for $y$ in ascending powers of $x$, up to an including the term in $x^3$.
-            \item Hence, find an approximation value of $e^{\tfrac{\pi}2}$, by substituting a suitable value of $x$ in the Maclaurin series for $y$.
+            \item Show that $(1-4x^2)\der[2]{y}{x} - 4x\der{y}x=4y$.
+            \item By further differentiating this result, find the MacLaurin series for $y$ in ascending powers of $x$, up to an including the term in $x^3$.
+            \item Hence, find an approximation value of $e^{\tfrac{\pi}2}$, by substituting a suitable value of $x$ in the MacLaurin series for $y$.
             \item Suggest one way to improve the accuracy of the approximated value obtained.
         \end{enumerate}
 
@@ -614,29 +585,25 @@
                 &= 1 + 2x + 2x^2 + \dfrac83 x^3 + \ldots
             \end{align*}
 
-            \boxt{
-                $y = 1 + 2x + 2x^2 + \dfrac83 x^3 + \ldots$
-            }
+            \boxt{$y = 1 + 2x + 2x^2 + \dfrac83 x^3 + \ldots$}
 
         \part
-            Consider $y = e^{\tfrac{\pi}2} \implies \arcsin 2x = \dfrac{\pi}2 \implies x = \dfrac12\cdot \sin \dfrac{\pi}2 = \dfrac12$. Hence, substituting $x = \dfrac12$ in the Maclaurin series for $y$,
+            Consider $y = e^{\tfrac{\pi}2} \implies \arcsin 2x = \dfrac{\pi}2 \implies x = \dfrac12\cdot \sin \dfrac{\pi}2 = \dfrac12$. Hence, substituting $x = \dfrac12$ in the MacLaurin series for $y$,
             \begin{align*}
                 e^{\tfrac{\pi}2} &\approx 1 + 2\cdot\dfrac12 + 2\left(\dfrac12\right)^2 + \dfrac83 \left(\dfrac12\right)^3\\
                 &= \dfrac{17}6
             \end{align*}
 
-            \boxt{
-                $e^{\tfrac{\pi}2} \approx \dfrac{17}6$
-            }
+            \boxt{$e^{\tfrac{\pi}2} \approx \dfrac{17}6$}
             
         \part
-            More terms of the Maclaurin series of $y$ could be considered.
+            More terms of the MacLaurin series of $y$ could be considered.
         
     \problem{}
         The curve $y = f(x)$ passes through the point $(0, 1)$ and satisfies the equation $\der{y}{x} = \dfrac{6-2y}{\cos 2x}$.
         
         \begin{enumerate}
-            \item Find the Maclaurin series of $f(x)$, up to and including the term in $x^3$.
+            \item Find the MacLaurin series of $f(x)$, up to and including the term in $x^3$.
             \item Using standard results given in the List of Formulae (MF27), express $\dfrac{1-\sin x}{\cos x}$ as a power series of $x$, up to and including the term in $x^3$.
             \item Using the two power series you have found, show to this degree of approximation, that $f(x)$ can be expressed as $a(\tan 2x - \sec 2x) + b$, where $a$ and $b$ are constants to be determined.
         \end{enumerate}
@@ -675,9 +642,7 @@
                 &= 1 + 4x -4x^2 + \dfrac{16}3 x^3 + \ldots
             \end{align*}
 
-            \boxt{
-                $f(x) = 1 + 4x -4x^2 + \dfrac{16}3 x^3 + \ldots$
-            }
+            \boxt{$f(x) = 1 + 4x -4x^2 + \dfrac{16}3 x^3 + \ldots$}
 
         \part
             Observe that
@@ -691,8 +656,8 @@
             
             \begin{alignat*}{2}
                 &&f(x) &= \sec x\\
-                \implies&&f'(x) &= \ln (\sec x + \tan x)\\
-                && &= \ln (f(x) + g(x))\\
+                \implies&&f'(x) &= \ln{\sec x + \tan x}\\
+                && &= \ln{f(x) + g(x)}\\
                 \implies&&f''(x) &= \dfrac{f'(x) + g'(x)}{f(x) + g(x)}
             \end{alignat*}
 
@@ -720,9 +685,7 @@
                 &= 1 - x + \dfrac12 x^2 - \dfrac13 x^3 + \ldots
             \end{align*}
 
-            \boxt{
-                $\dfrac{1 - \sin x}{\cos x} = 1 - x + \dfrac12 x^2 - \dfrac13 x^3 + \ldots$
-            }
+            \boxt{$\dfrac{1 - \sin x}{\cos x} = 1 - x + \dfrac12 x^2 - \dfrac13 x^3 + \ldots$}
 
         \part
             \begin{align*}
@@ -742,9 +705,7 @@
         
             In order to obtain an approximation for $f(x)$, we need $\dfrac{a}2 = 1$ and $-\dfrac32 a + b = 0$, whence $a = 2$ and $b = 3$.
 
-            \boxt{
-                $a = 2$, $b = 3$
-            }
+            \boxt{$a = 2$, $b = 3$}
 
     \problem{}
         Given that $x$ is sufficiently small for $x^3$ and higher powers of $x$ to be neglected, and that $13 - 59\sin x = 10(2 - \cos 2x)$, find a quadratic equation for $x$ and hence solve for $x$.
@@ -761,9 +722,7 @@
 
         Hence, $\sin x = \dfrac1{20}$. Note that we reject $\sin x = -3$ since $\abs{\sin x} \leq 1$. Since $x$ is sufficiently small for $x^3$ and higher powers of $x$ to be neglected, $\sin x \approx x$. Thus, $x \approx \dfrac1{20}$.
         
-        \boxt{
-            $x \approx \dfrac1{20}$
-        }
+        \boxt{$x \approx \dfrac1{20}$}
     \problem{}
         In triangle $ABC$, angle $A = \dfrac{\pi}3$ radians, angle $B = \left(\dfrac{\pi}3 + x\right)$ radians and angle $C = \left(\dfrac{\pi}3 - x\right)$ radians, where $x$ is small. The lengths of the sides $BC$, $CA$ and $AB$ are denoted by $a$, $b$ and $c$ respectively. Show that $b-c \approx \dfrac{2ax}{\sqrt{3}}$.
 
@@ -792,7 +751,7 @@
         Since $x$ is small, $\sin x \approx x$. Hence, $b-c \approx \dfrac{2ax}{\sqrt{3}}$.
 
     \problem{}
-        D'Alembert's ratio test states that a series of the form $\sum\limits_{r = 0}^\infty a_r$ converges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} < 1$, and diverges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} > 1$. When $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} = 1$, the test is inconclusive. Using the test, explain why the series $\sum\limits_{r=0}^\infty \dfrac{x^r}{r!}$ converges for all real values of $x$ and state the sum to infinity of this series, in terms of $x$.
+        D'Alembert's ratio test states that a series of the form $\sum\limits_{r = 0}^\infty a_r$ converges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} < 1$, and diverges when $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} > 1$. When $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{a_n}} = 1$, the test is inconclusive. Using the test, explain why the series $\displaystyle\sum\limits_{r=0}^\infty \dfrac{x^r}{r!}$ converges for all real values of $x$ and state the sum to infinity of this series, in terms of $x$.
 
     \solution
         Let $a_n = \dfrac{x^n}{n!}$ and consider $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{n}}$.
@@ -804,5 +763,5 @@
             &= 0
         \end{align*}
 
-        Since $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{n}} < 1$ for all $x \in \mathbb{R}$, it follows by D'Alembert's ratio test that $\sum\limits_{r=0}^\infty \dfrac{x^r}{r!}$ converges for all real values of $x$. The sum to infinity of the series in question is $e^x$.
+        Since $\lim\limits_{n \to \infty} \abs{\dfrac{a_{n+1}}{n}} < 1$ for all $x \in \R$, it follows by D'Alembert's ratio test that $\displaystyle\sum\limits_{r=0}^\infty \dfrac{x^r}{r!}$ converges for all real values of $x$. The sum to infinity of the series in question is $e^x$.
 \end{document}

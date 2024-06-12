@@ -9,8 +9,8 @@
         Functions $f$ and $g$ are defined as follows:
 
         \begin{alignat*}{2}
-            f & \colon x \mapsto (x-3)^2 + 6, &&\qquad x \in \mathbb{R}, \, x \leq 2\\
-            g & \colon x \mapsto \ln (x-2), &&\qquad x \in \mathbb{R}, \, x > 3
+            f & \colon x \mapsto (x-3)^2 + 6, &&\qquad x \in \R, \, x \leq 2\\
+            g & \colon x \mapsto \ln{x-2}, &&\qquad x \in \R, \, x > 3
         \end{alignat*}
 
         \begin{enumerate}
@@ -21,7 +21,7 @@
 
     \solution
         \part
-            Note that $f^\prime = 2(x-3) < 0$ for all $x \leq 2$. Thus $f$ is strictly decreasing. Since $f$ is also continuous, $f$ is one-one. Thus, $\inv f$ exists.
+            Note that $f' = 2(x-3) < 0$ for all $x \leq 2$. Thus $f$ is strictly decreasing. Since $f$ is also continuous, $f$ is one-one. Thus, $\inv f$ exists.
 
             Let $y = f(x) \implies x = \inv f(y)$.
 
@@ -35,9 +35,7 @@
 
             Hence, $\inv f(x) = 3 - \sqrt{x-6}$. Observe that $\dom{\inv f} = \ran f = [f(2), \infty) = [7, \infty)$.
 
-            \boxt{
-                $\inv f \colon x \mapsto 3 - \sqrt{x-6}, \, x \in \mathbb{R}, \, x \geq 7$
-            }
+            \boxt{$\inv f \colon x \mapsto 3 - \sqrt{x-6}, \, x \in \R, \, x \geq 7$}
 
         \part
             \begin{center}
@@ -86,17 +84,15 @@
         \part
             Note that $\ran g = (0, \infty)$ and $\dom f = (-\infty, 2]$. Hence, $\ran g \nsubseteq \dom f$. Thus, $fg$ does not exist. Note that $\ran f = [7, \infty)$ and $\dom g = (3, \infty)$. Hence, $\ran f \subseteq \dom g$. Thus, $gf$ exists.
 
-            Since $\ln x$ is a strictly increasing function, we have that $g$ is also strictly increasing. Hence, $\ran{gf} = [\ln(7 - 2), \infty) = [\ln 5, \infty)$.
+            Since $\ln x$ is a strictly increasing function, we have that $g$ is also strictly increasing. Hence, $\ran{gf} = [\ln{7 - 2}, \infty) = [\ln 5, \infty)$.
             
-            \boxt{
-                $\ran{gf} = [\ln 5, \infty)$
-            }
+            \boxt{$\ran{gf} = [\ln 5, \infty)$}
 
     \problem{}
         The function $f$ is defined as follows:
 
         \begin{equation*}
-            f \colon x \mapsto \dfrac1{x^2 - 1}, \qquad x \in \mathbb{R}, \, x \neq -1, \, x \neq 1
+            f \colon x \mapsto \dfrac1{x^2 - 1}, \qquad x \in \R, \, x \neq -1, \, x \neq 1
         \end{equation*}
 
         \begin{enumerate}
@@ -104,14 +100,14 @@
             \item If the domain of $f$ is further restricted to $x \geq k$, state with a reason the least value of $k$ for which the function $\inv f$ exists.
         \end{enumerate}
 
-        \noindent \textbf{In the rest of the question, the domain of $f$ is $x \in \mathbb{R}, \, x \neq -1, \, x \neq 1$, as originally defined.}
+         \textbf{In the rest of the question, the domain of $f$ is $x \in \R, \, x \neq -1, \, x \neq 1$, as originally defined.}
 
         \smallskip
 
-        \noindent The function $g$ is defined as follows:
+         The function $g$ is defined as follows:
 
         \begin{equation*}
-            g \colon x \mapsto \dfrac1{x-3}, \qquad x \in \mathbb{R}, \, x \neq 2, \, x \neq 3, x \neq 4
+            g \colon x \mapsto \dfrac1{x-3}, \qquad x \in \R, \, x \neq 2, \, x \neq 3, x \neq 4
         \end{equation*}
 
         \begin{enumerate}
@@ -155,22 +151,18 @@
         \part
             If the domain of $f$ is further restricted to $x \geq 0$, $f$ would pass the horizontal line test, whence $\inv f$ would exist.
             
-            \boxt{
-                $\min k = 0$
-            }
+            \boxt{$\min k = 0$}
 
         \part
-            Observe that $\ran g = \mathbb{R} \setminus \{g(2), g(4)\} = \mathbb{R} \setminus \{-1, 1\}$. Hence, $\ran {fg} = \ran{f} = \mathbb{R} \setminus (-1, 0\,]$.
+            Observe that $\ran g = \R \setminus \bc{g(2), g(4)} = \R \setminus \bc{-1, 1}$. Hence, $\ran {fg} = \ran{f} = \R \setminus (-1, 0\,]$.
 
-            \boxt{
-                $\ran {fg} = \mathbb{R} \setminus (-1, 0\,]$
-            }
+            \boxt{$\ran {fg} = \R \setminus (-1, 0\,]$}
 
     \problem{}
         The function $f$ is defined by
 
         \begin{equation*}
-            f \colon x \mapsto \dfrac{x}{x^2 - 1}, \qquad x \in \mathbb{R}, \, x \neq -1, \, x \neq 1
+            f \colon x \mapsto \dfrac{x}{x^2 - 1}, \qquad x \in \R, \, x \neq -1, \, x \neq 1
         \end{equation*}
 
         \begin{enumerate}
@@ -178,10 +170,10 @@
             \item The function $f$ has an inverse if the domain is restricted to $x \leq k$. State the largest value of $k$.
         \end{enumerate}
 
-        \noindent The function $g$ is defined by
+         The function $g$ is defined by
 
         \begin{equation*}
-            g \colon x \mapsto \ln x - 1, \qquad x \in \mathbb{R}, \, 0 < x < 1
+            g \colon x \mapsto \ln x - 1, \qquad x \in \R, \, 0 < x < 1
         \end{equation*}
 
         \begin{enumerate}
@@ -198,9 +190,7 @@
             Observe that $f\left(\dfrac12\right) = -\dfrac23$ and $f(-2) = -\dfrac23$. Hence, $f\left(\dfrac12\right) = f(-2)$. Since $\dfrac12 \neq -2$, $f$ is not one-one. Thus, $f$ does not have an inverse.
 
         \part
-            \boxt{
-                $\max k = 0$
-            }
+            \boxt{$\max k = 0$}
 
         \part
             \subpart
@@ -215,9 +205,7 @@
 
                 Hence, $h(x) = e^{x+1}$.
 
-                \boxt{
-                    $h(x) = e^{x+1}$
-                }
+                \boxt{$h(x) = e^{x+1}$}
 
             \subpart
                 Let $h = h_2 \circ h_1$ such that $h_1g(x) = x \implies h_1(x) = \inv g(x) \implies h_1(x) = e^{x+1}$.
@@ -230,7 +218,5 @@
 
                 Hence, $h(x) = h_2h_1(x) = h_2(e^{x+1}) = \left(e^{x+1}\right)^2 + 1 = e^{2x+2} + 1$
 
-                \boxt{
-                    $h(x) = e^{2x+2}+1$
-                }
+                \boxt{$h(x) = e^{2x+2}+1$}
 \end{document}

@@ -1,6 +1,6 @@
 \documentclass{echw}
 
-\title{Assignment B6\\Maclaurin Series}
+\title{Assignment B6\\MacLaurin Series}
 \author{Eytan Chong}
 \date{2024-04-29}
 
@@ -31,38 +31,38 @@
         Since $\sqrt[3]7 = 1.9129 \tosf{5}$, the approximation is accurate.
 
     \problem{}
-        In the triangle $ABC$, $AB = 1$, $BC = 3$ and angle $ABC = \theta$ radians. Given that $\theta$ is a sufficiently small angle, show that
+        In the triangle $ABC$, $AB = 1$, $BC = 3$ and angle $ABC = \t$ radians. Given that $\t$ is a sufficiently small angle, show that
         \begin{equation*}
-            AC \approx (4 + 3\theta^2)^{\tfrac12} \approx a + b\theta^2
+            AC \approx (4 + 3\t^2)^{\tfrac12} \approx a + b\t^2
         \end{equation*}
-        \noindent for constants $a$ and $b$ to be determined.
+         for constants $a$ and $b$ to be determined.
 
     \solution
         By cosine rule,
         \begin{alignat*}{2}
             &&AC^2 &= AB^2 + BC^2 - 2\cdot AB \cdot BC \cdot \cos ABC\\
-            \implies&&AC^2 &= 1^2 + 3^2 - 2 \cdot 1 \cdot 3 \cdot \cos \theta\\
-            && &= 10 - 6 \cos\theta
+            \implies&&AC^2 &= 1^2 + 3^2 - 2 \cdot 1 \cdot 3 \cdot \cos \t\\
+            && &= 10 - 6 \cos\t
         \end{alignat*}
-        Since $\theta$ is sufficiently small, $\cos \theta \approx 1 - \dfrac{\theta^2}{2}$. Hence,
+        Since $\t$ is sufficiently small, $\cos \t \approx 1 - \dfrac{\t^2}{2}$. Hence,
         \begin{alignat*}{2}
-            &&AC^2 &\approx 10 - 6\left(1 - \dfrac{\theta^2}{2}\right)\\
-            && &= 4 + 3\theta^2\\
-            \implies&&AC &\approx (4+3\theta^2)^{\tfrac12}\\
-            && &= 2\left(1 + \dfrac34 \theta^2\right)^{\tfrac12}\\
-            && &\approx 2 \left(1 + \dfrac12 \cdot \dfrac34 \theta^2\right)\\
-            && &= 2 + \dfrac34 \theta^2
+            &&AC^2 &\approx 10 - 6\left(1 - \dfrac{\t^2}{2}\right)\\
+            && &= 4 + 3\t^2\\
+            \implies&&AC &\approx (4+3\t^2)^{\tfrac12}\\
+            && &= 2\left(1 + \dfrac34 \t^2\right)^{\tfrac12}\\
+            && &\approx 2 \left(1 + \dfrac12 \cdot \dfrac34 \t^2\right)\\
+            && &= 2 + \dfrac34 \t^2
         \end{alignat*}
 
     \problem{}
         Given that $y = \ln \sec x$, show that
 
         \begin{enumerate}
-            \item $\derm{y}{x}{3} = 2 \, \derm{y}{x}{2} \, \der{y}{x}$
-            \item the value of $\derm{y}{x}{4}$ when $x = 0$ is 2.
+            \item $\der[3]{y}{x} = 2 \, \der[2]{y}{x} \, \der{y}{x}$
+            \item the value of $\der[4]{y}{x}$ when $x = 0$ is 2.
         \end{enumerate}
 
-        \noindent Write down the Maclaurin series for $\ln \sec x$ up to and including the term in $x^4$. By substituting $x = \dfrac\pi4$, show that $\ln 2 \approx \dfrac{\pi^2}{16} + \dfrac{\pi^4}{1536}$.
+         Write down the MacLaurin series for $\ln \sec x$ up to and including the term in $x^4$. By substituting $x = \dfrac\pi4$, show that $\ln 2 \approx \dfrac{\pi^2}{16} + \dfrac{\pi^4}{1536}$.
 
         \solution
             \part
@@ -105,7 +105,7 @@
                     y^{(3)} &= 0\\
                     y^{(4)} &= 2
                 \end{align*}
-                Thus, $\left.\derm{y}{x}{4}\right|_{x=0} = 2$.
+                Thus, $\left.\der[4]{y}{x}\right|_{x=0} = 2$.
                 \begin{align*}
                     \ln \sec x &= \sum_{n=0}^\infty \dfrac{y^{(n)}}{n!}x^n\\
                     &= \dfrac12 x^2 + \dfrac1{12} x^4 + \ldots 

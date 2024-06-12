@@ -20,9 +20,7 @@
 
     \solution
         \part
-            \boxt{
-                $u_{n+1} = 1.5u_n - 10$
-            }
+            \boxt{$u_{n+1} = 1.5u_n - 10$}
 
         \part
             Let $k$ be the constant such that $u_{n+1} + k = 1.5(u_n + k) \implies 0.5k = -10 \implies k = -20$. Hence, $u_{n+1} - 20 = 1.5(u_n - 20)$.
@@ -44,26 +42,22 @@
 
                 Hence, $m = 25$.
 
-                \boxt{
-                    It takes at least 25 bids to meet this amount.
-                }
+                \boxt{It takes at least 25 bids to meet this amount.}
 
             \subpart
                 \begin{align*}
                     u_{25} &= 1.5^{25-1}(111 - 20)\\
-                    &= 1532000 \text{ (to nearest thousand)}
+                    &= 1532000 \text{ (to the nearest thousand)}
                 \end{align*}
 
-                \boxt{
-                    The winning bid is \$1 532 000.
-                }
+                \boxt{The winning bid is \$1 532 000.}
 
     \problem{}
         Solve these recurrence relations together with the initial conditions.
 
         \begin{enumerate}
             \item $u_{n+2} = -u_n + 2u_{n+1}$, for $n \geq 0$, $u_0 = 5$, $u_1 = -1$.
-            \item $4u_n = 4u_{n-1} + u_{n-2}$, for $n \geq 2$, $u_0 = a$, $u_1 = b$, $a, b \in \mathbb{R}$.
+            \item $4u_n = 4u_{n-1} + u_{n-2}$, for $n \geq 2$, $u_0 = a$, $u_1 = b$, $a, b \in \R$.
         \end{enumerate}
 
     \solution
@@ -94,9 +88,7 @@
             \end{alignat*} 
 
             Thus,
-            \boxt{
-                $u_n = 5 - 6n$
-            }
+            \boxt{$u_n = 5 - 6n$}
 
         \part
             \begin{alignat*}{2}
@@ -138,9 +130,7 @@
             \end{alignat*}
 
             Thus,
-            \boxt{
-                $u_n = \left(\dfrac{\sqrt2 - 1}{2\sqrt2}a + \dfrac{1}{\sqrt{2}}b\right)\left(\dfrac{1 + \sqrt2}{2}\right)^n + \left(\dfrac{\sqrt2 + 1}{2\sqrt2}a - \dfrac{1}{\sqrt{2}}b\right)\left(\dfrac{1 - \sqrt2}{2}\right)^n$
-            }
+            \boxt{$u_n = \left(\dfrac{\sqrt2 - 1}{2\sqrt2}a + \dfrac{1}{\sqrt{2}}b\right)\left(\dfrac{1 + \sqrt2}{2}\right)^n + \left(\dfrac{\sqrt2 + 1}{2\sqrt2}a - \dfrac{1}{\sqrt{2}}b\right)\left(\dfrac{1 - \sqrt2}{2}\right)^n$}
 
     \problem{}
         A passcode is generated using the digits 1 to 5, with repetitions allowed. The passcodes are classified into two types. A Type $A$ passcode has an even number of the digit 1, while a Type $B$ passcode has an odd number of the digit 1. For example, a Type $A$ passcode is 1231, and a Type $B$ passcode is 1541213. Let $a_n$ and $b_n$ denote the number of $n$-digit Type $A$ and Type $B$ passcodes respectively.
@@ -152,19 +142,17 @@
                 a_n = xa_{n-1} + y^{n-1}, \qquad n \geq 2
             \end{equation*}
             where $x$ and $y$ are constants to be determined.
-            \item Using the substitution $c_n = za_n + y^n$, where $z$ is a constant to be determined, find a first order linear recurrence relation for $c_n$. Hence find the general term formula for $a_n$.
+            \item Using the substitution $c_n = za_n + y^n$, where $z$ is a constant to be determined, find a first order linear recurrence relation for $c_n$. Hence, find the general term formula for $a_n$.
         \end{enumerate}
 
     \solution
         \part
-            \boxt{
-                $a_1 = 4$, $a_2 = 17$
-            }
+            \boxt{$a_1 = 4$, $a_2 = 17$}
 
         \part
-            Let $P$ be a $n$-digit passcode with Type $T$, where $T \in \{A, B\}$. We also let Type $T^\prime$ be such that $T^\prime \in \{A, B\} \setminus T$.
+            Let $P$ be an $n$-digit passcode with Type $T$, where $T \in \bc{A, B}$. We also let Type $T'$ be such that $T' \in \bc{A, B} \setminus T$.
             
-            By concatenating a digit from 1 to 5 to $P$, 5 $(n+1)$-digit passcodes can be created. Let $P^\prime$ denote a newly passcode that is created via this process. If the digit 1 is concatenated, then $P^\prime$ is of Type $T^\prime$. If the digit 1 is not concatenated, then $P^\prime$ is of Type $T$. There are 4 choices for such a case. This hence gives the recurrence relations
+            By concatenating a digit from 1 to 5 to $P$, 5 $(n+1)$-digit passcodes can be created. Let $P'$ denote a new passcode that is created via this process. If the digit 1 is concatenated, then $P'$ is of Type $T'$. If the digit 1 is not concatenated, then $P'$ is of Type $T$. There are 4 choices for such a case. This hence gives the recurrence relations
             \begin{align*}
                 a_n &= 4a_{n-1} + b_{n-1}\\
                 b_n &= 4b_{n-1} + a_{n-1}
@@ -176,7 +164,7 @@
                 &= 3a_{n-1} + a_{n-1} + b_{n-1}\\
                 &= 3a_{n-1} + 5^{n-1}
             \end{align*}
-            \noindent whence $x = 3$ and $y = 5$.
+             whence $x = 3$ and $y = 5$.
         
         \part
             \begin{align*}
@@ -202,8 +190,6 @@
                 &= \dfrac12 \left(3^n + 5^n\right)
             \end{align*}
 
-            \boxt{
-                $a_n = \dfrac12 \left(3^n + 5^n\right)$
-            }
+            \boxt{$a_n = \dfrac12 \bp{3^n + 5^n}$}
 
 \end{document}

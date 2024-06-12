@@ -22,9 +22,7 @@
                 &= \dfrac54 - \dfrac1{2^n} - \dfrac1{2n} - \dfrac1{2n + 2}
             \end{align*}
 
-            \boxt{
-                $\displaystyle\sum\limits_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) = \dfrac54 - \dfrac1{2^n} - \dfrac1{2n} - \dfrac1{2n + 2}$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) = \dfrac54 - \dfrac1{2^n} - \dfrac1{2n} - \dfrac1{2n + 2}$}
 
         \part
             \begin{align*}
@@ -33,20 +31,18 @@
                 &= \dfrac54
             \end{align*}
 
-            \boxt{
-                $\displaystyle\sum\limits_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) = \dfrac54$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=2}^n \left(\dfrac1{2^r} + \dfrac1{r^2 - 1}\right) = \dfrac54$}
 
     \problem{}
         The curve $C$ has equation $y = \dfrac{x^2 + ax}{x - a}$, where $a$ is a positive constant.
 
         \medskip
 
-        \noindent Sketch $C$, indicating clearly the equations of any asymptotes, the coordinates of turning points and the coordinates of the points where the curve crosses the axes.
+         Sketch $C$, indicating clearly the equations of any asymptotes, the coordinates of turning points and the coordinates of the points where the curve crosses the axes.
 
         \medskip
 
-        \noindent State the set of values that $y$ can take.
+         State the set of values that $y$ can take.
 
     \solution
         \textbf{Asymptotes.} Note that
@@ -57,7 +53,7 @@
 
         \medskip
 
-        \noindent \textbf{Turning Points.} Observe that $\der{y}{x} = \der{}{x} \left(x + 2a + \dfrac{2a^2}{x-a}\right) = 1 - \dfrac{2a^2}{(x-a)^2}$. For stationary points, $\der{y}{x} = 0$.
+         \textbf{Turning Points.} Observe that $\der{y}{x} = \der{}{x} \left(x + 2a + \dfrac{2a^2}{x-a}\right) = 1 - \dfrac{2a^2}{(x-a)^2}$. For stationary points, $\der{y}{x} = 0$.
         \begin{alignat*}{2}
             &&\der{y}{x} &= 0\\
             \implies&&1 - \dfrac{2a^2}{(x-a)^2} &= 0\\
@@ -74,17 +70,17 @@
             &= a \left(\dfrac{4 \pm 3\sqrt2}{\pm \sqrt2}\right)\\
             &= a\left(3 \pm 2\sqrt2\right)
         \end{align*}
-        From the First Derivative Test, we see that $C$ obtains a minimum at $\coord{a + a\sqrt2}{3a + 2a\sqrt2}$ and a maximum at $\coord{a - a\sqrt2}{3a - 2a\sqrt2}$. 
+        From the First Derivative Test, we see that $C$ obtains a minimum at $\bp{a + a\sqrt2, 3a + 2a\sqrt2}$ and a maximum at $\bp{a - a\sqrt2, 3a - 2a\sqrt2}$. 
 
         \medskip
 
-        \noindent \textbf{Axial Intercepts.} When $x = 0$, we have $y = 0$. Consider $y = 0$.
+         \textbf{Axial Intercepts.} When $x = 0$, we have $y = 0$. Consider $y = 0$.
         \begin{alignat*}{2}
             &&\dfrac{x^2 + ax}{x-a} &= 0\\
             \implies&&x^2 + ax &= 0\\
             \implies&&x(x + a) &= 0
         \end{alignat*}
-        Hence, $x = 0$ or $x = -a$. Thus, $C$ intercepts the axes at $\coord00$ and $\coord{-a}0$.
+        Hence, $x = 0$ or $x = -a$. Thus, $C$ intercepts the axes at $(0, 0)$ and $(-a, 0)$.
 
         \begin{center}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -115,29 +111,27 @@
         
                     \addlegendentry{$C$};
 
-                    \fill (-0.414, 0.172) circle[radius=2.5pt] node[anchor=south] {$\coord{a - a\sqrt2}{3a - 2a\sqrt2}$};
+                    \fill (-0.414, 0.172) circle[radius=2.5pt] node[anchor=south] {$\bp{a - a\sqrt2, 3a - 2a\sqrt2}$};
                     \fill (2.414, 5.83) circle[radius=2.5pt];
 
-                    \node[anchor=north] at (2.614, 5.83) {$\coord{a + a\sqrt2}{3a + 2a\sqrt2}$};
+                    \node[anchor=north] at (2.614, 5.83) {$\bp{a + a\sqrt2, 3a + 2a\sqrt2}$};
 
                     \node[rotate=35] at (1.5, 3) {$y = x+2a$};
                 \end{axis}
             \end{tikzpicture}
         \end{center}
 
-        \boxt{
-            $y$ can take on values in $\mathbb{R} \setminus \left(3a - 2a\sqrt2, 3a + 2a\sqrt2\right)$.
-        }
+        \boxt{$y$ can take on values in $\R \setminus \left(3a - 2a\sqrt2, 3a + 2a\sqrt2\right)$.}
 
     \problem{}
         Sketch the curve $C$ with equation $4x^2 + y^2 = 1$ where $y \geq 0$. The region $R$ is described as the region bounded by the $x$-axis and $C$.
 
         \medskip
 
-        \noindent Use differentiation to find the area of the largest rectangle that can be inscribed in the region $R$.
+         Use differentiation to find the area of the largest rectangle that can be inscribed in the region $R$.
 
     \solution
-        Observe that $4x^2 + y^2 = 1$ describes an ellipse centered at the origin with horizontal radius $\dfrac12$ and vertical radius 1.
+        Observe that $4x^2 + y^2 = 1$ describes an ellipse centred at the origin with horizontal radius $\dfrac12$ and vertical radius 1.
 
         \begin{center}            
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -182,7 +176,7 @@
             \implies&&1 - 8a^2 &= 0\\
             \implies&&a &= \dfrac1{\sqrt8}
         \end{alignat*}
-        Hence, $A(a)$ has a staionary point at $a = \dfrac1{\sqrt8}$.
+        Hence, $A(a)$ has a stationary point at $a = \dfrac1{\sqrt8}$.
         \begin{table}[H]
             \centering
             \begin{tabular}{|c|c|c|c|}
@@ -191,16 +185,14 @@
             $A'(a)$ & +ve   & 0 & -ve   \\\hline
             \end{tabular}
         \end{table}
-        \noindent By the First Derivative Test, we see that $A(a)$ achieves a maximum at $a = \dfrac1{\sqrt8}$. Hence,
+         By the First Derivative Test, we see that $A(a)$ achieves a maximum at $a = \dfrac1{\sqrt8}$. Hence,
         \begin{align*}
             \text{Maximum area} &= A\left(\dfrac1{\sqrt8}\right)\\
             &= 2\cdot\dfrac1{\sqrt8}\sqrt{1 - 4\cdot\dfrac18}\\
             &= \dfrac12 
         \end{align*}
 
-        \boxt{
-            The area of the largest rectangle is $\dfrac12$ units$^2$.
-        }
+        \boxt{The area of the largest rectangle is $\dfrac12$ units$^2$.}
 
     \problem{}
         \begin{enumerate}
@@ -221,16 +213,12 @@
                 &= 243 - \dfrac{135}2 x + \dfrac{14625}{8} x^2 + \dfrac{24305}{48} x^3 + \ldots
             \end{align*}
 
-            \boxt{
-                $(9 - x)^{5/2}\left(1 + 3x^2\right)^{5/2} = 243 - \dfrac{135}2 x + \dfrac{14625}{8} x^2 + \dfrac{24305}{48} x^3 + \ldots$
-            }
+            \boxt{$(9 - x)^{5/2}\left(1 + 3x^2\right)^{5/2} = 243 - \dfrac{135}2 x + \dfrac{14625}{8} x^2 + \dfrac{24305}{48} x^3 + \ldots$}
 
         \part
             Note that the expansion of $\left(1 - \dfrac19 x\right)^{5/2}$ is valid for $\abs{-\dfrac19 x} < 1 \implies x < 9$, while the expansion of $\left(1 + 3x^2\right)^{5/2}$ is valid for $\abs{3x^2} < 1 \implies x^2 < \dfrac13 \implies -\dfrac1{\sqrt3} < x < \dfrac1{\sqrt3}$. Putting both inequalities together, we have $x \in \left(-\dfrac1{\sqrt3}, \dfrac1{\sqrt3}\right)$.
 
-            \boxt{
-                The expression is valid for $x \in \left(-\dfrac1{\sqrt3}, \dfrac1{\sqrt3}\right)$
-            }
+            \boxt{The expression is valid for $x \in \left(-\dfrac1{\sqrt3}, \dfrac1{\sqrt3}\right)$}
 
     \problem{}
         \textbf{Omitted.}
@@ -246,13 +234,13 @@
 
     \solution
         \part
-            Let $P_n$ be the statement that $u_n = 2n^2 - 4n + 6 - \left(\dfrac12\right)^n$, where $n \in \mathbb{N}$.
+            Let $P_n$ be the statement that $u_n = 2n^2 - 4n + 6 - \left(\dfrac12\right)^n$, where $n \in \N$.
 
-            \noindent \textbf{Base Case.} $n = 1: u_1 = 2\cdot1^2 - 4\cdot1 + 6 - \left(\dfrac12\right)^1 = \dfrac72$. Hence, $P_1$ is true.
+             \textbf{Base Case.} $n = 1: u_1 = 2\cdot1^2 - 4\cdot1 + 6 - \left(\dfrac12\right)^1 = \dfrac72$. Hence, $P_1$ is true.
 
-            \noindent \textbf{Inductive Hypothesis.} Assume $P_k$ is true for some $k \in \mathbb{N}$.
+             \textbf{Inductive Hypothesis.} Assume $P_k$ is true for some $k \in \N$.
 
-            \noindent \textbf{Inductive Step.} Consider $u_{n+1}$.
+             \textbf{Inductive Step.} Consider $u_{n+1}$.
             \begin{align*}
                 u_{k+1} &= \dfrac12 u_k + (k+1)^2\\
                 &= \dfrac12 \left[2k^2 -4k + 6 - \left(\dfrac12\right)^k\right] + (k+1)^2\\
@@ -262,12 +250,12 @@
                 &= 2(k+1)^2 - \Big[(4k + 4) - 4\Big] + 2 - \left(\dfrac12\right)^{k+1}\\
                 &= 2(k+1)^2 - 4(k+1) + 6 - \left(\dfrac12\right)^{k+1}
             \end{align*}
-            Hence $P_k \implies P_{k+1}$. Since $P_1$ is true, by induction, $P_n$ is true for all $n \in \mathbb{N}$.
+            Hence $P_k \implies P_{k+1}$. Since $P_1$ is true, by induction, $P_n$ is true for all $n \in \N$.
 
     \problem{}
         \begin{enumerate}
             \item On the 1st of January 2023, Mr Yu visited his newly acquired fishing farm for the first time and there were 2000 fish. His planned business model is such that on the last day of
-            each month, 30\% of the fish in the farm are sold off and another 150 fish are added in.
+            each month, 30\% of the fish in the farm are sold off, and another 150 fish are added in.
 
             Based on the above information, Mr Yu wants to come up with a recurrence relation to predict the number of fish in his farm on the first day of subsequent months.
 
@@ -289,19 +277,17 @@
 
             Let $P_n$ denote the population of prawns n months after 1st January 2023.
 
-            Given that $P_0 = 3000$, find an expression for $P_n$ in terms of $n$. Hence state the month and year when Mr Sia sells his prawns with at least 3000 prawns in his farm for the breeding cycle to start again.
+            Given that $P_0 = 3000$, find an expression for $P_n$ in terms of $n$. Hence, state the month and year when Mr Sia sells his prawns with at least 3000 prawns in his farm for the breeding cycle to start again.
         \end{enumerate}
 
     \solution
         \part
             \subpart
-                \boxt{
-                    $u_n = \dfrac7{10} u_{n-1} + 150$, $u_1 = 2000$
-                }
+                \boxt{$u_n = \dfrac7{10} u_{n-1} + 150$, $u_1 = 2000$}
 
             \subpart
             
-                \noindent Let $k$ be the constant such that $u_n + k = \dfrac7{10} (u_{n-1} + k)$. Then $-\dfrac3{10} k = 150 \implies k = -500$.
+                 Let $k$ be the constant such that $u_n + k = \dfrac7{10} (u_{n-1} + k)$. Then $-\dfrac3{10} k = 150 \implies k = -500$.
                 \begin{alignat*}{2}
                     &&u_n - 500 &= \dfrac7{10} (u_{n-1} - 500)\\
                     && &= \left(\dfrac7{10}\right)^{n-1} (u_1 - 500)\\
@@ -309,13 +295,11 @@
                     \implies&&u_n &= 1500\left(\dfrac7{10}\right)^{n-1} + 500
                 \end{alignat*}
 
-                \boxt{
-                    $u_n = 1500\left(\dfrac7{10}\right)^{n-1} + 500$
-                }
+                \boxt{$u_n = 1500\left(\dfrac7{10}\right)^{n-1} + 500$}
 
             \subpart
 
-                \noindent With the new information, we have the following revised recurrence relation for $u_n$:
+                 With the new information, we have the following revised recurrence relation for $u_n$:
                 \begin{equation*}
                     u_n = \left(1 - \dfrac{p}{100}\right) \cdot \dfrac{75}{100} \cdot u_{n-1} + 150
                 \end{equation*}
@@ -327,9 +311,7 @@
                     \implies&&1 - \dfrac{p}{100} &= \dfrac45\\
                     \implies&&p &= 20
                 \end{alignat*}
-                \boxt{
-                    $p = 20$
-                }
+                \boxt{$p = 20$}
 
         \part
             We have $P_n - P_{n-1} = 2(P_{n-1} - P_{n-2})$. Rearranging, we have the recurrence relation
@@ -362,10 +344,8 @@
                 \implies&&n &\geq \log_2 115\\
                 && &= 6.8 \tosf{2}
             \end{alignat*}
-            Since $n \in \mathbb{N}$, the least $n$ is $7$. Hence, Mr Sia will sell his prawns in August 2023.
+            Since $n \in \N$, the least $n$ is $7$. Hence, Mr Sia will sell his prawns in August 2023.
 
-            \boxt{
-                Mr Sia will sell his prawns in August 2023.
-            }
+            \boxt{Mr Sia will sell his prawns in August 2023.}
 
 \end{document}

@@ -9,44 +9,38 @@
         Evaluate the following limits.
 
         \begin{enumerate}
-            \item $\lim\limits_{x \rightarrow 5} (6x + 7)$
-            \item $\lim\limits_{x \rightarrow 1} \dfrac{x^3-1}{1-x}$
-            \item $\lim\limits_{x \rightarrow \infty} \dfrac{3x}{2x^2-5}$
+            \item $\lim\limits_{x \to 5} (6x + 7)$
+            \item $\lim\limits_{x \to 1} \dfrac{x^3-1}{1-x}$
+            \item $\lim\limits_{x \to \infty} \dfrac{3x}{2x^2-5}$
         \end{enumerate}
 
     \solution
         \part
             \begin{align*}
-                \lim\limits_{x \rightarrow 5} (6x + 7) &= 6 \cdot 5 + 7\\
+                \lim\limits_{x \to 5} (6x + 7) &= 6 \cdot 5 + 7\\
                 &= 37
             \end{align*}
 
-            \boxt{
-                $\lim\limits_{x \rightarrow 5} (6x + 7) = 37$
-            }
+            \boxt{$\lim\limits_{x \to 5} (6x + 7) = 37$}
 
         \part
             \begin{align*}
-                \lim\limits_{x \rightarrow 1} \dfrac{x^3-1}{1-x} &= \lim\limits_{x \rightarrow 1} \dfrac{(x-1)\left(x^2 + x + 1\right)}{1-x} \\
-                &= \lim\limits_{x \rightarrow 1} -\left(x^2 + x + 1\right) \\
+                \lim\limits_{x \to 1} \dfrac{x^3-1}{1-x} &= \lim\limits_{x \to 1} \dfrac{(x-1)\left(x^2 + x + 1\right)}{1-x} \\
+                &= \lim\limits_{x \to 1} -\left(x^2 + x + 1\right) \\
                 &= -(1^2 + 1 + 1)\\
                 &= -3
             \end{align*}
 
-            \boxt{
-                $\lim\limits_{x \rightarrow 1} \dfrac{x^3-1}{1-x} = -3$
-            }
+            \boxt{$\lim\limits_{x \to 1} \dfrac{x^3-1}{1-x} = -3$}
 
         \part
             \begin{equation*}
-                \lim\limits_{x \rightarrow \infty} \dfrac{3x}{2x^2-5} = \lim\limits_{x \rightarrow \infty} \dfrac{3}{2x-\tfrac5{x}}
+                \lim\limits_{x \to \infty} \dfrac{3x}{2x^2-5} = \lim\limits_{x \to \infty} \dfrac{3}{2x-\tfrac5{x}}
             \end{equation*}
 
-            Note that as $x \rightarrow \infty$, $2x - \dfrac5{x} \rightarrow \infty - 0$. Hence, $\lim\limits_{x \rightarrow \infty} \dfrac{1}{2x-\tfrac5{x}} = 0$.
+            Note that as $x \to \infty$, $2x - \dfrac5{x} \to \infty - 0$. Hence, $\lim\limits_{x \to \infty} \dfrac{1}{2x-\tfrac5{x}} = 0$.
 
-            \boxt{
-                $\lim\limits_{x \rightarrow \infty} \dfrac{3x}{2x^2-5} = 0$
-            }
+            \boxt{$\lim\limits_{x \to \infty} \dfrac{3x}{2x^2-5} = 0$}
 
     \problem{}
         Differentiate the following with respect to $x$ from first principles.
@@ -59,28 +53,24 @@
     \solution
         \part
             \begin{align*}
-                \der{}{x} (3x+4) &= \lim_{h \rightarrow 0}\dfrac{(3(x+h) + 4) - (3x + 4)}{h}\\
-                &= \lim_{h \rightarrow 0}\dfrac{3h}{h}\\
-                &= \lim_{h \rightarrow 0} 3\\
+                \der{}{x} (3x+4) &= \lim_{h \to 0}\dfrac{(3(x+h) + 4) - (3x + 4)}{h}\\
+                &= \lim_{h \to 0}\dfrac{3h}{h}\\
+                &= \lim_{h \to 0} 3\\
                 &= 3
             \end{align*}
 
-            \boxt{
-                $\der{}{x} (3x+4) = 3$
-            }
+            \boxt{$\der{}{x} (3x+4) = 3$}
 
         \part
             \begin{align*}
-                \der{}{x} x^3 &= \lim_{h \rightarrow 0} \dfrac{(x+h)^3 - x^3}{h} \\
-                &= \lim_{h \rightarrow 0} \dfrac{x^3 + 3hx^2 + 3h^2x + h^3 - x^3}{h}\\
-                &= \lim_{h \rightarrow 0} \dfrac{3hx^2 + 3h^2x + h^3}{h}\\
-                &= \lim_{h \rightarrow 0} \left(3x^2 + 3hx + h^2\right)\\
+                \der{}{x} x^3 &= \lim_{h \to 0} \dfrac{(x+h)^3 - x^3}{h} \\
+                &= \lim_{h \to 0} \dfrac{x^3 + 3hx^2 + 3h^2x + h^3 - x^3}{h}\\
+                &= \lim_{h \to 0} \dfrac{3hx^2 + 3h^2x + h^3}{h}\\
+                &= \lim_{h \to 0} \left(3x^2 + 3hx + h^2\right)\\
                 &= 3x^2
             \end{align*}
 
-            \boxt{
-                $\der{}{x} x^3 = 3x^2$
-            }
+            \boxt{$\der{}{x} x^3 = 3x^2$}
 
     \problem{}
         Differentiate each of the following with respect to $x$, simplifying your answer.
@@ -101,9 +91,7 @@
                 &= 2x\left(x^2 + 4\right)\left(7x^3 + 12x - 2\right)
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \left(x^2 + 4\right)^2\left(2x^3 -1\right) = 2x\left(x^2 + 4\right)\left(7x^3 + 12x - 2\right)$
-            }
+            \boxt{$\der{}{x} \left(x^2 + 4\right)^2\left(2x^3 -1\right) = 2x\left(x^2 + 4\right)\left(7x^3 + 12x - 2\right)$}
         
         \part
             \begin{align*}
@@ -114,9 +102,7 @@
                 &= \dfrac{x \left(8-x^2\right)}{(4-x^2)^{\frac32}}
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \dfrac{x^2}{\sqrt{4-x^2}} = \dfrac{x \left(8-x^2\right)}{(4-x^2)^{\frac32}}$
-            }
+            \boxt{$\der{}{x} \dfrac{x^2}{\sqrt{4-x^2}} = \dfrac{x \left(8-x^2\right)}{(4-x^2)^{\frac32}}$}
 
         \part
             \begin{align*}
@@ -124,9 +110,7 @@
                 &= \dfrac1{4\sqrt{x(1+\sqrt x)}}
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \sqrt{1+\sqrt x} = \dfrac1{4\sqrt{x(1+\sqrt x)}}$
-            }
+            \boxt{$\der{}{x} \sqrt{1+\sqrt x} = \dfrac1{4\sqrt{x(1+\sqrt x)}}$}
 
         \part
             \begin{align*}
@@ -140,17 +124,13 @@
                 &= \dfrac{36x^2\left(x^3-1\right)^3}{\left(2x^3+1\right)^5}
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \left(\dfrac{x^3-1}{2x^3+1}\right)^4 = \dfrac{36x^2\left(x^3-1\right)^3}{\left(2x^3+1\right)^5}$
-            }
+            \boxt{$\der{}{x} \left(\dfrac{x^3-1}{2x^3+1}\right)^4 = \dfrac{36x^2\left(x^3-1\right)^3}{\left(2x^3+1\right)^5}$}
 
     \problem{}
         Using a graphing calculator, find the derivative of $\dfrac{e^{2x}}{x^2+1}$ when $x = 1.5$.
 
     \solution
-        \boxt{
-            $\left. \der{}{x} \dfrac{e^{2x}}{x^2+1}\right|_{x = 1.5} = 6.66$
-        }
+        \boxt{$\left. \der{}{x} \dfrac{e^{2x}}{x^2+1}\right|_{x = 1.5} = 6.66$}
 
     \problem{}
         Find the derivative with respect to $x$ of
@@ -170,9 +150,7 @@
                 &= -\dfrac{\pi}{180} \sin\left(\dfrac{\pi}{180} x\right)
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \cos x^\circ = -\dfrac{\pi}{180} \sin\left(\dfrac{\pi}{180} x\right)$
-            }
+            \boxt{$\der{}{x} \cos x^\circ = -\dfrac{\pi}{180} \sin\left(\dfrac{\pi}{180} x\right)$}
 
         \part
             \begin{align*}
@@ -180,9 +158,7 @@
                 &= 4x\csc\left(1-2x^2\right)
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \cot \left(1-2x^2\right) = 4x\csc\left(1-2x^2\right)$
-            }
+            \boxt{$\der{}{x} \cot \left(1-2x^2\right) = 4x\csc\left(1-2x^2\right)$}
 
         \part
             \begin{align*}
@@ -190,9 +166,7 @@
                 &= 15\tan^2(5x)\sec^2(5x)
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \tan^3 (5x) = 15\tan^2(5x)\sec^2(5x)$
-            }
+            \boxt{$\der{}{x} \tan^3 (5x) = 15\tan^2(5x)\sec^2(5x)$}
 
         \part
             \begin{align*}
@@ -203,9 +177,7 @@
                 &= \dfrac{\sec x (\tan x - 1)}{(1 + \tan x)^2}
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \dfrac{\sec x}{1 + \tan x} = \dfrac{\sec x (\tan x - 1)}{(1 + \tan x)^2}$
-            }
+            \boxt{$\der{}{x} \dfrac{\sec x}{1 + \tan x} = \dfrac{\sec x (\tan x - 1)}{(1 + \tan x)^2}$}
 
     \problem{}
         Find the derivative with respect to $x$ of
@@ -213,10 +185,10 @@
         \begin{enumerate}
             \item $y = e^{1 + \sin 3x}$
             \item $y = x^2 e^\frac1{x}$
-            \item $y = \ln \left( \dfrac{1-x}{\sqrt{1+x^2}}\right)$
-            \item $y = \dfrac{\ln (2x)}x$
+            \item $y = \ln{\dfrac{1-x}{\sqrt{1+x^2}}}$
+            \item $y = \dfrac{\ln{2x}}x$
             \item $y = \log_2 (3x^4 - e^x)$
-            \item $y = 3^{\ln (\sin x)}$
+            \item $y = 3^{\ln \sin x}$
             \item $y = a^{2\log_a x}$
             \item $y = \sqrt[3]{\dfrac{e^x (x+1)}{x^2 +1}}, \, x > 0$
         \end{enumerate}
@@ -230,9 +202,7 @@
                 &= 3 e^{1 + \sin 3x}\cos{3x} 
             \end{align*}
 
-            \boxt{
-                $\der{y}{x} = 3 e^{1 + \sin 3x}\cos{3x}$
-            }
+            \boxt{$\der{y}{x} = 3 e^{1 + \sin 3x}\cos{3x}$}
 
         \part
             \begin{align*}
@@ -244,15 +214,13 @@
                 &= e^{\frac1x}(2x-1)
             \end{align*}
 
-            \boxt{
-                $\der{y}{x} = e^{\frac1x}(2x-1)$
-            }
+            \boxt{$\der{y}{x} = e^{\frac1x}(2x-1)$}
 
         \part
             \begin{alignat*}{2}
-                &&y &= \ln \left( \dfrac{1-x}{\sqrt{1+x^2}}\right)\\
-                && &= \ln (1-x) - \ln(\sqrt{1+x^2})\\
-                && &= \ln (1-x) - \dfrac12 \ln (1+x^2)\\
+                &&y &= \ln{\dfrac{1-x}{\sqrt{1+x^2}}}\\
+                && &= \ln{1+x^2} - \ln{\sqrt{1+x^2}}\\
+                && &= \ln{1+x^2} - \dfrac12 \ln{1+x^2}\\
                 \implies&&\der{y}{x} &= \dfrac{1}{1-x} \cdot \der{}{x} (1-x) - \dfrac12 \left(\dfrac{1}{1+x^2} \cdot \der{}{x} (1+x^2)  \right)\\
                 && &= \dfrac{1}{1-x} \cdot -1 - \dfrac12 \left(\dfrac{1}{1+x^2} \cdot 2x  \right)\\
                 && &= \dfrac{1}{x-1} - \dfrac{x}{1+x^2}\\
@@ -261,22 +229,18 @@
                 && &= \dfrac{1+x}{(x-1)\left(1 +x^2\right)}
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{1+x}{(x-1)\left(1 +x^2\right)}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{1+x}{(x-1)\left(1 +x^2\right)}$}
 
         \part
             \begin{align*}
-                \der{y}{x} &= \der{}{x} \dfrac{\ln (2x)}x\\
-                &= \dfrac{x \cdot \der{}{x} \ln(2x) - \ln(2x) \cdot \der{}{x} x}{x^2}\\
-                &= \dfrac{x \cdot \dfrac1{2x} \cdot \der{}{x} 2x - \ln(2x)}{x^2}\\
-                &= \dfrac{x \cdot \dfrac1{2x} \cdot 2 - \ln(2x)}{x^2}\\
-                &= \dfrac{1- \ln(2x)}{x^2}
+                \der{y}{x} &= \der{}{x} \dfrac{\ln{2x})}x\\
+                &= \dfrac{x \cdot \der{}{x} \ln{2x} - \ln{2x} \cdot \der{}{x} x}{x^2}\\
+                &= \dfrac{x \cdot \dfrac1{2x} \cdot \der{}{x} 2x - \ln{2x}}{x^2}\\
+                &= \dfrac{x \cdot \dfrac1{2x} \cdot 2 - \ln{2x}}{x^2}\\
+                &= \dfrac{1- \ln{2x}}{x^2}
             \end{align*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{1-\ln(2x)}{x^2}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{1-\ln{2x}}{x^2}$}
 
         \part
             \begin{alignat*}{2}
@@ -289,25 +253,21 @@
                 && &= \dfrac{12x^3 - e^x}{(3x^4 - e^x) \ln 2}
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{12x^3 - e^x}{(3x^4 - e^x) \ln 2}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{12x^3 - e^x}{(3x^4 - e^x) \ln 2}$}
 
         \part
             \begin{alignat*}{2}
-                &&y &= 3^{\ln (\sin x)}\\
-                \implies&&\log_3 y &= \ln(\sin x)\\
-                \implies&& \dfrac{\ln y}{\ln 3} &= \ln(\sin x)\\
-                \implies&& \ln y &= \ln 3 \cdot\ln(\sin x)\\
+                &&y &= 3^{\ln \sin x}\\
+                \implies&&\log_3 y &= \ln \sin x\\
+                \implies&& \dfrac{\ln y}{\ln 3} &= \ln \sin x\\
+                \implies&& \ln y &= \ln 3 \cdot\ln \sin x\\
                 \implies&& \dfrac{1}{y} \cdot \der{y}{x} &= \ln 3 \cdot \dfrac{1}{\sin{x}} \cdot \der{}{x} \sin x\\
                 && &= \ln 3 \cdot \dfrac{1}{\sin{x}} \cdot \cos x\\
                 \implies&& \der{y}{x} &= \ln 3 \cdot \cot{x} \cdot y\\
-                && &= \ln 3 \cdot \cot{x} \cdot 3^{\ln (\sin x)}
+                && &= \ln 3 \cdot \cot{x} \cdot 3^{\ln \sin x}
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \ln 3 \cdot \cot{x} \cdot 3^{\ln (\sin x)}$
-            }
+            \boxt{$\der{y}{x} = \ln 3 \cdot \cot{x} \cdot 3^{\ln \sin x}$}
 
         \part
             \begin{alignat*}{2}
@@ -318,9 +278,7 @@
                 && &= 2x
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = 2x$
-            }
+            \boxt{$\der{y}{x} = 2x$}
             
         \part
             \begin{alignat*}{2}
@@ -340,9 +298,7 @@
                 && &= \dfrac{1}3 \cdot \sqrt[3]{\dfrac{e^x (x+1)}{x^2 +1}} \cdot \left( 1 + \dfrac{1}{x+1} - \dfrac{2x}{x^2 + 1} \right)
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{1}3 \cdot \sqrt[3]{\dfrac{e^x (x+1)}{x^2 +1}} \cdot \left( 1 + \dfrac{1}{x+1} - \dfrac{2x}{x^2 + 1} \right)$
-            }
+            \boxt{$\der{y}{x} = \dfrac{1}3 \cdot \sqrt[3]{\dfrac{e^x (x+1)}{x^2 +1}} \cdot \left( 1 + \dfrac{1}{x+1} - \dfrac{2x}{x^2 + 1} \right)$}
 
     \problem{}
         Find the derivative with respect to $x$ of
@@ -360,9 +316,7 @@
                 &= -\dfrac{1}{\sqrt{100 - x^2}}
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \arccos \dfrac{x}{10} = -\dfrac{1}{\sqrt{100 - x^2}}$
-            }
+            \boxt{$\der{}{x} \arccos \dfrac{x}{10} = -\dfrac{1}{\sqrt{100 - x^2}}$}
 
         \part
             \begin{align*}
@@ -371,18 +325,14 @@
                 &= \dfrac1{(1-x)^2+1}\\
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \arctan \dfrac1{1-x} = \dfrac1{(1-x)^2+1}$
-            }
+            \boxt{$\der{}{x} \arctan \dfrac1{1-x} = \dfrac1{(1-x)^2+1}$}
 
         \part
-            \begin{equation*}
+            \[
                 \der{}{x} \arcsin (\tan x) = \dfrac1{1-\tan^2 x} \cdot \sec^2x
-            \end{equation*}
+            \]
 
-            \boxt{
-                $\der{}{x} \arcsin (\tan x) = \dfrac{\sec^2x}{1-\tan^2 x}$
-            }
+            \boxt{$\der{}{x} \arcsin (\tan x) = \dfrac{\sec^2x}{1-\tan^2 x}$}
 
     \problem{}
         Find an expression for $\der{y}{x}$ in terms of $x$ and $y$.
@@ -405,9 +355,7 @@
                 \implies&& \der{y}{x} &= \dfrac{a + y-x}{y-x-a}
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{a + y-x}{y-x-a}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{a + y-x}{y-x-a}$}
 
         \part
             \begin{alignat*}{2}
@@ -419,9 +367,7 @@
                 \implies&&\der{y}{x} &= \dfrac{e^x \left(2e^{x}y + x + 1\right)}{2y - e^{2x}}
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{e^x \left(2e^{x}y + x + 1\right)}{2y - e^{2x}}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{e^x \left(2e^{x}y + x + 1\right)}{2y - e^{2x}}$}
 
         \part
             \begin{alignat*}{2}
@@ -434,9 +380,7 @@
                 && &= \dfrac{y^2}{x - xy\ln x}
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{y^2}{x - xy\ln x}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{y^2}{x - xy\ln x}$}
 
         \part
             \begin{alignat*}{2}
@@ -448,27 +392,23 @@
                 && &= \cot x \cot y
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \cot x \cot y$
-            }
+            \boxt{$\der{y}{x} = \cot x \cot y$}
 
     \problem{}
-        It is given that $x$ and $y$ satisfy the equation
-        
+        It is given that $x$ and $y$ satisfy the equation        
         \begin{equation}\label{P9}
             \arctan{x} + \arctan{y} + \arctan{xy} = \dfrac7{12} \pi
         \end{equation}
 
         \begin{enumerate}
             \item Find the exact value of $y$ when $x = 1$.
-            \item Express $\der{}{x} \arctan{(xy)}$ in terms of $x$, $y$ and $y^\prime$.
-            \item Show that, when $x = 1$, $y^\prime = -\dfrac13 - \dfrac1{2\sqrt3}$.
+            \item Express $\der{}{x} \arctan{(xy)}$ in terms of $x$, $y$ and $y'$.
+            \item Show that, when $x = 1$, $y' = -\dfrac13 - \dfrac1{2\sqrt3}$.
         \end{enumerate}
             
     \solution
         \part
             Substituting $x = 1$ into Equation~\ref{P9},
-
             \begin{alignat*}{2}
                 &&\arctan1 + \arctan{y} + \arctan{y} &= \dfrac{7}{12} \pi\\
                 \implies&&\dfrac14 \pi + 2\arctan{y} &= \dfrac{7}{12} \pi\\
@@ -476,34 +416,28 @@
                 \implies&& y &= \dfrac1{\sqrt3}
             \end{alignat*}
             
-            \boxt{
-                $y = \dfrac1{\sqrt3}$
-            }
+            \boxt{$y = \dfrac1{\sqrt3}$}
         
         \part
             \begin{align*}
                 \der{}{x} \arctan{(xy)} &= \dfrac1{1+(xy)^2} \cdot \der{}{x} (xy) \\
-                &= \dfrac1{1+(xy)^2} \cdot (xy^\prime + y)
+                &= \dfrac1{1+(xy)^2} \cdot (xy' + y)
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \arctan{(xy)} = \dfrac1{1+(xy)^2} \cdot (xy^\prime + y)$
-            }
+            \boxt{$\der{}{x} \arctan{(xy)} = \dfrac1{1+(xy)^2} \cdot (xy' + y)$}
 
         \part
             Differentiating Equation~\ref{P9} with respect to $x$,
-
-            \begin{equation*}
-                \dfrac{1}{1+x^2} + \dfrac{y^\prime}{1+y^2} + \dfrac1{1+(xy)^2} \cdot (xy^\prime + y) = 0
-            \end{equation*}
+            \[
+                \dfrac{1}{1+x^2} + \dfrac{y'}{1+y^2} + \dfrac1{1+(xy)^2} \cdot (xy' + y) = 0
+            \]
 
             Substituting $x=1$,
-
             \begin{alignat*}{2}
-                &&\dfrac12 + \dfrac34 y^\prime + \dfrac34 (y^\prime + y) &= 0\\
-                \implies&&y^\prime(\dfrac34 + \dfrac34) &= \dfrac34 \left(-\dfrac1{\sqrt3}\right) - \dfrac12\\
-                \implies&&\dfrac32 y^\prime &= \dfrac{-3-2\sqrt3}{4\sqrt3}\\
-                \implies&&y^\prime &= \dfrac23 \cdot \dfrac{-3-2\sqrt3}{4\sqrt3}\\
+                &&\dfrac12 + \dfrac34 y' + \dfrac34 (y' + y) &= 0\\
+                \implies&&y'(\dfrac34 + \dfrac34) &= \dfrac34 \left(-\dfrac1{\sqrt3}\right) - \dfrac12\\
+                \implies&&\dfrac32 y' &= \dfrac{-3-2\sqrt3}{4\sqrt3}\\
+                \implies&&y' &= \dfrac23 \cdot \dfrac{-3-2\sqrt3}{4\sqrt3}\\
                 && &= \dfrac{-1-\tfrac23 \sqrt3}{2\sqrt3}\\
                 && &= -\dfrac{1}{2\sqrt3} - \dfrac13
             \end{alignat*}
@@ -514,8 +448,8 @@
         \begin{enumerate}
             \item $x = \dfrac1{1+t^2}, \, y = \dfrac{t}{1+t^2}$
             \item $x = \dfrac12 (e^t - e^{-t}), \, y = \dfrac12 (e^t + e^{-t})$
-            \item $x = a\sec\theta, \, y = a\tan\theta$
-            \item $x = e^{3\theta}\cos{3\theta}, \, y = e^{3\theta}\sin{3\theta}$
+            \item $x = a\sec\t, \, y = a\tan\t$
+            \item $x = e^{3\t}\cos{3\t}, \, y = e^{3\t}\sin{3\t}$
         \end{enumerate}
 
     \solution
@@ -530,9 +464,7 @@
                 &= \dfrac{t^2-1}{2t}
             \end{align*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{t^2-1}{2t}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{t^2-1}{2t}$}
 
         \part
             \begin{align*}
@@ -542,66 +474,57 @@
                 &= \dfrac{e^t - e^{-t}}{e^t + e^{-t}}
             \end{align*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{e^t - e^{-t}}{e^t + e^{-t}}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{e^t - e^{-t}}{e^t + e^{-t}}$}
 
         \part
-            Recall that $\tan^2 \theta + 1 = \sec^2 \theta$. Hence, $y^2 + a^2 = x^2$. Implicitly differentiating, we have
+            Recall that $\tan^2 \t + 1 = \sec^2 \t$. Hence, $y^2 + a^2 = x^2$. Implicitly differentiating, we have
             \begin{alignat*}{2}
                 &&2y\cdot\der{y}{x} &= 2x\\
                 \implies&&\der{y}{x} &= \dfrac{x}{y}\\
-                && &= \dfrac{a\sec \theta}{a \tan \theta}\\
-                && &= \csc \theta
+                && &= \dfrac{a\sec \t}{a \tan \t}\\
+                && &= \csc \t
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \csc\theta$
-            }
+            \boxt{$\der{y}{x} = \csc\t$}
 
         \part
-            Recall that $\sin^2 \theta + \cos^2 \theta = 1$. Hence, $x^2 + y^2 = e^{6\theta}$. Implicitly differentiating, we have
+            Recall that $\sin^2 \t + \cos^2 \t = 1$. Hence, $x^2 + y^2 = e^{6\t}$. Implicitly differentiating, we have
             \begin{alignat}{2}
-                &&2x + 2y\der{y}{x} &= e^{6\theta} \cdot 6\der{\theta}{x}\nonumber\\
-                \implies&&x + y\der{y}{x} &= 3e^{6\theta}\cdot\der{\theta}{x}\label{P10D-1}
+                &&2x + 2y\der{y}{x} &= e^{6\t} \cdot 6\der{\t}{x}\nonumber\\
+                \implies&&x + y\der{y}{x} &= 3e^{6\t}\cdot\der{\t}{x}\label{P10D-1}
             \end{alignat}
 
-            Observe that $\dfrac{y}{x} = \tan{3\theta}$. Implicitly differentiating,
+            Observe that $\dfrac{y}{x} = \tan{3\t}$. Implicitly differentiating,
             \begin{alignat}{2}
-                &&\dfrac{x\der{y}{x} - y}{x^2} &= \sec^2{3\theta} \cdot 3\der{\theta}{x}\nonumber\\
-                \implies&&x\der{y}{x} - y &= 3 x^2 \sec^2{3\theta} \cdot \der{\theta}{x}\nonumber\\
-                && &= 3 (e^{3\theta}\cos{3\theta})^2 \cdot \dfrac1{\cos^2{3\theta}} \cdot \der{\theta}{x}\nonumber\\
-                && &= 3e^{6\theta}\cdot\der{\theta}{x}\label{P10D-2}
+                &&\dfrac{x\der{y}{x} - y}{x^2} &= \sec^2{3\t} \cdot 3\der{\t}{x}\nonumber\\
+                \implies&&x\der{y}{x} - y &= 3 x^2 \sec^2{3\t} \cdot \der{\t}{x}\nonumber\\
+                && &= 3 (e^{3\t}\cos{3\t})^2 \cdot \dfrac1{\cos^2{3\t}} \cdot \der{\t}{x}\nonumber\\
+                && &= 3e^{6\t}\cdot\der{\t}{x}\label{P10D-2}
             \end{alignat}
 
             Subtracting Equation~\ref{P10D-1} from Equation~\ref{P10D-2}, 
-
             \begin{alignat*}{2}
                 &&x\der{y}{x} - y \der{y}{x} - y - x &= 0\\
                 \implies&&(x-y)\der{y}{x} &= x+y\\
                 \implies&&\der{y}{x} &= \dfrac{x+y}{x-y}\\
-                && &= \dfrac{e^{3\theta}(\cos 3\theta + \sin 3\theta)}{e^{3\theta}(\cos 3\theta - \sin 3\theta)}\\
-                && &= \dfrac{\cos 3\theta + \sin 3\theta}{\cos 3\theta - \sin 3\theta}\\
-                && &= \dfrac{1 + \tan 3\theta}{1 - \tan 3\theta}\\
-                && &= \tan\left(3\theta + \dfrac{\pi}4\right)
+                && &= \dfrac{e^{3\t}(\cos 3\t + \sin 3\t)}{e^{3\t}(\cos 3\t - \sin 3\t)}\\
+                && &= \dfrac{\cos 3\t + \sin 3\t}{\cos 3\t - \sin 3\t}\\
+                && &= \dfrac{1 + \tan 3\t}{1 - \tan 3\t}\\
+                && &= \tan\left(3\t + \dfrac{\pi}4\right)
             \end{alignat*}
 
-            \boxt{
-                $\der{y}{x} = \tan\left(3\theta + \dfrac{\pi}4\right)$
-            }
+            \boxt{$\der{y}{x} = \tan\left(3\t + \dfrac{\pi}4\right)$}
 
     \problem{}
         A curve is defined by the parametric equation
-
-        \begin{equation*}
+        \[
             x = 120t - 4t^2, \, y = 60t - 6t^2
-        \end{equation*}
+        \]
 
         Find the value of $\der{y}{x}$ at each of the points where the curve cross the $x$-axis.
 
     \solution
         The curve crosses the $x$-axis when $y=0$.
-
         \begin{alignat*}{2}
             &&y &= 0\\
             \implies&&60t-6t^2 &= 0\\
@@ -610,7 +533,6 @@
         \end{alignat*}
 
         Hence, $t = 0$ or $t = 10$. Now, consider the derivative with respect to $x$ of the curve.
-
         \begin{align*}
             \der{y}{x} &= \der{y}{t} \cdot \der{t}{x}\\
             &= \der{y}{t} \cdot \left(\der{x}{t}\right)^{-1}\\
@@ -629,12 +551,10 @@
             &= -\dfrac32
         \end{align*}
 
-        \boxt{
-            $\der{y}{x} = \dfrac12 \lor -\dfrac32$ 
-        }
+        \boxt{$\der{y}{x} = \dfrac12 \lor -\dfrac32$}
 
     \problem{}
-        A curve has parametric equations $x = 2t-\ln (2t), \, y = t^2 - \ln t^2$, where $t > 0$. Find the value of $t$ at the point on the curve at which the gradient is 2.
+        A curve has parametric equations $x = 2t-\ln{2t}, \, y = t^2 - \ln t^2$, where $t > 0$. Find the value of $t$ at the point on the curve at which the gradient is 2.
 
     \solution
         \begin{align*}
@@ -656,16 +576,14 @@
 
         Hence, $t = 0$ or $t = 2$. Since $t > 0$, we reject $t = 0$. Thus, $t = 2$.
 
-        \boxt{
-            $t = 2$
-        }
+        \boxt{$t = 2$}
 
     \problem{}
-        If $y = \ln \left(\sin^3 2x\right)$, find $\der{y}{x}$ and prove that $3\derm{y}{x}{2} + \left(\der{y}{x}\right)^2 + 36 = 0$.
+        If $y = \ln{\sin^3 2x}$, find $\der{y}{x}$ and prove that $3\der[2]{y}{x} + \bp{\der{y}{x}}^2 + 36 = 0$.
 
     \solution
         \begin{alignat*}{2}
-            &&y &= \ln \left(\sin^3 2x\right)\\
+            &&y &= \ln{\sin^3 2x}\\
             \implies&&e^y &= \sin^3 2x\\
             \implies&&e^y \cdot \der{y}{x} &= 3\sin^2 2x \cdot \cos 2x \cdot 2\\
             && &= 6\sin^2 2x \cos 2x\\
@@ -675,23 +593,21 @@
             && &= 6 \cot 2x
         \end{alignat*}
         
-        \boxt{
-            $\der{y}{x} = 6\cot 2x$
-        }
+        \boxt{$\der{y}{x} = 6\cot 2x$}
 
         \begin{alignat*}{2}
             &&\der{y}{x} &= 6\cot 2x\\
-            \implies&&\derm{y}{x}{2} &= 6 \cdot -\csc^2 2x \cdot 2\\
+            \implies&&\der[2]{y}{x} &= 6 \cdot -\csc^2 2x \cdot 2\\
             && &= -12 \csc^2 2x\\
             && &= -12 \left(1 + \cot^2 2x\right)\\
             && &= -12 - 12\cot^2 2x\\
             && &= -12 - \dfrac13 \left(\der{y}{x}\right)^2\\
-            \implies&&3\derm{y}{x}2 &= -36 - \left(\der{y}{x}\right)^2\\
-            \implies&& 3\derm{y}{x}2 + \left(\der{y}{x}\right)^2 + 36 &= 0
+            \implies&&3\der[2]{y}{x} &= -36 - \left(\der{y}{x}\right)^2\\
+            \implies&& 3\der[2]{y}{x} + \left(\der{y}{x}\right)^2 + 36 &= 0
         \end{alignat*}
-        
+
     \problem{}
-        Given that $y = e^{\arcsin{2x}}$, show that $\left(1-4x^2\right)\derm{y}{x}2 - 4x\der{y}{x} = 4y$. Further differentiate this result to obtain a differential equation for $\derm{y}{x}3$.
+        Given that $y = e^{\arcsin{2x}}$, show that $\left(1-4x^2\right)\der[2]{y}{x} - 4x\der{y}{x} = 4y$. Differentiate this result further to obtain a differential equation for $\der[3]{y}{x}$.
 
     \solution
         \begin{alignat*}{2}
@@ -699,22 +615,20 @@
             \implies&& \ln y &= \arcsin{2x}\\
             \implies&& \dfrac1y \cdot \der{y}{x} &= \dfrac{1}{\sqrt{1 - (2x)^2}} \cdot 2\\
             \implies&& \der{y}{x} &= \dfrac{2y}{\sqrt{1 - 4x^2}}\\
-            \implies&& \derm{y}{x}2 &= \dfrac{\sqrt{1 - 4x^2} \cdot 2\der{y}{x} - 2y \cdot \dfrac{1}{2\sqrt{1-4x^2}} \cdot -8x}{1-4x^2}\\
-            \implies&& \left(1-4x^2\right)\derm{y}{x}2 &= 2\sqrt{1 - 4x^2} \der{y}{x} + 4x \dfrac{2y}{\sqrt{1-4x^2}}\\
+            \implies&& \der[2]{y}{x} &= \dfrac{\sqrt{1 - 4x^2} \cdot 2\der{y}{x} - 2y \cdot \dfrac{1}{2\sqrt{1-4x^2}} \cdot -8x}{1-4x^2}\\
+            \implies&& \left(1-4x^2\right)\der[2]{y}{x} &= 2\sqrt{1 - 4x^2} \der{y}{x} + 4x \dfrac{2y}{\sqrt{1-4x^2}}\\
             && &= 2\sqrt{1 - 4x^2} \cdot \dfrac{2y}{\sqrt{1 - 4x^2}} + 4x \der{y}{x} \\
             && &= 4y + 4x \der{y}{x} \\
-            \implies&& \left(1-4x^2\right)\derm{y}{x}2 -4x \der{y}{x} &= 4y \\
+            \implies&& \left(1-4x^2\right)\der[2]{y}{x} -4x \der{y}{x} &= 4y \\
         \end{alignat*}
 
         \begin{alignat*}{2}
-            && \left(1-4x^2\right)\derm{y}{x}2 -4x \der{y}{x} &= 4y\\
-            \implies&&\left(1 - 4x^2\right) \derm{y}{x}3 + \derm{y}{x}2 \cdot (-8x) - 4\left(x  \derm{y}{x}2 + \der{y}{x} \right) &= 4\der{y}{x}\\
-            \implies&&\left(1 - 4x^2\right) \derm{y}{x}3 -8x \derm{y}{x}2 - 4x  \derm{y}{x}2 - 4\der{y}{x} &= 4\der{y}{x}\\
-            \implies&&\left(1 - 4x^2\right) \derm{y}{x}3 -12x \derm{y}{x}2 - 8\der{y}{x} &= 0
+            && \left(1-4x^2\right)\der[2]{y}{x} -4x \der{y}{x} &= 4y\\
+            \implies&&\left(1 - 4x^2\right) \der[3]{y}{x} + \der[2]{y}{x} \cdot (-8x) - 4\left(x  \der[2]{y}{x} + \der{y}{x} \right) &= 4\der{y}{x}\\
+            \implies&&\left(1 - 4x^2\right) \der[3]{y}{x} -8x \der[2]{y}{x} - 4x  \der[2]{y}{x} - 4\der{y}{x} &= 4\der{y}{x}\\
+            \implies&&\left(1 - 4x^2\right) \der[3]{y}{x} -12x \der[2]{y}{x} - 8\der{y}{x} &= 0
         \end{alignat*}
 
-        \boxt{
-            $\left(1 - 4x^2\right) \derm{y}{x}3 -12x \derm{y}{x}2 - 8\der{y}{x} = 0$
-        }
+        \boxt{$\left(1 - 4x^2\right) \der[3]{y}{x} -12x \der[2]{y}{x} - 8\der{y}{x} = 0$}
 
 \end{document}

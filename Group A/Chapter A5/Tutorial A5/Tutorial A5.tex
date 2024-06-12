@@ -20,13 +20,10 @@
                 &= 3 \cdot 2^n
             \end{align*}
 
-            \boxt{
-                $u_n = 3\cdot 2^n$
-            }
+            \boxt{$u_n = 3\cdot 2^n$}
 
         \part
             Let $k$ be a constant such that $u_n + k = 3(u_{n-1} + k)$. Then $2k = 7 \implies k = \dfrac72$. Hence,
-
             \begin{alignat*}{2}
                 &&u_n + \dfrac72 &= 3\left(u_{n-1} + \dfrac72\right)\\
                 \implies&&u_n + \dfrac72 &= 3^n \left(u_0 + \dfrac72\right)\\
@@ -34,9 +31,7 @@
                 && &= \dfrac{17}2 \cdot3^n  - \dfrac72
             \end{alignat*}
 
-            \boxt{
-                $u_n = \dfrac{17}2 \cdot3^n  - \dfrac72$
-            }
+            \boxt{$u_n = \dfrac{17}2 \cdot3^n  - \dfrac72$}
 
     \problem{}
         Solve these recurrence relations together with the initial conditions.
@@ -52,27 +47,23 @@
     \solution
         \part
             Consider the characteristic equation of $u_n$.
-
             \begin{alignat*}{2}
                 &&x^2-5x+6&=0\\
                 \implies&&(x-2)(x-3) &= 0
             \end{alignat*}
 
             Hence, 2 and 3 are the roots of the characteristic equation. Thus,
-
             \begin{equation*}
                 u_n = A\cdot2^n + B\cdot3^n
             \end{equation*}
 
-            Since $u_0 = 1$,
-            
+            Since $u_0 = 1$,            
             \begin{alignat}{2}
                 &&A\cdot2^0 + B\cdot3^0 &= 1\nonumber\\
                 \implies&&A + B &= 1\label{P2-A-1}
             \end{alignat}
 
             Since $u_1 = 0$,
-
             \begin{alignat}{2}
                 &&A \cdot 2^1 + B\cdot3^1 &= 0\nonumber\\
                 \implies&& 2A + 3B &= 0\label{P2-A-2}
@@ -80,33 +71,27 @@
 
             Solving Equations~\ref{P2-A-1} and~\ref{P2-A-2} simultaneously, we have $A = 3$ and $B = -2$. Thus,
 
-            \boxt{
-                $u_n = 3 \cdot 2^n + 2 \cdot 3 ^n$
-            }
+            \boxt{$u_n = 3 \cdot 2^n + 2 \cdot 3 ^n$}
 
         \part
             Consider the characteristic equation of $u_n$.
-
             \begin{alignat*}{2}
                 &&x^2 - 4 &= 0\\
                 \implies&&(x+2)(x-2) &= 0
             \end{alignat*}
 
             Hence, $-2$ and 2 are the roots of the characteristic equation. Thus,
-
             \begin{equation*}
                 u_n = A\cdot (-2)^n + B\cdot2^n
             \end{equation*}
 
             Since $u_0 = 0$,
-
             \begin{alignat}{2}
                 &&A \cdot (-2)^0 + B \cdot 2^0 &= 0\nonumber\\
                 \implies&&A + B &= 0\label{P2-B-1}
             \end{alignat}
 
             Since $u_1 = 4$,
-
             \begin{alignat}{2}
                 &&A \cdot (-2)^1 + B \cdot 2^1 &= 4\nonumber\\
                 \implies&&-2A + 2B &= 4\label{P2-B-2}
@@ -114,33 +99,27 @@
 
             Solving Equations~\ref{P2-B-1} and~\ref{P2-B-2} simultaneously, we have $A = -1$ and $B = 1$. Thus,
 
-            \boxt{
-                $u_n = -(-2)^n + 2^n$
-            }
+            \boxt{$u_n = -(-2)^n + 2^n$}
 
         \part
             Consider the characteristic equation of $u_n$.
-
             \begin{alignat*}{2}
                 &&x^2 - 4x + 4 &= 0\\
                 \implies&&(x-2)^2 &= 0
             \end{alignat*}
 
             Hence, 2 is the only root of the characteristic equation. Thus,
-
             \begin{equation*}
                 u_n = (A + Bn)2^n
             \end{equation*}
 
             Since $u_0 = 6$,
-
             \begin{alignat*}{2}
                 &&(A + B\cdot0)2^0 &= 6\\
                 \implies&&A &= 6
             \end{alignat*}
 
             Since $u_1 = 8$,
-
             \begin{alignat*}{2}
                 &&(A + B \cdot 1)2^1 &= 8\\
                 \implies&&A+B &= 4\\
@@ -149,33 +128,27 @@
 
             Since $A = 6$ and $B = -2$, we have
 
-            \boxt{
-                $u_n = (6 - 2n)2^n$
-            }
+            \boxt{$u_n = (6 - 2n)2^n$}
 
         \part
             Consider the characteristic equation of $u_n$.
-
             \begin{alignat*}{2}
                 &&x^2 + 6x + 9 &= 0\\
                 \implies&&(x+3)^2 &= 0
             \end{alignat*}
 
             Hence, $-3$ is the only root of the characteristic equation. Thus,
-
-            \begin{equation*}
+            \[
                 u_n = (A + Bn)(-3)^n
-            \end{equation*}
+            \]
 
             Since $u_0 = 3$,
-
             \begin{alignat*}{2}
                 &&(A + B\cdot0)2^0 &= 3\\
                 \implies&&A &= 3
             \end{alignat*}
 
             Since $u_1 = -3$,
-
             \begin{alignat*}{2}
                 &&(A + B \cdot 1)2^1 &= -3\\
                 \implies&&A+B &= 1\\
@@ -184,13 +157,10 @@
 
             Since $A = 3$ and $B = -2$, we have
 
-            \boxt{
-                $u_n = (3 - 2n)2^n$
-            }
+            \boxt{$u_n = (3 - 2n)2^n$}
 
         \part
-            Consider the characteristic equation of $u_n$, $x^2 - 2x + 2 = 0$. Solving the characteristic equaiton using the quadratic formula,
-
+            Consider the characteristic equation of $u_n$, $x^2 - 2x + 2 = 0$. Solving the characteristic equation using the quadratic formula,
             \begin{align*}
                 x &= \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4\cdot1\cdot2}}{2\cdot1}\\
                 &= \dfrac{2 \pm \sqrt{-4}}{2}\\
@@ -200,13 +170,11 @@
             \end{align*}
 
             Hence,
-
-            \begin{equation*}
+            \[
                 u_n = A \cdot \sqrt{2}^n \cos \left(\dfrac{\pi}4 n \right) + B \cdot \sqrt{2}^n \sin \left(\dfrac{\pi}4 n\right)
-            \end{equation*}
+            \]
 
-            Since $u_0 = 2$,
-            
+            Since $u_0 = 2$,            
             \begin{alignat*}{2}
                 && A \cdot \sqrt{2}^0 \cos \left(\dfrac{\pi}4 \cdot 0 \right) + B \cdot \sqrt{2}^0 \sin \left(\dfrac{\pi}4 \cdot 0\right) &= 2\\
                 \implies&& A \cdot 1 \cdot 1 + B \cdot 1 \cdot 0 &= 2\\
@@ -214,7 +182,6 @@
             \end{alignat*}
 
             Since $u_1 = 6$,
-
             \begin{alignat*}{2}
                 && A \cdot \sqrt{2}^1 \cos \left(\dfrac{\pi}4 \cdot 1 \right) + B \cdot \sqrt{2}^1 \sin \left(\dfrac{\pi}4 \cdot 1\right) &= 6\\
                 \implies&& A \cdot \sqrt{2} \cdot \dfrac{1}{\sqrt2} + B \cdot \sqrt{2} \cdot \dfrac{1}{\sqrt2} &= 6\\
@@ -223,7 +190,6 @@
             \end{alignat*}
 
             Since $A = 2$ and $B = 4$,
-
             \begin{align*}
                 u_n &= 2 \cdot \sqrt{2}^n \cos \left(\dfrac{\pi}4 n \right) + 4 \cdot \sqrt{2}^n \sin \left(\dfrac{\pi}4 n\right)\\
                 &= \sqrt{2}^{n+2} \cos \left(\dfrac{\pi}4 n \right) + \sqrt{2}^{n+4} \sin \left(\dfrac{\pi}4 n\right)
@@ -231,10 +197,10 @@
 
     \problem{}
         \begin{enumerate}
-            \item A sequence is defined by the formula $b_n = \dfrac{n!n!}{(2n)!}\cdot2^n$, where $n \in \mathbb{Z}^+$. Show that the sequence satisfies the recurrence relation $b_{n+1} = \dfrac{n+1}{2n+1} b_n$.
+            \item A sequence is defined by the formula $b_n = \dfrac{n!n!}{(2n)!}\cdot2^n$, where $n \in \Z^+$. Show that the sequence satisfies the recurrence relation $b_{n+1} = \dfrac{n+1}{2n+1} b_n$.
             \item A sequence is defined recursively by the formula
             \begin{equation*}
-                u_{n+1} = 2u_n + 3, \qquad n \in \mathbb{Z}_0^+, \, u_0 = a
+                u_{n+1} = 2u_n + 3, \qquad n \in \Z_0^+, \, u_0 = a
             \end{equation*}
             Show that $u_n = 2^na+3\left(2^n - 1\right)$.
         \end{enumerate}
@@ -253,7 +219,6 @@
 
         \part
             Let $k$ be a constant such that $u_{n+1} + k = 2(u_n + k)$. Then $k = 3$. Hence,
-
             \begin{alignat*}{2}
                 &&u_{n+1} + 3 &= 2(u_n + 3)\\
                 \implies&&u_n +3 &= 2^n(u_0 + 3)\\
@@ -274,13 +239,10 @@
 
     \solution
         \part
-            \boxt{
-                $x_{n+1} = 0.9x_n + 90$, $n \in \mathbb{N}$
-            }
+            \boxt{$x_{n+1} = 0.9x_n + 90$, $n \in \N$}
 
         \part
             Let $k$ be a constant such that $x_{n+1} + k = 0.9(x_n + k)$. Then $-\dfrac1{10}k = 90 \implies k = -900$. Hence,
-
             \begin{alignat*}{2}
                 &&x_{n+1} - 900 &= 0.9(x_n - 900)\\
                 \implies&&x_n - 900 &= 0.9^n (x_0 - 900)\\
@@ -294,15 +256,13 @@
                 &= 900
             \end{align*}
 
-            \boxt{
-                When $n$ becomes very large, the amount of water in the tank converges to 900 litres.
-            }
+            \boxt{When $n$ becomes very large, the amount of water in the tank converges to 900 litres.}
 
     \problem{}
         A deposit of \$100,000 is made to an investment fund at the beginning of a year. On the last day of each year, two dividends are awarded and reinvested into the fund. The first dividend is 20\% of the amount in the account during that year. The second dividend is 45\% of the amount in the account in the previous year.
 
         \begin{enumerate}
-            \item Find a recurrence relation $\{P_n\}$ where $P_n$ is the amount at the start of the $n$th year if no money is ever withdrawn.
+            \item Find a recurrence relation $\bc{P_n}$ where $P_n$ is the amount at the start of the $n$th year if no money is ever withdrawn.
             \item How much is in the account after $n$ years if no money is ever withdrawn?
         \end{enumerate}
 
@@ -313,13 +273,10 @@
                 &= 1.2 P_{n+1} + 0.45 P_n
             \end{align*}
             
-            \boxt{
-                $P_{n+2} = 1.2 P_{n+1} + 0.45 P_n$
-            }
+            \boxt{$P_{n+2} = 1.2 P_{n+1} + 0.45 P_n$}
 
         \part
             Consider the characteristic equation of $P_n$.
-
             \begin{alignat*}{2}
                 &&x^2 - 1.2x - 0.45 &= 0\\
                 \implies&&20x^2-24x-9 &= 0\\
@@ -327,58 +284,48 @@
             \end{alignat*}
 
             Hence, $-\dfrac3{10}$ and $\dfrac32$ are the roots of the characteristic equation. Thus,
-
-            \begin{equation*}
+            \[
                 P_n = A  \left(-\dfrac3{10}\right)^n + B \left(\dfrac32\right)^n
-            \end{equation*}
+            \]
 
             Since $P_0 = 0$,
-
             \begin{alignat}{2}
                 &&A  \left(-\dfrac3{10}\right)^0 + B \left(\dfrac32\right)^0 &= 0\nonumber\\
                 \implies&&A + B &= 0\label{P5-1}
             \end{alignat}
 
             Since $P_1 = 100000$,
-
             \begin{alignat}{2}
                 &&A  \left(-\dfrac3{10}\right)^1 + B \left(\dfrac32\right)^1 &= 100000\nonumber\\
                 \implies&&-3A + 15B &= 1000000\label{P5-2}
             \end{alignat}
 
             Solving Equation~\ref{P5-1} and~\ref{P5-2} simultaneously, we have $A = -\dfrac{500000}9$ and $B = \dfrac{500000}9$. Thus,
-
-            \begin{equation*}
+            \[
                 P_n = \dfrac{500000}9 \left(\left(\dfrac32\right)^n - \left(-\dfrac3{10}\right)^n\right)
-            \end{equation*}
+            \]
 
-            \boxt{
-                There will be \$$\left(\dfrac{500000}9 \left(\left(\dfrac32\right)^n - \left(-\dfrac3{10}\right)^n\right)\right)$ in the account after $n$ years.
-            }
+            \boxt{There will be \$$\left(\dfrac{500000}9 \left(\left(\dfrac32\right)^n - \left(-\dfrac3{10}\right)^n\right)\right)$ in the account after $n$ years.}
 
     \problem{}
         A pair of rabbits does not breed until they are two months old. After they are two months old, each pair of rabbit produces another pair each month.
 
         \begin{enumerate}
-            \item Find a recurrence relation $\{f_n\}$ where $f_n$ is the total number of pairs of rabbits, assuming that no rabbits ever die.
+            \item Find a recurrence relation $\bc{f_n}$ where $f_n$ is the total number of pairs of rabbits, assuming that no rabbits ever die.
             \item What is the number of pairs of rabbits at the end of the $n$th month, assuming that no rabbits ever die?
         \end{enumerate}
 
     \solution
         \part
-            \boxt{
-                $f_{n+2} = f_{n+1} + f_n$, $n \geq 2$, $f_1 = 1, f_2 = 1$
-            }
+            \boxt{$f_{n+2} = f_{n+1} + f_n$, $n \geq 2$, $f_1 = 1, f_2 = 1$}
 
         \part
             Consider the characteristic equation of $f_n$, $x^2 - x - 1 = 0$. Using the quadratic formula, the roots of the characteristic equation are $\dfrac{1 + \sqrt5}{2}$ and $\dfrac{1 - \sqrt5}{2}$.
-
-            \begin{equation*}
+            \[
                 f_n = A \left(\dfrac{1 + \sqrt5}{2}\right)^n + B \left(\dfrac{1 - \sqrt5}{2}\right)^n
-            \end{equation*}
+            \]
 
             Since $f_1 = 1$,
-
             \begin{alignat}{2}
                 &&A \left(\dfrac{1 + \sqrt5}{2}\right)^1 + B  \left(\dfrac{1 - \sqrt5}{2}\right)^1 &= 1\nonumber\\
                 \implies&&A (1 + \sqrt5) + B (1 - \sqrt5) &= 2\nonumber\\
@@ -386,13 +333,11 @@
             \end{alignat}
 
             Since $f_2 = 1$,
-
-            \begin{equation*}
+            \[
                 A \left(\dfrac{1 + \sqrt5}{2}\right)^2 + B \left(\dfrac{1 - \sqrt5}{2}\right)^2 = 1
-            \end{equation*}
+            \]
 
             Since $\dfrac{1 + \sqrt5}{2}$ and $\dfrac{1 - \sqrt5}{2}$ are both roots of $x^2 - x - 1 = 0$, they both satisfy the equation $x^2 = x + 1$. Hence,
-
             \begin{alignat}{2}
                 && A \left(\dfrac{1 + \sqrt5}{2} + 1\right) + B \left(\dfrac{1 - \sqrt5}{2} + 1\right) &= 1\nonumber\\
                 \implies&& A (1 + \sqrt5 + 2) + B (1 - \sqrt5 + 2) &= 2\nonumber\\
@@ -400,44 +345,37 @@
             \end{alignat}
 
             From Equations~\ref{P6-1} and~\ref{P6-2}, we see that $A + B = 0 \implies A = -B$, and $\sqrt5 (A - B) = 2 \implies A = \dfrac2{\sqrt5} + B$. Thus, $-B = \dfrac2{\sqrt5} + B \implies B = -\dfrac1{\sqrt5} \implies A = \dfrac1{\sqrt5}$. Hence,
-
-            \begin{equation*}
+            \[
                 f_n = \dfrac1{\sqrt5} \left(\dfrac{1 + \sqrt5}{2}\right)^n - \dfrac1{\sqrt5} \left(\dfrac{1 - \sqrt5}{2}\right)^n
-            \end{equation*}
+            \]
 
-            \boxt{
-                After $n$ months, there will be $\left(\dfrac1{\sqrt5} \left(\dfrac{1 + \sqrt5}{2}\right)^n - \dfrac1{\sqrt5} \left(\dfrac{1 - \sqrt5}{2}\right)^n \right)$ pairs of rabbits.
-            }
+            \boxt{After $n$ months, there will be $\left(\dfrac1{\sqrt5} \left(\dfrac{1 + \sqrt5}{2}\right)^n - \dfrac1{\sqrt5} \left(\dfrac{1 - \sqrt5}{2}\right)^n \right)$ pairs of rabbits.}
 
     \problem{}
-        For $n \in \{2^j \colon j \in \mathbb{Z}, j \geq 1\}$, it is given that $T_n = 3T_{\tfrac{n}2} + 17$, where $T_1 = 4$. By considering the substitution $n = 2^i$ and another suitable substitution, show that the recurrence relation can be expressed in the form
-
-        \begin{equation*}
-            t_i = 3t_{i-1} + 17, \qquad i \in \mathbb{Z}^+
-        \end{equation*}
-
-        \noindent Hence, find an expression for $T_n$ in terms of $n$.
+        For $n \in \bc{2^j \colon j \in \Z, j \geq 1}$, it is given that $T_n = 3T_{\tfrac{n}2} + 17$, where $T_1 = 4$. By considering the substitution $n = 2^i$ and another suitable substitution, show that the recurrence relation can be expressed in the form
+        \[
+            t_i = 3t_{i-1} + 17, \qquad i \in \Z^+
+        \]
+        
+        Hence, find an expression for $T_n$ in terms of $n$.
 
     \solution
-        \begin{equation*}
+        \[
             T_n = 3T_{\tfrac{n}2} + 17, \qquad T_1 = 4
-        \end{equation*}
+        \]
 
         Let $n = 2^i \iff i = \log_2{n}$.
-
         \begin{alignat*}{2}
             &&T_{2^i} &= 3T_{\tfrac{2^i}2} + 17, \qquad T_{2^0} = 4\\
             \implies&&T_{2^i} &= 3T_{2^{i-1}} + 17, \qquad T_{2^0} = 4
         \end{alignat*}
 
         Let $t_i = T_{2^i}$.
-
-        \begin{equation*}
+        \[
             t_i = 3t_{i-1} + 17, \qquad t_0 = 4
-        \end{equation*}
+        \]
 
         Let $k$ be a constant such that $t_i + k = 3(t_{i-1} + k)$. Then $2k = 17 \implies k = \dfrac{17}2$. Hence,
-
         \begin{alignat*}{2}
             &&t_i + \dfrac{17}2 &= 3\left(t_{i-1} + \dfrac{17}2\right)\\
             \implies&&t_i + \dfrac{17}2 &= 3^i \left(t_0 + \dfrac{17}2\right)\\
@@ -448,20 +386,17 @@
             \implies&&T_n &= \dfrac{25}2 \cdot 3^{\log_2{n}} - \dfrac{17}2
         \end{alignat*}
 
-        \boxt{
-            $T_n = \dfrac{25}2 \cdot 3^{\log_2{n}} - \dfrac{17}2$
-        }       
+        \boxt{$T_n = \dfrac{25}2 \cdot 3^{\log_2{n}} - \dfrac{17}2$}       
 
     \problem{}
-        Consider the sequence $\{a_n\}$ given by the recurrence relation
-
-        \begin{equation*}
+        Consider the sequence $\bc{a_n}$ given by the recurrence relation
+        \[
             a_{n+1} = 2a_n + 5^n, \qquad n \geq 1
-        \end{equation*}
+        \]
 
         \begin{enumerate}
             \item Given that $a_n = k\left(5^n\right)$ satisfies the recurrent relation, find the value of the constant $k$.
-            \item Hence, by considering the sequence $\{b_n\}$ where $b_n = a_n - k(5^n)$, find the particular solution to the recurrence relation for which $a_1 = 2$.
+            \item Hence, by considering the sequence $\bc{b_n}$ where $b_n = a_n - k(5^n)$, find the particular solution to the recurrence relation for which $a_1 = 2$.
         \end{enumerate}
 
     \solution
@@ -475,9 +410,7 @@
                 \implies&&k &= \dfrac13
             \end{alignat*}
 
-            \boxt{
-                $k = \dfrac13$
-            }
+            \boxt{$k = \dfrac13$}
 
         \part
             \begin{align*}
@@ -500,18 +433,15 @@
                 && &= \dfrac16 \left(2^n + 2 \cdot 5^n \right)
             \end{alignat*}
 
-            \boxt{
-                $a_n = \dfrac16 \left(2^n + 2 \cdot 5^n \right)$
-            }
+            \boxt{$a_n = \dfrac16 \left(2^n + 2 \cdot 5^n \right)$}
 
     \problem{}
-        The sequence $\{X_n\}$ is given by
-
-        \begin{equation*}
+        The sequence $\bc{X_n}$ is given by
+        \[
             \sqrt{X_{n+2}} = \dfrac{X_{n+1}}{X_n^2}, \qquad n \geq 1
-        \end{equation*}
+        \]
 
-        \noindent By applying the natural logarithm to the recurrence relation, use a suitable substitution to find the general solution of the sequence, expressing your answer in trigonometric form.
+         By applying the natural logarithm to the recurrence relation, use a suitable substitution to find the general solution of the sequence, expressing your answer in trigonometric form.
 
     \solution
         \begin{alignat*}{2}
@@ -522,13 +452,11 @@
         \end{alignat*}
 
         Let $L_n = \ln X_n \iff X_n = \exp{L_n}$. Then,
-
-        \begin{equation*}
+        \[
             L_{n+2} = 2L_{n+1} - 4L_n
-        \end{equation*}
+        \]
 
         Consider the characteristic equation of $L_n$, $x^2 - 2x + 4 = 0$. Using the quadratic formula,
-
         \begin{align*}
             x &= \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4\cdot1\cdot4}}{2\cdot1}\\
             &= \dfrac{2 \pm \sqrt{4 \cdot -3}}{2}\\
@@ -538,25 +466,21 @@
         \end{align*}
 
         Thus, we can express $L_n$ as
-
         \begin{align*}
             L_n &= A \cdot 2^n \cos \left(\dfrac{\pi}3 n\right) + B \cdot 2^n \sin \left(\dfrac{\pi}3 n\right)\\
             &= 2^n \left(A \cos \left(\dfrac{\pi}3 n\right) + B \sin \left(\dfrac{\pi}3 n\right)\right)
         \end{align*}
 
         Thus,
+        \boxt{$X_n = \exp{2^n \left(A \cos \left(\dfrac{\pi}3 n\right) + B \sin \left(\dfrac{\pi}3 n\right)\right)}$}
 
-        \boxt{
-            $X_n = \exp \left( 2^n \left(A \cos \left(\dfrac{\pi}3 n\right) + B \sin \left(\dfrac{\pi}3 n\right)\right)\right)$
-        }
     \problem{}
-        The sequence $\{X_n\}$ is given by $X_1 = 2$, $X_2 = 15$ and
-
-        \begin{equation*}
+        The sequence $\bc{X_n}$ is given by $X_1 = 2$, $X_2 = 15$ and
+        \[
             X_{n+2} = 5\left(1 + \dfrac1{n+2}\right)X_{n+1} - 6\left(1 + \dfrac2{n+1}\right)X_n, \qquad n \geq 1
-        \end{equation*}
+        \]
 
-        \noindent By dividing the recurrence relation throughout by $n+3$, use a suitable substitution to determine $X_n$ as a function of $n$.
+         By dividing the recurrence relation throughout by $n+3$, use a suitable substitution to determine $X_n$ as a function of $n$.
 
     \solution
         \begin{alignat*}{2}
@@ -566,17 +490,15 @@
         \end{alignat*}
 
         Note that $\dfrac1{(n+2)(n+3)} = \dfrac1{n+2} - \dfrac1{n+3}$ and $\dfrac{2}{(n+1)(n+3)} = \dfrac1{n+1} - \dfrac1{n+3}$. Thus,
-
         \begin{alignat*}{2}
             &&\dfrac1{n+3}X_{n+2} &= 5\left(\dfrac1{n+3} + \dfrac1{n+2} - \dfrac1{n+3}\right)X_{n+1} - 6\left(\dfrac1{n+3} + \dfrac1{n+1} - \dfrac1{n+3}\right)X_n\\
             \implies&& &= 5\cdot \dfrac1{n+2} \cdot X_{n+1} - 6\cdot \dfrac1{n+1} \cdot X_n
         \end{alignat*}
 
         Let $Y_n = \dfrac{n + 1}X_n \iff X_n = (n+1)Y_n$. Then,
-
-        \begin{equation*}
+        \[
             Y_{n+2} = 5 Y_{n+1} - 6Y_n
-        \end{equation*}
+        \]
 
         Consider the characteristic equation of $Y_n$.
         \begin{alignat*}{2}
@@ -604,9 +526,7 @@
 
         Solving Equations~\ref{P10-1} and~\ref{P10-2} simultaneously, we have $A = -1$ and $B = 1$. Thus,
 
-        \boxt{
-            $X_n = (n+1)\left(3^n - 2^n\right)$
-        }
+        \boxt{$X_n = (n+1)\left(3^n - 2^n\right)$}
 
     \problem{}
         A logistics company set up an online platform providing delivery services to users on a monthly paid subscription basis. The company's sales manager models the number of subscribers that the company has at the end of each month. She notes that approximately 10\% of the existing subscribers leave each month, and that there will be a constant number $k$ of new subscribers in each subsequent month after the first.
@@ -617,7 +537,7 @@
             \item Express $T_{n+1}$ in terms of $T_n$.
         \end{enumerate}
 
-        \noindent The company has 250 subscribers at the end of the first month.
+        The company has 250 subscribers at the end of the first month.
 
         \begin{enumerate}
             \setcounter{enumi}{1}
@@ -625,25 +545,22 @@
             \item Find the least number of subscribers the company needs to attract in each subsequent month after the first if it aims to have at least 350 subscribers by the end of the 12th month.
         \end{enumerate}
 
-        \noindent Let $k = 50$ for the rest of the question.
+        Let $k = 50$ for the rest of the question.
 
-        The monthly running cost of the company is assumed to be fixed at \$4,000. The monthly subscription fee is \$10 per user which is charged at the end of the each month.
+        The monthly running cost of the company is assumed to be fixed at \$4,000. The monthly subscription fee is \$10 per user which is charged at the end of each month.
 
         \begin{enumerate}
             \setcounter{enumi}{3}
             \item Given that the $m$th month is the first month in which the company's revenue up to and including that month is able to cover its cost up to and including that month, find the value of $m$.
-            \item Using your answer to part (b), determine the long-term behaviour of the number of subscribers that the company has. Hence explain whether this behaviour is appropriate in terms of long-term prospects for the company's success.    
+            \item Using your answer to part (b), determine the long-term behaviour of the number of subscribers that the company has. Hence, explain whether this behaviour is appropriate in terms of long-term prospects for the company's success.    
         \end{enumerate}
 
     \solution
         \part
-            \boxt{
-                $T_{n+1} = 0.9T_n + k$
-            }
+            \boxt{$T_{n+1} = 0.9T_n + k$}
 
         \part
             Let $m$ be a constant such that $T_{n+1} + m = 0.9\left(T_n + m\right)$. Then $-0.1m = k \implies m = -10k$. Hence,
-
             \begin{alignat*}{2}
                 &&T_{n+1} - 10k &= 0.9\left(T_n - 10k\right)\\
                 \implies&&T_{n} - 10k &= 0.9^{n-1} \left(T_0 - 10k\right)\\
@@ -651,9 +568,7 @@
                 \implies&&T_n &= 0.9^{n-1} \left(250 - 10k\right) + 10k
             \end{alignat*}
 
-            \boxt{
-                $T_n = 0.9^{n-1} \left(250 - 10k\right) + 10k$
-            }
+            \boxt{$T_n = 0.9^{n-1} \left(250 - 10k\right) + 10k$}
 
         \part
             \begin{alignat*}{2}
@@ -666,11 +581,9 @@
                 && &= 39.6 \tosf{3}
             \end{alignat*}
 
-            Since $k \in \mathbb{N}$, the least value of $k$ is 40.
+            Since $k \in \N$, the least value of $k$ is 40.
 
-            \boxt{
-                The company needs to attract at least 40 subscribers in each subsequent month.
-            }
+            \boxt{The company needs to attract at least 40 subscribers in each subsequent month.}
 
         \part
             Since $k = 50$,
@@ -699,11 +612,9 @@
                 \implies&&m &\geq 22.7 \tosf{3}
             \end{alignat*}
 
-            Since $m \in \mathbb{N}$, the least value of $m$ is 23.
+            Since $m \in \N$, the least value of $m$ is 23.
 
-            \boxt{
-                $m = 23$
-            }
+            \boxt{$m = 23$}
 
         \part
             \begin{align*}
@@ -715,7 +626,5 @@
 
             As $n$ becomes very large, the profit per month is $500 \cdot 10 - 4000 = 1000$ dollars.
 
-            \boxt{
-                This behaviour is appropriate.
-            }
+            \boxt{This behaviour is appropriate.}
 \end{document}

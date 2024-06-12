@@ -10,7 +10,7 @@
 
         \begin{enumerate}
             \item $y = \sqrt{9-x^2}, \, -3 \leq x \leq 3$
-            \item $x = (y-4)^2, \, y \in \mathbb{R}$
+            \item $x = (y-4)^2, \, y \in \R$
         \end{enumerate}
 
     \solution
@@ -46,9 +46,7 @@
 
             $y = \sqrt{9-x^2}$ passes the vertical line test for $-3 \leq x \leq 3$ and is hence a function.
 
-            \boxt{
-                $y = \sqrt{9-x^2}, \, -3 \leq x \leq 3$ is a function.
-            }
+            \boxt{$y = \sqrt{9-x^2}, \, -3 \leq x \leq 3$ is a function.}
 
         \part
             \begin{center}
@@ -80,11 +78,9 @@
                 \end{tikzpicture}
             \end{center}
 
-            $x = (y-4)^2$ does not pass the vertical line test for $y \in \mathbb{R}$ and is hence not a function.
+            $x = (y-4)^2$ does not pass the vertical line test for $y \in \R$ and is hence not a function.
 
-            \boxt{
-                $x = (y-4)^2, \, y \in \mathbb{R}$ is not a function.
-            }
+            \boxt{$x = (y-4)^2, \, y \in \R$ is not a function.}
 
     \problem{}
         Sketch the graph and find the range for each the following functions.
@@ -133,9 +129,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{
-                $\ran{g} = [-2, 7)$
-            }
+            \boxt{$\ran{g} = [-2, 7)$}
 
         \part
             \begin{center}
@@ -167,15 +161,13 @@
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{
-                $\ran{h} = [\, 0, \infty)$ 
-            }
+            \boxt{$\ran{h} = [ 0, \infty)$ }
 
     \problem{}
         For each of the following functions, sketch its graph and determine if the function is one-one. If it is, find its inverse in a similar form.
 
         \begin{enumerate}
-            \item $g \colon x \mapsto \abs{x} - 2, \, x \in \mathbb{R}$
+            \item $g \colon x \mapsto \abs{x} - 2, \, x \in \R$
             \item $h \colon x \mapsto x^2 + 2x + 5, \, x \leq -2$
         \end{enumerate}
 
@@ -209,9 +201,7 @@
 
             $y=g(x)$ does not pass the horizontal line test. Hence, $g$ is not one-one.
 
-            \boxt{
-                $g$ is not one-one.
-            }
+            \boxt{$g$ is not one-one.}
 
         \part
             \begin{center}
@@ -245,9 +235,7 @@
 
             $y=h(x)$ passes the horizontal line test. Hence, $h$ is one-one.
             
-            \boxt{
-                $h$ is not one-one.
-            }
+            \boxt{$h$ is not one-one.}
 
             Note that $y = h(x) \implies x = \inv h(y)$. Now consider $y = h(x)$.
 
@@ -269,9 +257,7 @@
 
             Hence, $\inv h(x) = -1 -\sqrt{x-4}$. Note that $\dom{\inv h} = \ran h = [5, \infty)$. Hence,
 
-            \boxt{
-                $\inv h \colon x \mapsto -1-\sqrt{x-4}, \, x \geq 5$
-            }
+            \boxt{$\inv h \colon x \mapsto -1-\sqrt{x-4}, \, x \geq 5$}
 
     \problem{}
         The function $f$ is defined by
@@ -282,10 +268,10 @@
 
         \begin{enumerate}
             \item Sketch the graph of $f$ and explain why $\inv{f}$ does not exist.
-            \item The function $h$ is defined by $h \colon x \mapsto f(x), \, x \in \mathbb{R}, \, x \geq \alpha$, where $\alpha \in \mathbb{R}^+$. Find the smallest value of $\alpha$ such that the inverse function of $h$ exists.
+            \item The function $h$ is defined by $h \colon x \mapsto f(x), \, x \in \R, \, x \geq \a$, where $\a \in \R^+$. Find the smallest value of $\a$ such that the inverse function of $h$ exists.
         \end{enumerate}
 
-        \noindent Using this value of $\alpha$,
+         Using this value of $\a$,
         
         \begin{enumerate}
             \setcounter{enumi}{2}
@@ -333,26 +319,22 @@
             $y=f(x)$ does not pass the horizontal line test. Hence, $f$ is not one-one. Hence, $\inv f$ does not exist.
 
         \part
-            Consider $f^\prime(x) = 0$ for $x > 0$.
+            Consider $f'(x) = 0$ for $x > 0$.
             \begin{alignat*}{2}
-                &&f^\prime(x) &= 0\\
+                &&f'(x) &= 0\\
                 \implies&&1 - \dfrac1{x^2} &= 0\\
                 \implies&&x^2 &= 1\\
                 \implies&&x &= 1 \reject{x = -1 \because x > 0}
             \end{alignat*}
 
-            Looking at the graph of $y=f(x)$, we see that $f(x)$ achieves a minimum at $x = 1$. Hence, $f$ is increasing for all $x \geq 1$. Thus, the smallest value of $\alpha$ is 1.
+            Looking at the graph of $y=f(x)$, we see that $f(x)$ achieves a minimum at $x = 1$. Hence, $f$ is increasing for all $x \geq 1$. Thus, the smallest value of $\a$ is 1.
 
-            \boxt{
-                $\min \alpha = 1$
-            }
+            \boxt{$\min \a = 1$}
 
         \part
             Note $f(1) = 2$. Hence, from the graph,
 
-            \boxt{
-                $\ran h = [2, \infty)$
-            }
+            \boxt{$\ran h = [2, \infty)$}
 
         \part
             Note that $y = h(x) \implies x = \inv h(y)$. Now consider $y = h(x)$.
@@ -366,15 +348,13 @@
 
             Note that $f(2) = \dfrac52$. Since $2 = \dfrac12 \left(\tfrac52 + \sqrt{\left(\tfrac52\right)^2 - 4}\right)$ and $2 \neq \dfrac12 \left(\tfrac52 - \sqrt{\left(\tfrac52\right)^2 - 4}\right)$, we reject $x = \dfrac12 (y - \sqrt{y^2 - 4})$. Hence, $\inv h(x) = \dfrac12 (x + \sqrt{x^2 - 4})$. Note that $\dom{\inv f} = \ran f = [2, \infty)$. Thus,
 
-            \boxt{
-                $\inv h \colon x \mapsto \dfrac12\left(x + \sqrt{x^2-4} \right), \, x \geq 2$
-            }
+            \boxt{$\inv h \colon x \mapsto \dfrac12\left(x + \sqrt{x^2-4} \right), \, x \geq 2$}
     
     \problem{}
         The function $f$ is defined as follows:
 
         \begin{equation*}
-            f \colon x \mapsto x^3 + x - 7, \, x \in \mathbb{R}
+            f \colon x \mapsto x^3 + x - 7, \, x \in \R
         \end{equation*}
 
         \begin{enumerate}
@@ -421,9 +401,7 @@
                 && &= -7
             \end{alignat*}
 
-            \boxt{
-                $x = -7$
-            }
+            \boxt{$x = -7$}
 
             \begin{center}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -463,27 +441,25 @@
             \end{center}
 
         \part
-            Let ($\alpha$, $\beta$) be the coordinates of the intersection between $f(x)$ and $\inv f$. From the graph, we see that $\alpha=\beta$, hence $f(\alpha) = \alpha$.
+            Let ($\a$, $\b$) be the coordinates of the intersection between $f(x)$ and $\inv f$. From the graph, we see that $\a=\b$, hence $f(\a) = \a$.
             \begin{alignat*}{2}
-                &&f(\alpha) &= \alpha\\
-                \implies&&\alpha^3 + \alpha - 7 &= \alpha\\
-                \implies&&\alpha^3 &= 7\\
-                \implies&&\alpha &= \sqrt[3]{7}
+                &&f(\a) &= \a\\
+                \implies&&\a^3 + \a - 7 &= \a\\
+                \implies&&\a^3 &= 7\\
+                \implies&&\a &= \sqrt[3]{7}
             \end{alignat*}
 
-            \boxt{
-                $(\sqrt[3]{7}, \sqrt[3]{7})$
-            }
+            \boxt{$(\sqrt[3]{7}, \sqrt[3]{7})$}
             
         \part
             \begin{alignat*}{2}
-                &&[\inv f(x)]^\prime &= \dfrac1{f^\prime(\inv f(x))}\\
-                \implies&&\left.[\inv f(x)]^\prime\right|_{x = p} &= \left.\dfrac1{f^\prime(\inv f(x))}\right|_{x=p}\\
-                \implies&&\dfrac14 &= \left.\dfrac1{f^\prime(\inv f(x))}\right|_{x=p}\\
-                \implies&&\left.f^\prime(\inv f(x))\right|_{x=p} &= 4\\
+                &&[\inv f(x)]' &= \dfrac1{f'(\inv f(x))}\\
+                \implies&&\left.[\inv f(x)]'\right|_{x = p} &= \left.\dfrac1{f'(\inv f(x))}\right|_{x=p}\\
+                \implies&&\dfrac14 &= \left.\dfrac1{f'(\inv f(x))}\right|_{x=p}\\
+                \implies&&\left.f'(\inv f(x))\right|_{x=p} &= 4\\
             \end{alignat*}
 
-            Note that $f^\prime(x) = 3x^2 + 1$.
+            Note that $f'(x) = 3x^2 + 1$.
             \begin{alignat*}{2}
                 \implies&&\left(\left.3\cdot\inv f(x)^2 + 1\right)\right|_{x=p} &= 4\\
                 \implies&&3\cdot\inv f(p)^2 + 1 &= 4\\
@@ -507,16 +483,14 @@
                 && &= -9
             \end{alignat*}
 
-            \boxt{
-                $p = -9 \lor -5$
-            }
+            \boxt{$p = -9 \lor -5$}
 
 
     \problem{}
         The functions $g$ and $h$ are defined as follows:
         \begin{alignat*}{2}
-            g & \colon x \mapsto \ln (x+2), &&\qquad x \in (-1, 1)\\
-            h & \colon x \mapsto x^2 - 2x - 1, &&\qquad x \in \mathbb{R}^+
+            g & \colon x \mapsto \ln{x+2}, &&\qquad x \in (-1, 1)\\
+            h & \colon x \mapsto x^2 - 2x - 1, &&\qquad x \in \R^+
         \end{alignat*}
 
         \begin{enumerate}
@@ -597,31 +571,27 @@
         \part
             Observe that $\ran h = [-2, \infty)$ and $\dom g = (-1, 1)$. Hence, $\ran h \nsubseteq \dom g$. Thus, $gh$ does not exist.
 
-            \boxt{
-                $gh$ does not exist.
-            }
+            \boxt{$gh$ does not exist.}
 
         \part
             \begin{align*}
-                hg(x) &= h(\ln(x+2))\\
-                &= \ln(x+2)^2 - 2\ln(x+2) - 1
+                hg(x) &= h(\ln{x+2})\\
+                &= \ln{x+2}^2 - 2\ln{x+2} - 1
             \end{align*}
 
             Note that $\dom{hg} = \dom{g} = (-1, 1)$.
 
-            \boxt{
-                $hg \colon x \mapsto \ln(x+2)^2 - 2\ln(x+2) - 1, \, x \in (-1, 1)$
-            }
+            \boxt{$hg \colon x \mapsto \ln{x+2}^2 - 2\ln{x+2} - 1, \, x \in (-1, 1)$}
 
             Observe that $h$ is decreasing on the interval $(0, 1]$ and increasing on the interval $[1, \infty)$. Note that $\ran g = (0, \ln 3)$. Hence,
 
             \begin{align*}
-                \ran{hg} &= [-2, \max \{ h(0), h(\ln 3) \})\\
+                \ran{hg} &= [-2, \max \bc{h(0), h(\ln 3)})\\
                 &= [-2, -1)
             \end{align*}
 
         \part
-            Note that $h(x) = (x-1)^2 -2$. Hence, $\inv h(x) = 1 + \sqrt{x+2}$ (we reject $\inv h(x) = 1 - \sqrt{x+2}$ since $\ran{\inv h} = \dom h = \mathbb{R}^+$). Further note that $\inv g = e^x - 2$.
+            Note that $h(x) = (x-1)^2 -2$. Hence, $\inv h(x) = 1 + \sqrt{x+2}$ (we reject $\inv h(x) = 1 - \sqrt{x+2}$ since $\ran{\inv h} = \dom h = \R^+$). Further note that $\inv g = e^x - 2$.
             \begin{alignat*}{2}
                 &&hg(a) &= -1.5\\
                 \implies&&g(a) &= \inv{h}(-1.5)\\
@@ -631,15 +601,13 @@
                 && &= e^{1 + \tfrac1{\sqrt{2}}} - 2
             \end{alignat*}
 
-            \boxt{
-                $a = e^{1 + \tfrac1{\sqrt{2}}} - 2$
-            }
+            \boxt{$a = e^{1 + \tfrac1{\sqrt{2}}} - 2$}
 
     \problem{}
         The functions $f$ and $g$ are defined as follows:
         \begin{alignat*}{2}
-            f & \colon x \mapsto 3 - x, &&\qquad x \in \mathbb{R}\\
-            g & \colon x \mapsto \dfrac4{x}, &&\qquad x \in \mathbb{R}, \, x \neq 0
+            f & \colon x \mapsto 3 - x, &&\qquad x \in \R\\
+            g & \colon x \mapsto \dfrac4{x}, &&\qquad x \in \R, \, x \neq 0
         \end{alignat*}
 
         \begin{enumerate}
@@ -650,24 +618,19 @@
 
     \solution
         \part
-            Note that $\ran g = \mathbb{R} \setminus \{0\}$ and $\dom g = \mathbb{R}$. Hence, $\ran g \subseteq \dom g$. Thus, $fg$ exists.
-
+            Note that $\ran g = \R \setminus \bc{0}$ and $\dom g = \R$. Hence, $\ran g \subseteq \dom g$. Thus, $fg$ exists.
             \begin{align*}
                 fg(x) &= f\left(\dfrac4x\right)\\
                 &= 3 - \dfrac4x
             \end{align*}
 
-            Observe that $\dom{fg} = \dom{g} = \mathbb{R}\setminus \{ 0 \}$.
+            Observe that $\dom{fg} = \dom{g} = \R\setminus \bc{0}$.
 
-            \boxt{
-                $fg \colon x \mapsto 3 - \dfrac4x, \, x \in \mathbb{R} \setminus \{0\}$
-            }
+            \boxt{$fg \colon x \mapsto 3 - \dfrac4x, \, x \in \R \setminus \bc{0}$}
 
             Since $\dfrac4x$ can take on any value except 0, then $fg(x) = 3 - \dfrac4x$ can take on any value except 3.
 
-            \boxt{
-                $\ran{fg} = \mathbb{R} \setminus \{3\}$
-            }
+            \boxt{$\ran{fg} = \R \setminus \bc{3}$}
 
         \part
             \begin{align*}
@@ -676,9 +639,7 @@
                 &= x
             \end{align*}
 
-            \boxt{
-                $g^2 \colon x \mapsto x, \, x \in \mathbb{R} \setminus \{0\}$
-            }
+            \boxt{$g^2 \colon x \mapsto x, \, x \in \R \setminus \bc{0}$}
 
             \begin{align*}
                 g^3(x) &= g(g^2(x))\\
@@ -686,9 +647,7 @@
                 &= \dfrac4x
             \end{align*}
 
-            \boxt{
-                $g^3 \colon x \mapsto \dfrac4x, \, x \in \mathbb{R} \setminus \{0\}$
-            }
+            \boxt{$g^3 \colon x \mapsto \dfrac4x, \, x \in \R \setminus \bc{0}$}
 
             \begin{align*}
                 g^{2017} &= g^{2016}(g(x))\\
@@ -697,9 +656,7 @@
                 &= \dfrac4x
             \end{align*}
 
-            \boxt{
-                $g^{2017} \colon x \mapsto \dfrac4x, \, x \in \mathbb{R} \setminus \{0\}$
-            }
+            \boxt{$g^{2017} \colon x \mapsto \dfrac4x, \, x \in \R \setminus \bc{0}$}
 
         \part
             \begin{alignat*}{2}
@@ -709,9 +666,7 @@
 
             From the definition of $g^2(x)$, we know that $g^2(x) = x$ for all $x$ in $\dom{g^2}$.
 
-            \boxt{
-                $\mathbb{R} \setminus \{0\}$
-            }
+            \boxt{$\R \setminus \bc{0}$}
 
     \problem{}
         The function $f$ is defined by
@@ -724,7 +679,7 @@
             \end{cases}
         \end{equation*}
 
-        \noindent It is further given that $f(x) = f(x+4)$ for all real values of $x$.
+         It is further given that $f(x) = f(x+4)$ for all real values of $x$.
 
         \begin{enumerate}
             \item Find the values of $f(1)$ and $f(5)$ and hence explain why $f$ is not one-one.
@@ -742,9 +697,7 @@
                 && &= 3
             \end{alignat*}
 
-            \boxt{
-                $f(1) = 3$, $f(5) = 3$
-            }
+            \boxt{$f(1) = 3$, $f(5) = 3$}
 
             Since $f(1) = f(5)$, but $1 \neq 5$, $f$ is not one-one.
 
@@ -797,16 +750,14 @@
             \end{center}
 
         \part
-            \boxt{
-                $\ran f = [1, 5]$
-            }
+            \boxt{$\ran f = [1, 5]$}
 
     \problem{}
         \begin{enumerate}
-            \item The function $f$ is given by $f \colon x \mapsto 1 + \sqrt{x}$ for $x \in \mathbb{R}^+$. \begin{enumerate}
+            \item The function $f$ is given by $f \colon x \mapsto 1 + \sqrt{x}$ for $x \in \R^+$. \begin{enumerate}
                 \item Find $\inv f(x)$ and state the domain of $\inv f$.
                 \item Find $f^2(x)$ and the range of $f^2$.
-                \item Show that if $f^2(x) = x$ then $x^3 - 4x^2 + 4x - 1 = 0$. Hence find the value of $x$ for which $f^2(x) = x$. Explain why this value of $x$ satisfies the equation $f(x) = \inv f(x)$.
+                \item Show that if $f^2(x) = x$ then $x^3 - 4x^2 + 4x - 1 = 0$. Hence, find the value of $x$ for which $f^2(x) = x$. Explain why this value of $x$ satisfies the equation $f(x) = \inv f(x)$.
             \end{enumerate}
             \item The function $g$, with domain the set of non-negative integers, is given by
             \begin{equation*}
@@ -834,15 +785,11 @@
                     \implies&&x &= (y-1)^2
                 \end{alignat*}
 
-                \boxt{
-                    $\inv f(x) = (x-1)^2$
-                }
+                \boxt{$\inv f(x) = (x-1)^2$}
 
                 Observe that $\dom{\inv f} = \ran f = (1, \infty)$.
 
-                \boxt{
-                    $\dom{\inv f} = (1, \infty)$
-                }
+                \boxt{$\dom{\inv f} = (1, \infty)$}
 
             \subpart
                 \begin{align*}
@@ -850,15 +797,11 @@
                     &= 1 + \sqrt{1 + \sqrt{x}}
                 \end{align*}
 
-                \boxt{
-                    $f^2(x) = 1 + \sqrt{1 + \sqrt{x}}$
-                }
+                \boxt{$f^2(x) = 1 + \sqrt{1 + \sqrt{x}}$}
 
                 Observe that $\sqrt{1 + \sqrt{x}} > 1$. Hence, $1 + \sqrt{1 + \sqrt{x}} > 1 + 1 = 2$.
 
-                \boxt{
-                    $\ran{f^2} = (2, \infty)$
-                }
+                \boxt{$\ran{f^2} = (2, \infty)$}
 
             \subpart
                 \begin{alignat*}{2}
@@ -892,9 +835,7 @@
 
                 Observe that $\dfrac{3 - \sqrt{5}}{2} < 2$ and $\dfrac{3 + \sqrt{5}}{2} > 2$. Thus, we reject $x = \dfrac{3 - \sqrt{5}}{2}$ and take $x = \dfrac{3 + \sqrt{5}}{2}$.
 
-                \boxt{
-                    $x = \dfrac{3 + \sqrt{5}}{2}$
-                }
+                \boxt{$x = \dfrac{3 + \sqrt{5}}{2}$}
 
                 Consider $f(x) = \inv f(x)$. Applying $f$ on both sides of the equation, we have $f^2(x) = f(x)$. Since $x = \dfrac{3 + \sqrt{5}}{2}$ satisfies $f^2(x) = f(x)$, it also satisfies $f(x) = \inv f(x)$.
 
@@ -918,9 +859,7 @@
                     && &= 9
                 \end{alignat*}
 
-                \boxt{
-                    $g(4) = 6$, $g(7) = 8$, $g(12) = 9$
-                }
+                \boxt{$g(4) = 6$, $g(7) = 8$, $g(12) = 9$}
 
             \subpart
                 Consider $g(5)$ and $g(6)$.
@@ -936,7 +875,5 @@
 
                 Since $g(5) = g(6)$, but $5 \neq 6$, $g$ is not one-one. Hence, $\inv g$ does not exist.
 
-                \boxt{
-                    $g$ does not have an inverse.
-                }
+                \boxt{$g$ does not have an inverse.}
 \end{document}

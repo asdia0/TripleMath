@@ -9,11 +9,11 @@
         \textbf{Omitted.}
 
     \problem{}
-        A point $P$ lies on the curve $C$ with polar equation $r = 2a\cos\theta$, $-\dfrac\pi2 < \theta \leq \dfrac\pi2$, where $a$ is a positive constant. The point $N$ is the foot of the perpendicular from the pole to the tangent of $C$ at $P$.
+        A point $P$ lies on the curve $C$ with polar equation $r = 2a\cos\t$, $-\dfrac\pi2 < \t \leq \dfrac\pi2$, where $a$ is a positive constant. The point $N$ is the foot of the perpendicular from the pole to the tangent of $C$ at $P$.
 
         \begin{enumerate}
             \item Sketch $C$, $P$ and $N$ on the same diagram.
-            \item By considering the polar coordinates of $N$, show that, as $P$ varies, the locus of $N$ is given by the polar equation $r = a(1 + \cos\theta)$, $-\pi < \theta \leq \pi$.
+            \item By considering the polar coordinates of $N$, show that, as $P$ varies, the locus of $N$ is given by the polar equation $r = a(1 + \cos\t)$, $-\pi < \t \leq \pi$.
         \end{enumerate}
 
     \solution
@@ -21,47 +21,47 @@
             \begin{center}
                 \begin{tikzpicture}
                     \coordinate[label=left:$O$] (O) at (0, 0);
-                    \coordinate[label=below:$A\coord{0}{a}$] (A) at (3, 0);
+                    \coordinate[label=below:$A\bp{0, a}$] (A) at (3, 0);
                     \coordinate[label=above right:$P$] (P) at (9/2, 2.6);
                     \coordinate[label=above right:$N$] (N) at (2.249, 3.899);
                     \coordinate[label=below:$B$] (B) at (9.006, 0);
                     \coordinate[label=below right:$C$] (C) at (9/2, -2.6);
 
-                    \draw[->] (O)--(10.5, 0) node[anchor=south east] {$\theta = 0$};
+                    \draw[->] (O)--(10.5, 0) node[anchor=south east] {$\t = 0$};
                     \draw (A) circle[radius=3];
                     \draw (0, 5.196)--(B);
                     \draw (A)--(P);
                     \draw (O)--(P);
                     \draw (O)--(N);
 
-                    \draw pic [draw, angle radius=12mm, "$\theta$"] {angle = A--O--P};
+                    \draw pic [draw, angle radius=12mm, "$\t$"] {angle = A--O--P};
                     \draw pic [draw, angle radius=14mm, "$\varphi$"] {angle = P--O--N};
-                    \draw pic [draw, angle radius=12mm, "$2\theta$"] {angle = B--A--P};
+                    \draw pic [draw, angle radius=12mm, "$2\t$"] {angle = B--A--P};
                     \draw pic [draw, angle radius=3mm, ""] {right angle = O--N--P};
                     \draw pic [draw, angle radius=3mm, ""] {right angle = A--P--B};
                 \end{tikzpicture}
             \end{center}
 
         \part
-            Consider the diagram above. Let $N(\theta + \varphi, r)$. Let $B$ be the intersection between the tangent at $P$ and the half-line $\theta = 0$. Note that $C$ is a circle centered at $A$ with radius $a$.
+            Consider the diagram above. Let $N(\t + \varphi, r)$. Let $B$ be the intersection between the tangent at $P$ and the half-line $\t = 0$. Note that $C$ is a circle centred at $A$ with radius $a$.
 
-            Since angle at centre is twice angle at circumference, $\angle PAB = 2\angle POA = 2\theta$. Since tangent to circle is parallel to radius, $AP \perp PB$. Hence, $ON \parallel AP \implies \angle NOA = \angle PAB \implies \varphi = \theta$.
+            Since angle at centre is twice angle at circumference, $\angle PAB = 2\angle POA = 2\t$. Since tangent to circle is parallel to radius, $AP \perp PB$. Hence, $ON \parallel AP \implies \angle NOA = \angle PAB \implies \varphi = \t$.
 
             Since $\cos\angle NOP = \dfrac{ON}{OP}$, we have
             \begin{align*}
-                ON &= OP\cos\theta\\
-                &= (2a\cos\theta)\cos\theta\\
-                &= 2a\cos^2\theta\\
-                &= a\left(2\cos^2\theta - 1 + 1\right)\\
-                &= a(\cos2\theta + 1)
+                ON &= OP\cos\t\\
+                &= (2a\cos\t)\cos\t\\
+                &= 2a\cos^2\t\\
+                &= a\left(2\cos^2\t - 1 + 1\right)\\
+                &= a(\cos2\t + 1)
             \end{align*}
 
-            Hence, $N(\theta + \varphi, r) = \Big(2\theta, a(\cos2\theta + 1)\Big) = \Big(\theta, a(\cos\theta + 1)\Big)$. Thus, the locus of $N$ is given by $r = a(1 + \cos\theta)$.
+            Hence, $N(\t + \varphi, r) = \Big(2\t, a(\cos2\t + 1)\Big) = \Big(\t, a(\cos\t + 1)\Big)$. Thus, the locus of $N$ is given by $r = a(1 + \cos\t)$.
 
     \problem{}
-        The sequence $\{u_n\}$ is given by the recurrence relation
+        The sequence $\bc{u_n}$ is given by the recurrence relation
         \begin{equation*}
-            u_{n+2} = 5u_{n+1} - 6u_n, \, n \in \mathbb{Z}^+
+            u_{n+2} = 5u_{n+1} - 6u_n, \, n \in \Z^+
         \end{equation*}
         together with terms $u_1 = a$ and $u_2 = b$.
 
@@ -86,9 +86,7 @@
                 \systeme[AB]{2A + 3B = a, 4A + 9B=b}
             \end{equation*}
             which has solution $A = \dfrac{3a-b}2$ and $B = \dfrac{b-2a}3$. Thus,
-            \boxt{
-                $u_n = \dfrac{3a-b}2\cdot2^n + \dfrac{b-2a}3\cdot3^n$
-            }
+            \boxt{$u_n = \dfrac{3a-b}2\cdot2^n + \dfrac{b-2a}3\cdot3^n$}
 
         \part
             Let $L = \lim\limits_{n \to \infty} \dfrac{u_n}{u_{n-1}}$.
@@ -101,25 +99,23 @@
                 \implies&&(L-2)(L-3) &= 0\\
                 \implies&&L &= 2 \lor 3
             \end{alignat*}
-            \boxt{
-                The possible limits are 2 and 3.
-            }
+            \boxt{The possible limits are 2 and 3.}
 
     \problem{}
         \textbf{Omitted.}
 
     \problem{}
-        The points $A$ and $B$ have Cartesian coordinates $\coord{a}0$ and $\coord{-a}0$ respectively, where $a$ is a positive constant. The point $P$ is such that $AP \cdot BP = a^2$. The curve $C$ describes the locus of $P$.
+        The points $A$ and $B$ have Cartesian coordinates $(a, 0)$ and $(-a, 0)$ respectively, where $a$ is a positive constant. The point $P$ is such that $AP \cdot BP = a^2$. The curve $C$ describes the locus of $P$.
 
         \begin{enumerate}
-            \item Show that $C$ has polar equation $r^2 = 2a^2\cos2\theta$, $0 \leq \theta \leq 2\pi$.
+            \item Show that $C$ has polar equation $r^2 = 2a^2\cos2\t$, $0 \leq \t \leq 2\pi$.
             \item Sketch the graph of $C$, indicating all key features and symmetries of the curve.
             \item Find the exact area of the region enclosed by the curve $C$.
         \end{enumerate}
 
     \solution
         \part
-            Let $P\coord{x}{y}$.
+            Let $P(x, y)$.
             \begin{alignat*}{2}
                 &&AP \cdot BP &= a^2\\
                 \implies&&AP^2 \cdot BP^2 &= a^4\\
@@ -131,11 +127,11 @@
                 \implies&&x^4 -2a^2x^2 + 2x^2y^2 + 2a^2y^2 + y^4 &= 0\\
                 \implies&&\left(x^4  + 2x^2y^2 + y^4\right) + \left(2a^2y^2 -2a^2x^2\right)&= 0\\
                 \implies&&\left(x^2 + y^2\right)^2 + 2a^2\left(y^2 - x^2\right)&= 0\\
-                \implies&&\left(r^2\right)^2 + 2a^2\left((r\sin\theta)^2 - (r\cos\theta)^2\right)&= 0\\
-                \implies&&r^4 + 2a^2r^2\left(\sin^2\theta - \cos^2\theta\right)&= 0\\
-                \implies&&r^4 - 2a^2r^2\cos2\theta&= 0\\
-                \implies&&r^2 - 2a^2\cos2\theta&= 0\\
-                \implies&&r^2 &= 2a^2\cos2\theta
+                \implies&&\left(r^2\right)^2 + 2a^2\left((r\sin\t)^2 - (r\cos\t)^2\right)&= 0\\
+                \implies&&r^4 + 2a^2r^2\left(\sin^2\t - \cos^2\t\right)&= 0\\
+                \implies&&r^4 - 2a^2r^2\cos2\t&= 0\\
+                \implies&&r^2 - 2a^2\cos2\t&= 0\\
+                \implies&&r^2 &= 2a^2\cos2\t
             \end{alignat*}
 
         \part
@@ -151,8 +147,8 @@
                         xmax=1.5,
                         ymin=-1.5,
                         ymax=1.5,
-                        xlabel = {$\theta=0$},
-                        ylabel = {$\theta = \frac\pi2$},
+                        xlabel = {$\t=0$},
+                        ylabel = {$\t = \frac\pi2$},
                         legend cell align={left},
                         legend pos=outer north east,
                         after end axis/.code={
@@ -169,29 +165,27 @@
                         \addplot[dotted] {x};
                         \addplot[dotted] {-x};
 
-                        \node[anchor=east] at (1.414, 1.31) {$\theta = \frac14 \pi$};
+                        \node[anchor=east] at (1.414, 1.31) {$\t = \frac14 \pi$};
 
-                        \node[anchor=west] at (-1.414, 1.31) {$\theta = \frac34 \pi$};
+                        \node[anchor=west] at (-1.414, 1.31) {$\t = \frac34 \pi$};
 
-                        \node[anchor=west] at (-1.414, -1.31) {$\theta = \frac54 \pi$};
+                        \node[anchor=west] at (-1.414, -1.31) {$\t = \frac54 \pi$};
 
-                        \node[anchor=east] at (1.414, -1.31) {$\theta = \frac74 \pi$};
+                        \node[anchor=east] at (1.414, -1.31) {$\t = \frac74 \pi$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
 
         \part
             \begin{align*}
-                \text{Area} &= 2 \cdot \dfrac12 \int_{-\pi/4}^{\pi/4} r^2 \d \theta\\
-                &= \int_{-\pi/4}^{\pi/4} 2a^2\cos2\theta \d \theta \usub{u &= 2\theta\\du &= 2 \d \theta}\\
+                \text{Area} &= 2 \cdot \dfrac12 \int_{-\pi/4}^{\pi/4} r^2 \d \t\\
+                &= \int_{-\pi/4}^{\pi/4} 2a^2\cos2\t \d \t \usub{u &= 2\t\\du &= 2 \d \t}\\
                 &= a^2 \int_{-\pi/2}^{\pi/2} \cos u \d u\\
                 &= a^2 \eval{\sin u}{-\pi/2}{\pi/2}\\
                 &= 2a^2
             \end{align*}
 
-            \boxt{
-                The area of the region enclosed by $C$ is $2a^2$ units$^2$.
-            }
+            \boxt{The area of the region enclosed by $C$ is $2a^2$ units$^2$.}
 
     \problem{}
         In the diagram, the curve with equation $2y = 1 + \ln x$ for $x > 0$ divides the rectangle bounded by the axes, the lines $y = 1$ and $x = e$ into two regions, $S$ and $T$.
@@ -268,9 +262,7 @@
                 &= \dfrac14 \left(e + e^{-1}\right)
               \end{align*}
 
-              \boxt{
-                $\displaystyle\int_0^1 ye^{2y-1} \d y = \dfrac14 \left(e + e^{-1}\right)$
-              }
+              \boxt{$\displaystyle\int_0^1 ye^{2y-1} \d y = \dfrac14 \left(e + e^{-1}\right)$}
 
         \part
             Let $I = \displaystyle\int_{e^{-1}}^e (\ln x + 1)^2 \d x$. Observe that the volume of the solid generated when $T$ is rotated completely about the $x$-axis is given by
@@ -287,9 +279,8 @@
                 \implies&&I &= 4e - 2\left(e + e^{-1}\right)\\
                 && &= 2\left(e - e^{-1}\right)
             \end{alignat*}
-            \boxt{
-                $\displaystyle\int_{e^{-1}}^e (\ln x + 1)^2 \d x = 2\left(e - e^{-1}\right)$
-            }
+
+            \boxt{$\displaystyle\int_{e^{-1}}^e (\ln x + 1)^2 \d x = 2\left(e - e^{-1}\right)$}
 
         \part
             Note that $2y = 1 + \ln x \implies \der{y}{x} = \dfrac1{2x}$. Hence,
@@ -298,27 +289,22 @@
                 \text{Surface area} &= 2\pi \int_{e^{-1}}^e y\sqrt{1 + \left(\der{y}{x}\right)^2} \d x\\
                 &= 2\pi \int_{e^{-1}}^e \left(\dfrac{1 + \ln x}2\right)\sqrt{1 + \left(\dfrac1{2x}\right)^2} \d x\\
                 &= 10.3 \tosf{3}
-            \end{align*}
-            }
+            \end{align*}}
 
-            \boxt{
-                The area of the surface generated is $10.3$ units$^2$.
-            }
+            \boxt{The area of the surface generated is $10.3$ units$^2$.}
 
-            \noindent The curve described is the inverse of $2y = 1 + \ln x$. Hence, the surface area generated by the new curve is the same as that of $2y = 1 + \ln x$.
+             The curve described is the inverse of $2y = 1 + \ln x$. Hence, the surface area generated by the new curve is the same as that of $2y = 1 + \ln x$.
 
-            \boxt{
-                The surface area generated by the new curve is also $10.3$ units$^2$.
-            }
+            \boxt{The surface area generated by the new curve is also $10.3$ units$^2$.}
 
     \problem{}
         \textbf{Omitted.}
 
     \problem{}
-        The function $g$ is given by $g(x) = x^{3/2} - 2\sqrt{x} - 1$ for $x \geq 0$. Show that the equation $g(x) = 0$ has only one real root, $x = \alpha$. State an integer $n$ such that $n < \alpha < n + 1$.
+        The function $g$ is given by $g(x) = x^{3/2} - 2\sqrt{x} - 1$ for $x \geq 0$. Show that the equation $g(x) = 0$ has only one real root, $x = \a$. State an integer $n$ such that $n < \a < n + 1$.
 
         \begin{enumerate}
-            \item To find an approximate value for $\alpha$, the following rearrangements of $g(x) = 0$ are suggested as a basis for the iteration method of the form $x_{n+1} = f(x_n)$.
+            \item To find an approximate value for $\a$, the following rearrangements of $g(x) = 0$ are suggested as a basis for the iteration method of the form $x_{n+1} = f(x_n)$.
             \begin{itemize}
                 \item $x = \dfrac14 \left(x^{3/2} - 1\right)^2$
                 \item $x = 2 + \dfrac1{\sqrt{x}}$
@@ -326,11 +312,11 @@
             \end{itemize}
 
             \begin{enumerate}
-                \item By considering $f'(x)$, identify the iteration method which converges to $\alpha$. Use a graph to explain why the chosen iteration method converges to $\alpha$.
-                \item Using the appropriate iteration method found in part(a)(i), and $x_0 = n$, find the value of $\alpha$, correct to 4 decimal places, and demonstrate how to verify its correctness.
+                \item By considering $f'(x)$, identify the iteration method which converges to $\a$. Use a graph to explain why the chosen iteration method converges to $\a$.
+                \item Using the appropriate iteration method found in part(a)(i), and $x_0 = n$, find the value of $\a$, correct to 4 decimal places, and demonstrate how to verify its correctness.
             \end{enumerate}
             \item \begin{enumerate}
-                \item Show that a Newton-Raphson iteration method for the root $\alpha$ is given by
+                \item Show that a Newton-Raphson iteration method for the root $\a$ is given by
                 \begin{equation*}
                     x_{n+1} = \dfrac{x_n^{3/2} + 2x_n^{1/2} + 2}{3x_n^{1/2} - 2x_n^{-1/2}}
                 \end{equation*}
@@ -350,12 +336,11 @@
             \end{tabular}
         \end{table}
         
-        \noindent From the First Derivative Test, we see that $y = \sqrt{\dfrac23}$ is a minimum point. Hence, $h(y)$ is strictly decreasing on the interval $\left[0, \sqrt{\dfrac23}\right)$ and strictly increasing on the interval $\left(\sqrt{\dfrac23}, \infty\right)$. Since $h(0) = -1 < 0$, we have that $h(y) < 0$ for all $y \leq \sqrt{\dfrac23}$. Since $h(y)$ is strictly increasing for $y > \sqrt{\dfrac23}$, and $h\left(\sqrt{\dfrac23}\right) < 0$, $h(y)$ has only one real root. Thus, $g(x)$ has only one real root.
+         From the First Derivative Test, we see that $y = \sqrt{\dfrac23}$ is a minimum point. Hence, $h(y)$ is strictly decreasing on the interval $\left[0, \sqrt{\dfrac23}\right)$ and strictly increasing on the interval $\left(\sqrt{\dfrac23}, \infty\right)$. Since $h(0) = -1 < 0$, we have that $h(y) < 0$ for all $y \leq \sqrt{\dfrac23}$. Since $h(y)$ is strictly increasing for $y > \sqrt{\dfrac23}$, and $h\left(\sqrt{\dfrac23}\right) < 0$, $h(y)$ has only one real root. Thus, $g(x)$ has only one real root.
 
-        Observe that $g(2)\,g(3) = (-1)(0.732) < 0$. Hence, $\alpha \in (2, 3)$. Thus,
-        \boxt{
-            $n = 2$
-        }
+        Observe that $g(2)\,g(3) = (-1)(0.732) < 0$. Hence, $\a \in (2, 3)$. Thus,
+        
+        \boxt{$n = 2$}
 
         \part
             \subpart
@@ -385,9 +370,7 @@
 
                 \medskip
                 
-                \boxt{
-                    $x_{n+1} = 2 + \dfrac1{\sqrt{x_n}}$ converges to $\alpha$.
-                }
+                \boxt{$x_{n+1} = 2 + \dfrac1{\sqrt{x_n}}$ converges to $\a$.}
 
                 \begin{center}
                     \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -397,7 +380,7 @@
                             axis y line=middle,
                             axis x line=middle,
                             xtick = {1, 3, 2.6180},
-                            xticklabels = {$x_0$, $x_1$, $\alpha$},
+                            xticklabels = {$x_0$, $x_1$, $\a$},
                             ytick = \empty,
                             xlabel = {$x$},
                             ylabel = {$y$},
@@ -441,7 +424,7 @@
                     \end{tikzpicture}
                 \end{center}
 
-                \noindent From the graph, the subsequent approximations get closer and closer to $\alpha$. Hence, $x_{n+1} = 2 + \dfrac1{\sqrt{x_n}}$ converges to $\alpha$.
+                 From the graph, the subsequent approximations get closer and closer to $\a$. Hence, $x_{n+1} = 2 + \dfrac1{\sqrt{x_n}}$ converges to $\a$.
                 \medskip
 
             \subpart
@@ -455,10 +438,8 @@
                     \implies&&x_6 &= 2 + \dfrac1{\sqrt{x_5}} = 2.6180320\\
                     \implies&&x_7 &= 2 + \dfrac1{\sqrt{x_6}} = 2.6180342
                 \end{alignat*}
-                Observe that $g(2.61795)\,g(2.61805) = (-1.5 \times 10^{-4})(2.9 \times 10^{-5}) < 0$. Hence, $\alpha \in (2.61795, 2.61805)$. Thus,
-                \boxt{
-                    $\alpha = 2.6180 \todp{4}$
-                }
+                Observe that $g(2.61795)\,g(2.61805) = (-1.5 \times 10^{-4})(2.9 \times 10^{-5}) < 0$. Hence, $\a \in (2.61795, 2.61805)$. Thus,
+                \boxt{$\a = 2.6180 \todp{4}$}
 
         \part
             \subpart
@@ -475,10 +456,10 @@
 
             \subpart
 
-                \noindent When $x_0 = \dfrac23$, we have $3x_n^{1/2} - 2x_n^{-1/2} = 0$, whence $x_1$ is undefined. When $x_0 < \dfrac23$, $x_1 < 0$. However, the iterative formula for $x_n$ is valid only for $x_n > 0$. Thus, $x_2$ will be undefined. Hence, the method fails for $x_0 \leq \dfrac23$.
+                 When $x_0 = \dfrac23$, we have $3x_n^{1/2} - 2x_n^{-1/2} = 0$, whence $x_1$ is undefined. When $x_0 < \dfrac23$, $x_1 < 0$. However, the iterative formula for $x_n$ is valid only for $x_n > 0$. Thus, $x_2$ will be undefined. Hence, the method fails for $x_0 \leq \dfrac23$.
 
     \problem{}
-        A point $P$ resides on the circumference of a circular gear with centre $C$ and radius $a$, which rolls in an anticlockwise direction externally without slipping on the circumference of a fixed circular axle with centre $O$ and radius $a$. Figure 1 shows the initial position of $P$ at $\coord{a}0$ and Figure 2 shows its position $P\coord{x}{y}$ where $OC$ makes an angle $\theta$ with the positive $x$-axis.
+        A point $P$ resides on the circumference of a circular gear with centre $C$ and radius $a$, which rolls in an anticlockwise direction externally without slipping on the circumference of a fixed circular axle with centre $O$ and radius $a$. Figure 1 shows the initial position of $P$ at $(a, 0)$ and Figure 2 shows its position $P(x, y)$ where $OC$ makes an angle $\t$ with the positive $x$-axis.
 
         \medskip
 
@@ -487,7 +468,7 @@
                 \begin{tikzpicture}
                     \coordinate[label=left:$O$] (O) at (0, 0);
                     \coordinate[label=above:$C$] (C) at (3, 0);
-                    \coordinate[label=below right:$P\coord{a}0$] (P) at (1.5, 0);
+                    \coordinate[label=below right:$P\bp{a, 0}$] (P) at (1.5, 0);
                     \coordinate[label=below left:$P'$] (P') at (4.5, 0);
 
                     \draw[->] (0, -2) -- (0, 4) node[anchor=north west] {$y$};
@@ -512,7 +493,7 @@
                 \begin{tikzpicture}
                     \coordinate[label=left:$O$] (O) at (0, 0);
                     \coordinate[label=above:$C$] (C) at (2.24, 2);
-                    \coordinate[label=below right:$P\coord{x}{y}$] (P) at (2.0685, 0.5076);
+                    \coordinate[label=below right:$P\bp{x, y}$] (P) at (2.0685, 0.5076);
                     \coordinate (X) at (1, 0);
 
                     \draw[->] (0, -2) -- (0, 4) node[anchor=north west] {$y$};
@@ -527,7 +508,7 @@
 
                     \draw[->] (4.24, 2) arc[radius=2, start angle=0, end angle=45];
 
-                    \draw pic [draw, angle radius=9mm, "$\theta$"] {angle = X--O--C};
+                    \draw pic [draw, angle radius=9mm, "$\t$"] {angle = X--O--C};
 
                     \node at (2.5, -2.5) {Figure 2};
                 \end{tikzpicture}
@@ -537,12 +518,12 @@
         \begin{enumerate}
             \item Show that the equation of one full revolution of the path of $P$ can be represented by
             \begin{align*}
-                x &= 2a\cos\theta - a\cos2\theta\\
-                y &= 2a\sin\theta - a\sin2\theta
+                x &= 2a\cos\t - a\cos2\t\\
+                y &= 2a\sin\t - a\sin2\t
             \end{align*}
-            \item Sketch the path of $P$ for $0 \leq \theta \leq 2\pi$, indicating clearly the coordinates of the $x$-intercepts.
+            \item Sketch the path of $P$ for $0 \leq \t \leq 2\pi$, indicating clearly the coordinates of the $x$-intercepts.
             \item Without the use of a calculator, find the length of the path of $P$ in terms of $a$.
-            \item A student commented that a point $P'$ with the initial position $\coord{3a}0$ (as shown in Figure 1) is further away from $O$ than point $P$ and therefore travels a longer path as the circular gear makes a full revolution around the fixed circular axle. Do you agree with the comment? Justify your answer.
+            \item A student commented that a point $P'$ with the initial position $(3a, 0)$ (as shown in Figure 1) is further away from $O$ than point $P$ and therefore travels a longer path as the circular gear makes a full revolution around the fixed circular axle. Do you agree with the comment? Justify your answer.
         \end{enumerate}
 
     \solution
@@ -574,48 +555,48 @@
                     \fill (F) circle[radius=2.5pt];
                     \fill (E) circle[radius=2.5pt];
 
-                    \draw pic [draw, angle radius=12mm, "$\theta$"] {angle = X--O--C};
+                    \draw pic [draw, angle radius=12mm, "$\t$"] {angle = X--O--C};
 
                     \draw pic [draw, angle radius=3mm, ""] {right angle = E--F--C};
                     \draw pic [draw, angle radius=3mm, ""] {right angle = P--G--C};
                 \end{tikzpicture}
             \end{center}
 
-            \noindent Consider the above diagram. Let $E$ be the intersection between the $x$-axis and $CP$ extended. Let $F$ be the point on the $x$-axis such that $CF \perp OF$. Let $G$ be the point on the line $CF$ such that $PG \perp CG \implies PG \parallel EF$.
+             Consider the above diagram. Let $E$ be the intersection between the $x$-axis and $CP$ extended. Let $F$ be the point on the $x$-axis such that $CF \perp OF$. Let $G$ be the point on the line $CF$ such that $PG \perp CG \implies PG \parallel EF$.
 
-            By symmetry, $OE = EC$, whence $\triangle OEC$ is isoceles. Hence, $\angle COE = \angle OCE = \theta$. By the exterior angle theorem, $\angle CEF = 2\theta$. Since $PG \parallel EF$, we have $\angle CPG = \angle CEF = 2\theta$. Finally, from the angle sum of a triangle, we have $\angle ECF = \dfrac\pi2 - \theta$.
+            By symmetry, $OE = EC$, whence $\triangle OEC$ is isosceles. Hence, $\angle COE = \angle OCE = \t$. By the exterior angle theorem, $\angle CEF = 2\t$. Since $PG \parallel EF$, we have $\angle CPG = \angle CEF = 2\t$. Finally, from the angle sum of a triangle, we have $\angle ECF = \dfrac\pi2 - \t$.
             \begin{alignat*}{8}
-                &&\cos\angle COF &= \dfrac{OF}{OC} &\implies&&\cos\theta &= \dfrac{OF}{2a} &\implies &&OF &= 2a\cos\theta\\
-                &&\cos \angle CPG &= \dfrac{PG}{PC} &\implies&& \cos 2\theta &= \dfrac{PG}{a} &\implies&& PG &= a\cos2\theta
+                &&\cos\angle COF &= \dfrac{OF}{OC} &\implies&&\cos\t &= \dfrac{OF}{2a} &\implies &&OF &= 2a\cos\t\\
+                &&\cos \angle CPG &= \dfrac{PG}{PC} &\implies&& \cos 2\t &= \dfrac{PG}{a} &\implies&& PG &= a\cos2\t
             \end{alignat*}
             Since $x = OF - PG$, we have
             \begin{equation*}
-                x = 2a\cos\theta - a\cos2\theta
+                x = 2a\cos\t - a\cos2\t
             \end{equation*}
             \begin{alignat*}{8}
-                &&\cos \angle OCF &= \dfrac{CF}{OC} &\implies&& \cos \left(\dfrac\pi2 - \theta\right) &= \dfrac{CF}{2a} &\implies&& CF &= 2a\sin\theta\\
-                &&\cos \angle PCG &= \dfrac{CG}{PC} &\implies&& \cos \left(\dfrac\pi2 - 2\theta\right) &= \dfrac{CG}{a} &\implies&& CG &= a\sin2\theta
+                &&\cos \angle OCF &= \dfrac{CF}{OC} &\implies&& \cos \left(\dfrac\pi2 - \t\right) &= \dfrac{CF}{2a} &\implies&& CF &= 2a\sin\t\\
+                &&\cos \angle PCG &= \dfrac{CG}{PC} &\implies&& \cos \left(\dfrac\pi2 - 2\t\right) &= \dfrac{CG}{a} &\implies&& CG &= a\sin2\t
             \end{alignat*}
             Since $y = CF - CG$, we have
             \begin{equation*}
-                y = 2a\sin\theta - a\sin2\theta
+                y = 2a\sin\t - a\sin2\t
             \end{equation*}
             Hence, the path of $P$ can be represented by
             \begin{align*}
-                x &= 2a\cos\theta - a\cos2\theta\\
-                y &= 2a\sin\theta - a\sin2\theta
+                x &= 2a\cos\t - a\cos2\t\\
+                y &= 2a\sin\t - a\sin2\t
             \end{align*}
 
         \part
             \begin{alignat*}{2}
                 &&r^2 &= x^2 + y^2\\
-                && &= (2a\cos\theta - a\cos2\theta)^2 + (2a\sin\theta - a\sin2\theta)^2\\
-                && &= a^2\Big[(2\cos\theta - \cos2\theta)^2 + (2\sin\theta - \sin2\theta)^2\Big]\\
-                && &= a^2\Big[4\cos^2\theta - 4\cos\theta\cos2\theta + \cos^2 2\theta + 4\sin^2\theta - 4\sin\theta\sin2\theta + \sin^2 2\theta\Big]\\
-                && &= a^2\Big[(4\cos^2\theta + 4\sin^2\theta) + (\cos^2 2\theta + \sin^2 2\theta) - 4(\cos\theta\cos2\theta + \sin\theta\sin2\theta)\Big]\\
-                && &= a^2(4 + 1 - 4\cos\theta)\\
-                && &= a^2 (5 - 4\cos\theta)\\
-                \implies&&r &= \pm a \sqrt{5 - 4\cos\theta}
+                && &= (2a\cos\t - a\cos2\t)^2 + (2a\sin\t - a\sin2\t)^2\\
+                && &= a^2\Big[(2\cos\t - \cos2\t)^2 + (2\sin\t - \sin2\t)^2\Big]\\
+                && &= a^2\Big[4\cos^2\t - 4\cos\t\cos2\t + \cos^2 2\t + 4\sin^2\t - 4\sin\t\sin2\t + \sin^2 2\t\Big]\\
+                && &= a^2\Big[(4\cos^2\t + 4\sin^2\t) + (\cos^2 2\t + \sin^2 2\t) - 4(\cos\t\cos2\t + \sin\t\sin2\t)\Big]\\
+                && &= a^2(4 + 1 - 4\cos\t)\\
+                && &= a^2 (5 - 4\cos\t)\\
+                \implies&&r &= \pm a \sqrt{5 - 4\cos\t}
             \end{alignat*}
 
             \begin{center}
@@ -643,47 +624,44 @@
                         ]
                         \addplot[color=plotRed,data cs=polarrad] {sqrt(5 - 4*cos(\x r))};
             
-                        \addlegendentry{$r^2 = 5 - 4\cos\theta$};
+                        \addlegendentry{$r^2 = 5 - 4\cos\t$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
 
         \part
-            Note that we have $\der{x}{\theta} = -2a\sin\theta + 2a\sin2\theta$ and $\der{y}{\theta} = 2a\cos\theta - 2a\cos2\theta$. Thus, 
+            Note that we have $\der{x}{\t} = -2a\sin\t + 2a\sin2\t$ and $\der{y}{\t} = 2a\cos\t - 2a\cos2\t$. Thus, 
             \begin{align*}
-                \left(\der{x}{\theta}\right)^2 &+ \left(\der{y}{\theta}\right)^2\\
-                &= \left(-2a\sin\theta + 2a\sin2\theta\right)^2 + \left(2a\cos\theta - 2a\cos2\theta\right)^2\\
-                &= 4a^2\Big[\left(-\sin\theta + \sin2\theta\right)^2 + \left(\cos\theta - \cos2\theta\right)^2\Big]\\
-                &= 4a^2\Big[\sin^2\theta - 2\sin\theta\sin2\theta + \sin^2 2\theta + \cos^2\theta - 2\cos\theta\cos2\theta + \cos^2 2\theta\Big]\\
-                &= 4a^2\Big[\left(\sin^2\theta + \cos^2\theta\right) + \left(\sin^2 2\theta + \cos^2 2\theta\right) - 2\left(\sin\theta\sin2\theta + \cos\theta\cos2\theta\right)\Big]\\
-                &= 4a^2\left(1 + 1 - 2\cos\theta\right)\\
-                &= 8a^2\left(1 - \cos\theta\right)
+                \left(\der{x}{\t}\right)^2 &+ \left(\der{y}{\t}\right)^2\\
+                &= \left(-2a\sin\t + 2a\sin2\t\right)^2 + \left(2a\cos\t - 2a\cos2\t\right)^2\\
+                &= 4a^2\Big[\left(-\sin\t + \sin2\t\right)^2 + \left(\cos\t - \cos2\t\right)^2\Big]\\
+                &= 4a^2\Big[\sin^2\t - 2\sin\t\sin2\t + \sin^2 2\t + \cos^2\t - 2\cos\t\cos2\t + \cos^2 2\t\Big]\\
+                &= 4a^2\Big[\left(\sin^2\t + \cos^2\t\right) + \left(\sin^2 2\t + \cos^2 2\t\right) - 2\left(\sin\t\sin2\t + \cos\t\cos2\t\right)\Big]\\
+                &= 4a^2\left(1 + 1 - 2\cos\t\right)\\
+                &= 8a^2\left(1 - \cos\t\right)
             \end{align*}
             Hence, the length of the path of $P$ is given by
             {\allowdisplaybreaks
             \begin{align*}
-                \text{Length} &= \int_0^{2\pi} \sqrt{\left(\der{x}{\theta}\right)^2 + \left(\der{y}{\theta}\right)^2} \d \theta\\
-                &= \int_0^{2\pi} \sqrt{8a^2(1 - \cos\theta)} \d \theta\\
-                &= \sqrt8 a \int_0^{2\pi} \sqrt{1 - \cos\theta}\d \theta\\
-                &= \sqrt8 a \int_0^{2\pi} \sqrt{2\sin^2 \left(\dfrac\theta2\right)}\d \theta\\
-                &= 4 a \int_0^{2\pi} \sin \left(\dfrac\theta2\right) \d \theta \usub{u &= \theta/2\\\d u &= \d \theta/2}\\
-                &= 8 a \int_0^{\pi} \sin u \d \theta\\
+                \text{Length} &= \int_0^{2\pi} \sqrt{\left(\der{x}{\t}\right)^2 + \left(\der{y}{\t}\right)^2} \d \t\\
+                &= \int_0^{2\pi} \sqrt{8a^2(1 - \cos\t)} \d \t\\
+                &= \sqrt8 a \int_0^{2\pi} \sqrt{1 - \cos\t}\d \t\\
+                &= \sqrt8 a \int_0^{2\pi} \sqrt{2\sin^2 \left(\dfrac\t2\right)}\d \t\\
+                &= 4 a \int_0^{2\pi} \sin \left(\dfrac\t2\right) \d \t \usub{u &= \t/2\\\d u &= \d \t/2}\\
+                &= 8 a \int_0^{\pi} \sin u \d \t\\
                 &= 8 a \eval{-\cos u}{0}{\pi}\\
                 &= 16a
-            \end{align*}
-            }
+            \end{align*}}
 
-            \boxt{
-                The length of the path of $P$ is $16a$ units.
-            }
+            \boxt{The length of the path of $P$ is $16a$ units.}
 
         \part
-            When the gear has rotated $\pi$ radians, $P$ ends up at $\coord{-3a}0$. This is the reflection of $P'$ in the $y$-axis. Indeed, $P'$ also ends up at $\coord{-a}0$, which is the reflection of $P$ in the $y$-axis. Hence, the path taken by $P'$ is excatly the path taken by $P$ in the $y$-axis, but reflected in the $y$-axis. Hence, the total length travelled by $P$ and $P'$ are equal. Thus, the comment is incorrect.
+            When the gear has rotated $\pi$ radians, $P$ ends up at $(-3a, 0)$. This is the reflection of $P'$ in the $y$-axis. Indeed, $P'$ also ends up at $(-a, 0)$, which is the reflection of $P$ in the $y$-axis. Hence, the path taken by $P'$ is exactly the path taken by $P$ in the $y$-axis, but reflected in the $y$-axis. Hence, the total length travelled by $P$ and $P'$ are equal. Thus, the comment is incorrect.
 
     \problem{}
-        To promote Earth Day, the Earth Day Network organises an event that will be held for $n$ consecutive days. Cash prizes will be awarded to participants throughout the event, with one lucky participant chosen each day. Let the budget for the cash prizes by \$$m$.
+        To promote Earth Day, the Earth Day Network organizes an event that will be held for $n$ consecutive days. Cash prizes will be awarded to participants throughout the event, with one lucky participant chosen each day. Let the budget for the cash prizes by \$$m$.
         
-        The amount of cash prize given out on the first day is a sum of \$10 and $\dfrac17$ of the remaining budget, i.e. \$$\left(10 + \dfrac17 (m - 10)\right)$. The amount of cash prize given out on the second day is a sum of \$20 and $\dfrac17$ of the remaining budget. In general, the amount of cash prize given out on the $k$th day is a sum of \$$10k$ and $\dfrac17$ of the remaining budget. Let $u_k$ denote the amount of cash prize given out on the $k$th day, with $1 \leq k \leq n$, $k \in \mathbb{Z}^+$.
+        The amount of cash prize given out on the first day is a sum of \$10 and $\dfrac17$ of the remaining budget, i.e. \$$\left(10 + \dfrac17 (m - 10)\right)$. The amount of cash prize given out on the second day is a sum of \$20 and $\dfrac17$ of the remaining budget. In general, the amount of cash prize given out on the $k$th day is a sum of \$$10k$ and $\dfrac17$ of the remaining budget. Let $u_k$ denote the amount of cash prize given out on the $k$th day, with $1 \leq k \leq n$, $k \in \Z^+$.
 
         \begin{enumerate}
             \item Write down the expression for $u_k$, in terms of $u_1, u_2, \ldots, u_{k-1}$.
@@ -691,7 +669,7 @@
             \item Find $u_k$ in the form $u_k = p\left(\dfrac67\right)^k (m - 360) + q$, where $p$ and $q$ are constants to be determined.
         \end{enumerate}
 
-        \noindent It is given that $m = 4000$.
+         It is given that $m = 4000$.
 
         \begin{enumerate}
             \setcounter{enumi}{3}
@@ -703,9 +681,8 @@
     \solution
         \part
             On the $k$th day, the total cash prizes that have already been given out is $u_1 + u_2 + \ldots + u_{k-1}$. Hence,
-            \boxt{
-                $u_k = 10k + \dfrac17 \Big(m - 10k - (u_1 + u_2 + \ldots + u_{k-1})\Big)$
-            }
+            
+            \boxt{$u_k = 10k + \dfrac17 \Big(m - 10k - (u_1 + u_2 + \ldots + u_{k-1})\Big)$}
 
         \part
             {\allowdisplaybreaks
@@ -715,8 +692,7 @@
                 && &= 10 + \dfrac17(-10 - u_k)\\
                 && &= \dfrac{60}7 - \dfrac17 u_k\\
                 \implies&&u_{k+1} &= \dfrac{60}7 + \dfrac67 u_k
-            \end{alignat*}
-            }
+            \end{alignat*}}
 
         \part
             Let $x$ be the constant such that $u_k + x = \dfrac67 (u_{k-1} + x)$. Then $-\dfrac17 x = \dfrac{60}7 \implies x = -60$.
@@ -729,9 +705,7 @@
                 && &= \dfrac16 \left(\dfrac67\right)^k \left( m - 360\right) + 60\\
             \end{alignat*}
 
-            \boxt{
-                $u_k = \dfrac16 \left(\dfrac67\right)^k \left( m - 360\right) + 60$
-            }
+            \boxt{$u_k = \dfrac16 \left(\dfrac67\right)^k \left( m - 360\right) + 60$}
 
         \part
             Let $S_n$ be the total amount of cash prizes given out in $n$ days.
@@ -748,9 +722,7 @@
             \end{align*}
             Since $S_{14} > 4000 = m$, there is not enough money to pay out the cash prizes for 14 days, or 2 weeks.
 
-            \boxt{
-                It is not poassible for the Earth Day Network to host this event for 2 weeks.
-            }
+            \boxt{It is not possible for the Earth Day Network to host this event for 2 weeks.}
 
         \part
             Consider $u_k < \dfrac5{100}m = 200$.
@@ -763,9 +735,7 @@
             \end{alignat*}
 
             Note that $S_{13} = (4000 - 360) \left(1 - \left(\dfrac67\right)^{13}\right) + 60\cdot13 = 3929 < 4000 = m$. Hence,
-            \boxt{
-                $\{k \in \mathbb{N} : 10 \leq k \leq 13\}$
-            }
+            \boxt{$\bc{k \in \N : 10 \leq k \leq 13}$}
 
         \part
             Consider $S_{14} \leq m$.
@@ -779,7 +749,5 @@
                 && &= 4514.285
             \end{alignat*}
 
-            \boxt{
-                Earth Day Network needs to have a minimum budget of \$$4514.29$.
-            }
+            \boxt{Earth Day Network needs to have a minimum budget of \$$4514.29$.}
 \end{document}

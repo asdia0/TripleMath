@@ -437,9 +437,9 @@
         Sketch the curves defined by the following parametric equations. Find also their respective Cartesian equations.
 
         \begin{enumerate}
-            \item $x=4t+3, \, y=16t^2 -9, \, t \in \mathbb{R}$
+            \item $x=4t+3, \, y=16t^2 -9, \, t \in \R$
             \item $x=t^2, \, y=2\ln t, \, t \geq 1$
-            \item $x = 1 + 2\cos \theta, \, y = 2\sin\theta -1, \, 0 \leq \theta \leq \dfrac{\pi}2$
+            \item $x = 1 + 2\cos \t, \, y = 2\sin\t -1, \, 0 \leq \t \leq \dfrac{\pi}2$
             \item $x = t^2, \, y = \dfrac2t, \, t \neq 0$
         \end{enumerate}
 
@@ -471,9 +471,7 @@
 
             Since $x = 4t+3$, we have $t = \dfrac14 (x-3)$. Thus, $y = 16 \left(\dfrac14 (x-3)\right)^2 - 9 = (x-3)^2-9$.
 
-            \boxt{
-                $y = (x-3)^2-9$
-            }
+            \boxt{$y = (x-3)^2-9$}
 
         \part
             \begin{center}
@@ -503,9 +501,7 @@
 
             Since $x = t^2$ and $t \geq 1 > 0$, we have $t = \sqrt{x}$. Thus, $y = 2\ln{t} = 2\ln{\sqrt{x}} = \ln{x}$.
 
-            \boxt{
-                $y=\ln x$
-            }
+            \boxt{$y=\ln x$}
 
         \part
             \begin{center}
@@ -531,7 +527,7 @@
 
                         \addplot[plotRed] [domain=0:pi/2,samples=100]({1 + 2 * cos(\x r)},{2 * sin(\x r) - 1});
 
-                        \addlegendentry{$x = 1 + 2\cos \theta, \, y = 2\sin\theta -1$};
+                        \addlegendentry{$x = 1 + 2\cos \t, \, y = 2\sin\t -1$};
 
                         \fill (1, 1) circle[radius=2.5 pt] node[anchor=south] {$(1,1)$};
 
@@ -540,11 +536,9 @@
                 \end{tikzpicture}
             \end{center}
 
-            We have $2\cos\theta = x-1$ and $2\sin\theta = y+1$. Squaring both equations and adding them, we obtain $4\cos^2\theta + 4\sin^2\theta = (x-1)^2 + (y+1)^2$, which simplifies to $(x-1)^2 + (y+1)^2 = 4$.
+            We have $2\cos\t = x-1$ and $2\sin\t = y+1$. Squaring both equations and adding them, we obtain $4\cos^2\t + 4\sin^2\t = (x-1)^2 + (y+1)^2$, which simplifies to $(x-1)^2 + (y+1)^2 = 4$.
 
-            \boxt{
-                $(x-1)^2 + (y+1)^2 = 4$
-            }
+            \boxt{$(x-1)^2 + (y+1)^2 = 4$}
 
         \part
             \begin{center}
@@ -577,9 +571,7 @@
 
             Since $x = t^2$, we have $t = \pm \sqrt{x}$. Hence, $y = \pm \dfrac2{\sqrt{x}}$.
 
-            \boxt{
-                $y = \pm \dfrac2{\sqrt{x}}$
-            }
+            \boxt{$y = \pm \dfrac2{\sqrt{x}}$}
 
     
     \problem{} 
@@ -591,15 +583,14 @@
             \item Use your calculator to find these $x$-coordinates.
         \end{enumerate}
 
-       \noindent Another curve is defined parametrically by
-
-        \begin{equation*}
-            x = \sqrt6 \cos\theta, \, y = \sqrt3 \sin\theta, \, -\pi \leq \theta \leq \pi
-        \end{equation*}
+        Another curve is defined parametrically by
+        \[
+            x = \sqrt6 \cos\t, \, y = \sqrt3 \sin\t, \, -\pi \leq \t \leq \pi
+        \]
 
         \begin{enumerate}
             \setcounter{enumi}{3}
-            \item Find the Cartesian equation of this curve and hence determine the number of roots to the equation $\sqrt3 \sin\theta = \dfrac{\sqrt6 \cos\theta -2}{\sqrt6 \cos\theta+2}$ for $-\pi \leq \theta \leq \pi$.
+            \item Find the Cartesian equation of this curve and hence determine the number of roots to the equation $\sqrt3 \sin\t = \dfrac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}$ for $-\pi \leq \t \leq \pi$.
         \end{enumerate}
 
     \solution
@@ -644,46 +635,36 @@
 
         \part
             From $C_1$, we have $y(x+2) = x-2$. Hence,
-
-            \begin{equation*}
+            \[
                 y^2(x+2)^2 = (x-2)^2
-            \end{equation*}
+            \]
 
             From $C_2$, we have $x^2 + 2y^2 = 6$. Hence,
-
-            \begin{equation*}
+            \[
                 y^2 = \dfrac{6-x^2}2
-            \end{equation*}
+            \]
 
             Putting both equations together, we have
-
             \begin{alignat*}{2}
                 &&(x-2)^2 &= \dfrac{\left(6-x^2\right)(x+2)^2}2\\
                 \implies&& 2(x-2)^2 &= \left(6-x^2\right)(x+2)^2
             \end{alignat*}
 
         \part
-            \boxt{
-                $x = -0.515 \lor x = 2.45$
-            }
+            \boxt{$x = -0.515 \lor x = 2.45$}
 
         \part
-            Since $x = \sqrt 6 \cos\theta$ and $y = \sqrt3 \sin\theta$, we have $x^2 = 6\cos^2\theta$ and $2y^2 = 6 \sin^2\theta$. Adding both equations together, we have
-
+            Since $x = \sqrt 6 \cos\t$ and $y = \sqrt3 \sin\t$, we have $x^2 = 6\cos^2\t$ and $2y^2 = 6 \sin^2\t$. Adding both equations together, we have
             \begin{alignat*}{2}
-                &&x^2 + 2y^2 &= 6\cos^2\theta + 6\sin^2\theta\\
+                &&x^2 + 2y^2 &= 6\cos^2\t + 6\sin^2\t\\
                 && &=6\\
                 \implies&&\dfrac{x^2}6 + \dfrac{y^2}3 &= 1
             \end{alignat*}
 
-            \boxt{
-                $\dfrac{x^2}6 + \dfrac{y^2}3 = 1$
-            }
+            \boxt{$\dfrac{x^2}6 + \dfrac{y^2}3 = 1$}
 
-            This is the equation that gives $C_1$. We further observe that the equation $\sqrt3 \sin\theta = \dfrac{\sqrt6 \cos\theta -2}{\sqrt6 \cos\theta+2}$ simplifies to $y = \dfrac{x-2}{x+2}$. This is the equation that gives $C_2$. Since there are two intersections between $C_1$ and $C_2$, there are thus two roots to the equation $\sqrt3 \sin\theta = \dfrac{\sqrt6 \cos\theta -2}{\sqrt6 \cos\theta+2}$.
+            This is the equation that gives $C_1$. We further observe that the equation $\sqrt3 \sin\t = \dfrac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}$ simplifies to $y = \dfrac{x-2}{x+2}$. This is the equation that gives $C_2$. Since there are two intersections between $C_1$ and $C_2$, there are thus two roots to the equation $\sqrt3 \sin\t = \dfrac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}$.
 
-            \boxt{
-                There are 2 roots to $\sqrt3 \sin\theta = \dfrac{\sqrt6 \cos\theta -2}{\sqrt6 \cos\theta+2}$.
-            }
+            \boxt{There are 2 roots to $\sqrt3 \sin\t = \dfrac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}$.}
 
 \end{document}

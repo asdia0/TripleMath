@@ -6,13 +6,11 @@
 
 \begin{document}
     \problem{}
-        Show that 
-        
-        \begin{equation*}
+        Show that         
+        \[
             \sum_{r=1}^{(n-1)^2 + 3} (3^{2r} - n + 1) = \dfrac{a}{b} \left(729 \cdot 9^{(n-1)^2} - 1\right) - c(n-1)^3 - d(n-1)
-        \end{equation*}
-
-        \noindent where $a$, $b$, $c$ and $d$ are constants to be determined.
+        \]
+        where $a$, $b$, $c$ and $d$ are constants to be determined.
     
     \solution
         \begin{align*}
@@ -24,17 +22,15 @@
     \problem{}
         \textbf{Do not use a calculator in answering this question.}
 
-        \medskip
+        The sequence of positive numbers, $u_n$, satisfies the recurrence relation:
 
-        \noindent The sequence of positive numbers, $u_n$, satisfies the recurrence relation:
-
-        \begin{equation*}
+        \[
             u_{n+1} = \sqrt{2u_n + 3}, \qquad n = 1, 2, 3, \ldots
-        \end{equation*}
+        \]
 
         \begin{enumerate}
             \item If the sequence converges to $m$, find the value of $m$.
-            \item By using a graphical approach, explain why $m < u_{n_1} < u_n$ when $u_n > u_m$. Hence determine the behaviour of the sequence when $u_1 > m$.
+            \item By using a graphical approach, explain why $m < u_{n_1} < u_n$ when $u_n > u_m$. Hence, determine the behaviour of the sequence when $u_1 > m$.
         \end{enumerate}
 
     \solution
@@ -54,9 +50,7 @@
             \end{alignat*}
             Thus, $m = 3$ or $m = -1$. Since $u_n$ is always positive, we take $m = 3$.
             
-            \boxt{
-                $m = 3$
-            }
+            \boxt{$m = 3$}
 
         \part
             \begin{center}
@@ -104,9 +98,7 @@
 
             From the graph, if $u_n > 3$, then $3 < u_{n+1} < u_n$.
 
-            \boxt{
-                The sequence decreases and converges to 3.
-            }
+            \boxt{The sequence decreases and converges to 3.}
 
     \problem{}
         Two expedition teams are to climb a vertical distance of 8100 m from the foot to the peak of a mountain. Team $A$ plans to cover a vertical distance of 400 m on the first day. On each subsequent day, the vertical distance covered is 5 m less than the vertical distance covered in the previous day. Team $B$ plans to cover a vertical distance of 800 m on the first day. On each subsequent day, the vertical distance covered is 90\% of the vertical distance covered in the previous day.
@@ -120,14 +112,12 @@
     \solution
         \part
             The vertical distance Team $A$ plans to cover in a day can be described as a sequence in arithmetic progression with first term 400 and common difference $-5$. In order to reach the peak, the total vertical distance covered by Team $A$ has to be greater than 8100 m. Hence,
-            \begin{equation*}
+            \[
                 \dfrac{n}2 \left(2 (400) + (n-1)(-5)\right) \geq 8100
-            \end{equation*}
+            \]
             From the graphing calculator, $n \geq 24$. Hence, Team $A$ requires 24 days to reach the peak.
 
-            \boxt{
-                24 days.
-            }
+            \boxt{24 days.}
 
         \part
             The vertical distance Team $B$ plans to cover in the $n$th day can be described by the sequence $U_n$ in geometric progression with first term 800 and common ratio $r = 0.9$. Let $S^U_n$ be the $n$th partial sum of $U_n$. Since $\abs{r} < 1$, the sum to infinity of exists and is equal to
@@ -138,31 +128,29 @@
 
         \part
             The new vertical distance covered by Team $B$ after Day 15 can be described by the sequence $V_n$ in geometric progression with first term $U_{15}$ and common ratio $r = 0.95$. Let $S^V_n$ be the $n$th partial sum of $V_n$. Then,
-            \begin{equation*}
+            \[
                 S^V_n = \frac{U_{15}\cdot 0.95 \left(1 - (0.95)^n\right)}{1 - 0.95}
-            \end{equation*}
+            \]
             Note that             
-            \begin{equation*}
+            \[
                 S^U_n = \frac{800\left(1 - (0.9)^n\right)}{1 - 0.9}
-            \end{equation*}
+            \]
             Hence, after Day 15, Team $B$ has to climb another $8000 - S^U_{15} = 1747.13$ metres. Since $U_{15} = 183.01$, we have the inequality
-            \begin{equation*}
+            \[
                 \frac{183.01\cdot0.95\left(1 - (0.95)^n\right)}{1 - 0.95} \geq 1747.13
-            \end{equation*}
+            \]
             Using the graphing calculator, $n \geq 14$. Hence, Team $B$ will need at least $15 + 14 = 29$ days to reach the peak.
 
-            \boxt{
-                Team $A$ will reach the peak first.
-            }
+            \boxt{Team $A$ will reach the peak first.}
 
     \problem{}
-        The function $f$ is given by $f(x) = x^2 - 3x + 2 - e^{-x}$. It is known from graphical work that this equation has 2 roots $x = \alpha$ and $x = \beta$, where $\alpha < \beta$.
+        The function $f$ is given by $f(x) = x^2 - 3x + 2 - e^{-x}$. It is known from graphical work that this equation has 2 roots $x = \a$ and $x = \b$, where $\a < \b$.
 
         \begin{enumerate}
             \item Show that $f(x) = 0$ has at least one root in the interval $[0, 1]$.
         \end{enumerate}
 
-        \noindent It is known that there is exactly one root in $[0, 1]$ where $x = \alpha$.
+        It is known that there is exactly one root in $[0, 1]$ where $x = \a$.
 
         \begin{enumerate}
             \setcounter{enumi}{1}
@@ -170,22 +158,22 @@
             \begin{equation*}
                 x_{n+1} = p\left(x_n^2 + q - e^{-x_n}\right)
             \end{equation*}            
-            where $p$ and $q$ are real numbers to be determined, to find the value of $\alpha$ correct to 3 decimal places. You should demonstrate that your answer has the required accuracy.
+            where $p$ and $q$ are real numbers to be determined, to find the value of $\a$ correct to 3 decimal places. You should demonstrate that your answer has the required accuracy.
         \end{enumerate}
 
-        \noindent It is known that the other root $x = \beta$ lies in the interval $[2, 3]$.
+        It is known that the other root $x = \b$ lies in the interval $[2, 3]$.
 
         \begin{enumerate}
             \setcounter{enumi}{2}
-            \item With the aid of a clearly labelled diagram, explain why the method in (b) will fail to obtain any reasonable approximation to $\beta$, where $x_0$ is chosen such that $x_0 \in [2, 3]$, $x_0 \neq \beta$.
+            \item With the aid of a clearly labelled diagram, explain why the method in (b) will fail to obtain any reasonable approximation to $\b$, where $x_0$ is chosen such that $x_0 \in [2, 3]$, $x_0 \neq \b$.
         \end{enumerate}
 
-        \noindent To obtain an approximation to $\beta$, another approach is used.
+        To obtain an approximation to $\b$, another approach is used.
 
         \begin{enumerate}
             \setcounter{enumi}{3}
-            \item Use linear interpolation once in the interval $[2, 3]$ to find a first approximation to $\beta$, giving your answer to 2 decimal places. Explain whether this approximate is an overestimate or underestimate.
-            \item With your answer in (d) as the initial approximate, use the Newton-Raphson method to obtain $\beta$ correct to 3 decimal places. Your process should terminate when you have two sucessive iterates that are equal when rounded to 3 decimal places.
+            \item Use linear interpolation once in the interval $[2, 3]$ to find a first approximation to $\b$, giving your answer to 2 decimal places. Explain whether this approximate is an overestimate or underestimate.
+            \item With your answer in (d) as the initial approximate, use the Newton-Raphson method to obtain $\b$ correct to 3 decimal places. Your process should terminate when you have two sucessive iterates that are equal when rounded to 3 decimal places.
         \end{enumerate}
 
     \solution
@@ -217,11 +205,9 @@
                 \implies&&x_{10} &= \dfrac13 \left( x^2_9 + 2 - e^{-x_9}\right) &= 0.60851\\
                 \implies&&x_{11} &= \dfrac13 \left( x^2_{10} + 2 - e^{-x_{10}}\right) &= 0.60870
             \end{alignat*}
-            Since $f(0.6085) = 0.000606 > 0$ and $f(0.6095) = -0.000632 < 0$, we have that $\alpha \in (0.6085, 0.6095)$. Hence,
+            Since $f(0.6085) = 0.000606 > 0$ and $f(0.6095) = -0.000632 < 0$, we have that $\a \in (0.6085, 0.6095)$. Hence,
 
-            \boxt{
-                $\alpha = 0.609 \todp{3}$
-            }
+            \boxt{$\a = 0.609 \todp{3}$}
 
         \part
             \begin{center}
@@ -232,7 +218,7 @@
                         axis y line=middle,
                         axis x line=middle,
                         xtick = {0.609, 2.109, 2.5, 1.6},
-                        xticklabels = {$\alpha$, $\beta$, $x_0 > \beta$, $x_0 < \beta$},
+                        xticklabels = {$\a$, $\b$, $x_0 > \b$, $x_0 < \b$},
                         ytick = \empty,
                         xlabel = {$x$},
                         ylabel = {$y$},
@@ -284,7 +270,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            \noindent From the diagram, we see that whether we chose $x_0 < \beta$ or $x_0 > \beta$, we the approximates move away from the root $\beta$. In fact, if we choose $x_0 < \beta$, the approximates converge to the root $\alpha$ instead.
+            From the diagram, we see that whether we chose $x_0 < \b$ or $x_0 > \b$, the approximates move away from the root $\b$. In fact, if we choose $x_0 < \b$, the approximates converge to the root $\a$ instead.
 
         \part
             Using linear interpolation on the interval $[2, 3]$,
@@ -292,25 +278,19 @@
                 x_1 = \dfrac{2f(3)-3f(2)}{f(3)-f(2)} = 2.06 \todp{2}
             \end{equation*}
 
-            \boxt{
-                $\beta = 2.06 \todp{2}$
-            }
+            \boxt{$\b = 2.06 \todp{2}$}
 
-            \noindent Observe that $f(2.06) = -0.039 < 0$ and $f(3) = 1.950 > 0$. Hence, $\beta \in (2.06, 3)$. Thus,
+            Observe that $f(2.06) = -0.039 < 0$ and $f(3) = 1.950 > 0$. Hence, $\b \in (2.06, 3)$. Thus,
 
-            \boxt{
-                $\beta = 2.06$ is an underestimate.
-            }
+            \boxt{$\b = 2.06$ is an underestimate.}
 
         \part
-            Observe that $f^\prime(x) = 2x x- 3 + e^{-x}$.Using the Newton-Raphson method with $x_1 = 2.06$,
+            Observe that $f'(x) = 2x x- 3 + e^{-x}$. Using the Newton-Raphson method with $x_1 = 2.06$,
             \begin{alignat*}{2}
                 &&x_2 &= \nrm{x_1}{f} = 2.11118 = 2.111 \todp{3}\\
                 \implies&&x_3 &= \nrm{x_2}{f} = 2.10935 = 2.109\todp{3}\\
                 \implies&&x_4 &= \nrm{x_3}{f} = 2.10935 = 2.109\todp{3}
             \end{alignat*}
             Hence,
-            \boxt{
-                $\beta = 2.109 \todp{3}$
-            }
+            \boxt{$\b = 2.109 \todp{3}$}
 \end{document}

@@ -14,11 +14,9 @@
             &= 6x^2+6x+6
         \end{align*}
 
-        \boxt{
-            $\der{y}{x} = 6x^2 + 6x + 6$
-        }
+        \boxt{$\der{y}{x} = 6x^2 + 6x + 6$}
 
-        Observe that $\der{y}{x} = 6x^2 + 6x+6 = 6\left(x + \dfrac12\right)^2 + \dfrac{18}4$. For all $x \in \mathbb{R}$, we have $\left(x + \dfrac12\right)^2 \geq 0$. Hence, $\der{y}{x} > 0$. Thus, $y$ is increasing for all real values of $x$.
+        Observe that $\der{y}{x} = 6x^2 + 6x+6 = 6\left(x + \dfrac12\right)^2 + \dfrac{18}4$. For all $x \in \R$, we have $\left(x + \dfrac12\right)^2 \geq 0$. Hence, $\der{y}{x} > 0$. Thus, $y$ is increasing for all real values of $x$.
 
     \problem{}
         Find, by differentiation, the $x$-coordinates of all the stationary points on the curve $y = \dfrac{x^3}{(x+1)^2}$ stating, with reasons, the nature of each point.
@@ -27,10 +25,10 @@
         \begin{alignat*}{2}
             &&y &= \dfrac{x^3}{(x+1)^2}\\
             \implies&&(x+1)^2y&=x^3\\
-            \implies&&(x+1)^2\cdot y^\prime + y\cdot2(x+1) &= 3x^2
+            \implies&&(x+1)^2\cdot y' + y\cdot2(x+1) &= 3x^2
         \end{alignat*}
 
-        For stationary points, $y^\prime = 0$.
+        For stationary points, $y' = 0$.
 
         \begin{alignat*}{2}
             \implies&&y\cdot2(x+1) &= 3x^2\\
@@ -44,9 +42,7 @@
 
         Hence, $x = 0$ or $x = -3$.
 
-        \boxt{
-            The $x$-coordinates of the stationary points are $x =0$ and $x=-3$.
-        }
+        \boxt{The $x$-coordinates of the stationary points are $x =0$ and $x=-3$.}
 
         \begin{table}[h]
             \centering
@@ -70,30 +66,26 @@
 
         Thus, there is a maximum point at $x=-3$.
 
-        \boxt{
-            At $x=0$, there is a stationary point of inflexion.\\At $x=-3$, there is a maximum point.
-        }
+        \boxt{At $x=0$, there is a stationary point of inflexion.\\At $x=-3$, there is a maximum point.}
 
     \problem{}
         Differentiate $f(x) = 8\sin \dfrac{x}2 - 4x$ with respect to $x$ and deduce that $f(x) < 0$ for $x>0$.
 
     \solution
         \begin{align*}
-            f^\prime(x) &= 8\cos \dfrac{x}2 \cdot \dfrac12 - \cos x - 4\\
+            f'(x) &= 8\cos \dfrac{x}2 \cdot \dfrac12 - \cos x - 4\\
             &= 4\cos\dfrac{x}2 - \cos x- 4
         \end{align*}
 
-        \boxt{
-            $f^\prime(x) = 4\cos\dfrac{x}2 - \cos x- 4$
-        }
+        \boxt{$f'(x) = 4\cos\dfrac{x}2 - \cos x- 4$}
 
         \begin{align*}
-            f^\prime(x) &= 4\cos\dfrac{x}2 - \cos x- 4\\
+            f'(x) &= 4\cos\dfrac{x}2 - \cos x- 4\\
             &= 4\cos \dfrac{x}2 - (2\cos^2 \dfrac{x}2 - 1) - 4\\
             &= -2\left(\cos\dfrac{x}2 - 1\right)^2 - 1
         \end{align*}
 
-        Observe that for all $x \in \mathbb{R}$, $\left(\cos\dfrac{x}2 - 1\right)^2 \geq 0$. Hence, $f^\prime(x) < 0$ for all real values of $x$. Thus, $f(x)$ is strictly decreasing on $\mathbb{R}$.
+        Observe that for all $x \in \R$, $\left(\cos\dfrac{x}2 - 1\right)^2 \geq 0$. Hence, $f'(x) < 0$ for all real values of $x$. Thus, $f(x)$ is strictly decreasing on $\R$.
 
         Note that $f(0) = 8\sin 0 - \sin 0 - 4 \cdot 0 = 0$. Since $f(x)$ is strictly decreasing, for all $x > 0$, $f(x) < f(0) = 0$.
 
@@ -361,7 +353,7 @@
     \problem{}
         \begin{enumerate}
             \item Given that $y=ax\sqrt{x+2}$ where $a > 0$, find $\der{y}{x}$, expressing your answer as a single algebraic fraction. Hence show that the curve $y = ax\sqrt{x+2}$ has only one turning point, and state its coordinates in exact form.
-            \item Sketch the graph of $y = f^\prime(x)$, where $f(x) = ax\sqrt{x+2}$, where $a > 0$.
+            \item Sketch the graph of $y = f'(x)$, where $f(x) = ax\sqrt{x+2}$, where $a > 0$.
         \end{enumerate}
 
     \solution
@@ -372,9 +364,7 @@
                 &= \dfrac{a(3x+4)}{2\sqrt{x+2}}
             \end{align*}
 
-            \boxt{
-                $\der{y}{x} = \dfrac{a(3x+4)}{2\sqrt{x+2}}$
-            }
+            \boxt{$\der{y}{x} = \dfrac{a(3x+4)}{2\sqrt{x+2}}$}
 
             Consider the stationary points of $y=ax\sqrt{x+2}$. For stationary points, $\der{y}{x} =0$.
 
@@ -399,9 +389,7 @@
 
             Substituting $x = -\dfrac43$ into $y = ax\sqrt{x+2}$, we see that $y = -\dfrac{4a}3 \sqrt{\dfrac23}$. Hence, the coordinate of the turning point is $(-\dfrac43, -\dfrac{4a}3 \sqrt{\dfrac23})$.
 
-            \boxt{
-                $(-\dfrac43, -\dfrac{4a}3 \sqrt{\dfrac23})$
-            }
+            \boxt{$\bp{-\dfrac43, -\dfrac{4a}3 \sqrt{\dfrac23}}$}
 
         \part
             \begin{center}
@@ -428,7 +416,7 @@
                         ]
                         \addplot[plotRed] {(3*x + 4)/(2 * sqrt(x+2))};
             
-                        \addlegendentry{$y = f^\prime(x)$};
+                        \addlegendentry{$y = f'(x)$};
 
                         \draw[dotted, thick] (-2, -2) -- (-2, 5) node[anchor=north east, rotate=90] {$x=-2$};
                     \end{axis}
@@ -515,14 +503,14 @@
             \end{center}
 
     \problem{}
-        The function $f$ defined by $f(x) = \ln x - 2\left(x-\dfrac12\right)$, where $x \in \mathbb{R}, x > 0$. Find $f^\prime(x)$ and show that the function is decreasing for $x > \dfrac12$. Hence show that for $x > \dfrac12$, $2\left(x - \dfrac12\right) - \ln x > \ln 2$.
+        The function $f$ defined by $f(x) = \ln x - 2\left(x-\dfrac12\right)$, where $x \in \R, x > 0$. Find $f'(x)$ and show that the function is decreasing for $x > \dfrac12$. Hence show that for $x > \dfrac12$, $2\left(x - \dfrac12\right) - \ln x > \ln 2$.
 
     \solution
         \begin{equation*}
-            f^\prime = \dfrac1x - 2
+            f' = \dfrac1x - 2
         \end{equation*}
 
-        When $x > \dfrac12$, $\dfrac1x < 2 \implies \dfrac1x - 2<0$. Thus, $f^\prime(x) < 0$, whence $f(x)$ is decreasing.
+        When $x > \dfrac12$, $\dfrac1x < 2 \implies \dfrac1x - 2<0$. Thus, $f'(x) < 0$, whence $f(x)$ is decreasing.
 
         Note that $f\left(\dfrac12\right) = \ln \dfrac12 - 2\left(\dfrac12 - \dfrac12\right) = -\ln2$. Since $f(x)$ is decreasing for all $x > \dfrac12$, $f(x) < f\left(\dfrac12\right) = -\ln 2 \implies \ln x - 2\left(x - \dfrac12\right) < -\ln2 \implies 2\left(x - \dfrac12\right) - \ln x > \ln 2$.
 

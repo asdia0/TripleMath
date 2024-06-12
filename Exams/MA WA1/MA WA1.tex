@@ -1,6 +1,6 @@
 \documentclass{echw}
 
-\title{Mathematics\\Weighted Assesment 1}
+\title{Mathematics\\Weighted Assessment 1}
 \author{Eytan Chong}
 \date{2024-04-25}
 
@@ -44,9 +44,9 @@
             
                         \addlegendentry{$C$};
 
-                        \draw (2, -12) circle[radius=2.5pt] node[anchor=north] {$\coord2{-12}$};
+                        \draw (2, -12) circle[radius=2.5pt] node[anchor=north] {$(2, -12)$};
 
-                        \draw (2, 3) circle[radius=2.5pt] node[anchor=south] {$\coord2{3}$};
+                        \draw (2, 3) circle[radius=2.5pt] node[anchor=south] {$(2, 3)$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
@@ -61,11 +61,9 @@
                 \implies&&\left(t - \dfrac12\right)^2 &= 0\\
                 \implies&&t &= \dfrac12
             \end{alignat*}
-            When $t = \dfrac12$, we have that $x = \dfrac34$ and $y = \dfrac74$. Thus, $C$ and the line $8y-12x=5$ intersect at $\coord{\dfrac34}{\dfrac74}$.
+            When $t = \dfrac12$, we have that $x = \dfrac34$ and $y = \dfrac74$. Thus, $C$ and the line $8y-12x=5$ intersect at $\bp{\dfrac34, \dfrac74}$.
 
-            \boxt{
-                $\coord{\dfrac34}{\dfrac74}$
-            }
+            \boxt{$\bp{\dfrac34, \dfrac74}$}
 
     \problem{}
         \begin{enumerate}
@@ -89,11 +87,9 @@
                 &&\dfrac1{(x-3)(x+1)} &\geq 0\\
                 \implies&&(x-3)(x+1) &\geq 0
             \end{alignat*}
-            \noindent whence $x < 1$ or $x > 3$. Putting everything together, we have
+             whence $x < 1$ or $x > 3$. Putting everything together, we have
 
-            \boxt{
-                $x < -1 \lor x = 1 \lor x > 3$
-            }
+            \boxt{$x < -1 \lor x = 1 \lor x > 3$}
 
         \part
             \begin{alignat*}{2}
@@ -108,9 +104,7 @@
 
             \case{3}{$\abs{x} > 3$.} We have $x > 3$ or $x < -3$.
 
-            \boxt{
-                $x < -3 \lor x = -1 \lor x = 1 \lor x > 3$
-            }
+            \boxt{$x < -3 \lor x = -1 \lor x = 1 \lor x > 3$}
 
     \problem{}
         The curve $C_1$ has equation
@@ -122,11 +116,11 @@
             \item Sketch the graph of $C_1$, stating the equations of any asymptotes and the coordinates of any axial intercepts and/or turning points.
         \end{enumerate}
 
-        \noindent The curve $C_2$ has equation
+         The curve $C_2$ has equation
         \begin{equation*}
             \dfrac{(x-a)^2}{1^2} + \dfrac{(y-6)^2}{b^2} = 1
         \end{equation*}
-        \noindent where $b > 0$. It is given that $C_1$ and $C_2$ have no points in common for all $a \in \mathbb{R}$.
+         where $b > 0$. It is given that $C_1$ and $C_2$ have no points in common for all $a \in \R$.
         \begin{enumerate}
             \setcounter{enumi}{1}
             \item By adding an appropriate curve in part (a), state the range of values of $b$, explaining your answer.
@@ -179,7 +173,7 @@
 
                         \fill (0, 2) circle[radius=2.5pt];
 
-                        \fill (2, 10) circle[radius=2.5pt] node[anchor=west] {$\coord2{10}$};
+                        \fill (2, 10) circle[radius=2.5pt] node[anchor=west] {$(2, 10)$};
 
                         \addplot[dotted] {2};
 
@@ -187,7 +181,7 @@
 
                         \addplot[dotted] {6};
 
-                        \fill (1, 6) circle[radius=2.5pt] node[anchor=west] {$\coord{a}6$};
+                        \fill (1, 6) circle[radius=2.5pt] node[anchor=west] {$(a, 6)$};
 
                         \draw[->] (1, 6) -- (0, 6);
 
@@ -201,20 +195,16 @@
             \end{center}
 
         \part
-            Observe that $C_2$ describes an ellipse with vertical radius $b$ and horizontal radius 1. Furthermore, the ellipse is centered at $\coord{a}6$. Since $C_1$ and $C_2$ have no points in common for all $a \in \mathbb{R}$, the maximum $y$-value of the ellipse corresponds to the $y$-value of the minimum point $\coord2{10}$ of $C_1$. Similarly, the minimum $y$-value of the ellipse corresponds to the $y$-value of the maximum point $\coord02$ of $C_1$. Thus, $2 < y < 10$, whence $b < \min \{\abs{6-2}, \abs{6-10} \} = 4$. Thus,
+            Observe that $C_2$ describes an ellipse with vertical radius $b$ and horizontal radius 1. Furthermore, the ellipse is centred at $(a, 6)$. Since $C_1$ and $C_2$ have no points in common for all $a \in \R$, the maximum $y$-value of the ellipse corresponds to the $y$-value of the minimum point $(2, 10)$ of $C_1$. Similarly, the minimum $y$-value of the ellipse corresponds to the $y$-value of the maximum point $(0, 2)$ of $C_1$. Thus, $2 < y < 10$, whence $b < \min \bc{\abs{6-2}, \abs{6-10}} = 4$. Thus,
 
-            \boxt{
-                $0 < b < 4$.
-            }
+            \boxt{$0 < b < 4$}
 
         \part
             \subpart
                 Observe that $f(-1.62) = f(0.618) = 0$. Hence, there exist two different values of $x$ in $\dom f$ that have the same image under $f$. Thus, $f$ is not one-one. Hence, $\inv f$ does not exist.
             
             \subpart
-                \boxt{
-                    $c = 0$
-                }
+                \boxt{$c = 0$}
 
                 \begin{alignat*}{2}
                     &&f(x) &= \dfrac{2x^2 + 2x - 2}{x-1}\\
@@ -227,9 +217,7 @@
                     \implies&&\inv f(x) &= \dfrac{x - 2 \pm \sqrt{x^2 -12x + 20}}{4}
                 \end{alignat*}
 
-                Note that $\dom f = \ran {\inv f} = [0, 1)$. We thus take the positive root. Further note that $\ran f = \dom {\inv f} = (-\infty, 2]$.
+                Note that $\dom f = \ran {\inv f} = [0, 1)$. We thus take the positive root. Also note that $\ran f = \dom {\inv f} = (-\infty, 2]$.
 
-                \boxt{
-                    $\inv f : x \mapsto \dfrac{x - 2 + \sqrt{x^2 -12x + 20}}{4}, \, x \in \mathbb{R}, \, x \leq 2$
-                }
+                \boxt{$\inv f : x \mapsto \dfrac{x - 2 + \sqrt{x^2 -12x + 20}}{4}, \, x \in \R, \, x \leq 2$}
 \end{document}

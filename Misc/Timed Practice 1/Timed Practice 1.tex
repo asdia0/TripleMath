@@ -6,7 +6,7 @@
 
 \begin{document}
     \problem{}
-        Find $\sum\limits_{r = 0}^n \left(n^2 + 1 - 3r\right)$ in terms of $n$, giving your answer in factorised form.
+        Find $\displaystyle\sum\limits_{r = 0}^n \left(n^2 + 1 - 3r\right)$ in terms of $n$, giving your answer in factorized form.
 
     \solution
         \begin{align*}
@@ -15,12 +15,10 @@
             &= \dfrac12 (n+1)(2n^2 + 3n + 2)
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{r = 0}^n \left(n^2 + 1 - 3r\right) = \dfrac12 (n+1)(2n^2 + 3n + 2)$
-        }
+        \boxt{$\displaystyle\sum\limits_{r = 0}^n \left(n^2 + 1 - 3r\right) = \dfrac12 (n+1)(2n^2 + 3n + 2)$}
 
     \problem{}
-        Given that $\sum\limits_{k=1}^n k!\left(k^2 + 1\right) = (n+1)!\,n$, find $\sum\limits_{k=1}^{n-1} (k+1)!\left(k^2 + 2k + 2\right)$.
+        Given that $\displaystyle\sum\limits_{k=1}^n k!\left(k^2 + 1\right) = (n+1)!\,n$, find $\displaystyle\sum\limits_{k=1}^{n-1} (k+1)!\left(k^2 + 2k + 2\right)$.
 
     \solution
         \begin{align*}
@@ -30,12 +28,10 @@
             &= (n+1)! \, n - 2
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{k=1}^{n-1} (k+1)!\left(k^2 + 2k + 2\right) = (n+1)! \, n - 2$
-        }
+        \boxt{$\displaystyle\sum\limits_{k=1}^{n-1} (k+1)!\left(k^2 + 2k + 2\right) = (n+1)! \, n - 2$}
 
     \problem{}
-        Given that $\sum\limits_{r=1}^n = \dfrac16 n(n+1)(2n+1)$, find $\sum\limits_{r=N+1}^{2N} \left(7^{r+1} + 3r^2\right)$ in terms of $N$, simplifying your answer.
+        Given that $\displaystyle\sum\limits_{r=1}^n = \dfrac16 n(n+1)(2n+1)$, find $\displaystyle\sum\limits_{r=N+1}^{2N} \left(7^{r+1} + 3r^2\right)$ in terms of $N$, simplifying your answer.
 
     \solution
         \begin{align*}
@@ -47,18 +43,16 @@
             &= \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12 N(2N+1)(7N+1)
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{r=N+1}^{2N} \left(7^{r+1} + 3r^2\right) = \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12 N(2N+1)(7N+1)$
-        }
+        \boxt{$\displaystyle\sum\limits_{r=N+1}^{2N} \left(7^{r+1} + 3r^2\right) = \dfrac{7^{N+2}(7^N - 1)}{6} + \dfrac12 N(2N+1)(7N+1)$}
 
     \problem{}
         Let $f(r) = \dfrac3{r-1}$.
 
         \begin{enumerate}
             \item Show that $f(r+1) - f(r) = -\dfrac3{r(r-1)}$.
-            \item Hence find in terms of $N$, the sum of the series $S_N = \sum\limits_{r=2}^N \dfrac1{r(r-1)}$.
-            \item Explain why $\sum\limits_{r=2}^\infty \dfrac1{r(r-1)}$ is a convergent series, and find the value of the sum to infinity.
-            \item Using the result from part (b), find $\sum\limits_{r=2}^N \dfrac1{r(r+1)}$.
+            \item Hence, find in terms of $N$, the sum of the series $S_N = \displaystyle\sum\limits_{r=2}^N \dfrac1{r(r-1)}$.
+            \item Explain why $\displaystyle\sum\limits_{r=2}^\infty \dfrac1{r(r-1)}$ is a convergent series, and find the value of the sum to infinity.
+            \item Using the result from part (b), find $\displaystyle\sum\limits_{r=2}^N \dfrac1{r(r+1)}$.
         \end{enumerate}
 
     \solution
@@ -81,13 +75,10 @@
                 &= 1 - \dfrac1N
             \end{align*}
 
-            \boxt{
-                $S_N = 1 - \dfrac1N$
-            }
+            \boxt{$S_N = 1 - \dfrac1N$}
 
         \part
             Consider $\lim\limits_{n \to \infty} S_n$.
-
             \begin{align*}
                 \lim_{n \to \infty} S_n &= \lim_{n \to \infty} \left(1 - \dfrac1N\right)\\
                 &= 1 - 0\\
@@ -96,9 +87,7 @@
 
             Since 1 is a constant, $S_N$ is a convergent series.
 
-            \boxt{
-                The value of the sum to infinity is 1.
-            }
+            \boxt{The value of the sum to infinity is 1.}
 
         \part
             \begin{align*}
@@ -110,25 +99,22 @@
                 &= \dfrac12 - \dfrac1{N+1}
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=2}^N \dfrac1{r(r+1)} = \dfrac12 - \dfrac1{N+1}$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=2}^N \dfrac1{r(r+1)} = \dfrac12 - \dfrac1{N+1}$}
 
     \problem{}
-        Sketch the graph of $y = \dfrac{4\lambda - x^2}{x^2 + \lambda}$ in each of the following two cases:
+        Sketch the graph of $y = \dfrac{4\l - x^2}{x^2 + \l}$ in each of the following two cases:
 
         \begin{enumerate}
-            \item $\lambda > 0$,
-            \item $\lambda < 0$.
+            \item $\l > 0$,
+            \item $\l < 0$.
         \end{enumerate}
 
-        \noindent By using your graph in part (b) and considering a suitable graph whose Cartesian equation is to be stated, find the positive value of $h$ such that the equation
+         By using your graph in part (b) and considering a suitable graph whose Cartesian equation is to be stated, find the positive value of $h$ such that the equation
 
-        \begin{equation*}
-            \left(\dfrac{4\lambda - x^2}{hx^2 + h\lambda}\right)^2 = 1 + \dfrac{x^2}{\lambda}
-        \end{equation*}
-
-        \noindent where $\lambda < 0$, has only one real root. State the value of the real root for this value of $h$.
+        \[
+            \left(\dfrac{4\l - x^2}{hx^2 + h\l}\right)^2 = 1 + \dfrac{x^2}{\l}
+        \]
+        where $\l < 0$, has only one real root. State the value of the real root for this value of $h$.
 
     \solution
         \part
@@ -140,7 +126,7 @@
                         axis y line=middle,
                         axis x line=middle,
                         xtick = {-2, 2},
-                        xticklabels = {$-2\sqrt\lambda$, $2\sqrt\lambda$},
+                        xticklabels = {$-2\sqrt\l$, $2\sqrt\l$},
                         ytick = {4},
                         xlabel = {$x$},
                         ymax=5,
@@ -155,7 +141,7 @@
                         ]
                         \addplot[plotRed] {(4 - x^2)/(x^2 + 1)};
             
-                        \addlegendentry{$y = \tfrac{4\lambda - x^2}{x^2 + \lambda}$, $\lambda > 0$};
+                        \addlegendentry{$y = \tfrac{4\l - x^2}{x^2 + \l}$, $\l > 0$};
 
                         \draw[dotted, thick] (-5, -1) -- (5, -1) node[anchor=north east] {$y = -1$};
                     \end{axis}
@@ -185,31 +171,31 @@
                         ]
                         \addplot[plotRed, unbounded coords = jump] {(-4 - x^2)/(x^2 - 1)};
             
-                        \addlegendentry{$y = \tfrac{4\lambda - x^2}{x^2 + \lambda}$, $\lambda < 0$};
+                        \addlegendentry{$y = \tfrac{4\l - x^2}{x^2 + \l}$, $\l < 0$};
 
                         \draw[dotted, thick] (-5, -1) -- (5, -1) node[anchor=north east] {$y = -1$};
                         
-                        \draw[dotted, thick] (-1, -10) -- (-1, 10) node[anchor=north east] {$x = -\sqrt{-\lambda}$};
+                        \draw[dotted, thick] (-1, -10) -- (-1, 10) node[anchor=north east] {$x = -\sqrt{-\l}$};
 
-                        \draw[dotted, thick] (1, -10) -- (1, 10) node[anchor=north west] {$x = \sqrt{-\lambda}$};
+                        \draw[dotted, thick] (1, -10) -- (1, 10) node[anchor=north west] {$x = \sqrt{-\l}$};
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
 
             \newpage
 
-            Consider $\left(\dfrac{4\lambda - x^2}{hx^2 + h\lambda}\right)^2 = 1 + \dfrac{x^2}{\lambda}$.
+            Consider $\left(\dfrac{4\l - x^2}{hx^2 + h\l}\right)^2 = 1 + \dfrac{x^2}{\l}$.
 
             \begin{alignat*}{2}
-                &&\left(\dfrac{4\lambda - x^2}{hx^2 + h\lambda}\right)^2 &= 1 + \dfrac1{x^2}{\lambda}\\
-                \implies&&\left(\dfrac1h \cdot \dfrac{4\lambda - x^2}{x^2 + \lambda}\right)^2 &= 1 + \dfrac{x^2}\lambda\\
-                \implies&&\left(\dfrac1h \cdot y\right)^2 &= 1 + \dfrac{x^2}\lambda\\
-                \implies&&\dfrac{y^2}{h^2} &= 1 + \dfrac{x^2}\lambda\\
-                \implies&&- \dfrac{x^2}\lambda + \dfrac{y^2}{h^2} &= 1\\
-                \implies&&- \dfrac{x^2}{\sqrt{\lambda}^2} + \dfrac{y^2}{h^2} &= 1
+                &&\left(\dfrac{4\l - x^2}{hx^2 + h\l}\right)^2 &= 1 + \dfrac1{x^2}{\l}\\
+                \implies&&\left(\dfrac1h \cdot \dfrac{4\l - x^2}{x^2 + \l}\right)^2 &= 1 + \dfrac{x^2}\l\\
+                \implies&&\left(\dfrac1h \cdot y\right)^2 &= 1 + \dfrac{x^2}\l\\
+                \implies&&\dfrac{y^2}{h^2} &= 1 + \dfrac{x^2}\l\\
+                \implies&&- \dfrac{x^2}\l + \dfrac{y^2}{h^2} &= 1\\
+                \implies&&- \dfrac{x^2}{\sqrt{\l}^2} + \dfrac{y^2}{h^2} &= 1
             \end{alignat*}
 
-            We hence plot an ellipse centered at the origin with horizontal radius $\sqrt{\lambda}$ and vertical radius $h$.
+            We hence plot an ellipse centred at the origin with horizontal radius $\sqrt{\l}$ and vertical radius $h$.
             
             For only one real root, the ellipse must meet the above graph at exactly one point. Hence, $h = 4$ and the corresponding root is $x = 0$.
 
@@ -235,22 +221,20 @@
                         ]
                         \addplot[plotRed, unbounded coords = jump] {(-4 - x^2)/(x^2 - 1)};
             
-                        \addlegendentry{$y = \tfrac{4\lambda - x^2}{x^2 + \lambda}$, $\lambda < 0$};
+                        \addlegendentry{$y = \tfrac{4\l - x^2}{x^2 + \l}$, $\l < 0$};
 
                         \draw[dotted, thick] (-5, -1) -- (5, -1) node[anchor=north east] {$y = -1$};
                         
-                        \draw[dotted, thick] (-1, -10) -- (-1, 10) node[anchor=north east] {$x = -\sqrt{-\lambda}$};
+                        \draw[dotted, thick] (-1, -10) -- (-1, 10) node[anchor=north east] {$x = -\sqrt{-\l}$};
 
-                        \draw[dotted, thick] (1, -10) -- (1, 10) node[anchor=north west] {$x = \sqrt{-\lambda}$};
+                        \draw[dotted, thick] (1, -10) -- (1, 10) node[anchor=north west] {$x = \sqrt{-\l}$};
 
                         \addplot[plotBlue] (0, 0) ellipse[x radius = 1, y radius = 4];
 
-                        \addlegendentry{$-\frac{x^2}{\lambda} + \frac{y^2}{h^2} = 1$}
+                        \addlegendentry{$-\frac{x^2}{\l} + \frac{y^2}{h^2} = 1$}
                     \end{axis}
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{
-                $h = 4$, $x = 0$
-            }
+            \boxt{$h = 4$, $x = 0$}
 \end{document}

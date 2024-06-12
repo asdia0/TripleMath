@@ -36,9 +36,7 @@
                 &= \dfrac14 - \dfrac1{2(n+1)(n+2)}
             \end{align*}
 
-            \boxt{
-                $\displaystyle\sum\limits_{r=1}^n \dfrac1{r(r+1)(r+2)} = \dfrac14 - \dfrac1{2(n+1)(n+2)}$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=1}^n \dfrac1{r(r+1)(r+2)} = \dfrac14 - \dfrac1{2(n+1)(n+2)}$}
 
         \part
             \subpart
@@ -48,9 +46,7 @@
                     &= \dfrac14
                 \end{align*}
 
-                \boxt{
-                    $\displaystyle\sum\limits_{r=1}^\infty \dfrac1{r(r+1)(r+2)} = \dfrac14$
-                }
+                \boxt{$\displaystyle\sum\limits_{r=1}^\infty \dfrac1{r(r+1)(r+2)} = \dfrac14$}
 
             \subpart
                 \begin{align*}
@@ -59,9 +55,7 @@
                     &= \dfrac14 - \dfrac1{2(N-2)(N-1)} 
                 \end{align*}
 
-                \boxt{
-                    $\displaystyle\sum\limits_{r = 3}^{N-1} \dfrac1{r(r-1)(r-2)} = \dfrac14 - \dfrac1{2(N-2)(N-1)}$
-                }
+                \boxt{$\displaystyle\sum\limits_{r = 3}^{N-1} \dfrac1{r(r-1)(r-2)} = \dfrac14 - \dfrac1{2(N-2)(N-1)}$}
 
     \problem{}
         \begin{enumerate}
@@ -77,7 +71,7 @@
         \part
             \subpart
 
-                \noindent Let the $n$th term of $G$ be $a_n = ar^{n-1}$. Since the sum to infinity of $S$ exists, $\abs{r} < 1$.
+                 Let the $n$th term of $G$ be $a_n = ar^{n-1}$. Since the sum to infinity of $S$ exists, $\abs{r} < 1$.
                 \begin{align*}
                     \sum_{n=1}^\infty a_{2n} &= \sum_{n=1}^\infty ar^{2n-1}\\
                     &= \dfrac{a}{r} \sum_{n=1}^\infty \left(r^2\right)^n\\
@@ -94,13 +88,11 @@
                 \end{alignat*}
                 Hence, $r = -\dfrac13$. Note that we reject $r = 1$ since $\abs{r} < 1$.
 
-                \boxt{
-                    $r = -\dfrac13$
-                }
+                \boxt{$r = -\dfrac13$}
 
             \subpart
                 
-                \noindent Since $a_3 = 2 = a\left(-\dfrac13\right)^2$, we have $a = 18$. Let the $n$th term of $H$ be $b_n = \abs{a_n} = \abs{18 \left(-\dfrac13\right)^{n-1}} = 18 \left(\dfrac13\right)^{n-1}$. Hence, the sum to infinity of $H$ is given by
+                 Since $a_3 = 2 = a\left(-\dfrac13\right)^2$, we have $a = 18$. Let the $n$th term of $H$ be $b_n = \abs{a_n} = \abs{18 \left(-\dfrac13\right)^{n-1}} = 18 \left(\dfrac13\right)^{n-1}$. Hence, the sum to infinity of $H$ is given by
                 \begin{equation*}
                     \sum_{n=1}^\infty b_n = \dfrac{18}{1-1/3} = 27
                 \end{equation*}
@@ -116,24 +108,21 @@
             \end{alignat*}
             Hence, the first negative term of the sequence is achieved when $n = 716$. Thus, the value of the first negative term is $a_{716} = 1001.4 - 1.4\cdot716 = -1$.
 
-            \boxt{
-                The value of the first negative term is $-1$.
-            }
+            \boxt{The value of the first negative term is $-1$.}
+
             \begin{align*}
                 \sum_{n=1}^{715} a_n &= \sum_{n=1}^{715} \Big(1001.4 - 1.4n\Big)\\
                 &= 1001.4 \cdot 715 - 1.4 \cdot \dfrac{715\cdot716}{2}\\
                 &= 357643
             \end{align*}
 
-            \boxt{
-                The sum of all the positive terms is 357643.
-            }
+            \boxt{The sum of all the positive terms is 357643.}
 
     \problem{}
         \textbf{Omitted.}
 
     \problem{}
-        Referring to the pole $O$, the curve $C$ has polar equation $r = \cot \theta$, where $\dfrac\pi6 < \theta < \dfrac\pi2$.
+        Referring to the pole $O$, the curve $C$ has polar equation $r = \cot \t$, where $\dfrac\pi6 < \t < \dfrac\pi2$.
         
         \begin{enumerate}
             \item Sketch the curve $C$.
@@ -156,8 +145,8 @@
                         xmax=2,
                         ymin=-0.1,
                         ymax=1,
-                        xlabel = {$\theta=0$},
-                        ylabel = {$\theta = \frac\pi2$},
+                        xlabel = {$\t=0$},
+                        ylabel = {$\t = \frac\pi2$},
                         legend cell align={left},
                         legend pos=outer north east,
                         after end axis/.code={
@@ -169,7 +158,7 @@
             
                         \addlegendentry{$C$};
 
-                        \draw (1.5, 0.866) circle[radius=2.5pt] node[anchor=west] {$\coord{\dfrac\pi6}{\sqrt3}$};
+                        \draw (1.5, 0.866) circle[radius=2.5pt] node[anchor=west] {$\bp{\dfrac\pi6, \sqrt3}$};
 
                         \draw (0, 0) circle[radius=2.5pt];
                     \end{axis}
@@ -177,25 +166,23 @@
             \end{center}
 
         \part
-            Note that $\der{r}{\theta} = -\csc^2 \theta = -(1 + r^2)$.
+            Note that $\der{r}{\t} = -\csc^2 \t = -(1 + r^2)$.
             \begin{align*}
-                \der{y}{x} &= \dfrac{\der{r}{\theta}\sin\theta + r\cos\theta}{\der{r}{\theta}\cos\theta - r\sin\theta}\\
-                &= \dfrac{-(1+r^2)\sin\theta + r\cos\theta}{-(1+r^2)\cos\theta - r\sin\theta}\\
-                &= \dfrac{-(1+r^2) + r\cot\theta}{-(1+r^2)\cot\theta - r}\\
+                \der{y}{x} &= \dfrac{\der{r}{\t}\sin\t + r\cos\t}{\der{r}{\t}\cos\t - r\sin\t}\\
+                &= \dfrac{-(1+r^2)\sin\t + r\cos\t}{-(1+r^2)\cos\t - r\sin\t}\\
+                &= \dfrac{-(1+r^2) + r\cot\t}{-(1+r^2)\cot\t - r}\\
                 &= \dfrac{-(1+r^2) + r^2}{-(1+r^2)r - r}\\
                 &= \dfrac{(1+r^2) - r^2}{(1+r^2)r + r}\\
                 &= \dfrac1{r(2+r^2)}
             \end{align*}
             Observe that $r \in (0, \sqrt{3})$. Since $\der{y}{x} = \dfrac1{r(r^2 + 2)}$ is continuous and decreasing on the interval $(0, \sqrt{3})$, we have $\der{y}{x} \in \left(\dfrac1{\sqrt3(\sqrt{3}^2 + 2)}, \infty\right) = \left(\dfrac1{5\sqrt{3}}, \infty\right)$.
 
-            \boxt{
-                $\der{y}{x} \in \left(\dfrac1{5\sqrt{3}}, \infty\right)$
-            }
+            \boxt{$\der{y}{x} \in \left(\dfrac1{5\sqrt{3}}, \infty\right)$}
 
         \part
             \begin{alignat*}{2}
-                    &&r &= \cot\theta\\
-                    \implies&&r\sin\theta &= \cos\theta\\
+                    &&r &= \cot\t\\
+                    \implies&&r\sin\t &= \cos\t\\
                     \implies&&y &= \cos \arctan \dfrac{y}{x}\\
                     && &= \dfrac{x}{\sqrt{x^2 + y^2}}\\
                     \implies&&y^2 &= \dfrac{x^2}{x^2 + y^2}\\
@@ -206,25 +193,23 @@
             \end{alignat*}
             Note that in the steps marked ($\ast$), we reject the negative branch since $y^2 \geq 0$ and $y > 0$ in the given domain. 
 
-            \boxt{
-                $y = \sqrt{\dfrac{-x^2 + \sqrt{x^4 + 4x^2}}2}$
-            }
+            \boxt{$y = \sqrt{\dfrac{-x^2 + \sqrt{x^4 + 4x^2}}2}$}
 
     \problem{}
-        Relative to an origin $O$, an object is placed at point $P$ with coordinates $\coordiii{-4}{c}{c}$, where $c$ is a positive real constant, and there is a mirror plane with equation $x + y + z = 1$. It is known that the shortest distance between $P$ and the mirror is $3\sqrt3$.
+        Relative to an origin $O$, an object is placed at point $P$ with coordinates $(-4, c, c)$, where $c$ is a positive real constant, and there is a mirror plane with equation $x + y + z = 1$. It is known that the shortest distance between $P$ and the mirror is $3\sqrt3$.
 
         \begin{enumerate}
             \item Show that $c = 7$.
         \end{enumerate}
     
-        \noindent A point $A$ has coordinates $\coordiii{-15}{17}5$.
+         A point $A$ has coordinates $(-15, 17, 5)$.
 
         \begin{enumerate}
             \setcounter{enumi}{1}
             \item Find the coordinates of $A'$, the point of reflection of $A$ in the mirror.
         \end{enumerate}
 
-        \noindent A laser beam is directed from $A$ towards a point on the mirror and is reflected to reach the object at $P$.
+         A laser beam is directed from $A$ towards a point on the mirror and is reflected to reach the object at $P$.
 
         \begin{enumerate}
             \setcounter{enumi}{2}
@@ -249,45 +234,42 @@
             \case{2}{} $-5 + 2c < 0 \implies -5+2c = -9 \implies c = -2$ which cannot be since $c$ is positive. Hence, $c = 7$ as required.
 
         \part
-            Let $F$ be a point on the mirror (i.e. $\overrightarrow{OF} \cdot \cveciii111 = 1$) such that $\overrightarrow{AF} = \lambda \cveciii111$ for some $\lambda \in \mathbb{R}$.
+            Let $F$ be a point on the mirror (i.e. $\oa{OF} \cdot \cveciii111 = 1$) such that $\oa{AF} = \l \cveciii111$ for some $\l \in \R$.
             \begin{alignat*}{2}
-                &&\overrightarrow{AF} &= \lambda \cveciii111\\
-                \implies&&\overrightarrow{OF} - \cveciii{-15}{17}5 &= \lambda\cveciii111\\
-                \implies&&\Big[\overrightarrow{OF} - \cveciii{-15}{17}5\Big] \cdot \cveciii111 &= \lambda\cveciii111 \cdot \cveciii111\\
-                \implies&&\overrightarrow{OF} \cdot \cveciii111 - \cveciii{-15}{17}5 \cdot \cveciii111 &= \lambda \cveciii111 \cdot \cveciii111\\
-                \implies&&1 - 7 &= 3\lambda\\
-                \implies&&\lambda &= -2\\
-                \implies&&\overrightarrow{AF} &= -2\cveciii111
+                &&\oa{AF} &= \l \cveciii111\\
+                \implies&&\oa{OF} - \cveciii{-15}{17}5 &= \l\cveciii111\\
+                \implies&&\Big[\oa{OF} - \cveciii{-15}{17}5\Big] \cdot \cveciii111 &= \l\cveciii111 \cdot \cveciii111\\
+                \implies&&\oa{OF} \cdot \cveciii111 - \cveciii{-15}{17}5 \cdot \cveciii111 &= \l \cveciii111 \cdot \cveciii111\\
+                \implies&&1 - 7 &= 3\l\\
+                \implies&&\l &= -2\\
+                \implies&&\oa{AF} &= -2\cveciii111
             \end{alignat*}
-            Note that since $A'$ is the reflection of $A$ in the mirror, $\overrightarrow{AF} = \overrightarrow{FA'}$.
+            Note that since $A'$ is the reflection of $A$ in the mirror, $\oa{AF} = \oa{FA'}$.
             \begin{alignat*}{2}
-                &&\overrightarrow{AF} &= \overrightarrow{FA'}\\
-                \implies&&\overrightarrow{AA'} &= 2\overrightarrow{AF}\\
-                \implies&&\overrightarrow{OA'} - \overrightarrow{OA} &= 2\overrightarrow{AF}\\
-                \implies&&\overrightarrow{OA'} - \cveciii{-15}{17}5 &= 2\cdot -2\cveciii111\\
-                \implies&&\overrightarrow{OA'} &= \cveciii{-4}{-4}{-4} + \cveciii{-15}{17}5\\
+                &&\oa{AF} &= \oa{FA'}\\
+                \implies&&\oa{AA'} &= 2\oa{AF}\\
+                \implies&&\oa{OA'} - \oa{OA} &= 2\oa{AF}\\
+                \implies&&\oa{OA'} - \cveciii{-15}{17}5 &= 2\cdot -2\cveciii111\\
+                \implies&&\oa{OA'} &= \cveciii{-4}{-4}{-4} + \cveciii{-15}{17}5\\
                 && &= \cveciii{-19}{13}1
             \end{alignat*}
-            \boxt{
-                $A'\coordiii{-19}{13}1$
-            }
+
+            \boxt{$A'(-19, 13, 1)$}
 
         \part
-            Let $\theta$ be the acute angle the laser beam makes with the mirror. Note that $\overrightarrow{A'P} = \cveciii{15}{-6}6 = 3\cveciii5{-2}2$. Hence, the line $A'P$ has direction vector $\cveciii5{-2}2$.
+            Let $\t$ be the acute angle the laser beam makes with the mirror. Note that $\oa{A'P} = \cveciii{15}{-6}6 = 3\cveciii5{-2}2$. Hence, the line $A'P$ has direction vector $\cveciii5{-2}2$.
             \begin{alignat*}{2}
-                &&\sin\theta &= \dfrac{\abs{\cveciii5{-2}2 \cdot \cveciii111}}{\abs{\cveciii5{-2}2}\abs{\cveciii111}}\\
+                &&\sin\t &= \dfrac{\abs{\cveciii5{-2}2 \cdot \cveciii111}}{\abs{\cveciii5{-2}2}\abs{\cveciii111}}\\
                 && &= \dfrac{5}{\sqrt{99}}\\
-                \implies&&\theta &= 0.527 \tosf{3}
+                \implies&&\t &= 0.527 \tosf{3}
             \end{alignat*}
 
-            \boxt{
-                The laser beams makes an acute angle of $0.527$ with the mirror.
-            }
+            \boxt{The laser beams makes an acute angle of $0.527$ with the mirror.}
     \problem{}
         \textbf{Omitted.}
 
     \problem{}
-        A straight street of width 20 metres is bounded on its parallel sides by two vertical walls, one of height 13 metres, the other of height 8 metres. The intensity of light at point $P$ at ground level on the street is proportional to the angle $\theta$ radians, where $\theta = \angle APB$ as shown in the cross-sectional diagram below.
+        A straight street of width 20 metres is bounded on its parallel sides by two vertical walls, one of height 13 metres, the other of height 8 metres. The intensity of light at point $P$ at ground level on the street is proportional to the angle $\t$ radians, where $\t = \angle APB$ as shown in the cross-sectional diagram below.
 
         \begin{center}
             \begin{tikzpicture}
@@ -303,7 +285,7 @@
                 \draw (P)--(A);
                 \draw (P)--(B);
 
-                \draw pic [draw, angle radius=12mm, "$\theta$"] {angle = B--P--A};
+                \draw pic [draw, angle radius=12mm, "$\t$"] {angle = B--P--A};
         
                 \node[anchor=east] at ($(A)!0.5!(AF)$) {8 m};
                 \node[anchor=west] at ($(B)!0.5!(BF)$) {13 m};
@@ -314,12 +296,12 @@
         \begin{enumerate}
             \item Given that the distance of $P$ from the base of the wall of height 8 metres is $x$ metres ($0 \leq x \leq 20$), show that
             \begin{equation*}
-                \theta = \arctan \dfrac{x}8 + \arctan \dfrac{20-x}{13}
+                \t = \arctan \dfrac{x}8 + \arctan \dfrac{20-x}{13}
             \end{equation*}
-            \item Find an expression for $\der{\theta}{x}$.
+            \item Find an expression for $\der{\t}{x}$.
             \item Hence, determine the value of $x$ corresponding to the maximum light intensity at $P$. Give your answer to four significant figures. You need not justify that the value of $x$ obtained gives the maximum light intensity at $P$.
-            \item Find the minimum value of $\theta$ as $x$ varies.
-            \item The point $P$ moves across the street from the base of $A$ to the base of $B$ with speed $0.5$ ms$^{-1}$. Determine the rate of change of $\theta$ with respect to time when $P$ is at the midpoint of the street.
+            \item Find the minimum value of $\t$ as $x$ varies.
+            \item The point $P$ moves across the street from the base of $A$ to the base of $B$ with speed $0.5$ ms$^{-1}$. Determine the rate of change of $\t$ with respect to time when $P$ is at the midpoint of the street.
         \end{enumerate}
 
     \solution
@@ -343,10 +325,10 @@
                     \draw[dotted] (A) -- (PA);
                     \draw[dotted] (B) -- (PB);
 
-                    \draw pic [draw, angle radius=12mm, "$\phi_1$"] {angle = AF--A--P};
-                    \draw pic [draw, angle radius=12mm, "$\phi_2$"] {angle = P--B--BF};
-                    \draw pic [draw, angle radius=12mm, "$\phi_1$"] {angle = PA--P--A};
-                    \draw pic [draw, angle radius=14mm, "$\phi_2$"] {angle = B--P--PB};
+                    \draw pic [draw, angle radius=12mm, "$\f_1$"] {angle = AF--A--P};
+                    \draw pic [draw, angle radius=12mm, "$\f_2$"] {angle = P--B--BF};
+                    \draw pic [draw, angle radius=12mm, "$\f_1$"] {angle = PA--P--A};
+                    \draw pic [draw, angle radius=14mm, "$\f_2$"] {angle = B--P--PB};
             
                     \node[anchor=east] at ($(A)!0.5!(AF)$) {8 m};
                     \node[anchor=west] at ($(B)!0.5!(BF)$) {13 m};
@@ -355,46 +337,40 @@
                 \end{tikzpicture}
             \end{center}
 
-            \noindent Consider the diagram above. It is clear that $\theta = \phi_1 + \phi_2$. Observe that $\tan \phi_1 = \dfrac{x}8$ and $\tan \phi_2 = \dfrac{20-x}{13}$. Thus, $\theta = \arctan \dfrac{x}8 + \arctan \dfrac{20-x}{13}$.
+             Consider the diagram above. It is clear that $\t = \f_1 + \f_2$. Observe that $\tan \f_1 = \dfrac{x}8$ and $\tan \f_2 = \dfrac{20-x}{13}$. Thus, $\t = \arctan \dfrac{x}8 + \arctan \dfrac{20-x}{13}$.
 
         \part
             \begin{align*}
-                \der{\theta}{x} &= \dfrac1{1+\left(\frac{x}8\right)^2}\cdot\dfrac18 + \dfrac1{1+\left(\frac{20-x}{13}\right)^2} \cdot \left(-\dfrac1{13}\right)\\
+                \der{\t}{x} &= \dfrac1{1+\left(\frac{x}8\right)^2}\cdot\dfrac18 + \dfrac1{1+\left(\frac{20-x}{13}\right)^2} \cdot \left(-\dfrac1{13}\right)\\
                 &= \dfrac{8^2}{8^2 + x^2} \cdot \dfrac18 + \dfrac{13^2}{13^2 + (20-x)^2} \cdot \left(-\dfrac1{13}\right)\\
                 &= \dfrac{8}{x^2 + 64} + \dfrac{13}{(20-x)^2 + 169}
             \end{align*}
 
         \part
-            At stationary points, $\der{\theta}{x} = 0$. Hence,
+            At stationary points, $\der{\t}{x} = 0$. Hence,
             \begin{equation*}
                 \dfrac{8}{x^2 + 64} + \dfrac{13}{(20-x)^2 + 169} = 0
             \end{equation*}
             From G.C, we have $x = 10.05$ and $x = -74.05 \tosf{4}$. Since $0 \leq x \leq 20$, we take $x = 10.05$.
 
-            \boxt{
-                $x = 10.05 \tosf{4}$
-            }
+            \boxt{$x = 10.05 \tosf{4}$}
 
         \part
-            Since there is only one stationary point in the interval $[0, 20]$ and it is a maximum, the minimum value of $\theta$ occurs either at $x = 0$ or $x = 20$, i.e. the extreme ends of the interval.
+            Since there is only one stationary point in the interval $[0, 20]$, and it is a maximum, the minimum value of $\t$ occurs either at $x = 0$ or $x = 20$, i.e. the extreme ends of the interval.
             \begin{align*}
-                x = 0 &: \theta = \arctan \frac{20}{13} = 0.994 \tosf{3}\\
-                x = 20 &: \theta = \arctan \frac{20}8 = 1.19 \tosf{3}
+                x = 0 &: \t = \arctan \frac{20}{13} = 0.994 \tosf{3}\\
+                x = 20 &: \t = \arctan \frac{20}8 = 1.19 \tosf{3}
             \end{align*}
 
-            \boxt{
-                The minimum value of $\theta$ is $0.994$.
-            }
+            \boxt{The minimum value of $\t$ is $0.994$.}
 
         \part
             Let the time elapsed be $t$ s. We have $\der{x}{t} = 0.5$. Also note that when $P$ is at the midpoint of the street, $x = 10$.
             \begin{align*}
-                \left.\der{\theta}{t}\right|_{x=10} &= \left.\der{\theta}{x} \cdot \der{x}{t}\right|_{x=10}\\
+                \left.\der{\t}{t}\right|_{x=10} &= \left.\der{\t}{x} \cdot \der{x}{t}\right|_{x=10}\\
                 &= \left(\dfrac{8}{10^2 + 64} + \dfrac{13}{(20-10)^2 + 169}\right) \cdot 0.5\\
                 &= 0.000227 \tosf{3}
             \end{align*}
             
-            \boxt{
-                The rate of change of $\theta$ is $0.000227$ rad per second.
-            }
+            \boxt{The rate of change of $\t$ is $0.000227$ rad per second.}
 \end{document}

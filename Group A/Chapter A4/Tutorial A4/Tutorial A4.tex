@@ -9,40 +9,32 @@
         True or False? Explain your answers briefly.
 
         \begin{enumerate}
-            \item $\sum\limits_{r=1}^n (2r + 3) = \sum\limits_{k=1}^n (2k + 3)$
-            \item $\sum\limits_{r = 1}^n \left(\dfrac1r + 5\right) = \sum\limits_{r=1}^n \dfrac1r + 5$
-            \item $\sum\limits_{r=1}^n \dfrac1r = \dfrac1{\sum\limits_{r=1}^n r}$
-            \item $\sum\limits_{r=1}^n c = \sum\limits_{r=0}^{n-1} (c+1)$
+            \item $\displaystyle\sum\limits_{r=1}^n (2r + 3) = \sum\limits_{k=1}^n (2k + 3)$
+            \item $\displaystyle\sum\limits_{r = 1}^n \bp{\dfrac1r + 5} = \sum\limits_{r=1}^n \dfrac1r + 5$
+            \item $\displaystyle\sum\limits_{r=1}^n \dfrac1r = 1 \Big/ {\sum\limits_{r=1}^n r}$
+            \item $\displaystyle\sum\limits_{r=1}^n c = \sum\limits_{r=0}^{n-1} (c+1)$
         \end{enumerate}
 
     \solution
         \part
             Since both sums differ only by dummy variables, they are equal.
 
-            \boxt{
-                True
-            }
+            \boxt{True}
 
         \part
             Summation is distributive. Since $\sum\limits_{r = 1}^n 5$ is not equal to $5$ in general, the equality does not hold.
 
-            \boxt{
-                False
-            }
+            \boxt{False}
 
         \part
-            In general, $\sum \dfrac{a}{b} \neq \dfrac{\sum a}{\sum b}$.
+            In general, $\displaystyle\sum \dfrac{a}{b} \neq {\displaystyle\sum a} \Big/ {\displaystyle\sum b}$.
 
-            \boxt{
-                False
-            }
+            \boxt{False}
 
         \part
-            Since $c$ is a constant with respect to $r$, $\sum\limits_{r=1}^n c = nc \neq n(c+1) = \sum\limits_{r=0}^{n-1} (c+1)$.
+            Since $c$ is a constant with respect to $r$, $\displaystyle\sum\limits_{r=1}^n c = nc \neq n(c+1) = \sum\limits_{r=0}^{n-1} (c+1)$.
 
-            \boxt{
-                False
-            }
+            \boxt{False}
 
     \problem{}
         Write the following series in $\Sigma$ notation twice, with $r = 1$ as the lower limit in the first and $r =0$ as the lower limit in the second.
@@ -58,29 +50,23 @@
     \solution
         \part
             Observe that $-2 + 1 + 4 + \ldots + 40$ is in arithmetic progression with a common difference of 3.
-
             \begin{align*}
                 -2 + 1 + 4 + \ldots + 40 &= \sum_{r = 1}^{15} (3r-5)\\
                 &= \sum_{r = 0}^{14} (3(r+1)-5)\\
                 &= \sum_{r = 0}^{14} (3r-2)
             \end{align*}
 
-            \boxt{
-                $-2 + 1 + 4 + \ldots + 40 = \sum\limits_{r = 1}^{15} (3r-5) = \sum\limits_{r = 0}^{14} (3r-2)$
-            }
+            \boxt{$\displaystyle-2 + 1 + 4 + \ldots + 40 = \sum\limits_{r = 1}^{15} (3r-5) = \sum\limits_{r = 0}^{14} (3r-2)$}
 
         \part
             Observe that $a^2 + a^4 + a^6 + \ldots + a^{50}$ is in geometric progression with a common ratio of $a^2$.
-
             \begin{align*}
                 a^2 + a^4 + a^6 + \ldots + a^{50} &= \sum_{r=1}^{25} a^{2r}\\
                 &= \sum_{r=0}^{24} a^{2(r+1)}\\
                 &= \sum_{r=0}^{24} a^{2r + 2}
             \end{align*}
 
-            \boxt{
-                $a^2 + a^4 + a^6 + \ldots + a^{50} = \sum\limits_{r=1}^{25} a^{2r} = \sum\limits_{r=0}^{24} a^{2r + 2}$
-            }
+            \boxt{$\displaystyle a^2 + a^4 + a^6 + \ldots + a^{50} = \sum\limits_{r=1}^{25} a^{2r} = \sum\limits_{r=0}^{24} a^{2r + 2}$}
 
         \part
             \begin{align*}
@@ -89,9 +75,7 @@
                 &= \sum_{r=0}^{n-1} \dfrac1{2r+3}
             \end{align*}
 
-            \boxt{
-                $ \dfrac13 + \dfrac15 + \dfrac17 + \ldots + n\text{th term} = \sum\limits_{r=1}^n \dfrac1{2r+1} = \sum\limits_{r=0}^{n-1} \dfrac1{2r+3}$
-            }
+            \boxt{$\displaystyle \dfrac13 + \dfrac15 + \dfrac17 + \ldots + n\text{th term} = \sum\limits_{r=1}^n \dfrac1{2r+1} = \sum\limits_{r=0}^{n-1} \dfrac1{2r+3}$}
 
         \part
             \begin{align*}
@@ -100,9 +84,7 @@
                 &= \sum_{r = 0}^{n-1} \left( -\dfrac12\right)^{r}
             \end{align*}
 
-            \boxt{
-                $1 - \dfrac12 + \dfrac14 - \dfrac18 + \ldots \text{ to $n$ terms} = \sum\limits_{r = 1}^n \left( -\dfrac12\right)^{r-1} = \sum\limits_{r = 0}^{n-1} \left( -\dfrac12\right)^{r}$
-            }
+            \boxt{$\displaystyle1 - \dfrac12 + \dfrac14 - \dfrac18 + \ldots \text{ to $n$ terms} = \sum\limits_{r = 1}^n \left( -\dfrac12\right)^{r-1} = \sum\limits_{r = 0}^{n-1} \left( -\dfrac12\right)^{r}$}
 
         \part
             \begin{align*}
@@ -111,18 +93,16 @@
                 &= \sum_{r=0}^{26} \dfrac1{(r+2)(r+4)}
             \end{align*}
 
-            \boxt{
-                $\dfrac1{2\cdot4} + \dfrac1{3\cdot5} + \dfrac1{4 \cdot 6} + \ldots + \dfrac1{28 \cdot 30} = \sum\limits_{r=1}^{27} \dfrac1{(r+1)(r+3)} = \sum\limits_{r=0}^{26} \dfrac1{(r+2)(r+4)}$
-            }
+            \boxt{$\displaystyle\dfrac1{2\cdot4} + \dfrac1{3\cdot5} + \dfrac1{4 \cdot 6} + \ldots + \dfrac1{28 \cdot 30} = \sum\limits_{r=1}^{27} \dfrac1{(r+1)(r+3)} = \sum\limits_{r=0}^{26} \dfrac1{(r+2)(r+4)}$}
 
     \problem{}
         Without using the GC, evaluate the following sums.
 
         \begin{enumerate}
-            \item $\sum\limits_{r=1}^{50} (2r-7)$
-            \item $\sum\limits_{r=1}^a (1-a-r)$
-            \item $\sum\limits_{r=2}^n \left(\ln r + 3^r\right)$
-            \item $\sum\limits_{r=1}^\infty \left(\dfrac{2^r-1}{3^r}\right)$
+            \item $\displaystyle\sum\limits_{r=1}^{50} (2r-7)$
+            \item $\displaystyle\sum\limits_{r=1}^a (1-a-r)$
+            \item $\displaystyle\sum\limits_{r=2}^n \left(\ln r + 3^r\right)$
+            \item $\displaystyle\sum\limits_{r=1}^\infty \left(\dfrac{2^r-1}{3^r}\right)$
         \end{enumerate}
 
     \solution
@@ -133,9 +113,7 @@
                 &= 2200
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=1}^{50} (2r-7) = 2200$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=1}^{50} (2r-7) = 2200$}
 
         \part
             \begin{align*}
@@ -146,9 +124,7 @@
                 &= \dfrac{a}2 (1-3a)
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=1}^a (1-a-r) = \dfrac{a}2 (1-3a)$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=1}^a (1-a-r) = \dfrac{a}2 (1-3a)$}
 
         \part
             \begin{align*}
@@ -159,9 +135,7 @@
                 &= \ln n! +\dfrac92 \left(3^{n-1} - 1\right)
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=2}^n \left(\ln r + 3^r\right) = \ln n! +\dfrac92 \left(3^{n-1} - 1\right)$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=2}^n \left(\ln r + 3^r\right) = \ln n! +\dfrac92 \left(3^{n-1} - 1\right)$}
 
         \part
             \begin{align*}
@@ -171,9 +145,7 @@
                 &= \dfrac32
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=1}^\infty \left(\dfrac{2^r-1}{3^r}\right) = \dfrac32$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=1}^\infty \left(\dfrac{2^r-1}{3^r}\right) = \dfrac32$}
 
     \problem{}
         The $n$th term of a series is $2^{n-2} + 3n$. Find the sum of the first $N$ terms.
@@ -186,9 +158,7 @@
             &= \dfrac12 \left(2^N + 3N^2 + 3N - 1\right)
         \end{align*}
 
-        \boxt{
-            The sum of the first $N$ terms is $\dfrac12 \left(2^N + 3N^2 + 3N - 1\right)$
-        }
+        \boxt{The sum of the first $N$ terms is $\dfrac12 \left(2^N + 3N^2 + 3N - 1\right)$}
 
     \problem{}
         The $r$th term, $u_r$, of a series is given by $u_r = \left(\dfrac13\right)^{3r-2} + \left(\dfrac13\right)^{3r-1}$. Express $\sum\limits_{r=1}^n u_r$ in the form $A\left(1 - \dfrac{B}{27^n}\right)$, where $A$ and $B$ are constants. Deduce the sum to infinity of the series.
@@ -205,20 +175,16 @@
             &= \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{r=1}^n u_r = \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)$
-        }
+        \boxt{$\displaystyle\sum\limits_{r=1}^n u_r = \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)$}
 
         \begin{align*}
-            \sum\limits_{r=1}^\infty u_r &= \lim_{n \rightarrow \infty} \sum\limits_{r=1}^n u_r\\
-            &= \lim_{n \rightarrow \infty} \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)\\
+            \sum\limits_{r=1}^\infty u_r &= \lim_{n \to \infty} \sum\limits_{r=1}^n u_r\\
+            &= \lim_{n \to \infty} \dfrac{6}{13} \left(1-\dfrac1{27^n}\right)\\
             &= \dfrac{6}{13} (1-0)\\
             &= \dfrac6{13}
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{r=1}^\infty u_r = \dfrac6{13}$
-        }
+        \boxt{$\displaystyle\sum\limits_{r=1}^\infty u_r = \dfrac6{13}$}
 
     \problem{}
         The $r$th term, $u_r$, of a series is given by $u_r = \ln \dfrac{r}{r+1}$. Find $\sum\limits_{r=1}^n u_r$ in terms of $n$. Comment on whether the series converges.
@@ -226,27 +192,25 @@
     \solution
         \begin{align*}
             \sum\limits_{r=1}^n u_r &= \sum\limits_{r=1}^n \ln \dfrac{r}{r+1}\\
-            &= \sum\limits_{r=1}^n (\ln r - \ln (r+1))\\
-            &= \sum\limits_{r=1}^n \ln r - \sum\limits_{r=1}^n\ln (r+1)\\
+            &= \sum\limits_{r=1}^n (\ln r - \ln{r+1})\\
+            &= \sum\limits_{r=1}^n \ln r - \sum\limits_{r=1}^n\ln{r+1}\\
             &= \sum\limits_{r=1}^n \ln r - \sum\limits_{r=2}^{n+1}\ln r\\
-            &= \ln 1 + \sum\limits_{r=2}^{n+1} \ln r - \ln (n+1) - \sum\limits_{r=2}^{n+1}\ln r\\
-            &= \ln 1 - \ln (n+1)\\
+            &= \ln 1 + \sum\limits_{r=2}^{n+1} \ln r - \ln{n+1} - \sum\limits_{r=2}^{n+1}\ln r\\
+            &= \ln 1 - \ln{n+1}\\
             &= \ln \dfrac1{n+1}
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{r=1}^n u_r = \ln \dfrac1{n+1}$
-        }
+        \boxt{$\displaystyle\sum\limits_{r=1}^n u_r = \ln \dfrac1{n+1}$}
 
-        Observe that as $n \rightarrow \infty$, $\ln \dfrac1{n+1} \rightarrow \ln 0$. Hence, $\sum\limits_{r=1}^n u_r$ diverges to infinity. Thus, $u_n$ does not converge.
+        Observe that as $n \to \infty$, $\ln \dfrac1{n+1} \to \ln 0$. Hence, $\displaystyle\sum\limits_{r=1}^n u_r$ diverges to infinity. Thus, $u_n$ does not converge.
 
     \problem{}
         Given that $\sum\limits_{r=1}^n r^2 = \dfrac{n}6 (n+1)(2n+1)$, without using the GC, find the following sums.
 
         \begin{enumerate}
-            \item $\sum\limits_{r=0}^n (r(r+4) + n)$
-            \item $\sum\limits_{r=n+1}^{2n} (2r-1)^2$
-            \item $\sum\limits_{r=-15}^{20} r(r-2)$
+            \item $\displaystyle\sum\limits_{r=0}^n (r(r+4) + n)$
+            \item $\displaystyle\sum\limits_{r=n+1}^{2n} (2r-1)^2$
+            \item $\displaystyle\sum\limits_{r=-15}^{20} r(r-2)$
         \end{enumerate}
 
     \solution
@@ -262,15 +226,12 @@
                 &= \dfrac{n}6 (n+1)(2n+19)
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=0}^n (r(r+4) + n) = \dfrac{n}6 (n+1)(2n+19)$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=0}^n (r(r+4) + n) = \dfrac{n}6 (n+1)(2n+19)$}
 
         \part
             \begin{align*}
                 \sum\limits_{r=n+1}^{2n} (2r-1)^2 &= \sum\limits_{r=1}^{n} (2(r+n)-1)^2\\\
                 &= \sum\limits_{r=1}^{n} (2r + 2n-1)^2\\
-                &= \sum\limits_{r=1}^{n} \left(4r^2 + 2(2r)(2n-1) + (2n-1)^2\right)\\
                 &= \sum\limits_{r=1}^{n} \left(4r^2 + 4(2n-1)r + (2n-1)^2\right)\\
                 &= 4\sum\limits_{r=1}^{n} r^2 + 4(2n-1)\sum\limits_{r=1}^{n} r + (2n-1)^2\sum\limits_{r=1}^{n}1\\
                 &= 4 \cdot\dfrac{n}6 (n+1)(2n+1) + 4(2n-1)\dfrac{n(n+1)}2 + n(2n-1)^2\\
@@ -280,9 +241,7 @@
                 &= \dfrac13 n \left(28n^2 -1 \right)
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=n+1}^{2n} (2r-1)^2 = \dfrac13 n \left(28n^2 -1 \right)$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=n+1}^{2n} (2r-1)^2 = \dfrac13 n \left(28n^2 -1 \right)$}
 
         \part
             \begin{align*}
@@ -294,12 +253,10 @@
                 &= 3930
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=-15}^{20} r(r-2) = 3930$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=-15}^{20} r(r-2) = 3930$}
 
     \problem{}
-        Let $S = \sum\limits_{r=0}^\infty \dfrac{(x-2)^r}{3^r}$ where $x \neq 2$. Find the range of values of $x$ such that the series $S$ converges. Given that $x=1$, find
+        Let $S = \displaystyle\sum\limits_{r=0}^\infty \dfrac{(x-2)^r}{3^r}$ where $x \neq 2$. Find the range of values of $x$ such that the series $S$ converges. Given that $x=1$, find
 
         \begin{enumerate}
             \item the value of $S$
@@ -319,26 +276,19 @@
 
         \case{2}{} $-\dfrac{x-2}3 < 1 \implies \dfrac{x-2}3 > -1 \implies x-2 > -3 \implies x > -1$
         
-        \smallskip
-
         Putting both inequalities together, we see that $-1 < x < 5$.
 
-        \boxt{
-            For $S$ to converge, we must have $-1 < x < 5$, $x \neq 2$.
-        }
+        \boxt{For $S$ to converge, we must have $-1 < x < 5$, $x \neq 2$.}
 
         \part
             When $x=1$, 
-
             \begin{align*}
                 S &= \sum\limits_{r=0}^\infty \left(-\dfrac{1}3 \right)^r \\
                 &= \dfrac{1}{1-(-\tfrac13)}\\
                 &= \dfrac34
             \end{align*}
 
-            \boxt{
-                $S = \dfrac34$
-            }
+            \boxt{$S = \dfrac34$}
 
         \part
             \begin{align*}
@@ -350,9 +300,7 @@
                 &= \dfrac34 \left(1 - \left(-\dfrac13\right)^n\right)
             \end{align*}
 
-            \boxt{
-                $S_n = \dfrac34 \left(1 - \left(-\dfrac13\right)^n\right)$
-            }
+            \boxt{$S_n = \dfrac34 \left(1 - \left(-\dfrac13\right)^n\right)$}
 
         \part
             \begin{alignat*}{2}
@@ -365,21 +313,19 @@
                 && &= 10.5
             \end{alignat*}
 
-            Since $n \in \mathbb{N}$, the least value of $n$ is 11.
+            Since $n \in \N$, the least value of $n$ is 11.
 
-            \boxt{
-                The least value of $n$ is 11.
-            }
+            \boxt{The least value of $n$ is 11.}
 
     \problem{}
-        Given that $\sum\limits_{r=1}^n r^2 = \dfrac{n}6 (n+1)(2n+1)$,
+        Given that $\displaystyle\sum\limits_{r=1}^n r^2 = \dfrac{n}6 (n+1)(2n+1)$,
 
         \begin{enumerate}
-            \item write down $\sum\limits_{r=1}^{2k} r^2$ in terms of $k$
+            \item write down $\displaystyle\sum\limits_{r=1}^{2k} r^2$ in terms of $k$
             \item find $2^2 + 4^2 + 6^2 + \ldots + (2k)^2$.
         \end{enumerate}
 
-        \noindent Hence, show that $\sum\limits_{r=1}^k (2r-1)^2 = \dfrac{k}3(2k+1)(2k-1)$.
+        Hence, show that $\displaystyle\sum\limits_{r=1}^k (2r-1)^2 = \dfrac{k}3(2k+1)(2k-1)$.
 
     \solution
         \part
@@ -388,9 +334,7 @@
                 &= \dfrac{k}3 (2k+1)(4k+1)
             \end{align*}
 
-            \boxt{
-                $\sum\limits_{r=1}^{2k} r^2 = \dfrac{k}3 (2k+1)(4k+1)$
-            }
+            \boxt{$\displaystyle\sum\limits_{r=1}^{2k} r^2 = \dfrac{k}3 (2k+1)(4k+1)$}
 
         \part
             \begin{align*}
@@ -401,9 +345,7 @@
                 &=\dfrac{2k}3 (k+1)(2k+1)
             \end{align*}
 
-            \boxt{
-                $2^2 + 4^2 + 6^2 + \ldots + (2k)^2 = \dfrac{2k}3 (k+1)(2k+1)$
-            }
+            \boxt{$2^2 + 4^2 + 6^2 + \ldots + (2k)^2 = \dfrac{2k}3 (k+1)(2k+1)$}
 
             \begin{align*}
                 \sum\limits_{r=1}^k (2r-1)^2 &= \sum_{r=1}^{2k} r^2 - \sum_{r=1}^k (2r)^2\\
@@ -413,7 +355,7 @@
             \end{align*}
 
     \problem{}
-        Given that $u_n = e^{nx} - e^{(n+1)x}$, find $\sum\limits_{n=1}^N u_n$ in terms of $N$ and $x$. Hence determine the set of values of $x$ for which the infinite series $u_1 + u_2 + u_3 + \ldots$ is convergent and give the sum to infinity for cases where this exists.
+        Given that $u_n = e^{nx} - e^{(n+1)x}$, find $\displaystyle\sum\limits_{n=1}^N u_n$ in terms of $N$ and $x$. Hence, determine the set of values of $x$ for which the infinite series $u_1 + u_2 + u_3 + \ldots$ is convergent and give the sum to infinity for cases where this exists.
 
     \solution
         \begin{align*}
@@ -425,41 +367,33 @@
             &= e^x(1 - e^{Nx})
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{n=1}^N u_n = e^x(1 - e^{Nx})$
-        }
+        \boxt{$\displaystyle\sum\limits_{n=1}^N u_n = e^x(1 - e^{Nx})$}
 
-        For the infinite series $u_1 + u_2 + u_3 + \ldots$ to converge, we require $e^x$ to converge. Hence, $x \leq 0$. Equivalently, $x \in \mathbb{R}^-_0$.
+        For the infinite series $u_1 + u_2 + u_3 + \ldots$ to converge, we require $e^x$ to converge. Hence, $x \leq 0$. Equivalently, $x \in \R^-_0$.
 
-        \boxt{
-            $\mathbb{R}^-_0$
-        }
+        \boxt{$\R^-_0$}
 
         \case{1}{$x=0$}
         \begin{align*}
-            \lim_{N \rightarrow \infty} \sum\limits_{n=1}^N u_n &= \lim_{N \rightarrow \infty} e^x(1 - e^{Nx}) \\
-            &= \lim_{N \rightarrow \infty} e^0(1 - e^{N\cdot0}) \\
-            &= \lim_{N \rightarrow \infty} 1(1 - 1) \\
+            \lim_{N \to \infty} \sum\limits_{n=1}^N u_n &= \lim_{N \to \infty} e^x(1 - e^{Nx}) \\
+            &= \lim_{N \to \infty} e^0(1 - e^{N\cdot0}) \\
+            &= \lim_{N \to \infty} 1(1 - 1) \\
             &= 0
         \end{align*}
 
-        \boxt{
-            When $x = 0$, the sum to infinity is $0$.
-        }
+        \boxt{When $x = 0$, the sum to infinity is $0$.}
 
         \case{2}{$x < 0$}
         \begin{align*}
-            \lim_{N \rightarrow \infty} \sum\limits_{n=1}^N u_n &= \lim_{N \rightarrow \infty} e^x(1 - e^{Nx}) \\
+            \lim_{N \to \infty} \sum\limits_{n=1}^N u_n &= \lim_{N \to \infty} e^x(1 - e^{Nx}) \\
             &= e^x(1 - 0)\\
             &= e^x
         \end{align*}
 
-        \boxt{
-            When $x < 0$, the sum to infinity is $e^x$.
-        }
+        \boxt{When $x < 0$, the sum to infinity is $e^x$.}
 
     \problem{}
-        Given that $r$ is a positive integer and $f(r) = \dfrac1{r^2}$, express $f(r) - f(r+1)$ as a single fraction. Hence prove that $\sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) = 1 - \dfrac1{(4n+1)^2}$. Give a reason why the series is convergent and state the sum to infinity. Find $\sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right)$.
+        Given that $r$ is a positive integer and $f(r) = \dfrac1{r^2}$, express $f(r) - f(r+1)$ as a single fraction. Hence, prove that $\displaystyle\sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) = 1 - \dfrac1{(4n+1)^2}$. Give a reason why the series is convergent and state the sum to infinity. Find $\displaystyle\sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right)$.
 
     \solution
         \begin{align*}
@@ -468,9 +402,7 @@
             &= \dfrac{2r+1}{r^2(r+1)^2}
         \end{align*}
 
-        \boxt{
-            $f(r) - f(r+1) = \dfrac{2r+1}{r^2(r+1)^2}$
-        }
+        \boxt{$f(r) - f(r+1) = \dfrac{2r+1}{r^2(r+1)^2}$}
 
         \begin{align*}
             \sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) &= \sum\limits_{r=1}^{4n} (f(r) - f(r+1))\\
@@ -481,11 +413,9 @@
             &= 1 - \dfrac{1}{(4n+1)^2}
         \end{align*}
 
-        As $r \rightarrow \infty$, $ \sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) = 1 - \dfrac{1}{(4n+1)^2} \rightarrow 1$. Hence, the series is convergent and converges to 1.
+        As $r \to \infty$, $\displaystyle\sum\limits_{r=1}^{4n} \left(\dfrac{2r+1}{r^2(r+1)^2}\right) = 1 - \dfrac{1}{(4n+1)^2} \to 1$. Hence, the series is convergent and converges to 1.
 
-        \boxt{
-            The sum to infinity is 1.
-        }
+        \boxt{The sum to infinity is 1.}
 
         \begin{align*}
             \sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right) &= \sum\limits_{r=1}^{4n-1} \left(\dfrac{2(r+1)-1}{(r+1)^2 \, r^2}\right)\\
@@ -498,21 +428,18 @@
             &= 1 - \dfrac1{16n^2}
         \end{align*}
 
-        \boxt{
-            $\sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right) = 1 - \dfrac1{16n^2}$
-        }
+        \boxt{$\displaystyle\sum\limits_{r=2}^{4n} \left(\dfrac{2r-1}{r^2(r-1)^2}\right) = 1 - \dfrac1{16n^2}$}
 
     \problem{}
         \begin{enumerate}
             \item Express $\dfrac1{(2x+1)(2x+3)(2x+5)}$ in partial fractions.
-            \item Hence show that $\sum\limits_{r=1}^n \dfrac1{(2r+1)(2r+3)(2r+5)} = \dfrac1{60} - \dfrac1{4(2n+3)(2n+5)}$.
+            \item Hence, show that $\displaystyle\sum\limits_{r=1}^n \dfrac1{(2r+1)(2r+3)(2r+5)} = \dfrac1{60} - \dfrac1{4(2n+3)(2n+5)}$.
             \item Deduce the sum of $\dfrac1{1\cdot 3\cdot5} + \dfrac1{3 \cdot 5 \cdot 7} + \dfrac1{3 \cdot 5 \cdot 7 \cdot 9} + \ldots + \dfrac1{41 \cdot 43 \cdot 45}$.
         \end{enumerate}
 
     \solution
         \part
             Let $u = 2x+3$. Then $\dfrac1{(2x+1)(2x+3)(2x+5)} = \dfrac{1}{(u-2)u(u+2)}$. 
-
             \begin{alignat*}{2}
                 &&\dfrac{1}{(u-2)u(u+2)} &= \dfrac{A}{u-2} + \dfrac{B}{u} + \dfrac{C}{u+2}\\
                 \implies &&1 &= A(u)(u+2) + B(u-2)(u+2) + C(u-2)u\\
@@ -521,16 +448,13 @@
             \end{alignat*}
 
             Comparing the coefficients of $u^2$, $u$ and constant terms, we have the following system of equations.
-
-            \begin{equation*}
-                \begin{cases}
-                    \begin{aligned}
-                        A + B + C&& = 0\\
-                        A - C&& = 0\\
-                        -4B&& = 1
-                    \end{aligned}
-                \end{cases}
-            \end{equation*}
+            \[
+                \systeme[ABC]{
+                    A + B + C  = 0,
+                    A - C = 0,
+                    -4B = 1
+                }
+            \]
 
             Solving, we obtain $A = \dfrac18$, $B = -\dfrac14$ and $C = \dfrac18$. Hence,
             \begin{alignat*}{2}
@@ -538,9 +462,7 @@
                 \implies&&\dfrac1{(2x+1)(2x+3)(2x+5)} &= \dfrac{1}{8(2x+1)} - \dfrac{1}{4(2x+3)} + \dfrac{1}{8(2x+5)}
             \end{alignat*}
 
-            \boxt{
-                $\dfrac1{(2x+1)(2x+3)(2x+5)} = \dfrac{1}{8(2x+1)} - \dfrac{1}{4(2x+3)} + \dfrac{1}{8(2x+5)}$
-            }
+            \boxt{$\dfrac1{(2x+1)(2x+3)(2x+5)} = \dfrac{1}{8(2x+1)} - \dfrac{1}{4(2x+3)} + \dfrac{1}{8(2x+5)}$}
 
         \part
             \begin{align}
@@ -550,16 +472,14 @@
                 &= \dfrac18 \left(\left(\sum\limits_{r=1}^n \dfrac{1}{2r+1} -\sum\limits_{r=1}^n\dfrac{1}{2r+3}\right)+ \left(\sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}\right)\right)\label{P12-1}
             \end{align}
 
-            Consider $\sum\limits_{r=1}^n \dfrac{1}{2r+1} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}$.
-
+            Consider $\displaystyle\sum\limits_{r=1}^n \dfrac{1}{2r+1} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}$.
             \begin{align}
                 \sum\limits_{r=1}^n \dfrac{1}{2r+1} - \sum\limits_{r=1}^n\dfrac{1}{2r+3} &= \sum\limits_{r=1}^n \dfrac{1}{2r+1} - \sum\limits_{r=2}^{n+1}\dfrac{1}{2r+1}\nonumber\\
                 &= \left(\dfrac13 + \sum\limits_{r=2}^n\dfrac{1}{2r+1}\right) - \left(\sum\limits_{r=2}^n\dfrac{1}{2r+1} + \dfrac{1}{2(n+1) + 1}\right)\nonumber\\
                 &= \dfrac13 - \dfrac1{2n+3}\label{P12-2}
             \end{align}
 
-            Consider $\sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}$.
-
+            Consider $\displaystyle\sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3}$.
             \begin{align}
                 \sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=1}^n\dfrac{1}{2r+3} &= \sum\limits_{r=1}^n\dfrac{1}{2r+5} - \sum\limits_{r=0}^{n-1}\dfrac{1}{2r+5}\nonumber\\
                 &= \left(\sum\limits_{r=0}^n \dfrac{1}{2r+5} - \dfrac15\right) - \left(\sum\limits_{r=0}^n \dfrac{1}{2r+5} - \dfrac1{2n+5} \right)\nonumber\\
@@ -567,7 +487,6 @@
             \end{align}
 
             Substituting Equations~\ref{P12-2} and~\ref{P12-3} into Equation~\ref{P12-1}, we have
-
             \begin{align*}
                 \sum\limits_{r=1}^n \dfrac1{(2r+1)(2r+3)(2r+5)} &= \dfrac18 \left(\dfrac13 - \dfrac1{2n+3} + \dfrac1{2n+5} - \dfrac15\right)\\
                 &= \dfrac18 \left(\dfrac2{15} - \dfrac1{2n+3} + \dfrac1{2n+5}\right)\\
@@ -584,7 +503,5 @@
                 &= \dfrac{161}{1935}
             \end{align*}
 
-            \boxt{
-                $\dfrac1{1\cdot 3\cdot5} + \dfrac1{3 \cdot 5 \cdot 7} + \dfrac1{3 \cdot 5 \cdot 7 \cdot 9} + \ldots + \dfrac1{41 \cdot 43 \cdot 45} = \dfrac{161}{1935}$
-            }
+            \boxt{$\dfrac1{1\cdot 3\cdot5} + \dfrac1{3 \cdot 5 \cdot 7} + \dfrac1{3 \cdot 5 \cdot 7 \cdot 9} + \ldots + \dfrac1{41 \cdot 43 \cdot 45} = \dfrac{161}{1935}$}
 \end{document}

@@ -24,56 +24,42 @@
         He did his account again and the amount spent on food is \$337. Is this record correct? Why?
 
     \solution
-        Let $g$, $f$ and $s$ represent the number of days the traveller spent in Germany, France and Spain respectively. 
+        Let $g$, $f$ and $s$ represent the number of days the traveller spent in Germany, France and Spain respectively.
+        \[
+            \systeme{
+                28g + 23f + 19s = 391,
+                30g + 25f + 22s = 430,
+                14g + 8f + 12s = 180
+            }
+        \]
+        This gives the unique solution $g=4$, $f=8$ and $s=5$.
 
-        \begin{equation*}
-            \begin{cases}
-                \begin{aligned}
-                    28g + 23f + 19s &= 391\\
-                    30g + 25f + 22s &= 430\\
-                    14g + 8f + 12s &= 180\\
-                \end{aligned}
-            \end{cases}
-        \end{equation*}
+        \boxt{The traveller spent 4 days in Germany, 8 days in France and 5 days in Spain.}
 
-        \begin{center}
-            $g=4$, $f=8$, $s=5$
-        \end{center}
+        \[
+            \systeme{
+                28g + 23f + 19s = 391,
+                30g + 25f + 22s = 337,
+                14g + 8f + 12s = 180
+            }
+        \]
 
-        \boxt{
-            The traveller spent 4 days in Germany, 8 days in France and 5 days in Spain.
-        }
+        This gives the unique solution $g=66$, $f=-27$ and $s=-44$
 
-        \begin{equation*}
-            \begin{cases}
-                \begin{aligned}
-                    28g + 23f + 19s &= 391\\
-                    30g + 25f + 22s &= 337\\
-                    14g + 8f + 12s &= 180\\
-                \end{aligned}
-            \end{cases}
-        \end{equation*}
-
-        \begin{center}
-            $g=66$, $f=-27$, $s=-44$
-        \end{center}
-
-        \boxt{
-            The record is incorrect as $f$ and $s$ must be positive.
-        }
+        \boxt{The record is incorrect as $f$ and $s$ must be positive.}
 
     \problem{}
         \begin{enumerate}
-            \item Solve algebraically $x^2 - 9 \geq (x+3)\left(x^2 - 3x + 1\right)$.
+            \item Solve algebraically $x^2 - 9 \geq (x+3)\bp{x^2 - 3x + 1}$.
             \item Solve algebraically $\dfrac{7-2x}{3-x^2} \leq 1$.
         \end{enumerate}
 
     \solution
         \part 
             \begin{alignat*}{2}
-                &&x^2-9 &\geq (x+3)\left(x^2 - 3x + 1\right) \\
-                \implies &&(x+3)(x-3) &\geq (x+3)\left(x^2 - 3x + 1\right) \\
-                \implies &&(x+3)\left(x^2 - 4x + 4\right) &\leq 0 \\
+                &&x^2-9 &\geq (x+3)\bp{x^2 - 3x + 1} \\
+                \implies &&(x+3)(x-3) &\geq (x+3)\bp{x^2 - 3x + 1} \\
+                \implies &&(x+3)\bp{x^2 - 4x + 4} &\leq 0 \\
                 \implies &&(x+3)(x-2)^2 &\leq 0
             \end{alignat*}
 
@@ -90,9 +76,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{
-                $x \leq -3 \lor x = 2$
-            }
+            \boxt{$x \leq -3 \lor x = 2$}
 
         \part
             \begin{alignat*}{2}
@@ -102,7 +86,6 @@
             \end{alignat*}
 
             Observe that $x^2 - 2x + 4 = (x-1)^2 + 3 > 0$. Hence,
-
             \begin{alignat*}{2}
                 &&\dfrac1{3-x^2} &\leq 0\\
                 &&3-x^2 &\leq 0
@@ -122,15 +105,13 @@
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{
-                $x < -\sqrt3 \lor x > \sqrt3$
-            }
+            \boxt{$x < -\sqrt3 \lor x > \sqrt3$}
 
     \problem{}
-        \begin{itemize}
+        \begin{enumerate}
             \item Without using a calculator, solve the inequality $\dfrac{3x+4}{x^2+3x+2} \geq \dfrac{1}{x+2}$.
             \item Hence, deduce the set of values of $x$ that satisfies $\dfrac{3\abs{x}+4}{x^2+3\abs{x}+2} \geq \dfrac{1}{\abs{x}+2}$.
-        \end{itemize}
+        \end{enumerate}
 
     \solution
         \part
@@ -155,9 +136,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{
-                $-2 < x \leq -\dfrac32 \lor x > -1$
-            }
+            \boxt{$-2 < x \leq -\dfrac32 \lor x > -1$}
 
         \part
             Observe that $\abs{x}^2 = x^2$. Hence, with the map $x \mapsto \abs{x}$, we obtain
@@ -168,9 +147,7 @@
 
             Since $\abs{x} > 0$, we have that $\abs{x} > -1$ is satisfied for all real $x$.
 
-            \boxt{
-                The solution set is $\mathbb{R}$
-            }
+            \boxt{The solution set is $\R$}
 
     \problem{}
         On the same diagram, sketch the graphs of $y = 4\abs{x}$ and $y = x^2 - 2x + 3$. Hence or otherwise, solve the inequality $4\abs{x} \geq x^2 - 2x + 3$.
@@ -212,8 +189,6 @@
             \end{tikzpicture}
         \end{center}
 
-        \boxt{
-            $0.551 \leq x \leq 5.45$
-        }
+        \boxt{$0.551 \leq x \leq 5.45$}
         
 \end{document}

@@ -6,30 +6,27 @@
 
 \begin{document}
     \problem{}
-        A university student has a goal of saving at least \$1 000 000 (in Singapore dollars). He begins working at the start of the year 2019. In order to achieve his goal, he saves 40\% of his annual salary at the end of each year. If his annual salary in the year 2019 is \$40800 and it increases by 5\% (of his previous year's salary) every year, find
+        A university student has a goal of saving at least \$1 000 000 (in Singapore dollars). He begins working at the start of the year 2019. In order to achieve his goal, he saves 40\% of his annual salary at the end of each year. If his annual salary in the year 2019 is \$40800, and it increases by 5\% (of his previous year's salary) every year, find
 
         \begin{enumerate}
             \item his annual savings in 2027 (to the nearest dollar),
             \item his total savings at the end of $n$ years.
         \end{enumerate}
 
-        \noindent What is the minimum number of complete years for which he has to work in order to achieve his goal?
+         What is the minimum number of complete years for which he has to work in order to achieve his goal?
 
     \solution
-        Let \$$u_n$ be his annual salary in the $n$th year after 2019, with $n \in \mathbb{N}$. Then $u_{n+1} = 1.05\cdot u_n$, with $u_0 = 40800$. Hence, $u_n = 40800 \cdot 1.05^n$.
+        Let \$$u_n$ be his annual salary in the $n$th year after 2019, with $n \in \N$. Then $u_{n+1} = 1.05\cdot u_n$, with $u_0 = 40800$. Hence, $u_n = 40800 \cdot 1.05^n$.
 
         \part
-            In 2027, $n = 8$. Hence,
-            
+            In 2027, $n = 8$. Hence,            
             \begin{align*}
                 \text{Annual savings in 2027} &= 0.40 \cdot u_8 \\
                 &= 0.40 \cdot 40800 \cdot 1.05^8\\
-                &= 24112 \text{ (to nearest integer)}
+                &= 24112 \text{ (to the nearest integer)}
             \end{align*}
 
-            \boxt{
-                His annual savings in 2027 will be \$24112.
-            }
+            \boxt{His annual savings in 2027 will be \$24112.}
 
         \part
             \begin{align*}
@@ -41,9 +38,7 @@
                 &= 326400 (1.05^k - 1)
             \end{align*}
 
-            \boxt{
-                His total savings at the end of $n$ years is \$$326400 (1.05^k - 1)$.
-            }
+            \boxt{His total savings at the end of $n$ years is \$$326400 (1.05^k - 1)$.}
 
             \begin{alignat*}{2}
                 && 326400 (1.05^n - 1) &\geq 1 000 000\\
@@ -53,99 +48,84 @@
                 && &= 28.7 \tosf{3}
             \end{alignat*}
 
-            Since $n \in \mathbb{N}$, the minimum value of $n$ is 29. 
+            Since $n \in \N$, the minimum value of $n$ is 29. 
 
-            \boxt{
-                He has to work for a minimum of 29 complete years.
-            }
+            \boxt{He has to work for a minimum of 29 complete years.}
 
 
     \problem{}
         \begin{enumerate}
             \item A rope of length $200\pi$ cm is cut into pieces to form as many circles as possible, whose radii follow an arithmetic progression with common difference $0.25$ cm. Given that the smallest circle has an area of $\pi$ cm$^2$, find the area of the largest circle in terms of $\pi$.
-            \item The sum of the first $n$ terms of a sequence is given by $S_n = \alpha^{-n}-1$, where $\alpha$ is a non-zero constant, $\alpha \neq 1$.
+            \item The sum of the first $n$ terms of a sequence is given by $S_n = \a^{-n}-1$, where $\a$ is a non-zero constant, $\a \neq 1$.
             \begin{enumerate}
-                \item Show that the sequence is a geometric progression and state its common ratio in terms of $\alpha$.
-                \item Find the set of values of $\alpha$ for which the sum to infinity of the sequence exists.
+                \item Show that the sequence is a geometric progression and state its common ratio in terms of $\a$.
+                \item Find the set of values of $\a$ for which the sum to infinity of the sequence exists.
                 \item Find the value of the sum to infinity.
             \end{enumerate}
         \end{enumerate}
 
     \solution
         \part
-            Let the sequence $r_n$ be the radius of the $n$th smallest circle, in centimeters. Hence, $r_n = \dfrac14 + r_{n-1}$. Since the smallest circle has area $\pi$ cm$^2$, $r_1 = 1$. Thus, $r_n = 1 + \dfrac14 (n - 1)$.
+            Let the sequence $r_n$ be the radius of the $n$th smallest circle, in centimetres. Hence, $r_n = \dfrac14 + r_{n-1}$. Since the smallest circle has area $\pi$ cm$^2$, $r_1 = 1$. Thus, $r_n = 1 + \dfrac14 (n - 1)$.
 
             Consider the $n$th partial sum of the circumferences.
-
             \begin{align*}
                 \sum_{k=1}^n 2\pi r_k &= 2\pi \sum_{k=1}^n \left(1 + \dfrac14 (n-1)\right)\\
                 &= 2\pi \left(n + \dfrac14 \cdot \dfrac{n(n+1)}2 - \dfrac14 n\right)\\
                 &= 2\pi \left(\dfrac34 n + \dfrac18 n(n+1)\right)\\
                 &= \dfrac14 \pi \left(6n + n(n+1)\right)\\
-                &= \dfrac14 \pi (n^2 + 7n)\\
+                &= \dfrac14 \pi (n^2 + 7n)
             \end{align*}
 
             Since the rope has length $200\pi$ cm, we have the inequality
-
             \begin{alignat*}{2}
                 && \sum_{k=1}^n 2\pi r_k &\leq 200 \pi\\
                 && \dfrac14 \pi (n^2 + 7n) &\leq 200 \pi\\
                 && n^2 + 7n &\leq 800 \\
                 && n^2 + 7n - 800 &\leq 0 \\
-                && (n+32)(n-25) &\leq 0 \\
+                && (n+32)(n-25) &\leq 0
             \end{alignat*}
 
             Hence, $n \leq 25$. Since the rope is cut to form as many circles as possible, $n = 25$.
 
             Observe that $r_25 = 1 + \dfrac14 (25 - 1) = 7$. Hence, the largest circle has area $\pi \cdot 7^2 = 49\pi$ cm$^2$.
 
-            \boxt{
-                The largest circle has area $49\pi$ cm$^2$.
-            }
+            \boxt{The largest circle has area $49\pi$ cm$^2$.}
 
         \part
             Let $S_n = \sum\limits_{k=1}^n u_k$.
-
             \begin{align*}
                 u_{n+1} &= S_{n+1} - S_n\\
-                &= \alpha^{-(n+1)}-1-(\alpha^{-n}-1)\\
-                &= \alpha^{-n} \cdot \alpha^{-1} - \alpha^{-n}\\
-                &= \alpha^{-n}(\alpha^{-1} - 1)
+                &= \a^{-(n+1)}-1-(\a^{-n}-1)\\
+                &= \a^{-n} \cdot \a^{-1} - \a^{-n}\\
+                &= \a^{-n}(\a^{-1} - 1)
             \end{align*}
 
             \subpart
                 \textbf{Test for Geometric Progression}
-
                 \begin{align*}
-                    \dfrac{u_{n+1}}{u_n} &= \dfrac{\alpha^{-(n+1)}(\alpha^{-1} - 1)}{\alpha^{-n}(\alpha^{-1} - 1)}\\
-                    &= \dfrac{\alpha^{-(n+1)}}{\alpha^{-n}}\\
-                    &= \alpha^{-1}
+                    \dfrac{u_{n+1}}{u_n} &= \dfrac{\a^{-(n+1)}(\a^{-1} - 1)}{\a^{-n}(\a^{-1} - 1)}\\
+                    &= \dfrac{\a^{-(n+1)}}{\a^{-n}}\\
+                    &= \a^{-1}
                 \end{align*}
 
-                Since $\alpha^{-1}$ is a constant, $u_n$ is in geometric progession with common ratio $\alpha^{-1}$.
+                Since $\a^{-1}$ is a constant, $u_n$ is in geometric progression with common ratio $\a^{-1}$.
 
-                \boxt{
-                    The common ratio of the sequence is $\alpha^{-1}$.
-                }
+                \boxt{The common ratio of the sequence is $\a^{-1}$.}
 
             \subpart
-                Consider $L = \lim\limits_{n \to \infty} S_n = \lim\limits_{n \to \infty} (\alpha^{-n} - 1)$. For $L$ to exist, we need $\lim\limits_{n \to \infty} \alpha^{-n}$ to exist. Hence, $\abs{\alpha^{-1}} < 1$, whence $\abs{\alpha} > 1$. Thus, $\alpha < -1$ or $\alpha > 1$.
+                Consider $L = \lim\limits_{n \to \infty} S_n = \lim\limits_{n \to \infty} (\a^{-n} - 1)$. For $L$ to exist, we need $\lim\limits_{n \to \infty} \a^{-n}$ to exist. Hence, $\abs{\a^{-1}} < 1$, whence $\abs{\a} > 1$. Thus, $\a < -1$ or $\a > 1$.
 
-                \boxt{
-                    $\{ x \in \mathbb{R} \colon x < -1 \lor x > 1 \}$
-                }
+                \boxt{$\bc{ x \in \R \colon x < -1 \lor x > 1}$}
 
             \subpart
-            Since $\abs{\alpha^{-1}} < 1$, we know $\lim\limits_{n \to infty} \alpha^{-n} = 0$. Hence,
+                Since $\abs{\a^{-1}} < 1$, we know $\lim\limits_{n \to infty} \a^{-n} = 0$. Hence,
+                \begin{align*}
+                    \lim\limits_{n \to \infty} S_n &= \lim\limits_{n \to \infty} (\a^{-n} - 1)\\
+                    &= -1
+                \end{align*}
 
-            \begin{align*}
-                \lim\limits_{n \to \infty} S_n &= \lim\limits_{n \to \infty} (\alpha^{-n} - 1)\\
-                &= -1
-            \end{align*}
-
-            \boxt{
-                The sum to infinity of the sequence is -1.
-            }
+                \boxt{The sum to infinity of the sequence is $-1$.}
 
     \problem{}
         A sequence $u_1, u_2, u_3, \ldots$ is such that $u_{n+1} = 2u_n + An$, where $A$ is a constant and $n \geq 1$.
@@ -154,13 +134,11 @@
             \item Given that $u_1 = 5$ and $u_2 = 15$, find $A$ and $u_3$.
         \end{enumerate}
 
-        \noindent It is known that the $n$th term of this sequence is given by
-
-        \begin{equation*}
+        It is known that the $n$th term of this sequence is given by
+        \[
             u_n = a(2^n) + bn +c
-        \end{equation*}
-
-        \noindent where $a$, $b$ and $c$ are constants.
+        \]
+        where $a$, $b$ and $c$ are constants.
 
         \begin{enumerate}
             \setcounter{enumi}{1}
@@ -175,55 +153,42 @@
                 &= 10 + A\\
                 &= 15
             \end{align*}
-
             Hence, $A = 5$.
-
             \begin{align*}
                 u_3 &= 2u_2 + A\cdot 2\\
                 &= 2 \cdot 15 + 2\cdot5\\
                 &= 40
             \end{align*}
 
-            \boxt{
-                $A = 15$, $u_3 = 40$
-            }
+            \boxt{$A = 15$, $u_3 = 40$}
 
         \part
-            Since $u_1=5$, $u_2 = 15$ and $u_3 = 40$, we have the following system of equations.
+            Since $u_1=5$, $u_2 = 15$ and $u_3 = 40$, we have the following system
+            \[
+                \systeme{
+                    2a + b + c = 5,
+                    4a + 2b + c = 15,
+                    8a + 3b + c = 40
+                }
+            \]
+            which has solutions $a = \dfrac{15}2$, $b=-5$ and $c=-5$
 
-            \begin{numcases}{}
-                2a + b + c &= 5\label{P3-1}\\
-                4a + 2b + c &= 15\label{P3-2}\\
-                8a + 3b + c &= 40
-            \end{numcases}
-
-            Subtracting Equation~\ref{P3-2} from twice of Equation~\ref{P3-1} yields $c=-5$. This reduces our system of equations to 
-
-            \begin{numcases}{}
-                4a+2b &= 20\label{P3-3}\\
-                8a+3b &= 45\label{P3-4}
-            \end{numcases}
-
-            Subtracting Equation~\ref{P3-4} from twice of Equation~\ref{P3-3} yields $b=-5$, whence $a = \dfrac{15}2$.
-
-            \boxt{
-                $a = \dfrac{15}2$, $b=-5$, $c=-5$
-            }
+            \boxt{$a = \dfrac{15}2$, $b=-5$, $c=-5$}
 
     \problem{}
-        The graphs of $y = \dfrac13 (2^x)$ and $y=x$ intersect at $x = \alpha$ and $x=\beta$ where $\alpha < \beta$. A sequence of real numbers $x_1, x_2, x_3, \ldots$ satisfies the recurrence relation
+        The graphs of $y = \dfrac13 (2^x)$ and $y=x$ intersect at $x = \a$ and $x=\b$ where $\a < \b$. A sequence of real numbers $x_1, x_2, x_3, \ldots$ satisfies the recurrence relation
 
         \begin{equation*}
             x_{n+1} = \dfrac13 (2^{x_n}), \qquad n \geq 1
         \end{equation*}
 
         \begin{enumerate}
-            \item Prove algebraically that, if the sequence converges, then it converges to either $\alpha$ or $\beta$.
+            \item Prove algebraically that, if the sequence converges, then it converges to either $\a$ or $\b$.
             \item By using the graphs of $y=\dfrac13(2^x)$ and $y=x$, prove that
             \begin{itemize}
-                \item if $\alpha < x_n < \beta$, then $\alpha < x_{n+1} < x_n$
-                \item if $x_n < \alpha$, then $x_n < x_{n+1} < \alpha$
-                \item if $x_n > \beta$, then $x_n < x_{n+1}$
+                \item if $\a < x_n < \b$, then $\a < x_{n+1} < x_n$
+                \item if $x_n < \a$, then $x_n < x_{n+1} < \a$
+                \item if $x_n > \b$, then $x_n < x_{n+1}$
             \end{itemize}
 
             Describe the behaviour of the sequence for the three cases.
@@ -232,14 +197,13 @@
     \solution
         \part
             Let $L = \lim\limits_{n \to \infty} x_n$.
-
             \begin{alignat*}{2}
                 && x_{n+1} &= \dfrac13 (2^{x_n})\\
                 \implies&& \lim_{n \to \infty} x_{n+1} &= \lim_{n \to \infty} \dfrac13 (2^{x_n})\\
-                \implies&& L &= \dfrac13 (2^L)\\
+                \implies&& L &= \dfrac13 (2^L)
             \end{alignat*}
 
-            Since $y=x$ and $y=\dfrac13 (2^x)$ intersect only at $x=\alpha$ and $x = \beta$, then $\alpha$ and $\beta$ are the only roots of $x = \dfrac13 (2^x)$. Since $L$ is also a root of $x = \dfrac13 (2^x)$, $L$ must be either $\alpha$ or $\beta$.
+            Since $y=x$ and $y=\dfrac13 (2^x)$ intersect only at $x=\a$ and $x = \b$, then $\a$ and $\b$ are the only roots of $x = \dfrac13 (2^x)$. Since $L$ is also a root of $x = \dfrac13 (2^x)$, $L$ must be either $\a$ or $\b$.
 
         \part
             \begin{center}
@@ -250,7 +214,7 @@
                         axis y line=middle,
                         axis x line=middle,
                         xtick = {0.458, 3.313},
-                        xticklabels = {$\alpha$, $\beta$},
+                        xticklabels = {$\a$, $\b$},
                         ytick = \empty,
                         xlabel = {$x$},
                         ylabel = {$y$},
@@ -296,11 +260,9 @@
                 \end{tikzpicture}
             \end{center}
 
-            \boxt{
-                \begin{center}
-                    If $\alpha < x_n < \beta$, then $x_n$ is decreasing and converges to $\alpha$.\\
-                    If $x_n < \alpha$, then $x_n$ is increasing and converges to $\alpha$.\\
-                    If $x_n > \beta$, then $x_n$ is increasing and diverges.
-                \end{center}
-            }
+            \boxt{\begin{center}
+                    If $\a < x_n < \b$, then $x_n$ is decreasing and converges to $\a$.\\
+                    If $x_n < \a$, then $x_n$ is increasing and converges to $\a$.\\
+                    If $x_n > \b$, then $x_n$ is increasing and diverges.
+                \end{center}}
 \end{document}

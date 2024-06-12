@@ -22,19 +22,19 @@
             Implicitly differentiating the given equation,
 
             \begin{alignat*}{2}
-                &&2(x+2y)\left(1 + 2y^\prime\right) + 6(x-y)(1 - y^\prime) &= 0\\
-                &&(x+2y)\left(1 + 2y^\prime\right) + 3(x-y)(1 - y^\prime) &= 0\\
-                \implies&& x + 2xy^\prime + 2y + 4y\cdot y^\prime + 3x - 3x\cdot y^\prime - 3y + 3y\cdot y^\prime &= 0\\
-                \implies&& (-x + 7y)y^\prime + 4x - y &= 0\\
-                \implies&& y^\prime &= \dfrac{y-4x}{7y-x}
+                &&2(x+2y)\left(1 + 2y'\right) + 6(x-y)(1 - y') &= 0\\
+                &&(x+2y)\left(1 + 2y'\right) + 3(x-y)(1 - y') &= 0\\
+                \implies&& x + 2xy' + 2y + 4y\cdot y' + 3x - 3x\cdot y' - 3y + 3y\cdot y' &= 0\\
+                \implies&& (-x + 7y)y' + 4x - y &= 0\\
+                \implies&& y' &= \dfrac{y-4x}{7y-x}
             \end{alignat*}
 
         \part
             \subpart
-                When the tangent to the curve is parallel to the $x$-axis, $y^\prime = 0$.
+                When the tangent to the curve is parallel to the $x$-axis, $y' = 0$.
 
                 \begin{alignat*}{2}
-                    &&y^\prime &= 0\\
+                    &&y' &= 0\\
                     \implies&&\dfrac{y-4x}{7y-x} &= 0\\
                     \implies&&y-4x &= 0\\
                     \implies&&y &= 4x
@@ -53,12 +53,10 @@
 
                 Hence, $y = \pm 2$. Since the tangents to the curve is parallel to the $x$-axis, the equation of the tangents is $y = \pm 2$.
 
-                \boxt{
-                    $y = \pm 2$
-                }
+                \boxt{$y = \pm 2$}
 
             \subpart
-                When the tangent to the curve is parallel to the $y$-axis, $y^\prime$ is undefined. Hence, $7y-x =0 \implies x = 7y$. Substituting $x = 7y$ into the given equation,
+                When the tangent to the curve is parallel to the $y$-axis, $y'$ is undefined. Hence, $7y-x =0 \implies x = 7y$. Substituting $x = 7y$ into the given equation,
 
                 \begin{alignat*}{2}
                     &&(7y+2y)^2 + 3(7y-y)^2 &= 27\\
@@ -71,9 +69,7 @@
 
                 Hence, $x = \pm \dfrac{7}{\sqrt7} = \pm \sqrt7$. Since the tangents to the curve is parallel to the $y$-axis, the equation of the tangents is $x = \pm \sqrt7$.
 
-                \boxt{
-                    $x = \pm \sqrt7$
-                }
+                \boxt{$x = \pm \sqrt7$}
 
     \problem{}
         A piece of wire of length 8 cm is cut into two piece, one of length $x$ cm, the other of length $(8-x)$ cm. The piece of length $x$ cm is bent to form a circle with circumference $x$ cm. The other piece is bent to form a square with perimeter $(8-x)$ cm. Show that, as $x$ varies, the sum of the areas enclosed by these two pieces of wire is a minimum when the radius of the circle is $\dfrac4{4+\pi}$ cm.
@@ -90,10 +86,10 @@
             &= \left(\dfrac1{4\pi} + \dfrac1{16}\right)x^2 - x + 4
         \end{align*}
 
-        Consider the stationary points of $A(x)$. For stationary points, $A^\prime(x) = 0$.
+        Consider the stationary points of $A(x)$. For stationary points, $A'(x) = 0$.
 
         \begin{alignat*}{2}
-            &&A^\prime(x) &= 0\\
+            &&A'(x) &= 0\\
             \implies&&\left(\dfrac1{4\pi} + \dfrac1{16}\right)\cdot 2x - 1 &= 0\\
             \implies&&\left(\dfrac1{2\pi} + \dfrac1{8}\right)x - 1 &= 0\\
             \implies&& x &= \dfrac1{\tfrac1{2\pi} + \tfrac1{8}}\\
@@ -140,9 +136,7 @@
                 &= \dfrac3{200\pi}
             \end{align*}
 
-            \boxt{
-                When $r = 50$, $\der{r}{t} = \dfrac3{200\pi}$
-            }
+            \boxt{When $r = 50$, $\der{r}{t} = \dfrac3{200\pi}$}
 
         \part
             Let the surface area of the balloon be $A(r) = 4\pi r^2$. Observe that $\der{A}{r} = 8 \pi r$.
@@ -154,23 +148,21 @@
                 && &= 6
             \end{alignat*}
 
-            \boxt{
-                The rate of increase of the surface area of the balloon when its radius is 50 cm is 6 cm/s.
-            }
+            \boxt{The rate of increase of the surface area of the balloon when its radius is 50 cm is 6 cm/s.}
 
     \problem{}
-        A curve has parametric equations $x = 5\sec\theta, \, y = 3\tan\theta$, where $-\dfrac12\pi < \theta < \dfrac12\pi$. Find the exact coordinates of the point on the curve at which the normal is parallel to the line $y=x$.
+        A curve has parametric equations $x = 5\sec\t, \, y = 3\tan\t$, where $-\dfrac12\pi < \t < \dfrac12\pi$. Find the exact coordinates of the point on the curve at which the normal is parallel to the line $y=x$.
 
     \solution
-        Observe that $x^2 = 25\sec^2\theta$ and $\dfrac{25}9 y^2 = 25\tan^2\theta$. Using the identity $\tan^2\theta + 1 = \sec^2\theta$,
+        Observe that $x^2 = 25\sec^2\t$ and $\dfrac{25}9 y^2 = 25\tan^2\t$. Using the identity $\tan^2\t + 1 = \sec^2\t$,
 
         \begin{equation}\label{P4-1}
             \dfrac{25}9 y^2 + 25 = x^2
         \end{equation}
 
-        Implicitly differentiating, we get $\dfrac{25}9 \cdot 2y \cdot y^\prime = 2x \implies \dfrac{25}9 \cdot y \cdot y^\prime = x$.
+        Implicitly differentiating, we get $\dfrac{25}9 \cdot 2y \cdot y' = 2x \implies \dfrac{25}9 \cdot y \cdot y' = x$.
 
-        Since the normal is parallel to $y =x$, the tangent is perpendicular is perpendicular to $y=x$. Hence, the tangent is parallel to $y = -x$, whence $y^\prime = -1$.
+        Since the normal is parallel to $y =x$, the tangent is perpendicular is perpendicular to $y=x$. Hence, the tangent is parallel to $y = -x$, whence $y' = -1$.
 
         \begin{alignat*}{2}
             \dfrac{25}9 \cdot y \cdot -1 &= x\\
@@ -188,11 +180,9 @@
             \implies&& x &= \pm \dfrac{25}4
         \end{alignat*}
 
-        Observe that for $-\dfrac12\pi < \theta < \dfrac12\pi$, $x=5\sec\theta \geq 5$. We thus reject $x = -\dfrac{25}4$. Hence, $x=\dfrac{25}4$, whence $y = -\dfrac{9}{25} \cdot \dfrac{25}4 = -\dfrac{9}4$. The coordinate of the required point is thus $\left(\dfrac{25}4, -\dfrac94\right)$.
+        Observe that for $-\dfrac12\pi < \t < \dfrac12\pi$, $x=5\sec\t \geq 5$. We thus reject $x = -\dfrac{25}4$. Hence, $x=\dfrac{25}4$, whence $y = -\dfrac{9}{25} \cdot \dfrac{25}4 = -\dfrac{9}4$. The coordinate of the required point is thus $\left(\dfrac{25}4, -\dfrac94\right)$.
         
-        \boxt{
-            $\left(\dfrac{25}4, -\dfrac94\right)$
-        }
+        \boxt{$\bp{\dfrac{25}4, -\dfrac94}$}
 
     \problem{}
         The parametric equations of a curve are
@@ -227,9 +217,7 @@
                 && &= \dfrac{3}p -\dfrac1{p^3}x
             \end{alignat*}
 
-            \boxt{
-                $y = \dfrac{3}p -\dfrac1{p^3}x$
-            }
+            \boxt{$y = \dfrac{3}p -\dfrac1{p^3}x$}
 
         \part
             \case{1}{$y = 0$}
@@ -249,9 +237,7 @@
 
                 Hence, $R\left(0, \dfrac3p\right)$.
 
-            \boxt{
-                $Q(3p^2, 0)$, $R\left(0, \dfrac3p\right)$
-            }
+            \boxt{$Q(3p^2, 0)$, $R\left(0, \dfrac3p\right)$}
 
         \part
             \begin{align*}
@@ -269,9 +255,7 @@
                 \implies&&y &= \pm \left(\dfrac32\right)^{\tfrac32}  \dfrac1{\sqrt{x}}
             \end{alignat*}
 
-            \boxt{
-                $y = \pm \left(\dfrac32\right)^{\tfrac32}  \dfrac1{\sqrt{x}}$
-            }
+            \boxt{$y = \pm \left(\dfrac32\right)^{\tfrac32}  \dfrac1{\sqrt{x}}$}
 
     \problem{}
         \begin{center}
@@ -292,7 +276,7 @@
             \end{tikzpicture}    
         \end{center}
         
-        \noindent A new flower-bed is being designed for a large garden. The flower-bed will occupy a rectangle $x$ m by $y$ m together with a semicircle of diameter $x$ m, as shown in the diagram. A low wall will be built around the flowerbed. The time needed to build the wall will be 3 hours per metre for the straight parts and 9 hours per metre for the semicircular part. Given that a total time of 180 hours is taken to build the wall, find, using differentiation, the values of $x$ and $y$ which give a flower-bed of maximum area.
+         A new flower-bed is being designed for a large garden. The flower-bed will occupy a rectangle $x$ m by $y$ m together with a semicircle of diameter $x$ m, as shown in the diagram. A low wall will be built around the flowerbed. The time needed to build the wall will be 3 hours per metre for the straight parts and 9 hours per metre for the semicircular part. Given that a total time of 180 hours is taken to build the wall, find, using differentiation, the values of $x$ and $y$ which give a flower-bed of maximum area.
 
     \solution
         Observe that the length of the straight parts is $(2y + x)$ m, while the length of the semicicular part is $\dfrac12 \cdot 2\pi\left(\dfrac{x}2\right) = \dfrac12 \pi x$ m. Since a total time of 180 hours is taken to build the wall,
@@ -306,15 +290,15 @@
             \implies&& x &= \dfrac{120-4y}{2+3\pi}
         \end{alignat*}
 
-        Let $A(y)$ be the total area enclosed by the garden, in m$^2$. Observe that $A(y) = xy + \dfrac12 \pi \left(\dfrac{x}2\right)^2 = xy + \dfrac18 \pi x^2$. Also note that $x^\prime = -\dfrac4{2 + 3\pi}$. Now, consider the stationary points of $A(y)$. For stationary points, $A^\prime(y) = 0$.
+        Let $A(y)$ be the total area enclosed by the garden, in m$^2$. Observe that $A(y) = xy + \dfrac12 \pi \left(\dfrac{x}2\right)^2 = xy + \dfrac18 \pi x^2$. Also note that $x' = -\dfrac4{2 + 3\pi}$. Now, consider the stationary points of $A(y)$. For stationary points, $A'(y) = 0$.
 
         \begin{alignat*}{2}
-            &&A^\prime(y) &= 0\\
-            \implies&&\left(x^\prime y + x\right) + \dfrac18 \pi (2x \cdot x^\prime) &= 0\\
-            \implies&&x^\prime y + x + \dfrac14 \pi (x \cdot x^\prime) &= 0
+            &&A'(y) &= 0\\
+            \implies&&\left(x' y + x\right) + \dfrac18 \pi (2x \cdot x') &= 0\\
+            \implies&&x' y + x + \dfrac14 \pi (x \cdot x') &= 0
         \end{alignat*}
 
-        Substituting $x = \dfrac{120-4y}{2+3\pi}$ and $x^\prime = -\dfrac4{2 + 3\pi}$,
+        Substituting $x = \dfrac{120-4y}{2+3\pi}$ and $x' = -\dfrac4{2 + 3\pi}$,
 
         \begin{alignat*}{2}
             &&-\dfrac4{2 + 3\pi} \cdot y + \dfrac{120-4y}{2+3\pi} + \dfrac14 \pi \left(\dfrac{120-4y}{2+3\pi} \cdot -\dfrac4{2 + 3\pi}\right) &= 0\\
@@ -340,9 +324,7 @@
             &= \dfrac{120}{4+5\pi}
         \end{align*}
 
-        \boxt{
-            $x = \dfrac{120}{4+5\pi}$, $y = \dfrac{60 + 60\pi}{4 + 5\pi}$
-        }
+        \boxt{$x = \dfrac{120}{4+5\pi}$, $y = \dfrac{60 + 60\pi}{4 + 5\pi}$}
 
     \problem{}
         \begin{center}
@@ -371,7 +353,7 @@
             \end{tikzpicture}    
         \end{center}
 
-        \noindent A model of a concert hall is made up of three parts.
+         A model of a concert hall is made up of three parts.
 
         \begin{itemize}
             \item The roof is modelled by the curved surface of a hemisphere of radius $r$ cm.
@@ -379,7 +361,7 @@
             \item The floor is modelled by a circular disc of radius $r$ cm.
         \end{itemize}
 
-        \noindent The three parts are joined together as shown in the diagram. The model is made of material of negligible thickness.
+         The three parts are joined together as shown in the diagram. The model is made of material of negligible thickness.
 
         \begin{enumerate}
             \item It is given that the volume of the model is a fixed value $k$ cm$^3$, and the external surface area is a minimum. Use differentiation to find the values of $r$ and $h$ in terms of $k$. Simplify your answers.
@@ -436,9 +418,7 @@
                 && &= \sqrt[3]{\dfrac{3k}{5\pi}}
             \end{alignat*}
 
-            \boxt{
-                $r = \sqrt[3]{\dfrac{3k}{5\pi}}$, $h = \sqrt[3]{\dfrac{3k}{5\pi}}$
-            }
+            \boxt{$r = \sqrt[3]{\dfrac{3k}{5\pi}}$, $h = \sqrt[3]{\dfrac{3k}{5\pi}}$}
 
         \part
             From Equation~\ref{P7-3}, we have
@@ -449,9 +429,9 @@
                 \implies&&\pi r^3 - 108r + 240 &= 0
             \end{alignat*}
 
-            Let $f(r) = \pi r^3 - 108r + 240$. Consider the stationary points of $f(r)$. For stationary points, $f^\prime(r) = 0$.            
+            Let $f(r) = \pi r^3 - 108r + 240$. Consider the stationary points of $f(r)$. For stationary points, $f'(r) = 0$.            
             \begin{alignat*}{2}
-                &&f^\prime(r) &= 0\\
+                &&f'(r) &= 0\\
                 \implies&&3\pi r^2 - 108 &= 0\\
                 \implies&& r^2 &= \dfrac{36}{\pi}
             \end{alignat*}
@@ -463,7 +443,7 @@
                 \begin{tabular}{|c|c|c|c|}
                 \hline
                 $r$ & $\dfrac6{\sqrt\pi}^-$ & $\dfrac6{\sqrt\pi}$ & $\dfrac6{\sqrt\pi}^+$ \\\hline
-                $f^\prime(r)$ & -ve   & 0 & +ve   \\\hline
+                $f'(r)$ & -ve   & 0 & +ve   \\\hline
                 \end{tabular}
             \end{table}
 
@@ -471,9 +451,7 @@
 
             From Equation~\ref{P7-2}, we know that $h= \dfrac{200}{\pi r^2} - \dfrac23 r$. When $r = 3.04$, $h = 4.88 > r$. When $r = 3.72$, $h = 2.12 < r$. Thus, given that $r < h$, $r = 3.04$ and $h = 4.88$.
 
-            \boxt{
-                $r = 3.04$, $h = 4.88$
-            }
+            \boxt{$r = 3.04$, $h = 4.88$}
 
     \problem{}
         \begin{center}
@@ -510,85 +488,79 @@
 
                 \node at (0.65, 0.2) {$y$};
 
-                \node at (0.5, 0.53) {$\theta$};
+                \node at (0.5, 0.53) {$\t$};
             \end{tikzpicture}
         \end{center}
         
-        \noindent A movie screen on a vertical wall is 6 m high and 4 m above the horizontal floor. A boy who is standing at $x$ m away from the wall has eye level at 1 m above the floor as shown in the diagram.
+         A movie screen on a vertical wall is 6 m high and 4 m above the horizontal floor. A boy who is standing at $x$ m away from the wall has eye level at 1 m above the floor as shown in the diagram.
 
-        The viewing angle of the boy at that position is $\theta$ and the angle of elevation of the bottom of the screen is $y$.
+        The viewing angle of the boy at that position is $\t$ and the angle of elevation of the bottom of the screen is $y$.
 
         \begin{enumerate}
             \item Express $y$ in terms of $x$.
-            \item By expressing $\theta$ in terms of $x$ or otherwise, find the stationary value of $\theta$, giving your answers in exact form. Determine if the value is a maximum or minimum value, showing your working clearly.
+            \item By expressing $\t$ in terms of $x$ or otherwise, find the stationary value of $\t$, giving your answers in exact form. Determine if the value is a maximum or minimum value, showing your working clearly.
         \end{enumerate}
 
     \solution
         \part
             Observe that $\tan y = \dfrac3x$, whence $y = \arctan \dfrac3x$.
 
-            \boxt{
-                $y = \arctan \dfrac3x$
-            }
+            \boxt{$y = \arctan \dfrac3x$}
 
         \part
-            Observe that $\tan (y + \theta) = \dfrac9x$. 
+            Observe that $\tan (y + \t) = \dfrac9x$. 
 
             \begin{alignat*}{2}
-                &&\tan (y + \theta) &= \dfrac9x\\
-                \implies&&\dfrac{\tan y + \tan \theta}{1 - \tan y \tan \theta} &= \dfrac9x\\
-                \implies&&\dfrac{\tfrac3x + \tan \theta}{1 - \tfrac3x \tan \theta} &= \dfrac9x\\
-                \implies&&\dfrac{3 + x\tan \theta}{x - 3\tan \theta} &= \dfrac9x\\
-                \implies&&x(3 + x\tan \theta) &= 9(x - 3\tan \theta)
+                &&\tan (y + \t) &= \dfrac9x\\
+                \implies&&\dfrac{\tan y + \tan \t}{1 - \tan y \tan \t} &= \dfrac9x\\
+                \implies&&\dfrac{\tfrac3x + \tan \t}{1 - \tfrac3x \tan \t} &= \dfrac9x\\
+                \implies&&\dfrac{3 + x\tan \t}{x - 3\tan \t} &= \dfrac9x\\
+                \implies&&x(3 + x\tan \t) &= 9(x - 3\tan \t)
             \end{alignat*}
             \begin{alignat*}{2}
-                \implies&&3x + x^2\tan\theta &= 9x - 27 \tan \theta\\
-                \implies&&x^2\tan\theta + 27 \tan \theta &= 6x \\
-                \implies&&(x^2 + 27)\tan\theta&= 6x\\
-                \implies&&\tan\theta &= \dfrac{6x}{x^2+27}
+                \implies&&3x + x^2\tan\t &= 9x - 27 \tan \t\\
+                \implies&&x^2\tan\t + 27 \tan \t &= 6x \\
+                \implies&&(x^2 + 27)\tan\t&= 6x\\
+                \implies&&\tan\t &= \dfrac{6x}{x^2+27}
             \end{alignat*}
 
             Implicitly differentiating,
             \begin{alignat*}{2}
-                &&\sec^2(\theta)\cdot\theta^\prime &= \dfrac{(x^2+27)\cdot 6 - 6x \cdot 2x}{(x^2+27)^2}\\
-                \implies&&\theta^\prime&=\dfrac{-6x^2 + 162}{(x^2+27)^2\sec^2\theta}
+                &&\sec^2(\t)\cdot\t' &= \dfrac{(x^2+27)\cdot 6 - 6x \cdot 2x}{(x^2+27)^2}\\
+                \implies&&\t'&=\dfrac{-6x^2 + 162}{(x^2+27)^2\sec^2\t}
             \end{alignat*}
 
-            Using the identity $\tan^2 \theta + 1 = \sec^2\theta$, we have $\sec^2\theta = \left(\dfrac{6x}{x^2+27}\right)^2 + 1$.
+            Using the identity $\tan^2 \t + 1 = \sec^2\t$, we have $\sec^2\t = \left(\dfrac{6x}{x^2+27}\right)^2 + 1$.
 
             \begin{align*}
-                \theta^\prime &= \dfrac{-6x^2 + 162}{(x^2+27)^2\left(\left(\dfrac{6x}{x^2+27}\right)^2 + 1\right)}\\
+                \t' &= \dfrac{-6x^2 + 162}{(x^2+27)^2\left(\left(\dfrac{6x}{x^2+27}\right)^2 + 1\right)}\\
                 &= \dfrac{-6x^2 + 162}{(6x)^2 + \left(x^2+27\right)^2}\\
                 &= \dfrac{-6x^2 + 162}{36x^2 + \left(x^2+27\right)^2}
             \end{align*}
 
-            For stationary points, $\theta^\prime = 0$. Hence,
+            For stationary points, $\t' = 0$. Hence,
             \begin{alignat*}{2}
                 &&-6x^2 + 162 &= 0\\
                 \implies&&x^2 &= 27\\
                 \implies&&x &= \pm \sqrt{27}
             \end{alignat*}
 
-            Since $x > 0$, we only take $x = \sqrt{27}=3\sqrt{3}$. Thus, $\tan\theta = \dfrac3{3\sqrt{3}} = \dfrac1{\sqrt3}$, whence $\theta = \dfrac{\pi}{6}$.
+            Since $x > 0$, we only take $x = \sqrt{27}=3\sqrt{3}$. Thus, $\tan\t = \dfrac3{3\sqrt{3}} = \dfrac1{\sqrt3}$, whence $\t = \dfrac{\pi}{6}$.
 
-            \boxt{
-                $\theta = \dfrac{\pi}6$
-            }
+            \boxt{$\t = \dfrac{\pi}6$}
 
             \begin{table}[h]
                 \centering
                 \begin{tabular}{|c|c|c|c|}
                 \hline
                 $x$ & $\sqrt{27}^-$ & $\sqrt{27}$ & $\sqrt{27}^+$ \\\hline
-                $\theta^\prime$ & +ve   & 0 & -ve   \\\hline
+                $\t'$ & +ve   & 0 & -ve   \\\hline
                 \end{tabular}
             \end{table}
 
-            Thus, by the First Derivative Test, $\theta = \dfrac{\pi}6$ is a maximum value.
+            Thus, by the First Derivative Test, $\t = \dfrac{\pi}6$ is a maximum value.
 
-            \boxt{
-                $\theta=\dfrac{\pi}6$ is a maximum value.
-            }
+            \boxt{$\t=\dfrac{\pi}6$ is a maximum value.}
 
     \problem{}
         \begin{center}
@@ -613,17 +585,17 @@
 
                 \draw (0, 0.5-sqrt 3) arc[x radius=0.5, y radius=0.5, start angle=90, end angle=60];
 
-                \node at (0.20, 0.75-sqrt 3) {$\theta$};
+                \node at (0.20, 0.75-sqrt 3) {$\t$};
             \end{tikzpicture}    
         \end{center}
 
-        \noindent The diagram shows a right inverted cone of radius $r$, height $h$ and semi-vertical angle $\theta$, which is inscribed in a sphere of radius 1 unit.
+         The diagram shows a right inverted cone of radius $r$, height $h$ and semi-vertical angle $\t$, which is inscribed in a sphere of radius 1 unit.
 
         Prove that $r^2 = 2h - h^2$.
 
         \begin{enumerate}
             \item As $r$ and $h$ varies, determine the exact maximum volume of the cone.
-            \item Show that $h = 2\cos^2\theta$. The volume of the cone is increasing at a rate of 6 unit$^3$/s when $h = \dfrac32$. Determine the rate of change of $\theta$ at this instant, leaving your answer in an exact form.
+            \item Show that $h = 2\cos^2\t$. The volume of the cone is increasing at a rate of 6 unit$^3$/s when $h = \dfrac32$. Determine the rate of change of $\t$ at this instant, leaving your answer in an exact form.
         \end{enumerate}
 
     \solution
@@ -651,7 +623,7 @@
 
                 \draw (0, 0.5-sqrt 3) arc[x radius=0.5, y radius=0.5, start angle=90, end angle=60];
 
-                \node at (0.20, 0.75-sqrt 3) {$\theta$};
+                \node at (0.20, 0.75-sqrt 3) {$\t$};
 
                 \node[anchor=north] at (0, -sqrt 3) {$O$};
 
@@ -672,15 +644,15 @@
 
             Implicitly differentiating Equation~\ref{P9-1},
             \begin{alignat*}{2}
-                &&2r &= 2h^\prime - 2h\cdot h^\prime\\
-                \implies&&r &= h^\prime - h\cdot h^\prime\\
-                && &= h^\prime (1 - h)\\
-                \implies&& h^\prime &= \dfrac{r}{1 - h}
+                &&2r &= 2h' - 2h\cdot h'\\
+                \implies&&r &= h' - h\cdot h'\\
+                && &= h' (1 - h)\\
+                \implies&& h' &= \dfrac{r}{1 - h}
             \end{alignat*}
 
             Let the volume of the cone be $V(r) = \dfrac13 \pi r^2 h$. Differentiating $V(r)$,
             \begin{align*}
-                V^\prime(r) &= \dfrac13 \pi (r^2 h^\prime + h \cdot 2r)\\
+                V'(r) &= \dfrac13 \pi (r^2 h' + h \cdot 2r)\\
                 &= \dfrac13 \pi \left(\left(2h - h^2\right)\left(\dfrac{r}{1-h}\right) + 2hr\right)\\
                 &= \dfrac13 \pi \left(hr\cdot\dfrac{2 - h}{1-h} + 2hr\right)\\
                 &= \dfrac13 \pi rh \left(\dfrac{2 - h}{1-h} + 2\right)\\
@@ -689,9 +661,9 @@
                 &= \dfrac13 \cdot \dfrac{\pi rh}{1-h}(4-3h)
             \end{align*}
 
-            Consider the stationary values of $V(r)$. For stationary values, $V^\prime(r) = 0$.
+            Consider the stationary values of $V(r)$. For stationary values, $V'(r) = 0$.
             \begin{alignat*}{2}
-                &&V^\prime(r) &= 0\\
+                &&V'(r) &= 0\\
                 \implies&& \dfrac13 \cdot \dfrac{\pi rh}{1-h}(4-3h) &= 0\\
                 \implies&& 4-3h &= 0\\
                 \implies&& h &= \dfrac43
@@ -704,7 +676,7 @@
                 \begin{tabular}{|c|c|c|c|}
                 \hline
                 $r$ & $\dfrac{2\sqrt2}3^-$ & $\dfrac{2\sqrt2}3$ & $\dfrac{2\sqrt2}3^+$ \\[1ex]\hline
-                $V^\prime(r)$ & +ve   & 0 & -ve   \\\hline
+                $V'(r)$ & +ve   & 0 & -ve   \\\hline
                 \end{tabular}
             \end{table}
 
@@ -715,61 +687,57 @@
                 &= \dfrac{32}{81}\pi
             \end{align*}
 
-            \boxt{
-                The maximum volume of the cone is $\dfrac{32}{81} \pi$ units$^3$.
-            }
+            \boxt{The maximum volume of the cone is $\dfrac{32}{81} \pi$ units$^3$.}
 
         \part
-            From the diagram, we see that $\cos\theta = \dfrac{h}{\sqrt{r^2 + h^2}}$.
+            From the diagram, we see that $\cos\t = \dfrac{h}{\sqrt{r^2 + h^2}}$.
 
             \begin{alignat*}{2}
-                &&\cos\theta &= \dfrac{h}{\sqrt{r^2 + h^2}}\\
-                \implies&&\cos^2\theta &= \dfrac{h^2}{r^2 + h^2}\\
-                \implies&&2\cos^2\theta &= \dfrac{2h^2}{r^2 + h^2}\\
+                &&\cos\t &= \dfrac{h}{\sqrt{r^2 + h^2}}\\
+                \implies&&\cos^2\t &= \dfrac{h^2}{r^2 + h^2}\\
+                \implies&&2\cos^2\t &= \dfrac{2h^2}{r^2 + h^2}\\
                 && &= \dfrac{2h^2}{2h-h^2+h^2}\\
                 && &= \dfrac{2h^2}{2h}\\
                 && &= h
             \end{alignat*}
             \begin{alignat*}{2}
-                &&2\cos^2\theta - 1 &= h - 1\\
-                \implies&&\cos 2\theta &= h-1\\
-                \implies&&\cos^2 2\theta &= (h-1)^2\\
-                \implies&&\sin^2 2\theta &= 1-(h-1)^2\\
-                \implies&&\sin 2\theta &= \pm \sqrt{1-(h-1)^2}
+                &&2\cos^2\t - 1 &= h - 1\\
+                \implies&&\cos 2\t &= h-1\\
+                \implies&&\cos^2 2\t &= (h-1)^2\\
+                \implies&&\sin^2 2\t &= 1-(h-1)^2\\
+                \implies&&\sin 2\t &= \pm \sqrt{1-(h-1)^2}
             \end{alignat*}
 
-            Since $0 < \theta < \dfrac{\pi}2$, we know $\sin 2\theta > 0$. We thus take $\sin 2\theta = \sqrt{1 - (h-1)^2}$.
+            Since $0 < \t < \dfrac{\pi}2$, we know $\sin 2\t > 0$. We thus take $\sin 2\t = \sqrt{1 - (h-1)^2}$.
             
-            Implicitly differentiating $2\cos^2\theta = h$ with respect to $h$,
+            Implicitly differentiating $2\cos^2\t = h$ with respect to $h$,
 
             \begin{alignat*}{2}
-                &&2\cdot 2 \cos\theta \cdot -\sin\theta \cdot \der{\theta}{h} &= 1\\
-                \implies&&\der{\theta}h &= \dfrac{1}{-4\sin\theta\cos\theta}\\
-                && &= \dfrac1{-2\sin 2\theta}\\
+                &&2\cdot 2 \cos\t \cdot -\sin\t \cdot \der{\t}{h} &= 1\\
+                \implies&&\der{\t}h &= \dfrac{1}{-4\sin\t\cos\t}\\
+                && &= \dfrac1{-2\sin 2\t}\\
                 && &= \dfrac1{-2 \sqrt{1 - (h-1)^2}}
             \end{alignat*}
             \begin{align*}
-                \der{\theta}{t} &= \der{\theta}h \cdot \der{h}r \cdot \der{r}V \cdot \der{V}t\\
-                &= \der{\theta}h \cdot \der{h}r \cdot \left(\der{V}r\right)^{-1} \cdot \der{V}t\\
+                \der{\t}{t} &= \der{\t}h \cdot \der{h}r \cdot \der{r}V \cdot \der{V}t\\
+                &= \der{\t}h \cdot \der{h}r \cdot \left(\der{V}r\right)^{-1} \cdot \der{V}t\\
                 &= \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac{r}{1-h} \cdot \left(\dfrac13 \cdot \dfrac{\pi rh}{1-h} (4-3h) \right)^{-1} \cdot \der{V}t\\
                 &= \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac{r}{1-h} \cdot 3 \cdot \dfrac{1-h}{\pi rh(4-3h)}  \cdot \der{V}t\\
                 &= \dfrac3{\pi} \cdot \dfrac1{-2 \sqrt{1 - (h-1)^2}} \cdot \dfrac1{h(4-3h)}  \cdot \der{V}t
             \end{align*}
 
-            Evaluating $\der{\theta}t$ at $h = \dfrac32$,
+            Evaluating $\der{\t}t$ at $h = \dfrac32$,
 
             \begin{align*}
-                \left.\der{\theta}t\right|_{h = \tfrac32} &= \dfrac3{\pi} \cdot \dfrac1{-2 \sqrt{1 - (\tfrac32-1)^2}} \cdot \dfrac1{\tfrac32(4-3\cdot\tfrac32)}  \cdot 6\\
+                \left.\der{\t}t\right|_{h = \tfrac32} &= \dfrac3{\pi} \cdot \dfrac1{-2 \sqrt{1 - (\tfrac32-1)^2}} \cdot \dfrac1{\tfrac32(4-3\cdot\tfrac32)}  \cdot 6\\
                 &= \dfrac{18}{\pi} \cdot -\dfrac1{\sqrt{3}} \cdot -\dfrac43\\
                 &= \dfrac{24}{\pi} \cdot \dfrac{\sqrt 3}{3}\\
                 &= \dfrac{8\sqrt{3}}{\pi}
             \end{align*}
 
-            Hence, $\theta$ is increasing at a rate of $\dfrac{8\sqrt3}{\pi}$ radians per second when $h = \dfrac32$.
+            Hence, $\t$ is increasing at a rate of $\dfrac{8\sqrt3}{\pi}$ radians per second when $h = \dfrac32$.
 
-            \boxt{
-                $\dfrac{8\sqrt3}{\pi}$ rad/s
-            }
+            \boxt{$\dfrac{8\sqrt3}{\pi}$ rad/s}
 
     \problem{}
         \begin{center}
@@ -792,7 +760,7 @@
             \end{tikzpicture}    
         \end{center}
 
-        \noindent A hollow cone of semi-vertical angle $45^\circ$ is held with its axis vertical and vertex downwards. At the beginning of an experiment, it is follows with 390 cm$^3$ of liquid. The liquid runs out thorugh a small hole at the vertex at a constant rate of 2 cm$^3$/s. 
+         A hollow cone of semi-vertical angle $45^\circ$ is held with its axis vertical and vertex downwards. At the beginning of an experiment, it is follows with 390 cm$^3$ of liquid. The liquid runs out thorugh a small hole at the vertex at a constant rate of 2 cm$^3$/s. 
 
         Find the rate at which the depth of the liquid is decreasing 3 minutes after the start of the experiment.
 
@@ -859,9 +827,7 @@
             &= -0.0680 \tosf{3}
         \end{align*}
 
-        \boxt{
-            The depth of the liquid is decreasing at a rate of 0.0680 cm/s 3 minutes after the start of the experiment.
-        }
+        \boxt{The depth of the liquid is decreasing at a rate of 0.0680 cm/s 3 minutes after the start of the experiment.}
 
 
     \problem{}
@@ -888,9 +854,7 @@
 
             Hence, $t = 1$ or $t = 3$. Thus, the particle takes $3-1 = 2$ seconds to travel from $A$ to $B$.
 
-            \boxt{
-                2 seconds
-            }
+            \boxt{2 seconds}
 
             \smallskip
 
@@ -902,9 +866,7 @@
 
             The distance $AB$ is thus $90-30 = 60$ m.
 
-            \boxt{
-                $AB = 60$ m
-            }
+            \boxt{$AB = 60$ m}
 
         \part
             Note that $\der{x}{t} = 30$ and $\der{y}t = 20-10t$. Thus
@@ -930,9 +892,7 @@
                 &= 34.3 \tosf{3}
             \end{align*}
 
-            \boxt{
-                The particle is travelling at a speed of 34.3 m/s when $x = 10$.
-            }
+            \boxt{The particle is travelling at a speed of $34.3$ m/s when $x = 10$.}
 
         \part
             Note that $t = \dfrac{x}{30}$. Hence,

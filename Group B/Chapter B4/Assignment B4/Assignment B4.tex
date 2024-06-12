@@ -17,14 +17,12 @@
     \solution
         \part
             \begin{align*}
-                \der{}{x} \ln \dfrac{x^3}{\sqrt{1+x^2}} &= \der{}{x} 3\ln x - \dfrac12 \ln (1+x^2)\\
+                \der{}{x} \ln \dfrac{x^3}{\sqrt{1+x^2}} &= \der{}{x} 3\ln x - \dfrac12 \ln{1+x^2}\\
                 &= 3\cdot\dfrac1x-\dfrac12\cdot\dfrac1{1+x^2}\cdot2x\\
                 &= \dfrac3x-\dfrac{x}{1+x^2}
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \ln \dfrac{x^3}{\sqrt{1+x^2}} = \dfrac3x-\dfrac{x}{1+x^2}$
-            }
+            \boxt{$\der{}{x} \ln \dfrac{x^3}{\sqrt{1+x^2}} = \dfrac3x-\dfrac{x}{1+x^2}$}
 
         \part
             \begin{align*}
@@ -33,9 +31,7 @@
                 &= \dfrac{4x}{4+x^4}
             \end{align*}
 
-            \boxt{
-                $\der{}{x} \arctan{\dfrac{x^2}2} = \dfrac{4x}{4+x^4}$
-            }
+            \boxt{$\der{}{x} \arctan{\dfrac{x^2}2} = \dfrac{4x}{4+x^4}$}
 
         \part
             \begin{align*}
@@ -43,9 +39,7 @@
                 &= e^{2x} \sec x\, (\tan x + 2)
             \end{align*}
 
-            \boxt{
-                $\der{}{x} e^{2x}\sec x = e^{2x} \sec x\, (\tan x + 2)$
-            }
+            \boxt{$\der{}{x} e^{2x}\sec x = e^{2x} \sec x\, (\tan x + 2)$}
 
     \problem{}
         Find the gradient of the curve $x^3 + xy^2 = 5y$ at the point where $x=1$ and $0 < y < 1$, leaving your answer to 3 significant figures.
@@ -65,53 +59,49 @@
         Implicitly differentiating the given equation,
 
         \begin{alignat}{2}
-            &&3x^2+x\cdot2y\cdot y^\prime + y^2 &= 5y^\prime \nonumber\\
-            &&2xy\cdot y^\prime - 5y^\prime &= -3x^2-y^2 \nonumber\\
-            \implies&&y^\prime(2xy-5)&=-3x^2-y^2 \nonumber\\
-            \implies&&y^\prime &= \dfrac{-3x^2-y^2}{2xy-5}\label{P2-1}
+            &&3x^2+x\cdot2y\cdot y' + y^2 &= 5y' \nonumber\\
+            &&2xy\cdot y' - 5y' &= -3x^2-y^2 \nonumber\\
+            \implies&&y'(2xy-5)&=-3x^2-y^2 \nonumber\\
+            \implies&&y' &= \dfrac{-3x^2-y^2}{2xy-5}\label{P2-1}
         \end{alignat}
 
         Substituting $x=1$ and $y=0.20871$ into Equation~\ref{P2-1}, 
 
         \begin{align*}
-            y^\prime &= \dfrac{-3\cdot1^2-0.20871^2}{2\cdot 1 \cdot 0.20871-5}\\
+            y' &= \dfrac{-3\cdot1^2-0.20871^2}{2\cdot 1 \cdot 0.20871-5}\\
             &= 0.664 \tosf{3}
         \end{align*}
 
-        \boxt{
-            The gradient of the curve is 0.664.
-        }
+        \boxt{The gradient of the curve is 0.664.}
 
     \problem{}
         A curve $C$ has parametric equations
 
         \begin{equation*}
-            x = \sin^3 \theta, \, y = 3 \sin^2 \theta \cos \theta, \qquad 0 \leq \theta \leq \dfrac12 \pi
+            x = \sin^3 \t, \, y = 3 \sin^2 \t \cos \t, \qquad 0 \leq \t \leq \dfrac12 \pi
         \end{equation*}
 
-        Show that $\der{y}{x} = a\cot \theta + b\tan \theta$, where $a$ and $b$ are values to be determined.
+        Show that $\der{y}{x} = a\cot \t + b\tan \t$, where $a$ and $b$ are values to be determined.
 
     \solution
         \begin{equation*}
-            \der{x}{\theta} = 3\sin^2\theta\cos\theta
+            \der{x}{\t} = 3\sin^2\t\cos\t
         \end{equation*}
 
         \begin{align*}
-            \der{y}{\theta} &= 3\left(\sin^2\theta \cdot -\sin\theta + \cos\theta \cdot (2\sin\theta\cos\theta) \right)\\
-            &= 3(2\sin\theta\cos^2\theta-\sin^3\theta)
+            \der{y}{\t} &= 3\left(\sin^2\t \cdot -\sin\t + \cos\t \cdot (2\sin\t\cos\t) \right)\\
+            &= 3(2\sin\t\cos^2\t-\sin^3\t)
         \end{align*}
 
         \begin{align*}
-            \der{y}{x} &= \der{y}{\theta} \cdot \der{\theta}{x}\\
-            &= \der{y}{\theta} \cdot \left(\der{x}{\theta}\right)^{-1}\\
-            &= \dfrac{3(2\sin\theta\cos^2\theta-\sin^3\theta)}{3\sin^2\theta\cos\theta}\\
-            &= \dfrac{2\cos^2\theta-\sin^2\theta}{\sin\theta\cos\theta}\\
-            &= \dfrac{2\cos^2\theta}{\sin\theta\cos\theta} - \dfrac{\sin^2\theta}{\sin\theta\cos\theta}\\
-            &= \dfrac{2\cos\theta}{\sin\theta} - \dfrac{\sin\theta}{\cos\theta}\\
-            &= 2\cot\theta - \tan\theta
+            \der{y}{x} &= \der{y}{\t} \cdot \der{\t}{x}\\
+            &= \der{y}{\t} \cdot \left(\der{x}{\t}\right)^{-1}\\
+            &= \dfrac{3(2\sin\t\cos^2\t-\sin^3\t)}{3\sin^2\t\cos\t}\\
+            &= \dfrac{2\cos^2\t-\sin^2\t}{\sin\t\cos\t}\\
+            &= \dfrac{2\cos^2\t}{\sin\t\cos\t} - \dfrac{\sin^2\t}{\sin\t\cos\t}\\
+            &= \dfrac{2\cos\t}{\sin\t} - \dfrac{\sin\t}{\cos\t}\\
+            &= 2\cot\t - \tan\t
         \end{align*}
 
-        \boxt{
-            $a = 2$, $b=-1$
-        }
+        \boxt{$a = 2$, $b=-1$}
 \end{document}
