@@ -234,8 +234,8 @@
                         xticklabels = {2, 2},
                         ytick = {-2, 2},
                         yticklabels = {2, 2},
-                        xmin=-3.5,
-                        xmax=3.5,
+                        xmin=-4,
+                        xmax=4,
                         ymin=-3.5,
                         ymax=3.5,
                         xlabel = {$\t=0$},
@@ -687,25 +687,24 @@
             &= \dfrac{\tan\t + 2}{1 - 2\tan\t}
         \end{align*}
 
-        Let $\oa{T} = \begin{bmatrix}T_1\\T_2\end{bmatrix}$ represent the tangent line and let $\oa{P} = \begin{bmatrix}P_1\\P_2\end{bmatrix}$ represent $\oa{OP}$. We hence have
+        Let $\vec t = \cvecii{T_1}{T_2}$ represent the tangent line and let $\vec p = \cvecii{P_1}{P_2}$ represent $\oa{OP}$. We hence have
         \begin{align*}
-            \oa{T} &= \begin{bmatrix}1\\\frac{dy}{dx}\end{bmatrix}\\
+            \vec t &= \begin{bmatrix}1\\\frac{dy}{dx}\end{bmatrix}\\
             &= \begin{bmatrix}1\\\frac{\tan\t+2}{1-2\tan\t}\end{bmatrix}\\
             &= \dfrac1{1-2\tan\t}\begin{bmatrix}1-2\tan\t\\\tan\t+2\end{bmatrix}\\
-            \oa{P} &= \begin{bmatrix}x\\y\end{bmatrix}\\
+            \vec p &= \begin{bmatrix}x\\y\end{bmatrix}\\
             &= \begin{bmatrix}ae^{\frac12 \t}\cos\t\\ae^{\frac12\t}\sin\t\end{bmatrix}\\
             &= ae^{\frac12 \t}\begin{bmatrix}\cos\t\\\sin\t\end{bmatrix}
         \end{align*}
 
-        Let $\oa{T'} = \begin{bmatrix}1-2\tan\t\\\tan\t+2\end{bmatrix}$ and $\oa{P'} = \begin{bmatrix}\cos\t\\\sin\t\end{bmatrix}$. Then the angle $\a$ between $\oa{T}$ and $\oa{P}$ is equal to the angle between  $\oa{T'}$ and $\oa{P'}$. By the definition of the dot product, we have
+        Let $\vec{t'} = \cvecii{1 - 2\tan\t}{\tan\t + 2}$ and $\vec{p'} = \cvecii{\cos\t}{\sin\t}$. Then the angle $\a$ between $\vec{t}$ and $\vec{p}$ is equal to the angle between  $\vec{t'}$ and $\vec{p'}$. By the definition of the dot product, we have
 
         \[
-            \oa{T'} \cdot \oa{P'} = T'_1P'_1 + T'_2P'_2 = \norm{T'}\norm{P'}\cos\a
+            \vec{t'} \cdot \vec{p'} = T'_1P'_1 + T'_2P'_2 = \abs{\vec{t'}} \abs{\vec{p'}} \cos\a
         \]
-
-         whence
+        whence
         \begin{align*}
-            \cos\a &= \dfrac{T'_1P'_1 + T'_2P'_2}{\norm{T'}\norm{P'}}\\
+            \cos\a &= \dfrac{T'_1P'_1 + T'_2P'_2}{\abs{\vec{t'}} \abs{\vec{p'}}}\\
             &= \dfrac{(1-2\tan\t)\cos\t + (\tan\t+2)\sin\t}{\sqrt{(1-2\tan\t)^2 + (\tan\t+2)^2} \cdot \sqrt{\cos^2\t + \sin^2\t}}\\
             &= \dfrac{(1-2\tan\t)\cos\t + (\tan\t+2)\sin\t}{\sqrt{(1-2\tan\t)^2 + (\tan\t+2)^2}}\\
             &= \dfrac{\cos\t - 2\sin\t + \tan\t\sin\t + 2\sin\t}{\sqrt{1 - 4\tan\t + 4\tan^2\t + \tan^2\t + 4\tan\t + 4}}\\
@@ -715,16 +714,14 @@
             &= \dfrac1{\sqrt{5\sin^2 + 5\cos^2\t}}\\
             &= \dfrac1{\sqrt5}
         \end{align*}
-
         Thus, $\a = \arccos \dfrac1{\sqrt5}$. Since $\tan(\arccos x) = \dfrac{\sqrt{1-x^2}}{x}$,
         \begin{align*}
             \tan \a &= \tan{\arccos \dfrac1{\sqrt5}}\\
-            &= \dfrac{\sqrt{1 - \bp{\frac1{\sqrt5}}^2}}{\frac1{\sqrt5}}\\
-            &= \sqrt{5} \cdot \sqrt{\frac45}\\
+            &= \dfrac{\sqrt{1 - (1/\sqrt5)^2}}{1/\sqrt5}\\
+            &= \sqrt{5} \cdot \sqrt{4/5}\\
             &= \sqrt{4}\\
             &= 2
         \end{align*}
-
         Hence, the tangent at $P$ is inclined to $\oa{OP}$ at a constant angle $\a$, where $\tan\a = 2$.
 
         \begin{center}

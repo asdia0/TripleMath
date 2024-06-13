@@ -76,7 +76,6 @@
                 &= \dfrac14 \pi \bp{6n + n(n+1)}\\
                 &= \dfrac14 \pi (n^2 + 7n)
             \end{align*}
-
             Since the rope has length $200\pi$ cm, we have the inequality
             \begin{alignat*}{2}
                 && \sum_{k=1}^n 2\pi r_k &\leq 200 \pi\\
@@ -85,7 +84,6 @@
                 && n^2 + 7n - 800 &\leq 0 \\
                 && (n+32)(n-25) &\leq 0
             \end{alignat*}
-
             Hence, $n \leq 25$. Since the rope is cut to form as many circles as possible, $n = 25$.
 
             Observe that $r_25 = 1 + \dfrac14 (25 - 1) = 7$. Hence, the largest circle has area $\pi \cdot 7^2 = 49\pi$ cm$^2$.
@@ -102,7 +100,7 @@
             \end{align*}
 
             \subpart
-                \textbf{Test for Geometric Progression}
+                \textbf{Test for Geometric Progression.}
                 \begin{align*}
                     \dfrac{u_{n+1}}{u_n} &= \dfrac{\a^{-(n+1)}(\a^{-1} - 1)}{\a^{-n}(\a^{-1} - 1)}\\
                     &= \dfrac{\a^{-(n+1)}}{\a^{-n}}\\
@@ -119,7 +117,7 @@
                 \boxt{$\bc{ x \in \R \colon x < -1 \lor x > 1}$}
 
             \subpart
-                Since $\abs{\a^{-1}} < 1$, we know $\lim\limits_{n \to infty} \a^{-n} = 0$. Hence,
+                Since $\abs{\a^{-1}} < 1$, we know $\lim\limits_{n \to \infty} \a^{-n} = 0$. Hence,
                 \begin{align*}
                     \lim\limits_{n \to \infty} S_n &= \lim\limits_{n \to \infty} (\a^{-n} - 1)\\
                     &= -1

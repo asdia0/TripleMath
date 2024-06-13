@@ -166,7 +166,7 @@
                 &= \dfrac{2 \pm \sqrt{-4}}{2}\\
                 &= \dfrac{2 \pm 4i}{2}\\
                 &= 1 \pm 2i\\
-                &= \sqrt{2} \exp\bp{\pm i \dfrac{\pi}4}}
+                &= \sqrt{2} \exp{\pm i \dfrac{\pi}4}
             \end{align*}
 
             Hence,
@@ -282,25 +282,19 @@
                 \implies&&20x^2-24x-9 &= 0\\
                 \implies&&(10x+3)(2x-3) &= 0
             \end{alignat*}
-
             Hence, $-\dfrac3{10}$ and $\dfrac32$ are the roots of the characteristic equation. Thus,
             \[
                 P_n = A  \bp{-\dfrac3{10}}^n + B \bp{\dfrac32}^n
             \]
-
             Since $P_0 = 0$,
-            \begin{alignat}{2}
-                &&A  \bp{-\dfrac3{10}}^0 + B \bp{\dfrac32}^0 &= 0\nonumber\\
-                \implies&&A + B &= 0\label{P5-1}
-            \end{alignat}
-
+            \[
+                A \bp{-\dfrac3{10}}^0 + B \bp{\dfrac32}^0 = 0 \implies A + B = 0
+            \]
             Since $P_1 = 100000$,
-            \begin{alignat}{2}
-                &&A  \bp{-\dfrac3{10}}^1 + B \bp{\dfrac32}^1 &= 100000\nonumber\\
-                \implies&&-3A + 15B &= 1000000\label{P5-2}
-            \end{alignat}
-
-            Solving Equation~\ref{P5-1} and~\ref{P5-2} simultaneously, we have $A = -\dfrac{500000}9$ and $B = \dfrac{500000}9$. Thus,
+            \[
+                A \bp{-\dfrac3{10}}^1 + B \bp{\dfrac32}^1 = 100000 \implies -3A + 15B = 1000000
+            \]
+            Solving both equations simultaneously, we have $A = -\dfrac{500000}9$ and $B = \dfrac{500000}9$. Thus,
             \[
                 P_n = \dfrac{500000}9 \bp{\bp{\dfrac32}^n - \bp{-\dfrac3{10}}^n}
             \]
@@ -422,9 +416,8 @@
                 &= 2b_{n-1} + \dfrac53 \cdot 5^{n-1} - \dfrac53 \cdot 5^{n-1}\\
                 &= 2b_{n-1}
             \end{align*}
-
             Hence, $b_n = b_1 \cdot 2^{n-1}$. Note that $b_1 = a_1 - \dfrac13 \cdot 5^1 = 2 - \dfrac13 \cdot 5^1 = \dfrac13$. Thus, $b_n = \dfrac13 \cdot 2^{n-1}$.
-
+            
             \begin{alignat*}{2}
                 &&b_n &= \dfrac13 \cdot 2^{n-1}\\
                 \implies&&a_n - \dfrac13 \cdot 5^n &= \dfrac13 \cdot 2^{n-1}\\
@@ -450,12 +443,10 @@
             \implies&&\dfrac12 \ln X_{n+2} &= \ln X_{n+1} - 2 \ln X_n\\
             \implies&&\ln X_{n+2} &= 2\ln X_{n+1} - 4\ln X_n
         \end{alignat*}
-
         Let $L_n = \ln X_n \iff X_n = \exp{L_n}$. Then,
         \[
             L_{n+2} = 2L_{n+1} - 4L_n
         \]
-
         Consider the characteristic equation of $L_n$, $x^2 - 2x + 4 = 0$. Using the quadratic formula,
         \begin{align*}
             x &= \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4\cdot1\cdot4}}{2\cdot1}\\
@@ -464,13 +455,11 @@
             &= \sqrt{1 + \sqrt{3}^2} \exp{\bp{i \arctan{\dfrac{\pm{\sqrt3}}1}}}\\
             &= 2 \exp \bp{\pm i \dfrac{\pi}3}
         \end{align*}
-
         Thus, we can express $L_n$ as
         \begin{align*}
             L_n &= A \cdot 2^n \cos{\dfrac{\pi}3 n} + B \cdot 2^n \sin{\dfrac{\pi}3 n}\\
             &= 2^n \bp{A \cos{\dfrac{\pi}3 n} + B \sin{\dfrac{\pi}3 n}}
         \end{align*}
-
         Thus,
         \boxt{$X_n = \exp{2^n \bp{A \cos{\dfrac{\pi}3 n} + B \sin{\dfrac{\pi}3 n}}}$}
 
@@ -480,7 +469,7 @@
             X_{n+2} = 5\bp{1 + \dfrac1{n+2}}X_{n+1} - 6\bp{1 + \dfrac2{n+1}}X_n, \qquad n \geq 1
         \]
 
-         By dividing the recurrence relation throughout by $n+3$, use a suitable substitution to determine $X_n$ as a function of $n$.
+        By dividing the recurrence relation throughout by $n+3$, use a suitable substitution to determine $X_n$ as a function of $n$.
 
     \solution
         \begin{alignat*}{2}
@@ -488,42 +477,35 @@
             \implies&&\dfrac1{n+3}X_{n+2} &= \dfrac1{n+3} \cdot 5\bp{1 + \dfrac1{n+2}}X_{n+1} - \dfrac1{n+3} \cdot 6\bp{1 + \dfrac2{n+1}}X_n\\
             && &= 5\bp{\dfrac1{n+3} + \dfrac1{(n+2)(n+3)}}X_{n+1} - 6\bp{\dfrac1{n+3} + \dfrac2{(n+1)(n+3)}}X_n
         \end{alignat*}
-
         Note that $\dfrac1{(n+2)(n+3)} = \dfrac1{n+2} - \dfrac1{n+3}$ and $\dfrac{2}{(n+1)(n+3)} = \dfrac1{n+1} - \dfrac1{n+3}$. Thus,
         \begin{alignat*}{2}
             &&\dfrac1{n+3}X_{n+2} &= 5\bp{\dfrac1{n+3} + \dfrac1{n+2} - \dfrac1{n+3}}X_{n+1} - 6\bp{\dfrac1{n+3} + \dfrac1{n+1} - \dfrac1{n+3}}X_n\\
             \implies&& &= 5\cdot \dfrac1{n+2} \cdot X_{n+1} - 6\cdot \dfrac1{n+1} \cdot X_n
         \end{alignat*}
-
         Let $Y_n = \dfrac{n + 1}X_n \iff X_n = (n+1)Y_n$. Then,
         \[
             Y_{n+2} = 5 Y_{n+1} - 6Y_n
         \]
-
         Consider the characteristic equation of $Y_n$.
         \begin{alignat*}{2}
             &&x^2 - 5x + 6 &= 0\\
             \implies&&(x-2)(x-3) &= 0\\
         \end{alignat*}
-
         Thus, 2 and 3 are the roots of the characteristic equation. Hence,
         \begin{alignat*}{2}
             &&Y_n &= A \cdot 2^n + B \cdot 3^n\\
             \implies&&X_n &= (n+1)\bp{A \cdot 2^n + B \cdot 3^n}
         \end{alignat*}
-
         Since $X_1 = 2$,
         \begin{alignat}{2}
             &&(1+1)\bp{A \cdot 2^1 + B \cdot 3^1} &= 2\nonumber\\
             \implies&&2A + 3B &= 1\label{P10-1}
         \end{alignat}
-
         Since $X_2 = 15$,
         \begin{alignat}{2}
             &&(2+1)\bp{A \cdot 2^2 + B \cdot 3^2}\nonumber\\
             \implies&&4A + 9B &= 5\label{P10-2}
         \end{alignat}
-
         Solving Equations~\ref{P10-1} and~\ref{P10-2} simultaneously, we have $A = -1$ and $B = 1$. Thus,
 
         \boxt{$X_n = (n+1)\bp{3^n - 2^n}$}
@@ -580,7 +562,6 @@
                 \implies&& k &\geq \dfrac{350 - 0.9^{11} \cdot 250}{10 \bp{1-0.9^{11}}}\\
                 && &= 39.6 \tosf{3}
             \end{alignat*}
-
             Since $k \in \N$, the least value of $k$ is 40.
 
             \boxt{The company needs to attract at least 40 subscribers in each subsequent month.}
@@ -593,7 +574,6 @@
                 &= -250 \cdot \dfrac1{0.9} \cdot 0.9^n + 500\\
                 &= -\dfrac{2500}9 \cdot 0.9^n + 500
             \end{align*}
-
             Let \$$S_m$ be the total revenue for the first $m$ months.
             \begin{align*}
                 S_m &= 10 \sum_{n=1}^m T_n\\
@@ -602,7 +582,6 @@
                 &= 10\bp{2500 \bp{0.9^m - 1} + 500m}\\
                 &= 25000 \bp{0.9^m - 1} + 5000m
             \end{align*}
-
             Note that the total cost for the first $m$ months is \$$4000m$. Hence, the total profit for the first $m$ months is given by \$$(S_m - 4000m)$.
             \begin{alignat*}{2}
                 &&S_m - 4000m &\geq 0\\
@@ -611,7 +590,6 @@
                 \implies&&25 \bp{0.9^m - 1} + m &\geq 0\\
                 \implies&&m &\geq 22.7 \tosf{3}
             \end{alignat*}
-
             Since $m \in \N$, the least value of $m$ is 23.
 
             \boxt{$m = 23$}
@@ -623,7 +601,6 @@
                 &= -250 \cdot 0 + 500\\
                 &= 500
             \end{align*}
-
             As $n$ becomes very large, the profit per month is $500 \cdot 10 - 4000 = 1000$ dollars.
 
             \boxt{This behaviour is appropriate.}

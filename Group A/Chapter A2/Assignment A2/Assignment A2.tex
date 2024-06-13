@@ -323,9 +323,7 @@
             \end{center}
 
         \part
-            Consider $f(x) = \dfrac23 (\cos x + x)$. Then $f'(x) = \dfrac23(-\sin x + 1)$.
-
-            For fixed-point iteration to converge to $\a$, we need $\abs{f'(x)} < 1$ for $x$ near $\a$. It thus suffices to show that $\abs{-\sin x + 1} < \dfrac32$ for all $x \in [1, 1.2]$. Observe that $1 - \sin x$ is strictly decreasing and positive for $x \in \bs{0, \dfrac{\pi}2}$. Since $1 - \sin 1 < \dfrac32$, and $[1, 1.2] \subset \bs{0, \dfrac{\pi}2}$, we have that $\abs{-\sin x + 1} < \dfrac32$ for all $x \in [1, 1.2]$. Thus, $\abs{f'(x)} < 1$ for $x$ near $\a$. Hence, fixed-point iteration will work and converge to $\a$.
+            Consider $f(x) = \dfrac23 (\cos x + x)$. Then $f'(x) = \dfrac23(-\sin x + 1)$. For fixed-point iteration to converge to $\a$, we need $\abs{f'(x)} < 1$ for $x$ near $\a$. It thus suffices to show that $\abs{-\sin x + 1} < \dfrac32$ for all $x \in [1, 1.2]$. Observe that $1 - \sin x$ is strictly decreasing and positive for $x \in \bs{0, \dfrac{\pi}2}$. Since $1 - \sin 1 < \dfrac32$, and $[1, 1.2] \subset \bs{0, \dfrac{\pi}2}$, we have that $\abs{-\sin x + 1} < \dfrac32$ for all $x \in [1, 1.2]$. Thus, $\abs{f'(x)} < 1$ for $x$ near $\a$. Hence, fixed-point iteration will work and converge to $\a$.
 
             \begin{center}
                 \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -378,7 +376,7 @@
                 \implies&&x_2 &= F(x_1) = 1.02687\\
                 \implies&&x_3 &= F(x_2) = 1.02958\\
                 \implies&&x_4 &= F(x_3) = 1.02984\\
-                \implies&&x_5 &= F(x_4) = 1.02986\\
+                \implies&&x_5 &= F(x_4) = 1.02986
             \end{alignat*}
 
             Since $F(1.0295) > 1.0295$ and $F(1.0305) < 1.0305$, $\a \in (1.0295, 1.0305)$. Hence, $\a = 1.030 \tosf{4}$.

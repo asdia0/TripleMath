@@ -349,7 +349,7 @@
         \begin{alignat*}{2}
             &&x &= 3\ln x\\
             \implies&& \dfrac13 x &= \ln x\\
-            \implies&&x &= e^{\tfrac{1}{3}x}\\
+            \implies&&x &= e^{\tfrac{1}{3}x}
         \end{alignat*}
 
         Observe that $\der{}{x} (e^{\tfrac13 x}) = \dfrac13 e^{\tfrac13 x} < 1$ for all $1 < x < 2$. Thus, $F(x) = e^{\tfrac13 x}$ is suitable for computing $\a$ as the iterative formula $x_{n+1} = F(x_n)$ will converge.
@@ -398,7 +398,6 @@
 
     \solution
         We begin by finding the equation of the line that passes through both $(a, f(a))$ and $(b, f(b))$. Using the point-slope formula, we have
-
         \[
             y - f(a) = \dfrac{f(a) - f(b)}{a - b} (x - a)
         \]
@@ -532,11 +531,9 @@
             && &= 8.05 \\
             && &> 8
         \end{alignat*}
-
         Since the gradient of the curve is always less than $\dfrac15$, $\a$ represents the lowest possible value of the positive root of the curve. Hence, the positive root of the equation $\dfrac15 x - \ln{x+2} = 0$ is greater than 8.
 
         Let $f(x) = \dfrac15 x - \ln{x+2}$. Using linear interpolation on the interval $[8, 20]$, we have
-
         \[
             \begin{aligned}
                 a &= \dfrac{8f(20) - 20f(8)}{f(20) - f(8)} \\
@@ -716,7 +713,7 @@
                     &&x_1 &= 0.9\\
                     \implies&&x_2 &= g(x_1) = 0.92019\\  
                     \implies&&x_3 &= g(x_2) = 0.91928\\  
-                    \implies&&x_4 &= g(x_3) = 0.91928\\  
+                    \implies&&x_4 &= g(x_3) = 0.91928  
                 \end{alignat*}
 
                 \boxt{$\a = 0.919 \todp{3}$}

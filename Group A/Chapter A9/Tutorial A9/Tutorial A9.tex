@@ -150,7 +150,7 @@
             \vec r = \cveciii124 + \l\cveciii3{-1}3, \, \l \in \R
         \]
 
-         Also note that the equation of the plane $p$ can be written as
+        Also note that the equation of the plane $p$ can be written as
         \[
             \vec r \cdot \cveciii3{-1}2 = 17
         \]
@@ -159,7 +159,7 @@
             Let the point of intersection of $l$ and $p$ be $P$. Consider $l = p$.
             \begin{alignat*}{2}
                 &&l &= p\\
-                \implies&&\left[\cveciii124 + \l\cveciii3{-1}3\right] \cdot \cveciii3{-1}2 &= 17\\
+                \implies&&\bs{\cveciii124 + \l\cveciii3{-1}3} \cdot \cveciii3{-1}2 &= 17\\
                 \implies&&\cveciii124 \cdot \cveciii3{-1}2 + \l\cveciii3{-1}3 \cdot \cveciii3{-1}2 &= 17\\
                 \implies&&9 + 16\l &= 17\\
                 \implies&&\l &= \dfrac12
@@ -183,7 +183,7 @@
             Note that $\oa{AP} = -\dfrac12 \cveciii3{-1}3$.
             \begin{align*}
                 \text{Perpendicular distance} &= \abs{\oa{AP} \cdot \hat{\vec n}}\\
-                &= \dfrac{\abs{-\dfrac12\cveciii3{-1}3 \cdot \cveciii3{-1}2}}{\abs{\cveciii3{-1}2}}\\
+                &= \abs{-\dfrac12\cveciii3{-1}3 \cdot \cveciii3{-1}2} \Bigg/ \abs{\cveciii3{-1}2}\\
                 &= \dfrac8{\sqrt{14}}
             \end{align*}
 
@@ -194,7 +194,7 @@
 
             \begin{alignat*}{2}
                 &&\oa{OF} \cdot \cveciii3{-1}2 &= 17\\
-                \implies&&\left[\cveciii{-2}31 + \l \cveciii3{-1}2\right] \cdot \cveciii3{-1}2 &= 17\\
+                \implies&&\bs{\cveciii{-2}31 + \l \cveciii3{-1}2} \cdot \cveciii3{-1}2 &= 17\\
                 \implies&&\cveciii{-2}31 \cdot \cveciii3{-1}2 + \l\cveciii3{-1}2 \cdot \cveciii3{-1}2 &= 17\\
                 \implies&&-7 + 14\l &= 17\\
                 \implies&&\l &= \dfrac{12}7
@@ -212,7 +212,7 @@
 
             Consider $m \cdot \vec n$.
             \begin{align*}
-                m \cdot \vec n &= \left[\cveciii610 + \l \cveciii021\right] \cdot \cveciii3{-1}2\\
+                m \cdot \vec n &= \bs{\cveciii610 + \l \cveciii021} \cdot \cveciii3{-1}2\\
                 &= \cveciii610 \cdot \cveciii3{-1}2 + \l\cveciii021 \cdot \cveciii3{-1}2\\
                 &= 17 + 0\l\\
                 &= 17
@@ -250,8 +250,7 @@
                 \implies&&t &= \dfrac{d - \vec a \cdot \vec n}{\vec b \cdot \vec n}\\
                 \implies&&\vec r &= \vec a + \dfrac{d - \vec a \cdot \vec n}{\vec b \cdot \vec n} \, \vec b
             \end{alignat*}
-
-             $\vec a + \dfrac{d - \vec a \cdot \vec n}{\vec b \cdot \vec n} \, \vec b$ is the position vector of the point of intersection of the line and plane.
+            $\vec a + \dfrac{d - \vec a \cdot \vec n}{\vec b \cdot \vec n} \, \vec b$ is the position vector of the point of intersection of the line and plane.
 
     \problem{}
         The planes $p_1$ and $p_2$ have equations $\vec r \cdot \cveciii2{-2}1 = 1$ and $\vec r \cdot \cveciii{-6}32 = -1$ respectively, and meet in the line $l$.
@@ -276,11 +275,11 @@
         \part
             Observe that $p_1$ has the Cartesian equation $2x-2y+z = 1$ and $p_2$ has the Cartesian equation $-6x + 3y + 2z = -1$. Consider $p_1 = p_2$. Solving both Cartesian equations simultaneously gives the solution
             \[
-                \begin{cases}
-                    x = -\frac16 + \frac76t\\
-                    y = -\frac23 + \frac53 t\\
+                \systeme*{
+                    x = -\frac16 + \frac76t,
+                    y = -\frac23 + \frac53 t,
                     z = t
-                \end{cases}
+                }
             \]
              for all $t \in \R$. The line $l$ thus has vector equation $\vec r = \cveciii{x}{y}{z} = -\dfrac16\cveciii140 + t\cveciii7{10}6, \, t \in \R$.
 
@@ -289,7 +288,7 @@
         \part
             Let $Q$ be the point with position vector $-\dfrac16 \cveciii140$, whence $\oa{AQ} = -\dfrac16 \cveciii{25}{22}{6c}$. Since $Q$ lies on $l$, it lies on both $p_1$ and $p_2$. Since $A$ is equidistant to $p_1$ and $p_2$, the perpendicular distances from $A$ to $p_1$ and $p_2$ are equal.
             \begin{alignat*}{2}
-                &&\dfrac{\abs{\oa{AQ} \cdot \cveciii2{-2}1}}{\abs{\cveciii2{-2}1}} &= \dfrac{\abs{\oa{AQ} \cdot \cveciii{-6}32}}{\abs{\cveciii{-6}32}}\\
+                &&\abs{\oa{AQ} \cdot \cveciii2{-2}1} \Bigg/ \abs{\cveciii2{-2}1} &= \abs{\oa{AQ} \cdot \cveciii{-6}32} \Bigg/ \abs{\cveciii{-6}32}\\
                 \implies&&\dfrac13 \abs{-\dfrac16 \cveciii{25}{22}{6c} \cdot \cveciii2{-2}1} &= \dfrac17 \abs{-\dfrac16 \cveciii{25}{22}{6c} \cdot \cveciii{-6}32}\\
                 \implies&&\dfrac13 \, \abs{1 + c} &= \dfrac17 \, \abs{-14 + 2c}\\
                 \implies&&\abs{7 + 7c} &= \abs{-42 + 6c}\\
@@ -329,7 +328,7 @@
             {\allowdisplaybreaks
             \begin{alignat*}{2}
                 &&\oa{OQ} \cdot \cveciii230 &= -6\\
-                \implies&&\left[\cveciii214 + \l\cveciii230\right] \cdot \cveciii230 &= -6\\
+                \implies&&\bs{\cveciii214 + \l\cveciii230} \cdot \cveciii230 &= -6\\
                 \implies&&\cveciii214 \cdot \cveciii230 + \l\cveciii230 \cdot \cveciii230 &= -6\\
                 \implies&&7 + 13\l &= -6\\
                 \implies&&\l &= -1
@@ -444,21 +443,18 @@
                 &= \cveciii300 + \cveciii002 + \cveciii010 + \cveciii00{3/4}\\
                 &= \dfrac14\cveciii{12}4{11}
             \end{align*}
-
             Consider $\oa{AB} \cdot \cveciii{22}{33}{-12}$, $\oa{AD} \cdot \cveciii{22}{33}{-12}$ and $\oa{AM} \cdot \cveciii{22}{33}{-12}$.
-
             \begin{alignat*}{2}
                 \oa{AB} \cdot \cveciii{22}{33}{-12} &= \cveciii300 \cdot \cveciii{22}{33}{-12} &= 66\\
                 \oa{AD} \cdot \cveciii{22}{33}{-12} &= \cveciii020 \cdot \cveciii{22}{33}{-12} &= 66\\
                 \oa{AM} \cdot \cveciii{22}{33}{-12} &= \dfrac14\cveciii{12}4{11} \cdot \cveciii{22}{33}{-12} &= 66
-            \end{alignat*}
-            
+            \end{alignat*}            
             Since $\oa{AB}$, $\oa{AD}$ and $\oa{AM}$ satisfy the equation $\vec r \cdot \cveciii{22}{33}{-12} = 66$, they all lie on the plane with said equation.
 
         \part
             \begin{align*}
                 \text{Perpendicular distance} &= \abs{\oa{AB} \cdot \hat{\vec n}}\\
-                &= \dfrac{\abs{\cveciii300 \cdot \cveciii{22}{33}{-12}}}{\abs{\cveciii{22}{33}{-12}}}\\
+                &= \abs{\cveciii300 \cdot \cveciii{22}{33}{-12}} \Bigg/ \abs{\cveciii{22}{33}{-12}}\\
                 &= \dfrac{66}{\sqrt{1717}}
             \end{align*}
 
@@ -472,7 +468,7 @@
         \part
             Note that $\oa{EC} = \oa{AC} - \oa{AE} = \cveciii32{-2}$.
             \begin{align*}
-                \text{Perpendicular distance} &= \dfrac{\abs{\oa{EC} \times \cveciii{12}43}}{\abs{\cveciii{12}43}}\\
+                \text{Perpendicular distance} &= \abs{\oa{EC} \times \cveciii{12}43} \Bigg/ \abs{\cveciii{12}43}\\
                 &= \dfrac1{13} \abs{\cveciii32{-2} \times \cveciii{12}43}\\
                 &= \dfrac1{13} \abs{\cveciii{14}{-33}{-12}}\\
                 &= \dfrac{\sqrt{1429}}{13}\\
@@ -536,7 +532,7 @@
 
         \part
             \begin{align*}
-                \text{Length of projection} &= \dfrac{\oa{OP} \times \cveciii11{-1}}{\abs{\cveciii11{-1}}}\\
+                \text{Length of projection} &= \oa{OP} \times \cveciii11{-1} \Bigg/ \abs{\cveciii11{-1}}\\
                 &= \dfrac1{\sqrt{3}} \abs{\cveciii382 \times \cveciii11{-1}}\\
                 &= \dfrac1{\sqrt3} \abs{\cveciii{-10}5{-5}}\\
                 &= \dfrac1{\sqrt3} \cdot 5\sqrt{6}\\
@@ -598,7 +594,7 @@
             Since $P$ is on $l_1$, we have $\oa{OP} = \cveciii3{-5}{-4} + \l\cveciii342$ for some $\l \in \R$. Similarly, since $Q$ is on $l_2$, we have $\oa{OQ} = \cveciii235 + \m\cveciii1{-1}4$ for some $\m \in \R$. Thus,
             \begin{align*}
                 \oa{PQ} &= \oa{OQ} - \oa{OP}\\
-                &= \left[\cveciii235 + \m\cveciii1{-1}4\right] - \left[\cveciii3{-5}{-4} + \l\cveciii342\right]\\
+                &= \bs{\cveciii235 + \m\cveciii1{-1}4} - \bs{\cveciii3{-5}{-4} + \l\cveciii342}\\
                 &= \cveciii{-1}89 - \l\cveciii342 + \m\cveciii1{-1}{-4}
             \end{align*}
             Recall that $PQ$ is parallel to $\cveciii2{-2}1$. Hence, $\oa{PQ}$ can be expressed as $\nu \cveciii2{-2}1$ for some $\nu \in \R$. 
@@ -609,15 +605,13 @@
             \end{alignat*}
             This gives the following system:
             \[
-                \begin{cases}
-                    \begin{aligned}
-                        3\l - \m + 2\nu &= -1\\
-                        4\l + \m -2\nu &= 8\\
-                        2\l + 4\m + \nu &= 9
-                    \end{aligned}
-                \end{cases}
+                \systeme[\l\m\n]{
+                    3\l - \m + 2\n = -1,
+                    4\l + \m -2\n = 8,
+                    2\l + 4\m + \n = 9
+                }
             \]
-            which has the unique solution $\l = 1$, $\m = 2$ and $\nu = -1$. Thus,
+            which has the unique solution $\l = 1$, $\m = 2$ and $\n = -1$. Thus,
             \begin{alignat*}{2}
                 \oa{OP} &= \cveciii3{-5}{-4} + \cveciii342 &= \cveciii6{-1}2\\
                 \oa{OQ} &= \cveciii235 + 2\cveciii1{-1}{-4} &= \cveciii41{-3}
@@ -645,18 +639,18 @@
         \part
             Consider $p_1 = p_2$.
             \[
-                \begin{cases}
-                    2x-5y+3z= 3\\
+                \systeme{
+                    2x-5y+3z= 3,
                     3x+2y-5z=-5
-                \end{cases}
+                }
             \]
             The above system has solution
             \[
-                \begin{cases}
-                    x = -1 + t\\
-                    y = -1 + t\\
+                \systeme*{
+                    x = -1 + t,
+                    y = -1 + t,
                     z = t
-                \end{cases}
+                }
             \]
             for all $t \in \R$. Thus, the line $l$ has vector equation
             \begin{align*}
@@ -674,12 +668,12 @@
             \end{alignat*}
             Comparing the coefficients of $t$ and the constant terms, we have the following system:
             \[
-                \begin{cases}
-                    22 + \l &= 0\\
-                    5 + \l + \m &= 0
-                \end{cases}
+                \systeme[\l\m]{
+                    22 + \l = 0,
+                    5 + \l + \m = 0
+                }
             \]
-            which the unique solution $\l = -22$ and $\m = 17$.
+            which has the unique solution $\l = -22$ and $\m = 17$.
 
             \boxt{$\l = -22$, $\m = 17$}
 
@@ -697,12 +691,10 @@
             \[
                 \vec r = \cveciii{-1}{-1}0 + \l\cveciii111 + \m\cveciii{-2}0{-3}, \, \l, \m \in \R
             \]
-
             Observe that $\vec n = \cveciii111 \times \cveciii{-2}03 = \cveciii{-3}12$, whence $d = \cveciii{-1}{-1}0 \cdot \vec n = \cveciii{-1}{-1}0 \cdot \cveciii{-3}12 = 2$. Thus, the required plane has the equation
             \[
                 \vec r \cdot \cveciii{-3}12 = 2
             \]
-
             Let $\vec r = \cveciii{x}{y}{z}$. It follows that the plane has Cartesian equation
             \boxt{$-3x + y + 2 = 2$}
 
@@ -726,13 +718,13 @@
         \part
             Consider $p_1 = p_2$. This gives the system
             \[
-                \begin{cases}
-                    x-2y+2z=0\\
+                \systeme{
+                    x-2y+2z=0,
                     2x-2y+z=0
-                \end{cases}
+                }
             \]
             which has solution $x = t$, $y = \dfrac32 t$ and $z = $. Thus, $l$ has Cartesian equation
-            \boxt{$x = \frac23 y = z$}
+            \boxt{$x = \dfrac23 y = z$}
 
         \part
             When $d = 0$, $p_3$ has equation
@@ -746,7 +738,6 @@
             \[
                 (x-2y+2z) + c(2x-2y+z) \neq d
             \]
-            
             Since $x - 2y + 2z = 0$ and $2x - 2y + z = 0$ for all points on $l$, the LHS simplifies to 0. Thus, to satisfy the above relation, we require $d \neq 0$.
 
             \boxt{$d \neq 0$}
@@ -825,7 +816,7 @@
         \part
             Let the point of intersection between $l_{PV}$ and the screen be $I$.
             \begin{alignat*}{2}
-                &&\left[\cveciii{20}{-4}0 + \l\cveciii{-10}2h\right] \cdot \cveciii100 &= \a\\
+                &&\bs{\cveciii{20}{-4}0 + \l\cveciii{-10}2h} \cdot \cveciii100 &= \a\\
                 \implies&&\cveciii{20}{-4}0 \cdot \cveciii100 + \l\cveciii{-10}2h \cdot \cveciii100 &= \a\\
                 \implies&&20-10\l &= \a\\
                 \implies&&\l &= \dfrac{20-\a}{10}
@@ -852,7 +843,6 @@
             \[
                 \vec r \cdot \cveciii001 = 0
             \]
-
             Let $\t$ be the angle of inclination made by the mirror with the ground.
             \begin{alignat*}{2}
                 &&\cos\t &= \dfrac{\cveciii501 \cdot \cveciii001}{\abs{\cveciii501}\abs{\cveciii001}}\\

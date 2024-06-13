@@ -10,7 +10,6 @@
 
     \solution
         Let the foot of the perpendicular be $F$. We have that $\oa{OF} = \vec a + \l \vec b$ for some real $\l$, and $\oa{CF} \cdot \vec b = 0$.
-        
         \begin{alignat*}{2}
             &&\oa{CF} \cdot \vec b &= 0\\
             \implies&&\bp{\oa{OF} - \oa{OC}} \cdot \vec b &= 0\\
@@ -40,7 +39,7 @@
             By the Ratio Theorem,
             \begin{alignat*}{2}
                 &&\oa{OP} &= \dfrac{2\,\oa{OB} + \oa{OA}}{1 + 2}\\
-                && &= \dfrac13 \bp{2\cveciii030 + \cveciii600}\\
+                && &= \dfrac13 \bs{2\cveciii030 + \cveciii600}\\
                 && &= \cveciii220\\
                 \implies&&\oa{CP} &= \oa{OP} - \oa{OC}\\
                 && &= \cveciii220 - \cveciii004\\
@@ -51,14 +50,11 @@
 
         \part
             Note that $\oa{BQ} = \oa{OQ} - \oa{OB} = \cveciii{q}00 - \cveciii030 = \cveciii{q}{-3}0$. Thus, $BQ$ is given by
-
             \begin{align*}
                 \vec r &= \cveciii030 + t\cveciii{q}{-3}0, \, t \in \R\\
                 \implies\vec r&= 3\vec j + t(q\vec i - 3\vec j), \, t \in \R
             \end{align*}
-
             Note that $\oa{CP} = \cveciii22{-4} = 2\cveciii11{-2}$. Hence, $CP$ is given by
-
             \[
                 \vec r = \cveciii004 + u\cveciii11{-2}, \, u \in \R
             \]
@@ -67,7 +63,6 @@
 
         \part
             Since $CP$ is perpendicular to $BQ$, we have $\oa{CP} \cdot \oa{BQ} = 0$.
-
             \begin{alignat*}{2}
                 &&\oa{CP} \cdot \oa{BQ} &= 0\\
                 \implies&&2\cveciii11{-2} \cdot \cveciii{q}{-3}0 &= 0\\
@@ -79,7 +74,6 @@
 
         \part
             Let $\t$ be the acute angle between $CP$ and $BQ$.
-
             {\allowdisplaybreaks
             \begin{alignat*}{2}
                 &&\abs{\cveciii11{-2} \times \cveciii{q}{-3}0} &= \abs{\cveciii11{-2}} \abs{\cveciii{q}{-3}0} \sin \t\\
@@ -122,7 +116,7 @@
             \end{alignat*}
             This gives the following system:
             \[
-                \systeme{2\m + 2\l = 2, \m - 4\l = 0, \m + \l = 1}
+                \systeme[\l\m]{2\l+2\m=2,{-4\l}+{\m}=0,{\l}+{\m}=1}
             \]
              which has the unique solution $\m = \dfrac45$ and $\l = \dfrac15$. Thus, the intersection point $P$ has position vector $\cveciii30{-2} + \dfrac15\cveciii{-2}4{-1} = \dfrac15\cveciii{13}{4}{-11}$ and thus has coordinates $\bp{\dfrac{13}5, \dfrac45, -\dfrac{11}5}$.
 
@@ -164,7 +158,7 @@
             \begin{alignat*}{2}
                 &&\oa{AN} \cdot \cveciii211 &= 0\\
                 \implies&&\bp{\oa{ON} - \oa{OA}} \cdot \cvecii211 &= 0\\
-                \implies&&\bp{\cveciii10{-3} + \m\cveciii211 - \cveciii30{-2}} \cdot \cveciii211 &= 0\\
+                \implies&&\bs{\cveciii10{-3} + \m\cveciii211 - \cveciii30{-2}} \cdot \cveciii211 &= 0\\
                 \implies&&\cveciii{-2+2\m}{\m}{-1+\m} \cdot \cveciii211 &= 0\\
                 \implies&&2(-2 + 2\m) + \m + (-1 + \m) &= 0\\
                 \implies&&\m &= \dfrac56\\

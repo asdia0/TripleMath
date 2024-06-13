@@ -37,7 +37,7 @@
             \boxt{False}
 
     \problem{}
-        Write the following series in $\Sigma$ notation twice, with $r = 1$ as the lower limit in the first and $r =0$ as the lower limit in the second.
+        Write the following series in sigma notation twice, with $r = 1$ as the lower limit in the first and $r =0$ as the lower limit in the second.
 
         \begin{enumerate}
             \item $-2 + 1 + 4 + \ldots + 40$
@@ -141,7 +141,7 @@
             \begin{align*}
                 \sum\limits_{r=1}^\infty \bp{\dfrac{2^r-1}{3^r}} &= \sum\limits_{r=1}^\infty \dfrac{2^r}{3^r} - \sum\limits_{r=1}^\infty \dfrac1{3^r}\\
                 &= \sum\limits_{r=1}^\infty \bp{\dfrac23}^r - \sum\limits_{r=1}^\infty \bp{\dfrac1{3}}^r\\
-                &= \dfrac{\tfrac23}{1-\tfrac23} - \dfrac{\tfrac13}{1- \tfrac13}\\
+                &= \dfrac{2/3}{1-2/3} - \dfrac{1/3}{1- 1/3}\\
                 &= \dfrac32
             \end{align*}
 
@@ -170,8 +170,8 @@
             &= 9\sum\limits_{r=1}^n \bp{\dfrac13}^{3r} + 3\sum\limits_{r=1}^n \bp{\dfrac13}^{3r}\\
             &= 12\sum\limits_{r=1}^n \bp{\dfrac13}^{3r}\\
             &= 12\sum\limits_{r=1}^n \bp{\dfrac1{27}}^{r}\\
-            &= 12 \cdot \dfrac{\tfrac1{27}(1-(\tfrac1{27})^n)}{1-\tfrac1{27}}\\
-            &= 12 \cdot \dfrac{1-(\tfrac1{27})^n}{27 - 1}\\
+            &= 12 \cdot \dfrac{1/27 \cdot (1-(1/27)^n)}{1-1/27}\\
+            &= 12 \cdot \dfrac{1-(1/27)^n}{27 - 1}\\
             &= \dfrac{6}{13} \bp{1-\dfrac1{27^n}}
         \end{align*}
 
@@ -312,7 +312,6 @@
                 \implies&&n &> \log_{\tfrac13}\dfrac1{100000}\\
                 && &= 10.5
             \end{alignat*}
-
             Since $n \in \N$, the least value of $n$ is 11.
 
             \boxt{The least value of $n$ is 11.}
@@ -412,7 +411,6 @@
             &= f(1) - f(4n+1)\\
             &= 1 - \dfrac{1}{(4n+1)^2}
         \end{align*}
-
         As $r \to \infty$, $\displaystyle\sum\limits_{r=1}^{4n} \bp{\dfrac{2r+1}{r^2(r+1)^2}} = 1 - \dfrac{1}{(4n+1)^2} \to 1$. Hence, the series is convergent and converges to 1.
 
         \boxt{The sum to infinity is 1.}
@@ -446,7 +444,6 @@
                 && &= Au^2 + 2Au + Bu^2 - 4B + Cu^2 - 2Cu\\
                 && &= (A+B+C)u^2 + (A-C)u - 4B
             \end{alignat*}
-
             Comparing the coefficients of $u^2$, $u$ and constant terms, we have the following system of equations.
             \[
                 \systeme[ABC]{
@@ -455,7 +452,6 @@
                     -4B = 1
                 }
             \]
-
             Solving, we obtain $A = \dfrac18$, $B = -\dfrac14$ and $C = \dfrac18$. Hence,
             \begin{alignat*}{2}
                 &&\dfrac{1}{(u-2)u(u+2)} &= \dfrac{1}{8(u-2)} - \dfrac{1}{4u} + \dfrac{1}{8(u+2)}\\

@@ -117,11 +117,11 @@
             \end{alignat*}
             This gives the following system:
             \[
-                \begin{cases}
-                    4\a - 3\b &= -1\\
-                    -2\a - 8\b &= 10\\
-                    -3\a - \b &= 1
-                \end{cases}
+                \systeme[\a\b]{
+                    4\a - 3\b = -1,
+                    -2\a - 8\b = 10,
+                    -3\a - \b = 1
+                }
             \]
             There are no solutions to the above system. Hence, $l_1$ and $l_2$ do not intersect and are hence skew.
 
@@ -150,11 +150,11 @@
             \end{alignat*}
             This gives the following system:
             \[
-                \begin{cases}
-                    \l - 5\m &= 0\\
-                    -\l + 4\m &= -1\\
-                    \l + \m &= 6
-                \end{cases}
+                \systeme[\l\m]{
+                    \l - 5\m = 0,
+                    -\l + 4\m = -1,
+                    \l + \m = 6
+                }
             \]
             The above system has the unique solution $\l = 5$ and $\m = 1$. Hence, $l_1$ and $l_2$ intersect at $\cveciii10{-5} + 5\cveciii1{-1}1 = \cveciii6{-5}0$.
 
@@ -185,7 +185,7 @@
             Note that $\oa{AP} = \oa{OP} - \oa{OA} = \cveciii123 - \cveciii324 = \cveciii{-2}0{-1}$.
 
             \begin{align*}
-                \text{Shortest distance} &= \dfrac{\abs{\cveciii{-2}0{-1} \times \cveciii122}}{\abs{\cveciii122}}\\
+                \text{Shortest distance} &= \abs{\cveciii{-2}0{-1} \times \cveciii122} \Bigg/ \abs{\cveciii122}\\
                 &= \dfrac1{\sqrt{1^2 + 2^2 + 2^2}} \abs{\cveciii2{-3}{-4}}\\
                 &= \dfrac{\sqrt{2^2 + (-3)^2 + (-4)^2}}3\\
                 &= \dfrac{\sqrt{29}}3
@@ -196,12 +196,12 @@
         \part
             Note that the line has vector form
             \begin{align*}
-                \vec r &= \cveciii{-5}55 + \l \cveciii43{-\frac12}\\
+                \vec r &= \cveciii{-5}55 + \l \cveciii43{-1/2}\\
                 &= \cveciii{-5}55 + \l \cveciii86{-1}, \, \l \in \R
             \end{align*}
 
             \begin{align*}
-                \text{Length of projection} &= \dfrac{\abs{\cveciii4{-5}6 \cdot \cveciii86{-1}}}{\abs{\cveciii86{-1}}}\\
+                \text{Length of projection} &= \abs{\cveciii4{-5}6 \cdot \cveciii86{-1}} \Bigg/ \abs{\cveciii86{-1}}\\
                 &= \dfrac{4}{\sqrt{101}}
             \end{align*}
 
@@ -209,7 +209,7 @@
 
         \part
             \begin{align*}
-                \text{Projection} &= \dfrac{\cveciii4{-5}6 \cdot \cveciii86{-1}}{\abs{\cveciii86{-1}}} \cdot \dfrac{\cveciii86{-1}}{\abs{\cveciii86{-1}}}\\
+                \text{Projection} &= \bs{\cveciii4{-5}6 \cdot \cveciii86{-1} \Bigg/ \abs{\cveciii86{-1}}} \cdot \bs{\cveciii86{-1} \Bigg/ \abs{\cveciii86{-1}}}\\
                 &= \dfrac{-4}{101} \cveciii86{-1}
             \end{align*}
 
@@ -242,16 +242,17 @@
 
         \part
             Let the foot of the perpendicular from $P$ to $l_2$ be $F$. Since $F$ is on $l_2$, we have that $\oa{OF} = \cveciii{-3}31 + \m\cveciii2{-1}0$ for some real $\m$. We also have that $\oa{PF} \cdot \cveciii2{-1}0 = 0$.
-            {\allowdisplaybreaks
+
             \begin{alignat*}{2}
                 &&\oa{PF} \cdot \cveciii2{-1}0 &= 0\\
                 \implies&&\bp{\oa{OF} - \oa{OP}} \cdot \cveciii2{-1}0 &= 0\\
-                \implies&&\bp{\cveciii{-3}31 + \m\cveciii2{-1}0 - \cveciii0{-1}{-1}} \cdot \cveciii2{-1}0 &= 0\\
-                \implies&&\bp{\cveciii{-3}42 + \m\cveciii2{-1}0} \cdot \cveciii2{-1}0 &= 0\\
+                \implies&&\bs{\cveciii{-3}31 + \m\cveciii2{-1}0 - \cveciii0{-1}{-1}} \cdot \cveciii2{-1}0 &= 0\\
+                \implies&&\bs{\cveciii{-3}42 + \m\cveciii2{-1}0} \cdot \cveciii2{-1}0 &= 0\\
                 \implies&&\cveciii{-3}42 \cdot \cveciii2{-1}0 + \m\cveciii2{-1}0 \cdot \cveciii2{-1}0 &= 0\\
                 \implies&&-10 + 5m &= 0\\
                 \implies&&m &= 2
-            \end{alignat*}}
+            \end{alignat*}
+
             Hence, $\oa{OF} = \cveciii{-3}31 + 2\cveciii3{-1}0 = \cveciii111$.
 
             \boxt{$F(1, 1, 1)$}
@@ -271,7 +272,7 @@
 
             {\allowdisplaybreaks
             \begin{align*}
-                \text{Length of projection} &= \dfrac{\abs{\cveciii312 \cdot \cveciii2{-1}0}}{\abs{\cveciii2{-1}0}}\\
+                \text{Length of projection} &= \abs{\cveciii312 \cdot \cveciii2{-1}0} \Bigg/ \abs{\cveciii2{-1}0}\\
                 &= \dfrac{\abs{6 - 1 + 0}}{\sqrt{2^2 + (-1)^2 + 0^2}}\\
                 &= \dfrac5{\sqrt 5}\\
                 &= \sqrt{5}
@@ -290,7 +291,7 @@
     \solution
         We have that $\oa{OP} = \cveciii012 + s\cveciii103$ and $\oa{OQ} = \cveciii{-2}31 + t\cveciii210$ for some reals $s$ and $t$. For $O$, $P$ and $Q$ to be collinear, we need $\oa{OP} = \l \oa{OQ}$ for some real $\l$.
         \begin{alignat*}{2}
-            &&\cveciii012 + s\cveciii103 &= \l\bp{\cveciii{-2}31 + t\cveciii210}\\
+            &&\cveciii012 + s\cveciii103 &= \l\bs{\cveciii{-2}31 + t\cveciii210}\\
             \implies&&\cveciii{s}1{2 + 3s} &= \l\cveciii{-2+2t}{3+t}1
         \end{alignat*}
         This gives use the system:
@@ -349,20 +350,17 @@
 
         \part
             Note that $\oa{AB} = \oa{OB} - \oa{OA} = \cveciii{-4}4{-2} - \cveciii54{10} = \cveciii{-9}0{-12} = -3\cveciii304$. The line $AB$ hence has the vector form
-
             \[
                 \vec r = \cveciii54{10} + \l\cveciii304, \, \l \in \R
             \]
-
             The line $AB$ thus has the Cartesian form
 
             \boxt{$\dfrac{x-5}{3} = \dfrac{z-10}4,\,y=4$}
 
         \part
             Note that $\oa{AC} = \oa{OC} - \oa{OA} = \cveciii{-5}95 - \cveciii54{10} = \cveciii{-10}5{-5} = -5\cveciii2{-1}1$.
-
             \begin{align*}
-                \text{Length of projection} &= \dfrac{\abs{\oa{AC} \cdot \oa{AB}}}{\abs{\oa{AB}}}\\
+                \text{Length of projection} &= \abs{\oa{AC} \cdot \oa{AB}} \Big/ \abs{\oa{AB}}\\
                 &= \dfrac1{-3\sqrt{3^2 + 0^2 + 4^2}} \abs{-5\cveciii2{-1}1 \cdot -3\cveciii304}\\
                 &= 10
             \end{align*}
@@ -406,21 +404,21 @@
         Note that $\oa{AB} = \oa{OB} - \oa{OA} = \cveciii{d}{-4}{-2-c}$. Hence, the line $AB$ is given by the vector $\vec r_{AB} = \cveciii{d}5{-2} + \m \cveciii{d}{-4}{-2-c}$ for $\m \in \R$.
 
         \part
-            Consider the direction vectors of $AB$ and $l$. Since $\cveciii{\frac{22}7}{-4}{-2-c} \neq \l\cveciii{-1}43$ for all real $\l$ and $c$, the lines $AB$ and $l$ are not parallel. Hence, $AB$ and $l$ intersect at only one point. Thus, there must be a unique solution to $\vec r = \vec r_{AB}$.
+            Consider the direction vectors of $AB$ and $l$. Since $\cveciii{22/7}{-4}{-2-c} \neq \l\cveciii{-1}43$ for all real $\l$ and $c$, the lines $AB$ and $l$ are not parallel. Hence, $AB$ and $l$ intersect at only one point. Thus, there must be a unique solution to $\vec r = \vec r_{AB}$.
             \begin{alignat*}{2}
                 &&\vec r &= \vec r_{AB}\\
-                \implies&&\cveciii{-3}15 + \l \cveciii{-1}43 &= \cveciii{\frac{22}7}5{-2} + \m \cveciii{\frac{22}7}{-4}{-2-c}\\
+                \implies&&\cveciii{-3}15 + \l \cveciii{-1}43 &= \cveciii{22/7}5{-2} + \m \cveciii{22/7}{-4}{-2-c}\\
                 \implies&&\cveciii{-21}{7}{35} + \l \cveciii{-1}43 &= \cveciii{22}{35}{-14} + \m \cveciii{22}{-28}{-14-7c}\\
                 \implies&&\l \cveciii{-1}43 - \m\cveciii{22}{-28}{-14-7c} &= \cveciii{43}{28}{-49}
             \end{alignat*}
             This gives the following system:
-            \begin{align*}
-                \begin{cases}
-                    -\l - 22 \m &= 43\\
-                    4\l + 28\m &= 28\\
-                    3\l + (14 + 7c)\m &= -49
-                \end{cases}
-            \end{align*}
+            \[
+                \systeme[\l\m]{
+                    {-}\l - 22\m = 43,
+                    4\l + 28\m = 28,
+                    3\l + \bp{14 + 7c}\m = -49
+                }
+            \]
 
             Solving the first two equations gives $\l = \dfrac{91}3$ and $\m = -\dfrac{10}3$. It follows from the third equation that $c = 4$.
 
@@ -430,8 +428,8 @@
             \begin{alignat*}{2}
                 &&\oa{AF} \cdot \cveciii{-1}43 &= 0\\
                 \implies&&\bp{\oa{OF} - \oa{OA}} \cdot \cveciii{-1}43 &= 0\\
-                \implies&&\bp{\cveciii{-3}15 + \l\cveciii{-1}43 - \cveciii094} \cdot \cveciii{-1}43 &= 0\\
-                \implies&&\bp{\cveciii{-3}{-8}1 + \l\cveciii{-1}43} \cdot \cveciii{-1}43 &= 0\\
+                \implies&&\bs{\cveciii{-3}15 + \l\cveciii{-1}43 - \cveciii094} \cdot \cveciii{-1}43 &= 0\\
+                \implies&&\bs{\cveciii{-3}{-8}1 + \l\cveciii{-1}43} \cdot \cveciii{-1}43 &= 0\\
                 \implies&&\cveciii{-3}{-8}1 \cdot \cveciii{-1}43 + \l\cveciii{-1}43 \cdot \cveciii{-1}43 &= 0\\
                 \implies&&-26 + 26\l&= 0\\
                 \implies&&\l &= 1
@@ -453,7 +451,7 @@
             Note that the direction vector of $l$ and $AB$ is $\cveciii{-1}43$. Also note that $(-3, 1, 5)$ is on $l$ and $(1, 5, -2)$ is on $AB$.
 
             \begin{align*}
-                \text{Shortest distance between $AB$ and $l$} &= \dfrac{\abs{\cveciii{-1}43 \times \bp{\cveciii15{-2} - \cveciii{-3}15}}}{\abs{\cveciii{-1}43}}\\
+                \text{Shortest distance between $AB$ and $l$} &= \abs{\cveciii{-1}43 \times \bp{\cveciii15{-2} - \cveciii{-3}15}} \Bigg/ \abs{\cveciii{-1}43}\\
                 &= \dfrac{1}{\sqrt{(-1)^2 + 4^2 + 3^2}} \abs{\cveciii{-1}43 \times \cveciii44{-7}}\\
                 &= \dfrac1{\sqrt{26}} \abs{\cveciii{-40}{-5}{-20}}\\
                 &= \dfrac1{\sqrt{26}} \abs{-5\cveciii814}\\
@@ -486,13 +484,13 @@
                 \implies&&t\cveciii2{-1}5 - u\cveciii46{\a - 26} &= \cveciii80{19}
             \end{alignat*}
             This gives the following system:
-            \begin{align*}
-                \begin{cases}
-                    2t - 4u &= 8\\
-                    -t - 6u &= 0\\
-                    5t - (\a - 26)u &= 19
-                \end{cases}
-            \end{align*}
+            \[
+                \systeme[tu]{
+                    2t - 4u = 8,
+                    -t - 6u = 0,
+                    5t - \bp{\a - 26}u = 19
+                }
+            \]
             Solving the first two equations gives $t = 3$ and $u = -\dfrac12$. It follows from the third equation that $\a = 34$.
 
             \boxt{$\a = 34$}
@@ -512,8 +510,8 @@
             \begin{alignat*}{2}
                 &&\oa{CQ} \cdot \cveciii2{-1}5 &= 0\\
                 \implies&&\bp{\oa{OQ} - \oa{OC}} \cdot \cveciii2{-1}5 &= 0\\
-                \implies&&\bp{\cveciii137 + t\cveciii2{-1}5 - \cveciii251} \cdot \cveciii2{-1}5 &= 0\\
-                \implies&&\bp{\cveciii{-1}{-2}6 + t\cveciii2{-1}5} \cdot \cveciii2{-1}5 &= 0\\
+                \implies&&\bs{\cveciii137 + t\cveciii2{-1}5 - \cveciii251} \cdot \cveciii2{-1}5 &= 0\\
+                \implies&&\bs{\cveciii{-1}{-2}6 + t\cveciii2{-1}5} \cdot \cveciii2{-1}5 &= 0\\
                 \implies&&\cveciii{-1}{-2}6 \cdot \cveciii2{-1}5 + t\cveciii2{-1}5 \cdot \cveciii2{-1}5 &= 0\\
                 \implies&&30 + 30t &= 0\\
                 \implies&&t &= 1
@@ -590,6 +588,7 @@
 
     \solution
         We are given that $\oa{OP} = \cveciii0{-2}0$, $\oa{OC} = \cveciii220$ and $\oa{OV} = \cveciii00{2h}$. Hence, $\oa{CV} = \oa{OV} - \oa{OC} = \cveciii{-2}{-2}{2h}$. Thus, $\oa{CM} = \dfrac12 \oa{CV} = \cveciii{-1}{-1}h$. Since $\oa{OM} = \oa{OC} + \oa{CM} = \cveciii11h$, we have that $\oa{PM} = \oa{OM} - \oa{OP} = \cveciii13h$. Thus, $PM$ is given by
+
         \[
             \vec r = \cveciii0{-2}0 + t\cveciii13h, \, t \in \R
         \]
@@ -608,11 +607,11 @@
             \end{alignat*}
             This gives the following system:
             \[
-                \begin{cases}
-                    t + 3u &= 2\\
-                    3t + u &= 2\\
-                    th - uh &= 0
-                \end{cases}
+                \systeme[tu]{
+                    t + 3u = 2,
+                    3t + u = 2,
+                    ht - hu = 0
+                }
             \]
             From the first two equations, we see that $t = \dfrac12$ and $u = \dfrac12$, which is consistent with the third equation. Hence, $\oa{OX} = \cveciii0{-2}0 + \dfrac12 \cveciii13h = \dfrac12 \cveciii1{-1}h$.
 

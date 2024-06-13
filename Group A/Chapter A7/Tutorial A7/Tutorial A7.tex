@@ -326,7 +326,7 @@
                 \matr A\oa{AE} = -\dfrac{\l}2 \cvecii15 = \cvecii{\m}{-3}\\
             \]
 
-            Thus, $\l = \dfrac65$ and $\m = -\dfrac35$. Hence, $\matr A\oa{OE} = \cvecii{\frac25}{0}$, giving
+            Thus, $\l = \dfrac65$ and $\m = -\dfrac35$. Hence, $\matr A\oa{OE} = \cvecii{2/5}{0}$, giving
 
             \begin{align*}
                 \dfrac{OE}{EB} &= \dfrac{\abs{\matr A\oa{OE}}}{\abs{\matr A\oa{OB} - \matr A\oa{OE}}}\\
@@ -382,7 +382,7 @@
             Let $\vec a = \cveciii3{-2}0$ and $\vec b = \cveciii6d{-\sqrt7}$. Let $\t$ be the angle between $\vec a$ and $\vec b$.
             \begin{alignat*}{2}
                 &&\vec a \cdot \vec b &= \abs{\vec a}\abs{\vec b}\cos\t\\
-                &&3\cdot6 + (-2)\cdot d + 0 \cdot (-\sqrt7) &= \sqrt{3^2 + (-2)^2 + 0^2} \cdot \sqrt{6^2 + d^2 + (-\sqrt7)^2} \cdot \cos\arccos\dfrac6{13}\\
+                \implies&&3\cdot6 + (-2)\cdot d + 0 \cdot (-\sqrt7) &= \sqrt{3^2 + (-2)^2 + 0^2} \cdot \sqrt{6^2 + d^2 + (-\sqrt7)^2} \cdot \cos\arccos\dfrac6{13}\\
                 \implies&&18-2d &= \sqrt{43 + d^2} \cdot \sqrt{13} \cdot \dfrac6{13}\\
                 && &= \sqrt{43 + d^2} \cdot \dfrac6{\sqrt{13}}\\
                 \implies&&(18 -2d)^2 &= \dfrac{36}{13}\bp{43 + d^2}\\
@@ -397,19 +397,16 @@
             \subpart
 
                  Note that $\oa{DA} = \oa{OA} - \oa{OD} = \vec a - 4\vec b$ and $\oa{CB} = \oa{OB} - \oa{OC} = \vec b - 6\vec a$. Since $E$ is on both $DA$ and $CB$, we have
-
                 \[
                     \oa{OE} = \oa{OD} + \l \oa{DA} = \oa{OC} + \m \oa{CB}
                 \]
-
-                 for some scalars $\l$ and $\m$. Hence,
+                for some scalars $\l$ and $\m$. Hence,
                 \begin{alignat*}{2}
                     &&4 \vec b + \l (\vec a - 4 \vec b) &= 6\vec a + \m (\vec b - 6 \vec a)\\
                     \implies&&\l \vec a + 4(1 - \l)\vec b &= 6(1 - \m)\vec a + \m \vec b
                 \end{alignat*}
 
                 Comparing the coefficients of $\vec a$ and $\vec b$, we have the system
-
                 \[
                     \begin{cases}
                         \begin{aligned}
@@ -418,14 +415,13 @@
                         \end{aligned}
                     \end{cases}
                 \]
-
-                 which has the solution $\l = \dfrac{18}{23}$ and $\m = \dfrac{20}{23}$. Hence, $\oa{OE} = \dfrac{18}{23} \vec a + \dfrac{20}{23} \vec b$.
+                which has the solution $\l = \dfrac{18}{23}$ and $\m = \dfrac{20}{23}$. Hence, $\oa{OE} = \dfrac{18}{23} \vec a + \dfrac{20}{23} \vec b$.
 
                 \boxt{$\oa{OE} = \dfrac{18}{23} \vec a + \dfrac{20}{23} \vec b$}
 
             \subpart
 
-                 By the Ratio Theorem,
+                By the Ratio Theorem,
                 \begin{align*}
                     \oa{OF} &= \dfrac{3\vec c + 5\vec d}{5 + 3}\\
                     &= \dfrac18 \bp{5 \cdot 4\vec b + 3 \cdot 6\vec a}\\
@@ -451,7 +447,7 @@
             We have $\vec a = \cveciii{14}{14}{14} = 14 \cveciii111$ and $\vec b = \cveciii{11}{-13}2$. By the Ratio Theorem,
             \begin{align*}
                 \oa{OP} &= \dfrac{\vec a + 2\vec b}{2 + 1}\\
-                &= \dfrac13 \bp{\cveciii{14}{14}{14} + 2\cveciii{11}{-13}2}\\
+                &= \dfrac13 \bs{\cveciii{14}{14}{14} + 2\cveciii{11}{-13}2}\\
                 &= \cveciii{12}{-4}6
             \end{align*}
 
@@ -460,12 +456,11 @@
         \part
             Consider $\oa{AB} \cdot \oa{OP}$.
             \begin{align*}
-                \oa{AB} \cdot \oa{OP} &= \bp{\cveciii{11}{-13}2 -  \cveciii{14}{14}{14}} \cdot \cveciii{12}{-4}6\\
+                \oa{AB} \cdot \oa{OP} &= \bs{\cveciii{11}{-13}2 -  \cveciii{14}{14}{14}} \cdot \cveciii{12}{-4}6\\
                 &= -3\cveciii194 \cdot 2\cveciii6{-2}3\\
                 &= -6\bp{1\cdot6 + 9 \cdot (-2) + 4 \cdot 3 }\\
                 &= 0
             \end{align*}
-
             Since $\oa{AB} \cdot \oa{OP} = 0$, $AB$ and $OP$ must be perpendicular.
 
         \part
@@ -521,7 +516,6 @@
                 &= 2\cdot\sqrt{2^2 + 2^2 + 1^2}\\
                 &= 6
             \end{align*}
-
             Hence, the area of $\triangle ABC = \dfrac12 \abs{\vec b' \times \vec c'} = 3$ units$^2$.
 
             \boxt{$\area \triangle ABC = 3$ units$^2$}
@@ -542,7 +536,7 @@
             Note that $\hat{\vec b}' = \dfrac{\vec b'}{\abs{\vec b'}} = \dfrac1{\sqrt{(-1)^2 + 2^2 + (-2)^2}} \cveciii{-1}2{-2} = \dfrac13\cveciii{-1}2{-2}$. Hence,
 
             \begin{align*}
-                \bp{\vec c' \cdot \hat{\vec b}'} \hat{\vec b}' &= \bp{ \cveciii10{-2} \cdot \dfrac13\cveciii{-1}2{-2} } \dfrac13\cveciii{-1}2{-2}\\
+                \bp{\vec c' \cdot \hat{\vec b}'} \hat{\vec b}' &= \bs{ \cveciii10{-2} \cdot \dfrac13\cveciii{-1}2{-2} } \dfrac13\cveciii{-1}2{-2}\\
                 &= \dfrac19 \Big(1 \cdot (-1) + 0 \cdot 2 + (-2) \cdot (-2)\Big) \cveciii{-1}2{-2}\\
                 &= \dfrac13 \cveciii{-1}2{-2}
             \end{align*}
@@ -612,7 +606,7 @@
             By the Ratio Theorem,
             \begin{align*}
                 \oa{OP} &= \dfrac{1 \oa{OC} + 2 \oa{OF}}{2 + 1}\\
-                &= \dfrac13 \bp{\cveciii03h + 2\cveciii{2h}00 }\\
+                &= \dfrac13 \bs{\cveciii03h + 2\cveciii{2h}00 }\\
                 &= \dfrac13 \cveciii{4h}3h
             \end{align*}
             
@@ -633,7 +627,7 @@
             Let $\t$ be the angle the rectangular face $BCEF$ makes with the horizontal base.
             \begin{alignat*}{2}
                 &&\oa{OF} \cdot \oa{BF} &= \abs{\oa{OF}} \abs{\oa{BF}} \cos \t\\
-                \implies&&\cveciii200 \cdot \bp{\cveciii200 - \cveciii001} &= 2 \cdot \abs{\cveciii200 - \cveciii001} \cdot \cos\t\\
+                \implies&&\cveciii200 \cdot \bs{\cveciii200 - \cveciii001} &= 2 \cdot \abs{\cveciii200 - \cveciii001} \cdot \cos\t\\
                 \implies&&\cveciii200 \cdot \cveciii20{-1} &= 2 \cdot \abs{\cveciii20{-1}} \cdot \cos\t\\
                 \implies&&2 \cdot 2 + 0 \cdot 0 + 0 \cdot (-1) &= 2 \cdot \sqrt{2^2 + 0^2 + (-1)^2} \cdot \cos\t\\
                 \implies&&4 &= 2 \sqrt{5} \cos\t\\
@@ -666,7 +660,7 @@
             For $OP$ to be perpendicular to $AB$, we must have $\oa{OP} \cdot \oa{AB} = 0$.
             \begin{alignat*}{2}
                 &&\oa{OP} \cdot \oa{AB} &= 0\\
-                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \bp{\cveciii2{-3}6 - \cveciii12{-2}} &= 0\\
+                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \bs{\cveciii2{-3}6 - \cveciii12{-2}} &= 0\\
                 \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \cveciii1{-5}8 &= 0\\
                 \implies&&(1+\l)\cdot1 + (2-5\l)\cdot(-5) + (-2+8\l)\cdot8 &= 0\\
                 \implies&&-25 + 90\l &= 0\\
@@ -686,7 +680,7 @@
                 \implies&&\oa{OP} \cdot \bp{\abs{\oa{OB}} \, \oa{OA} -  \abs{\oa{OA}} \, \oa{OB}} &= 0\\
                 \implies&&\oa{OP} \cdot \bp{\sqrt{2^2 + (-3)^2 + 6^2} \, \oa{OA} -  \sqrt{1^2 + 2^2 + (-2)^2} \, \oa{OB}} &= 0\\
                 \implies&&\oa{OP} \cdot \bp{7 \oa{OA} -  3 \oa{OB}} &= 0\\
-                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \bp{7 \cveciii12{-2} -  3 \cveciii2{-3}6} &= 0\\
+                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \bs{7 \cveciii12{-2} -  3 \cveciii2{-3}6} &= 0\\
                 \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \cveciii1{23}{-32} &= 0\\
                 \implies&&(1+\l)\cdot1 + (2-5\l)\cdot23 + (-2+8\l)\cdot(-32)&=0\\
                 \implies&&111-370\l&=0\\

@@ -97,7 +97,7 @@
 
         \boxt{$u_n = 4n+8$}
 
-        \textbf{Test for Arithmetic Progression:}
+        \textbf{Test for Arithmetic Progression.}
         \begin{align*}
             u_{n+1} - u_n &= 4(n+1)+8 - (4n + 8)\\
             &= 4
@@ -130,9 +130,9 @@
             \boxt{$u_n$ = $\bp{\dfrac12}^{n+1}$}
 
         \part
-            \textbf{Test for Geometric Progression:}
+            \textbf{Test for Geometric Progression.}
             \begin{align*}
-                \dfrac{u_{n+1}}{u_n} &= \dfrac{\bp{\dfrac12}^{n+2}}{\bp{\dfrac12}^{n+1}} \\
+                \dfrac{u_{n+1}}{u_n} &= \bp{\dfrac12}^{n+2} \Bigg/ \bp{\dfrac12}^{n+1} \\
                 &= \dfrac12
             \end{align*}
 
@@ -204,7 +204,11 @@
             \dfrac{a}{1-r} = 5
         \end{equation}
 
-        Taking the first, fourth, seventh, tenth, $\ldots$ terms, we get a new geometric series $a, ar^3, ar^6, ar^9, \ldots$ which has common ratio $r^3$. Thus,
+        Taking the first, fourth, seventh, tenth, $\ldots$ terms, we get a new geometric series
+        \[
+            a, ar^3, ar^6, ar^9, \ldots
+        \]
+        which has common ratio $r^3$. Thus,
         \begin{equation}\label{P9-2}
             \dfrac{a}{1-r^3} = 4
         \end{equation}
@@ -214,7 +218,7 @@
             &&5(1-r) &= 4(1-r^3)\\
             \implies&&5-5r &= 4 - 4r^3\\
             \implies&& 4r^3-5r+1 &= 0\\
-            \implies&& (r-1)(4r^2+4r-1) = 0\\
+            \implies&& (r-1)(4r^2+4r-1) = 0
         \end{alignat*}
 
         We hence see that $r = 1$ or $4r^2+4r-1 = 0$. We reject $r=1$ since $\abs{r} < 1$. Now consider $4r^2+4r-1=0$. By the quadratic formula, we have $r = \dfrac{-1+\sqrt2}2$ or $r = \dfrac{-1-\sqrt2}{2}$. Once again, since $\abs{r} < 1$, we reject $r = \dfrac{-1-\sqrt2}{2}$. Hence, $r = \dfrac{-1+\sqrt2}{2}$.
@@ -260,7 +264,6 @@
                 &= an + \dfrac{n(n-1)d}2\\
                 &= an + \dfrac{dn^2 - dn}2
             \end{align*}
-
             Consider $S > 4a$.
             \begin{alignat*}{2}
                 &&S &> 4a\\
@@ -268,17 +271,15 @@
                 \implies&&2an + dn^2 - dn &> 8a\\
                 \implies&& dn^2 + (2a-d)n - 8a &> 0
             \end{alignat*}
-
             Note that $a = \dfrac{3d}{r-1}$, whence $d = -\dfrac{a}9$.
             \begin{alignat*}{2}
                 \implies&& -\dfrac{a}9n^2 + (2a+\dfrac{a}9)n - 8a &> 0\\
                 \implies&& -\dfrac{1}9n^2 + (2+\dfrac{1}9)n - 8 &> 0\\
                 \implies&& -n^2 + 19n - 72 &> 0
             \end{alignat*}
+            Observe that $-n^2 + 19n - 72 = 0$ when $n = 5.23$ or $n = 13.8$. Since the curve of $-n^2 + 19n - 72$ is concave downwards, we have $5.23 < n < 13.8$. Since $n$ is an integer, $n$ must be between 6 and 13 inclusive.
 
-            Observe that $-n^2 + 19n - 72 = 0$ when $n = 5.23$ or $n = 13.8$. Since the curve of $-n^2 + 19n - 72$ is concave downwards, we have $5.23 < n < 13.8$. Since $n$ is an integer, the set of possible values of $n$ for which $S$ exceeds $4a$ is $\bc{n \in \Z^+ \colon 6 \leq n \leq 13}$.
-
-            \boxt{$\bc{n \in \Z^+ \colon 6 \leq n \leq 13}$}
+            \boxt{$\bc{n \in \Z \colon 6 \leq n \leq 13}$}
 
     \problem{}
         Two musical instruments, $A$ and $B$, consist of metal bars of decreasing lengths.
@@ -304,7 +305,6 @@
                 &= 356.34\\
                 &< 357
             \end{align*}
-
             Hence, no matter how many bars there are, the total length of the bars will never exceed 357 cm.
 
         \part
@@ -331,7 +331,6 @@
                 &= \dfrac{25}2 (a + 5)\\
                 &= 272.26
             \end{align*}
-
             Rearranging, we have $a = 16.781$. Hence, $d = \dfrac{5-a}{24} = -0.491$.
             
             \boxt{The longest bar is 16.8 cm long. The common difference $d$ is $-0.491$ cm.}
@@ -361,7 +360,6 @@
                     \implies&& u_2 &= 1.05(1 + 1.05) = 1.05 + 1.05^2\\
                     \implies&& u_3 &= 1.05(1 + 1.05 + 1.05^2) = 1.05 + 1.05^2 + 1.05^3
                 \end{alignat*}
-
                 It thus stands to reason that $u_n = \sum_{k=1}^{n} 1.05^n$. Thus, $u_n = \dfrac{1.05 (1.05^n - 1)}{1.05 - 1} = 21(1.05^n - 1)$. Hence, there is \$$21(1.05^n - 1)x$ in the account after $n$ years.
 
             \subpart
@@ -374,7 +372,6 @@
                     \implies&&n &\geq \log_{1.05} \dfrac{33}{21}\\
                     \implies&&n &\geq 9.26
                 \end{alignat*}
-
                 Since $n$ is an integer, the smallest value of $n$ is 10.
 
                 \boxt{After 10 years, he will have at least \$$12x$ in his account for the first time.}
@@ -436,7 +433,6 @@
                 \implies&& 2\t^3 - 9\t - 2 &= 0\\
                 \implies&& (\t + 2)(2\t^2 -4\t -1) &= 0
             \end{alignat*}
-
             Hence, $\t = -2$ or $2\t^2 -4\t -1 = 0$. We reject $\t = -2$ since $\t > 0$. We thus consider $2\t^2 -4\t -1 = 0$. By the quadratic formula, $\t = 1 + \sqrt{\dfrac32}$ or $\t = 1 - \sqrt{\dfrac32}$. Once again, we reject $\t = 1 - \sqrt{\dfrac32}$ since $\t > 0$. Thus, $\t = 1 + \sqrt{\dfrac32}$.
 
             \boxt{$\t = 1 + \sqrt{\dfrac32}$}
