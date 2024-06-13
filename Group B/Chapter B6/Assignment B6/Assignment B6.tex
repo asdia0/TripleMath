@@ -14,20 +14,18 @@
 
     \solution
         \begin{align*}
-            (1 + 2x)^{-\tfrac13} &= 1 + -\dfrac13 \cdot 2x + \dfrac{-\tfrac13 (-\tfrac13 - 1)}2 \cdot (2x)^2 + \ldots\\
+            (1 + 2x)^{-1/3} &= 1 + -\dfrac13 \cdot 2x + \dfrac{1/3 \cdot (-1/3 - 1)}2 \cdot (2x)^2 + \ldots\\
             &= 1 - \dfrac23 x + \dfrac89 x^2 + \ldots
         \end{align*}
-
         Substituting $x = \dfrac1{14}$,
         \begin{alignat*}{2}
-            &&(1 + 2 \cdot \dfrac1{14})^{-\tfrac13} &= 1 - \dfrac23 \cdot \dfrac1{14} + \dfrac89 \bp{\dfrac1{14}}^2 + \ldots\\
-            \implies&& \bp{\dfrac87}^{-\tfrac13} &\approx \dfrac{422}{441}\\
-            \implies&& \bp{\dfrac78}^{\tfrac13} &\approx \dfrac{422}{441}\\
-            \implies&& \bp{7}^{\tfrac13} \cdot \dfrac12 &\approx \dfrac{422}{441}\\
+            &&(1 + 2 \cdot \dfrac1{14})^{-1/3} &= 1 - \dfrac23 \cdot \dfrac1{14} + \dfrac89 \bp{\dfrac1{14}}^2 + \ldots\\
+            \implies&& \bp{\dfrac87}^{-1/3} &\approx \dfrac{422}{441}\\
+            \implies&& \bp{\dfrac78}^{1/3} &\approx \dfrac{422}{441}\\
+            \implies&& \bp{7}^{1/3} \cdot \dfrac12 &\approx \dfrac{422}{441}\\
             \implies&& \sqrt[3]7 &\approx \dfrac{844}{441}\\
             && &= 1.9138 \tosf{5}
         \end{alignat*}
-
         Since $\sqrt[3]7 = 1.9129 \tosf{5}$, the approximation is accurate.
 
     \problem{}
@@ -35,7 +33,7 @@
         \[
             AC \approx (4 + 3\t^2)^{\tfrac12} \approx a + b\t^2
         \]
-         for constants $a$ and $b$ to be determined.
+        for constants $a$ and $b$ to be determined.
 
     \solution
         By cosine rule,
@@ -48,8 +46,8 @@
         \begin{alignat*}{2}
             &&AC^2 &\approx 10 - 6\bp{1 - \dfrac{\t^2}{2}}\\
             && &= 4 + 3\t^2\\
-            \implies&&AC &\approx (4+3\t^2)^{\tfrac12}\\
-            && &= 2\bp{1 + \dfrac34 \t^2}^{\tfrac12}\\
+            \implies&&AC &\approx (4+3\t^2)^{1/2}\\
+            && &= 2\bp{1 + \dfrac34 \t^2}^{1/2}\\
             && &\approx 2 \bp{1 + \dfrac12 \cdot \dfrac34 \t^2}\\
             && &= 2 + \dfrac34 \t^2
         \end{alignat*}
@@ -64,59 +62,53 @@
 
          Write down the MacLaurin series for $\ln \sec x$ up to and including the term in $x^4$. By substituting $x = \dfrac\pi4$, show that $\ln 2 \approx \dfrac{\pi^2}{16} + \dfrac{\pi^4}{1536}$.
 
-        \solution
-            \part
-                Note that $y = \ln \sec x = -\ln \cos x$. Hence,
+    \solution
+        \part
+            Note that $y = \ln \sec x = -\ln \cos x$. Hence,
+            \begin{equation}
+                e^{-y} = \cos x \label{P3-1}
+            \end{equation}
+            Implicitly differentiating Equation~\ref{P3-1},
+            \begin{alignat}{2}
+                &&e^{-y}\cdot (-y') &= -\sin x\notag\\
+                \implies&&y' e^{-y} &= \sin x\label{P3-2}
+            \end{alignat}
+            Implicitly differentiating Equation~\ref{P3-2},
+            \begin{alignat}{2}
+                &&y' e^{-y}\cdot (-y') + e^{-y} \cdot y'' &= \cos x\notag\\
+                \implies&&y' e^{-y}\cdot (-y') + e^{-y} \cdot y'' &= e^{-y}\notag\\
+                \implies&&y'' - (y')^2 &= 0\label{P3-3}
+            \end{alignat}
+            Implicitly differentiating Equation~\ref{P3-3},
+            \begin{alignat}{2}
+                &&y^{(3)} - 2\cdot y' \cdot y'' &= 0\notag\\
+                \implies&&y^{(3)} &= 2 y'' y'\label{P3-4}
+            \end{alignat}
 
-                \begin{equation}
-                    e^{-y} = \cos x \label{P3-1}
-                \end{equation}
-
-                Implicitly differentiating Equation~\ref{P3-1},
-                \begin{alignat}{2}
-                    &&e^{-y}\cdot (-y') &= -\sin x\notag\\
-                    \implies&&y' e^{-y} &= \sin x\label{P3-2}
-                \end{alignat}
-
-                Implicitly differentiating Equation~\ref{P3-2},
-                \begin{alignat}{2}
-                    &&y' e^{-y}\cdot (-y') + e^{-y} \cdot y'' &= \cos x\notag\\
-                    \implies&&y' e^{-y}\cdot (-y') + e^{-y} \cdot y'' &= e^{-y}\notag\\
-                    \implies&&y'' - (y')^2 &= 0\label{P3-3}
-                \end{alignat}
-
-                Implicitly differentiating Equation~\ref{P3-3},
-                \begin{alignat}{2}
-                    &&y^{(3)} - 2\cdot y' \cdot y'' &= 0\notag\\
-                    \implies&&y^{(3)} &= 2 y'' y'\label{P3-4}
-                \end{alignat}
-
-            \part
-                Implicitly differentiating Equation~\ref{P3-4},
-                \begin{equation}
-                    y^{(4)} = 2\bp{y^{(3)}y' + (y'')^2}\label{P3-5}
-                \end{equation}
-
-                Substituting $x = 0$ into Equations~\ref{P3-1},~\ref{P3-2},~\ref{P3-3},~\ref{P3-4} and~\ref{P3-5}, we see that
-                \begin{align*}
-                    y &= 0\\
-                    y' &= 0\\
-                    y'' &= 1\\
-                    y^{(3)} &= 0\\
-                    y^{(4)} &= 2
-                \end{align*}
-                Thus, $\evalder{\der[4]{y}{x}}{x=0} = 2$.
-                \begin{align*}
-                    \ln \sec x &= \sum_{n=0}^\infty \dfrac{y^{(n)}}{n!}x^n\\
-                    &= \dfrac12 x^2 + \dfrac1{12} x^4 + \ldots 
-                \end{align*}
-
-                Substituting $x = \dfrac\pi4$,
-                \begin{alignat*}{2}
-                    &&\ln \sec \dfrac\pi4 &= \dfrac12 \bp{\dfrac\pi4}^2 + \dfrac1{12} \bp{\dfrac\pi4}^4 + \ldots\\
-                    \implies&&\ln \sqrt2 &= \dfrac{\pi^2}{32} + \dfrac{\pi^2}{3072} + \ldots\\
-                    \implies&&\dfrac12 \ln 2 &= \dfrac{\pi^2}{32} + \dfrac{\pi^2}{3072} + \ldots\\
-                    \implies&&\ln 2 &= \dfrac{\pi^2}{16} + \dfrac{\pi^2}{1536} + \ldots\\
-                    \implies&&\ln 2 &\approx \dfrac{\pi^2}{16} + \dfrac{\pi^2}{1536}
-                \end{alignat*}
+        \part
+            Implicitly differentiating Equation~\ref{P3-4},
+            \begin{equation}
+                y^{(4)} = 2\bp{y^{(3)}y' + (y'')^2}\label{P3-5}
+            \end{equation}
+            Substituting $x = 0$ into Equations~\ref{P3-1},~\ref{P3-2},~\ref{P3-3},~\ref{P3-4} and~\ref{P3-5}, we see that
+            \begin{align*}
+                y &= 0\\
+                y' &= 0\\
+                y'' &= 1\\
+                y^{(3)} &= 0\\
+                y^{(4)} &= 2
+            \end{align*}
+            Thus, $\evalder{\der[4]{y}{x}}{x=0} = 2$.
+            \begin{align*}
+                \ln \sec x &= \sum_{n=0}^\infty \dfrac{y^{(n)}}{n!}x^n\\
+                &= \dfrac12 x^2 + \dfrac1{12} x^4 + \ldots 
+            \end{align*}
+            Substituting $x = \dfrac\pi4$,
+            \begin{alignat*}{2}
+                &&\ln \sec \dfrac\pi4 &= \dfrac12 \bp{\dfrac\pi4}^2 + \dfrac1{12} \bp{\dfrac\pi4}^4 + \ldots\\
+                \implies&&\ln \sqrt2 &= \dfrac{\pi^2}{32} + \dfrac{\pi^2}{3072} + \ldots\\
+                \implies&&\dfrac12 \ln 2 &= \dfrac{\pi^2}{32} + \dfrac{\pi^2}{3072} + \ldots\\
+                \implies&&\ln 2 &= \dfrac{\pi^2}{16} + \dfrac{\pi^2}{1536} + \ldots\\
+                \implies&&\ln 2 &\approx \dfrac{\pi^2}{16} + \dfrac{\pi^2}{1536}
+            \end{alignat*}
 \end{document}

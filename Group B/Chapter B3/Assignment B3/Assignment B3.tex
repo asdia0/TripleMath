@@ -24,7 +24,6 @@
             Note that $f' = 2(x-3) < 0$ for all $x \leq 2$. Thus, $f$ is strictly decreasing. Since $f$ is also continuous, $f$ is one-one. Thus, $\inv f$ exists.
 
             Let $y = f(x) \implies x = \inv f(y)$.
-
             \begin{alignat*}{2}
                 &&y &= f(x)\\
                 \implies&&y &= (x-3)^2 + 6\\
@@ -32,7 +31,6 @@
                 \implies&&x-3 &= -\sqrt{y-6} \reject{x -3 = \sqrt{y-6} \because x -3 < 0}\\
                 \implies&&x &= 3 - \sqrt{y-6}
             \end{alignat*}
-
             Hence, $\inv f(x) = 3 - \sqrt{x-6}$. Observe that $\dom{\inv f} = \ran f = [f(2), \infty) = [7, \infty)$.
 
             \boxt{$\inv f \colon x \mapsto 3 - \sqrt{x-6}, \, x \in \R, \, x \geq 7$}
@@ -90,7 +88,6 @@
 
     \problem{}
         The function $f$ is defined as follows:
-
         \[
             f \colon x \mapsto \dfrac1{x^2 - 1}, \qquad x \in \R, \, x \neq -1, \, x \neq 1
         \]
@@ -105,7 +102,6 @@
         \smallskip
 
          The function $g$ is defined as follows:
-
         \[
             g \colon x \mapsto \dfrac1{x-3}, \qquad x \in \R, \, x \neq 2, \, x \neq 3, x \neq 4
         \]
@@ -160,7 +156,6 @@
 
     \problem{}
         The function $f$ is defined by
-
         \[
             f \colon x \mapsto \dfrac{x}{x^2 - 1}, \qquad x \in \R, \, x \neq -1, \, x \neq 1
         \]
@@ -171,7 +166,6 @@
         \end{enumerate}
 
          The function $g$ is defined by
-
         \[
             g \colon x \mapsto \ln x - 1, \qquad x \in \R, \, 0 < x < 1
         \]
@@ -195,7 +189,6 @@
         \part
             \subpart
                 Note that $gh(x) = x \implies h(x) = \inv g(x)$. Hence, consider $y = g(x) \implies x = h(y)$.
-
                 \begin{alignat*}{2}
                     &&y &= g(x)\\
                     \implies&&y &= \ln x - 1\\
@@ -213,9 +206,8 @@
                 \begin{alignat*}{2}
                     &&hg(x) &= x^2+1\\
                     \implies&&h_2h_1g(x) &= x^2+1\\
-                    \implies&&h_2(x) &= x^2+1\\
+                    \implies&&h_2(x) &= x^2+1
                 \end{alignat*}
-
                 Hence, $h(x) = h_2h_1(x) = h_2(e^{x+1}) = \bp{e^{x+1}}^2 + 1 = e^{2x+2} + 1$
 
                 \boxt{$h(x) = e^{2x+2}+1$}

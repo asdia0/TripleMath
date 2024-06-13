@@ -238,7 +238,6 @@
             \boxt{$h$ is not one-one.}
 
             Note that $y = h(x) \implies x = \inv h(y)$. Now consider $y = h(x)$.
-
             \begin{alignat*}{2}
                 &&y &= h(x)\\
                 \implies&&y &= x^2 + 2x + 5\\
@@ -247,21 +246,17 @@
                 \implies&&(x+1)^2 &= y - 4\\
                 \implies&& x+1 &= \pm\sqrt{y-4}
             \end{alignat*}
-
-            Now, since $x \leq -2$, we have $x+1 \leq -1$. Hence, we reject $x + 1 = \sqrt{y-4}$ since $\sqrt{y-4} \geq 0$.
-
+            Since $x \leq -2$, we have $x+1 \leq -1$. Hence, we reject $x + 1 = \sqrt{y-4}$ since $\sqrt{y-4} \geq 0$.
             \begin{alignat*}{2}
                 \implies&&x + 1 &= -\sqrt{y-4}\\
                 \implies&& x &= -1-\sqrt{y-4}
             \end{alignat*}
-
             Hence, $\inv h(x) = -1 -\sqrt{x-4}$. Note that $\dom{\inv h} = \ran h = [5, \infty)$. Hence,
 
             \boxt{$\inv h \colon x \mapsto -1-\sqrt{x-4}, \, x \geq 5$}
 
     \problem{}
         The function $f$ is defined by
-
         \[
             f \colon x \mapsto x + \dfrac1{x}, \, x \neq 0
         \]
@@ -271,7 +266,7 @@
             \item The function $h$ is defined by $h \colon x \mapsto f(x), \, x \in \R, \, x \geq \a$, where $\a \in \R^+$. Find the smallest value of $\a$ such that the inverse function of $h$ exists.
         \end{enumerate}
 
-         Using this value of $\a$,
+        Using this value of $\a$,
         
         \begin{enumerate}
             \setcounter{enumi}{2}
@@ -345,14 +340,12 @@
                 \implies&&x^2 - yx + 1 &= 0\\
                 \implies&&x &= \dfrac12 (y \pm \sqrt{y^2 - 4})
             \end{alignat*}
-
             Note that $f(2) = \dfrac52$. Since $2 = \dfrac12 \bp{\tfrac52 + \sqrt{\bp{\tfrac52}^2 - 4}}$ and $2 \neq \dfrac12 \bp{\tfrac52 - \sqrt{\bp{\tfrac52}^2 - 4}}$, we reject $x = \dfrac12 (y - \sqrt{y^2 - 4})$. Hence, $\inv h(x) = \dfrac12 (x + \sqrt{x^2 - 4})$. Note that $\dom{\inv f} = \ran f = [2, \infty)$. Thus,
 
             \boxt{$\inv h \colon x \mapsto \dfrac12\bp{x + \sqrt{x^2-4} }, \, x \geq 2$}
     
     \problem{}
         The function $f$ is defined as follows:
-
         \[
             f \colon x \mapsto x^3 + x - 7, \, x \in \R
         \]
@@ -456,15 +449,14 @@
                 &&[\inv f(x)]' &= \dfrac1{f'(\inv f(x))}\\
                 \implies&&\evalder{[\inv f(x)]'}{x = p} &= \evalder{\dfrac1{f'(\inv f(x))}}{x=p}\\
                 \implies&&\dfrac14 &= \evalder{\dfrac1{f'(\inv f(x))}}{x=p}\\
-                \implies&&\\evalder{f'(\inv f(x))}{x=p} &= 4\\
+                \implies&&\evalder{f'(\inv f(x))}{x=p} &= 4
             \end{alignat*}
-
             Note that $f'(x) = 3x^2 + 1$.
             \begin{alignat*}{2}
                 \implies&&\evalder{\bp{3\inv f(x)^2 + 1}}{x=p} &= 4\\
                 \implies&&3\inv f(p)^2 + 1 &= 4\\
                 \implies&&\inv f(p)^2 &= 1\\
-                \implies&&\inv f(p) &= \pm 1\\
+                \implies&&\inv f(p) &= \pm 1
             \end{alignat*}
 
             \case{1}{$\inv f(p) = 1$}
@@ -578,13 +570,11 @@
                 hg(x) &= h(\ln{x+2})\\
                 &= \ln{x+2}^2 - 2\ln{x+2} - 1
             \end{align*}
-
             Note that $\dom{hg} = \dom{g} = (-1, 1)$.
 
             \boxt{$hg \colon x \mapsto \ln{x+2}^2 - 2\ln{x+2} - 1, \, x \in (-1, 1)$}
 
             Observe that $h$ is decreasing on the interval $(0, 1]$ and increasing on the interval $[1, \infty)$. Note that $\ran g = (0, \ln 3)$. Hence,
-
             \begin{align*}
                 \ran{hg} &= [-2, \max \bc{h(0), h(\ln 3)})\\
                 &= [-2, -1)
@@ -623,7 +613,6 @@
                 fg(x) &= f\bp{\dfrac4x}\\
                 &= 3 - \dfrac4x
             \end{align*}
-
             Observe that $\dom{fg} = \dom{g} = \R\setminus \bc{0}$.
 
             \boxt{$fg \colon x \mapsto 3 - \dfrac4x, \, x \in \R \setminus \bc{0}$}
@@ -651,7 +640,7 @@
 
             \begin{align*}
                 g^{2017} &= g^{2016}(g(x))\\
-                &= \bp{g^2}}^{1008}(g(x))\\
+                &= \bp{g^2}^{1008}(g(x))\\
                 &= g(x)\\
                 &= \dfrac4x
             \end{align*}
@@ -670,7 +659,6 @@
 
     \problem{}
         The function $f$ is defined by
-
         \[
             f(x) =
             \begin{cases}
@@ -815,24 +803,19 @@
                     \implies&& x(x-2)^2 &= 1 \qquad (\because x \neq 0)\\
                     \implies&& x\bp{x^2 -4x + 4 } &= 1 \\
                     \implies&& x^3 -4x^2 + 4x  &= 1 \\
-                    \implies&& x^3 -4x^2 + 4x -1 &= 0 \\
+                    \implies&& x^3 -4x^2 + 4x -1 &= 0
                 \end{alignat*}
-
                 Hence, if $f^2(x) = x$, then $x^3 -4x^2 + 4x -1 = 0$.
-
                 \begin{alignat*}{2}
                     &&f^2(x) &= x\\
                     \implies&&x^3 -4x^2 + 4x -1 &= 0 \\
                     \implies&&(x-1)\bp{x^2-3x+1} &= 0
                 \end{alignat*}
-
                 Hence, $x = 1$ or $\bp{x^2-3x+1} = 0$. However, since $x \geq 2$, $x$ cannot be 1. We thus consider $\bp{x^2-3x+1} = 0$.
-
                 \begin{alignat*}{2}
                     &&\bp{x^2-3x+1} &= 0\\
                     \implies&&x &= \dfrac{3 \pm \sqrt{5}}{2}
                 \end{alignat*}
-
                 Observe that $\dfrac{3 - \sqrt{5}}{2} < 2$ and $\dfrac{3 + \sqrt{5}}{2} > 2$. Thus, we reject $x = \dfrac{3 - \sqrt{5}}{2}$ and take $x = \dfrac{3 + \sqrt{5}}{2}$.
 
                 \boxt{$x = \dfrac{3 + \sqrt{5}}{2}$}
@@ -863,7 +846,6 @@
 
             \subpart
                 Consider $g(5)$ and $g(6)$.
-
                 \begin{alignat*}{2}
                     && g(5) &= 1 + g(4)\\
                     && &= 1 + 6\\
@@ -872,7 +854,6 @@
                     && &= 8 - 1\\
                     && &= 7
                 \end{alignat*}
-
                 Since $g(5) = g(6)$, but $5 \neq 6$, $g$ is not one-one. Hence, $\inv g$ does not exist.
 
                 \boxt{$g$ does not have an inverse.}

@@ -26,8 +26,8 @@
 
         \part
             \begin{align*}
-                \der{}{x} \arctan{\dfrac{x^2}2} &= \dfrac1{1+(\tfrac{x^2}2)}\cdot\dfrac12 \cdot 2x\\
-                &= \dfrac1{1+\tfrac{x^4}4}\cdot x\\
+                \der{}{x} \arctan{\dfrac{x^2}2} &= \dfrac1{1+(x^2/2)^2}\cdot\dfrac12 \cdot 2x\\
+                &= \dfrac1{1+x^4/4}\cdot x\\
                 &= \dfrac{4x}{4+x^4}
             \end{align*}
 
@@ -46,18 +46,15 @@
 
     \solution
         Substituting $x=1$ into the given equation,
-
         \begin{alignat*}{2}
             &&1^4 + 1\cdot y^2 &= 5y\\
             \implies&&y^2-5y+1&=0\\
             \implies&&y &= \dfrac{-(-5)\pm\sqrt{5^2-4}}{2\cdot1}\\
             && &= \dfrac{5\pm\sqrt{21}}2
         \end{alignat*}
-
         Since $0 < y < 1$, we reject $y = \dfrac{5+\sqrt{21}}2$ and take $y = \dfrac{5-\sqrt{21}}2 = 0.20871 \tosf{5}$.
 
         Implicitly differentiating the given equation,
-
         \begin{alignat}{2}
             &&3x^2+x\cdot2y\cdot y' + y^2 &= 5y' \nonumber\\
             &&2xy\cdot y' - 5y' &= -3x^2-y^2 \nonumber\\
@@ -66,7 +63,6 @@
         \end{alignat}
 
         Substituting $x=1$ and $y=0.20871$ into Equation~\ref{P2-1}, 
-
         \begin{align*}
             y' &= \dfrac{-3\cdot1^2-0.20871^2}{2\cdot 1 \cdot 0.20871-5}\\
             &= 0.664 \tosf{3}
@@ -76,23 +72,19 @@
 
     \problem{}
         A curve $C$ has parametric equations
-
         \[
             x = \sin^3 \t, \, y = 3 \sin^2 \t \cos \t, \qquad 0 \leq \t \leq \dfrac12 \pi
         \]
-
         Show that $\der{y}{x} = a\cot \t + b\tan \t$, where $a$ and $b$ are values to be determined.
 
     \solution
         \[
             \der{x}{\t} = 3\sin^2\t\cos\t
         \]
-
         \begin{align*}
             \der{y}{\t} &= 3\bp{\sin^2\t \cdot -\sin\t + \cos\t \cdot (2\sin\t\cos\t) }\\
             &= 3(2\sin\t\cos^2\t-\sin^3\t)
         \end{align*}
-
         \begin{align*}
             \der{y}{x} &= \der{y}{\t} \cdot \der{\t}{x}\\
             &= \der{y}{\t} \cdot \bp{\der{x}{\t}}^{-1}\\

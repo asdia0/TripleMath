@@ -35,10 +35,10 @@
 
         \part
             \[
-                \lim\limits_{x \to \infty} \dfrac{3x}{2x^2-5} = \lim\limits_{x \to \infty} \dfrac{3}{2x-\tfrac5{x}}
+                \lim\limits_{x \to \infty} \dfrac{3x}{2x^2-5} = \lim\limits_{x \to \infty} \dfrac{3}{2x-5/x}
             \]
 
-            Note that as $x \to \infty$, $2x - \dfrac5{x} \to \infty - 0$. Hence, $\lim\limits_{x \to \infty} \dfrac{1}{2x-\tfrac5{x}} = 0$.
+            Note that as $x \to \infty$, $2x - \dfrac5{x} \to \infty - 0$. Hence, $\lim\limits_{x \to \infty} \dfrac{1}{2x-5/x} = 0$.
 
             \boxt{$\lim\limits_{x \to \infty} \dfrac{3x}{2x^2-5} = 0$}
 
@@ -96,13 +96,13 @@
         \part
             \begin{align*}
                 \der{}{x} \dfrac{x^2}{\sqrt{4-x^2}} &= \dfrac{\sqrt{4-x^2} \cdot \der{}{x} x^2 - x^2 \cdot \der{}{x} \sqrt{4-x^2}}{4-x^2}\\
-                &= \dfrac{\sqrt{4-x^2} \cdot 2x - x^2 \cdot \frac{1}{2\sqrt{4-x^2}} \cdot -2x }{4-x^2}\\
-                &= \dfrac{\bp{4-x^2} \cdot 2x - x^2 \cdot \frac12 \cdot -2x }{(4-x^2)^{\frac32}}\\
-                &= \dfrac{\bp{4-x^2} \cdot 2x + x^3 }{(4-x^2)^{\frac32}}\\
-                &= \dfrac{x \bp{8-x^2}}{(4-x^2)^{\frac32}}
+                &= \dfrac{\sqrt{4-x^2} \cdot 2x - x^2 \cdot 1/(2\sqrt{4-x^2}) \cdot -2x }{4-x^2}\\
+                &= \dfrac{\bp{4-x^2} \cdot 2x - x^2 \cdot 1/2 \cdot -2x }{(4-x^2)^{3/2}}\\
+                &= \dfrac{\bp{4-x^2} \cdot 2x + x^3 }{(4-x^2)^{3/2}}\\
+                &= \dfrac{x \bp{8-x^2}}{(4-x^2)^{3/2}}
             \end{align*}
 
-            \boxt{$\der{}{x} \dfrac{x^2}{\sqrt{4-x^2}} = \dfrac{x \bp{8-x^2}}{(4-x^2)^{\frac32}}$}
+            \boxt{$\der{}{x} \dfrac{x^2}{\sqrt{4-x^2}} = \dfrac{x \bp{8-x^2}}{(4-x^2)^{3/2}}$}
 
         \part
             \begin{align*}
@@ -312,7 +312,7 @@
     \solution
         \part
             \begin{align*}
-                \der{}{x} \arccos \dfrac{x}{10} &= -\dfrac1{\sqrt{1-\bp{\frac{x}{10}}^2}} \cdot \dfrac{1}{10}\\
+                \der{}{x} \arccos \dfrac{x}{10} &= -\dfrac1{\sqrt{1-(x/10)^2}} \cdot \dfrac{1}{10}\\
                 &= -\dfrac{1}{\sqrt{100 - x^2}}
             \end{align*}
 
@@ -320,8 +320,8 @@
 
         \part
             \begin{align*}
-                \der{}{x} \arctan \dfrac1{1-x} &= \dfrac1{1+\bp{\frac1{1-x}}^2} \cdot -\dfrac1{(1-x)^2} \cdot -1 \\
-                &= \dfrac1{(1-x)^2\bp{1+\bp{\frac1{1-x}}^2}}\\
+                \der{}{x} \arctan \dfrac1{1-x} &= \dfrac1{1+1/(1-x)^2} \cdot -\dfrac1{(1-x)^2} \cdot -1 \\
+                &= \dfrac1{(1-x)^2\bp{1+ 1/(1-x)^2}}\\
                 &= \dfrac1{(1-x)^2+1}\\
             \end{align*}
 
@@ -397,12 +397,12 @@
     \problem{}
         It is given that $x$ and $y$ satisfy the equation        
         \begin{equation}\label{P9}
-            \arctan{x} + \arctan{y} + \arctan{xy} = \dfrac7{12} \pi
+            \arctan x + \arctan y  + \arctan{xy} = \dfrac7{12} \pi
         \end{equation}
 
         \begin{enumerate}
             \item Find the exact value of $y$ when $x = 1$.
-            \item Express $\der{}{x} \arctan{(xy)}$ in terms of $x$, $y$ and $y'$.
+            \item Express $\der{}{x} \arctan{xy}$ in terms of $x$, $y$ and $y'$.
             \item Show that, when $x = 1$, $y' = -\dfrac13 - \dfrac1{2\sqrt3}$.
         \end{enumerate}
             
@@ -410,9 +410,9 @@
         \part
             Substituting $x = 1$ into Equation~\ref{P9},
             \begin{alignat*}{2}
-                &&\arctan1 + \arctan{y} + \arctan{y} &= \dfrac{7}{12} \pi\\
-                \implies&&\dfrac14 \pi + 2\arctan{y} &= \dfrac{7}{12} \pi\\
-                \implies&& \arctan{y} &= \dfrac16 \pi\\
+                &&\arctan1 + \arctan y + \arctan y &= \dfrac{7}{12} \pi\\
+                \implies&&\dfrac14 \pi + 2\arctan y &= \dfrac{7}{12} \pi\\
+                \implies&& \arctan y &= \dfrac16 \pi\\
                 \implies&& y &= \dfrac1{\sqrt3}
             \end{alignat*}
             
@@ -420,11 +420,11 @@
         
         \part
             \begin{align*}
-                \der{}{x} \arctan{(xy)} &= \dfrac1{1+(xy)^2} \cdot \der{}{x} (xy) \\
+                \der{}{x} \arctan{xy} &= \dfrac1{1+(xy)^2} \cdot \der{}{x} (xy) \\
                 &= \dfrac1{1+(xy)^2} \cdot (xy' + y)
             \end{align*}
 
-            \boxt{$\der{}{x} \arctan{(xy)} = \dfrac1{1+(xy)^2} \cdot (xy' + y)$}
+            \boxt{$\der{}{x} \arctan{xy} = \dfrac1{1+(xy)^2} \cdot (xy' + y)$}
 
         \part
             Differentiating Equation~\ref{P9} with respect to $x$,
@@ -435,10 +435,9 @@
             Substituting $x=1$,
             \begin{alignat*}{2}
                 &&\dfrac12 + \dfrac34 y' + \dfrac34 (y' + y) &= 0\\
-                \implies&&y'(\dfrac34 + \dfrac34) &= \dfrac34 \bp{-\dfrac1{\sqrt3}} - \dfrac12\\
+                \implies&&y'\bp{\dfrac34 + \dfrac34} &= \dfrac34 \bp{-\dfrac1{\sqrt3}} - \dfrac12\\
                 \implies&&\dfrac32 y' &= \dfrac{-3-2\sqrt3}{4\sqrt3}\\
                 \implies&&y' &= \dfrac23 \cdot \dfrac{-3-2\sqrt3}{4\sqrt3}\\
-                && &= \dfrac{-1-\tfrac23 \sqrt3}{2\sqrt3}\\
                 && &= -\dfrac{1}{2\sqrt3} - \dfrac13
             \end{alignat*}
 
@@ -619,9 +618,8 @@
             \implies&& \bp{1-4x^2}\der[2]{y}{x} &= 2\sqrt{1 - 4x^2} \der{y}{x} + 4x \dfrac{2y}{\sqrt{1-4x^2}}\\
             && &= 2\sqrt{1 - 4x^2} \cdot \dfrac{2y}{\sqrt{1 - 4x^2}} + 4x \der{y}{x} \\
             && &= 4y + 4x \der{y}{x} \\
-            \implies&& \bp{1-4x^2}\der[2]{y}{x} -4x \der{y}{x} &= 4y \\
+            \implies&& \bp{1-4x^2}\der[2]{y}{x} -4x \der{y}{x} &= 4y
         \end{alignat*}
-
         \begin{alignat*}{2}
             && \bp{1-4x^2}\der[2]{y}{x} -4x \der{y}{x} &= 4y\\
             \implies&&\bp{1 - 4x^2} \der[3]{y}{x} + \der[2]{y}{x} \cdot (-8x) - 4\bp{x  \der[2]{y}{x} + \der{y}{x} } &= 4\der{y}{x}\\

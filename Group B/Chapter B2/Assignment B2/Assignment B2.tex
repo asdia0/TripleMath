@@ -44,7 +44,7 @@
         \begin{enumerate}
             \item $y = f(-x)$
             \item $y = 3 - 2f(x)$
-            \item $y = 3f(\dfrac{x}2 + 1)$
+            \item $y = 3f\of{\dfrac{x}2 + 1}$
         \end{enumerate}
         showing in each case the coordinates of the points corresponding to $A$, $B$ and $C$.
 
@@ -187,7 +187,7 @@
             \end{tikzpicture}
         \end{center}
 
-        The curve shown is the graph of $y = f(x)$. The $x$-axis is a tangent at the origin and at $(2, 0)$. The curve has two maximum points at $(-\dfrac34, 3)$ and $(1, 2)$. On two separate diagrams, sketch the graphs of the following equations. Show clearly the shapes of the graphs where they meet the $x$-axis and any asymptotes.
+        The curve shown is the graph of $y = f(x)$. The $x$-axis is a tangent at the origin and at $(2, 0)$. The curve has two maximum points at $\bp{-\dfrac34, 3}$ and $(1, 2)$. On two separate diagrams, sketch the graphs of the following equations. Show clearly the shapes of the graphs where they meet the $x$-axis and any asymptotes.
 
         \begin{enumerate}
             \item $y = \dfrac1{f(x)}, \, x \neq -1, 0, 2$
@@ -289,13 +289,12 @@
             \begin{tikzpicture}
                 \node (F) {$y = 4x^2-4x+1$};
                 \node[below of=F, yshift=-1cm] (B) {$y = 4\bp{\dfrac12 x}^2-4\bp{\dfrac12 x}+1$};
-                \node[below of=B, yshift=-1cm] (A) {$y = 4\bp{\dfrac12 (x+1)}^2-4\bp{\dfrac12 (x+1)}+1$};
+                \node[below of=B, yshift=-1.5cm] (A) {$y = 4\bp{\dfrac12 (x+1)}^2-4\bp{\dfrac12 (x+1)}+1$};
 
                 \draw[->] (F) -- node[anchor=west] {$B^{-1}$} (B);
                 \draw[->] (B) -- node[anchor=west] {$A^{-1}$} (A);
             \end{tikzpicture}
         \end{center}
-
         \begin{alignat*}{2}
             &&y &= 4\bp{\dfrac12 (x+1)}^2-4\bp{\dfrac12 (x+1)}+1\\
             \implies&&y &= (x+1)^2-2(x+1)+1\\
