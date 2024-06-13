@@ -79,25 +79,25 @@
 
             \boxt{$f^2(x) = \dfrac{3x - 2}{2x - 1}$, $f^3(x) = \dfrac{4x - 3}{3x - 2}$, $f^4(x) = \dfrac{5x - 4}{4x - 3}$}
 
-             \textbf{Conjecture.} For all $n \in \N$, $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$.
+            \textbf{Conjecture.} For all $n \in \N$, $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$.
 
         \part
             Let $P_n$ be the statement that $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$ for $n \in \N$.
 
-             \textbf{Base Case.} $n = 1 : f^1(x) = 2 - \dfrac1x = \dfrac{2x - 1}{x - 0}$. Hence, $P_1$ is true.
+            \textbf{Base Case.} $n = 1 : f^1(x) = 2 - \dfrac1x = \dfrac{2x - 1}{x - 0}$. Hence, $P_1$ is true.
             
-             \textbf{Inductive Hypothesis.} Assume $P_k$ is true for some $k \in \N$.
+            \textbf{Inductive Hypothesis.} Assume $P_k$ is true for some $k \in \N$.
 
-             \textbf{Inductive Step.} Consider $f^{k+1}(x)$.
+            \textbf{Inductive Step.} Consider $f^{k+1}(x)$.
             \begin{align*}
                 f^{k+1}(x) &= 2 - \dfrac1{f^k(x)}\\
                 &= 2 - \bp{\dfrac{(k+1)x - k}{kx - (k-1)}}^{-1}\\
                 &= 2 - \dfrac{kx - (k-1)}{(k+1)x - k}\\
-                &= \dfrac{2\left[(k+1)x - k\right] - \left[kx - (k-1)\right]}{(k+1)x - k}\\
+                &= \dfrac{2\bs{(k+1)x - k} - \bs{kx - (k-1)}}{(k+1)x - k}\\
                 &= \dfrac{(k+2)x - (k+1)}{(k+1) - k}
             \end{align*}
 
-             Hence, $P_k \implies P_{k+1}$. Since $P_1$ is true, by induction, $P_n$ is true for all $n \in \N$.
+            Hence, $P_k \implies P_{k+1}$. Since $P_1$ is true, by induction, $P_n$ is true for all $n \in \N$.
 
         \part
             Since $f^n(x) = \dfrac{(n+1)x - n}{nx - (n-1)}$ for all $n \in \N$, we have the restriction $nx - (n-1) \neq 0 \implies x \neq \dfrac{n-1}{n}$. Hence,
@@ -118,7 +118,7 @@
                 3\t \in (-3\pi, -2\pi] \cup [-\pi, 0] \cup [\pi, 2\pi] \cup \bc{3\pi}\\
             \]
 
-            \boxt{$r$ is undefined for $\t \in \bp{-\pi, -\dfrac23\pi\right] \cup \left[-\dfrac13\pi, 0\right] \cup \left[\dfrac13\pi, \dfrac23\pi\right] \cup \bc{\pi}$.}
+            \boxt{$r$ is undefined for $\t \in \left(-\pi, -\dfrac23\pi\right] \cup \bs{-\dfrac13\pi, 0} \cup \bs{\dfrac13\pi, \dfrac23\pi} \cup \bc{\pi}$.}
 
             \boxt{Asymptotes: $\t = -\dfrac23 \pi, -\dfrac13\pi, 0, \dfrac13\pi, \dfrac23\pi, \pi$.}
 
@@ -338,15 +338,15 @@
         \part
             Suppose $k > 1$. Then
             \begin{align*}
-                \lim_{n \to \infty} x_n &= \lim_{n \to \infty} \left[8 + \dfrac{15}{k-1}\bp{k^{n-1} - 1}\right] \to \infty
+                \lim_{n \to \infty} x_n &= \lim_{n \to \infty} \bs{8 + \dfrac{15}{k-1}\bp{k^{n-1} - 1}} \to \infty
             \end{align*}
             Hence, everyone in Singapore will get the Omega variant, i.e. the Omega variant will not stop spreading.
 
             \medskip
             
-             Suppose $0 < k < 1$. Then
+            Suppose $0 < k < 1$. Then
             \begin{align*}
-                \lim_{n \to \infty} x_n &= \lim_{n \to \infty} \left[8 + \dfrac{15}{k-1}\bp{k^{n-1} - 1}\right] = 8 - \dfrac{15}{k-1} = 8 + \dfrac{15}{1-k}
+                \lim_{n \to \infty} x_n &= \lim_{n \to \infty} \bs{8 + \dfrac{15}{k-1}\bp{k^{n-1} - 1}} = 8 - \dfrac{15}{k-1} = 8 + \dfrac{15}{1-k}
             \end{align*}
             Hence, a total of $8 + \dfrac{15}{1-k}$ people in Singapore will get the Omega variant, i.e. the Omega variant will eventually stop spreading.
 

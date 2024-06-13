@@ -24,7 +24,6 @@
                 &= \dfrac{(r+2)-r}{r(r+1)(r+2)}\\
                 &= \dfrac2{r(r+1)(r+2)}
             \end{align*}
-
             \begin{align*}
                 \sum_{r=1}^n \dfrac1{r(r+1)(r+2)} &= \dfrac12 \sum_{r=1}^n \dfrac2{r(r+1)(r+2)}\\
                 &= \dfrac12 \sum_{r=1}^n \Big(f(r-1) - f(r)\Big)\\
@@ -70,7 +69,6 @@
     \solution
         \part
             \subpart
-
                  Let the $n$th term of $G$ be $a_n = ar^{n-1}$. Since the sum to infinity of $S$ exists, $\abs{r} < 1$.
                 \begin{align*}
                     \sum_{n=1}^\infty a_{2n} &= \sum_{n=1}^\infty ar^{2n-1}\\
@@ -91,8 +89,7 @@
                 \boxt{$r = -\dfrac13$}
 
             \subpart
-                
-                 Since $a_3 = 2 = a\bp{-\dfrac13}^2$, we have $a = 18$. Let the $n$th term of $H$ be $b_n = \abs{a_n} = \abs{18 \bp{-\dfrac13}^{n-1}} = 18 \bp{\dfrac13}^{n-1}$. Hence, the sum to infinity of $H$ is given by
+                Since $a_3 = 2 = a\bp{-\dfrac13}^2$, we have $a = 18$. Let the $n$th term of $H$ be $b_n = \abs{a_n} = \abs{18 \bp{-\dfrac13}^{n-1}} = 18 \bp{\dfrac13}^{n-1}$. Hence, the sum to infinity of $H$ is given by
                 \[
                     \sum_{n=1}^\infty b_n = \dfrac{18}{1-1/3} = 27
                 \]
@@ -220,7 +217,7 @@
         \part
             We have that the mirror is defined by the vector equation $\vec r \cdot \cveciii111 = 1$. Note that the point with position vector $\cveciii100$ is on the mirror. Thus,
             \begin{align*}
-                \text{Shortest distance between $P$ and mirror} &= \dfrac{\abs{\left[\cveciii{-4}{c}{c} - \cveciii100\right] \cdot \cveciii111}}{\abs{\cveciii111}}\\
+                \text{Shortest distance between $P$ and mirror} &= \abs{\bs{\cveciii{-4}{c}{c} - \cveciii100} \cdot \cveciii111} \Bigg/ \abs{\cveciii111}\\
                 &= \dfrac1{\sqrt3} \abs{\cveciii{-5}{c}{c} \cdot \cveciii111}\\
                 &= \dfrac{\sqrt3}{3} \abs{-5+2c}
             \end{align*}
@@ -238,7 +235,7 @@
             \begin{alignat*}{2}
                 &&\oa{AF} &= \l \cveciii111\\
                 \implies&&\oa{OF} - \cveciii{-15}{17}5 &= \l\cveciii111\\
-                \implies&&\Big[\oa{OF} - \cveciii{-15}{17}5\Big] \cdot \cveciii111 &= \l\cveciii111 \cdot \cveciii111\\
+                \implies&&\bs{\oa{OF} - \cveciii{-15}{17}5} \cdot \cveciii111 &= \l\cveciii111 \cdot \cveciii111\\
                 \implies&&\oa{OF} \cdot \cveciii111 - \cveciii{-15}{17}5 \cdot \cveciii111 &= \l \cveciii111 \cdot \cveciii111\\
                 \implies&&1 - 7 &= 3\l\\
                 \implies&&\l &= -2\\
@@ -351,7 +348,7 @@
             \[
                 \dfrac{8}{x^2 + 64} + \dfrac{13}{(20-x)^2 + 169} = 0
             \]
-            From G.C, we have $x = 10.05$ and $x = -74.05 \tosf{4}$. Since $0 \leq x \leq 20$, we take $x = 10.05$.
+            From G.C., we have $x = 10.05$ and $x = -74.05 \tosf{4}$. Since $0 \leq x \leq 20$, we take $x = 10.05$.
 
             \boxt{$x = 10.05 \tosf{4}$}
 

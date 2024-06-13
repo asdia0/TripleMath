@@ -139,7 +139,7 @@
 
     \solution
         \part
-            Note that $\lim_{t \to \pm \infty} x = \lim_{t \to \pm \infty} \dfrac{t^2}{1 + t^2} = 1$. Hence, the curve has a vertical asymptote with equation $x = 1$.
+            Note that $\displaystyle\lim_{t \to \pm \infty} x = \lim_{t \to \pm \infty} \dfrac{t^2}{1 + t^2} = 1$. Hence, the curve has a vertical asymptote with equation $x = 1$.
 
             \begin{center}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -315,7 +315,7 @@
                 \int_{-1}^0 \dfrac1{\sqrt{1 - a^2x^2}} \d x &= \int_{-1}^0 \dfrac1{\sqrt{1 - (ax)^2}} \d x\usub{u &= ax\\\d u &= a \d x}\\
                 &= \dfrac1a \int_{-a}^0 \dfrac1{\sqrt{1 - u^2}} \d x\\
                 &= \dfrac1a \evalint{\arcsin u}{-a}{0}\\
-                &= \dfrac1a \cdot -\arcsin(-a)\\
+                &= \dfrac1a \cdot -\arcsin{-a}\\
                 &= \dfrac{\arcsin a}{a}\\
                 &= \dfrac{\pi - \f}{a}
             \end{align*}
@@ -326,11 +326,11 @@
             Consider the substitution $t = \tan \dfrac{x}2$.
             {\allowdisplaybreaks
             \begin{alignat*}{2}
-                &&\sin x &= \dfrac{2\sin \frac{x}2 \cos \frac{x}2}{\cos^2 \frac{x}2 + \sin^2 \frac{x}2}\\
-                && &= \dfrac{2\tan \frac{x}2}{1 + \tan^2 \frac{x}2}\\
+                &&\sin x &= \dfrac{2\sin{x/2} \cos{x/2}}{\cos[2]{x/2} + \sin[2]{x/2}}\\
+                && &= \dfrac{2\tan{x/2}}{1 + \tan[2]{x/2}}\\
                 && &= \dfrac{2t}{1 + t^2}\\
-                &&\cos x &= \dfrac{\cos^2 \frac{x}2 - \sin^2\frac{x}2}{\cos^2 \frac{x}2 + \sin^2\frac{x}2}\\
-                && &= \dfrac{1 - \tan^2 \frac{x}2}{1 + \tan^2 \frac{x}2}\\
+                &&\cos x &= \dfrac{\cos[2]{x/2} - \sin[2]{x/2}}{\cos[2]{x/2} + \sin[2]{x/2}}\\
+                && &= \dfrac{1 - \tan[2]{x/2}}{1 + \tan[2]{x/2}}\\
                 && &= \dfrac{1 - t^2}{1 + t^2}
             \end{alignat*}
             }
