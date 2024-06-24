@@ -736,21 +736,7 @@
             \boxt{The solid has a volume of $\bp{\dfrac{4\pi^2}{3} - \sqrt{3}\pi}$ units$^3$.}
 
         \part
-            \[
-                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
-                    & D & I \\\cmidrule{1-3}
-                    + & \arctan y & 1 \\
-                    - & \tfrac1{1 + y^2} & y \\\bottomrule
-                \end{array}
-            \]
-
-            \begin{align*}
-                \int_0^{\sqrt3} \arctan y \d y &= \evalint{y\arctan y}{0}{\sqrt3} - \int_0^{\sqrt3} \dfrac{y}{1 + y^2} \d y\\
-                &= \dfrac{\pi}{\sqrt3} - \int_0^{\sqrt3} \dfrac{y}{1 + y^2} \d y\usub{u &= y^2\\\d u &= 2y\d y\\y = 0 &\implies u = 0\\y = \sqrt{3} &\implies u = 3}\\
-                &= \dfrac{\pi}{\sqrt3} - \dfrac12 \int_0^3 \dfrac{1}{1 + u} \d u\\
-                &= \dfrac{\pi}{\sqrt3} - \dfrac12 \evalint{\ln{1 + u}}03\\
-                &= \dfrac{\pi}{\sqrt3} - \ln 2
-            \end{align*}
+            Observe that $\displaystyle\int\limits_0^{\sqrt3} \arctan y \d y = \area S = \area (R + S) - \area R = \dfrac\pi3 \cdot \sqrt{3} - \ln 2$.
 
             \boxt{$\displaystyle\int\limits_0^{\sqrt3} \arctan y \d y = \dfrac{\pi}{\sqrt3} - \ln 2$}
 
@@ -812,7 +798,7 @@
             \begin{align*}
                 \volume &= \pi\int_{r^2/a}^{9r^2/a} ay \d y\\
                 &= \pi \evalint{\dfrac{a}2 y^2}{r^2/a}{9r^2/a}\\
-                &= \dfrac{a\pi}2 \bp{\bp{\dfrac{9r^2}a}^2 - \bp{\dfrac{r^2}a}^2}\\
+                &= \dfrac{a\pi}2 \bs{\bp{\dfrac{9r^2}a}^2 - \bp{\dfrac{r^2}a}^2}\\
                 &= \dfrac{a\pi}2 \cdot \dfrac{80r^4}{a^2}\\
                 &= \dfrac{40\pi r^4}{a}
             \end{align*}}
@@ -825,7 +811,7 @@
                 \implies&&400r^4 &= a^4\\
                 \implies&&20r^2 &= a^2\\
                 \implies&&r^2 &= \dfrac1{20} a^2\\
-                \implies&&\text{Depth of bowl} &= \dfrac{8\cdot\tfrac1{20} a^2}{a}\\
+                \implies&&\text{Depth of bowl} &= \dfrac{8 \cdot a^2/20}{a}\\
                 && &= \dfrac25 a
             \end{alignat*}
 
@@ -1028,14 +1014,14 @@
         Find the area enclosed by the ellipse $x = a \cos t, \, y = b \sin t$, where $a$ and $b$ are positive constants. Find also the volume of solid obtained when the region enclosed by the ellipse is rotated through $\pi$ radians about the $x$-axis.
 
     \solution
-        By symmetry, we only need to consider the area of the ellipse in the first quadrant. Note that $x = 0 \implies t = \dfrac\pi2$ and $x = a \implies t = 0$.
+        By symmetry, we only need to consider the area of the ellipse in the first quadrant. Note that $x = 0 \implies t = \pi/2$ and $x = a \implies t = 0$.
         \begin{align*}
             \area &= 4\int_0^a y \d x\\
             &= 4\int_{\pi/2}^0 y \cdot \der{x}{t} \d t\\
             &= 4\int_{\pi/2}^0 (b\sin t)(-a\sin t) \d t\\
             &= 4ab\int_0^{\pi/2} \sin^2 t \d t\\
             &= 4ab\int_0^{\pi/2} \dfrac{1 - \cos 2t}2 \d t\\
-            &= 4ab\evalint{\dfrac{1}2 t - \dfrac{\sin 2t}4}{0}{\pi/2}\\
+            &= 4ab \cdot \dfrac12 \evalint{t - \dfrac{\sin 2t}2}{0}{\pi/2}\\
             &= \pi ab
         \end{align*}
 
@@ -1047,7 +1033,7 @@
             &= 2\pi\int_{\pi/2}^0 (b\sin t)^2 (-a\sin t) \d t\\
             &= 2\pi a b^2 \int_0^{\pi/2} \sin^3 t \d t\\
             &= 2\pi a b^2 \int_0^{\pi/2} \dfrac{3\sin t - \sin 3t}{4} \d t\\
-            &= 2\pi a b^2 \evalint{-\dfrac34 \cos t + \dfrac12 \cos t}{0}{\pi/2}\\
+            &= 2\pi a b^2 \cdot \dfrac14 \evalint{-3\cos t + \dfrac13 \cos 3t}{0}{\pi/2}\\
             &= \dfrac{4\pi}3 ab^2
         \end{align*}
 
@@ -1114,7 +1100,7 @@
         \boxt{$A = \dfrac{5b^2}2$}
 
     \problem{}
-        The polar equation of a curve is given by $r = e^\t$ where $0 \leq \t \leq \dfrac\pi2$. Cartesian axes are taken at the pole $O$. Express $x$ and $y$ in terms of $\t$ and hence find the Cartesian equation of the tangent at $\bp{e^{\tfrac\pi2}, \dfrac\pi2}$. The region $R$ is bounded by the polar curve, tangent and the $x$-axis. Find the exact area of the region $R$.
+        The polar equation of a curve is given by $r = e^\t$ where $0 \leq \t \leq \pi/2$. Cartesian axes are taken at the pole $O$. Express $x$ and $y$ in terms of $\t$ and hence find the Cartesian equation of the tangent at $\bp{e^{\pi/2}, \pi/2}$. The region $R$ is bounded by the polar curve, tangent and the $x$-axis. Find the exact area of the region $R$.
 
     \solution
         \boxt{$x = e^\t \cos \t$, $y = e^\t \sin \t$}
@@ -1124,20 +1110,21 @@
             && &= \der{y}{\t} \Big/ \der{x}{\t}\\
             && &= \dfrac{e^\t \cos\t + e^\t\sin\t}{e^\t(-\sin\t) + e^\t \cos\t}\\
             && &= \dfrac{\cos\t + \sin\t}{\cos\t - \sin\t}\\
-            \implies&&\evalder{\der{y}{x}}{\t = \pi/2} &= \dfrac{\cos\tfrac\pi2 + \sin\tfrac\pi2 }{\cos\tfrac\pi2 - \sin\tfrac\pi2 }\\
+            \implies&&\evalder{\der{y}{x}}{\t = \pi/2} &= \dfrac{\cos(\pi/2) + \sin(\pi/2) }{\cos(\pi/2) - \sin(\pi/2) }\\
             && &= -1
         \end{alignat*}
 
-        Note that when $\t = \dfrac\pi2$, we have that $x = 0$ and $y = e^{\tfrac\pi2}$. Hence, by the point-slope formula, the tangent is given by
+        When $\t = \dfrac\pi2$, we have $x = 0$ and $y = e^{\pi/2}$. Hence, the tangent is given by
         \begin{alignat*}{2}
-            &&y - e^{\tfrac\pi2} &= -(x - 0)\\
-            \implies&&y &= -x + e^{\tfrac\pi2}
+            &&y - e^{\pi/2} &= -(x - 0)\\
+            \implies&&y &= -x + e^{\pi/2}
         \end{alignat*}
 
-        \boxt{$y = -x + e^{\tfrac\pi2}$}
+        \boxt{$y = -x + e^{\pi/2}$}
 
         \begin{align*}
-            \area &= \dfrac12 \cdot e^{\tfrac\pi2} \cdot e^{\tfrac\pi2} - \dfrac12 \int_0^{\pi/2} \bp{e^\t}^2 \d \t\\
+            \area R &= \dfrac12 \cdot e^{\pi/2} \cdot e^{\pi/2} - \dfrac12 \int_0^{\pi/2} \bp{e^\t}^2 \d \t\\
+            &= \dfrac{e^\pi}2 - \dfrac12 \int_0^{\pi/2} e^{2\t} \d \t\\
             &= \dfrac{e^\pi}2 - \dfrac12 \evalint{\dfrac{e^{2\t}}2}0{\pi/2}\\
             &= \dfrac{e^\pi}2 - \dfrac14 \bp{e^\pi - 1}\\
             &= \dfrac14 \bp{e^\pi + 1}
