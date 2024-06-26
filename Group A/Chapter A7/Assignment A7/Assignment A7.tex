@@ -23,17 +23,15 @@
 
         Since $\vec a$ and $\vec b$ are non-parallel, we have the following system:
         \[
-            \begin{cases}
-                \dfrac32 \cdot \dfrac1{1 + \l} &= 1\\
-                \dfrac32 \cdot \dfrac\l{1 + \l} &= 1 + \m
-            \end{cases}
+            \systeme{\dfrac32 \cdot \dfrac1{1 + \l} = 1, \dfrac32 \cdot \dfrac\l{1 + \l} = 1 + \m
+            }
         \]
          which has the unique solution $\l = \dfrac12$ and $\m = -\dfrac12$.
 
         \boxt{$\l = \dfrac12$, $\m = -\dfrac12$}
 
     \problem{}
-        Given that $\vec a = \vec i + \vec j$, $\vec b = 4 \vec i - 2 \vec j + 6 \vec k$ and $\vec p = \l \vec a + (1 - \l) \vec b$ where $\l \in \R$, find the possible value(s) of $\l$ for which the angle between $\vec p$ and $\vec k$ is $45^{\circ}$.
+        Given that $\vec a = \vec i + \vec j$, $\vec b = 4 \vec i - 2 \vec j + 6 \vec k$ and $\vec p = \l \vec a + (1 - \l) \vec b$ where $\l \in \R$, find the possible value(s) of $\l$ for which the angle between $\vec p$ and $\vec k$ is $45\deg$.
 
     \solution
         \begin{alignat*}{2}
@@ -44,9 +42,9 @@
             && &= 54\l^2 - 108\l + 56
         \end{alignat*}
 
-        Since the angle between $\vec p$ and $\vec k$ is $45^{\circ}$,
+        Since the angle between $\vec p$ and $\vec k$ is $45\deg$,
         \begin{alignat*}{2}
-            &&\cos 45^{\circ} &= \dfrac{\vec p \cdot \vec k}{\abs{\vec p} \abs{\vec k}}\\
+            &&\cos 45\deg &= \dfrac{\vec p \dotp \vec k}{\abs{\vec p} \abs{\vec k}}\\
             \implies&&\dfrac1{\sqrt2} &= \dfrac{(4-3\l) \cdot 0 + (-2 + 3\l) \cdot 0 + (6 - 6\l) \cdot 1}{\abs{\vec p} \cdot 1}\\
             \implies&&\dfrac{\abs{\vec p}}{\sqrt 2} &= 6 - 6\l\\
             \implies&&\dfrac{\abs{\vec p}^2}{2} &= (6 - 6\l)^2\\
@@ -61,8 +59,8 @@
 
     \problem{}
         \begin{enumerate}
-            \item $\vec a$ and $\vec b$ are non-zero vectors such that $\vec a = (\vec a \cdot \vec b) \vec b$. State the relation between the directions of $\vec a$ and $\vec b$, and find $\abs{\vec b}$.
-            \item $\vec a$ is a non-zero vector such that $\vec a = \sqrt3$ and $\vec b$ is a unit vector. Given that $\vec a$ and $\vec b$ are non-parallel and the angle between them is $\dfrac56 \pi$, find the exact value of the length of projection of $\vec a$ on $\vec b$. By considering $(2\vec a + \vec b)\cdot(2 \vec a + \vec b)$, or otherwise, find the exact value of $\abs{2\vec a + \vec b}$.
+            \item $\vec a$ and $\vec b$ are non-zero vectors such that $\vec a = (\vec a \dotp \vec b) \vec b$. State the relation between the directions of $\vec a$ and $\vec b$, and find $\abs{\vec b}$.
+            \item $\vec a$ is a non-zero vector such that $\vec a = \sqrt3$ and $\vec b$ is a unit vector. Given that $\vec a$ and $\vec b$ are non-parallel and the angle between them is $\dfrac56 \pi$, find the exact value of the length of projection of $\vec a$ on $\vec b$. By considering $(2\vec a + \vec b)\dotp(2 \vec a + \vec b)$, or otherwise, find the exact value of $\abs{2\vec a + \vec b}$.
         \end{enumerate}
 
     \solution
@@ -71,8 +69,8 @@
 
             Let $\vec b = \l \vec a$ for some $\l \in \R$.
             \begin{alignat*}{2}
-                &&\vec a &= (\vec a \cdot \vec b) \vec b\\
-                \implies&&\vec a &= (\vec a \cdot \l \vec a) \l \vec a\\
+                &&\vec a &= (\vec a \dotp \vec b) \vec b\\
+                \implies&&\vec a &= (\vec a \dotp \l \vec a) \l \vec a\\
                 \implies&&\vec a &= \l^2 \abs{\vec a}^2 \vec a\\
                 \implies&&\l^2\abs{\vec a}^2 &= 1\\
                 \implies&&\l\abs{\vec a} &= \pm 1\\
@@ -87,11 +85,11 @@
         \part
             {\allowdisplaybreaks
             \begin{alignat*}{2}
-                &&\abs{\vec a \cdot \vec b} &= \abs{\vec a} \abs{\vec b} \cos \dfrac56\pi\\
+                &&\abs{\vec a \dotp \vec b} &= \abs{\vec a} \abs{\vec b} \cos \dfrac56\pi\\
                 && &= \sqrt3 \cdot 1 \cdot \bp{-\dfrac{\sqrt3}2}\\
                 && &= -\dfrac32\\
-                \implies&&\text{Length of projection of $\vec a$ on $\vec b$} &= \abs{\vec a \cdot \hat{\vec b}}\\
-                && &= \abs{\vec a \cdot \vec b}\\
+                \implies&&\text{Length of projection of $\vec a$ on $\vec b$} &= \abs{\vec a \dotp \hat{\vec b}}\\
+                && &= \abs{\vec a \dotp \vec b}\\
                 && &= \abs{-\dfrac32}\\
                 && &= \dfrac32
             \end{alignat*}}
@@ -99,9 +97,9 @@
             \boxt{$\text{Length of projection of $\vec a$ on $\vec b$} = \dfrac32$}
 
             \begin{alignat*}{2}
-                &&\abs{2\vec a + \vec b}^2 &= (2\vec a + \vec b) \cdot (2\vec a + \vec b)\\
-                && &= 2\vec a \cdot 2\vec a + 2\vec a \cdot \vec b + \vec b \cdot 2\vec a + \vec b \cdot \vec b\\
-                && &= 4\vec a \cdot \vec a + 4 \vec a \cdot \vec b + \vec b \cdot \vec b\\
+                &&\abs{2\vec a + \vec b}^2 &= (2\vec a + \vec b) \dotp (2\vec a + \vec b)\\
+                && &= 2\vec a \dotp 2\vec a + 2\vec a \dotp \vec b + \vec b \dotp 2\vec a + \vec b \dotp \vec b\\
+                && &= 4\vec a \dotp \vec a + 4 \vec a \dotp \vec b + \vec b \dotp \vec b\\
                 && &= 4 \cdot 3 + 4 \cdot \bp{-\dfrac32} + 1^2\\
                 && &= 7\\
                 \implies&&\abs{2\vec a + \vec b} &= \sqrt7
@@ -124,20 +122,20 @@
 
         \part
             \begin{align*}
-                \oa{PQ} \cdot \oa{AQ} &= \oa{PQ}' \cdot \oa{OQ}'\\
-                &= \bp{\oa{OQ}' - \oa{OP}'} \cdot (\oa{OQ}')\\
-                &= \cveciii101 \cdot \cveciii10{-1}\\
+                \oa{PQ} \dotp \oa{AQ} &= \oa{PQ}' \dotp \oa{OQ}'\\
+                &= \bp{\oa{OQ}' - \oa{OP}'} \dotp (\oa{OQ}')\\
+                &= \cveciii101 \dotp \cveciii10{-1}\\
                 &= 1 + 0 - 1\\
                 &= 0
             \end{align*}
 
-            Since $\oa{PQ} \cdot \oa{AQ} = 0$, the lines $PQ$ and $AQ$ must be perpendicular.
+            Since $\oa{PQ} \dotp \oa{AQ} = 0$, the lines $PQ$ and $AQ$ must be perpendicular.
 
         \part
             \begin{align*}
-                \area \triangle APQ &= \dfrac12 \abs{\oa{AP} \times \oa{AQ}'}\\
-                &= \dfrac12 \abs{\oa{OP}' \times \oa{OQ}'}\\
-                &= \dfrac12 \abs{\cveciii00{-2} \times \cveciii10{-1}}\\
+                \area \triangle APQ &= \dfrac12 \abs{\oa{AP} \crossp \oa{AQ}'}\\
+                &= \dfrac12 \abs{\oa{OP}' \crossp \oa{OQ}'}\\
+                &= \dfrac12 \abs{\cveciii00{-2} \crossp \cveciii10{-1}}\\
                 &= \dfrac12 \abs{\cveciii0{-2}0}\\
                 &= 1
             \end{align*}
@@ -146,7 +144,7 @@
 
         \part
             \begin{align*}
-                \vec b' \times \vec c' &= \cveciii00{-1} \times \cveciii20{-2}\\
+                \vec b' \crossp \vec c' &= \cveciii00{-1} \crossp \cveciii20{-2}\\
                 &= \cveciii0{-2}0
             \end{align*}
 
@@ -156,8 +154,8 @@
             Let the angle between $\oa{AD}$ and $\oa{BD}$ be $\t$. Note that $\oa{BD} = \vec d' - \vec b' = \cveciii3{-3}{-4} - \cveciii00{-1} = \cveciii3{-3}{-3} = -3\cveciii1{-1}{-1}$.
 
             \begin{align*}
-                \cos\t &= \dfrac{\oa{AD} \cdot \oa{BD}}{\abs{\oa{AD}} \abs{\oa{BD}}}\\
-                &= \dfrac1{\sqrt{3^2 + (-3)^2 + (-3)^2} \cdot 3\sqrt{1^2 + (-1)^2 + (-1)^2}} \cveciii3{-3}{-4} \cdot 3\cveciii1{-1}{-1}\\
+                \cos\t &= \dfrac{\oa{AD} \dotp \oa{BD}}{\abs{\oa{AD}} \abs{\oa{BD}}}\\
+                &= \dfrac1{\sqrt{3^2 + (-3)^2 + (-3)^2} \cdot 3\sqrt{1^2 + (-1)^2 + (-1)^2}} \cveciii3{-3}{-4} \dotp 3\cveciii1{-1}{-1}\\
                 &= \dfrac1{3\sqrt{102}} \cdot 3\Big(3 \cdot 1 + (-3) \cdot (-1) + (-4) \cdot (-1)\Big)\\
                 &= \dfrac{10}{\sqrt{102}}
             \end{align*}

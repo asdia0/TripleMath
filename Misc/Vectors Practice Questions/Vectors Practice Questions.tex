@@ -96,7 +96,7 @@
         \begin{enumerate}
             \item By considering $(\vec a + \vec b)\cdot(\vec a + \vec b)$, show that $\vec a$ and $\vec b$ are perpendicular.
             \item Find the length of the projection of $\vec c$ on $\vec a$ in terms of $\abs{\vec a}$.
-            \item Given that $F$ is the foot of the perpendicular from $C$ to $OA$ and $\vec f$ denotes the position vector $\oa{OF}$, state the geometrical meaning of $\abs{\vec c \times \vec f}$.
+            \item Given that $F$ is the foot of the perpendicular from $C$ to $OA$ and $\vec f$ denotes the position vector $\oa{OF}$, state the geometrical meaning of $\abs{\vec c \crossp \vec f}$.
             \item Two points $X$ and $Y$ move along line segments $OA$ and $AB$ respectively such that
             \begin{align*}
                 \oa{OX} &= (\cos 3t)\vec i + (\sin 3t)\vec j + \dfrac12 \vec k\\
@@ -136,7 +136,7 @@
             \boxt{The length of projection of $\vec c$ on $\vec a$ is $\dfrac15 \abs{\vec a}$.}
 
         \part
-            $\abs{\vec c \times \vec f}$ is the area of a parallelogram defined by $\vec c$ and $\vec f$.
+            $\abs{\vec c \crossp \vec f}$ is the area of a parallelogram defined by $\vec c$ and $\vec f$.
 
         \part
             We have $\oa{OX} = \cveciii{\cos 3t}{\sin 3t}{1/2}$ and $\oa{OY} = \cveciii{\sin t}{\cos t}{-2}$. Hence,
@@ -167,14 +167,14 @@
 
         \begin{enumerate}
             \item Give a geometrical interpretation of $\abs{\vec b \cdot \vec a}$.
-            \item Find $\abs{\vec a \times \vec b}$, leaving your answer in exact form.
+            \item Find $\abs{\vec a \crossp \vec b}$, leaving your answer in exact form.
         \end{enumerate}
 
          It is also given that $\vec p = 3\vec a + (\m + 2)\vec b$ and $\vec q = (\m + 3)\vec a + \m \vec b$, where $\m \in \R$.
 
         \begin{enumerate}
             \setcounter{enumi}{2}
-            \item Show that $\vec p \times \vec q = \bp{\m^2 + 2\m + 6}(\vec b \times \vec a)$.
+            \item Show that $\vec p \crossp \vec q = \bp{\m^2 + 2\m + 6}(\vec b \crossp \vec a)$.
             \item Hence, find the smallest area of the triangle $OPQ$ as $\m$ varies.
         \end{enumerate}
 
@@ -185,27 +185,27 @@
         \part
             Let $\t = \dfrac\pi4$ be the angle between $\vec a$ and $\vec b$.
             \begin{align*}
-                \abs{\vec a \times \vec b} &= \abs{\vec a} \abs{\vec b} \sin \t\\
+                \abs{\vec a \crossp \vec b} &= \abs{\vec a} \abs{\vec b} \sin \t\\
                 &= 2 \cdot 1 \cdot \sin \dfrac\pi4\\
                 &= \sqrt2
             \end{align*}
 
-            \boxt{$\abs{\vec a \times \vec b} = \sqrt2$}
+            \boxt{$\abs{\vec a \crossp \vec b} = \sqrt2$}
 
         \part
             \begin{align*}
-                \vec p \times \vec q &= \Big[3\vec a + (\m + 2)\vec b \Big] \times \Big[(\m + 3)\vec a + \m \vec b\Big]\\
-                &= 3(\m + 3)\vec a \times \vec a + 3\m\vec a \times \vec b + (\m + 2)(\m + 3)\vec b \times \vec a + \m(\m + 2)\vec b \times \vec b\\
-                &= 3\m\vec a \times \vec b + (\m + 2)(\m + 3)\vec b \times \vec a\\
-                &= -3\m\vec b \times \vec a + \bp{\m^2 + 5\m + 6}\vec b \times \vec a\\
-                &= \bp{\m^2 + 2\m + 6}\vec b \times \vec a
+                \vec p \crossp \vec q &= \Big[3\vec a + (\m + 2)\vec b \Big] \crossp \Big[(\m + 3)\vec a + \m \vec b\Big]\\
+                &= 3(\m + 3)\vec a \crossp \vec a + 3\m\vec a \crossp \vec b + (\m + 2)(\m + 3)\vec b \crossp \vec a + \m(\m + 2)\vec b \crossp \vec b\\
+                &= 3\m\vec a \crossp \vec b + (\m + 2)(\m + 3)\vec b \crossp \vec a\\
+                &= -3\m\vec b \crossp \vec a + \bp{\m^2 + 5\m + 6}\vec b \crossp \vec a\\
+                &= \bp{\m^2 + 2\m + 6}\vec b \crossp \vec a
             \end{align*}
 
         \part
             {\allowdisplaybreaks
             \begin{align*}
-                \min \area \triangle OPQ &= \min \dfrac12 \abs{\vec p \times \vec q}\\
-                &= \min \dfrac12 \abs{\m^2 + 2\m + 6} \abs{\vec b \times \vec a}\\
+                \min \area \triangle OPQ &= \min \dfrac12 \abs{\vec p \crossp \vec q}\\
+                &= \min \dfrac12 \abs{\m^2 + 2\m + 6} \abs{\vec b \crossp \vec a}\\
                 &= \min \dfrac12 \abs{(\m + 1)^2 + 5} \sqrt{2}\\
                 &= \dfrac12 \cdot 5 \cdot \sqrt{2}\\
                 &= \dfrac{5}{\sqrt{2}}
@@ -217,14 +217,14 @@
         The vectors $\vec p$ and $\vec q$ are given by $\vec p = 2\vec i + \vec j + a\vec k$ and $\vec q = b\vec i + \vec j$, where $a$ and $b$ are non-zero constants.
 
         \begin{enumerate}
-            \item Find $(2\vec p - 5\vec q) \times (2\vec p + 5\vec q)$ in terms of $a$ and $b$.
+            \item Find $(2\vec p - 5\vec q) \crossp (2\vec p + 5\vec q)$ in terms of $a$ and $b$.
         \end{enumerate}
 
          Given that the $\vec i$- and $\vec j-$ components of the answer to part (a) are equal, find the value of $b$. Use the value of $b$ you have found to solve parts (b) and (c).
 
         \begin{enumerate}
             \setcounter{enumi}{1}
-            \item Given that the magnitude of $(2\vec p - 5\vec q) \times (2\vec p + 5\vec q)$ is 80, find the possible exact values of $a$.
+            \item Given that the magnitude of $(2\vec p - 5\vec q) \crossp (2\vec p + 5\vec q)$ is 80, find the possible exact values of $a$.
             \item Given instead that $2\vec p - 5\vec q$ and $2\vec p + 5\vec q$ are perpendicular, find the exact value of $\abs{\vec p}$.
         \end{enumerate}
 
@@ -232,15 +232,15 @@
         \part
             We have $\vec p = \cveciii21a$ and $\vec q = \cveciii{b}10$. Hence,
             \begin{align*}
-                (2\vec p - 5\vec q) \times (2\vec p + 5\vec q) &= 4\vec p \times \vec p + 10\vec p \times \vec q - 10\vec q \times \vec p - 25 \vec q \times \vec q\\
-                &= 10\vec p \times \vec q - 10\vec q \times \vec p\\
-                &= 10\vec p \times \vec q + 10\vec p \times \vec q\\
-                &= 20\vec p \times \vec q\\
-                &= 20 \cveciii21a \times \cveciii{b}10\\
+                (2\vec p - 5\vec q) \crossp (2\vec p + 5\vec q) &= 4\vec p \crossp \vec p + 10\vec p \crossp \vec q - 10\vec q \crossp \vec p - 25 \vec q \crossp \vec q\\
+                &= 10\vec p \crossp \vec q - 10\vec q \crossp \vec p\\
+                &= 10\vec p \crossp \vec q + 10\vec p \crossp \vec q\\
+                &= 20\vec p \crossp \vec q\\
+                &= 20 \cveciii21a \crossp \cveciii{b}10\\
                 &= 20 \cveciii{-a}{ab}{2-b}
             \end{align*}
 
-            \boxt{$(2\vec p - 5\vec q) \times (2\vec p + 5\vec q) = 20 \cveciii{-a}{ab}{2-b}$}
+            \boxt{$(2\vec p - 5\vec q) \crossp (2\vec p + 5\vec q) = 20 \cveciii{-a}{ab}{2-b}$}
 
             Since the $\vec i$- and $\vec j$-components are equal, we have
             \begin{alignat*}{2}
@@ -254,7 +254,7 @@
 
         \part
             \begin{alignat*}{2}
-                &&\abs{(2\vec p - 5\vec q) \times (2\vec p + 5\vec q)} &= 80\\
+                &&\abs{(2\vec p - 5\vec q) \crossp (2\vec p + 5\vec q)} &= 80\\
                 \implies&&\abs{20 \cveciii{-a}{-a}{3}} &= 80\\
                 \implies&&\abs{\cveciii{-a}{-a}{3}} &= 4\\
                 \implies&&\sqrt{(-a)^2 + (-a)^2 + 3^2} &= 4\\
@@ -383,7 +383,7 @@
                 \item Find the angle between $\oa{OA}$ and $\oa{OB}$.
                 \item Hence or otherwise, find the shortest distance from $B$ to line $OA$.
             \end{enumerate}
-            \item The points $C$, $D$ and $E$ relative to the origin $O$ have non-zero and non-parallel position vectors $\vec c$, $\vec d$ and $\vec e$ respectively. Given that $(\vec c \times \vec d) \cdot \vec e = 0$, state with reason(s) the relationship between $O$, $C$, $D$ and $E$.
+            \item The points $C$, $D$ and $E$ relative to the origin $O$ have non-zero and non-parallel position vectors $\vec c$, $\vec d$ and $\vec e$ respectively. Given that $(\vec c \crossp \vec d) \cdot \vec e = 0$, state with reason(s) the relationship between $O$, $C$, $D$ and $E$.
         \end{enumerate}
 
     \solution
@@ -429,10 +429,10 @@
                 \boxt{The shortest distance from $B$ to the line $OA$ is $2.58$ units.}
 
         \part
-            Recall that $(\vec c \times \vec d) \cdot \vec e$ is the volume of the parallelepiped defined by $\vec c$, $\vec d$ and $\vec e$. Since the volume is 0 and all three vectors are non-zero and non-parallel, they must be coplanar.
+            Recall that $(\vec c \crossp \vec d) \cdot \vec e$ is the volume of the parallelepiped defined by $\vec c$, $\vec d$ and $\vec e$. Since the volume is 0 and all three vectors are non-zero and non-parallel, they must be coplanar.
 
     \problem{NJC Prelim 9758/2017/01/Q1}
-        Given that $\vec p = 2\vec i + \a\vec j + \vec k$ and $\vec q = \a\vec i + \vec j + 6\vec k$, where $\a$ is a real constant and $\vec w$ is the position vector of a variable point $W$ relative to the origin such that $\vec w \times \vec p = \vec q$.
+        Given that $\vec p = 2\vec i + \a\vec j + \vec k$ and $\vec q = \a\vec i + \vec j + 6\vec k$, where $\a$ is a real constant and $\vec w$ is the position vector of a variable point $W$ relative to the origin such that $\vec w \crossp \vec p = \vec q$.
 
         \begin{enumerate}
             \item Find the value of $\a$.
@@ -441,7 +441,7 @@
 
     \solution
         \part
-            We have $\vec p = \cveciii2{\a}1$ and $\vec q = \cveciii{\a}16$. Since $\vec w \times \vec p = \vec q$, the vectors $\vec w$, $\vec p$ and $\vec q$ are pairwise orthogonal. Hence,
+            We have $\vec p = \cveciii2{\a}1$ and $\vec q = \cveciii{\a}16$. Since $\vec w \crossp \vec p = \vec q$, the vectors $\vec w$, $\vec p$ and $\vec q$ are pairwise orthogonal. Hence,
             \begin{alignat*}{2}
                 &&\vec p \cdot \vec q &= 0\\
                 \implies&&\cveciii2{\a}1 \cdot \cveciii{\a}16 &= 0\\
@@ -454,8 +454,8 @@
         \part
             Let $\vec w = \cveciii{x}{y}{z}$.
             \begin{alignat*}{2}
-                &&\vec w \times \vec p &= \vec q\\
-                \implies&&\cveciii{x}{y}{z} \times \cveciii2{-2}1 &= \cveciii{-2}16\\
+                &&\vec w \crossp \vec p &= \vec q\\
+                \implies&&\cveciii{x}{y}{z} \crossp \cveciii2{-2}1 &= \cveciii{-2}16\\
                 \implies&&\cveciii{y+2z}{2z-x}{-2x-2y} &= \cveciii{-2}16
             \end{alignat*}
             This gives the system:
@@ -599,7 +599,7 @@
 
         \begin{enumerate}
             \item Giving a necessary condition for $\vec a$ and $\vec b$, find the position vector of $M$ in terms of $\vec a$ and $\vec b$.
-            \item If $\abs{\vec a} = 1$ and $\abs{\vec b} = 2$, find the shortest distance of $M$ from the line $OC$, giving your answer in the form $k\abs{\vec a \times \vec b}$, where $k$ is a constant to be determined.
+            \item If $\abs{\vec a} = 1$ and $\abs{\vec b} = 2$, find the shortest distance of $M$ from the line $OC$, giving your answer in the form $k\abs{\vec a \crossp \vec b}$, where $k$ is a constant to be determined.
         \end{enumerate}
 
     \solution
@@ -649,15 +649,15 @@
             
              Let $F$ be the foot of the perpendicular of $M$ to $OC$. Observe that $\oa{OM} = \dfrac59 \vec a + \dfrac89 \vec b - \vec a = -\dfrac49 \vec a + \dfrac89 \vec b$ and $\oa{AC} = 5\vec a - \vec a = 4\vec a$.
             \begin{alignat*}{2}
-                &&\abs{\oa{AM} \times \oa{AC}} &= 2 \area \triangle AMC\\
-                \implies&&\abs{\bp{-\dfrac49 \vec a + \dfrac89 \vec b} \times 4\vec a} &= 2 \cdot \dfrac12 \cdot FM \cdot AC\\
-                \implies&&\abs{-\dfrac{16}9\vec a \times \vec a + 4 \cdot \dfrac89 \vec b \times \vec a} &= FM \cdot \abs{4 \vec a}\\
-                \implies&&4 \cdot \dfrac89 \cdot \abs{\vec b \times \vec a} &= 4 \cdot FM\\
-                \implies&&FM &= \dfrac89 \abs{\vec b \times \vec a}\\
-                && &=  \dfrac89 \abs{\vec a \times \vec b}
+                &&\abs{\oa{AM} \crossp \oa{AC}} &= 2 \area \triangle AMC\\
+                \implies&&\abs{\bp{-\dfrac49 \vec a + \dfrac89 \vec b} \crossp 4\vec a} &= 2 \cdot \dfrac12 \cdot FM \cdot AC\\
+                \implies&&\abs{-\dfrac{16}9\vec a \crossp \vec a + 4 \cdot \dfrac89 \vec b \crossp \vec a} &= FM \cdot \abs{4 \vec a}\\
+                \implies&&4 \cdot \dfrac89 \cdot \abs{\vec b \crossp \vec a} &= 4 \cdot FM\\
+                \implies&&FM &= \dfrac89 \abs{\vec b \crossp \vec a}\\
+                && &=  \dfrac89 \abs{\vec a \crossp \vec b}
             \end{alignat*}
 
-            \boxt{The shortest distance of $M$ from the line $OC$ is $\dfrac89 \abs{\vec a \times \vec b}$ units.}
+            \boxt{The shortest distance of $M$ from the line $OC$ is $\dfrac89 \abs{\vec a \crossp \vec b}$ units.}
 
     \problem{PJC Prelim 9758/2017/02/Q1}
         Referred to the origin $O$, points $A$ and $B$ have position vectors $\vec a$ and $\vec b$ respectively. Point $P$ lies on $OA$ produced such that $OA : AP = 1 : \l$. Point $Q$ lies on $OB$, between $O$ and $B$, such that $OQ:QB = 3:1$. The mid-point of $PB$ is $M$. Show that the ratio of the area of triangle $OPM$ to the area of triangle $OQM$ is independent of $\l$.
@@ -715,9 +715,9 @@
         \part
             By the Midpoint Theorem, $\oa{OM} = \dfrac12 (\vec a + \vec c) = \cveciii32{-3/2}$. Thus, $\oa{AM} = \cveciii1{-1}{-1/2}$. We also have $\oa{AB} = \cveciii3{-5}4$. Hence,
             \begin{align*}
-                \area \triangle ABM &= \dfrac12 \abs{\oa{AM} \times \oa{AB}}\\
-                &= \dfrac12 \abs{\cveciii1{-1}{-1/2} \times \cveciii3{-5}4}\\
-                &= \dfrac14 \abs{\cveciii{-2}2{1} \times \cveciii3{-5}4}\\
+                \area \triangle ABM &= \dfrac12 \abs{\oa{AM} \crossp \oa{AB}}\\
+                &= \dfrac12 \abs{\cveciii1{-1}{-1/2} \crossp \cveciii3{-5}4}\\
+                &= \dfrac14 \abs{\cveciii{-2}2{1} \crossp \cveciii3{-5}4}\\
                 &= \dfrac12 \abs{\cveciii{13}{11}4}\\
                 &= \dfrac{\sqrt{306}}4\\
                 &= \dfrac{3\sqrt{34}}4

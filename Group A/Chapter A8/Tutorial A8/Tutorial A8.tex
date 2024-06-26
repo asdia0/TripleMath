@@ -127,12 +127,12 @@
 
             Let $\t$ be the acute angle between $l_1$ and $l_2$.
             \begin{alignat*}{2}
-                &&\cos\t &= \dfrac{\abs{\cveciii4{-2}{-3} \cdot \cveciii381}}{\abs{\cveciii4{-2}{-3}} \abs{\cveciii381}}\\
+                &&\cos\t &= \dfrac{\abs{\cveciii4{-2}{-3} \dotp \cveciii381}}{\abs{\cveciii4{-2}{-3}} \abs{\cveciii381}}\\
                 && &= \dfrac{7}{\sqrt{2146}}\\
-                \implies&&\t &= 1.42 \tosf{3}
+                \implies&&\t &= 81.3 \deg \todp{1}
             \end{alignat*}
 
-            \boxt{Skew lines. $\t = 1.42$.}
+            \boxt{Skew lines. $\t = 81.3 \deg$.}
 
         \part
             Note that $l_1$ and $l_2$ have vector form
@@ -160,12 +160,12 @@
 
             Let $\t$ be the acute angle between $l_1$ and $l_2$.
             \begin{alignat*}{2}
-                &&\cos\t &= \dfrac{\abs{\cveciii1{-1}1 \cdot \cveciii5{-4}{-1}}}{\abs{\cveciii1{-1}1} \abs{\cveciii5{-4}{-1}}}\\
+                &&\cos\t &= \dfrac{\abs{\cveciii1{-1}1 \dotp \cveciii5{-4}{-1}}}{\abs{\cveciii1{-1}1} \abs{\cveciii5{-4}{-1}}}\\
                 && &= \dfrac8{3\sqrt{14}}\\
-                \implies&&\t &= 0.777 \tosf{3}
+                \implies&&\t &= 44.5 \deg \todp{1}
             \end{alignat*}
 
-            \boxt{Intersecting lines. $\cveciii6{-5}0$. $\t = 0.777$.}
+            \boxt{Intersecting lines. $\cveciii6{-5}0$. $\t = 44.5 \deg \todp{1}$.}
 
     \problem{}
         \begin{enumerate}
@@ -185,7 +185,7 @@
             Note that $\oa{AP} = \oa{OP} - \oa{OA} = \cveciii123 - \cveciii324 = \cveciii{-2}0{-1}$.
 
             \begin{align*}
-                \text{Shortest distance} &= \abs{\cveciii{-2}0{-1} \times \cveciii122} \Bigg/ \abs{\cveciii122}\\
+                \text{Shortest distance} &= \abs{\cveciii{-2}0{-1} \crossp \cveciii122} \Bigg/ \abs{\cveciii122}\\
                 &= \dfrac1{\sqrt{1^2 + 2^2 + 2^2}} \abs{\cveciii2{-3}{-4}}\\
                 &= \dfrac{\sqrt{2^2 + (-3)^2 + (-4)^2}}3\\
                 &= \dfrac{\sqrt{29}}3
@@ -201,7 +201,7 @@
             \end{align*}
 
             \begin{align*}
-                \text{Length of projection} &= \abs{\cveciii4{-5}6 \cdot \cveciii86{-1}} \Bigg/ \abs{\cveciii86{-1}}\\
+                \text{Length of projection} &= \abs{\cveciii4{-5}6 \dotp \cveciii86{-1}} \Bigg/ \abs{\cveciii86{-1}}\\
                 &= \dfrac{4}{\sqrt{101}}
             \end{align*}
 
@@ -209,7 +209,7 @@
 
         \part
             \begin{align*}
-                \text{Projection} &= \bs{\cveciii4{-5}6 \cdot \cveciii86{-1} \Bigg/ \abs{\cveciii86{-1}}} \cdot \bs{\cveciii86{-1} \Bigg/ \abs{\cveciii86{-1}}}\\
+                \text{Projection} &= \bs{\cveciii4{-5}6 \dotp \cveciii86{-1} \Bigg/ \abs{\cveciii86{-1}}} \dotp \bs{\cveciii86{-1} \Bigg/ \abs{\cveciii86{-1}}}\\
                 &= \dfrac{-4}{101} \cveciii86{-1}
             \end{align*}
 
@@ -244,11 +244,11 @@
             Let the foot of the perpendicular from $P$ to $l_2$ be $F$. Since $F$ is on $l_2$, we have that $\oa{OF} = \cveciii{-3}31 + \m\cveciii2{-1}0$ for some real $\m$. We also have that $\oa{PF} \cdot \cveciii2{-1}0 = 0$.
 
             \begin{alignat*}{2}
-                &&\oa{PF} \cdot \cveciii2{-1}0 &= 0\\
-                \implies&&\bp{\oa{OF} - \oa{OP}} \cdot \cveciii2{-1}0 &= 0\\
-                \implies&&\bs{\cveciii{-3}31 + \m\cveciii2{-1}0 - \cveciii0{-1}{-1}} \cdot \cveciii2{-1}0 &= 0\\
-                \implies&&\bs{\cveciii{-3}42 + \m\cveciii2{-1}0} \cdot \cveciii2{-1}0 &= 0\\
-                \implies&&\cveciii{-3}42 \cdot \cveciii2{-1}0 + \m\cveciii2{-1}0 \cdot \cveciii2{-1}0 &= 0\\
+                &&\oa{PF} \dotp \cveciii2{-1}0 &= 0\\
+                \implies&&\bp{\oa{OF} - \oa{OP}} \dotp \cveciii2{-1}0 &= 0\\
+                \implies&&\bs{\cveciii{-3}31 + \m\cveciii2{-1}0 - \cveciii0{-1}{-1}} \dotp \cveciii2{-1}0 &= 0\\
+                \implies&&\bs{\cveciii{-3}42 + \m\cveciii2{-1}0} \dotp \cveciii2{-1}0 &= 0\\
+                \implies&&\cveciii{-3}42 \dotp \cveciii2{-1}0 + \m\cveciii2{-1}0 \dotp \cveciii2{-1}0 &= 0\\
                 \implies&&-10 + 5m &= 0\\
                 \implies&&m &= 2
             \end{alignat*}
@@ -272,7 +272,7 @@
 
             {\allowdisplaybreaks
             \begin{align*}
-                \text{Length of projection} &= \abs{\cveciii312 \cdot \cveciii2{-1}0} \Bigg/ \abs{\cveciii2{-1}0}\\
+                \text{Length of projection} &= \abs{\cveciii312 \dotp \cveciii2{-1}0} \Bigg/ \abs{\cveciii2{-1}0}\\
                 &= \dfrac{\abs{6 - 1 + 0}}{\sqrt{2^2 + (-1)^2 + 0^2}}\\
                 &= \dfrac5{\sqrt 5}\\
                 &= \sqrt{5}
@@ -360,8 +360,8 @@
         \part
             Note that $\oa{AC} = \oa{OC} - \oa{OA} = \cveciii{-5}95 - \cveciii54{10} = \cveciii{-10}5{-5} = -5\cveciii2{-1}1$.
             \begin{align*}
-                \text{Length of projection} &= \abs{\oa{AC} \cdot \oa{AB}} \Big/ \abs{\oa{AB}}\\
-                &= \dfrac1{-3\sqrt{3^2 + 0^2 + 4^2}} \abs{-5\cveciii2{-1}1 \cdot -3\cveciii304}\\
+                \text{Length of projection} &= \abs{\oa{AC} \dotp \oa{AB}} \Big/ \abs{\oa{AB}}\\
+                &= \dfrac1{-3\sqrt{3^2 + 0^2 + 4^2}} \abs{-5\cveciii2{-1}1 \dotp -3\cveciii304}\\
                 &= 10
             \end{align*}
 
@@ -424,13 +424,13 @@
 
             \boxt{$c = 4$}
 
-            Let $F$ be the foot of the perpendicular from $A$ to $l$. We have that $\oa{OF} = \cveciii{-3}15 + \l\cveciii{-1}43$ for some real $\l$. We also have that $\oa{AF} \cdot \cveciii{-1}43 = 0$.
+            Let $F$ be the foot of the perpendicular from $A$ to $l$. We have that $\oa{OF} = \cveciii{-3}15 + \l\cveciii{-1}43$ for some real $\l$. We also have that $\oa{AF} \dotp \cveciii{-1}43 = 0$.
             \begin{alignat*}{2}
-                &&\oa{AF} \cdot \cveciii{-1}43 &= 0\\
-                \implies&&\bp{\oa{OF} - \oa{OA}} \cdot \cveciii{-1}43 &= 0\\
-                \implies&&\bs{\cveciii{-3}15 + \l\cveciii{-1}43 - \cveciii094} \cdot \cveciii{-1}43 &= 0\\
-                \implies&&\bs{\cveciii{-3}{-8}1 + \l\cveciii{-1}43} \cdot \cveciii{-1}43 &= 0\\
-                \implies&&\cveciii{-3}{-8}1 \cdot \cveciii{-1}43 + \l\cveciii{-1}43 \cdot \cveciii{-1}43 &= 0\\
+                &&\oa{AF} \dotp \cveciii{-1}43 &= 0\\
+                \implies&&\bp{\oa{OF} - \oa{OA}} \dotp \cveciii{-1}43 &= 0\\
+                \implies&&\bs{\cveciii{-3}15 + \l\cveciii{-1}43 - \cveciii094} \dotp \cveciii{-1}43 &= 0\\
+                \implies&&\bs{\cveciii{-3}{-8}1 + \l\cveciii{-1}43} \dotp \cveciii{-1}43 &= 0\\
+                \implies&&\cveciii{-3}{-8}1 \dotp \cveciii{-1}43 + \l\cveciii{-1}43 \dotp \cveciii{-1}43 &= 0\\
                 \implies&&-26 + 26\l&= 0\\
                 \implies&&\l &= 1
             \end{alignat*}
@@ -451,8 +451,8 @@
             Note that the direction vector of $l$ and $AB$ is $\cveciii{-1}43$. Also note that $(-3, 1, 5)$ is on $l$ and $(1, 5, -2)$ is on $AB$.
 
             \begin{align*}
-                \text{Shortest distance between $AB$ and $l$} &= \abs{\cveciii{-1}43 \times \bp{\cveciii15{-2} - \cveciii{-3}15}} \Bigg/ \abs{\cveciii{-1}43}\\
-                &= \dfrac{1}{\sqrt{(-1)^2 + 4^2 + 3^2}} \abs{\cveciii{-1}43 \times \cveciii44{-7}}\\
+                \text{Shortest distance between $AB$ and $l$} &= \abs{\cveciii{-1}43 \crossp \bp{\cveciii15{-2} - \cveciii{-3}15}} \Bigg/ \abs{\cveciii{-1}43}\\
+                &= \dfrac{1}{\sqrt{(-1)^2 + 4^2 + 3^2}} \abs{\cveciii{-1}43 \crossp \cveciii44{-7}}\\
                 &= \dfrac1{\sqrt{26}} \abs{\cveciii{-40}{-5}{-20}}\\
                 &= \dfrac1{\sqrt{26}} \abs{-5\cveciii814}\\
                 &= \dfrac{5 \sqrt{8^2 + 1^2 + 4^2}}{\sqrt{26}}\\
@@ -497,22 +497,22 @@
 
             Let the acute angle between $L$ and $AB$ be $\t$.
             \begin{alignat*}{2}
-                &&\cos\t &= \dfrac{\abs{\cveciii2{-1}5 \cdot \cveciii468}}{\abs{\cveciii2{-1}5} \abs{\cveciii468}}\\
+                &&\cos\t &= \dfrac{\abs{\cveciii2{-1}5 \dotp \cveciii468}}{\abs{\cveciii2{-1}5} \abs{\cveciii468}}\\
                 && &= \dfrac{42}{\sqrt{30} \sqrt{116}}\\
                 \implies&&\t &= \arccos \dfrac{42}{\sqrt{30} \sqrt{116}}\\
-                && &= 44.6^{\circ} \todp{1}
+                && &= 44.6\deg \todp{1}
             \end{alignat*}
 
-            \boxt{$\t = 44.6^{\circ} \todp{1}$}
+            \boxt{$\t = 44.6\deg \todp{1}$}
         
         \part
-            Since $Q$ is on $L$, we have that $\oa{OQ} = \cveciii137 + t\cveciii2{-1}5$ for some real $t$. Further, since $\oa{CQ} \perp L$, we have that $\oa{CQ} \cdot \cveciii2{-1}5 = 0$.
+            Since $Q$ is on $L$, we have that $\oa{OQ} = \cveciii137 + t\cveciii2{-1}5$ for some real $t$. Further, since $\oa{CQ} \perp L$, we have that $\oa{CQ} \dotp \cveciii2{-1}5 = 0$.
             \begin{alignat*}{2}
-                &&\oa{CQ} \cdot \cveciii2{-1}5 &= 0\\
-                \implies&&\bp{\oa{OQ} - \oa{OC}} \cdot \cveciii2{-1}5 &= 0\\
-                \implies&&\bs{\cveciii137 + t\cveciii2{-1}5 - \cveciii251} \cdot \cveciii2{-1}5 &= 0\\
-                \implies&&\bs{\cveciii{-1}{-2}6 + t\cveciii2{-1}5} \cdot \cveciii2{-1}5 &= 0\\
-                \implies&&\cveciii{-1}{-2}6 \cdot \cveciii2{-1}5 + t\cveciii2{-1}5 \cdot \cveciii2{-1}5 &= 0\\
+                &&\oa{CQ} \dotp \cveciii2{-1}5 &= 0\\
+                \implies&&\bp{\oa{OQ} - \oa{OC}} \dotp \cveciii2{-1}5 &= 0\\
+                \implies&&\bs{\cveciii137 + t\cveciii2{-1}5 - \cveciii251} \dotp \cveciii2{-1}5 &= 0\\
+                \implies&&\bs{\cveciii{-1}{-2}6 + t\cveciii2{-1}5} \dotp \cveciii2{-1}5 &= 0\\
+                \implies&&\cveciii{-1}{-2}6 \dotp \cveciii2{-1}5 + t\cveciii2{-1}5 \dotp \cveciii2{-1}5 &= 0\\
                 \implies&&30 + 30t &= 0\\
                 \implies&&t &= 1
             \end{alignat*}
@@ -583,7 +583,7 @@
         \begin{enumerate}
             \item Find an equation for the line $QN$.
             \item Show that the lines $PM$ and $QN$ intersect and that the position vector $\oa{OX}$ of their point of intersection is $\vec r = \dfrac12 \cveciii1{-1}h$.
-            \item Given that $OX$ is perpendicular to $VB$, find the value of $h$ and calculate the acute angle between $PM$ and $QN$, giving your answer correct to the nearest $0.1^{\circ}$.
+            \item Given that $OX$ is perpendicular to $VB$, find the value of $h$ and calculate the acute angle between $PM$ and $QN$, giving your answer correct to the nearest $0.1\deg$.
         \end{enumerate}
 
     \solution
@@ -616,10 +616,10 @@
             From the first two equations, we see that $t = \dfrac12$ and $u = \dfrac12$, which is consistent with the third equation. Hence, $\oa{OX} = \cveciii0{-2}0 + \dfrac12 \cveciii13h = \dfrac12 \cveciii1{-1}h$.
 
         \part
-            Note that $\oa{OB} = \cveciii2{-2}6$, whence $\oa{VB} = \oa{OB} - \oa{OV} = \cveciii2{-2}{-2h}$. Since $OX$ is perpendicular to $VB$, we have that $\oa{OX} \cdot \oa{VB} = 0$.
+            Note that $\oa{OB} = \cveciii2{-2}6$, whence $\oa{VB} = \oa{OB} - \oa{OV} = \cveciii2{-2}{-2h}$. Since $OX$ is perpendicular to $VB$, we have that $\oa{OX} \dotp \oa{VB} = 0$.
             \begin{alignat*}{2}
-                &&\oa{OX} \cdot \oa{VB} &= 0\\
-                \implies&&\dfrac12 \cveciii1{-1}h \cdot 2 \cveciii1{-1}{-h} &= 0\\
+                &&\oa{OX} \dotp \oa{VB} &= 0\\
+                \implies&&\dfrac12 \cveciii1{-1}h \dotp 2 \cveciii1{-1}{-h} &= 0\\
                 \implies&&1 + 1 - h^2 &= 0\\
                 \implies&&h^2 &= 2
             \end{alignat*}
@@ -629,13 +629,13 @@
 
             Let the acute angle between $PM$ and $QN$ be $\t$.
             \begin{alignat*}{2}
-                &&\cos\t &= \dfrac{\abs{\oa{PM} \cdot \oa{QN}}}{\abs{\oa{PM}}\abs{\oa{QN}}}\\
-                && &= \dfrac{1}{\sqrt{1^2 + 3^2 + \sqrt{2}^2}} \cdot \frac1{\sqrt{(-3)^2 + (-1)^2 + \sqrt{2}^2}} \cdot \abs{\cveciii13{\sqrt2} \cdot \cveciii{-3}{-1}{\sqrt2}}\\
+                &&\cos\t &= \dfrac{\abs{\oa{PM} \dotp \oa{QN}}}{\abs{\oa{PM}}\abs{\oa{QN}}}\\
+                && &= \dfrac{1}{\sqrt{1^2 + 3^2 + \sqrt{2}^2}} \cdot \frac1{\sqrt{(-3)^2 + (-1)^2 + \sqrt{2}^2}} \cdot \abs{\cveciii13{\sqrt2} \dotp \cveciii{-3}{-1}{\sqrt2}}\\
                 && &= \dfrac1{\sqrt{12}}\cdot\dfrac1{\sqrt{12}}\cdot\abs{-3 - 3 + 2}\\
                 && &= \dfrac13\\
                 \implies&&\t &= \arccos \dfrac13\\
-                && &= 70.5^{\circ} \todp{1}
+                && &= 70.5\deg \todp{1}
             \end{alignat*}
 
-            \boxt{$\t = 70.5^{\circ} \todp{1}$}
+            \boxt{$\t = 70.5\deg \todp{1}$}
 \end{document}

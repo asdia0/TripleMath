@@ -43,7 +43,7 @@
             \begin{alignat*}{2}
                 &&\oa{BC} &= \l \oa{CD}\\
                 \implies&&\cvecii11 &= \l\bp{\oa{OD} - \oa{OC}}\\
-                && &= \l\bp{\cvecii3d - \cvecii24}\\
+                && &= \l\bs{\cvecii3d - \cvecii24}\\
                 && &= \cvecii{\l}{\l(d-4)}
             \end{alignat*}
 
@@ -110,7 +110,7 @@
                 \end{aligned}$}
 
     \problem{}
-        Find $\vec u \cdot \vec v$, $\vec u \times \vec v$ and the angle between $\vec u$ and $\vec v$ given that
+        Find $\vec u \dotp \vec v$, $\vec u \crossp \vec v$ and the angle between $\vec u$ and $\vec v$ given that
 
         \begin{enumerate}
             \item $\vec u = \vec i - \vec j + \vec k$, $\vec v = 3\vec i + 2 \vec j + 7 \vec k$
@@ -121,71 +121,71 @@
         \part
             We have $\vec u = \cveciii1{-1}1$ and $\vec v = \cveciii327$. Hence,
             \begin{align*}
-                \vec u \cdot \vec v &= 1 \cdot 3 + (-1) \cdot 2 + 1 \cdot 7\\
+                \vec u \dotp \vec v &= 1 \cdot 3 + (-1) \cdot 2 + 1 \cdot 7\\
                 &= 8\\
-                \vec u \times \vec v &= \cveciii{-1\cdot7-2\cdot1}{1\cdot3-7\cdot1}{1\cdot2-3\cdot(-1)}\\
+                \vec u \crossp \vec v &= \cveciii{-1\cdot7-2\cdot1}{1\cdot3-7\cdot1}{1\cdot2-3\cdot(-1)}\\
                 &= \cveciii{-9}{-4}{5}
             \end{align*}
 
             Let the angle between $\vec u$ and $\vec v$ be $\t$.
             \begin{alignat*}{2}
-                &&\vec u \cdot \vec v &= \abs{\vec u} \abs{\vec v} \cos \t\\
+                &&\vec u \dotp \vec v &= \abs{\vec u} \abs{\vec v} \cos \t\\
                 \implies&&8 &= \sqrt{1^2 + (-1)^2 + 1^2} \cdot \sqrt{3^2 + 2^2 + 7^2} \cdot \cos \t\\
                 \implies&&\t &= \arccos{\dfrac{8}{\sqrt 3 \cdot \sqrt{62}}}\\
-                && &= 54.1^\circ \todp{1}
+                && &= 54.1\deg \todp{1}
             \end{alignat*}
 
             \boxt{$\begin{aligned}
-                        \vec u \cdot \vec v &= 8\\
-                        \vec u \times \vec v &= -9 \vec i -4 \vec j + 5 \vec k\\
-                        \t &= 54.1^\circ
+                        \vec u \dotp \vec v &= 8\\
+                        \vec u \crossp \vec v &= -9 \vec i -4 \vec j + 5 \vec k\\
+                        \t &= 54.1\deg
                     \end{aligned}$}
 
         \part
             We have $\vec u = \cveciii20{-3}$ and $\vec v = \cveciii{-1}72$. Hence,
             \begin{align*}
-                \vec u \cdot \vec v &= 2\cdot(-1) + 0 \cdot7 + (-3)\cdot2\\
+                \vec u \dotp \vec v &= 2\cdot(-1) + 0 \cdot7 + (-3)\cdot2\\
                 &= -8\\
-                \vec u \times \vec v &= \cveciii{0\cdot2-7\cdot(-3)}{(-3)\cdot(-1)-2\cdot2}{2\cdot7-(-1)\cdot0}\\
+                \vec u \crossp \vec v &= \cveciii{0\cdot2-7\cdot(-3)}{(-3)\cdot(-1)-2\cdot2}{2\cdot7-(-1)\cdot0}\\
                 &= \cveciii{21}{-1}{14}
             \end{align*}
 
             Let the angle between $\vec u$ and $\vec v$ be $\t$.
             \begin{alignat*}{2}
-                &&\vec u \cdot \vec v &= \abs{\vec u} \abs{\vec v} \cos \t\\
+                &&\vec u \dotp \vec v &= \abs{\vec u} \abs{\vec v} \cos \t\\
                 \implies&&8 &= \sqrt{2^2 + 0^2 + (-3)^2} \cdot \sqrt{(-1)^2 + 7^2 + 2^2} \cdot \cos \t\\
                 \implies&&\t &= \arccos{\dfrac{-8}{\sqrt{13} \cdot \sqrt{54}}}\\
-                && &= 107.6^\circ \todp{1}
+                && &= 107.6\deg \todp{1}
             \end{alignat*}
 
             \boxt{$\begin{aligned}
-                        \vec u \cdot \vec v &= -8\\
-                        \vec u \times \vec v &= 21 \vec i - \vec j + 14 \vec k\\
-                        \t &= 107.6^\circ
+                        \vec u \dotp \vec v &= -8\\
+                        \vec u \crossp \vec v &= 21 \vec i - \vec j + 14 \vec k\\
+                        \t &= 107.6\deg
                     \end{aligned}$}
 
     \problem{}
-        Find $\vec u \cdot \vec v$ and $\abs{\vec u \times \vec v}$ given that $\vec u = 2\vec a - \vec b$, $\vec v = -\vec a + 3 \vec b$, where $\abs{\vec a} = 2$, $\abs{\vec b} = 1$ and the angle between $\vec a$ and $\vec b$ is 60$^\circ$.
+        Find $\vec u \dotp \vec v$ and $\abs{\vec u \crossp \vec v}$ given that $\vec u = 2\vec a - \vec b$, $\vec v = -\vec a + 3 \vec b$, where $\abs{\vec a} = 2$, $\abs{\vec b} = 1$ and the angle between $\vec a$ and $\vec b$ is 60$\deg$.
 
     \solution
         \begin{align*}
-            \vec u \cdot \vec v &= (2 \vec a - \vec b) \cdot (-\vec a + 3 \vec b)\\
-            &= -2\vec a \cdot \vec a + 6 \vec a \cdot \vec b + \vec b \cdot \vec a -3 \vec b \cdot \vec b\\
+            \vec u \dotp \vec v &= (2 \vec a - \vec b) \dotp (-\vec a + 3 \vec b)\\
+            &= -2\vec a \dotp \vec a + 6 \vec a \dotp \vec b + \vec b \dotp \vec a -3 \vec b \dotp \vec b\\
             &= -2 \abs{\vec a}^2 - 3 \abs{\vec b}^2 + 7 \abs{\vec a}\abs{\vec b}\cos \t\\
-            &= -2 \cdot 2^2 - 3 \cdot 1^2 + 7 \cdot 2 \cdot 1 \cdot \cos 60^\circ\\
+            &= -2 \cdot 2^2 - 3 \cdot 1^2 + 7 \cdot 2 \cdot 1 \cdot \cos 60\deg\\
             &= -4\\
-            \abs{\vec u \times \vec v} &= \abs{(2 \vec a - \vec b) \times (-\vec a + 3 \vec b)}\\
-            &= \abs{-2\vec a \times \vec a + 6 \vec a \times \vec b + \vec b \times \vec a -3 \vec b \times \vec b}\\
-            &= \abs{-2 \cdot 0 + 6 \vec a \times \vec b - \vec a \times \vec b -3 \cdot 0}\\
-            &= \abs{5 \vec a \times \vec b}\\
+            \abs{\vec u \crossp \vec v} &= \abs{(2 \vec a - \vec b) \crossp (-\vec a + 3 \vec b)}\\
+            &= \abs{-2\vec a \crossp \vec a + 6 \vec a \crossp \vec b + \vec b \crossp \vec a -3 \vec b \crossp \vec b}\\
+            &= \abs{-2 \cdot 0 + 6 \vec a \crossp \vec b - \vec a \crossp \vec b -3 \cdot 0}\\
+            &= \abs{5 \vec a \crossp \vec b}\\
             &= 5 \abs{\vec a} \abs{\vec b} \sin \t\\
             &= 5 \cdot 2 \cdot 1 \cdot \dfrac{\sqrt3}2\\
             &= 5\sqrt3
         \end{align*}
 
         \boxt{$\begin{aligned}
-                    \vec u \cdot \vec v &= -4\\
-                    \abs{\vec u \times \vec v} &= 5 \sqrt3
+                    \vec u \dotp \vec v &= -4\\
+                    \abs{\vec u \crossp \vec v} &= 5 \sqrt3
                 \end{aligned}$}
 
     \problem{}
@@ -199,20 +199,20 @@
     \solution
         \part
             \begin{alignat*}{2}
-                &&\vec a \times \vec b &= \cveciii{4\cdot3-(-1)\cdot(-1)}{(-1)\cdot1 - 3\cdot1}{1\cdot(-1)-1\cdot4}\\
+                &&\vec a \crossp \vec b &= \cveciii{4\cdot3-(-1)\cdot(-1)}{(-1)\cdot1 - 3\cdot1}{1\cdot(-1)-1\cdot4}\\
                 && &= \cveciii{11}{-4}{-5}\\
-                \implies&&\abs{\vec a \times \vec b} &= \sqrt{11^2 + (-4)^2 + (-5)^2}\\
+                \implies&&\abs{\vec a \crossp \vec b} &= \sqrt{11^2 + (-4)^2 + (-5)^2}\\
                 && &= \sqrt{162}\\
-                \implies&&\widehat{\vec a \times \vec b} &= \dfrac{1}{\sqrt{162}} \cveciii{11}{-4}{-5}
+                \implies&&\wh{\vec a \crossp \vec b} &= \dfrac{1}{\sqrt{162}} \cveciii{11}{-4}{-5}
             \end{alignat*}
 
             \boxt{$\dfrac{1}{\sqrt{162}} \cveciii{11}{-4}{-5}$}
 
         \part
-            Observe that $(3 \vec b - 5 \vec c) \times (7 \vec b + \vec c) = \l \vec b \times \vec c$ for some scalar $\l$. It hence suffices to find $\vec b \times \vec c$.
+            Observe that $(3 \vec b - 5 \vec c) \crossp (7 \vec b + \vec c) = \l \vec b \crossp \vec c$ for some scalar $\l$. It hence suffices to find $\vec b \crossp \vec c$.
 
             \begin{align*}
-                \vec b \times \vec c &= \cveciii{(-1)\cdot0 - 1 \cdot3}{3\cdot2 - 0\cdot1}{1 \cdot1-2\cdot(-1)}\\
+                \vec b \crossp \vec c &= \cveciii{(-1)\cdot0 - 1 \cdot3}{3\cdot2 - 0\cdot1}{1 \cdot1-2\cdot(-1)}\\
                 &= \cveciii{-3}63
             \end{align*}
 
@@ -256,7 +256,7 @@
             Given that $A$, $B$ and $C$ are collinear, we have $\oa{AB} = k\oa{BC}$. Hence,
             \begin{align*}
                 \cveciii3{-4}6 &= k \bp{\vec c - \vec b}\\
-                &= k \bp{\cveciii{11}{\l}{14} - \cveciii5{-1}2}\\
+                &= k \bs{\cveciii{11}{\l}{14} - \cveciii5{-1}2}\\
                 &= k \cveciii6{\l + 1}{12}
             \end{align*}
 
@@ -268,7 +268,7 @@
             By the Ratio Theorem,
             \begin{align*}
                 \oa{OP} &= \dfrac{1\vec a + 2 \vec b}{2 + 1}\\
-                &= \dfrac13 \bp{\cveciii23{-4} + 2\cveciii5{-1}2}\\
+                &= \dfrac13 \bs{\cveciii23{-4} + 2\cveciii5{-1}2}\\
                 &= \dfrac13 \cveciii{12}10
             \end{align*}
 
@@ -381,7 +381,7 @@
         \part
             Let $\vec a = \cveciii3{-2}0$ and $\vec b = \cveciii6d{-\sqrt7}$. Let $\t$ be the angle between $\vec a$ and $\vec b$.
             \begin{alignat*}{2}
-                &&\vec a \cdot \vec b &= \abs{\vec a}\abs{\vec b}\cos\t\\
+                &&\vec a \dotp \vec b &= \abs{\vec a}\abs{\vec b}\cos\t\\
                 \implies&&3\cdot6 + (-2)\cdot d + 0 \cdot (-\sqrt7) &= \sqrt{3^2 + (-2)^2 + 0^2} \cdot \sqrt{6^2 + d^2 + (-\sqrt7)^2} \cdot \cos\arccos\dfrac6{13}\\
                 \implies&&18-2d &= \sqrt{43 + d^2} \cdot \sqrt{13} \cdot \dfrac6{13}\\
                 && &= \sqrt{43 + d^2} \cdot \dfrac6{\sqrt{13}}\\
@@ -438,8 +438,8 @@
         \begin{enumerate}
             \item The point $P$ divides the line $AB$ in the ratio $2:1$. Find the coordinates of $P$.
             \item Show that $AB$ and $OP$ are perpendicular.
-            \item The vector $\vec c$ is a unit vector in the direction of $\oa{OP}$. Write $\vec c$ as a column vector and give the geometrical meaning of $\abs{\vec a \cdot \vec c}$.
-            \item Find $\vec a \times \vec p$, where $\vec p$ is the vector $\oa{OP}$, and give the geometrical meaning of $\abs{\vec a \times \vec p}$. Hence, write down the area of triangle $OAP$.
+            \item The vector $\vec c$ is a unit vector in the direction of $\oa{OP}$. Write $\vec c$ as a column vector and give the geometrical meaning of $\abs{\vec a \dotp \vec c}$.
+            \item Find $\vec a \crossp \vec p$, where $\vec p$ is the vector $\oa{OP}$, and give the geometrical meaning of $\abs{\vec a \crossp \vec p}$. Hence, write down the area of triangle $OAP$.
         \end{enumerate}
 
     \solution
@@ -454,14 +454,14 @@
             \boxt{$P(12, -4, 6)$}
 
         \part
-            Consider $\oa{AB} \cdot \oa{OP}$.
+            Consider $\oa{AB} \dotp \oa{OP}$.
             \begin{align*}
-                \oa{AB} \cdot \oa{OP} &= \bs{\cveciii{11}{-13}2 -  \cveciii{14}{14}{14}} \cdot \cveciii{12}{-4}6\\
-                &= -3\cveciii194 \cdot 2\cveciii6{-2}3\\
+                \oa{AB} \dotp \oa{OP} &= \bs{\cveciii{11}{-13}2 -  \cveciii{14}{14}{14}} \dotp \cveciii{12}{-4}6\\
+                &= -3\cveciii194 \dotp 2\cveciii6{-2}3\\
                 &= -6\bp{1\cdot6 + 9 \cdot (-2) + 4 \cdot 3 }\\
                 &= 0
             \end{align*}
-            Since $\oa{AB} \cdot \oa{OP} = 0$, $AB$ and $OP$ must be perpendicular.
+            Since $\oa{AB} \dotp \oa{OP} = 0$, $AB$ and $OP$ must be perpendicular.
 
         \part
             \begin{align*}
@@ -472,21 +472,21 @@
 
             \boxt{$\vec c = \dfrac17 \cveciii6{-2}3$}
 
-            $\abs{\vec a \cdot \vec c}$ is the length of the projection of $\vec a$ on $\oa{OP}$.
+            $\abs{\vec a \dotp \vec c}$ is the length of the projection of $\vec a$ on $\oa{OP}$.
 
         \part
             \begin{align*}
-                \vec a \times \vec p &= 14 \cveciii111 \times 2 \cveciii6{-2}3\\
+                \vec a \crossp \vec p &= 14 \cveciii111 \crossp 2 \cveciii6{-2}3\\
                 &= 28 \cveciii{1 \cdot 3 - (-2) \cdot 1}{1 \cdot 6 - 3 \cdot 1}{1 \cdot -2 - 6 \cdot 1}\\
                 &= 28 \cveciii53{-8}
             \end{align*}
 
-            \boxt{$\vec a \times \vec p = \cveciii53{-8}$}
+            \boxt{$\vec a \crossp \vec p = \cveciii53{-8}$}
 
-            $\abs{\vec a \times \vec p}$ is twice the area of $\triangle OAP$.
+            $\abs{\vec a \crossp \vec p}$ is twice the area of $\triangle OAP$.
 
             \begin{align*}
-                \area \triangle OAP &= \dfrac12 \abs{\vec a \times \vec p}\\
+                \area \triangle OAP &= \dfrac12 \abs{\vec a \crossp \vec p}\\
                 &= \dfrac12 \cdot 28 \sqrt{5^2 + 3^2 + (-8)^2}\\
                 &= 14 \sqrt{98}\\
                 &= 14 \cdot 7 \sqrt2\\
@@ -510,18 +510,18 @@
 
         \part
             \begin{align*}
-                \abs{\vec b' \times \vec c'} &= \abs{\cveciii{2\cdot(-2) - 0 \cdot (-2)}{-2 \cdot 1 - (-1)\cdot(-2)}{-1 \cdot 0 - 1 \cdot 2}}\\
+                \abs{\vec b' \crossp \vec c'} &= \abs{\cveciii{2\cdot(-2) - 0 \cdot (-2)}{-2 \cdot 1 - (-1)\cdot(-2)}{-1 \cdot 0 - 1 \cdot 2}}\\
                 &= \abs{\cveciii{-4}{-4}{-2}}\\
                 &= \abs{-2 \cveciii221}\\
                 &= 2\cdot\sqrt{2^2 + 2^2 + 1^2}\\
                 &= 6
             \end{align*}
-            Hence, the area of $\triangle ABC = \dfrac12 \abs{\vec b' \times \vec c'} = 3$ units$^2$.
+            Hence, the area of $\triangle ABC = \dfrac12 \abs{\vec b' \crossp \vec c'} = 3$ units$^2$.
 
             \boxt{$\area \triangle ABC = 3$ units$^2$}
 
             \begin{alignat*}{2}
-                &&\abs{\vec b' \times \vec c'} &= \abs{\vec b'} \abs{\vec c'} \sin BAC\\
+                &&\abs{\vec b' \crossp \vec c'} &= \abs{\vec b'} \abs{\vec c'} \sin BAC\\
                 \implies&&\sin BAC &= \dfrac{6}{\sqrt{(-1)^2 + 2^2 + (-2)^2}\sqrt{1^2 + 0^2 + (-2)^2}}\\
                 && &= \dfrac6{3\sqrt5}\\
                 && &= \dfrac2{\sqrt5}
@@ -536,7 +536,7 @@
             Note that $\hat{\vec b}' = \dfrac{\vec b'}{\abs{\vec b'}} = \dfrac1{\sqrt{(-1)^2 + 2^2 + (-2)^2}} \cveciii{-1}2{-2} = \dfrac13\cveciii{-1}2{-2}$. Hence,
 
             \begin{align*}
-                \bp{\vec c' \cdot \hat{\vec b}'} \hat{\vec b}' &= \bs{ \cveciii10{-2} \cdot \dfrac13\cveciii{-1}2{-2} } \dfrac13\cveciii{-1}2{-2}\\
+                \bp{\vec c' \dotp \hat{\vec b}'} \hat{\vec b}' &= \bs{ \cveciii10{-2} \dotp \dfrac13\cveciii{-1}2{-2} } \dfrac13\cveciii{-1}2{-2}\\
                 &= \dfrac19 \Big(1 \cdot (-1) + 0 \cdot 2 + (-2) \cdot (-2)\Big) \cveciii{-1}2{-2}\\
                 &= \dfrac13 \cveciii{-1}2{-2}
             \end{align*}
@@ -545,8 +545,8 @@
 
         \part
             \begin{align*}
-                \abs{\vec c' \times \hat{\vec b}'} &= \abs{\hat{\vec b}' \times \vec c'}\\
-                &= \abs{\dfrac13 \vec b' \times \vec c'}\\
+                \abs{\vec c' \crossp \hat{\vec b}'} &= \abs{\hat{\vec b}' \crossp \vec c'}\\
+                &= \abs{\dfrac13 \vec b' \crossp \vec c'}\\
                 &= \dfrac13 \cdot 6\\
                 &= 2
             \end{align*}
@@ -614,8 +614,8 @@
 
         \part
             \begin{align*}
-                \abs{\oa{OP} \cdot \hat{\vec c}} &= \abs{\dfrac13 \cveciii{4}31 \cdot \dfrac1{\sqrt{0^2 + 3^2 + 1^2}}\cveciii031}\\
-                &= \dfrac1{3\sqrt{10}} \abs{\cveciii{4}31 \cdot \cveciii031}\\
+                \abs{\oa{OP} \dotp \hat{\vec c}} &= \abs{\dfrac13 \cveciii{4}31 \dotp \dfrac1{\sqrt{0^2 + 3^2 + 1^2}}\cveciii031}\\
+                &= \dfrac1{3\sqrt{10}} \abs{\cveciii{4}31 \dotp \cveciii031}\\
                 &= \dfrac1{3\sqrt{10}} \abs{4 \cdot 0 + 3 \cdot 3 + 1 \cdot 1}\\
                 &= \dfrac{10}{3\sqrt{10}}\\
                 &= \dfrac{\sqrt{10}}3
@@ -626,17 +626,17 @@
         \part
             Let $\t$ be the angle the rectangular face $BCEF$ makes with the horizontal base.
             \begin{alignat*}{2}
-                &&\oa{OF} \cdot \oa{BF} &= \abs{\oa{OF}} \abs{\oa{BF}} \cos \t\\
-                \implies&&\cveciii200 \cdot \bs{\cveciii200 - \cveciii001} &= 2 \cdot \abs{\cveciii200 - \cveciii001} \cdot \cos\t\\
-                \implies&&\cveciii200 \cdot \cveciii20{-1} &= 2 \cdot \abs{\cveciii20{-1}} \cdot \cos\t\\
+                &&\oa{OF} \dotp \oa{BF} &= \abs{\oa{OF}} \abs{\oa{BF}} \cos \t\\
+                \implies&&\cveciii200 \dotp \bs{\cveciii200 - \cveciii001} &= 2 \cdot \abs{\cveciii200 - \cveciii001} \cdot \cos\t\\
+                \implies&&\cveciii200 \dotp \cveciii20{-1} &= 2 \cdot \abs{\cveciii20{-1}} \cdot \cos\t\\
                 \implies&&2 \cdot 2 + 0 \cdot 0 + 0 \cdot (-1) &= 2 \cdot \sqrt{2^2 + 0^2 + (-1)^2} \cdot \cos\t\\
                 \implies&&4 &= 2 \sqrt{5} \cos\t\\
                 \implies&&\cos\t &= \dfrac{2}{\sqrt5}\\
                 \implies&&\t &= \arccos{\dfrac{2}{\sqrt5}}\\
-                && &= 26.6^\circ \todp{1}
+                && &= 26.6\deg \todp{1}
             \end{alignat*}
 
-            \boxt{$26.6^\circ$}
+            \boxt{$26.6\deg$}
 
     \problem{}
         The position vectors of the points $A$ and $B$ relative to the origin $O$ are $\oa{OA} = \vec i + 2 \vec j - 2 \vec k$ and $\oa{OB} = 2\vec i - 3 \vec j + 6 \vec k$ respectively. The point $P$ on $AB$ is such that $AP:PB = \l:1-\l$. Show that $\oa{OP} = (1 + \l)\vec i + (2 - 5\l)\vec j + (-2 + 8) \vec k$ where $\l$ is a real parameter.
@@ -657,11 +657,11 @@
         \end{align*}
 
         \part
-            For $OP$ to be perpendicular to $AB$, we must have $\oa{OP} \cdot \oa{AB} = 0$.
+            For $OP$ to be perpendicular to $AB$, we must have $\oa{OP} \dotp \oa{AB} = 0$.
             \begin{alignat*}{2}
-                &&\oa{OP} \cdot \oa{AB} &= 0\\
-                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \bs{\cveciii2{-3}6 - \cveciii12{-2}} &= 0\\
-                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \cveciii1{-5}8 &= 0\\
+                &&\oa{OP} \dotp \oa{AB} &= 0\\
+                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \dotp \bs{\cveciii2{-3}6 - \cveciii12{-2}} &= 0\\
+                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \dotp \cveciii1{-5}8 &= 0\\
                 \implies&&(1+\l)\cdot1 + (2-5\l)\cdot(-5) + (-2+8\l)\cdot8 &= 0\\
                 \implies&&-25 + 90\l &= 0\\
                 \implies&&\l &= \dfrac5{18}
@@ -673,15 +673,15 @@
             \begin{alignat*}{2}
                 &&\angle AOP &= \angle POB\\
                 \implies&&\cos\angle AOP &= \cos \angle POB\\
-                \implies&&\dfrac{\oa{OP} \cdot \oa{OA}}{\abs{\oa{OP}} \abs{\oa{OA}}} &= \dfrac{\oa{OP} \cdot \oa{OB}}{\abs{\oa{OP}} \abs{\oa{OB}}}\\
-                \implies&&\abs{\oa{OB}} \bp{\oa{OP} \cdot \oa{OA}} &= \abs{\oa{OA}} \bp{ \oa{OP} \cdot \oa{OB}}\\
-                \implies&&\oa{OP} \cdot \bp{\abs{\oa{OB}} \, \oa{OA}} &= \oa{OP} \cdot \bp{ \abs{\oa{OA}} \, \oa{OB}}\\
-                \implies&&\oa{OP} \cdot \bp{\abs{\oa{OB}} \, \oa{OA}} - \oa{OP} \cdot \bp{ \abs{\oa{OA}} \, \oa{OB}} &= 0\\
-                \implies&&\oa{OP} \cdot \bp{\abs{\oa{OB}} \, \oa{OA} -  \abs{\oa{OA}} \, \oa{OB}} &= 0\\
-                \implies&&\oa{OP} \cdot \bp{\sqrt{2^2 + (-3)^2 + 6^2} \, \oa{OA} -  \sqrt{1^2 + 2^2 + (-2)^2} \, \oa{OB}} &= 0\\
-                \implies&&\oa{OP} \cdot \bp{7 \oa{OA} -  3 \oa{OB}} &= 0\\
-                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \bs{7 \cveciii12{-2} -  3 \cveciii2{-3}6} &= 0\\
-                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \cdot \cveciii1{23}{-32} &= 0\\
+                \implies&&\dfrac{\oa{OP} \dotp \oa{OA}}{\abs{\oa{OP}} \abs{\oa{OA}}} &= \dfrac{\oa{OP} \cdot \oa{OB}}{\abs{\oa{OP}} \abs{\oa{OB}}}\\
+                \implies&&\abs{\oa{OB}} \bp{\oa{OP} \dotp \oa{OA}} &= \abs{\oa{OA}} \bp{ \oa{OP} \dotp \oa{OB}}\\
+                \implies&&\oa{OP} \dotp \bp{\abs{\oa{OB}} \, \oa{OA}} &= \oa{OP} \dotp \bp{ \abs{\oa{OA}} \, \oa{OB}}\\
+                \implies&&\oa{OP} \dotp \bp{\abs{\oa{OB}} \, \oa{OA}} - \oa{OP} \dotp \bp{ \abs{\oa{OA}} \, \oa{OB}} &= 0\\
+                \implies&&\oa{OP} \dotp \bp{\abs{\oa{OB}} \, \oa{OA} -  \abs{\oa{OA}} \, \oa{OB}} &= 0\\
+                \implies&&\oa{OP} \dotp \bp{\sqrt{2^2 + (-3)^2 + 6^2} \, \oa{OA} -  \sqrt{1^2 + 2^2 + (-2)^2} \, \oa{OB}} &= 0\\
+                \implies&&\oa{OP} \dotp \bp{7 \oa{OA} -  3 \oa{OB}} &= 0\\
+                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \dotp \bs{7 \cveciii12{-2} -  3 \cveciii2{-3}6} &= 0\\
+                \implies&&\cveciii{1+\l}{2-5\l}{-2+8\l} \dotp \cveciii1{23}{-32} &= 0\\
                 \implies&&(1+\l)\cdot1 + (2-5\l)\cdot23 + (-2+8\l)\cdot(-32)&=0\\
                 \implies&&111-370\l&=0\\
                 \implies&&\l&=\dfrac3{10}
@@ -749,15 +749,15 @@
             {\allowdisplaybreaks
             \begin{alignat*}{2}
                 &&\area \triangle ONC &= \area \triangle OMC\\
-                \implies&&\dfrac12 \abs{\oa{ON} \times \hat{\vec c}} &= \dfrac12 \abs{\oa{OM} \times \hat{\vec c}}\\
-                \implies&&\abs{\bp{\dfrac47 \vec a + \dfrac37 \vec c} \times \hat{\vec c}} &= \abs{\dfrac12 \vec b \times \hat{\vec c}}\\
-                \implies&&\dfrac47 \abs{\vec a \times \hat{\vec c}} &= \dfrac12 \abs{\vec b \times \hat{\vec c}}\\
-                \implies&&\dfrac47 \abs{\vec a \times \dfrac{\l \vec a + \m \vec b}{\abs{\l \vec a + \m \vec b}}} &= \dfrac12 \abs{\vec b \times \dfrac{\l \vec a + \m \vec b}{\abs{\l \vec a + \m \vec b}}}\\
-                \implies&&\dfrac47 \abs{\vec a \times \bp{\l \vec a + \m \vec b}} &= \dfrac12 \abs{\vec b \times \bp{\l \vec a + \m \vec b}}\\
-                \implies&&\dfrac47 \abs{\vec a \times \m \vec b} &= \dfrac12 \abs{\vec b \times \l \vec a}\\
-                \implies&&\dfrac47 \m \abs{\vec a \times \vec b} &= \dfrac12 \l \abs{\vec b \times \vec a}\\
-                \implies&&\dfrac47 \m \abs{\vec a \times \vec b} &= \dfrac12 \l \abs{\vec a \times \vec b}\\
-                \implies&&\bp{\dfrac47 \m - \dfrac12 \l} \abs{\vec a \times \vec b} &= 0\\
+                \implies&&\dfrac12 \abs{\oa{ON} \crossp \hat{\vec c}} &= \dfrac12 \abs{\oa{OM} \crossp \hat{\vec c}}\\
+                \implies&&\abs{\bp{\dfrac47 \vec a + \dfrac37 \vec c} \crossp \hat{\vec c}} &= \abs{\dfrac12 \vec b \crossp \hat{\vec c}}\\
+                \implies&&\dfrac47 \abs{\vec a \crossp \hat{\vec c}} &= \dfrac12 \abs{\vec b \crossp \hat{\vec c}}\\
+                \implies&&\dfrac47 \abs{\vec a \crossp \dfrac{\l \vec a + \m \vec b}{\abs{\l \vec a + \m \vec b}}} &= \dfrac12 \abs{\vec b \crossp \dfrac{\l \vec a + \m \vec b}{\abs{\l \vec a + \m \vec b}}}\\
+                \implies&&\dfrac47 \abs{\vec a \crossp \bp{\l \vec a + \m \vec b}} &= \dfrac12 \abs{\vec b \crossp \bp{\l \vec a + \m \vec b}}\\
+                \implies&&\dfrac47 \abs{\vec a \crossp \m \vec b} &= \dfrac12 \abs{\vec b \crossp \l \vec a}\\
+                \implies&&\dfrac47 \m \abs{\vec a \crossp \vec b} &= \dfrac12 \l \abs{\vec b \crossp \vec a}\\
+                \implies&&\dfrac47 \m \abs{\vec a \crossp \vec b} &= \dfrac12 \l \abs{\vec a \crossp \vec b}\\
+                \implies&&\bp{\dfrac47 \m - \dfrac12 \l} \abs{\vec a \crossp \vec b} &= 0\\
                 \implies&&\dfrac47 \m - \dfrac12 \l &= 0\\
                 \implies&&\l &= \dfrac87 \m
             \end{alignat*}}
