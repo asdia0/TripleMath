@@ -58,6 +58,8 @@
         \end{align*}
         
         \boxt{$V_x = 2\pi a^3$ units$^3$}
+        
+        \dash
 
         Note that $x = a-\dfrac{y^2}{4a} \implies x^2 = \bp{a - \dfrac{y^2}{4a}}^2 = a^2 - \dfrac12 y^2 + \dfrac1{16a^2}y^4$. Hence, 
         {\allowdisplaybreaks
@@ -70,6 +72,7 @@
             &= \dfrac8{15} (2\pi a^3)\\
             &= \dfrac8{15} V_x
         \end{align*}}
+        \dash
         \begin{align*}
             \volume S &= \text{Volume of Cylinder} - V_y\\
             &= \pi \cdot a^2 \cdot 2a - \dfrac{16}{15} \pi a^3\\
@@ -185,37 +188,30 @@
 
         \part
             Let $V_3$ and $V_4$ be the volumes of the solids obtained when $A_3$ and $A_4$ are rotated about the $y$-axis through $2\pi$ radians, respectively.
-            \begin{align*}
-                V_3 &= 2\pi\int_0^{\pi/4} xy \d x\\
-                &= 2\pi \int_0^{\pi/4} x\sin x \d x 
-            \end{align*}
-            \[
-            \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
-                & D & I \\\cmidrule{1-3}
-                + & x & \sin x \\
-                - & 1 & -\cos x\\
-                + & 0 & -\sin x \\\bottomrule
-            \end{array}
-            \]
+            {\allowdisplaybreaks
             \begin{alignat*}{2}
-                \implies&& V_3 &= 2\pi \evalint{-x\cos x + \sin x}{0}{\pi/4}\\
+                && V_3 &= 2\pi\int_0^{\pi/4} xy \d x\\
+                && &= 2\pi \int_0^{\pi/4} x\sin x \d x\\\\
+                && &\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & x & \sin x \\
+                    - & 1 & -\cos x\\
+                    + & 0 & -\sin x \\\bottomrule
+                \end{array}\\\\
+                && &= 2\pi \evalint{-x\cos x + \sin x}{0}{\pi/4}\\
                 && &= 2\pi\bs{\bp{-\dfrac\pi4 \cos \dfrac\pi4 + \sin \dfrac\pi4} - \bp{0 + \sin 0}}\\
                 && &= 2\pi \bp{-\dfrac\pi4 \cdot \dfrac{\sqrt2}2 + \dfrac{\sqrt2}2}\\
                 && &= 2\pi \cdot \dfrac{\sqrt2}2 \bp{1 - \dfrac\pi4}\\
                 && &= \sqrt2 \pi \bp{1 -\dfrac\pi4}\\\\
                 && V_4 &= 2\pi \int_{\pi/4}^{\pi/2} xy \d x\\
-                && &= 2\pi \int_{\pi/4}^{\pi/2} x\cos x \d x
-            \end{alignat*}
-            \[
-                \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                && &= 2\pi \int_{\pi/4}^{\pi/2} x\cos x \d x\\\\
+                && &\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
                     & D & I \\\cmidrule{1-3}
                     + & x & \cos x \\
                     - & 1 & \sin x\\
                     + & 0 & -\cos x \\\bottomrule
-                \end{array}
-            \]
-            \begin{alignat*}{2}
-                \implies&& V_4 &= 2\pi \evalint{x\sin x + \cos x}{\pi/4}{\pi/2}\\
+                \end{array}\\\\
+                && &= 2\pi \evalint{x\sin x + \cos x}{\pi/4}{\pi/2}\\
                 && &= 2\pi \bp{\bs{\dfrac\pi2 \sin \dfrac\pi2 + \cos\dfrac\pi2} - \bs{\dfrac\pi4\sin\dfrac\pi4 + \cos\dfrac\pi4}}\\
                 && &= 2\pi \bs{\dfrac\pi2 - \bp{\dfrac\pi4 \cdot \dfrac{\sqrt2}2 + \dfrac{\sqrt2}2}}\\
                 && &= 2\pi \bs{\dfrac\pi2 - \dfrac{\sqrt2}2 \bp{1 + \dfrac\pi4}}\\
@@ -224,7 +220,7 @@
                 && &= \sqrt2 \pi \bp{1 - \dfrac\pi4} + \pi^2 - \sqrt2 \pi \bp{1 + \dfrac\pi4}\\
                 && &= \pi^2 - 2 \cdot \sqrt2 \pi \cdot \dfrac\pi4\\
                 && &= \pi^2 - \dfrac{\sqrt2}2 \pi^2
-            \end{alignat*}
+            \end{alignat*}}
             \boxt{The required volume is $\bp{\pi^2 - \dfrac{\sqrt2}2 \pi^2}$ units$^3$.}
 
     \problem{}
@@ -276,7 +272,7 @@
                 &= \int_{\pi/2}^0 y \der{x}{t} \d t\\
                 &= \int_{\pi/2}^0 \sin^3 t \cdot (-2\cos t \sin t) \d t\\
                 &= 2\int_0^{\pi/2} \cos t \sin^4 t \d t\\
-                &= B\of{\dfrac52, 1}\\
+                &= B(5/2, 1)\\
                 &= \dfrac{\G(5/2) \, \G(1)}{\G(5/2 + 1)}\\
                 &= \dfrac{\G(5/2) \cdot 1}{5/2 \cdot \G(5/2)}\\
                 &= \dfrac25
