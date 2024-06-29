@@ -152,24 +152,21 @@
             &= \ln x + \ln k^{r-1}\\
             &= \ln x + (r-1)\ln k
         \end{align*}
-
         Thus, we see that the arithmetic series has a common difference of $\ln k$.        
         \begin{align*}
-            \sum_{r=1}^n u_r &= \sum_{r=1}^n (\ln x + (r-1)\ln k) \\
-            &= n\ln x + \ln k \sum_{r=1}^n (r-1)\\
-            &= n\ln x + \ln k \bp{\dfrac{n(n+1)}2 - n }\\
-            &= \dfrac{n}2 (2\ln x  +(n-1)\ln k)\\
-            &= \dfrac{n}2 (\ln x^2 + \ln k^{n-1})\\
-            &= \dfrac{n}2 \ln{x^2k^{n-1}}
+            \sum_{r=1}^n u_r &= \sum_{r=1}^n \ln{xk^{u-1}}\\
+            &= \ln \prod_{r=1}^n xk^{u-1}\\
+            &= \ln \bp{x^nk^{0 + 1 + 2 + \ldots + (n-1)}}\\
+            &= \ln \bp{x^nk^{(n-1)n/2}}\\
+            &= \ln \bs{\bp{x^2 k^{n-1}}^{n/2}}\\
+            &= \dfrac{n}2 \ln \bp{x^2 k^{n-1}}
         \end{align*}
-
         Consider $e^{S_n}$ when $k = 1$ and $x \neq 1$.
         \begin{align*}
             e^{S_n} &= e^{\tfrac{n}2 \ln x^2}\\
             &= e^{\ln{x^n}}\\
             &= x^n
         \end{align*}
-
         Hence,
         \begin{align*}
             e^{S_1} + e^{S_2} + e^{S_3} + \ldots + e^{S_n} &= x + x^2 + x^3 + \ldots x^n\\
