@@ -30,7 +30,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | B6 | MacLaurin Series | [T-B6](/Group%20B/Chapter%20B6/Tutorial%20B6/Tutorial%20B6.pdf) | [A-B6](/Group%20B/Chapter%20B6/Assignment%20B6/Assignment%20B6.pdf) |
 | B7 | Integration Techniques | [T-B7](/Group%20B/Chapter%20B7/Tutorial%20B7/Tutorial%20B7.pdf) | [A-B7](/Group%20B/Chapter%20B7/Assignment%20B7/Assignment%20B7.pdf) |
 | B8 | Applications of Integration I | [T-B8](/Group%20B/Chapter%20B8/Tutorial%20B8/Tutorial%20B8.pdf) | [A-B8](/Group%20B/Chapter%20B8/Assignment%20B8/Assignment%20B8.pdf) |
-| B9 | Applications of Integration II | | |
+| B9 | Applications of Integration II | [T-B9](/Group%20B/Chapter%20B9/Tutorial%20B9/Tutorial%20B9.pdf) | |
 | B10 | Trapezium and Simpson's Rule | | |
 | B11 | Functions of Two Variables | | |
 | B12 | Functional Differential Equations (H2 MA) | | |
