@@ -1,0 +1,207 @@
+\documentclass{echw}
+
+\title{Further Mathematics\\Weighted Assignment 2}
+\author{Eytan Chong}
+\date{2024-07-02}
+
+\begin{document}
+    \problem{}
+        Referred to the origin $O$, points $A$ and $B$ have position vectors $\vec a$ and $\vec b$ respectively where $\vec a$ and $\vec b$ are non-zero and non-parallel vectors. The point $C$ is such that $\oa{OC} = m \oa{OA}$ where $m$ is a constant. The point $D$ lies on $AB$ produced such that $B$ divides $AD$ in the ratio $1 : 2$.
+
+        \begin{enumerate}
+            \item Express the area of triangle $ADC$ in the form $k \abs{\vec a \crossp \vec b}$, where $k$ is an expression in terms of $m$. Show your working clearly.
+            \item If $\oa{AC}$ is a unit vector, give a geometrical interpretation of the value of $\abs{\vec b \crossp \oa{AC}}$ and find the possible values of $m$ in terms of $\abs{\vec a}$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{alignat*}{2}
+                &&\oa{OC} &= m\oa{OA}\\
+                && &= m \vec a\\
+                \implies&& \oa{AC} &= \oa{OC} - \oa{OA}\\
+                && &= m \vec a - \vec a\\
+                && &= (m-1) \vec a
+            \end{alignat*}
+            By the Ratio Theorem,
+            \begin{alignat*}{2}
+                &&\oa{OB} &= \dfrac{1 \cdot \oa{OD} + 2 \cdot \oa{OA}}{1 + 2}\\
+                \implies&& \oa{OD} &= 3\oa{OB} - 2\oa{OA}\\
+                && &= 3\vec b - 2 \vec a\\
+                \implies&& \oa{AD} &= \oa{OD} - \oa{OA}\\
+                && &= 3\vec b - 3\vec a
+            \end{alignat*}
+            Thus,
+            \begin{align*}
+                \area \triangle ADC &= \dfrac12 \abs{\oa{AC} \crossp \oa{AD}}\\
+                &= \dfrac12 \abs{(m-1)\vec a \crossp (3\vec b - 3\vec a)}\\
+                &= \dfrac32 \abs{m-1} \abs{\vec a \crossp (\vec b - \vec a)}\\
+                &= \dfrac32 \abs{m-1} \abs{\vec a \crossp \vec b - \vec a \crossp \vec a}\\
+                &= \dfrac32 \abs{m-1} \abs{\vec a \crossp \vec b}
+            \end{align*}
+            whence $k = \dfrac32 \abs{m-1}$.
+
+            \boxt{$\area \triangle ADC = \dfrac32 \abs{m-1} \abs{\vec a \crossp \vec b}$}
+
+        \part
+            Since $\oa{AC}$ is parallel to $\vec a$, if $\oa{AC}$ is a unit vector, then $\oa{AC} = \hat{\vec a}$. Hence, $\abs{\vec b \crossp \oa{AC}} = \abs{\vec b \crossp \hat{\vec a}}$ is the shortest distance from $B$ to the line $OA$.
+
+            \begin{alignat*}{2}
+                &&\abs{\oa{AC}} &= 1\\
+                \implies&&\abs{(m-1) \vec a} &= 1\\
+                \implies&& \abs{m-1} &= \dfrac1{\abs{\vec a}}\\
+                \implies&& m-1 &= \pm \dfrac1{\abs{\vec a}}\\
+                \implies&& m &= 1 \pm \dfrac1{\abs{\vec a}}
+            \end{alignat*}
+            
+            \boxt{$m = 1 \pm \dfrac1{\abs{\vec a}}$}
+
+    \problem{}
+        Marine biologist experts calculated that when the concentration of chemical $X$ in a sea inlet reaches 6 milligrams per litre (mg/l), the level of pollution endangers marine life. A factory wishes to release waste containing chemical $X$ into the inlet. It claimed that the discharge will not endanger the marine life, and they provided the local authority with the following information:
+
+        \begin{itemize}
+            \item There is no presence of chemical $X$ in the sea inlet at present.
+            \item The plain is to discharge chemical $X$ on a weekly basis into the sea inlet. The discharge, which will be done at the beginning of each week, will result in an increase in concentration of 2.3 mg/l of chemical $X$ in the inlet.
+            \item The tidal streams will remove 7\% of chemical $X$ from the inlet at the end of every day.
+        \end{itemize}
+
+        \begin{enumerate}
+            \item Form a recurrence relation for the concentration level of chemical $X$, $u_n$, at the beginning of week $n$. Hence, find the concentration at the beginning of week $n$.
+            \item Should the local authority allow the factory to go ahead with the discharge if they are concerned with the marine life at the sea inlet? Justify your answer.
+        \end{enumerate}
+
+    \solution
+        \part
+            Note that $\bp{\dfrac{93}{100}}^7 = 0.60170 \tosf{5}$.
+            \boxt{$u_n = 0.60170(u_{n-1} + 2.3), \, u_0 = 0$}
+
+            Let $k$ be the constant such that $u_n + k = 0.60170(u_{n-1} + k)$. Then $k = \dfrac{2.3 \cdot 0.60170}{0.60170 - 1} = -3.4745 \tosf{5}$.
+            \begin{alignat*}{2}
+                &&u_n -3.4745 &= 0.60170(u_{n-1} - 3.4745)\\
+                && &= 0.60170^n (u_0 - 3.4745)\\
+                && &= -3.4745 \cdot 0.60170^n\\
+                \implies&& u_n &= 3.4745 - 3.4745 \cdot 0.60170^n
+            \end{alignat*}
+
+            \boxt{The concentration at the beginning of week $n$ is $\bp{3.4745 - 3.4745 \cdot 0.60170^n}$ mg/l.}
+
+        \part
+            \begin{equation*}
+                \lim_{n \to \infty} u_n = \lim_{n \to \infty} (3.4745 - 3.4745 \cdot 0.60170^n) = 3.4745
+            \end{equation*}
+            Hence, in the long run, the concentration of chemical $X$ in the inlet is $3.4745$ mg/l, which is less than the endangering limit of 6 mg/l. Thus, the local authority should allow the factory to go ahead with the discharge as it would not pose any major threat to the marine life at the sea inlet.
+            \boxt{The local authority should allow the factory to go ahead with the discharge.}
+
+    \problem{}
+        Referred to the origin $O$, the position vector of the point $A$ is $3 \vec i - 2 \vec j - 6 \vec k$ and the Cartesian equation of the line $l_1$ is $x-1 = 2-y = 2z+6$. 
+        
+        \begin{enumerate}
+            \item Find the position vector of the foot of perpendicular from $A$ to $l_1$.
+        \end{enumerate}
+
+        Line $l_2$ has the vector equation $\vec r = \cveciii{-1}6{-1} + \m \cveciii{-6}{6}{-3}$, where $\m \in \R$.
+
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item Find the shortest distance between $l_1$ and $l_2$.
+            \item Given that $l_2$ is the reflection of $l_1$ about the line $l_3$, find the vector equation of the line $l_3$.
+        \end{enumerate}
+
+    \solution
+        \part
+            Note that $l_1$ has vector equation
+            \[
+                l_1 : \vec r = \cveciii12{-3} + \l \cveciii{2}{-2}{1}, \, \l \in \R
+            \]
+            Let $F$ be the foot of perpendicular from $A$ to $l_1$. Since $F$ is on $l_1$, $\oa{OF} = \cveciii12{-3} + \l \cveciii{2}{-2}{1}$ for some $\l \in \R$. Note also that $\oa{AF}$ is perpendicular to $l_1$. Hence,
+            \begin{alignat*}{2}
+                &&\oa{AF} \cdot \cveciii2{-2}1 &= 0\\
+                \implies&&\bs{\oa{OF} - \oa{OA}} \cdot \cveciii{2}{-2}1 &= 0\\
+                \implies&&\bs{\cveciii12{-3} + \l \cveciii{2}{-2}{1} - \cveciii3{-2}{-6}} \cdot \cveciii{2}{-2}1 &= 0\\
+                \implies&&\bs{\cveciii{-2}43 + \l \cveciii{2}{-2}{1}} \cdot \cveciii{2}{-2}1 &= 0\\
+                \implies&& (-4 -8 + 3) + \l (4 + 4 + 1) &= 0\\
+                \implies&& -9 + 9 \l &= 0\\
+                \implies&& \l &= 1
+            \end{alignat*} 
+            Thus, $\oa{OF} = \cveciii12{-3} + \cveciii{2}{-2}{1} = \cveciii30{-2}$.
+            \boxt{$\oa{OF} = \cveciii30{-2}$}
+
+        \part
+            Note that $\cveciii{-6}6{-3} = -3\cveciii2{-2}1$. Hence, $l_2$ is parallel to $l_1$. Hence, the shortest distance between $l_1$ and $l_2$ is the perpendicular distance from a point on $l_1$ to $l_2$.
+            \begin{align*}
+                \text{Shortest distance} &= \abs{\bs{\cveciii12{-3} - \cveciii{-1}6{-1}} \crossp \cveciii2{-2}1} \Bigg/ \abs{\cveciii2{-2}1}\\
+                &= \dfrac1{\sqrt{9}} \abs{\cveciii2{-4}{-2} \crossp \cveciii{2}{-2}1}\\
+                &= \dfrac23 \abs{\cveciii{-1}21 \crossp \cveciii2{-2}1}\\
+                &= \dfrac23 \abs{\cveciii43{-2}}\\
+                &= \dfrac23 \sqrt{29}
+            \end{align*}
+
+            \boxt{The shortest distance between $l_1$ and $l_2$ is $\dfrac23 \sqrt{29}$ units.}
+
+        \part
+            Observe that $l_3$ passes through the midpoint of $\cveciii12{-3}$ and $\cveciii{-1}6{-1}$, which evaluates to $\dfrac12 \bs{\cveciii12{-3} + \cveciii{-1}6{-1}} = \cveciii04{-2}$. $l_3$ is also parallel to both $l_1$ and $l_2$. Hence,
+            \boxt{$l_3 : \vec r = \cveciii04{-2} + \n \cveciii2{-2}1, \, \n \in \R$}
+
+    \problem{}
+        A first order recurrence relation is given as 
+        \[
+            u_{n+1} \bs{u_n + \bp{\dfrac12}^n} + u_n \bs{\bp{\dfrac12}^{n+1} - 10} = 10\bp{\dfrac12}^n - \bp{\dfrac12}^{2n+1} - 16
+        \]
+        where $u_1$ = 1.
+
+        \begin{enumerate}
+            \item Using the substitution $u_n = \dfrac{v_n}{v_{n-1}} - \bp{\dfrac12}^n$ where $v_{n-1} \neq 0$, show that the recurrence relation can be expressed as a second order recurrence relation of the form $v_{n+1} + av_n + 16v_{n-1} = 0$, where $a$ is a constant to be found.
+            \item By first solving the second order recurrence relation in (a), find an expression for $u_n$ in terms of $n$.
+            \item Describe what happens to the value of $u_n$ for large values of $n$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{alignat*}{2}
+                && u_{n+1} \bs{u_n + \bp{\dfrac12}^n} + u_n \bs{\bp{\dfrac12}^{n+1} - 10} &= 10\bp{\dfrac12}^n - \bp{\dfrac12}^{2n+1} - 16\\
+                \implies&& \bs{\dfrac{v_{n+1}}{v_n} - \bp{\dfrac12}^{n+1}} \bs{\dfrac{v_n}{v_{n-1}} - \bp{\dfrac12}^n + \bp{\dfrac12}^n} + &\bs{\dfrac{v_n}{v_{n-1}} - \bp{\dfrac12}^n} \bs{\bp{\dfrac12}^{n+1} - 10}\\
+                && &= 10\bp{\dfrac12}^n - \bp{\dfrac12}^{2n+1} - 16\\
+                \implies&& \bs{\dfrac{v_{n+1}}{v_n} - \bp{\dfrac12}^{n+1}} \bp{\dfrac{v_n}{v_{n-1}}} + \bs{\dfrac{v_n}{v_{n-1}} - \bp{\dfrac12}^n} &\bs{\bp{\dfrac12}^{n+1} - 10}\\
+                && &= 10\bp{\dfrac12}^n - \bp{\dfrac12}^{2n+1} - 16\\
+                \implies&& \dfrac{v_{n+1}}{v_n} \cdot \dfrac{v_n}{v_{n-1}} - \bp{\dfrac12}^{n+1} \cdot \dfrac{v_n}{v_{n-1}} + \dfrac{v_n}{v_{n-1}} \cdot \bp{\dfrac12}^{n+1} &-10 \cdot \dfrac{v_n}{v_{n-1}} - \bp{\dfrac12}^{2n+1} + 10\bp{\dfrac12}^n\\
+                && &= 10\bp{\dfrac12}^n - \bp{\dfrac12}^{2n+1} - 16\\
+                \implies&& \dfrac{v_{n+1}}{v_{n-1}} -10 \cdot \dfrac{v_n}{v_{n-1}} &=- 16\\
+                \implies&&v_{n+1} - 10v_n + 16v_{n-1} &= 0
+            \end{alignat*}
+            Hence, $a = -10$.
+
+        \part
+            Consider the characteristic equation of $v_n$.
+            \begin{alignat*}{2}
+                && x^2 - 10x + 16 &= 0\\
+                \implies&&(x-2)(x-8) &= 0
+            \end{alignat*}
+            Hence, 2 and 8 are the roots of the characteristic equation. Thus,
+            \boxt{$v_n = A \cdot 2^n + B \cdot 8^n$}
+            Consider $u_1$.
+            \begin{alignat*}{2}
+                && u_1 &= 1\\
+                \implies&& \dfrac{v_1}{v_0} - \dfrac12 &= 1\\
+                \implies&& \dfrac{2A + 8B}{A + B} &= \dfrac32\\
+                \implies&& \dfrac{4A + 16B}{A + B} &= 3\\
+                \implies&& 4A + 16B &= 3A + 3B\\
+                \implies&& A &= -13B
+            \end{alignat*}
+            Consider $u_n$.
+            \begin{align*}
+                u_n &= \dfrac{v_n}{v_{n-1}} - \bp{\dfrac12}^n\\
+                &= \dfrac{A \cdot 2^n + B \cdot 8^n}{A \cdot 2^{n-1} + B \cdot 8^{n-1}} - \bp{\dfrac12}^n\\
+                &= 8 \bp{\dfrac{A \cdot 2^n + B \cdot 8^n}{4A \cdot 2^n + B \cdot 8^n}} - \bp{\dfrac12}^n\\
+                &= 8 \bp{1 - \dfrac{3A \cdot 2^n}{4A \cdot 2^n + B \cdot 8^n}} - \bp{\dfrac12}^n\\
+                &= 8 \bp{1 - \dfrac{3 \cdot -13B \cdot 2^n}{4 \cdot -13B \cdot 2^n + B \cdot 8^n}} - \bp{\dfrac12}^n\\
+                &= 8 \bp{1 - \dfrac{-39 \cdot 2^n}{-52 \cdot 2^n + 8^n}} - \bp{\dfrac12}^n\\
+                &= 8 + \dfrac{312 \cdot 2^n}{52 \cdot 2^n - 8^n} - \bp{\dfrac12}^n
+            \end{align*}
+
+            \boxt{$u_n = 8 + \dfrac{312 \cdot 2^n}{52 \cdot 2^n - 8^n} - \bp{\dfrac12}^n$}
+
+        \part
+            \begin{equation*}
+                \lim_{n \to \infty} u_n = \lim_{n \to \infty} \bp{8 + \dfrac{312 \cdot 2^n}{52 \cdot 2^n - 8^n} - \bp{\dfrac12}^n} = 8
+            \end{equation*}
+            \boxt{$u_n$ converges to 8 for large values of $n$.}
+\end{document}
