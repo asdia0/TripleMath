@@ -32,22 +32,16 @@
             \begin{align*}
                 \sum\limits_{k=0}^{n-1} 0.40 \cdot u_k &= \sum\limits_{k=0}^{n-1} 0.40 \cdot 40800 \cdot 1.05^k \\
                 &= 16320 \sum\limits_{k=0}^{n-1} 1.05^k \\
-                &= 16320 \sum\limits_{k=1}^{n} 1.05^{k-1} \\
-                &= 16320 \cdot 1.05^{-1} \cdot \sum\limits_{k=1}^{n} 1.05^k \\
-                &= 16320 \cdot 1.05^{-1} \cdot \dfrac{1.05 \cdot (1.05^k - 1)}{1.05-1} \\
-                &= 326400 (1.05^k - 1)
+                &= 16320 \cdot \dfrac{1.05^n - 1}{1.05-1} \\
+                &= 326400 (1.05^n - 1)
             \end{align*}
 
-            \boxt{His total savings at the end of $n$ years is \$$326400 (1.05^k - 1)$.}
+            \boxt{His total savings at the end of $n$ years is \$$326400 (1.05^n - 1)$.}
 
             \begin{alignat*}{2}
                 && 326400 (1.05^n - 1) &\geq 1 000 000\\
-                && 1.05^n - 1 &\geq \dfrac{1 000 000}{326400}\\
-                && 1.05^n &\geq \dfrac{1 000 000}{326400}+1\\
-                && n &\geq \log_{1.05}(\dfrac{1 000 000}{326400}+1)\\
-                && &= 28.7 \tosf{3}
+                \implies&& n &\geq 28.7 \tosf{3}
             \end{alignat*}
-
             Since $n \in \N$, the minimum value of $n$ is 29. 
 
             \boxt{He has to work for a minimum of 29 complete years.}
@@ -100,6 +94,7 @@
             \end{align*}
 
             \subpart
+
                 \textbf{Test for Geometric Progression.}
                 \begin{align*}
                     \dfrac{u_{n+1}}{u_n} &= \dfrac{\a^{-(n+1)}(\a^{-1} - 1)}{\a^{-n}(\a^{-1} - 1)}\\
@@ -112,11 +107,13 @@
                 \boxt{The common ratio of the sequence is $\a^{-1}$.}
 
             \subpart
+
                 Consider $L = \lim\limits_{n \to \infty} S_n = \lim\limits_{n \to \infty} (\a^{-n} - 1)$. For $L$ to exist, we need $\lim\limits_{n \to \infty} \a^{-n}$ to exist. Hence, $\abs{\a^{-1}} < 1$, whence $\abs{\a} > 1$. Thus, $\a < -1$ or $\a > 1$.
 
                 \boxt{$\bc{ x \in \R \colon x < -1 \lor x > 1}$}
 
             \subpart
+
                 Since $\abs{\a^{-1}} < 1$, we know $\lim\limits_{n \to \infty} \a^{-n} = 0$. Hence,
                 \begin{align*}
                     \lim\limits_{n \to \infty} S_n &= \lim\limits_{n \to \infty} (\a^{-n} - 1)\\
@@ -174,15 +171,15 @@
             \boxt{$a = \dfrac{15}2$, $b=-5$, $c=-5$}
 
     \problem{}
-        The graphs of $y = \dfrac13 (2^x)$ and $y=x$ intersect at $x = \a$ and $x=\b$ where $\a < \b$. A sequence of real numbers $x_1, x_2, x_3, \ldots$ satisfies the recurrence relation
+        The graphs of $y = 2^x / 3$ and $y=x$ intersect at $x = \a$ and $x=\b$ where $\a < \b$. A sequence of real numbers $x_1, x_2, x_3, \ldots$ satisfies the recurrence relation
 
         \[
-            x_{n+1} = \dfrac13 (2^{x_n}), \qquad n \geq 1
+            x_{n+1} = \dfrac13 \cdot 2^{x_n}, \qquad n \geq 1
         \]
 
         \begin{enumerate}
             \item Prove algebraically that, if the sequence converges, then it converges to either $\a$ or $\b$.
-            \item By using the graphs of $y=\dfrac13(2^x)$ and $y=x$, prove that
+            \item By using the graphs of $y=\dfrac13 \cdot 2^x$ and $y=x$, prove that
             \begin{itemize}
                 \item if $\a < x_n < \b$, then $\a < x_{n+1} < x_n$
                 \item if $x_n < \a$, then $x_n < x_{n+1} < \a$
@@ -194,14 +191,7 @@
 
     \solution
         \part
-            Let $L = \lim\limits_{n \to \infty} x_n$.
-            \begin{alignat*}{2}
-                && x_{n+1} &= \dfrac13 (2^{x_n})\\
-                \implies&& \lim_{n \to \infty} x_{n+1} &= \lim_{n \to \infty} \dfrac13 (2^{x_n})\\
-                \implies&& L &= \dfrac13 (2^L)
-            \end{alignat*}
-
-            Since $y=x$ and $y=\dfrac13 (2^x)$ intersect only at $x=\a$ and $x = \b$, then $\a$ and $\b$ are the only roots of $x = \dfrac13 (2^x)$. Since $L$ is also a root of $x = \dfrac13 (2^x)$, $L$ must be either $\a$ or $\b$.
+            Let $L = \lim\limits_{n \to \infty} x_n$. Then $L = \dfrac13 \cdot 2^L$. Since $y=x$ and $y=\dfrac13 \cdot 2^x$ intersect only at $x=\a$ and $x = \b$, then $\a$ and $\b$ are the only roots of $x = \dfrac13 \cdot 2^x$. Since $L$ is also a root of $x = \dfrac13 \cdot 2^x$, $L$ must be either $\a$ or $\b$.
 
         \part
             \begin{center}
@@ -225,7 +215,7 @@
                         ]
                         \addplot[plotRed] {1/3*2^x};
             
-                        \addlegendentry{$y = \tfrac13 (2^x)$};
+                        \addlegendentry{$y = \frac13 \cdot 2^x$};
             
                         \addplot[plotBlue] {x};
             
