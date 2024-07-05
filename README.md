@@ -11,13 +11,12 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | |
 | A5 | Recurrence Relations | [T-A5](/Group%20A/Chapter%20A5/Tutorial%20A5/Tutorial%20A5.pdf) | [A-A5](/Group%20A/Chapter%20A5/Assignment%20A5/Assignment%20A5.pdf) | 
 | A6 | Polar Coordinates | [T-A6](/Group%20A/Chapter%20A6/Tutorial%20A6/Tutorial%20A6.pdf) | [A-A6](/Group%20A/Chapter%20A6/Assignment%20A6/Assignment%20A6.pdf) |
-| A7 | Vectors I | [T-A7](/Group%20A/Chapter%20A7/Tutorial%20A7/Tutorial%20A7.pdf) | [A-A7](/Group%20A/Chapter%20A7/Assignment%20A7/Assignment%20A7.pdf) |
-| A8 | Vectors II | [T-A8](/Group%20A/Chapter%20A8/Tutorial%20A8/Tutorial%20A8.pdf) | [A-A8](/Group%20A/Chapter%20A8/Assignment%20A8/Assignment%20A8.pdf) |
-| A9 | Vectors III | [T-A9](/Group%20A/Chapter%20A9/Tutorial%20A9/Tutorial%20A9.pdf) | |
-| A10 | Complex Numbers (H2 MA) | | |
-| A11 | Complex Numbers (H2 FM) | | |
-| A12 | Permutations and Combinations | | |
-| A13 | Probability | | |
+| A7 | Vectors I - Basic Properties and Vector Algebra | [T-A7](/Group%20A/Chapter%20A7/Tutorial%20A7/Tutorial%20A7.pdf) | [A-A7](/Group%20A/Chapter%20A7/Assignment%20A7/Assignment%20A7.pdf) |
+| A8 | Vectors II - Lines | [T-A8](/Group%20A/Chapter%20A8/Tutorial%20A8/Tutorial%20A8.pdf) | [A-A8](/Group%20A/Chapter%20A8/Assignment%20A8/Assignment%20A8.pdf) |
+| A9 | Vectors III - Planes | [T-A9](/Group%20A/Chapter%20A9/Tutorial%20A9/Tutorial%20A9.pdf) | |
+| A10 | Complex Numbers | [T-A10A](/Group%20A/Chapter%20A10/Tutorial%20A10A/Tutorial%20A10A.pdf) | |
+| A11 | Permutations and Combinations | | |
+| A12 | Probability | | |
 
 ## Group B
 | Index | Chapter | Tutorials | Assignments |
@@ -29,9 +28,9 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | B5 | Applications of Differentiation | [T-B5A](/Group%20B/Chapter%20B5/Tutorial%20B5A/Tutorial%20B5A.pdf), [T-B5B](/Group%20B/Chapter%20B5/Tutorial%20B5B/Tutorial%20B5B.pdf) | [A-B5A](/Group%20B/Chapter%20B5/Assignment%20B5A/Assignment%20B5A.pdf), [A-B5B](/Group%20B/Chapter%20B5/Assignment%20B5B/Assignment%20B5B.pdf) |
 | B6 | MacLaurin Series | [T-B6](/Group%20B/Chapter%20B6/Tutorial%20B6/Tutorial%20B6.pdf) | [A-B6](/Group%20B/Chapter%20B6/Assignment%20B6/Assignment%20B6.pdf) |
 | B7 | Integration Techniques | [T-B7](/Group%20B/Chapter%20B7/Tutorial%20B7/Tutorial%20B7.pdf) | [A-B7](/Group%20B/Chapter%20B7/Assignment%20B7/Assignment%20B7.pdf) |
-| B8 | Applications of Integration I | [T-B8](/Group%20B/Chapter%20B8/Tutorial%20B8/Tutorial%20B8.pdf) | [A-B8](/Group%20B/Chapter%20B8/Assignment%20B8/Assignment%20B8.pdf) |
-| B9 | Applications of Integration II | [T-B9](/Group%20B/Chapter%20B9/Tutorial%20B9/Tutorial%20B9.pdf) | |
-| B10 | Trapezium and Simpson's Rule | | |
+| B8 | Applications of Integration I - Area and Volume | [T-B8](/Group%20B/Chapter%20B8/Tutorial%20B8/Tutorial%20B8.pdf) | [A-B8](/Group%20B/Chapter%20B8/Assignment%20B8/Assignment%20B8.pdf) |
+| B9 | Applications of Integration II - Arc Length and Surface Area| [T-B9](/Group%20B/Chapter%20B9/Tutorial%20B9/Tutorial%20B9.pdf) | |
+| B10 | Applications of Integration III - Trapezium Rule and Simpson's Rule | | |
 | B11 | Functions of Two Variables | | |
 | B12 | Functional Differential Equations (H2 MA) | | |
 | B13 | Functional Differential Equations (H2 FM) | | |
