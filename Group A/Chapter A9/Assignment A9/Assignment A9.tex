@@ -1,0 +1,231 @@
+\documentclass{echw}
+
+\title{Assignment A9\\Vectors III}
+\author{Eytan Chong}
+\date{2024-07-06}
+
+\begin{document}
+    \problem{}
+        The equation of the plane $\Pi_1$ is $y + z = 0$ and the equation of the line $l$ is $\dfrac{x-2}2 = \dfrac{y-2}{-1} = \dfrac{z-2}3$. Find
+        \begin{enumerate}
+            \item the position vector of the point of intersection of $l$ and $\Pi_1$,
+            \item the length of the perpendicular from the origin to $l$,
+            \item the Cartesian equation for the plane $\Pi_2$ which contains $l$ and the origin,
+            \item the acute angle between the planes $\Pi_1$ and $\Pi_2$, giving your answer correct to the nearest $0.1 \deg$.
+        \end{enumerate}
+
+    \solution
+        Note that $\Pi_1$ has equation $\vec r \dotp \cveciii011 = 0$ and $l$ has equation $\vec r = \cveciii522 + \l \cveciii2{-1}3$, $\l \in \R$.
+
+        \part
+            Let $P$ be the point of intersection of $\Pi_1$ and $l$. Then $\oa{OP} = \cveciii522 + \l \cveciii2{-1}3$ for some $\l \in \R$. Also, $\oa{OP} \dotp \cveciii011 = 0$.
+            \begin{alignat*}{2}
+                &&\bs{\cveciii522 + \l \cveciii2{-1}3} \dotp \cveciii011 &= 0\\
+                \implies&&\cveciii522 \dotp \cveciii011 + \l \cveciii2{-1}3 \dotp \cveciii011 &= 0\\
+                \implies&&4 + 2\l &= 0\\
+                \implies&&\l &= -2\\
+                \implies&&\oa{OP} &= \cveciii522 - 2\cveciii2{-1}3\\
+                && &= \cveciii14{-4}
+            \end{alignat*}
+            
+            \boxt{$\oa{OP} = \cveciii14{-4}$}
+
+        \part
+            \begin{align*}
+                \length &= \abs{\cveciii522 \crossp \cveciii2{-1}3} \Bigg/ \abs{\cveciii2{-1}3}\\
+                &= \dfrac1{\sqrt{14}} \abs{\cveciii8{-11}{-9}}\\
+                &= \dfrac{\sqrt{266}}{\sqrt{14}}\\
+                &= \sqrt{19}
+            \end{align*}
+
+            \boxt{The perpendicular distance from the origin to $l$ is $\sqrt{19}$ units.}
+
+        \part
+            Observe that $\Pi_2$ is parallel to $\cveciii522$ and $\cveciii2{-1}3$. Thus, $\vec n = \cveciii522 \crossp \cveciii2{-1}3 = \cveciii8{-11}{-9}$. Since $\Pi_2$ contains the origin, $d = 0$. Hence, $\Pi_2$ has vector equation $\vec r \dotp \cveciii8{-11}{-9} = 0$, which translates to $8x - 11y - 9z = 0$.
+
+            \boxt{$\Pi_2 : 8x - 11y - 9z = 0$}
+
+        \part
+            Let the acute angle be $\t$.
+            \begin{alignat*}{2}
+                &&\cos\t &= \dfrac{\abs{\cveciii011 \dotp \cveciii8{-11}{-9}}}{\abs{\cveciii011}\abs{\cveciii8{-11}{-9}}}\\
+                && &= \dfrac{20}{\sqrt{2}\sqrt{266}}\\
+                \implies&&\t &= 29.9\deg \todp{1}
+            \end{alignat*}
+
+            \boxt{$\t = 29.9\deg$}
+
+    \problem{}
+        The plane $\Pi_1$ has equation $\vec r \dotp (-\vec i + 2 \vec k) = -4$ and the points $A$ and $P$ have position vectors $4\vec i$ and $\vec i + \a \vec j + \vec k$ respectively, where $\a \in \R$.
+
+        \begin{enumerate}
+            \item Show that $A$ lies on $\Pi_1$, but $P$ does not.
+            \item Find, in terms of $\a$, the position vector of $N$, the foot of perpendicular of $P$ on $\Pi_1$.
+        \end{enumerate}
+
+        The plane $\Pi_2$ contains the points $A$, $P$ and $N$.
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item Show that the equation of $\Pi_2$ is $\vec r \dotp (2\a \vec i + 5 \vec j + \a \vec k) = 8\a$ and write down the equation of $l$, the line of the intersection of $\Pi_1$ and $\Pi_2$.
+        \end{enumerate}
+
+        The plane $\Pi_3$ has equation $\vec r \dotp (\vec i + \vec j + 2\vec k) = 4$.
+        \begin{enumerate}
+            \setcounter{enumi}{3}
+            \item By considering $l$, or otherwise, find the value of $\a$ for which the three planes intersect in a line.
+        \end{enumerate}
+
+    \solution
+        Note that $\Pi_1 : \vec r \dotp \cveciii{-1}02 = -4$, $\oa{OA} = \cveciii400$ and $\oa{OP} = \cveciii1\a1$.
+
+        \part
+            \[
+                \oa{OA} \dotp \cveciii{-1}02 = \cveciii400 \dotp \cveciii{-1}02 = -4
+            \]
+            Hence, $A$ lies on $\Pi_1$.
+
+            \[
+                \oa{OP} \dotp \cveciii{-1}02 = \cveciii1\a1 \dotp \cveciii{-1}02 = 1 \neq -4
+            \]
+            Hence, $P$ does not lie on $\Pi_1$.
+
+        \part
+            Note that $\oa{NP} = \l \cveciii{-1}02$ for some $\l \in \R$, and $\oa{ON} \dotp \cveciii{-1}02 = -4$.
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                &&\oa{NP} &= \l \cveciii{-1}02\\
+                \implies&&\oa{OP} - \oa{ON} &= \l \cveciii{-1}02\\
+                \implies&&\cveciii1\a1 - \oa{ON} &= \l \cveciii{-1}02\\
+                \implies&&\bs{\cveciii1\a1 - \oa{ON}} \dotp \cveciii{-1}02 &= \l \cveciii{-1}02 \dotp \cveciii{-1}02\\
+                \implies&&\cveciii1\a1 \dotp \cveciii{-1}02 - (-4) &= \l \cveciii{-1}02 \dotp \cveciii{-1}02\\
+                \implies&&5 &= 5\l\\
+                \implies&&\l &= 1
+            \end{alignat*}}
+            Hence, $\oa{NP} = \cveciii{-1}02$, whence $\oa{ON} = \oa{OP} - \oa{NP} = \cveciii2\a{-1}$.
+
+            \boxt{$\oa{ON} = \cveciii2\a{-1}$}
+
+        \part
+            Note that $\Pi_2$ is parallel to $\oa{NP} = \cveciii{-1}02$ and $\oa{AN} = \cveciii2\a{-1} - \cveciii400 = \cveciii{-2}\a{-1}$. Hence, $\vec n = \cveciii{-1}02 \crossp \cveciii{-2}\a{-1} = -\cveciii{2\a}5\a \implies d = \cveciii400 \dotp \cveciii{2\a}5\a = 8\a$. Thus, $\Pi_2$ has vector equation $\vec r \dotp \cveciii{2\a}5{\a} = 8\a$ which translates to $\vec r \dotp (2\a \vec i + 5 \vec j + \a \vec k) = 8\a$.
+
+            \boxt{$l : \cveciii400 + \m \cveciii{-2}\a{-1}$, $\m \in \R$}
+
+        \part
+            If the three planes intersect in a line, they must intersect at $l$. Hence, $l$ lies on $\Pi_3$.
+            \begin{alignat*}{2}
+                &&\bs{\cveciii400 + \m \cveciii{-2}\a{-1}} \dotp \cveciii112 &= 4\\
+                \implies&&\cveciii400 \dotp \cveciii112 + \m \cveciii{-2}\a{-1} \dotp \cveciii112 &= 4\\
+                \implies&&4 + (\a - 4)\m &= 4\\
+                \implies&& (\a - 4)\m &= 0
+            \end{alignat*}
+            Hence, $\a = 4$.
+
+            \boxt{$\a = 4$}
+
+    \problem{}
+        When a light ray passes from air to glass, it is deflected through an angle. The light ray $ABC$ starts at point $A(1, 2, 2)$ and enters a glass object at point $B(0, 0, 2)$. The surface of the glass object is a plane with normal vector $\vec n$. The diagram shows a cross-section of the glass object in the plane of the light ray and $\vec n$.
+
+        \begin{center}
+            \begin{tikzpicture}
+                \coordinate[label=right:$A$] (A) at (2, 1);
+                \coordinate[label=above left:$B$] (B) at (0, 0);
+                \coordinate[label=left:$C$] (C) at (-1.5, -1.5);
+                \coordinate (P1) at (3, 0);
+
+                \draw (-3, 0) -- (P1);
+                \draw (-3, 0) -- (-3, -2);
+                \draw (-3, -2) -- (3, -2);
+                \draw (3, -2) -- (3, 0);
+                \draw[->, very thick] (B) -- (0, 2.5) node[anchor=north west] {$\vec n$};
+                \draw (A) -- (B);
+                \draw (B) -- (C);
+                \draw[dashed] (B) -- (0, -1.75);
+
+        
+                \draw pic [draw, angle radius=12mm, "$\t$"] {angle = P1--B--A};
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+            \item Find a vector equation of the line $AB$.
+        \end{enumerate}
+
+        The surface of the glass object is a plane with equation $x + z = 2$. $AB$ makes an acute angle $\t$ with the plane.
+
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item Calculate the value of $\t$, giving your answer in degrees.
+        \end{enumerate}
+
+        The line $BC$ makes an angle of $45 \deg$ with the normal to the plane, and $BC$ is parallel to the unit vector $\cveciii{-2/3}{p}{q}$.
+
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item By considering a vector perpendicular to the plane containing the light ray and $\vec n$, or otherwise, find the values of $p$ and $q$.
+        \end{enumerate}
+
+        The light ray leaves the glass object through a plane with equation $3x + 3z = -4$.
+        \begin{enumerate}
+            \setcounter{enumi}{3}
+            \item Find the exact thickness of the glass object, taking one unit as one cm.
+            \item Find the exact coordinates of the point at which the light ray leaves the glass object.
+        \end{enumerate}
+
+    \solution
+        Let $\Pi_G$ be the plane representing the surface of the glass object.
+
+        \part
+            Note that $\oa{AB} = \oa{OB} - \oa{OA} = \cveciii002 - \cveciii122 = -\cveciii120$.
+
+            \boxt{$l_{AB} : \vec r = \cveciii002 + \l \cveciii120$, $\l \in \R$}
+            
+        \part
+            Observe that $\Pi_G$ has equation $\vec r \dotp \cveciii101 = 2$. Hence,
+            \begin{alignat*}{2}
+                &&\sin \t &= \dfrac{\abs{\cveciii101 \dotp \cveciii120}}{\abs{\cveciii101} \abs{\cveciii120}}\\
+                && &= \dfrac1{\sqrt2 \sqrt5}\\
+                \implies&&\t &= 71.6 \deg \todp{1}
+            \end{alignat*}
+
+            \boxt{$\t = 71.6 \deg$}
+
+        \part
+            Since line $BC$ makes an angle of $45 \deg$ with $\vec n_G$,
+            \begin{alignat*}{2}
+                &&\sin 45\deg &= \dfrac{\abs{\cveciii101 \dotp \cveciii{-2/3}{p}{q}}}{\abs{\cveciii101} \abs{\cveciii{-2/3}{p}{q}}}\\
+                \implies&&\dfrac1{\sqrt2} &= \dfrac{\abs{q - \dfrac23}}{\sqrt2 \cdot 1}\\
+                \implies&&\abs{q - \dfrac23} &= 1
+            \end{alignat*}
+            Hence, $q = -\dfrac13$. Note that we reject $q = \dfrac53$ since $\cveciii{-2/3}{p}{q}$ is a unit vector, which implies that $\abs{q} \leq 1$.
+
+            Let $\Pi_L$ be the plane containing the light ray. Note that $\Pi_L$ is parallel to $\oa{AB}$ and $\oa{BC}$. Hence, $\vec n_L = \cveciii120 \crossp \cveciii{-2/3}{p}{q} = \cveciii{2q}{-q}{p + 4/3} = \dfrac13 \cveciii{6q}{-3q}{3p + 4}$. Since $\Pi_L$ contains $\vec n_G$, we have that $\vec n_L \perp \vec n_G$, whence $\vec n_L \dotp \vec n_G = 0$.
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                &&\cveciii{6q}{-3q}{3p + 4} \cdot \cveciii101 &= 0\\
+                \implies&&6q + 3p + 4 &= 0\\
+                \implies&&6 \cdot -\dfrac13 + 3p + 4 &= 0\\
+                \implies&& p &= -\dfrac23
+            \end{alignat*}}
+
+            \boxt{$p = -\dfrac23$, $q = -\dfrac13$}
+
+        \part
+            Let $\Pi_G'$ be the plane with equation $3x + 3z = -4$. Observe that $\Pi_G$ is parallel to $\Pi_G'$. Also note that $\bp{-\dfrac43, 0, 0}$ is a point on $\Pi_G'$. Hence, the distance between $\Pi_G$ and $\Pi_G'$ is given by
+            \[
+                \text{Distance} = \abs{2 - \cveciii{-4/3}00 \dotp \cveciii101} \Bigg/ \abs{\cveciii101} = \dfrac{10/3}{\sqrt2} = \dfrac{10}{3\sqrt2}
+            \]
+            \boxt{The distance between the two planes is $\dfrac{10}{3\sqrt2}$ cm.}
+
+        \part
+            Observe that $\cveciii{-2/3}{p}{q} = \cveciii{-2/3}{-2/3}{-1/3} = -\dfrac13 \cveciii221$, whence the line $BC$ has equation $\vec r  = \cveciii002 + \m \cveciii221$, $\m \in \R$. Let $P$ be the intersection between line $BC$ and $\Pi_G'$. Note that $\oa{OP} = \cveciii002 + \m \cveciii221$ for some $\m \in \R$, and $\oa{OP} \dotp \cveciii303 = -4$.
+            \begin{alignat*}{2}
+                &&\bs{\cveciii002 + \m \cveciii221} \dotp \cveciii303 &= -4\\
+                \implies&&\cveciii002 \dotp \cveciii303 + \m \cveciii221 \dotp \cveciii303 &= -4\\
+                \implies&&6 - 9\m &= -4\\
+                \implies&&\m &= -\dfrac{10}9
+            \end{alignat*}
+            Hence, $\oa{OP} = \cveciii002 - \dfrac{10}9 \cveciii221 = \cveciii{-20/9}{-20/9}{8/9}$.
+
+            \boxt{The coordinates are $\bp{-\dfrac{20}9, -\dfrac{20}9, \dfrac89}$.}
+
+\end{document}

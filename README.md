@@ -8,12 +8,12 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | A1 | Equations and Inequalities | [T-A1](/Group%20A/Chapter%20A1/Tutorial%20A1/Tutorial%20A1.pdf) | [A-A1](/Group%20A/Chapter%20A1/Assignment%20A1/Assignment%20A1.pdf) |
 | A2 | Numerical Methods of Finding Roots | [T-A2](/Group%20A/Chapter%20A2/Tutorial%20A2/Tutorial%20A2.pdf) | [A-A2](/Group%20A/Chapter%20A2/Assignment%20A2/Assignment%20A2.pdf) |
 | A3 | Sequences and Series I | [T-A3](/Group%20A/Chapter%20A3/Tutorial%20A3/Tutorial%20A3.pdf) | [A-A3](/Group%20A/Chapter%20A3/Assignment%20A3/Assignment%20A3.pdf) |
-| A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | |
+| A4 | Sequences and Series II | [T-A4](/Group%20A/Chapter%20A4/Tutorial%20A4/Tutorial%20A4.pdf) | - |
 | A5 | Recurrence Relations | [T-A5](/Group%20A/Chapter%20A5/Tutorial%20A5/Tutorial%20A5.pdf) | [A-A5](/Group%20A/Chapter%20A5/Assignment%20A5/Assignment%20A5.pdf) | 
 | A6 | Polar Coordinates | [T-A6](/Group%20A/Chapter%20A6/Tutorial%20A6/Tutorial%20A6.pdf) | [A-A6](/Group%20A/Chapter%20A6/Assignment%20A6/Assignment%20A6.pdf) |
 | A7 | Vectors I - Basic Properties and Vector Algebra | [T-A7](/Group%20A/Chapter%20A7/Tutorial%20A7/Tutorial%20A7.pdf) | [A-A7](/Group%20A/Chapter%20A7/Assignment%20A7/Assignment%20A7.pdf) |
 | A8 | Vectors II - Lines | [T-A8](/Group%20A/Chapter%20A8/Tutorial%20A8/Tutorial%20A8.pdf) | [A-A8](/Group%20A/Chapter%20A8/Assignment%20A8/Assignment%20A8.pdf) |
-| A9 | Vectors III - Planes | [T-A9](/Group%20A/Chapter%20A9/Tutorial%20A9/Tutorial%20A9.pdf) | |
+| A9 | Vectors III - Planes | [T-A9](/Group%20A/Chapter%20A9/Tutorial%20A9/Tutorial%20A9.pdf) | [A-A9](/Group%20A/Chapter%20A9/Assignment%20A9/Assignment%20A9.pdf) |
 | A10 | Complex Numbers | [T-A10A](/Group%20A/Chapter%20A10/Tutorial%20A10A/Tutorial%20A10A.pdf), [T-A10B](/Group%20A/Chapter%20A10/Tutorial%20A10B/Tutorial%20A10B.pdf) | |
 | A11 | Permutations and Combinations | | |
 | A12 | Probability | | |
