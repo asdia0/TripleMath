@@ -1,0 +1,34 @@
+\begin{center}
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xmax=5,
+            xmin=-5,
+            ymin=-5,
+            ymax=5,
+            xlabel = {$\Re$},
+            ylabel = {$\Im$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+
+            \coordinate (R) at (10,0);
+            \coordinate[label=right:$Z(z)$] (Z) at (6, 0);
+            \coordinate (O) at (0, 0);
+    
+            \draw (O) -- (Z);
+    
+            \fill (Z) circle[radius=2.5pt];
+            \draw pic [draw, angle radius=12mm, "$\t$"] {angle = R--O--Z};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
