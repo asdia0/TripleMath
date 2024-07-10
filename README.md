@@ -14,7 +14,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | A7 | Vectors I - Basic Properties and Vector Algebra | [T-A7](/Group%20A/Chapter%20A7/Tutorial%20A7/Tutorial%20A7.pdf) | [A-A7](/Group%20A/Chapter%20A7/Assignment%20A7/Assignment%20A7.pdf) |
 | A8 | Vectors II - Lines | [T-A8](/Group%20A/Chapter%20A8/Tutorial%20A8/Tutorial%20A8.pdf) | [A-A8](/Group%20A/Chapter%20A8/Assignment%20A8/Assignment%20A8.pdf) |
 | A9 | Vectors III - Planes | [T-A9](/Group%20A/Chapter%20A9/Tutorial%20A9/Tutorial%20A9.pdf) | [A-A9](/Group%20A/Chapter%20A9/Assignment%20A9/Assignment%20A9.pdf) |
-| A10 | Complex Numbers | [T-A10A](/Group%20A/Chapter%20A10/Tutorial%20A10A/Tutorial%20A10A.pdf), [T-A10B](/Group%20A/Chapter%20A10/Tutorial%20A10B/Tutorial%20A10B.pdf), [T-A10C](//Group%20A/Chapter%20A10/Tutorial%20A10C/Tutorial%20A10C.pdf) | |
+| A10 | Complex Numbers | [T-A10A](/Group%20A/Chapter%20A10/Tutorial%20A10A/Tutorial%20A10A.pdf), [T-A10B](/Group%20A/Chapter%20A10/Tutorial%20A10B/Tutorial%20A10B.pdf), [T-A10C](//Group%20A/Chapter%20A10/Tutorial%20A10C/Tutorial%20A10C.pdf), [T-A10D](/Group%20A/Chapter%20A10/Tutorial%20A10D/Tutorial%20A10D.pdf) | |
 | A11 | Permutations and Combinations | | |
 | A12 | Probability | | |
 
