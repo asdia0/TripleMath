@@ -1,0 +1,440 @@
+\documentclass{echw}
+
+\title{Tutorial B10\\Applications of Integration III}
+\author{Eytan Chong}
+\date{2024-07-09}
+
+\begin{document}
+    \problem{}
+        Estimate, using the trapezium rule, the values of the following definite integrals, taking the number ordinates given in each case.
+
+        \begin{enumerate}
+            \item $\displaystyle\int_{-\pi/2}^0 \dfrac1{1 + \cos\t} \d \t$, 3 ordinates
+            \item $\displaystyle\int_{-0.4}^{0.2} \dfrac{x^2 - 4x + 1}{4x - 4}$, 4 ordinates
+        \end{enumerate}
+
+    \solution
+        \part
+            Let $f(\t) = \dfrac1{1+\cos\t}$.
+            \[
+              \int_{-\pi/2}^0 \dfrac1{1 + \cos\t} \d \t \approx \dfrac12 \cdot \dfrac{0 - (-\pi/2)}{3-1} \cdot \bs{f\of{-\dfrac\pi2} + 2f\of{-\dfrac\pi4} + f(0)} = 1.05
+            \]
+
+            \boxt{$\displaystyle\int_{-\pi/2}^0 \dfrac1{1 + \cos\t} \d \t \approx 1.05$}
+
+        \part
+            Let $f(x) = \dfrac{x^2 - 4x + 1}{4x - 4}$.
+            \[
+                \int_{-0.4}^{0.2} \dfrac{x^2 - 4x + 1}{4x - 4} \d x \approx \dfrac12 \cdot \dfrac{0.2 - (-0.4)}{4 - 1} \cdot \Big[f(-0.4) + 2\big(f(-0.2) + f(0)\big) + f(0.2)\Big] = -0.183
+            \]
+
+            \boxt{$\displaystyle\int_{-0.4}^{0.2} \dfrac{x^2 - 4x + 1}{4x - 4} \d x \approx -0.183$}
+
+    \problem{}
+        Use the trapezium rule with intervals of width 0.5 to obtain an approximation to $\displaystyle\int_2^{3.5} \ln \dfrac1x \d x$, giving your answer to 2 decimal places.
+
+    \solution
+        \begin{align*}
+            \int_2^{3.5} \ln \dfrac1x \d x &= -\int_2^{3.5} \ln x \d x\\
+            &\approx - \bp{\dfrac12 \cdot \dfrac{3.5 - 2}{4 - 1} \cdot \bs{\ln 2 + 2(\ln 2.5 + \ln 3) + \ln 3.5}}\\
+            &= -1.49 \todp{2}
+        \end{align*}
+
+        \boxt{$\displaystyle\int_2^{3.5} \ln \dfrac1x \d x = -1.49$}
+
+    \problem{}
+        Estimate, using Simpson's rule, the values of the following definite integrals, taking the number of ordinates given in each case.
+
+        \begin{enumerate}
+            \item $\displaystyle\int_{-\pi/2}^0 \dfrac1{1 + \cos\t} \d \t$, 3 ordinates
+            \item $\displaystyle\int_0^{0.4} \sqrt{1 - x^2} \d x$, 5 ordinates
+        \end{enumerate}
+
+    \solution
+        \part
+            Let $f(\t) = \dfrac1{1+\cos\t}$.
+            \[
+              \int_{-\pi/2}^0 \dfrac1{1 + \cos\t} \d \t \approx \dfrac13 \cdot \dfrac{0 - (-\pi/2)}{3 - 1} \cdot \bs{f\of{-\dfrac\pi2} + 4f\of{-\dfrac\pi4} + f(0)} = 1.01
+            \]
+
+            \boxt{$\displaystyle\int_{-\pi/2}^0 \dfrac1{1 + \cos\t} \d \t \approx 1.01$}
+
+        \part
+            Let $f(x) = \sqrt{1 - x^2}$.
+            \[
+                \int_0^{0.4} \sqrt{1 - x^2} \d x \approx \dfrac13 \cdot \dfrac{0.4 - 0}{5 - 1} \cdot \Big[f(0) + 4f(0.1) + 2f(0.2) + 4f(0.3) + f(0.4)\Big] = 0.389
+            \]
+
+            \boxt{$\displaystyle\int_0^{0.4} \sqrt{1 - x^2} \d x \approx 0.389$}
+
+    \problem{}
+        Show, by means of substitution $u = \sqrt{x}$, that
+        \[
+            \int_0^{0.25} \dfrac1{\sqrt{x}} e^{-x} \d x = \int_0^{0.5} 2e^{-u^2} \d u
+        \]
+        Use the trapezium rule, with ordinates at $u = 0$, $u = 0.1$, $u = 0.2$, $u = 0.3$, $u = 0.4$ and $u = 0.5$, to estimate the value of $I = \displaystyle\int_0^{0.5} 2e^{-u^2} \d u$, giving three decimal places in your answer.
+
+        Explain briefly why the trapezium rule cannot be used directly to estimate the value of $\displaystyle\int_0^{0.25} \dfrac1{\sqrt{x}} e^{-x} \d x$.
+
+        By using the first four terms of the expansion of $e^{-x}$, obtain an estimate for the integral $\displaystyle\int_0^{0.25} \dfrac1{\sqrt{x}}e^{-x} \d x$, giving three decimal places in your answer.
+
+    \solution
+        Note that $u = \sqrt{x} \implies u^2 = x \implies 2u \d u = \d x$. Furthermore, $x = 0 \implies u = 0$ and $x = 0.25 \implies u = 0.5$.
+        \begin{align*}
+            \int_0^{0.25} \dfrac1{\sqrt{x}} e^{-x} \d x &= \int_{0}^{0.5} \dfrac1u e^{-u^2} \cdot 2u \d u\\
+            &= \int_0^{0.5} 2e^{-u^2} \d u
+        \end{align*}
+
+        Let $f(u) = 2e^{-u^2}$. Using the trapezium rule,
+        \begin{align*}
+            \int_0^{0.5} 2e^{-u^2} \d u &\approx \dfrac12 \cdot \dfrac{0.5 - 0}{5} \cdot \Big[f(0) + 2\big(f(0.1) + f(0.2) + f(0.3) + f(0.4)\big) + f(0.5) \Big]\\
+            &= 0.921 \todp{3}
+        \end{align*}
+
+        \boxt{$I \approx 0.921$}
+
+        At $x = 0$, $\dfrac1{\sqrt{x}}e^{-x}$ is undefined. Hence, the trapezium rule cannot be used.
+
+        Recall that $e^{-x} = 1 - x + \dfrac12 x^2 - \dfrac16 x^3 + \ldots$.
+        \[
+            \int_0^{0.25} \dfrac1{\sqrt{x}} e^{-x} \d x \approx \int_0^{0.25} \dfrac1{\sqrt x}\bp{1 - x + \dfrac12 x^2 - \dfrac16 x^3} \d x = 0.923 \todp{3}
+        \]
+
+        \boxt{$\displaystyle\int_0^{0.25} \dfrac1{\sqrt{x}} e^{-x} \d x \approx 0.923$}
+
+    \problem{}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:1,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=1.1,
+                    ymin=0,
+                    xmin=0,
+                    xmax=1.1,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {e^(-1.5 * ln(x^2 + 1))};
+        
+                    \addlegendentry{$y = (x^2 + 1)^{-3/2}$};
+
+                    \draw[dotted] (1, 0) -- (1, 0.35355);
+
+                    \node at (0.5, 0.3577) {$R$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        The diagram (not to scale) show the region $R$ bounded by the axes, the curve $y = (x^2 + 1)^{-3/2}$ and the line $x = 1$. The integral $\displaystyle\int_0^1 (x^2 + 1)^{-3/2}$ is denoted by $I$.
+
+        \begin{enumerate}
+            \item Use the trapezium rule and Simpson's rule, with ordinates at $x = 0$, $x = 0.5$ and $x = 1$, to estimate the value of $I$ correct to 4 significant figures.
+            \item Use the substitution $x = \tan \t$ to show that $I = \dfrac12 \sqrt{2}$.
+            Comment on the approximations using the 2 rules and give a reason why one gives a better approximation than the other.
+            \item By using the trapezium rule, with the same ordinates as in part (a), or otherwise, estimate the volume of the solid formed when $R$ is rotated completely about the $x$-axis, giving your answer to 2 significant figures.
+        \end{enumerate}
+
+    \solution
+        \part
+            Let $f(x) = (x^2 + 1)^{-3/2}$. Using the trapezium rule,
+            \[
+                I \approx \dfrac12 \cdot \dfrac{1 - 0}{3 -1} \cdot \Big[f(0) + 2f(0.5) + f(1)\Big] = 0.6962 \tosf{4}
+            \]
+            \boxt{$I \approx 0.6962$}
+
+            Using Simpson's rule,
+            \[
+                I \approx \dfrac13 \cdot \dfrac{1 - 0}{3 -1} \cdot \Big[f(0) + 4f(0.5) + f(1)\Big] = 0.7026 \tosf{4}
+            \]
+            \boxt{$I \approx 0.7026$}
+
+        \part
+            \begin{align*}
+                \int_0^1 (x^2 + 1)^{-3/2} &= \int_0^{\pi/4} \bp{\tan^2 \t + 1}^{-3/2} \sec^2 \t \d \t \usub{x &= \tan \t\\\d x &= \sec^2 \t \d \t}\\
+                &= \int_0^{\pi/4} (\sec^2 \t)^{-3/2} \sec^2 \t \d \t\\
+                &= \int_0^{\pi/4} \dfrac1{\sec \t} \d \t\\
+                &= \int_0^{\pi/4} \cos \t \d \t\\
+                &= \evalint{\sin \t}0{\pi/4}\\
+                &= \dfrac12 \sqrt2
+            \end{align*}
+
+            The curve $y = (x^2 + 1)^{-3/2}$ resembles a quadratic more than a line on the interval $[0, 1]$. Hence, Simpson's rule, which uses quadratic curves to approximate $y$, gives a better approximation for $I$ than the trapezium rule, which uses lines to approximate $y$.
+
+        \part
+            Let $g(x) = (x^2 + 1)^{-3}$.
+            \begin{align*}
+                \volume &= \pi \int_0^1 y^2 \d x\\
+                &= \pi \int_0^1 (x^2 + 1)^{-3} \d x\\
+                &\approx \pi \bp{\dfrac12 \cdot \dfrac{1- 0}{3 - 1} \cdot \Big[g(0) + 2g(0.5) + g(1)\Big]}\\
+                &= 1.7 \tosf{2}
+            \end{align*}
+
+            \boxt{The volume of the solid formed is $1.7$ units$^3$.}
+    
+    \problem{}
+        It is given that $f(x) = \dfrac1{\sqrt{1 + \sqrt{x}}}$, and the integral $\displaystyle\int_0^1 f(x) \d x$ is denoted by $I$.
+
+        \begin{enumerate}
+            \item Using the trapezium rule, with four trapezia of equal width, obtain an approximation $I_1$ to the value of $I$, giving 3 decimal places in your answer.
+            \item Explain, with the aid of a sketch, why $I < I_1$.
+            \item Evaluate $I_2$, where $I_2 = \dfrac13 \displaystyle\sum_{r = 1}^3 f\of{\dfrac13 r}$, giving 3 decimal places in your answer, and use the sketch in (b) to justify the inequality $I > I_2$.
+            \item By means of a substitution $\sqrt{x} = u -1$, show that the value of $I$ is $\dfrac43(2 - \sqrt2)$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \[
+                I_1 = \dfrac12 \cdot \dfrac{1 - 0}{4} \cdot \Big[ f(0) + 2\big(f(0.25) + f(0.5) + f(0.75)\big) + f(1)\Big] = 0.792 \todp{3}
+            \]
+
+            \boxt{$I_1 = 0.792$}
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:1,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {0.25, 0.5, 0.75, 1},
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        ymin=0,
+                        xmax=1.1,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {1/sqrt(1 + sqrt(x)) - 0.5};
+                        \addlegendentry{$y = f(x)$};
+                        
+                        \draw[dashed] (0.25, 0) -- (0.25, 0.31650);
+                        \draw[dashed] (0.5, 0) -- (0.5, 0.26537);
+                        \draw[dashed] (0.75, 0) -- (0.75, 0.23205);
+                        \draw[dashed] (1, 0) -- (1, 0.20711);
+                        \draw[dashed] (0.25, 0.31650) -- (0, 0.5);
+                        \draw[dashed] (0.25, 0.31650) -- (0.5, 0.26537);
+                        \draw[dashed] (0.5, 0.26537) -- (0.75, 0.23205);
+                        \draw[dashed] (0.75, 0.23205) -- (1, 0.20711);
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+            $I$ is the area under the curve $y = f(x)$, while $I_1$ is the sum of the areas of the trapeziums. Hence, from the sketch, $I_1 > I$.
+
+        \part
+            \begin{align*}
+                I_2 &= \dfrac13 \sum_{r=1}^3 f\of{\dfrac13 r}\\
+                &= \dfrac13 \bs{f\of{\dfrac13} + f\of{\dfrac23} + f(1)}\\
+                &= 0.748 \todp{3}
+            \end{align*}
+
+            \boxt{$I_2 = 0.748$}
+
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:1,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {1/3, 2/3, 1},
+                        xticklabels = {$1/3$, $2/3$, $1$},
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        ymin=0,
+                        xmax=1.1,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {1/sqrt(1 + sqrt(x)) - 0.5};
+                        \addlegendentry{$y = f(x)$};
+                        
+                        \draw[dashed] (1/3, 0) -- (1/3, 0.29623);
+                        \draw[dashed] (2/3, 0) -- (2/3, 0.24196);
+                        \draw[dashed] (1, 0) -- (1, 0.20711);
+                        \draw[dashed] (0, 0.29623) -- (1/3, 0.29623);
+                        \draw[dashed] (1/3, 0.24196) -- (2/3, 0.24196);
+                        \draw[dashed] (2/3, 0.20711) -- (1, 0.20711);
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+            $I$ is the area under the curve $y = f(x)$, while $I_2$ is the sum of the areas of the rectangles. Hence, from the sketch, $I_2 < I$.
+
+        \part
+            Note $\sqrt{x} = u -1 \implies x = u^2 - 2u + 1 \implies \d x = (2u - 2) \d u$. Furthermore, $x=0 \implies u = 1$ and $x = 1 \implies u = 2$.
+            \begin{align*}
+                \int_0^1 \dfrac1{\sqrt{1 + \sqrt{x}}} \d x &= \int_1^2 \dfrac1{\sqrt{1 + (u-1)}} \cdot (2u - 2) \d u\\
+                &= 2\int_1^2 \dfrac{u-1}{\sqrt{u}} \d u\\
+                &= 2\evalint{\dfrac23 u^{3/2} - 2u^{1/2}}12\\
+                &= \dfrac43 (2 - \sqrt2)
+            \end{align*}
+
+    \problem{}
+        For $0 < x < \pi$, the curve $C$ has the equation $y = \ln \sin x$. The region of the plane bounded by $C$, the $x$-axis and the lines $x = \dfrac\pi4$ and $x = \dfrac\pi2$ is rotated through $2\pi$ radians about the $x$-axis.
+
+        Show that the surface area of the solid generated in this way is given by $S$, where
+        \[
+            S = 2\pi \int_{\pi/4}^{\pi/2} \abs{\dfrac{\ln \sin x}{\sin x}} \d x
+        \]
+        Use Simpson's rule with 5 ordinates to find an approximate value of $S$, giving your answer to 3 decimal places.
+
+    \solution
+        Note that $\der{y}{x} = \dfrac1{\sin x} \cdot \cos x = \cot x \implies 1 + \bp{\der{y}{x}}^2 = 1 + \cot^2 x = \csc^2 x$.
+        \begin{align*}
+            S &= 2\pi \int_{\pi/4}^{\pi/2} y \sqrt{1 + \bp{\der{y}{x}}^2} \d x\\
+            &= 2\pi \int_{\pi/4}^{\pi/2} \ln \sin x \sqrt{\csc^2 x} \d x\\
+            &= 2\pi \int_{\pi/4}^{\pi/2} \ln \sin x \abs{\csc x} \d x\\
+            &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\ln \sin x} \abs{\dfrac1{\sin x}} \d x\\
+            &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\dfrac{\ln \sin x}{\sin x}} \d x
+        \end{align*}
+        Let $f(x) = \abs{\dfrac{\ln \sin x}{\sin x}}$.
+        \begin{align*}
+            S &\approx 2\pi \bp{\dfrac13 \cdot \dfrac{\pi/2 - \pi/4}{5 - 1} \cdot \bs{f\of{\dfrac4{16}\pi} + 4f\of{\dfrac5{16}\pi} + 2f\of{\dfrac6{16}\pi} + 4f\of{\dfrac7{16}\pi} + f\of{\dfrac8{16}\pi}}}\\
+            &= 0.670 \todp{3}
+        \end{align*}
+        \boxt{$S \approx 0.670$}
+
+    \problem{}
+        The value of the integral $\displaystyle\int_{0.2}^{0.4} f(x) \d x$ is to be estimated from information in the table below.
+        \[
+            \begin{array}{c c c c}\toprule
+                x & 0.2 & 0.3 & 0.4 \\\cmidrule{1-4}
+                f(x) & 1.2030 & 1.2441 & 1.2777\\\bottomrule
+            \end{array}
+        \]
+
+        \begin{enumerate}
+            \item Find the best possible estimate for the integral using the trapezium rule.
+            \item Using the table of values above, find an approximate value for $f''(0.3)$ and use your answer to explain why the estimate found in part (a) is likely to be smaller than the actual value.
+            \item Estimate the integral using Simpson's rule and determine the equation of the curve used in this method.
+        \end{enumerate}
+
+    \solution
+        \part
+            \[
+                \int_{0.2}^{0.4} f(x) \d x \approx \dfrac12 \cdot \dfrac{0.4 - 0.2}{3 - 1} \cdot \Big[f(0.2) + 2f(0.3) + f(0.4)\Big] = 0.248
+            \]
+
+            \boxt{$\displaystyle\int_{0.2}^{0.4} f(x) \d x \approx 0.248$}
+
+        \part
+            Note that $f'(0.25) \approx \dfrac{f(0.3) - f(0.2)}{0.3 - 0.2} = 0.411$ and $f'(0.35) \approx \dfrac{f(0.4) - f(0.3)}{0.4 - 0.3} = 0.336$. Hence,
+            \begin{align*}
+                f''(0.30) \approx \dfrac{f'(0.35) - f'(0.25)}{0.35 - 0.25} = -0.75
+            \end{align*}
+            \boxt{$f''(0.30) \approx -0.75$}
+
+            Since $f''(0.3) < 0$, $f(x)$ is concave downwards around $x = 0.3$. Hence, the estimate is likely to be smaller than the actual value.
+
+        \part
+            \[
+                \int_{0.2}^{0.4} f(x) \d x \approx = \dfrac13 \cdot \dfrac{0.4-0.2}{3 - 1} \cdot \Big[f(0.2) + 4f(0.3) + f(0.4)\Big] = 0.249
+            \]
+
+            \boxt{$\displaystyle\int_{0.2}^{0.4} f(x) \d x \approx 0.249$}
+
+            Let the equation of the quadratic used be $P(x) = ax^2 + bx + c$, where $a, b, c \in \R$. Since $P(0.2) = f(0.2)$, $P(0.3) = f(0.3)$ and $P(0.4) = f(0.4)$, we obtain the system
+            \[
+                \systeme{(0.2)^2a + 0.2 b + c = 1.2030, (0.3)^2a + 0.3 b + c = 1.2441, (0.4)^2a + 0.4 b + c = 1.2777}
+            \]
+            which has the unique solution $a = -0.375$, $b = 0.5985$, $c = 1.0983$. Thus, the required equation is $y = -0.375x^2 + 0.5985x + 1.0983$.
+
+            \boxt{$y = -0.375x^2 + 0.5985x + 1.0983$}
+
+    \problem{}
+        The curve $C$ is given by $y = \dfrac1x$, where $x > 0$.
+
+        \begin{enumerate}
+            \item Apply the trapezium rule with ordinates at unit intervals to the function $f : x \mapsto \dfrac1x$, $x \in \R^+$, to show that $\ln n < \dfrac12 + \dfrac1{2n} + \displaystyle\sum_{r=2}^{n-1} \dfrac1r$ where $n \geq 3$.
+            \item Obtain the area of the trapezium bounded by the axis, the lines $x = r \pm \dfrac12$, and the tangent to the curve $y = \dfrac1x$ at the point $\bp{r, \dfrac1r}$.
+
+            Hence, show that $\displaystyle\sum_{r=2}^{n-1} \dfrac1r < \ln \bp{\dfrac{2n-1}3}$, where $n \geq 3$.
+            \item From these results, obtain numerical values between which the value of $\displaystyle\sum_{r=2}^{99} \dfrac1r$ lies, and show that $4.110 < \dfrac12 + \dfrac13 + \ldots + \dfrac1{100} < 4.205$.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \int_1^n \dfrac1x \d x &\approx \dfrac12 \cdot 1 \cdot \bs{\dfrac11 + 2\bp{\dfrac12 + \dfrac13 + \ldots + \dfrac1{n-1}} + \dfrac1n}\\
+                &= \dfrac12 \bp{1 + \dfrac1n + 2\sum_{r=2}^{n-1} \dfrac1r}\\
+                &= \dfrac12 + \dfrac1{2n} + \sum_{r=2}^{n-1} \dfrac1r
+            \end{align*}
+
+            Note that $\der[2]{y}{x} \dfrac1x = \dfrac2{x^3} > 0$ for $x > 0$. Hence, $y = \dfrac1x$ is concave upwards. Thus,
+            \[
+                \dfrac12 + \dfrac1{2n} + \sum_{r=2}^{n-1} \dfrac1r > \int_1^n \dfrac1x \d x = \ln n
+            \]
+
+        \part
+            Since $\der{y}{x} = -\dfrac1{x^2}$, the equation of the tangent at $x = r$ is given by
+            \[
+                y - \dfrac1r = -\dfrac1{r^2} (x - r) \implies y = -\dfrac1{r^2} x + \dfrac2r
+            \]
+            \begin{align*}
+                &\text{Area of trapezium centred at $r$} \\
+                &=\int_{r-1/2}^{r + 1/2} \bp{-\dfrac1{r^2} x + \dfrac2r} \d x\\
+                &= \evalint{-\dfrac1{r^2} \cdot \dfrac12 x^2 + \dfrac2r x}{r-1/2}{r + 1/2}\\
+                &= \bs{-\dfrac1{2r^2} \bp{r + \dfrac12}^2 + \dfrac2r \bp{r + \dfrac12}} - \bs{-\dfrac1{r^2} \cdot \dfrac12 \bp{r - \dfrac12}^2 + \dfrac2r \bp{r - \dfrac12}}\\
+                &= \dfrac1{2r^2} \bs{\bp{r-\dfrac12}^2 - \bp{r + \dfrac12}^2} + \dfrac2r \bs{\bp{r + \dfrac12}- \bp{r - \dfrac12}}\\
+                &= \dfrac1{2r^2} \cdot {2r \cdot -1} + \dfrac2r \cdot 1\\
+                &= \dfrac{-1}r + \dfrac2r\\
+                &= \dfrac1r
+            \end{align*}
+
+            \boxt{The area of the trapezium is $\dfrac1r$ units$^2$.}
+
+            Observe that the area of the trapezium centred at $r$ is less than the area under the curve $y = \dfrac1x$ from $r - \dfrac12$ to $r + \dfrac12$. That is,
+            \[
+                \dfrac1r < \int_{r - 1/2}^{r + 1/2} \dfrac1x \d x = \ln\of{r + \dfrac12} - \ln\of{r - \dfrac12}
+            \]
+
+            Summing from $r = 2$ to $n-1$,
+            \begin{align*}
+                \sum_{r = 2}^{n-1} \dfrac1r &< \sum_{r=2}^{n-1} \bs{\ln\of{r + \dfrac12} - \ln\of{r - \dfrac12}}\\
+                &= \sum_{r=2}^{n-1} \ln\of{r + \dfrac12} - \sum_{r=2}^{n-1} \ln\of{r - \dfrac12}\\
+                &= \sum_{r=3}^{n} \ln\of{r - \dfrac12} - \sum_{r=2}^{n-1} \ln\of{r - \dfrac12}\\
+                &= \ln\of{n - \dfrac12} - \ln\of{2 - \dfrac12}\\
+                &= \ln\of{\dfrac{n - 1/2}{3/2}}\\
+                &= \ln\of{\dfrac{2n - 1}{3}}
+            \end{align*}
+
+        \part
+            Taking $n = 100$, we have
+            \[
+                \dfrac12 + \dfrac1{2 \cdot 100} + \sum_{r=2}^{100 - 1} \dfrac1{r} > \ln 100 \implies \sum_{r=2}^{99} \dfrac1{r} > \ln 100 - \dfrac12 - \dfrac1{200} = 4.100
+            \]
+            We also have
+            \[
+                \sum_{r = 2}^{100 - 1} \dfrac1r <\ln\of{\dfrac{2 \cdot 100 - 1}{3}} \implies \sum_{r = 2}^{100 - 1} \dfrac1r < \ln{\dfrac{199}3} = 4.195
+            \]
+            Putting both inequalities together, we obtain
+            \boxt{$4.100 < \displaystyle\sum_{r = 2}^{99} \dfrac1r < 2.195$}
+
+            Adding $\dfrac1{100} = 0.01$ to all sides of the inequality, we see that
+            \[
+                4.110 < \displaystyle\sum_{r = 2}^{100} \dfrac1r < 2.205
+            \]
+\end{document}
