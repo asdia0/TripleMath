@@ -45,6 +45,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | [FM WA1](/Exams/FM%20WA1/FM%20WA1.pdf) | A2, A3, A4 | 
 | [MA WA1](/Exams/MA%20WA1/MA%20WA1.pdf) | A1, B1, B3 |
 | [FM WA2](/Exams/FM%20WA2/FM%20WA2.pdf) | A5, A7, A8 |
+| [MA WA2](/Exams/MA%20WA2/MA%20WA2.pdf) | A1, B1, B3 |
 
 ## Misc
 
