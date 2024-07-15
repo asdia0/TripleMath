@@ -40,12 +40,39 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 
 ## Exams
 
-| Exam | Chapter(s) |
-| ---- | :--------: |
-| [FM WA1](/Exams/FM%20WA1/FM%20WA1.pdf) | A2, A3, A4 | 
-| [MA WA1](/Exams/MA%20WA1/MA%20WA1.pdf) | A1, B1, B3 |
-| [FM WA2](/Exams/FM%20WA2/FM%20WA2.pdf) | A5, A7, A8 |
-| [MA WA2](/Exams/MA%20WA2/MA%20WA2.pdf) | A1, B1, B3 |
+<table style="text-align: center; vertical-align: middle;">
+    <thead>
+        <tr>
+            <th>Level</th>
+            <th>Syllabus</th>
+            <th>Exam</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=6>JC1</td>
+            <td rowspan=3>9758</td>
+            <td><a href="/Exams/MA WA1/MA WA1.pdf">WA1</a></td>
+        </tr>
+        <tr>
+            <td><a href="/Exams/MA WA2/MA WA2.pdf">WA2</a></td>
+        </tr>
+        <tr>
+            <td>Promos</td>
+        </tr>
+        <tr>
+            <td rowspan=3>9649</td>
+            <td><a href="/Exams/FM WA1/FM WA1.pdf">WA1</a></td>
+        </tr>
+        <tr>
+            <td><a href="/Exams/FM WA2/FM WA2.pdf">WA2</a></td>
+        </tr>
+        <tr>
+            <td>Promos</td>
+        </tr>
+    </tbody>
+</table>
+
 
 ## Misc
 
@@ -61,18 +88,18 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 <table style="text-align: center; vertical-align: middle;">
     <thead>
         <tr>
-            <th>Syllabus</th>
-            <th>Year</th>
             <th>Level</th>
+            <th>Year</th>
+            <th>Syllabus</th>
             <th>Exam</th>
             <th>School</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td rowspan=5>9649</td>
-            <td rowspan=5>2023</td>
             <td rowspan=5>JC1</td>
+            <td rowspan=5>2023</td>
+            <td rowspan=5>9649</td>
             <td rowspan=5>MYE</td>
             <td><a href="/Misc/ASRJC%209649%202023%20JC1%20MYE/ASRJC%209649%202023%20JC1%20MYE.pdf">ASRJC</a></td>
         </tr>
