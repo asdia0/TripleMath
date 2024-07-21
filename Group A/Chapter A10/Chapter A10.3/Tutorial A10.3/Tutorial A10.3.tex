@@ -252,19 +252,13 @@
         \begin{align*}
             \sum_{n=1}^N \sin(2n-1)\t &= \Im \sum_{n=1}^N \Big[\cos(2n-1)\t + i\sin(2n-1)\t\Big]\\
             &= \Im \sum_{n=1}^N z^{2n-1}\\
-            &= \Im \dfrac1z \sum_{n=1}^N \bp{z^2}^n\\
-            &= \Im \dfrac1z \cdot \dfrac{z^2 \bs{\bp{z^2}^N - 1}}{z^2 - 1}\\
+            &= \Im{\dfrac1z \sum_{n=1}^N \bp{z^2}^n}\\
+            &= \Im{\dfrac1z \cdot \dfrac{z^2 \bs{\bp{z^2}^N - 1}}{z^2 - 1}}\\
             &= \Im \dfrac{z^{2N} - 1}{z - z^{-1}}\\
-            &= \Im \dfrac{\bp{z^{2N} - 1}/2i}{\bp{z - z^{-1}}/2i}\\
-            &= \Im \dfrac{\bp{z^{2N} - 1}/2i}{\sin \t}\\
-            &= \dfrac1{2\sin\t} \Im \dfrac{\bp{z^{2N} - 1}}{i}\\
-            &= \dfrac1{2\sin\t} \Im \bs{-i \bp{z^{2N} - 1}}\\
-            &= -\dfrac1{2\sin\t} \bs{\Re z^{2N} - 1}\\
-            &= -\dfrac1{2\sin\t} \bs{\Re \bp{\cos N\t + i\sin N\t}^2 - 1}\\
-            &= -\dfrac1{2\sin\t} \bs{\Re \bp{\cos^2 N\t + 2i\cos N\t \sin N\t - \sin^2 N\t} - 1}\\
-            &= -\dfrac1{2\sin\t} \bs{\cos^2 N\t - \sin^2 N\t - 1}\\
-            &= -\dfrac1{2\sin\t} \bs{\cos^2 N\t - \sin^2 N\t - \bp{\cos^2 N\t + \sin^2 N\t}}\\
-            &= -\dfrac1{2\sin\t} \bs{-2\sin^2 N\t}\\
+            &= \Im{z^N \cdot \dfrac{z^N - z^{-N}}{z - z^{-1}}}\\
+            &= \Im{z^N \cdot \dfrac{\bp{z^N - z^{-N}}/2i}{\bp{z - z^{-1}}/2i}}\\
+            &= \Im z^N \cdot \dfrac{\sin N\t}{\sin \t}\\
+            &= \sin N\t \cdot \dfrac{\sin N\t}{\sin \t}\\
             &= \dfrac{\sin^2 N\t}{\sin \t}
         \end{align*}
 
@@ -279,28 +273,17 @@
         \]
 
     \solution
+        Let $z = e^{i\t}$.
         {\allowdisplaybreaks
         \begin{align*}
             \sum_{n = 0}^N \cos 2n\t &= \Re \sum_{n = 0}^N \Big[\cos 2n\t + i\sin 2n\t\Big]\\
             &= \Re \sum_{n=0}^{N} e^{i2n\t}\\
-            &= \Re \sum_{n=0}^{N} \bp{e^{2i\t}}^n\\
-            &= \Re \dfrac{\bp{e^{2i\t}}^{N+1} - 1}{e^{2i\t} - 1}\\
-            &= \Re{e^{-i\t} \cdot \dfrac{\bp{e^{2i\t}}^{N+1} - 1}{e^{i\t} - e^{-i\t}}}\\
-            &= \Re{\dfrac{e^{-i\t}}{2i} \cdot \dfrac{\bp{e^{2i\t}}^{N+1} - 1}{\bp{e^{i\t} - e^{-i\t}}/2i}}\\
-            &= \Re{\dfrac{-i e^{-i\t}}{2} \cdot \dfrac{\bp{e^{2i\t}}^{N+1} - 1}{\sin \t}}\\
-            &= -\dfrac{1}{2\sin\t} \Re{i e^{-i\t} \bs{\bp{e^{2i\t}}^{N+1} - 1}}\\
-            &= \dfrac{1}{2\sin\t} \Im{e^{-i\t} \bs{\bp{e^{2i\t}}^{N+1} - 1}}\\
-            &= \dfrac{1}{2\sin\t} \Im{e^{-i\t} \bs{\bp{e^{i\t(N+1)}}^2 - 1}}\\
-            &= \dfrac{1}{2\sin\t} \Im{\bp{\cos\t - i\sin\t}\bs{\Big(\cos (N+1)\t + i\sin (N+1)\t\Big)^2 - 1}}\\
-            &= \dfrac{1}{2\sin\t} \Im\Big(\bp{\cos\t - i\sin\t} \Big[\cos^2 (N+1)\t + 2i\cos(N+1)\t \sin(N+1)\t\\
-            &\hspace{10em}- \sin^2 (N+1)\t - 1\Big]\Big)\\
-            &= \dfrac{1}{2\sin\t} \Im\Big(\bp{\cos\t - i\sin\t} \Big[\cos^2 (N+1)\t + 2i\cos(N+1)\t \sin(N+1)\t\\
-            &\hspace{10em}- \sin^2 (N+1)\t - (\cos^2 (N+1)\t + \sin^2 (N+1)\t)\Big]\Big)\\
-            &= \dfrac{1}{2\sin\t} \Im\Big(\bp{\cos\t - i\sin\t} \Big[2i\cos(N+1)\t \sin(N+1)\t- 2\sin^2 (N+1)\t\Big]\Big)\\
-            &= \dfrac1{2\sin\t} \Big[2\cos\t\cos(N+1)\t \sin(N+1)\t + 2\sin\t \sin^2(N+1)\t\Big]\\
-            &= \dfrac{\sin(N+1)\t}{\sin\t} \Big[\cos\t\cos(N+1)\t + \sin\t \sin(N+1)\t\Big]\\
-            &= \dfrac{\sin(N+1)\t}{\sin\t} \cdot \cos \Big((N+1)\t - \t\Big)\\
-            &= \dfrac{\sin(N+1)\t \cos N\t}{\sin\t}
+            &= \Re \sum_{n=0}^{N} \bp{z^2}^n\\
+            &= \Re \dfrac{\bp{z^2}^{N+1} - 1}{z^2 - 1}\\
+            &= \Re{\dfrac{z^{N+1}}{z} \cdot \dfrac{z^{N+1} - z^{-(N+1)}}{z - z^{-1}}}\\
+            &= \Re{z^N \cdot \dfrac{\bp{z^{N+1} - z^{-(N+1)}}/2i}{\bp{z - z^{-1}}/2i}}\\
+            &= \Re{z^N \cdot \dfrac{\sin (N+1)\t}{\sin \t}}\\
+            &= \cos N\t \cdot \dfrac{\sin (N+1)\t}{\sin \t}
         \end{align*}}
         \dash
         Recall that $\cos 2n\t = 1 - 2\sin^2 n\t \implies \sin^2 n\t = \dfrac12 (1 - 2\cos 2n\t)$.

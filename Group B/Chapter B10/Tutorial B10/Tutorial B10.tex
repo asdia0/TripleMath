@@ -304,9 +304,9 @@
     \solution
         Note that $\der{y}{x} = \dfrac1{\sin x} \cdot \cos x = \cot x \implies 1 + \bp{\der{y}{x}}^2 = 1 + \cot^2 x = \csc^2 x$.
         \begin{align*}
-            S &= 2\pi \int_{\pi/4}^{\pi/2} y \sqrt{1 + \bp{\der{y}{x}}^2} \d x\\
-            &= 2\pi \int_{\pi/4}^{\pi/2} \ln \sin x \sqrt{\csc^2 x} \d x\\
-            &= 2\pi \int_{\pi/4}^{\pi/2} \ln \sin x \abs{\csc x} \d x\\
+            S &= 2\pi \int_{\pi/4}^{\pi/2} \abs{y} \sqrt{1 + \bp{\der{y}{x}}^2} \d x\\
+            &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\ln \sin x} \sqrt{\csc^2 x} \d x\\
+            &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\ln \sin x} \abs{\csc x} \d x\\
             &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\ln \sin x} \abs{\dfrac1{\sin x}} \d x\\
             &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\dfrac{\ln \sin x}{\sin x}} \d x
         \end{align*}
@@ -383,7 +383,7 @@
                 &= \dfrac12 + \dfrac1{2n} + \sum_{r=2}^{n-1} \dfrac1r
             \end{align*}
 
-            Note that $\der[2]{y}{x} \dfrac1x = \dfrac2{x^3} > 0$ for $x > 0$. Hence, $y = \dfrac1x$ is concave upwards. Thus,
+            Note that $\der[2]{}{x} \dfrac1x = \dfrac2{x^3} > 0$ for $x > 0$. Hence, $y = \dfrac1x$ is concave upwards. Thus,
             \[
                 \dfrac12 + \dfrac1{2n} + \sum_{r=2}^{n-1} \dfrac1r > \int_1^n \dfrac1x \d x = \ln n
             \]

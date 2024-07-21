@@ -1,0 +1,212 @@
+\documentclass{echw}
+
+\title{Assignment B9\\Applications of Integration II}
+\author{Eytan Chong}
+\date{2024-07-11}
+
+\begin{document}
+    \problem{}
+        The curve $C$ is defined parametrically by $x = a(2\cos\t + \cos2\t)$, $y = a(2\sin\t + \sin2\t)$ where $0 \leq \t \leq \pi$ and $a$ is a positive constant.
+
+        \begin{enumerate}
+            \item Find the coordinates of the points at which $C$ meets the $x$-axis.
+            \item Sketch $C$.
+            \item Find the exact total length of $C$.
+            \item Find the exact area of the curve surface generated when $C$ is rotated through $2\pi$ radians about the $x$-axis.
+        \end{enumerate}
+
+    \solution
+        \part
+            When $C$ meets the $x$-axis, $y = 0$.
+            \begin{alignat*}{2}
+                && y &= 0\\
+                \implies&& a(2\sin\t + \sin2\t) &= 0\\
+                \implies&&2\sin\t + \sin2\t &= 0\\
+                \implies&&2\sin\t + 2\sin\t\cos\t &= 0\\
+                \implies&&\sin\t (1 + \cos\t) &= 0
+            \end{alignat*}
+            Note that $\sin \t = 0 \implies \t = 0 \lor \pi$ and $1 + \cos\t = 0 \implies \t = \pi$. Hence, $\t = 0 \lor \pi$.
+
+            At $\t = 0$, $x = a(2\cos0 + \cos0) = 3a$. At $\t = \pi$, $x = a(2\cos\pi + \cos 2\pi) = -a$. Hence, $C$ meets the $x$-axis at $(3a, 0)$ and $(-a, 0)$.
+
+            \boxt{$(3a, 0)$, $(-a, 0)$}
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:pi,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {-2, 6},
+                        xticklabels = {$-a$, $3a$},
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        ymax=6,
+                        xmin=-3.5,
+                        xmax=6.5,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] ({2*(2*cos(\x r) + cos(2*\x r))}, {2*(2*sin(\x r) + sin(2*\x r))});
+            
+                        \addlegendentry{$C$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+        
+        \part
+            Note that $\der{x}{\t} = a(-2\sin\t - 2\sin2\t) = -2a(\sin\t+\sin2\t)$ and $\der{y}{\t} = a(2\cos\t + 2\cos2\t) = 2a(\cos\t + \cos2\t)$. Hence,
+            \begin{align*}
+                \length &= \int_0^\pi \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t\\
+                &= \int_0^\pi \sqrt{\bs{-2a(\sin\t+\sin2\t)}^2 + \bs{2a(\cos\t + \cos2\t)}^2} \d \t\\
+                &= \int_0^\pi 2a \sqrt{\bp{\sin\t+\sin2\t}^2 + \bp{\cos\t + \cos2\t}^2} \d \t\\
+                &= \int_0^\pi 2a \sqrt{\bp{\sin^2\t + 2\sin\t\sin2\t + \sin^2 2\t} + \bp{\cos^2\t + 2\cos\t\cos2\t + \cos^2 2\t}} \d \t\\
+                &= \int_0^\pi 2a \sqrt{2 + 2\sin\t\sin2\t + 2\cos\t\cos2\t} \d \t\\
+                &= \int_0^\pi 2a \sqrt{2 + 2\cos{2\t - \t}} \d \t\\
+                &= \int_0^\pi 2a \sqrt{2 + 2\cos\t} \d \t\\
+                &= \int_0^\pi 2a \sqrt{2 + 2\bp{2\cos[2]{\t/2} - 1}} \d \t\\
+                &= \int_0^\pi 2a \cdot 2\cos{\t /2} \d \t\\
+                &= 4a \evalint{2\sin{\t /2}}0\pi\\
+                &= 8a
+            \end{align*}
+
+            \boxt{The total length of $C$ is $8a$ units.}
+
+        \part
+            {\allowdisplaybreaks
+            \begin{align*}
+                \area &= 2\pi \int_0^\pi a(2\sin\t + \sin2\t) \cdot \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t\\
+                &= 2\pi \int_0^\pi a(2\sin\t + \sin2\t) \cdot 4a\cos{\t/2} \d \t\\
+                &= 8\pi a^2 \int_0^\pi (2\sin\t + \sin2\t) \cos{\t/2} \d \t\\
+                &= 8\pi a^2 \int_0^\pi (2\sin\t + 2\sin\t\cos\t) \cos{\t/2} \d \t\\
+                &= 16\pi a^2 \int_0^\pi \sin\t(1 + \cos\t) \cos{\t/2} \d \t\\
+                &= 16\pi a^2 \int_0^\pi \sin\t\bs{1 + (2\cos[2]{\t/2} - 1)} \cos{\t/2} \d \t\\
+                &= 32\pi a^2 \int_0^\pi \sin\t\cos[3]{\t/2} \d \t\\
+                &= 32\pi a^2 \int_0^\pi 2\sin{\t/2}\cos{\t/2}\cdot\cos[3]{\t/2} \d \t\\
+                &= 64\pi a^2 \int_0^\pi \sin{\t/2}\cos[4]{\t/2} \d \t\usub{u &= \t/2\\\d u &= \d \t/2}\\
+                &= 128\pi a^2 \int_0^{\pi/2} \sin u \cos^4 u \d u \\
+                &= 64\pi a^2 \cdot 2 \int_0^{\pi/2} \sin^{2(1) - 1} u \cos^{2(5/2) - 1} u \d u \\
+                &= 64\pi a^2 \cdot B\bp{1, \dfrac52}\\
+                &= 64\pi a^2 \cdot \dfrac{\G(1) \, \G(5/2)}{\G(1 + 5/2)}\\
+                &= 64\pi a^2 \cdot \dfrac{\G(5/2)}{5/2 \cdot \G(5/2)}\\
+                &= 64\pi a^2 \cdot \dfrac25\\
+                &= \dfrac{128}{5} \pi a^2
+            \end{align*}}
+
+            \boxt{The surface area is $\dfrac{128}{5} \pi a^2$ units$^2$.}
+
+    \problem{}
+        The curve $C$ is given by the equation $y = \dfrac12(e^x + e^{-x})$.
+
+        \begin{enumerate}
+            \item Sketch the curve $C$.
+            \item Find the exact area bounded by $C$, the lines $x = 2$ and $x = -2$ and the $x$-axis.
+            \item Points $A$ and $B$ are on $C$ where $x = 2$ and $x = -2$ respectively. Find the exact length of the arc $AB$.
+        \end{enumerate}
+
+        A solid, made of a certain material, is of the shape obtained by rotating the region bounded by $C$, the lines $x = 2$ and $x = -2$ and the $x$-axis about the $y$-axis through $\pi$ radians.
+
+        \begin{enumerate}
+            \setcounter{enumi}{3}
+            \item Find the exact amount of material required to make this solid if $x$ is measured in cm.
+            \item The solid is painted with a brush that uses 2 cm$^3$ of paint for every cm$^2$ of surface painted. Find the exact amount of paint required.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = -2.5:2.5,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {2, -2},
+                        ytick = \empty,
+                        ymin=0,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {0.5 * (e^x + e^(-x))};
+            
+                        \addlegendentry{$C$};
+
+                        \draw[dotted] (2, 0) -- (2, 3.76);
+                        \draw[dotted] (-2, 0) -- (-2, 3.76);
+
+                        \fill (-2, 3.76) circle[radius=2.5pt] node[anchor=west] {$B$};
+                        \fill (2, 3.76) circle[radius=2.5pt] node[anchor=east] {$A$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+        \part
+            Note that $y = \dfrac12 (e^x + e^{-x}) = \cosh x$ is an even function. Hence,
+            {\allowdisplaybreaks
+            \begin{align*}
+                \area &= \int_{-2}^2 y \d x\\
+                &= 2 \int_0^2 \cosh x \d x\\
+                &= 2 \evalint{\sinh x}02\\
+                &= 2 \bp{\sinh 2 - \sinh 0}\\
+                &= 2 \bp{\dfrac{e^2 - e^{-2}}{2} - 0}\\
+                &= e^2 - e^{-2}
+            \end{align*}}
+
+            \boxt{The area is $e^2 - e^{-2}$ units$^2$.}
+
+        \part
+            Note that $\der{y}{x} = \der{}{x} \cosh x = \sinh x$, whence \[\sqrt{1 + \bp{\derx{y}{x}}^2} = \sqrt{1 + \sinh^2 x} = \sqrt{\cosh^2 x} = \cosh x\] Hence,
+            \begin{align*}
+                \length &= \int_{-2}^2 \sqrt{1 + \bp{\derx{y}{x}}^2} \d x\\
+                &= \int_{-2}^2 \cosh x \d x\\
+                &= 2 \int_0^2 \cosh x \d x\\
+                &= e^2 - e^{-2}
+            \end{align*}
+
+            \boxt{The length of arc $AB$ is $e^2 - e^{-2}$ units.}
+
+        \part
+            \begin{align*}
+                \volume &= 2\pi \int_0^2 xy \d x\\
+                &= 2\pi \int_0^2 x \cosh x \d x\\\\
+                &\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                    & D & I \\\cmidrule{1-3}
+                    + & x & \cosh x\\
+                    - & 1 & \sinh x \\
+                    + & 0 & \cosh x\\\bottomrule
+                \end{array}\\\\
+                &= 2\pi \evalint{x\sinh x - \cosh x}02\\
+                &= 2\pi \bs{\bp{2\sinh 2 - \cosh 2} - \bp{0\sinh 0 - \cosh 0}}\\
+                &= 2\pi \bp{2 \cdot \dfrac{e^2 - e^2}2 - \dfrac{e^2 + e^{-2}}2 + 1}\\
+                &= \pi \bp{2e^2 - 2e^{-2} - e^2 - e^{-2} + 2}\\
+                &= \pi \bp{e^2 - 3e^{-2} + 2}
+            \end{align*}
+
+            \boxt{$\pi \bp{e^2 - 3e^{-2} + 2}$ cm$^3$ of material is required.}
+
+        \part
+            \begin{align*}
+                \area &= \text{Area of curved surface} + \text{Area of side} + \text{Area of bottom}\\
+                &= 2\pi \int_0^2 x\cosh x \d x + 2^2\pi + 2^2\pi\cosh 2\\
+                &= \pi \bp{e^2 - 3e^{-2} + 2} + 4\pi + 4\pi \cdot \dfrac{e^2 + e^{-2}}2\\
+                &= \pi \bp{e^2 - 3e^{-2} + 2} + 4\pi + 2\pi(e^2 + e^{-2})\\
+                &= \pi \bs{\bp{e^2 - 3e^{-2} + 2} + 4 + 2(e^2 + e^{-2})}\\
+                &= \pi \bs{3e^2 - e^{-2} + 6}
+            \end{align*}
+
+            \boxt{$2\pi \bs{3e^2 - e^{-2} + 6}$ cm$^3$ of paint is required.}
+
+\end{document}
