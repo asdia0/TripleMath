@@ -1,0 +1,312 @@
+\documentclass{echw}
+
+\title{Assignment B10\\Applications of Integration III}
+\author{Eytan Chong}
+\date{2024-07-18}
+
+\begin{document}
+    \problem{}
+        Given that $y = e^{-x}\cos x$, show that $\der[2]{y}{x} = -2\bp{y + \der{y}{x}}$. By further differentiation, find the series expansion of $y$, in ascending powers of $x$, up to and including the term in $x^3$. Use the series to obtain an approximate value for $\displaystyle\int_0^{0.2} \dfrac{\cos x^2}{e^{x^2}} \d x$, giving your answer correct to 4 decimal places.
+
+        Using the trapezium rule with 4 trapezia of equal width, find another approximation for $\displaystyle\int_0^{0.2}\dfrac{\cos x^2}{e^{x^2}} \d x$, giving your answer correct to 4 decimal places.
+
+    \solution
+        Note that $y = e^{-x}\cos x = e^{-x} \Re e^{ix} = \Re e^{(i-1)x}$. Hence, we have $y' = \Re{(i-1)e^{(i-1)x}}$ and $y'' = \Re{(1-i)^2e^{(i-1)x}}$. Hence,
+        \begin{align*}
+            y'' &= \Re{(i^2 - 2i + 1^2) e^{(i-1)x}}\\
+            &= -2\Re{ie^{(i-1)x}}\\
+            &= -2\Re{(i-1)e^{(i-1)x} + e^{(i-1)x}}\\
+            &= -2\bp{\Re \, (i-1)e^{(i-1)x} + \Re \, e^{(i-1)x}}\\
+            &= -2\bp{y' + y}
+        \end{align*}
+        Further differentiating, we obtain $y^{(3)} = -2(y' + y'')$. Evaluating $y$ and its derivatives at 0,
+        \begin{align*}
+            y(0) &= 1\\
+            y'(0) &= -1\\
+            y''(0) &= 0\\
+            y^{(3)}(0) &= 2
+        \end{align*}
+        Hence, we have 
+        \boxt{$e^{-x}\cos x = 1 - x + \dfrac13 x^3 + \ldots$}
+
+        \begin{align*}
+            \int_0^{0.2} \dfrac{\cos x^2}{e^{x^2}} \d x &= \int_0^{0.2} e^{-{x^2}}\cos x^2 \d x\\
+            &\approx \int_0^{0.2} \bp{1 - x^2 + \dfrac13 (x^2)^3} \d x\\
+            &= \int_0^{0.2} \bp{1 - x^2 + \dfrac13 x^6} \d x\\
+            &= 0.1973 \todp{4}
+        \end{align*}
+
+        \boxt{$\displaystyle\int_0^{0.2} \dfrac{\cos x^2}{e^{x^2}} \d x \approx 0.1973$}
+
+        Let $g(x) = \dfrac{\cos x^2}{e^{x^2}}$. By the trapezium rule, we have
+        \begin{align*}
+            \int_0^{0.2} \dfrac{\cos x^2}{e^{x^2}} \d x &\approx \dfrac12 \cdot \dfrac{0.2 - 0}{4} \bs{g(0) + 2g(0.05) + 2g(0.1) + 2g(0.15) + g(0.2)}\\
+            &= 0.1973 \todp{4}
+        \end{align*}
+
+        \boxt{$\displaystyle\int_0^{0.2} \dfrac{\cos x^2}{e^{x^2}} \d x \approx 0.1973$}
+    \problem{}
+        The curve $C$ has equation $y^2 = \dfrac{x}{\sqrt{1 + x^2}}$, $y \geq 0$.
+
+        The finite region $R$ is bounded by $C$, the $x$-axis and the lines $x = 0$ and $x = 2$. $R$ is rotated through $2\pi$ radians about the $x$-axis.
+
+        \begin{enumerate}
+            \item Find the exact volume of the solid formed.
+        \end{enumerate}
+
+        An estimate for the volume in (a) is found using the trapezium rule with 7 ordinates.
+
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item Find the percentage error resulting from using this estimate, giving your answer to 3 decimal places.
+
+            Explain, with the help of a sketch, why the estimate given by the trapezium rule is less than the actual value.
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{align*}
+                \volume &= \pi \int_0^2 y^2 \d x\\
+                &= \pi \int_0^2 \dfrac{x}{\sqrt{1 + x^2}} \d x \usub{u &= 1 + x^2 \\ \d u &= 2x \d x}\\
+                &= \dfrac\pi2 \int_1^5 \dfrac1{\sqrt u} \d u\\
+                &= \dfrac\pi2 \evalint{2\sqrt u}15\\
+                &= \pi(\sqrt5 - 1)
+            \end{align*}
+
+            \boxt{The volume of the solid formed is $\pi(\sqrt5 - 1)$ units$^3$.}
+
+        \part
+            Let $f(x) = \dfrac{x}{\sqrt{1 + x^2}}$. By the trapezium rule,
+            \begin{align*}
+                \volume &= \pi \int_0^2 f(x) \d x\\
+                &\approx \pi \cdot \dfrac12 \cdot \dfrac{2-0}{6} \sum_{n=0}^5 \bs{f\of{\dfrac{n}3} + f\of{\dfrac{n+1}3}}\\
+                &= 3.8566 \tosf{5}
+            \end{align*}
+            Hence, the percentage error is $\abs{\dfrac{\pi(\sqrt5 - 1) - 3.8566}{\pi(\sqrt5 - 1)}} = 0.686\% \todp{3}$.
+            \boxt{The percentage error of the estimate is $0.686\%$.}
+
+            Consider the following graph of $y = f(x)$.
+
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:2,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {x/sqrt(1 + x^2)};
+            
+                        \addlegendentry{$y = f(x)$};
+
+                        \draw (0.5, 0) -- (0.5, 0.4472);
+                        \draw (1, 0) -- (1, 0.7071);
+                        \draw (1.5, 0) -- (1.5, 0.8321);
+                        \draw (0.5, 0.4472) -- (1, 0.7071);
+                        \draw (1, 0.7071) -- (1.5, 0.8321);
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+            
+            From the graph, the curve $y = f(x)$ is clearly concave downwards. Hence, the approximation given by the trapezium rule is an underestimate and is thus less than the actual value.
+
+    \problem{}
+        Prove that $\displaystyle\int_{-h}^h f(x) \d x = \dfrac13 h (y_{-1} + 4y_0 + y_1)$, where $y = f(x)$ is the quadratic curve passing through the points $(-h, y_{-1})$, $(0, y_0)$ and $(h, y_1)$.
+
+        Use Simpson's rule with 5 ordinates to find an approximation to \[\int_{-3}^1 \bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x\] Find another approximation to the same integral using the trapezium rule with 5 ordinates.
+
+        Which of these approximations would you expect to be more accurate? Justify your answer.
+
+    \solution
+        Let $f(x) = ax^2 + bx + c$ be the quadratic such that the graph $y = f(x)$ passes through the points $(-h, y_{-1})$, $(0, y_0)$ and $(h, y_1)$.
+
+        Note that we have $y_0 = f(0) = a \cdot 0^2 + b \cdot 0 + c = c$. We also have 
+        \[
+            y_{-1} + y_1 = f(-h) + f(h) = \bs{a(-h)^2 + b(-h) + c} + \bs{ah^2 + bh + c} = 2ah^2 + 2c
+        \] Hence,
+        \begin{align*}
+            \int_{-h}^h f(x) \d x &= \int_{-h}^h (ax^2 + bx + c) \d x\\
+            &= \evalint{\dfrac13 x^3 + \dfrac12 bx^2 + cx}{-h}{h}\\
+            &= \dfrac23 h^3 + 2ch\\
+            &= \dfrac13 h \bp{2h^2 + 6c}\\
+            &= \dfrac13 h \bp{2h^2 + 2c + 4c}\\
+            &= \dfrac13 h \bp{y_{-1} + y_1 + 4y_0}\\
+            &= \dfrac13 h \bp{y_{-1} + 4y_0 + y_1}
+        \end{align*}
+
+        \dash
+
+        Let $f(x) = \bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3}$. By Simpson's rule,
+        \begin{align*}
+            \int_{-3}^1 &\bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x\\
+            &\hspace{5em}\approx \dfrac13 \cdot \dfrac{1-(-3)}{4} \bs{f(-3) + 4f(-2) + 2f(-1) + 4f(0) + f(1)}\\
+            &\hspace{5em}= 11.977 \tosf{5}
+        \end{align*}
+
+        \boxt{By Simpson's rule, $\displaystyle\int_{-3}^1 \bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x = 11.977$}
+
+        By the trapezium rule,
+        \begin{align*}
+            \int_{-3}^1 &\bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x\\
+            &\hspace{5em}\approx \dfrac12 \cdot \dfrac{1-(-3)}{4} \bs{f(-3) + 2f(-2) + 2f(-1) + 2f(0) + f(1)}\\
+            &\hspace{5em}= 12.142 \tosf{5}
+        \end{align*}
+
+        \boxt{By the trapezium rule, $\displaystyle\int_{-3}^1 \bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x = 12.142$}
+
+        The approximation given by Simpson's rule should be more accurate as Simpson's rule accounts for the concavity of the curve $y = f(x)$.
+
+
+    \problem{}
+        \begin{enumerate}
+            \item Find the exact value of $\displaystyle\int_0^1 \dfrac1{1 + x^2} \d x$.
+            \item The graph of $y = \dfrac1{1 + x^2}$ is shown in the diagram below. Rectangles, each of width $\dfrac1n$, are drawn under the curve.
+            
+            Show that the total area $A$ of all $n$ rectangles is given by \[A = \dfrac1n \bs{\dfrac1{1 + \bp{\frac1n}^2} + \dfrac1{1 + \bp{\frac2n}^2} + \dfrac1{1 + \bp{\frac3n}^2} + \ldots + \dfrac12}\] State the limit of $A$ as $n \to \infty$.
+        \end{enumerate}
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:1,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {0.1, 0.2, 0.3, 0.4, 0.8, 0.9, 1},
+                    xticklabels = {$\frac1n$, $\frac2n$, $\frac3n$, $\frac4n$, $\frac{n-2}n$, $\frac{n-1}n$, 1},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=0,
+                    ymax=1.1,
+                    xmax=1.02,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {1/(1 + x^2)};
+        
+                    \addlegendentry{$y = 1/(1 + x^2)$};
+
+                    \draw (0.1, 0) -- (0.1, 100/101);
+                    \draw (0.0, 100/101) -- (0.1, 100/101);
+
+                    \draw (0.2, 0) -- (0.2, 25/26);
+                    \draw (0.1, 25/26) -- (0.2, 25/26);
+
+                    \draw (0.3, 0) -- (0.3, 100/109);
+                    \draw (0.2, 100/109) -- (0.3, 100/109);
+                    
+                    \draw (0.4, 0) -- (0.4, 25/29);
+                    \draw (0.3, 25/29) -- (0.4, 25/29);
+
+                    \draw (0.8, 0) -- (0.8, 25/41);
+
+                    \draw (0.9, 0) -- (0.9, 100/181);
+                    \draw (0.8, 100/181) -- (0.9, 100/181);
+
+                    \draw (1, 0) -- (1, 1/2);
+                    \draw (0.9, 1/2) -- (1, 1/2);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item It is given that \[B = \dfrac1n \bs{\dfrac1{1 + \bp{\frac1n}^4} + \dfrac1{1 + \bp{\frac2n}^4} + \dfrac1{1 + \bp{\frac3n}^4} + \ldots + \dfrac12}\] Find an approximation for the limit of $B$ as $n \to \infty$ by considering an appropriate graph and using the trapezium rule with 5 intervals. Given your answer correct to 2 decimal places.
+        \end{enumerate}
+
+    \solution
+        \part
+            \[
+                \int_0^1 \dfrac1{1 + x^2} \d x = \evalint{\arctan x}{0}{1} = \dfrac\pi4
+            \]
+
+            \boxt{$\displaystyle\int_0^1 \dfrac1{1 + x^2} \d x = \dfrac\pi4$}
+
+        \part
+            Observe that the $k$th rectangle has height $\dfrac1{1 + (k/n)^2}$ and width $1/n$. Hence,
+            \begin{align*}
+                A &= \sum_{k=1}^n \dfrac1n \cdot \dfrac1{1 + (k/n)^2}\\
+                &= \dfrac1n \sum_{k=1}^n \dfrac1{1 + (k/n)^2}\\
+                &= \dfrac1n \bs{\dfrac1{1 + \bp{\frac1n}^2} + \dfrac1{1 + \bp{\frac2n}^2} + \dfrac1{1 + \bp{\frac3n}^2} + \ldots + \dfrac1{1 + \bp{\frac{n}{n}}^2}}\\
+                &= \dfrac1n \bs{\dfrac1{1 + \bp{\frac1n}^2} + \dfrac1{1 + \bp{\frac2n}^2} + \dfrac1{1 + \bp{\frac3n}^2} + \ldots + \dfrac1{2}}
+            \end{align*}
+
+            \boxt{As $n \to \infty$, $A \to \displaystyle\int_0^1 \dfrac1{1 + x^2} = \dfrac\pi4$.}
+        
+        \part
+            Consider the following graph of $y = \dfrac1{1 + x^4}$.
+
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:1,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = {0.1, 0.2, 0.3, 0.4, 0.8, 0.9, 1},
+                        xticklabels = {$\frac1n$, $\frac2n$, $\frac3n$, $\frac4n$, $\frac{n-2}n$, $\frac{n-1}n$, 1},
+                        ytick = \empty,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        ymin=0,
+                        ymax=1.1,
+                        xmax=1.02,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {1/(1 + x^4)};
+            
+                        \addlegendentry{$y = 1/(1 + x^4)$};
+    
+                        \draw (0.1, 0) -- (0.1, 0.9999);
+                        \draw (0.0, 0.9999) -- (0.1, 0.9999);
+    
+                        \draw (0.2, 0) -- (0.2, 625/626);
+                        \draw (0.1, 625/626) -- (0.2, 625/626);
+    
+                        \draw (0.3, 0) -- (0.3, 0.9920);
+                        \draw (0.2, 0.9920) -- (0.3, 0.9920);
+                        
+                        \draw (0.4, 0) -- (0.4, 625/641);
+                        \draw (0.3, 625/641) -- (0.4, 625/641);
+    
+                        \draw (0.8, 0) -- (0.8, 625/881);
+    
+                        \draw (0.9, 0) -- (0.9, 0.60383);
+                        \draw (0.8, 0.60383) -- (0.9, 0.60383);
+    
+                        \draw (1, 0) -- (1, 1/2);
+                        \draw (0.9, 1/2) -- (1, 1/2);
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+            Using a similar line of logic presented in part (b), we have that $B$ is the total area of the rectangles above. Hence, as $n \to \infty$, $B \to \displaystyle\int_{0}^1 \dfrac1{1 + x^4} \d x$. 
+            
+            Let $f(x) = \dfrac1{1 + x^4}$. Using the trapezium rule,
+            \begin{align*}
+                \int_0^1 \dfrac1{1 + x^4} \d x &= \dfrac12 \cdot \dfrac{1-0}{5} \bs{f(0) + 2f(0.2) + 2f(0.4) + 2f(0.6) + 2f(0.8) + f(1)}\\
+                &= 0.86 \todp{2}
+            \end{align*}
+            
+            \boxt{As $n \to \infty$, $B \to 0.86$.}
+\end{document}
