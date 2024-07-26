@@ -1,0 +1,170 @@
+\documentclass{echw}
+
+\title{Assignment A10.3\\Complex Numbers}
+\author{Eytan Chong}
+\date{2024-07-26}
+
+\begin{document}
+    \problem{}
+        \begin{enumerate}
+            \item Solve $z^4 = -4 - 4\sqrt3 i$, expressing your answers in the form $re^{i\t}$, where $r > 0$ and $-\pi < \t \leq \pi$.
+            \item Sketch the roots on an Argand diagram.
+            \item Hence, solve $w^4 = -1 + \sqrt3 i$, expressing your answers in a similar form.
+        \end{enumerate}
+    
+    \solution
+        \part
+            Observe that $-4-4\sqrt3i = 8\bp{-\dfrac12 - \dfrac{\sqrt3}2i} = 8\bp{\cos \dfrac43\pi + i\sin\dfrac43\pi} = 8e^{i\frac43\pi} = 8e^{i\frac43 \pi + 2k\pi i}$ for all $k \in \Z$. Hence,
+            \begin{alignat*}{2}
+                && z^4 &= 8e^{i\frac43 \pi + 2k\pi i}\\
+                \implies&& z &= 8^{\frac14} e^{i\frac13 \pi + \frac12 k\pi i}\\
+                && &= 2^{\frac34} e^{i \frac{2 + 3k}{6} \pi}
+            \end{alignat*}
+            Taking $k = -2, -1, 0, 1$:
+            \boxt{$z_{-2} = 2^{\frac34} e^{-i\frac23\pi}$, $z_{-1} = 2^{\frac34} e^{-i\frac16\pi}$, $z_{0} = 2^{\frac34} e^{i\frac13\pi}$, $z_{1} = 2^{\frac34} e^{i\frac56\pi}$}
+
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:10,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = \empty,
+                        xmax=2.4,
+                        xmin=-2.4,
+                        ymin=-2.1,
+                        ymax=2.1,
+                        xlabel = {$\Re$},
+                        ylabel = {$\Im$},
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+            
+                        \coordinate (R) at (10,0);
+                        \coordinate[label=below left:$z_{-2}$] (Z-2) at (-0.84089, -1.4565);
+                        \coordinate[label=right:$z_{-1}$] (Z-1) at (1.4565, -0.84089);
+                        \coordinate[label=right:$z_{0}$] (Z0) at (0.84089, 1.4565);
+                        \coordinate[label=left:$z_{1}$] (Z1) at (-1.4565, 0.84089);
+                        \coordinate (O) at (0, 0);
+
+                        \draw[dashed] (O) circle[radius=8^0.25];
+
+                        \node[rotate=60, anchor=south] at (0.42, 0.7) {$2^{\frac34}$};
+                
+                        \draw (O) -- (Z-2);
+                        \draw (O) -- (Z-1);
+                        \draw (O) -- (Z0);
+                        \draw (O) -- (Z1);
+                
+                        \fill (Z-2) circle[radius=2.5pt];
+                        \fill (Z-1) circle[radius=2.5pt];
+                        \fill (Z0) circle[radius=2.5pt];
+                        \fill (Z1) circle[radius=2.5pt];
+                        \draw pic [draw, angle radius=5mm, ""] {angle = R--O--Z0};
+
+                        \node at (0.45, 0.24) {$\frac\pi3$};
+
+                        \draw pic [draw, angle radius=3mm, "$\cdot$"] {right angle = Z0--O--Z1};
+                        \draw pic [draw, angle radius=3mm, "$\cdot$"] {right angle = Z-1--O--Z0};
+                        \draw pic [draw, angle radius=3mm, "$\cdot$"] {right angle = Z-2--O--Z-1};
+                        \draw pic [draw, angle radius=3mm, "$\cdot$"] {right angle = Z1--O--Z-2};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+        
+        \part
+            Observe that $w^{4} = -1 + \sqrt3 i = \dfrac14 (-4 + 4\sqrt3 i) = \dfrac14 (z^4)\cconj = 2^{-2} (z\cconj)^4$. Hence, $w = 2^{-\frac12} z\cconj$.
+
+            \boxt{$w_{-2} = 2^{\frac14} e^{i\frac23\pi}$, $w_{-1} = 2^{\frac14} e^{i\frac16\pi}$, $w_{0} = 2^{\frac14} e^{-i\frac13\pi}$, $w_{1} = 2^{\frac14} e^{-i\frac56\pi}$}
+
+    \problem{}
+        Let
+        \begin{align*}
+            C &= 1 - \binom{2n}{1} \cos \t + \binom{2n}{2} \cos 2\t - \binom{2n}{3} \cos 3\t + \ldots + \cos 2n\t\\
+            S &= - \binom{2n}{1} \sin \t + \binom{2n}{2} \sin 2\t - \binom{2n}{3} \sin 3\t + \ldots + \sin 2n\t
+        \end{align*}
+        where $n$ is a positive integer.
+
+        Show that $C = (-4)^n \cos{n\t} \sin[2n]{\t/2}$, and find the corresponding expression for $S$.
+
+    \solution
+        \begin{align*}
+            C + iS &= \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k \cos k\t + \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k i \sin k\t\\
+            &= \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k (\cos k\t + i\sin k\t)\\
+            &= \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k e^{ik\t}\\
+            &= \sum_{k = 0}^{2n} \binom{2n}{k} (-e^{i\t})^k\\
+            &= (1 - e^{i\t})^{2n}\\
+            &= \bp{e^{i\t/2}}^{2n} \bp{e^{-i\t/2} - e^{i\t/2}}^{2n}\\
+            &= \bp{e^{i\t/2}}^{2n} \bp{e^{i\t/2} - e^{-i\t/2}}^{2n}\\
+            &= \bp{e^{i\t/2}}^{2n} \bp{2i\sin{\t/2}}^{2n}\\
+            &= e^{in\t} 2^{2n} i^{2n} \sin[2n]{\t/2}\\
+            &= e^{in\t} 4^n (-1)^n \sin[2n]{\t/2}\\
+            &= (\cos n\t + i\sin n\t) (-4)^n \sin[2n]{\t/2}
+        \end{align*}
+
+        Comparing real and imaginary parts, we have $C = (-4)^n \cos{n\t} \sin[2n]{\t/2}$ and
+        \boxt{$S = (-4)^n \sin{n\t} \sin[2n]{\t/2}$}
+
+    \problem{}
+        Given that $z = \cos\t + \i\sin\t$, show that
+        \begin{enumerate}
+            \item $z - \dfrac1z = 2i\sin\t$,
+            \item $z^n + z^{-n} = 2\cos n\t$.
+        \end{enumerate}
+
+        Hence, show that \[\sin^6 \t = \dfrac1{32} (10 - 15\cos2\t + 6\cos4\t - \cos6\t)\] Find a similar expression for $\cos^6 \t$, and hence express $\cos^6 \t - \sin^6 \t$ in the form $a\cos2\t + b\cos6\t$.
+
+    \solution
+        \part
+            \begin{align*}
+                z - \dfrac1z &= z - z^{-1}\\
+                &= e^{i\t} - e^{-i\t}\\
+                &= (\cos \t + i\sin \t) - (\cos{-\t} + i\sin{-\t})\\
+                &= (\cos \t + i\sin \t) - (\cos \t - i\sin \t)\\
+                &= 2i\sin \t
+            \end{align*}
+
+        \part
+            \begin{align*}
+                z^n + z^{-n} &= \bp{e^{i\t}}^n + \bp{e^{i\t}}^{-n}\\
+                &= e^{in\t} + e^{-in\t}\\
+                &= (\cos n\t + i\sin n\t) + (\cos{-n\t} + i\sin{n\t})\\
+                &= (\cos n\t + i\sin n\t) + (\cos n\t - i\sin n\t)\\
+                &= 2\cos n\t
+            \end{align*}
+        \dash
+        \begin{align*}
+            \sin^6 \t &= \dfrac1{(2i)^6} (2i \sin \t)^6\\
+            &= -\dfrac1{64} (z - z^{-1})^6\\
+            &= -\dfrac1{64} \bs{\binom60 z^6 - \binom61 z^4 + \binom62 z^2 - \binom63 z^0 + \binom64 z^{-2} - \binom65 z^{-4} + \binom66 z^{-6}}\\
+            &= -\dfrac1{64} \bs{-20 + 15(z^2 + z^{-2}) -6(z^4 + z^{-4}) + (z^6 + z^{-6})}\\
+            &= -\dfrac1{64} \bs{-20 + 15(2\cos2\t) -6(2\cos4\t) + 2\cos6\t}\\
+            &= \dfrac1{32} \bp{10 - 15\cos2\t + 6\cos4\t - \cos6\t}
+        \end{align*}
+
+        \begin{align*}
+            \cos^6 \t &= \dfrac1{2^6} (2\cos\t)^6\\
+            &= \dfrac1{64} (z + z^{-1})^6\\
+            &= \dfrac1{64} \bs{\binom60 z^6 + \binom61 z^4 + \binom62 z^2 + \binom63 z^0 + \binom64 z^{-2} + \binom65 z^{-4} + \binom66 z^{-6}}\\
+            &= \dfrac1{64} \bs{20 + 15(z^2 + z^{-2}) + 6(z^4 + z^{-4}) + (z^6 + z^{-6})}\\
+            &= \dfrac1{64} \bs{20 + 15(2\cos2\t) + 6(2\cos4\t) + 2\cos6\t}\\
+            &= \dfrac1{32} \bp{10 + 15\cos2\t + 6\cos4\t + \cos6\t}
+        \end{align*}
+
+        \begin{align*}
+            \cos^6 \t - \sin^6 \t &= \bs{\dfrac1{32} \bp{10 + 15\cos2\t + 6\cos4\t + \cos6\t}}\\
+            &- \bs{\dfrac1{32} \bp{10 - 15\cos2\t + 6\cos4\t - \cos6\t}}\\
+            &= \dfrac1{32} (30 \cos 2\t + 2\cos 6\t)\\
+            &= \dfrac{15}{16} \cos 2\t + \dfrac1{16} \cos 6\t
+        \end{align*}
+
+        \boxt{$a = \dfrac{15}{16}$, $b = \dfrac1{16}$}
+
+\end{document}
