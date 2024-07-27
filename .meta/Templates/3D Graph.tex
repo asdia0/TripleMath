@@ -1,0 +1,22 @@
+\begin{center}
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            axis on top,
+            axis y line=middle,
+            axis x line=middle,
+            axis z line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            ztick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            zlabel = {$z$},
+            zmax = 20,
+            zmin = -20,
+            legend cell align={left},
+            legend pos=outer north east,
+            ]
+            \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7]{x^2 * y + 1};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}

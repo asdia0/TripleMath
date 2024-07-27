@@ -34,7 +34,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | B8 | Applications of Integration I - Area and Volume | [T-B8](/Group%20B/Chapter%20B8/Tutorial%20B8/Tutorial%20B8.pdf) | [A-B8](/Group%20B/Chapter%20B8/Assignment%20B8/Assignment%20B8.pdf) |
 | B9 | Applications of Integration II - Arc Length and Surface Area| [T-B9](/Group%20B/Chapter%20B9/Tutorial%20B9/Tutorial%20B9.pdf) | [A-B9](/Group%20B/Chapter%20B9/Assignment%20B9/Assignment%20B9.pdf]) |
 | B10 | Applications of Integration III - Trapezium Rule and Simpson's Rule | [T-B10](/Group%20B/Chapter%20B10/Tutorial%20B10/Tutorial%20B10.pdf) | [A-B10](/Group%20B/Chapter%20B10/Assignment%20B10/Assignment%20B10.pdf) |
-| B11 | Functions of Two Variables | | |
+| B11 | Functions of Two Variables | [T-B11](/Group%20B/Chapter%20B11/Tutorial%20B11/Tutorial%20B11.pdf) | |
 | B12 | Functional Differential Equations | | |
 
 ## Exams
