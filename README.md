@@ -51,20 +51,20 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
         <tr>
             <td rowspan=6>JC1</td>
             <td rowspan=3>9758</td>
-            <td><a href="/Exams/MA WA1/MA WA1.pdf">WA1</a></td>
+            <td><a href="/Exams/JC1 9758 WA1/JC1 9758 WA1.pdf">WA1</a></td>
         </tr>
         <tr>
-            <td><a href="/Exams/MA WA2/MA WA2.pdf">WA2</a></td>
+            <td><a href="/Exams/JC1 9758 WA2/JC1 9758 WA2.pdf">WA2</a></td>
         </tr>
         <tr>
             <td>Promos</td>
         </tr>
         <tr>
             <td rowspan=3>9649</td>
-            <td><a href="/Exams/FM WA1/FM WA1.pdf">WA1</a></td>
+            <td><a href="/Exams/JC1 9649 WA1/JC1 9649 WA1.pdf">WA1</a></td>
         </tr>
         <tr>
-            <td><a href="/Exams/FM WA2/FM WA2.pdf">WA2</a></td>
+            <td><a href="/Exams/JC1 9649 WA2/JC1 9649 WA2.pdf">WA2</a></td>
         </tr>
         <tr>
             <td>Promos</td>
@@ -100,19 +100,19 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
             <td rowspan=5>2023</td>
             <td rowspan=5>9649</td>
             <td rowspan=5>MYE</td>
-            <td><a href="/Misc/ASRJC%209649%202023%20JC1%20MYE/ASRJC%209649%202023%20JC1%20MYE.pdf">ASRJC</a></td>
+            <td><a href="/Misc/JC1 2023 9649 MYE ASRJC/JC1 2023 9649 MYE ASRJC.pdf">ASRJC</a></td>
         </tr>
         <tr>
-            <td><a href="/Misc/EJC%209649%202023%20JC1%20MYE/EJC%209649%202023%20JC1%20MYE.pdf">EJC</a></td>
+            <td><a href="/Misc/JC1 2023 9649 MYE EJC/JC1 2023 9649 MYE EJC.pdf">EJC</a></td>
         </tr>
         <tr>
-            <td><a href="/Misc/HCI%209649%202023%20JC1%20MYE/HCI%209649%202023%20JC1%20MYE.pdf">HCI</a></td>
+            <td><a href="/Misc/JC1 2023 9649 MYE HCI/JC1 2023 9649 MYE HCI.pdf">HCI</a></td>
         </tr>
         <tr>
-            <td><a href="/Misc/RI%209649%202023%20JC1%20MYE/RI%209649%202023%20JC1%20MYE.pdf">RI</a></td>
+            <td><a href="/Misc/JC1 2023 9649 MYE RI/JC1 2023 9649 MYE RI.pdf">RI</a></td>
         </tr>
         <tr>
-            <td><a href="/Misc/VJC%209649%202023%20JC1%20MYE/VJC%209649%202023%20JC1%20MYE.pdf">VJC</a></td>
+            <td><a href="/Misc/JC1 2023 9649 MYE VJC/JC1 2023 9649 MYE VJC.pdf">VJC</a></td>
         </tr>
     </tbody>
 </table>
