@@ -17,7 +17,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | A10.1 | Complex Numbers - Complex Numbers in Cartesian Form | [T-A10.1](/Group%20A/Chapter%20A10/Chapter%20A10.1/Tutorial%20A10.1/Tutorial%20A10.1.pdf) | [A-A10.1](/Group%20A/Chapter%20A10/Chapter%20A10.1/Assignment%20A10.1/Assignment%20A10.1.pdf) |
 | A10.2 | Complex Numbers - Complex Numbers in Polar Form | [T-A10.2](/Group%20A/Chapter%20A10/Chapter%20A10.2/Tutorial%20A10.2/Tutorial%20A10.2.pdf) | [A-A10.2](/Group%20A/Chapter%20A10/Chapter%20A10.2/Assignment%20A10.2/Assignment%20A10.2.pdf) |
 | A10.3 | Complex Numbers - Geometrical Effects and De Moivre's Theorem | [T-A10.3](/Group%20A/Chapter%20A10/Chapter%20A10.3/Tutorial%20A10.3/Tutorial%20A10.3.pdf) | [A-A10.3](/Group%20A/Chapter%20A10/Chapter%20A10.3/Assignment%20A10.3/Assignment%20A10.3.pdf) |
-| A10.4 | Complex Numbers - Loci in Argand Diagram | [T-A10.4](/Group%20A/Chapter%20A10/Chapter%20A10.4/Tutorial%20A10.4/Tutorial%20A10.4.pdf) | |
+| A10.4 | Complex Numbers - Loci in Argand Diagram | [T-A10.4](/Group%20A/Chapter%20A10/Chapter%20A10.4/Tutorial%20A10.4/Tutorial%20A10.4.pdf) | [A-10.4](/Group%20A/Chapter%20A10/Chapter%20A10.4/Assignment%20A10.4/Assignment%20A10.4.pdf) |
 | A11 | Permutations and Combinations | [T-A11](/Group%20A/Chapter%20A11/Tutorial%20A11/Tutorial%20A11.pdf) | |
 | A12 | Probability | | |
 
