@@ -18,7 +18,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | A10.2 | Complex Numbers - Complex Numbers in Polar Form | [T-A10.2](/Group%20A/Chapter%20A10/Chapter%20A10.2/Tutorial%20A10.2/Tutorial%20A10.2.pdf) | [A-A10.2](/Group%20A/Chapter%20A10/Chapter%20A10.2/Assignment%20A10.2/Assignment%20A10.2.pdf) |
 | A10.3 | Complex Numbers - Geometrical Effects and De Moivre's Theorem | [T-A10.3](/Group%20A/Chapter%20A10/Chapter%20A10.3/Tutorial%20A10.3/Tutorial%20A10.3.pdf) | [A-A10.3](/Group%20A/Chapter%20A10/Chapter%20A10.3/Assignment%20A10.3/Assignment%20A10.3.pdf) |
 | A10.4 | Complex Numbers - Loci in Argand Diagram | [T-A10.4](/Group%20A/Chapter%20A10/Chapter%20A10.4/Tutorial%20A10.4/Tutorial%20A10.4.pdf) | |
-| A11 | Permutations and Combinations | | |
+| A11 | Permutations and Combinations | [T-A11](/Group%20A/Chapter%20A11/Tutorial%20A11/Tutorial%20A11.pdf) | |
 | A12 | Probability | | |
 
 ## Group B
@@ -35,7 +35,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | B9 | Applications of Integration II - Arc Length and Surface Area| [T-B9](/Group%20B/Chapter%20B9/Tutorial%20B9/Tutorial%20B9.pdf) | [A-B9](/Group%20B/Chapter%20B9/Assignment%20B9/Assignment%20B9.pdf]) |
 | B10 | Applications of Integration III - Trapezium Rule and Simpson's Rule | [T-B10](/Group%20B/Chapter%20B10/Tutorial%20B10/Tutorial%20B10.pdf) | [A-B10](/Group%20B/Chapter%20B10/Assignment%20B10/Assignment%20B10.pdf) |
 | B11 | Functions of Two Variables | [T-B11](/Group%20B/Chapter%20B11/Tutorial%20B11/Tutorial%20B11.pdf) | |
-| B12 | Functional Differential Equations | | |
+| B12 | First Order Differential Equations | | |
 
 ## Exams
 
