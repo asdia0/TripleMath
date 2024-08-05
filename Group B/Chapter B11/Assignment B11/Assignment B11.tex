@@ -1,0 +1,143 @@
+\documentclass{echw}
+
+\title{Assignment B11\\Functions of Two Variables}
+\author{Eytan Chong}
+\date{2024-08-05}
+
+\begin{document}
+    \problem{}
+        Show that if $f$ is differentiable at $(x_0, y_0)$ and $\nabla f(x_0, y_0) \neq \vec 0$, then $\nabla f(x_0, y_0)$ is perpendicular to the level curve of $f$ through $(x_0, y_0)$.
+
+    \solution
+        Since $f$ is differentiable at $(x_0, y_0)$, we know that $\nabla f(x_0, y_0) = (f_x(x_0, y_0), f_y(x_0, y_0))$ exists. Consider the level curve of $f$ through $(x_0, y_0)$. Let $\vec u$ be the unit vector in the direction of the level curve at $(x_0, y_0)$. Since $f$ is constant about this curve, the directional derivative of $\vec u$ is 0 at $(x_0, y_0)$. That is, $\nabla f(x_0, y_0) \cdot \vec u = 0$. Since neither $\nabla f(x_0, y_0)$ nor $\vec u$ are the zero vector, it must be that they are perpendicular to each other, whence $\nabla f(x_0, y_0)$ is perpendicular to the level curve of $f$ through $(x_0, y_0)$.
+
+    \problem{}
+        Find the quadratic approximation of $f(x, y) = e^{x^2 + y^2}$ around the point $\bp{\dfrac12, 0}$.
+
+    \solution
+        Observe that we have
+        \begin{align*}
+            f_x(x, y) &= 2xe^{x^2 + y^2}\\
+            f_y(x, y) &= 2ye^{x^2 + y^2}\\
+            f_{xx}(x, y) &= 2e^{x^2 + y^2}(2x^2 + 1)\\
+            f_{xy}(x, y) &= 4xye^{x^2 + y^2}\\
+            f_{yy}(x, y) &= 2e^{x^2 + y^2}(2y^2 + 1)
+        \end{align*}
+        Evaluating $f(x, y)$ and the above partial derivatives at $\bp{\dfrac12, 0}$, we obtain
+        \begin{align*}
+            f(x, y) &= e^{1/4}\\
+            f_x(x, y) &= e^{1/4}\\
+            f_y(x, y) &= 0\\
+            f_{xx}(x, y) &= 3e^{1/4}\\
+            f_{xy}(x, y) &= 0\\
+            f_{yy}(x, y) &= 2e^{1/4}
+        \end{align*}
+        The quadratic approximation $Q(x, y)$ to $f(x, y)$ at $\bp{\dfrac12, 0}$ is hence given by
+        \boxt{$Q(x, y) = e^{1/4} + e^{1/4}\bp{x - \dfrac12} + 3e^{1/4} \bp{x - \dfrac12}^2 + 2e^{1/4} y^2$}
+
+    \problem{}
+        A common problem in experimental work is to obtain a mathematical relationship between two variables $x$ and $y$ by ``fitting'' a curve to points in the plane corresponding to various experimentally determines values of $x$ and $y$, say \[(x_1, y_1), (x_2, y_2), (x_3, y_3), \ldots, (x_n, y_n).\] Based on theoretical considerations, or simply on the pattern of the points, one decides on the general form of the curve to be fitted. Often, the ``curve'' to be fitted is a straight line, $y = ax + b$. One criterion for selecting a line of ``best fit'' is to choose $a$ and $b$ to minimize the function \[f(a, b) = \sum_{k = 1}^n (ax_k + b - y_k)^2.\] Geometrically, $\abs{ax_k + b - y_k}$ is the vertical distance between the data point $(x_k, y_k)$ and the line $y = ax + b$, so in effect, minimizing $f(a, b)$ minimizes the sum of the squares of the vertical distances. This procedure is called the method of least squares.
+
+        \begin{enumerate}
+            \item Sbow that the conditions $\pder{f}{a} = 0$ and $\pder{f}{b} = 0$ result in the equations
+            \begin{align*}
+                \bp{\sum_{k = 1}^n x_k^2} a + \bp{\sum_{k = 1}^n x_k} b &= \sum_{k = 1}^n (x_k y_k)\\
+                \bp{\sum_{k = 1}^n x_k} a + nb &= \sum_{k = 1}^n y_k
+            \end{align*}
+            \item Solve the equations for $a$ and $b$ to show that \[a = \dfrac{n\displaystyle\sum_{k = 1}^n (x_k y_k) - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n y_k}}{n\displaystyle\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}\] and \[b = \dfrac{\displaystyle\bp{\sum_{k = 1}^n x_k^2}\bp{\sum_{k = 1}^n y_k} - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n (x_k y_k)}}{n\displaystyle\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}.\]
+            \item Given that $\bar{x} = \displaystyle \dfrac1n \sum_{k = 1}^n x_k$, show that $\displaystyle n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 > 0$.
+            \item Find $f_{aa}(a, b)$, $f_{bb}(a, b)$ and $f_{ab}(a, b)$.
+            \item Show that $f$ has a relative minimum at the critical point found in (b).
+        \end{enumerate}
+
+    \solution
+        \part
+            Consider $\pder{f}{a} = 0$.
+            \begin{alignat*}{2}
+                && \pder{f}{a} &= 0\\
+                \implies&& \pder{}{a} \sum_{k = 1}^n (ax_k + b - y_k)^2 &= 0\\
+                \implies&& \sum_{k = 1}^n \pder{}{a} (ax_k + b - y_k)^2 &= 0\\
+                \implies&& \sum_{k = 1}^n 2x_k(ax_k + b - y_k) &= 0\\
+                \implies&& \sum_{k = 1}^n (ax_k^2 + bx_k - x_ky_k) &= 0\\
+                \implies&& a \sum_{k = 1}^n x_k^2 + b \sum_{k = 1}^n x_k - \sum_{k = 1}^n x_ky_k &= 0\\
+                \implies&& a \sum_{k = 1}^n x_k^2 + b \sum_{k = 1}^n x_k &= \sum_{k = 1}^n x_ky_k
+            \end{alignat*}
+
+            Consider $\pder{f}{b} = 0$.
+            \begin{alignat*}{2}
+                && \pder{f}{b} &= 0\\
+                \implies&& \pder{}{b} \sum_{k = 1}^n (ax_k + b - y_k)^2 &= 0\\
+                \implies&& \sum_{k = 1}^n \pder{}{b} (ax_k + b - y_k)^2 &= 0\\
+                \implies&& \sum_{k = 1}^n 2(ax_k + b - y_k) &= 0\\
+                \implies&& \sum_{k = 1}^n (ax_k + b - y_k) &= 0\\
+                \implies&& a \sum_{k = 1}^n x_k + b\sum_{k = 1}^n 1 - \sum_{k = 1}^n y_k &= 0\\
+                \implies&& a \sum_{k = 1}^n x_k + bn - \sum_{k = 1}^n y_k &= 0\\
+                \implies&& a \sum_{k = 1}^n x_k + bn &= \sum_{k = 1}^n y_k\\
+            \end{alignat*}
+
+        \part
+            Let $A = \displaystyle\sum_{k = 1}^n x_k^2$, $B = \displaystyle\sum_{k = 1}^n x_k$, $C = \displaystyle\sum_{k = 1}^n (x_k y_k)$, $D = n$ and $E = \displaystyle\sum_{k = 1}^n y_k$. The above equations transform into \[\systeme{Aa + Bb = C, Ba + Db = E}.\] Multiplying through the second equation by $\dfrac{B}{D}$, we obtain
+            \begin{alignat*}{2}
+                &&\dfrac{B^2}{D} a + Bb &= \dfrac{BE}{D}\\
+                \implies&& Bb &= \dfrac{BE}{D} - \dfrac{B^2}{D} a
+            \end{alignat*}
+            Substituting this into the first equation yields
+            \begin{alignat*}{2}
+                && Aa + \bp{\dfrac{BE}{D} - \dfrac{B^2}{D} a} &= C\\
+                \implies&& \bp{A - \dfrac{B^2}{D}} a = C - \dfrac{BE}{D}\\
+                \implies&& (AD - B^2) a &= CD - BE\\
+                \implies&& a &= \dfrac{CD - BE}{AD - B^2}
+            \end{alignat*}
+            Substituting immediately gives the desired result \[a = \dfrac{n\displaystyle\sum_{k = 1}^n (x_k y_k) - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n y_k}}{n\displaystyle\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}.\]
+            Recall that $Bb = \dfrac{BE}{D} - \dfrac{B^2}{D} a$. This gives
+            \begin{alignat*}{2}
+                && Bb &= \dfrac{BE}{D} - \dfrac{B^2}{D} a\\
+                \implies&&b &= \dfrac{E}{D} - \dfrac{B}{D} a\\
+                && &= \dfrac{E}{D} - \dfrac{B}{D} \bp{\dfrac{CD - BE}{AD - B^2}}\\
+                && &= \dfrac{E(AD - B^2) - B(CD - BE)}{D(AD - B^2)}\\
+                && &= \dfrac{DAE - DBC}{D(AD - B^2)}\\
+                && &= \dfrac{AE - BC}{AD - B^2}
+            \end{alignat*}
+            Substituting immediately gives the desired result \[b = \dfrac{\displaystyle\bp{\sum_{k = 1}^n x_k^2}\bp{\sum_{k = 1}^n y_k} - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n (x_k y_k)}}{n\displaystyle\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}.\]
+
+        \part
+            Observe that $\bar{x} = \displaystyle \dfrac1n \sum_{k = 1}^n x_k \implies \sum_{k = 1}^n x_k = n \bar{x}$. Consider $\displaystyle n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2$.
+            \begin{align*}
+                n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 &= n\sum_{k = 1}^n x_k^2 - (n\bar{x})^2\\
+                &= n \bp{\sum_{k = 1}^n x_k^2 - n\bar{x}^2}\\
+                &= n \bp{\sum_{k = 1}^n x_k^2 - 2n\bar{x}^2 + n\bar{x}^2} \\
+                &= n \bp{\sum_{k = 1}^n x_k^2 - 2n\bar{x} \bp{\dfrac1n \sum_{k = 1}^n x_k} + \sum_{k = 1}^n \bar{x}^2} \\
+                &= n \bp{\sum_{k = 1}^n x_k^2 - \sum_{k = 1}^n 2x_k\bar{x} + \sum_{k = 1}^n \bar{x}^2} \\
+                &= n \sum_{k = 1}^n \bp{x_k^2 -  2x_k\bar{x} + \bar{x}^2} \\
+                &= n \sum_{k = 1}^n \bp{x_k - \bar{x}}^2
+            \end{align*}
+            Given that the RHS is a sum of squares, it must be greater than or equal to 0. We thus have the inequality \[n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 \geq 0.\] However, if $\displaystyle n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 = 0$, then both $a$ and $b$ would be undefined. Thus, we must have a strict inequality, which gives \[n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 > 0\] as desired.
+
+        \part
+            We first find the first derivatives of $f(a, b)$:
+            \begin{alignat*}{2}
+                && f_a(a, b) &= \pder{}{a} \sum_{k = 1}^n (ax_k + b - y_k)^2 \\
+                && &= \sum_{k = 1}^n \pder{}{a} (ax_k + b - y_k)^2\\
+                && &= \sum_{k = 1}^n 2x_k(ax_k + b - y_k)\\
+                && &= 2a \sum_{k = 1}^n x_k^2 + 2b \sum_{k = 1}^n x_k - 2\sum_{k = 1}^n x_k y_k\\
+                && f_b(a, b) &= \pder{}{b} \sum_{k = 1}^n (ax_k + b - y_k)^2 \\
+                && &= \sum_{k = 1}^n \pder{}{b} (ax_k + b - y_k)^2\\
+                && &= \sum_{k = 1}^n 2(ax_k + b - y_k)\\
+                && &= 2a\sum_{k = 1}^n x_k + 2nb - 2\sum_{k = 1}^n y_k
+            \end{alignat*}
+            We now find the second derivatives of $f(a, b)$:
+            \begin{alignat*}{2}
+                && f_{aa}(a, b) &= \pder{}{a} \bp{ 2a \sum_{k = 1}^n x_k^2 + 2b \sum_{k = 1}^n x_k - 2\sum_{k = 1}^n x_k y_k}\\
+                && &= 2 \sum_{k = 1}^n x_k^2\\
+                && f_{ab}(a, b) &= \pder{}{b} \bp{ 2a \sum_{k = 1}^n x_k^2 + 2b \sum_{k = 1}^n x_k - 2\sum_{k = 1}^n x_k y_k}\\
+                && &= 2 \sum_{k = 1}^n x_k\\
+                && f_{bb}(a, b) &= \pder{}{b} \bp{2a\sum_{k = 1}^n x_k + 2nb - 2\sum_{k = 1}^n y_k}\\
+                && &= 2n
+            \end{alignat*}
+
+            \boxt{\[f_{aa}(a, b) = 2 \sum_{k = 1}^n x_k^2\] \[f_{ab}(a, b) = 2 \sum_{k = 1}^n x_k\] \[f_{bb}(a, b) = 2n\]}
+
+        \part
+            Let $D = f_{aa}(a, b) f_{bb}(a, b) - \bs{f_{ab}(a, b)}^2$. From part (d), we have \[D = 4\bs{n\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2},\] which is clearly positive from part (c). Furthermore, $f_{aa}(a, b) = \displaystyle 2 \sum_{k = 1}^n x_k^2$ is clearly positive (note that we reject the equality for the reason stated in part (c)). Thus, by the second partial derivative test, the critical point found in part (b) must be a minimum point.
+
+\end{document}
