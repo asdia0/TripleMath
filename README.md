@@ -19,7 +19,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | A10.3 | Complex Numbers - Geometrical Effects and De Moivre's Theorem | [T-A10.3](/Group%20A/Chapter%20A10/Chapter%20A10.3/Tutorial%20A10.3/Tutorial%20A10.3.pdf) | [A-A10.3](/Group%20A/Chapter%20A10/Chapter%20A10.3/Assignment%20A10.3/Assignment%20A10.3.pdf) |
 | A10.4 | Complex Numbers - Loci in Argand Diagram | [T-A10.4](/Group%20A/Chapter%20A10/Chapter%20A10.4/Tutorial%20A10.4/Tutorial%20A10.4.pdf) | [A-10.4](/Group%20A/Chapter%20A10/Chapter%20A10.4/Assignment%20A10.4/Assignment%20A10.4.pdf) |
 | A11 | Permutations and Combinations | [T-A11](/Group%20A/Chapter%20A11/Tutorial%20A11/Tutorial%20A11.pdf) | |
-| A12 | Probability | | |
+| A12 | Probability | [T-A12](/Group%20A/Chapter%20A12/Tutorial%20A12/Tutorial%20A12.pdf) | |
 
 ## Group B
 | Index | Chapter | Tutorials | Assignments |
