@@ -121,13 +121,13 @@
             \boxt{$A$ and $C$ are mutually exclusive.}
 
         \part
-            Let the scores of the first and second die be $p$ and $q$ respectively. Observe that $p$ is independent of $q$, and vice versa. Hence, the parity of $q$ is not affected by the parity of $p$. Thus, $\P{A} = \dfrac36 = \dfrac12$.
+            Let the scores of the first and second die be $p$ and $q$ respectively. Observe that $p$ is independent of $q$, and vice versa. Hence, the parity of $q$ is not affected by the parity of $p$. Thus, $\P{A} = \P{\text{$p$ even}}\P{\text{$q$ odd}} + \P{\text{$p$ odd}}\P{\text{$q$ even}} = \dfrac36 \cdot \dfrac36 + \dfrac36 \cdot \dfrac36 = \dfrac12$.
 
             We also have $\P{B} = 1 - \P{\text{neither $p$ nor $q$ is greater than 4}} = 1 - \bp{\dfrac46}^2 = \dfrac{20}{36}$.
 
             \begin{center}
                 \begin{tabular}{|c|c|c|c|c|c|c|}
-                    \hline $p$, $q$ & 1 & 2 & 3 & 4 & 5 & 6\\\hline
+                    \hline $p$\textbackslash$q$ & 1 & 2 & 3 & 4 & 5 & 6\\\hline
                     1 & 2 & 3 & 4 & 5 & 6 & \cellcolor{blue!25}7 \\ \hline
                     2 & 3 & 4 & 5 & 6 & \cellcolor{blue!25}7 & 8 \\ \hline
                     3 & 4 & 5 & 6 & 7 & 8 & \cellcolor{blue!25}9 \\ \hline
@@ -209,52 +209,9 @@
                 \end{tikzpicture}
             \end{center}
 
-            We are given that $\P{A} = 0.7$, $\P{B} = 0.6$, $\P{C}$, whence
-            \begin{align*}
-                c+e+f+h&=0.7\\
-                d+f+g+h&=0.6\\
-                b+e+g+h&=0.5
-            \end{align*}
-            We also have $\P{A}{B'} = 0.8 \implies \dfrac{c+e}{a+b+c+e}=0.8$, thus \[0.8a + 0.8b - 0.2c - 0.2e = 0 \implies 4a + 4b - c - e = 0.\]
-            From part (a), $\P{A \cap B'} = 0.32$, giving \[c + e = 0.32.\]
-            From part (b), $\P{A \cup B} = 0.92$, giving \[c + d + e + f + g + h = 0.92.\]
-            From part (c), $\P{B'}{A} = \dfrac{16}{35} \implies \dfrac{c+e}{c+e+f+h} = \dfrac{16}{35}$, giving \[-\dfrac{19}{35}c -\dfrac{19}{35}e + \dfrac{16}{35}f + \dfrac{16}{35}h = 0 \implies -19c - 19e + 16f + 16h = 0.\]
-            From part (d), $\P{A' \cap C} = 0.15$, giving \[b + g = 0.15.\]
-            Since $A$ and $C$ are independent, we also have $\P{A \cap C} = \P{A}\P{C} = 0.7 \cdot 0.5 = 0.35$, giving \[e + h = 0.35.\]
-            We hence have the following system of equations:
-            \[\systeme{
-                c+e+f+h=0.7,
-                d+f+g+h=0.6,
-                b+e+g+h=0.5,
-                4a + 4b - c - e = 0,
-                c + e = 0.32,
-                c + d + e + f + g + h = 0.92,
-                -19c - 19e + 16f + 16h = 0,
-                b + g = 0.15,
-                e + h = 0.35
-            }\] Solving, we obtain
-            \begin{align*}
-                a &= -0.07 + g\\
-                b &= 0.15 - g\\
-                c &= -0.03 + h\\
-                d &= 0.22 - g\\
-                e &= 0.35 - h\\
-                f &= 0.38 - h
-            \end{align*}
-            where $g$ and $h$ are free. Since $\P{A' \cap B \cap C} = g$, we focus only on the equations obtained involving $g$. We have 
-            \begin{align*}
-                a &= -0.07 + g\\
-                b &= 0.15 - g\\
-                d &= 0.22 - g
-            \end{align*}
-            Since $a$, $b$, $d$ and $g$ each represent a probability, they are bounded between 0 and 1. This gives the following system of inequalities:
-            \begin{align*}
-                0 \leq -0.07 + g \leq 1 \implies 0.07 \leq &g \leq 1.007\\
-                0 \leq 0.15 - g \leq 1 \implies -0.85 \leq &g \leq 0.15\\
-                0 \leq 0.22 - g \leq 1 \implies -0.78 \leq &g \leq 0.22\\
-                0 \leq &g \leq 1
-            \end{align*}
-            Hence, $0.07 \leq g \leq 0.15$, whence \boxt{$0.07 \leq \P{A' \cap B \cap C} \leq 0.15$}
+            Note that $\P{A' \cap B \cap C} = g$. From part (d), we have $b + g = \P{A' \cap C} = 0.15$. Hence, $g \leq 0.15$. From part (b), we have $a + b = 1 - \P{A \cup B} = 1 - 0.92 = 0.08$. Hence, $b \leq 0.08 \implies g \geq 0.07$.
+
+            Thus, $0.07 \leq g \leq 0.15$, whence \boxt{$0.07 \leq \P{A' \cap B \cap C} \leq 0.15$}
 
 
     \problem{}
@@ -487,12 +444,12 @@
             \end{align*}
 
         \part
-            Note that
             \begin{align*}
-                \P{\text{all red}} &= \dfrac{\comb44}{10!/(4! \, 6!)}\\
-                &= \dfrac1{210}
+                \P{\text{one of each colour}} &= 1 - \P{\text{all green}} - \P{\text{all red}}\\
+                &= 1 - \dfrac1{14} - \dfrac{\comb44}{10!/(4! \, 6!)}\\
+                &= 1 - \dfrac1{14} - \dfrac1{210}\\
+                &= \boxed{\dfrac{97}{105}}
             \end{align*}
-            Hence, the required probability is given by $1 - \dfrac{1}{14} - \dfrac1{210} = \boxed{\dfrac{97}{105}}$.
 
         \part
             \begin{align*}
@@ -506,6 +463,8 @@
                 \P{\text{at least 2 green}}{\text{one of each colour}} &= \dfrac{\comb63 \cdot \comb41 + \comb62 \cdot \comb42}{10!/(4! \, 6!) - \comb64 - \comb44}\\
                 &= \boxed{\dfrac{85}{97}}
             \end{align*}
+
+        Since $\P{\text{at least 2 green}} = \dfrac{37}{42} \neq \dfrac{85}{97} = \P{\text{at least 2 green}}{\text{one of each colour}}$, the two events are not independent.
 
     \problem{}
         A group of fifteen people consists of one pair of sisters, one set of three brothers and ten other people. The fifteen people are arranged randomly in a line.
