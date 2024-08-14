@@ -426,7 +426,7 @@
         A rectangular tank has a horizontal base. Water is flowing into the tank at a constant rate, and flows out at a rate which is proportional to the depth of water in the tank. At time $t$ seconds, the depth of water in the tank is $x$ metres. If the depth is $0.5$ m, it remains at this constant value. Show that $\der{x}{t} = -k(2x-1)$, where $k$ is a positive constant. When $t = 0$, the depth of water in the tank is $0.75$ m and is decreasing at a rate of $0.01$ m s$^{-1}$. Find the time at which the depth of water is $0.55$ m.
         
     \solution
-        Let $k_i$ m/s be the rate at which water is flowing into the tank. Note that $k_i \geq 0$. Let the rate at which water is flowing out of the tank be $k_o x$ m/s. Then $\derx{x}{t} = k_i - k_o x$. At $x = 0.5$, the volume of water in the tank is constant, i.e. $\evalder{\derx{x}{t}}{0.5} = 0$. This gives $k_i - 0.5 k_o = 0$, whence $k_0 = 2k_i$. Thus, $\derx{x}{t} = k_i - 2k_i x = -k_i (2x - 1)$. Renaming $k_i$ as $k$, we have \[\der{x}{t} = -k(2x - 1)\] as desired.
+        Let $V_i$ m$^3$/s be the rate at which water is flowing into the tank. Note that $V_i \geq 0$. Let the rate at which water is flowing out of the tank be $V_o x$ m$^3$/s. Let the base of the container be $A$ m$^2$. Then $\derx{x}{t} = 1/A \cdot \bp{V_i - V_o x}$. At $x = 0.5$, the volume of water in the tank is constant, i.e. $\evalder{\derx{x}{t}}{0.5} = 0$. This gives $V_i - 0.5 V_o = 0$, whence $V_o = 2V_i$. Thus, $\derx{x}{t} = 1/A \cdot \bp{V_i - 2V_i x} = -V_i/A \cdot (2x - 1)$. Letting $k = V_i/A$, we have \[\der{x}{t} = -k(2x - 1)\] as desired.
 
         We now solve for $t$.
         \begin{alignat*}{2}
