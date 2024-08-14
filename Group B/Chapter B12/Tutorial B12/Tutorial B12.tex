@@ -380,7 +380,7 @@
             \begin{center}
                 \begin{tikzpicture}[trim axis left, trim axis right]
                     \begin{axis}[
-                        domain = 0:7.1,
+                        domain = 0:7.03,
                         samples = 101,
                         axis y line=middle,
                         axis x line=middle,
@@ -389,6 +389,7 @@
                         xlabel = {$n$},
                         ylabel = {$t$},
                         ymax = 150,
+                        xmax=7.1,
                         legend cell align={left},
                         legend pos=outer north east,
                         after end axis/.code={
@@ -417,9 +418,9 @@
             \end{alignat*}
             When $t = 0$ and $n = 100$, we have $C = 50$.
             \boxt{$n = 150 - 50e^{-t/50}$}
-            As $t \to \infty$, $n \to 100$. Hence, the population will decrease before plateauing at 100 thousand.
+            As $t \to \infty$, $n \to 150$. Hence, the population will decrease before plateauing at 150 thousand.
 
-        The second model is more appropriate, as it account for the fact that the species will eventually go extinct ($n = 0$) due to the fact that they cannot replace itself in the long run.
+        The first model is more appropriate, as it account for the fact that the species will eventually go extinct ($n = 0$) due to the fact that they cannot replace itself in the long run.
 
     \problem{}
         A rectangular tank has a horizontal base. Water is flowing into the tank at a constant rate, and flows out at a rate which is proportional to the depth of water in the tank. At time $t$ seconds, the depth of water in the tank is $x$ metres. If the depth is $0.5$ m, it remains at this constant value. Show that $\der{x}{t} = -k(2x-1)$, where $k$ is a positive constant. When $t = 0$, the depth of water in the tank is $0.75$ m and is decreasing at a rate of $0.01$ m s$^{-1}$. Find the time at which the depth of water is $0.55$ m.
