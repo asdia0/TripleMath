@@ -1,0 +1,671 @@
+\documentclass{echw}
+
+\title{Tutorial B13\\Differential Equations I}
+\author{Eytan Chong}
+\date{2024-08-15}
+
+\begin{document}
+    \problem{}
+        Solve the following differential equations:
+        \begin{enumerate}
+            \item $2\sec x \der{y}{x} = \sqrt{1 - y^2}$
+            \item $\der{y}{t} = \dfrac{t}{y-t^2 y}$, given $y = 4$ when $t = 0$
+        \end{enumerate}
+
+    \solution
+        \part
+            \begin{alignat*}{2}
+                && 2\sec x \der{y}{x} &= \sqrt{1 - y^2}\\
+                \implies&& \dfrac{2}{\sqrt{1-y^2}} \der{y}{x} &= \cos x\\
+                \implies&& \int \dfrac{2}{\sqrt{1-y^2}} \der{y}{x} \d x &= \int \cos x \d x\\
+                \implies&& \int \dfrac{2}{\sqrt{1-y^2}} \d y &= \int \cos x \d x\\
+                \implies&& 2\arcsin y &= \sin x + C_1\\
+                \implies&& \arcsin y &= \dfrac12 \sin x + C_2\\
+                \implies&& y &= \sin{\dfrac12 \sin x + C}
+            \end{alignat*}
+
+            \boxt{$y = \sin{\dfrac12 \sin x + C}$}
+
+        \part
+            \begin{alignat*}{2}
+                && \der{y}{t} &= \dfrac{t}{y-t^2 y}\\
+                && &= \dfrac1y \cdot \dfrac{t}{1-t^2}\\
+                \implies&& y \der{y}{t} &= \dfrac{t}{1-t^2}\\
+                \implies&& \int y \der{y}{t} \d t &= \int \dfrac{t}{1-t^2} \d t\\
+                \implies&& \int y \d y &= \int \dfrac{t}{1-t^2} \d t\\
+                \implies&& \dfrac12 y^2 &= -\dfrac12 \ln \abs{1-t^2} + C_1\\
+                \implies&& y^2 &= C_2 - \ln \abs{1 - t^2}
+            \end{alignat*}
+            Since $y = 4 \geq 0$ when $t = 0$, we have $16 = C_2 - \ln \abs{1 - 0}$, whence $C_2 = 16$. Hence, 
+            \boxt{$y = \sqrt{16 - \ln \abs{1 - t^2}}$}
+
+    \problem{}
+        Solve the following differential equations:
+        \begin{enumerate}
+            \item $xy' + (2x-3)y = 4x^4$
+            \item $(1+x)y' + y = \cos x$, $y(0) = 1$
+            \item $(1 + t^2) \der{y}{t} = 2ty+2$
+            \item $(x+1)\der{y}{x} + \dfrac{y}{\ln{x+1}} = x^2 + x$, where $x > 0$
+        \end{enumerate}
+
+    \solution
+        \part
+            Note that $xy' + (2x-3)y = 4x^4 \implies y' + \bp{2 - \dfrac3x} y = 4x^3$. Hence, the integrating factor is $\exp{\displaystyle\int \bp{2 - \dfrac3x} \d x} = \exp{2x - \ln 3} = \dfrac{e^{2x}}{x^3}$.
+            \begin{alignat*}{2}
+                && y' + \bp{2 - \dfrac3x} y &= 4x^3\\
+                \implies&& \dfrac{e^{2x}}{x^3}y' + \dfrac{e^{2x}}{x^3} \bp{2 - \dfrac3x} y &= 4e^{2x}\\
+                \implies&& \der{}{x} \bp{\dfrac{e^{2x}}{x^3} y} &= 4e^{2x}\\
+                \implies&& \dfrac{e^{2x}}{x^3} y &= \int 4e^{2x} \d x\\
+                && &= 2e^{2x} + C\\
+                \implies&& y &= \dfrac{x^3}{e^{2x}} \bp{2e^{2x} + C}\\
+                && &= 2x^3 + \dfrac{Cx^3}{e^{2x}}
+            \end{alignat*}
+            \boxt{$y = 2x^3 + \dfrac{Cx^3}{e^{2x}}$}
+
+        \part
+            \begin{alignat*}{2}
+                && (1+x)y' + y &= \cos x\\
+                \implies&& \der{}{x} ((1+x)y) &= \cos x\\
+                \implies&& (1+x)y &= \int \cos x \d x\\
+                && &= \sin x + C\\
+                \implies&& y &= \dfrac{\sin x + C}{x+1}
+            \end{alignat*}
+            Since $y(0) = 1$, we have $1 = \dfrac{\sin 0 + C}{0+1}$, whence $C = 1$.
+            \boxt{$y = \dfrac{\sin x + 1}{x + 1}$}
+        
+        \part
+            Let $t = \tan \t$. Then $\der{t}{\t} = \sec^2 \t = 1 + t^2$. Hence, $\der{y}{t} = \der{y}{\t} \cdot \der{\t}{t} = \der{y}{\t} \cdot \dfrac1{\sec^2 \t}$.
+            \begin{alignat*}{2}
+                &&(1 + t^2) \der{y}{t} &= 2ty+2\\
+                \implies&& \sec^2 \t \cdot \der{y}{\t} \cdot \dfrac1{\sec^2 \t} &= 2 \tan \t \cdot y + 2\\
+                \implies&& \der{y}{\t} - 2 \tan \t \cdot y &= 2\\
+                \implies&& \cos^2 \t \cdot \der{y}{\t} - 2 \sin \t \cos \t \cdot y &= 2\cos^2 \t\\
+                \implies&& \der{}{\t} (\cos^2 \t \cdot y) &= 2 \cos^2 \t\\
+                \implies&& \cos^2 \t \cdot y &= \int 2 \cos^2 \t \d \t\\
+                && &= \int \bp{1 + \cos 2\t} \d \t\\
+                && &= \t + \dfrac12 \sin 2\t + C\\
+                && &= \t + \sin \t \cos \t + C\\
+                \implies&& y &= (\t + C)\sec^2 \t + \tan \t\\
+                && &= (\arctan t + C)(1 + t^2) + t
+            \end{alignat*}
+            \boxt{$y = (\arctan t + C)(1 + t^2) + t$}
+
+        \part
+            Note that $(x+1)\der{y}{x} + \dfrac{y}{\ln{x+1}} = x^2 + x \implies \der{y}{x} + \dfrac{y}{(x+1)\ln{x+1}} = x$. Hence, the integrating factor is $\exp{\displaystyle \int \dfrac{1/(x+1)}{\ln{x+1}} \d x} = \exp{\ln \ln{x+1}} = \ln{x+1}$.
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                &&\der{y}{x} + \dfrac{y}{(x+1)\ln{x+1}} &= x\\
+                \implies&&\ln{x+1} \der{y}{x} + \dfrac{y}{(x+1)} &= x\ln{x+1}\\
+                \implies&& \der{}{x} \bp{y\ln{x+1}} &= x \ln{x+1}\\
+                \implies&& y\ln{x+1} &= \int x\ln{x+1} \d x\\
+                && &= \dfrac12 x^2 \ln{x+1} - \dfrac12 \int \dfrac{x^2}{x+1} \d x\\
+                && &= \dfrac12 x^2 \ln{x+1} - \dfrac12 \int \bp{x - 1 + \dfrac1{x+1}} \d x\\
+                && &= \dfrac12 x^2 \ln{x+1} - \dfrac12 \bp{\dfrac12 x^2 - x + \ln{x+1} + C_1}\\
+                && &= \dfrac12 x^2 \ln{x+1} - \dfrac14 x^2 + \dfrac12 x - \dfrac12 \ln{x+1} + C\\
+                \implies&& y &= \dfrac{x^2}2  - \dfrac{x^2}{4\ln{x+1}} + \dfrac{x}{2\ln{x+1}} - \dfrac12 + \dfrac{C}{\ln{x+1}}
+            \end{alignat*}}
+            \boxt{$y = \dfrac{x^2}2  - \dfrac{x^2}{4\ln{x+1}} + \dfrac{x}{2\ln{x+1}} - \dfrac12 + \dfrac{C}{\ln{x+1}}$}
+
+    \problem{}
+        Given a general first order differential equation, $\der{y}{x} = f(x, y)$, if $f(x, y)$ is such that $f(kx, ky) = f(x, y)$, then the equation may be reduced to a separable equation by means of the substitution $y = ux$. Hence, solve the following differential equation: $(x+y)y' = x-y$.
+
+    \solution
+        Note that $(x+y)y' = x-y \implies y' = \dfrac{x-y}{x+y}$. Let $f(x, y) = \dfrac{x-y}{x+y}$. Then $f(kx, ky) = \dfrac{kx-ky}{kx+ky} = \dfrac{x-y}{x+y} = f(x, y)$. Hence, the differential equation can be solved with the substitution $y = ux$, whence $y' = u' x + u$. Thus,
+        \begin{alignat*}{2}
+            && y' &= \dfrac{x-y}{x+y}\\
+            \implies&& u' x + u &= \dfrac{x - ux}{x + ux}\\
+            && &= \dfrac{1 - u}{1 + u}\\
+            \implies&& u' &= \dfrac1x \bp{\dfrac{1-u}{1+u} - u}\\
+            && &= \dfrac1x \cdot \dfrac{1-u - u(1+u)}{1 + u}\\
+            && &= \dfrac1x \cdot \dfrac{1-2u-u^2}{1+u}\\
+            \implies&& \dfrac{1+u}{1-2u-u^2} u' &= \dfrac1x\\
+            \implies&& \int \dfrac{1+u}{1-2u-u^2} u' \d x &= \int \dfrac1x \d x\\
+            \implies&& \int \dfrac{1+u}{1-2u-u^2} \d u &= \int \dfrac1x \d x\\
+            \implies&& \int \dfrac{1+u}{2-(1+u)^2} \d u &= \int \dfrac1x \d x\\
+            \implies&& -\dfrac12 \int \dfrac{-2(1+u)}{2-(1+u)^2} \d u &= \int \dfrac1x \d x\\
+            \implies&& -\dfrac12 \ln \abs{2 - (1+u)^2} &= \ln x + C_1 \quad (\because x > 0)\\
+            \implies&& \ln \abs{2 - (1+u)^2} &= \ln x^{-2} + C_2\\
+            \implies&& 2 - (1+u)^2 &= C_3 x^{-2}\\
+            \implies&& 2 - \bp{1 + \dfrac{y}{x}}^2 &= C_3 x^{-2}\\
+            \implies&& 2 - x^{-2} (x + y)^2 &= C_3x^{-2}\\
+            \implies&& 2x^2 - (x+y)^2 &= C_3\\
+            \implies&& (x+y)^2 &= 2x^2 + C
+        \end{alignat*}
+        \boxt{$(x+y)^2 = 2x^2 + C$}
+
+    \problem{}
+        Using the substitution $u = \dfrac1y$, solve $\der{y}{x} + 2y = e^x y^2$.
+    
+    \solution
+        Note that $u = \dfrac1y \implies y = \dfrac1u \implies \der{y}{x} = -\dfrac1{u^2} \cdot \der{u}{x}$.
+        \begin{alignat*}{2}
+            && \der{y}{x} + 2y &= e^x y^2\\
+            \implies&& -\dfrac1{u^2} \cdot \der{u}{x} + \dfrac2{u} &= \dfrac{e^x}{u^2}\\
+            \implies&& \der{u}{x} -2u &= -e^x\\
+            \implies&& e^{-2x}\der{u}{x} - 2e^{-2x} u &= -e^{-x}\\
+            \implies&& \der{}{x} \bp{e^{-2x} u} &= -e^{-x}\\
+            \implies&& e^{-2x} u &= \int -e^{-x} \d x\\
+            && &= e^{-x} + C\\
+            \implies&& u &= e^{x} + Ce^{2x}\\
+            \implies&& y &= \dfrac1{e^{x} + Ce^{2x}}
+        \end{alignat*}
+        \boxt{$y = \dfrac1{e^{x} + Ce^{2x}}$}
+
+    \problem{}
+        Assuming that $p(x) \neq 0$, state conditions under which the linear equation $y' + p(x) y = f(x)$ is separable. If the equation satisfies these conditions, solve it by separation of variables and by the method of integrating factor.
+
+    \solution
+        The linear equation $y' + p(x) y = f(x)$ is separable if $p(x)$ and $f(x)$ are linearly dependent, i.e. $p(x) = \l f(x)$ for some $\l \in \R$.
+
+        \textbf{Separation of Variables.} Note that $y' = f(x) - p(x) y = f(x) - \l f(x) y = f(x) (1 - \l y)$.
+        \begin{alignat*}{2}
+            && y' &= f(x) (1 - \l y)\\
+            \implies&& \dfrac1{1 - \l y} y' &= f(x)\\
+            \implies&& \int \dfrac1{1 - \l y} y' \d x &= \int f(x) \d x\\
+            \implies&& \int \dfrac1{1 - \l y} \d y &= \int f(x) \d x\\
+            \implies&& -\dfrac1{\l} \ln \abs{1 - \l y} &= \int f(x) \d x\\
+            \implies&& \ln \abs{1 - \l y} &= -\l \int f(x) \d x\\
+            && &= -\int \l f(x) \d x\\
+            && &= -\int p(x) \d x\\
+            \implies&& 1 - \l y &= C_1e^{-\int p(x) \d x}\\
+            \implies&& y &= \dfrac{1}{\l} \bs{{1 - C_1e^{-\int p(x) \d x}}}\\
+            && &= \dfrac1{\l} + Ce^{-\int p(x) \d x}
+        \end{alignat*}
+
+        \textbf{Integrating Factor.} Note that the integrating factor is $e^{\int p(x) \d x}$.
+        \begin{alignat*}{2}
+            && y' + p(x) y &= f(x)\\
+            \implies&& e^{\int p(x) \d x}y' + e^{\int p(x) \d x} p(x) y &= e^{\int p(x) \d x} f(x)\\
+            \implies&& \der{}{x} \bp{e^{\int p(x) \d x} y} &= e^{\int p(x) \d x} f(x)\\
+            && &= \dfrac1{\l} e^{\int p(x) \d x} p(x)\\
+            \implies&& e^{\int p(x) \d x} y &= \int \dfrac1{\l} e^{\int p(x) \d x} p(x) \d x\\
+            && &= \dfrac1{\lambda} e^{\int p(x) \d x} + C\\
+            \implies&& y &= \dfrac1{\lambda} + Ce^{-\int p(x) \d x}
+        \end{alignat*}
+
+    \problem{}
+        The variables $x$ and $y$ are related by the differential equation $\der{y}{x} + \dfrac{y}{x} = y^3$.
+        \begin{enumerate}
+            \item State clearly why the integrating factor method cannot be used to solve this equation.
+            \item The variables $y$ and $z$ are related by the equation $\dfrac{1}{y^2} = -2z$. Show that $\der{z}{x} - \dfrac{2z}{x} = 1$.
+            \item Find the solution of the differential equation $\der{y}{x} + \dfrac{y}{x} = y^3$, given that $y = 2$ when $x = 1$.
+        \end{enumerate}
+
+    \solution
+        \part
+            The differential is non-linear due to the presence of the $y^3$ term. 
+
+        \part
+            \begin{alignat*}{2}
+                && \dfrac{1}{y^2} &= -2z\\
+                \implies&& -2 \der{z}{x} &= \dfrac{-2}{y^3} \cdot \der{y}{x}\\
+                \implies&& \der{z}{x} &= \dfrac{1}{y^3} \cdot \der{y}{x}\\
+                && &= \dfrac{1}{y^3} \cdot \bp{y^3 - \dfrac{y}{x}}\\
+                && &= 1 - \dfrac{1}{y^2} \cdot \dfrac1x\\
+                && &= 1 + \dfrac{2z}{x}\\
+                \implies&& \der{z}{x} - \dfrac{2z}{x} &= 1
+            \end{alignat*}
+
+        \part
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                && \der{z}{x} - \dfrac{2z}{x} &= 1\\
+                \implies&& \dfrac1{x^2} \der{z}{x} - \dfrac{2}{x^3} \cdot z &= \dfrac{1}{x^2} \\
+                \implies&& \der{}{x} \bp{\dfrac{z}{x^2}} &= \dfrac{1}{x^2}\\
+                \implies&& \dfrac{z}{x^2} &= \int \dfrac{1}{x^2} \d x\\
+                && &= -\dfrac{1}{x} + C_1\\
+                \implies&& z &= -x + C_1x^2 \\
+                \implies&& -\dfrac1{2y^2} &= -x + C_1x^2\\
+                \implies&& y^2 &= \dfrac1{2x + C_2 x^2}
+            \end{alignat*}}
+            Since $y(1) = 2$, we have $4 = \dfrac1{2 + C_2}$, whence $C_2 = -\dfrac74$. Thus, $y^2 = \dfrac1{2x - 7x^2/4} = \dfrac{4}{8x - 7x^2}$, whence $y = \dfrac2{\sqrt{8x-7x^2}}$. Note that we reject the negative branch since $y(1) = 2 \geq 0$.
+
+            \boxt{$y = \dfrac2{\sqrt{8x-7x^2}}$}
+
+    \problem{}
+        Show that the subtitution $v = \ln y$ transforms the differential equation $\der{y}{x} + P(x) y = Q(x) (y \ln y)$ into the linear equation $\der{v}{x} + P(x) = Q(x)v(x)$. Hence solve the equation $x \der{y}{x} - 4x^2 y + 2y \ln y = 0$.
+
+    \solution
+        Note that $v = \ln y \implies \der{y}{x} = \dfrac1y \cdot \der{y}{x} \implies \der{y}{x} = y \der{v}{x}$.
+        \begin{alignat*}{2}
+            && \der{y}{x} + P(x) y &= Q(x) (y \ln y)\\
+            \implies&& y \der{v}{x} + P(x) y &= Q(x) (y v)\\
+            \implies&& \der{v}{x} + P(x) &= Q(x) v(x)
+        \end{alignat*}
+        Note that $x \der{y}{x} - 4x^2 y + 2y \ln y = 0 \implies \der{y}{x} - 4x y = -\dfrac2x y \ln y$. Hence, $P(x) = -4x$ and $Q(x) = -\dfrac2x$. Let $v = \ln y$. From the above transformation, we see that
+        \begin{alignat*}{2}
+            &&\der{v}{x} - 4x &= -\dfrac2x v\\
+            \implies&& \der{v}{x} + \dfrac2x v &= 4x\\
+            \implies&& x^2 \der{v}{x} + 2x v &= 4x^3\\
+            \implies&& \der{}{x} \bp{x^2 v} &= 4x^3\\
+            \implies&& x^2 v &= \int 4x^3 \d x\\
+            && &= x^4 + C\\
+            \implies&& v &= x^2 + Cx^{-2}\\
+            \implies&& \ln y &= x^2 + Cx^{-2}\\
+            \implies&& y &= e^{x^2 + Cx^{-2}}
+        \end{alignat*}
+        \boxt{$y = e^{x^2 + Cx^{-2}}$}
+
+    \problem{}
+        The normal at any point on a certain curve always passes through the point $(2, 3)$. Form a differential equation to express this property. Without solving the differential equation, find the equation of the curve where the stationary points of the famility of curves will lie on. Which family of standard curves will have their stationary points lying along a curve with such an equation found earlier?
+
+    \solution
+        \boxt{$y - 3 = \dfrac{-1}{\derx{y}{x}} (x- 2)$}
+        Note that $\der{y}{x} = -\dfrac{x-2}{y-3}$. For stationary points, $\der{y}{x} = 0 \implies \boxed{x = 2 \land y \neq 3}$.
+        
+        Also note that $\der[2]{y}{x} = -\dfrac{(y-3) - (x-2)\derx{y}{x}}{(y-3)^2}$. At stationary points, $\der{y}{x} = 0$, giving $\der[2]{y}{x} = -\dfrac1{y-3}$. Hence, when $y > 3$, we have $\der[2]{y}{x} < 0$, giving a maximimum. Likewise, when $y < 3$, we have $\der[2]{y}{x} > 0$, giving a minimum. This suggests that the required family of standard curves is the family of circles with center $(2, 3)$.
+
+    \problem{}
+        Obtain the general solution of the differential equation $x \der{y}{x} - y = x^2 + 1$ in the form $y = x^2 + Cx - 1$, where $C$ is an arbitrary constant.
+
+        Show that each solution curve of the differential equation has one minimum point.
+
+        Find the equation of the curve of which all these minimum points lie.
+
+        Sketch some of the family of solution curves including those corresponding to some negative values of $C$, some positive values of $C$, and $C = 0$.
+
+    \solution
+        \begin{alignat*}{2}
+            && x \der{y}{x} - y &= x^2 + 1\\
+            \implies&& \dfrac1x \der{y}{x} - \dfrac{y}{x^2} &= 1 + \dfrac1{x^2}\\
+            \implies&& \der{}{x} \bp{\dfrac{y}{x}} &= 1 + \dfrac1{x^2}\\
+            \implies&& \dfrac{y}{x} &= \int \bp{1 + \dfrac{1}{x^2}} \d x\\
+            && &= x - \dfrac1x + C\\
+            \implies&& y &= x^2 + Cx - 1
+        \end{alignat*}
+
+        Note that $y = x^2 + Cx - 1 = \bp{x + \dfrac{C}{2}}^2 - \bp{1 + \dfrac{C^2}4}$. Thus $y$ has a unique minimum point at $\bp{-\dfrac{C}2, -\bp{1 + \dfrac{C^2}4}}$.
+
+        For stationary points, $\der{y}{x} = 0$. Hence, $-y = x^2 + 1 \implies y = -x^2 - 1$. Thus, the minimum points lie on the curve with equation $\boxed{y = -x^2 - 1}$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -5:5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax = 3,
+                    ymin = -4,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^2 - 2*x - 1};
+        
+                    \addlegendentry{$C = -2$};
+        
+                    \addplot[plotBlue] {x^2 - 1};
+        
+                    \addlegendentry{$C = 0$};
+        
+                    \addplot[plotGreen] {x^2 + 2*x - 1};
+
+                    \addlegendentry{$C = 2$};
+
+                    \addplot[dashed] {-x^2 - 1};
+
+                    \addlegendentry{$y = -x^2 - 1$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+    \problem{}
+        Show that the general solution of the differential equation \[\der{y}{x} + 2xy - 2x \bp{x^2 + 1} = 0\] can be expressed in the form $y = x^2 + Ce^{-x^2}$, where $C$ is an arbitrary constant.
+        
+        Deduce, with reasons, the number of stationary points of the solution curves of the equation when
+        \begin{enumerate}
+            \item $C \leq 1$;
+            \item $C > 1$.
+        \end{enumerate}
+
+    \solution
+        Note that the integrating factor is $\exp{\displaystyle \int 2x \d x} = e^{x^2}$.
+        \begin{alignat*}{2}
+            && \der{y}{x} + 2xy - 2x \bp{x^2 + 1} &= 0\\
+            \implies&& e^{x^2}\der{y}{x} + 2xe^{x^2}y &= 2xe^{x^2} \bp{x^2 + 1}\\
+            \implies&& \der{}{x} \bp{e^{x^2} y} &= 2xe^{x^2} \bp{x^2 + 1}\\
+            \implies&& e^{x^2} y &= \int 2xe^{x^2} \bp{x^2 + 1} \d x\\
+            && &= e^{x^2}(x^2 + 1) - \int 2x e^{x^2} \d x\\
+            && &= e^{x^2} (x^2 + 1) - e^{x^2} + C\\
+            \implies&& y &= (x^2 + 1) - 1 + Ce^{-x^2}\\
+            && &= x^2 + Ce^{-x^2}
+        \end{alignat*}
+
+        For stationary points, $\der{y}{x} = 0$. Hence, $2xy - 2x\bp{x^2 + 1} = 0$. Thus, $x = 0$ or $y - (x^2 + 1) = 0$.
+        \begin{alignat*}{2}
+            \implies&& y - (x^2 + 1) &= 0\\
+            \implies&& (x^2 + Ce^{-x^2}) - (x^2 + 1) &= 0\\
+            \implies&& Ce^{-x^2} - 1 &= 0\\
+            \implies&& e^{-x^2} &= \dfrac1{C}\\
+            \implies&& e^{x^2} &= C\\
+            \implies&& x^2 &= \ln C
+        \end{alignat*}
+        
+        \part
+            When $C < 1$, we have $\ln C < 0$. Hence, there are no solutions to $x^2 = \ln C$, whence there is only \boxed{1} stationary point (at $x = 0$).
+
+            When $C = 1$, we have $\ln C = 0$, whence the only solution to $x^2 = \ln C$ is $x = 0$. Thus, there is still only \boxed{1} stationary point (at $x = 0$).
+        
+        \part
+            When $C > 1$, we have $\ln C > 0$, whence there are two solutions to $x^2 = \ln C$, namely $x = \pm \ln C$. Thus, there are \boxed{3} stationary points (at $x = 0$ and $x = \pm \ln C$).
+
+    \problem{}
+        Using the substitution $y = x^2 \ln t$, where $t > 0$, show that the differential equation
+        \begin{equation}\label{E11}
+            2xt \ln t \der{x}{t} + (3\ln t + 1)x^2 = \dfrac{e^{-2t}}{t}
+        \end{equation}
+        can be reduced to a differential equation of the form \[\der{y}{t} + P(t) y = \dfrac{e^{-2t}}{t^2},\] where $P(t)$ is some function of $t$ to be determined.
+
+        Hence, find $x^2$ in terms of $t$.
+
+        Sketch, on a single diagram, two solution curves for the differential equation~\ref{E11}, $C_1$ and $C_2$, of which only $C_1$ has stationary point(s). Label the equations of any asymptotes in your diagram.
+
+    \solution
+        Note that $y = x^2 \ln t \implies \der{y}{t} = \dfrac{x^2}{t} + 2x\ln t \der{x}{t} \implies 2xt \ln t \der{x}{t} = t\der{y}{t} - x^2$.
+        \begin{alignat*}{2}
+            && 2xt \ln t \der{x}{t} + (3\ln t + 1)x^2 &= \dfrac{e^{-2t}}{t}\\
+            \implies&& \bp{t\der{y}{t} - x^2} + (3\ln t + 1)x^2 &= \dfrac{e^{-2t}}{t}\\
+            \implies&& t\der{y}{t} + 3x^2\ln t &= \dfrac{e^{-2t}}{t}\\
+            \implies&& t\der{y}{t} + 3 \cdot \dfrac{y}{\ln t} \cdot \ln t &= \dfrac{e^{-2t}}{t}\\
+            \implies&& t\der{y}{t} + 3y &= \dfrac{e^{-2t}}{t}\\
+            \implies&& \der{y}{t} + \dfrac{3}{t} \cdot y &= \dfrac{e^{-2t}}{t^2}
+        \end{alignat*}
+        Hence, $P(t) = \dfrac3t$.
+        \begin{alignat*}{2}
+            && \der{y}{t} + \dfrac{3}{t} \cdot y &= \dfrac{e^{-2t}}{t^2}\\
+            \implies&& t^3 \der{y}{t} + 3t^2y &= te^{-2t}\\
+            \implies&& \der{}{t} \bp{t^3 y} &= te^{-2t}\\
+            \implies&& t^3 y &= \int te^{-2t} \d t\\
+            && &= -\dfrac{1}{2} te^{-2t} - \dfrac14 e^{-2t} + C_1\\
+            \implies&& t^3 x^2 \ln t &= -\dfrac{(2t+1)e^{-2t}}4 + \dfrac{C}{4}\\
+            \implies&& x^2 &= \dfrac{C-(2t+1)e^{-2t}}{4t^3 \ln t}
+        \end{alignat*}
+        \boxt{$x^2 = \dfrac{C-(2t+1)e^{-2t}}{4t^3 \ln t}$}
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:3,
+                    samples = 201,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = \empty,
+                    xlabel = {$t$},
+                    ylabel = {$x$},
+                    ymax=3,
+                    ymin=-3,
+                    xmin=0,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+
+                    
+                    \addplot[plotRed, unbounded coords = jump] {sqrt((-(2*x + 1)*e^(-2*x))/(4*x^3 * ln(x)))};
+        
+                    \addlegendentry{$C_1 \quad (C = 0)$};
+
+                    \addplot[plotBlue, domain=1:3] {sqrt((1-(2*x + 1)*e^(-2*x))/(4*x^3 * ln(x)))};
+        
+                    \addlegendentry{$C_2 \quad (C = 1)$};
+
+                    \addplot[plotRed, unbounded coords = jump] {-sqrt((-(2*x + 1)*e^(-2*x))/(4*x^3 * ln(x)))};
+        
+                    \addplot[plotBlue, domain=1:3] {-sqrt((1-(2*x + 1)*e^(-2*x))/(4*x^3 * ln(x)))};
+
+                    \draw[dotted] (1, 3) -- (1, -3);
+
+                    \fill (0.776, 1.07) circle[radius=2.5pt] node[below] {$\bp{0.776, 1.07}$};
+                    \fill (0.776, -1.07) circle[radius=2.5pt] node[below] {$\bp{0.776, -1.07}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+    \problem{}
+        It is suggested that the spread of a highly contagious disease on an isolated island with a population of $N$ may be modelled by the differential equation $\der{x}{t} = kx(N-x)$, where $k$ is a positive constant, and $x(t)$ is the number of individuals infected with the disease at time $t$.
+        \begin{enumerate}
+            \item Without solving the differential equation, sketch the graph of $x(t)$ against $t$ for cases when $x(0) < \dfrac{N}2$ and $x(0) > \dfrac{N}{2}$.
+            \item Given that $x(0) = x_0$, solve the differential equation for an explicit expression of $x(t)$.
+        \end{enumerate}
+        
+    \solution
+        \part
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:1,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        ytick = {50, 100, 25, 75},
+                        yticklabels = {$N/2$, $N$, $x(0)_1$, $x(0)_2$},
+                        xtick = \empty,
+                        xlabel = {$t$},
+                        ylabel = {$x$},
+                        xmin=0,
+                        ymin=0,
+                        ymax=110,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {(100 * 25 * e^(100 * 0.05 * x))/(100 - 25 + 25 * e^(100 * 0.05 * x))};
+            
+                        \addlegendentry{$x(0) < N/2$};
+
+                        \addplot[plotBlue] {(100 * 75 * e^(100 * 0.05 * x))/(100 - 75 + 75 * e^(100 * 0.05 * x))};
+            
+                        \addlegendentry{$x(0) > N/2$};
+
+                        \addplot[dotted] {50};
+                        \addplot[dotted] {100};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+        \part
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                && \der{x}{t} &= kx(N-x)\\
+                \implies&& \dfrac{1}{x(N-x)} \der{x}{t} &= k\\
+                \implies&& \int \dfrac{1}{x(N-x)} \der{x}{t} \d t &= \int k \d t\\
+                \implies&& \int \dfrac{1}{x(N-x)} \d x &= \int k \d t\\
+                \implies&& \int \dfrac1N \bp{\dfrac1x - \dfrac1{N-x}} \d x &= \int k \d t\\
+                \implies&& \dfrac1{N} \bp{\ln x - \ln{N-x}} &= kt + C_1\\
+                \implies&& \ln \dfrac{x}{N-x} &= Nkt + C_2\\
+                \implies&& \dfrac{x}{N-x} &= C_3 e^{Nkt}\\
+                \implies&& x &= C_3 N e^{Nkt} - C_3 xe^{Nkt}\\
+                \implies&& x + C_3 xe^{Nkt} &= C_3 N e^{Nkt}\\
+                \implies&& x &= \dfrac{C_3 Ne^{Nkt}}{1 + C_3 e^{Nkt}}
+            \end{alignat*}}
+            At $t = 0$, we have $x = x_0$. Hence, $C_3 = \dfrac{x_0}{N-x_0}$. This gives
+            \begin{align*}
+                x &= \dfrac{\frac{x_0}{N-x_0} Ne^{Nkt}}{1 + \frac{x_0}{N-x_0} e^{Nkt}}\\
+                &= \dfrac{Nx_0 e^{Nkt}}{N-x_0 + x_0e^{Nkt}}
+            \end{align*}
+            \boxt{$x = \dfrac{Nx_0 e^{Nkt}}{N-x_0 + x_0e^{Nkt}}$}
+
+
+    \problem{}
+        In the diagram below, the curve $C_1$ and the line $C_2$ illustrate the relationship between price ($P$ dollars per kg) and quantity ($Q$ tonnes) for consumers and producers respectively. 
+
+        The curve $C_1$ shows the quantity of rice that consumers will buy at each price level while the line $C_2$ shows the quantity of rice that producers will produce at each price level. $C_1$ and $C_2$ intersect at point $A$, which has the coordinates $(1, 4)$.
+
+        The quantity of rice that consumers will buy is inversely proportional to the price of the rice. The quantity of rice that producers will produce is directly proportional to the price.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:6,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$Q$},
+                    ylabel = {$P$},
+                    ymax = 8,
+                    xmax = 2,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {4/x};
+        
+                    \addlegendentry{$C_1$};
+        
+                    \addplot[plotBlue] {4*x};
+        
+                    \addlegendentry{$C_2$};
+
+                    \fill (1, 4) circle[radius=2.5pt] node[right] {$A\bp{1, 4}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+            \item Interpret the coordinates of $A$ in the context of the question.
+            \item Solve for the equations of $C_1$ and $C_2$, expressing $Q$ in terms of $P$.
+        \end{enumerate}
+
+        Shortage occurs when the quantity of rice consumers will buy exceeds the quantity of rice producers will produce. It is known that the rate of increase of $P$ after time $t$ months is directly proportional to the quantity of rice in shortage.
+
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item Given that the initial price is \$3 and that after 1 month, the price is \$3.65, find $P$ in terms of $t$ and sketch this solution curve, showing the long-term behaviour of $P$.
+        \end{enumerate}
+
+        Suggest a reason why producers might use $P = aQ + b$, where $a, b \in \R^+$, instead of $C_2$ to model the relationship between price and quantity of rice produced.
+
+    \solution
+        \part
+            The coordinates of $A$ represent the equilibrium price and quantity of rice. That is, 4 tonnes of rice will be transacted at a price of \$1 per kg.
+
+        \part
+            Note that $C_1: P = \dfrac{k_1}{Q}$ and $C_2: P = k_2 Q$ for some constants $k_1$ and $k_2$. At $A(1, 4)$, we obtain $4 = \dfrac{k_1}{1}$ and $4 = k_2 \cdot 1$, whence $k_1 = k_2 = 4$. Thus, \boxed{C_1 : Q = \dfrac4P} and \boxed{C_2 : Q = \dfrac{P}{4}}.
+
+        \part
+            At a given price $P < 4$, the difference in the amount of rice demanded and produced is given by $\dfrac{4}{P} - \dfrac{P}{4} = \dfrac{16 - P^2}{4P}$. Hence, $\der{P}{t} = k \cdot \dfrac{16 - P^2}{4P}$.
+            \begin{alignat*}{2}
+                && \der{P}{t} &= k \cdot \dfrac{16 - P^2}{4P}\\
+                \implies&& \dfrac{2P}{16 - P^2} \der{P}{t} &= \dfrac{k}2\\
+                \implies&&\int \dfrac{2P}{16 - P^2} \der{P}{t} \d t &= \int \dfrac{k}2 \d t\\
+                \implies&&\int \dfrac{2P}{16 - P^2} \d P &= \int \dfrac{k}2 \d t\\
+                \implies&& -\ln{16 - P^2} &= \dfrac{k}{2} t + C_1 \quad (\because 16-P^2 > 0)\\
+                \implies&& 16 - P^2 &= C_2 e^{-kt/2} \quad (C_2 = e^{-C_1})\\
+                \implies&& P^2 &= 16 - C_2 e^{-kt/2}\\
+                \implies&& P &= \sqrt{16 - C_2 e^{-kt/2}} \quad (\because P \geq 0)
+            \end{alignat*}
+            At $t = 0$, $P = 3$. Hence, $9 = 16 - C_2 \implies C_2 = 7$. At $t = 1$, $P = 3.65$. Hence, $\dfrac{k}{2} - \ln 7 = -\ln{16 - 3.65^2} \implies -\dfrac{k}{2} = \ln \dfrac{16-3.65^2}{7} = \ln \dfrac{153}{400}$. Thus, 
+            \boxt{$P = \sqrt{16 - 7 \bp{\frac{153}{400}}^t}$}
+
+            \begin{center}
+                \begin{tikzpicture}[trim axis left, trim axis right]
+                    \begin{axis}[
+                        domain = 0:6,
+                        samples = 101,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xtick = \empty,
+                        ytick = {3, 4},
+                        xlabel = {$t$},
+                        ylabel = {$P$},
+                        ymin=0,
+                        ymax=4,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        legend style={minimum height=0.9cm},
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        \addplot[plotRed] {sqrt(16 - 7 * 0.3825^x)};
+            
+                        \addlegendentry{$P = \sqrt{16 - 7 \bp{\frac{153}{400}}^t}$};
+
+                        \addplot[dashed] {4};
+
+                        \fill (1, 3.65) circle[radius=2.5pt] node[below right] {$\bp{1, 3.65}$};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+
+            The model $P = aQ + b$ accounts for the fixed cost involved in producing rice.
+
+    \problem{}
+        A rectangular tank contains 100 litres of salt solution at a concentration of 0.01 kg/litre. A salt solution with a concentration of 0.5 kg/litre flows into the tank at the rate of 6 litres/min. The mixture in the tank is kept uniform by stirring the mixture and the mixture flows out at the rate of 4 litres/min. If $y$ kg is the mass of salt in the solution in the tank after $t$ minutes, show that $y$ satisfies the differential equation \[\der{y}{t} = 3 - \dfrac{ky}{100 + mt},\] where $k$ and $m$ are constants to be determined.
+
+        Find the particular solution of the differential equation.
+
+    \solution
+        Note that $\der{y}{t} = 0.5 \cdot 6 - 4 \cdot \dfrac{y}{100 + (6-4)t} = 3 - \dfrac{4y}{100 + 2t}$. Hence, $k = 4$ and $m = 2$.
+        \begin{alignat*}{2}
+            && \der{y}{t} &= 3 - \dfrac{4y}{100 + 2t}\\
+            \implies&& \der{y}{t} + \dfrac{4y}{100 + 2t} &= 3\\
+            \implies&& (100+2t)^2 \der{y}{t} + 4(100+2t)y &= 3(100+2t)^2\\
+            \implies&& \der{}{t} \bp{(100+2t)^2 y} &= 3(100 + 2t)^2\\
+            \implies&& (100+2t)^2 y &= \int 3 (100+2t)^2 \d t\\
+            && &= \dfrac12 (100 + 2t)^3 + C_1\\
+            && &= 4(50 + t)^3 + C_1\\
+            \implies&& y &= \dfrac{4(50+t)^3 + C_1}{(100+2t)^2}\\
+            && &= \dfrac{4(50+t)^3 + C_1}{4(50 + t)^2}\\
+            && &= 50 + t + \dfrac{C}{(50 + t)^2}
+        \end{alignat*}
+        At $t = 0$, $y = 100(0.01) = 1$. Hence, $1 = 50 + 0 + \dfrac{C}{(50+0)^2}$, whence $C = -122500$. Thus,
+        \boxt{$y = 50 + t - \dfrac{122500}{(50+t)^2}$}
+
+    \problem{}
+        A first order differential equation of the form \[\der{y}{x} + p(x) y = q(x) y^n, \quad n \neq 0, 1\] is called a Bernoulli equation. Show that the substitution $u = y^{1-n}$ reduces the Bernoulli equation into the linear equation $\der{u}{x} + (1-n)p(x)u(x) = (1-n)q(x)$.
+
+        A cardiac pacemaker is designed to provide electrical impulses $I$ amps such that as time $t$ increases, $I$ oscillates with a fixed amplitude of one amp. It is proposed that the following differential equation $\der{I}{t} + (\tan t) I = (I \sin t)^2$ can be used to describe how $I$ changes with $t$.
+
+        By using a substitution of the form $u = I^{1-n}$, find $I$ in terms of $t$.
+
+        State one limitation of this model.
+
+    \solution
+        Note that $u = y^{1-n} \implies \der{u}{x} = (1-n)y^n \der{y}{x} \implies \der{y}{x} = \der{u}{x} \cdot \dfrac{y^n}{1-n}$.
+        \begin{alignat*}{2}
+            &&\der{y}{x} + p(x) y &= q(x) y^n\\
+            \implies&& \der{u}{x} \cdot \dfrac{y^n}{1-n} + p(x)y &= q(x) y^n\\
+            \implies&& \der{u}{x} \cdot \dfrac{1}{1-n} + p(x)y^{1-n} &= q(x)\\
+            \implies&& \der{u}{x} \cdot \dfrac{1}{1-n} + p(x)u &= q(x)\\
+            \implies&& \der{u}{x} + (1-n)p(x)u(x) &= (1-n)q(x)
+        \end{alignat*}
+        Let $n = 2$. Then $u = I^{-1}$. We also have $p(x) = \tan t$ and $q(x) = \sin^2 t$.
+        {\allowdisplaybreaks
+        \begin{alignat*}{2}
+            && \der{I}{t} + (\tan t) I &= (I \sin t)^2\\
+            \implies&&\der{u}{t} - (\tan t)u &= -\sin^2 t\\
+            \implies&&\cos t \der{u}{t} - (\sin t) u &= -\cos t \sin^2 t\\
+            \implies&& \der{}{t} \bp{u \cos t} &= -\cos t \sin^2 t\\
+            \implies&& u \cos t &= \int -\cos t \sin^2 \t \d t\\
+            && &= -\dfrac13 \sin^3 t + C\\
+            \implies&& u &= \dfrac{-1/3 \cdot \sin^3 t + C}{\cos t}\\
+            \implies&& I &= \dfrac{\cos t}{-1/3 \cdot \sin^3 t + C}\\
+            && &= \dfrac{3\cos t}{3C - \sin^3 t}
+        \end{alignat*}}
+        Observe that at $t = 0$, $I$ attains a maximum of $\dfrac{1}{C}$. Also observe that $I$ is an odd function. Hence, the range of $I$ is $\bs{-\dfrac1C, \dfrac1C}$. Since $I$ has an amplitude of 1, it follows that $\dfrac1C = 1 \implies C = 1$. Thus,
+        \boxt{$I = \dfrac{3\cos t}{3 - \sin^3 t}$}
+        A limitation of this model is that it does not reflect the fact that the oscillations may gradually get weaker.
+
+\end{document}

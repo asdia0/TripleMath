@@ -36,6 +36,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | B10 | Applications of Integration III - Trapezium Rule and Simpson's Rule | [T-B10](/Group%20B/Chapter%20B10/Tutorial%20B10/Tutorial%20B10.pdf) | [A-B10](/Group%20B/Chapter%20B10/Assignment%20B10/Assignment%20B10.pdf) |
 | B11 | Functions of Two Variables | [T-B11](/Group%20B/Chapter%20B11/Tutorial%20B11/Tutorial%20B11.pdf) | [A-B11](/Group%20B/Chapter%20B11/Assignment%20B11/Assignment%20B11.pdf) |
 | B12 | First Order Differential Equations | [T-B12](/Group%20B/Chapter%20B12/Tutorial%20B12/Tutorial%20B12.pdf) | [A-B12](/Group%20B/Chapter%20B12/Assignment%20B12/Assignment%20B12.pdf) |
+| B13 | Differential Equation I - Integrating Factor | [T-B13](/Group%20B/Chapter%20B13/Tutorial%20B13/Tutorial%20B13.pdf) | |
 
 ## Exams
 

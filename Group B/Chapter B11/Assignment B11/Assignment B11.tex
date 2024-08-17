@@ -9,7 +9,7 @@
         Show that if $f$ is differentiable at $(x_0, y_0)$ and $\nabla f(x_0, y_0) \neq \vec 0$, then $\nabla f(x_0, y_0)$ is perpendicular to the level curve of $f$ through $(x_0, y_0)$.
 
     \solution
-        Since $f$ is differentiable at $(x_0, y_0)$, we know that $\nabla f(x_0, y_0) = (f_x(x_0, y_0), f_y(x_0, y_0))$ exists. Consider the level curve of $f$ through $(x_0, y_0)$. Let $\vec u$ be the unit vector in the direction of the level curve at $(x_0, y_0)$. Since $f$ is constant about this curve, the directional derivative of $\vec u$ is 0 at $(x_0, y_0)$. That is, $\nabla f(x_0, y_0) \cdot \vec u = 0$. Since neither $\nabla f(x_0, y_0)$ nor $\vec u$ are the zero vector, it must be that they are perpendicular to each other, whence $\nabla f(x_0, y_0)$ is perpendicular to the level curve of $f$ through $(x_0, y_0)$.
+        Since $f$ is differentiable at $(x_0, y_0)$, we know that $\nabla f(x_0, y_0) = (f_x(x_0, y_0), f_y(x_0, y_0))$ exists. Consider the level curve of $f$ through $(x_0, y_0)$. Let $\vec u$ be the unit vector tangent to the level curve at $(x_0, y_0)$. Since $f$ is constant about the level curve, the directional derivative of $\vec u$ is 0 at $(x_0, y_0)$. That is, $\nabla f(x_0, y_0) \cdot \vec u = 0$. Since neither $\nabla f(x_0, y_0)$ nor $\vec u$ are the zero vector, it must be that they are perpendicular to each other, whence $\nabla f(x_0, y_0)$ is perpendicular to the level curve of $f$ through $(x_0, y_0)$.
 
     \problem{}
         Find the quadratic approximation of $f(x, y) = e^{x^2 + y^2}$ around the point $\bp{\dfrac12, 0}$.
@@ -33,7 +33,7 @@
             f_{yy}(x, y) &= 2e^{1/4}
         \end{align*}
         The quadratic approximation $Q(x, y)$ to $f(x, y)$ at $\bp{\dfrac12, 0}$ is hence given by
-        \boxt{$Q(x, y) = e^{1/4} + e^{1/4}\bp{x - \dfrac12} + 3e^{1/4} \bp{x - \dfrac12}^2 + 2e^{1/4} y^2$}
+        \boxt{$Q(x, y) = e^{1/4} + e^{1/4}\bp{x - \dfrac12} + 3e^{1/4} \bp{x - \dfrac12}^2 + e^{1/4} y^2$}
 
     \problem{}
         A common problem in experimental work is to obtain a mathematical relationship between two variables $x$ and $y$ by ``fitting'' a curve to points in the plane corresponding to various experimentally determines values of $x$ and $y$, say \[(x_1, y_1), (x_2, y_2), (x_3, y_3), \ldots, (x_n, y_n).\] Based on theoretical considerations, or simply on the pattern of the points, one decides on the general form of the curve to be fitted. Often, the ``curve'' to be fitted is a straight line, $y = ax + b$. One criterion for selecting a line of ``best fit'' is to choose $a$ and $b$ to minimize the function \[f(a, b) = \sum_{k = 1}^n (ax_k + b - y_k)^2.\] Geometrically, $\abs{ax_k + b - y_k}$ is the vertical distance between the data point $(x_k, y_k)$ and the line $y = ax + b$, so in effect, minimizing $f(a, b)$ minimizes the sum of the squares of the vertical distances. This procedure is called the method of least squares.

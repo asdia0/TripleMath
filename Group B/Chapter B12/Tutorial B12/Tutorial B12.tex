@@ -467,7 +467,7 @@
             \implies&&\dfrac{1}{x-a} \der{x}{t} &= \dfrac{r}{a}\\
             \implies&&\int \dfrac{1}{x-a} \der{x}{t} \d t &= \dfrac{r}{a} \int \d t\\
             \implies&&\int \dfrac{1}{x-a} \d x &= \dfrac{r}{a} \int \d t\\
-            \implies&& \ln{x-a} &= \dfrac{r}{a} t + C_1\\
+            \implies&& \ln \abs{x-a} &= \dfrac{r}{a} t + C_1\\
             \implies&& x-a &= Ce^{rt/a}\\
             \implies&& x &= Ce^{rt/a} + a
         \end{alignat*}
@@ -478,14 +478,14 @@
         \begin{center}
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
-                    domain = 0:4,
+                    domain = 0:1.386,
                     samples = 101,
                     axis y line=middle,
                     axis x line=middle,
-                    xtick = {2 * ln 3},
+                    xtick = {2 * ln 2},
                     xticklabels = {$T$},
-                    ytick = {4},
-                    yticklabels = {$A$},
+                    ytick = {3, 1},
+                    yticklabels = {$A_1$, $A_2$},
                     xlabel = {$t$},
                     ylabel = {$x$},
                     legend cell align={left},
@@ -495,11 +495,11 @@
                             node [anchor=east] {$O$};
                         }
                     ]
-                    \addplot[plotRed] {2*e^(x/2) + 2};
+                    \addplot[plotRed] {(3-2)*e^(x/2)+2};
         
                     \addlegendentry{$A>a$};
 
-                    \addplot[plotBlue] {-2*e^(x/2) + 6};
+                    \addplot[plotBlue] {(1-2)*e^(x/2)+2};
         
                     \addlegendentry{$A<a$};
                 \end{axis}
