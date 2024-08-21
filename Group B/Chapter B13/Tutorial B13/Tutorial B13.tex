@@ -557,7 +557,7 @@
 
     \solution
         \part
-            The coordinates of $A$ represent the equilibrium price and quantity of rice. That is, 4 tonnes of rice will be transacted at a price of \$1 per kg.
+            The coordinates of $A$ represent the equilibrium price and quantity of rice. That is, 1 tonne of rice will be transacted at a price of \$4 per kg.
 
         \part
             Note that $C_1: P = \dfrac{k_1}{Q}$ and $C_2: P = k_2 Q$ for some constants $k_1$ and $k_2$. At $A(1, 4)$, we obtain $4 = \dfrac{k_1}{1}$ and $4 = k_2 \cdot 1$, whence $k_1 = k_2 = 4$. Thus, \boxed{C_1 : Q = \dfrac4P} and \boxed{C_2 : Q = \dfrac{P}{4}}.
@@ -664,7 +664,30 @@
             \implies&& I &= \dfrac{\cos t}{-1/3 \cdot \sin^3 t + C}\\
             && &= \dfrac{3\cos t}{3C - \sin^3 t}
         \end{alignat*}}
-        Observe that at $t = 0$, $I$ attains a maximum of $\dfrac{1}{C}$. Also observe that $I$ is an odd function. Hence, the range of $I$ is $\bs{-\dfrac1C, \dfrac1C}$. Since $I$ has an amplitude of 1, it follows that $\dfrac1C = 1 \implies C = 1$. Thus,
+        
+        Consider the stationary points of $I$. For stationary points, we have $\der{I}{t} = 0$. Hence,
+        \begin{alignat*}{2}
+            && \der{I}{t} + (\tan t) I &= (I \sin t)^2 \\
+            \implies&& \dfrac{\sin t}{\cos t} I &= I^2 \sin^2 t\\
+            \implies&& I \sin t \bp{I \sin t - \dfrac1{\cos t}} &= 0
+        \end{alignat*}
+        Hence, $\sin t = 0$ or $I \sin t - \dfrac1{\cos t} = 0$. Note that $I = \dfrac{3\cos t}{3C - \sin^3 t} \neq 0$ since $\cos t \neq 0$. We now consider the latter case.
+        \begin{alignat*}{2}
+            && I \sin t - \dfrac1{\cos t} &= 0\\
+            \implies&& I \sin t \cos t &= 1\\
+            \implies&& I \sin 2t &= 2
+        \end{alignat*}
+        Since $I$ has an amplitude of 1, we have that $I \in [-1, 1]$. Since $\sin 2t \in [-1, 1]$, we have that $I \sin 2t \in [-1, 1]$. Thus, $I \sin 2t$ can never be 2. Hence, stationary points only occur when $\sin t = 0$, implying $t = k\pi$.
+        
+        Differentiating the original differential equation with respect to $t$, we obtain
+        \begin{alignat*}{2}
+            && \der[2]{I}{t} + \bp{(\sec^2 t) I + \tan t \der{I}{t}} &= 2 I \sin t \bp{I \cos t + \sin t \der{I}{t}}\\
+            \implies&&\der[2]{I}{t} + (\sec^2 t) I &= 2 I^2 \sin t \cos t\\
+            \implies&&\der[2]{I}{t} + (\sec^2 t) I &= I^2 \sin 2t\\
+            \implies&&\der[2]{I}{t} &= I^2 \sin 2t - (\sec^2 t) I\\
+        \end{alignat*}
+        Plotting the RHS, we see that $\der[2]{I}{t}$ is negative on the intervals $\bp{-\dfrac\pi2 + 2n\pi, \dfrac\pi2 + 2n\pi}$ and positive on the intervals $\bp{\dfrac\pi2 + 2n\pi, \dfrac{3\pi}2 + 2n\pi}$, where $n \in \Z$. When $k$ is even, $\der[2]{I}{t} < 0$, whence $t = k\pi$ is a maximum point. Likewise, when $k$ is odd, $\der[2]{I}{t} > 0$, whence $t = k\pi$ is a minimum point. Hence, $I(0) = 1 \implies \dfrac{3}{3C} = 1$, whence $C = 1$, thus giving
+
         \boxt{$I = \dfrac{3\cos t}{3 - \sin^3 t}$}
         A limitation of this model is that it does not reflect the fact that the oscillations may gradually get weaker.
 
