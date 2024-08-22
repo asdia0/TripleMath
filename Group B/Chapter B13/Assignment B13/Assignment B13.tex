@@ -263,7 +263,7 @@
                 \implies&& e^{\frac12 x^2} y &= \int e^{\frac12 x^2 + x} x^2 \d x
             \end{alignat*}
             Suppose $\displaystyle\int e^{\frac12 x^2 + x} x^2 \d x = P(x) e^{\frac12 x^2 + x} + C$ for some function $P(x)$. Differentiating both sides with respect to $x$, we obtain \[x^2 e^{\frac12 x^2 + x} = e^{\frac12 x^2 + x} \bs{(x+1)P(x) + P'(x)},\] whence \[x^2 = (x+1)P(x) + P'(x).\] Thus, $P(x)$ is a polynomial of degree 1. Let $P(x) = ax + b$. For some constants $a$ and $b$. Then \[x^2 = ax^2 + (a+b)x + (a+b).\] Comparing coefficients of $x^2$, $x$ and constant terms, we have $a = 1$ and $a + b = 0 \implies b = -1$. Thus, \[\int x^2 e^{\frac12 x^2 + x} \d x = (x-1)e^{\frac12 x^2 + x} + C.\] Thus,
-            \boxt{$y = x-1 + Ce^{-\frac12 x^2 - x}$}
+            \boxt{$y = (x-1)e^x + Ce^{-\frac12 x^2}$}
 
 
 \end{document}
