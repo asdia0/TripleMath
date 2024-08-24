@@ -20,7 +20,7 @@
             y_5 &= y_4 + \D t \, f(y_4) = 4.28368
         \end{align*}
         \boxt{$y(0.5) \approx 4.28$}
-        For $t > 0$, we have $\derx{y}{t} = 4y - 1 > 0$. Hence, $y$ is concave upward. Thus, the approximation is an underestimate.
+        Observe that $\der[2]{y}{t} = 4\der{y}{t} > 0$ for $y > 0$. Hence, $y$ is concave upward. Thus, the approximation is an underestimate.
 
     \problem{}
         A solution to the differential equation $\der{y}{x} = y - x$ has $y = 0.5$ at $x = 0$.
@@ -40,7 +40,9 @@
                 y_4 &= y_3 + \D x \, f(x_3, y_3) = 0.7632\\
                 y_5 &= y_4 + \D x \, f(x_4, y_4) = 0.75584
             \end{align*}
-            \boxt{$y(1) \approx 0.756$} Since $\derx{y}{x} = y-x < 0$ for $x$ near 1, $y$ is concave downward near $x = 1$. Thus, the approximation is an overestimate.
+            \boxt{$y(1) \approx 0.756$}
+            
+            Observe that $\der{y}{x} = y - x < 1$ for $x \in [0, 1]$. Hence, $\der[2]{y}{x} = \der{y}{x} - 1 < 0$. Thus, $y$ is concave downward near $x = 1$, whence the approximation is an overestimate.
 
         \part
             \begin{alignat*}{2}
@@ -158,7 +160,7 @@
             \boxt{$y(0.5) \approx 5.30$}
 
         \part
-            For $x > 0$, $\derx{y}{x} = e^y + x > 0$. Hence, $y$ is concave upwards, whence the estimates are underestimates. Since the improved Euler method is more accurate than the Euler method, it will be greater than the value calculated in (a).
+            Observe that for $x > 0$, $\der{y}{x} = e^y + x > 0$. Hence, $\der[2]{y}{x} = e^y \der{y}{x} + 1 > 0$. Thus, $y$ is concave upwards, whence the estimates are underestimates. Since the improved Euler method is more accurate than the Euler method, it will be greater than the value calculated in (a).
 
     \problem{}
         A differential equation is given by \[\der{y}{t} = y^2 - 2y + 1, \qquad y(0) = 2, \qquad 0 \leq t \leq 2.\] Copy and complete the table showing the use of the improved Euler's method with step size $0.5$ to estimate $y$ at $t = 2$.
@@ -253,7 +255,7 @@
             \end{align*}
             \boxt{$y(1) \approx 4.25$}
 
-            For $x > 0$, $\derx{y}{x} = y - x > 0$. Hence, $y$ is concave upwards, whence the value of $y$ is an underestimate.
+            Note that $\der{y}{x} = y - x > 1$ for $x > 0$.Hence, $\der[2]{y}{x} = \der{y}{x} - 1 > 0$. Thus, $y$ is concave upwards, whence the value of $y$ is an underestimate.
 
         \part
             \begin{alignat*}{2}
@@ -456,16 +458,15 @@
                 \end{tikzpicture}
             \end{center}
 
-            By the fundamental theorem of calculus, the area under the graph of $f(x)$ between $x_0$ and $x_1$ is precisely $y_1 - y_0$.
+            By the fundamental theorem of calculus, the area under the graph of $f(x)$ between $x_0$ and $x_1$ is precisely $y_1 - y_0$. That is, \[\int_{x_0}^{x_1} f(x) \d x = y_1 - y_0 = \D y.\] Hence, the better the approximation of the integral, the better the approximation of $\D y$ and thus $y_1$.
 
-            The Euler method gives the approximation $y_1 - y_0 = \D x \, f(x_0)$. This is represented by the area of the red-shaded rectangle with base $\D x$ and height $f(x_0)$.
+            The Euler method gives the approximation $\D y = \D x \, f(x_0)$. This is represented by the area of the red-shaded rectangle with base $\D x$ and height $f(x_0)$.
 
-            The improved Euler method gives the approximation $y_1 - y_0 = \D x \, \dfrac12 \big[f(x_0) + f(x_1)\big]$. This is represented by the area of the blue-shaded trapezium with base $\D x$ and heights $f(x_0)$ and $f(x_1)$.
+            The improved Euler method gives the approximation $\D y = \D x \, \dfrac12 \big[f(x_0) + f(x_1)\big]$. This is represented by the area of the blue-shaded trapezium with base $\D x$ and heights $f(x_0)$ and $f(x_1)$.
 
-            Thus, the improved Euler method gives a better approximation for the area under the graph of $f(x)$ than the Euler method. Thus, the error of the estimate given by the improved Euler method is smaller than that of the Euler method.
+            Thus, the improved Euler method gives a better approximation for the integral of $f(x)$ than the Euler method. Thus, the error of the estimate given by the improved Euler method is smaller than that of the Euler method.
 
-            On the interval $[x_0, x_1]$, we have $f(x) > 0$, whence $y$ is concave upwards. Thus, both estimations are underestimates.
-
+            The Euler method underestimates the integral, hence $y_1$ is also underestimated. Similarly, the improved Euler method overestimates the integral, hence $y_1$ is also overestimated.
             
         \part
             We have $f(x) = a + bx + cx^2$, $x_0 = 0$ and $\D x = h$. Let $y_0 = d$.
@@ -509,10 +510,8 @@
             \boxt{$y(1.2) \approx 1.6656 \todp{4}$}
 
         \part
-            On the interval $x \in [1, 1.2]$, we have $\derx{y}{x} = 1 + y^2 \tan x > 0$, whence $y$ is concave upwards. Thus, the estimates are likely to be underestimates.
+            Observe that on the intevral $x \in [1, 1.2]$, we have $\der{y}{x} = 1 + y^2 \tan x > 0$. Since $y(1) = 1$, we also have $y > 0$. Thus, $\der[2]{y}{x} = 2y \der{y}{x} \tan x + y^2 \sec^2 x > 0$, whence $y$ is concave upwards. Thus, the estimates are likely to be underestimates.
 
         \part
             $f(x, y)$ has a discontinuity at $x = \pi/2 \in (1.5, 1.6)$, whence the Euler method will fail.
-            
-
 \end{document}
