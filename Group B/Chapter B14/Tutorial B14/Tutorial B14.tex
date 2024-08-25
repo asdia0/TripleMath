@@ -502,7 +502,7 @@
 
     \solution
         \part
-            Let $f(x, y) = 1 + y^2 \tan x$. Let $x_0 = 1$, $y_0 = 1$ and $\D x = 0.1 \implies x_n = 1 + 0.1n$. By the Euler method,
+            Let $f(x, y) = \derx{y}{x} = 1 + y^2 \tan x$, $x_0 = 1$, $y_0 = 1$, $\D x = 0.1$ and $x_n = x_0 + n \D x$. By the Euler method,
             \begin{align*}
                 y_1 &= y_0 + \D x \, f(x_0, y_0) = 1.2557408\\
                 y_2 &= y_1 + \D x \, f(x_1, y_1) = 1.6655608
@@ -510,8 +510,8 @@
             \boxt{$y(1.2) \approx 1.6656 \todp{4}$}
 
         \part
-            Observe that on the intevral $x \in [1, 1.2]$, we have $\der{y}{x} = 1 + y^2 \tan x > 0$. Since $y(1) = 1$, we also have $y > 0$. Thus, $\der[2]{y}{x} = 2y \der{y}{x} \tan x + y^2 \sec^2 x > 0$, whence $y$ is concave upwards. Thus, the estimates are likely to be underestimates.
+            Observe that on the interval $x \in I = [1, 1.2]$, we have $\derx{y}{x} = 1 + y^2 \tan x > 0$. Since $y$ is continuous on $I$, and $y(1) = 1$, we also have $y > 0$ on $I$. Thus, \[\der[2]{y}{x} = 2y \der{y}{x} \tan x + y^2 \sec^2 x > 0,\] whence $y$ is concave upwards. Thus, the estimates are likely to be underestimates.
 
         \part
-            $f(x, y)$ has a discontinuity at $x = \pi/2 \in (1.5, 1.6)$, whence the Euler method will fail.
+            $f(x, y)$ has a vertical asymptote at $x = \dfrac\pi2 \in (1.5, 1.6)$. Thus, the Euler method will fail.
 \end{document}
