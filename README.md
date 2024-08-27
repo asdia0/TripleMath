@@ -37,7 +37,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | B11 | Functions of Two Variables | [T-B11](/Group%20B/Chapter%20B11/Tutorial%20B11/Tutorial%20B11.pdf) | [A-B11](/Group%20B/Chapter%20B11/Assignment%20B11/Assignment%20B11.pdf) |
 | B12 | Differential Equations I - Separable DE | [T-B12](/Group%20B/Chapter%20B12/Tutorial%20B12/Tutorial%20B12.pdf) | [A-B12](/Group%20B/Chapter%20B12/Assignment%20B12/Assignment%20B12.pdf) |
 | B13 | Differential Equations I - Linear First Order DE | [T-B13](/Group%20B/Chapter%20B13/Tutorial%20B13/Tutorial%20B13.pdf) | [A-B13](/Group%20B/Chapter%20B13/Assignment%20B13/Assignment%20B13.pdf) |
-| B14 | Differential Equations I - Euler Method and Improved Euler Method | [T-B14](/Group%20B/Chapter%20B14/Tutorial%20B14/Tutorial%20B14.pdf) | |
+| B14 | Differential Equations I - Euler Method and Improved Euler Method | [T-B14](/Group%20B/Chapter%20B14/Tutorial%20B14/Tutorial%20B14.pdf) | [A-B14](/Group%20B/Chapter%20B14/Assignment%20B14/Assignment%20B14.pdf) |
 | B15 | Differential Equations I - Modelling Populations with First Order DE | - | |
 
 ## Exams

@@ -1,0 +1,110 @@
+\documentclass{echw}
+
+\title{Assignment B14\\Euler Method and Improved Euler Method}
+\author{Eytan Chong}
+\date{2024-08-23}
+
+\begin{document}
+    \problem{}
+        \begin{enumerate}
+            \item Explain why the Euler method will fail for the initial-value problem \[\der{y}{x} = y \cos \sqrt x, \qquad y(0) = 0,\] where $y = y(x)$ satisfies that differential equation and is not a constant.
+            \item Suppose the initial condition for the problem in part (a) is now $y(0) = 10$. Use the improved Euler method with a step size of $0.1$ to find, to three decimal places, an estimate for $y(0.1)$.
+            \item Solve the differential equation \[\der{y}{x} = \dfrac12 y (2-x), \qquad y > 0, \quad y(0) = 10,\] expressing $y$ in terms of $x$, and simplifying your answer as far as possible.
+            \item Explain why the solution found in part (c) will give a reasonable estimate for $y(0.1)$ in part (b).
+        \end{enumerate}
+
+    \solution
+        \part
+            By the Euler method, \[y_1 = y_0 + \D x (y_0 \cos \sqrt{x_0}) = 0 + \D x (0 \cos 0) = 0.\] It follows that $y_n = 0$ for all $n \in \N$, whence $y$ is the zero function. However, because $y$ is not a constant function, $y$ cannot be the zero function, a contradiction. Hence, the Euler method fails.
+
+        \part
+            Let $\D x = 0.1$, $y_0 = 10$ and $x_n = n \D x$.
+            \begin{align*}
+                \wt{y_1} &= y_0 + \D x (y_0 \cos \sqrt{x_0}) = 11\\
+                y_1 &= y_0 + \dfrac12 \D x \bs{y_0 \cos \sqrt{x_0} + \wt{y_1} \cos \sqrt{x_1}} = 11.023 \todp{3}
+            \end{align*}
+            \boxt{$y(0.1) \approx 11.023$}
+
+        \part
+            {\allowdisplaybreaks
+            \begin{alignat*}{2}
+                &&\der{y}{x} &= \dfrac12 y (2-x)\\
+                \implies&& \dfrac1y \der{y}{x} &= \dfrac12 (2-x)\\
+                \implies&& \int \dfrac1y \der{y}{x} \d x&=\int \dfrac12 (2-x) \d x\\
+                \implies&& \int \dfrac1y \d y &=\int \dfrac12 (2-x) \d x\\
+                \implies&& \ln y &= \dfrac12 \bs{2x - \dfrac12 x^2} + C_1\\
+                && &= x - \dfrac14 x^2 + C_1\\
+                \implies&& y &= C\exp{x - \dfrac14 x^2}
+            \end{alignat*}}
+            Since $y(0) = 10$, we have $C = 10$. Thus,
+            \boxt{$y = 10\exp{x - \dfrac14 x^2}$}
+
+        \part
+            For small $x$, we have that $\cos \sqrt{x} \approx 1 - \dfrac12 (\sqrt x)^2 = \dfrac12 (2 - x)$. Thus, \[y \cos \sqrt x \approx \dfrac12 y (2-x),\] whence the two differential equations and thus their solutions are approximately equal. Since $x = 0.1$ is small, the solution found in part (c) will give a reasonable estimate for $y(0.1)$ in part (b).
+    
+    \problem{}
+        A particle moves along a straight line which passes through a fixed point $O$. It is acted on by two resistive forces, one of which is proportional to its displacement $x$ from $O$ while the other is proportional to its speed $v$. As a result, the motion of the particle is governed by the differential equation \[v \der{v}{x} = -7x - 24v.\] Given that $v = 121$ when $x = 0$, estimate the value of $v$ when $x = 1$ using
+        \begin{enumerate}
+            \item one iteration of the Euler method,
+            \item one iteration of the improved Euler method.
+        \end{enumerate}
+        Hence, explain why $v$ is approximately a linear function of $x$ for $0 \leq x \leq 1$.
+
+        By considering the values of $\dfrac{x}{v}$ for $0 \leq x \leq 1$, use the given differential equatoin to find an expression for this linear function.
+
+    \solution
+        Rewriting the given differential equation, we obtain \[\der{v}{x} = -\dfrac{7x}{v} - 24.\] Let $f(x, v) = -\dfrac{7x}{v} - 24$, $\D x = 1$, $v_0 = 121$, and $x_n = n \D x$.
+        \part
+            By the Euler method,
+            \[v_1 = v_0 + \D x f(x_0, v_0) = 97\]
+            \boxt{$y(1) \approx 97$}
+
+        \part
+            By the improved Euler method,
+            \begin{align*}
+                \wt{v_1} &= v_0 + \D x f(x_0, v_0) = 97\\
+                v_1 &= v_0 + \dfrac12 \D x \bs{f(x_0, v_0) + f(x_1, \wt{v_1})} = 96.964
+            \end{align*}
+            \boxt{$y(1) \approx 96.964$}
+
+            \dash
+
+            The gradient of $v$ at $x = 0$ is $f(x_0, v_0) = -24$, which is very close to the gradient of $v$ at $x=1$, $f(x_1, \wt{v_1}) = -24.072$. Since the gradient of $v$ is approximately constant for $0 \leq x \leq 1$, we have that $v$ is approximately a linear function on that interval.
+
+            \dash
+
+            Observe that for $0 \leq x \leq 1$, $x/v \approx 0$ since $x \in [0, 1]$, while $v \geq 96$. Thus, $\derx{v}{x} \approx -24$, whence $v = -24 x + C$. Since $v = 121$ when $x = 0$, we have $\boxed{v \approx -24x + 121}$.
+
+    \problem{}
+        The function $y = y(x)$ satisfies \[\der{y}{x} = \dfrac15 (\tan x + x^3 y).\] The value of $y(h)$ is to be found, where $h$ is a small positive number, and $y(0) = 0$.
+        \begin{enumerate}
+            \item Use one step of the improved Euler method to find an alternative approximation to $y(h)$ in terms of $h$.
+            \item It can be shown that $y = y(x)$ satisfies \[y(h) = e^{0.05h^4} \int_0^h \dfrac{\tan x}{5} e^{-0.05x^4} \d x.\] Assume that $h$ is small and hence find another approximation to $y(h)$ in terms of $h$.
+            \item Discuss the relative merits of these two methods employed to obtain these approximations.
+        \end{enumerate}
+
+    \solution
+        \part
+            Let $f(x, y) = \dfrac15 (\tan x + x^3 y)$, $\D x = h$, $y_0 = 0$ and $x_n = n \D x$. By the improved Euler method,
+            \begin{align*}
+                \wt{y_1} &= y_0 + \D x f(x_0, y_0) = 0\\
+                y_1 &= y_0 + \dfrac12 \D x \bs{f(x_0, y_0) + f(x_1, \wt{y_1})}\\
+                &= 0 + \dfrac12 h \bs{0 + \dfrac15(\tan h + 0)}\\
+                &= \dfrac{h \tan h}{10} 
+            \end{align*}
+            \boxt{$y(h) \approx \dfrac{h\tan h}{10}$}
+
+        \part
+            Let $g(x) = \dfrac{\tan x}{5} e^{-0.05x^4}$. Consider Simpson's rule with abscissae $0$, $h/2$ and $h$.
+            \begin{align*}
+                e^{0.05h^4} \int_0^h \dfrac{\tan x}{5} e^{-0.05x^4} \d x &\approx e^{0.05h^4} \cdot \dfrac{h-0}{6} \bs{g(0) + g(h/2) + g(h)}\\
+                &= e^{0.05h^4} \cdot \dfrac{h}{6} \bs{0 + \dfrac{\tan{h/2}}{5} e^{-0.05(h/2)^4} + \dfrac{\tan h}{5} e^{-0.05h^4}}\\
+                &= e^{0.05h^4} \cdot \dfrac{h}{30} \bs{\tan{\dfrac{h}{2}} e^{-h^4/320} + \tan{h}e^{-0.05h^4}}\\
+                &= \dfrac{h}{30} \bs{\tan{\dfrac{h}{2}} e^{3h^4/64} + \tan{h}}
+            \end{align*}
+            \boxt{$y(h) \approx \dfrac{h}{30} \bs{\tan{\dfrac{h}{2}} e^{3h^4/64} + \tan{h}}$}
+
+        \part
+            Simpson's rule requires less computations, while the improved Euler method gives a nicer approximation.
+
+\end{document}
