@@ -1,6 +1,6 @@
 \documentclass{echw}
 
-\title{Assignment B15\\Modeeling Populations with First Order DE}
+\title{Assignment B15\\Modelling Populations with First Order DE}
 \author{Eytan Chong}
 \date{2024-08-27}
 
@@ -65,11 +65,11 @@
 
             When $P_0 = 60$, $\derx{P}{t} = 0$. Hence, the population of goats will remain at 60 thousand.
 
-            When $60 < P_0 < 90$, $\derx{P}{t} > 0$. Hence, the population of goats will increase towards 90.
+            When $60 < P_0 < 90$, $\derx{P}{t} > 0$. Hence, the population of goats will increase towards 90 thousand.
 
             When $P_0 = 90$, $\derx{P}{t} = 0$. Hence, the population of goats will remain at 90 thousand.
 
-            When $P_0 > 90$, $\derx{P}{t} < 0$. Hence, the population of goats will decrease towards 90.
+            When $P_0 > 90$, $\derx{P}{t} < 0$. Hence, the population of goats will decrease towards 90 thousand.
 
         \part
             \boxt{$H > 9.375$}
@@ -86,13 +86,11 @@
                 \implies&& \int \dfrac1{(P-75)^2 + (600H - 75^2)} \d P &= -\dfrac1{600} t + C\\
                 \implies&& \dfrac1{\sqrt{600H - 75^2}} \arctan{\dfrac{P-75}{\sqrt{600H - 75^2}}} &= -\dfrac1{600} t + C
             \end{alignat*}}
+
             Note that $600H - 75^2 > 0$ since $H > 9.375$.
 
-            When $t = 0$, $P = 100$. Hence, \[C = \dfrac1{\sqrt{600H - 75^2}} \arctan{\dfrac{25}{\sqrt{600H - 75^2}}}\]
-            When $t = 120$, $P = 0$. Hence,
-            \[\dfrac1{\sqrt{600H - 75^2}} \arctan{\dfrac{-75}{\sqrt{600H - 75^2}}} = -\dfrac{120}{600} + \dfrac1{\sqrt{600H - 75^2}} \arctan{\dfrac{25}{\sqrt{600H - 75^2}}}\]
-            Let $X = \dfrac{1}{\sqrt{600H - 75^2}}$. The above equation simplifies to
-            \[X \arctan{-75X} = -\dfrac15 + X \arctan{25X}\] which has the solution $X = 0.079667$. Note that we reject $X = -0.079667$ since $X \geq 0$. We thus have
+            Let $X = \dfrac{1}{\sqrt{600H - 75^2}}$. This simplifies the above result to \[X \arctan{(P-75)X} = -\dfrac1{600}t + C.\] When $t = 0$, $P = 100$. Hence, \[C = X \arctan{25X}\]
+            When $t = 120$, $P = 0$. Hence, \[X\arctan{-75X} = -\dfrac{120}{600} + X \arctan{25X},\] which has the solution $X = 0.079667$. Note that we reject $X = -0.079667$ since $X \geq 0$. We thus have
             \[H = \dfrac1{600}\bp{\dfrac1{0.079667^2} + 75^2} = \boxed{9.638} \todp{3}\]
 
 
