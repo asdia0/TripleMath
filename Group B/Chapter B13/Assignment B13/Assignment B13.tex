@@ -57,9 +57,14 @@
                 \implies&& y &= \tan{\dfrac12 t + C}
             \end{alignat*}
             At $t = 0$, $y = 1$. Hence, $1 = \tan C \implies C = \dfrac\pi4$.
-            \boxt{$y = \tan{\dfrac12t + \dfrac\pi4}$}
-            
-            {\allowdisplaybreaks
+            \begin{align*}
+                y &= \tan{\dfrac12 t + \dfrac\pi4}\\
+                &= \dfrac{1-\cos{t + \pi/2}}{\sin{t+\pi/2}}\\
+                &= \dfrac{1 + \sin t}{\cos t}\\
+                &= \sec t + \tan t
+            \end{align*}
+            \boxt{$y = \sec t + \tan t$}
+
             \begin{alignat*}{2}
                 && \der{x}{t} &= (2-x)y\\
                 && &= (2-x) \sqrt{\dfrac{x}{2-x}}\\
@@ -76,9 +81,14 @@
                 \implies&& \sqrt{\dfrac{x}{2}} &= \sin{\dfrac12 t + C_2}\\
                 \implies&& \dfrac{x}{2} &= \sin[2]{\dfrac12 t + C_2}\\
                 \implies&& x &= 2\sin[2]{\dfrac12 t + C_2}
-            \end{alignat*}}
-            At $t = 0$, $x = 1$. Hence, $1 = 2\sin[2]{C_2}$, whence $C_2 = \dfrac\pi4$.
-            \boxt{$x = 2\sin[2]{\dfrac12 t + \dfrac\pi4}$}
+            \end{alignat*}
+            At $t = 0$, $x = 1$. Hence, $1 = 2\sin[2] C_2$, whence $C_2 = \dfrac\pi4$.
+            \begin{align*}
+                x &= 2\sin[2]{\dfrac12 t + \dfrac\pi4}\\
+                &= 1 - \cos{t + \dfrac\pi2}\\
+                &= 1 + \sin t
+            \end{align*}
+            \boxt{$x = 1 + \sin t$}
 
         \part
             Note that $0 < t < \dfrac\pi2 \implies 1 < x < 2$.
