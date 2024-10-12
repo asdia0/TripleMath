@@ -95,16 +95,14 @@
             \boxt{$y(h) \approx \dfrac{h\tan h}{10}$}
 
         \part
-            Let $g(x) = \dfrac{\tan x}{5} e^{-0.05x^4}$. Consider Simpson's rule with abscissae $0$, $h/2$ and $h$.
+            Since $h$ is small, we have that $e^{0.05h^4} \approx 1$. Furthermore, since we are integrating over the interval $x \in [0, h]$, the integrand $\dfrac{\tan x}{5} e^{-0.05x^4}$ can likewise be approximated by $\dfrac{x}{5}$. Our integral hence transforms to
             \begin{align*}
-                e^{0.05h^4} \int_0^h \dfrac{\tan x}{5} e^{-0.05x^4} \d x &\approx e^{0.05h^4} \cdot \dfrac{h-0}{6} \bs{g(0) + g(h/2) + g(h)}\\
-                &= e^{0.05h^4} \cdot \dfrac{h}{6} \bs{0 + \dfrac{\tan{h/2}}{5} e^{-0.05(h/2)^4} + \dfrac{\tan h}{5} e^{-0.05h^4}}\\
-                &= e^{0.05h^4} \cdot \dfrac{h}{30} \bs{\tan{\dfrac{h}{2}} e^{-h^4/320} + \tan{h}e^{-0.05h^4}}\\
-                &= \dfrac{h}{30} \bs{\tan{\dfrac{h}{2}} e^{3h^4/64} + \tan{h}}
+                y(h) &= e^{0.05h^4} \int_0^h \dfrac{\tan x}{5} e^{-0.05x^4} \d x\\
+                &\approx \int_0^h \dfrac{x}{5} \d x\\
+                &= \boxed{\dfrac{h^2}{10}}
             \end{align*}
-            \boxt{$y(h) \approx \dfrac{h}{30} \bs{\tan{\dfrac{h}{2}} e^{3h^4/64} + \tan{h}}$}
 
         \part
-            Simpson's rule requires less computations, while the improved Euler method gives a nicer approximation.
+            The improved Euler method involves more steps, while the approximation in (b) is more direct.
 
 \end{document}

@@ -75,7 +75,7 @@
             \boxt{$H > 9.375$}
 
         \part
-            Note that $t = 10 \cdot 12 = 120$, $P(0) = 100$ and $P(120) = 0$.
+            Note that $t = 10 \cdot 12 = 120$, $P(0) = 100$ and $P(108) = 0$.
             {\allowdisplaybreaks
             \begin{alignat*}{2}
                 &&\der{P}{t} &= \dfrac{P}{4} \bp{1 - \dfrac{P}{150}} - H\\
@@ -90,8 +90,8 @@
             Note that $600H - 75^2 > 0$ since $H > 9.375$.
 
             Let $X = \dfrac{1}{\sqrt{600H - 75^2}}$. This simplifies the above result to \[X \arctan{(P-75)X} = -\dfrac1{600}t + C.\] When $t = 0$, $P = 100$. Hence, \[C = X \arctan{25X}\]
-            When $t = 120$, $P = 0$. Hence, \[X\arctan{-75X} = -\dfrac{120}{600} + X \arctan{25X},\] which has the solution $X = 0.079667$. Note that we reject $X = -0.079667$ since $X \geq 0$. We thus have
-            \[H = \dfrac1{600}\bp{\dfrac1{0.079667^2} + 75^2} = \boxed{9.638} \todp{3}\]
+            When $t = 108$, $P = 0$. Hence, \[X\arctan{-75X} = -\dfrac{108}{600} + X \arctan{25X},\] which has the solution $X = 0.073145$. Note that we reject $X = -0.073145$ since $X \geq 0$. We thus have
+            \[H = \dfrac1{600}\bp{\dfrac1{0.073145^2} + 75^2} = \boxed{9.377} \todp{3}\]
 
 
 \end{document}

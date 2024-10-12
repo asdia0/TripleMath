@@ -60,7 +60,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
             <td><a href="/Exams/JC1 9758 WA2/JC1 9758 WA2.pdf">WA2</a></td>
         </tr>
         <tr>
-            <td>Promos</td>
+            <td><a href="/Exams/JC1 9758 Promos/JC1 9758 Promos.pdf">Promos</a></td>
         </tr>
         <tr>
             <td rowspan=3>9649</td>
@@ -70,7 +70,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
             <td><a href="/Exams/JC1 9649 WA2/JC1 9649 WA2.pdf">WA2</a></td>
         </tr>
         <tr>
-            <td>Promos</td>
+            <td><a href="/Exams/JC1 9649 Promos/JC1 9649 Promos.pdf">Promos</a></td>
         </tr>
     </tbody>
 </table>
@@ -83,7 +83,6 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 | [Timed Practice 1](/Misc/Timed%20Practice%201/Timed%20Practice%201.pdf) | A4, B1 |
 | [Timed Practice 2](/Misc/Timed%20Practice%202/Timed%20Practice%202.pdf) | A2 |
 | [Vectors Practice Questions](/Misc/Vectors%20Practice%20Questions/Vectors%20Practice%20Questions.pdf) | A7, A8 |
-
 
 ### Practice Papers
 
