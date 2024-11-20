@@ -1,0 +1,241 @@
+\section{Tutorial A3}
+
+\begin{problem}
+    Determine the behaviour of the following sequences.
+
+    \begin{enumerate}
+        \item $u_n = 3\bp{\frac12}^{n-1}$
+        \item $v_n = 2 - n$
+        \item $t_n = (-1)^n$
+        \item $w_n = 4$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Decreasing, converges to 0.
+    \end{ppart}
+    \begin{ppart}
+        Decreasing, diverges.
+    \end{ppart}
+    \begin{ppart}
+        Alternating, diverges.
+    \end{ppart}
+    \begin{ppart}
+        Constant, converges to 4.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Find the sum of all even numbers from 20 to 100 inclusive.
+\end{problem}
+\begin{solution}
+    The even numbers from 20 to 100 inclusive form an AP with common difference 2, first term 20 and last term 100. Since we are adding a total of $\frac{100-20}{2} + 1 = 41$ terms, we get a sum of $41\bp{\frac{20 + 100}{2}} = 2460$.
+\end{solution}
+
+\begin{problem}
+    A geometric series has first term 3, last term 384 and sum 765. Find the common ratio.
+\end{problem}
+\begin{solution}
+    Let the $n$th term of the geometric series be $ar^{n-1}$, where $1 \leq n \leq k$. We hence have $3r^{k-1} = 384$, which gives $r^k = 128r$. Thus, \[\frac{3(1-r^k)}{1-r} = 765 \implies \frac{3(1-128r)}{1-r} = 765 \implies r = 2.\]
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the first four terms of the following sequence $u_{n+1} = \frac{u_n + 1}{u_n + 2}$, $u_1 = 0$, $n \geq 1$.
+        \item Write down the recurrence relation between the terms of these sequences.
+        \begin{enumerate}
+            \item $-1, 2, -4, 8, -16, \ldots$
+            \item $1, 3, 7, 15, 31, \ldots$
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., the first four terms of $u_n$ are 0, $\frac12$, $\frac35$ and $\frac8{13}$. 
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            $u_{n+1} = -2u_n$, $u_1 = -1$, $n \geq 1$.
+        \end{psubpart}
+        \begin{psubpart}
+            $u_{n+1} = 2u_n + 1$, $u_1 = 1$, $n \geq 1$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The sum of the first $n$ terms of a series, $S_n$, is given by $S_n = 2n(n+5)$. Find the $n$th term and show that the terms are in arithmetic progression.
+\end{problem}
+\begin{solution}
+    We have \[u_n = S_n - S_{n-1} = 2n(n+5) - 2(n-1)(n+4) = 4n + 8.\] Observe that $u_n - u_{n-1} = \bs{4n + 8} - \bs{4(n-1) + 8} = 8$ is a constant.  Hence, $u_n$ is in AP.
+\end{solution}
+
+\begin{problem}
+    The sum of the first $n$ terms, $S_n$, is given by \[S_n = \frac12 - \bp{\frac12}^{n+1}.\]
+    
+    \begin{enumerate}
+        \item Find an expression for the $n$th term of the series.
+        \item Hence or otherwise, show that it is a geometric series.
+        \item State the values of the first term and the common ratio.
+        \item Give a reason why the sum of the series converges as $n$ approaches infinity and write down its value.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[u_n = S_n - S_{n-1} = \bs{\frac12 - \bp{\frac12}^{n+1}} - \bs{\frac12 - \bp{\frac12}^{n}} = \bp{\frac12}^{n+1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $\frac{u_{n+1}}{u_n} = \frac{(1/2)^{n+2}}{(1/2)^{n+1}} = \frac12$ is constant, $u_n$ is in GP.
+    \end{ppart}
+    \begin{ppart}
+        The first term is $\frac14$ and the common ratio is $\frac12$.
+    \end{ppart}
+    \begin{ppart}
+        As $n \to \infty$, we clearly have $\bp{\frac12}^{n+1} \to 0$. Hence, $S_\infty = \frac12$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The first term of an arithmetic series is $\ln x$ and the $r$th term is $\ln{xk^{r-1}}$, where $k$ is a real constant. Show that the sum of the first $n$ terms of the series is $S_n = \frac{n}2 \ln{x^2k^{n-1}}$. If $k = 1$ and $x \neq 1$, find the sum of the series $e^{S_1} + e^{S_2} + e^{S_3} + \ldots + e^{S_n}$.
+\end{problem}
+\begin{solution}
+    Let $u_n$ be the $n$th term in the arithmetic series. Then \[u_n = \ln{xk^{r-1}} = \ln x + (r-1)\ln k.\] We thus see that the arithmetic series has first term $\ln x$ and common difference of $\ln k$. Thus, \[S_n = n\bp{\frac{\ln x + \bp{\ln x + (r-1)\ln k}}{2}} = \frac{n}{2} \ln{x^2 k^{r-1}}.\]
+
+    When $k = 1$, we have $S_n = \ln{x^n}$, whence $e^{S_n} = x^n$. Thus, \[e^{S_1} + e^{S_2} + e^{S_3} + \ldots + e^{S_n} = x + x^2 + x^3 + \ldots x^n = \frac{x(1-x^{n+1})}{1-x}.\]
+\end{solution}
+
+\begin{problem}
+    A baker wants to bake a 1-metre tall birthday cake. It comprises 10 cylindrical cakes each of equal height 10 cm. The diameter of the cake at the lowest layer is 30 cm. The diameter of each subsequent layer is 4\% less than the diameter of the cake below. Find the volume of this cake in cm$^3$, giving your answer to the nearest integer.
+\end{problem}
+\begin{solution}
+    Let the diameter of the $n$th layer be $d_n$ cm. We have $d_{n+1} = 0.96d_n$ and $d_1 = 30$, whence $d_n = 30\cdot0.96^{n-1}$. Let the $n$th layer have volume $v_n$ cm$^3$. Then \[v_n = 10 \pi \bp{\frac{d_n}{2}}^2 = 10\pi \bp{\frac{900 \cdot 0.9216^{n-1}}{4}} = 2250\pi \cdot 0.9216^{n-1}.\] The volume of the cake in cm$^3$ is thus given by \[2250\pi \bp{\frac{1 - 0.9216^{10}}{1 - 0.9216}} = 50309.\]
+\end{solution}
+
+\begin{problem}
+    The sum to infinity of a geometric progression is 5 and the sum to infinity of another series is formed by taking the first, fourth, seventh, tenth, $\ldots$ terms is 4. Find the exact common ratio of the series.
+\end{problem}
+\begin{solution}
+    Let the $n$th term of the geometric progression be given by $ar^{n-1}$. Then, we have \[\frac{a}{1 - r} = 5 \implies a = 5(1-r). \tag{1}\] Note that the first, fourth, seventh, tenth, $\ldots$ terms forms a new geometric series with common ratio $r^3$: $a, ar^3, ar^6, ar^9, \ldots$. Thus, \[\frac{a}{1 - r^3} = 4 \implies a = 4(1 - r^3). \tag{2}\] Equating (1) and (2), we have \[5(1-r) = 4(1 - r^3) \implies 4r^3 + 5r + 1 = 0 \implies (r - 1)(4r^2 + 4r - 1) = 0.\] Since $\abs{r} < 1$, we only have $4r^2 + 4r - 1 = 0$, which has solutions $r = \frac{-1+\sqrt2}2$ or $r = \frac{-1-\sqrt2}{2}$. Once again, since $\abs{r} < 1$, we reject $r = \frac{-1-\sqrt2}{2}$. Hence, $r = \frac{-1+\sqrt2}{2}$.
+\end{solution}
+
+\begin{problem}
+    A geometric series has common ratio $r$, and an arithmetic series has first term $a$ and common difference $d$, where $a$ and $d$ are non-zero. The first three terms of the geometric series are equal to the first, fourth and sixth terms respectively of the arithmetic series.
+
+    \begin{enumerate}
+        \item Show that $3r^2 - 5r + 2 = 0$
+        \item Deduce that the geometric series is convergent and find, in terms of $a$, the sum of infinity.
+        \item The sum of the first $n$ terms of the arithmetic series is denoted by $S$. Given that $a > 0$, find the set of possible values of $n$ for which $S$ exceeds $4a$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let the $n$th term of the geometric series be $G_n = G_1r^{n-1}$. Let the $n$th term of the arithmetic series be $A_n = a + (n-1)d$.
+        
+        Since $G_1 = A_1$, we have $G_1 = a$. We can thus write $G_n = ar^{n-1}$. From $G_2 = A_4$, we have $ar = a + 3d$, which gives $a = \frac{3d}{r-1}$. From $G_3 = A_6$, we have $ar^2 = a + 5d$. Thus, \[\frac{3d}{r-1} \cdot r^2 = \frac{3d}{r-1} + 5d \implies \frac{3r^2}{r-1} = \frac{3}{r-1} + 5 \implies 3r^2 - 5r + 2 = 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the roots to $3r^2 - 5r + 2 = 0$ are $r = 1$ and $r = \frac23$. Clearly, $r \neq 1$ since $a = \frac{3d}{r-1}$ would be undefined. Hence, $r = \frac23$, whence the geometric series is convergent.
+
+        Let $S_\infty$ be the sum to infinity of $G_n$. Then $S_\infty = \frac{a}{1 - r} = 3a$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $d = \frac13 a(r-1) = -\frac{a}9$. Hence, \[S = n \bp{\frac{a + \bs{a + (n-1)d}}{2}} = n \bp{\frac{2a + (n-1)\bp{-\frac{a}9}}{2}} = \frac{an}{18}(19 - n).\] Consider $S > 4a$. \[S > 4a \implies \frac{n}{18} (19 - n) > 4 \implies -n^2 + 19n - 72 > 0.\] Using G.C., we see that  $5.23 < n < 13.8$. Since $n$ is an integer, the set of values that $n$ can take on is $\bc{n \in \ZZ : 6 \leq n \leq 13}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Two musical instruments, $A$ and $B$, consist of metal bars of decreasing lengths.
+
+    \begin{enumerate}
+        \item The first bar of instrument $A$ has length 20 cm and the lengths of the bars form a geometric progression. The 25th bar has length 5 cm. Show that the total length of all the bars must be less than 357 cm, no matter how many bars there are.
+    \end{enumerate}
+
+    Instrument $B$ consists of only 25 bars which are identical to the first 25 bars of instrument $A$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Find the total length, $L$ cm, of all the bars of instrument $B$ and the length of the 13th bar.
+        \item Unfortunately, the manufacturer misunderstands the instructions and constructs instrument $B$ wrongly, so that the lengths of the bars are in arithmetic progression with a common difference $d$ cm. If the total length of the 25 bars is still $L$ cm and the length of the 25th bar is still 5 cm, find the value of $d$ and the length of the longest bar.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $u_n = u_1r^{n-1}$ be the length of the $n$th bar. Since $u_1 = 20$, we have $u_n = 20r^{n-1}$. Since $u_{25} = 5$, we have $r = 4^{-\tfrac1{24}}$. Hence, $u_n = 20 \cdot 4^{-\tfrac{n-1}{24}}$. Now, consider the sum to infinity of $u_n$: \[S_\infty = \frac{u_1}{1 - r} = \frac{20}{1 - 4^{-1/24}} = 356.3 < 357.\] Hence, no matter how many bars there are, the total length of the bars will never exceed 357 cm.
+    \end{ppart}
+    \begin{ppart}
+        We have \[L = u_1 \bp{\frac{1 - r^{25}}{1 - r}} = 20 \bp{\frac{1 - 4^{-25/24}}{1 - 4^{-1/24}}} = 272.26 = 272 \tosf{3}.\]
+        
+        Note that \[u_{13} = 20 \cdot \bp{4^{-1/24}}^{13 - 1} = 10.\] The 13th bar is hence 10 cm long.
+    \end{ppart}
+    \begin{ppart}
+        Let $v_n = a + (n-1)d$ be the length of the wrongly-manufactured bars. Since the length of the 25th bar is still 5 cm, we know $v_{25} = a + 24d = 5$. Now, consider the total lengths of the bars, which is still $L$ cm. \[L = 25\bp{\frac{a + 5}{2}} = 272.26.\] Solving, we see that $a = 16.781$. Hence, $d = \frac{5-a}{24} = -0.491$, and the longest bar is 16.8 = cm long.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A bank has an account for investors. Interest is added to the account at the end of each year at a fixed rate of 5\% of the amount in the account at the beginning of that year. A man a woman both invest money.
+
+    \begin{enumerate}
+        \item The man decides to invest \$$x$ at the beginning of one year and then a further \$$x$ at the beginning of the second and each subsequent year. He also decides that he will not draw any money out of the account, but just leave it, and any interest, to build up. \begin{enumerate}
+            \item How much will there be in the account at the end of 1 year, including the interest?
+            \item Show that, at the end of $n$ years, when the interest for the last year has been added, he will have a total of \$$21(1.05^n - 1)x$ in his account.
+            \item After how many complete years will he have, for the first time, at least \$$12x$ in his account?
+        \end{enumerate}
+        \item The woman decides that, to assist her in her everyday expenses, she will withdraw the interest as soon as it has been added. She invests \$$y$ at the beginning of each year. Show that, at the end of $n$ years, she will have received a total of \$$\frac1{40} n(n+1)y$ in interest.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            There will be \$$1.05x$ in the account at the end of 1 year.
+        \end{psubpart}
+        \begin{psubpart}
+            Let \$$u_nx$ be the amount of money in the account at the end of $n$ years. Then, $u_n$ satisfies the recurrence relation $u_{n+1} = 1.05(1 + u_n)$, with $u_1 = 1.05$. Observe that \[u_1 = 1.05 \implies u_2 = 1.05 + 1.05^2 \implies u_3 = 1.05 + 1.05^2 + 1.05^3 \implies \cdots.\] We thus have \[u_n = 1.05 + 1.05^2 + \cdots + 1.05^n = 1.05 \bp{\frac{1 - 1.05^n}{1 - 1.05}} = 21\bp{1.05^n - 1}.\]Hence, there will be \$$21(1.05^n - 1)x$ in the account after $n$ years.
+        \end{psubpart}
+        \begin{psubpart}
+            Consider the inequality $u_n \geq 12x$. \[u_n \geq 12x \implies 21(1.05^n - 1) \geq 12 \implies n \geq 9.26.\] Since $n$ is an integer, the smallest value of $n$ is 10. Hence, after 10 years, he will have at least \$$12x$ in his account for the first time.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        After $n$ years, the woman will have \$$ny$ in her account. Hence, the interest she gains at the end of the $n$th year is $\frac1{20}ny$. Thus, the total interest she will gain after $n$ years is \[\frac{y}{20} + \frac{2y}{20} + \cdots + \frac{ny}{20} = \frac{y}{20} \bp{1 + 2 + \cdots + n} = \frac{y}{20} \cdot \frac{n(n+1)}{2} = \frac{n(n+1)y}{40}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The sum, $S_n$, of the first $n$ terms of a sequence $U_1, U_2, U_3, \ldots$ is given by \[S_n = \frac{n}2 (c-7n),\] where $c$ is a constant.
+
+    \begin{enumerate}
+        \item Find $U_n$ in terms of $c$ and $n$.
+        \item Find a recurrence relation of the form $U_{n+1} = f(U_n)$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that \[U_n = S_n - S_{n-1} = \frac{n}{2} (c-7n) - \frac{n-1}{2} (c - 7(n-1)) = -7n + \frac{7 + c}{2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that $U_{n+1} - U_n = -7$. Thus, \[U_{n+1} = U_n - 7, \quad U_1 = \frac{7+c}2, \quad n \geq 1.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The positive numbers $x_n$ satisfy the relation
+    
+    \[
+        x_{n+1} = \sqrt{\frac92 + \frac1{x_n}}
+    \]
+    for $n = 1, 2, 3, \ldots$.
+
+    \begin{enumerate}
+        \item Given that $n \to \infty$, $x_n \to \t$, find the exact value of $\t$.
+        \item By considering $x^2_{n+1} - \t^2$, or otherwise, show that if $x_n > \t$, then $0 < x_{n+1} < \t$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that \[\t = \lim_{n \to \infty} \sqrt{\frac92 + \frac1{x_n}} = \sqrt{\frac92 + \frac1{\t}} \implies 2\t^3 - 9\t - 2  = 0 \implies (\t + 2)\bp{2\t^2 - 4\t - 1} = 0.\] We reject $\t = -2$ since $\t > 0$. We thus consider $2\t^2 -4\t -1 = 0$, which has roots $\t = 1 + \sqrt{\frac32}$ and $\t = 1 - \sqrt{\frac32}$. Once again, we reject $\t = 1 - \sqrt{\frac32}$ since $\t > 0$. Thus, $\t = 1 + \sqrt{\frac32}$.
+    \end{ppart}
+    \begin{ppart}
+        Suppose $x_n > \t$. Then \[x_{n+1}^2 = \frac92 + \frac1{x_n} < \frac92 + \frac1\t = \t^2 \implies 0 < x_{n+1} < \t.\]
+    \end{ppart}
+\end{solution}

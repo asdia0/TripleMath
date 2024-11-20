@@ -1,0 +1,62 @@
+\usepackage{asdia}
+
+\usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[headsepline]{scrlayer-scrpage}
+\usepackage{tocloft}
+
+\usetikzlibrary{external}
+\tikzexternalize[prefix=figures/]
+
+\hypersetup{pdfkeywords={Double Math Solutions},pdfsubject={Double Math}}
+
+\AfterStartingTOC{\clearpage}
+
+\newcommand{\partx}[1]{\cleardoubleoddpage\part{#1}\cleardoubleoddpage}
+
+\clearpairofpagestyles
+\ohead*{\pagemark}
+\chead{\headmark}
+
+% Chapter and section numbering
+\setcounter{secnumdepth}{0}
+
+\makeatletter
+\newcommand{\chapterkey}[1]{%
+  \renewcommand{\chapter@key}{#1}%
+}
+\newcommand{\chapter@key}{???} % initialize
+\renewcommand{\thechapter}{\chapter@key}
+\makeatother
+
+\setlength{\cftchapnumwidth}{2.5em}
+\let \savenumberline \numberline
+\def \numberline#1{\savenumberline{#1.}}
+
+\raggedbottom
+
+% Problem and Solution Environments
+\newcounter{problemnum}[section]
+\newcounter{partnum}[problemnum]
+\newcounter{subpartnum}[partnum]
+
+\renewcommand{\theproblemnum}{\arabic{problemnum}}
+\renewcommand{\thepartnum}{\alph{partnum}}
+\renewcommand{\thesubpartnum}{\roman{subpartnum}}
+
+\newbox\sepbox 
+\newcommand\separator{
+  \setbox\sepbox=\vbox{
+    \begin{center}
+      $\ast$ $\ast$ $\ast$ $\ast$ $\ast$
+    \end{center}
+  }
+  \cleaders\copy\sepbox\vskip\ht\sepbox}
+
+\newcommand*{\problem}{\ifnum\value{problemnum}>0 \separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum.}}}
+\newcommand*{\solution}{\medbreak\noindent{\large\sffamily\bfseries{Solution.}}}
+\newcommand*{\ppart}{\stepcounter{partnum}\smallbreak\noindent{\sffamily\bfseries{Part (\thepartnum).}}}
+\newcommand*{\psubpart}{\stepcounter{subpartnum}\smallbreak\noindent{\sffamily\bfseries\small{Part (\thepartnum)(\thesubpartnum).}}}
+
+\renewcommand{\theenumi}{(\alph{enumi})}
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumii}{(\roman{enumii}}

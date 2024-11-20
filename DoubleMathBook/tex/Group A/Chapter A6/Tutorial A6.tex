@@ -1,0 +1,858 @@
+\section{Tutorial A6}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the rectangular coordinates of the following points.
+        \begin{enumerate}
+            \item $(3, -\frac\pi4)$
+            \item $(1, \pi)$
+            \item $(\frac12, \frac32 \pi)$
+        \end{enumerate}
+        \item Find the polar coordinates of the following points.
+        \begin{enumerate}
+            \item $(3, 3)$
+            \item $(-1, -\sqrt3)$
+            \item $(2, 0)$
+            \item $(4, 2)$
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that $r = 3$ and $\t = -\frac\pi4$. This gives \[x = r\cos\t = \frac{3}{\sqrt2}, \quad y = r\sin\t = -\frac{3}{\sqrt2}.\] Hence, the rectangular coordinate of the point is $(\frac{3}{\sqrt2}, -\frac{3}{\sqrt2})$.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $r = 1$ and $\t = \pi$. This gives \[x = r\cos\t = -1, \quad y = r\sin\t = 0.\] Hence, the rectangular coordinate of the point is $(-1, 0)$.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $r =\frac12$ and $\t = \frac32 \pi$. This gives \[x = \r\cos\t = 0, \quad y = r\sin\t = -\frac12.\] Hence, the rectangular coordinate of the point is $(0, -\frac12)$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that $x = 3$ and $y = -3$. This gives \[r^2 = x^2 + y^2 \implies r = 3\sqrt2, \quad \tan \t = \frac{y}{x} \implies \t = -\frac\pi4.\] Hence, the polar coordinate of the point is $(3\sqrt2, -\frac\pi4)$.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $x = -1$ and $y = -\sqrt3$. This gives \[r^2 = x^2 + y^2 \implies r = 2, \quad \tan \t = \frac{y}{x} \implies \t = \frac\pi3.\] Hence, the polar coordinate of the point is $(2, \frac\pi3)$.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $x = 2$ and $y = 0$. This gives \[r^2 = x^2 + y^2 \implies r = 2, \quad \tan \t = \frac{y}{x} \implies \t = 0.\] Hence, the polar coordinate of the point is $(2, 0)$.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $x = 4$ and $y = 2$. This gives \[r^2 = x^2 + y^2 \implies r = 2\sqrt5, \quad \tan \t = \frac{y}{x} \implies \t = \arctan \frac12.\] Hence, the polar coordinate of the point is $(2\sqrt5, \arctan \frac12)$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Rewrite the following equations in polar form.
+        
+    \begin{enumerate}
+        \item $2x^2 + 3y^2 = 4$
+        \item $y = 2x^2$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[2x^2 + 3y^2 = 2(r\cos\t)^2 + 3(r\sin\t)^2 = 4 \implies r^2 = \frac4{2\cos^2\t + 3\sin^2\t} = \frac4{2 + \sin^2\t}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[y = 2x^2 \implies \frac{y}{x} = 2x \implies \tan \t = 2r\cos \t \implies r = \frac12\tan\t\sec\t.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Rewrite the following equations in rectangular form.
+
+    \begin{enumerate}
+        \item $r = \frac1{1 - 2\cos\t}$
+        \item $r = \sin \t$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{align*}
+            &r = \frac1{1 - 2\cos\t} \implies r - 2r\cos\t = 1 \implies r = 2x + 1 \implies r^2 = 4x^2 + 4x + 1 \\
+            &\hspace{5em}\implies x^2 + y^2 = 4x^2 + 4x + 1 \implies y^2 = 3x^2 + 4x + 1.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        \[r = \sin\t \implies r^2 = r\sin\t \implies x^2 + y^2 = y.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    \begin{enumerate}
+        \item Show that the curve with polar equation $r = 3a\cos\t$, where $a$ is a positive constant, is a circle. Write down its centre and radius.
+        \item By finding the Cartesian equation, sketch the curve whose polar equation is $r = a\sec{\t - \frac\pi4}$, where $a$ is a positive constant.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[r = 3a\cos\t \implies r^2 = 3a r\cos\t \implies x^2 + y^2 = 3ax \implies x^2 - 3ax + y^2 = 0.\] Completing the square, we get \[\bp{x - \frac{3a}2}^2 + y^2  \bp{\frac{3a}{2}}^2.\] Thus, the circle has centre $(\frac{3a}2, 0)$ and radius $\frac{3a}{2}$.
+    \end{ppart}
+    \begin{ppart}
+        \[r = a\sec{\t - \frac\pi4} \implies r\cos{\t - \frac\pi4} = a \implies r\bp{\cos\t + \sin\t} = \sqrt2 a \implies x + y = \sqrt2 a.\]
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -1:sqrt(2)+1,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {sqrt(2)},
+                    xticklabels = {$\sqrt2a$},
+                    ytick = {sqrt(2)},
+                    yticklabels = {$\sqrt2a$},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {-x + sqrt(2)};
+        
+                    \addlegendentry{$x+ y = \sqrt2a$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Sketch the following polar curves, where $r$ is non-negative and $0 \leq \t \leq 2\pi$.
+
+    \begin{enumerate}
+        \item $r = 2$
+        \item $\t = \frac\pi4$
+        \item $r = \frac12 \t$
+        \item $r = 2\csc\t$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:360,
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2, 2},
+                    xticklabels = {2, 2},
+                    ytick = {-2, 2},
+                    yticklabels = {2, 2},
+                    xmin=-4,
+                    xmax=4,
+                    ymin=-3.5,
+                    ymax=3.5,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[color=plotRed,data cs=polar] (x,{2});
+
+                    \addlegendentry{$r = 2$};
+
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -10:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xmin=-3.5,
+                    xmax=3.5,
+                    ymin=-3.5,
+                    ymax=3.5,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north west] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x};
+
+                    \addlegendentry{$\t = \frac\pi4$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2*pi,
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {pi, -pi/2},
+                    xticklabels = {$\pi$, $\frac12 \pi$},
+                    ytick = {pi/4, -3*pi/4},
+                    yticklabels = {$\frac14 \pi$, $\frac34 \pi$},
+                    xmin=-3.5,
+                    xmax=3.5,
+                    ymin=-3.5,
+                    ymax=3.5,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[color=plotRed,data cs=polarrad] { 0.5 * x};
+
+                    \addlegendentry{$r = \frac12 \t$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -10:10,
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {2},
+                    xmin=-3.5,
+                    xmax=3.5,
+                    ymin=-3.5,
+                    ymax=3.5,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {2};
+
+                    \addlegendentry{$r = 2\csc\t$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A sketch of the curve $r = 1 + \sin \frac\t3$ is shown. Copy the diagram and indicate the $x$- and $y$-intercepts.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:6*pi,
+                samples = 200,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmin=-2,
+                xmax=2,
+                ymin=-2,
+                ymax=2,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=south east] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] (x, { 1 + sin((\x r)/3)});
+
+                \addlegendentry{$r = 1 + \sin \frac\t3$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{problem}
+\begin{solution}
+    Observe that the curve is symmetric about the $y$-axis. Also observe that $\frac\t3 \in [0, 2\pi)$, hence we take $\t \in [0, 6\pi)$.
+        
+    For $x$-intercepts, $y = r\sin\t = 0 \implies \t = n\pi$, where $n \in \ZZ$. Due to the symmetry of the curve, we consider only $n = 0, 2, 4$.
+
+    \case{1}{} $n = 0 \implies r = 1 + \sin\frac03\pi = 1$.
+    
+    \case{2}{} $n = 2 \implies r = 1 + \sin\frac23\pi = 1 + \frac{\sqrt3}2$.
+        
+    \case{3}{} $n = 4 \implies r = 1 + \sin\frac43\pi = 1 - \frac{\sqrt3}2$.
+
+    Hence, the curve intersects the $x$-axis at $x = 1, 1 + \frac{\sqrt3}2, 1 - \frac{\sqrt3}2$. Correspondingly, the curve also intersects the $x$-axis at $x = -1, -1 - \frac{\sqrt3}2, -1 + \frac{\sqrt3}2$. 
+
+    For $y$-intercepts, $x = r\cos\t = 0 \implies \t = (n + \frac12)\pi$, where $n \in \ZZ$. Due to the restriction on $\t$, we consider $n \in [0, 5)$.
+
+    \case{1}{} $n = 0, r = 1 + \sin\frac{1/2}3\pi = \frac32$.
+
+    \case{2}{} $n = 1, r = 1 + \sin\frac{3/2}3\pi = 2$.
+
+    \case{3}{} $n = 2, r = 1 + \sin\frac{5/2}3\pi = \frac32$.
+
+    \case{4}{} $n = 3, r = 1 + \sin\frac{7/2}3\pi = \frac12$.
+
+    \case{5}{} $n = 4, r = 1 + \sin\frac{9/2}3\pi = 0$.
+
+    Hence, the curve intersects the $y$-axis at $y = -2, -\frac12, \frac32$.
+    
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:6*pi,
+                samples = 200,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {1, 1.866, 0.113, -1, -1.866, -0.113},
+                xticklabels = {$1$, $1 + \frac{\sqrt3}2$,, $-1$,$-1-\frac{\sqrt3}2$,},
+                ytick = {-2, -0.5, 1.5},
+                yticklabels = {$-2$, $-\frac12$, $\frac32$},
+                xmin=-2,
+                xmax=2,
+                ymin=-2,
+                ymax=2,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north west] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] (x, { 1 + sin((\x r)/3)});
+
+                \addlegendentry{$r = 1 + \sin \frac\t3$};
+
+                \node[anchor=south] at (0.434, 0) {$1-\frac{\sqrt3}2$};
+
+                \node[anchor=south] at (-0.534, 0) {$-1+\frac{\sqrt3}2$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item A graph has polar equation $r = \frac2{\cos\t\sin\a - \sin\t\cos\a}$, where $\a$ is a constant. Express the equation in Cartesian form. Hence, sketch the graph in the case $\a = \frac\pi4$, giving the Cartesian coordinates of the intersection with the axes.
+        \item A graph has Cartesian equation $(x^2+y^2)^2 = 4x^2$. Express the equation in polar form. Hence, or otherwise, sketch the graph.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{align*}
+            r = \frac2{\cos\t\sin\a - \sin\t\cos\a} &\implies r\cos\t\sin\a - r\sin\t\cos\a = x\sin\a - y\cos\a = 2\\
+            &\implies y = x\tan\a - 2\sec\a.
+        \end{align*}
+
+        When $\a = \frac\pi4$, we have $y = x - 2\sqrt{2}$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -sqrt(2):3*sqrt(2),
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {2*sqrt(2)},
+                    xticklabels = {$2\sqrt2$},
+                    ytick = {-2*sqrt(2)},
+                    yticklabels = {$-2\sqrt2$},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x - 2*sqrt(2)};
+        
+                    \addlegendentry{$r = \frac2{\cos\t\sin\a - \sin\t\cos\a}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+
+    \clearpage
+    \begin{ppart}
+        \[(x^2+y^2)^2 = 4x^2 \implies \bp{r^2}^2 = 4(r\cos\t)^2 \implies r^4 = 4r^2\cos^2\t \implies r^2 = 4\cos^2\t.\]
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2*pi,
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-1, 1},
+                    xticklabels = {1, 1},
+                    ytick = \empty,
+                    xmin=-2,
+                    xmax=2,
+                    ymin=-2,
+                    ymax=2,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[color=plotRed,data cs=polarrad] { 2*cos(\x r)};
+
+                    \addplot[color=plotRed,data cs=polarrad] { -2*cos(\x r)};
+        
+                    \addlegendentry{$r^2 = 4\cos^2\t$};
+
+                    \fill (-1, 0) circle[radius=2.5 pt];
+                    \draw[dotted, thick] (-1, 0) -- (-1, 1);
+                    \node[anchor=east] at (-1, 0.5) {$1$};
+                    \fill (1, 0) circle[radius=2.5 pt];
+                    \draw[dotted, thick] (1, 0) -- (1, 1);
+                    \node[anchor=east] at (1, 0.5) {$1$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \frac\pi2$.
+\end{problem}
+\begin{solution}
+    \begin{alignat*}{2}
+        &&x^5 + y^5 &= 5bx^2y^2\\
+        \implies&&(r\cos\t)^5 + (r\sin\t)^5 &= 5b(r\cos\t)^2(r\sin\t)^2\\
+        \implies&&r\bp{\cos^5\t + \sin^5\t} &= 5b\cos^2\t \sin^2\t\\
+        \implies&&r &= \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}
+    \end{alignat*}
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:pi/2,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] {(5 * cos(\x r)^2 * sin(\x r)^2)/(cos(\x r)^5 + sin(\x r)^5)};
+    
+                \addlegendentry{$C$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The equation of a curve, in polar coordinates, is $r = e^{-2\t}$, for $0 \leq \t \leq \pi$. Sketch the curve, indicating clearly the polar coordinates of any axial intercepts.
+\end{problem}
+\begin{solution}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:pi,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {-e^(-pi), 1},
+                xticklabels = {$\bp{e^{-2\pi}, \pi}$, $\bp{1, 0}$},
+                ytick = {e^(-pi/2)},
+                yticklabels = {$\bp{e^{-\pi}, \frac{\pi}2}$},
+                xmax=1.1,
+                xmin=-0.07,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=south west] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] {e^(-x)};
+    
+                \addlegendentry{$r = e^{-2\t}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
+
+\begin{problem}
+    Suppose that a long thin rod with one end fixed at the pole of a polar coordinate system rotates counter-clockwise at the constant rate of 0.5 rad/sec. At time $t = 0$, a bug on the rod is 10 mm from the pole and is moving outward along the rod at a constant speed of 2 mm/sec. Find an equation of the form $r = f(\t)$ for the part of motion of the bug, assuming that $\t = 0$ when $t = 0$. Sketch the path of the bug on the polar coordinate system for $0 \leq t \leq 4\pi$.
+\end{problem}
+\begin{solution}
+    Let $\t(t)$ and $r(t)$ be functions of time, with $\t(0) = 0$ and $r(0) = 10$. We know that $\der{\t}{t} = 0.5$ and $\der{r}{t} = 2$. Hence, \[\der{r}{\t} = \der{r}{t} \cdot \der{t}{\t} = \der{r}{t} \cdot \bp{\der{\t}{t}}^{-1} = 2 \cdot (0.5)^{-1} = 4.\] Thus, $r = 4\t + r(0) = 4\t + 10$.
+
+    Since $\der{\t}{t} = 0.5$ and $\t(0) = 0$, we have $\t = 0.5t$. Hence, $0 \leq t \leq 4\pi \implies 0 \leq \t \leq 2\pi$.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2*pi,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {10, -4*pi-10, 8*pi + 10},
+                xticklabels = {$10$, $4\pi+10$, $8\pi+10$},
+                ytick = {2*pi + 10, -6*pi - 10},
+                yticklabels = {$2\pi + 10$, $6\pi+10$},
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+
+                \addplot[color=plotRed,data cs=polarrad] {4*x + 10};
+    
+                \addlegendentry{$r = 4\t + 10$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The equation, in polar coordinates, of a curve $C$ is $r = ae^{\frac12 \t}$, $0 \leq \t \leq 2\pi$, where $a$ is a positive constant. Write down, in terms of $\t$, the Cartesian coordinates, $x$ and $y$, of a general point $P$ on the curve. Show that the gradient at $P$ is given by $\der{y}{x} = \frac{\tan\t + 2}{1 - 2\tan\t}$.
+
+    Hence, show that the tangent at $P$ is inclined to $\oa{OP}$ at a constant angle $\a$, where $\tan \a = 2$. Sketch the curve $C$.
+\end{problem}
+\begin{solution}
+    Note that $x = r\cos\t$ and $y = r\sin\t$, whence $x = ae^{\frac12 \t}\cos\t$ and $y = ae^{\frac12 \t}\sin\t$. Hence, $P\bp{ae^{\frac12 \t}\cos\t, ae^{\frac12 \t}\sin\t}$.
+
+    Observe that $\der{r}{\t} = \frac12ae^{\frac12 \t} = \frac12r$. Hence, \[\der{y}{x} = \frac{\der{r}{\t} \sin\t + r\cos\t}{\der{r}{\t} \cos\t - r\sin\t} = \frac{\frac12r \sin\t + r\cos\t}{\frac12r \cos\t - r\sin\t} = \frac{\sin\t + 2\cos\t}{\cos\t - 2\sin\t} = \frac{\tan\t + 2}{1 - 2\tan\t}.\]
+
+    Let $\vec t = \cvecii{T_1}{T_2}$ represent the direction of the tangent line. Then \[\vec t = \cvecii1{\derx{y}{x}} = \cvecii{1}{\frac{\tan \t + 2}{1 - 2\tan\t}} = \frac1{1 - 2\tan\t} \cvecii{1 - 2\tan\t}{\tan \t + 2}\] and \[\oa{OP} = \cvecii{x}{y} = \cvecii{ae^{\frac12\t}\cos\t}{ae^{\frac12\t}\sin\t} = ae^{\frac12 \t}\cvecii{\cos\t}{\sin\t}.\] By the definition of the dot-product, we have $\vec t \dotp \oa{OP} = \abs{\vec t}\abs{\oa{OP}} \cos \a$, whence
+    \begin{align*}
+        \cos \a &= \frac{\vec t \dotp \oa{OP}}{\abs{\vec t} \abs{\oa{OP}}} = \frac{(1-2\tan\t)\cos \t + (\tan\t + 2)\sin\t}{\sqrt{(1-2\tan\t)^2 + (\tan\t+2)^2} \cdot \sqrt{\cos^2\t + \sin^2\t}}\\
+        &= \frac{\cos\t + \tan\t\sin\t}{\sqrt{5\tan^2 \t + 5}} = \frac{\cos^2 \t + \sin^2 \t}{\sqrt{5\sin^2 \t + 5\cos^2 \t}} = \frac1{\sqrt5}.
+    \end{align*}
+    Thus, $\a = \arccos \frac1{\sqrt5}$. Since $\tan(\arccos x) = \frac{\sqrt{1-x^2}}{x}$, \[\tan \a = \tan{\arccos \frac1{\sqrt5}} = \frac{\sqrt{1 - \bp{1/\sqrt5}^2}}{1/\sqrt5} = 2.\] Hence, the tangent at $P$ is inclined to $\oa{OP}$ at a constant angle $\a$, where $\tan\a = 2$.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2*pi,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {e^pi, -e^(pi/2)},
+                xticklabels = {$ae^\pi$, $ae^{\frac12 \pi}$},
+                ytick = {e^(pi/4), -e^(3*pi/4)},
+                yticklabels = {$ae^{\frac14 \pi}$, $ae^{\frac34 \pi}$},
+                xmin=-6,
+                xmax=25,
+                ymin=-12,
+                ymax=5,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] {e^(0.5*x)};
+    
+                \addlegendentry{$r = ae^{\frac12 \t}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
+
+\begin{problem}
+    The polar equation of a curve is given by $r = e^\t$ where $0 \leq \t \leq \frac\pi2$. Cartesian axes are taken at the pole $O$. Express $x$ and $y$ in terms of $\t$ and hence find the Cartesian equation of the tangent at $\bp{e^{\frac\pi2}, \frac\pi2}$.
+\end{problem}
+\begin{solution}
+    Recall that $x = r\cos\t$ and $y = r\sin\t$, whence $x = e^\t\cos\t$ and $y = e^\t\sin\t$. Thus, $\der{x}{\t} = e^\t(\cos\t - \sin\t)$, and $\der{y}{x} = e^\t(\cos\t + \sin\t)$. Hence, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{e^\t (\cos\t + \sin\t)}{e^\t (\cos\t - \sin\t)} = \frac{\cos\t+\sin\t}{\cos\t-\sin\t}.\]
+
+    At $\bp{e^{\frac\pi2}, \frac\pi2}$, we clearly have $x = 0$ and $y = e^{\pi/2}$. Also, $\derx{y}{x} = -1$. By the point-slope formula, the equation of the tangent line at $\bp{e^{\frac\pi2}, \frac\pi2}$ is given by $y = -x + e^{\frac\pi2}$.
+\end{solution}
+
+\begin{problem}
+    A curve $C$ has polar equation $r = a \cot \t$, $0 < \t \leq \pi$, where $a$ is a positive constant.
+
+    \begin{enumerate}
+        \item Show that $y = a$ is an asymptote of $C$.
+        \item Find the tangent at the pole.
+    \end{enumerate}
+
+     Hence, sketch $C$ and find the Cartesian equation of $C$ in the form $y^2(x^2 + y^2)= bx^2$, where $b$ is a constant to be determined.
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[r = a\cot\t \implies y = r\sin\t = a\cos\t.\] As $\t \to 0$, $r \to \infty$. Hence, there is an asymptote at $\t = 0$. Since $\cos\t = 1$ when $\t = 0$, the line $y = a\cos\t = a$ is an asymptote of $C$.
+    \end{ppart}
+    \begin{ppart}
+        For tangents at the pole, $r = 0 \implies \cot \t = 0 \implies \t = \frac\pi2$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:pi-0.2,
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xmin=0,
+                    xmax=2,
+                    ymin=-2,
+                    ymax=2,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    \addplot[color=plotRed,data cs=polarrad] {cot(\x r)};
+        
+                    \addlegendentry{$r = a\cot\t$};
+
+                    \addplot[dotted] {1};
+
+                    \addplot[dotted] {-1};
+
+                    \node[anchor=south east] at (2, 1) {$y = a$};
+
+                    \node[anchor=north east] at (2, -1) {$y = -a$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        Note that \[r = a\cot\t = a\bp{\frac{r\cos\t}{r\sin\t}} = a\bp{\frac{x}{y}}.\] Thus, \[x^2 + y^2 = r^2 = a^2 \bp{\frac{x^2}{y^2}} \implies y^2\bp{x^2 + y^2} = a^2 x^2,\] whence $b = a^2$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2*pi,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$P$};
+                    }
+                ]
+                \addplot[plotRed,data cs=polarrad] {4 + 1.5 * cos(5 * \x r)};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+     Relative to the pole $P$ and the initial line $\t = 0$, the polar equation of the curve shown is either
+    
+    \begin{enumerate}
+        \item[i.] $r = a+b\sin n\t$, or
+        \item[ii.] $r = a + b\cos n\t$
+    \end{enumerate}
+     where $a$, $b$ and $n$ are positive constants. State, with a reason, whether the equation is (i) or (ii) and state the value of $n$.
+
+    The maximum value of $r$ is $\frac{11}2$ and the minimum value of $r$ is $\frac52$. Find the values of $a$ and $b$.
+\end{problem}
+\begin{solution}
+    Since the curve is symmetrical about the horizontal half-line $\t = 0$, the polar equation of the curve is a function of $\cos n\t$ only. Hence, the polar equation of the curve is $r = a+b\cos n\t$, with $n = 5$.
+
+    Observe that the maximum value of $r$ is achieved when $\cos 5\t = 1$, whence $r = a + b$. Thus, $a + b = \frac{11}2$. Also observe that the minimum value of $r$ is achieved when $\cos 5\t = -1$, whence $r = a-b$. Thus, $a - b = \frac52$. Solving, we get $a = 4$ and $b = \frac32$.
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2*pi,
+                samples = 101,
+                xmin=-10,
+                xmax=10,
+                ymin=-5,
+                ymax=15,
+                axis y line = none,
+                axis x line = none,
+                legend cell align={left},
+                legend pos=outer north east,
+                ]
+
+                \addplot[plotRed,data cs=polarrad] {6 * (1 + sin(\x r))};
+
+                \addlegendentry{$r = 6(1 + \sin\t)$};
+
+                \fill (0, 0) circle[radius=2.5 pt];
+
+                \draw (-10, 3) -- (10, 3) -- (10, 15) -- (-10, 15) -- (-10 , 3);
+
+                \node[anchor=north] at (0, 15) {Stage};
+
+                \node[anchor=south] at (0, 0) {Microphone};
+
+                \addplot[dotted, thick, domain=-10:10] {-1.5};
+
+                \node[anchor=north] at (0, -1.5) {Audience};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Sound engineers often use a microphone with a cardioid acoustic pickup pattern to record live performances because it reduces pickup from the audience. Suppose a cardioid microphone is placed 3 metres from the front of the stage, and the boundary of the optimal pickup region is given by the cardioid with polar equation
+
+    \[
+        r = 6(1 + \sin \t)
+    \]
+    where $r$ is measured in metres and the microphone is at the pole.
+
+    Find the minimum distance from the front of the stage the first row of the audience can be seated such that the microphone does not pick up noise from the audience.
+\end{problem}
+\begin{solution}
+    Note that $r = 6(1 + \sin\t) = 6(1 + \frac{y}{r})$, whence $r^2 = 6r + 6y$. Thus,
+    \[r^2 - 6r - 6y = 0 \implies r = 3 \pm \sqrt{9 + 6y} \implies 9 + 6y = (r-3)^2.\] Since $9 + 6y = (r-3)^2 \geq 0$, we have $y \geq -1.5$. Thus, the furthest distance the audience has to be from the stage is $\abs{-1.5} + 3 = 4.5$ m.
+\end{solution}
+
+\begin{problem}
+    To design a flower pendant, a designer starts off with a curve $C_1$, given by the Cartesian equation
+
+    \[
+        \bp{x^2+y^2}^2 = a^2\bp{3x^2-y^2}
+    \]
+    where $a$ is a positive constant.
+
+    \begin{enumerate}
+        \item Show that a corresponding polar equation of $C_1$ is $r^2 = a^2(1 + 2\cos 2\t)$.
+        \item Find the equations of the tangents to $C_1$ at the pole.
+    \end{enumerate}
+
+     Another curve $C_2$ is obtained by rotating $C_1$ anti-clockwise about the origin by $\frac\pi3$ radians.
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item State a polar equation of $C_2$.
+        \item Sketch $C_1$ and $C_2$ on the same diagram, stating clearly the exact polar coordinates of the points of intersection of the curves with the axes. Find also the exact polar coordinates of the points of intersection with $C_1$ and $C_2$.
+    \end{enumerate}
+
+     The curve $C_3$ is obtained by reflecting $C_2$ in the line $\t = \frac\pi2$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{4}
+        \item State a polar equation of $C_3$.
+        \item The designer wishes to enclose the 3 curves inside a circle given by the polar equation $r = r_1$. State the minimum value of $r_1$ in terms of $a$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that $\bp{x^2 + y^2}^2 = r^4$ and $3x^2 - y^2 = r^2\bp{3\cos^2 \t - \sin^2\t}$. Hence, \[\bp{x^2+y^2}^2 = a^2\bp{3x^2-y^2} \implies r^2 = a^2 \bp{3\cos^2\t - \sin^2\t}.\] Note that \[3\cos^2\t - \sin^2 \t = 1 + 2\cos^2 \t - 2\sin^2\t = 1 + 2\cos 2\t.\] Thus, \[r^2 = a^2\bp{1 + 2\cos2\t}.\]
+    \end{ppart}
+    \begin{ppart}
+        For tangents at the pole, \[r = 0 \implies 1 + 2\cos2\t = 0 \implies \cos2\t = -\frac12.\] Note that $0 \leq 2\t \leq 2\pi$. Hence, $2\t = \frac23 \pi, \frac43\pi$, whence $\t = \frac13\pi, \frac23\pi$. For full lines, we also have $\t = \frac23 \pi$ and $\t = \frac53 \pi$.
+    \end{ppart}
+    \begin{ppart}
+        \[r^2 = a^2 \bs{1 + 2\cos{2\bp{\t-\frac\pi3}}} = a^2 \bs{1 + 2\cos{2\t - \frac23 \pi }}.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2*pi,
+                    samples = 628,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {sqrt(3), -sqrt(3)},
+                    ytick = {sqrt(2), -sqrt(2)},
+                    xticklabels = {$\bp{\sqrt3a, 0}$, $\bp{\sqrt3a, \pi}$},
+                    yticklabels = {$\bp{\sqrt2a, \frac12 \pi}$, $\bp{\sqrt2a, \frac32 \pi}$},
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east
+                    ]
+                    \addplot[plotRed,data cs=polarrad] {sqrt(1 + 2*cos(2*\x r))};
+        
+                    \addlegendentry{$C_1$};
+
+                    \addplot[plotBlue,data cs=polarrad] {sqrt(1 + 2*cos(2*\x r - 120))};
+
+                    \addlegendentry{$C_2$};
+
+                    \fill (1.22, 0.70) circle[radius=2.5 pt];
+
+                    \fill (-1.22, -0.70) circle[radius=2.5 pt];
+
+                    \fill (0, 0) circle[radius=2.5 pt];
+
+                    \node[anchor=west] at (-1.22, -0.70) {$\bp{\sqrt2a, \frac76 \pi}$};
+
+                    \node[anchor=east] at (1.22, 0.70) {$\bp{\sqrt2a, \frac16 \pi}$};
+
+                    \node[anchor=north west] at (0, 0) {$\bp{0, 0}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        Consider the horizontal intercepts of $C_1$. When $\t = 0$, $r = \sqrt3 a$. Hence, by symmetry, $C_1$ intercepts the horizontal axis at $\bp{\sqrt3a, 0}$ and $\bp{\sqrt3a, \pi}$.
+
+        Consider the vertical intercepts of $C_2$. When $\t = \frac\pi2$, $r = \sqrt2a$. Hence, by symmetry, $C_2$ intercepts the vertical axis at $\bp{\sqrt2a, \frac\pi2}$ and $\bp{\sqrt2a, \frac32 \pi}$.
+
+        Now consider the intersections between $C_1$ and $C_2$. By symmetry, it is obvious that the points of intersections must lie along the half-lines $\frac\pi6$ and $\frac{7\pi}6$, or along the half-lines $\frac{4\pi}6$ and $\frac{10\pi}6$. By symmetry, we consider only the half-lines $\frac\pi6$ and $\frac{4\pi}6$.
+
+        \case{1}[$\t = \frac\pi6$] Substituting $\t = \frac\pi6$ into the equation of $C_1$, we obtain $r = \sqrt2 a$. Hence, $C_1$ and $C_2$ intersect at $\bp{\sqrt2a, \frac16 \pi}$ and, by symmetry, at $\bp{\sqrt2a, \frac76 \pi}$.
+
+        \case[2]{$\t = \frac{4\pi}6$} Substituting $\t = \frac{4\pi}{6}$ into the equation of $C_1$, we obtain $r = 0$. Hence, $C_1$ and $C_2$ intersect at $(0, 0)$.
+    \end{ppart}
+    \begin{ppart}
+        Reflecting about the line $\t = \frac\pi2$ is equivalent to applying the map $\t \mapsto \t + \frac13\pi$ to $C_1$. Hence, \[r^2 = a^2 \bs{1 + 2\cos{2\bp{\t + \frac13\pi}}} = a^2 \bs{1 + 2\cos{2\t + \frac23 \pi }}.\]
+    \end{ppart}
+    \begin{ppart}
+        $r_1 = \sqrt3 a$.
+    \end{ppart}
+\end{solution}

@@ -1,0 +1,650 @@
+\section{Tutorial A2}
+
+\begin{problem}
+    Without using a graphing calculator, show that the equation $x^3+2x^2-2=0$ has exactly one positive root.
+
+    This root is denoted by $\a$ and is to be found using two different iterative methods, starting with the same initial approximation in each case.
+
+    \begin{enumerate}
+        \item Show that $\a$ is a root of the equation $x = \sqrt{\frac2{x+2}}$, and use the iterative formula $x_{n+1} = \sqrt{\frac2{x_n + 2}}$, with $x_1 = 1$, to find $\a$ correct to 2 significant figures.
+        \item Use the Newton-Raphson method, with $x_1=1$, to find $\a$ correct to 3 significant figures.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Let $f(x) = x^3 + 2x^2 - 2$. Observe that for all $x > 0$, we have $f'(x) = 3x^2 + 4x > 0$. Hence, $f(x)$ is strictly increasing on $(0, \infty)$. Since $f(0)f(1) = (-2)(1) < 0$, it follows that $f(x)$ has exactly one positive root.
+
+    \begin{ppart}
+        We know $f(\a) = 0$. Hence, \[\a^3 + 2\a^2 - 2 = 0 \implies \a^2 (\a + 2) = 2 \implies \a^2 = \frac2{\a + 2} \implies \a = \sqrt{\frac2{\a + 2}}.\] Note that we reject the negative branch since $\a > 0$. We hence see that $\a$ is a root of the equation $x = \sqrt{\frac2{x+2}}$. Using the iterative formula $x_{n+1} = \sqrt{\frac2{x_n + 2}}$ with $x_1 = 1$, we have
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $x_n$ \\ \hline
+            1 & 1 \\ \hline
+            2 & 0.81650 \\ \hline
+            3 & 0.84268 \\ \hline
+            4 & 0.83879 \\ \hline
+            \end{tabular}
+        \end{table}
+        Hence, $\a = 0.84 \tosf2$.
+    \end{ppart}
+    \begin{ppart}
+        Using the Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$) with $x_1 = 1$, we have
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $x_n$ \\ \hline
+            1 & 1 \\ \hline
+            2 & 0.857143 \\ \hline
+            3 & 0.839545 \\ \hline
+            4 & 0.839287 \\ \hline
+            5 & 0.839287 \\ \hline
+            \end{tabular}
+        \end{table}
+        Hence, $\a = 0.839 \tosf3$.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    \begin{enumerate}
+        \item Show that the tangent at the point $(e, 1)$ to the graph $y=\ln x$ passes through the origin, and deduce that the line $y=mx$ cuts the graph $y=\ln x$ in two points provided that $0 < m <  \frac1e$.
+        \item For each root of the equation $\ln x = \frac13 x$, find an integer $n$ such that the interval $n < x < n+1$ contains the root. Using linear interpolation, based on $x=n$ and $x = n+1$, find a first approximation to the smaller root, giving your answer to 1 decimal place. Using your first approximation, obtain, by the Newton-Raphson method, a second approximation to the smaller root, giving your answer to 2 decimal places.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that the derivative of $y = \ln x$ at $x = e$ is $\frac1e$. Using the point slope formula, we see that the equation of the tangent at the point $(e,1)$ is given by \[y - 1 = \frac{x-e}{e} \implies y = \frac{x}{e}.\] Since $x=0$, $y=0$ is clearly a solution, the tangent passes through the origin. From the graph below, it is clear that for $y = mx$ to intersect $y = \ln x$ twice, we must have $0 < m < \frac1e$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -1:5,
+                    samples = 50,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = \empty,
+                    ymin=-0.5,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {ln(x)};
+
+                    \addlegendentry{$y=\ln x$};
+
+                    \addplot[plotBlue] {1/e * x};
+
+                    \addlegendentry{$y=x/e$};
+
+                    \fill (axis cs: 2.718, 1) circle[radius=2.5pt] node[anchor=south east] {$(e, 1)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+
+    \begin{ppart}
+        Consider $f(x) = \frac13 x - \ln x$. Let $\a$ and $\b$ be the smaller and larger root to $f(x) = 0$ respectively. Observe that $f(1)f(2) = (1)(-0.03) < 0$ and $f(4)f(5) = (-0.05)(0.06) < 0$. Thus, for the smaller root $\a$, $n = 1$, while for the larger root $\b$, $n = 4$.
+
+        Let $x_1$ be the first approximation to $\a$.
+        Using linear interpolation, we have \[x_1 = \frac{1f(2) - 2f(1)}{f(2) - f(1)} = 1.9 \todp{1}\]
+
+        Note that $f'(x) = \frac13 - \frac1x$. Using the Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$), we have
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $x_n$ \\ \hline
+            1 & 1.9 \\ \hline
+            2 & 1.85585 \\ \hline
+            3 & 1.85718 \\ \hline
+            \end{tabular}
+        \end{table}
+        Hence, $\a = 1.86 \todp{2}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Find the exact coordinates of the turning points on the graph of $y = f(x)$ where $f(x) = x^3-x^2-x-1$. Deduce that the equation $f(x) = 0$ has only one real root $\a$, and prove that $\a$ lies between 1 and 2. Use the Newton-Raphson method applied to the equation $f(x) = 0$ to find a second approximation $x_2$ to $\a$, taking $x_1$, the first approximation, to be 2. With reference to a graph of $y=f(x)$, explain why all further approximations to $\a$ by this process are always larger than $\a$.
+\end{problem}
+\begin{solution}
+    For turning points, $f'(x) = 0$. \[f'(x) = 0 \implies 3x^2-2x-1 = 0 \implies (3x+1)(x-1) = 0.\] Hence, $x = -\frac13$ or $x = 1$. When $x = -\frac13$, we have $y = -0.815$, giving the coordinate $\bp{-\frac13, -0.815}$. When $x = 1$, we have $y = -2$, giving the coordinate $(1, -2)$.
+
+    Observe that $f(x)$ is strictly increasing for all $x > 1$. Further, since both turning points have a negative $y$-coordinate, it follows that $y < 0$ for all $x \leq 1$. Since $f(1)f(2) = (-2)(1) < 0$, the equation $f(x) = 0$ has only one real root.
+
+    Using the Newton-Raphson method with $x_1 = 2$, we have $x_2 = x_1 - \frac{f(x_1)}{f'(x_1)} = \frac{13}7$.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 1.5:2.5,
+                samples = 50,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {1.8393, 1.994, 2.4},
+                xticklabels = {$\a$, $x_2$, 2},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ymin = -2,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:1.5,0) 
+                        node [anchor=east] {$O$};
+                    }
+                ]
+
+                \draw[thick,black!70,TwoMarks=0.1] (1.5,0) -- (1.8,0);
+
+                \addplot[plotRed] {x^3-x^2-x-1};
+
+                \addlegendentry{$y=x^3-x^2-x-1$};
+
+                \draw[dotted, thick] (2.4, 0) -- (2.4, 4.644);
+
+                \addplot[plotBlue] {11.48 * (x-2.4) + 4.644};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    Since $x_2$ lies on the right of $\a$, the Newton-Raphson method gives an over-estimation given an initial approximation of 2. Thus, all further approximations to $\a$ will also be larger than $\a$.
+\end{solution}
+
+\begin{problem}
+    A curve $C$ has equation $y = x^5 + 50x$. Find the least value of $\der{y}{x}$ and hence give a reason why the equation $x^5+50x=10^5$ has exactly one real root. Use the Newton-Raphson method, with a suitable first approximation, to find, correct to 4 decimal places, the root of the equation $x^5+50x=10^5$. You should demonstrate that your answer has the required accuracy.
+\end{problem}
+\begin{solution}
+    Since $y = x^5 + 50x$, we have $\der{y}{x} = 5x^4 + 50$. Since $x^4 \geq 0$ for all real $x$, the minimum value of $\der{y}{x}$ is 50.
+
+    Let $f(x) = x^5 + 50x$. Since $\min \der{f}{x} = 50 > 0$, it follows that $f(x)$ is strictly increasing. Hence, $f(x)$ will intersect only once with the line $y = 10^5$, whence the equation $x^5 + 50x = 10^5$ has exactly one real root.
+
+    Observe that $f(9)f(10) = (-40901)(50) < 0$. Thus, there must be a root in the interval $(9, 10)$. We now use the Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$) with $x_1 = 9$ as the first approximation.
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        $n$ & $x_n$ \\ \hline
+        1 & 9 \\ \hline
+        2 & 10.2178921 \\ \hline
+        3 & 10.0017491 \\ \hline
+        4 & 9.9901221 \\ \hline
+        5 & 9.9899912 \\ \hline
+        6 & 9.9899900 \\ \hline
+        \end{tabular}
+    \end{table}
+    Thus, the root is $9.9900 \todp{4}$.
+
+    Observe that $f(9.98995)f(9.99005) = (-2.00)(3.00) < 0$. Hence, the root lies in the interval $(9.98995, 9.99005)$ whence the calculated root has the required accuracy.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item A function $f$ is such that $f(4) = 1.158$ and $f(5) = -3.381$, correct to 3 decimal places in each case. Assuming that there is a value of $x$ between 4 and 5 for which $f(x) = 0$, use linear interpolation to estimate this value.
+        
+        For the case when $f(x) = \tan x$, and $x$ is measured in radians, the value of $f(4)$ and $f(5)$ are as given above. Explain, with the aid of a sketch, why linear interpolation using these values does not give an approximation to a solution of the equation $\tan x = 0$.
+
+        \item Show, by means of a graphical argument or otherwise, that the equation $\ln{x-1} = -2x$ has exactly one real root, and show that this root lies between 1 and 2. 
+        
+        The equation may be written in the form $\ln{x-1} + 2x = 0$. Show that neither $x=1$ nor $x=2$ is a suitable initial value for the Newton-Raphson method in this case.
+
+        The equation may also be written in the form $x - 1 - e^{-2x} = 0$. For this form, use two applications of the Newton-Raphson method, starting with $x=1$, to obtain an approximation to the root, giving 3 decimal places in your answer.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let the root of $f(x) = 0$ be $\a$. Using linear interpolation on the interval $[4, 5]$, we have \[\a = \frac{4f(5) - 5f(4)}{f(5) - f(4)} = 4.255 \todp{3}.\]
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    samples = 500,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {4, 5},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=3,xmax=6,ymin=-10,ymax=10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:3,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+
+                    \draw[thick,black!70,TwoMarks=0.1] (pi, 0) -- (pi + 0.3,0);
+
+                    \addplot[plotRed, domain=pi:3*pi/2-0.01] {tan(\x r)};
+
+                    \addplot[plotRed, domain=3*pi/2+0.01:5*pi/2-0.01] {tan(\x r)};
+
+                    \draw[dotted, thick] (axis cs:3*pi/2, -10) -- (axis cs:3*pi/2, 10);
+                    \node[anchor=north west] at (axis cs:3*pi/2, 10) {$x = \frac32 \pi$};
+
+                    \addlegendentry{$y=\tan x$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        Since $\tan x$ has a vertical asymptote at $x = \frac32 \pi$, it is not continuous on $[4, 5]$. Thus, linear interpolation diverges when applied to the equation $\tan x = 0$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:3,
+                    samples = 300,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-4,
+                    xtick={2},
+                    ytick=\empty,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    
+                    \addplot[plotRed, name path=f1] {ln(x-1)};
+
+                    \addlegendentry{$y = \ln{x-1}$};
+
+                    \addplot[plotBlue, name path=f2] {-2*x};
+
+                    \addlegendentry{$y = -2x$};
+
+                    \fill [name intersections={of=f1 and f2,by={E1}}] (E1) circle[radius=2.5pt] node[anchor=west] {$(1.109, -2.218)$};
+
+                    \draw[dotted, thick] (axis cs:1, -4) -- (axis cs:1, 1);
+
+                    \node[anchor=north west] at (1, 0.75) {$x = 1$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        Since there is only one intersection between the graphs $y = \ln{x-1}$ and $y = -2x$, there is only one real root to the equation $\ln{x-1} = -2x$. Furthermore, since $y=-2x$ is negative for all $x > 0$ and $y = \ln{x-1}$ is negative only when $1 < x < 2$, it follows that the root must lie between 1 and 2.
+
+        Let $f(x) = \ln{x-1} + 2x$. Then $f'(x) = \frac1{x-1} + 2$. Note that the Newton-Raphson method is given by $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$.
+
+        Since $f'(1)$ is undefined, an initial approximation of $x_1 = 1$ cannot be used for the Newton-Raphson method, which requires a division by $f'(1)$.
+
+        Using the Newton-Raphson method with the initial approximation $x_2 = 2$, we see that $x_2 = 1$. Once again, because $f'(1)$ is undefined, $x_1 = 2$ is also not a suitable initial value.
+
+        Let $g(x) = x-1-e^{-2x}$. Then $g'(x) = 1+2e^{-2x}$. Using the Newton-Raphson method with the initial approximation $x_1=1$, we have
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $x_n$ \\ \hline
+            1 & 1 \\ \hline
+            2 & 1.106507 \\ \hline
+            3 & 1.108857 \\ \hline
+            \end{tabular}
+        \end{table}
+        Hence, $x = 1.109 \todp{3}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The equation $x = 3\ln x$ has two roots $\a$ and $\b$, where $1 < \a < 2$ and $4 < \b < 5$. Using the iterative formula $x_{n+1} = F(x_n)$, where $F(x) = 3 \ln x$, and starting with $x_0 = 4.5$, find the value of $\b$ correct to 3 significant figures. Find a suitable $F(x)$ for computing $\a$.
+\end{problem}
+\begin{solution}
+    Using the iterative formula $x_{n+1} = F(x_n)$, we have
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        $n$ & $x_n$ & $n$ & $x_n$\\ \hline
+        0 & 4.5 & 5 & 4.53175 \\ \hline
+        1 & 4.51223 & 6 & 4.53333 \\ \hline
+        2 & 4.52038 & 7 & 4.53437 \\ \hline
+        3 & 4.52579 & 8 & 4.53506 \\ \hline
+        4 & 4.52937 & 9 & 4.53551 \\ \hline
+        \end{tabular}
+    \end{table}
+    Hence, $\b = 4.54 \tosf{3}$.
+
+    Note that $x = 3\ln x \implies x = e^{x/3}$. Observe that $\der{}{x} (e^{x/3}) = \frac13 e^{x/3}$, which is between $-1$ and 1 for all $1 < x < 2$. Thus, the iterative formula $x_{n+1} = F(x_n)$ will converge, whence $F(x) = e^{x/3}$ is suitable for computing $\a$.
+\end{solution}
+
+\begin{problem}
+    Show that the cubic equation $x^3 + 3x - 15 = 0$ has only one real root. This root is near $x=2$. The cubic equation can be written in any one of the forms below:
+    \begin{enumerate}
+        \item $x = \frac13 (15-x^3)$
+        \item $x = \frac{15}{x^2 + 3}$
+        \item $x = (15-3x)^{1/3}$
+    \end{enumerate}
+
+    Determine which of these forms would be suitable for the use of the iterative formula $x_{r+1} = F(x_r)$, where $r = 1, 2, 3, \ldots$.
+
+    Hence, find the root correct to 3 decimal places.
+\end{problem}
+\begin{solution}
+    Let $f(x) = x^3 + 3x - 15$. Then $f'(x) = 3x^2 + 3 > 0$ for all real $x$. Hence, $f$ is strictly increasing. Since $f$ is continuous, $f(x) = 0$ has only one real root.
+
+    \begin{ppart}
+        Let $g_1(x) = \frac13 (15-x^3)$. Then $g'_1(x) = -x^2$. For values of $x$ near 2, $\abs{g'_1(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_1(x_n)$ will diverge and $g_1(x)$ is unsuitable.
+    \end{ppart}
+
+    \begin{ppart}
+        Let $g_2(x) = \frac{15}{x^2 + 3}$. Then $g'_2(x) = \frac{-30x}{\bp{x^2 + 3}^2}$. For values of $x$ near 2, $\abs{g'_2(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_2(x_n)$ will diverge and $g_2(x)$ is unsuitable.
+    \end{ppart}
+    
+    \begin{ppart}
+        Let $g_3(x) = (15-3x)^{1/3}$. Then $g'_3(x) = -(15-3x)^{-2/3}$. For values of $x$ near 2, $\abs{g'_3(x)} < 1$. Hence, the iterative formula $x_{n+1} = g_3(x_n)$ will converge and $g_3(x)$ is suitable.
+
+        Using the iterative formula $x_{r+1} = g_3(x_r)$, we get
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $r$ & $x_r$ \\ \hline
+            1 & 2 \\ \hline
+            2 & 2.080084 \\ \hline
+            3 & 2.061408 \\ \hline
+            4 & 2.065793 \\ \hline
+            5 & 2.064765 \\ \hline
+            \end{tabular}
+        \end{table}
+        Hence, $x = 2.065 \todp{3}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The equation of a curve is $y=f(x)$. The curve passes through the points $(a, f(a))$ and $(b, f(b))$, where $0 < a < b$, $f(a) > 0$ and $f(b) < 0$. The equation $f(x) = 0$ has precisely one root $\a$ such that $a < \a < b$. Derive an expression, in terms of $a$, $b$, $f(a)$ and $f(b)$, for the estimated value of $\a$ based on linear interpolation.
+
+    Let $f(x) = 3e^{-x} - x$. Show that $f(x) = 0$ has a root $\a$ such that $1 < \a < 2$, and that for all $x$, $f'(x)<0$ and $f''(x) > 0$. Obtain an estimate of $\a$ using linear interpolation to 2 decimal places, and explain by means of a sketch whether the value obtained is an over-estimate or an under-estimate.
+
+    Use one application of the Newton-Raphson method to obtain a better estimate of $\a$, giving your answer to 2 decimal places.
+\end{problem}
+\begin{solution}
+    Using the point-slope formula, the equation of the line that passes through both $(a, f(a))$ and $(b, f(b))$ is \[y - f(a) = \frac{f(a) - f(b)}{a - b} (x - a).\] Note that $(\a, 0)$ is approximately the solution to the above equation. Thus, \[0-f(a) \approx \frac{f(a) - f(b)}{a-b} (\a - a) \implies \a \approx \frac{bf(a) - af(b)}{f(a) - f(b)}.\]
+
+    Since $f(x)$ is continuous, and $f(1)f(2) = (0.10)(-1.6) < 0$, there exists a root $\a \in (1, 2)$.
+
+    Note that $f'(x) = -3e^{-x}-1$ and $f''(x) = 3e^{-x}$. Since $e^{-x} > 0$ for all $x$, we have that $f'(x) < 0$ and $f''(x) > 0$ for all $x$.
+
+    Using linear interpolation on the interval $(1, 2)$, we have \[ \a = \frac{2\cdot f(1) - 1 \cdot f(2)}{f(1) - f(2)} = 1.06 \todp{2}.\]
+
+    Since $f'(x) < 0$ and $f''(x) > 0$, we know that $f(x)$ is strictly decreasing and is concave upwards. $f(x)$ hence has the following shape:
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:5,
+                samples = 300,
+                axis y line=middle,
+                axis x line=middle,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                xtick={0.5, 4, 1.0499},
+                xticklabels = {1, 2, $\a$},
+                ytick={3},
+                ymax=4,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=east] {$O$};
+                    }
+                ]
+                
+                \addplot[plotRed] {3*e^(-x) -x};
+
+                \addlegendentry{$y = 3e^{-x} -x$};
+
+                \draw[plotBlue] (axis cs:0.5, 1.32) -- (axis cs:4, -3.945);
+
+                \draw[dotted] (axis cs:0.5, 0) -- (axis cs:0.5, 1.32);
+
+                \draw[dotted] (axis cs:4, 0) -- (4, -3.945);
+            \end{axis} 
+        \end{tikzpicture}
+    \end{center}
+    From the graph, we see that the value obtained is an over-estimate.
+
+    Using the Newton-Raphson method with the initial approximation $x_1 = 1.06$, we get \[\a = x_1 - \frac{f(x_1)}{f'(x_1)} = 1.05 \todp{2}.\]
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -2:17,
+                samples = 300,
+                axis y line=middle,
+                axis x line=middle,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                xtick={8.045},
+                xticklabels={$\a$},
+                ytick=\empty,
+                ymin=-1.1,
+                ymax=1,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north west] {$O$};
+                    }
+                ]
+                
+                \addplot[plotRed] {x/5 - ln(x+2)};
+
+                \addlegendentry{$y = \frac15 x - \ln{x+2}$};
+
+                \fill (3, -1.009) circle[radius=2.5pt] node[anchor=south east] {$M$};
+
+                \addplot[dotted, thick] {1/5 * (x-3) - 1.009};
+            \end{axis} 
+        \end{tikzpicture}
+    \end{center}
+
+    The diagram shows a sketch of the graph $y = \frac13 x - \ln{x+2}$. Find the $x$-coordinate of the minimum point $M$ on the graph, and verify that $y$ is positive when $x = 20$.
+
+    Show that the gradient of the curve is always less than $\frac15$. Hence, by considering the line through $M$ having gradient $\frac15$, show that the positive root of the equation $\frac13 x - \ln{x+2} = 0$ is greater than 8.
+
+    Use linear interpolation, once only, on the interval $[8, 20]$, to find an approximate value $a$ for this positive root, giving your answer to 1 decimal place.
+
+    Using $a$ as an initial value, carry out one application of the Newton-Raphson method to obtain another approximation to the positive root, giving your answer to 2 decimal places.
+\end{problem}
+\begin{solution}
+    For stationary points, $y' = 0$. \[y' = 0 \implies \frac15 - \frac1{x+2} \implies x = 3.\] By the second derivative test, we see that $y''(x) = \frac1{(x+2)^2} > 0$. Hence, the $x$-coordinate of $M$ is 3. Substituting $x = 20$ into the equation of the curve gives $y = 4 - \ln 22 = 0.909 > 0$.
+
+    We know that $y' = \frac15 - \frac1{x+2}$, hence $y' < \frac15$ for all $x > -2$. Since the domain of the curve is $x > -2$, $y'$ is always less than $\frac15$.
+
+    Let $(\a, 0)$ be the coordinates of the root of the line through $M$ having gradient $\frac15$. We know that the coordinates of $M$ are $\bp{3, \frac35 - \ln5}$. Taking the gradient of the line segment joining $M$ and $(\a, 0)$, we get \[\frac{\bp{\frac35 - \ln5} - 0}{3 - \a} = \frac15 \implies \a = 5\ln 5 = 8.05 > 8.\] Since the gradient of the curve is always less than $\frac15$, $\a$ represents the lowest possible value of the positive root of the curve. Hence, the positive root of the equation $\frac15 x - \ln{x+2} = 0$ is greater than 8.
+
+    Let $f(x) = \frac15 x - \ln{x+2}$. Using linear interpolation on the interval $[8, 20]$, we have \[\a = \frac{8f(20) - 20f(8)}{f(20) - f(8)} = 13.2 \todp{1}.\]
+
+    Using the Newton-Raphson method with the initial approximation $x_1 = 13.2$, we have \[\a = x_1 - \frac{f(x_1)}{f'(x_1)} = 13.81 \todp{2}.\]
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item The function $f$ is such that $f(a)f(b) < 0$, where $a < b$. A student concludes that the equation $f(x) = 0$ has exactly one root in the interval $(a,b)$. Draw sketches to illustrate two distinct ways in which the student could be wrong.
+        \item The equation $\sec^2x - e^2 = 0$ has a root $\a$ in the interval $[1.5, 2.5]$. A student uses linear interpolation once on this interval to find an approximation to $\a$. Find the approximation to $\a$ given by this method and comment on the suitability of the method in this case.
+        \item The equation $\sec^2x - e^x = 0$ also has a root $\b$ in the interval $(0.1, 0.9)$. Use the Newton-Raphson method, with $f(x) = \sec^2x-e^x$ and initial approximation $0.5$, to find a sequence of approximations $\bc{x_1, x_2, x_3, \ldots}$ to $\b$. Describe what is happening to $x_n$ for large $n$, and use a graph of the function to explain why the sequence is not converging to $\b$.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \medbreak
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        domain = -2:2,
+                        samples = 201,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        xtick={-1, 1},
+                        xticklabels={$a$, $b$},
+                        ytick=\empty,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north west] {$O$};
+                            }
+                        ]
+                        
+                        \addplot[plotRed, unbounded coords=jump] {5/x};
+                    \end{axis} 
+                \end{tikzpicture}
+            \end{center}
+        \end{minipage}
+        \hspace{0.05\textwidth}
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        domain = -3*pi/2:5*pi/2,
+                        samples = 201,
+                        axis y line=middle,
+                        axis x line=middle,
+                        xlabel = {$x$},
+                        ylabel = {$y$},
+                        xtick={-pi, 2*pi},
+                        xticklabels={$a$, $b$},
+                        ytick=\empty,
+                        ymax=1.2,
+                        legend cell align={left},
+                        legend pos=outer north east,
+                        after end axis/.code={
+                            \path (axis cs:0,0) 
+                                node [anchor=north east] {$O$};
+                            }
+                        ]
+                        
+                        \addplot[plotRed, unbounded coords=jump] {cos(\x r)};
+                    \end{axis} 
+                \end{tikzpicture}
+            \end{center}
+        \end{minipage}
+    \end{ppart}
+
+    \begin{ppart}
+        Let $f(x) = \sec^2 x - e^x$. Using linear interpolation on the interval $[1.5, 2.5]$, \[a = \frac{1.5f(2.5)-2.5f(1.5)}{f(2.5) - f(1.5)} = 1.06 \todp{2}.\]
+
+        $\sec^2{x}$ is not continuous on the interval $[1.5, 2.5]$ due to the presence of an asymptote at $x = \frac{\pi}2$. Hence, linear interpolation is not suitable in this case.
+    \end{ppart}
+
+    \begin{ppart}
+        We know $f'(x) = 2\sec^2 x \tan x -e^x$. Using the Newton-Raphson method with the initial approximation $x_1 = 0.5$,
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $r$ & $x_r$ \\ \hline
+            1 & 0.5 \\ \hline
+            2 & -1.02272 \\ \hline
+            3 & -0.75526 \\ \hline
+            4 & -0.40306 \\ \hline
+            5 & -0.09667 \\ \hline
+            6 & -0.00466 \\ \hline
+            7 & -0.00000 \\ \hline
+            \end{tabular}
+        \end{table}
+        As $n \to \infty$, $x_n \to 0^-$. 
+        
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -1.3:1.3,
+                    samples = 201,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xtick={0.864, 0.5, -1.022},
+                    xticklabels={$\b$, $x_1$, $x_2$},
+                    ytick=\empty,
+                    ymin=-0.5,
+                    ymax=1,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    
+                    \addplot[plotRed] {sec(\x r)^2 - e^x};
+
+                    \addlegendentry{$y = \sec^2{x} - e^x$};
+
+                    \draw[dotted] (0.5, 0) -- (0.5, -0.35);
+
+                    \addplot[dotted, thick] {-0.23 * (x - 0.5) - 0.35};
+                \end{axis} 
+            \end{tikzpicture}
+        \end{center}
+        
+        From the above graph, we see that the initial approximation of $x_1 = 0.5$ is past the turning point. Hence, all subsequent approximations will converge to the root at $0$ instead of the root at $\b$. Thus, the sequence does not converge to $\b$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The function $f$ is given by $f(x) = \sqrt{1 - x^2} + \cos x - 1$ for $0 \leq x \leq 1$. It is known, from graphical work, that the equation $f(x) = 0$ has a single root $x = \a$.
+    \begin{enumerate}
+        \item Express g(x) in terms of $x$, where $g(x) = x - \frac{f(x)}{f'(x)}$.
+    \end{enumerate}
+
+        A student attempts to use the Newton-Raphson method, based on the form $x_{n+1} = g(x_n)$, to calculate the value of $\a$ correct to 3 decimal places.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item \begin{enumerate}
+            \item The student first uses an initial approximation to $\a$ of $x_1 = 0$. Explain why this will be unsuccessful in finding a value for $\a$.
+            \item The student next uses an initial approximation to $\a$ of $x_1 = 1$. Explain why this will also be unsuccessful in finding a value for $\a$.
+            \item The student then uses an initial approximate to $\a$ of $x_1 = 0.5$. Investigate what happens in this case.
+            \item By choosing a suitable value for $x_1$, use the Newton-Raphson method, based on the form $x_{n+1} = g(x_n)$, to determine $\a$ correct to 3 decimal places.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We know $f'(x) = \frac{-x}{\sqrt{1-x^2}} - \sin x$. Hence, \[g(x) = x - \frac{\sqrt{1 - x^2} + \cos x - 1}{\frac{-x}{\sqrt{1-x^2}} - \sin x}.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Observe that $f'(0) = 0$. Hence, $g(0)$ is undefined. Thus, starting with an initial approximation of $x_1 = 0$ will be unsuccessful in finding a value for $\a$.
+        \end{psubpart}
+        \begin{psubpart}
+            Observe that $\sqrt{1-x^2}$ is 0 when $x = 1$. Hence, $f'(0)$ is undefined. Thus, $g(0)$ is also undefined. Hence, starting with an initial approximation of $x_1 = 1$ will also be unsuccessful in finding a value for $\a$. 
+        \end{psubpart}
+        \begin{psubpart}
+            When $x_1 = 0.5$, we have $x_2 = g(x_1) = 1.20$. Since $g(x)$ is only defined for $0 \leq x \leq 1$, $x_3 = g(x_2)$ is undefined. Hence, an initial approximation of $x_1 = 0.5$ will also be unsuccessful in finding a value for $\a$.
+        \end{psubpart}
+        \begin{psubpart}
+            Using the Newton-Raphson method with $x_1 = 0.9$, we have
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|}
+                \hline
+                $r$ & $x_r$ \\ \hline
+                1 & 0.9 \\ \hline
+                2 & 0.92019 \\ \hline
+                3 & 0.91928 \\ \hline
+                4 & 0.91928 \\ \hline
+                \end{tabular}
+            \end{table}
+            Thus, $\a = 0.919 \todp{3}$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}

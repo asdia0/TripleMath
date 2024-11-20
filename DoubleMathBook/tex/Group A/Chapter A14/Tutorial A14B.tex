@@ -1,0 +1,34 @@
+\section{Tutorial A14B}
+
+\begin{problem}
+    In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A - I (see diagram).
+
+    \begin{enumerate}
+        \item Show that the probability that the bug finishes its journey at D is $56p^5 q^3$.
+        \item Given that the probability that the bug finishes its journey at D is greater than the probability at any one of the other endpoints, find exactly the possible range of values of $p$.
+    \end{enumerate}
+
+    In another version of the game, the probability that, at each junction, the bug takes the left fork is $0.9p$, the probability that the bug takes the right fork is $0.9q$ and the probability that the bug is swallowed up by a `black hole' is $0.1$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find the probability that, in this version of the game, the bug reaches one of the endpoints A - I, without being swallowed up by a black hole.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Relabel each endpoint from A - I to 0 - 8. Let the random variable $X$ be the end-point that the bug ends up at. Clearly, to reach endpoint $i$, the bug must take $i$ right forks and $8-i$ left forks. Hence, $X \sim \Binom{8}{q}$ and the probability that the bug reaches endpoint 3 (i.e. endpoint D) is \[\P{X = 3} = \binom{8}{3} q^3 (1-q)^{8-3} = 56p^5q^3.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $X$ follows a binomial distribution, it suffices to find the range of values of $p$ that satisfy $\P{X = 2} < \P{X = 3} > \P{X = 4}$.
+        
+        \case{1}[$\P{X = 2} < \P{X = 3}$] Note that $\P(X = 2) = \binom{8}{2} q^2 (1-q)^{8-2} = 28p^6q^2$. \[\P(X = 2) < \P(X = 3) \implies 28p^6q^2 < 56p^5q^3 \implies 28p < 56(1-p) \implies p < \frac23.\]
+
+        \case{2}[$\P{X = 3} > \P{X = 4}$] Note that $\P{X = 4} = \binom{8}{4} q^4 (1 - q)^{8-4} = 70 p^4 q^4$. \[\P(X = 3) > \P(X = 4) \implies 56p^5q^3 > 70p^4q^4 \implies 56p > 70(1-p) \implies p > \frac59.\]
+
+        Hence, $\frac59 < p < \frac23$.
+    \end{ppart}
+    \begin{ppart}
+        Note that the bug most take a total of 8 forks. Since the probability of not getting swallowed by a black hole at each fork is $0.9$, the desired probability is clearly $0.9^8 = 0.430 \tosf{3}$.
+    \end{ppart}
+\end{solution}

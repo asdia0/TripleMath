@@ -1,0 +1,364 @@
+\clearpage
+\section{Assignment A2}
+
+\begin{problem}
+    By considering the graphs of $y = \cos x$ and $y = -\frac14 x$, or otherwise, show that the equation $x + 4\cos x = 0$ has one negative root and two positive roots.
+
+    Use linear interpolation, once only, on the interval $[-1.5, 1]$ to find an approximation to the negative root of the equation $x + 4\cos x = 0$ correct to 2 decimal places.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {3.595},
+                xticklabels = {$\a$},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                xmin=2.3,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:2.3,0) 
+                        node [anchor=east] {$O$};
+                    }
+                ]
+
+                \draw[thick,black!70,TwoMarks=0.1] (2.4,0) -- (2.6,0);
+                
+                \addplot[plotRed, domain=2.5:4] {x + 4*cos(\x r)};
+    
+                \addlegendentry{$y = x+4\cos x$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    The diagram shows part of the graph of $y = x + 4\cos x$ near the larger positive root, $\a$, of the equation $x + 4\cos x = 0$. Explain why, when using the Newton-Raphson method to find $\a$, an initial approximation which is smaller than $\a$ may not be satisfactory.
+
+    Use the Newton-Raphson method to find $\a$ correct to 2 significant figures. You should demonstrate that your answer has the required accuracy.
+\end{problem}
+\begin{solution}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
+            \begin{axis}[
+                domain = -2:5,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ymax=1.2,
+                ymin=-1.2,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=f2] {cos(\x r)};
+    
+                \addlegendentry{$y=\cos x$};
+
+                \addplot[plotBlue, name path=f1] {-0.25 * x};
+    
+                \addlegendentry{$y = -\tfrac14 x$};
+    
+                \fill [name intersections={of=f1 and f2,by={E1, E2, E3}}] (E1) circle[radius=2.5pt];
+
+                \fill (E2) circle[radius=2.5pt];
+
+                \fill (E3) circle[radius=2.5pt];
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Note that $x + 4\cos x = 0 \implies \cos x = -\frac14 x$. Plotting the graphs of $y = \cos x$ and $y = -\frac14 x$, we see that there is one negative root and two positive roots. Hence, the equation $x + 4\cos x = 0$ has one negative root and two positive roots.
+
+    Let $f(x) = x+4\cos x$. Let $\b$ be the negative root of the equation $f(x) = 0$. Using linear interpolation on the interval $[-1.5. -1]$, \[\b = \frac{-1.5f(-1) - (-1)f(-1.5)}{f(-1)-f(1.5)} = -1.24 \todp{2}.\]
+
+    There is a minimum at $x = m$ such that $m$ is between the two positive roots. Hence, when using the Newton-Raphson method, an initial approximation which is smaller than $m$ would result in subsequent approximations being further away from the desired root $\a$. Hence, an initial approximation that is smaller than $\a$ may not be satisfactory.
+
+    We know from the above graph that $\a \in \bp{\pi, \frac32 \pi}$. We hence pick $\frac32 \pi$ as our initial approximation. Using the Newton-Raphson method $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ with $x_1 = \frac32\pi$, we have
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        $r$ & $x_r$ \\ \hline
+        1 & $\frac32 \pi$ \\ \hline
+        2 & 3.7699 \\ \hline
+        3 & 3.6106 \\ \hline
+        4 & 3.5955 \\ \hline
+        5 & 3.5953 \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    Since $f(3.55)f(3.65) = (-0.1)(0.2) < 0$, we have $\a \in (3.55, 3.65)$. Hence, $\a = 3.6 \tosf{2}$.
+\end{solution}
+
+\begin{problem}
+    Find the coordinates of the stationary points on the graph $y = x^3 + x^2$. Sketch the graph and hence write down the set of values of the constant $k$ for which the equation $x^3 + x^2 = k$ has three distinct real roots.
+
+    The positive root of the equation $x^3 + x^2 = 0.1$ is denoted by $\a$.
+
+    \begin{enumerate}
+        \item Find a first approximation to $\a$ by linear interpolation on the interval $0 \leq x \leq 1$.
+        \item With the aid of a suitable figure, indicate why, in this case, linear interpolation does not give a good approximation to $\a$.
+        \item Find an alternative first approximation to $\a$ by using the fact that if $x$ is small then $x^3$ is negligible when compared to $x^2$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    For stationary points, $y' = 0$. \[y' = 0 \implies 3x^2 + 2x = 0 \implies x(3x+2) = 0.\] Hence, $x = 0$ or $x = -\frac23$. When $x = 0$, $y = 0$. When $x = -\frac23$, $y = \frac4{27}$. Thus, the coordinates of the stationary points of $y = x^3 + x^2$ are $(0, 0)$ and $\bp{-\frac23, \frac4{27}}$.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
+            \begin{axis}[
+                domain = -1.1:0.4,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {-1},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {x^3 + x^2};
+    
+                \addlegendentry{$y=x^3 + x^2$};
+
+                \fill (-2/3, 4/27) circle[radius=2.5pt] node[anchor=south] {$\bp{-\frac23, \frac4{27}}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Therefore, $k \in \bp{0, \frac4{27}}$. The solution set of $k$ is thus $\bc{k \in \RR : 0 < k < \frac4{27}}$.
+
+    \begin{ppart}
+        Let $f(x) = x^2 + x^2 - 0.1$. Using linear interpolation on the interval $[0, 1]$, \[\a = \frac{0f(1) - 1f(0)}{f(1)-f(0)} = \frac1{20}.\]
+    \end{ppart}
+    \clearpage
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
+                \begin{axis}[
+                    domain = 0:1,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {0.279},
+                    xticklabels={$\a$},
+                    ytick = {-0.1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-0.2,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^3 + x^2 -0.1};
+        
+                    \addlegendentry{$y=x^3 + x^2-0.1$};
+
+                    \fill (-2/3, 4/27) circle[radius=2.5pt] node[anchor=south] {$\bp{-\frac23, \frac4{27}}$};
+
+                    \draw[plotBlue] (0, -0.1) -- (1, 1.9);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        On the interval $[0, 1]$, the gradient of $y = x^3 + x^2 - 0.1$ changes considerably. Hence, linear interpolation gives an approximation much less than the actual value.
+    \end{ppart}
+    \begin{ppart}
+        For small $x$, $x^3$ is negligible when compared to $x^2$. Consider $g(x) = x^2-0.1$. Then the positive root of $g(x)=0$ is approximately $\a$. Hence, an alternative approximation to $\a$ is $\sqrt{0.1} = 0.316 \tosf{3}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The equation $2\cos x - x =0$ has a root $\a$ in the interval $[1, 1.2]$. Iterations of the form $x_{n+1} = F(x_n)$ are based on each of the following rearrangements of the equation:
+
+    \begin{enumerate}
+        \item $x = 2\cos x$
+        \item $x = \cos x + \frac12 x$
+        \item $x = \frac23 (\cos x + x)$
+    \end{enumerate}
+
+        Determine which iteration will converge to $\a$ and illustrate your answer by a `staircase' or `cobweb' diagram. Use the most appropriate iteration with $x_1 = 1$, to find $\a$ to 4 significant figures. You should demonstrate that your answer has the required accuracy.
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Consider $f(x) = 2\cos x$. Then $f'(x) = -2\sin x$. Observe that $\sin x$ is increasing on $[1, 1.2]$. Since $\sin 1 > \frac12$, $\abs{f'(x)} > 1$ for all $x \in [1, 1.2]$. Thus, fixed-point iteration fails and will not converge to $\a$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
+                \begin{axis}[
+                    domain = 0:pi/2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1.2},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=2.2,
+                    xmax=1.7,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {2 *cos(\x r)};
+
+                    \addlegendentry{$y=2\cos x$};
+
+                    \addplot[plotBlue] {x};
+                    
+                    \addlegendentry{$y=x$};
+        
+                    \draw[dotted, thick] (1.2, 0) -- (1.2, 0.725);
+
+                    \begin{scope}[decoration={
+                        markings,
+                        mark=at position 0.5 with {\arrow{>}}}
+                        ] 
+
+                        \draw[postaction={decorate}] (1.2, 0.725) -- (0.725, 0.725);
+
+                        \draw[postaction={decorate}] (0.725, 0.725) -- (0.725, 1.497);
+
+                        \draw[postaction={decorate}] (0.725, 1.497) -- (1.497, 1.497);
+
+                        \draw[postaction={decorate}] (1.497, 1.497) -- (1.497, 0.147);
+                    \end{scope}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Consider $f(x) = \cos x + \frac12 x$. Then $f'(x) = -\sin x + \frac12 -\bp{\sin x - \frac12}$. Since $0 \leq \sin x \leq 1$ for $x \in \bs{0, \frac{\pi}2}$, and $[1, 1.2] \subset \bs{0, \frac{\pi}2}$, we know $-\frac12 \leq \sin x - \frac12 \leq \frac12$ for $x \in [1, 1.2]$. Thus, $0 \leq \abs{\sin x - \frac12} \leq \frac12$ for $x \in [1, 1.2]$. Hence, fixed-point iteration will work and converge to $\a$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
+                \begin{axis}[
+                    domain = 0:2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1.7},
+                    xticklabels = {1.2},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=1.4,
+                    xmax=2,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {cos(\x r) + 0.5 * x};
+
+                    \addlegendentry{$y=\cos x + \tfrac12 x$};
+
+                    \addplot[plotBlue] {x};
+
+                    \addlegendentry{$y=x$};
+
+                    \draw[dotted, thick] (1.7, 0) -- (1.7, 0.721);
+
+                    \begin{scope}[decoration={
+                        markings,
+                        mark=at position 0.5 with {\arrow{>}}}
+                        ] 
+
+                        \draw[postaction={decorate}] (1.7, 0.721) -- (0.721, 0.721);
+
+                        \draw[postaction={decorate}] (0.721, 0.721) -- (0.721, 1.112);
+
+                        \draw[postaction={decorate}] (0.721, 1.112) -- (1.112, 1.112);
+
+                        \draw[postaction={decorate}] (1.112, 1.112) -- (1.112, 0.999);
+                    \end{scope}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Consider $f(x) = \frac23 (\cos x + x)$. Then $f'(x) = \frac23(-\sin x + 1)$. For fixed-point iteration to converge to $\a$, we need $\abs{f'(x)} < 1$ for $x$ near $\a$. It thus suffices to show that $\abs{-\sin x + 1} < \frac32$ for all $x \in [1, 1.2]$. Observe that $1 - \sin x$ is strictly decreasing and positive for $x \in \bs{0, \frac{\pi}2}$. Since $1 - \sin 1 < \frac32$, and $[1, 1.2] \subset \bs{0, \frac{\pi}2}$, we have that $\abs{-\sin x + 1} < \frac32$ for all $x \in [1, 1.2]$. Thus, $\abs{f'(x)} < 1$ for $x$ near $\a$. Hence, fixed-point iteration will work and converge to $\a$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
+                \begin{axis}[
+                    domain = 0:3.3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {3},
+                    xticklabels = {1.2},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=1.6,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {2/3 * (cos(\x r) + x)};
+
+                    \addlegendentry{$y=\tfrac23 (\cos x + x)$};
+
+                    \addplot[plotBlue] {x};
+
+                    \addlegendentry{$y=x$};
+
+                    \draw[dotted, thick] (3, 0) -- (3, 1.34);
+
+                    \begin{scope}[decoration={
+                        markings,
+                        mark=at position 0.5 with {\arrow{>}}}
+                        ] 
+
+                        \draw[postaction={decorate}] (3, 1.34) -- (1.34,1.34);
+
+                        \draw[postaction={decorate}] (1.34,1.34) -- (1.34, 1.046);
+
+                        \draw[postaction={decorate}] (1.34, 1.046) -- (1.046, 1.046);
+                    \end{scope}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        For $x \in [1, 1.2]$, $\abs{\frac23 (-\sin x + 1)} < \abs{-\sin x + \frac12} < 1$. Thus, $x_{n+1} = \frac23 (\cos x_n + x_n)$ is the most suitable iteration as it will converge to $\a$ the quickest. Using $F(x_{n+1}) = \frac23 (\cos x_n + x_n)$ with $x_1 = 1$,
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $r$ & $x_r$ \\ \hline
+            1 & 1 \\ \hline
+            2 & 1.02687 \\ \hline
+            3 & 1.02958 \\ \hline
+            4 & 1.02984 \\ \hline
+            5 & 1.02986 \\ \hline
+            \end{tabular}
+        \end{table}
+        Since $F(1.0295) > 1.0295$ and $F(1.0305) < 1.0305$, we have $\a \in (1.0295, 1.0305)$. Hence, $\a = 1.030 \tosf{4}$.
+    \end{ppart}
+\end{solution}
