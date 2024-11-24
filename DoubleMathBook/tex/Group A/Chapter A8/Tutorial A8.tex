@@ -1,0 +1,324 @@
+\section{Tutorial A8}
+
+\begin{problem}
+    For each of the following, write down a vector equivalent of the line $l$ and convert it to parametric and Cartesian forms.
+
+    \begin{enumerate}
+        \item $l$ passes through the point with position vector $-\vec i + \vec k$ and is parallel to the vector $\vec i + \vec j$.
+        \item $l$ passes through the points $P(1, -1, 3)$ and $Q(2, 1, -2)$.
+        \item $l$ passes through the origin and is parallel to the line $m: \vec r = \cveciiix1{-1}3 + \l \cveciiix123$, where $\l \in \RR$.
+        \item $l$ is the $x$-axis.
+        \item $l$ passes through the point $C(4,-1, 2)$ and is parallel to the $z$-axis.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+            \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+            \textbf{Vector} & \vec r = \cveciiix{-1}01 + \l \cveciiix110, \, \l \in \RR \\
+            \textbf{Parametric} & x = \l - 1, \, y = \l, \, z = 1 \\
+            \textbf{Cartesian} & x + 1 = y, \, z = 1 \\\bottomrule
+        \end{array}\]
+    \end{ppart}
+    \begin{ppart}
+        \[\begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+            \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+            \textbf{Vector} & \vec r = \cveciiix1{-1}3 + \l \cveciiix12{-5}, \, \l \in \RR \\
+            \textbf{Parametric} & x = \l + 1, \, y = 2\l - 1, \, z = -5\l + 3 \\
+            \textbf{Cartesian} & x-1 = \frac{y+1}2 = \frac{3-z}{5}\\\bottomrule
+        \end{array}\]
+    \end{ppart}
+    \begin{ppart}
+        \[\begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+            \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+            \textbf{Vector} & \vec r = \l \cveciiix123, \, \l \in \RR \\
+            \textbf{Parametric} & x = \l, \, y = 2\l, \, z = 3\l \\
+            \textbf{Cartesian} & x = \frac{y}2 = \frac{z}3\\\bottomrule
+        \end{array}\]
+    \end{ppart}
+    \begin{ppart}
+        \[\begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+            \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+            \textbf{Vector} & \vec r = \l \cveciiix100, \, \l \in \RR \\
+            \textbf{Parametric} & x = \l, \, y = 0, \, z = 0\\
+            \textbf{Cartesian} & x \in \RR, \, y = 0, \, z = 0 \\\bottomrule
+        \end{array}\]
+    \end{ppart}
+    \begin{ppart}
+        \[\begin{array}{r @{\hspace*{1.0cm}} l}\toprule
+            \textbf{Form} & \textbf{Expression} \\\cmidrule{1-2}
+            \textbf{Vector} & \vec r = \cveciiix4{-1}2 + \l \cveciiix001, \, \l \in \RR \\
+            \textbf{Parametric} & x = 4, \, y = -1, \, z = \l + 2 \\
+            \textbf{Cartesian} & x = 4, \, y = -1, \, z \in \RR \\\bottomrule
+        \end{array}\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    For each of the following, determine if $l_1$ and $l_2$ are parallel, intersecting or skew. In the case of intersecting lines, find the position vector of the point of intersection. In addition, find the acute angle between the lines $l_1$ and $l_2$.
+
+    \begin{enumerate}
+        \item $l_1 : x-1 = -y = z-2$ and $l_2 : \frac{x-2}2 = -\frac{y+1}2 = \frac{z-4}{2}$
+        \item $l_1 : \vec r = \cveciiix100 + \a\cveciiix4{-2}{-3}, \, \a \in \RR$ and $l_2 : \vec r = \cveciiix0{10}1 + \b \cveciiix381$
+        \item $l_1 : \vec r = (\vec i - 5 \vec k) + \l(\vec i - \vec j + \vec k), \, \l \in \RR$ and $l_2 : \vec r = (\vec i - \vec j + \vec k) + \m(5 \vec i - 4 \vec j - \vec k), \, \m \in \RR$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $l_1$ and $l_2$ have vector form \[l_1 : \vec r = \cveciii102 + \l\cveciii1{-1}1, \, \l \in \RR \text{ and } l_2 : \vec r = \cveciii214 + \m\cveciii2{-2}{2}, \, \m \in \RR.\] Since $\cveciiix2{-2}2 = 2\cveciiix1{-1}1$, $l_1$ and $l_2$ are parallel ($\t = 0$). Since $\cveciiix102 \neq \cveciiix214 + \m\cveciiix2{-2}2$ for all real $\m$, we have that $l_1$ and $l_2$ are distinct.
+    \end{ppart}
+    \begin{ppart}
+        Since $\cveciiix4{-2}3 \neq \b \cveciiix381$ for all real $\b$, it follows that $l_1$ and $l_2$ are not parallel.
+        
+        Consider $l_1 = l_2$. \[l_1 = l_2 \implies \cveciii100 + \a\cveciii4{-2}{-3} = \cveciii0{10}1 + \b \cveciii381 \implies \a\cveciii4{-2}{-3} - \b\cveciii381 = \cveciii{-1}{10}1.\] This gives the following system: \[\systeme[\a\b]{
+                4\a - 3\b = -1,
+                -2\a - 8\b = 10,
+                -3\a - \b = 1
+        }\] There are no solutions to the above system. Hence, $l_1$ and $l_2$ do not intersect and are thus skew.
+
+        Let $\t$ be the acute angle between $l_1$ and $l_2$. \[\cos\t = \frac{\abs{\cveciiix4{-2}{-3} \dotp \cveciiix381}}{\abs{\cveciiix4{-2}{-3}} \abs{\cveciiix381}} = \frac{7}{\sqrt{2146}} \implies \t = 81.3 \deg \todp{1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $l_1$ and $l_2$ have vector form \[l_1 : \vec r = \cveciii10{-5} + \l \cveciii1{-1}1 \text{ and } l_2 : \vec r = \cveciii1{-1}1 + \m \cveciii5{-4}{-1}, \, \l, \m \in \RR.\]
+
+        Since $\cveciiix1{-1}1 \neq \m \cveciiix5{-4}{-1}$ for all real $\m$, it follows that $l_1$ and $l_2$ are not parallel.
+
+        Consider $l_1 = l_2$. \[l_1 = l_2 \implies \cveciii10{-5} + \l \cveciii1{-1}1 = \cveciii1{-1}1 + \m \cveciii5{-4}{-1} \implies \l\cveciii1{-1}1 - \m\cveciii5{-4}{-1} = \cveciii0{-1}6.\] This gives the following system: \[\systeme[\l\m]{
+                \l - 5\m = 0,
+                -\l + 4\m = -1,
+                \l + \m = 6
+        }\] The above system has the unique solution $\l = 5$ and $\m = 1$. Hence, $l_1$ and $l_2$ intersect at $\cveciiix10{-5} + 5\cveciiix1{-1}1 = \cveciiix6{-5}0$.
+
+        Let $\t$ be the acute angle between $l_1$ and $l_2$. 
+        \[\cos\t = \frac{\abs{\cveciiix1{-1}1 \dotp \cveciiix5{-4}{-1}}}{\abs{\cveciiix1{-1}1} \abs{\cveciiix5{-4}{-1}}} = \frac8{3\sqrt{14}} \implies \t = 44.5 \deg \todp{1}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the shortest distance from the point $(1, 2, 3)$ to the line with equation $\vec r = 3\vec i + 2\vec j + 4\vec k + \l(\vec i + 2\vec j + 2\vec k), \, \l \in \RR$.
+        \item Find the length of projection of $4\vec i - 5 \vec j + 6 \vec k$ onto the line with equation $\frac{x+5}4 = \frac{y-5}3 = 10-2z$.
+        \item Find the projection of $4\vec i - 5 \vec j + 6 \vec k$ onto the line with equation $\frac{x+5}4 = \frac{y-5}3 = 10-2z$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\oa{OP} = \cveciiix123$ and $\oa{OA} = \cveciiix324$. Note that $\oa{AP} = \cveciiix{-2}0{-1}$. The shortest distance between $P$ and the line is thus \[\text{Shortest distance} = \frac{\abs{\cveciiix{-2}0{-1} \crossp \cveciiix122}}{\abs{\cveciiix122}} = \frac{\abs{\cveciiix2{-3}{-4}}}3 = \frac{\sqrt{29}}3 \text{ units}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the line has vector form \[\vec r = \cveciii{-5}55 + \l' \cveciii43{-1/2} = \cveciii{-5}55 + \l \cveciii86{-1}, \, \l \in \RR.\] The length of projection of $\cveciiix4{-5}6$ onto the line is thus given by \[\text{Length of projection} = \frac{\abs{\cveciiix4{-5}6 \dotp \cveciiix86{-1}}}{\abs{\cveciiix86{-1}}} = \frac{4}{\sqrt{101}} \text{ units}.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{align*}
+            \text{Projection} = \bs{\frac{\cveciiix4{-5}6 \dotp \cveciiix86{-1}}{\abs{\cveciiix86{-1}}}} \dotp \frac{\cveciiix86{-1}}{\abs{\cveciiix86{-1}}} = \frac{-4}{101} \cveciii86{-1}
+        \end{align*}
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The points $P$ and $Q$ have coordinates $(0, -1, -1)$ and $(3, 0, 1)$ respectively, and the equations of the lines $l_1$ and $l_2$ are given by \[l_1 : \vec r = \cveciii01{-3} + \l\cveciii01{-1}, \, \l \in \RR \text{ and } l_2 : \vec r = \cveciii{-3}31 + \m \cveciii2{-1}0, \, \m \in \RR.\]
+
+    \begin{enumerate}
+        \item Show that $P$ lies on $l_1$ but not on $l_2$.
+        \item Determine if $l_2$ passes through $Q$.
+        \item Find the coordinates of the foot of the perpendicular from $P$ to $l_2$. Hence, or otherwise, find the perpendicular distance from $P$ to $l_2$.
+        \item Find the length of projection of $\oa{PQ}$ onto $l_2$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We have that $\oa{OP} = \cveciiix0{-1}{-1}$ and $\oa{OQ} = \cveciiix301$.
+
+    \begin{ppart}
+        When $\l = -2$, we have $\cveciiix01{-3} - 2\cveciiix01{-1} = \cveciiix0{-1}{-1} = \oa{OP}$. Hence, $P$ lies on $l_1$.
+
+        Observe that all points on $l_2$ have a $z$-coordinate of 1. Since $P$ has a $z$-coordinate of $-1$, $P$ does not lie on $l_2$.
+    \end{ppart}
+    \begin{ppart}
+        When $\m = 3$, we have $\cveciiix{-3}31 + 3\cveciiix2{-1}0 = \cveciiix301 = \oa{OQ}$. Hence, $l_2$ passes through $Q$.
+    \end{ppart}
+    \begin{ppart}
+        Let the foot of the perpendicular from $P$ to $l_2$ be $F$. Since $F$ is on $l_2$, we have that $\oa{OF} = \cveciiix{-3}31 + \m\cveciiix2{-1}0$ for some real $\m$. We also have that $\oa{PF} \cdot \cveciiix2{-1}0 = 0$. Note that \[\oa{PF} = \oa{OF} - \oa{OP} = \cveciii{-3}31 + \m\cveciii2{-1}0 - \cveciii0{-1}{-1} = \cveciii{-3 + 2\m}{4-\m}{2}.\] Hence, \[\oa{PF} \dotp \cveciii2{-1}0 = 0 \implies \cveciii{-3 + 2\m}{4-\m}{2} \dotp \cveciii2{-1}0 = 0 \implies -10 + 5\m = 0 \implies \m = 2.\] Hence, $\oa{OF} = \cveciiix{-3}31 + 2\cveciiix3{-1}0 = \cveciiix111$. Thus, $F(1, 1, 1)$. The perpendicular distance from $P$ to $l_2$ is thus $\abs{\oa{PF}} = \abs{\cveciiix122} = 3$ units.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{PQ} = \oa{OQ} - \oa{OP} = \cveciii312$. The length of projection of $\oa{PQ}$ onto $l_2$ is thus given by \[\text{Length of projection} = \frac{\abs{\cveciiix312 \dotp \cveciiix2{-1}0}}{\abs{\cveciiix2{-1}0}} = \frac5{\sqrt 5} = \sqrt{5} \text{ units}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The lines $l_1$ and $l_2$ have equations \[\vec r = \cveciii012 + s\cveciii103 \text{ and } \vec r = \cveciii{-2}31 + t\cveciii210\] respectively. Find the position vectors of the points $P$ on $l_1$ and $Q$ on $l_2$ such that $O$, $P$ and $Q$ are collinear, where $O$ is the origin.
+\end{problem}
+\begin{solution}
+    We have that $\oa{OP} = \cveciiix012 + s\cveciiix103$ and $\oa{OQ} = \cveciiix{-2}31 + t\cveciiix210$ for some $s, t \in \RR$. For $O$, $P$ and $Q$ to be collinear, we need $\oa{OP} = \l \oa{OQ}$ for some $\l \in \RR$: \[\cveciii012 + s\cveciii103 = \l\bs{\cveciii{-2}31 + t\cveciii210} \implies \cveciii{s}1{2 + 3s} = \l\cveciii{-2+2t}{3+t}1.\] This gives us the system: \[\begin{cases}
+        \begin{aligned}
+            s &= \l (-2 + 2t)\\
+            1 &= \l(3 + t)\\
+            2 + 3s &= \l 
+        \end{aligned}
+    \end{cases}\] Substituting the third equation into the first two gives the reduced system: \[\begin{cases}
+        \begin{aligned}
+            s &= (2+3s)(-2+2t)\\
+            1 &= (2+3s)(3+t)
+        \end{aligned}
+    \end{cases}\] Subtracting twice of the second equation from the first yields $s-2 = -8(2+3s)$, whence $s = -14/25$. It quickly follows that $t = 1/8$. Hence, \[\oa{OP} = \cveciii012 - \frac{14}{25}\cveciii103 = \frac1{25}\cveciii{-14}{25}{8}, \quad \oa{OQ} = \cveciii{-2}31 + \frac18\cveciii210 = \frac18 \cveciii{-14}{25}8.\]
+\end{solution}
+
+\begin{problem}
+    Relative to the origin $O$, the points $A$, $B$ and $C$ have position vectors $5\vec i + 4\vec j + 10\vec k$, $-4\vec i + 4\vec j - 2\vec k$ and $-5\vec i + 9\vec j + 5\vec k$ respectively.
+
+    \begin{enumerate}
+        \item Find the Cartesian equation of the line $AB$.
+        \item Find the length of projection of $\oa{AC}$ onto the line $AB$. Hence, find the perpendicular distance from $C$ to the line $AB$.
+        \item Find the position vector of the foot $N$ of the perpendicular from $C$ to the line $AB$.
+        \item The point $D$ is such that it is a reflection of point $C$ about the line $AB$. Find the position vector of $D$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We have that $\oa{OA} = \cveciiix54{10}$, $\oa{OB} = \cveciiix{-4}4{-2}$ and $\oa{OC} = \cveciiix{-5}95$.
+
+    \begin{ppart}
+        Note that $\oa{AB} = \cveciiix{-9}0{-12} = -3\cveciiix304$. The line $AB$ hence has the vector form \[\vec r = \cveciii54{10} + \l\cveciii304, \, \l \in \RR\] and Cartesian form $\frac{x-5}{3} = \frac{z-10}4,\,y=4$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{AC} = \cveciiix{-10}5{-5} = -5\cveciiix2{-1}1$. Hence, the length of projection of $\oa{AC}$ onto the line $AB$ is given by \[\text{Length of projection} = \frac{\abs{\oa{AC} \dotp \oa{AB}}}{\abs{\oa{AB}}} = \frac1{15} \abs{5\cveciii2{-1}1 \dotp 3\cveciii304} = 10 \text{ units}.\] Since $\abs{\oa{AC}} = 5\sqrt6$, the perpendicular distance from $C$ to the line $AB$ is $\sqrt{\bp{5\sqrt6}^2 - 10^2} = 5\sqrt{2}$ units.
+    \end{ppart}
+    \begin{ppart}
+        Let $\oa{AN} = \l \cveciiix{-9}0{-12}$ for some $\l \in \RR$ such that $\abs{\oa{AN}} = 10$. \[\abs{\oa{AN}} = 10 \implies 15\l = 10 \implies \l = \frac23.\] Hence, $\oa{AN} = \frac23 \cveciiix{-9}0{-12} = \cveciiix{-6}0{-8}$. Thus, $\oa{ON} = \oa{OA} + \oa{AN} = \cveciiix{-1}42$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{NC} = \oa{OC} - \oa{ON} = \cveciiix{-4}53$. Since $D$ is the reflection of $C$ about $AB$, we have that $\oa{ND} = -\oa{NC}$. Thus, \[\oa{OD} = \oa{ON} + \oa{ND} = \oa{ON} - \oa{NC} = \cveciii{-1}42 - \cveciii{-4}53 = \cveciii3{-1}{-1}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The points $A$ and $B$ have coordinates $(0, 9, c)$ and $(d, 5, -2)$ respectively, where $c$ and $d$ are constants. The line $l$ has equation $\frac{x+3}{-1} = \frac{y-1}4 = \frac{z-5}3$.
+
+    \begin{enumerate}
+        \item Given that $d = \frac{22}7$ and the line $AB$ intersects $l$, find the value of $c$. Find also the coordinates of the foot of the perpendicular from $A$ to $l$.
+        \item Given instead that the lines $AB$ and $l$ are parallel, state the value of $c$ and $d$ and find the shortest distance between the lines $AB$ and $l$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We have that $\oa{OA} = \cveciiix09c$ and $\oa{OB} = \cveciiix{d}5{-2}$. We also have that the line $l$ is given by the vector $\vec r = \cveciiix{-3}15 + \l \cveciiix{-1}43$ for $\l \in \RR$.
+
+    Note that $\oa{AB} = \oa{OB} - \oa{OA} = \cveciiix{d}{-4}{-2-c}$. Hence, the line $AB$ is given by the vector $\vec r_{AB} = \cveciiix{d}5{-2} + \m \cveciiix{d}{-4}{-2-c}$ for $\m \in \RR$.
+
+    \begin{ppart}
+        Consider the direction vectors of $AB$ and $l$. Since $\cveciiix{22/7}{-4}{-2-c} \neq \l\cveciiix{-1}43$ for all real $\l$ and $c$, the lines $AB$ and $l$ are not parallel. Hence, $AB$ and $l$ intersect at only one point. Thus, there must be a unique solution to $\vec r = \vec r_{AB}$.
+        \begin{align*}
+            \vec r = \vec r_{AB} &\implies \cveciii{-3}15 + \l \cveciii{-1}43 = \cveciii{22/7}5{-2} + \m \cveciii{22/7}{-4}{-2-c}\\
+            &\implies \l \cveciii{-7}{28}{21} - \m\cveciii{22}{-28}{-14-7c} = \cveciii{43}{28}{-49}
+        \end{align*}
+        This gives the following system: \[\systeme[\l\m]{
+                {-}\l - 22\m = 43,
+                4\l + 28\m = 28,
+                3\l + \bp{14 + 7c}\m = -49
+            }
+        \] Solving the first two equations gives $\l = 91/3$ and $\m = -10/3$. It follows from the third equation that $c = 4$.
+
+        Let $F$ be the foot of the perpendicular from $A$ to $l$. We have that $\oa{OF} = \cveciiix{-3}15 + \l\cveciiix{-1}43$ for some $\l \in \RR$. We also have that $\oa{AF} \dotp \cveciiix{-1}43 = 0$. Note that \[\oa{AF} = \oa{OF} - \oa{OA} = \cveciii{-3-\l}{-8+4\l}{1 + 3\l}.\] Hence, \[\oa{AF} \dotp \cveciii{-1}43 = 0 \implies \cveciii{-3-\l}{-8+4\l}{1 + 3\l} \dotp \cveciii{-1}43 = 0 \implies -26 + 26 \l = 0 \implies \l = 1.\] Hence, $\oa{OF} = \cveciiix{-3}15 + \cveciiix{-1}43 = \cveciiix{-4}58$. The foot of the perpendicular from $A$ to $l$ hence has coordinates $(-4, 5, 8)$.
+    \end{ppart}
+    \begin{ppart}
+        Given that $AB$ is parallel to $l$, one of their direction vectors must be a scalar multiple of the other. Hence, for some real $\l$, $\cveciiix{-1}4{3} = \l\cveciiix{d}{-4}{-2-c}$. It is obvious that $\l = -1$, whence $c = 1$ and $d = 1$.
+
+        Note that the direction vector of $l$ and $AB$ is $\cveciiix{-1}43$. Also note that $l$ passes through $(-3, 1, 5)$ and $AB$ passes through $(1, 5, -2)$. Since $\cveciiix15{-2} - \cveciiix{-3}15 = \cveciiix44{-7}$, the shortest distance between $AB$ and $l$ is \[\frac{\abs{\cveciiix{-1}43 \crossp \cveciiix44{-7}}}{\abs{\cveciiix{-1}43}} = \frac1{\sqrt{26}} \abs{\cveciii{-40}{-5}{-20}} = \frac{45}{\sqrt{26}} \text{ units}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The equation of the line $L$ is $\vec r = \cveciiix137 + t\cveciiix2{-1}5$, $t \in \RR$. The points $A$ and $B$ have position vectors $\cveciiix93{26}$ and $\cveciiix{13}9\a$ respectively. The line $L$ intersects the line through $A$ and $B$ at $P$.
+
+    \begin{enumerate}
+        \item Find $\a$ and the acute angle between line $L$ and $AB$.
+    \end{enumerate}
+
+    The point $C$ has position vector $\cveciiix251$ and the foot of the perpendicular from $C$ to $L$ is $Q$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Find the position vector of $Q$. Hence, find the shortest distance from $C$ to $L$.
+        \item Find the position vector of the point of reflection of the point $C$ about the line $L$. Hence, find the reflection of the line passing through $C$ and the point $(1, 3, 7)$ about the line $L$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have that $\oa{OA} = \cveciiix93{26}$ and $\oa{OB} = \cveciiix{13}9\a$. Hence, $\oa{AB} = \cveciiix46{\a - 26}$. The line $AB$ is thus given by $\vec r_{AB} = \cveciiix93{26} + u\cveciiix46{\a - 26}$ for $u \in \RR$. Note that $AB$ is not parallel to $L$. Hence, $\oa{OP}$ is the only solution to the equation $\vec r = \vec r_{AB}$. \[\cveciii137 + t\cveciii2{-1}5 = \cveciii93{26} + u\cveciii46{\a - 26} \implies t\cveciii2{-1}5 - u\cveciii46{\a - 26} = \cveciii80{19}.\] This gives the following system: \[
+            \systeme[tu]{
+                2t - 4u = 8,
+                -t - 6u = 0,
+                5t - \bp{\a - 26}u = 19
+            }
+        \] Solving the first two equations gives $t = 3$ and $u = -\frac12$. It follows from the third equation that $\a = 34$.
+
+        Let the acute angle between $L$ and $AB$ be $\t$. \[\cos\t = \frac{\abs{\cveciiix2{-1}5 \dotp \cveciiix468}}{\abs{\cveciiix2{-1}5} \abs{\cveciiix468}} = \frac{42}{\sqrt{30} \sqrt{116}} \implies \t = 44.6\deg \todp{1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $Q$ is on $L$, we have that $\oa{OQ} = \cveciiix137 + t\cveciiix2{-1}5$ for some real $t$. Further, since $\oa{CQ} \perp L$, we have that $\oa{CQ} \dotp \cveciiix2{-1}5 = 0$. Note that \[\oa{CQ} = \oa{OQ} - \oa{OC} = \cveciii{-1 + 2t}{-2 -t}{6+5t}.\] Thus, \[\oa{CQ} \dotp \cveciii2{-1}5 = 0 \implies \cveciii{-1 + 2t}{-2 -t}{6+5t} \dotp \cveciii2{-1}5 = 0 \implies 30 + 30t = 0 \implies t = 1.\] Hence, $\oa{OQ} = \cveciiix137 + \cveciiix2{-1}5 = \cveciiix{-1}42$. The shortest distance from $C$ to $L$ is thus \[\abs{\oa{CQ}} = \abs{\cveciii{-1}42 - \cveciii251} = \abs{\cveciii{-3}{-1}1} = \sqrt{11} \text{ units}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $C'$ be the reflection of $C$ about $L$. Note that \[ \oa{OC'} = \oa{OQ} - \oa{QC} = \oa{OQ} + \oa{CQ} = \cveciii{-1}42 + \cveciii{-3}{-1}1 = \cveciii{-4}33.\] Note that $(1, 3, 7)$ is on $L$ and is hence invariant under a reflection about $L$. Let the reflection about $L$ of the line passing through $C$ and $(1, 3, 7)$ be $L'$. Since $\cveciiix{-4}33 - \cveciiix137 = \cveciiix{-5}0{-4} \parallel \cveciiix504$, $L'$ hence has direction vector $\cveciiix504$. Thus, $L'$ is given by $\vec r' = \cveciiix137 + \l \cveciiix504$ for $\l \in \RR$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0, 0) -- (6, 0);
+            \draw (0, 0) -- (4, 3);
+            \draw (6, 0) -- (10, 3);
+            \draw (4, 3) -- (10, 3);
+
+            \draw (0, 0) -- (5, 6);
+            \draw (6, 0) -- (5, 6);
+            \draw (4, 3) -- (5, 6);
+            \draw (10, 3) -- (5, 6);
+
+            \node[anchor=north east] at (0, 0) {$A$};
+            \node[anchor=north west] at (6, 0) {$B$};
+            \node[anchor=west] at (10, 3) {$C$};
+            \node[anchor=south east] at (4, 3) {$D$};
+            \node[anchor=south] at (5, 6) {$V$};
+
+            \node[anchor=north east] at (5, 1.5) {$O$};
+            \draw[very thick, ->] (5, 1.5) -- (6, 1.5);
+            \draw[very thick, ->] (5, 1.5) -- (5.8, 2.1);
+            \draw[very thick, ->] (5, 1.5) -- (5, 2.5);
+
+            \node[anchor=west] at (6, 1.5) {$\vec i$};
+            \node[anchor=south west] at (5.8, 2.1) {$\vec j$};
+            \node[anchor=south] at (5, 2.5) {$\vec k$};
+
+            \draw[dotted] (5, 1.5) -- (5, 6);
+        \end{tikzpicture}
+    \end{center}
+    In the diagram, $O$ is the origin of the square base $ABCD$ of a right pyramid with vertex $V$. The perpendicular unit vectors $\vec i$, $\vec j$ and $\vec k$ are parallel to $AB$, $AD$ and $OV$ respectively. The length of $AB$ is 4 units and the length of $OV$ is $2h$ units. $P$, $Q$, $M$ and $N$ are the mid-points of $AB$, $BC$, $CV$ and $VA$ respectively. The point $O$ is taken as the origin for position vectors.
+
+    Show that the equation of the line $PM$ may be expressed as $\vec r = \cveciiix0{-2}0 + t\cveciiix13h$, where $t$ is a parameter.
+
+    \begin{enumerate}
+        \item Find an equation for the line $QN$.
+        \item Show that the lines $PM$ and $QN$ intersect and that the position vector $\oa{OX}$ of their point of intersection is $\vec r = \frac12 \cveciiix1{-1}h$.
+        \item Given that $OX$ is perpendicular to $VB$, find the value of $h$ and calculate the acute angle between $PM$ and $QN$, giving your answer correct to the nearest $0.1\deg$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We are given that $\oa{OP} = \cveciiix0{-2}0$, $\oa{OC} = \cveciiix220$ and $\oa{OV} = \cveciiix00{2h}$. Hence, $\oa{CV} = \oa{OV} - \oa{OC} = \cveciiix{-2}{-2}{2h}$. Thus, $\oa{CM} = \frac12 \oa{CV} = \cveciiix{-1}{-1}h$. Since $\oa{OM} = \oa{OC} + \oa{CM} = \cveciiix11h$, we have that $\oa{PM} = \oa{OM} - \oa{OP} = \cveciiix13h$. Thus, $PM$ is given by \[\vec r = \cveciii0{-2}0 + t\cveciii13h, \, t \in \RR.\]
+
+    \begin{ppart}
+        Since $\oa{OM} = \cveciiix11h$, by symmetry, $\oa{ON} = \cveciiix{-1}{-1}h$. Given that $\oa{OQ} = \cveciiix200$, we have that $\oa{QN} = \oa{ON} - \oa{OQ} = \cveciiix{-3}{-1}h$. Thus, $QN$ is given by \[\vec r = \cveciii200 + u\cveciii{-3}{-1}h, \, u \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider $PM = QN$. \[PM = QN \implies \cveciii0{-2}0 + t\cveciii13h = \cveciii200 + u\cveciii{-3}{-1}h \implies t\cveciii13h - u\cveciii{-3}{-1}h = \cveciii220.\] This gives the following system: \[
+            \systeme[tu]{
+                t + 3u = 2,
+                3t + u = 2,
+                ht - hu = 0
+            }
+        \] From the first two equations, we see that $t = \frac12$ and $u = \frac12$, which is consistent with the third equation. Hence, $\oa{OX} = \cveciiix0{-2}0 + \frac12 \cveciiix13h = \frac12 \cveciiix1{-1}h$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{OB} = \cveciiix2{-2}6$, whence $\oa{VB} = \oa{OB} - \oa{OV} = \cveciiix2{-2}{-2h}$. Since $OX$ is perpendicular to $VB$, we have that $\oa{OX} \dotp \oa{VB} = 0$. \[\oa{OX} \dotp \oa{VB} = 0 \implies \frac12 \cveciii1{-1}h \dotp 2 \cveciii1{-1}{-h} = 0 \implies h^2 = 2.\] We hence have that $h = \sqrt2$. Note that we reject $h = -\sqrt2$ since $h > 0$.
+
+        Let the acute angle between $PM$ and $QN$ be $\t$. \[\cos\t = \frac{\abs{\oa{PM} \dotp \oa{QN}}}{\abs{\oa{PM}}\abs{\oa{QN}}} = \frac1{\sqrt{12}\sqrt{12}} \abs{\cveciii13{\sqrt2} \dotp \cveciii{-3}{-1}{\sqrt2}} = \frac13 \implies \t = 70.5\deg \todp{1}.\]
+    \end{ppart}
+\end{solution}

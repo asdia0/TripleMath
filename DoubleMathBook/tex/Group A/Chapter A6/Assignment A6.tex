@@ -1,2 +1,169 @@
 \clearpage
 \section{Assignment A6}
+
+\begin{problem}
+    The planet Mercury travels around the sun in an elliptical orbit given approximately by \[r = \dfrac{3.442 \crossp 10^7}{1 - 0.206\cos\t},\] where $r$ is measured in miles and the sun is at the pole.
+
+    Sketch the orbit and find the distance from Mercury to the sun at the aphelion (the greatest distance from the sun) and at the perihelion (the shortest distance from the sun).
+\end{problem}
+\begin{solution}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2*pi,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] {1/(1 - 0.206*cos(\x r))};
+    
+                \addlegendentry{$r = \frac{3.442 \crossp 10^7}{1 - 0.206\cos\t}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Observe that $r$ attains a maximum when $\cos \t$ is also at its maximum. Since the maximum value of $\cos \t$ is 1, \[r = \dfrac{3.442 \times 10^7}{1 - 0.206\cdot1} = 4.34 \times 10^7 \tosf{3}.\] Hence, the distance from Mercury to the sun at the aphelion is $4.34 \crossp 10^7$ miles.
+
+    Observe that $r$ attains a minimum when $\cos \t$ is also at its minimum. Since the minimum value of $\cos \t$ is $-1$, \[r = \dfrac{3.442 \crossp 10^7}{1 - 0.206\cdot-1} = 2.85 \crossp 10^7 \tosf{3}.\] Hence, the distance from Mercury to the sun at the perihelion is $2.85 \crossp 10^7$ miles.
+\end{solution}
+
+\begin{problem}
+    A variable point $P$ has polar coordinates $(r, \t)$, and fixed points $A$ and $B$ have polar coordinates $(1, 0)$ and $(1, \pi)$ respectively. Given that $P$ moves so that the product $PA\cdot PB = 2$, show that \[r^2 = \cos2\t + \sqrt{3 + \cos^22\t}.\]
+
+    \begin{enumerate}
+        \item Given that $r \geq 0$ and $0 \leq \t \leq 2\pi$, find the maximum and minimum values of $r$, and the values of $\t$ at which they occur.
+        \item Verify that the path taken by $P$ is symmetric about the lines $\t = 0$ and $\t = \dfrac{\pi}{2}$, giving your reasons.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Note that $A$ and $B$ have Cartesian coordinates $(1, 0)$ and $(-1, 0)$ respectively. Let $P(x, y)$. Then \[PA^2 = (x-1)^2 + y^2, \qquad PB^2 = (x+1)^2 + y^2.\] Hence, \[PA \cdot PB = \bp{(x-1)^2 + y^2}\bp{(x+1)^2 + y^2} = \bp{x^2 + y^2}^2 - 2\bp{x^2 - y^2} + 1.\] Since $x^2 - y^2 = r^2 \bp{\cos^2 \t - \sin^2 \t} = r^2 \cos 2\t$, the polar equation of the locus of $P$ is \[r^4 - 2r^2 \cos 2\t + 1 = \bp{PA \cdot PB}^2 = 4 \implies r^4 - 2r^2\cos2\t - 3 = 0.\] By the quadratic formula, we have \[r^2 = \frac{2\cos2\t \pm \sqrt{4\cos^2 2\t + 12}}{2} = \cos 2\t \pm \sqrt{\cos^2 2\t + 3}.\] Since $\sqrt{\cos^2 2\t + 3} > \cos 2\t$ and $r^2 \geq 0$, we reject the negative case. Thus, \[r^2 = \cos2\t + \sqrt{3 + \cos^22\t}.\]
+
+    \begin{ppart}
+        Differentiating with respect to $\t$, we obtain \[2r \der{r}{\t} = -2\sin2\t \bp{1 + \frac1{2\sqrt{3 + \cos^2 2\t}}}.\] For stationary points, $\derx{r}{\t} = 0$. Since $1 + 1/2\sqrt{3 + \cos^2 2\t} > 0$, we must have $\sin 2\t = 0$, whence $\t = 0, \pi/2, \pi, 3\pi/2$. By symmetry, we only consider $\t = 0$ and $\t = \pi/2$.
+
+        \case{1} When $\t = 0$, we have $r^2 = 3$, whence $r = \sqrt3$.
+
+        \case{2} When $\t = \pi/2$, we have $r^2 = 1$, whence $r = 1$.
+
+        Thus, $\max r = \sqrt3$ and occurs when $\t = 0, \pi$, while $\min r = 1$ and occurs when $\t = \pi/2, 3\pi/2$.
+    \end{ppart}
+    \begin{ppart}
+        Recall that the path taken by $P$ is given by \[\bp{(x-1)^2 + y^2}\bp{(x+1)^2 + y^2} = 4.\] Observe that the above equation is invariant under the transformations $x \mapsto -x$ and $y \mapsto -y$. Hence, the path is symmetric about both the $x$- and $y$-axes, i.e. the lines $\t = 0$ and $\t = \pi/2$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Explain why the curve with equation $x^3 + 2xy^2 - a^2y = 0$ where $a$ is a positive constant lies entirely in the region $\abs{x} \leq 2^{-\frac34}a$.
+        \item Show that the polar equation of this curve is $r^2 = \dfrac{a^2\tan\t}{2-\cos^2\t}$.
+        \item Sketch the curve.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Consider the discriminant $\D$ of $x^3 + 2xy^2 - a^2 y = 0$ with respect to $y$: \[\D = \bp{-a^2}^2 - 4\bp{2x} = a^4 - 8x^4.\] For points on the curve, we clearly have $\D \geq 0$. Thus, \[a^3 - 8x^4 \geq 0 \implies x^4 \leq 2^{-3} a^4 \implies \abs{x} \leq 2^{-3/4} a.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{align*}
+            x^3 + 2xy^2 - a^2 y = 0 &\implies 2\bp{x^2 + y^2} - x^2 - a^2 \frac{y}{x} = 0 \implies 2r^2 - r^2\cos^2 \t - a^2 \tan \t = 0\\
+            &\hspace{5em} \implies r^2 = \frac{a^2 \tan \t}{2 - \cos^2 \t}.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2*pi,
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xmin=-2,
+                    xmax=2,
+                    ymin=-2,
+                    ymax=2,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[color=plotRed,data cs=polarrad, unbounded coords = jump] {sqrt((tan(\x r))/(2 - cos(\x r)^2))};
+        
+                    \addlegendentry{$r^2 = \frac{a^2\tan\t}{2-\cos^2\t}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The curve $C$ has polar equation $r = 1 - \sin 3\t$, where $0 \leq \t \leq 2\pi$.
+
+    \begin{enumerate}
+        \item Sketch the curve $C$, showing the tangents at the pole and the intersections with the axes.
+        \item Find the gradient of the curve at the point where $\t = \dfrac{\pi}3$, giving your answer in the form $a + b\sqrt3$, where $a$ and $b$ are constants to be determined.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2*pi,
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-1, 1},
+                    xticklabels = {$\bp{1, \pi}$, $\bp{1, 0}$},
+                    ytick = {2},
+                    yticklabels = {$\bp{2, \frac\pi2}$},
+                    ymax=2.3,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[color=plotRed,data cs=polarrad] {1 - sin(3 * \x r)};
+        
+                    \addlegendentry{$r = 1 - \sin3\t$};
+                    
+                    \node[anchor=west] at (0, -1) {$\t = \frac32 \pi$};
+
+                    \addplot[dotted, thick, domain=0:sqrt(3)] {1/sqrt(3) * x};
+
+                    \addplot[dotted, thick, domain=-sqrt(3):0] {-1/sqrt(3) * x};
+
+                    \node[anchor=south west, rotate=-25] at (-sqrt 3, 1) {$\t = \frac56 \pi$};
+
+                    \node[anchor=south east, rotate=25] at (sqrt 3, 1) {$\t = \frac16 \pi$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        When $\t = 0$ or $\t = \pi$, we have $r = 1$. Thus, $C$ intersects the horizontal axis at $(1, 0)$ and $(1, \pi)$. When $\t = \pi/2$, we have $r = 2$. Thus, $C$ intersects the vertical axis at $(2, \pi/2)$. When $\t = 3\pi/2$, we have $r = 0$. Thus, $C$ passes through the pole.
+
+        For tangents at the pole, $r = 0 \implies \sin 3\t = 1 \implies \t = \pi/6, 5\pi/6, 3\pi/2$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\derx{r}{\t} = -3\cos3\t$ evaluates to 3 when $\t = \pi/3$. Thus, \[\evalder{\der{y}{x}}{\t = \frac\pi3} = \evalder{\frac{\der{r}{\t}\sin\t + r\cos\t}{\der{r}{\t}\cos\t - r\sin\t}}{\t = \frac\pi3} = \frac{3\sqrt3 + 1}{3 - \sqrt3} = \frac{12 + 10\sqrt3}{6} = 2 + \frac{5}{3} \sqrt3.\] Hence, when $\t = \pi/3$, the gradient of the curve is $2 + 5\sqrt3/2$.
+    \end{ppart}
+\end{solution}

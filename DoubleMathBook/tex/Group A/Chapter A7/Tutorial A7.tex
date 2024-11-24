@@ -1,0 +1,404 @@
+\section{Tutorial A7}
+
+\begin{problem}
+    The vector $\vec v$ is defined by $3\vec i - 4 \vec j + \vec k$. Find the unit vector in the direction of $\vec v$ and hence find a vector of magnitude 25 which is parallel to $\vec v$.
+\end{problem}
+\begin{solution}
+    \[\vec{\hat v} = \frac{\vec v}{\abs{\vec v}} = \frac{1}{\sqrt{3^2 + (-4)^2 + 1^2}} \cveciii{3}{-4}{1} = \frac{1}{\sqrt{26}} \cveciii{3}{-4}{1}, \quad 25 \hat{\vec v} = \frac{25}{\sqrt{26}} \cveciii{3}{-4}{1}.\]
+\end{solution}
+
+\begin{problem}
+    With respect to an origin $O$, the position vectors of the points $A$, $B$, $C$ and $D$ are $4\vec i + 7 \vec j$, $\vec i + 3 \vec j$, $2\vec i + 4 \vec j$ and $3\vec i + d\vec j$ respectively.
+
+    \begin{enumerate}
+        \item Find the vectors $\oa{BA}$ and $\oa{BC}$.
+        \item Find the value of $d$ if $B$, $C$ and $D$ are collinear. State the ratio $\frac{BC}{BD}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\oa{BA} = \oa{OA} - \oa{OB} = \cvecii47 - \cvecii13 = \cvecii34, \quad \oa{BC} = \oa{OC} - \oa{OB} = \cvecii24 - \cvecii13 = \cvecii11.\]
+    \end{ppart}
+    \begin{ppart}
+        If $B$, $C$ and $D$ are collinear, then $\oa{BC} = \l \oa{CD}$ for some $\l \in \RR$. \[\oa{BC} = \l \oa{CD} \implies \cvecii11 = \l\bp{\oa{OD} - \oa{OC}} = \l\bs{\cvecii3d - \cvecii24} = \cvecii{\l}{\l(d-4)}.\] Hence, $\l = 1$ and $\l(d - 4) = 1$, whence $d = 5$. Also, $\oa{BC} = \oa{CD}$. Thus, \[\frac{BC}{BD} = \frac{BC}{BC + CD} = \frac{BC}{BC + BC} = \frac12.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The diagram shows a roof, with horizontal rectangular base $OBCD$, where $OB = 10$ m and $BC = 6$ m. The triangular planes $ODE$ and $BCF$ are vertical and the ridge $EF$ is horizontal to the base. The planes $OBFE$ and $DCFE$ are each inclined at an angle $\t$ to the horizontal, where $\tan \t = 4/3$. The point $O$ is taken as the origin and vectors $\vec i$, $\vec j$, $\vec k$, each of length 1 m, are taken along $OB$, $OD$ and vertically upwards from $O$ respectively.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0, 0) -- (-3, 0);
+            \draw (0, 0) -- (-1.5, 2);
+            \draw (-1.5, 2) -- (-3, 0);
+            \draw (0, 0) -- (4, 2);
+            \draw (4, 2) -- (1, 2);
+            \draw (4, 2) -- (2.5, 4);
+            \draw (2.5, 4) -- (1, 2);
+            \draw (1, 2) -- (-3, 0);
+            \draw (2.5, 4) -- (-1.5, 2);
+
+            \node[anchor=north] at (0, 0) {$O$};
+            \node[anchor=north] at (-3, 0) {$D$};
+            \node[anchor=south] at (-1.5, 2) {$E$};
+            \node[anchor=south] at (2.5, 4) {$F$};
+            \node[anchor=south east] at (1, 2) {$C$};
+            \node[anchor=west] at (4, 2) {$B$};
+
+            \draw (1.5, 2) arc (0:53:0.5);
+            \draw (3.5, 2) arc (180:127:0.5);
+            \node at (1.6, 2.3) {$\t$};
+            \node at (3.4, 2.3) {$\t$};
+
+            \draw[very thick, -latex] (0, 0) -- (-1, 0) node[anchor=north] {$\vec j$};
+            \draw[very thick, -latex] (0, 0) -- (0, 1) node[anchor=west] {$\vec k$};
+            \draw[very thick, -latex] (0, 0) -- (0.89, 0.45) node[anchor=north west] {$\vec i$};
+        \end{tikzpicture}
+    \end{center}
+
+    Find the position vectors of the points $B$, $C$, $D$, $E$ and $F$.
+\end{problem}
+\begin{solution}
+    Note that $\oa{OB} = 10 \vec i$ and $\oa{BC} =  6 \vec j$. Thus, $\oa{OC} = \oa{OB} + \oa{BC} = 10 \vec i + 6 \vec j$. Also, note that $\triangle ODE \cong \triangle BCF$. Hence, $\oa{OD} = \oa{BC} = 6 \vec j$. Note that $\triangle ODE$ is isosceles. Let $G$ be the mid-point of $OD$. Since $\tan \t = 4/3$, we have \[\frac{EG}{DG} = \frac43 \implies EG = \frac43 DG = \frac23 OD = \frac23 \cdot 6 = 4 \implies \oa{GE} = 4\vec k.\] Hence, \[\oa{OE} = \oa{OG} + \oa{GE} = \frac12 \oa{OD} + \oa{GE} = 3\vec j + 4 \vec k.\] Hence, \[\oa{OF} = \oa{OB} + \oa{BF} = \oa{OB} + \oa{OE} = 10 \vec i + 3 \vec j + 4 \vec k.\] Thus, \[\oa{OB} = 10 \vec i, \quad \oa{OC} = 10 \vec i + 6 \vec j, \quad \oa{OD} = 6 \vec j, \quad \oa{OE} = 3 \vec j + 4 \vec k, \quad \oa{OF} = 10 \vec i + 3 \vec j + 4 \vec k.\]
+\end{solution}
+
+\begin{problem}
+    Find $\vec u \dotp \vec v$, $\vec u \crossp \vec v$ and the angle between $\vec u$ and $\vec v$ given that
+
+    \begin{enumerate}
+        \item $\vec u = \vec i - \vec j + \vec k$, $\vec v = 3\vec i + 2 \vec j + 7 \vec k$
+        \item $\vec u = 2\vec i - 3\vec k$, $\vec v = -\vec i + 7 \vec j + 2\vec k$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have $\vec u = \cveciiix1{-1}1$ and $\vec v = \cveciiix327$. Hence, \[\vec u \dotp \vec v = (1)(3) + (-1)(2) + (1)(7) = 8, \quad \vec u \crossp \vec v = \cveciii{(-1)(7) - (2)(1)}{(1)(3) - (7)(1)}{(1)(2) - (3)(-1)}= \cveciii{-9}{-4}{5}.\] Let the angle between $\vec u$ and $\vec v$ be $\t$. \[\cos \t = \frac{\vec u \dotp \vec v}{\abs{\vec u} \abs{\vec v}} = \frac{8}{\sqrt{3} \sqrt{62}} \implies \t = 54.1\deg \todp{1}.\]
+    \end{ppart}
+    \begin{ppart}
+        We have $\vec u = \cveciiix20{-3}$ and $\vec v = \cveciiix{-1}72$. Hence, \[\vec u \dotp \vec v = (2)(-1) + (0)(7) + (-3)(2) = -8, \quad \vec u \dotp \vec v = \cveciii{(0)(2) - (7)(-3)}{(-3)(-1) - (2)(2)}{(2)(7) - (-1)(0)} = \cveciii{21}{-1}{14}.\] Let the angle between $\vec u$ and $\vec v$ be $\t$. \[\cos \t = \frac{\vec u \dotp \vec v}{\abs{\vec u}\abs{\vec v}} = \frac{-8}{\sqrt{13}\sqrt{54}} \implies \t = 107.6\deg \todp{1}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Find $\vec u \dotp \vec v$ and $\abs{\vec u \crossp \vec v}$ given that $\vec u = 2\vec a - \vec b$, $\vec v = -\vec a + 3 \vec b$, where $\abs{\vec a} = 2$, $\abs{\vec b} = 1$ and the angle between $\vec a$ and $\vec b$ is 60$\deg$.
+\end{problem}
+\begin{solution}
+    \begin{align*}
+        \vec u \dotp \vec v &= (2 \vec a - \vec b) \dotp (-\vec a + 3 \vec b) = -2\vec a \dotp \vec a + 6 \vec a \dotp \vec b + \vec b \dotp \vec a -3 \vec b \dotp \vec b\\ &= -2 \abs{\vec a}^2 - 3 \abs{\vec b}^2 + 7 \abs{\vec a}\abs{\vec b}\cos \t = -2(2)^2 - 3(1)^2 + 7(2)(1)\cos60\deg = -4.\\
+        \abs{\vec u \crossp \vec v} &= \abs{(2 \vec a - \vec b) \crossp (-\vec a + 3 \vec b)} = \abs{-2\vec a \crossp \vec a + 6 \vec a \crossp \vec b + \vec b \crossp \vec a -3 \vec b \crossp \vec b}\\
+        &= \abs{5 \vec a \crossp \vec b} = 5 \abs{\vec a} \abs{\vec b} \sin \t = 5(2)(1) \sin 60\deg = 5\sqrt3.
+    \end{align*}
+\end{solution}
+
+\begin{problem}
+    If $\vec a = \vec i + 4 \vec j - \vec k$, $\vec b = \vec i - \vec j + 3 \vec k$ and $\vec c = 2 \vec i + \vec j$, find
+
+    \begin{enumerate}
+        \item a unit vector perpendicular to both $\vec a$ and $\vec b$,
+        \item a vector perpendicular to both $(3 \vec b - 5 \vec c)$ and $(7 \vec b + \vec c)$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $\vec a \crossp \vec b = \cveciiix{11}{-4}{-5}$. Hence, $\wh{\vec a \crossp \vec b} = \frac1{\sqrt{162}} \cveciiix{11}{-4}{-5}$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that $(3 \vec b - 5 \vec c) \crossp (7 \vec b + \vec c) = \l \vec b \crossp \vec c$ for some $\l \in \RR$. It hence suffices to find $\vec b \crossp \vec c$, which works out to be $\cveciiix{-3}{6}{3}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The position vectors of the points $A$, $B$ and $C$ are given by $\vec a = 2 \vec i + 3 \vec j - 4 \vec k$, $\vec b = 5 \vec i - \vec j + 2 \vec k$, $\vec c = 11 \vec i + \l \vec j + 14 \vec k$ respectively. Find
+
+    \begin{enumerate}
+        \item a unit vector parallel to $\oa{AB}$;
+        \item the position vector of the point $D$ such that $ABCD$ is a parallelogram, leaving your answer in terms of $\l$;
+        \item the value of $\l$ if $A$, $B$ and $C$ are collinear;
+        \item the position vector of the point $P$ on $AB$ is $AP:PB = 2:1$.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \[\oa{AB} = \vec b - \vec a = \cveciii5{-1}2 - \cveciii23{-4} = \cveciii3{-4}6.\] Note that $\abs{\oa{AB}} = \sqrt{61}$. Hence, the required vector is $\frac1{\sqrt{61}}\cveciiix3{-4}6$.
+    \end{ppart}
+    \begin{ppart}
+        Since $ABCD$ is a parallelogram, we have that $\oa{AD} = \oa{BC}$. Thus, \[\oa{OD} - \vec a = \vec c - \vec b \implies \oa{OD} = \vec a - \vec b + \vec c = \cveciii23{-4} - \cveciii5{-1}2 + \cveciii{11}{\l}{14} = \cveciii8{\l + 4}8.\]
+    \end{ppart}
+    \begin{ppart}
+        Given that $A$, $B$ and $C$ are collinear, we have $\oa{AB} = k\oa{BC}$ for some $k \in \RR$. Hence, \[\cveciii3{-4}6 = k \bp{\vec c - \vec b} = k \bs{\cveciii{11}{\l}{14} - \cveciii5{-1}2} = k \cveciii6{\l + 1}{12}.\] We hence see that $k = 1/2$, whence $\l = -9$.
+    \end{ppart}
+    \begin{ppart}
+        By the ratio theorem, \[\oa{OP} = \frac{\vec a + 2 \vec b}{2 + 1} = \frac13 \bs{\cveciii23{-4} + 2\cveciii5{-1}2} = \frac13 \cveciii{12}10.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    $ABCD$ is a square, and $M$ and $N$ are the midpoints of $BC$ and $CD$ respectively. Express $\oa{AC}$ in terms of $\vec p$ and $\vec q$, where $\oa{AM} = \vec p$ and $\oa{AN} = \vec q$.
+\end{problem}
+\begin{solution}
+    Let $ABCD$ be a square with side length $2k$ with $A$ at the origin. Then $\vec p = \oa{AM} = \cveciix{2k}{-k}$ and $\vec q = \oa{AN} = \cveciix{k}{-2k}$. Hence, $\vec p + \vec q = \cveciix{3k}{-3k}$. Thus, $\oa{AC} = \cveciix{2k}{-2k} = \frac23 \cveciix{3k}{-3k} = \frac23 \bp{\vec p + \vec q}$.
+\end{solution}
+
+\begin{problem}
+    The points $A$, $B$ have position vectors $\vec a$, $\vec b$ respectively, referred to an origin $O$, where $\vec a$ and $\vec b$ are not parallel to each other. The point $C$ lies on $AB$ between $A$ and $B$ and is such that $\frac{AC}{CB} = 2$, and $D$ is the mid-point of $OC$. The line $AD$ produced meets $OB$ at $E$.
+
+    Find, in terms of $\vec a$ and $\vec b$,
+
+    \begin{enumerate}
+        \item the position vector of $C$ (referred to $O$),
+        \item the vector $\oa{AD}$. Find the values of $\frac{OE}{EB}$ and $\frac{AE}{ED}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        By the ratio theorem, \[\oa{OC} = \frac{\vec a + 2\vec b}{2 + 1} = \frac13 \vec a + \frac23 \vec b.\]
+    \end{ppart}
+    \begin{ppart}
+        Using Menalaus' theorem on $\triangle BCO$, \[\frac{BA}{AC} \frac{CD}{DO} \frac{OE}{EB} = 1 \implies \frac{OE}{EB} = \frac23.\] Using Menalaus' theorem on $\triangle BEA$, \[\frac{BO}{OE} \frac{ED}{DA} \frac{AC}{CB} = 1 \implies \frac{ED}{AD} = \frac15 \implies \frac{AE}{ED} = \frac{AD + DE}{ED} = 6.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item The angle between the vectors $(3\vec i - 2\vec j)$ and $(6\vec i + d\vec j - \sqrt7 \vec k)$ is $\arccos \frac6{13}$. Show that $2d^2 - 117d + 333 = 0$.
+        \item With reference to the origin $O$, the points $A$, $B$, $C$ and $D$ are such that $\oa{OA} = \vec a$, $\oa{OB} = \vec b$, $\oa{AC} = 5\vec a$, $\oa{BD} = 3\vec b$. The lines $AD$ and $BC$ cross at $E$.
+
+        \begin{center}
+            \begin{tikzpicture}[scale=0.8]
+                \node[anchor=east] at (0, 0) {$O$};
+                \draw (0, 0) -- (12, 0) node[anchor=west] {$C$};
+                \draw (0, 0) -- (6, 4) node[anchor=west] {$D$};
+                \fill (2, 0) circle[radius=2.5pt] node[anchor=north] {$A$};
+                \fill (1.5, 1) circle[radius=2.5pt] node[anchor=south east] {$B$};
+                \fill (12, 0) circle[radius=2.5pt];
+                \fill (6, 4) circle[radius=2.5pt];
+                \draw[name path=L1] (1.5, 1) -- (12, 0);
+                \draw[name path=L2] (2, 0) -- (6, 4);
+                \fill [name intersections={of=L1 and L2,by={E1}}] (E1) circle[radius=2.5pt] node[anchor=north] {$E$};
+
+                \node[anchor=north] at (1, 0) {$\vec a$};
+                \node[anchor=south east] at (0.75, 0.5) {$\vec b$};
+
+                \begin{scope}[decoration={
+                    markings,
+                    mark=at position 0.5 with {\arrow{>}}}
+                    ]
+                    \draw[postaction={decorate}] (0, 0) -- (2, 0);
+                    \draw[postaction={decorate}] (0, 0) -- (1.5, 1);
+                \end{scope}
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{enumerate}
+            \item Find $\oa{OE}$ in terms of $\vec a$ and $\vec b$.
+            \item The point $F$ divides the line $CD$ in the ratio $5 : 3$. Show that $O$, $E$ and $F$ are collinear, and find $OE:EF$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\vec a = \cveciiix3{-2}0$ and $\vec b = \cveciiix6d{-\sqrt7}$. Note that $\vec a \dotp \vec b = 18 - 2d$. Let $\t$ be the angle between $\vec a$ and $\vec b$.
+        \begin{align*}
+            &\cos \t = \frac{\vec a \dotp \vec b}{\abs{\vec a}\abs{\vec b}} \implies \frac6{13} = \frac{18-2d}{\sqrt{43 + d^2}\sqrt{13}} \implies \frac{9}{13} = \frac{(9-d)^2}{43 + d^2}\\
+            &\implies 9(43 + d^2) = 13(d^2 - 18d + 81) \implies 2d^2 - 117d + 333 = 0.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            By Menalaus' theorem, \[\frac{OC}{CA} \frac{AE}{ED} \frac{DB}{BO} = 1 \implies \frac{AE}{ED} = \frac{5}{18} \implies \oa{AE} = \frac5{23} \oa{AD} \implies \oa{OE} = \oa{OA} + \frac5{23} \oa{AD}.\] Since $\oa{AD} = \oa{OD} - \oa{OA} = 4\vec b - \vec a$. Thus, \[\oa{OE} = \vec a + \frac5{23} \bp{4\vec b - \vec a} = \frac{18}{23} \vec a + \frac{20}{23} \vec b.\]
+        \end{psubpart}
+        \begin{psubpart}
+            By the ratio theorem, \[\oa{OF} = \frac{3\vec c + 5\vec d}{5 + 3} = \frac{23}8 \bp{\frac{18}{23} \vec a + \frac{20}{23} \vec b} = \frac{23}8 \oa{OE}.\] Thus, $OE : OF = 8 : 23$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Relative to the origin $O$, two points $A$ and $B$ have position vectors given by $\vec a = 14 \vec i + 14 \vec j + 14 \vec k$ and $\vec b = 11\vec i - 13 \vec j + 2 \vec k$ respectively.
+
+    \begin{enumerate}
+        \item The point $P$ divides the line $AB$ in the ratio $2:1$. Find the coordinates of $P$.
+        \item Show that $AB$ and $OP$ are perpendicular.
+        \item The vector $\vec c$ is a unit vector in the direction of $\oa{OP}$. Write $\vec c$ as a column vector and give the geometrical meaning of $\abs{\vec a \dotp \vec c}$.
+        \item Find $\vec a \crossp \vec p$, where $\vec p$ is the vector $\oa{OP}$, and give the geometrical meaning of $\abs{\vec a \crossp \vec p}$. Hence, write down the area of triangle $OAP$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have $\vec a = \cveciiix{14}{14}{14} = 14 \cveciiix111$ and $\vec b = \cveciiix{11}{-13}2$. By the ratio theorem, \[\oa{OP} = \frac{\vec a + 2\vec b}{2 + 1} = \frac13 \bs{\cveciii{14}{14}{14} + 2\cveciii{11}{-13}2} = \cveciii{12}{-4}6 = 2\cveciii6{-2}3.\] Hence, $P(12, -4, 6)$
+    \end{ppart}
+    \begin{ppart}
+        Consider $\oa{AB} \dotp \oa{OP}$. \[\oa{AB} \dotp \oa{OP} = \bs{\cveciii{11}{-13}2 -  \cveciii{14}{14}{14}} \dotp \cveciii{12}{-4}6 = -3\cveciii194 \dotp 2\cveciii6{-2}3 = 0.\] Since $\oa{AB} \dotp \oa{OP} = 0$, $AB$ and $OP$ must be perpendicular.
+    \end{ppart}
+    \begin{ppart}
+        We have \[\vec c = \frac{\oa{OP}}{\abs{\oa{OP}}} = \frac1{\sqrt{6^2 + (-2)^2 + 3^2}}\cveciii6{-2}3 = \frac17 \cveciii6{-2}3.\] $\abs{\vec a \dotp \vec c}$ is the length of the projection of $\vec a$ on $\oa{OP}$.
+    \end{ppart}
+    \begin{ppart}
+        We have \[\vec a \crossp \vec p = 14 \cveciii111 \crossp 2 \cveciii6{-2}3 = 28 \cveciii{1 \cdot 3 - (-2) \cdot 1}{1 \cdot 6 - 3 \cdot 1}{1 \cdot -2 - 6 \cdot 1} = 28 \cveciii53{-8}.\] $\abs{\vec a \crossp \vec p}$ is twice the area of $\triangle OAP$. \[[\triangle OAP] = \frac12 \abs{\vec a \crossp \vec p} = 14 \sqrt{98} = 98 \sqrt 2 \text{ units$^2$}.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The points $A$, $B$ and $C$ have position vectors given by $\vec i - \vec j + \vec k$, $\vec j - \vec k$ and $2 \vec i - \vec j - \vec k$ respectively.
+
+    \begin{enumerate}
+        \item Find the area of the triangle $ABC$. Hence, find the sine of the angle $BAC$.
+        \item Find a vector perpendicular to the plane $ABC$.
+        \item Find the projection vector of $\oa{AC}$ onto $\oa{AB}$.
+        \item Find the distance of $C$ to $AB$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have $\oa{OA} = \cveciiix1{-1}{1}$, $\oa{OB} = \cveciiix01{-1}$ and $\oa{OC} = \cveciiix2{-1}{-1}$. Note that $\oa{AB} = \cveciiix{-1}2{-2}$ and $\oa{AC} = \cveciiix10{-2}$. Thus, \[[\triangle ABC] = \frac12 \abs{\oa{AB} \crossp \oa{AC}} = \frac12 \abs{\cveciii{-4}{-4}{-2}} = \frac12 \cdot 6 = 3 \text{ units$^2$}.\]
+
+        We have \[\sin BAC = \frac{\abs{\oa{AB} \crossp \oa{AC}}}{\abs{\oa{AB}}\abs{\oa{AC}}} = \frac{6}{3\sqrt5} = \frac{2\sqrt5}{5}.\]
+    \end{ppart}
+    \begin{ppart}
+        $\cveciiix221$ is parallel to $\oa{AB} \crossp \oa{AC}$ and is hence perpendicular to the plane $ABC$.
+    \end{ppart}
+    \begin{ppart}
+        The projection vector of $\oa{AC}$ onto $\oa{AB}$ is given by \[\bp{\oa{AC} \dotp \frac{\oa{AB}}{\abs{\oa{AB}}}} \frac{\oa{AB}}{\abs{\oa{AB}}} = \frac13 \cveciii{-1}2{-2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\abs{\oa{AC} \crossp \frac{\oa{AB}}{\abs{\oa{AB}}}} = \frac13 \abs{\oa{AB} \crossp \oa{AC}} = 2.\] Hence, the perpendicular distance between $C$ and $AB$ is 2 units.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0, 0) -- (4, -2);
+            \draw (0, 0) -- (0, 2);
+            \draw[dotted] (0, 0) -- (4, 1);
+            \draw (4, -2) -- (8, -1);
+            \draw[dotted] (4, 1) -- (8, -1);
+            \draw (0, 2) -- (4, 3);
+            \draw[dotted] (4, 3) -- (4, 1);
+            \draw (4, 3) -- (8, -1);
+            \draw (0, 2) -- (4, -2);
+
+            \node[anchor=east] at (0, 0) {$O$};
+            \node[anchor=south] at (0, 2) {$B$};
+            \node[anchor=south] at (4, 3) {$C$};
+            \node[anchor=north] at (4, 1) {$D$};
+            \node[anchor=west] at (8, -1) {$E$};
+            \node[anchor=north] at (4, -2) {$F$};
+
+            \draw[very thick, -latex] (0, 0) -- (0, 1) node[anchor=east] {$\vec k$};
+            \draw[very thick, -latex] (0, 0) -- (0. 97, 0.24) node[anchor=south east] {$\vec j$};
+            \draw[very thick, -latex] (0, 0) -- (0. 89, -0.45) node[anchor=north east] {$\vec i$};
+        \end{tikzpicture}
+    \end{center}
+
+    The diagram shows a vehicle ramp $OBCDEF$ with horizontal rectangular base $ODEF$ and vertical rectangular face $OBCD$. Taking the point $O$ as the origin, the perpendicular unit vectors $\vec i$, $\vec j$ and $\vec k$ are parallel to the edges $OF$, $OD$ and $OB$ respectively. The lengths of $OF$, $OD$ and $OB$ are $2h$ units, 3 units and $h$ units respectively.
+
+    \begin{enumerate}
+        \item Show that $\oa{OC} = 3 \vec j + h \vec k$.
+        \item The point $P$ divides the segment $CF$ in the ratio $2:1$. Find $\oa{OP}$ in terms of $h$.
+    \end{enumerate}
+
+    For parts (c) and (d), let $h = 1$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find the length of projection of $\oa{OP}$ onto $\oa{OC}$.
+        \item Using the scalar product, find the angle that the rectangular face $BCEF$ makes with the horizontal base.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\oa{OC} = \oa{OD} + \oa{DC} = \oa{OD} + \oa{OB} = 3 \vec j + h \vec k.\]
+    \end{ppart}
+    \begin{ppart}
+        By the ratio theorem, \[\oa{OP} = \frac{\oa{OC} + 2 \oa{OF}}{2 + 1} = \frac13 \bs{\cveciii03h + 2\cveciii{2h}00 } = \frac13 \cveciii{4h}3h.\]
+    \end{ppart}
+    \begin{ppart}
+        The length of projection of $\oa{OP}$ onto $\oa{OC}$ is given by \[\abs{\oa{OP} \dotp \frac{\oa{OC}}{\abs{\oa{OC}}}} = \frac1{3\sqrt{10}} \abs{\cveciii{4}31 \dotp \cveciii031} = \frac{\sqrt{10}}3 \text{ units}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{OF} = \cveciiix200$ and $\oa{BF} = \oa{OF} - \oa{OB} = \cveciiix20{-1}$. Let $\t$ be the angle the rectangular face $BCEF$ makes with the horizontal base. \[\cos \t = \frac{\oa{OF} \dotp \oa{BF}}{\abs{\oa{OF}}\abs{\oa{BF}}} = \frac{4}{2\sqrt5} \implies \t = 26.6 \deg \todp{1}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The position vectors of the points $A$ and $B$ relative to the origin $O$ are $\oa{OA} = \vec i + 2 \vec j - 2 \vec k$ and $\oa{OB} = 2\vec i - 3 \vec j + 6 \vec k$ respectively. The point $P$ on $AB$ is such that $AP:PB = \l:1-\l$. Show that $\oa{OP} = (1 + \l)\vec i + (2 - 5\l)\vec j + (-2 + 8) \vec k$ where $\l$ is a real parameter.
+
+    \begin{enumerate}
+        \item Find the value of $\l$ for which $OP$ is perpendicular to $AB$.
+        \item Find the value of $\l$ for which angles $\angle AOP$ and $\angle POB$ are equal.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    By the ratio theorem, \[\oa{OP} = \frac{\l \oa{OB} + (1-\l) \oa{OA}}{\l + (1 - \l)} = \l \cveciii2{-3}6 + (1-\l)\cveciii12{-2} = \cveciii{1+\l}{2-5\l}{-2+8\l}.\]
+
+    \begin{ppart}
+        Note that $\oa{AB} = \oa{OB} - \oa{OA} = \cveciiix1{-5}8$. For $OP$ to be perpendicular to $AB$, we must have $\oa{OP} \dotp \oa{AB} = 0$. \[\oa{OP} \dotp \oa{AB} = 0 \implies \cveciii{1+\l}{2-5\l}{-2+8\l} \dotp \cveciii1{-5}8 = 0 \implies -25 + 90\l = 0 \implies \l = \frac5{18}.\]
+    \end{ppart}
+    \begin{ppart}
+        Suppose $\angle AOP = \angle POB$. Then $\cos \angle AOP = \cos \angle POB$. Thus, \[\frac{\oa{OP} \dotp \oa{OA}}{\abs{\oa{OP}} \abs{\oa{OA}}} = \frac{\oa{OP} \cdot \oa{OB}}{\abs{\oa{OP}} \abs{\oa{OB}}} \implies \oa{OP} \dotp \bp{\frac13 \oa{OA} - \frac17 \oa{OB}} = 0 \implies \oa{OP} \dotp \bp{7\oa{OA} - 3\oa{OB}} = 0.\] This gives \[\cveciii{1+\l}{2-5\l}{-2+8\l} \dotp \bs{7 \cveciii12{-2} -  3 \cveciii2{-3}6} = \cveciii{1+\l}{2-5\l}{-2+8\l} \dotp \cveciii1{23}{-32} = 0.\] Taking the dot product and simplifying, we see that $111 - 370\l = 0$, whence $\l = \frac3{10}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}
+            \node[anchor=east] at (0, 0) {$O$};
+            \draw (0, 0) -- (5, 0.5) node[anchor=west] {$B$};
+            
+            \draw[dotted] (2.5, 3) -- (6, 2);
+
+            \fill (2.5, 0.25) circle[radius=2.5pt] node[anchor=north] {$M$};
+            \fill (28/7, 18/7) circle[radius=2.5pt] node[anchor=south west] {$N$};
+
+            \node[anchor=south east] at (1.25, 1.5) {$\vec a$};
+
+            \node[anchor=south] at (3.75, 0.375) {$\vec b$};
+
+            \node[anchor=south] at (3, 1) {$\vec c$};
+
+            \fill (2.5, 3) circle[radius=2.5pt];
+            \fill (5, 0.5) circle[radius=2.5pt];
+            \fill (6, 2) circle[radius=2.5pt];
+
+            \begin{scope}[decoration={
+                markings,
+                mark=at position 0.5 with {\arrow{>}}}
+                ] 
+                \draw[postaction={decorate}] (2.5, 0.25)--(5, 0.5);
+                \draw [postaction={decorate}](0, 0) -- (2.5, 3) node[anchor=south] {$A$};
+                \draw [postaction={decorate}](0, 0) -- (6, 2) node[anchor=west] {$C$};
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+
+    The origin $O$ and the points $A$, $B$ and $C$ lie in the same plane, where $\oa{OA} = \vec a$, $\oa{OB} = \vec b$ and $\oa{OC} = \vec c$,
+
+    \begin{enumerate}
+        \item Explain why $\vec c$ can be expressed as $\vec c = \l \vec a + \m \vec b$, for constants $\l$ and $\m$.
+    \end{enumerate}
+
+    The point $N$ is on $AC$ such that $AN : NC = 3 : 4$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Write down the position vector of $N$ in terms of $\vec a$ and $\vec c$.
+        \item It is given that the area of triangle $ONC$ is equal to the area of triangle $OMC$, where $M$ is the mid-point of $OB$. By finding the areas of these triangles in terms of $\vec a$ and $\vec b$, find $\l$ in terms of $\m$ in the case where $\l$ and $\m$ are both positive.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since $\vec a$, $\vec b$ and $\vec c$ are co-planar and $\vec a$ is not parallel to $\vec b$, $\vec c$ can be written as a linear combination of $\vec a$ and $\vec b$.
+    \end{ppart}
+    \begin{ppart}
+        By the ratio theorem, \[\oa{ON} = \frac{4\vec a + 3\vec c}{3 + 4} = \frac47 \vec a + \frac37 \vec c.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $\vec c = \l \vec a + \m \vec b$.
+        The area of $\triangle ONC$ is given by \[[\triangle ONC] = \frac12 \abs{\oa{ON} \crossp \hat{\vec c}} = \frac12 \abs{\bs{\frac47\vec a + \frac37(\l \vec a + \m \vec b)} \crossp \frac{(\l \vec a + \m \vec b)}{\abs{\vec c}}} = \frac{2}{7\abs{\vec c}} \abs{\vec a \crossp \vec b}.\] Meanwhile, the area of $\triangle OMC$ is given by \[[\triangle OMC] = \frac12 \abs{\oa{OM} \crossp \hat{\vec c}} = \frac12 \abs{\frac12 \vec b \crossp \frac{(\l \vec a + \m \vec b)}{\abs{\vec c}}} = \frac{\l}{4\abs{\vec c}} \abs{\vec a \crossp \vec b}.\] Since the two areas are equal, \[[\triangle ONC] = [\triangle OMC] \implies \frac2{7\abs{\vec c}} \abs{\vec a \crossp \vec b} = \frac{\l}{4\abs{\vec c}} \abs{\vec a \crossp \vec b} \implies \l = \frac87 \m.\]
+    \end{ppart}
+\end{solution}
