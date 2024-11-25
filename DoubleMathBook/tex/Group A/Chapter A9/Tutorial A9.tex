@@ -1,0 +1,508 @@
+\section{Tutorial A9}
+
+\begin{problem}
+    A student claims that a unique plane can always be defined based on the given information. True or False? (Whenever a line is mentioned, assume the vector equation is known.)
+
+    \begin{table}[h]
+        \centering
+        \begin{tabularx}{\textwidth}{r X l}
+        & \textbf{Statement} & \textbf{T/F}\\\hline
+        (a) & Any 2 vectors parallel to the plane and a point lying on the plane. & False \\
+        (b) & Any 3 distinct points lying on the plane. & False \\
+        (c) & A vector perpendicular to the plane and a point lying on the plane. & True\\
+        (d) & A line $l$ perpendicular to the plane and a particular point on $l$ lying on the plane. & True\\
+        (e) & A line $l$ lying on the plane. & False\\
+        (f) & A line $l$ and a point not on $l$, both lying on the plane. & True\\
+        (g) & A pair of distinct, intersecting lines, both lying on the plane. & True\\
+        (h) & A pair of distinct, parallel lines, both lying on the plane. & True\\
+        (i) & A pair of skew lines both parallel to the plane. & False\\
+        (j) & 2 intersecting lines both parallel to the plane. & False
+        \end{tabularx}
+    \end{table}
+\end{problem}
+
+\begin{problem}
+    Find the equations of the following planes in parametric, scalar product and Cartesian form:
+
+    \begin{enumerate}
+        \item The plane passes through the point with position vector $7\vec i + 2 \vec j -3\vec j$ and is parallel to $\vec i + 3\vec j$ and $4\vec j - 2\vec k$.
+        \item The plane passes through the points $A(2, 0, 1)$, $B(1, -1, 2)$ and $C(1, 3, 1)$.
+        \item The plane passes through the point with position vector $7\vec i$ and is parallel to the plane $\vec r = (2 - p + q)\vec i + (p + 3q)\vec j + (-2-3q)\vec k$, $p, q \in \RR$.
+        \item The plane contains the line $l : \vec r = (-2\vec i + 5\vec j -3\vec k) + \l(2\vec i + \vec j + 2\vec k)$, $\l \in \RR$ and is perpendicular to the plane $\pi : \vec r \dotp (7\vec i + 4\vec j + 5\vec k) = 2$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \textbf{Parametric.}
+        Note that $\cveciiix04{-2} \parallel \cveciiix02{-1}$. Hence, the plane has parametric form \[\vec r = \cveciii72{-3} + \l\cveciii130 + \m\cveciii02{-1}, \, \l, \m \in \RR.\]
+
+        \textbf{Scalar Product.}
+        Note that $\vec n = \cveciiix130 \crossp \cveciiix02{-1} = \cveciiix{-3}12 \implies d = \cveciiix72{-3} \dotp \cveciiix{-3}12 = -25$. Thus, the plane has scalar product form \[\vec r \dotp \cveciii{-3}12 = -2.\]
+
+        \textbf{Cartesian.} Let $\vec r = \cveciiix{x}{y}{z}$. From the scalar product form, we have \[-3x + y + 2z = -25.\]
+    \end{ppart}
+    \begin{ppart}
+        \textbf{Parametric.} Since the plane passes through the points $A$, $B$ and $C$, it is parallel to both $\oa{AB} = -\cveciiix11{-1}$ and $\oa{AC}= \cveciiix{-1}30$. Hence, the plane has parametric form \[\vec r = \cveciii201 + \l\cveciii11{-1} + \m\cveciii{-1}30, \, \l, \m \in \RR.\]
+
+        \textbf{Scalar Product.} Note that $\vec n = \cveciiix11{-1} \crossp \cveciiix{-1}30 = \cveciiix314 \implies d = \cveciiix201 \dotp \cveciiix314 = 10$. Thus, the plane has scalar product form \[\vec r \dotp \cveciii314 = 10.\]
+
+        \textbf{Cartesian.} Let $\vec r = \cveciiix{x}{y}{z}$. From the scalar product form, we have \[3x + y + 4z = 10.\]
+    \end{ppart}
+    \begin{ppart}
+        \textbf{Parametric.} Note that the plane is parallel to $\vec r = \cveciiix20{-1} + p\cveciiix{-1}10 + q\cveciiix13{-3}$ and passes through $(7, 0, 0)$. Hence, the plane has parametric form \[\vec r = \cveciii700 + \l\cveciii{-1}10 + \m\cveciii13{-3}, \, \l, \m \in \RR.\]
+
+        \textbf{Scalar Product.} Note that $\cveciiix{-1}10 \crossp \cveciiix13{-3} = \cveciiix{-3}{-3}{-4} \parallel \cveciiix334$. We hence take $\vec n = \cveciiix334$, whence $d = \cveciiix700 \dotp \cveciiix334 = 21$. Thus, the plane has scalar product form \[\vec r \dotp \cveciii334 = 21.\]
+
+        \textbf{Cartesian.} Let $\vec r = \cveciiix{x}{y}{z}$. From the scalar product form, we have \[3x + 3y + 4z = 21.\]
+    \end{ppart}
+    \begin{ppart}
+        \textbf{Parametric.} Since the plane contains the line with equation $\vec r = \cveciiix{-2}5{-3} + \l\cveciiix212, \, \l \in \RR$, the plane passes through $(-2, 5, -3)$ and is parallel to the vector $\cveciiix212$. Furthermore, since the plane is perpendicular to the plane with normal $\cveciiix745$, it must be parallel to said vector. Thus, the plane has the following parametric form: \[\vec r = \cveciii{-2}5{-3} + \l\cveciii212 + \m\cveciii745, \, \l, \m \in \RR.\]
+
+        \textbf{Scalar Product.} Note that $\vec n = \cveciiix212 \crossp \cveciiix745 = \cveciiix{-3}41 \implies d = \cveciiix{-2}5{-3} \dotp \cveciiix{-3}41 = 23$. Thus, the plane has scalar product form \[\vec r \dotp \cveciii{-3}41 = 23.\]
+
+        \textbf{Cartesian.} Let $\vec r = \cveciiix{x}{y}{z}$. From the scalar product form, we have \[-3x + 4y + z = 23.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The line $l$ passes through the points $A$ and $B$ with coordinates $(1, 2, 4)$ and $(-2, 3, 1)$ respectively. The plane $p$ has equation $3x - y + 2z = 17$. Find
+
+    \begin{enumerate}
+        \item the coordinates of the point of intersection of $l$ and $p$,
+        \item the acute angle between $l$ and $p$,
+        \item the perpendicular distance from $A$ to $p$, and
+        \item the position vector of the foot of the perpendicular from $B$ to $p$.
+    \end{enumerate}
+
+     The line $m$ passes through the point $C$ with position vector $6\vec i + \vec j$ and is parallel to $2\vec j + \vec k$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{4}
+        \item Determine whether $m$ lies in $p$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Note that $\oa{OA} = \cveciiix124$ and $\oa{OB} = \cveciiix{-2}31$, whence $\oa{AB} = -\cveciiix3{-1}3$. Thus, the line $l$ has vector equation \[\vec r = \cveciii124 + \l\cveciii3{-1}3, \, \l \in \RR.\]
+
+    Also note that the equation of the plane $p$ can be written as \[\vec r \dotp \cveciii3{-1}2 = 17.\]
+
+    \begin{ppart}
+        Let the point of intersection of $l$ and $p$ be $P$. Consider $l = p$. \[l = p \implies \bs{\cveciii124 + \l\cveciii3{-1}3} \dotp \cveciii3{-1}2 = 17 \implies 9 + 16\l = 17 \implies \l = \frac12.\]
+
+        Thus, $\oa{OP} = \cveciiix124 + \frac12\cveciiix3{-1}3 = \cveciiix{5/2}{3/2}{11/2}$, whence $P(5/2, 3/2, 11/2)$.
+
+    \end{ppart}
+    \begin{ppart}
+        Let $\t$ be the acute angle between $l$ and $p$. \[\sin\t = \frac{\abs{\cveciiix3{-1}3 \dotp \cveciiix3{-1}2}}{\abs{\cveciiix3{-1}3} \abs{\cveciiix3{-1}2}} = \frac{16}{\sqrt{266}} \implies \t = 78.8 \deg \todp{1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{AP} = -\frac12 \cveciiix3{-1}3$. The perpendicular distance from $A$ to $p$ is hence \[\abs{\oa{AP} \dotp \hat{\vec n}} = \frac{\abs{-\frac12\cveciiix3{-1}3 \dotp \cveciiix3{-1}2}}{\abs{\cveciiix3{-1}2}} = \frac8{\sqrt{14}} \text{ units}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $F$ be the foot of the perpendicular from $B$ to $p$. Since $F$ is on $p$, we have $\oa{OF} \dotp \cveciiix3{-1}2 = 17$. Furthermore, since $BF$ is perpendicular to $p$, we have $\oa{BF} = \l \vec n = \l \cveciiix3{-1}2$ for some $\l \in \RR$. We hence have $\oa{OF} = \oa{OB} + \oa{BF} = \cveciiix{-2}31 + \l \cveciiix3{-1}2$. Thus, \[\bs{\cveciii{-2}31 + \l \cveciii3{-1}2} \dotp \cveciii3{-1}2 = 17 \implies -7 + 14\l = 17 \implies \l = \frac{12}7.\] Hence, $\oa{OF} = \cveciiix{-2}31 + \frac{12}7 \cveciiix3{-1}2 = \frac17\cveciiix{22}9{31}$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $m$ has the vector equation \[\vec r = \cveciii610 + \l \cveciii021, \, \l \in \RR.\] Consider $m \dotp \vec n$: \[ m \dotp \vec n = \bs{\cveciii610 + \l \cveciii021} \dotp \cveciii3{-1}2 = 17.\] Since $m \dotp \vec n = 17$ for all $\l \in \RR$, it follows that $m$ lies in $p$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A plane contains distinct points $P$, $Q$, $R$ and $S$, of which no 3 points are collinear. What can be said about the relationship between the vectors $\oa{PQ}$, $\oa{PR}$ and $\oa{PS}$?
+\end{problem}
+\begin{solution}
+    Each of the three vectors can be expressed as a unique linear combination of the other two.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Interpret geometrically the vector equation $\vec r = \vec a + t\vec b$ where $\vec a$ and $\vec b$ are constant vectors and $t$ is a parameter.
+        \item Interpret geometrically the vector equation $\vec r \dotp \vec n = d$, where $\vec n$ is a constant unit vector and $d$ is a constant scalar, stating what $d$ represents.
+        \item Given that $\vec b \dotp \vec n \neq 0$, solve the equations $\vec r = \vec a + t\vec b$ and $\vec r \dotp \vec n = d$ to find $\vec r$ in terms of $\vec a$, $\vec b$, $\vec n$ and $d$. Interpret the solution geometrically.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The vector equation $\vec r = \vec a + t\vec b$ represents a line with direction vector $\vec b$ that passes through the point with position vector $\vec a$.
+    \end{ppart}
+    \begin{ppart}
+        The vector equation $\vec r \dotp \vec n = d$ represents a plane perpendicular to $\vec n$ that has a perpendicular distance of $d$ units from the origin. Here, a negative value of $d$ corresponds to a plane $d$ units from the origin in the opposite direction of $\vec n$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \vec r \dotp \vec n = d \implies \bp{\vec a + t\vec b} \dotp \vec n = d \implies \vec a \dotp \vec n + t\vec b \dotp \vec n = d\\
+            \implies t = \frac{d - \vec a \dotp \vec n}{\vec b \dotp \vec n} \implies \vec r = \vec a + \frac{d - \vec a \dotp \vec n}{\vec b \dotp \vec n} \, \vec b.
+        \end{gather*}
+
+        $\vec a + \frac{d - \vec a \dotp \vec n}{\vec b \dotp \vec n} \, \vec b$ is the position vector of the point of intersection of the line and plane.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The planes $p_1$ and $p_2$ have equations $\vec r \dotp \cveciiix2{-2}1 = 1$ and $\vec r \dotp \cveciiix{-6}32 = -1$ respectively, and meet in the line $l$.
+
+    \begin{enumerate}
+        \item Find the acute angle between $p_1$ and $p_2$.
+        \item Find a vector equation for $l$.
+        \item The point $A(4, 3, c)$ is equidistant from the planes $p_1$ and $p_2$. Calculate the two possible values of $c$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\t$ the acute angle between $p_1$ and $p_2$. \[\cos\t = \frac{\abs{\cveciiix2{-2}1 \dotp \cveciiix{-6}32}}{\abs{\cveciiix2{-2}1} \abs{\cveciiix{-6}32}} = \frac{16}{21} \implies \t = 40.4 \deg \todp{1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that $p_1$ has the Cartesian equation $2x-2y+z = 1$ and $p_2$ has the Cartesian equation $-6x + 3y + 2z = -1$. Consider $p_1 = p_2$. Solving both Cartesian equations simultaneously gives the solution \[ x = -\frac16 + \frac76t, \quad y = -\frac23 + \frac53 t, \quad z = t\] for all $t \in \RR$. The line $l$ thus has vector equation \[\vec r = \cveciii{x}{y}{z} = -\frac16\cveciii140 + t\cveciii7{10}6, \, t \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $Q$ be the point with position vector $-\frac16 \cveciiix140$. Then $\oa{AQ} = -\frac16 \cveciiix{25}{22}{6c}$. Since $Q$ lies on $l$, it lies on both $p_1$ and $p_2$. Since $A$ is equidistant to $p_1$ and $p_2$, the perpendicular distances from $A$ to $p_1$ and $p_2$ are equal.
+
+        The perpendicular distance from $A$ to $p_1$ is given by: \[\frac{\abs{\oa{AQ} \dotp \cveciiix2{-2}1}}{\abs{\cveciiix2{-2}1}} = \frac13 \abs{-\frac16 \cveciii{25}{22}{6c} \dotp \cveciii2{-2}1} = \frac13 \abs{1 + c}.\] Meanwhile, the perpendicular distance from $A$ to $p_2$ is given by: \[\frac{\abs{\oa{AQ} \dotp \cveciiix{-6}32}}{\abs{\cveciiix{-6}32}} = \frac17 \abs{-\frac16 \cveciii{25}{22}{6c} \dotp \cveciii{-6}32} = \frac17 \abs{-14 + 2c}.\] Equating the two gives \[\frac13 \abs{1 + c} = \frac17 \abs{-14 + 2c} \implies \abs{7 + 7c} = \abs{-42 + 6c}.\] This splits into the following two cases:
+
+        \case{1}{} $(7+7c)(-42+6c) > 0 \implies 7+7c = -42+6c \implies c = -49$.
+
+        \case{2}{} $(7+7c)(-42+6c) < 0 \implies 7+7c = -(-42+6c) \implies c = -35/13$.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    A plane $\Pi$ has equation $\vec r \dotp (2\vec i + 3\vec j) = -6$.
+        
+    \begin{enumerate}
+        \item Find, in vector form, an equation for the line passing through the point $P$ with position vector $2\vec i + \vec j + 4\vec k$ and normal to the plane $\Pi$.
+        \item Find the position vector of the foot $Q$ of the perpendicular from $P$ to the plane $\Pi$ and hence find the position vector of the image of $P$ after the reflection in the plane $\Pi$.
+        \item Find the sine of the acute angle between $OQ$ and the plane $\Pi$.
+    \end{enumerate}
+
+     The plane $\Pi'$ has equation $\vec r \dotp (\vec i + \vec j + \vec k) = 5$.
+    
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Find the position vector of the point $A$ where the planes $\Pi$, $\Pi'$ and the plane with equation $\vec r \dotp \vec i = 0$ meet.
+        \item Hence, or otherwise, find also the vector equation of the line of intersection of planes $\Pi$ and $\Pi'$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $l$ be the required line. Since $l$ is normal to $\Pi$, it is parallel to the normal vector of $\Pi$, $\cveciiix230$. Thus, $l$ has vector equation \[l: \vec r = \cveciii214 + \l\cveciii230, \, \l \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $Q$ is on $\Pi$, $\oa{OQ} \dotp \cveciiix230 = -6$. Furthermore, observe that $Q$ is also on the line $l$. Thus, $\oa{OQ} = \cveciiix214 + \l\cveciiix230$ for some $\l \in \RR$. Hence, \[\oa{OQ} \dotp \cveciii230 = -6 \implies\bs{\cveciii214 + \l\cveciii230} \dotp \cveciii230 = -6 \implies 7 + 13\l = -6 \implies \l = -1.\] Thus, $\oa{OQ} = \cveciiix214 - \cveciiix230 = \cveciiix0{-2}4$.
+
+        Let the reflection of $P$ in $\Pi$ be $P'$. Then  \[\oa{PQ} = \oa{QP'} \implies \oa{OQ} - \oa{OP} = \oa{OP'}- \oa{OQ} \implies \oa{OP'} = 2\oa{OQ} - \oa{OP}.\] Hence, $\oa{OP'} = 2\cveciiix0{-2}4 - \cveciiix214 = \cveciiix{-2}{-5}4$.
+    \end{ppart}
+    \begin{ppart}
+        Let $\t$ be the acute angle between $OQ$ and $\Pi$. \[\sin\t = \frac{\abs{\cveciiix0{-2}4 \dotp \cveciiix230}}{\abs{\cveciiix0{-2}4} \abs{\cveciiix230}} = \frac{3}{\sqrt{65}}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $\oa{OA} = \cveciiix{x}{y}{z}$. We thus have the following system: \[
+                \begin{cases}
+                    \cveciiix{x}{y}{z} \dotp \cveciiix230 = -6 &\implies 2x+3y=-6\\
+                    \cveciiix{x}{y}{z} \dotp \cveciiix111 = 5 &\implies x+y+z = 5\\
+                    \cveciiix{x}{y}{z} \dotp \cveciiix100 = 0 &\implies x = 0
+                \end{cases}
+        \] Solving, we obtain $x = 0$, $y = -2$ and $z = 7$, whence $\oa{OA} = \cveciiix0{-2}7$.
+    \end{ppart}
+    \begin{ppart}
+        Let the line of intersection of $\Pi$ and $\Pi'$ be $l'$. Observe that $A$ is on $\Pi$ and $\Pi'$ and thus lies on $l'$. Hence, \[l': \vec r = \cveciii0{-2}7 + \l\vec b, \, \l \in \RR.\] Since $l'$ lies on both $\Pi$ and $\Pi'$, $\vec b$ is perpendicular to the normals of both planes, i.e. $\cveciiix230$ and $\cveciiix111$. Thus, $\vec b = \cveciiix230 \crossp \cveciiix111 = \cveciiix3{-2}{-1}$ and \[l': \vec r = \cveciii0{-2}7 + \l\cveciii3{-2}{-1}, \, \l \in \RR.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}
+            \coordinate[label=left:$A$] (A) at (0, 0);
+            \coordinate[label=right:$B$] (B) at (6, 0);
+            \coordinate[label=right:$C$] (C) at (7.5, 1.5);
+            \coordinate[label=above right:$D$] (D) at (1.5, 1.5);
+            \coordinate[label=left:$E$] (E) at (0, 4);
+            \coordinate[label=right:$F$] (F) at (6, 4);
+            \coordinate[label=below right:$G$] (G) at (7.5, 5.5);
+            \coordinate[label=below right:$H$] (H) at (1.5, 5.5);
+            \coordinate[label=above:$L$] (L) at (0.75, 6);
+            \coordinate[label=above:$M$] (M) at (6.75, 6);
+
+            \draw (A) -- (B);
+            \draw (B) -- (C);
+            \draw (B) -- (F);
+            \draw (F) -- (G);
+            \draw (C) -- (G);
+            \draw (A) -- (E);
+            \draw (E) -- (F);
+            \draw[dotted] (A) -- (D);
+            \draw[dotted] (D) -- (C);
+            \draw[dotted] (D) -- (H);
+            \draw[dotted] (E) -- (H);
+            \draw[dotted] (H) -- (G);
+            \draw (E) -- (L);
+            \draw[dotted] (L) -- (H);
+            \draw (F) -- (M);
+            \draw (M) -- (G);
+            \draw (L) -- (M);
+
+            \draw pic [draw, angle radius=12mm, "$\t$"] {angle = H--E--L};
+
+            \draw[very thick, ->] (A) -- (1, 0) node[anchor=north] {$\vec i$};
+            \draw[very thick, ->] (A) -- (0.707, 0.707) node[anchor=west] {$\vec j$};
+            \draw[very thick, ->] (A) -- (0, 1) node[anchor=east] {$\vec k$};
+
+            \node[anchor=north] at ($(A)!0.5!(B)$) {3 m};
+            \node[anchor=west] at ($(B)!0.5!(C)$) {2 m};
+            \node[anchor=west] at ($(C)!0.5!(G)$) {2 m};
+        \end{tikzpicture}
+    \end{center}
+
+    The diagram shows a garden shed with horizontal base $ABCD$, where $AB = 3$ m and $BC = 2$ m. There are two vertical rectangular walls $ABFE$ and $DCGH$, where $AE = BF = CG = DH = 2$ m. The roof consists of two rectangular planes $EFML$ and $HGML$, which are inclined at an angle $\t$ to the horizontal such that $\tan \t = \frac34$.
+
+    The point $A$ is taken as the origin and the vectors $\vec i$, $\vec j$ and $\vec k$, each of length 1 m, are taken along $AB$, $AD$ and $AE$ respectively.
+
+    \begin{enumerate}
+        \item Verify that the plane with equation $\vec r \dotp (22\vec i + 33\vec j - 12\vec k) = 66$ passes through $B$, $D$ and $M$.
+        \item Find the perpendicular distance, in metres, from $A$ to the plane $BDM$.
+        \item Find a vector equation of the straight line $EM$.
+        \item Show that the perpendicular distance from $C$ to the straight line $EM$ is 2.91 m, correct to 3 significant figures.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        We have $\oa{AB} = \cveciiix300$, $\oa{BF} = \oa{AE} = \cveciiix002$ and $\oa{FG} = \oa{AD} = \cveciiix020$. Let $T$ be the midpoint of $FG$. We have $\oa{FT} = \cveciiix010$ and $TM/FT = \tan\t = 3/4$, whence $\oa{TM} = \cveciiix00{3/4}$. Hence, \[\oa{AM} = \oa{AB} + \oa{BF} + \oa{FT} + \oa{TM} = \cveciii300 + \cveciii002 + \cveciii010 + \cveciii00{3/4} = \frac14\cveciii{12}4{11}.\]
+
+        Consider $\oa{AB} \dotp \cveciiix{22}{33}{-12}$, $\oa{AD} \dotp \cveciiix{22}{33}{-12}$ and $\oa{AM} \dotp \cveciiix{22}{33}{-12}$.
+        \begin{alignat*}{2}
+            \oa{AB} \dotp \cveciii{22}{33}{-12} &= \cveciii300 \dotp \cveciii{22}{33}{-12} &= 66\\
+            \oa{AD} \dotp \cveciii{22}{33}{-12} &= \cveciii020 \dotp \cveciii{22}{33}{-12} &= 66\\
+            \oa{AM} \dotp \cveciii{22}{33}{-12} &= \frac14\cveciii{12}4{11} \dotp \cveciii{22}{33}{-12} &= 66
+        \end{alignat*}            
+        Since $\oa{AB}$, $\oa{AD}$ and $\oa{AM}$ satisfy the equation $\vec r \dotp \cveciiix{22}{33}{-12} = 66$, they all lie on the plane with said equation.
+    \end{ppart}
+    \begin{ppart}
+        The perpendicular distance from $A$ to the plane $BDM$ is given by \[\text{Perpendicular distance} = \abs{\oa{AB} \dotp \hat{\vec n}} = \frac{\abs{\cveciiix300 \dotp \cveciiix{22}{33}{-12}}}{\abs{\cveciiix{22}{33}{-12}}} = \frac{66}{\sqrt{1717}} \text{ m}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that $\oa{EM} = \oa{AM} - \oa{AE} = \frac14 \cveciiix{12}43$. Hence, the line $EM$ has vector equation \[\vec r = \cveciii002 + \l \cveciii{12}43, \, \l \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{EC} = \oa{AC} - \oa{AE} = \cveciiix32{-2}$. The perpendicular distance from $C$ to the line $EM$ is hence given by \[\frac{\abs{\oa{EC} \crossp \cveciiix{12}43}}{\abs{\cveciiix{12}43}} = \frac1{13} \abs{\cveciii32{-2} \crossp \cveciii{12}43} = \frac1{13} \abs{\cveciii{14}{-33}{-12}} = \frac{\sqrt{1429}}{13} = 2.91 \text{ m}\tosf{3}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The planes $\pi_1$ and $\pi_2$ have equations \[x + y - z = 0 \text{ and } 2x-4y+z+12=0\] respectively. The point $P$ has coordinates $(3, 8, 2)$ and $O$ is the origin.
+
+    \begin{enumerate}
+        \item Verify that the vector $\vec i + \vec j + 2\vec k$ is parallel to both $\pi_1$ and $\pi_2$.
+        \item Find the equation of the plane which passes through $P$ and is perpendicular to both $\pi_1$ and $\pi_2$.
+        \item Verify that $(0, 4, 4)$ is a point common to both $\pi_1$ and $\pi_2$, and hence or otherwise, find the equation of the line of intersection of $\pi_1$ and $\pi_2$, giving your answer in the form $\vec r = \vec a + \l \vec b$, $\l \in \RR$.
+        \item Find the coordinates of the point in which the line $OP$ meets $\pi_2$.
+        \item Find the length of projection of $OP$ on $\pi_1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Note that $\pi_1$ and $\pi_2$ have vector equations $\vec r \dotp \cveciiix11{-1} = 0$ and $\vec r \dotp \cveciiix2{-4}1 = -12$ respectively.
+
+    \begin{ppart}
+        Observe that $\cveciiix112 \dotp \cveciiix11{-1} = \cveciiix112 \dotp \cveciiix2{-4}1 = 0$. Thus, the vector $\cveciiix112$ is perpendicular to the normal vectors of both $\pi_1$ and $\pi_2$ and is hence parallel to them.
+    \end{ppart}
+    \begin{ppart}
+        Let the required plane be $\pi_3$. Since $\pi_3$ is perpendicular to both $\pi_1$ and $\pi_2$, its normal vector is parallel to both planes. Thus, $\vec n = \cveciiix112 \implies d = \cveciiix382 \dotp  \cveciiix112 = 15$. $\pi_3$ hence has the vector equation \[\vec r \dotp \cveciii112 = 15.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $\cveciiix044 \dotp \cveciiix11{-1} = 0$ and $\cveciiix044 \dotp \cveciiix2{-4}1 = -12$, $(0, 4, 4)$ satisfies the vector equation of both $\pi_1$ and $\pi_2$ and thus lies on both planes.
+
+        Let $l$ be the line of intersection of $\pi_1$ and $\pi_2$. Since $(0, 4, 4)$ is a point common to both planes, $l$ passes through it. Furthermore, since $l$ lies on both $\pi_1$ and $\pi_2$, it is perpendicular to the normal vector of both planes and hence has direction vector $\cveciiix11{-1} \crossp \cveciiix2{-4}1 = -3\cveciiix112$. Thus, $l$ can be expressed as \[l : \vec r = \cveciii044 + \l\cveciii112, \, \l \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the line $OP$, denoted $l_{OP}$ has equation \[l_{OP} : \vec r = \m \cveciii382, \, \m \in \RR.\] Consider the intersection between $l_{OP}$ and $\pi_2$. \[\m\cveciii382 \dotp \cveciii2{-4}1 = -12 \implies -24\m = -12 \implies \m = \frac12.\] Hence, $OP$ meets $\pi_2$ at $(3/2, 4, 1)$.
+    \end{ppart}
+    \begin{ppart}
+        The length of projection of $OP$ on $\pi_1$ is given by \[\frac{\oa{OP} \crossp \cveciiix11{-1}}{\abs{\cveciiix11{-1}}} = \frac1{\sqrt{3}} \abs{\cveciii382 \crossp \cveciii11{-1}} = \frac1{\sqrt3} \abs{\cveciii{-10}5{-5}} = \frac{5\sqrt{6}}{\sqrt3} = 5\sqrt{2} \text{ units}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The line $l_1$ passes through the point $A$, whose position vector is $3\vec i -5\vec j -4\vec k$, and is parallel to the vector $3\vec i + 4\vec j + 2\vec k$. The line $l_2$ passes through the point $B$, whose position vector is $2\vec i + 3\vec j + 5\vec k$, and is parallel to the vector $\vec i - \vec j - 4\vec k$. The point $P$ on $l_1$ and $Q$ on $l_2$ are such that $PQ$ is perpendicular to both $l_1$ and $l_2$. The plane $\Pi$ contains $PQ$ and $l_1$.
+
+    \begin{enumerate}
+        \item Find a vector parallel to $PQ$.
+        \item Find the equation of $\Pi$ in the forms $\vec r = \vec a + \l \vec b + \m \vec c$, $\l, \m \in \RR$ and $\vec r \dotp \vec n = D$.
+        \item Find the perpendicular distance from $B$ to $\Pi$.
+        \item Find the acute angle between $\Pi$ and $l_2$.
+        \item Find the position vectors of $P$ and $Q$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $l_1$ and $l_2$ have vector equations \[\vec r = \cveciii3{-5}{-4} + \l\cveciii342, \, \l \in \RR \text{ and } \vec r = \cveciii235 + \m\cveciii1{-1}{-4}, \, \m \in \RR\] respectively. Since $PQ$ is perpendicular to both $l_1$ and $l_2$, it is parallel to $\cveciiix342 \crossp \cveciiix1{-1}{-4} = \cveciiix{-14}{14}{-7} = -7\cveciiix2{-2}1$.
+    \end{ppart}
+    \begin{ppart}
+        Since $\Pi$ contains $PQ$ and $l_1$, it is parallel to $\cveciiix2{-2}1$ and $\cveciiix342$. Also note that $\Pi$ contains $\cveciiix3{-5}{-4}$. Thus, \[\Pi : \vec r = \cveciii3{-5}{-4} + \l \cveciii2{-2}1 + \m \cveciii342, \, \l, \m \in \RR.\] Note that $\cveciiix2{-2}1 \crossp \cveciiix342 = \cveciiix{-8}{-1}{14} \parallel \cveciiix81{-14}$. We hence take $\vec n = \cveciiix81{-14}$, whence $d = \cveciiix3{-5}{-4} \dotp \cveciiix81{-14} = 75$. Thus, $|Pi$ is also given by \[\Pi: \vec r \dotp \cveciii81{-14} = 75.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{AB} = \cveciiix{-1}89$. Hence, the perpendicular distance from $B$ to $\Pi$ is given by \[\frac{\abs{\cveciiix{-1}89 \dotp \cveciiix81{-14}}}{\abs{\cveciiix81{-14}}} = \frac{126}{\sqrt{261}} \text{ units}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $\t$ be the acute angle between $\Pi$ and $l_2$. \[\sin\t = \frac{\abs{\cveciiix1{-1}{-4} \dotp \cveciiix81{-14}}}{\abs{\cveciiix1{-1}{-4}} \abs{\cveciiix81{-14}}} = \frac{7}{\sqrt{58}} \implies \t = 66.8 \deg \todp{1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $P$ is on $l_1$, we have $\oa{OP} = \cveciiix3{-5}{-4} + \l\cveciiix342$ for some $\l \in \RR$. Similarly, since $Q$ is on $l_2$, we have $\oa{OQ} = \cveciiix235 + \m\cveciiix1{-1}4$ for some $\m \in \RR$. Thus, \[\oa{PQ} = \oa{OQ} - \oa{OP} = \cveciii{-1}89 - \l\cveciii342 + \m\cveciii1{-1}{-4}.\] Recall that $PQ$ is parallel to $\cveciiix2{-2}1$. Hence, $\oa{PQ}$ can be expressed as $\nu \cveciiix2{-2}1$ for some $\nu \in \RR$. Equating the two expressions for $\oa{PQ}$, we obtain \[\cveciii{-1}89 - \l\cveciii342 + \m\cveciii1{-1}{-4} = \nu \cveciii2{-2}1 \implies \l\cveciii342 + \m\cveciii{-1}14 + \nu \cveciii2{-2}1 = \cveciii{-1}89 .\] This gives the following system:
+        \[\systeme[\l\m\n]{
+                3\l - \m + 2\n = -1,
+                4\l + \m -2\n = 8,
+                2\l + 4\m + \n = 9
+        }\] which has the unique solution $\l = 1$, $\m = 2$ and $\n = -1$. Thus, \[ \oa{OP} = \cveciii3{-5}{-4} + \cveciii342 = \cveciii6{-1}{-2}, \quad \oa{OQ} = \cveciii235 + 2\cveciii1{-1}{-4} = \cveciii41{-3}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The equations of three planes $p_1$, $p_2$ and $p_3$ are
+    \begin{align*}
+        2x-5y+3z &= 3\\
+        3x+2y-5z&=-5\\
+        5x+\l y + 17z &= \m
+    \end{align*}
+    respectively, where $\l$ and $\m$ are constants. The planes $p_1$ and $p_2$ intersect in a line $l$.
+
+    \begin{enumerate}
+        \item Find a vector equation of $l$.
+        \item Given that all three planes meet in the line $l$, find $\l$ and $\m$.
+        \item Given instead that the three planes have no point in common, what can be said about the values of $\l$ and $\m$?
+        \item Find the Cartesian equation of the plane which contains $l$ and the point $(1, -1, 3)$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Consider the intersection of $p_1$ and $p_2$: \[
+        \systeme{
+            2x-5y+3z= 3,
+            3x+2y-5z=-5
+        }\] The above system has solution \[x = -1 + t, \quad y = -1 + t, \quad z = t\] for all $t \in \RR$. Thus, the line $l$ has vector equation \[l : \vec r = \cveciii{-1}{-1}0 + t \cveciii111, \quad t \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Since all three planes meet in the line $l$, $l$ must satisfy the equation of $p_3$. Substituting the above solution to the given equation, we have \[5(-1 + t) + \l(-1 + t) + 17t = \m \implies (22+\l)t - (5+\l+\m) = 0.\] Comparing the coefficients of $t$ and the constant terms, we have the following system: \[
+            \systeme[\l\m]{
+                22 + \l = 0,
+                5 + \l + \m = 0
+        }\] which has the unique solution $\l = -22$ and $\m = 17$.
+    \end{ppart}
+    \begin{ppart}
+        If the three planes have no point in common, we have \[(22+\l)t - (5+\l+\m) \neq 0\] for all $t \in \RR$. To satisfy this relation, we need $22 + \l = 0$ and $5 + \l + \m \neq 0$, whence $\l = -22$ and $\m \neq 17$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\cveciiix{-1}{-1}0$ lies on $l$ and is thus contained on the required plane. Observe that $\cveciiix{-1}{-1}0 - \cveciiix1{-1}3 = \cveciiix{-2}0{-3}$. Thus, the required plane is parallel to $\cveciiix111$ and $\cveciiix{-2}0{-3}$ and hence has vector equation \[\vec r = \cveciii{-1}{-1}0 + \l\cveciii111 + \m\cveciii{-2}0{-3}, \quad \l, \m \in \RR.\] Observe that $\vec n = \cveciiix111 \crossp \cveciiix{-2}03 = \cveciiix{-3}12$, whence $d = \cveciiix{-1}{-1}0 \dotp \cveciiix{-3}12 = 2$. The required plane thus has the equation \[\vec r \dotp \cveciii{-3}12 = 2.\] Let $\vec r = \cveciiix{x}{y}{z}$. It follows that the plane has Cartesian equation \[-3x + y + 2 = 2.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The planes $p_1$ and $p_2$, which meet in line $l$, have equations $x - 2y + 2z = 0$ and $2x - 2y + z = 0$ respectively.
+
+    \begin{enumerate}
+        \item Find an equation of $l$ in Cartesian form.
+    \end{enumerate}
+
+    The plane $p_3$ has equation $(x-2y+2z) + c(2x-2y+z) = d$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Given that $d = 0$, show that all 3 planes meet in the line $l$ for any constant $c$.
+        \item Given instead that the 3 planes have no point in common, what can be said about the value of $d$?
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Consider the intersection of $p_1$ and $p_2$. This gives the system \[\systeme{
+                x-2y+2z=0,
+                2x-2y+z=0
+        }\] which has solution $x = t$, $y = \frac32 t$ and $z = t$. Thus, $l$ has Cartesian equation \[x = \frac23 y = z.\]
+    \end{ppart}
+    \begin{ppart}
+        When $d = 0$, $p_3$ has equation \[(x-2y+2z) + c(2x-2y+z) = 0.\] Observe that the line $l$ satisfies the equations $x-2y+2z = 0$ and $2x-2y+z = 0$. Hence, $l$ also satisfies the equation that gives $p_3$ for all $c$. Thus, $p_3$ contains $l$, implying that all 3 planes meet in the line $l$.
+    \end{ppart}
+    \begin{ppart}
+        If the 3 planes have no point in common, then $l$ does not have any point in common with $p_3$. That is, all points on $l$ satisfy the relation \[(x-2y+2z) + c(2x-2y+z) \neq d.\] Since $x - 2y + 2z = 0$ and $2x - 2y + z = 0$ for all points on $l$, the LHS simplifies to 0. Thus, to satisfy the above relation, we require $d \neq 0$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}
+            \coordinate[label=left:$O$] (O) at (0, 0);
+            \coordinate[label=below:$A$] (A) at (-3, -1);
+            \coordinate[label=below:$B$] (B) at (1, -1);
+            \coordinate[label=above right:$C$] (C) at (3, 1);
+            \coordinate[label=above right:$D$] (D) at (-1, 1);
+            \coordinate[label=above:$V$] (V) at (0, 3);
+            \coordinate[label=right:$P$] (P) at (6, -1);
+            \coordinate (S1) at (-6, -1);
+            \coordinate (S2) at (-3, 2);
+            \coordinate (S3) at (-3, 6);
+            \coordinate (S4) at (-6, 3);
+
+            \draw (A) -- (B);
+            \draw (C) -- (D);
+            \draw[dotted] (A) -- (D);
+            \draw (B) -- (C);
+            \draw[dotted] (O) -- (V);
+            \draw (A) -- (V);
+            \draw (B) -- (V);
+            \draw (C) -- (V);
+            \draw[dotted] (D) -- (V);
+
+            \fill (P) circle[radius=2.5pt];
+            \draw[dotted] (B) -- (P);
+            
+            \draw[dotted] (A) -- (S1);
+            \draw (S1) -- (S2);
+            \draw (S2) -- (S3);
+            \draw (S3) -- (S4);
+            \draw (S4) -- (S1);
+
+            \node at (-4.5, 2.3) {Screen};
+
+            \draw[very thick, ->] (O) -- (0.5, 0) node[anchor=north] {$\vec i$};
+            \draw[very thick, ->] (O) -- (0.354, 0.354) node[anchor=south] {$\vec j$};
+            \draw[very thick, ->] (O) -- (0, 0.5) node[anchor=east] {$\vec k$};
+        \end{tikzpicture}
+    \end{center}
+
+    A right opaque pyramid with square base $ABCD$ and vertex $V$ is placed at ground level for a shadow display, as shown in the diagram. $O$ is the centre of the square base $ABCD$, and the perpendicular unit vectors $\vec i$, $\vec j$ and $\vec k$ are in the directions of $\oa{AB}$, $\oa{AD}$ and $\oa{OV}$ respectively. The length of $AB$ is 8 units and the length of $OV$ is $2h$ units.
+
+    A point light source for this shadow display is placed at the point $P(20, -4, 0)$ and a screen of height 35 units is placed with its base on the ground such that the screen lies on a plane with vector equation $\vec r \dotp \cveciii100 = \a$, where $\a < -4$.
+
+    \begin{enumerate}
+        \item Find a vector equation of the line depicting the path of the light ray from $P$ to $V$ in terms of $h$.
+        \item Find an inequality between $\a$ and $h$ so that the shadow of the pyramid cast on the screen will not exceed the height of the screen.
+    \end{enumerate}
+
+    The point light source is now replaced by a parallel light source whose light rays are perpendicular to the screen. It is also given that $h = 10$.
+    
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find the exact length of the shadow cast by the edge $VB$ on the screen.
+    \end{enumerate}
+
+    A mirror is placed on the plane $VBC$ to create a special effect during the display.
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Find a vector equation of the plane $VBC$ and hence find the angle of inclination made by the mirror with the ground.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Note that $\oa{OV} = \cveciiix00{2h}$ and $\oa{OP} = \cveciiix{20}{-4}0$, whence $\oa{PV} = \cveciiix{-20}{4}{2h} = 2\cveciiix{-10}2h$. Thus, the line from $P$ to $V$, denoted $l_{PV}$, has the vector equation \[l_{PV} : \vec r = \cveciii{20}{-4}0 + \l\cveciii{-10}2h, \quad \l \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the point of intersection between $l_{PV}$ and the screen be $I$. \[\bs{\cveciii{20}{-4}0 + \l\cveciii{-10}2h} \dotp \cveciii100 = \a \implies 20-10\l = \a \implies \l = \frac{20-\a}{10}.\] Hence, $\oa{OI} = \cveciiix{20}{-4}0 + \frac{20-\a}{10}\cveciiix{-10}2h$. To prevent the shadow from exceeding the screen, we require the $\vec k$-component of $\oa{OI}$ to be less than the height of the screen, i.e. 35 units. This gives the inequality $\frac{20-\a}{10} \cdot h \leq 35$, whence we obtain \[h \leq \frac{350}{20 - \a}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since the light rays emitted by the light source are now perpendicular to the screen, the image of some point with coordinates $(a, b, c)$ on the screen is given by $(\a, b, c)$. Thus, the image of $B(4, -4, 0)$ and $V(0, 0, 20)$ on the screen have coordinates $(\a, -4, 0)$ and $(\a, 0, 20)$. The length of the shadow cast by $VB$ is thus \[\sqrt{(\a - \a)^2 + (-4-0)^2 + (0-20)^2} = 4\sqrt{26} \text{ units}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $\oa{BV} = 4\cveciiix{-1}15$ and $\oa{BC} = 8\cveciiix010$. Hence, the plane $VBC$ is parallel to $\cveciiix{-1}15$ and $\cveciiix010$. Note that $\cveciiix{-1}15 \crossp \cveciiix010 = -\cveciiix501$. Thus, $\vec n = \cveciiix501$, whence $d = \cveciiix00{20} \dotp \cveciiix501 = 20$. Thus, the plane $VBC$ has the vector equation \[\vec r \dotp \cveciii501 = 20.\] 
+        
+        Observe that the ground is given by the vector equation $\vec r \dotp \cveciiix001 = 0$. Let $\t$ be the angle of inclination made by the mirror with the ground. \[\cos\t = \frac{\cveciiix501 \dotp \cveciiix001}{\abs{\cveciiix501}\abs{\cveciiix001}} = \frac1{\sqrt{26}} \implies \t = 78.7 \deg \todp{1}.\]
+    \end{ppart}
+\end{solution}

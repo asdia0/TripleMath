@@ -44,15 +44,11 @@
 \renewcommand{\thesubpartnum}{\roman{subpartnum}}
 
 \newbox\sepbox 
-\newcommand\separator{
-  \setbox\sepbox=\vbox{
-    \begin{center}
-      $\ast$ $\ast$ $\ast$ $\ast$ $\ast$
-    \end{center}
-  }
+\newcommand\separator{%
+  \setbox\sepbox=\vbox{\begin{center}$\ast$ $\ast$ $\ast$ $\ast$ $\ast$\end{center}}%
   \cleaders\copy\sepbox\vskip\ht\sepbox}
 
-\newcommand*{\problem}{\ifnum\value{problemnum}>0 \separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum.}}}
+\newcommand*{\problem}{\ifnum\value{problemnum}>0\separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum.}}}
 \newcommand*{\solution}{\medbreak\noindent{\large\sffamily\bfseries{Solution.}}}
 \newcommand*{\ppart}{\stepcounter{partnum}\smallbreak\noindent{\sffamily\bfseries{Part (\thepartnum).}}}
 \newcommand*{\psubpart}{\stepcounter{subpartnum}\smallbreak\noindent{\sffamily\bfseries\small{Part (\thepartnum)(\thesubpartnum).}}}
@@ -60,3 +56,11 @@
 \renewcommand{\theenumi}{(\alph{enumi})}
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumii}{(\roman{enumii}}
+
+\newcommand*{\boxt}[1]{
+\begin{center}
+	\fbox{\begin{varwidth}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+		#1
+	\end{varwidth}}
+\end{center}
+}
