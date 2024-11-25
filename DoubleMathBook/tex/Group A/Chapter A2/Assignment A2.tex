@@ -82,7 +82,7 @@
 
     There is a minimum at $x = m$ such that $m$ is between the two positive roots. Hence, when using the Newton-Raphson method, an initial approximation which is smaller than $m$ would result in subsequent approximations being further away from the desired root $\a$. Hence, an initial approximation that is smaller than $\a$ may not be satisfactory.
 
-    We know from the above graph that $\a \in \bp{\pi, \frac32 \pi}$. We hence pick $\frac32 \pi$ as our initial approximation. Using the Newton-Raphson method $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ with $x_1 = \frac32\pi$, we have
+    We know from the above graph that $\a \in (\pi, 3\pi/2)$. We hence pick $3\pi/2$ as our initial approximation. Using the Newton-Raphson method $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ with $x_1 = 3\pi/2$, we have
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|}
@@ -96,7 +96,7 @@
         \end{tabular}
     \end{table}
     
-    Since $f(3.55)f(3.65) = (-0.1)(0.2) < 0$, we have $\a \in (3.55, 3.65)$. Hence, $\a = 3.6 \tosf{2}$.
+    \noindent Since $f(3.55)f(3.65) = (-0.1)(0.2) < 0$, we have $\a \in (3.55, 3.65)$. Hence, $\a = 3.6 \tosf{2}$.
 \end{solution}
 
 \begin{problem}
@@ -111,7 +111,7 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    For stationary points, $y' = 0$. \[y' = 0 \implies 3x^2 + 2x = 0 \implies x(3x+2) = 0.\] Hence, $x = 0$ or $x = -\frac23$. When $x = 0$, $y = 0$. When $x = -\frac23$, $y = \frac4{27}$. Thus, the coordinates of the stationary points of $y = x^3 + x^2$ are $(0, 0)$ and $\bp{-\frac23, \frac4{27}}$.
+    For stationary points, $y' = 0$. \[y' = 0 \implies 3x^2 + 2x = 0 \implies x(3x+2) = 0.\] Hence, $x = 0$ or $x = -2.3$. When $x = 0$, $y = 0$. When $x = -2/3$, $y = 4/{27}$. Thus, the coordinates of the stationary points of $y = x^3 + x^2$ are $(0, 0)$ and $(-2/3, 4/27)$.
 
     \begin{center}
         \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -135,15 +135,15 @@
     
                 \addlegendentry{$y=x^3 + x^2$};
 
-                \fill (-2/3, 4/27) circle[radius=2.5pt] node[anchor=south] {$\bp{-\frac23, \frac4{27}}$};
+                \fill (-2/3, 4/27) circle[radius=2.5pt] node[anchor=south] {$\bp{-2/3, 4/27}$};
             \end{axis}
         \end{tikzpicture}
     \end{center}
 
-    Therefore, $k \in \bp{0, \frac4{27}}$. The solution set of $k$ is thus $\bc{k \in \RR : 0 < k < \frac4{27}}$.
+    Therefore, $k \in (0, 4/27)$. The solution set of $k$ is thus $\bc{k \in \RR : 0 < k < 4/27}$.
 
     \begin{ppart}
-        Let $f(x) = x^2 + x^2 - 0.1$. Using linear interpolation on the interval $[0, 1]$, \[\a = \frac{0f(1) - 1f(0)}{f(1)-f(0)} = \frac1{20}.\]
+        Let $f(x) = x^2 + x^2 - 0.1$. Using linear interpolation on the interval $[0, 1]$, \[\a = \frac{-f(0)}{f(1)-f(0)} = \frac1{20}.\]
     \end{ppart}
     \clearpage
     \begin{ppart}

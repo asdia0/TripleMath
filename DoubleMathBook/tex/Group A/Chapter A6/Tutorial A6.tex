@@ -20,27 +20,27 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Note that $r = 3$ and $\t = -\frac\pi4$. This gives \[x = r\cos\t = \frac{3}{\sqrt2}, \quad y = r\sin\t = -\frac{3}{\sqrt2}.\] Hence, the rectangular coordinate of the point is $(\frac{3}{\sqrt2}, -\frac{3}{\sqrt2})$.
+            Note that $r = 3$ and $\t = -\frac\pi4$. This gives \[x = r\cos\t = \frac{3}{\sqrt2}, \quad y = r\sin\t = -\frac{3}{\sqrt2}.\] Hence, the rectangular coordinate of the point is $(3/\sqrt2, -3\sqrt2)$.
         \end{psubpart}
         \begin{psubpart}
             Note that $r = 1$ and $\t = \pi$. This gives \[x = r\cos\t = -1, \quad y = r\sin\t = 0.\] Hence, the rectangular coordinate of the point is $(-1, 0)$.
         \end{psubpart}
         \begin{psubpart}
-            Note that $r =\frac12$ and $\t = \frac32 \pi$. This gives \[x = \r\cos\t = 0, \quad y = r\sin\t = -\frac12.\] Hence, the rectangular coordinate of the point is $(0, -\frac12)$.
+            Note that $r =\frac12$ and $\t = \frac32 \pi$. This gives \[x = \r\cos\t = 0, \quad y = r\sin\t = -\frac12.\] Hence, the rectangular coordinate of the point is $(0, -1/2)$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Note that $x = 3$ and $y = -3$. This gives \[r^2 = x^2 + y^2 \implies r = 3\sqrt2, \quad \tan \t = \frac{y}{x} \implies \t = -\frac\pi4.\] Hence, the polar coordinate of the point is $(3\sqrt2, -\frac\pi4)$.
+            Note that $x = 3$ and $y = -3$. This gives \[r^2 = x^2 + y^2 \implies r = 3\sqrt2, \quad \tan \t = \frac{y}{x} \implies \t = -\frac\pi4.\] Hence, the polar coordinate of the point is $(3\sqrt2, -\pi/4)$.
         \end{psubpart}
         \begin{psubpart}
-            Note that $x = -1$ and $y = -\sqrt3$. This gives \[r^2 = x^2 + y^2 \implies r = 2, \quad \tan \t = \frac{y}{x} \implies \t = \frac\pi3.\] Hence, the polar coordinate of the point is $(2, \frac\pi3)$.
+            Note that $x = -1$ and $y = -\sqrt3$. This gives \[r^2 = x^2 + y^2 \implies r = 2, \quad \tan \t = \frac{y}{x} \implies \t = \frac\pi3.\] Hence, the polar coordinate of the point is $(2, \pi/3)$.
         \end{psubpart}
         \begin{psubpart}
             Note that $x = 2$ and $y = 0$. This gives \[r^2 = x^2 + y^2 \implies r = 2, \quad \tan \t = \frac{y}{x} \implies \t = 0.\] Hence, the polar coordinate of the point is $(2, 0)$.
         \end{psubpart}
         \begin{psubpart}
-            Note that $x = 4$ and $y = 2$. This gives \[r^2 = x^2 + y^2 \implies r = 2\sqrt5, \quad \tan \t = \frac{y}{x} \implies \t = \arctan \frac12.\] Hence, the polar coordinate of the point is $(2\sqrt5, \arctan \frac12)$.
+            Note that $x = 4$ and $y = 2$. This gives \[r^2 = x^2 + y^2 \implies r = 2\sqrt5, \quad \tan \t = \frac{y}{x} \implies \t = \arctan \frac12.\] Hence, the polar coordinate of the point is $(2\sqrt5, \arctan{1/2})$.
         \end{psubpart}
     \end{ppart}
 \end{solution}
@@ -91,7 +91,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[r = 3a\cos\t \implies r^2 = 3a r\cos\t \implies x^2 + y^2 = 3ax \implies x^2 - 3ax + y^2 = 0.\] Completing the square, we get \[\bp{x - \frac{3a}2}^2 + y^2  \bp{\frac{3a}{2}}^2.\] Thus, the circle has centre $(\frac{3a}2, 0)$ and radius $\frac{3a}{2}$.
+        \[r = 3a\cos\t \implies r^2 = 3a r\cos\t \implies x^2 + y^2 = 3ax \implies x^2 - 3ax + y^2 = 0.\] Completing the square, we get \[\bp{x - \frac{3a}2}^2 + y^2  \bp{\frac{3a}{2}}^2.\] Thus, the circle has centre $(3a/2, 0)$ and radius $3a/2$.
     \end{ppart}
     \begin{ppart}
         \[r = a\sec{\t - \frac\pi4} \implies r\cos{\t - \frac\pi4} = a \implies r\bp{\cos\t + \sin\t} = \sqrt2 a \implies x + y = \sqrt2 a.\]
@@ -195,7 +195,7 @@
                     ]
                     \addplot[plotRed] {x};
 
-                    \addlegendentry{$\t = \frac\pi4$};
+                    \addlegendentry{$\t = \pi/4$};
                 \end{axis}
             \end{tikzpicture}
         \end{center}
@@ -227,7 +227,7 @@
                     ]
                     \addplot[color=plotRed,data cs=polarrad] { 0.5 * x};
 
-                    \addlegendentry{$r = \frac12 \t$};
+                    \addlegendentry{$r = \t/2$};
                 \end{axis}
             \end{tikzpicture}
         \end{center}
@@ -291,7 +291,7 @@
                 ]
                 \addplot[color=plotRed,data cs=polarrad] (x, { 1 + sin((\x r)/3)});
 
-                \addlegendentry{$r = 1 + \sin \frac\t3$};
+                \addlegendentry{$r = 1 + \sin{\t/3}$};
             \end{axis}
         \end{tikzpicture}
     \end{center}
@@ -349,7 +349,7 @@
                 ]
                 \addplot[color=plotRed,data cs=polarrad] (x, { 1 + sin((\x r)/3)});
 
-                \addlegendentry{$r = 1 + \sin \frac\t3$};
+                \addlegendentry{$r = 1 + \sin{\t/3}$};
 
                 \node[anchor=south] at (0.434, 0) {$1-\frac{\sqrt3}2$};
 
@@ -448,15 +448,13 @@
 \end{solution}
 
 \begin{problem}
-    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \frac\pi2$.
+    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \pi/2$.
 \end{problem}
 \begin{solution}
-    \begin{alignat*}{2}
-        &&x^5 + y^5 &= 5bx^2y^2\\
-        \implies&&(r\cos\t)^5 + (r\sin\t)^5 &= 5b(r\cos\t)^2(r\sin\t)^2\\
-        \implies&&r\bp{\cos^5\t + \sin^5\t} &= 5b\cos^2\t \sin^2\t\\
-        \implies&&r &= \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}
-    \end{alignat*}
+    \begin{gather*}
+        x^5 + y^5 = 5bx^2y^2 \implies (r\cos\t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2 \\
+        \implies r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t \sin^2\t \implies r = \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}.
+    \end{gather*}
 
     \begin{center}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -486,7 +484,7 @@
 
 \clearpage
 \begin{problem}
-    The equation of a curve, in polar coordinates, is $r = e^{-2\t}$, for $0 \leq \t \leq \pi$. Sketch the curve, indicating clearly the polar coordinates of any axial intercepts.
+    The equation of a curve, in polar coordinates, is $r = \e^{-2\t}$, for $0 \leq \t \leq \pi$. Sketch the curve, indicating clearly the polar coordinates of any axial intercepts.
 \end{problem}
 \begin{solution}
     \begin{center}
@@ -497,9 +495,9 @@
                 axis y line=middle,
                 axis x line=middle,
                 xtick = {-e^(-pi), 1},
-                xticklabels = {$\bp{e^{-2\pi}, \pi}$, $\bp{1, 0}$},
+                xticklabels = {$\bp{\e^{-2\pi}, \pi}$, $\bp{1, 0}$},
                 ytick = {e^(-pi/2)},
-                yticklabels = {$\bp{e^{-\pi}, \frac{\pi}2}$},
+                yticklabels = {$\bp{\e^{-\pi}, \frac{\pi}2}$},
                 xmax=1.1,
                 xmin=-0.07,
                 xlabel = {$\t=0$},
@@ -513,7 +511,7 @@
                 ]
                 \addplot[color=plotRed,data cs=polarrad] {e^(-x)};
     
-                \addlegendentry{$r = e^{-2\t}$};
+                \addlegendentry{$r = \e^{-2\t}$};
             \end{axis}
         \end{tikzpicture}
     \end{center}
@@ -523,9 +521,9 @@
     Suppose that a long thin rod with one end fixed at the pole of a polar coordinate system rotates counter-clockwise at the constant rate of 0.5 rad/sec. At time $t = 0$, a bug on the rod is 10 mm from the pole and is moving outward along the rod at a constant speed of 2 mm/sec. Find an equation of the form $r = f(\t)$ for the part of motion of the bug, assuming that $\t = 0$ when $t = 0$. Sketch the path of the bug on the polar coordinate system for $0 \leq t \leq 4\pi$.
 \end{problem}
 \begin{solution}
-    Let $\t(t)$ and $r(t)$ be functions of time, with $\t(0) = 0$ and $r(0) = 10$. We know that $\der{\t}{t} = 0.5$ and $\der{r}{t} = 2$. Hence, \[\der{r}{\t} = \der{r}{t} \cdot \der{t}{\t} = \der{r}{t} \cdot \bp{\der{\t}{t}}^{-1} = 2 \cdot (0.5)^{-1} = 4.\] Thus, $r = 4\t + r(0) = 4\t + 10$.
+    Let $\t(t)$ and $r(t)$ be functions of time, with $\t(0) = 0$ and $r(0) = 10$. We know that $\derx{\t}{t} = 0.5$ and $\derx{r}{t} = 2$. Hence, \[\der{r}{\t} = \der{r}{t} \cdot \der{t}{\t} = \der{r}{t} \cdot \bp{\der{\t}{t}}^{-1} = 2 \cdot (0.5)^{-1} = 4.\] Thus, $r = 4\t + r(0) = 4\t + 10$.
 
-    Since $\der{\t}{t} = 0.5$ and $\t(0) = 0$, we have $\t = 0.5t$. Hence, $0 \leq t \leq 4\pi \implies 0 \leq \t \leq 2\pi$.
+    Since $\derx{\t}{t} = 0.5$ and $\t(0) = 0$, we have $\t = 0.5t$. Hence, $0 \leq t \leq 4\pi \implies 0 \leq \t \leq 2\pi$.
 
     \begin{center}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -558,20 +556,20 @@
 
 \clearpage
 \begin{problem}
-    The equation, in polar coordinates, of a curve $C$ is $r = ae^{\frac12 \t}$, $0 \leq \t \leq 2\pi$, where $a$ is a positive constant. Write down, in terms of $\t$, the Cartesian coordinates, $x$ and $y$, of a general point $P$ on the curve. Show that the gradient at $P$ is given by $\der{y}{x} = \frac{\tan\t + 2}{1 - 2\tan\t}$.
+    The equation, in polar coordinates, of a curve $C$ is $r = a\e^{\frac12 \t}$, $0 \leq \t \leq 2\pi$, where $a$ is a positive constant. Write down, in terms of $\t$, the Cartesian coordinates, $x$ and $y$, of a general point $P$ on the curve. Show that the gradient at $P$ is given by $\der{y}{x} = \frac{\tan\t + 2}{1 - 2\tan\t}$.
 
     Hence, show that the tangent at $P$ is inclined to $\oa{OP}$ at a constant angle $\a$, where $\tan \a = 2$. Sketch the curve $C$.
 \end{problem}
 \begin{solution}
-    Note that $x = r\cos\t$ and $y = r\sin\t$, whence $x = ae^{\frac12 \t}\cos\t$ and $y = ae^{\frac12 \t}\sin\t$. Hence, $P\bp{ae^{\frac12 \t}\cos\t, ae^{\frac12 \t}\sin\t}$.
+    Note that $x = r\cos\t$ and $y = r\sin\t$, whence $x = a\e^{\frac12 \t}\cos\t$ and $y = a\e^{\frac12 \t}\sin\t$. Hence, $P\bp{a\e^{\frac12 \t}\cos\t, a\e^{\frac12 \t}\sin\t}$.
 
-    Observe that $\der{r}{\t} = \frac12ae^{\frac12 \t} = \frac12r$. Hence, \[\der{y}{x} = \frac{\der{r}{\t} \sin\t + r\cos\t}{\der{r}{\t} \cos\t - r\sin\t} = \frac{\frac12r \sin\t + r\cos\t}{\frac12r \cos\t - r\sin\t} = \frac{\sin\t + 2\cos\t}{\cos\t - 2\sin\t} = \frac{\tan\t + 2}{1 - 2\tan\t}.\]
+    Observe that $\der{r}{\t} = \frac12a\e^{\frac12 \t} = \frac12r$. Hence, \[\der{y}{x} = \frac{\der{r}{\t} \sin\t + r\cos\t}{\der{r}{\t} \cos\t - r\sin\t} = \frac{\frac12r \sin\t + r\cos\t}{\frac12r \cos\t - r\sin\t} = \frac{\sin\t + 2\cos\t}{\cos\t - 2\sin\t} = \frac{\tan\t + 2}{1 - 2\tan\t}.\]
 
-    Let $\vec t = \cvecii{T_1}{T_2}$ represent the direction of the tangent line. Then \[\vec t = \cvecii1{\derx{y}{x}} = \cvecii{1}{\frac{\tan \t + 2}{1 - 2\tan\t}} = \frac1{1 - 2\tan\t} \cvecii{1 - 2\tan\t}{\tan \t + 2}\] and \[\oa{OP} = \cvecii{x}{y} = \cvecii{ae^{\frac12\t}\cos\t}{ae^{\frac12\t}\sin\t} = ae^{\frac12 \t}\cvecii{\cos\t}{\sin\t}.\] By the definition of the dot-product, we have $\vec t \dotp \oa{OP} = \abs{\vec t}\abs{\oa{OP}} \cos \a$, whence
-    \begin{align*}
-        \cos \a &= \frac{\vec t \dotp \oa{OP}}{\abs{\vec t} \abs{\oa{OP}}} = \frac{(1-2\tan\t)\cos \t + (\tan\t + 2)\sin\t}{\sqrt{(1-2\tan\t)^2 + (\tan\t+2)^2} \cdot \sqrt{\cos^2\t + \sin^2\t}}\\
-        &= \frac{\cos\t + \tan\t\sin\t}{\sqrt{5\tan^2 \t + 5}} = \frac{\cos^2 \t + \sin^2 \t}{\sqrt{5\sin^2 \t + 5\cos^2 \t}} = \frac1{\sqrt5}.
-    \end{align*}
+    Let $\vec t = \cvecii{T_1}{T_2}$ represent the direction of the tangent line. Then \[\vec t = \cvecii1{\derx{y}{x}} = \cvecii{1}{\frac{\tan \t + 2}{1 - 2\tan\t}} = \frac1{1 - 2\tan\t} \cvecii{1 - 2\tan\t}{\tan \t + 2}\] and \[\oa{OP} = \cvecii{x}{y} = \cvecii{a\e^{\frac12\t}\cos\t}{a\e^{\frac12\t}\sin\t} = a\e^{\frac12 \t}\cvecii{\cos\t}{\sin\t}.\] By the definition of the dot-product, we have $\vec t \dotp \oa{OP} = \abs{\vec t}\abs{\oa{OP}} \cos \a$, whence
+    \begin{gather*}
+        \cos \a = \frac{\vec t \dotp \oa{OP}}{\abs{\vec t} \abs{\oa{OP}}} = \frac{(1-2\tan\t)\cos \t + (\tan\t + 2)\sin\t}{\sqrt{(1-2\tan\t)^2 + (\tan\t+2)^2} \cdot \sqrt{\cos^2\t + \sin^2\t}}\\
+        = \frac{\cos\t + \tan\t\sin\t}{\sqrt{5\tan^2 \t + 5}} = \frac{\cos^2 \t + \sin^2 \t}{\sqrt{5\sin^2 \t + 5\cos^2 \t}} = \frac1{\sqrt5}.
+    \end{gather*}
     Thus, $\a = \arccos \frac1{\sqrt5}$. Since $\tan(\arccos x) = \frac{\sqrt{1-x^2}}{x}$, \[\tan \a = \tan{\arccos \frac1{\sqrt5}} = \frac{\sqrt{1 - \bp{1/\sqrt5}^2}}{1/\sqrt5} = 2.\] Hence, the tangent at $P$ is inclined to $\oa{OP}$ at a constant angle $\a$, where $\tan\a = 2$.
 
     \begin{center}
@@ -582,9 +580,9 @@
                 axis y line=middle,
                 axis x line=middle,
                 xtick = {e^pi, -e^(pi/2)},
-                xticklabels = {$ae^\pi$, $ae^{\frac12 \pi}$},
+                xticklabels = {$a\e^\pi$, $a\e^{\frac12 \pi}$},
                 ytick = {e^(pi/4), -e^(3*pi/4)},
-                yticklabels = {$ae^{\frac14 \pi}$, $ae^{\frac34 \pi}$},
+                yticklabels = {$a\e^{\frac14 \pi}$, $a\e^{\frac34 \pi}$},
                 xmin=-6,
                 xmax=25,
                 ymin=-12,
@@ -600,19 +598,19 @@
                 ]
                 \addplot[color=plotRed,data cs=polarrad] {e^(0.5*x)};
     
-                \addlegendentry{$r = ae^{\frac12 \t}$};
+                \addlegendentry{$r = a\e^{\frac12 \t}$};
             \end{axis}
         \end{tikzpicture}
     \end{center}
 \end{solution}
 
 \begin{problem}
-    The polar equation of a curve is given by $r = e^\t$ where $0 \leq \t \leq \frac\pi2$. Cartesian axes are taken at the pole $O$. Express $x$ and $y$ in terms of $\t$ and hence find the Cartesian equation of the tangent at $\bp{e^{\frac\pi2}, \frac\pi2}$.
+    The polar equation of a curve is given by $r = \e^\t$ where $0 \leq \t \leq \frac\pi2$. Cartesian axes are taken at the pole $O$. Express $x$ and $y$ in terms of $\t$ and hence find the Cartesian equation of the tangent at $\bp{\e^{\frac\pi2}, \frac\pi2}$.
 \end{problem}
 \begin{solution}
-    Recall that $x = r\cos\t$ and $y = r\sin\t$, whence $x = e^\t\cos\t$ and $y = e^\t\sin\t$. Thus, $\der{x}{\t} = e^\t(\cos\t - \sin\t)$, and $\der{y}{x} = e^\t(\cos\t + \sin\t)$. Hence, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{e^\t (\cos\t + \sin\t)}{e^\t (\cos\t - \sin\t)} = \frac{\cos\t+\sin\t}{\cos\t-\sin\t}.\]
+    Recall that $x = r\cos\t$ and $y = r\sin\t$, whence $x = \e^\t\cos\t$ and $y = \e^\t\sin\t$. Thus, $\der{x}{\t} = \e^\t(\cos\t - \sin\t)$, and $\der{y}{x} = \e^\t(\cos\t + \sin\t)$. Hence, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{\e^\t (\cos\t + \sin\t)}{\e^\t (\cos\t - \sin\t)} = \frac{\cos\t+\sin\t}{\cos\t-\sin\t}.\]
 
-    At $\bp{e^{\frac\pi2}, \frac\pi2}$, we clearly have $x = 0$ and $y = e^{\pi/2}$. Also, $\derx{y}{x} = -1$. By the point-slope formula, the equation of the tangent line at $\bp{e^{\frac\pi2}, \frac\pi2}$ is given by $y = -x + e^{\frac\pi2}$.
+    At $\bp{\e^{\frac\pi2}, \frac\pi2}$, we clearly have $x = 0$ and $y = \e^{\pi/2}$. Also, $\derx{y}{x} = -1$. By the point-slope formula, the equation of the tangent line at $\bp{\e^{\frac\pi2}, \frac\pi2}$ is given by $y = -x + \e^{\frac\pi2}$.
 \end{solution}
 
 \begin{problem}

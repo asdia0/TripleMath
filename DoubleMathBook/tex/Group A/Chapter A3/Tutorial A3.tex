@@ -96,12 +96,12 @@
 \end{solution}
 
 \begin{problem}
-    The first term of an arithmetic series is $\ln x$ and the $r$th term is $\ln{xk^{r-1}}$, where $k$ is a real constant. Show that the sum of the first $n$ terms of the series is $S_n = \frac{n}2 \ln{x^2k^{n-1}}$. If $k = 1$ and $x \neq 1$, find the sum of the series $e^{S_1} + e^{S_2} + e^{S_3} + \ldots + e^{S_n}$.
+    The first term of an arithmetic series is $\ln x$ and the $r$th term is $\ln{xk^{r-1}}$, where $k$ is a real constant. Show that the sum of the first $n$ terms of the series is $S_n = \frac{n}2 \ln{x^2k^{n-1}}$. If $k = 1$ and $x \neq 1$, find the sum of the series $\e^{S_1} + \e^{S_2} + \e^{S_3} + \ldots + \e^{S_n}$.
 \end{problem}
 \begin{solution}
     Let $u_n$ be the $n$th term in the arithmetic series. Then \[u_n = \ln{xk^{r-1}} = \ln x + (r-1)\ln k.\] We thus see that the arithmetic series has first term $\ln x$ and common difference of $\ln k$. Thus, \[S_n = n\bp{\frac{\ln x + \bp{\ln x + (r-1)\ln k}}{2}} = \frac{n}{2} \ln{x^2 k^{r-1}}.\]
 
-    When $k = 1$, we have $S_n = \ln{x^n}$, whence $e^{S_n} = x^n$. Thus, \[e^{S_1} + e^{S_2} + e^{S_3} + \ldots + e^{S_n} = x + x^2 + x^3 + \ldots x^n = \frac{x(1-x^{n+1})}{1-x}.\]
+    When $k = 1$, we have $S_n = \ln{x^n}$, whence $\e^{S_n} = x^n$. Thus, \[\e^{S_1} + \e^{S_2} + \e^{S_3} + \ldots + \e^{S_n} = x + x^2 + x^3 + \ldots x^n = \frac{x(1-x^{n+1})}{1-x}.\]
 \end{solution}
 
 \begin{problem}
@@ -134,12 +134,12 @@
         Since $G_1 = A_1$, we have $G_1 = a$. We can thus write $G_n = ar^{n-1}$. From $G_2 = A_4$, we have $ar = a + 3d$, which gives $a = \frac{3d}{r-1}$. From $G_3 = A_6$, we have $ar^2 = a + 5d$. Thus, \[\frac{3d}{r-1} \cdot r^2 = \frac{3d}{r-1} + 5d \implies \frac{3r^2}{r-1} = \frac{3}{r-1} + 5 \implies 3r^2 - 5r + 2 = 0.\]
     \end{ppart}
     \begin{ppart}
-        Note that the roots to $3r^2 - 5r + 2 = 0$ are $r = 1$ and $r = \frac23$. Clearly, $r \neq 1$ since $a = \frac{3d}{r-1}$ would be undefined. Hence, $r = \frac23$, whence the geometric series is convergent.
+        Note that the roots to $3r^2 - 5r + 2 = 0$ are $r = 1$ and $r = 2/3$. Clearly, $r \neq 1$ since $a = 3d/(r-1)$ would be undefined. Hence, $r = 2/3$, whence the geometric series is convergent.
 
-        Let $S_\infty$ be the sum to infinity of $G_n$. Then $S_\infty = \frac{a}{1 - r} = 3a$.
+        Let $S_\infty$ be the sum to infinity of $G_n$. Then $S_\infty = a/(1-r) = 3a$.
     \end{ppart}
     \begin{ppart}
-        Note that $d = \frac13 a(r-1) = -\frac{a}9$. Hence, \[S = n \bp{\frac{a + \bs{a + (n-1)d}}{2}} = n \bp{\frac{2a + (n-1)\bp{-\frac{a}9}}{2}} = \frac{an}{18}(19 - n).\] Consider $S > 4a$. \[S > 4a \implies \frac{n}{18} (19 - n) > 4 \implies -n^2 + 19n - 72 > 0.\] Using G.C., we see that  $5.23 < n < 13.8$. Since $n$ is an integer, the set of values that $n$ can take on is $\bc{n \in \ZZ : 6 \leq n \leq 13}$.
+        Note that $d = a(r-1)/3 = -\frac{a}9$. Hence, \[S = n \bp{\frac{a + \bs{a + (n-1)d}}{2}} = n \bp{\frac{2a + (n-1)\bp{-\frac{a}9}}{2}} = \frac{an}{18}(19 - n).\] Consider $S > 4a$. \[S > 4a \implies \frac{n}{18} (19 - n) > 4 \implies -n^2 + 19n - 72 > 0.\] Using G.C., we see that  $5.23 < n < 13.8$. Since $n$ is an integer, the set of values that $n$ can take on is $\bc{n \in \ZZ : 6 \leq n \leq 13}$.
     \end{ppart}
 \end{solution}
 

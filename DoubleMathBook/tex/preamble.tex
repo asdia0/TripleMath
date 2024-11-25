@@ -18,19 +18,7 @@
 \chead{\headmark}
 
 % Chapter and section numbering
-\setcounter{secnumdepth}{0}
-
-\makeatletter
-\newcommand{\chapterkey}[1]{%
-  \renewcommand{\chapter@key}{#1}%
-}
-\newcommand{\chapter@key}{???} % initialize
-\renewcommand{\thechapter}{\chapter@key}
-\makeatother
-
-\setlength{\cftchapnumwidth}{2.5em}
-\let \savenumberline \numberline
-\def \numberline#1{\savenumberline{#1.}}
+\setcounter{secnumdepth}{-1}
 
 \raggedbottom
 
