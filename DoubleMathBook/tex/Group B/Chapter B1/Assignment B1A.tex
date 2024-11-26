@@ -1,0 +1,241 @@
+\section{Assignment B1A}
+
+\begin{problem}
+    Sketch clearly labelled diagrams of each of the following curves, giving exact values of axial intercepts, stationary points and equations of asymptotes, if any.
+
+    \begin{enumerate}
+        \item $y + x^2 = 2x - 4$
+        \item $y = \frac{3x-4}{2x-1}$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -3:5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {-4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-10,
+                    ymax=2,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {-x^2 + 2*x - 4};
+        
+                    \addlegendentry{$y + x^2 = 2x - 4$};
+
+                    \fill (1, -3) circle[radius=2.5 pt] node[anchor=north] {$(1, -3)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -3:5,
+                    samples = 81,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {4/3},
+                    xticklabels = {$\frac43$},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-3,
+                    ymax=6,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords=jump] {(3*x - 4)/(2*x - 1)};
+        
+                    \addlegendentry{$y = \frac{3x-4}{2x-1}$};
+
+                    \draw[dotted, thick] (0.5, -3) -- (0.5, 6) node[anchor=north west] {$x=\frac12$};
+
+                    \draw[dotted, thick] (-3, 1.5) -- (5, 1.5) node[anchor=south east] {$y = \frac32$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    On separate diagrams, sketch the graphs of 
+    \begin{enumerate}
+        \item $y = \frac{x^2-a^2}{x^2}, \, a > 0$
+        \item $y = \frac{x-1}{2x(x+3)}$
+    \end{enumerate}
+    Indicate clearly the coordinates of axial intercepts, stationary points and equations of asymptotes, if any.
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -4:4,
+                    samples = 81,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2, 2},
+                    xticklabels = {$-a$, $a$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-5,
+                    ymax=2,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords=jump] {(x^2 - 4)/(x^2)};
+        
+                    \addlegendentry{$y = \frac{x^2-a^2}{x^2}$};
+
+                    \draw[dotted, thick] (-4, 1) -- (4, 1) node[anchor=south east] {$y = 1$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:7,
+                    samples = 141,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-0.5,
+                    ymax=0.75,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords=jump] {(x-1)/((2*x)*(x+3))};
+        
+                    \addlegendentry{$y = \frac{x-1}{2x(x+3)}$};
+
+                    \draw[dotted, thick] (-3, -0.5) -- (-3, 0.75) node[anchor=north east] {$x = -3$};
+
+                    \fill (-1, 0.5) circle[radius=2.5 pt];
+
+                    \node[anchor=north] at (-1.5, 0.475) {$\bp{-1, \frac12}$};
+
+                    \fill (3, 1/18) circle[radius=2.5 pt] node[anchor=south] {$\bp{3, \frac1{18}}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The curve $C$ has equation $y = \frac{ax^2+bx-2}{x+4}$, where $a$ and $b$ are constants. It is given that $y = 2x-5$ is an asymptote of $C$.
+
+    \begin{enumerate}
+        \item Find the values of $a$ and $b$.
+        \item Sketch $C$.
+        \item Using an algebraic method, find the set of values that $y$ cannot take.
+        \item By drawing a sketch of another suitable curve in the same diagram as your sketch of $C$ in part (b), deduce the number of distinct real roots of the equation $x^3 + 6x^2 + 3x - 2 = 0$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since $y = 2x-5$ is an asymptote of $C$, $\frac{ax^2 + bx-2}{x+4}$ can be expressed in the form $2x-5 + \frac{k}{x+4}$, where $k$ is a constant. \[\frac{ax^2 + bx-2}{x+4} = 2x-5 + \frac{k}{x+4} \implies ax^2+bx-2 = (2x-5)(x+4) + k = 2x^2+3x-20+k.\] Comparing coefficients of $x^2$, $x$ and constant terms, we have $a = 2$, $b = 3$ and $k = 18$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -10:5,
+                    samples = 301,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {0.5},
+                    xticklabels = {$\frac12$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-40,
+                    ymax = 10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords=jump] {(2*x^2 + 3*x-2)/(x+4)};
+        
+                    \addlegendentry{$y = \frac{2x^2 + 3x-2}{x+4}$};
+
+                    \addplot[plotBlue] {-x^2};
+
+                    \addlegendentry{$y=-x^2$};
+
+                    \draw[dotted, thick] (-4, 10) -- (-4, -40) node[anchor=south west] {$x = -4$};
+
+                    \fill (-1, -1) circle[radius=2.5 pt];
+                    
+                    \node[anchor=north] at (-2, -1) {$(-1, -1)$};
+
+                    \fill (-7, -25) circle[radius=2.5 pt];
+                    
+                    \node[anchor=north] at (-7.5, -26) {$(-7, -25)$};
+                    
+                    \addplot[dotted, thick] {2*x-5};
+
+                    \node[anchor=south, rotate=22.5] at (-7, -19) {$y= 2x-5$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \[y = \frac{2x^2 + 3x - 2}{x+4} \implies (x+4)y = 2x^2 + 3x -2 \implies 2x^2 + (3-y)x - (2+4y) = 0.\] For values that $y$ cannot take on, there exist no solutions to $2x^2 + (3-y)x - (2+4y) = 0$. Hence, $\D < 0$. Hence, \[(3-y)^2 - 4(2)\bp{-(2+4y)} < 0 \implies y^2+26y+25 < 0 \implies (y+25)(y+1) <0.\]
+        \begin{center}
+            \begin{tikzpicture}
+                    \draw[-latex] (-10,0) -- (0.0,0) node[right]{$y$};
+                    \foreach \x in {-1.0,-8} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
+                    \draw[shift={(-1,-3pt)}] node[below]  {$-1$};
+                    \draw[shift={(-8,-3pt)}] node[below]  {$-25$};
+
+                    \draw[very thick, o-o, color=red] (-8.12, 0) -- (-0.88, 0);
+                    \node[anchor=south, align=center] at (-9, 0) {$+$};
+                    \node[anchor=south, align=center] at (-4.5, 0) {$-$};
+                    \node[anchor=south, align=center] at (-0.5, 0) {$+$};
+            \end{tikzpicture}
+        \end{center}
+        Thus, the set of values that $y$ cannot take is $\bc{y \in \RR \colon -25 < y < -1}$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            x^3+6x^2+3x-2 = 0 \implies \frac{x^3+4x^2}{x+4} + \frac{2x^2 + 3x-2}{x+4} = x^2 + \frac{2x^2 + 3x-2}{x+4} = 0 \\
+            \implies \frac{2x^2 + 3x-2}{x+4} = -x^2.
+        \end{gather*}
+        Plotting $y=-x^2$ on the same digram, we see that there are 3 intersections between $y=x^2$ and $C$. Hence, there are 3 distinct real roots to $x^3+6x^2+3x-2 = 0$.
+    \end{ppart}
+\end{solution}

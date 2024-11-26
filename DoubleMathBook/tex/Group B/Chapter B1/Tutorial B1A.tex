@@ -1,0 +1,822 @@
+\section{Tutorial B1A}
+
+\begin{problem}
+    Without using a calculator, sketch the following graphs and determine their symmetries.
+
+    \begin{enumerate}
+        \item $y = x^2 + 5$
+        \item $y = 2x-x^3$
+        \item $y = x^2-4x+3$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -5:5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {5},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin = -5,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^2 + 5};
+        
+                    \addlegendentry{$y = x^2 + 5$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        Symmetry: $x = 0$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -2:2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north west] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {2*x-x^3};
+        
+                    \addlegendentry{$y = 2x-x^3$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        Symmetry: $(0, 0)$.
+    \end{ppart}
+    \clearpage
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -1:5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1, 3},
+                    ytick = {3},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin = -2,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^2 + -4*x + 3};
+        
+                    \addlegendentry{$y = x^2-4x+3$};
+
+                    \fill (2, -1) circle[radius=2.5pt] node[anchor=north] {$(2, -1)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        Symmetry: $x = 2$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Sketch the following curves. Indicate using exact values, the equations of any asymptotes and the coordinates of any intersection with the axes.
+
+    \begin{enumerate}
+        \item $y = \frac1{2x+1}$
+        \item $y = \frac{3x}{x-2}$
+        \item $y = \frac{x^2+x-6}{2x-2}$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -2:1,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin = -10,
+                    ymax = 10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {1/(2*x+1)};
+        
+                    \addlegendentry{$y = \frac1{2x+1}$};
+
+                    \draw[dotted, thick] (-0.5, -10) -- (-0.5, 10) node[anchor=north east] {$x = -\frac12$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \clearpage
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -8:12,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin = -7,
+                    ymax = 13,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {3*x/(x-2)};
+        
+                    \addlegendentry{$y = \frac{3x}{x-2}$};
+
+                    \draw[dotted, thick] (2, -7) -- (2, 13) node[anchor=north west, fill=white, opacity = 0.6, text opacity=1] {$x = 2$};
+
+                    \draw[dotted, thick] (-8, 3) -- (12, 3) node[anchor=south east, fill=white, opacity = 0.6, text opacity=1] {$y = 3$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:9,
+                    samples = 129,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-3, 2},
+                    ytick = {3},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=10,
+                    ymin=-4,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {(x^2 + x - 6)/(2*x-2)};
+        
+                    \addlegendentry{$y = \frac{x^2+x-6}{2x-2}$};
+
+                    \draw[dotted, thick] (1, -7) -- (1, 10) node[anchor=north west, fill=white, opacity = 0.6, text opacity=1] {$x = 1$};
+
+                    \addplot[dotted, thick] {1/2 * x + 1};
+
+                    \draw[dotted, thick] (9, 4.6) node[anchor=south east] {$y = \frac12 x + 1$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Sketch the following graphs
+
+    \begin{enumerate}
+        \item $x^2 + 2x + 2y + 4 = 0$
+        \item $y^2 = x - 9$
+        \item $y^2 = (x-2)^4 + 5$
+        \item $y = \tan{\frac12 x}, \, -2\pi \leq x \leq 2\pi$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -5:3,
+                    samples = 129,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {-2},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax = 2,
+                    ymin= -9.5,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {-1/2 * x^2 - x - 2};
+        
+                    \addlegendentry{$x^2 + 2x + 2y + 4 = 0$};
+
+                    \fill (-1, -1.5) circle[radius=2.5 pt] node[anchor=north east, fill=white, opacity = 0.6, text opacity=1] {$\bp{-1, -\frac32}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -5:40,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {9},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, samples=500] {sqrt(x - 9)};
+
+                    \addplot[plotRed, samples=500] {-sqrt(x - 9)};
+        
+                    \addlegendentry{$y^2 = x - 9$};
+
+                    \addplot[white, dotted, very thin, domain=-5:1] {3};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -10:12,
+                    samples=500,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {-4.583, 4.583},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=10,
+                    ymin=-10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {sqrt((x-2)^4+5)};
+
+                    \addplot[plotRed] {-sqrt((x-2)^4+5)};
+        
+                    \addlegendentry{$y^2 = (x-2)^4+5$};
+
+                    \fill (2, 2.236) circle[radius=2.5 pt] node[anchor=south] {$(2, 2.24)$};
+
+                    \fill (2, -2.236) circle[radius=2.5 pt] node[anchor=north] {$(2, -2.24)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    samples=500,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {2*pi, pi, -pi, -2*pi},
+                    xticklabels = {$2\pi$, $\pi$, $-\pi$, $-2\pi$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=10,
+                    ymin=-10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north west] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, domain=-2*pi:-3/2*pi] {tan(\x r)};
+
+                    \addplot[plotRed, domain=-3/2*pi:-1/2*pi] {tan(\x r)};
+
+                    \addplot[plotRed, domain=-1/2*pi:1/2*pi] {tan(\x r)};
+
+                    \addplot[plotRed, domain=1/2*pi:3/2*pi] {tan(\x r)};
+
+                    \addplot[plotRed, domain=3/2*pi:2*pi] {tan(\x r)};
+        
+                    \addlegendentry{$y = \tan{x}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Sketch the following curves. Indicate using exact values, the equations of any asymptotes and the coordinates of any intersection with the axes.
+
+    \begin{enumerate}
+        \item $y = \frac{1-3x}{2x-1}$
+        \item $y = \frac{ax}{x-a}, \, a < 0$
+        \item $y = -\frac{b(x+3a)}{x+a}, \, a,b > 0$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -0.5:3,
+                    samples = 141,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1/3},
+                    xticklabels={$\frac13$},
+                    ytick = {-1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin = -4,
+                    ymax = 1,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {(1-3*x)/(2*x-1)};
+        
+                    \addlegendentry{$y = \frac{1-3x}{2x-1}$};
+
+                    \draw[dotted, thick] (0.5, -4) -- (0.5, 1) node[anchor=north west, fill=white, opacity = 0.6, text opacity=1] {$x = \frac12$};
+
+                    \draw[dotted, thick] (-0.5, -1.5) -- (3, -1.5) node[anchor=south east, fill=white, opacity = 0.6, text opacity=1] {$y = -\frac32$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -5.5:1.5,
+                    samples = 141,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=10,
+                    ymin=-10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {(-2*x)/(x+2)};
+        
+                    \addlegendentry{$y = \frac{ax}{x-a}$};
+
+                    \draw[dotted, thick] (-2, -10) -- (-2, 10) node[anchor=north west, fill=white, opacity = 0.6, text opacity=1] {$x = a$};
+
+                    \draw[dotted, thick] (-5.5, -2) -- (1.5, -2) node[anchor=north east, fill=white, opacity = 0.6, text opacity=1] {$y = a$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -5.5:1.5,
+                    samples = 141,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-3},
+                    xticklabels = {$-3a$},
+                    ytick = {-6},
+                    yticklabels = {$-3b$},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=10,
+                    ymin=-10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {-2*(x+3)/(x+1)};
+        
+                    \addlegendentry{$y = -\frac{b(x+3a)}{x+a}$};
+
+                    \draw[dotted, thick] (-1, -10) -- (-1, 10) node[anchor=north east, fill=white, opacity = 0.6, text opacity=1] {$x = -a$};
+
+                    \draw[dotted, thick] (-5.5, -2) -- (1.5, -2) node[anchor=north east, fill=white, opacity = 0.6, text opacity=1] {$y = -b$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Sketch the following curves and find the coordinates of any turning points on the curves.
+
+    \begin{enumerate}
+        \item $y = x + 2\sin x, \, 0 \leq x \leq 2\pi$
+        \item $y = \frac{x}{\ln x}, \, x > 0, \, x \neq 1$
+        \item $y = xe^{-x}$
+        \item $y = xe^{-x^2}$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2*pi,
+                    samples = 141,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {x + 2*sin(\x r)};
+        
+                    \addlegendentry{$y = x + 2\sin x$};
+
+                    \fill (2.094, 3.826) circle[radius=2.5 pt] node[anchor=south] {$\bp{\frac23 \pi, 3.83}$};
+
+                    \fill (4.189, 2.457) circle[radius=2.5 pt] node[anchor=north] {$\bp{\frac43 \pi, 2.46}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:6,
+                    samples = 61,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=6,
+                    ymin=-3,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {x/(ln(x))};
+        
+                    \addlegendentry{$y = \frac{x}{\ln x}$};
+
+                    \draw[dotted, thick] (1, 6) -- (1, -3) node[anchor=south west] {$x = 1$};
+                    
+                    \fill (e, e) circle[radius=2.5 pt] node[anchor=north] {$(e, e)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -0.5:6,
+                    samples = 61,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=0.7,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {x * e^(-x)};
+        
+                    \addlegendentry{$y = xe^{-x}$};
+                    
+                    \fill (1, 1/e) circle[radius=2.5 pt] node[anchor=south west] {$\bp{1, \frac1e}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -6:6,
+                    samples = 61,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=0.6,
+                    ymin=-0.6,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {x * e^(-x^2)};
+        
+                    \addlegendentry{$y = xe^{-x^2}$};
+                    
+                    \fill (0.707, 0.429) circle[radius=2.5 pt] node[anchor=west] {$\bp{\frac{1}{\sqrt{2}}, \frac1{\sqrt2e}}$};
+
+                    \fill (-0.707, -0.429) circle[radius=2.5 pt] node[anchor=east] {$\bp{-\frac{1}{\sqrt{2}}, -\frac1{\sqrt2e}}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The equation of a curve $C$ is $y = 1 + \frac6{x-3} - \frac{24}{x+3}$.
+
+    \begin{enumerate}
+        \item Explain why $y=1$ and $x=3$ are asymptotes to the curve.
+        \item Find the coordinates of the points where $C$ meets the axes.
+        \item Sketch $C$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        As $x \to \pm \infty$, $y \to 1$. Hence, $y=1$ is an asymptote to $C$. As $x \to 3^\pm$, $y \to \pm \infty$. Hence, $x = 3$ is an asymptote to $C$.
+    \end{ppart}
+    \begin{ppart}
+        When $x = 0$, $y = -9$. When $y = 0$, $x = 9$. Hence, $C$ meets the axes at $(0, -9)$ and $(9, 0)$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -8:12,
+                    samples = 201,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {9},
+                    ytick = {-9},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=30,
+                    ymin=-30,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {1 + 6/(x-3) - 24/(x+3)};
+        
+                    \addlegendentry{$y = 1 + \frac6{x-3} - \frac{24}{x+3}$};
+                    
+                    \draw[dotted, thick] (3, 30) -- (3, -30) node[anchor=south west] {$x=3$};
+
+                    \draw[dotted, thick] (-3, 30) -- (-3, -30) node[anchor=south east] {$x=-3$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The curve $C$ has equation $y = \frac{ax^2+bx}{x+2}$, where $x \neq -2$. It is given that $C$ has an asymptote $y = 1-2x$.
+
+    \begin{enumerate}
+        \item Show (do not verify) that $a = -2$ and $b = -3$.
+        \item Using an algebraic method, find the set of values that $y$ can take.
+        \item Sketch $C$, showing clearly the positions of any axial intercept(s), asymptote(s) and stationary point(s).
+        \item Deduce that the equation $x^4 + 2x^3 + 2x^2 + 3x = 0 $ has exactly one real non-zero root.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[y = \frac{ax^2+bx}{x+2} = \frac{(ax + b-2a)(x+2) - 2(b-2a)}{x+2} = ax+b-2a - \frac{2(b-2a)}{x+2}.\] Since $C$ has an asymptote $y = 1-2x$, we have $a = -2$ and $b-2a = 1$, whence $b = -3$.
+    \end{ppart}
+    \begin{ppart}
+        \[y = \frac{-2x^2+-3x}{x+2} \implies y(x+2) = -2x^2 -3 x \implies 2x^2 + (3+y)x + 2y = 0.\] For all values that $y$ can take on, there exists a solution to $2x^2 + (3+y)x + 2y = 0$. Hence, $\D \geq 0$. \[(3+y)^2 -4(2)(2y) \geq 0 \implies y^2-10y +9 \geq 0 \implies (y-1)(y-9) \geq 0.\]
+
+        \begin{center}
+            \begin{tikzpicture}
+                    \draw[-latex] (0.0,0) -- (10.0,0) node[right]{$y$};
+                    \foreach \x in {9,1} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
+                    \foreach \x in {9,1} \draw[shift={(\x,-3pt)}] node[below]  {$\x$};
+                    \draw[thick, -*, color=red] (0.0, 0) -- (1.12, 0);
+                    \draw[thick, *-, color=red] (8.88, 0) -- (9.9, 0);
+                    \node[anchor=south, align=center] at (0.5, 0) {$+$};
+                    \node[anchor=south, align=center] at (5.0, 0) {$-$};
+                    \node[anchor=south, align=center] at (9.5, 0) {$+$};
+            \end{tikzpicture}
+        \end{center}
+
+        Thus, $\bc{y \in \RR \colon y \leq 1 \lor y \geq 9}$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -6:3,
+                    samples = 91,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-3/2},
+                    xticklabels = {$-\frac32$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=20,
+                    ymin=-10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {-(2*x^2+3*x)/(x+2)};
+        
+                    \addlegendentry{$y = \frac{-2x^2-3x}{x+2}$};
+                    
+                    \draw[dotted, thick] (-2, 20) -- (-2, -10) node[anchor=south east] {$x=-2$};
+
+                    \addplot[dotted, thick] {1-2*x};
+
+                    \node[anchor=north east] at (-2, 5) {$y=1-2x$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[x^4 + 2x^3 + 2x^2 + 3x = 0 \implies x^3(x+2) = -2x^2 - 3x \implies x^3 = \frac{-2x^2-3x}{x+2}.\] This motivates us to plot $y = x^3$ and $y = \frac{-2x^2-3x}{x+2}$ on the same graph.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -6:3,
+                    samples = 91,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-3/2},
+                    xticklabels = {$-\frac32$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=20,
+                    ymin=-10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {-(2*x^2+3*x)/(x+2)};
+        
+                    \addlegendentry{$y = \frac{-2x^2-3x}{x+2}$};
+
+                    \addplot[plotBlue] {x^3};
+
+                    \addlegendentry{$y = x^3$};
+                    
+                    \draw[dotted, thick] (-2, 20) -- (-2, -10) node[anchor=south east] {$x=-2$};
+
+                    \addplot[dotted, thick] {1-2*x};
+
+                    \node[anchor=north east] at (-2, 5) {$y=1-2x$};
+
+                    \fill (-1.811, -5.935) circle[radius=2.5 pt];
+
+                    \fill (0, 0) circle[radius=2.5 pt];
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        We thus see that $y = x^3$ intersects $y = \frac{-2x^2-3x}{x+2}$ twice, with one intersection point being the origin. Thus, there is only one real non-zero root to $x^4 + 2x^3 + 2x^2 + 3x =0$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The curve $C$ is defined by the equation $y = \frac{x}{x^2-5x+4}$.
+
+    \begin{enumerate}
+        \item Write down the equations of the asymptotes.
+        \item Sketch $C$, indicating clearly the axial intercept(s), asymptote(s) and turning point(s).
+        \item Find the positive value $k$ such that the equation $\frac{x}{x^2-5x+4} = kx$ has exactly 2 distinct real roots.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        As $x \to \pm \infty$, $y \to 0$. Hence, $y = 0$ is an asymptote. Observe that $x^2 - 5x + 4 = (x-1)(x-4)$. Hence, $x=1$ and $x=4$ are also asymptotes.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -2:7,
+                    samples = 451,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=10,
+                    ymin=-10,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords = jump] {x/(x^2-5*x+4)};
+        
+                    \addlegendentry{$y = \frac{x}{x^2 -5x+4}$};
+                    
+                    \draw[dotted, thick] (1, 10) -- (1, -10) node[anchor=south west] {$x=1$};
+
+                    \draw[dotted, thick] (4, 10) -- (4, -10) node[anchor=south west] {$x=4$};
+
+                    \fill (2, -1) circle[radius=2.5 pt] node[anchor=north] {$(2,1)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Note that $x = 0$ is always a root of $\frac{x}{x^2-5x+4} = kx$. We thus aim to find the value of $k$ such that $\frac{x}{x^2-5x+4} = kx$ has only one non-zero root. 
+
+            We observe that if $k > 0$, $y=kx$ will intersect with $y = \frac{x}{x^2-5x+4}$ at least twice: before $x=1$ and after $x=4$. In order to have only one non-zero root, we must force the intersection point that comes before $x=1$ to be at the origin $(0, 0)$. Hence, $k$ is tangential to $C$ at $(0, 0)$, thus giving $k = \evalder{\derx{C}{x}}{x=0}$.
+
+            \[k = \evalder{\der{C}{x}}{x=0} = \evalder{\der{}{x} \bp{\frac{x}{x^2-5x+4}}}{x=0} = \evalder{\frac{3x^2-10x+4}{(x^2-5x+4)^2}}{x=0} = \frac14.\]
+    \end{ppart}
+\end{solution}
