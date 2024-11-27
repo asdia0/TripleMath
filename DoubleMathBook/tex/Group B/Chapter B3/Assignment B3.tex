@@ -1,0 +1,167 @@
+\section{Assignment B3}
+
+\begin{problem}
+    Functions $f$ and $g$ are defined as follows:
+    \begin{alignat*}{2}
+        f & \colon x \mapsto (x-3)^2 + 6, &&\qquad x \in \RR, \, x \leq 2\\
+        g & \colon x \mapsto \ln{x-2}, &&\qquad x \in \RR, \, x > 3
+    \end{alignat*}
+
+    \begin{enumerate}
+        \item Show that $\inv f$ exists and define $\inv f$ in a similar form.
+        \item Sketch, on the same diagram, the graphs of $f$, $\inv f$ and $f \inv f$.
+        \item Find $fg$ and $gf$ if they exist, and find their ranges (where applicable).
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $f' = 2(x-3) < 0$ for all $x \leq 2$. Thus, $f$ is strictly decreasing. Since $f$ is also continuous, $f$ is one-one. Thus, $\inv f$ exists.
+
+        Let $y = f(x) \implies x = \inv f(y)$. \[y = f(x) = (x-3)^2 + 6 \implies x = 3 \pm \sqrt{y-6}.\] Since $x < 3$, we reject $x = 3 + \sqrt{y-6}$. Lastly, observe that $\dom{\inv f} = \ran f = [f(2), \infty) = [7, \infty)$. Thus, \[\inv f \colon x \mapsto 3 - \sqrt{x-6}, \, x \in \RR, \, x \geq 7.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = {15},
+                    xtick = {15},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=20,
+                    ymin=-3,
+                    xmin=-3,
+                    xmax=20,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed, domain=-3:2] {(x-3)^2 + 6};
+        
+                    \addlegendentry{$y = f(x)$};
+
+                    \addplot[plotBlue, domain=7:30] {3 - sqrt(x-6)};
+
+                    \addlegendentry{$y = \inv f(x)$};
+
+                    \addplot[plotGreen, domain=7:30] {x};
+
+                    \addlegendentry{$y = f\inv f(x)$};
+
+                    \draw (2, 7) circle[radius=2.5 pt] node[anchor=north] {$(2, 7)$};
+
+                    \draw (7, 2) circle[radius=2.5 pt] node[anchor=east] {$(7, 2)$};
+
+                    \draw (7, 7) circle[radius=2.5 pt] node[anchor=north] {$(7, 7)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Note that $\ran g = (0, \infty)$ and $\dom f = (-\infty, 2]$. Hence, $\ran g \nsubseteq \dom f$. Thus, $fg$ does not exist. Note that $\ran f = [7, \infty)$ and $\dom g = (3, \infty)$. Hence, $\ran f \subseteq \dom g$. Thus, $gf$ exists.
+
+        Since $\ln x$ is a strictly increasing function, we have that $g$ is also strictly increasing. Hence, $\ran{gf} = [\ln{7 - 2}, \infty) = [\ln 5, \infty)$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The function $f$ is defined as follows: \[f \colon x \mapsto \frac1{x^2 - 1}, \qquad x \in \RR, \, x \neq -1, \, x \neq 1.\]
+
+    \begin{enumerate}
+        \item Sketch the graph of $y = f(x)$.
+        \item If the domain of $f$ is further restricted to $x \geq k$, state with a reason the least value of $k$ for which the function $\inv f$ exists.
+    \end{enumerate}
+
+     \textbf{In the rest of the question, the domain of $f$ is $x \in \RR, \, x \neq -1, \, x \neq 1$, as originally defined.}
+
+    \smallskip
+
+    The function $g$ is defined as follows: \[g \colon x \mapsto \frac1{x-3}, \qquad x \in \RR, \, x \neq 2, \, x \neq 3, x \neq 4.\]
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find the range of $fg$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    samples = 161,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = {-1},
+                    xtick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-3,
+                    ymax=3,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed, domain=-4:4, unbounded coords=jump] {1/(x^2 - 1)};
+        
+                    \addlegendentry{$y = f(x)$};
+
+                    \draw[dotted, thick] (1, 3) -- (1, -3) node[anchor=south west] {$x = 1$};
+
+                    \draw[dotted, thick] (-1, 3) -- (-1, -3) node[anchor=south east] {$x = -1$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        If the domain of $f$ is further restricted to $x \geq 0$, $f$ would pass the horizontal line test, whence $\inv f$ would exist. Hence, $\min k = 0$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that $\ran g = \RR \setminus \bc{g(2), g(4)} = \RR \setminus \bc{-1, 1}$. Hence, $\ran {fg} = \ran{f} = \RR \setminus (-1, 0\,]$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The function $f$ is defined by \[f \colon x \mapsto \frac{x}{x^2 - 1}, \qquad x \in \RR, \, x \neq -1, \, x \neq 1.\]
+
+    \begin{enumerate}
+        \item Explain why $f$ does not have an inverse.
+        \item The function $f$ has an inverse if the domain is restricted to $x \leq k$. State the largest value of $k$.
+    \end{enumerate}
+
+    The function $g$ is defined by \[g \colon x \mapsto \ln x - 1, \qquad x \in \RR, \, 0 < x < 1.\]
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find an expression for $h(x)$ for each of the following cases:
+        \begin{enumerate}
+            \item $gh(x) = x$
+            \item $hg(x) = x^2+1$
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that $f(1/2) = -2/3$ and $f(-2) = -2/3$. Hence, $f(1/2) = f(-2)$. Since $1/2 \neq -2$, $f$ is not one-one. Thus, $f$ does not have an inverse.
+    \end{ppart}
+    \begin{ppart}
+        Clearly, $\max k = 0$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that $gh(x) = x \implies h(x) = \inv g(x)$. Hence, consider $y = g(x) \implies x = h(y)$. \[y = g(x) = \ln x - 1 \implies \ln x = y+1 \implies x = e^{y+1}.\] Hence, $h(x) = e^{x+1}$.
+        \end{psubpart}
+        \begin{psubpart}
+            Let $h = h_2 \circ h_1$ such that $h_1g(x) = x \implies h_1(x) = \inv g(x) \implies h_1(x) = e^{x+1}$. Then \[hg(x) = x^2+1 \implies h_2h_1g(x) = x^2+1 \implies h_2(x) = x^2+1.\] Hence, $h(x) = h_2h_1(x) = h_2(e^{x+1}) = \bp{e^{x+1}}^2 + 1 = e^{2x+2} + 1$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}

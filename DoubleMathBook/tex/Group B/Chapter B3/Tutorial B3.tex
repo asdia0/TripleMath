@@ -1,0 +1,651 @@
+\section{Tutorial B3}
+
+\begin{problem}
+    Sketch the following graphs and determine whether each graph represents a function for the given domain.
+
+    \begin{enumerate}
+        \item $y = \sqrt{9-x^2}, \, -3 \leq x \leq 3$
+        \item $x = (y-4)^2, \, y \in \RR$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -3:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-3, 3},
+                    ytick = {3},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=-4,
+                    xmax=4,
+                    ymax=4,
+                    ymin=-1,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {sqrt(9-x^2)};
+        
+                    \addlegendentry{$y = \sqrt{9-x^2}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        $y = \sqrt{9-x^2}$ passes the vertical line test for $-3 \leq x \leq 3$ and is hence a function.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:30,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {16},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=-3,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed] {sqrt(x) + 4};
+
+                    \addplot[plotRed] {-sqrt(x) + 4};
+        
+                    \addlegendentry{$x = (y-4)^2$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        $x = (y-4)^2$ does not pass the vertical line test for $y \in \RR$ and is hence not a function.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Sketch the graph and find the range for each the following functions.
+
+    \begin{enumerate}
+        \item $g \colon x \mapsto x^2 - 4x + 2, \, 1 < x \leq 5$
+        \item $h \colon x \mapsto \abs{2x-3}, \, x < 3$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 1:5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = \empty,
+                    xtick = {3.414},
+                    xticklabels = {$2 + \sqrt2$},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=0,
+                    xmax=6,
+                    ymax=9,
+                    ymin=-4,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^2 - 4*x + 2};
+        
+                    \addlegendentry{$y = g(x)$};
+
+                    \draw (1, -1) circle[radius=2.5 pt];
+                    \node[anchor=north] at (0.7, -1.1) {$(1, -1)$};
+
+                    \fill (5, 7) circle[radius=2.5pt] node[anchor=east] {$(5, 7)$};
+
+                    \fill (2, -2) circle[radius=2.5 pt] node[anchor=north] {$(2, -2)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        From the graph, $\ran{g} = [-2, 7)$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -2:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = {3},
+                    xtick = {1.5},
+                    xticklabels = {$\frac32$},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmax=4,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {abs(2 * x - 3)};
+        
+                    \addlegendentry{$y = h(x)$};
+
+                    \draw (3, 3) circle[radius=2.5pt] node[anchor=south] {$(3, 3)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        From the graph, $\ran{h} = [\,0, \infty)$.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    For each of the following functions, sketch its graph and determine if the function is one-one. If it is, find its inverse in a similar form.
+
+    \begin{enumerate}
+        \item $g \colon x \mapsto \abs{x} - 2, \, x \in \RR$
+        \item $h \colon x \mapsto x^2 + 2x + 5, \, x \leq -2$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -4:4,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = {-2},
+                    xtick = {-2, 2},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-2.5,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {abs(x) - 2};
+        
+                    \addlegendentry{$y = g(x)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        $y=g(x)$ does not pass the horizontal line test. Hence, $g$ is not one-one.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:-2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = \empty,
+                    xtick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=0,
+                    xmax=1,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^2 + 2*x + 5};
+        
+                    \addlegendentry{$y = h(x)$};
+
+                    \fill (-2, 5) circle[radius=2.5 pt] node[anchor=west] {$(-2, 5)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        $y=h(x)$ passes the horizontal line test. Hence, $h$ is one-one.
+        
+        Note that $y = h(x) \implies x = \inv h(y)$. Now consider $y = h(x)$. \[y = h(x) = x^2 + 2x + 5 = (x+1)^2 + 4 \implies x = -1 \pm \sqrt{y - 4}.\] Since $x \leq -2$, we reject $x = -1 + \sqrt{y-4}$. Note that $\dom{\inv h} = \ran h = [5, \infty)$. Hence, \[\inv h \colon x \mapsto -1-\sqrt{x-4}, \, x \geq 5.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The function $f$ is defined by \[f \colon x \mapsto x + \frac1{x}, \, x \neq 0.\]
+
+    \begin{enumerate}
+        \item Sketch the graph of $f$ and explain why $\inv{f}$ does not exist.
+        \item The function $h$ is defined by $h \colon x \mapsto f(x), \, x \in \RR, \, x \geq \a$, where $\a \in \RR^+$. Find the smallest value of $\a$ such that the inverse function of $h$ exists.
+    \end{enumerate}
+
+    Using this value of $\a$,
+    
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item State the range of $h$.
+        \item Express $\inv{h}$ in a similar form and sketch on a single diagram, the graphs of $h$ and $\inv{h}$, showing clearly their geometrical relationship.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -4:4,
+                    samples = 81,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = \empty,
+                    xtick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, unbounded coords=jump] {x + 1/x};
+        
+                    \addlegendentry{$y = f(x)$};
+
+                    \addplot[dotted, thick] {x};
+
+                    \node[anchor=south west, rotate=16] at (-4, -4) {$y=x$};
+
+                    \fill (-1, -2) circle[radius=2.5 pt];
+                    
+                    \node[anchor=north, fill=white, opacity = 0.6, text opacity=1] at (-1.2, -2.2) {$(-1, -2)$};
+
+                    \fill (1, 2) circle[radius=2.5 pt] node[anchor=south] {$(1, 2)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        $y=f(x)$ does not pass the horizontal line test. Hence, $f$ is not one-one. Hence, $\inv f$ does not exist.
+    \end{ppart}
+    \begin{ppart}
+        Consider $f'(x) = 0$ for $x > 0$. \[f'(x) = 1 - \frac1{x^2} = 0 \implies x^2 = 1 \implies x = 1.\] Note that we reject $x = -1$ since $x > 0$.
+
+        Looking at the graph of $y=f(x)$, we see that $f(x)$ achieves a minimum at $x = 1$. Hence, $f$ is increasing for all $x \geq 1$. Thus, the smallest value of $\a$ is 1.
+    \end{ppart}
+    \begin{ppart}
+        Note $f(1) = 2$. Hence, from the graph, $\ran h = [2, \infty)$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $y = h(x) \implies x = \inv h(y)$. Now consider $y = h(x)$. \[y = x + \frac1{x} \implies xy = x^2 + 1 \implies x^2 - yx + 1 = 0 \implies x = \frac12 \bp{y \pm \sqrt{y^2 - 4}}.\] Note that $f(2) = \frac52$. Since $2 = \frac12 \bp{\frac52 + \sqrt{\bp{\frac52}^2 - 4}}$ and $2 \neq \frac12 \bp{\frac52 - \sqrt{\bp{\frac52}^2 - 4}}$, we reject $x = \frac12 (y - \sqrt{y^2 - 4})$. Since $\dom{\inv f} = \ran f = [2, \infty)$, we thus have \[\inv h \colon x \mapsto \frac12\bp{x + \sqrt{x^2-4} }, \, x \geq 2.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The function $f$ is defined as follows: \[f \colon x \mapsto x^3 + x - 7, \, x \in \RR.\]
+
+    \begin{enumerate}
+        \item By using a graphical method or otherwise, show that the inverse of $f$ exists.
+        \item Solve exactly the equation $\inv f(x) = 0$. Sketch the graph of $\inv f$ together with the graph of $f$ on the same diagram.
+        \item Find, in exact form, the coordinates of the intersection point(s) of the graphs of $f$ and $\inv f$.
+        \item Given that the gradient of the tangent to the curve with equation $y = \inv f(x)$ is $\frac14$ at the point with $x = p$, find the possible values of $p$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -2.5:2.5,
+                    samples = 161,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = {-7},
+                    xtick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^3 + x - 7};
+
+                    \addlegendentry{$y = f(x)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        $y = f(x)$ passes the horizontal line test. Hence, $f$ is one-one. Thus, $\inv f$ exists.
+    \end{ppart}
+    \begin{ppart}
+        We have \[\inv f(x) = 0 \implies x = f(0) = -7.\]
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -2.5:2.5,
+                    samples = 161,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = {-7},
+                    xtick = {-7},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=-10,
+                    ymax=8,
+                    xmin=-10,
+                    xmax=8,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^3 + x - 7};
+
+                    \addlegendentry{$y = f(x)$};
+
+                    \plot[plotBlue, samples=161] (\x^3 + \x -7, \x);
+
+                    \addlegendentry{$y = \inv f(x)$};
+
+                    \addplot[dotted, thick, domain=-10:10] {x};
+
+                    \node[rotate=45, anchor=south] at (-7, -7) {$y=x$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Let ($\a$, $\b$) be the coordinates of the intersection between $f(x)$ and $\inv f$. From the graph, we see that $\a=\b$, hence $f(\a) = \a$. Hence, \[f(\a) = \a^3 + \a - 7 = \a \implies \a^3 = 7 \implies \a = \sqrt[3]{7}.\] The coordinates are thus $\bp{\sqrt[3]{7}, \sqrt[3]{7}}$.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[[\inv f(x)]' = \frac1{f'(\inv f(x))}.\] Evaluating at $x = p$, we obtain \[\frac14 = \evalder{\frac1{f'(\inv f(x))}}{x=p} \implies \evalder{f'(\inv f(x))}{x=p} = 4.\] Since $f'(x) = 3x^2 + 1$, \[3\inv f(p)^2 + 1 = 4 \implies \inv f(p)^2 = 1 \implies \inv f(p) = \pm 1.\]
+
+        \case{1}[$\inv f(p) = 1$] Then $p = f(1) = -5$.
+
+        \case{2}[$\inv f(p) = -1$] Then $p = f(-1) = -9$.
+
+        Hence, $p = -5$ or $p = -9$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The functions $g$ and $h$ are defined as follows:
+    \begin{alignat*}{2}
+        g & \colon x \mapsto \ln{x+2}, &&\qquad x \in (-1, 1)\\
+        h & \colon x \mapsto x^2 - 2x - 1, &&\qquad x \in \RR^+
+    \end{alignat*}
+
+    \begin{enumerate}
+        \item Sketch, on separate diagrams, the graphs of $g$ and $h$.
+        \item Determine whether the composite function $gh$ exists.
+        \item Give the rule and domain of the composite function $hg$ and find its range.
+        \item The image of $a$ under the composite function $hg$ is -1.5. Find the value of $a$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -1:1,
+                    samples = 161,
+                    axis y line=middle,
+                    axis x line=middle,
+                    ytick = {ln(2)},
+                    yticklabels = {$\ln 2$},
+                    xtick = {-1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=-1.5,
+                    xmax=1.5,
+                    ymax=1.5,
+                    ymin=-0.5,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {ln(x+2)};
+
+                    \addlegendentry{$y = g(x)$};
+                    
+                    \draw (-1, 0) circle[radius=2.5pt];
+
+                    \draw (1, 1.0986) circle[radius=2.5 pt] node[anchor=south east] {$(1, \ln 3)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:4,
+                    samples = 161,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1 + sqrt(2)},
+                    xticklabels = {$1 + \sqrt2$},
+                    ytick = {-1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=-1,
+                    ymin=-3,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x^2 - 2*x - 1};
+
+                    \addlegendentry{$y = h(x)$};
+                    
+                    \draw (0, -1) circle[radius=2.5pt];
+
+                    \fill (1, -2) circle[radius=2.5 pt] node[anchor=north] {$(1, -2)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Observe that $\ran h = [-2, \infty)$ and $\dom g = (-1, 1)$. Hence, $\ran h \nsubseteq \dom g$. Thus, $gh$ does not exist.
+    \end{ppart}
+    \begin{ppart}
+        \[hg(x) = h(\ln{x+2}) = \ln{x+2}^2 - 2\ln{x+2} - 1.\] Also note that $\dom{hg} = \dom{g} = (-1, 1)$. Hence, \[hg \colon x \mapsto \ln{x+2}^2 - 2\ln{x+2} - 1, \, x \in (-1, 1).\]
+
+        Observe that $h$ is decreasing on the interval $(0, 1]$ and increasing on the interval $[1, \infty)$. Note that $\ran g = (0, \ln 3)$. Hence, \[\ran{hg} = [-2, \max \bc{h(0), h(\ln 3)}) = [-2, -1).\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $h(x) = (x-1)^2 -2$. Hence, $\inv h(x) = 1 + \sqrt{x+2}$ (we reject $\inv h(x) = 1 - \sqrt{x+2}$ since $\ran{\inv h} = \dom h = \RR^+$). Also note that $\inv g = e^x - 2$. Thus,
+        \begin{gather*}
+            hg(a) = -1.5 \implies g(a) = \inv{h}(-1.5) = 1 + \sqrt{-1.5 + 2} = 1 + \frac1{\sqrt{2}}\\
+            \implies a = \inv{g}\bp{1 + \frac1{\sqrt{2}}} = e^{1 + \frac1{\sqrt{2}}} - 2.
+        \end{gather*}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The functions $f$ and $g$ are defined as follows:
+    \begin{alignat*}{2}
+        f & \colon x \mapsto 3 - x, &&\qquad x \in \RR\\
+        g & \colon x \mapsto \frac4{x}, &&\qquad x \in \RR, \, x \neq 0
+    \end{alignat*}
+
+    \begin{enumerate}
+        \item Show that the composite function $fg$ exists and express the definition of $fg$ in a similar form. Find the range of $fg$.
+        \item Find, in similar form, $g^2$ and $g^3$, and deduce $g^{2017}$.
+        \item Find the set of values of $x$ for which $g(x) = \inv g(x)$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $\ran g = \RR \setminus \bc{0}$ and $\dom g = \RR$. Hence, $\ran g \subseteq \dom g$. Thus, $fg$ exists. \[fg(x) = f\bp{\frac4x} = 3 - \frac4x.\]  Observe that $\dom{fg} = \dom{g} = \RR\setminus \bc{0}$. Thus, \[fg \colon x \mapsto 3 - \frac4x, \, x \in \RR \setminus \bc{0}.\]
+        
+        Since $\frac4x$ can take on any value except 0, then $fg(x) = 3 - \frac4x$ can take on any value except 3. Thus, \[\ran{fg} = \RR \setminus \bc{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[g^2(x) = g\bp{\frac4x} = \frac4{4/x} = x.\] Hence, \[g^2 \colon x \mapsto x, \, x \in \RR \setminus \bc{0}.\]
+
+        We have \[g^3(x) = g(g^2(x)) = g(x) = \frac4x.\] Hence, \[g^3 \colon x \mapsto \frac4x, \, x \in \RR \setminus \bc{0}.\]
+
+        Thus, \[g^{2017} = g^{2016}(g(x)) = \bp{g^2}^{1008} \circ g(x) = g(x) = \frac4x.\] Hence, \[g^{2017} \colon x \mapsto \frac4x, \, x \in \RR \setminus \bc{0}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $g(x) = \inv g(x) \implies g^2(x) = x$. From the definition of $g^2(x)$, we know that $g^2(x) = x$ for all $x$ in $\dom{g^2}$. Hence, the solution set is $\RR \setminus \bc{0}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The function $f$ is defined by \[f(x) =
+        \begin{cases}
+            2x+1, & 0 \leq x < 2\\
+            (x-4)^2+1, & 2 \leq x < 4.
+        \end{cases}\] It is further given that $f(x) = f(x+4)$ for all real values of $x$.
+
+    \begin{enumerate}
+        \item Find the values of $f(1)$ and $f(5)$ and hence explain why $f$ is not one-one.
+        \item Sketch the graph of $y = f(x)$ for $-4 \leq x < 8$.
+        \item Find the range of $f$ for $-4 \leq x < 8$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[f(1) = 2(1) + 1 = 3\] and \[f(5) = f(1 + 4) = f(1) = 3.\] Since $f(1) = f(5)$, but $1 \neq 5$, $f$ is not one-one.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    samples = 161,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-4, -2, 2, 4, 6, 8},
+                    ytick = {1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmin=-5,
+                    xmax=9,
+                    ymin=-1,
+                    ymax=6,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed, domain=-4:-2] {2*(x+4)+1};
+
+                    \addplot[plotRed, domain=-2:0] {(x)^2 + 1};
+
+                    \addplot[plotRed, domain=0:2] {2*x+1};
+
+                    \addplot[plotRed, domain=2:4] {(x-4)^2 + 1};
+
+                    \addplot[plotRed, domain=4:6] {2*(x-4)+1};
+
+                    \addplot[plotRed, domain=6:8] {(x-8)^2 + 1};
+
+                    \addlegendentry{$y = f(x)$};
+
+                    \fill (-4, 1) circle[radius=2.5 pt] node[anchor=north west] {$(-4, 1)$};
+
+                    \draw (8, 1) circle[radius=2.5 pt] node[anchor=north east] {$(8, 1)$};
+                    
+                    \draw[dotted, thick] (-4, 5) -- (8, 5);
+
+                    \node[anchor=south] at (4, 5) {$y = 5$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        From the graph, $\ran f = [1, 5]$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item The function $f$ is given by $f \colon x \mapsto 1 + \sqrt{x}$ for $x \in \RR^+$. \begin{enumerate}
+            \item Find $\inv f(x)$ and state the domain of $\inv f$.
+            \item Find $f^2(x)$ and the range of $f^2$.
+            \item Show that if $f^2(x) = x$ then $x^3 - 4x^2 + 4x - 1 = 0$. Hence, find the value of $x$ for which $f^2(x) = x$. Explain why this value of $x$ satisfies the equation $f(x) = \inv f(x)$.
+        \end{enumerate}
+        \item The function $g$, with domain the set of non-negative integers, is given by
+        \[
+            g(n) =
+            \begin{cases}
+                1, & n = 0\\
+                2 + g\bp{\frac12 n}, & n \text{ even}\\
+                1 + g(n-1), & n \text{ odd}
+            \end{cases}
+        \]
+        \begin{enumerate}
+            \item Find $g(4)$, $g(7)$ and $g(12)$.
+            \item Does $g$ have an inverse? Justify your answer.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            Let $y = f(x)$. Then $x = \inv f(y)$. \[y = f(x) = 1 + \sqrt{x} \implies \sqrt{x} = y -1 \implies x = (y-1)^2.\] Hence, $\inv f(x) = (x-1)^2$.
+
+            Observe that $\dom{\inv f} = \ran f = (1, \infty)$. Thus, $\dom{\inv f} = (1, \infty)$.
+        \end{psubpart}
+        \begin{psubpart}
+            We have \[f^2(x) = f(1+\sqrt{x}) = 1 + \sqrt{1 + \sqrt{x}}.\]
+
+            Observe that $\sqrt{1 + \sqrt{x}} > 1$. Hence, $1 + \sqrt{1 + \sqrt{x}} > 1 + 1 = 2$, whence $\ran{f^2} = (2, \infty)$.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $f^2(x) = x \implies 1 + \sqrt{1 + \sqrt{x}} = x$, whence $x$ satisfies the recursion $1 + \sqrt{x} = x$. Hence, \[1 + \sqrt{x} = x \implies \sqrt{x} = x - 1 \implies x = x^2 - 2x + 1 \implies x^2 - 3x + 1 = 0.\] We can manipulate this to form the desired cubic equation: \[0 = x\bp{x^2 - 3x + 1} - \bp{x^2 -3x + 1} = x^3 - 4x^2 + 4x - 1.\]
+
+            Solving the initial quadratic equation yields $x = \frac12 \bp{3 \pm \sqrt5}$. Observe that $\frac{3 - \sqrt{5}}{2} < 2$ and $\frac{3 + \sqrt{5}}{2} > 2$. Thus, the sole solution is $x = \frac{3 + \sqrt{5}}{2}$.
+
+            Consider $f(x) = \inv f(x)$. Applying $f$ on both sides of the equation, we have $f^2(x) = f(x)$. Since $x = \frac{3 + \sqrt{5}}{2}$ satisfies $f^2(x) = f(x)$, it also satisfies $f(x) = \inv f(x)$.
+        \end{psubpart}
+    \end{ppart}
+    \clearpage
+    \begin{ppart}
+        \begin{psubpart}
+            We have \[g(4) = 2 + g(2) = 2 + 2 + g(1) = 4 + 1 + g(0) = 5 + 1 = 6,\] \[g(7) = 1 + g(6) = 1 + 2 + g(3) = 3 + 1 + g(2) = 4 + (g(4)-2) = 2 + 6 = 8,\] and \[g(12) = 2 + g(6) = 2 + (g(7) - 1) = 1 + 8 = 9.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Consider $g(5)$ and $g(6)$. \[g(5) = 1 + g(4) = 1 + 6 = 7, \quad g(6) = g(7) - 1 = 8 - 1 = 7.\] Since $g(5) = g(6)$, but $5 \neq 6$, $g$ is not one-one. Hence, $\inv g$ does not exist.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
