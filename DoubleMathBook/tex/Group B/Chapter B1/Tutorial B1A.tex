@@ -469,8 +469,8 @@
     \begin{enumerate}
         \item $y = x + 2\sin x, \, 0 \leq x \leq 2\pi$
         \item $y = \frac{x}{\ln x}, \, x > 0, \, x \neq 1$
-        \item $y = xe^{-x}$
-        \item $y = xe^{-x^2}$
+        \item $y = x\e^{-x}$
+        \item $y = x\e^{-x^2}$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -531,7 +531,7 @@
 
                     \draw[dotted, thick] (1, 6) -- (1, -3) node[anchor=south west] {$x = 1$};
                     
-                    \fill (e, e) circle[radius=2.5 pt] node[anchor=north] {$(e, e)$};
+                    \fill (e, e) circle[radius=2.5 pt] node[anchor=north] {$(\e, \e)$};
                 \end{axis}
             \end{tikzpicture}
         \end{center}
@@ -558,9 +558,9 @@
                     ]
                     \addplot[plotRed, unbounded coords = jump] {x * e^(-x)};
         
-                    \addlegendentry{$y = xe^{-x}$};
+                    \addlegendentry{$y = x\e^{-x}$};
                     
-                    \fill (1, 1/e) circle[radius=2.5 pt] node[anchor=south west] {$\bp{1, \frac1e}$};
+                    \fill (1, 1/e) circle[radius=2.5 pt] node[anchor=south west] {$\bp{1, \frac1\e}$};
                 \end{axis}
             \end{tikzpicture}
         \end{center}
@@ -588,11 +588,11 @@
                     ]
                     \addplot[plotRed, unbounded coords = jump] {x * e^(-x^2)};
         
-                    \addlegendentry{$y = xe^{-x^2}$};
+                    \addlegendentry{$y = x\e^{-x^2}$};
                     
-                    \fill (0.707, 0.429) circle[radius=2.5 pt] node[anchor=west] {$\bp{\frac{1}{\sqrt{2}}, \frac1{\sqrt2e}}$};
+                    \fill (0.707, 0.429) circle[radius=2.5 pt] node[anchor=west] {$\bp{\frac{1}{\sqrt{2}}, \frac1{\sqrt2\e}}$};
 
-                    \fill (-0.707, -0.429) circle[radius=2.5 pt] node[anchor=east] {$\bp{-\frac{1}{\sqrt{2}}, -\frac1{\sqrt2e}}$};
+                    \fill (-0.707, -0.429) circle[radius=2.5 pt] node[anchor=east] {$\bp{-\frac{1}{\sqrt{2}}, -\frac1{\sqrt2\e}}$};
                 \end{axis}
             \end{tikzpicture}
         \end{center}

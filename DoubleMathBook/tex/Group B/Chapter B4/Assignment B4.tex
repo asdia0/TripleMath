@@ -1,0 +1,38 @@
+\section{Assignment B4}
+
+\begin{problem}
+    Differentiate the following with respect to $x$.
+
+    \begin{enumerate}
+        \item $\ln \frac{x^3}{\sqrt{1+x^2}}$
+        \item $\arctan{\frac{x^2}2}$
+        \item $\e^{2x}\sec x$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\ln \frac{x^3}{\sqrt{1 + x^2}} = 3\ln x - \frac12 \ln{1 + x^2} \implies \der{}{x} \bp{\ln \frac{x^3}{\sqrt{1+x^2}}} = \frac3x - \frac{x}{1 + x^2}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\der{}{x} \arctan{\frac{x^2}2} = \frac{x}{1 + x^4/4} = \frac{4x}{4 + x^4}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\der{}{x} \e^{2x}\sec x = \e^{2x}\bp{\sec x \tan x} + \sec x \bp{2\e^{2x}} = \e^{2x} \sec x \bp{\tan x + 2}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Find the gradient of the curve $x^3 + xy^2 = 5y$ at the point where $x=1$ and $0 < y < 1$, leaving your answer to 3 significant figures.
+\end{problem}
+\begin{solution}
+    Substituting $x=1$ into the given equation, \[y^2-5y+1 =0 \implies y = \frac{5\pm\sqrt{21}}2.\] Since $0 < y < 1$, we reject $y = \frac12 \bp{5+\sqrt{21}}$ and take $y = \frac12 \bp{5-\sqrt{21}} = 0.20871 \tosf{5}$. 
+    
+    Implicitly differentiating the given equation, \[3x^2 + 2xy\cdot y' + y^2 = 5y' \implies y' = \frac{3x^2 - y^2}{5 - 2xy}.\] Substituting $x=1$ and $y=0.20871$ into the above equation, \[y' = \frac{3(1)^2 - (0.20871)^2}{2(1)(0.20871) - 5} = 0.664 \tosf{3}.\] Hence, the gradient of the curve is 0.664.
+\end{solution}
+
+\begin{problem}
+    A curve $C$ has parametric equations \[x = \sin^3 \t, \, y = 3 \sin^2 \t \cos \t, \qquad 0 \leq \t \leq \frac\pi2.\] Show that $\derx{y}{x} = a\cot \t + b\tan \t$, where $a$ and $b$ are values to be determined.
+\end{problem}
+\begin{solution}
+    Note that \[\der{x}{\t} = 3\sin^2\t\cos\t, \quad \der{y}{\t} = 3\bp{2\sin\t\cos^2\t-\sin^3\t}.\] Hence, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{3\bp{2\sin\t\cos^2\t-\sin^3\t}}{3\sin^2\t\cos\t} = \frac{2\cos\t}{\sin\t} - \frac{\sin\t}{\cos\t} = 2\cot\t - \tan\t.\] Thus, $a = 2$ and $b=-1$.
+\end{solution}
