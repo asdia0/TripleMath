@@ -1,0 +1,64 @@
+\section{Assignment B7}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find $\int \frac{6x^3 + 2}{x^2 + 1} \d x$.
+        \item Evaluate $\int_2^4 x\ln x \d x$ exactly.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\frac{6x^3 + 2}{x^2 + 1} = 6x - \frac{6x}{x^2 + 1} + \frac{2}{x^2 + 1}.\] Hence,  \[\int \frac{6x^3 + 2}{x^2 + 1} \d x = \int \bp{6x - \frac{6x}{x^2 + 1} + \frac{2}{x^2 + 1}} \d x = 3x^2 - 3\ln{x^2 + 1} + 2 \arctan x + C.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the substitution $u = x^2$. \[\int_2^4 x \ln x \d x = \frac12 \int_4^{16} \ln \sqrt{u} \d u = \frac14 \int_4^{16} \ln u \d u = \frac14 \evalint{u\ln u - u}4{16} = 14\ln 2 - 3.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Use the derivative of $\cos \t$ to show that $\der{}{\t} \sec \t = \sec \t \tan \t$.
+        \item Use the substitution $x = \sec \t - 1$ to find the exact value of $\int_{\sqrt2 - 1}^1 \frac1{(x+1)\sqrt{x^2 + 2x}} \d x$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\der{}{\t} \sec \t = \der{}{\t} \frac1{\cos \t} = \frac{\sin \t}{\cos^2 \t} = \frac{1}{\cos \t} \cdot \frac{\sin \t}{\cos \t} = \sec \t \tan \t.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the substitution $x = \sec \t - 1 \implies \d x = \sec\t\tan\t \d \t$. When $x = 1$, we have $\t = \pi/3$. When $x = \sqrt2 - 1$, we have $\t = \pi/4$. Also note that $x + 1 = \sec\t$. Now observe that \[x^2 + 2x = (\sec \t - 1)^2 + 2(\sec \t - 1) = \sec^2\t - 1 = \tan^2\t \implies \sqrt{x^2 + 2x} = \tan\t.\] Thus, \[\int_{\sqrt2 - 1}^1 \frac1{(x+1)\sqrt{x^2 + 2x}} \d x = \int_{\pi/4}^{\pi/3} \frac{\sec\t\tan\t}{\sec\t\tan\t} \d\t = \frac\pi3 - \frac\pi4 = \frac\pi{12}.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The expression $\frac{x^2}{9-x^2}$ can be written in the form $A + \frac{B}{3 - x} + \frac{C}{3 + x}$.
+        
+    \begin{enumerate}
+        \item Find the values of constants $A$, $B$ and $C$.
+        \item Show that $\int_0^2 \frac{x^2}{9-x^2} \d x = \frac32 \ln 5 - 2$.
+        \item Hence, find the value of $\int_0^2 \ln{9-x^2} \d x$, giving your answer in terms of $\ln 5$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\frac{x^2}{9-x^2} = -1 + \frac9{9 - x^2} = -1 + \frac9{(3-x)(3+x)} = -1 + \frac{3/2}{3-x} + \frac{3/2}{3 + x}.\] Thus, $A = -1$, $B = 3/2$ and $C = 3/2$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \int_0^2 \frac{x^2}{9-x^2} \d x = \int_0^2 \bp{-1 + \frac{3/2}{3-x} + \frac{3/2}{3 + x}} \d x \\
+            = \evalint{-x -\frac32 \ln{3 - x} + \frac32 \ln{3 + x}}02 = \frac32\ln5 - 2.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Integrating by parts,
+        \[
+            \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+                & D & I \\\cmidrule{1-3}
+                + & \ln\bp{9 - x^2} & 1 \\
+                - & -2x/\bp{9 - x^2} & x \\\bottomrule
+            \end{array}
+        \]
+        Thus, \[\int_0^2 \ln\bp{9 - x^2} \d x = \evalint{x\ln\bp{9 - x^2}}02 + 2\bp{\frac32 \ln5 - 2} = 5\ln5 - 4.\]
+    \end{ppart}
+\end{solution}
