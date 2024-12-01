@@ -1,0 +1,901 @@
+\section{Tutorial B8}
+
+\begin{problem}
+    Write down the integral for the area of the shaded region for each of the figure below and use the GC to evaluate it, to 3 significant figures.
+
+    \begin{enumerate}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis on top,
+                    domain = -1.3:1.3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f1] {x^3 + 2*x^2 - x - 2};
+                    \addlegendentry{$y = x^3 + 2x^2 - x -2$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=black!20] fill between[of=null and f1,soft clip={domain=-1:1}];
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \pgfdeclarelayer{pre main}
+                \pgfsetlayers{pre main,main}
+                \begin{axis}[
+                    axis on top,
+                    domain = -2.5:2.5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {2},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \pgfonlayer{pre main}
+                    \fill[black!20] (0,0) rectangle (2, 4);
+                    \endpgfonlayer
+                    \addplot[plotRed, name path=f1] {x^2};
+                    \addlegendentry{$y = x^2$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=white] fill between[of=null and f1,soft clip={domain=0:2}];
+                    \draw[dotted] (2, 0) -- (2, 4);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \pgfdeclarelayer{pre main}
+                \pgfsetlayers{pre main,main}
+                \begin{axis}[
+                    axis on top,
+                    domain = -1:2.5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {2},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \pgfonlayer{pre main}
+                    \fill[black!20] (0,0) rectangle (2, e^4);
+                    \endpgfonlayer
+                    \addplot[plotRed, name path=f1] {e^(2*x)};
+                    \addlegendentry{$y = \e^{2x}$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=white] fill between[of=null and f1,soft clip={domain=0:2}];
+                    \draw[dotted] (2, 0) -- (2, e^4);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \pgfdeclarelayer{pre main}
+                \pgfsetlayers{pre main,main}
+                \begin{axis}[
+                    axis on top,
+                    domain = -pi:pi,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-pi/2, pi/2},
+                    xticklabels={$-\frac\pi2$, $\frac\pi2$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=2.5,
+                    ymin=-2.5,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \pgfonlayer{pre main}
+                    \fill[black!20] (-pi/2, -2) rectangle (0, 0);
+                    \fill[black!20] (pi/2, 2) rectangle (0, 0);
+                    \endpgfonlayer
+                    \addplot[plotRed, name path=f1] {2*sin(\x r)};
+                    \addlegendentry{$y = 2\sin x$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=white] fill between[of=null and f1,soft clip={domain=-pi/2:pi/2}];
+                    \draw[dotted] (-pi/2, 0) -- (-pi/2, -2);
+                    \draw[dotted] (pi/2, 0) -- (pi/2, 2);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis on top,
+                    domain = -2.5:2.5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2, 2},
+                    xticklabels={$-2$, $2$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f1] {x^2};
+                    \addplot[plotBlue, name path=f2] {8-x^2};
+                    \addlegendentry{$y = x^2$};
+                    \addlegendentry{$y = 8-x^2$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=black!20] fill between[of=null and f2,soft clip={domain=-2:2}];
+                    \addplot[color=white] fill between[of=null and f1,soft clip={domain=-2:2}];
+                    \draw[dotted] (-2, 0) -- (-2, 4);
+                    \draw[dotted] (2, 0) -- (2, 4);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis on top,
+                    domain = -0.5:2.5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymax=5,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f1] {4-x^2};
+                    \addplot[plotBlue, name path=f2] {3*x};
+                    \addlegendentry{$y = 4-x^2$};
+                    \addlegendentry{$y = 3x$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=black!20] fill between[of=null and f1,soft clip={domain=0:1}];
+                    \addplot[color=white] fill between[of=null and f2,soft clip={domain=0:1}];
+                    \draw[dotted] (1, 0) -- (1, 3);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis on top,
+                    domain = -2:2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-1, 1},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f1] {9-x^2};
+                    \addplot[plotBlue, name path=f2] {e^x};
+                    \addlegendentry{$y = 9-x^2$};
+                    \addlegendentry{$y = \e^x$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=black!20] fill between[of=null and f1,soft clip={domain=-1:1}];
+                    \addplot[color=white] fill between[of=null and f2,soft clip={domain=-1:1}];
+                    \draw[dotted] (-1, 0) -- (-1, 8);
+                    \draw[dotted] (1, 0) -- (1, 8);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis on top,
+                    domain = 0:1.1,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = {1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f2] {sqrt(x)};
+                    \addplot[plotBlue, name path=f1] {x^2};
+                    \addlegendentry{$y = \sqrt{x}$};
+                    \addlegendentry{$y = x^2$};
+                    \addplot[thin, name path=null] {0};
+                    \addplot[color=black!20] fill between[of=null and f2,soft clip={domain=0:1}];
+                    \addplot[color=white] fill between[of=null and f1,soft clip={domain=0:1}];
+                    \draw[dotted] (1, 0) -- (1, 1);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\area = -\int_{-1}^1 \bp{x^3 + 2x^2 - x - 2} \d x = 2.67 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $y = x^2 \implies x = \sqrt{y}$. \[\area = \int_0^4 \sqrt{y} \d y = 5.33 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $y = \e^{2x} \implies x = \frac12 \ln y$. Also, when $x = 0$, we have $y = 1$. Further, when $x = 2$, we have $y = \e^4$. Thus, \[\area = \int_0^{\e^4} \frac12 \ln y \d y = 82.4 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that when $x = \pi/2$, we have $y = 2$. Thus, \[\area = 2 \int_0^2 \arcsin \frac{y}2 \d y = 2.28 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\area = \int_{-2}^2 \bs{\bp{8-x^2} - x^2} \d x = 21.3 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\area = \int_0^1 \bs{\bp{4-x^2}-3x} \d x = 2.17 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\area = \int_{-1}^1 \bs{\bp{9-x^2} - \e^x} \d x = 15.0 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\area = \int_0^1 \bp{\sqrt{x} - x^2} \d x = 0.333 \units[2] \tosf{3}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Write down the integral for the volume of the solid generated when the shaded region is rotated about the $x$-axis through $2\pi$ for questions 1(a), (e), (f) and (h) using the disc method and use the GC to evaluate it.
+        \item Write down the integral for the volume of the solid generated when the shaded region is rotated about the $y$-axis through $2\pi$ for questions 1(b), (d) and (f) using the disc method and use the GC to evaluate it.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            \[\volume = \pi \int_{-1}^1 \bp{x^3 + 2x^2 - x - 2}^2 \d x = 13.9 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\volume = \pi \int_{-2}^2 \bs{\bp{8-x^2}^2 - x^2} \d x = 536 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\volume = \pi \int_0^1 \bs{\bp{4-x^2}^2 - \bp{3x}^2} \d x = 33.1 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\volume = \pi \int_0^1 \bs{\bp{\sqrt x}^2 - \bp{x^2}^2} \d x = 0.942 \units[3] \tosf{3}.\]
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            \[\volume = \pi \int_0^4 \bp{\sqrt{y}}^2 \d y = 25.1 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\volume = 2\pi \int_0^2 \arcsin^2 \frac{y}2 \d y = 5.87 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\volume = \pi \int_3^4 (4-y) \d y + \frac{\pi\bp{1^2}\bp{3}}3 = 4.71 \units[3] \tosf{3}.\]
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Write down the integral for the volume of the solid generated when the shaded region is rotated about the $x$-axis through $2\pi$ for questions 1(e), (f) and (h) using the shell method and use the GC to evaluate it.
+        \item Write down the integral for the volume of the solid generated when the shaded region is rotated about the $y$-axis through $2\pi$ for questions 1(b), (d) and (f) using the shell method and use the GC to evaluate it.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that $y = x^2 \implies x = \sqrt{y}$ and $y = 8 - x^2 \implies x = \sqrt{8 - y}$ for $x > 0$. Thus, \[\volume = 2\bp{2\pi \int_0^4 \sqrt{y}\cdot y \d y + 2\pi \int_4^8 \sqrt{8-y}\cdot y \d y} = 536 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $y = 3x \implies x = y/3$ and $y = 4 - x^2 \implies x = \sqrt{4-y}$ for $x > 0$. Thus, \[\volume = 2\pi\int_0^3 \frac13 y \cdot y \d y + 2\pi\int_3^4 \sqrt{4-y}\cdot y \d y = 33.1 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $y = \sqrt{x} \implies x = y^2$ and $y = x^2 \implies x = \sqrt{y}$ for $x > 0$. Thus, \[\volume = 2\pi\int_0^1 \bp{\sqrt{y} - y^2}y \d y = 0.942 \units[3] \tosf{3}.\]
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            \[\volume = 2\pi\int_0^2 x\cdot x^2 \d x = 25.1 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\volume = 2 \cdot 2\pi\int_0^{\pi/2} x\bp{2 - 2\sin x} \d x = 5.87 \units[3] \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\volume = 2\pi\int_0^1 x\bs{\bp{4-x^2} - 3x} \d x = 4.71 \units[3] \tosf{3}.\]
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Calculate the area enclosed by the petals of the curve $r = \sin2\t$ where $r \geq 0$.
+\end{problem}
+\begin{solution}
+    Note that $r \geq 0 \implies \sin2\t \geq 0 \implies r \in \left[0, \frac\pi2\right] \cup \left[\pi, \frac{3\pi}2\right]$. Thus, \[\area = 2 \cdot \frac12 \int_0^{\pi/2} \sin^2 2\t \d \t = \int_0^{\pi/2} \frac{1 - \cos 4\t}{2} \d \t = \frac12 \evalint{\t - \frac{\sin 4\t}{4}}0{\pi/2}= \frac{\pi}4 \units[2].\]
+\end{solution}
+
+\begin{problem}
+    The finite region $A$ is bounded by the curve $y = x^2$ and a minor arc of the circle $x^2 + y^2 = 12$.
+
+    \begin{enumerate}
+        \item Find the numerical value of the area of $A$, correct to 2 decimal places.
+        \item Find the exact volume of the solid obtained when $A$ is rotated about the $x$-axis through $2\pi$ radians.
+        \item Find the exact volume of the solid obtained when $A$ is rotated about the $y$-axis through $\pi$ radians.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                axis on top,
+                domain = -sqrt(12):sqrt(12),
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ymax=1.75*sqrt(12),
+                ymin=0,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=f1] {x^2};
+    
+                \addlegendentry{$y = x^2$};
+    
+                \addplot[plotBlue, name path=f2] {sqrt(12 - x^2)};
+    
+                \addlegendentry{$x^2 + y^2 = 12$};
+
+                \addplot[color=black!20] fill between[of=f1 and f2,soft clip={domain=0:1.73}];
+
+                \addplot[color=black!20] fill between[of=f2 and f1,soft clip={domain=-1.73:0}];
+
+                \node[anchor=west] at (0, 1.73) {$A$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{ppart}
+        Consider the intersections between $y = x^2$ and $x^2 + y^2 = 12$.
+        \begin{gather*}
+            x^2 + y^2 = x^2 + \bp{x^2}^2 = 12 \implies x^4 + x^2 - 12 = (x^2 - 3)(x^2 + 4) = 0 \\
+            \implies \bp{x - \sqrt3}\bp{x+\sqrt3}\bp{x^2 + 4} = 0.
+        \end{gather*}
+        Hence, the two curves intersect at $x = -\sqrt3$ and $x = \sqrt3$. Note that $x^2 + 4 = 0$ has no solution since $x^2 + 4 > 0$. Also note that $x^2 + y^2 = 12 \implies y = \sqrt{12 - x^2}$ for $y > 0$. Thus, \[\area = 2\int_0^{\sqrt3} \bp{\sqrt{12-x^2} - x^2} \d x = 8.02 \units[2] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $x^2 + y^2 = 12 \implies y^2 = 12 - x^2$.
+        \begin{align*}
+            \volume &= 2\pi\int_0^{\sqrt3} \bs{\bp{12 - x^2} - \bp{x^2}^2} \d x = 2\pi \evalint{12x - \frac{x^3}3- \frac{x^5}5}{0}{\sqrt3} = \frac{92\sqrt{3}\pi}5 \units[3].
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Note that when the curves intersect at $x = \sqrt{3}$, we have $y = 3$. Furthermore, when $x = 0$, we have $y = \sqrt{12}$. Also note that $x^2 + y^2 = 12 \implies x^2 = 12 - y^2$. \[\volume = \pi\int_0^{3} y \d y + \pi \int_{3}^{\sqrt{12}} \bp{12 - y^2} \d y = \pi\bp{16\sqrt{3} - \frac{45}2} \units[3].\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -1:2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {0.2, 0.4, 0.6, 1.4, 1.6},
+                xticklabels = {$\frac1n$, $\frac2n$, $\frac3n$, $\frac{n-2}n$, $\quad\frac{n-1}n$},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0.5) 
+                        node [anchor=north] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=f1] {2^x};
+    
+                \addlegendentry{$y = 2^x$};
+
+                \draw (0, 0) -- (0, 2);
+                \draw (0.2, 0) -- (0.2, 1);
+                \draw (0, 1) -- (0.2, 1);
+
+                \draw (0.2, 0) -- (0.2, 2^0.2);
+                \draw (0.4, 0) -- (0.4, 2^0.2);
+                \draw (0.2, 2^0.2) -- (0.4, 2^0.2);
+
+                \draw (0.4, 0) -- (0.4, 2^0.4);
+                \draw (0.6, 0) -- (0.6, 2^0.4);
+                \draw (0.4, 2^0.4) -- (0.6, 2^0.4);
+
+                \draw (1.4, 0) -- (1.4, 2^1.4);
+                \draw (1.6, 0) -- (1.6, 2^1.4);
+                \draw (1.4, 2^1.4) -- (1.6, 2^1.4);
+
+                \draw (1.6, 0) -- (1.6, 2^1.6);
+                \draw (1.8, 0) -- (1.8, 2^1.6);
+                \draw (1.6, 2^1.6) -- (1.8, 2^1.6);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{enumerate}
+        \item The graph of $y = 2^x$, for $0 \leq x \leq 1$ is shown in the diagram. Rectangles, each of width $\frac1n$, are drawn under the curve. Given that $\sum\limits_{k = 0}^n x^k = \frac{1-x^{n+1}}{1-x}$, show that the total area $A$ of all $n$ rectangles is given by $\frac1n \bp{\frac1{2^{\frac1n} - 1}}$.
+        \item Find the limit of $A$ in exact form as $n \to \infty$.
+    \end{enumerate}
+
+    Let $V$ be the volume of all $n$ rectangles rotated about the $x$-axis.
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find $V$ in terms of $n$.
+        \item State the limit of $V$ in exact form as $n \to \infty$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[A = \sum_{k=0}^{n-1} \frac{2^{k/n}}n = \frac1n \sum_{k=0}^{n-1} \bp{2^{1/n}}^k = \frac1n \cdot \frac{1 - \bp{2^{1/n}}^{n}}{1 - 2^{1/n}} = \frac1n \bp{\frac{1 -2}{1 - 2^{1/n}}} = \frac1n \bp{\frac{1}{2^{1/n} - 1}}.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\lim_{n \to \infty} A = \lim_{n \to \infty} \frac{1/n}{2^{1/n} - 1} = \lim_{m \to 0} \frac{m}{2^m - 1} = \lim_{m \to 0} \frac{1}{\ln 2 \cdot 2^m} = \frac1{\ln 2}.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            V = \pi \sum_{k=0}^{n-1} \frac1n \bp{2^{k/n}}^2 = \frac\pi{n} \sum_{k=0}^{n-1} \bp{2^{2/n}}^k = \frac\pi{n} \bp{\frac{1 - \bp{2^{2/n}}^{n}}{1 - 2^{2/n}}}\\
+            = \frac\pi{n} \bp{\frac{1 - 4}{1 - 2^{2/n}}} = \frac{3\pi}{n\bp{4^{1/n} - 1}}.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \lim_{n \to \infty} V = \lim_{n \to \infty} \frac{3\pi}{n\bp{4^{1/n} - 1}} = 3\pi \lim_{n \to \infty} \frac{1/n}{4^{1/n} - 1} = 3\pi \lim_{m \to 0} \frac{m}{4^m - 1} \\
+            = 3\pi \lim_{m \to 0} \frac{1}{4^m \ln 4} = 3\pi \bp{\frac1{\ln 4}} = \frac{3\pi}{2\ln2}.
+        \end{gather*}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    $O$ is the origin and $A$ is the point on the curve $y = \tan x$ where $x = \pi/3$.
+
+    \begin{enumerate}
+        \item Calculate the area of the region $R$ enclosed by the arc $OA$, the $x$-axis and the line $x = \pi/3$, giving your answer in an exact form.
+        \item The region $S$ is enclosed by the arc $OA$, the $y$-axis and the line $y = \sqrt3$. Find the volume of the solid of revolution formed when $S$ is rotated through 360$\deg$ about the $x$-axis, giving your answer in an exact form.
+        \item Find $\int_0^{\sqrt3} \arctan y \d y$ in exact form.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                axis on top,
+                domain = 0:1.2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {pi/3},
+                ytick = {1.73},
+                xticklabels = {$\frac\pi3$},
+                yticklabels = {$\sqrt 3$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ymin=0,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=f1] {tan(\x r)};
+    
+                \addlegendentry{$y = \tan x$};
+                \addplot[dotted, name path=f2] {1.73};
+                \addplot[dotted, name path=null] {0};
+    
+                \addplot[color=black!20] fill between[of=null and f1,soft clip={domain=0:pi/3}];
+
+                \addplot[color=black!10] fill between[of=f2 and f1,soft clip={domain=0:pi/3}];
+
+                \node at (0.3, 1) {$S$};
+                \node at (0.8, 0.5) {$R$};
+
+                \fill (pi/3, 1.73) circle[radius=2.5 pt] node[anchor=south east] {$A$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{ppart}
+        \[[R] = \int_0^{\pi/3} \tan x \d x = \evalint{\ln \sec x}{0}{\pi/3} = \ln 2 \units[2].\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \volume = \pi \int_0^{\pi/3} \bs{\bp{\sqrt3}^2 - \tan^2 x} \d x = \pi \int_0^{\pi/3} \bp{3 - \sec^2 x + 1} \d x \\
+            = \pi\evalint{4x - \tan x}{0}{\pi/3} = \bp{\frac{4\pi^2}{3} - \sqrt{3}\pi} \units[3].
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Observe that $\int_0^{\sqrt3} \arctan y \d y = [S] = [R \cup S] - [R] = (\pi/3) \cdot \sqrt{3} - \ln 2$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A portion of the curve $ay = x^2$, where $a$ is a positive constant, is rotated about the vertical axis $Oy$ to form the curved surface of an open bowl. The bowl has a horizontal circular base of radius $r$ and a horizontal circular rim of radius $3r$.
+
+    \begin{enumerate}
+        \item Prove that the depth of the bowl is $\frac{8r^2}a$.
+        \item Find the volume of the bowl in terms of $r$ and $a$.
+        \item Given that the volume of the bowl is $\frac{\pi a^3}{10}$, find the depth of the bowl in terms of $a$ only.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Note that $ay = x^2 \implies y = \frac{x^2}a$.
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                axis on top,
+                domain = 0:3.5,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {1, 3},
+                ytick = {1, 9},
+                xticklabels = {$r$, $3r$},
+                yticklabels = {$\frac{r^2}a$, $\frac{(3r)^2}a$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ymin=0,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=f1] {x^2};
+    
+                \addlegendentry{$y = x^2/a$};
+                \addplot[dotted, name path=f2] {1};
+                \addplot[dotted, name path=f3] {9};
+    
+                \addplot[color=black!20] fill between[of=f2 and f3, soft clip={domain=0:1.01}];
+
+                \addplot[color=black!20] fill between[of=f3 and f1,soft clip={domain=1:3}];
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{ppart}
+        \[\text{Depth of bowl} = \frac{(3r)^2}a - \frac{r^2}a = \frac{8r^2}a \units.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\volume = \pi\int_{r^2/a}^{9r^2/a} ay \d y = \pi \evalint{\frac{a}2 y^2}{r^2/a}{9r^2/a} = \frac{a\pi}2 \cdot \frac{80r^4}{a^2} = \frac{40\pi r^4}{a} \units[3].\]
+    \end{ppart}
+    \begin{ppart}
+        \[\frac{40\pi r^4}{a} = \frac{\pi a^3}{10} \implies 400r^4 = a^4 \implies 20r^2 = a^2 \implies r^2 = \frac1{20} a^2.\] Hence, the depth of the bowl is \[\frac{8}{a} \bp{\frac1{20} a^2} = \frac25 a \units.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The diagram shows the region $R$ bounded by part of the curve $C$ with equation $y = 3 - x^2$, the $y$-axis and the line $y = 2$, lying in the first quadrant.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2,
+                samples = 101,
+                ymax=4,
+                xmin=-1,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = {2, 3},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=quad] {3-x^2};
+                \addlegendentry{$C$};
+
+                \addplot[dotted, name path=line] {2};
+
+                \addplot[color=black!20] fill between[of=quad and line, soft clip={domain=0:1}];
+
+                \node at (0.3, 2.5) {$R$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Write down the equation of the curve obtained when $C$ is translated by 2 units in the negative $y$-direction.
+
+    Hence, or otherwise, show that the volume of the solid formed when $R$ is rotated completely about the line $y = 2$ is given by $\pi \int_0^1 \bp{1 - 2x^2 + x^4} \d x$ and evaluate this integral exactly.
+\end{problem}
+\begin{solution}
+    Clearly, $C: y = 1-x^2$.
+
+    Note that $3 - x^2 = 2 \implies x = \pm 1$, whence $x = 1$ since $x > 0$.
+    \begin{gather*}
+        \volume = \pi\int_0^1 \bp{1 - x^2}^2 \d x = \pi\int_0^1 \bp{1 - 2x^2 + x^4} \d x\\
+        = \pi \evalint{x - \frac23 x^3 + \frac15 x^5}01 = \frac{8}{15} \pi \units[3].
+    \end{gather*}
+\end{solution}
+
+\begin{problem}
+    The diagram below shows a region $R$ bounded by the curve $(y + 5)^2 = x-3$ and the line $y = x - 10$. Find the volume of solid formed when $R$ is rotated four right angles about 
+    \begin{enumerate}
+        \item the $y$-axis, and
+        \item the $x$-axis.
+    \end{enumerate}
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:30,
+                samples = 151,
+                ymax=4,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=quad1] {sqrt(x-3)-5};
+                \addlegendentry{$(y+5)^2 = x - 3$};
+
+                \addplot[plotBlue, name path=line] {x-10};
+                \addlegendentry{$y = x - 10$};
+
+                \addplot[plotRed, name path=quad2] {-sqrt(x-3)-5};
+
+                \addplot[color=black!20] fill between[of=quad1 and quad2, soft clip={domain=3:4}];
+
+                \addplot[color=black!20] fill between[of=quad1 and line, soft clip={domain=4: 7}];
+
+                \node at (4.2, -4.6) {$R$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Consider the intersections between $(y+5)^2 = x-3$ and $y = x-10$. \[(y+5)^2 = (x-5)^2 = x-3 \implies  x^2 - 11x + 28 = (x-4)(x-7) = 0.\] Hence, $x = 4$ and $x = 7$, whence $y = -6$ and $y = -3$. Thus, the two curves intersect at $(4, -6)$ and $(7, -3)$.
+
+        Note that $(y+5)^2 = x - 3 \implies x = 3 + (y+5)^2$ and $y = x - 10 \implies x = y + 10$. \[\volume = \pi \int_{-6}^{-3} \bs{\bp{y+10}^2 - \bp{3 + (y+5)^2}^2} \d y = 130 \units[3] \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that
+        \[(y+5)^2 = x - 3 \implies \begin{cases}
+                y = -5+\sqrt{x-3},\qquad y \geq -5\\
+                y = -5-\sqrt{x-3}, \qquad y < -5
+        \end{cases}\] Thus,
+        \begin{align*}
+            \volume &= \pi\int_3^4 \bs{\bp{-5-\sqrt{x-3}}^2 - \bp{-5+\sqrt{x+3}}^2} \d x\\
+            &\quad + \pi\int_4^7 \bs{\bp{x-10}^2 - \bp{-5+\sqrt{x-3}}^2} \d x = 127 \units[3] \tosf{3}.
+        \end{align*}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The curve $C$ is defined by the following pair of parametric equations. \[x = t - \frac1{t^2}, \, y = 2 - t^2,\qquad t > 0.\]
+
+    Find the area of the finite region $R$ enclosed by the curve $C$ and the axes as well as the volume of solid obtained when $R$ is rotated about the $x$-axis through 4 right-angles.
+\end{problem}
+\begin{solution}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                axis on top,
+                domain = 0.95:1.5,
+                samples = 151,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=C] ({x - 1/x^2}, {2 - x^2});
+                \addlegendentry{$C$};
+
+                \addplot[thin, name path=null, domain=0:0.914] {0};
+
+                \addplot[color=black!20] fill between[of=C and null, soft clip={domain=0:0.914}];
+
+                \node at (0.3, 0.4) {$R$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Note that when $x = 0$, we have $ t = 1$. Also note that when $y = 0$, we have $t = \sqrt2$, whence $x = \sqrt2 - 1/2$. Thus,
+    \begin{gather*}
+        [R] = \int_0^{\sqrt2 - 1/2} y \d x = \int_1^{\sqrt2} \bp{2 - t^2} \der{x}{t} \d t \\
+        = \int_1^{\sqrt2} \bp{2 - t^2}\bp{1 + \frac2{t^3}} \d t = 0.526 \units[2] \tosf{3}.
+    \end{gather*}
+
+    Also,
+    \begin{gather*}
+        \volume = \pi \int_0^{\sqrt2 - \frac12} y^2 \d x = \pi\int_1^{\sqrt2} \bp{2 - t^2}\der{x}{t} \d t \\
+        = \pi\int_1^{\sqrt2} \bp{2 - t^2}\bp{1 + \frac2{t^3}} \d t = 1.19 \units[3] \tosf{3}.
+    \end{gather*}
+\end{solution}
+
+\begin{problem}
+    Find the area enclosed by the ellipse $x = a \cos t, \, y = b \sin t$, where $a$ and $b$ are positive constants. Find also the volume of solid obtained when the region enclosed by the ellipse is rotated through $\pi$ radians about the $x$-axis.
+\end{problem}
+\begin{solution}
+    By symmetry, we only need to consider the area of the ellipse in the first quadrant. Note that $x = 0 \implies t = \pi/2$ and $x = a \implies t = 0$. Hence,
+    \begin{gather*}
+        \area = 4\int_0^a y \d x = 4\int_{\pi/2}^0 y \cdot \der{x}{t} \d t = 4\int_{\pi/2}^0 (b\sin t)(-a\sin t) \d t = 4ab\int_0^{\pi/2} \sin^2 t \d t\\
+        = 4ab\int_0^{\pi/2} \frac{1 - \cos 2t}2 \d t = 2ab \evalint{t - \frac{\sin 2t}2}{0}{\pi/2} = \pi ab \units[2].
+    \end{gather*}
+
+    Also,
+    \begin{gather*}
+        \volume = 2\pi \int_0^a y^2 \d x = 2\pi\int_{\pi/2}^0 y^2 \cdot \der{x}{t} \d t = 2\pi\int_{\pi/2}^0 (b\sin t)^2 (-a\sin t) \d t\\
+        = 2\pi a b^2 \int_0^{\pi/2} \sin^3 t \d t = 2\pi a b^2 \int_0^{\pi/2} \frac{3\sin t - \sin 3t}{4} \d t \\
+        = \frac12 \pi a b^2 \evalint{-3\cos t + \frac13 \cos 3t}{0}{\pi/2} = \frac{4\pi}3 ab^2 \units[3].
+    \end{gather*}
+\end{solution}
+
+\begin{problem}
+    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \frac\pi2$. Show, using polar coordinates, that the area $A$ of the region enclosed by this part of the curve is given by
+    \[
+        A = \frac{25b^2}2 \int_0^{\frac\pi2} \frac{\sin^4\t\cos^4\t}{(\cos^5\t + \sin^5\t)^2} \d \t
+    \]
+    By differentiating $\frac1{1 + \tan^5\t}$ with respect to $\t$, or otherwise, find the exact value of $A$ in terms of $b$.
+\end{problem}
+\begin{solution}
+    \begin{gather*}
+        x^5 + y^5 = 5bx^2y^2 \implies (r\cos \t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2\\
+        \implies r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t\sin^2\t \implies r = \frac{5b\cos^2\t\sin^2\t}{\cos^5\t + \sin^5\t}.
+    \end{gather*}
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                samples = 150,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad, domain=0:pi/2] {(5*cos(\x r)^2*sin(\x r)^2)/(cos(\x r)^5 + sin(\x r)^5)};
+    
+                \addlegendentry{$C$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    We have
+    \begin{gather*}
+        A = \frac12 \int_0^{\pi/2} \bp{\frac{5b\cos^2\t\sin^2\t}{\cos^5\t + \sin^5\t}}^2 \d \t = \frac12 \int_0^{\pi/2} \frac{25b^2\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t \\
+        = \frac{25b^2}2 \int_0^{\pi/2} \frac{\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t.
+    \end{gather*}
+
+    Note that \[\der{}{\t} \frac1{1 + \tan^5\t} = -\frac{5\tan^4\t \sec^2\t}{\bp{1 + \tan^5\t}^2} = -5 \bp{\frac{\cos^{10}\t}{\cos^5\t + \sin^5\t}}\bp{\frac{\sin^4\t}{\cos^6\t}} = -\frac{5\cos^4\t\sin^4\t}{\cos^5\t + \sin^5\t}.\] Hence, \[A = \frac{-5b^2}2 \int_0^{\pi/2} -\frac{5\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t = -\frac{5b^2}2 \evalint{\frac{1}{1 + \tan^5\t}}{0}{\pi/2} = \frac{5b^2}2.\]
+\end{solution}
+
+\begin{problem}
+    The polar equation of a curve is given by $r = \e^\t$ where $0 \leq \t \leq \pi/2$. Cartesian axes are taken at the pole $O$. Express $x$ and $y$ in terms of $\t$ and hence find the Cartesian equation of the tangent at $\bp{\e^{\pi/2}, \pi/2}$. The region $R$ is bounded by the polar curve, tangent and the $x$-axis. Find the exact area of the region $R$.
+\end{problem}
+\begin{solution}
+    We have $x = \e^\t \cos \t$ and $y = \e^\t \sin \t$. Thus, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{e^\t \cos\t + e^\t\sin\t}{-e^\t \sin\t + e^\t \cos\t} = \frac{\cos\t + \sin\t}{\cos\t - \sin\t}.\] Hence, \[\evalder{\der{y}{x}}{\t = \pi/2} = \frac{\cos(\pi/2) + \sin(\pi/2) }{\cos(\pi/2) - \sin(\pi/2) } = -1.\]
+
+    When $\t = \pi/2$, we have $x = 0$ and $y = \e^{\pi/2}$. Hence, the tangent is given by \[y - e^{\pi/2} = -(x - 0) \implies y = -x + e^{\pi/2}.\] Thus, \[[R] = \frac12 \bp{\e^{\pi/2}}\bp{\e^{\pi/2}} - \frac12 \int_0^{\pi/2} \bp{e^\t}^2 \d \t = \frac{\e^\pi}2 - \frac12 \evalint{\frac{\e^{2\t}}2}0{\pi/2} = \frac{e^\pi + 1}4 \units[2].\]
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:13,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$t$},
+                ylabel = {$v$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {x * (x-10)};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    The diagram shows the velocity-time graph of a particle moving in a straight line. The equation of the curve shown is $v = t(t - 10)$ where $t$ seconds is the time and $v$ ms$^{-1}$ is the velocity. The particle starts at a point $A$ on the line when $t = 0$.
+
+    Calculate
+    \begin{enumerate}
+        \item the distance travelled by the particle before coming to instantaneous rest, and
+        \item the time at which the particle returns to $A$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        For instantaneous rest, $v = 0$. Hence, $t(t-10) = 0$, whence $t = 10$. Note that we reject $t = 0$ since $t > 0$. The distance travelled by the particle before coming to instantaneous rest is hence \[-\int_0^{10} v \d t = -\int_0^{10} t(t-10) \d t = -\int_0^{10} \bp{t^2 - 10t} \d t = -\evalint{\frac{t^3}3 - \frac{10t^2}2}{0}{10} = \frac{500}3 \text{ m}.\]
+    \end{ppart}
+    \begin{ppart}
+        When the particle returns to $A$, $s = 0$. Let the time at which the particle returns to $A$ be $t_0$. \[\int_0^{t_0} v \d t = \int_0^{t_0} t(t-10) \d t = \evalint{\frac{t_0^3}3 - \frac{10t_0^2}2}{0}{t_0} = \frac13 t_0^3 - 5t_0^2 = \frac13t_0^2 \bp{t_0 - 15} = 0.\] Thus, $t_0 = 15$. Note that we reject $t_0 = 0$ since $t_0 > 0$. It hence takes the particle 15 seconds to return to $A$.
+    \end{ppart}
+\end{solution}

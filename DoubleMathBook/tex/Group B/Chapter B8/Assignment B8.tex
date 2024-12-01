@@ -1,0 +1,399 @@
+\section{Assignment B8}
+
+\begin{problem}
+    The diagram shows the region $R$, which is bounded by the axes and the part of the curve $y^2 = 4a(a-x)$ lying in the first quadrant.
+
+    Find, in terms of $a$, the volume, $V_x$, of the solid formed when $R$ is rotated completely about the $x$-axis.
+
+    The volume of the solid formed when $R$ is rotated completely about the $y$-axis is $V_y$. Show that $V_y = \frac8{15} V_x$.
+
+    The region $S$, lying in the first quadrant, is bounded by the curve $y^2 = 4a(a-x)$ and the lines $x = a$ and $y = 2a$. Find, in terms of $a$, the volume of the solid formed when $S$ is rotated completely about the $y$-axis.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xmax=3,
+                ymax=5,
+                xtick = {2},
+                ytick = {4},
+                xticklabels = {$a$},
+                yticklabels = {$2a$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {sqrt(4*2*(2-x))};
+    
+                \addlegendentry{$y^2 = 4a(a-x)$};
+
+                \draw[dotted] (2, 0) -- (2, 4);
+                \draw[dotted] (0, 4) -- (2, 4);
+
+                \node at (0.8, 1.5) {$R$};
+                \node at (1.5, 3) {$S$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{problem}
+\begin{solution}
+    \[V_x = \pi \int_0^a y^2 \d x = \pi \int_0^a 4a(a-x) \d x = 4\pi a \evalint{ax - \frac12 x^2}{0}{a} = 2\pi a^3 \units[3].\]
+    
+    Note that \[x = a-\frac{y^2}{4a} \implies x^2 = \bp{a - \frac{y^2}{4a}}^2 = a^2 - \frac12 y^2 + \frac1{16a^2}y^4.\] Hence, 
+    \begin{gather*}
+        V_y = \pi \int_0^{2a} x^2 \d y = \pi \int_0^{2a} \bp{a^2 - \frac12 y^2 + \frac1{16a^2}y^4} \d y\\
+        = \pi \evalint{a^2y - \frac12 \bp{\frac{y^3}3} + \frac1{16a^2}\bp{\frac{y^5}5}}{0}{2a} = \frac{16}{15} \pi a^3 = \frac8{15} V_x.
+    \end{gather*}
+
+    We have \[\volume = \text{Volume of cylinder} - V_y = \pi\bp{a^2}\bp{2a} - \frac{16}{15} \pi a^3 = \frac{14}{15} \pi a^3 \units[3].\]
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The region bounded by the axes and the curve $y = \cos x$ from $x = 0$ to $x = \frac12 \pi$ is divided into two parts, of areas $A_1$ and $A_2$, by the curve $y = \sin x$.
+
+    \begin{enumerate}
+        \item Prove that $A_2 = \sqrt2 A_1$.
+        \item Find the volume of the solid obtained when the region with area $A_2$ is rotated about the $y$-axis through $2\pi$ radians. Give your answer in exact form.
+    \end{enumerate}
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:pi/2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {pi/2},
+                ytick = \empty,
+                xticklabels = {$\pi/2$},
+                xmax=pi/2 + 0.2,
+                ymax=1.2,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+
+                \addplot[plotRed] {cos(\x r)};
+    
+                \addlegendentry{$y = \cos x$};
+
+                \addplot[plotBlue] {sin(\x r)};
+
+                \addlegendentry{$y = \sin x$};
+
+                \node at (0.3, 0.65) {$A_1$};
+
+                \node at (pi/4, 0.3) {$A_2$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:pi/2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {pi/2, pi/4},
+                    ytick = \empty,
+                    xticklabels = {$\pi/2$, $\pi/4$},
+                    xmax=pi/2 + 0.2,
+                    ymax=1.2,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed] {cos(\x r)};
+        
+                    \addlegendentry{$y = \cos x$};
+
+                    \addplot[plotBlue] {sin(\x r)};
+
+                    \addlegendentry{$y = \sin x$};
+
+                    \node at (0.3, 0.65) {$A_1$};
+
+                    \draw[dotted] (pi/4, 0) -- (pi/4, 1/2 * sqrt 2);
+
+                    \node at (pi/4 - 0.2, 0.3) {$A_3$};
+
+                    \node at (pi/4 + 0.2, 0.3) {$A_4$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        Let $A_3$ and $A_4$ be the areas as defined on the diagram above. By the symmetry of $y = \sin x$ and $y = \cos x$ about $x = \pi/4$, we have $A_3 = A_4$. \[A_3 = \int_0^{\pi/4} \sin x \d x = \evalint{-\cos x}{0}{\pi/4} = 1 - \frac{\sqrt2}2.\] Hence, \[A_1 = \int_0^{\pi/4} \cos x \d x - A_3 = \evalint{\sin x}{0}{\pi/4} - \bp{1 - \frac{\sqrt2}2} = \frac{\sqrt2}{2} - 1 + \frac{\sqrt2}2 = \sqrt2 - 1.\] Thus, \[A_2 = 2 A_3 = 2\bp{1 - \frac{\sqrt2}2} = \sqrt{2} \bp{\sqrt2 - 1} = \sqrt2 A_1.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $V_3$ and $V_4$ be the volumes of the solids obtained when $A_3$ and $A_4$ are rotated about the $y$-axis through $2\pi$ radians, respectively. \[V_3 = 2\pi\int_0^{\pi/4} xy \d x = 2\pi \int_0^{\pi/4} x\sin x \d x.\] Integrating by parts,
+        \[\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+            & D & I \\\cmidrule{1-3}
+            + & x & \sin x \\
+            - & 1 & -\cos x\\
+            + & 0 & -\sin x \\\bottomrule
+        \end{array}\] Thus,
+        \[V_3 = 2\pi \evalint{-x\cos x + \sin x}{0}{\pi/4} = \sqrt2 \pi \bp{1 -\frac\pi4}.\] Also, \[V_4 = 2\pi \int_{\pi/4}^{\pi/2} xy \d x = 2\pi \int_{\pi/4}^{\pi/2} x\cos x \d x.\] Integrating by parts, 
+        \[\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+            & D & I \\\cmidrule{1-3}
+            + & x & \cos x \\
+            - & 1 & \sin x\\
+            + & 0 & -\cos x \\\bottomrule
+        \end{array}\] Thus, \[V_4 = 2\pi \evalint{x\sin x + \cos x}{\pi/4}{\pi/2} = \pi^2 - \sqrt{2} \pi \bp{1 + \frac\pi4}.\] Hence, the required volume is \[V_3 + V_4 = \sqrt2 \pi \bp{1 - \frac\pi4} + \pi^2 - \sqrt2 \pi \bp{1 + \frac\pi4} = \pi^2 \bp{1 - \frac{\sqrt2}2} \units[3].\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    A curve has parametric equations \[x = \cos^2 t, \, y = \sin^3 t, \, 0 \leq t \leq \frac12 \pi.\]
+    
+    \begin{enumerate}
+        \item Sketch the curve.
+        \item Show that the area under the curve for $0 \leq t \leq \frac12 \pi$ is $2\int_0^{\pi/2} \cos t \sin^4 t \d t$, and find the exact value of the area.
+        \item Find the volume of the solid obtained when the region in (b) is rotated about the $y$-axis through $2\pi$ radians.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:pi/2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = {1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xmax=1.1,
+                    ymax=1.1,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] ({cos(\x r)^2}, {sin(\x r)^3});
+        
+                    \addlegendentry{$x = \cos^2 t, \, y = \sin^3 t$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Note that $x = 0 \implies t = \frac\pi2$ and $x = 1 \implies t = 0$. Hence,
+        \begin{gather*}
+            \area = \int_0^1 y \d x = \int_{\pi/2}^0 y \der{x}{t} \d t = \int_{\pi/2}^0 \sin^3 t (-2\cos t \sin t) \d t = 2\int_0^{\pi/2} \cos t \sin^4 t \d t\\
+            = 2\evalint{\frac{\sin^5 t}{5}}0{\pi/2} = \frac25 \units[2].
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \volume = 2\pi \int_0^1 xy \d x = 2\pi \int_{\pi/2}^0 \cos^2 t \sin^3 t (-2\cos t \sin t) \d t 
+            = 4\pi \int_0^{\pi/2} \cos^3 t \sin^4 t \d t\\
+            = 4\pi \int_0^{\pi/2} \sin^4 t \bp{1 - \sin^2 t} \cos t \d t = 4\pi \int_0^{\pi/2} \bp{\sin^4 t - \sin^6 t} \cos t \d t \\
+            = 4\pi \evalint{\frac{\sin^5 t}{5} - \frac{\sin^7 t}{7}}{0}{\pi/2} = \frac{8\pi}{35} \units[3].
+        \end{gather*}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Given that $f$ is a continuous function, explain, with the aid of a sketch, why the value of
+        \[
+            \lim_{n \to \infty} \frac1n \bs{f\of{\frac1n} + f\of{\frac2n} + \ldots + f\of{\frac{n}{n}}}
+        \]
+        is $\int_0^1 f(x) \d x$.
+        \item Hence, evaluate $\lim_{n \to \infty} \frac1n \bp{\frac{\sqrt[3]1 + \sqrt[3]2 + \ldots + \sqrt[3]n}{\sqrt[3]n}}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:1.2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {0.1, 0.2, 0.3, 0.4, 0.9, 1},
+                    xticklabels = {$\frac1{n}$, $\frac2{n}$, $\frac3{n}$, $\frac4n$, $\frac{n-1}{n}$, $\frac{n}{n}$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x + sin(pi * \x r)};
+        
+                    \addlegendentry{$y = f(x)$};
+
+                    \draw[plotBlue] (0.1, 0) -- (0.1, 0.409);
+                    \draw[plotBlue] (0.1, 0.409) -- (0.2, 0.409);
+
+                    \draw[plotBlue] (0.2, 0) -- (0.2, 0.788);
+                    \draw[plotBlue] (0.2, 0.788) -- (0.3, 0.788);
+
+                    \draw[plotBlue] (0.3, 0) -- (0.3, 1.11);
+                    \draw[plotBlue] (0.3, 1.11) -- (0.4, 1.11);
+                    \draw[plotBlue] (0.4, 0) -- (0.4, 1.11);
+
+                    \draw[plotBlue] (0.9, 0) -- (0.9, 1.21);
+                    \draw[plotBlue] (0.9, 1.21) -- (1, 1.21);
+
+                    \draw[plotBlue] (1, 0) -- (1, 1.21);
+                    \draw[plotBlue] (1, 1) -- (1.1, 1);
+                    \draw[plotBlue] (1.1, 0) -- (1.1, 1);
+
+                    \node[plotBlue] at (0.65, 0.5) {$\ldots$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        The area of the rectangles in the above figure is given by \[\frac1n \bs{f\of{\frac1n} + f\of{\frac2n} + \ldots + f\of{\frac{n}{n}}}.\] This gives an approximation of the signed area under the curve from $x = \frac1n$ to $x = \frac{n}{n} = 1$. As $n \to \infty$, the widths of the rectangles become smaller and the approximation becomes exact. Hence, \[\lim_{n \to \infty} \frac1n \bs{f\of{\frac1n} + f\of{\frac2n} + \ldots + f\of{\frac{n}{n}}} = \int_0^1 f(x) \d x.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \lim_{n \to \infty} \frac1n \bp{\frac{\sqrt[3]1 + \sqrt[3]2 + \ldots + \sqrt[3]n}{\sqrt[3]n}} = \lim_{n \to \infty} \frac1n \bs{\sqrt[3]{\frac1n} + \sqrt[3]{\frac2n} + \ldots + \sqrt[3]{\frac{n}{n}}}\\ = \int_0^1 \sqrt[3]{x} \d x = \evalint{\frac{x^{4/3}}{4/3}}01 = \frac34.
+        \end{gather*}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The function $f$ satisfies $f'(x) > 0$ for $a \leq x \leq b$, and $g$ is the inverse of $f$. By making a suitable change of variable, prove that \[\int_a^b f(x) \d x = b\b - a\a - \int_\a^\b g(y) \d y\] where $\a = f(a)$ and $\b = f(b)$. Interpret this formula geometrically by means of a sketch where $\a$ and $a$ are positive. Verify this result for the case where $f(x) = \e^{2x}$, $a = 0$, $b = 1$.
+
+    Prove similarly and interpret geometrically the formula \[2\pi \int_a^b xf(x) \d x = \pi(b^2\b - a^2\a) - \pi\int_\a^\b \bs{g(y)}^2 \d y.\]
+\end{problem}
+\begin{solution}
+    Observe that $y = f(x) \implies \d y = f'(x) \d x$. Hence, \[\int_\a^\b g(y) \d y = \int_a^b \inv f\of{f(x)} f'(x) \d x = \int_a^b xf'(x) \d x.\] Integrating by parts,
+    \[\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+        & D & I \\\cmidrule{1-3}
+        + & x & f'(x) \\
+        - & 1 & f(x) \\\bottomrule
+    \end{array}\] Hence, \[\int_\a^\b g(y) \d y = \evalint{xf(x)}{a}{b} - \int_a^b f(x) \d x = b\b - a\a - \int_a^b f(x) \d x.\] Thus, \[\int_a^b f(x) \d x = b\b - a\a - \int_\a^\b g(y) \d y.\]
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2.2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {0.5, 2},
+                ytick = {1.375, 4},
+                xticklabels = {$a$, $b$},
+                yticklabels = {$\a$, $\b$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {x^3 - 3*x^2 + 4*x};
+    
+                \addlegendentry{$y = f(x)$};
+
+                \draw[dotted] (0.5, 0) -- (0.5, 1.375);
+                \draw[dotted] (0, 1.375) -- (0.5, 1.375);
+                \draw[dotted] (2, 0) -- (2, 4);
+                \draw[dotted] (0, 4) -- (2, 4);
+
+                \node at (0.3, 0.5) {$A$};
+                \node at (0.12, 0.9) {$C$};
+                \node at (1.3, 1) {$B$};
+                \node at (0.7, 3) {$D$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Consider the above diagram. We clearly have $[A \cup C] = a \a$, $[A \cup B \cup C \cup D] = b\b$, $[B] = \int_a^b f(x) \d x$ and $[D] = \int_\a^\b g(y) \d y$. Thus, \[\int_a^b f(x) \d x = [B] = [A \cup B \cup C \cup D] - [A \cup C] - [D] = b\b - a\a - \int_\a^\b g(y) \d y.\]
+
+    \begin{center}\rule{0.8\textwidth}{0.4pt} \end{center}
+
+    Using the standard way, we get \[\int_0^1 \e^{2x} \d x = \evalint{\frac12 \e^{2x}}{0}{1} = \frac{\e^2 - 1}2.\]
+
+    We now use the formula. Let $f(x) = e^{2x}$. Then $g(x) = \frac12 \ln x$. Hence, $\a = g(0) = 1$ and $\b = g(1) = e^2$. Invoking the above formula, \[\int_0^1 \e^{2x} \d x = 1\bp{\e^2} - 0(1) - \int_1^{\e^2} \frac12 \ln x \d x = \e^2 - \frac12 \evalint{x \ln x - x}{1}{e^2} = \frac{\e^2 - 1}{2}.\] Hence, the formula holds for the above case.
+    
+    \clearpage
+    Similar to the above part, we have \[\int_\a^\b \bs{g(y)}^2 \d y = \int_\a^\b \bs{\inv f\of{f(x)}}^2 f'(x) \d x = \int_a^b x^2 f'(x) \d x.\] Integrating by parts,
+    \[\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+        & D & I \\\cmidrule{1-3}
+        + & x^2 & f'(x) \\
+        - & 2x & f(x) \\\bottomrule
+    \end{array}\] Thus, \[\int_\a^\b \bs{g(y)}^2 \d y = \evalint{x^2f(x)}{a}{b} - 2\int_a^b xf(x) \d x = b^2\b - a^2\a - 2\int_a^b x f(x) \d x.\] Rearranging, \[2\pi\int_a^b x f(x) \d x = \pi\bp{b^2\b - a^2\a} - \pi \int_\a^\b \bs{g(y)}^2 \d y.\]
+    
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2.2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {0.5, 2},
+                ytick = {1.375, 4},
+                xticklabels = {$a$, $b$},
+                yticklabels = {$\a$, $\b$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {x^3 - 3*x^2 + 4*x};
+    
+                \addlegendentry{$y = f(x)$};
+
+                \draw[dotted] (0.5, 0) -- (0.5, 1.375);
+                \draw[dotted] (0, 1.375) -- (0.5, 1.375);
+                \draw[dotted] (2, 0) -- (2, 4);
+                \draw[dotted] (0, 4) -- (2, 4);
+
+                \node at (0.3, 0.5) {$A$};
+                \node at (0.12, 0.9) {$C$};
+                \node at (1.3, 1) {$B$};
+                \node at (0.7, 3) {$D$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    Let $V(R)$ represent the volume of the solid obtained when a region $R$ is rotated completely about the $y$-axis.
+
+    We clearly have $V(A \cup B \cup C \cup D) = \pi b^2 \b$, $V(A \cup C) = \pi a^2 \a$, $V(B) = 2\pi \int_a^b xf(x) \d x$ (using the shell method), and $V(D) = \pi \int_\a^\b \bs{g(y)}^2 \d y$ (using the disc method). Thus,
+    \begin{gather*}
+        2\pi \int_a^b xf(x) \d x = V(B) = V(A \cup B \cup C \cup D) - V(A \cup C) - V(D)\\
+        = \pi b^2 \b - \pi a^2 \a - \pi \int_\a^\b \bs{g(y)}^2 \d y = \pi\bp{b^2\b - a^2\a} - \pi \int_\a^\b \bs{g(y)}^2 \d y.
+    \end{gather*}
+\end{solution}
