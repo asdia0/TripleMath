@@ -1,0 +1,377 @@
+\section{Tutorial B12}
+
+\begin{problem}
+    Given that $y = 1$ when $x = 1$, find the particular solution of the differential equation $\der{y}{x} = \frac{y^2}{x}$.
+\end{problem}
+\begin{solution}
+    \begin{gather*}
+        \der{y}{x} = \frac{y^2}{x} \implies \frac1{y^2} \der{y}{x} = \frac1x \implies \int \frac1{y^2} \d y = \int \frac1x \d x \\
+        \implies -\frac1{y} = \ln \abs{x} + C_1 \implies y = \frac1{C - \ln \abs{x}}, \quad C = -C_1.
+    \end{gather*}
+    Since $y(1) = 1$, we have \[1 = \frac{1}{C - \ln \abs{1}} \implies C = 1 \implies y = \frac1{1 - \ln \abs{x}}.\]
+\end{solution}
+
+\begin{problem}
+    Two variables $x$ and $t$ are connected by the differential equation $\der{x}{t} = \frac{kx}{10-x}$, where $0 < x < 10$ and where $k$ is a constant. It is given that $x = 1$ when $t = 0$ and that $x = 2$ when $t = 1$. Find the value of $t$ when $x = 5$, given your answer to three s.f.
+\end{problem}
+\begin{solution}
+    \begin{gather*}
+        \der{x}{t} = \frac{kx}{10-x} \implies \frac{10-x}{x} \der{x}{t} = k\\
+        \implies \int \frac{10-x}{x} \d x = \int k \d t \implies 10\ln x - x = kt + C.
+    \end{gather*}
+
+    Evaluating at $x = 1$ and $t = 0$, \[10\ln{1} - 1 = k(0) + C \implies C = -1.\] Evaluating at $x = 2$ and $t = 1$, \[10\ln{2} - 2 = k(1) - 1 \implies k = 10 \ln 2 - 1.\] Hence, evaluating at $x = 5$, we get \[10\ln{5} - 5 = \bp{10 \ln 2 - 1}t - 1 \implies t = 2.04 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    Use the substitution $y = u - 2x$ to find the general solution of the differential equation $\der{y}{x} = -\frac{8x + 4y + 1}{4x+2y+1}$.
+\end{problem}
+\begin{solution}
+    Note that \[\der{y}{x} = -\frac{8x + 4y + 1}{4x+2y+1} = -2 + \frac1{4x + 2y + 1}.\] Also note that under the substitution $y = u - 2x$, we have \[\der{y}{x} = \der{u}{x} - 2.\] Thus, \[\der{u}{x} = \frac1{4x + 2y + 1} = \frac1{4x + 2(u - 2x) + 1} = \frac1{2u + 1} \implies (2u + 1) \der{u}{x} = 1.\] Integrating with respect to $x$, \[\int \bp{2u + 1} \d u = \int 1 \d x \implies u^2 + u = x + C \implies (y+2x)^2 + y + x = C.\]
+\end{solution}
+
+\begin{problem}
+    By using the substitution $z = y\e^{2x}$, find the general solution of the differential equation $\der{y}{x} + 2y = x\e^{-2x}$.
+
+    Find the particular solution of the differential equation given that $\der{y}{x} = 1$ when $x = 0$.
+\end{problem}
+\begin{solution}
+    Note that \[z = ye^{2x} \implies \der{z}{x} = \der{y}{x} \e^{2x} + 2y \e^{2x} = \der{y}{x} \e^{2x} + 2z \implies \der{y}{x} = \der{z}{x} \e^{-2x} - 2y.\] Substituting this into the given differential equation, \[\der{z}{x} \e^{-2x} - 2y + 2y = x \e^{-2x} \implies \der{z}{x} = x.\] Integrating with respect to $x$, we easily see that \[y \e^{2x} = z = \frac{z^2}{2} + C \implies y = \frac{x^2}{2 \e^{2x}} + \frac{C}{\e^{2x}}.\] Since $\der{y}{x} = 1$ when $x = 0$, we have \[1 + 2y = 0 \implies y = -\frac12 \implies C = -\frac12.\] The desired particular solution is hence \[y = \frac{x^2 - 1}{2\e^{2x}}.\]
+\end{solution}
+
+\begin{problem}
+    Find the general solution of the differential equation $\der{y}{x} = 6xy^3$.
+
+    Find its particular solution given that $y = 0.5$ when $x = 0$.
+
+    Determine the interval of validity for the particular solution.
+\end{problem}
+\begin{solution}
+    \begin{gather*}
+        \der{y}{x} = 6xy^3 \implies \frac{1}{y^3} \der{y}{x} = 6x \implies \int \frac{1}{y^3} \d y = \int 6x \d  x\\
+        \implies -\frac{1}{2y^2} = 3x^2 + C_1 \implies y^2 = \frac{1}{C - 6x^2}.
+    \end{gather*}
+
+    Since $y(0) = 0.5$, we have \[(0.5)^2 = \frac1{C - 6(0)^2} \implies C = 4.\] Thus, the particular solution is \[y^2 = \frac1{4 - 6x^2}.\]
+ 
+    For the solution to be valid, we require $4 - 6x^2 > 0$, whence $x \in \bp{-\sqrt{2/3}, \sqrt{2/3}}$.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the general solution of the differential equation $\der{y}{x} = \frac{3x}{x^2 + 1}$.
+        \item What can you say about the gradient of every solution as $x \to \pm \infty$?
+        \item Find the particular solution of the differential equation for which $y = 2$ when $x = 0$. Hence, sketch the graph of this solution.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\der{y}{x} = \frac{3x}{x^2 + 1} = \frac32 \bp{\frac{2x}{x^2 + 1}} \implies y = \frac32 \ln{x^2 + 1} + C.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\lim_{x \to \pm \infty} \der{y}{x} = \lim_{x \to \pm \infty} \frac{3x}{x^2 + 1} = 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Evaluating the general solution at $x = 0$ and $y = 2$, we get \[2 = \frac32 \ln{0^2 + 1} + C \implies C = 2.\] Thus, the particular solution is \[y = \frac32 \ln{x^2 + 1} + 2.\]
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -20:20,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {2},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=0,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {1.5 * ln(x^2 + 1) + 2};
+        
+                    \addlegendentry{$y = \frac32 \ln{x^2 + 1} + 2$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The variables $x$, $y$ and $z$ are connected by the following differential equations.
+    \begin{align*}
+        \der{z}{x} &= 3-2z \tag{$\ast$}\\
+        \der{y}{x} &= z
+    \end{align*}
+    \begin{enumerate}
+        \item Given that $z < \frac32$, solve equation ($\ast$) to find $z$ in terms of $x$.
+        \item Hence, find $y$ in terms of $x$.
+        \item Use the result in part (b) to show that \[\der[2]{y}{x} = a\der{y}{x} + b\] for constants $a$ and $b$ to be determined.
+        \item The curve of the solution in part (b) passes through the points $(0, 1)$ and $\bp{2, 3+\e^{-4}}$. Sketch this curve, indicating its axial intercept and asymptote (if any).
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{gather*}
+            \der{z}{x} = 3-2z \implies \frac{1}{3-2z} \der{z}{x} = 1 \implies \int \frac{1}{3-2z} \d z = \int 1 \d x\\
+            \implies -\frac12 \ln{3-2z} = x + C_1 \implies z = \frac32 - A \e^{-2x}, \quad A = \frac{\e^{-2C_1}}{2}.
+        \end{gather*}
+        Thus, the general solution is \[z = \frac32 - A \e^{-2x}, \quad A \in \RR^+.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \der{y}{x} = \frac32 - A \e^{-2x} \implies y = \int \bp{\frac32 - A \e^{-2x}} \d x = \frac32 x + \frac{A}2 \e^{-2x} + B, \quad B \in \RR.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        \[\der{y}{x} = \frac32 - A\e^{-2x} \implies \der[2]{y}{x} = 2A \e^{-2x} = 2\bp{\frac32 - \der{y}{x}} = -2\der{y}{x} + 3.\] Hence, $a = -2$ and $b = 3$.
+    \end{ppart}
+    \begin{ppart}
+        Evaluating the general solution at $(0, 1)$, we obtain \[1 = \frac32 (0) + \frac{A}{2} \e^{-2(0)} + B \implies B = 1 - \frac{A}{2}.\] Evaluating the general solution at $\bp{2, 3 + \e^{-4}}$, we obtain \[3 + \e^{-4} = \frac32 (2) + \frac{A}{2} \e^{-2(2)} + \bp{1 - \frac{A}{2}} \implies A = 2.\] The curve thus has equation \[y = \frac32 x + \e^{-2x}.\]
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -0.5:1.4,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = {1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    ymin=0,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f1, unbounded coords = jump] {1.5 * x + e^(-2*x)};
+        
+                    \addlegendentry{$y = \frac32 x + \e^{-2x}$};
+
+                    \addplot[dotted] {1.5 * x};
+                    \node[rotate=50, below] at (1, 1.5) {$y = \frac32 x$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A bottle containing liquid is taken from a refrigerator and placed in a room where the termperature is a constant 20\,$\deg$C. As the liquid warms up, the rate of increase of its temperature $\t$\,$\deg$C after time $t$ minutes is proportional to the temperature difference $(20-\t)$\,$\deg$C. Initially the temperature of the liquid is $10$\,$\deg$C and the rate of increase of the temperature is 1\,$\deg$C per minute. By setting up and solving a differential equation, show that $\t = 20 - 10e^{-t/10}$.
+
+    Find the time it takes the liquid to reach a temperature of $15$\,$\deg$C, and state what happens to $\t$ for large values of $t$. Sketch a graph of $\t$ against $t$.
+\end{problem}
+\begin{solution}
+    Since $\der{\t}{t} \propto (20 - \t)$, we have $\der{\t}{t} = k(20 - \t)$, where $k$ is a constant. We now solve for $\t$.
+    \begin{gather*}
+        \der{\t}{t} = k(20 - \t) \implies \frac1{20 - \t} \der{\t}{t} = k \implies \int \frac1{20 - \t} \d \t = \int k \d t \\
+        \implies - \ln{20 - \t} = kt + C_1 \implies \t = 20 - C\e^{-kt}, \quad C = \e^{-C_1}.
+    \end{gather*}
+
+    Evaluating at $\t = 0$ and $\t = 10$, we get \[10 = 20 - C\e^{-0} \implies C = 10.\] Additionally, since $\der{\t}{t} = 1$ when $t = 0$, we have \[1 = k\bs{20 - (20 - 10\e^0)} = 10k \implies k = \frac1{10}.\] Thus, \[\t = 20 - 10\e^{-t/10}.\]
+
+    Using G.C., when $\t = 15$, we have $t = 6.93$. Thus, it takes 6.93 minutes for the liquid to reach a temperature of 15$\deg$C. As $t$ tends to infinity, $\t$ tends towards 20.
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:50,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = {10, 20},
+                xlabel = {$t$},
+                ylabel = {$\t$},
+                ymax=25,
+                ymin=0,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, name path=f1, unbounded coords = jump] {20 - 10*e^(-0.1 * x)};
+    
+                \addlegendentry{$\t = 20 - 10\e^{-t/10}$};
+
+                \addplot[dotted]{20};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find $\int \frac1{100-v^2} \d x$.
+        \item A stone is dropped from a stationary balloon. It leaves the balloon with zero speed, and $t$ seconds later its speed $v$ metres per second satisfies the differential equation \[\der{v}{t} = 10 - 0.1v^2.\]
+        \begin{enumerate}
+            \item Find $t$ in terms of $v$. Hence, find the exact time the stone takes to reach a speed of 5 metres per second.
+            \item Find the speed of the stone after 1 second.
+            \item What happens to the speed of the stone for large values of $t$?
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\int \frac1{100 - v^2} \d v = \frac{1}{2(10)} \ln{\frac{10 + v}{10 - v}} + C = \frac{1}{20} \ln{\frac{10 + v}{10 - v}} + C.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            \begin{gather*}
+                \der{v}{t} = 10 - 0.1v^2 = \frac{100 - v^2}{10} \implies \frac1{100 - v^2} \der{v}{t} = \frac1{10} \implies \int \frac1{100 - v^2} \d v = \int \frac1{10} \d t\\
+                \implies \frac1{20} \ln{\frac{10 + v}{10 - v}} + C_1 = \frac{t}{10} \implies t = \frac1{2} \ln{\frac{10 + v}{10 - v}} + C, \quad C = 10 C_1.
+            \end{gather*}
+            Evaluating the solution at $t = 0$ and $v = 0$, we get \[0 = \frac12 \ln{\frac{10 +0}{10 + 0}} + C \implies C = 0.\] Thus, the general solution is \[t = \frac12 \ln{\frac{10 + v}{10 - v}}.\]
+
+            Consider $v = 5$, we have \[t = \frac12 \ln{\frac{10+5}{10 - 5}} = \frac12 \ln 3.\] It thus takes $\frac12 \ln 3$ seconds for the stone to reach a speed of 5 m/s.
+        \end{psubpart}
+        \begin{psubpart}
+            Consider $t = 1$. Using G.C., we get $v = 7.62$. Thus, after 1 second, the stone has a speed of $7.62$ m/s.
+        \end{psubpart}
+        \begin{psubpart}
+            As $t \to \infty$, we have $\ln{\frac{10 + v}{10 - v}} \to \infty \implies \frac{10 + v}{10 - v} \to \infty$. Thus, $v \to 10$. Hence, for large values of $t$, the speed of the stone approaches 10 m/s.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Two scientists are investigating the change of a certain population of an animal species of size $n$ thousand at time $t$ years. It is known that due to its inability to reproduce effectively, the species is unable to replace itself in the long run.
+    \begin{enumerate}
+        \item One scientist suggests that $n$ and $t$ are related by the differential equation $\der[2]{n}{t} = 10 - 6t$. Given that $n = 100$ when $t = 0$, show that the general solution of this differential equation is $n = 5t^2 - t^3 + Ct + 100$, where $C$ is a constant. Sketch the solution curve of the particular solution when $C = 0$, stating the axial intercepts clearly.
+        \item The other scientist suggests that $n$ and $t$ are related by the differential equation $\der{n}{t} = 3 - 0.02n$. Find $n$ in terms of $t$, given again that $n = 100$ when $t = 0$. Explain in simple terms what will eventually happen to the population using this model.
+    \end{enumerate}
+    Which is a more appropriate model in modeling the population of the animal species?
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{gather*}
+            \der[2]{n}{t} = 10 - 6t \implies \der{n}{t} = \int (10 - 6t) \d \t = 10t - 3t^2 + C\\
+            \implies n = \int \bp{10t - 3t^2 + C} \d t = 5t^2 - t^3 + C t + D.
+        \end{gather*}
+        Evaluating the solution at $t = 0$ and $n = 100$, we obtain $D = 100$. Thus, \[n = 5t^2 - t^3 + Ct + 100.\] Hence, when $C = 0$, \[n = 5t^2 - t^3 + 100.\]
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:7.03,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {7.03},
+                    ytick = {100},
+                    xlabel = {$n$},
+                    ylabel = {$t$},
+                    ymax = 150,
+                    xmax=7.1,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed, name path=f1, unbounded coords = jump] {5*x^2 - x^3 + 100};
+        
+                    \addlegendentry{$n = 5t^2 - t^3 + 100$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \der{n}{t} = 3 - 0.02n = \frac{150 - n}{50} \implies \frac{1}{150-n} \der{n}{t} = \frac1{50} 
+            \implies \int \frac{1}{150-n} \d n = \int \frac1{50} \d t\\
+            \implies -\ln{150 - n} = \frac1{50} t + C_1  \implies n = 150 - C\e^{-t/50}, \quad C = \e^{-C_1}.
+        \end{gather*}
+        When $t = 0$ and $n = 100$, we have $C = 50$. Hence, \[n = 150 - 50\e^{-t/50}.\] As $t \to \infty$, $n \to 150$. Hence, the population will decrease before plateauing at 150 thousand.
+    \end{ppart}
+    
+    The first model is more appropriate, as it account for the fact that the species will eventually go extinct ($n = 0$) due to the fact that they cannot replace itself in the long run.
+\end{solution}
+
+\begin{problem}
+    A rectangular tank has a horizontal base. Water is flowing into the tank at a constant rate, and flows out at a rate which is proportional to the depth of water in the tank. At time $t$ seconds, the depth of water in the tank is $x$ metres. If the depth is $0.5$ m, it remains at this constant value. Show that $\der{x}{t} = -k(2x-1)$, where $k$ is a positive constant. When $t = 0$, the depth of water in the tank is $0.75$ m and is decreasing at a rate of $0.01$ m s$^{-1}$. Find the time at which the depth of water is $0.55$ m.
+\end{problem}
+\begin{solution}
+    Let $V_i$ m$^3$/s be the rate at which water is flowing into the tank. Note that $V_i \geq 0$. Let the rate at which water is flowing out of the tank be $V_o x$ m$^3$/s. Let the base of the container be $A$ m$^2$. Then \[\der{x}{t} = \frac{V_i - V_o x}{A}.\] At $x = 0.5$, the volume of water in the tank is constant. Thus, \[\evalder{\der{x}{t}}{x = 0.5} = 0 \implies V_i - 0.5 V_o = 0 \implies V_o = 2V_i \implies \der{x}{t} = -\frac{V_i (2x - 1)}{A}.\] Letting $k = V_i/A$, we have \[\der{x}{t} = -k(2x - 1).\]
+
+    We now solve for $t$.
+    \begin{gather*}
+        \der{x}{t} = -k(2x - 1) \implies \frac{1}{2x-1} \der{x}{t} = -k \implies \int \frac{1}{2x-1} \d x = \int -k \d t \\
+        \implies \frac{\ln{2x-1}}2 + C_1 = -kt \implies t = -\frac{\ln{2x-1} + C}{2k}, \quad C = 2C_1
+    \end{gather*}
+    Evaluating the solution at $t = 0$ and $x = 0.75$, we get \[0 = -\frac{\ln{2(0.75) - 1} + C}{2k} \implies C_2 = \ln 2.\] Additionally, \[\evalder{\der{x}{t}}{t = 0} = -0.01 \implies -0.01 = -k[2(0.75) -1] \implies k = 0.02.\] Thus, \[t = -\frac{\ln{2x-1} + \ln 2}{2(0.02)} = -25 \ln{4x-2}.\] 
+    
+    Consider $x = 0.55$. Then \[t = -25\ln{4(0.55) - 2} = 25\ln5.\] Thus, when $t = 25 \ln 5$, the depth of the water is 0.55 m.
+\end{solution}
+
+\begin{problem}
+    In a model of mortgage repayment, the sum of money owned to the Building Society is denoted by $x$ and the time is denoted by $t$. Both $x$ and $t$ are taken to be continuous variables. The sum of money owned to the Building Society increases, due to interest, at a rate proportional to the sum of money owed. Money is also repaid at a constant rate $r$.
+
+    When $x = a$, interest and repayment balance. Show that, for $x > 0$, $\der{x}{t} = \frac{r}{a} (x - a)$.
+
+    Given that, when $t = 0$, $x = A$, find $x$ in terms of $t$, $r$, $a$ and $A$.
+
+    On a single, clearly labelled sketch, show the graph of $x$ against $t$ in the two cases:
+    \begin{enumerate}
+        \item $A > a$.
+        \item $A < a$.
+    \end{enumerate}
+
+    State the circumstances under which the loan is repaid in a finite time $T$ and show that, in this case, $T = \frac{a}{r} \ln \frac{a}{a - A}$.
+\end{problem}
+\begin{solution}
+    Let the rate at which money is owned to the Building Society be $kx$. Then \[\der{x}{t} = kx - r.\] At $x = a$, interest and repayment balance. Hence, \[\evalder{\derx{x}{t}}{a} = ka - r = 0 \implies k = \frac{r}{a}.\] Thus, \[\der{x}{t} = \frac{r}{a} x - r = \frac{r}{a} (x - a).\]
+
+    We now solve for $x$.
+    \begin{gather*}
+        \der{x}{t} = \frac{r}{a} (x - a) \implies\frac{1}{x-a} \der{x}{t} = \frac{r}{a} \implies\int \frac{1}{x-a} \d x = \int \frac{r}{a} \d t\\
+        \implies \ln \abs{x-a} = \frac{r}{a} t + C_1 \implies x = C\e^{rt/a} + a.
+    \end{gather*}
+
+    When $t = 0$, we have $x = A$. Substituting this into the solution, we obtain \[A = C + a \implies C = A - a.\] Thus, \[x = (A-a)\e^{rt/a} + a.\]
+
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:1.386,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {2 * ln 2},
+                xticklabels = {$T$},
+                ytick = {3, 1},
+                yticklabels = {$A_1$, $A_2$},
+                xlabel = {$t$},
+                ylabel = {$x$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {(3-2)*e^(x/2)+2};
+    
+                \addlegendentry{$A>a$};
+
+                \addplot[plotBlue] {(1-2)*e^(x/2)+2};
+    
+                \addlegendentry{$A<a$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    For the loan to be repaid in finite time, $A < a$. At time $T$, the loan has been repaid, i.e. $x = 0$. Thus, \[(A-a) \e^{rt/a} + a = 0 \implies \e^{rt/a} = \frac{a}{a-A} \implies \frac{rt}{a} = \ln{\frac{a}{a-A}} \implies t = \frac{a}{r} \ln{\frac{a}{a-A}}.\]
+\end{solution}
