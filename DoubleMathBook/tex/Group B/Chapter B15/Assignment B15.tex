@@ -1,0 +1,79 @@
+\section{Assignment B15}
+
+\begin{problem}
+    In response to a massive ecosystem-wide destruction by goats on the island of Isabela in Ecuador, Project Isabela was started on the first day of 1997 to eliminate all goats on the island. Goat elimination was done by hunting at a constant rate. Suppose that the goat population, $P$ (in thousands), can be modelled by the differential equation \[\der{P}{t} = \frac{P}{4} \bp{1 - \frac{P}{150}} - H,\] where $t$ is measured in months and $H$ is measured in thousands.
+    \begin{enumerate}
+        \item State, in context, the significance of the term $H$.
+        \item Find the greatest integer value of $H$ for which it is still possible for some goats to survive in the long run.
+        \item Based on the answer from part (b), discuss the long-term behaviour of the goat population for different initial populations.
+    \end{enumerate}
+    The hunters involved in Project Isabela finally managed to eliminate all the goats on the island of Isabela on the first day of 2006.
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item State an inequality that must be satisfied by $H$.
+        \item Given that the initial goat population was $100$ thousand, find the value of $H$, correc to 3 decimal places.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+    $H$ represents the number of goats killed (in thousands) per month.
+    \end{ppart}
+    \begin{ppart}
+        Consider the equilibrium points of the differential equation. \[\der{P}{t} = \frac{P}{4} \bp{1 - \frac{P}{150}} - H = -\frac{1}{600} \bp{P^2 - 150P + 600H} = 0.\] By the quadratic formula, \[P = 75 \pm 5 \sqrt{225 - 24H}.\] For it to be possible for goats to survive in the long term, there must be at least one equilibrium point. That is, $\sqrt{225 - 24H} \geq 0 \implies H \leq 9.375$. Thus, the maximum integer value of $H$ is $9$.
+    \end{ppart}
+    \begin{ppart}
+        When $H = 9$, the equilibrium points are $P = 75 \pm 5\sqrt{225 - 24(9)} = 60 \lor 90$. Let the initial population be $P_0$.
+
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:100,                        samples = 101,
+                    ymax=700,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {60, 90},
+                    ytick = \empty,
+                    ylabel = {$\derx{P}{t}$},
+                    xlabel = {$P$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {-x^2 + 150*x - 600*9};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        When $P_0 = 0$, there are no goats initially. Hence, the population will remain at 0.
+
+        When $0 < P_0 < 60$, $\derx{P}{t} < 0$. Hence, the population of goats will decrease towards 0.
+
+        When $P_0 = 60$, $\derx{P}{t} = 0$. Hence, the population of goats will remain at 60 thousand.
+
+        When $60 < P_0 < 90$, $\derx{P}{t} > 0$. Hence, the population of goats will increase towards 90 thousand.
+
+        When $P_0 = 90$, $\derx{P}{t} = 0$. Hence, the population of goats will remain at 90 thousand.
+
+        When $P_0 > 90$, $\derx{P}{t} < 0$. Hence, the population of goats will decrease towards 90 thousand.
+    \end{ppart}
+    \begin{ppart}
+        $H$ must satisfy the inequality $H > 9.375$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $t = 120$, $P(0) = 100$ and $P(108) = 0$. Now observe that
+        \begin{gather*}
+            \der{P}{t} = -\frac1{600} \bp{P^2 - 150P + 600H} = -\frac1{600} \bs{(P-75)^2 + \bp{600H - 75^2}} \\
+            \implies \frac1{(P-75)^2 + (600H - 75^2)} \der{P}{t} = -\frac1{600}.
+        \end{gather*}
+        Integrating both sides with respect to $t$,
+        \begin{gather*}
+            \int \frac1{(P-75)^2 + (600H - 75^2)} \d P = \int -\frac1{600} \d t\\
+            \implies \frac1{\sqrt{600H - 75^2}} \arctan{\frac{P-75}{\sqrt{600H - 75^2}}} = -\frac1{600} t + C.
+        \end{gather*}
+        Let $X = \frac{1}{\sqrt{600H - 75^2}}$. This simplifies the above result to \[X \arctan{(P-75)X} = -\frac1{600}t + C.\] When $t = 0$, $P = 100$. Hence, \[C = X \arctan{25X}\]
+        When $t = 108$, $P = 0$. Hence, \[X\arctan{-75X} = -\frac{108}{600} + X \arctan{25X},\] which has the solution $X = 0.073145$. Note that we reject $X = -0.073145$ since $X \geq 0$. We thus have \[H = \frac1{600}\bp{\frac1{0.073145^2} + 75^2} = 9.377 \todp{3}.\]
+    \end{ppart}
+\end{solution}
