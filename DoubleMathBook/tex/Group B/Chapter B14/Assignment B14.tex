@@ -1,0 +1,80 @@
+\section{Assignment B14}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Explain why the Euler method will fail for the initial-value problem \[\der{y}{x} = y \cos \sqrt x, \qquad y(0) = 0,\] where $y = y(x)$ satisfies that differential equation and is not a constant.
+        \item Suppose the initial condition for the problem in part (a) is now $y(0) = 10$. Use the improved Euler method with a step size of $0.1$ to find, to three decimal places, an estimate for $y(0.1)$.
+        \item Solve the differential equation \[\der{y}{x} = \frac12 y (2-x), \qquad y > 0, \quad y(0) = 10,\] expressing $y$ in terms of $x$, and simplifying your answer as far as possible.
+        \item Explain why the solution found in part (c) will give a reasonable estimate for $y(0.1)$ in part (b).
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        By the Euler method, \[y_1 = y_0 + \D x (y_0 \cos \sqrt{x_0}) = 0 + \D x (0 \cos 0) = 0.\] It follows that $y_n = 0$ for all $n \in \NN$, whence $y$ is the zero function. However, because $y$ is not a constant function, $y$ cannot be the zero function, a contradiction. Hence, the Euler method fails.
+    \end{ppart}
+    \begin{ppart}
+        Let $\D x = 0.1$, $y_0 = 10$ and $x_n = n \D x$.
+        \begin{align*}
+            \wt{y_1} &= y_0 + \D x (y_0 \cos \sqrt{x_0}) = 11\\
+            y_1 &= y_0 + \frac12 \D x \bs{y_0 \cos \sqrt{x_0} + \wt{y_1} \cos \sqrt{x_1}} = 11.023 \todp{3}
+        \end{align*}
+        Hence, $y(0.1) \approx 11.023$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \der{y}{x} = \frac12 y (2-x) \implies \frac1y \der{y}{x} = \frac12 (2-x) \implies \int \frac1y \d y =\int \frac12 (2-x) \d x\\
+            \implies \ln y = \frac12 \bs{2x - \frac12 x^2} + C_1 = x - \frac14 x^2 + C_1 \implies y = C\exp{x - \frac14 x^2}.
+        \end{gather*}
+        Since $y(0) = 10$, we have $C = 10$. Thus, \[y = 10\exp{x - \frac14 x^2}.\]
+    \end{ppart}
+    \begin{ppart}
+        For small $x$, we have that $\cos \sqrt{x} \approx 1 - \frac12 (\sqrt x)^2 = \frac12 (2 - x)$. Thus, \[y \cos \sqrt x \approx \frac12 y (2-x),\] whence the two differential equations and thus their solutions are approximately equal. Since $x = 0.1$ is small, the solution found in part (c) will give a reasonable estimate for $y(0.1)$ in part (b).
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Rewriting the given differential equation, we obtain \[\der{v}{x} = -\frac{7x}{v} - 24.\] Let $f(x, v) = -\frac{7x}{v} - 24$, $\D x = 1$, $v_0 = 121$, and $x_n = n \D x$.
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        By the Euler method, \[v_1 = v_0 + \D x f(x_0, v_0) = 97.\] Thus, $y(1) \approx 97$.
+    \end{ppart}
+    \begin{ppart}
+        By the improved Euler method,
+        \begin{align*}
+            \wt{v_1} &= v_0 + \D x f(x_0, v_0) = 97\\
+            v_1 &= v_0 + \frac12 \D x \bs{f(x_0, v_0) + f(x_1, \wt{v_1})} = 96.964
+        \end{align*}
+        Thus, $y(1) \approx 96.964$.
+    \end{ppart}
+
+    The gradient of $v$ at $x = 0$ is $f(x_0, v_0) = -24$, which is very close to the gradient of $v$ at $x=1$, $f(x_1, \wt{v_1}) = -24.072$. Since the gradient of $v$ is approximately constant for $0 \leq x \leq 1$, we have that $v$ is approximately a linear function on that interval.
+
+    Observe that for $0 \leq x \leq 1$, $x/v \approx 0$ since $x \in [0, 1]$, while $v \geq 96$. Thus, $\derx{v}{x} \approx -24$, whence $v = -24 x + C$. Since $v = 121$ when $x = 0$, we have $v \approx -24x + 121$.
+\end{solution}
+
+\begin{problem}
+    The function $y = y(x)$ satisfies \[\der{y}{x} = \frac15 (\tan x + x^3 y).\] The value of $y(h)$ is to be found, where $h$ is a small positive number, and $y(0) = 0$.
+    \begin{enumerate}
+        \item Use one step of the improved Euler method to find an alternative approximation to $y(h)$ in terms of $h$.
+        \item It can be shown that $y = y(x)$ satisfies \[y(h) = e^{0.05h^4} \int_0^h \frac{\tan x}{5} \e^{-0.05x^4} \d x.\] Assume that $h$ is small and hence find another approximation to $y(h)$ in terms of $h$.
+        \item Discuss the relative merits of these two methods employed to obtain these approximations.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Let $f(x, y) = \frac15 (\tan x + x^3 y)$, $\D x = h$ and $y_0 = 0$. By the improved Euler method,
+        \begin{align*}
+            \wt{y_1} &= y_0 + \D x f(x_0, y_0) = 0\\
+            y_1 &= y_0 + \frac12 \D x \bs{f(x_0, y_0) + f(x_1, \wt{y_1})} = 0 + \frac12 h \bs{0 + \frac15(\tan h + 0)} = \frac{h \tan h}{10}.
+        \end{align*}
+        Hence, \[y(h) \approx \frac{h\tan h}{10}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $h$ is small, we have that $\e^{0.05h^4} \approx 1$. Furthermore, since we are integrating over the interval $x \in [0, h]$, the integrand $\frac{\tan x}{5} \e^{-0.05x^4}$ can likewise be approximated by $\frac{x}{5}$. Our integral hence transforms to \[y(h) = \e^{0.05h^4} \int_0^h \frac{\tan x}{5} \e^{-0.05x^4} \d x \approx \int_0^h \frac{x}{5} \d x = \frac{h^2}{10}.\]
+    \end{ppart}
+    \begin{ppart}
+        The improved Euler method involves more steps, while the approximation in (b) is more direct.
+    \end{ppart}
+\end{solution}

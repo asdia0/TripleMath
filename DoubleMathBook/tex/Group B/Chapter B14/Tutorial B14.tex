@@ -1,0 +1,478 @@
+\section{Tutorial B14}
+
+\begin{problem}
+    Consider the initial value problem \[\der{y}{t} = 4y - 1, \qquad y(0) = 1.\] Use the Euler method with step size $\D t = 0.1$ to estimate $y(0.5)$.
+
+    Explain whether the approximation is an underestimate or an overestimate of the actual value.
+\end{problem}
+\begin{solution}
+    Let $f(y) = 4y-1$ and $y_0 = 1$. By the Euler method ($y_{n+1} = y_n + \D t f(y_n)$),
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            $t$ & $n$ & $y_n$ \\ \hline\hline
+            0.0 & 0 & 1 \\ \hline
+            0.1 & 1 & 1.3 \\ \hline
+            0.2 & 2 & 1.72 \\ \hline
+            0.3 & 3 & 2.308 \\ \hline
+            0.4 & 4 & 3.1312 \\ \hline
+            0.5 & 5 & 4.28368 \\ \hline
+        \end{tabular}
+    \end{center}
+
+    Hence, $y(0.5) \approx 4.28$.
+
+    Observe that $\der[2]{y}{t} = 4\der{y}{t} > 0$ for $y > 0$. Hence, $y$ is concave upward. Thus, the approximation is an underestimate.
+\end{solution}
+
+\begin{problem}
+    A solution to the differential equation $\der{y}{x} = y - x$ has $y = 0.5$ at $x = 0$.
+    \begin{enumerate}
+        \item Use the Euler method with step size $0.2$ to estimate $y$ at $x = 1$. State with a reason whether this value of $y$ is an underestimate or an overestimate.
+        \item Find the exact value of $y$ at $x = 1$.
+        \item By changing the step size to $\D x = 0.1$, comment on the accuracy of the approximations. What are the trade-offs, if any?
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $f(x, y) = y - x$, $x_0 = 0$, $y_0 = 0.5$ and $\D x = 0.2$. By the Euler method ($y_{n+1} = y_n + \D t f(y_n)$),
+
+        \begin{center}
+            \begin{tabular}{|c|c|c|}
+                \hline
+                $x$ & $n$ & $y_n$ \\ \hline\hline
+                0.0 & 0 & 0.5 \\ \hline
+                0.2 & 1 & 0.6 \\ \hline
+                0.4 & 2 & 0.68 \\ \hline
+                0.6 & 3 & 0.736 \\ \hline
+                0.8 & 4 & 0.7632 \\ \hline
+                1.0 & 5 & 0.75584 \\ \hline
+            \end{tabular}
+        \end{center}
+        
+        Hence, $y(1) \approx 0.756$.
+        
+        Observe that for $x \in [0, 1]$, \[\der{y}{x} = y - x < 1 \implies \der[2]{y}{x} = \der{y}{x} - 1 < 0.\] Thus, $y$ is concave downward near $x = 1$, whence the approximation is an overestimate.
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \der{y}{x} = y - x \implies \e^{-x} \der{y}{x} - \e^{-x}y = \der{}{x} \bp{\e^{-x}y} = -x\e^{-x} \\
+            \implies \e^{-x}y = \int -x\e^{-x} \d x = x\e^{-x} + \e^{-x} + C \implies y = x + 1 + C\e^x.
+        \end{gather*}
+        At $x = 0$, $y = \frac12$. Hence, \[\frac12 = 1 + C \implies C = -\frac12 \implies y = x + 1 - \frac{\e^x}2.\] Evaluating $y$ at $x = 1$ yields, \[y = 1 + 1 - \frac{e^1}2 = 2 - \frac{\e}2.\]
+    \end{ppart}
+    \begin{ppart}
+        The accuracy of the approximations will improve. However, more calculations will need to be done.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Consider the initial value problem \[\der{y}{t} = t + y, \qquad y(0) = 1.\]
+    \begin{enumerate}
+        \item Use the Euler method with step size $\D t = 0.2$ to estimate $y$ at $t = 0.6$. Compare the approximated results with the exact solution.
+        \item Use the improved Euler method with step size $\D t = 0.2$ to estimate $y$ at $t = 0.6$. Compare the approximated results with the exact solution.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We begin by finding the exact solution to the differential equation. Observe that
+    \begin{gather*}
+        \der{y}{t} = t + y \implies \e^{-t} \der{y}{t} - \e^{-t}y = \der{}{t} \bp{\e^{-t}y} = t\e^{-t}\\
+        \implies \e^{-t} y = \int t\e^{-t} \d t = -t\e^{-t} - \e^{-t} + C \implies y = -t - 1 + C\e^t.
+    \end{gather*}
+    At $t = 0$, $t = 1$. Hence, \[1 = -1 + C \implies C = 2 \implies y = -t - 1 + 2\e^t.\] Evaluating at $t = 0.6$, we get \[y = -0.6 - 1 + 2\e^{0.6} = 2.044.\]
+
+    \begin{ppart}
+        Let $f(t, y) = t + y$, $t_0 = 0$, $y_0 = 1$ and $\D t = 0.2$. By the Euler method,
+
+        \begin{center}
+            \begin{tabular}{|c|c|c|}
+                \hline
+                $t$ & $n$ & $y_n$ \\ \hline\hline
+                0.0 & 0 & 1 \\ \hline
+                0.2 & 1 & 1.2 \\ \hline
+                0.4 & 2 & 1.48 \\ \hline
+                0.6 & 3 & 1.856 \\ \hline
+            \end{tabular}
+        \end{center}
+
+        Hence, $y(0.6) \approx 1.856$.
+
+        The approximation is not very close to the exact solution, with a percentage error of $9.20\%$.
+    \end{ppart}
+    \begin{ppart}
+        By the improved Euler method, 
+        \begin{align*}
+            \wt{y_1} &= y_0 + \D t \, f(t_0, y_0) = 1.2\\
+            y_1 &= y_0 + \frac12 \D t \Big[f(t_0, y_0) + f(t_1, \wt{y_1})\Big] = 1.24\\\\
+            \wt{y_2} &= y_1 + \D t \, f(t_1, y_1) = 1.528\\
+            y_2 &= y_1 + \frac12 \D t \Big[f(t_1, y_1) + f(t_2, \wt{y_2})\Big] = 1.5768\\\\
+            \wt{y_3} &= y_2 + \D t \, f(t_2, y_2) = 1.97216\\
+            y_3 &= y_2 + \frac12 \D t \Big[f(t_2, y_2) + f(t_3, \wt{y_3})\Big] = 2.031696
+        \end{align*}
+
+        Hence, $y(0.6) \approx 2.032$.
+
+        The approximation is very close to the exact solution, with a percentage error of $0.602\%$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Consider the initial value problem \[\der{y}{t} = -y^2, \qquad y(0) = \frac12, \qquad 0 \leq t \leq 2.\]
+    \begin{enumerate}
+        \item Determine an analytic solution for the problem.
+        \item Using the improved Euler method with a step size of $0.5$, determine an approximate value for $y(2)$ and its error.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{gather*}
+            \der{y}{t} = -y^2 \implies -y^{-2} \der{y}{t} = 1  \implies \int -y^2 \d y = \int \d t\\
+            \implies y^{-1} = t + C \implies y = \frac1{t + C}.
+        \end{gather*}
+        Note that \[y(0) = \frac12 \implies \frac12 = \frac1C \implies C = 2.\] Hence, \[y = \frac1{t + 2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $f(y) = -y^2$, $t_0 = 0$, $y_0 = \frac12$ and $\D t = 0.5$. By the improved Euler method,
+        \begin{align*}
+            \wt{y_1} &= y_0 + \D t \, f(y_0) = 0.375\\
+            y_1 &= y_0 + \frac12 \D t \Big[f(y_0) + f(\wt{y_1})\Big] = 0.4023438\\\\
+            \wt{y_2} &= y_1 + \D t \, f(y_1) = 0.3214035\\
+            y_2 &= y_1 + \frac12 \D t \Big[f(y_1) + f(\wt{y_2})\Big] = 0.3360486\\\\
+            \wt{y_3} &= y_2 + \D t \, f(y_2) = 0.2795843\\
+            y_3 &= y_2 + \frac12 \D t \Big[f(y_2) + f(\wt{y_3})\Big] = 0.2882746\\\\
+            \wt{y_4} &= y_3 + \D t \, f(y_3) = 0.2467235\\
+            y_4 &= y_3 + \frac12 \D t \Big[f(y_3) + f(\wt{y_4})\Big] = 0.2522809
+        \end{align*}
+        Hence, $y(2) \approx 0.252$. Thus, the error is \[\text{Error} = 0.2522809 - \frac{1}{2+2} = 0.0022809\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    It is given that $\der{y}{x} = \e^y + x$, and that a particular solution curve passes through the point $(0, 1)$.
+    \begin{enumerate}
+        \item Use the Euler method with a step size of $0.1$ to estimate the value of $y$ at $x = 0.5$.
+        \item If the estimate for $y$ at $x = 0.5$ is calculated using the improved Euler method with a step size of $0.1$, determine whether this estimate will be greater or less than the value you have calculated in (a). Justify your answer.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $f(x, y) = \e^y + x$, $x_0 = 0$, $y_0 = 1$ and $\D x = 0.1$. By the Euler method,
+
+        \begin{center}
+            \begin{tabular}{|c|c|c|}
+                \hline
+                $t$ & $n$ & $y_n$ \\ \hline\hline
+                0.0 & 0 & 1 \\ \hline
+                0.1 & 1 & 1.27183 \\ \hline
+                0.2 & 2 & 1.63857 \\ \hline
+                0.3 & 3 & 2.17334 \\ \hline
+                0.4 & 4 & 3.08210 \\ \hline
+                0.5 & 5 & 5.30253 \\ \hline
+            \end{tabular}
+        \end{center}
+        
+        Hence, $y(0.5) \approx 5.30$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that for $x > 0$, \[\der{y}{x} = \e^y + x > 0 \implies \der[2]{y}{x} = \e^y \der{y}{x} + 1 > 0.\] Thus, $y$ is concave upwards, whence the estimates are underestimates. Since the improved Euler method is more accurate than the Euler method, it will be greater than the value calculated in (a).
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A differential equation is given by \[\der{y}{t} = y^2 - 2y + 1, \qquad y(0) = 2, \qquad 0 \leq t \leq 2.\] Copy and complete the table showing the use of the improved Euler's method with step size $0.5$ to estimate $y$ at $t = 2$.
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $n$ & $t_n$ & Euler ($y_n$) & $\wt{y_n}$ & Improved Euler ($y_n$) & Actual $y_n$ \\ \hline\hline
+        0 & 0.0 & 2 & \cellcolor{black!10} & 2 & 2 \\ \hline
+        1 & 0.5 & 2.5 & 2.5 & 2.8125 &  \\ \hline
+        2 & 1.0 &  &  &  &  \\ \hline
+        3 & 1.5 &  &  &  &  \\ \hline
+        4 & 2.0 &  &  &  &  \\ \hline
+        \end{tabular}
+    \end{table}
+    Compare and comment on your values obtained using the improved Euler method with the values obtained from the Euler method and the actual solution.
+\end{problem}
+\begin{solution}
+    Let $f(y) = y^2 - 2y + 1$ and $\D t = 0.5$.
+
+    \textbf{Euler Method.}
+    \begin{align*}
+        y_2 &= y_1 + \D t \, f(y_1) = 3.625\\
+        y_3 &= y_2 + \D t \, f(y_2) = 7.070313\\
+        y_4 &= y_3 + \D t \, f(y_3) = 25.49466
+    \end{align*}
+
+    \textbf{Improved Euler Method.}
+    \begin{align*}
+        \wt{y_2} &= y_1 + \D t \, f(y_1) = 4.455078\\
+        y_2 &= y_1 + \frac12 \D t \big[f(y_1) + f(\wt{y_2})\big] = 6.618180\\\\
+        \wt{y_3} &= y_2 + \D t \, f(y_2) = 22.40016\\
+        y_3 &= y_2 + \frac12 \D t \big[f(y_2) + f(\wt{y_3})\big] = 129.0008\\\\
+        \wt{y_4} &= y_3 + \D t \, f(y_3) = 8321.107\\
+        y_4 &= y_3 + \frac12 \D t \big[f(y_3) + f(\wt{y_4})\big] = 17310270
+    \end{align*}
+
+    \textbf{Actual Value.}
+    \begin{gather*}
+        \der{y}{t} = y^2 - 2y + 1 = (y-1)^2 \implies \frac1{(y-1)^2} \der{y}{t} = 1 \implies \int \frac1{(y-1)^2} \d y = \int 1 \d t\\
+        \implies -\frac{1}{y-1} = x + C \implies y = 1 - \frac{1}{x+C}.
+    \end{gather*}
+    Note that \[y(0) = 2 \implies 2 = 1 - \frac1C \implies C = -1.\] Hence, \[y = 1 - \frac1{x-1}.\]
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $n$ & $t_n$ & Euler ($y_n$) & $\wt{y_n}$ & Improved Euler ($y_n$) & Actual $y_n$ \\ \hline\hline
+        0 & 0.0 & 2 & \cellcolor{black!10} & 2 & 2 \\ \hline
+        1 & 0.5 & 2.5 & 2.5 & 2.8125 & 3 \\ \hline
+        2 & 1.0 & 3.625 & 4.455078 & 6.618180 & - \\ \hline
+        3 & 1.5 & 7.070313 & 22.40016 & 129.0008 & -1 \\ \hline
+        4 & 2.0 & 25.49466 & 8321.107 & 17310270 & 0 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    The values obtained using the improved Euler method deviate significantly from that obtained using the Euler method and the actual solution. This is because $y$ has a discontinuity at $t = 1$, making both Euler methods inappropriate to use.
+\end{solution}
+
+\begin{problem}
+    A solution of the differential equation \[\der{y}{x} = y - x\] has $y = 2$ at $x = 0$.
+    \begin{enumerate}
+        \item Use the Euler method with step size $0.5$ to estimate $y$ at $x = 1$. Explain whether you expect this value of $y$ to be an underestimate or overestimate of the true value.
+        \item Copy and complete the table showing the use of the improved Euler method with step size $0.5$ to estimate $y$ at $x = 1$.
+    \end{enumerate}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$ & $y$ & $y-x$ & $\wt y$ & $\D y / \D x$ \\ \hline\hline
+        0 & 2 & 2 & 3 & $(2 + 2.5)/2$\\ \hline
+        0.5 & 3.125 & 2.625 & 4.438 & \\ \hline
+        1 & & \cellcolor{black!10} & \cellcolor{black!10} & \cellcolor{black!10}\\\hline
+        \end{tabular}
+    \end{table}
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Show that the exact value of $y$ at $x = 1$ is $2 + \e$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $f(x, y) = y - x$, $x_0 = 0$, $y_0 = 2$, $\D x = 0.5$. By the Euler method,
+
+        \begin{center}
+            \begin{tabular}{|c|c|c|}
+                \hline
+                $x$ & $n$ & $y_n$ \\ \hline\hline
+                0.0 & 0 & 2 \\ \hline
+                0.5 & 1 & 3 \\ \hline
+                1.0 & 2 & 4.25 \\ \hline
+            \end{tabular}
+        \end{center}
+
+        Hence, $y(1) \approx 4.25$.
+
+        Note that for $x > 0$, we get \[\der{y}{x} = y - x >  \implies \der[2]{y}{x} = \der{y}{x} - 1 > 0.\] Thus, $y$ is concave upwards, whence the value of $y$ is an underestimate.
+    \end{ppart}
+    \begin{ppart}
+        From the improved Euler method, one has \[y_2 = y_1 + \frac12 \D x \Big[f(x_1, y_1) + f(x_2, \wt{y_2})\Big].\] Thus, \[\frac{y_2 - y_1}{\D x} = \frac{\D y}{\D x} = \frac12 \Big[f(x_1, y_1) + f(x_2, \wt{y_2})\Big] = \frac12\bs{2.625 + \bp{4.438 - 1}} = 3.031.\]
+        Also, \[y_2 = y_1 + \D x \bp{\frac{\D y}{\D x}} = 3.125 + 0.5 \bp{3.031} = 4.64.\]
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            $x$ & $y$ & $y-x$ & $\wt y$ & $\D y / \D x$ \\ \hline\hline
+            0 & 2 & 2 & 3 & $(2 + 2.5)/2$\\ \hline
+            0.5 & 3.125 & 2.625 & 4.438 & 3.031 \\ \hline
+            1 & 4.64 & \cellcolor{black!10} & \cellcolor{black!10} & \cellcolor{black!10}\\\hline
+            \end{tabular}
+        \end{table}
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \der{y}{x} = y - x \implies \e^{-x}\der{y}{x} - \e^{-x} y = \der{}{x} \bp{\e^{-x}y} = -x\e^{-x}\\
+            \implies \e^{-x} y = \int \bp{-x\e^{-x}} \d x = x\e^{-x} + \e^{-x} + C \implies y = x + 1 + C\e^x.
+        \end{gather*}
+        At $x = 0$, $y = 2$, whence \[2 = 1 + C \implies C = 1 \implies y = x + 1 + \e^x.\] Thus, at $x = 1$, \[y = 1 + 1 + \e^1 = 2 + \e.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Initially, a tank is fully filled with 100 litres of pure water. There exists a tap at the top of the tank. This tap supplies brine, containing 1 g of salt per litre, into the tank at a rate of 1 litre per minute. There also exists another tap at the bottom of the tank which allows the mixture to flow out at a constant rate of 2 litres per minute. At time $T$ (in minutes), the amount of salt and the volume of the mixutre in the tank are denoted by $S$ (in grams) and $V$ (in litres) respectively. Both taps are turned on simultaneously at time $T = 0$. THe tap at the bottom of the tank is turned off at time $T = 75$. The mixture in the tank is assumed to be well-stirred and homogenous at all times.
+    \begin{enumerate}
+        \item Show that $\der{S}{T} = \frac{100-T-2S}{100-T}$, $0 < T < 75$.
+        \item By solving the differential equation, show that the amount of salt in the tank after 75 minutes is 18.75 grams.
+    \end{enumerate}
+    At the instance when the tap at the bottom is turned off, a crack is accidentally created at the bottom of the tank. According to Torricelli's law, the mixture flows out from the crack at a rate proportional to the square-root of its volume. It can be assumed that the mixture flow obeys Torricelli's law, regardless of its viscosity. Let the amount of salt and the volume of the mixture in the tank be denoted by $s$ (in grams) and $v$ (in litres) respectively, $t$ minutes after the crack has been accidentally created. It has been observed that the volume of the mixture in the tank stays constant at 36 litres after a long period of time.
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Show that $\der{v}{t} = \frac{6-\sqrt{v}}{6}$. Estimate the time taken for the mixture in the tank to rise to 26 litres after the crack has been created, by using
+        \begin{enumerate}
+            \item Euler's Method with two iterations,
+            \item Simpson's Rule with two strips.
+        \end{enumerate}
+        \item Show that $\der{s}{v} = \frac{6\sqrt{v} - s}{6\sqrt{v} - v}$. Use the improved Euler method with one iteration to estimate the amount of salt in the tank at the instant when the mixture in the tank rises to 26 litres after the crack has been created. Given your answer to 4 decimal places.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The concentration of salt in the tank is given by $\frac{S}{V}$. Let $V_i$ and $V_o$ be the volume of liquid entering and leaving the tank in litres, respectively. Then \[\der{V}{T} = \der{V_i}{T} - \der{V_o}{T} = 1 - 2 = -1 \implies V = 100 - T,\] since $V = 100$ initially. Thus, \[\der{S}{T} = 1 \bp{\der{V_i}{T}} - \frac{S}{V} \bp{\der{V_o}{T}} = 1 - \frac{2S}{100 - T} = \frac{100 - T - 2S}{100 - T}.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{gather*}
+            \der{S}{T} = 1 - \frac{2S}{100-T} \implies \der{S}{T} + \frac{2S}{100-T} = 1 \\
+            \implies \frac1{(100-T)^2} \der{S}{T} + \frac{2S}{(100-T)^3} = \der{}{T} \bp{\frac{S}{(100-T)^2}} = \frac1{(100-T)^2}\\
+            \implies \frac{S}{(100-T)^2} = \int \frac{\d T}{(100-T)^2} = \frac1{100-T} + C \implies S = 100 - T + C(100-T)^2.
+        \end{gather*}
+        When $T = 0$, $S = 0$, whence \[0 = 100 + C \bp{100^2} \implies C = -\frac1{100} \implies S = 100 - T - \frac{(100-T)^2}{100}.\] When $T = 75$, \[S = 100 - 75 - \frac{(100-75)^2}{100} = 18.75.\] Hence, the amount of salt in the tank after 75 minutes is 18.75 grams.
+    \end{ppart}
+    \begin{ppart}
+        Let $v_i$ and $v_o$ be the volume of liquid entering and leaving the tank in litres, respectively. Since the top tap is still open, we have $\der{v_i}{t} = 1$. By Torricelli's law, we also have $\der{v_0}{t} = k\sqrt{v}$. Thus, \[\der{v}{t} =  \der{v_i}{t} - \der{v_o}{t} = 1 - k\sqrt{v}.\] Since the volume of the tank remains constant at 36 litres eventually, we have \[1 - k\sqrt{36} = 0 \implies k = \frac16.\] Thus, \[\der{v}{t} = 1 - \frac{\sqrt{v}}6 = \frac{6-\sqrt{v}}{6}.\]
+
+        Observe that $\der{t}{v} = \frac{6}{6 - \sqrt v}$.
+
+        \begin{psubpart}
+            Let $f(v) = \frac{6}{6 - \sqrt v}$, $v_0 = 25$, $t_0 = 0$ and $\D v = 0.5$. By the Euler method, \[t_1 = t_0 + \D v \, f(v_0) = 3, \qquad t_2 = t_1 + \D v \, f(v_1) = 6.157.\] Hence, when $t \approx 6.16$, the mixture in the tank has risen to 26 litres.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $t = \int \frac{6}{6 - \sqrt v} \d v$. Hence, the desired time is given by $\int_{25}^{26} \frac{6}{6 - \sqrt v} \d v$. By Simpson's rule, \[\int_{25}^{26} \frac{6}{6 - \sqrt v} \d v \approx \frac13 \cdot \frac{26-25}{2} \Big[f(25) + 4f(25.5) + f(26)\Big] = 6.319.\] Hence, when $t \approx 6.32$, the mixture in the tank has risen to 26 litres.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\der{s}{t} = 1 \bp{\der{v_i}{t}} - \frac{s}{v} \bp{\der{v_o}{t}} = 1 - \frac{s}{v} \frac{\sqrt{v}}6 = \frac{6\sqrt v - s}{6\sqrt v}.\] By the chain rule, \[\der{s}{v} = \der{s}{t} \der{t}{v} = \frac{6\sqrt v - s}{6\sqrt v} \cdot \frac{6}{6 - \sqrt v} = \frac{6\sqrt v - s}{6\sqrt v - v}.\] Let $f(s, v) = \frac{6\sqrt v - s}{6\sqrt v - v}$, $v_0 = 25$, $s_0 = 18.75$ and $\D v = 1$. By the improved Euler method,
+        \begin{align*}
+            \wt{s_1} &= s_0 + \D v \, f(s_0, v_0) = 21\\
+            s_1 &= s_0 + \frac12 \D v \Big[f(s_0, v_0) + f(\wt{s_1}, v_1)\Big] = 20.9192 \todp{4}
+        \end{align*}
+        Hence, there is approximately $20.9192$ grams of salt in the tank.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A solution to the differential equation $\der{y}{x} = f(x)$ has $y = y_0$ at $x = x_0$. It is required to estimate the value of $y$ at $x = x_1$ using a numerical method with one step.
+    \begin{enumerate}
+        \item Write down expressions for the value of $y$ at $x = x_1$ obtained by using the Euler method and by using the improved Euler method.
+        \item The graph of $f$ is as below. Copy the graph and use it to illustrate the errors in the two estimates of $y$ obtained by using the methods of part (a). State clearly whether the errors correspond to overestimates or underestimates.
+    \end{enumerate}
+    \begin{center}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2.4,
+                restrict y to domain =0:14,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {1, 2},
+                xticklabels = {$x_0$, $x_1$},
+                ytick = \empty,
+                ymin = 0,
+                xlabel = {$x$},
+                ylabel = {$f(x)$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {e^x};
+    
+                \draw[dotted] (1, 0) -- (1, e);
+                \draw[dotted] (2, 0) -- (2, e^2);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Given that $x_0 = 0$ and $f(x) = a + bx + cx^2$, where $a$, $b$ and $c$ are constants, find the error in using the improved Euler method with a single step of size $h$.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Let $\D x = x_1 - x_0$.
+
+        \textbf{Euler Method.} \[y_1 = y_0 + \D x \, f(x_0)\]
+
+        \textbf{Improved Euler Method.} \[y_1 = y_0 + \frac12 \D x \Big[f(x_0) + f(x_1)\Big]\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2.4,
+                    restrict y to domain =0:14,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1, 2},
+                    xticklabels = {$x_0$, $x_1$},
+                    ytick = \empty,
+                    ymin = 0,
+                    xlabel = {$x$},
+                    ylabel = {$f(x)$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {e^x};
+        
+                    \draw[dotted] (1, 0) -- (1, e);
+                    \draw[dotted] (2, 0) -- (2, e^2);
+
+                    \path[pattern color=plotRed,pattern=north east lines] (1, 0) rectangle (2, e);
+
+                    \path[pattern color=plotBlue,pattern=north west lines] (1, 0) -- (1, e) -- (2, e^2) -- (2, 0);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        By the fundamental theorem of calculus, the area under the graph of $f(x)$ between $x_0$ and $x_1$ is precisely $y_1 - y_0$. That is, \[\int_{x_0}^{x_1} f(x) \d x = y_1 - y_0 = \D y.\] Hence, the better the approximation of the integral, the better the approximation of $\D y$ and thus $y_1$.
+
+        The Euler method gives the approximation $\D y = \D x \, f(x_0)$. This is represented by the area of the red-shaded rectangle with base $\D x$ and height $f(x_0)$.
+
+        The improved Euler method gives the approximation $\D y = \D x \, \frac12 \big[f(x_0) + f(x_1)\big]$. This is represented by the area of the blue-shaded trapezium with base $\D x$ and heights $f(x_0)$ and $f(x_1)$.
+
+        Thus, the improved Euler method gives a better approximation for the integral of $f(x)$ than the Euler method. Thus, the error of the estimate given by the improved Euler method is smaller than that of the Euler method.
+
+        The Euler method underestimates the integral, hence $y_1$ is also underestimated. Similarly, the improved Euler method overestimates the integral, hence $y_1$ is also overestimated.
+    \end{ppart}
+    \begin{ppart}
+        We have $f(x) = a + bx + cx^2$, $x_0 = 0$ and $\D x = h$. Let $y_0 = d$.
+
+        \textbf{Improved Euler Method.} \[y_1 = d + \frac12 h \Big[\big(a\big) + \big( a + bh + ch^3\big)\Big] = d + ah + \frac12 bh^2 + \frac12 ch^3.\]
+
+        \textbf{Actual Value.}
+        \[\der{y}{x} = a + bx + cx^2 \implies y = \int \bp{a + bx + cx^2} \d x = ax + \frac12 bx^2 + \frac13 cx^3 + C.\]
+        When $x = 0$, $y = d$. Hence, $C = d$, thus $y = d + ax + \frac12 bx^2 + \frac13 cx^3$. At $x = h$, \[y_1 = d + ah + \frac12 bh^2 + \frac13 ch^3\]
+        
+        \textbf{Error.} \[\text{Error} = \bp{d + ah + \frac12 bh^2 + \frac13 ch^3} - \bp{d + ah + \frac12 bh^2 + \frac12 ch^3} = \frac16 ch^3.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The differential equation \[\der{y}{x} - y^2 \tan x = 1,\] where $y = 1$ when $x = 1$, is to be solved numerically.
+    \begin{enumerate}
+        \item Carry out two steps of Euler's method with step length 0.1 to estimate the value of $y$ when $x = 1.2$, giving your answer to 4 decimal places.
+        \item The method in part (a) is now replaced by the improved Euler method. The estimate obtained is $2.0156$, given to 4 decimal places. State, with a reason, whether this estimate and the one found in part (a) are likely to be overestimates or underestimates of the actual value of $y$ when $x = 1.2$.
+        \item Explain why it would be inappropriate to continue this process in part (a) to estimate the value of $y$ when $x = 1.6$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $f(x, y) = \derx{y}{x} = 1 + y^2 \tan x$, $x_0 = 1$, $y_0 = 1$, $\D x = 0.1$ and $x_n = x_0 + n \D x$. By the Euler method, \[y_1 = y_0 + \D x \, f(x_0, y_0) = 1.2557408, \qquad y_2 = y_1 + \D x \, f(x_1, y_1) = 1.6655608.\] Hence, $y(1.2) \approx 1.6656 \todp{4}$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that on the interval $x \in I = [1, 1.2]$, we have \[\der{y}{x} = 1 + y^2 \tan x > 0.\] Since $y$ is continuous on $I$, and $y(1) = 1$, we also have $y > 0$ on $I$. Thus, \[\der[2]{y}{x} = 2y \der{y}{x} \tan x + y^2 \sec^2 x > 0,\] whence $y$ is concave upwards. Thus, the estimates are likely to be underestimates.
+    \end{ppart}
+    \begin{ppart}
+        $f(x, y)$ has a vertical asymptote at $x = \pi/2 \in (1.5, 1.6)$. Thus, the Euler method will fail.
+    \end{ppart}
+\end{solution}
