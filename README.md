@@ -1,6 +1,6 @@
 # Double Math
 
-Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documents use the `asdia` style file, which can be downloaded at [asdia0/asdia.sty](https://github.com/asdia0/asdia.sty).
+Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
 
 ## Compiling
 
