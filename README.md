@@ -6,7 +6,7 @@ Solutions to all tutorials and assignments, typewritten in $\LaTeX$. All documen
 
 ### Prerequisites
 
-To compile `DoubleMath.tex`, ensure that you have $\LaTeX$ installed on your local machine. Additionally, download the [`asdia.sty` package](https://github.com/asdia0/asdia.sty). Follow the [installation instructions](https://github.com/asdia0/asdia.sty/blob/main/README.md) provided in the repository to set it up correctly.
+To compile `DoubleMath.tex`, ensure that you have $\LaTeX$ installed on your local machine. Additionally, download the [`asdia.sty` package](https://github.com/asdia0/asdia.sty). Follow the [installation instructions](https://github.com/asdia0/asdia.sty/blob/main/README.md#installation) provided in the repository to set it up correctly.
 
 ### Steps
 
