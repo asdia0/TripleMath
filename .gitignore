@@ -1,6 +1,7 @@
 /.vscode/*
 
-/.meta/PDF
+/figures/*
+*.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
