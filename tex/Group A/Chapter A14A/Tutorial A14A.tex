@@ -1,6 +1,174 @@
 \section{Tutorial A14A}
 
 \begin{problem}
+    An unbiased die is in the form of a regular tetrahedron and has its faces numbered 1, 2, 3, 4. When the die is thrown on to a horizontal table, the number on the fact in contect with the table is noted. Two such dice are thrown and the score $X$ is found by multiplying these numbers together. Obtain the probability distribution of $X$. Find the values of
+    \begin{enumerate}
+        \item $\P{X > 8}$,
+        \item $\E{X}$,
+        \item $\Var{X}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    The following table displays all possible outcomes.
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ccccc}
+        & 1 & 2 & 3  & 4  \\ \cline{2-5} 
+        \multicolumn{1}{c|}{1} & 1 & 2 & 3  & 4  \\
+        \multicolumn{1}{c|}{2} & 2 & 4 & 6  & 8  \\
+        \multicolumn{1}{c|}{3} & 3 & 6 & 9  & 12 \\
+        \multicolumn{1}{c|}{4} & 4 & 8 & 12 & 16
+        \end{tabular}
+    \end{table}
+    Hence, the probability distribution is
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 1 & 2 & 3 & 4 & 6 & 8 & 9 & 12 & 16 \\ \hline
+        &&&&&&&&&\\[-1em]
+        $\P{X = x}$ & $\frac1{16}$ & $\frac2{16}$ & $\frac2{16}$ & $\frac3{16}$ & $\frac2{16}$ & $\frac2{16}$ & $\frac1{16}$ & $\frac2{16}$ & $\frac1{16}$ \\[0.2em] \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{ppart}
+        \[\P{X > 8} = \P{X = 9} + \P{X = 12} + \P{X = 16} = \frac1{16} + \frac2{16} + \frac1{16} = \frac14.\]
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $\E{X} = 6.25$.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $\Var{X} = (4.14578)^2 = 17.2$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A computer can give independent observations of a random variable $X$ with probability distribution given by $\P{X = 0} = \frac34$ and $\P{X = 2} = \frac14$. It is programmed to output a value for the random variable $Y$ defined by $Y = X_1 + X_2$, where $X_1$ and $X_2$ are two observations of $X$.
+
+    Tabulate the probability distribution of $Y$ and show that $\E{Y} = 1$.
+
+    The random variable $T$ is defined by $T = Y^2$. Find $\E{T}$ and show that $\Var{T} = \frac{63}{4}$.
+\end{problem}
+\begin{solution}
+    Quite clearly, we have \[\P{Y = 0} = \bp{\frac34}^2 = \frac9{16}, \quad \P{Y = 2} = 2\bp{\frac34}\bp{\frac14} = \frac38, \quad \P{Y = 4} = \bp{\frac14}^2 = \frac1{16}.\] Thus, the probability distribution of $Y$ is given by
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        $y$ & 0 & 2 & 4  \\ \hline
+        &&&\\[-1em]
+        $\P{Y = y}$ & $\frac9{16}$ & $\frac38$ & $\frac1{16}$ \\[0.2em] \hline
+        \end{tabular}
+    \end{table}
+    Thus, \[\E{Y} = 0\bp{\frac9{16}} + 2\bp{\frac38} + 4\bp{\frac1{16}} = 1.\]
+
+    Note that $\E{T} = \E{Y^2}$ and $\E{T^2} = \E{Y^4}$. Hence, \[\E{T} = 0^2\bp{\frac9{16}} + 2^2\bp{\frac38} + 4^2\bp{\frac1{16}} = \frac52\] and \[\E{T^2} = 0^4\bp{\frac9{16}} + 2^4\bp{\frac38} + 4^4\bp{\frac1{16}} = 22.\] Thus, \[\Var{T} = \E{T^2} - \E{T}^2 = 22 - \bp{\frac52}^2 = \frac{63}4.\]
+\end{solution}
+
+\begin{problem}
+    The discrete random variable $X$ takes values $-1$, 0, 1 with probabilities $\frac14$, $\frac12$, $\frac14$ respectively. The variable $\bar{X}$ is the mean of a random sample of 3 values of $X$ (i.e. $X_1$, $X_2$ and $X_3$ are independent random variables).
+
+    Tabulate the probability distribution of $\bar{X}$, and use your values to calculate $\Var{\bar{X}}$. Hence, verify that $\Var{\bar{X}} = \frac13 \Var{X}$ in this case.
+\end{problem}
+\begin{solution}
+    By symmetry, we have $\P{\bar{X} = -n} = \P{\bar{X} = n}$. Now, notice that the only way to get a total score of 3 is to have $X_1 = X_2 = X_3 = 1$. Thus, \[\P{\bar{X} = 1} = \P{\bar{X} = -1} = \bp{\frac14}^3 = \frac1{64}.\] Similarly, the only way to get a total score of 2 is to have two 1's and one 0. Thus, \[\P{\bar{X} = \frac23} = \P{\bar{X} = -\frac23} = \binom31 \bp{\frac14}^2 \bp{\frac12} = \frac3{32}.\] Now note that there are two ways to achieve a total score of 1: have two 1's and one $-1$, or have two 0's and one 1. This gives \[\P{\bar{X} = \frac13} = \P{\bar{X} = -\frac13} = \binom31 \bp{\frac14}^2 \bp{\frac14} + \binom31 \bp{\frac12}^2 \bp{\frac14} = \frac{15}{64}.\] Lastly, by the complement principle, we have \[\P{\bar{X} = 0} = 1 - 2\bp{\frac1{64} + \frac3{32} + \frac{15}{64}} = \frac5{16}.\] Hence, the probability distribution of $X$ is given by
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        &&&&&&&\\[-1em]
+        $\bar{x}$ & $-1$ & $-\frac23$ & $-\frac13$ & 0 & $\frac13$ & $\frac23$ & $1$ \\[0.2em] \hline
+        &&&&&&&\\[-1em]
+        $\P{\bar{X} = \bar{x}}$ & $\frac1{64}$ & $\frac3{32}$ & $\frac{15}{64}$ & $\frac5{16}$ & $\frac{15}{64}$ & $\frac{3}{32}$ & $\frac1{64}$ \\[0.2em] \hline
+        \end{tabular}
+    \end{table}
+    
+    We now calculate $\Var{\bar{X}}$. Observe that the means of $X$ and $\bar{X}$ are 0 by symmetry. Hence, \[\Var{\bar{X}} = \E{\bar{X}^2} = 2\bs{1^2\bp{\frac1{64}} + \bp{\frac23}^2 \bp{\frac3{32}} + \bp{\frac13}^2\bp{\frac{15}{64}}} = \frac16.\] Now, note that \[\Var{X} = \E{X^2} = 2\bs{1^2 \bp{\frac14}} = \frac12.\] Thus, \[\Var{\bar{X}} = \frac13 \Var{X}.\]
+\end{solution}
+
+\begin{problem}
+    The probability of obtaining a head when a particular type of coin is tossed is $p$. The random variable $X$ is the number of heads obtained when three such coins are tossed.
+    \begin{enumerate}
+        \item Draw up a table showing the probability distribution of $X$.
+        \item Prove that $\E{\frac13 X} = p$.
+        \item Given that $p = \frac13$, and denoting by $E$ the event that $X > 1$, find the probability that in 100 throws of the three coins, $E$ will not occur more than 30 times.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that \[\P{X = n} = \binom{3}{n} p^n (1-p)^n.\] Hence, the probability distribution of $X$ is given by
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            $x$ & 0 & 1 & 2 & 3  \\ \hline
+            &&&&\\[-1em]
+            $\P{X = x}$ & $(1-p)^3$ & $3p(1-p)^2$ & $3p^2(1-p)$ & $p^3$ \\[0.2em] \hline
+            \end{tabular}
+        \end{table}
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\E{X} = \sum_{n = 0}^3 n \binom{3}{n} p^n (1-p)^{3-n}.\] Differentiating with respect to $p$, we get \[0 = \sum_{n = 0}^3 \binom{3}{n} \bs{np^{n-1}(1-p)^{3-n} - (3-n) p^n (1-p)^{3-n-1}}.\] Rearranging, we have \[\bp{\frac1{p} + \frac1{1-p}} \underbrace{\sum_{n = 0} \binom{3}{n} n p^n (1-p)^{3-n}}_{\E{X}} = \frac3{1-p} \underbrace{\sum_{n = 0} \binom{3}{n} p^n (1-p)^{3-n}}_{1}.\] Thus, \[\E{X} = \frac{\frac3{1-p}}{\frac1p + \frac1{1-p}} = 3p \implies \E{\frac13 X} = \frac13 \E{X} = \frac13 \bp{3p} = p.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\P{E} = \P{X > 1} = \P{X = 2} + \P{X = 3} = 3\bp{\frac13}^2 \bp{1 - \frac13} + \bp{\frac13}^3 = \frac7{27}.\] Now, observe that \[\P{\# E = n} = \binom{100}{n} \bp{\frac7{27}}^n \bp{1 - \frac7{27}}^{100 -n}.\] Thus, \[\P{\# E \leq 30} = \sum_{n = 0}^{30} \binom{100}{n} \bp{\frac7{27}}^n \bp{1 - \frac7{27}}^{100 -n} = 0.851.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{center}
+        \begin{tikzpicture}
+            \coordinate (O1) at (0, 0);
+            \coordinate (O2) at (3, 0);
+
+            \draw (O1) circle[radius=1];
+            \draw (O2) circle[radius=1];
+
+            \draw (O1) -- (-0.707, 0.707);
+            \draw (O1) -- (-0.707, -0.707);
+            \draw (O1) -- (1, 0);
+
+            \draw (2, 0) -- (4, 0);
+            \draw (O2) -- (3, -1);
+
+            \node at (3, 0.4) {1};
+            \node at (2.6, -0.4) {2};
+            \node at (3.4, -0.4) {3};
+
+            \node at (-0.5, 0) {2};
+            \node at (0.3, 0.4) {1};
+            \node at (0.3, -0.4) {3};
+
+            \draw[-Latex, very thick] (0, -0.35) -- (0, 0.35);
+
+            \draw[-Latex, very thick] (3-0.236, -0.236) -- (3.236, 0.236);
+        \end{tikzpicture}
+    \end{center}
+
+    A circular card is divided into 3 sectors 1, 2, 3 and having angles $135\deg$, $90\deg$ and $135\deg$ respectively. On a second circular card, sectors scoring 1, 2, 3 have angles $180\deg$, $90\deg$ and $90\deg$ respectively (see diagram). Each card has a pointer pivoted at its centre. After being set in motion, the pointers come to rest independently in random positions. Find the probability that
+    \begin{enumerate}
+        \item the score on each card is 1,
+        \item the score on at least one of the cards is 3.
+    \end{enumerate}
+
+    The random variable $X$ is the larger of the two scores if they are different, and their common value if they are the same. Show that $\P{X = 2} = \frac{9}{32}$.
+
+    Show that $\E{X} = \frac{75}{32}$ and find $\Var{X}$.
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Clearly, \[\P{\text{both scores are 1}} = \frac{135}{360} \cdot \frac{180}{360} = \frac3{16}.\]
+    \end{ppart}
+    \begin{ppart}
+        Likewise, \[\P{\text{one score is 3}} = \frac{135}{360} + \frac{90}{360} - \frac{135}{360} \cdot \frac{90}{360} = \frac{17}{32}.\]
+    \end{ppart}
+
+    Observe that the event $X = 1$ is equivalent to both scores being 1, whence we have $\P{X = 1} = \frac3{16}$ from part (a). From part (b), we also have $\P{X = 3} = \frac{17}{32}$. Thus, \[\P{X = 2} = 1 - \P{X = 1} - \P{X = 3} = 1 - \frac3{16} - \frac{17}{32} = \frac{9}{32}.\]
+
+    Note that \[\E{X} = 1\bp{\frac3{16}} + 2\bp{\frac9{32}} + 3\bp{\frac{17}{32}} = \frac{75}{32}\] and \[\E{X^2} = 1^2\bp{\frac3{16}} + 2^2\bp{\frac9{32}} + 3^2\bp{\frac{17}{32}} = \frac{195}{32}.\] Thus, \[\Var{X} = \E{X^2} - \E{X}^2 = \frac{195}{32} - \bp{\frac{75}{32}}^2 = \frac{615}{1024}.\]
+\end{solution}
+
+\begin{problem}
     Alfred and Bertie play a game, each starting with cash amounting to \$100. Two dice are thrown. If the total score if 5 or more, then Alfred pays \$$x$, where $0 < x \leq 8$, to Bertie. If the total score if 4 or less, then Bertie pays \$$(x+8)$ to Alfred.
 
     \begin{enumerate}
@@ -12,15 +180,61 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[\P{\text{score}<5} = \frac{3 + 2 + 1}{6^2} = \frac16 \implies \P{\text{score} \geq 5} = 1 - \frac16 = \frac56.\] Let \$$a_n$ be the expectation of Alfred's cash after $n$ games. Suppose Alfred and Bertie play one more game (i.e. $n + 1$ total games). Then \[a_{n+1} = \frac56 (a_n - x) + \frac16(a_n + x + 8) = a_n + \frac23 \bp{2-x}.\] $a_n$ is in AP with common difference $\frac23 \bp{2-x}$ and is thus given by \[a_n = a_0 + n\bs{\frac23 \bp{2-x}} = 100 + \frac{2n}{3}(2-x).\] Hence, the expectation of Alfred's cash after the first game is \[a_1 = 100 + \frac{2 \cdot 1}3(2 - x) = \frac13(304 - 2x).\]
+        Note that \[\P{\text{score}<5} = \frac{3 + 2 + 1}{6^2} = \frac16 \implies \P{\text{score} \geq 5} = 1 - \frac16 = \frac56.\] Let \$$a_n$ be the expectation of Alfred's cash after $n$ games. Suppose Alfred and Bertie play one more game (i.e. $n + 1$ total games). Then \[a_{n+1} = \frac56 (a_n - x) + \frac16(a_n + x + 8) = a_n + \frac23 \bp{2-x}.\] $a_n$ is in AP with common difference $\frac23 \bp{2-x}$ and is thus given by \[a_n = a_0 + n\bs{\frac23 \bp{2-x}} = 100 + \frac{2n}{3}(2-x).\] Hence, the expectation of Alfred's cash after the first game is \[a_1 = 100 + \frac{2(1)}3(2 - x) = \frac13(304 - 2x).\]
     \end{ppart}
     \begin{ppart}
-        The expectation of Alfred's cash after six games is \[a_6 = 100 + \frac{2 \cdot 6}{3}(2 - x) = 108 - 4x.\]
+        The expectation of Alfred's cash after six games is \[a_6 = 100 + \frac{2(6)}{3}(2 - x) = 108 - 4x.\]
     \end{ppart}
     \begin{ppart}
         For the game to be fair, $a_0 = a_1 = a_2 = \cdots$, i.e. the common difference is 0. Hence, $x = 2$.
     \end{ppart}
     \begin{ppart}
         Let the random variable $X$ be Alfred's cash after one game. Since the payouts are unaffected by $a_0$, we take $a_0 = 0$. When $x = 3$, $\E(X) = -\frac23$. Hence, \[\Var{X} = \frac56 \bp{3 - \frac23}^2 + \frac16 \bp{3 + 8 + \frac23}^2 = \frac{245}{9}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A random variable $X$ has the probability distribution given in the following table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$ & 2 & 3 & 4 & 5 \\ \hline
+        &&&&\\[-1em]
+        $\P{X = x}$ & $p$ & $\frac2{10}$ & $\frac3{10}$ & $q$ \\[0.2em] \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Given that $\E{X} = 4$, find $p$ and $q$.
+        \item Show that $\Var{X} = 1$.
+        \item Find $\E{\abs{X - 4}}$.
+        \item Ten independent observations of $X$ are taken. Find the probability that the value 3 is obtained at most three times.
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{ppart}
+        We have \[\E{X} = 2p + 3\bp{\frac2{10}} + 4\bp{\frac3{10}} + 5q = 4 \implies 2p + 5q = 2.2.\] Additionally, we know that the probabilities must sum to 1: \[p + \frac2{10} + \frac3{10} + q = 1 \implies p + q = 0.5.\] We hence get a system of two linear equations. Solving, we have $p = 1/10$ and $q = 2/5$.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\E{X^2} = 2^2 \bp{\frac1{10}} + 3^2 \bp{\frac2{10}} + 4^2 \bp{\frac3{10}} + 5^2 \bp{\frac25} = 17.\] Thus, \[\Var{X} = \E{X^2} - \E{X}^2 = 17 - 4^2 = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|}
+            \hline
+            $x$ & 0 & 1 & 2 \\ \hline
+            &&&\\[-1em]
+            $\P{\abs{X - 4} = x}$ & $\frac3{10}$ & $\frac25 + \frac2{10}$ & $\frac1{10}$ \\[0.2em] \hline
+            \end{tabular}
+        \end{table}
+
+        Hence, \[\E{\abs{X - 4}} = 0\bp{\frac3{10}} + 1\bp{\frac25 + \frac2{10}} + 2\bp{\frac2{10}} = 0.8.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that the probability that we get exactly $n$ 3's is given by \[\P{\text{$n$ 3's}} = \binom{10}{n} \bp{\frac2{10}}^n \bp{1 - \frac2{10}}^{10-n}.\] Hence, the required probability is \[\text{Required probability} = \sum_{n = 0}^3 \binom{10}{n} \bp{\frac2{10}}^n \bp{1 - \frac2{10}}^{10-n} = 0.879.\]
     \end{ppart}
 \end{solution}
