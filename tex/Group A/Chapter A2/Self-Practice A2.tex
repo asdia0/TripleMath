@@ -1,0 +1,52 @@
+\section{Self-Practice A2}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Sketch on the same diagram the graphs of $y = x - 1$ and $y = k \e^{-3x}$, where $-1 < k < 0$. State the number of real roots of the equation $k \e^{-3x} - (x-1) = 0$.
+
+        For the case $k = 1$, sketch appropriate graphs to show that the equation $\e^{-3x} - (x-1) = 0$ has exactly one real root. Denoting this real root by $\a$, find the integer $n$ such that the interval $[n-1, n]$ contains $\a$. Use linear interpolation, once only, on this interval to find an estimate for $\a$, giving your answer correct to 2 decimal places.
+        \item Let $f(x) = \e^{-3x} - (x - 1)$. By considering the signs of $f'(x)$ and $f''(x)$ for all real values of $x$, explain with the aid of a simple diagram whether the value of $\a$ obtained in (a) is an over-estimate or an under-estimate.
+        \item Taking the value of $\a$ obtained in (a) as the initial value, apply the Newton-Raphson method to find the value of $\a$ correct to 3 decimal places.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The equation $f(x) = 0$ where $f(x) = \frac1x - 2 + \ln x$ has exactly two real roots $\a$ and $\b$.
+
+    Verify that the larger root $\b$ lies between 6 and 7 and use one application of linear interpolation on the interval $[6, 7]$ to estimate this root, giving your answer correct to 2 decimal places.
+
+    Sketch the graph of $y = f(x)$, stating clearly the coordiantes of the turning point. Using the graph of $y = f(x)$, deduce the integer $N$ such that the interval $[N - 1, N]$ contains the smaller root $\a$.
+
+    An attempt to calculate the smaller root $\a$ is made. Explain why neither $x = 0$ nor $x = 1$ is a suitable initial value for the Newton-Raphson method in this case.
+
+    Taking $x = 0.3$ as the initial value, use the Newton-Raphson method to find a second approximation to the root $\a$, giving your answer correct to three decimal places.
+\end{problem}
+
+\begin{problem}
+    Sketch the graph of $y = (1 + x) \e^{-x}$, indicating clearly the turning points and asymptotes (if any). State the transformation by which the graph of $y = x\e^{1-x}$ may be obtained from the graph of $y = (1 + x) \e^{-x}$.
+
+    By means of a suitable sketch, deduce that $x\bp{1 + \e^{1-x}} = 1$ has exactly one real root $\a$. Show that $\a$ lies between 0.3 and 0.4.
+
+    Use linear interpolation once to obtain an approximation value, $c$, for $\a$, giving your answer correct to 4 decimal places.
+
+    Using the Newton-Raphson method once with $c$ as the first approximation, obtain a second approximation for $\a$ correct to 3 significant figures.
+\end{problem}
+
+\begin{problem}
+    \textbf{In this question, give all your final answers correct to 3 decimal places.}
+
+    \begin{enumerate}
+        \item Find, stating your reason, the value of the positive integer $n$ such that \[n - 1 \leq \sqrt[3]{100} \leq n.\] Hence, use linear interpolation once only, to find an approximation, $\a$, to the root of the equation $x^3 = 100$. Explain, with the aid of a suitable diagram, whether $\a$ is an overestimate or underestimate.
+        \item Using the Newton-Raphson method with $\a$ as a first approximation, find $\sqrt[3]{100}$. Explain, using the same diagram as in (a), whether this method yields a series of overestimates or underestimates.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    THe rotos of the quadratic equation $x^2 - 7x + 1 = 0$ are to be calculated by the use of the recurrence relation $x_{r + 1} = \frac1{7 - x_r}$. Sketch the graphs of $y = x$ and $y = \frac1{7-x}$ and hence show
+    \begin{enumerate}
+        \item that the equation has 2 roots, which lie between 0 and 7.
+        \item if $x_1$ has a value lying between these roots, then the recurrence relation will always yield an approximation to the smaller root.
+    \end{enumerate}
+
+    Taking $x_1 = 1$, find the smaller root correct to 3 decimal places. Obtain the value of the larger root to the same degree of accuracy.
+\end{problem}

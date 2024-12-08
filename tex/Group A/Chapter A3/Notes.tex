@@ -1,0 +1,69 @@
+\section{Notes}
+
+\subsection{Sequences}
+
+\begin{definition}
+    A \vocab{sequence} or \vocab{progression} is a set of number $u_1, u_2, u_3, \dots, u_n, \dots$ arranged in a defined order according to a certain rule. In general, $u_n$ is called the \vocab{$n$th term}.
+\end{definition}
+
+\begin{definition}
+    A sequence is said to be \vocab{finite} if it terminates; otherwise it is an \vocab{infinite sequence}.
+\end{definition}
+
+\begin{definition}
+    If an infinite sequence $u_n$ approaches a unique value $l$ as $n \to \infty$, then the sequence is said to \vocab{converge} to $l$. We say that $l$ is the \vocab{limit} of $u_n$. A sequence that does not converge is said to \vocab{diverge}.
+\end{definition}
+
+When describing sequences, one should identifiy
+\begin{itemize}
+    \item Trends (increasing/decreasing, constant, alternating)
+    \item Long-run behaviour of an infinite sequence (convergent or divergent)
+\end{itemize}
+
+\subsection{Series}
+
+\begin{definition}
+    A \vocab{series} is the sum of the terms of a sequence $u_n$. The sum to $n$ terms is denoted by $S_n$, i.e. \[S_n = u_1 + u_2 + \dots + u_{n-1} + u_n.\]
+\end{definition}
+
+Similar to sequences, a series can be finite or infinite. If a series is infinite, it can further be categorized as convergent or divergent.
+
+\subsection{Arithmetic Progression}
+
+\begin{definition}
+    An \vocab{arithmetic progression} (AP) is a sequence $u_n$ in which each term differs from the preceding term by a constant called the \vocab{common difference}. The first term of an AP is usually denoted by $a$ and the common difference by $d$. Mathematically, \[u_n = a + (n-1)d.\]
+\end{definition}
+
+\begin{definition}
+    An \vocab{arithmetic series} is obtained by adding the terms of an arithmetic progression.
+\end{definition}
+
+\begin{theorem}
+    The $n$th term $S_n$ of an arithmetic series is given by \[S_n = \frac{n(a + l)}{2},\] where $l$ is the last term of the AP, i.e. \[l = u_n = a + (n-1) d.\]
+\end{theorem}
+\begin{proof}
+    Note that for all integers $k \in [1, n]$, \[u_k + u_{n - k + 1} = \bs{a + (k-1)d} + \bs{a + (n-k)d} = a + \bs{a + (n-1)d} = a + l.\] Hence, by pairing the $k$th term with the $(n-k+1)$th term, we get \[2S_n = (u_1 + u_n) + (u_2 + u_{n-1}) + \dots + (u_{n-1} + u_2) + (u_n + u_1) = n\bp{a + l} \implies S_n = \frac{n(a + l)}{2}.\]
+\end{proof}
+
+\subsection{Geometric Progression}
+
+\begin{definition}
+    A \vocab{geometric progression} (GP) is a sequence $u_n$ in which each term is obtained form the preceding one by multiplying a non-zero constant, called the \vocab{common ratio}. The first term of a GP is usually denoted by $a$ and the common ratio by $r$. Mathematically, \[u_n = ar^{n-1}.\]
+\end{definition}
+
+\begin{remark}
+    In the case where $r = 1$, the geometric progression becomes an arithmetic progression.
+\end{remark}
+
+\begin{definition}
+    A \vocab{geometric series} is the sum of the terms of a geometric progression.
+\end{definition}
+
+\begin{theorem}
+    The $n$th term $S_n$ of a geometric series is given by \[S_n = \frac{a(1 - r^n)}{1 - r},\] where $r \neq 1$. If the series is infinite, the sum to infinity $S_\infty$ exists only if $\abs{r} < 1$ and is given by \[S_\infty = \frac{a}{1 - r}.\]
+\end{theorem}
+\begin{proof}
+    By the definition of a series, we have \[S_n = a + ar + \dots + ar^{n-2} + ar^{n-1}. \tag{1}\] Multiplying both sides by $r$ yields \[r S_n = ar + ar^2 + \dots + ar^{n-1} + ar^{n}. \tag{2}\] Subtracting (2) from (1), we have \[(1-r)S_n = a - ar^{n} \implies S_n = \frac{a(1 - r^{n})}{1 - r}.\]
+    
+    Suppose $\abs{r} < 1$. In the limit as $n \to \infty$, we have $r^n \to 0$. Hence \[S_\infty = \frac{a(1 - 0)}{1 - r} = \frac{a}{1-r}.\]
+\end{proof}
