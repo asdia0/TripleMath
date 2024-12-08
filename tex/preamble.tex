@@ -36,7 +36,7 @@
   \setbox\sepbox=\vbox{\begin{center}$\ast$ $\ast$ $\ast$ $\ast$ $\ast$\end{center}}%
   \cleaders\copy\sepbox\vskip\ht\sepbox}
 
-\newcommand*{\problem}{\ifnum\value{problemnum}>0\separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum.}}}
+\NewDocumentCommand{\problem}{o}{\ifnum\value{problemnum}>0\separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum\IfNoValueF{#1}{$^\ast$}.}}}
 \newcommand*{\solution}{\medbreak\noindent{\large\sffamily\bfseries{Solution.}}}
 \newcommand*{\ppart}{\stepcounter{partnum}\smallbreak\noindent{\sffamily\bfseries{Part (\thepartnum).}}}
 \newcommand*{\psubpart}{\stepcounter{subpartnum}\smallbreak\noindent{\sffamily\bfseries\small{Part (\thepartnum)(\thesubpartnum).}}}
@@ -45,10 +45,90 @@
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumii}{(\roman{enumii}}
 
-\newcommand*{\boxt}[1]{
-\begin{center}
-	\fbox{\begin{varwidth}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
-		#1
-	\end{varwidth}}
-\end{center}
+% environment boxes
+
+\mdfdefinestyle{mdbluebox}{%
+roundcorner=10pt,
+linewidth=1pt,
+skipabove=12pt,
+innerbottommargin=9pt,
+skipbelow=2pt,
+linecolor=Periwinkle,
+nobreak=true,
+backgroundcolor=TealBlue!5,
 }
+\declaretheoremstyle[
+headfont=\sffamily\bfseries\color{MidnightBlue},
+mdframed={style=mdbluebox},
+headpunct={.\\[3pt]},
+postheadspace={0pt}
+]{thmbluebox}
+
+\let\theorem\relax
+\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem}
+\declaretheorem[style=thmbluebox,name=Fact,numbered=no]{fact}
+
+\mdfdefinestyle{mdgreenbox}{%
+roundcorner=10pt,
+linewidth=1pt,
+skipabove=12pt,
+innerbottommargin=9pt,
+skipbelow=2pt,
+linecolor=ForestGreen,
+nobreak=true,
+backgroundcolor=ForestGreen!5,
+}
+\declaretheoremstyle[
+headfont=\sffamily\bfseries\color{ForestGreen!70!black},
+mdframed={style=mdgreenbox},
+headpunct={.\\[3pt]},
+postheadspace={0pt}
+]{thmgreenbox}
+
+\let\definition\relax
+\declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition}
+
+
+\mdfdefinestyle{mdblueboxB}{%
+skipabove=8pt,
+skipbelow=0pt,
+linewidth=2pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=Periwinkle,
+backgroundcolor=TealBlue!5,
+}
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{MidnightBlue},
+bodyfont=\normalfont,
+spaceabove=2pt,
+spacebelow=1pt,
+mdframed={style=mdblueboxB},
+headpunct={.},
+]{thmblueboxB}
+
+\declaretheorem[style=thmblueboxB,name=Claim,numbered=no]{claim}
+
+\mdfdefinestyle{mdredbox}{%
+skipabove=8pt,
+skipbelow=0pt,
+linewidth=2pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=RawSienna,
+backgroundcolor=Salmon!5,
+}
+\declaretheoremstyle[
+headfont=\bfseries\sffamily\color{RawSienna},
+bodyfont=\normalfont,
+spaceabove=2pt,
+spacebelow=1pt,
+mdframed={style=mdredbox},
+headpunct={.},
+]{thmredbox}
+
+\declaretheorem[style=thmredbox,name=Example,numbered=no]{example}

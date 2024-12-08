@@ -1,0 +1,70 @@
+\section{Self-Practice A1}
+
+\begin{problem}
+    On joining ABC International School, each of the 200 students is placed in exactly one of the four performing arts groups: Choir, Chinese Orchestra, Concert Band and Dance. The following table shows some information about each of the performing arts groups:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabularx}{\textwidth}{|>{\centering}X|c|c|c|c|}
+        \hline
+        \textbf{Performing Arts Group} & \textbf{Choir} & \textbf{Chinese Orchestra} & \textbf{Concert Band} & \textbf{Dance} \\ \hline
+        Membership Fee (per student per month) & \$15 & \$20 & \$20 & \$18 \\ \hline
+        Instructor Fee (per student per month) & \$50 & \$60 & \$75 & \$40 \\ \hline
+        Costume Fee (one-time payment per student) & \$45 & ? & \$40 & \$60 \\ \hline
+        No. of Training Hours & 5 & 6 & 8 & 7 \\ \hline
+        \end{tabularx}
+    \end{table}
+
+    In a typical month, the school collects a total of \$3,721 for membershipo fee from the students, and pays the instructors a total sum of \$11,830 (assuming that this sum of money is fully paid by the students). As for the training in a typical week, students from CHinese Orchestra and Concert Band spend in total 431 hours more than their peers in Choir and Dance. Find the enrolment in each of the performing arts groups.
+
+    Hence, find the costume fee paid by each student from Chinese Orchestra if a vendor charges a total of \$9,440 for all the costumes for the four performing arts groups.
+\end{problem}
+\begin{solution}
+    Let $a$, $b$, $c$, $d$ be the number of students in choir, chinese orchestra, concert band and dance respectively. From the given information, we have the following equations: \[\systeme{a+b+c+d=200,15a + 20b + 20c + 18d = 3721,50a+60b+75c+40d=11830,-5a+6b+8c-7d=431}\] Using G.C., we obtain the unique solution \[a = 43, \quad b = 65, \quad c = 60, \quad d = 32.\] Let the Chinese Orchestra's custom fee (per student) be $x$. From the given information, we have the following equation: \[45a + xb + 40c + 60d = 9440.\] Hence, \[x = \frac{9440 - 45a - 40c - 60d}{b} = \frac{9440 - 45(43) - 40(60) - 60(32)}{65} = 49.\] Thus, the costume fee paid by each student from Chinese Orchestra is \$49.
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Solve the inequality $(x + 2)^2 \bp{x^2 + 2x - 8} \geq 0$.
+\end{problem}
+\begin{solution}
+    Since $(x+2)^2 \geq 0$, we can remove it from the inequality, keeping in mind that $x = -2$ is a solution. We are hence left with \[x^2 + 2x - 8 = (x+4)(x-2) \geq 0.\] Since this quadratic is concave up, we clearly have $x \leq -4$ or $x \geq 2$. Altogether, we have \[x \leq -4 \lor x = -2 \lor x \geq 2.\]
+\end{solution}
+
+\begin{problem}
+    By using a graphical method, solve the inequality $\abs{x^2 - x - 2} \geq \frac{x-1}{x+2}$.
+\end{problem}
+
+\begin{problem}
+    Show that $x^2 + 2x + 3$ is always positive for all real values of $x$. Hence, solve the inequality $\frac{x^2 + 2x + 3}{3 + 2x - x^2} \leq 0$. Deduce the solution set of the inequality $\frac{x^2 + 2\abs{x} + 3}{3 + 2\abs{x} - x^2} \leq 0$.
+\end{problem}
+
+\begin{problem}
+    Without use of a graphing calculator, solve the inequality $\frac{2x^2 - 7x + 6}{x^2 - x - 2} \geq 1$. Deduce the range of values of $x$ such that
+    \begin{enumerate}
+        \item $\frac{2(\ln x)^2 - 7\ln x + 6}{(\ln x)^2 - \ln x - 2} > 1$
+        \item $\frac{2 - 7x + 6x^2}{1 - x - 2x^2} \geq 1$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    It is given that $y = \frac{x^2 + x + 1}{x - 1}$, $x \in \RR$, $x \neq 1$. Without using a calculator, find the set of values that $y$ can take.
+\end{problem}
+\begin{solution}
+    Clearing denominators, we have \[y(x-1) = x^2 + x + 1 \implies x^2 + (1-y)x + (1+y) = 0.\] Since we are intereseted in the set of values that $y$ can take, we want this quadratic to have roots. Hence, the discriminant $\D$ is non-negative: \[\D = (1-y)^2 - 4(1 + y) = y^2 - 6y - 3 \geq 0.\] Completing the square, \[(y-3)^2 \geq 12 \implies \abs{y - 3} \geq \sqrt{12} = 2\sqrt3.\] Hence, \[y \leq 3 - 2\sqrt3 \lor y \geq 3 + 2\sqrt3,\] whence the solution set is \[\bc{y \in \RR: y \leq 3 - 2\sqrt3 \lor y \geq 3 + 2\sqrt3}.\]
+\end{solution}
+
+\begin{problem}[C]
+    Solve for $x$, in terms of $a$, the inequality $\abs{x^2 - 3ax + 2a^2} < \abs{x^2 + 3ax - a^2}$, where $x \in \RR$, $a \neq 0$.
+\end{problem}
+
+\begin{problem}[C]
+    Find constants $a$, $b$, $c$ and $d$ such that $1 + 2^3 + 3^3 + \dots + n^3 = an^4 + bn^3 + cn^2 + dn$.
+\end{problem}
+
+\begin{problem}[C]
+    \begin{enumerate}
+        \item By means of a sketch, or otherwise, state the range of values of $a$ for which the equation $\abs{x + 2} = ax + 4$ has two distinct real roots.
+        \item Solve the inequality $\abs{x + 2} < ax + 4$.
+    \end{enumerate}
+\end{problem}
