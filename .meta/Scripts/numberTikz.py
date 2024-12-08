@@ -1,5 +1,7 @@
 import re
 import os
+from pathlib import Path
+import glob
 
 counter = 1
 
@@ -41,17 +43,6 @@ def insert_tikzsetnextfilename(file_path):
 
     print(f"Processed {file_path}")
 
-def process_latex_files(directory):
-    # Iterate through all LaTeX files in the given directory
-    for filename in os.listdir(directory):
-        if filename.endswith('.tex'):  # Process only .tex files
-            file_path = os.path.join(directory, filename)
-            insert_tikzsetnextfilename(file_path)
-
-# Specify the directory where your LaTeX files are located
-#latex_directory = 'path/to/your/latex/files'
-
-# Process all LaTeX files in the specified directory
-#process_latex_files(latex_directory)
-
-insert_tikzsetnextfilename("C:\\Users\\Eytan Chong\\OneDrive\\Documents\\DoubleMath\\tex\\Group A\\Chapter A1\\Tutorial A1 copy.tex")
+for path in Path(os.getcwd() + "\\tex").rglob('*'):  # iterate over all
+    if path.suffix.lower() == ".tex":  # check if the path pattern matches
+        insert_tikzsetnextfilename(str(path))

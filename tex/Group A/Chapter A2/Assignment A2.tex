@@ -5,7 +5,7 @@
 
     Use linear interpolation, once only, on the interval $[-1.5, 1]$ to find an approximation to the negative root of the equation $x + 4\cos x = 0$ correct to 2 decimal places.
 
-    \begin{center}
+    \begin{center}\tikzsetnextfilename{106}
         \begin{tikzpicture}[trim axis left, trim axis right]
             \begin{axis}[
                 axis y line=middle,
@@ -38,7 +38,7 @@
     Use the Newton-Raphson method to find $\a$ correct to 2 significant figures. You should demonstrate that your answer has the required accuracy.
 \end{problem}
 \begin{solution}
-    \begin{center}
+    \begin{center}\tikzsetnextfilename{107}
         \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
             \begin{axis}[
                 domain = -2:5,
@@ -112,7 +112,7 @@
 \begin{solution}
     For stationary points, $y' = 0$. \[y' = 0 \implies 3x^2 + 2x = 0 \implies x(3x+2) = 0.\] Hence, $x = 0$ or $x = -2.3$. When $x = 0$, $y = 0$. When $x = -2/3$, $y = 4/{27}$. Thus, the coordinates of the stationary points of $y = x^3 + x^2$ are $(0, 0)$ and $(-2/3, 4/27)$.
 
-    \begin{center}
+    \begin{center}\tikzsetnextfilename{108}
         \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
             \begin{axis}[
                 domain = -1.1:0.4,
@@ -146,7 +146,7 @@
     \end{ppart}
     \clearpage
     \begin{ppart}
-        \begin{center}
+        \begin{center}\tikzsetnextfilename{109}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
                 \begin{axis}[
                     domain = 0:1,
@@ -199,7 +199,7 @@
     \begin{ppart}
         Consider $f(x) = 2\cos x$. Then $f'(x) = -2\sin x$. Observe that $\sin x$ is increasing on $[1, 1.2]$. Since $\sin 1 > \frac12$, $\abs{f'(x)} > 1$ for all $x \in [1, 1.2]$. Thus, fixed-point iteration fails and will not converge to $\a$.
 
-        \begin{center}
+        \begin{center}\tikzsetnextfilename{110}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
                 \begin{axis}[
                     domain = 0:pi/2,
@@ -249,7 +249,7 @@
     \begin{ppart}
         Consider $f(x) = \cos x + \frac12 x$. Then $f'(x) = -\sin x + \frac12 -\bp{\sin x - \frac12}$. Since $0 \leq \sin x \leq 1$ for $x \in \bs{0, \frac{\pi}2}$, and $[1, 1.2] \subset \bs{0, \frac{\pi}2}$, we know $-\frac12 \leq \sin x - \frac12 \leq \frac12$ for $x \in [1, 1.2]$. Thus, $0 \leq \abs{\sin x - \frac12} \leq \frac12$ for $x \in [1, 1.2]$. Hence, fixed-point iteration will work and converge to $\a$.
 
-        \begin{center}
+        \begin{center}\tikzsetnextfilename{111}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
                 \begin{axis}[
                     domain = 0:2,
@@ -300,7 +300,7 @@
     \begin{ppart}
         Consider $f(x) = \frac23 (\cos x + x)$. Then $f'(x) = \frac23(-\sin x + 1)$. For fixed-point iteration to converge to $\a$, we need $\abs{f'(x)} < 1$ for $x$ near $\a$. It thus suffices to show that $\abs{-\sin x + 1} < \frac32$ for all $x \in [1, 1.2]$. Observe that $1 - \sin x$ is strictly decreasing and positive for $x \in \bs{0, \frac{\pi}2}$. Since $1 - \sin 1 < \frac32$, and $[1, 1.2] \subset \bs{0, \frac{\pi}2}$, we have that $\abs{-\sin x + 1} < \frac32$ for all $x \in [1, 1.2]$. Thus, $\abs{f'(x)} < 1$ for $x$ near $\a$. Hence, fixed-point iteration will work and converge to $\a$.
 
-        \begin{center}
+        \begin{center}\tikzsetnextfilename{112}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
                 \begin{axis}[
                     domain = 0:3.3,
