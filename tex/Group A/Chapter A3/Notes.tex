@@ -38,9 +38,9 @@ Similar to sequences, a series can be finite or infinite. If a series is infinit
     An \vocab{arithmetic series} is obtained by adding the terms of an arithmetic progression.
 \end{definition}
 
-\begin{theorem}
+\begin{proposition}
     The $n$th term $S_n$ of an arithmetic series is given by \[S_n = \frac{n(a + l)}{2},\] where $l$ is the last term of the AP, i.e. \[l = u_n = a + (n-1) d.\]
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Note that for all integers $k \in [1, n]$, \[u_k + u_{n - k + 1} = \bs{a + (k-1)d} + \bs{a + (n-k)d} = a + \bs{a + (n-1)d} = a + l.\] Hence, by pairing the $k$th term with the $(n-k+1)$th term, we get \[2S_n = (u_1 + u_n) + (u_2 + u_{n-1}) + \dots + (u_{n-1} + u_2) + (u_n + u_1) = n\bp{a + l} \implies S_n = \frac{n(a + l)}{2}.\]
 \end{proof}
@@ -59,9 +59,9 @@ Similar to sequences, a series can be finite or infinite. If a series is infinit
     A \vocab{geometric series} is the sum of the terms of a geometric progression.
 \end{definition}
 
-\begin{theorem}
+\begin{proposition}
     The $n$th term $S_n$ of a geometric series is given by \[S_n = \frac{a(1 - r^n)}{1 - r},\] where $r \neq 1$. If the series is infinite, the sum to infinity $S_\infty$ exists only if $\abs{r} < 1$ and is given by \[S_\infty = \frac{a}{1 - r}.\]
-\end{theorem}
+\end{proposition}
 \begin{proof}
     By the definition of a series, we have \[S_n = a + ar + \dots + ar^{n-2} + ar^{n-1}. \tag{1}\] Multiplying both sides by $r$ yields \[r S_n = ar + ar^2 + \dots + ar^{n-1} + ar^{n}. \tag{2}\] Subtracting (2) from (1), we have \[(1-r)S_n = a - ar^{n} \implies S_n = \frac{a(1 - r^{n})}{1 - r}.\]
     

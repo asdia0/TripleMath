@@ -27,6 +27,7 @@
     \begin{ppart}
         Note that $\abs{2\i + 1 + \i z} = \abs{2 - \i + z} = \abs{z - (-2 + \i)}$. We hence have \[\abs{z - (-2 + \i)} = \abs{z - (-5 + 4\i)},\] which describes the perpendicular bisector of the line segment joining $(-2, 1)$ and $(-5, 4)$.
     \end{ppart}
+    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{1}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -196,7 +197,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\volume = 2\pi \int_0^{\sqrt\pi} x \sin{x^2} \d x = \pi \evalint{-\cos{x^2}}{0}{\sqrt\pi} = \boxed{2\pi} \units[3].\]
+        \[\volume = 2\pi \int_0^{\sqrt\pi} x \sin{x^2} \d x = \pi \evalint{-\cos{x^2}}{0}{\sqrt\pi} = 2\pi \units[3].\]
     \end{ppart}
     \begin{ppart}
         Let the depth of the water be $h$. We have $V = \pi \int_0^h \arcsin{y} \d y$, whence $\der{V}{h} = \pi \arcsin{h}$. Hence, \[\der{h}{t} = \frac{\derx{V}{t}}{\derx{V}{h}} = \frac2{\pi \arcsin{h}}.\] When $h = \frac{\sqrt3}2$, we have $\der{h}{t} = \frac2{\pi \cdot \pi/3}$. Thus, the rate of change of the depth of water is $\frac6{\pi^2}$ units/s.

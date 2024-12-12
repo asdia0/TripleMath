@@ -1,0 +1,25 @@
+\section{Notes}
+
+\subsection{Sigma Notation}
+
+\begin{definition}
+    The series $u_k + u_{k+1} + \dots + u_m$ can be denoted using $\S$ (sigma) notation as \[u_k + u_{k+1} + \dots + u_m = \sum_{r=k}^m u_r.\] Here, $r$ is called the \vocab{index}, and can be replaced with any letter. $k$ is the \vocab{lower limit} of $r$, while $m$ is the \vocab{upper limit} of $r$. There are a total of $m - k + 1$ terms in the sum.
+\end{definition}
+
+\begin{fact}[Properties of Sigma Notation]
+    \begin{gather*}
+        \sum_{r = 1}^n \bp{u_r \pm v_r} = \sum_{r = 1}^n u_r \pm \sum_{r = 1}^n v_r.\\
+        \sum_{r = 1}^n cu_r = c\sum_{r = 1}^n u_r.\\
+        \sum_{r = m}^n u_r = \sum_{r = 1}^n u_r - \sum_{r = 1}^{m-1} u_r, \quad n > m > 1.
+    \end{gather*}
+\end{fact}
+
+\begin{fact}[Standard Series]
+    The sum of the following standard series can be quoted and applied without proof. Note that $m = q - p + 1$ is the number of terms being summed.
+
+    \begin{itemize}
+        \item Series of constants \[\sum_{r = p}^q a = ma.\]
+        \item Arithmetic series \[\sum_{r = p}^q r = \frac{m}{2} \bp{p + q}.\]
+        \item Geometric series \[\sum_{r = p}^q a^r = \frac{a^p \bp{a^m - 1}}{a - 1}.\]
+    \end{itemize}
+\end{fact}

@@ -1,0 +1,290 @@
+\section{Notes}
+
+\subsection{Geometrical Representation of a Complex Number}
+
+\begin{definition}
+    The \vocab{Argand diagram} is a modified Cartesian plane where the $x$-axis represents real numbers and the $y$-axis represents imaginary numbers. The two axes are called the \vocab{real axis} and \vocab{imaginary axis} correspondingly.
+
+    On the Argand diagram, the complex number $z = x + \i y$, where $x, y \in \RR$, can be represented by
+    \begin{itemize}
+        \item the point $Z(x, y)$ or $Z(z)$; or
+        \item the vector $\oa{OZ}$.
+    \end{itemize}
+
+    \begin{center}\tikzsetnextfilename{339}
+        \begin{tikzpicture}[scale=0.8, trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:10,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmax=8,
+                xmin=-2,
+                ymin=-2,
+                ymax=8,
+                xlabel = {$\Re$},
+                ylabel = {$\Im$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+    
+                \coordinate[label=above:$Z\bp{x, y} \lor Z\bp{z}$] (Z) at (5, 6);
+                \coordinate (O) at (0, 0);
+    
+                \draw[->-=0.5, very thick] (O) -- (Z);
+                \node[anchor=north west] at (2.5, 3) {$\oa{OZ}$};
+    
+                \fill (Z) circle[radius=2.5pt];
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{definition}
+
+In an Argand diagram, let the points $Z$ and $W$ represent the complex numbers $z$ and $w$ respectively. Then $\oa{OZ}$ and $\oa{OW}$ are the corresponding vectors representing $z$ and $w$.
+
+The following diagram shows the geometrical effect of addition on complex numbers. Here, the point $P$ represents the complex number $z + w$. Observe that $OWPZ$ is a parallelogram (due to the parallelogram law of vector addition).
+
+\begin{center}\tikzsetnextfilename{340}
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xmax=8,
+            xmin=-2,
+            ymin=-2,
+            ymax=8,
+            xlabel = {$\Re$},
+            ylabel = {$\Im$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+
+            \coordinate[label=right:$Z\bp{z}$] (Z) at (4, 1);
+            \coordinate[label=above:$W\bp{w}$] (W) at (2, 3);
+            \coordinate[label=above:$P\bp{z + w}$] (P) at (6, 4);
+            \coordinate (O) at (0, 0);
+
+            \draw[->-=0.5, very thick] (O) -- (Z);
+            \draw[->-=0.5, very thick] (O) -- (W);
+            \draw[->-=0.5, very thick] (O) -- (P);
+            \draw[dotted, ->-=0.5] (Z) -- (P);
+            \draw[dotted, ->-=0.5] (W) -- (P);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+The following diagram shows the geometrical effect of multiplying a complex number by a real number $k$. Here, $Z_1$ represents a point where $k > 1$, $Z_2$ where $0 < k < 1$, and $Z_3$ where $k < 0$. Observe that the points lie on the straight line passing through the origin $O$ and the point $Z$.
+
+\begin{center}\tikzsetnextfilename{341}
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xmax=5,
+            xmin=-5,
+            ymin=-5,
+            ymax=5,
+            xlabel = {$\Re$},
+            ylabel = {$\Im$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+
+            \coordinate[label=above:$Z$] (Z) at (2, 1);
+            \coordinate (O) at (0, 0);
+
+            \draw (-5, -2.5) -- (5, 2.5);
+            \draw[very thick] (O) -- (Z);
+
+            \fill (Z) circle[radius=2.5pt];
+            \fill (-2.5, -1.25) circle[radius=2.5pt];
+            \fill (3, 1.5) circle[radius=2.5pt];
+            \fill (1, 0.5) circle[radius=2.5pt];
+
+            \node[anchor=north] at (-2.5, -1.25) {$Z_3$};
+            \node[anchor=south] at (1, 0.5) {$Z_2$};
+            \node[anchor=south] at (3, 1.5) {$Z_1$};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{definition}
+    The \vocab{argument} of a complex number $z$ is the directed angle $\t$ that $Z(z)$ makes with the positive real axis, and is denoted by $\arg{z}$. Note that $\arg{z} > 0$ when measured in an anticlockwise direction from the positive real axis, and $\arg{z} < 0$ when measured in a clockwise directoin from the positive real axis.
+\end{definition}
+
+Note that $\arg{z}$ is not unique; the position of $Z(z)$ is not affected by adding an integer multiple of $2\pi$ to $\t$. Therefore, if $\arg{z} = \f$, then $\f + 2k\pi$, where $k \in \ZZ$, is also an argument of $z$. We hence introduce the principal argument of $z$.
+
+\begin{definition}
+    The value of $\arg{z}$ in the interval $(-\pi, \pi]$ is known as the \vocab{principal argument} of $z$.
+\end{definition}
+
+The modulus $r = \abs{z}$ and argument $\t = \arg{z}$ of a complex number $z$ can easily be identified on an Argand diagram:
+
+\begin{center}\tikzsetnextfilename{342}
+    \begin{tikzpicture}[scale=0.8, trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xmin=-2,
+            xmax=8,
+            ymin=-2,
+            ymax=8,
+            xlabel = {$\Re$},
+            ylabel = {$\Im$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+
+            \coordinate (A) at (4, 0);
+            \coordinate (B) at (0, 0);
+            \coordinate (C) at (3, 4);
+
+            \fill (3, 4) circle[radius=2.5pt];
+            \draw (0, 0) -- (3, 4);
+            \node[anchor=south east] at (1.5, 2) {$r$};
+            \node[anchor=south] at (3, 4) {$Z(z)$};
+
+            \draw pic [draw, angle radius=10mm, "$\t$"] {angle = A--B--C};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\subsection{Complex Numbers in Polar Form}
+
+\begin{definition}
+    The \vocab{trigonometric form} of the complex number $z$ is \[z = r\bp{\cos \t + \i \sin \t},\] where $r = \abs{z}$ and $\t = \arg{z}$, $-\pi < \t \leq \pi$.
+\end{definition}
+\begin{sketch}
+    Let $z = x + \i y$, where $x, y \in \RR$. From the diagram above, we see that $x = r\cos\t$ and $y = r\sin\t$. Hence, \[z = x + \i y = (r\cos\t) + \i (r\sin\t) = r \bp{\cos \t + \i \sin\t}.\]
+\end{sketch}
+
+\begin{theorem}[Euler's Identity]
+    For all $\t \in \RR$, \[\e^{\i \t} = \cos \t + \i \sin \t.\]
+\end{theorem}
+\begin{proof}[Proof 1 (Series Expansion)]
+    By the standard series expansion of $\e^x$, we have \[\e^{\i \t} = 1 + \i \t + \frac{(\i \t)^2}{2!} + \frac{(\i \t)^3}{3!} + \frac{(\i \t)^4}{4!} + \frac{(\i \t)^5}{5!} + \dots.\] Simplifying and grouping real and imaginary parts together, \[\e^{\i \t} = \bp{1 - \frac{\t^2}{2!} + \frac{\t^4}{4!} + \dots} + \i \bp{\t - \frac{\t^3}{3!} + \frac{\t^5}{5!} + \dots},\] which we recognize to be the standard series expansions of $\cos \t$ and $\sin \t$ respectively. Hence, \[\e^{\i \t} = \cos \t + \i \sin \t.\]
+\end{proof}
+\begin{proof}[Proof 2 (Differentiation)]
+    Let $f(\t) = \e^{-\i \t} \bp{\cos \t + \i \sin \t}$. Differentiating with respect to $\t$, \[f'(\t) = \e^{-\i \t} \bp{-\sin \t + \i \cos \t} - \i \e^{-\i \t} \bp{\cos \t + \i \sin \t} = 0.\] Hence, $f(\t)$ is constant. Evaluating $f(\t)$ at $\t = 0$, we have $f(\t) = 1$, whence \[\e^{-\i \t} \bp{\cos \t + \i \sin \t} = 1 \implies \e^{\i \t} = \cos \t + \i \sin \t.\]
+\end{proof}
+
+\begin{definition}
+    The \vocab{exponential form} of the complex number $z$ is \[z = r \e^{\i \t},\] where $r = \abs{z}$ and $\t = \arg{z}$, $-\pi < \t \leq \pi$.
+\end{definition}
+
+Both the trigonometric and exponential forms of writing a complex number $z$ are collectively known as the \vocab{polar form} of $z$.
+
+We now observe the geometrical effect of complex conjugation on an Argand diagram. Let $Z$ be the point representing $z = x + \i y$ and $P$ be the point representing $z\conj = x - \i y$. Then $P$ is the reflection of $Z$ in the real axis, as shown below:
+
+\begin{center}\tikzsetnextfilename{343}
+    \begin{tikzpicture}[scale=0.8, trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xmin=-2,
+            xmax=8,
+            ymin=-5,
+            ymax=5,
+            xlabel = {$\Re$},
+            ylabel = {$\Im$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+
+            \coordinate (B) at (0, 0);
+            \coordinate (Z) at (5, 3);
+            \coordinate (P) at (5, -3);
+            \coordinate (E) at (5, 0);
+
+            \fill (Z) circle[radius=2.5pt];
+            \fill (P) circle[radius=2.5pt];
+            \draw (B) -- (Z);
+            \draw (B) -- (P);
+            \node[anchor=south] at (Z) {$Z(z)$};
+            \node[anchor=north] at (P) {$P(z\conj)$};
+            \draw[dotted] (Z) -- (P);
+
+            \draw (4.8, 1.5) -- (5.2, 1.5);
+            \draw (4.8, -1.5) -- (5.2, -1.5);
+
+            \draw pic [draw, angle radius=3mm] {right angle = Z--E--B};
+            \draw pic [draw, angle radius=3mm] {right angle = P--E--B};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+From the diagram, it is obvious that
+
+\begin{proposition}[Conjugation in Polar Form]
+    If $z = r \e^{\i \t}$, then $z\conj = r\e^{\i \t}$. Also, \[\arg{z\conj} = -\t = -\arg{z}, \qquad \abs{z} = r = \abs{z \conj}.\]
+\end{proposition}
+
+Recall that $z + z\conj = 2\Re{z}$ and $z - z\conj = 2 \Im{z} \i$. Using the proposition above, we have a similar result when $z$ is written in polar form:
+
+\begin{proposition}
+    \[\e^{\i \t} + \e^{-\i \t} = 2\cos \t, \qquad \e^{\i \t} - \e^{-\i \t} = \bp{2 \sin \t} \i.\]
+\end{proposition}
+\begin{proof}
+    Convert $\e^{\i \t}$ and $\e^{-\i \t}$ into trigonometric form and simplify.
+\end{proof}
+
+Lastly, we observe the effect of multiplication and division on the modulus and argument of complex numbers.
+
+\begin{proposition}[Multiplication in Polar Form]
+    Let $z_1 = r_1 \e^{\i \t_1}$ and $z_2 = r_2 \e^{\i \t_2}$. Then \[\abs{z_1 z_2} = r_1 r_2 = \abs{z_1} \abs{z_2}, \qquad \arg{z_1 z_2} = \t_1 + \t_2 = \arg{z_1} + \arg{z_2}.\]
+\end{proposition}
+\begin{proof}
+    Observe that \[z_1 z_2 = \bp{r_1 \e^{\i \t_1}}\bp{r_2 \e^{\i \t_2}} = (r_1 r_2) \e^{\i (\t_1 + \t_2)}.\] The results follow immediately.
+\end{proof}
+
+\begin{corollary}[Exponentiation in Polar Form]
+    For $n \in \ZZ$, \[\abs{z^n} = r^n = \abs{z}^n, \qquad \arg{z^n} = n \t = n \arg{z}.\]
+\end{corollary}
+\begin{proof}
+    Repeatedly apply the above proposition.
+\end{proof}
+
+\begin{proposition}[Division in Polar Form]
+    Let $z_1 = r_1 \e^{\i \t_1}$ and $z_2 = r_2 \e^{\i \t_2}$. Then \[\abs{\frac{z_1}{z_2}} = \frac{r_1}{r_2} = \frac{\abs{z_1}}{\abs{z_2}}, \qquad \arg{\frac{z_1}{z_2}} = \t_1 - \t_2 = \arg{z_1} - \arg{z_2}.\]
+\end{proposition}
+\begin{proof}
+    Observe that \[\frac{z_1}{z_2} = \frac{r_1 \e^{\i \t_1}}{r_2 \e^{\i \t_2}} = \frac{r_1}{r_2} \e^{\i (\t_1 - \t_2)}.\] The results follow immediately.
+\end{proof}

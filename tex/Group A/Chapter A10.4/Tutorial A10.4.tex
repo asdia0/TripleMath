@@ -110,49 +110,49 @@
     \begin{ppart}
         Note that $\arg{z + 2 - \i} = -\pi/4 \implies \arg{z - (-2 + \i)} = -\pi/4$.
 
-            \begin{center}\tikzsetnextfilename{81}
-                \begin{tikzpicture}[trim axis left, trim axis right]
-                    \begin{axis}[
-                        domain = -2:3,
-                        samples = 101,
-                        axis y line=middle,
-                        axis x line=middle,
-                        xtick = {-2},
-                        ytick = {1},
-                        yticklabels = {$\i$},
-                        xmax=2,
-                        xmin=-3,
-                        ymin=-2,
-                        ymax=2,
-                        xlabel = {$\Re$},
-                        ylabel = {$\Im$},
-                        legend cell align={left},
-                        legend pos=outer north east,
-                        after end axis/.code={
-                            \path (axis cs:0,0) 
-                                node [anchor=north west] {$O$};
-                            }
-                        ]
+        \begin{center}\tikzsetnextfilename{81}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -2:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2},
+                    ytick = {1},
+                    yticklabels = {$\i$},
+                    xmax=2,
+                    xmin=-3,
+                    ymin=-2,
+                    ymax=2,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north west] {$O$};
+                        }
+                    ]
+        
+                    \coordinate[label=above:$-2+\i$] (Z1) at (-2, 1);
+                    \coordinate (Z2) at (0, 1);
+                    \coordinate (O) at (0, 0);
+
+                    \draw[dotted] (Z1) -- (Z2);
+
+                    \addplot[plotRed] {-x - 1};
             
-                        \coordinate[label=above:$-2+\i$] (Z1) at (-2, 1);
-                        \coordinate (Z2) at (0, 1);
-                        \coordinate (O) at (0, 0);
+                    \draw (Z1) circle[radius=2.5pt];
 
-                        \draw[dotted] (Z1) -- (Z2);
+                    \addlegendentry{locus of $P$};
 
-                        \addplot[plotRed] {-x - 1};
-                
-                        \draw (Z1) circle[radius=2.5pt];
-
-                        \addlegendentry{locus of $P$};
-
-                        \coordinate (Z3) at (0, -1);
-                        \draw pic [draw, angle radius=12mm, "$-\frac\pi4$"] {angle =  Z3--Z1--Z2};
-                    \end{axis}
-                \end{tikzpicture}
-            \end{center}
+                    \coordinate (Z3) at (0, -1);
+                    \draw pic [draw, angle radius=12mm, "$-\frac\pi4$"] {angle =  Z3--Z1--Z2};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
             
-            The locus of $P$ is the half-line starting from $(-2, 1)$ and inclined at an angle $-\pi/4$ to the positive real axis. Its Cartesian equation is $y = -x - 1$
+        The locus of $P$ is the half-line starting from $(-2, 1)$ and inclined at an angle $-\pi/4$ to the positive real axis. Its Cartesian equation is $y = -x - 1$
     \end{ppart}
 \end{solution}
 

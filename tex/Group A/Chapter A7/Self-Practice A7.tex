@@ -1,0 +1,84 @@
+\section{Self-Practice A7}
+
+\begin{problem}
+    The position vector of points $A$, $B$ and $C$ relative to an origin $O$ are $\vec a$, $\vec b$ and $k \vec a$ respectively. The point $P$ lies on $AB$ and is such that $AP = 2PB$. The point $Q$ lies on $BC$ such that $CQ = 6QB$. Find, in terms of $\vec a$ and $\vec b$, the position vector of $P$ and $Q$. Given that $OPQ$ is a straight line, find
+    \begin{enumerate}
+        \item the value of $k$,
+        \item the ratio of $OP:PQ$.
+    \end{enumerate}
+    The position vector of a point $R$ is $\frac73 \vec a$. Show that $PR$ is parallel to $BC$.
+\end{problem}
+
+\begin{problem}
+    The position vectors of the points $P$ and $R$, relative to an origin $O$, are $\vec p$ and $\vec r$ respectively, where $\vec p$ and $\vec r$ are not parallel to each other. $Q$ is a point such that $\oa{OQ} = 2\oa{OP}$ and $S$ is a point such that $\oa{OS} = 2\oa{OR}$. $T$ is the midpoint of $QS$.
+
+    Find, in terms of $\vec p$ and $\vec r$,
+    \begin{enumerate}
+        \item $\oa{PR}$,
+        \item $\oa{QT}$,
+        \item $\oa{TR}$.
+    \end{enumerate}
+
+    What shape is the quadrilateral $PRTQ$? Name another quadrilateral that has the same shape as $PRTQ$.
+\end{problem}
+
+\begin{problem}
+    The position vectors of points $A$, $B$, $C$ are given by $\oa{OA} = 5\vec i$, $\oa{OB} = \vec i + 3\vec k$, $\oa{OC} = \vec i + 4\vec j$. A parallelepiped has $OA$, $OB$ and $OC$ as three edges, and the remaining edges are $X$, $Y$, $Z$ and $D$ as shown in the diagram.
+
+    \begin{center}\tikzsetnextfilename{338}
+        \begin{tikzpicture}
+            \coordinate[label=below:$A$] (A) at (5, 0);
+            \coordinate[label=left:$B$] (B) at (1, 3);
+            \coordinate[label=left:$C$] (C) at (2, 2);
+            \coordinate[label=above:$D$] (D) at (8, 5);
+            \coordinate[label=above:$X$] (X) at (3, 5);
+            \coordinate[label=right:$Y$] (Y) at (7, 2);
+            \coordinate[label=above left:$Z$] (Z) at (6, 3);
+            \coordinate[label=below:$O$] (O) at (0, 0);
+
+            \draw (B) -- (O) -- (A) -- (Y) -- (D) -- (X) -- (B) -- (Z) -- (A);
+            \draw (Z) -- (D);
+            \draw[dotted] (O) -- (C) -- (X);
+            \draw[dotted] (C) -- (Y);
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{enumerate}
+        \item Write down the position vectors of $X$, $Y$, $Z$ and $D$ in terms of $\vec i$, $\vec j$ and $\vec k$, and calculate the length of $OD$.
+        \item Calculate the size of angle $OZY$.
+        \item The point $P$ divides $CZ$ in the ratio $\l : 1$. Write down the position vector of $P$, and evaluate $\l$ if $\oa{OP}$ is perpendicular to $\oa{CZ}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The vectors $\vec a$, $\vec b$ and $\vec c$ are such that $\vec a \dotp \vec b = \vec b \dotp \vec c = 0$ and $\vec a \dotp \vec c = 2$. Given that $\abs{\vec a} = 1$, $\abs{\vec b} = 2$, $\abs{\vec c} = 3$, find
+    \begin{enumerate}
+        \item $\abs{\vec a - \vec b}$;
+        \item $\abs{\vec a - \vec b - \vec c}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The position vectors of the points $M$ and $N$ are given by \[\oa{OM} = \l \vec i + (2\l - 1) \vec j + \vec k, \qquad \oa{ON} = (1-\l) \vec i + 3\l \vec j - 2 \vec k,\] where $\l$ is a scalar. Find the values of $\l$ for which $\oa{OM}$ and $\oa{ON}$ are perpendicular. When $\l = 1$, find the size of $\angle MNO$ to the nearest degree.
+\end{problem}
+
+\begin{problem}
+    The points $A$, $B$, $C$ and $D$ have position vectors $\vec i - 2\vec j + 5\vec k$, $\vec i + 3\vec j$, $10\vec i + \vec j + 2\vec k$ and $-2\vec i + 4\vec j + 5\vec k$ respectively, with respect to an origin $O$. The point $P$ on $AB$ is such that $AP : PB = \l : 1 - \l$ and point $Q$ on $CD$ is such that $CQ : QD = \m : 1 - \m$. Find $\oa{OP}$ and $\oa{OQ}$ in terms of $\l$ and $\m$ respectively.
+
+    Given that $PQ$ is perpendicular to both $AB$ and $CD$, show that $\oa{PQ} = \vec i + 2\vec j + 2\vec k$.
+\end{problem}
+
+\begin{problem}
+    The position vectors of the vertices $A$, $B$ and $C$ of a triangle are $\vec a$, $\vec b$ and $\vec c$ respectively. If $O$ is the origin and not within the triangle, show that the area of triangle $OAB$ is $\frac12 \abs{\vec a \crossp \vec b}$, and deduce and expression for the area of the triangle $ABC$.
+
+    Hence, or otherwise, show that the perpendicular distance from $B$ to $AC$ is $\frac{\abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}}{\abs{\vec c - \vec a}}$.
+\end{problem}
+
+\begin{problem}[C]
+    The points $A$, $B$ and $C$ lie on a circle with center $O$ and diameter $AC$. It is given that $\oa{OA} = \vec a$ and $\oa{OB} = \vec b$.
+
+    \begin{enumerate}
+        \item Find $\oa{BC}$ in terms of $\vec a$ and $\vec b$. Hence, show that $AB$ is perpendicular to $BC$.
+        \item Given that $\angle AOB = 30\deg$, find $\oa{OF}$ where $F$ is the foot of perpendicular of $B$ to $AC$. Hence, find $\oa{OB'}$, where $B'$ is the reflection of $B$ in the line $AC$.
+    \end{enumerate}
+\end{problem}

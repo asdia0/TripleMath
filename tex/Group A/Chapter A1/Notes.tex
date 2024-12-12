@@ -2,25 +2,32 @@
 
 \subsection{Quadratic Equations}
 
-\begin{theorem}[Quadratic Formula]
+\begin{proposition}[Quadratic Formula]
     The roots $\a$ and $\b$ of a quadratic equation $ax^2 + bx + c = 0$, where $a \neq 0$ can be found using the quadratic formula: \[\a, \b = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.\]
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Completing the square, we get \[ax^2 + bx + c = a\bp{x + \frac{b}{2a}}^2 - \frac{b^2}{4a} + c = 0,\] which rearranges as \[\bp{x + \frac{b}{2a}}^2 = \frac{b^2 - 4ac}{4a^2}.\] Taking roots and simplifying, \[x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a} \implies x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.\]
 \end{proof}
 
-\begin{remark}
-    The expression under the radical ($b^2 - 4ac$) is known as the \vocab{discriminant} and is denoted $\D$. Observe that $\D$ determines the nature of the roots:
+\begin{definition}
+    The expression under the radical ($b^2 - 4ac$) is known as the \vocab{discriminant} and is denoted $\D$.
+\end{definition}
+
+\begin{proposition}[Nature of Roots]
+    \phantom{.}
     \begin{itemize}
         \item If $\D > 0$, the roots are real and distinct.
         \item If $\D = 0$, the roots are equal.
         \item If $\D < 0$, the roots are complex.
     \end{itemize}
-\end{remark}
+\end{proposition}
+\begin{proof}
+    Trivial by the quadratic formula.
+\end{proof}
 
-\begin{theorem}[Vieta's Formula for Quadratics]
+\begin{proposition}[Vieta's Formula for Quadratics]
     Let $\a$ and $\b$ be the roots of the quadratic $ax^2 + bx + c = 0$, where $a \neq 0$. Then \[\a + \b = -\frac{b}{a}, \qquad \a \b = \frac{c}{a}.\]
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Since $\a$ and $\b$ are roots, we can rewrite the quadratic as \[ax^2 + bx + c = a(x - \a)(x - \b).\] Expanding, \[ax^2 + bx + c = a\bs{x^2 - (\a + \b) x + \a\b} = 0.\] Comparing coefficients yields \[\a + \b = -\frac{b}{a}, \qquad \a \b = \frac{c}{a}.\]
 \end{proof}
@@ -35,9 +42,9 @@
     A system of equations is said to be \vocab{consistent} if it admits solutions. Conversely, if there are no solutions to the system, it is said to be \vocab{inconsistent}.
 \end{definition}
 
-\begin{theorem}
+\begin{proposition}
     If a system of linear equations is consistent, it either has a unique solution or infinitely many solutions.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Geometrically, if a collection of lines has more than one common point, they must all be equivalent.
 \end{proof}
@@ -47,17 +54,26 @@
 \begin{fact}[Properties of Inequalities]
     Let $a, b, c, \in \RR$.
     \begin{itemize}
-        \item (transitivity) if $a > b$ and $b > c$, then $a > c$.
-        \item (addition) if $a > b$, then $a + c > b + c$.
-        \item (multiplication) if $a > b$ and $c > 0$, then $ac > bc$; if $c < 0$, then $ac < bc$.
+        \item (transitivity) If $a > b$ and $b > c$, then $a > c$.
+        \item (addition) If $a > b$, then $a + c > b + c$.
+        \item (multiplication) If $a > b$ and $c > 0$, then $ac > bc$; if $c < 0$, then $ac < bc$.
     \end{itemize}
 \end{fact}
 
 We now introduce two methods to solve functional inequalities.
-\begin{enumerate}
-    \item \textbf{Graphical Method.} Plot the function and observe which $x$-values satisfy the inequality.
-    \item \textbf{Test-value Method.} Indicate the critical value(s) of the function on a number line (i.e. where $f(x) = 0$). Choose an $x$-value within each interval as your test-value. Using the test-value, evaluate whether the function is positive/negative within that interval.
-\end{enumerate}
+\begin{method}[Graphical Method]
+    Plot the function and observe which $x$-values satisfy the inequality.
+\end{method}
+\begin{method}[Test-Value Method]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \begin{enumerate}
+        \item Indicate the root(s) of the function on a number line (i.e. where $f(x) = 0$).
+        \item Choose an $x$-value within each interval as your test-value.
+        \item Using the test-value, evaluate whether the function is positive/negative within that interval.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{method}
 Note that the test-value method is only useful for inequalities where one side is 0, e.g. $f(x) > 0$.
 
 \begin{example}[Test-Value Method]
@@ -65,10 +81,9 @@ Note that the test-value method is only useful for inequalities where one side i
 \end{example}
 
 In the case where the function is rational, i.e. $\frac{f(x)}{g(x)}$, there is an additional method we can use.
-\begin{enumerate}
-    \setcounter{enumi}{2}
-    \item \textbf{Clearing Denominators.} Multiply the \textbf{square} of the denominators throughout the inequality.
-\end{enumerate}
+\begin{method}[Clearing Denominators]
+    Multiply the \textbf{square} of the denominators throughout the inequality.
+\end{method}
 Note that the squares ensure that the sign of the inequality is preserved.
 
 \begin{example}[Clearing Denominators]

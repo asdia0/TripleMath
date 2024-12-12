@@ -1,8 +1,8 @@
 \section{Notes}
 
-\begin{theorem}[Location of Root Theorem]
+\begin{proposition}[Location of Root Theorem]
     Let $f(x)$ be a continuous function on the interval $[a, b]$. If $f(a)$ and $f(b)$ have opposite signs, i.e. $f(a) f(b) < 0$, then there exists at least one real root in $[a, b]$. Furthermore, if $f(x)$ is strictly monotonic on $[a, b]$, then there is exactly one real root in $[a, b]$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Follows immediately from the Intermediate Value Theorem.
 \end{proof}
@@ -35,12 +35,12 @@ Linear interpolation is a numerical method based on approximating the curve $y =
         \end{tikzpicture}
 \end{center}
 
-\begin{statement}[Linear Interpolation]
+\begin{method}[Linear Interpolation]
     Suppose $f(x) = 0$ has exactly one root $\a$ in the interval $[a, b]$, where $f(a)$ and $f(b)$ have opposite signs. Then linear interpolation gives \[\a \approx \frac{af(b) - bf(a)}{f(b)-f(a)}.\]
-\end{statement}
-\begin{proof}
+\end{method}
+\begin{sketch}
     By the point-slope formula, the line connecting the points $(a, f(a))$ and $(b, f(b))$ is given by \[y - f(a) = \frac{f(b) - f(a)}{b - a} (x - a).\] At the point $(c, 0)$, \[0 - f(a) = \frac{f(b)-f(a)}{b-a} (c -a) \implies c = \frac{af(b) - bf(a)}{f(b)-f(a)}.\]
-\end{proof}
+\end{sketch}
 
 Linear interpolation can be repeatedly applied by replacing either the lower or upper bound of the interval with the previously found approximation.
 
@@ -48,7 +48,12 @@ Convergence of the approximations is guaranteed for linear interpolation. Howeve
 
 \subsection{Fixed Point Iteration}
 
-Suppose $f(x) = 0$ can be rewritten into the form $x = F(x)$. Then if $\a$ is a root to $f(x) = 0$, it must also be a root to $\a = F(\a)$. Due to the recursive nature of this equation, we can keep replacing the $\a$ in the argument with $F(\a)$: \[\a = F(\a) = F(F(\a)) = F(F(F(\a))) = \cdots.\] Let $\{x_{n}\}$ be a sequence such that $x_{n+1} = F(x_n)$ (i.e. $x_n = F^{n} (x)$). Then $\a = \lim_{n \to \infty} x_n$ (assuming it exists). We can thus approximate $\a$ by choosing an initial approximation $x_1$ and repeatedly apply $F$ to each subsequent approximation.
+\begin{method}
+    Suppose $f(x) = 0$ can be rewritten into the form $x = F(x)$. Then \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
+\end{method}
+\begin{sketch}
+    If $\a$ is a root to $f(x) = 0$, it must also be a root to $\a = F(\a)$. Due to the recursive nature of this equation, we can keep replacing the $\a$ in the argument with $F(\a)$: \[\a = F(\a) = F(F(\a)) = F(F(F(\a))) = \cdots.\] Let $\{x_{n}\}$ be a sequence such that $x_{n+1} = F(x_n)$ (i.e. $x_n = F^{n} (x)$). Then $\a = \lim_{n \to \infty} x_n$ (assuming it exists). Equivalently, \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
+\end{sketch}
 
 Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the initial approximation point $(x_1, F(x_1))$ about the line $y = x$, while keeping the resultant point on the curve $y = F(x)$.
 
@@ -140,12 +145,12 @@ Convergence is not guaranteed (see the above diagram on the right). The rate at 
 
 The Newton-Raphson method is a numerical method that improves on linear interpolation by considering the tangent line at the initial approximation to the root.
 
-\begin{statement}[Newton-Raphson Method]
+\begin{method}[Newton-Raphson Method]
     Let $\a$ be a root to $f(x) = 0$. The sequence $\{x_n\}$ defined by \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\] converges to $\a$, provided certain conditions are met.
-\end{statement}
-\begin{proof}
+\end{method}
+\begin{sketch}
     Consider the tangent to $y = f(x)$ at the point where $x = x_1$. In most circumstances, the point $(x_2, 0)$ where this tangent cuts the $x$-axis will be nearer to the point $(\a, 0)$ than $(x_1, 0)$ was. By the point-slope formula, the equation of the tangent to the curve at $x = x_1$ is \[y - f(x_1) = f'(x_1)(x-x_1).\] Since $(x_2, 0)$ lies on the tangent line, we have \[x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}.\] By repeating the Newton-Raphson process, we are able to get better approximations to $\a$. In general, \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.\]
-\end{proof}
+\end{sketch}
 
 \medskip
 

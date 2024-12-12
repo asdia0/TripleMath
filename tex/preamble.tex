@@ -19,6 +19,7 @@
 
 % Chapter and section numbering
 \setcounter{secnumdepth}{-1}
+\setcounter{tocdepth}{1}
 
 \raggedbottom
 
@@ -45,7 +46,7 @@
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumii}{(\roman{enumii}}
 
-% environment boxes
+% environment boxes (modified from evan.sty)
 
 \mdfdefinestyle{mdbluebox}{%
 roundcorner=10pt,
@@ -53,21 +54,42 @@ linewidth=1pt,
 skipabove=12pt,
 innerbottommargin=9pt,
 skipbelow=2pt,
-linecolor=Periwinkle,
+linecolor=MidnightBlue!80!black,
 nobreak=true,
 backgroundcolor=TealBlue!5,
 }
 \declaretheoremstyle[
 headfont=\sffamily\bfseries\color{MidnightBlue},
 mdframed={style=mdbluebox},
-headpunct={.\\[3pt]},
-postheadspace={0pt}
+headpunct={.},
 ]{thmbluebox}
 
 \let\theorem\relax
+\let\corollary\relax
+\let\proposition\relax
 \declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem}
 \declaretheorem[style=thmbluebox,name=Fact,numbered=no]{fact}
 \declaretheorem[style=thmbluebox,name=Statement,numbered=no]{statement}
+\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary}
+\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition}
+
+\mdfdefinestyle{mdpurplebox}{%
+roundcorner=10pt,
+linewidth=1pt,
+skipabove=12pt,
+innerbottommargin=9pt,
+skipbelow=2pt,
+linecolor=Mulberry!80!black,
+nobreak=true,
+backgroundcolor=Thistle!5,
+}
+\declaretheoremstyle[
+headfont=\sffamily\bfseries\color{Mulberry!80!black},
+mdframed={style=mdpurplebox},
+headpunct={.},
+]{thmpurplebox}
+
+\declaretheorem[style=thmpurplebox,name=Method,numbered=no]{method}
 
 \mdfdefinestyle{mdgreenbox}{%
 roundcorner=10pt,
@@ -82,8 +104,7 @@ backgroundcolor=ForestGreen!5,
 \declaretheoremstyle[
 headfont=\sffamily\bfseries\color{ForestGreen!70!black},
 mdframed={style=mdgreenbox},
-headpunct={.\\[3pt]},
-postheadspace={0pt}
+headpunct={.},
 ]{thmgreenbox}
 
 \let\definition\relax
@@ -133,3 +154,5 @@ headpunct={.},
 ]{thmredbox}
 
 \declaretheorem[style=thmredbox,name=Example,numbered=no]{example}
+
+\newenvironment{sketch}{\noindent\textit{Sketch.}}{\hfill$\square$}

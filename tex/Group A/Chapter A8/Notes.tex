@@ -1,0 +1,79 @@
+\section{Notes}
+
+\subsection{Equation of a Line}
+
+\begin{definition}
+    The \vocab{vector equation} of the line $l$ passing through point $A$ with position vector $\vec a$ and parallel to $\vec b$ is given by \[\vec r = \vec a + \l \vec b, \quad \l \in \RR,\] where $\vec r$ is the position vector of any point on the line, and $\l$ is a real, scalar parameter. The vector $\vec b$ is also called the \vocab{direction vector} of the line.
+\end{definition}
+\begin{remark}
+    Note that $\vec a$ can be any position vector on the line and $\vec b$ can be any vector parallel to the line. Hence, the vector equation of a line is not unique.
+\end{remark}
+
+\begin{definition}
+    Let $l : \vec r = \vec a + \l \vec b$, $\l \in \RR$. By writing $\vec r = \cveciiix{x}{y}{z}$, $\vec a = \cveciiix{a_1}{a_2}{a_3}$ and $\vec b = \cveciiix{b_1}{b_2}{b_3}$, we have \[\left\{ \begin{aligned}
+        x = a_1 + \l b_1\\
+        y = a_2 + \l b_2\\
+        z = a_3 + \l b_3
+    \end{aligned}, \quad \l \in \RR. \right.\] This set of three equations is known as the \vocab{parametric equations} of the line $l$.
+\end{definition}
+
+\begin{definition}
+    From the parametric form of the line $l$, by making $\l$ the subject, we have \[\l = \frac{x-a_1}{b_1} = \frac{y - a_2}{b_2} = \frac{z - a_3}{b_3}.\] This equation is known as the \vocab{Cartesian equation} of the line $l$.
+\end{definition}
+\begin{remark}
+    If $b_1 = 0$, we simply have $x = a_1$. A similar result arises when $b_2 = 0$ or $b_3 = 0$.
+\end{remark}
+
+\subsection{Point and Line}
+
+\begin{proposition}[Relationship between Point and Line]
+    A point $C$ lies on a line $l : \vec r = \vec a + \l \vec b$, $\l \in \RR$, if and only if \[(\exists \l \in \RR): \quad \oa{OC} = \vec a + \l \vec b.\]
+\end{proposition}
+\begin{proof}
+    Trivial.
+\end{proof}
+
+\begin{proposition}[Perpendicular Distance between Point and Line]
+    Let $C$ be a point not on the line $l : \vec r = \vec a + \l \vec b$, $\l \in \RR$. Let $F$ be the foot of perpendicular from $C$ to $l$. Then \[CF = \abs{\oa{AC} \crossp \hat{\vec b}}.\]
+\end{proposition}
+\begin{proof}
+    Trivial (recall the application of the vector product in finding side lengths of right-angled triangles).
+\end{proof}
+
+\begin{method}[Finding Foot of Perpendicular from Point to Line]
+    Let $F$ be the foot of perpendicular from $C$ to the line $l : \vec r = \vec a + \l \vec b$, $\l \in \RR$. To find $\oa{OF}$, we use the fact that
+    \begin{itemize}
+        \item $F$ lies on $l$, i.e. $\oa{OF} = \vec a + \l \vec b$ for some $\l \in \RR$.
+        \item $\oa{CF}$ is perpendicular to $l$, i.e. $\oa{CF} \dotp \vec b = 0$.
+    \end{itemize}
+\end{method}
+
+\subsection{Two Lines}
+
+\begin{definition}
+    The relationship between two lines in 3-D space can be classified as follows:
+    \begin{itemize}
+        \item \vocab{Parallel lines}: The lines are parallel and non-intersecting;
+        \item \vocab{Intersecting lines}: The lines are non-parallel and intersecting;
+        \item \vocab{Skew lines}: The lines are non-parallel and non-intersecting.
+    \end{itemize}
+\end{definition}
+\begin{remark}
+    Note that parallel and intersecting lines are coplanar, while skew lines are non-coplanar.
+\end{remark}
+
+\begin{method}[Relationship between Two Lines]
+    Consider two distinct lines, $l_1 : \vec r = \vec a + \l \vec b$, $\l \in \RR$ and $l_2 : \vec r = \vec c + \m \vec d$, $\m \in \RR$.
+    \begin{itemize}
+        \item $l_1$ and $l_2$ are parallel lines if their direction vectors are parallel.
+        \item $l_1$ and $l_2$ are intersecting lines if there are unique values of $\l$ and $\m$ such that $\vec a + \l \vec b = \vec c + \m \vec d$.
+        \item $l_2$ and $l_2$ are skew lines if their direction vectors are not parallel and there are no values of $\l$ and $\m$ such that $\vec a + \l \vec b = \vec c + \m \vec d$.
+    \end{itemize}
+\end{method}
+
+\begin{proposition}[Acute Angle between Two Lines]
+    Let the acute angle between two lines with direction vectors $\vec b_1$ and $\vec b_2$ be $\t$. Then \[\cos\t = \frac{\abs{\vec b_1 \dotp \vec b_2}}{\abs{\vec b_1} \abs{\vec b_2}}.\]
+\end{proposition}
+\begin{proof}
+    Observe that we are essentially finding the angle between the direction vectors of the two lines, which is given by \[\cos\t = \frac{\vec b_1 \dotp \vec b_2}{\abs{\vec b_1} \abs{\vec b_2}}.\] However, to ensure that $\t$ is acute (i.e. $\cos \t \geq 0$), we introduce a modulus sign in the numberator. Hence, \[\cos\t = \frac{\abs{\vec b_1 \dotp \vec b_2}}{\abs{\vec b_1} \abs{\vec b_2}}.\]
+\end{proof}
