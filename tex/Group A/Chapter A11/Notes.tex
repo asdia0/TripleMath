@@ -63,6 +63,8 @@ Note that both the Addition and Multiplication Principles can be extended to any
 \end{remark}
 
 \begin{example}[Permutations of Non-Distinct Objects in a Row]
+    \phantom{.}
+
     \textbf{Q:} Find the number of different permutations of the letters in the word ``BEEN''.
 
     \textbf{A:} Note that there is 1 `B', 2`E's and 1 `N' in ``BEEN''. Using the above result, the number of different permutations is given by \[\frac{4!}{1! 2! 1!} = 12.\]
@@ -113,6 +115,8 @@ Some problems involving permutations and combinations may involve restrictions. 
 \end{method}
 
 \begin{example}[Fixing Positions]
+    \phantom{.}
+    
     \textbf{Q:} How many ways are there to arrange the letters of the word ``SOCIETY'' if the arrangements start and end with a vowel?
     
     \textbf{A:} We first address the restriction by placing the vowels at the start and end of the arrangement. Since there are 3 vowels in ``SOCIETY'', there are $3 \cdot 2 = 6$ ways to do so. Next, observe there are $5!$ ways to arrange the remaining 5 letters. Thus, by the Multiplication Principle, there are \[6 \cdot 5! = 720\] arrangements that satsify the given restriction.
@@ -123,6 +127,8 @@ Some problems involving permutations and combinations may involve restrictions. 
 \end{method}
 
 \begin{example}[Grouping Method]
+    \phantom{.}
+
     \textbf{Q:} Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be together.
 
     \textbf{A:} Consider the consonants `C', `M', `B' and `N' as one unit: \[\boxed{\text{C} \quad \text{M} \quad \text{B} \quad \text{N}} \quad \boxed{\text{O}} \quad \boxed{\text{I}} \quad \boxed{\text{E}}.\]
@@ -138,6 +144,8 @@ Some problems involving permutations and combinations may involve restrictions. 
 \end{method}
 
 \begin{example}[Slotting Method]
+    \phantom{.}
+
     \textbf{Q:} Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
 
     \textbf{A:} We begin by arranging the vowels, of which there are $3!$ ways to do so. \[\uparrow \quad \boxed{\text{O}} \quad \uparrow \quad \boxed{\text{I}} \quad \uparrow \quad \boxed{\text{E}} \quad \uparrow.\] Next, we slot the 4 consonants into the 4 gaps in between the vowels (i.e. where the arrows are). There are $4!$ ways to do so. Thus, by the Multiplication Principle, the total number of arrangements is \[3! \cdot 4! = 144.\]
@@ -148,6 +156,8 @@ Some problems involving permutations and combinations may involve restrictions. 
 \end{method}
 
 \begin{example}[Complementary Method]
+    \phantom{.}
+    
     \textbf{Q:} Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
 
     \textbf{A:} Note that, without restrictions, there are a total of $7!$ ways to arrange the letters in ``COMBINE''. From the previous example, we saw that the number of arrangements where all consonants are together is $576$. Thus, by the complementary method, the number of arrangement where all consonants are separated is \[\text{total} - \text{complementary} = 7! - 576 = 144,\] which matches the answer given in the above example.
