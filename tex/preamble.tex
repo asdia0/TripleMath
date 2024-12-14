@@ -18,7 +18,7 @@
 \chead{\headmark}
 
 % Chapter and section numbering
-\setcounter{secnumdepth}{-1}
+%\setcounter{secnumdepth}{-1}
 \setcounter{tocdepth}{1}
 
 \raggedbottom
@@ -37,7 +37,11 @@
   \setbox\sepbox=\vbox{\begin{center}$\ast$ $\ast$ $\ast$ $\ast$ $\ast$\end{center}}%
   \cleaders\copy\sepbox\vskip\ht\sepbox}
 
-\NewDocumentCommand{\problem}{o}{\ifnum\value{problemnum}>0\separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum\IfNoValueF{#1}{$^\ast$}.}}}
+
+\usepackage{scalerel}
+\NewDocumentCommand\chili{}{\scalerel*{\includegraphics{media/chili.png}}{X}}
+
+\NewDocumentCommand{\problem}{o}{\ifnum\value{problemnum}>0\separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum\IfNoValueF{#1}{ (#1)}.}}}
 \newcommand*{\solution}{\medbreak\noindent{\large\sffamily\bfseries{Solution.}}}
 \newcommand*{\ppart}{\stepcounter{partnum}\smallbreak\noindent{\sffamily\bfseries{Part (\thepartnum).}}}
 \newcommand*{\psubpart}{\stepcounter{subpartnum}\smallbreak\noindent{\sffamily\bfseries\small{Part (\thepartnum)(\thesubpartnum).}}}
@@ -56,7 +60,11 @@ innerbottommargin=9pt,
 skipbelow=2pt,
 linecolor=MidnightBlue!80!black,
 nobreak=true,
-backgroundcolor=TealBlue!5,
+%backgroundcolor=TealBlue!5,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
 }
 \declaretheoremstyle[
 headfont=\sffamily\bfseries\color{MidnightBlue},
@@ -81,7 +89,11 @@ innerbottommargin=9pt,
 skipbelow=2pt,
 linecolor=Mulberry!80!black,
 nobreak=true,
-backgroundcolor=Thistle!5,
+%backgroundcolor=Thistle!5,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
 }
 \declaretheoremstyle[
 headfont=\sffamily\bfseries\color{Mulberry!80!black},
@@ -99,7 +111,11 @@ innerbottommargin=9pt,
 skipbelow=2pt,
 linecolor=ForestGreen,
 nobreak=true,
-backgroundcolor=ForestGreen!5,
+%backgroundcolor=ForestGreen!5,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
 }
 \declaretheoremstyle[
 headfont=\sffamily\bfseries\color{ForestGreen!70!black},
@@ -110,29 +126,6 @@ headpunct={.},
 \let\definition\relax
 \declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition}
 
-
-\mdfdefinestyle{mdblueboxB}{%
-skipabove=8pt,
-skipbelow=0pt,
-linewidth=2pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-linecolor=Periwinkle,
-backgroundcolor=TealBlue!5,
-}
-\declaretheoremstyle[
-headfont=\bfseries\sffamily\color{MidnightBlue},
-bodyfont=\normalfont,
-spaceabove=2pt,
-spacebelow=1pt,
-mdframed={style=mdblueboxB},
-headpunct={.},
-]{thmblueboxB}
-
-\declaretheorem[style=thmblueboxB,name=Claim,numbered=no]{claim}
-
 \mdfdefinestyle{mdredbox}{%
 skipabove=8pt,
 skipbelow=0pt,
@@ -142,7 +135,11 @@ leftline=true,
 topline=false,
 bottomline=false,
 linecolor=RawSienna,
-backgroundcolor=Salmon!5,
+%backgroundcolor=Salmon!5,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
 }
 \declaretheoremstyle[
 headfont=\bfseries\sffamily\color{RawSienna},
@@ -156,3 +153,41 @@ headpunct={.},
 \declaretheorem[style=thmredbox,name=Example,numbered=no]{example}
 
 \newenvironment{sketch}{\noindent\textit{Sketch.}}{\hfill$\square$}
+
+
+% SUPERPART
+% Define the superpart command
+\newcommand{\superpart}[1]{%
+  \cleardoublepage
+  \thispagestyle{empty}% No header/footer
+  \vbox to \textheight{%
+    \vfill
+    \begin{center}
+      \Huge\bfseries\sffamily
+      \MakeUppercase{#1} % Title
+    \end{center}
+    \vfill
+  }
+  %\addcontentsline{toc}{part}{\numberline{}\MakeUppercase{#1}}%
+  \addcontentsline{toc}{part}{\MakeUppercase{#1}}%
+}
+
+% CHAPTER NUMBERING
+\newcommand{\stopchapternumbers}{%
+\setcounter{secnumdepth}{-1}
+}
+
+% DIFFICULTY
+
+
+\makeatletter
+\newcount\my@repeat@count
+\newcommand{\myrepeat}[2]{%
+  \begingroup
+  \my@repeat@count=\z@
+  \@whilenum\my@repeat@count<#1\do{#2\advance\my@repeat@count\@ne}%
+  \endgroup
+}
+\makeatother
+
+\newcommand{\difficulty}[1]{\myrepeat{#1}{$\blacktriangleright$}}

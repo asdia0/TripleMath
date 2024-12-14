@@ -1,0 +1,49 @@
+\section{Assignment A4}
+
+\begin{problem}
+    Find $\sum_{r = 0}^n \bp{n^2 + 1 - 3r}$ in terms of $n$, giving your answer in factorized form.
+\end{problem}
+\begin{solution}
+    \[\sum_{r = 0}^n \bp{n^2 + 1 - 3r} = (n+1)(n^2 + 1) - 3 \bs{\frac{n(n+1)}2} = \frac12 (n+1)\bp{2n^2 - 3n + 2}.\]
+\end{solution}
+
+\begin{problem}
+    Given that $\sum_{k=1}^n k!\bp{k^2 + 1} = (n+1)!\,n$, find $\sum_{k=1}^{n-1} (k+1)!\bp{k^2 + 2k + 2}$.
+\end{problem}
+\begin{solution}
+    Reindexing $k+1 \mapsto k$,
+    \[\sum_{k=1}^{n-1} (k+1)!\bp{k^2 + 2k + 2} = \sum_{k=2}^{n} k! \bp{k^2 + 1}.\] Using the given result, \[\sum_{k=2}^{n} k! \bp{k^2 + 1} = \sum_{k=1}^{n} k! \bp{k^2 + 1} - 1! \bp{1^2 + 1} = (n+1)! \, n - 2.\]
+\end{solution}
+
+\begin{problem}
+    Given that $\sum_{r=1}^n = \frac16 n(n+1)(2n+1)$, find $\sum_{r=N+1}^{2N} \bp{7^{r+1} + 3r^2}$ in terms of $N$, simplifying your answer.
+\end{problem}
+\begin{solution}
+    Note that \[\sum_{r=N+1}^{2N} 7^{r+1} = \frac{7^{(N+1)+1}(7^N - 1)}{7-1} = \frac{7^{N+2}(7^N - 1)}{6}.\] Next, we split the sum of squares: \[\sum_{r=N+1}^{2N} 3r^2 = 3\bp{\sum_{r=1}^{2N} r^2 - \sum_{r=1}^{N} r^2}.\] Using the given result, \[\sum_{r=N+1}^{2N} 3r^2 = 3\bp{\frac{(2N)(2N+1)(4N + 1)}6 - \frac{N(N+1)(2N+1)}6} = \frac{N(2N+1)(7N+1)}{2}.\] Thus, \[\sum_{r=N+1}^{2N} \bp{7^{r+1} + 3r^2} = \frac{7^{N+2}(7^N - 1)}{6} + \frac{N(2N+1)(7N+1)}{2}.\]
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Let $f(r) = \frac3{r-1}$.
+
+        \begin{enumerate}
+            \item Show that $f(r+1) - f(r) = -\frac3{r(r-1)}$.
+            \item Hence, find in terms of $N$, the sum of the series $S_N = \sum_{r=2}^N \frac1{r(r-1)}$.
+            \item Explain why $\sum_{r=2}^\infty \frac1{r(r-1)}$ is a convergent series, and find the value of the sum to infinity.
+            \item Using the result from part (b), find $\sum_{r=2}^N \frac1{r(r+1)}$.
+        \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[f(r+1) - f(r) = \frac3{(r+1) - 1} - \frac3{r - 1} = \frac{3(r-1) - 3r}{r(r-1)} = -\frac3{r(r-1)}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[S_N = \sum_{r=2}^N \frac1{r(r-1)} = -\frac13 \sum_{r=2}^N -\frac{3}{r(r-1)} = -\frac13 \bs{\sum_{r=2}^N f(r+1) - \sum_{r=2}^N f(r)},\] which clearly telescopes. Thus, \[S_N = -\frac{f(N+1) - f(2)}3 = -\frac13 \bp{\frac3{N+1-1} - \frac3{2-1}} = 1 - \frac1N.\]
+    \end{ppart}
+    \begin{ppart}
+        \[\lim_{N \to \infty} S_N = \lim_{N \to \infty} \bp{1 - \frac1N} = 1 - 0 = 1.\] Since 1 is a constant, $\sum_{r=2}^\infty \frac1{r(r-1)}$ is a convergent series.
+    \end{ppart}
+    \begin{ppart}
+        Reindexing $r \mapsto r - 1$, \[\sum_{r=2}^N \frac1{r(r+1)} = \sum_{r=3}^{N+1} \frac1{(r-1)r} = \sum_{r=2}^{N} \frac1{r(r-1)} - \frac1{2(2-1)} + \frac1{(N+1)N}.\] Using the result from part (b), \[\sum_{r=2}^N \frac1{r(r+1)} = \bp{1 - \frac1N} - \frac1{2(2-1)} + \frac1{(N+1)N} = \frac12 - \frac1{N+1}.\]
+    \end{ppart}
+\end{solution}

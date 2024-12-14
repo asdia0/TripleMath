@@ -1,0 +1,63 @@
+\section{Self-Practice A6}
+
+\begin{problem}
+    A curve $C$ has equation, in polar coordinates, $r = a\sqrt{\bp{4 + \sin^2 \t} \cos \t}$, $-\frac12 \pi \leq \t \leq \frac12 \pi$, where $a$ is a positive constant.
+
+    \begin{enumerate}
+        \item Show that $\der{}{\t} \bs{\bp{4 + \sin^2 \t}\cos\t} = -\bp{2 + 3\sin^2 \t} \sin \t$. Hence, state, with a reason, whether $r$ increases or decreases as $\t$ increases, for $0 < \t \leq \frac12 \pi$.
+        \item Sketch the curve $C$.
+        \item Find the Cartesian equation of $C$ in the form $\bp{x^2 + y^2}^m = a^2 x \bp{bx^2 + cy^2}$, giving the numerical values of $m$, $b$ and $c$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The diagram shows a sketch of the curve $C$ with polar equation $r = a\cos^2 \t$, where $a$ is a positive constant and $-\frac12 \pi \leq \t \leq \frac12 \pi$.
+
+    \begin{center}\tikzsetnextfilename{334}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -pi/2:pi/2,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmin=-0.5,
+                xmax=1.5,
+                ymin=-1,
+                ymax=1,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] {(cos(\x r))^2};
+    
+                \addlegendentry{$C$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{enumerate}
+        \item Explain briefly about how you can tell from this form of the equation that $C$ is symmetrical about the line $\t = 0$ and that the tangent to $C$ at the pole $O$ is perpendicular to the line $\t = 0$.
+        \item Show that the equation of $C$ in Cartesian coordinates may be expressed in the form $y^2 = a^{2/3} x^{4/3} - x^2$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The equation of curve $C$ is given in polar coordinates by $r = 1 + \sin 2\t$, $0 \leq \t \leq 2\pi$. 
+    \begin{enumerate}
+        \item Prove that $C$ is symmetric about the pole.
+        \item Sketch $C$ and any tangents to $C$ at the pole. Label any points of intersection with the axes, and show clearly the symmetries and curvature near the pole.
+        \item Determine whether each loop of $C$ is a circle. Justify your answer.
+        \item Show that the Cartesian equation of $C$ is $\bp{x^2 + y^2}^3 = (x+y)^4$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[\chili]
+    Prove that at all points of intersection of the polar curves with equations $r = a(1 + \cos \t)$ and $r = b(1 - \cos\t)$, the tangent lines are perpendicular.
+\end{problem}

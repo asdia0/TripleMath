@@ -1,0 +1,175 @@
+\section{Self-Practice A12}
+
+\begin{problem}
+    Two events $A$ and $B$ are such that $\P{A} = 0.6$, $\P{B} = 0.3$, $\P{A}{B} = 0.2$. Calculate the probabilities that
+    \begin{enumerate}
+        \item both events occur,
+        \item at least one of the two events occurs,
+        \item exactly one of the events occur.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    For events $A$ and $B$, it is given tha t$\P{A} = 0.7$, $\P{B}{A'} = 0.8$, $\P{A}{B'} = 0.88$. Find
+    \begin{enumerate}
+        \item $\P{B \cap A'}$,
+        \item $\P{A' \cap B'}$,
+        \item $\P{A \cap B}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A group of student representatives is to be chosen from three schools, $R$, $S$ and $T$. The group is to consist of 10 students and is chosen from a set of 15 students consisting of 3 from $R$, 4 from $S$ and 8 from $T$. Find the probability that the group consists of
+    \begin{enumerate}
+        \item students from $S$ and $T$ only,
+        \item at least one student from each school.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A box contains 25 apples, of which 20 are red and 5 are green. Of the red apples, 3 contain maggots and of the green apples, 1 contains maggots. Two apples are chosen at random from the box. Find, in any order,
+    \begin{enumerate}
+        \item the probability that both apples contain maggots.
+        \item the probability that both apples are red and at least one contains maggots.
+        \item the probability that at least one apple contains maggots, given that both apples are red.
+        \item the probability that both apples are red given that at least one apple is red.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A bag contains 15 tokens that are indistinguishable apart from their colours. 2 of the tokens are blue and the rest are either red or green. Participants are required to draw the tokens randomly, one at a time, from the bag without replacement.
+
+    \begin{enumerate}
+        \item Given that the probability that a participant draws 2 red tokens on the first 2 draws is $1/35$, show that there are 3 red tokens in the bag.
+        \item Find the probability that a participant draws a red or green token on the second draw.
+    \end{enumerate}
+
+    Events $A$ and $B$ are defined as follows.
+    \begin{itemize}
+        \item $A$: A participant draws his/her second red token on the third draw.
+        \item $B$: A participant draws a blue token on the second draw.
+    \end{itemize}
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find $\P{A \cup B}$.
+        \item Determine if $A$ and $B$ are independent events.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{center}\tikzsetnextfilename{352}
+        \begin{tikzpicture}
+            \coordinate (A) at (-5, -0.5/1.3 - 2.5);
+            \coordinate (B) at (5, -0.5/1.3 - 2.5);
+            \coordinate (C) at (5, 2/1.3 + 3);
+            \coordinate (D) at (-5, 2/1.3 + 3);
+
+            \draw (A) -- (B);
+            \draw (B) -- (C);
+            \draw (C) -- (D);
+            \draw (D) -- (A);
+
+            \draw (0,2/1.3) circle[radius=2];
+            \draw (-1.73/1.3,-0.5/1.3) circle[radius=2];
+            \draw (1.73/1.3,-0.5/1.3) circle[radius=2];
+
+            \node[left] at (-1.73/1.3 - 2,-0.5/1.3) {Laptop};
+            \node[right, text width=3cm,align=center] at (1.73/1.3 + 1.2,-0.5/1.3) {Games\\machine};
+            \node[above] at (0,2/1.3+2) {Tablet};
+
+            \node at (-3, 3) {$x$};
+            \node at (0, 2.5) {130};
+            \node at (-2, -0.6) {48};
+            \node at (2, -0.6) {55};
+            \node at (-1, 0.8) {12};
+            \node at (0, -1) {10};
+            \node at (1, 0.8) {15};
+            \node at (0, 0.25) {20};
+        \end{tikzpicture}
+    \end{center}
+
+    A group of students is asked whether they own any of a laptop, a tablet and a games machine. The numbers owning different combinations are shown in the Venn diagram. The number of students owning none of these is $x$. One of the students is chosen at random.
+    
+    \begin{itemize}
+        \item $L$ is the event that the studnet owns a laptop.
+        \item $T$ is the event that the student owns a tablet.
+        \item $G$ is the event that the student owns a game machine.
+    \end{itemize}
+
+    \begin{enumerate}
+        \item Write down expressions for $\P{L}$ and $\P{G}$ in terms of $x$. Given that $L$ and $G$ are independent, show that $x = 10$.
+    \end{enumerate}
+
+    Using this value of $x$, find
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item $\P{L \cup T}$,
+        \item $\P{T \cap G'}$,
+        \item $\P{L}{G}$.
+    \end{enumerate}
+
+    Two students from the whole group are chosen at random.
+    
+    \begin{enumerate}
+        \setcounter{enumi}{4}
+        \item Find the probability that both of these students each owns exactly two out of the three items (laptop, tablet, games machine).
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A group of students takes an examination in Science. A student who fails the examination at the first attempt is allowed one further attempt. For a randomly chosen student, the probability of passing the examination at the first attempt is $p$. If the student fails the examination at the first attempt, the probability of passing at the second attempt is $0.3$ more than the probability of passing the examination at the first attempt.
+
+    \begin{enumerate}
+        \item Show that the probability that a randomly chosen student passes the examination is $0.3 + 1.7p - p^2$.
+    \end{enumerate}
+
+    Find the value of $p$ such that the probability that a randomly chosen student passes the examination on the first attempt given that the student passes is $0.6$.
+
+    Two students are randomly chosen.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item \begin{enumerate}
+            \item Find the probability that one passes the examination on the first attempt and the other passes the examination on the second attempt, leaving your answer in terms of $p$.
+            \item Find the value of $p$ such that the value of the probability in part (i) is maximum.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    In Haha College, 70\% of the students watch the show \textit{Jogging Man} and 60\% of the students watch the show \textit{Voice of Me}. 40\% of those who do not watch the show \textit{Voice of Me} watch the show \textit{Jogging Man}. Find the probability that a student chosen at random from the college
+    \begin{enumerate}
+        \item watches both shows,
+        \item watches exactly one show,
+        \item watches the show \textit{Voice of Me} given that the student does not watch the show \textit{Jogging Man}.
+    \end{enumerate}
+
+    State, with a reason, whether the events `watches \textit{Jogging Man}' and `watches \textit{Voice of Me}' are independent.
+\end{problem}
+
+\begin{problem}
+    For events $A$ and $B$, it is given that $\P{A} = 2/3$ and $\P{B} = 1/2$.
+    
+    \begin{enumerate}
+        \item State an inequality satisfied by $\P{A \cap B}$.
+    \end{enumerate}
+
+    It is given further that $A$ and $B$ are independent. Find
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item $\P{A \cap B}$,
+        \item $\P{A' \cup B}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[\chili]
+    A fast food restaurant gives away a free action figure for every child's meal bought. There are five different action figures and each figure is equally likely to be given away with a child's meal. A customer intends to collect all five different figures by buying child's meals.
+
+    \begin{enumerate}
+        \item Find the probability that the first 4 child's meals bought by the customer all had different action figures.
+        \item Two of the five action figures are X and Y. Find the probability that the first 4 action figures obtained result in the customer having at least one X or one Y or both.
+        \item Find the probability that the first 4 child's meals bought by the customer had exactly two different action figures.
+        \item At a certain stage, the customer collected 4 of the five action figures. Given that the probability of the customer completing the set by at most $n$ meals is larger than 0.95, find the least value of $n$.
+    \end{enumerate}
+\end{problem}

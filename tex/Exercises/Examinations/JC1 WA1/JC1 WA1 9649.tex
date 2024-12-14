@@ -1,0 +1,234 @@
+\section{JC1 Weighted Assessment 1 - H2 Further Mathematics 9649}
+
+\begin{problem}
+    Show that \[\sum_{r=1}^{(n-1)^2 + 3} (3^{2r} - n + 1) = \frac{a}{b} \bp{729 \cdot 9^{(n-1)^2} - 1} - c(n-1)^3 - d(n-1)\] where $a$, $b$, $c$ and $d$ are constants to be determined.
+\end{problem}
+\begin{solution}
+    \begin{align*}
+        \sum_{r=1}^{(n-1)^2 + 3} (3^{2r} - n + 1) &= \sum_{r=1}^{(n-1)^2 + 3} 9^r  - \sum_{r=1}^{(n-1)^2 + 3}(n - 1)\\
+        &= \frac{9\bp{9^{(n-1)^2 + 3} - 1}}{9-1} - (n-1)\bs{(n-1)^2 + 3}\\
+        &= \frac98 \bp{729 \cdot 9^{(n-1)^2} - 1} - (n-1)^3 - 3(n-1).
+    \end{align*}
+\end{solution}
+
+\begin{problem}
+    \textbf{Do not use a calculator in answering this question.}
+
+    The sequence of positive numbers, $u_n$, satisfies the recurrence relation: \[u_{n+1} = \sqrt{2u_n + 3}, \qquad n = 1, 2, 3, \ldots.\]
+
+    \begin{enumerate}
+        \item If the sequence converges to $m$, find the value of $m$.
+        \item By using a graphical approach, explain why $m < u_{n_1} < u_n$ when $u_n > u_m$. Hence, determine the behaviour of the sequence when $u_1 > m$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} \sqrt{2u_{n-1} + 3} = \sqrt{2\lim_{n \to \infty} u_{n-1} + 3} = \sqrt{2\lim_{n \to \infty} u_n + 3}.\] Since the sequence converges to $m$, we have $\lim_{n \to \infty} u_n = m$. Thus, \[m = \sqrt{2m + 3} \implies m^2 = 2m+3 \implies m^2-2m-3 = (m-3)(m+1) = 0.\] Thus, $m = 3$ or $m = -1$. Since $u_n$ is always positive, we take $m = 3$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}\tikzsetnextfilename{13}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:7,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {3, 5},
+                    ytick = {3},
+                    xticklabels = {3, $u_n > 3$},
+                    xlabel = {$u_n$},
+                    ylabel = {$u_{n+1}$},
+                    ymax=6,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {sqrt(2 * x + 3)};
+        
+                    \addlegendentry{$u_{n+1} = \sqrt{2u_n + 3}$};
+
+                    \addplot[plotBlue] {x};
+
+                    \addlegendentry{$u_{n+1} = u_n$};
+                    
+                    \addplot[dotted, thick] {3};
+
+                    \draw[dotted, thick] (3, 0) -- (3,3);
+
+                    \draw[dotted, thick] (5, 0) -- (5, 5);
+                    
+                    \fill (5, 3) circle[radius=2.5pt] node[anchor = north west] {3};
+
+                    \fill (5, 3.61) circle[radius=2.5pt]node[anchor=north west] {$u_{n+1}$};
+
+                    \fill (5, 5) circle[radius=2.5pt]node[anchor=north west] {$u_{n}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        From the graph, if $u_n > 3$, then $3 < u_{n+1} < u_n$. Hence, the sequence decreases and converges to 3.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Two expedition teams are to climb a vertical distance of 8100 m from the foot to the peak of a mountain. Team $A$ plans to cover a vertical distance of 400 m on the first day. On each subsequent day, the vertical distance covered is 5 m less than the vertical distance covered in the previous day. Team $B$ plans to cover a vertical distance of 800 m on the first day. On each subsequent day, the vertical distance covered is 90\% of the vertical distance covered in the previous day.
+
+    \begin{enumerate}
+        \item Find the number of days required for Team $A$ to reach the peak.
+        \item Explain why Team $B$ will never be able to reach the peak.
+        \item At the end of the 15th day, Team $B$ decided to modify their plan, such that on each subsequent day, the vertical distance covered is 95\% of the vertical distance covered in the previous day. Which team will be the first to reach the peak of the mountain? Justify your answer.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The vertical distance Team $A$ plans to cover in a day can be described as a sequence in arithmetic progression with first term 400 and common difference $-5$. In order to reach the peak, the total vertical distance covered by Team $A$ has to be greater than 8100 m. Hence, \[\frac{n}2 \bp{2 (400) + (n-1)(-5)} \geq 8100.\] Using G.C., $n \geq 24$. Hence, Team $A$ requires 24 days to reach the peak.
+    \end{ppart}
+    \begin{ppart}
+        The vertical distance Team $B$ plans to cover in the $n$th day can be described by the sequence $U_n$ in geometric progression with first term 800 and common ratio $r = 0.9$. Let $S^U_n$ be the $n$th partial sum of $U_n$. Since $\abs{r} < 1$, the sum to infinity of exists and is equal to \[S^U_\infty = \frac{800}{1 - 0.9} = 8000.\] Hence, Team $B$ will never be able to surpass 8 km in height. Thus, they will not reach the peak no matter how long they take.
+    \end{ppart}
+    \begin{ppart}
+        The new vertical distance covered by Team $B$ after Day 15 can be described by the sequence $V_n$ in geometric progression with first term $U_{15}$ and common ratio $r = 0.95$. Let $S^V_n$ be the $n$th partial sum of $V_n$. Then, \[S^V_n = \frac{U_{15}\cdot 0.95 \bs{1 - (0.95)^n}}{1 - 0.95}.\] Note that \[S^U_n = \frac{800\bs{1 - (0.9)^n}}{1 - 0.9}.\] Hence, after Day 15, Team $B$ has to climb another $8000 - S^U_{15} = 1747.13$ metres. Since $U_{15} = 183.01$, we have the inequality \[\frac{183.01\cdot0.95\bs{1 - (0.95)^n}}{1 - 0.95} \geq 1747.13.\] Using G.C., $n \geq 14$. Hence, Team $B$ will need at least $15 + 14 = 29$ days to reach the peak. Thus, team $A$ will reach the peak first.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The function $f$ is given by $f(x) = x^2 - 3x + 2 - \e^{-x}$. It is known from graphical work that this equation has 2 roots $x = \a$ and $x = \b$, where $\a < \b$.
+
+    \begin{enumerate}
+        \item Show that $f(x) = 0$ has at least one root in the interval $[0, 1]$.
+    \end{enumerate}
+
+    It is known that there is exactly one root in $[0, 1]$ where $x = \a$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Starting with $x_0 = 0.5$, use an iterative method based on the form \[x_{n+1} = p\bp{x_n^2 + q - \e^{-x_n}}\] where $p$ and $q$ are real numbers to be determined, to find the value of $\a$ correct to 3 decimal places. You should demonstrate that your answer has the required accuracy.
+    \end{enumerate}
+
+    It is known that the other root $x = \b$ lies in the interval $[2, 3]$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item With the aid of a clearly labelled diagram, explain why the method in (b) will fail to obtain any reasonable approximation to $\b$, where $x_0$ is chosen such that $x_0 \in [2, 3]$, $x_0 \neq \b$.
+    \end{enumerate}
+
+    To obtain an approximation to $\b$, another approach is used.
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Use linear interpolation once in the interval $[2, 3]$ to find a first approximation to $\b$, giving your answer to 2 decimal places. Explain whether this approximate is an overestimate or underestimate.
+        \item With your answer in (d) as the initial approximate, use the Newton-Raphson method to obtain $\b$ correct to 3 decimal places. Your process should terminate when you have two successive iterates that are equal when rounded to 3 decimal places.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that $f(0) = 1 > 0$ and $f(1) = -e^{-1} < 0$. Since $f$ is continuous and $f(0)f(1) < 0$, there must be at least one root to $f(x) = 0$ in the interval $[0, 1]$.
+    \end{ppart}
+    \begin{ppart}
+        Let $f(x) = 0$. Then, \[x^2 - 3x + 2 - \e^{-x} = 0 \implies x^2 + 2 - \e^{-x} = 3x \implies x = \frac13 \bp{x^2 + 2 - \e^{-x}}.\] Hence, we should use an iterative method based on the form \[x_{n+1} = \frac13 \bp{ x^2_n + 2 - \e^{-x_n}}.\] Starting with $x_0 = 0.5$,
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|}
+            \hline
+            $n$ & $x_n$ & $n$ & $x_n$ \\ \hline\hline
+            0 & 0.5 & 6 & 0.60494 \\ \hline
+            1 & 0.54782 & 7 & 0.60662 \\ \hline
+            2 & 0.57396 & 8 & 0.60759 \\ \hline
+            3 & 0.58871 & 9 & 0.60817 \\ \hline
+            4 & 0.59718 & 10 & 0.60851 \\ \hline
+            5 & 0.60208 & 11 & 0.60870 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        Since $f(0.6085) = 0.000606 > 0$ and $f(0.6095) = -0.000632 < 0$, we have that $\a \in (0.6085, 0.6095)$. Thus, $\a = 0.609 \todp{3}$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}\tikzsetnextfilename{14}
+            \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
+                \begin{axis}[
+                    domain = 0:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {0.609, 2.109, 2.5, 1.6},
+                    xticklabels = {$\a$, $\b$, $x_0 > \b$, $x_0 < \b$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {1/3 * (x^2 + 2 - e^(-x))};
+
+                    \addlegendentry{$y=\frac13 (x^2 + 2 - \e^{-x})$};
+
+                    \addplot[plotBlue] {x};
+
+                    \addlegendentry{$y=x$};
+
+                    \draw[dotted, thick] (0.609, 0) -- (0.609, 0.609);
+
+                    \draw[dotted, thick] (2.109, 0) -- (2.109, 2.109);
+
+                    \draw[dotted, thick] (2.5, 0) -- (2.5, 2.723);
+
+                    \draw[dotted, thick] (1.6, 0) -- (1.6, 1.453);
+
+                    \begin{scope}[decoration={
+                        markings,
+                        mark=at position 0.5 with {\arrow{>}}}
+                        ] 
+
+                        \draw[postaction={decorate}]  (2.5, 2.723) --  (2.723, 2.723);
+
+                        \draw[postaction={decorate}] (2.723, 2.723) -- (2.723, 3.116);
+
+                        \draw[postaction={decorate}] (2.723, 3.116) -- (3, 3.116);
+
+                        \draw[postaction={decorate}] (1.6, 1.453) -- (1.453, 1.453);
+
+                        \draw[postaction={decorate}] (1.453, 1.453) -- (1.453, 1.292);
+
+                        \draw[postaction={decorate}] (1.453, 1.292) -- (1.292, 1.292);
+
+                        \draw[postaction={decorate}] (1.292, 1.292) -- (1.292, 1.132);
+
+                        \draw[postaction={decorate}] (1.292, 1.132) -- (1.132, 1.132);
+                    \end{scope}
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        From the diagram, we see that whether we chose $x_0 < \b$ or $x_0 > \b$, the approximates move away from the root $\b$. In fact, if we choose $x_0 < \b$, the approximates converge to the root $\a$ instead.
+    \end{ppart}
+    \begin{ppart}
+        Using linear interpolation on the interval $[2, 3]$, \[x_1 = \frac{2f(3)-3f(2)}{f(3)-f(2)} = 2.06 \todp{2}.\] Thus, $\b = 2.06 \todp{2}$.
+
+        Observe that $f(2.06) = -0.039 < 0$ and $f(3) = 1.950 > 0$. Hence, $\b \in (2.06, 3)$. Thus, $\b = 2.06$ is an underestimate.
+    \end{ppart}
+    \begin{ppart}
+        Observe that $f'(x) = 2x x- 3 + \e^{-x}$. Using the Newton-Raphson method with $x_1 = 2.06$,
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            $n$ & $x_n$ \\ \hline
+            1 & 2.06 \\ \hline
+            2 & 2.11118 \\ \hline
+            3 & 2.10935 \\ \hline
+            4 & 2.10935 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        Hence, $\b = 2.109 \todp{3}$.
+    \end{ppart}
+\end{solution}

@@ -1,0 +1,117 @@
+\chapter{Equations and Inequalities}\label{sec:Equations-and-Inequalities}
+
+\paragraph{Prerequisites.} None.
+\paragraph{Exercises.} \nameref{sec:A1}
+
+\section{Quadratic Equations}
+
+\begin{proposition}[Quadratic Formula]
+    The roots $\a$ and $\b$ of a quadratic equation $ax^2 + bx + c = 0$, where $a \neq 0$ can be found using the quadratic formula: \[\a, \b = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.\]
+\end{proposition}
+\begin{proof}
+    Completing the square, we get \[ax^2 + bx + c = a\bp{x + \frac{b}{2a}}^2 - \frac{b^2}{4a} + c = 0,\] which rearranges as \[\bp{x + \frac{b}{2a}}^2 = \frac{b^2 - 4ac}{4a^2}.\] Taking roots and simplifying, \[x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a} \implies x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.\]
+\end{proof}
+\begin{proposition}
+    Test
+\end{proposition}
+
+\begin{definition}
+    The expression under the radical ($b^2 - 4ac$) is known as the \vocab{discriminant} and is denoted $\D$.
+\end{definition}
+
+\begin{proposition}[Nature of Roots]
+    \phantom{.}
+    \begin{itemize}
+        \item If $\D > 0$, the roots are real and distinct.
+        \item If $\D = 0$, the roots are equal.
+        \item If $\D < 0$, the roots are complex.
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    Trivial by the quadratic formula.
+\end{proof}
+
+\begin{proposition}[Vieta's Formula for Quadratics]
+    Let $\a$ and $\b$ be the roots of the quadratic $ax^2 + bx + c = 0$, where $a \neq 0$. Then \[\a + \b = -\frac{b}{a}, \qquad \a \b = \frac{c}{a}.\]
+\end{proposition}
+\begin{proof}
+    Since $\a$ and $\b$ are roots, we can rewrite the quadratic as \[ax^2 + bx + c = a(x - \a)(x - \b).\] Expanding, \[ax^2 + bx + c = a\bs{x^2 - (\a + \b) x + \a\b} = 0.\] Comparing coefficients yields \[\a + \b = -\frac{b}{a}, \qquad \a \b = \frac{c}{a}.\]
+\end{proof}
+
+\section{System of Linear Equations}
+
+\begin{definition}
+    A set of two or more equations to be solved simultaneously is called a \vocab{system of equations}. If the system has only equations that contain unknowns of the \textit{first degree}, it is a \vocab{system of linear equations}.
+\end{definition}
+
+\begin{definition}
+    A system of equations is said to be \vocab{consistent} if it admits solutions. Conversely, if there are no solutions to the system, it is said to be \vocab{inconsistent}.
+\end{definition}
+
+\begin{proposition}
+    If a system of linear equations is consistent, it either has a unique solution or infinitely many solutions.
+\end{proposition}
+\begin{proof}
+    Geometrically, if a collection of lines has more than one common point, they must all be equivalent.
+\end{proof}
+
+\section{Inequalities}
+
+\begin{fact}[Properties of Inequalities]
+    Let $a, b, c, \in \RR$.
+    \begin{itemize}
+        \item (transitivity) If $a > b$ and $b > c$, then $a > c$.
+        \item (addition) If $a > b$, then $a + c > b + c$.
+        \item (multiplication) If $a > b$ and $c > 0$, then $ac > bc$; if $c < 0$, then $ac < bc$.
+    \end{itemize}
+\end{fact}
+
+We now introduce two methods to solve functional inequalities.
+\begin{method}[Graphical Method]
+    Plot the function and observe which $x$-values satisfy the inequality.
+\end{method}
+\begin{method}[Test-Value Method]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \begin{enumerate}
+        \item Indicate the root(s) of the function on a number line (i.e. where $f(x) = 0$).
+        \item Choose an $x$-value within each interval as your test-value.
+        \item Using the test-value, evaluate whether the function is positive/negative within that interval.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{method}
+Note that the test-value method is only useful for inequalities where one side is 0, e.g. $f(x) > 0$.
+
+\begin{example}[Test-Value Method]
+    Consider the inequality $2x - x^2 \geq -3$. In order to apply the test-value method, we must first make one side of the inequality 0: \[2x - x^2 \geq -3 \implies x^2 - 2x - 3 \leq 0.\] Since $x^2 - 2x - 3 = (x+1)(x-3)$, the critical values are $x = -1$ and $x = 3$. Picking $x = -2$, $x = 0$ and $x = 4$ as our test-values, we see that $x^2 - 2x - 3$ is only negative on the interval $(-1, 3)$. Hence, the solution is $[-1, 3]$.
+\end{example}
+
+In the case where the function is rational, i.e. $\frac{f(x)}{g(x)}$, there is an additional method we can use.
+\begin{method}[Clearing Denominators]
+    Multiply the \textbf{square} of the denominators throughout the inequality.
+\end{method}
+Note that the squares ensure that the sign of the inequality is preserved.
+
+\begin{example}[Clearing Denominators]
+    To solve the inequality $\frac{(x-1)(x + 2)}{x - 4} > 0$, we multiply both sides of the inequality with the square of the denominator, $(x-4)^2$. This gives $(x-1)(x+2)(x-4) > 0$, which we can solve easily using either the graphical or test-value methods.
+\end{example}
+
+\section{Modulus Function}
+
+\begin{definition}
+    The modulus function $\abs{x}$, where $x \in \RR$, is defined as \[\abs{x} = \begin{cases}
+        \phantom{-}x & \text{if $x \geq 0$,}\\
+        -x & \text{if $x < 0$.}
+    \end{cases}\]
+\end{definition}
+
+\begin{fact}[Properties of Modulus Function]
+    For any $x \in \RR$ and $k > 0$,
+    \begin{itemize}
+        \item $\abs{x} \geq 0$.
+        \item $\abs{x^2} = \abs{x}^2 = x^2$ and $\sqrt{x^2} = \abs{x}$.
+        \item $\abs{x} < k \iff -k < x < k$.
+        \item $\abs{x} = k \iff x = -k \lor x = k$.
+        \item $\abs{x} > k \iff x < -k \lor x > k$.
+    \end{itemize}
+\end{fact}
