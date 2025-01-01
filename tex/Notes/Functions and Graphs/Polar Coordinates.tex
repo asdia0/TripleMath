@@ -1,14 +1,12 @@
-\chapter{Polar Coordinates}\label{sec:Polar-Coordinates}
-
-\paragraph{Prerequisites.} None.
-\paragraph{Exercises.} \nameref{sec:A6}
+\chapter{Polar Coordinates}\label{chap:Polar-Coordinates}
 
 \section{Polar Coordinate System}
 
 \begin{definition}
     Let the \vocab{pole} (or origin) be a point $O$ in the plane. Let the \vocab{initial line} (or polar axis) be a half-line starting at $O$. Let $P$ be any other point in the plane. Then $P$ has polar coordinates $(r, \t)$, where $r$ is the distance from $O$ to $P$ and $\t$ is the angle between the initial line and the line $OP$.
 
-    \begin{center}\tikzsetnextfilename{333}
+    \begin{figure}[H]\tikzsetnextfilename{333}
+        \centering
         \begin{tikzpicture}[trim axis left, trim axis right]
             \begin{axis}[
                 domain = 0:2*pi,
@@ -43,7 +41,8 @@
                 \draw pic [draw, angle radius=10mm, "$\t$"] {angle = A--B--C};
             \end{axis}
         \end{tikzpicture}
-    \end{center}
+        \caption{}
+    \end{figure}
 \end{definition}
 
 There are some conventions regarding the pole and the initial line.
@@ -73,7 +72,7 @@ From the figure, we also have \[r^2 = x^2 + y^2, \quad \tan \t = \frac{y}{x},\] 
     \phantom{.}
     \begin{itemize}
         \item If the equation is invariant under $\t \mapsto -\t$, the curve is symmetric about the polar axis.
-        \item If the equation is invariant under $r \mapsto r$, or when $\t \mapsto \t + \pi$, the curve is symmetric about the pole (i.e. the curve remains unchanged when rotated by $180\deg$ about the origin).
+        \item If the equation is invariant under $r \mapsto -r$, or when $\t \mapsto \t + \pi$, the curve is symmetric about the pole (i.e. the curve remains unchanged when rotated by $180\deg$ about the origin).
         \item If the equation is invariant when $\t \mapsto \pi - \t$, the curve is symmetric about the vertical line $\t = \frac\pi2$.
         \item If $r$ is a function of $\cos n\t$ only, the curve is symmetric about the horizontal half lines $\t = \frac{k}{n} \pi$, $k \in \ZZ$.
         \item If $r$ is a function of $\sin n\t$ only, the curve is symmetric about the vertical half-lines $\t = \frac{2k+1}{2n} \pi$, $k \in \ZZ$.
@@ -88,5 +87,5 @@ From the figure, we also have \[r^2 = x^2 + y^2, \quad \tan \t = \frac{y}{x},\] 
     Recall that \[x = r\cos\t, \qquad y = r\sin\t.\] Differentiating with respect to $\t$, \[\der{x}{\t} = r' \cos \t - r\sin\t, \qquad \der{y}{\t} = r' \sin \t + r\cos\t.\] Thus, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{r' \sin \t + r \cos \t}{r' \cos \t - r \sin \t}.\]
 \end{proof}
 \begin{remark}
-    To find horizontal tangents (i.e. $\der{y}{x} = 0$), we can solve $\der{y}{\t} = 0$ (provided $\der{x}{\t} \neq 0$). Likewise, to find vertical tangents (i.e. $\der{y}{x}$ undefined), we can solve $\der{x}{\t} = 0$ (provided $\der{y}{\t} \neq 0$). Lastly, if we are looking for tangent lines at the pole, where $r = 0$, the equation simplifies to \[\der{y}{x} = \tan \t,\] provided $\der{r}{\t} \neq 0$.
+    To find horizontal tangents (i.e. $\derx{y}{x} = 0$), we can solve $\derx{y}{\t} = 0$ (provided $\derx{x}{\t} \neq 0$). Likewise, to find vertical tangents (i.e. $\derx{y}{x}$ undefined), we can solve $\derx{x}{\t} = 0$ (provided $\derx{y}{\t} \neq 0$). Lastly, if we are looking for tangent lines at the pole, where $r = 0$, the equation simplifies to \[\der{y}{x} = \tan \t,\] provided $\derx{r}{\t} \neq 0$.
 \end{remark}

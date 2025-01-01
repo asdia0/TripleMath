@@ -491,7 +491,7 @@
         \end{tikzpicture}
     \end{center}
 
-    \renewcommand{\theenumi}{\arabic{enumi}}%
+    \renewcommand{\theenumi}{\arabic{enumi}.}%
     \begin{enumerate}
         \item Translate the curve 2 units in the positive $x$-direction.
         \item Stretch the curve with a scale factor of 4 parallel to the $y$-axis.
@@ -782,7 +782,7 @@
                     \addplot[plotRed, domain=2:5, samples=31, unbounded coords=jump] {1/(1/(x-2) + 2)};
 
 
-                    \addlegendentry{$y = \frac1{f(x)}$};
+                    \addlegendentry{$y = 1/f(x)$};
 
                     \fill (-1, -1/2) circle[radius=2.5 pt];
                     

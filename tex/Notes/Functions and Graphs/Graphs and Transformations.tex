@@ -1,0 +1,447 @@
+\chapter{Graphs and Transformations}
+
+\section{Characteristics of a Graph}
+
+When we sketch a graph, we need to take note of the following characteristics and indicate them on the sketch accordingly:
+\begin{itemize}
+    \item \textbf{Axial intercepts.} $x$- and $y$-intercepts.
+    \item \textbf{Stationary points.} Maximum, minmum points and stationary points of inflexion.
+    \item \textbf{Asymptotes.} Horizontal, vertical and oblique asymptotes.
+\end{itemize}
+
+When sketching a graph, the shape and any symmetry must be clearly seen.
+
+\section{Asymptotes}
+
+\begin{definition}
+    An \vocab{asymptote} is a straight line such that the distance between the curve and the line approaches zero at the extreme end(s) of a graph, i.e. the curve approaches the line but never touches it at these ends.
+\end{definition}
+
+\begin{definition}
+    Let $a$ and $b$ be constants.
+
+    \begin{itemize}
+        \item If $x \to \pm \infty$, $y \to a$, then the line $y = a$ is a \vocab{horizontal asymptote}.
+        \item If $x \to a$, $y \to \pm \infty$, then the line $x = a$ is a \vocab{vertical asymptote}.
+        \item If $x \to \pm \infty$, $y - (ax + b) \to 0$, then the line $y = ax + b$ is an \vocab{oblique asymptote}.
+    \end{itemize}
+\end{definition}
+
+\section{Even and Odd Functions}
+
+\begin{definition}
+    A function $f(x)$ is \vocab{even} if and only if $f(-x) = f(x)$ for all $x$ in its domain.
+\end{definition}
+
+Geometrically, a function is even if and only if the graph $y = f(x)$ is symmetrical about the $y$-axis.
+
+\begin{definition}
+    A function $f(x)$ is \vocab{odd} if and only if $f(-x) = -f(x)$ for all $x$ in its domain.
+\end{definition}
+
+Geometrically, a function is odd if and only if the graph $y = f(x)$ is symmetrical about the origin.
+
+\section{Graphs of Rational Functions}
+
+A rational function $f$ is a ratio of two polynomials $P(x)$ and $Q(x)$, where $Q(x) \not\equiv 0$.
+
+\subsection{Rectangular Hyperbola}
+
+A rectangular hyperbola is a hyperbola with asymptotes that are perpendicular to each other. The general formula for a rectangular hyperbola is $y = \frac{ax + b}{cx + d}$, where $a$, $b$, $c$ and $d$ are constants. Note that the curve $y = \frac{ax + b}{cx + d}$ has a vertical asymptote $x = -d/c$ and a horizontal asymptote $y = a/c$. The two possible shapes of a rectangular hyperbola are shown below.
+
+\begin{figure}[H]\tikzsetnextfilename{353}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -10:6,
+            ymax = 8,
+            ymin = -6,
+            samples = 161,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed, unbounded coords = jump] {-(x+1)/(x+2) + 2};
+            \addplot[plotBlue, unbounded coords = jump] {(x+1)/(x+2)};
+
+            \addplot[dashed] {1};
+            \draw[dashed] (-2, -6) -- (-2, 8);
+
+            \node[anchor=south east] at (-2, -6) {$x = -d/c$};
+            \node[anchor=south west] at (-10, 1) {$y = a/c$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Hyperbolas of the form $y = \frac{ax + b}{cx + d}$.}
+\end{figure}
+
+\subsection{Hyperbolas of the Form $y = \frac{ax^2 + bx + c}{dx + e}$}
+
+A hyperbola of the form $y = \frac{ax^2 + bx + c}{dx + e}$, where $a$, $b$, $c$, $d$ and $e$ are constants, has one vertical and one oblique asymptote. The vertical asymptote has equation $x = -e/d$. To deduce the oblique asymptote, we must first convert the equation to the form $y = px + q + \frac{r}{dx + e}$ (via long division or otherwise). These graphs will generally take one of the two forms below, which can be easily deduced by checking the axial intercepts.
+
+\begin{figure}[H]\tikzsetnextfilename{354}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -9:7,
+            ymax = 8,
+            ymin = -8,
+            samples = 161,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed, unbounded coords = jump] {x + 1 + 1/(x+1)};
+            \addplot[plotBlue, unbounded coords = jump] {x + 1 - 1/(x+1)};
+
+            \addplot[dashed] {x+1};
+            \draw[dashed] (-2, -8) -- (-2, 8);
+
+            \node[anchor=south east] at (-2, 6) {$x = -e/d$};
+            \node[anchor=west] at (-8, -7) {$y = px + q$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Hyperbolas of the form $y = \frac{ax^2 + bx + c}{dx + e}$.}
+\end{figure}
+
+\section{Graphs of Basic Conics}
+
+A conic is a curve that can be formed by intersecting a right circular conical surface with a plae. We will examine four types of conics: parabola, circle, ellipse and hyperbola. When sketching graphs of conics, it is important to identify their unique characteristics.
+
+\subsection{Parabola}
+
+Parabolas are curves with equations $y = ax^2$ or $x = by^2$, where $a$ and $b$ are constants.
+
+\begin{figure}[H]\tikzsetnextfilename{355}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -10:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {x^2};
+            \addlegendentry{$a > 0$};
+
+            \addplot[plotBlue] {-x^2};
+            \addlegendentry{$a < 0$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Parabolas with equation $y = ax^2$.}
+\end{figure}
+
+Parabolas with equation $y = ax^2$ have a line of symmetry $x = 0$ and a vertex at the origin.
+
+\begin{figure}[H]\tikzsetnextfilename{356}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -3:3,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] ({x^2}, {x});
+            \addlegendentry{$b > 0$};
+
+            \addplot[plotBlue] ({-x^2}, {x});
+            \addlegendentry{$b < 0$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Parabolas with equation $x=by^2$.}
+\end{figure}
+
+Parabolas with equation $x = by^2$ have a line of symmetry $y = 0$ and a vertex at the origin.
+
+\subsection{Circle}
+
+A circle is a set of all points in a plane which are the same distance (radius $r$) from a fixed point (centre). A basic circle with centre at the origin $O$ and radius $r$ is shown below.
+
+\begin{figure}[H]\tikzsetnextfilename{357}
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+        \draw[->] (0,-5) -- (0,5) node[anchor=north west] {$y$};
+        \draw[->] (-5,0) -- (5,0) node[anchor=south east] {$x$};
+
+        \draw[plotRed] (0, 0) circle[radius=4];
+        \draw[dashed] (0, 0) -- (2.83, 2.83);
+        \node[anchor=south east] at (1.41, 1.41) {$r$};
+        \node[anchor=north east] at (0, 0) {$O$};
+    \end{tikzpicture}
+    \caption{Circle with equation $x^2 + y^2 = r^2$.}
+\end{figure}
+
+Any straight line that passes through the centre of the circle is a line of symmetry. The above circle has vertices at $(r, 0)$, $(-r, 0)$, $(0, r)$ and $(0, -r)$.
+
+In general,
+\begin{itemize}
+    \item the standard form of the equation of a circle with centre at $(h, k)$ and radius $r$ is $(x-h)^2 + (y-k)^2 = r^2$, where $r > 0$.
+    \item the general form of the equation of a circle is $Ax^2 + Ay^2 + Bx + Cy + D = 0$.
+\end{itemize}
+
+\subsection{Ellipse}
+
+An ellipse is a circle that has been scaled parallel to the $x$- and/or $y$-axes. The standard form of the equation of an ellipse centred at $(0, 0)$ is $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$, where $a, b > 0$. $a$ and $b$ are known as the \vocab{horizontal} and \vocab{vertical radii} respectively.
+
+\begin{figure}[H]\tikzsetnextfilename{358}
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+        \draw[->] (0,-5) -- (0,5) node[anchor=north west] {$y$};
+        \draw[->] (-5,0) -- (5,0) node[anchor=south east] {$x$};
+
+        \draw[plotRed] (0, 0) ellipse[x radius=3, y radius=2];
+        \node[anchor=north east] at (0, 0) {$O$};
+
+        \node[anchor=south west] at (3, 0) {$a$};
+        \node[anchor=south east] at (-3, 0) {$-a$};
+        \node[anchor=south east] at (0, 2) {$b$};
+        \node[anchor=north east] at (0, -2) {$-b$};
+    \end{tikzpicture}
+    \caption{Ellipse with equation $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$.}
+\end{figure}
+
+The lines of symmetry for the above ellipse are the $x$- and $y$-axes, while its vertices are $(a,0)$, $(-a, 0)$, $(0, b)$ and $(0, -b)$.
+
+In general,
+\begin{itemize}
+    \item the standard form of the equation of an ellipse with centre at $(h, k)$ and radius $r$ is $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$, where $r > 0$.
+    \item the general form of the equation of an ellipse is $Ax^2 + Bx^2 + Cx + Dy + E = 0$.
+\end{itemize}
+
+\subsection{Hyperbola}
+
+The hyperbola is a conic with two oblique asymptotes. The standard form of a hyperbola centred at the origin $O$ is either $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ or $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$, where $a, b > 0$, depending on the orientation of the hyperbola.
+
+\begin{figure}[H]\tikzsetnextfilename{359}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -5:5,
+            ymin = -5,
+            ymax = 5,
+            samples = 201,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {sqrt(x^2 - 1)};
+            \addlegendentry{$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$};
+
+            \addplot[plotBlue] {sqrt(x^2 + 1)};
+            \addlegendentry{$\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$};
+
+            \addplot[plotRed] {-sqrt(x^2 - 1)};
+            \addplot[plotBlue] {-sqrt(x^2 + 1)};
+
+            \addplot[dashed] {x};
+            \addplot[dashed] {-x};
+
+            \node[anchor=south west] at (1, 0) {$a$};
+            \node[anchor=south east] at (-1, 0) {$-a$};
+            \node[anchor=south east] at (0, 1) {$b$};
+            \node[anchor=north east] at (0, -1) {$-b$};
+
+            \node at (1.5, 3) {$y = bx/a$};
+            \node at (1.5, -3) {$y = -bx/a$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+Both hyperbolas have the origin as their centres, the $x$- and $y$-axes as their lines of symmetry, and their two oblique asymptotes are $y = \pm \frac{b}{a} x$. The hyperbola with equation $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ has vertices $(-a, 0)$ and $(a, 0)$, i.e. $a$ is the horizontal distance from the centre to the vertices. Similarly, the hyperbola with equation $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$ has vertices $(0, -b)$ and $(0, b)$, i.e. $b$ is the vertical distance from the centre to the vertices.
+
+In general,
+\begin{itemize}
+    \item the standard form of the equation of a hyperbola with centre at $(h, k)$ and radius $r$ is $\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1$ or $\frac{(y-k)^2}{b^2} - \frac{(x-h)^2}{a^2} = 1$ where $a, b > 0$.
+    \item the general form of the equation of a hyperbola is $Ax^2 - Bx^2 + Cx + Dy + E = 0$.
+\end{itemize}
+
+\section{Parametric Equations}
+
+\begin{definition}
+    A set of \vocab{parametric equations} define a curve by expressing the coordinates $(x, y)$ in terms of an independent variable $t$ (the \vocab{parameter}), i.e. $x = f(t)$ and $y = g(t)$.
+\end{definition}
+
+\begin{example}[Parametric Equations of a Circle]
+    The parametric equations $x = \cos \t$, $y = \sin \t$, $\t \in [0, 2\pi)$ defines a unit circle.
+\end{example}
+
+Note that changing the domain of the parameter may change the shape of the curve, even if the same pair of parametric equations are used. Using the above example, if we instead take $\t \in [0, \pi)$ the resulting curve is that of a semicircle.
+
+To convert a pair of parametric equations to Cartesian form, the parameter must be eliminated. This can be done by either expressing $t$ in terms of $x$ and/or $y$.
+
+\begin{example}[Parametric to Cartesian via Substitution]
+    Consider the parametric equations $x = t^2 + 2t$, $y = t^2 - 2t$. Observe that $x - y = 4t$, whence $t = (x-y)/4$. Thus, the Cartesian equation of the resulting curve is \[y = \bp{\frac{x-y}4}^2 + 2\bp{\frac{x-y}4}.\]
+\end{example}
+
+A similar process is used to convert implicit Cartesian equations into parametric form. Note that explicit Cartesian equations can be trivially converted: simply take $x = t$.
+
+\section{Basic Linear Transformations}
+
+\subsection{Translation}
+
+For $a > 0$,
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\columnwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|c|}
+    \hline
+    \textbf{How $y = f(x)$ was transformed} & \textbf{Graphical effect on $y = f(x)$} & \textbf{Effect on $x$ or $y$ values} \\ \hline\hline
+    $y$ replaced with $y-a$ & Translated $a$ units in the positive $y$-direction. & $(x, y) \mapsto (x, y + a)$ \\ \hline
+    $y$ replaced with $y+a$ & Translated $a$ units in the negative $y$-direction. & $(x, y) \mapsto (x, y - a)$ \\ \hline
+    $x$ replaced with $x-a$ & Translated $a$ units in the positive $x$-direction. & $(x, y) \mapsto (x + a, y)$ \\ \hline
+    $x$ replaced with $x+a$ &  Translated $a$ units in the negative $x$-direction. & $(x, y) \mapsto (x - a, y)$ \\ \hline
+    \end{tabularx}
+\end{table}
+
+\subsection{Reflection}
+
+For $a > 0$,
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\columnwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|c|}
+    \hline
+    \textbf{How $y = f(x)$ was transformed} & \textbf{Graphical effect on $y = f(x)$} & \textbf{Effect on $x$ or $y$ values} \\ \hline\hline
+    $y$ replaced with $-y$ & Reflected in the $x$-axis. & $(x, y) \mapsto (x, -y)$ \\ \hline
+    $x$ replaced with $-x$ & Reflected in the $y$-axis. & $(x, y) \mapsto (-x, y)$ \\ \hline
+    \end{tabularx}
+\end{table}
+
+\subsection{Scaling}
+
+For $a > 0$,
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\columnwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|c|}
+    \hline
+    \textbf{How $y = f(x)$ was transformed} & \textbf{Graphical effect on $y = f(x)$} & \textbf{Effect on $x$ or $y$ values} \\ \hline\hline
+    $y$ replaced with $y/a$ & Scaled by a factor of $a$ parallel to the $y$-axis. & $(x, y) \mapsto (x, ay)$ \\ \hline
+    $x$ replaced with $x/a$ & Scaled by a factor of $a$ parallel to the $x$-axis. & $(x, y) \mapsto (ax, y)$ \\ \hline
+    \end{tabularx}
+\end{table}
+
+\section{Relating Graphs to the Graph of $y = f(x)$}
+
+\subsection{Graph of $y = \abs{f(x)}$}
+
+Note that \[y = \abs{f(x)} = \begin{cases}
+    f(x) & f(x) \geq 0,\\
+    f(-x) & f(x) < 0.
+\end{cases}\]
+
+\begin{recipe}[Graph of $y = \abs{f(x)}$]
+    To obtain the graph of $y = \abs{f(x)}$ from the graph of $y = f(x)$,
+    \begin{itemize}
+        \item Retain the portion of $y = f(x)$ above the $x$-axis.
+        \item Reflect in the $x$-axis the portion of $y = f(x)$ below the $x$-axis.
+    \end{itemize}
+\end{recipe}
+
+\begin{example}[Graph of $y = \abs{f(x)}$]
+    Consider the following graph of $y = f(x)$.
+    \begin{figure}[H]
+        \centering
+        \hspace{7em}\includegraphics{figures/248.pdf}
+        \caption{\label{fig:248}}
+    \end{figure}
+    Reflecting the portion of the curve below the $x$-axis, we get the following graph of $y = \abs{f(x)}$.
+    \begin{figure}[H]
+        \centering
+        \hspace{7em}\includegraphics{figures/252.pdf}
+        \caption{}
+    \end{figure}
+\end{example}
+
+\subsection{Graph of $y = f(\abs{x})$}
+
+Note that \[y = f(\abs{x}) = \begin{cases}
+    f(x) & x \geq 0,\\
+    f(-x) & x < 0.
+\end{cases}\]
+
+\begin{recipe}[Graph of $y = f(\abs{x})$]
+    To obtain the graph of $y = f(\abs{x})$ from the graph of $y = f(x)$,
+    \begin{itemize}
+        \item Retain the portion of $y = f(x)$ where $x \geq 0$.
+        \item Delete the porition of $y = f(x)$ where $x < 0$.
+        \item Copy and reflect in the $y$-axis the portion of $y = f(x)$ where $x \geq 0$.
+    \end{itemize}
+\end{recipe}
+
+\begin{example}[Graph of $y = f(\abs{x})$]
+    Let the graph of $y = f(x)$ be as in Fig.~\ref{fig:248}. Following the above steps, we see that the graph of $y = f(\abs{x})$ is
+    \begin{figure}[H]
+        \centering
+        \hspace{7em}\includegraphics{figures/250.pdf}
+        \caption{}
+    \end{figure}
+\end{example}
+
+\subsection{Graph of $y = 1/f(x)$}
+
+There are several key features and behaviours that we must note when drawing the graph of $y = 1/f(x)$.
+
+\begin{itemize}
+    \item If $y = f(x)$ increases, $1/f(x)$ decreases and vice versa.
+    \item For a minimum point $(a,b)$ where $b \neq 0$ on the graph of $y = f(x)$, it corresponds to a maximum point $(a, 1/b)$ on the graph of $y = 1/f(x)$ and vice versa.
+    \item For an $x$-intercept $(a, 0)$ on the graph of $y = f(x)$, it corresponds to a vertical asymptote $x = a$ on the graph of $y = 1/f(x)$ and vice versa.
+    \item Oblique asymptotes on the graph of $y = f(x)$ become horizontal asymptotes at $y = 0$ on the graph of $y = 1/f(x)$.
+\end{itemize}
+
+\begin{example}[Graph of $y = 1/f(x)$]
+    Let the graph of $y = f(x)$ be as in Fig.~\ref{fig:248}. Following the above pointers, we see that the graph of $y = 1/f(x)$ is
+    \begin{figure}[H]
+        \centering
+        \hspace{7em}\includegraphics{figures/253.pdf}
+        \caption{}
+    \end{figure}
+\end{example}

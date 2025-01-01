@@ -1,0 +1,151 @@
+\chapter{Functions}
+
+\section{Definition and Notation}
+
+\begin{definition}
+    A \vocab{function} $f$ is a rule or relation that assigns each and every element of $x \in X$ to one and only one element $y \in Y$. We write this as $f : X \to Y$ and read it as ``$f$ maps $x$ to $Y$''. $X$ is called the \vocab{domain} of $f$, denoted $\dom f$, while $Y$ is called the \vocab{codomain} of $f$. The elements of $y$ that get mapped to under $f$ is known as the \vocab{range} of $f$, denoted $\ran f$. Mathematically, $\ran f = \bc{f(x) \mid x \in \dom f}.$
+\end{definition}
+
+To define a function, we must state its rule and specify the domain. There are two ways to represent this: \[\underbrace{f : x \mapsto x^2 + 1}_{\text{the rule}}, \, \underbrace{x \in \RR}_{\dom f} \qquad \lor \qquad \underbrace{f(x) = x^2 + 1}_{\text{the rule}}, \, \underbrace{x \in \RR}_{\dom f}.\]
+
+Note that two functions are equal if and only if they have the same rule and domain. For instance, the function $g : x \mapsto x^2 + 1$, $x \in \ZZ$ is not equal to $f$ (as defined above) since their domains are not equal ($\RR \neq \ZZ$).
+
+Note that $f$ is not the same as $f(x)$! $f$ is a \textit{map}, while $f(x)$ is the \textit{value} that $f$ maps $x$ to.
+
+\section{Graph of a Function}
+
+A function $f$ is more often shown as a graph on which the points $(x, f(x))$ are plotted. The equation of the resulting curve can be written in the form $y = f(x)$.
+
+\begin{example}[Graph of a Function]
+    \phantom{.}
+    \begin{figure}[H]\tikzsetnextfilename{360}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -2.75:2.5,
+                ymax = 100,
+                ymin = -50,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {-3*x^3 + 7*x^2 + 10*x + 30 + x^5};
+    
+                \addlegendentry{$y = f(x)$};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{An example of a graph of a function.}
+    \end{figure}
+\end{example}
+
+\begin{proposition}[Vertical Line Test]
+    A relation $f$ is a function if and only if every vertical line $x = k$, $k \in \dom f$ cuts the graph of $y = f(x)$ at one and only one point.
+\end{proposition}
+\begin{proof}
+    By definition, a function $f$ is a relation which maps each element in the domain to one and only one image.
+\end{proof}
+
+\section{One-One Functions}
+
+\begin{definition}
+    A function is said to be \vocab{one-one} if no two distinct elements in the given domain have the same image under $f$. Mathematically, \[x_1 \neq x_2 \implies f(x_1) \neq f(x_2).\] Equivalently, $f$ is one-one if $f(x_1) = f(x_2)$ implies $x_1 = x_2$.
+\end{definition}
+
+\begin{proposition}[Horizontal Line Test]
+    A function $f$ is one-one if and only if any horizontal line $y = k$, $k \in \ran f$ cuts the graph of $y = f(x)$ at one and only one point.
+\end{proposition}
+\begin{proof}
+    We only prove the backwards case as the forwards case is trivial. Suppose $y = k$ and $y = f(x)$ intersect more than once. Then there exist two distinct elements $x_1$ and $x_2$ in $\dom f$ such that $f(x_1) = f(x_2)$, whence $f$ is not one-one.
+\end{proof}
+
+\begin{proposition}[Strict Monotonicity Implies One-One]
+    All strictly monotone functions are one-one.
+\end{proposition}
+\begin{proof}
+    Seeking a contradiction, assume that there exists a strictly increasing function $f : X \to Y$ which is not one-one. Then there exists $x_1, x_2 \in X$ such that $x_1 \neq x_2 \implies f(x_1) = f(x_2)$. Without loss of generality, assume $x_1 < x_2$, since $f$ is strictly increasing. Then $f(x_1) < f(x_2)$, a contradiction. Therefore, all strictly increasing functions are one-one. Similarly, all strictly decreasing functions are one-one.
+\end{proof}
+
+To prove that a function is not one-one, it is sufficient to provide a specific counter-example.
+
+\section{Inverse Functions}
+
+\begin{definition}
+    Let $f : X \to Y$ be a function. Its \vocab{inverse function}, $\inv f : Y \to X$ is a function that undoes the operation of $f$. Mathematically, for all $x \in \dom f$, \[\inv f(y) = x \iff f(x) = y.\]
+\end{definition}
+
+\begin{fact}[Properties of Inverse Function]
+    \phantom{.}
+    \begin{itemize}
+        \item $\inv f$ exists if and only if $f$ is one-one.
+        \item $\dom f = \ran{\inv f}$ and $\ran f = \dom{\inv f}$.
+        \item The graphs of $f$ and $\inv f$ are reflections of each other in the line $y = x$.
+    \end{itemize}
+\end{fact}
+
+\begin{figure}[H]\tikzsetnextfilename{361}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -2:5,
+            ymin = -2,
+            ymax = 5,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north west] {$O$};
+                }
+            ]
+            \addplot[plotRed] {e^x};
+
+            \addlegendentry{$y = f$};
+
+            \addplot[plotBlue] {ln(x)};
+
+            \addlegendentry{$y = \inv f$};
+
+            \addplot[dashed] {x};
+
+            \node[rotate=45] at (3, 2.5) {$y = x$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{The graphs of $f$ and $\inv f$ are reflections of each other in the line $y = x$.}
+\end{figure}
+
+\section{Composite Functions}
+
+\begin{definition}
+    Let $f$ and $g$ be functions. Then the \vocab{composite function} $gf$ is defined by \[gf(x) = g(f(x)) = g \circ f(x), \quad x \in \dom f.\]
+\end{definition}
+
+\begin{proposition}[Existence of Composite Function]
+    The composite function $gf$ exists when $\ran f \subseteq \dom g$.
+\end{proposition}
+\begin{proof}
+    Suppose $\ran f \not\subseteq \dom g$. Then there exists some element $y$ in $\ran f$ that is not in $\dom g$. Let the pre-image of $y$ under $f$ be $x$. Then $gf(x) = g(y)$ is undefined, whence $gf$ is not well-defined and is hence not a function.
+\end{proof}
+
+Note that in general, composition of functions is not commutative, i.e. $fg \neq gf$.
+
+We write the composition of $f$ with itself $n$ times as $f^n(x)$. For instance, $ff(x) = f(f(x))$ can be written as $f^2(x)$. This should not be confused with $\bs{f(x)}^n$.
+
+\subsection{Composition of Inverse Function}
+
+Suppose $f : x \mapsto y$ has an inverse $\inv f : y \mapsto x$. By the definition of an inverse function. \[\inv f \circ f(x) = f \circ \inv f(x) = x.\] Though $\inv f f$ and $f \inv f$ have the same rule, they may have different domains. This is because $\dom {\inv f f} = \dom f$, while $\dom {f \inv f} = \dom {\inv f}$.

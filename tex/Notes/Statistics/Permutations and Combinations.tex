@@ -1,7 +1,4 @@
-\chapter{Permutations and Combinations}\label{sec:Permutations-and-Combinations}
-
-\paragraph{Prerequisites.} None.
-\paragraph{Exercises.} \nameref{sec:A11}
+\chapter{Permutations and Combinations}\label{chap:Permutations-and-Combinations}
 
 \section{Counting Principles}
 
@@ -43,7 +40,7 @@ Note that both the Addition and Multiplication Principles can be extended to any
     \begin{itemize}
         \item \textbf{Stage $r$.} After filling all previous $r-1$ slots, the number of ways to fill in the last slot is $n-(r-1) = n-r+1$.
     \end{itemize}
-    Thus, by the Multiplication Principle, the number of ways to fill up the $r$ slots are \[n(n-1)(n-2)\dots(n-r+1)) = \frac{n!}{(n-r)!}.\]
+    Thus, by the Multiplication Principle, the number of ways to fill up the $r$ slots are \[n(n-1)(n-2)\dots(n-r+1) = \frac{n!}{(n-r)!}.\]
 \end{proof}
 
 \begin{corollary}[Permutations of Distinct Objects in a Row]
@@ -113,9 +110,9 @@ Note that both the Addition and Multiplication Principles can be extended to any
 
 Some problems involving permutations and combinations may involve restrictions. When dealing with such problems, one should consider the restrictions first. There are four basic strategies that can be employed to tackle these restrictions.
 
-\begin{method}[Fixing Positions]
+\begin{recipe}[Fixing Positions]
     When certain objects must be at certain positions, place those objects first.
-\end{method}
+\end{recipe}
 
 \begin{example}[Fixing Positions]
     \phantom{.}
@@ -125,9 +122,9 @@ Some problems involving permutations and combinations may involve restrictions. 
     \textbf{A:} We first address the restriction by placing the vowels at the start and end of the arrangement. Since there are 3 vowels in ``SOCIETY'', there are $3 \cdot 2 = 6$ ways to do so. Next, observe there are $5!$ ways to arrange the remaining 5 letters. Thus, by the Multiplication Principle, there are \[6 \cdot 5! = 720\] arrangements that satsify the given restriction.
 \end{example}
 
-\begin{method}[Grouping Method]
+\begin{recipe}[Grouping Method]
     When certain objects must be placed together, group them together as one unit.
-\end{method}
+\end{recipe}
 
 \begin{example}[Grouping Method]
     \phantom{.}
@@ -142,9 +139,9 @@ Some problems involving permutations and combinations may involve restrictions. 
     Hence, by the Multiplication Principle, the total number of arrangements is \[4! \cdot 4! = 576.\]
 \end{example}
 
-\begin{method}[Slotting Method]
+\begin{recipe}[Slotting Method]
     When certain objects are to be separated, we first arrange the other objects to form barriers before slotting in those to be separated.
-\end{method}
+\end{recipe}
 
 \begin{example}[Slotting Method]
     \phantom{.}
@@ -154,9 +151,9 @@ Some problems involving permutations and combinations may involve restrictions. 
     \textbf{A:} We begin by arranging the vowels, of which there are $3!$ ways to do so. \[\uparrow \quad \boxed{\text{O}} \quad \uparrow \quad \boxed{\text{I}} \quad \uparrow \quad \boxed{\text{E}} \quad \uparrow.\] Next, we slot the 4 consonants into the 4 gaps in between the vowels (i.e. where the arrows are). There are $4!$ ways to do so. Thus, by the Multiplication Principle, the total number of arrangements is \[3! \cdot 4! = 144.\]
 \end{example}
 
-\begin{method}[Complementary Method]
+\begin{recipe}[Complementary Method]
     If the direct method is too tedious, it is more efficient to count by taking all possibilities minus the complementary sets. This method can also be used for ``at least/at most'' problems.
-\end{method}
+\end{recipe}
 
 \begin{example}[Complementary Method]
     \phantom{.}

@@ -1,0 +1,356 @@
+\chapter{Differential Equations}
+
+\section{Definitions}
+
+\begin{definition}
+    A \vocab{differential equation} (DE) is an equation which involves one or more derivatives of a function $y$ with respect to a variable $x$ (i.e. $y'$, $y''$, etc.). The \vocab{order} of a DE is determined by the highest derivative in the equation. The \vocab{degree} of a DE is the power of the highest derivative in the equation.
+\end{definition}
+
+\begin{example}
+    The differential equation \[x \bp{\der[2]{y}{x}}^3 + x^2 \bp{\der{y}{x}} + y = 0\] has order 2 and degree 3.
+\end{example}
+
+Observe that the equations $y = x^2 - 2$, $y = x^2$ and $y = x^2 + 10$ all satisfy the property $y' = 2x$ and are hence solutions of that DE. There are obviously many other possible solutions are we see that any equations of the form $y = x^2 + C$, where $C$ is an arbitrary constant, will be a solution to the DE $y' = 2x$.
+
+\begin{definition}
+    A \vocab{general solution} to a DE contains arbitrary constants, while a \vocab{particular solution} does not.
+\end{definition}
+
+Hence, $y = x^2 + C$ is the general solution to the DE $y' = 2x$, while $y = x^2 - 2$, $y = x^2$ and $y = x^2 + 10$ are the particular solutions.
+
+In general, the general solution of an $n$th order DE has $n$ arbitrary constants.
+
+\section{Solving Differential Equations}
+
+\subsection{Separation of Variables}
+
+\begin{definition}
+    A \vocab{separable differential equation} is a DE that can be written in the form \[\der{y}{x} = f(x) g(y).\]
+\end{definition}
+
+\begin{recipe}[Solving via Separation of Variables]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \begin{enumerate}
+        \item Separate the variables. \[\der{y}{x} = f(x) g(y) \implies \frac1{g(y)} \der{y}{x} = f(x).\]
+        \item Integrate both sides with respect to $x$. \[\int \frac1{g(y)} \der{y}{x} \ d x = \int f(x) \d x \implies \int \frac1{g(y)} \d y = \int f(x) \d x.\]
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
+
+\begin{example}[Solving via Separation of Variables]
+    Consider the separable DE \[2x \der{y}{x} = y^2 + 1.\] Separating variables, \[\frac2{y^2 + 1} \der{y}{x} = \frac1{x}.\] Integrating both sides with respect to $x$, we get \[\int \frac2{y^2 + 1} \der{y}{x} \d x = \int \frac1{x} \d x.\] Using the chain rule, we can rewrite the LHS as \[\int \frac2{y^2 + 1} \d y = \int \frac1{x} \d x.\] Thus, \[2\arctan y = \ln \abs{x} + C.\] This is the general solution to the given DE.
+\end{example}
+
+\subsection{Integrating Factor}
+
+\begin{definition}
+    A \vocab{linear first-order differential equation} is a DE that can be written in the form \[\der{y}{x} + p(x) y = q(x).\]
+\end{definition}
+
+To solve a linear first-order DE, we first observe that the LHS looks like the product rule has been applied. This motivates us to multiply through by a new function $f(x)$ such that the LHS can be written as the derivative of a product: \[f(x) \der{y}{x} + f(x) p(x) y = f(x) q(x). \tag{1}\] Recall that \[\der{}{x} \bs{f(x) y} = f(x) \der{y}{x} + f'(x) y.\] Comparing this with (1), we want $f(x)$ to satisfy \[f(x) p(x) = f'(x) \implies \frac{f'(x)}{f(x)} = p(x).\] Observe that the LHS is simply the derivative of $\ln f(x)$. Integrating both sides, we get \[\ln f(x) = \int p(x) \d x \implies f(x) = \exp \int p(x) \d x.\] Going back to (1), we get \[\der{}{x} \bs{y \e^{\int p(x) \d x}} = q(x) \e^{\int p(x) \d x}.\] Once again, we get a separable DE, which we can solve easily: \[y \e^{\int p(x) \d x} = \int q(x) \e^{\int p(x) \d x} \d x.\] This is the general solution to the DE.
+
+\begin{definition}
+    The function $f(x) = \e^{\int p(x) \d x}$ is called the \vocab{integrating factor}, sometimes denoted $\IF$.
+\end{definition}
+
+Note that we do not need to derive the integrating factor like above every time we solve a linear first-order DE. We can simply quote the result $\IF = \e^{\int p(x) \d x}$. The following list is a summary of the steps we need to solve a linear first-order DE.
+
+\begin{recipe}[Solving via Integrating Factor]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \begin{enumerate}
+        \item Multiply the DE through by the $\IF = \e^{\int p(x) \d x}$. \[\e^{\int p(x) \d x} \der{y}{x} + \e^{\int p(x) \d x} p(x) y = \e^{\int p(x) \d x} q(x).\]
+        \item Express the LHS as the derivative of a product. \[\der{}{x} \bs{y \e^{\int p(x) \d x}} = \e^{\int p(x) \d x} q(x).\]
+        \item Integrating both sides with respect to $x$. \[y \e^{\int p(x) \d x} = \int \e^{\int p(x) \d x} q(x) \d x.\]
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
+
+Note that when finding the integrating factor, there is no need to include the arbitrary constant or consider $\abs{x}$ when integrating $1/x$ with respect to $x$, as it does not contribute to the solution process in any way; the constants will cancel each other out.
+
+\begin{example}[Solving via Integrating Factor]
+    Consider the DE equation \[x \der{y}{x} + 3y = 5x^2.\] Writing this in standard form, \[\der{y}{x} + \bp{\frac3x}y = 5x.\] The integrating factor is hence \[\IF = \e^{\int 3/x \d x} = \e^{3\ln x} = x^3.\] Multiplying the integrating factor through the DE, \[x^3 \der{y}{x} + 3x^2 y = \der{}{x} \bp{x^3 y} = 5x^4.\] Integrating both sides with respect to $x$, we get the general solution \[x^3 y = \int 5x^4 \d x = x^5 + C.\]
+\end{example}
+
+\subsection{Substitution}
+
+Sometimes, we are given a DE that is not of the forms described in this section. We must then use the given substitution function to simplify the original DE into one of the standard forms. Similar to integration by substitution, all instances of the dependent variable (including its derivatives) must be substituted.
+
+\begin{recipe}[Solving via Substitution]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}
+    \begin{enumerate}
+        \item Differentiate the given substitution function.
+        \item Substitute into the original DE and simplify to obtain another DE that we know how to solve.
+        \item Obtain the general solution of the new DE with new dependent variables.
+        \item Express the solution in terms of the original variables.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
+
+\begin{example}[Solving via Substitution]
+    \phantom{.}
+
+    \textbf{Q:} By using the substitution $y = ux^2$, find the general solution of the differential equation \[x^2 \der{y}{x} - 2xy = y^2, \quad x > 0.\]
+
+    \textbf{A:} From $y = ux^2$, we see that \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the original DE, \[x^2 \bp{2ux + x^2 \der{u}{x}} - 2x \bp{ux^2} = \bp{ux^2}^2.\] Simplifying, we get the separable DE \[\der{u}{x} = u^2,\] which we can easily solve: \[\int \frac1{u^2} \d u = \int 1 \d x \implies -\frac1{u} = x + C.\] Re-substituting $y$ back in, we have the general solution \[-\frac{x^2}{y} = x + C.\]
+\end{example}
+
+\section{Family of Solution Curves}
+
+Graphically, the general solution of a differential equation is represented by a family of solution curves which contains infinitely many curves as the arbitrary constant $c$ can take any real number.
+
+A particular solution of the differential equation is represented graphically by one member of that family of solution curves (i.e. one value of the arbitrary constant).
+
+When sketching a family of curves, we choose values of the arbitrary constant that will result in qualitatively different curves. We also need to sketch sufficient members (usually at least 3) of the family to show all the general features of the family.
+
+\begin{example}
+    The following diagram shows three members of the family of solution curves for the general solution $y = A\e^{x^2}$.
+
+    \begin{figure}[H]\tikzsetnextfilename{370}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -3:3,
+                restrict y to domain =-10:10,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {e^(x^2)};
+                \addlegendentry{$A = 1$};
+
+                \addplot[plotGreen] {0};
+                \addlegendentry{$A = 0$};
+
+                \addplot[plotBlue] {-e^(x^2)};    
+                \addlegendentry{$A = -1$};
+                \end{axis}
+        \end{tikzpicture}
+        \caption{}
+    \end{figure}
+\end{example}
+
+\section{Approximating Solutions}
+
+Most of the time, a differential equation of the general form $\derx{y}{x} = f(x, y)$ cannot be solved exactly and explicitly by analytical methods like those discussed in the earlier sections. In such cases, we can use numerical methods to approximate solutions to differential equations.
+
+Different methods can be used to approximate solutions to a differential equation. A sequence of values $y_1, y_2, \dots$ is generated to approximate the exact solutions at the points $x_1, x_2, \dots$. It must be emphasized that the numerical methods do not generate a formula for the solution to the differential equation. Rather, they generate a sequence of approximations to the actual solution at the specified points.
+
+In this section, we look at Euler's Method, as well as the improved Euler's Method.
+
+\subsection{Euler's Method}
+
+The key principle in Euler's method is the use of a linear approximation for the tangent line to the actual solution curve $y(t)$ to approximate a solution.
+
+\subsubsection{Derivation}
+
+Given an initial value problem \[\der{y}{t} = f(t, y), \quad y(t_0) = y_0,\] we start at $(t_0, y_0)$ on the solution curve as shown in the figure below. By the point-slope formula, the equation of the tangent line through $(t_0, y_0)$ is given as \[y - y_0 = \evalder{\der{y}{t}}{t=t_0} (t - t_0) = f(t_0, y_0) (t - t_0) \tag{1}.\] If we choose a step size of $\D t$ on the $t$-axis, then $t_1 = t_0 + \D t$. Using (1) at $t = t_1$, we can obtain an approximate value $y_1$ from \[y_1 = y_0 + (t_1 - t_0) f(t_0, y_0) \tag{2}.\] 
+
+\begin{figure}[H]\tikzsetnextfilename{371}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:0.8,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {0.3, 0.5},
+            xticklabels = {$t_0$, $t_1$},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {x + sin(pi * \x r) - 0.5};
+            \addlegendentry{actual solution curve};
+
+            \addplot[dashed] {0.609 + 2.847 * (x - 0.3)};
+            \draw[dashed] (0.3, 0) -- (0.3, 0.609);
+            \draw[dashed] (0.5, 0) -- (0.5, 1.178);
+            \fill (0.5, 1.178) circle[radius=2.5pt] node[anchor=south east] {$(t_1, y_1)$};
+            \fill (0.3, 0.609) circle[radius=2.5pt] node[anchor=south east] {$(t_0, y_0)$};
+            \fill (0.5, 1) circle[radius=2.5pt] node[anchor=north west] {$(t_1, y(t_1))$};
+            \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+The point $(t_1, y_1)$ on the tangent line is an approximation to the point $(t_1, y(t_1))$ on the actual solution curve. That is, $y_1 \approx y(t_1)$. From the above figure, it is observed that the accuracy of the approximation depends heavily on the size of $\D t$. Hence, we must choose an increment $\D t$ which is ``reasonably small''.
+
+We can extend (2) further. In general, at $t = t_{n+1}$, it follows that \[y_{n+1} = y_n + (t_{n+1} - t_n) f(t_n, y_n).\]
+
+\begin{recipe}[Euler's Method]
+    Euler's method, with step size $\D t$, gives the approximation \[y(t_n) \approx y_{n+1} = y_n + (t_{n+1} - t_n) f(t_n, y_n).\]
+\end{recipe}
+
+\begin{example}[Euler's Method]\label{eg:Eulers-Method}
+    Consider the initial value problem \[\der{y}{t} = 2y - 1, \quad y(0) = \frac32,\] which can be verified to have solution $y = e^{2t} + 1/2$. Suppose we wish to approximate the value of $y(0.3)$ (which we know to be $\e^{2(0.3)} + 1/2 = 2.322$). Using Euler's method with step size $\D t = 0.1$, we get
+    \begin{align*}
+        y_1 &= y_0 + \D t \bp{2y_0 - 1} = 1.5 + 0.1 \bs{2(1.5) - 1} = 1.7\\
+        y_2 &= y_1 + \D t \bp{2y_1 - 1} = 1.7 + 0.1 \bs{2(1.7) - 1} = 1.94\\
+        y_3 &= y_2 + \D t \bp{2y_2 - 1} = 1.94 + 0.1 \bs{2(1.94) - 1} = 2.228
+    \end{align*}
+    Hence, $y(0.3) \approx y_3 = 2.228$, which is a decent approximation (4.04\% error).
+\end{example}
+
+\subsubsection{Error in Approximations}
+
+Similar to the trapezium rule, the nature of the estimates given by Euler's method depends on the concavity of the actual solution curve.
+\begin{itemize}
+    \item If the actual solution curve is concave upwards (i.e. lies above its tangents), the approximations are under-estimates.
+    \item If the actual solution curve is concave downwards (i.e. lies below its tangents), the approximations are over-estimates.
+\end{itemize}
+
+Also note that the smaller the step size $\D t$, the better the approximations. However, in doing so, more calculations must be made. This is a situation that is typically of numerical methods: there is a trade-off between accuracy and speed.
+
+\subsection{Improved Euler's Method}
+
+In the previous section, we saw how Euler's method over- or under-estimates the actual solution curve due to the curve's concavity. The improved Euler's method address this.
+
+\subsubsection{Derivation}
+
+Suppose the actual solution curve is concave upward. Let $T_0$ and $T_1$ be the tangent lines at $t = t_0$ and $t = t_1$ respectively. Let the gradients of $T_0$ and $T_1$ be $m_0$ and $m_1$ respectively. We wish to find the optimal gradient $m$ such that the line with gradient $m$ passing through $(t_0, y(t_0))$ also passes through $(t_1, y(t_1))$.
+
+Since the actual solution curve is concave upward, both $T_0$ and $T_1$ lie below the actual solution curve for all $t \in [t_0, t_1]$. This is depicted in the diagram below.
+
+\begin{figure}[H]\tikzsetnextfilename{372}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:0.8,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {0.2, 0.6},
+            xticklabels = {$t_0$, $t_1$},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {x^2 + 0.3};
+            \addlegendentry{actual solution curve};
+
+            \addplot[dashed] {0.34 + (x - 0.2) * 0.4};
+            \addplot[dashed] {0.66 + (x - 0.6) * 1.2};
+
+            \draw[dashed] (0.2, 0) -- (0.2, 0.34);
+            \draw[dashed] (0.6, 0) -- (0.6, 0.66);
+
+            \fill (0.2, 0.34) circle[radius=2.5pt];
+            \fill (0.6, 0.66) circle[radius=2.5pt] node[anchor=south east] {$(t_1, y(t_1))$};
+
+            \node[anchor=south] at (0.17, 0.34) {$(t_0, y(t_0))$};
+
+            \node at (0.73, 0.72) {$T_1$};
+            \node at (0.73, 0.47) {$T_0$};
+            \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+Now, observe what happens when we translate $T_1$ such that it passes through $(t_0, y_0)$:
+
+\begin{figure}[H]\tikzsetnextfilename{373}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:0.8,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {0.2, 0.6},
+            xticklabels = {$t_0$, $t_1$},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {x^2 + 0.3};
+            \addlegendentry{actual solution curve};
+
+            \addplot[dashed] {0.34 + (x - 0.2) * 0.4};
+            \addplot[dashed] {0.34 + (x - 0.2) * 1.2};
+
+            \draw[dashed] (0.2, 0) -- (0.2, 0.34);
+            \draw[dashed] (0.6, 0) -- (0.6, 0.66);
+
+            \fill (0.2, 0.34) circle[radius=2.5pt] node[anchor=north west] {$(t_0, y(t_0))$};
+            \fill (0.6, 0.66) circle[radius=2.5pt] node[anchor=north west] {$(t_1, y(t_1))$};
+            \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+The translated $T_1$ is now overestimating the actual solution curve at $t = t_1$! Hence, the optimal gradient $m$ is somewhere between $m_0$ and $m_1$. This motivates us to approximate $m$ by taking the average of $m_0$ and $m_1$: \[m \approx \frac{m_0 + m_1}{2}.\]
+
+We now find $m_0$ and $m_1$. Note that \[m_0 = f(t_0, y(t_0)) \quad \land \quad m_1 = f(t_1, y(t_1)).\] This poses a problem, as the value of $y(t_1)$ is not known to us. However, we can estimate it using the Euler method: \[y(t_1) \approx \wt{y}_1 = y_0 + \D t f(t_0, y_0).\] Note that we denote this approximation as $\wt{y}_0$. We thus have \[m \approx \frac{m_0 + m_1}{2} = \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}.\]
+
+We are now ready to approximate $y(t_1)$. By the point-slope formula, the line with gradient $m$ passing through $(t_0, y_0)$ has equation \[y - y_0 = m (t - t_0) \approx \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2} (t - t_0).\] When $t = t_1$, we get \[y(t_1) \approx y_1 = y_0 + \D t \bs{\frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}}. \tag{1}\]
+
+A similar derivation can be obtained when the actual solution curve is concave downards.
+
+Extending (1), we get the usual statement of the improved Euler's method:
+
+\begin{recipe}[Improved Euler's Method]
+    The improved Euler's method, with step size $\D t$, gives the approximation \[y_{n+1} = y_n + \D t \bs{\frac{f(t_n, y_n) + f(t_{n+1}, \wt{y}_{n+1})}{2}},\] where \[\wt{y}_{n+1} = y_n + \D t f(t_n, y_n).\]
+\end{recipe}
+
+\begin{definition}
+    $\wt{y}_{n + 1}$ is called the \vocab{predictor}, while $y_{n+1}$ is called the \vocab{corrector}.
+\end{definition}
+
+\begin{example}[Improved Euler's Method]
+    Consider the initial value problem \[\der{y}{t} = 2y - 1, \quad y(0) = \frac32,\] which we previously saw in Example~\ref{eg:Eulers-Method}. Suppose we wish to approximate the value of $y(0.3)$. Using the improved Euler's method with step size $\D t = 0.1$,
+    \begin{align*}
+        \wt{y}_1 &= y_0 + \D t f(t_0, y_0) = 1.7\\
+        y_1 &= y_0 + \D t \bs{\frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}} = 1.72 \\ \\
+        \wt{y}_2 &= y_1 + \D t f(t_1, y_1) = 1.964\\
+        y_2 &= y_1 + \D t \bs{\frac{f(t_1, y_1) + f(t_2, \wt{y}_2)}{2}} = 1.9884 \\ \\
+        \wt{y}_3 &= y_2 + \D t f(t_2, y_2) = 2.28608\\
+        y_3 &= y_2 + \D t \bs{\frac{f(t_2, y_2) + f(t_3, \wt{y}_3)}{2}} = 2.35848
+    \end{align*}
+    Hence, $y(0.3) \approx y_3 = 3.5848$, which gives an error of $0.270\%$, much better than the $4.04\%$ achieved by Euler's method.
+\end{example}
+
+\subsection{Relationship with Approximations to Definite Integrals}
+
+Recall that solving differential equations analytically required us to integrate. It is thus no surprise that approximating solutions to differential equations is related to approximating the values of definite integrals. As we will see, the Euler method is akin to approximating definite integrals using a Riemann sum, while the improved Euler method is akin to using the trapezium rule.
+
+Consider the differential equation $\der{y}{t} = f(t, y)$. By the fundamental theorem of calculus, the area under the graph of $f(t, y)$ from $t = t_0$ to $t = t_1$ is given by \[\int_{t_0}^{t_1} f(t, y) \d t = \int_{t_0}^{t_1} \der{y}{t} \d t = y(t_1) - y(t_0) \tag{1}.\] Note that we know $y(t_0)$. Hence, the better the approximation of the integral, the better the approximation of $y(t_1)$, which is what we want.
+
+We can approximate this integral using a Riemann sum with one rectangle. Note that this rectangle has width $\D t$ and height $f(t_0, y_0)$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t f(t_0, y_0).\] Rewriting, we get the statement of the Euler method: \[y(t_1) \approx y(t_0) + \D t f(t_0, y_0).\]
+
+We now approximate the integral in (1) using the trapezium rule with 2 ordinates. Note that the area of this trapezium is given by $\frac12 \D t \bs{f(t_0, y_0) + f(t_1, y_1)}$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\] Rewriting, we (almost) get the statement of the improved Euler method: \[y(t_1) \approx y(t_0) + \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\]
+
+Recall that generally, the trapezium rule is a much better approximation than a Riemann sum. Correspondingly, it follows that the improved Euler method is a much better approximation than the Euler method.
+
+\section{Modelling Populations with First-Order Differential Equations}
+

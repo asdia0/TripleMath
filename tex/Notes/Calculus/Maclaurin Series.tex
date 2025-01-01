@@ -1,0 +1,107 @@
+\chapter{Maclaurin Series}
+
+\begin{definition}
+    A \vocab{power series} is an infinite series of the form \[\sum_{n=0}^\infty a_n (x-c)^n = a_0 + a_1 (x-c) + a_2 (x-c)^2 + \dots,\] where $a_n$ is the constant coefficient of the $n$th term and $c$ is the \vocab{centre} of the power series.
+\end{definition}
+
+Under certain conditions, a function $f(x)$ can be expressed as a power series. This makes certain operations, such as integration, easier to perform. For instance, the integral $\int x\e^x \d x$ is non-elementary. However, we can approximate it by replacing $x\e^x$ with its power series and integrating a polynomial instead.
+
+In this chapter, we will learn how to determine the power series of a given function $f(x)$ with centre $c = 0$ by using differentiation. This particular power series is called the Maclaurin series.
+
+\section{Deriving the Maclaurin Series}
+
+Suppose we can express a function $f(x)$ as a power series with centre $c = 0$. That is, we wish to find constant coefficients such that \[f(x) = \sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots. \tag{1}\] Notice that we can obtain $a_0$ right away: substituting $x = 0$ into (1) gives \[f(0) = a_0 + a_1 (0) + a_2 (0)^2 + \dots = a_0.\] Now, observe that if we differentiate (1), we get \[f'(x) = a_1 + 2a_2 x + 3a_3 x^2 + \dots. \tag{2}\] Once again, we can obtain $a_1$ using the same trick: substituting $x = 0$ into (2) yields \[f'(0) = a_1 + 2a_2 (0) + 3a_3 (0)^2 + \dots = a_1.\] If we continue this process of differentiating and substituting $x = 0$ into the resulting formula, we can obtain any coefficient we so desire. In general, \[f^{(n)}(0) = \der[n]{}{x} (a_n x^n). \tag{3}\] However, by repeatedly applying the power rule, we clearly have \[\der[n]{}{x} x^n = \der[n-1]{}{x} nx^{n-1} = \der[n-2]{}{x} n(n-1)x^{n-2} = \dots = n(n-1)(n-2)\dots(3)(2)(1) = n!.\] Thus, a simple rearrangement of (3) gives \[a_n = \frac{f^{(n)}(0)}{n!}.\] We thus arrive at the formula for the Maclaurin series of $f(x)$:
+
+\begin{definition}
+    The \vocab{Maclaurin series} of $f(x)$ is given by \[f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!} x^n = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f^{(3)}(0)}{3!} x^3 + \dots.\]
+\end{definition}
+
+There are a few caveats, though:
+\begin{itemize}
+    \item The Maclaurin series of $f(x)$ can only be found if $f^{(n)}(0)$ exists for all values of $n$. For example, $f(x) = \ln x$ cannot be expressed as a Maclaurin series because $f(0) = \ln 0$ is undefined.
+    \item The Maclaurin series may converge to $f(x)$ for only a specific range of values of $x$. This range is called the \vocab{validity range}.
+\end{itemize}
+
+\section{Binomial Series}
+
+\begin{proposition}[Binomial Series Expansion]
+    Let $n \in \QQ \setminus \ZZ^+$. Then \[(1+x)^n = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k,\] with validity range $\abs{x} < 1$.
+\end{proposition}
+\begin{proof}
+    Consider $f(x) = (1 + x)^n$, where $n \in \QQ \setminus \ZZ^+$. By repeatedly differentiating $f(x)$, it is not too hard to see that \[f^{(k)}(x) = n(n-1)(n-2)\dots(n-k+1) \, (1 + x)^{n-k}.\] Hence, \[f^{(k)}(0) = n(n-1)(n-2)\dots(n-k+1).\] Substituting this into the formula for the Maclaurin series, we have \[f(x) = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k.\]
+
+    We now consider the range of validity. If $\abs{x} \geq 1$, then $x^k$ diverges to $\infty$ as $k \to \infty$. Meanwhile, if $\abs{x} < 1$, then $x_k$ converges to 0 as $k \to \infty$. Hence, the range of validity is $\abs{x} < 1$.
+\end{proof}
+
+Note that the binomial theorem is similar to the above result: taking $n \in \ZZ^+$, we see that \[\frac{n(n-1)(n-2)\dots(n-k+1)}{k!} = \begin{cases}
+    \binom{n}{k} & k \leq n,\\
+    0 & k > n,
+\end{cases}\] whence \[(1+x)^n = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k = \sum_{k = 0}^n \binom{n}{k} x^n,\] which is exactly the binomial theorem. The only difference between the two results is that the range of validity is $\RR$ when $n$ is a positive integer. This is because the series is finite (all terms $k > n$ vanish), hence it will always converge.
+
+\section{Methods to Find Maclaurin Series}
+
+\subsection{Standard Maclaurin Series}
+
+Using repeated differentiation, we can derive the following standard Maclaurin series.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|rll|}
+    \hline
+    $f(x)$ & \textbf{Standard series} & \textbf{Validity range} \\ \hline\hline
+    $(1+x)^n$ & $\displaystyle\sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k$ & $\abs{x} < 1$ \\
+    $\e^x$ & $\displaystyle \sum_{k = 0}^\infty \frac{x^k}{k!}$ & all $x$ \\
+    $\sin x$ & $\displaystyle \sum_{k = 0}^\infty \frac{(-1)^k x^{2k+1}}{(2k+1)!}$ & all $x$ (in radians) \\
+    $\cos x$ & $\displaystyle \sum_{k = 0}^\infty \frac{(-1)^k x^{2k}}{(2k)!}$ & all $x$ (in radians) \\
+    $\ln{1 + x}$ & $\displaystyle \sum_{k = 0}^\infty \frac{(-1)^{k + 1} x^k}{r}$ & $-1 < x \leq 1$ \\ \hline
+    \end{tabular}
+\end{table}
+
+We can use these standard series to find the Maclaurin series of their composite functions.
+
+\begin{example}[Standard Maclaurin Series]
+    Suppose we wish to find the first three terms of the Maclaurin series of $\e^x \bp{1 + \sin 2x}$. Using the above standard series, we see that \[\e^x = 1 + x + \frac{x^2}{2} + \cdots, \quad \land \quad 1 + \sin 2x = 1 + 2x + \cdots.\] Hence,
+    \begin{gather*}
+        \e^x \bp{1 + \sin 2x} = \bp{1 + x + \frac{x^2}{2} + \cdots}\bp{1 + 2x + \cdots}\\
+        = \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \cdots = 1 + 3x + \frac52 x^2 + \cdots.
+    \end{gather*}
+\end{example}
+
+\subsection{Repeated Implicit Differentiation}
+
+For complicated functions, it is more efficient to repeatedly implicitly differentiate and substitute $x = 0$ to find the values of $y'(0)$, $y''(0)$, etc.
+
+\begin{example}[Repeated Implicit Differentiation]
+    Suppose we wish to find the first three terms of the Maclaurin series of $y = \ln{1 + \cos x}$. Rewriting, we get $\e^y = 1 + \cos x$. Implicitly differentiating repeatedly with respect to $x$,
+    \begin{gather*}
+        \e^y y' = -\sin x \implies \e^y \bs{\bp{y'}^2 + y''} = -\cos x \implies \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} = \sin x \\
+        \implies \e^y \bs{\bp{y'}^4 + 3\bp{y''}^2 + 6\bp{y'}^2 y'' + 4y'y''' + y^{(4)}} = \cos x.
+    \end{gather*}
+    Evaluating the above at $x = 0$, we get \[y(0) = \ln 2, \quad y'(0) = 0, \quad y''(0) = -\frac12, \quad y'''(0) = 0, \quad y^{(4)}(0) = -\frac14.\] Thus, \[\ln{1 + \cos x} = \ln 2 + \frac{-1/2}{2!} x^2 + \frac{-1/4}{4!} x^4 + \cdots = \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots.\]
+\end{example}
+
+\section{Approximations using Maclaurin series}
+
+Maclaurin series can be used to approximate a function $f(x)$ near $x = 0$.
+
+\begin{example}[Approximating Integrals]
+    Suppose we wish to approximate \[\int_0^{0.5} \ln{1 + \cos x} \d x.\] Doing so analytically is very hard, so we can approximate it using the Maclaurin series of $\ln{1 + \cos x}$, which we previously found to be $\ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots$. Integrating this expression over the interval $[0, 0.5]$, we get \[\int_0^{0.5} \ln{1 + \cos x} \d x \approx \int_0^{0.5} \bp{\ln 2 - \frac14 x^2 - \frac1{96}x^4} \d x = 0.336092,\] which is close to the actual value of $0.336091$.
+\end{example}
+
+\begin{example}[Approximating Constants]
+    For small $x$, \[\sin x \approx x - \frac{x^3}{3!}.\] Since $\sin{\pi/4} = 1/\sqrt{2}$, the numerical value of $1/\sqrt{2}$ can be approximated by substituting $x = \pi/4$ into the above equation: \[\frac1{\sqrt2} = \sin \frac{\pi}4 \approx \frac{\pi}4 - \frac{(\pi/4)^3}{3} = 0.70465.\] This is close to the actual value of $1/\sqrt{2} \approx 0.70711$.
+\end{example}
+
+To improve the approximation, we can 
+\begin{itemize}
+    \item choose an $x$-value closer to 0;
+    \item use more terms of the series.
+\end{itemize}
+
+\begin{example}[Improving Approximations]
+    Continuing on from the previous example, we note that $\sin{3\pi/4}$ is also equal to $1/\sqrt2$. If we substitute $x = 3\pi/4$ into $\sin x \approx x - x^3/3!$, we get \[\frac1{\sqrt2} = \sin \frac{3\pi}4 \approx \frac{3\pi}4 - \frac{(3\pi/4)^3}{3} = 0.17607,\] which is a worse approximation than if we had used $x = \pi/4$. This is because $\abs{\pi/4} < \abs{3\pi/4}$.
+\end{example}
+
+\section{Small Angle Approximation}
+
+For $x$ near zero, we can approximate trigonometric functions with just the first few terms of their respective Maclaurin series: \[\sin x \approx x, \qquad \cos x \approx 1- \frac{x^2}{2}, \qquad \tan x \approx x.\]

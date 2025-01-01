@@ -21,6 +21,8 @@
 %\setcounter{secnumdepth}{-1}
 \setcounter{tocdepth}{1}
 
+\setlength\cftpartnumwidth{2.2em}
+
 \raggedbottom
 
 % Problem and Solution Environments
@@ -54,11 +56,12 @@
 
 \mdfdefinestyle{mdbluebox}{%
 roundcorner=10pt,
-linewidth=1pt,
+linewidth=2pt,
 skipabove=12pt,
-innerbottommargin=9pt,
+innerbottommargin=1pt,
+innertopmargin=-2pt,
 skipbelow=2pt,
-linecolor=MidnightBlue!80!black,
+linecolor=MidnightBlue,
 nobreak=true,
 %backgroundcolor=TealBlue!5,
 rightline=false,
@@ -72,20 +75,18 @@ mdframed={style=mdbluebox},
 headpunct={.},
 ]{thmbluebox}
 
-\let\theorem\relax
-\let\corollary\relax
-\let\proposition\relax
-\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem}
-\declaretheorem[style=thmbluebox,name=Fact,numbered=no]{fact}
-\declaretheorem[style=thmbluebox,name=Statement,numbered=no]{statement}
-\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary}
-\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition}
+\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
+\declaretheorem[style=thmbluebox,name=Fact,sibling=theorem]{fact}
+\declaretheorem[style=thmbluebox,name=Statement,sibling=theorem]{statement}
+\declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
+\declaretheorem[style=thmbluebox,name=Proposition,sibling=theorem]{proposition}
 
 \mdfdefinestyle{mdpurplebox}{%
 roundcorner=10pt,
-linewidth=1pt,
+linewidth=2pt,
 skipabove=12pt,
-innerbottommargin=9pt,
+innerbottommargin=1pt,
+innertopmargin=-2pt,
 skipbelow=2pt,
 linecolor=Mulberry!80!black,
 nobreak=true,
@@ -101,13 +102,14 @@ mdframed={style=mdpurplebox},
 headpunct={.},
 ]{thmpurplebox}
 
-\declaretheorem[style=thmpurplebox,name=Method,numbered=no]{method}
+\declaretheorem[style=thmpurplebox,name=Recipe,sibling=theorem]{recipe}
 
 \mdfdefinestyle{mdgreenbox}{%
 roundcorner=10pt,
-linewidth=1pt,
+linewidth=2pt,
 skipabove=12pt,
-innerbottommargin=9pt,
+innerbottommargin=1pt,
+innertopmargin=-2pt,
 skipbelow=2pt,
 linecolor=ForestGreen,
 nobreak=true,
@@ -124,7 +126,7 @@ headpunct={.},
 ]{thmgreenbox}
 
 \let\definition\relax
-\declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition}
+\declaretheorem[style=thmgreenbox,name=Definition,sibling=theorem]{definition}
 
 \mdfdefinestyle{mdredbox}{%
 skipabove=8pt,
@@ -140,6 +142,8 @@ rightline=false,
 leftline=true,
 topline=false,
 bottomline=false,
+innerbottommargin=1pt,
+innertopmargin=-2pt,
 }
 \declaretheoremstyle[
 headfont=\bfseries\sffamily\color{RawSienna},
@@ -150,10 +154,12 @@ mdframed={style=mdredbox},
 headpunct={.},
 ]{thmredbox}
 
-\declaretheorem[style=thmredbox,name=Example,numbered=no]{example}
+\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
 
 \newenvironment{sketch}{\noindent\textit{Sketch.}}{\hfill$\square$}
 
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 
 % SUPERPART
 % Define the superpart command
@@ -179,7 +185,6 @@ headpunct={.},
 
 % DIFFICULTY
 
-
 \makeatletter
 \newcount\my@repeat@count
 \newcommand{\myrepeat}[2]{%
@@ -191,3 +196,16 @@ headpunct={.},
 \makeatother
 
 \newcommand{\difficulty}[1]{\myrepeat{#1}{$\blacktriangleright$}}
+
+\newcommand{\overbow}[1]{
+  \tikzexternaldisable
+  \tikz [baseline = (N.base), every node/.style={}] {
+    \node [inner sep = 0pt] (N) {$#1$};
+    \draw [line width = 0.4pt] plot [smooth, tension=1.3] coordinates {
+        ($(N.north west) + (0.1ex,0)$)
+        ($(N.north)      + (0,0.5ex)$)
+        ($(N.north east) + (0,0)$)
+    };
+  }
+  \tikzexternalenable
+}

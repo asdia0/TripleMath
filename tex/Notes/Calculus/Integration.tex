@@ -1,0 +1,179 @@
+\chapter{Integration}
+
+\section{Indefinite Integration}
+
+In the previous chapters, we learnt about differentiation, which can be thought as finding the derivative $f'(x)$ from a function $f(x)$. Reversing this, we define integration as the process of finding the function $f(x)$ from its derivative $f'(x)$. Simply put, integration ``undoes'' differentiation and vice versa.
+
+\subsection{Notation and Terminology}
+
+\begin{definition}
+    We write the \vocab{indefinite integral} with respect to $x$ of a function $f(x)$ as \[\int f(x) \d x.\] Here, $f(x)$ is called the \vocab{integrand}.
+\end{definition}
+
+Let the derivative of $F(x)$ be $f(x)$, and let $c$ be an arbitrary constant. Since the derivative of a constant is zero, the function $F(x) + c$ will always have the same derivative: $f(x)$. Thus, when we integrate $f(x)$, we don't get back a single function $F(x)$. Instead, we get back a \textit{class} of functions of the form $F(x) + c$. We call $F(x)$ the \vocab{primitive} of $f(x)$, and $c$ the \vocab{constant of integration}.
+
+With our notation, we can write down the notion of integration ``undoing'' differentiation mathematically: \[\int \der{}{x} \bs{f(x)} \d x = f(x) + c, \qquad \der{}{x} \bs{\int f(x) \d x} = f(x).\]
+
+\subsection{Basic Rules}
+
+\begin{fact}[Properties of Indefinite Integrals]
+    Let $f(x)$ and $g(x)$ be any two functions, and let $k$ be a constant.
+    \begin{itemize}
+        \item (linearity) $\int \bs{f(x) + g(x)} \d x = \int f(x) \d x + \int g(x) \d x$.
+        \item $\int k f(x) \d x = k \int f(x) \d x$.
+    \end{itemize}
+\end{fact}
+
+\section{Definite Integration}
+
+\begin{definition}
+    Suppose $f$ is a continuous function defined on the interval $[a, b]$ and $\int f(x) \d x = F(x) + c$. Then, the \vocab{definite integral} of $f(x)$ from $a$ to $b$ with respect to $x$ is denoted by \[\int_a^b f(x) \d x = \evalint{F(x)}{a}{b} = F(b) - F(a).\] We call $a$ the \vocab{lower limit} and $b$ the \vocab{upper limit} of the integral.
+\end{definition}
+
+Note that the indefinite integral $\int f(x) \d x$ is a function in $x$, while the definite integral $\int_a^b f(x) \d x$ is a numerical value. Also note that $x$ is a \vocab{dummy variable} as it does not appear in the final expression of the definite integral; it can be replaced by any symbol.
+
+\begin{fact}[Properties of Definite Integrals]
+    Let $f(x)$ and $g(x)$ be any two functions. Let $k$ and $c$ be constants.
+    \begin{itemize}
+        \item (linearity) $\int_a^b \bs{f(x) + g(x)} \d x = \int_a^b f(x) \d x + \int g(x) \d x$.
+        \item $\int_a^b k f(x) \d x = k \int_a^b f(x) \d x$.
+        \item $\int_a^b f(x) \d x = \int_a^c f(x) \d x + \int_c^b f(x) \d x$.
+    \end{itemize}
+\end{fact}
+
+Note that from the last property, we can deduce the following properties: \[\int_a^a f(x) \d x = 0, \qquad \land \qquad \int_a^b f(x) \d x = -\int_b^a f(x) \d x.\]
+
+\section{Integration Techniques}
+
+\subsection{Systematic Integration}
+
+\begin{proposition}[Integrals of Standard Functions]
+    \begin{align*}
+        \int x^n \d x &= \frac{x^{n+1}}{n+1} + c, \tag{$n \neq -1$}\\
+        \int \frac1x \d x &= \ln \abs{x} + c,\\
+        \int \e^x \d x &= \e^x + c.
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}[Integrals of Trigonometric Functions]
+    \begin{alignat*}{3}
+        \int \sin x \d x &= -\cos x + c, \qquad & \int \cos x \d x &= \sin x + c,\\
+        \int \sec x \d x &= -\ln \abs{\sec x - \tan x} + c, \qquad & \int \csc x \d x &= \ln \abs{\csc x - \cot x} + c,\\
+        \int \tan x \d x &= -\ln \abs{\cos x} + c, \qquad & \int \cot x \d x &= \ln \abs{\sin x} + c.
+    \end{alignat*}
+\end{proposition}
+
+Equivalently, \[\int \sec x \d x = \ln \abs{\sec x + \tan x} \qquad \land \qquad \int \csc x \d x = -\ln \abs{\csc x + \cot x}.\]
+
+Products of trignometric functions can be easily integrated using the following identities:
+\begin{alignat*}{3}
+    \sin P + \sin Q &= 2 \sin \frac{P + Q}{2} \cos \frac{P - Q}{2}, \qquad & \sin P - \sin Q &= 2 \sin \frac{P - Q}{2} \cos \frac{P + Q}{2},\\
+    \cos P + \cos Q &= 2 \cos \frac{P + Q}{2} \cos \frac{P - Q}{2}, \qquad & \cos P - \cos Q &= 2 \sin \frac{P - Q}{2} \sin \frac{P + Q}{2}.
+\end{alignat*}
+
+Powers of trigonometric functions can also be integrated using the following identities:
+\begin{alignat*}{3}
+    \sin^2 x &= \frac{1 - \cos 2x}{2}, \qquad & \cos^2 x &= \frac{1 + \cos 2x}{2},\\
+    \sin^3 x &= \frac{3\sin x - \sin 3x}{4}, \qquad & \cos^3 x &= \frac{3\cos x + \cos 3x}{4}.
+\end{alignat*}
+
+\begin{proposition}[Algebraic Fractions]
+    \begin{align*}
+        \int \frac1{\sqrt{a^2 - x^2}} \d x &= \arcsin \frac{x}{a} + c\\
+        \int \frac1{a^2 + x^2} \d x &= \frac1{a} \arctan \frac{x}{a} + c\\
+        \int \frac1{a^2 - x^2} \d x &= \frac1{2a} \ln \abs{\frac{a + x}{a-x}} + c
+    \end{align*}
+\end{proposition}
+
+\subsection{Integration by Substitution}
+
+If the given integrand is not in one of the standard forms, it may be possible to reduce it to a standard form by a change of variable. This method is called \vocab{integration by substitution}, and it ``undoes the chain rule''.
+
+\begin{proposition}[Integration by Substitution]
+    Let $F' = f$. Then \[\int f(g(x)) g'(x) \d x = F(g(x)) + c.\]
+\end{proposition}
+\begin{proof}
+    Recall that by the chain rule, \[\der{}{x} \bs{F(g(x))} = F'(g(x)) g'(x) = f(g(x)) g'(x).\] Integrating both sides with respect to $x$, \[\int f(g(x)) g'(x) \d x = F(g(x)) + c.\]
+\end{proof}
+
+A simpler way to interpret the above formula is as follows:
+
+\begin{recipe}[Integration by Substitution]
+    Given an integral $\int f(x) \d x$ and a substitution $x = g(u)$, convert all instances of $x$ in terms of $u$. This includes replacing $\d x$ with $\d u$, which can be found by ``splitting'' $\derx{x}{u}$: \[\der{x}{u} = g'(u) \implies \d x = g'(u) \d u.\] If the integral is definite, the bounds should also be converted to their corresponding $u$ values. Once the integral has been evaluated, all instances of $u$ should be converted back to $x$.
+\end{recipe}
+
+\begin{example}[Definite Integration by Substitution]
+    Consider the definite integral \[\int_{2/\sqrt3}^2 \frac1{x\sqrt{x^2 - 1}} \d x.\] Under the substitution $x = 1/u$, we have \[\der{x}{u} = -\frac1{u^2} \implies \d x = -\frac1{u^2} \d u.\] When $x = 2/\sqrt 3$, $u = \sqrt3/2$. When $x = 2$, $u = 1/2$. Thus, the integral becomes \[\int_{\sqrt3 / 2}^{1/2} \frac{u}{\sqrt{u^{-2} - 1}} \frac1{u^2} \d u = \int_{1/2}^{\sqrt3 /2} \frac1{\sqrt{1 - u^2}} \d u = \evalint{\arcsin u}{1/2}{\sqrt3 /2} = \frac\pi6.\]
+\end{example}
+
+\begin{example}[Indefinite Integration by Substitution]
+    Consider the indefinite integral \[\int \frac1{x\sqrt{x^2 - 1}} \d x.\] Following the same substitution as above ($x = 1/u$), we get \[\int \frac1{x\sqrt{x^2 - 1}} \d x = \int \frac1{\sqrt{1 - u^2}} \d u = \arcsin u + c = \arcsin \frac1x + c.\] 
+\end{example}
+
+\subsection{Integration by Parts}
+
+Just like integration by substitution ``undoes'' the chain rule, \vocab{integration by parts} ``undoes'' the product rule.
+
+\begin{proposition}[Integration by Parts]
+    Let $u$ and $v$ be functions of $x$. Then \[\int u v' \d x = uv - \int v u' \d x.\] For definite integrals, \[\int_a^b u v' \d x = \evalint{uv}{a}{b} - \int_a^b v u' \d x.\]
+\end{proposition}
+\begin{proof}
+    By the product rule, \[(uv)' = uv' + u'v.\] Integrating both sides and rearranging yields the desired result.
+\end{proof}
+
+Care must be exercised in the choice of the factor $u$. The aim is to ensure that $u' v$ on the RHS is easier to integrate than $u v'$. To choose $u$, we can use the following guideline:
+
+\begin{recipe}[LIATE]
+    In decreasing order of suitability, $u$ should be
+    \begin{itemize}
+        \item \textbf{L}ogarithmic
+        \item \textbf{I}nverse trigonometric
+        \item \textbf{A}lgebraic
+        \item \textbf{T}rigonometric
+        \item \textbf{E}xponential
+    \end{itemize}
+\end{recipe}
+
+\begin{example}[Integration by Parts]
+    Consider the integral $\int \ln x \d x$. Picking $u = \ln x$ and $v' = 1$, we get \[\int \ln x \d x = uv - \int u' v \d x = (\ln x)(x) - \int \bp{\frac1x} (x) \d x = x\ln x - x + c.\]
+\end{example}
+
+If evaluating an integral requires doing multiple integration by parts in succession, the DI method is more convenient.
+
+\begin{recipe}[DI Method]
+    Given the integral $\int uv \d x $, construct the following table:
+    \[
+    \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+        & D & I \\\cmidrule{1-3}
+        + & u & v \\
+        - & u' & v^{(-1)} \\
+        + & u'' & v^{(-2)} \\
+        - & u^{(3)} & v^{(-3)} \\
+        \vdots & \vdots & \vdots \\
+        \pm & u^{(n)} & v^{(-n)}\\\bottomrule
+    \end{array}
+    \]
+    In other words, keep differentiating the middle column ($u$) and keep integrating the right column ($v$), while alternating the sign in the left column. This sign is ``attached'' to the $u$ terms.
+
+    Next, draw diagonal arrows from the middle column to the right column one row below. For instance, $u$ is arrowed to $v^{(-1)}$, while $u'$ is arrowed to $v^{(-2)}$ and so on. Multiply the terms connected by an arrow, keeping in mind the sign of the $u$ terms. Add these terms up, and add the integral of the product of the last row (i.e. $\int u^{(n)} v^{(-n)} \d x$).
+
+    Mathematically, \[\int uv \d x = u v^{-1} - u' v^{(-2)} + u'' v^{(-3)} - u^{(3)} v^{(-4)} + \dots \pm \int \int u^{(n)} v^{(-n)} \d x,\] where the sign of the integral depends on the parity of $n$.
+\end{recipe}
+
+\begin{example}[DI Method]
+    Consider the integral $\int x^3 \sin x \d x$. Taking $u = x^3$ and $v = \sin x$, we construct the DI table:
+    \[
+    \begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
+        & D & I \\\cmidrule{1-3}
+        + & x^3 & \sin x \\
+        - & 3x^2 & -\cos x \\
+        + & 6x & -\sin x\\
+        - & 6 & \cos x\\\bottomrule
+    \end{array}
+    \]
+    Thus,
+    \begin{align*}
+        \int x^3 \sin x \d x &= x^3 (-\cos x) - 3x^2(-\sin x) + 6x(\cos x) - 6\int \cos x \d x\\
+        &= -x^3 \cos x + 3x^2 \sin x + 6x\cos x - 6\sin x + c.
+    \end{align*}
+\end{example}

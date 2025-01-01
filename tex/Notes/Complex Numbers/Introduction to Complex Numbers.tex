@@ -1,0 +1,303 @@
+\chapter{Introduction to Complex Numbers}
+
+\begin{definition}
+    The \vocab{imaginary unit} $\i$ is a root to the equation \[x^2 + 1 = 0.\]
+\end{definition}
+
+\section{Cartesian Form}
+
+\begin{definition}
+    A \vocab{complex number} $z$ has \vocab{Cartesian form} $x + \i y$, where $x$ and $y$ are real numbers. We call $x$ the \vocab{real part} of $z$, denoted $\Re z$. Likewise, we call $y$ the \vocab{imaginary part} of $z$, denoted $\Im z$.
+\end{definition}
+
+\begin{definition}
+    The set of complex numbers is denoted $\CC$ and is defined as \[\CC = \bc{z : z = x + \i y , \quad x, y \in \RR}.\]
+\end{definition}
+\begin{remark}
+    The set of real numbers, $\RR$, is a proper subset of the set of complex numbers, $\CC$. That is, $\RR \subset \CC$.
+\end{remark}
+
+\begin{fact}[Algebraic Operations on Complex Numbers]
+    Let $z_1, z_2, z_3 \in \CC$.
+    \begin{itemize}
+        \item Two complex numbers are equal if and only if their corresponding real and imaginary parts are equal. \[z_1 = z_2 \iff \Re z_1 = \Re z_2 \land \Im z_1 = \Im z_2.\]
+        \item Addition of complex numbers is commutative, i.e. \[z_1 + z_2 = z_2 + z_1\] and associative, i.e. \[(z_1 + z_2) + z_3 = z_1 + (z_2 + z_3).\]
+        \item Multiplication of complex numbers is commutative, i.e. \[z_1z_2 = z_2z_1,\] associative, i.e. \[z_1(z_2z_3) = (z_1z_2)z_3\] and distributive, i.e. \[z_1(z_2 + z_3) = z_1z_2 + z_1z_3.\]
+    \end{itemize}
+\end{fact}
+
+\begin{proposition}
+    Complex numbers cannot be ordered.
+\end{proposition}
+\begin{proof}
+    Seeking a contradiction, suppose $\i > 0$. Multiplying both sides by $\i$, we have $\i^2 = -1 > 0$, a contradiction. Hence, we must have $\i < 0$. However, multiplying both sides by $\i$ and changing signs (since $\i < 0$), we have $\i^2 = -1 > 0$, another contradiction. Thus, $\CC$ cannot be ordered.
+\end{proof}
+
+\section{Argand Diagram}
+
+We can represent complex numbers in the complex plane using an Argand diagram.
+
+\begin{definition}
+    The \vocab{Argand diagram} is a modified Cartesian plane where the $x$-axis represents real numbers and the $y$-axis represents imaginary numbers. The two axes are called the \vocab{real axis} and \vocab{imaginary axis} correspondingly.
+
+    On the Argand diagram, the complex number $z = x + \i y$, where $x, y \in \RR$, can be represented by
+    \begin{itemize}
+        \item the point $Z(x, y)$ or $Z(z)$; or
+        \item the vector $\oa{OZ}$.
+    \end{itemize}
+
+    \begin{figure}[H]\tikzsetnextfilename{339}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:10,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmax=8,
+                xmin=-2,
+                ymin=-2,
+                ymax=8,
+                xlabel = {$\Re$},
+                ylabel = {$\Im$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+    
+                \coordinate[label=above:$Z\bp{x, y} \lor Z\bp{z}$] (Z) at (5, 6);
+                \coordinate (O) at (0, 0);
+    
+                \draw[->-=0.5, very thick] (O) -- (Z);
+                \node[anchor=north west] at (2.5, 3) {$\oa{OZ}$};
+    
+                \fill (Z) circle[radius=2.5pt];
+            \end{axis}
+        \end{tikzpicture}
+        \caption{}
+    \end{figure}
+\end{definition}
+
+In an Argand diagram, let the points $Z$ and $W$ represent the complex numbers $z$ and $w$ respectively. Then $\oa{OZ}$ and $\oa{OW}$ are the corresponding vectors representing $z$ and $w$.
+
+\subsection{Modulus}
+
+Recall in \SS\ref{chap:Equations-and-Inequalities}, we defined the modulus of a real number $x$ as the ``distance'' between $x$ and the origin on the real number line. Generalizing this notion to complex numbers, it makes sense to define the modulus of a real number $z$ as the ``distance'' between $z$ and the origin on the complex plane. This uses Pythagoras' theorem.
+
+\begin{definition}
+    The \vocab{modulus} of a complex number $z$ is denoted $\abs{z}$ and is defined as \[\abs{z} = \sqrt{\Re{z}^2 + \Im{z}^2}.\]
+\end{definition}
+
+\subsection{Complex Conjugate}
+
+\begin{definition}
+    The \vocab{conjugate} of the complex number $z = x + \i y$ is denoted $z\conj$ with definition \[z\conj = x - \i y.\] We refer to $z$ and $z\conj$ as a \vocab{conjugate pair} of complex numbers.
+\end{definition}
+
+On an Argand diagram, the conjugate $z\conj$ is the reflection of $z$ about the real axis.
+
+\begin{fact}[Properties of Complex Conjugates]
+    \phantom{.}
+    \begin{itemize}
+        \item (distributive over addition) $(z + w)\conj = z\conj + w\conj$.
+        \item (distributive over multiplication) $(zw)\conj = z\conj w\conj$.
+        \item (involution) $\bp{z\conj}\conj = z$.
+        \item $z + z\conj = 2\Re{z}$.
+        \item $z - z\conj = 2\Im{z} \i$.
+        \item $z z\conj = \Re{z}^2 + \Im{z}^2 = \abs{z}^2$.
+    \end{itemize}
+\end{fact}
+
+Because conjugation is distributive over addition and multiplication, we also have the following identities: \[(kz)\conj = k z\conj, \qquad \bp{z^n}\conj = \bp{z\conj}^n,\] where $k \in \RR$ and $n \in \ZZ$.
+
+Using the conjugate of a complex number $z$, the reciprocal of $z$ can be computed as \[\frac1{z} = \frac{z\conj}{z z\conj} = \frac{z \conj}{\abs{z}^2}.\]
+
+\subsection{Argument}
+
+\begin{definition}
+    The \vocab{argument} of a complex number $z$ is the directed angle $\t$ that $Z(z)$ makes with the positive real axis, and is denoted by $\arg{z}$. Note that $\arg{z} > 0$ when measured in an anticlockwise direction from the positive real axis, and $\arg{z} < 0$ when measured in a clockwise directoin from the positive real axis.
+\end{definition}
+
+Note that $\arg{z}$ is not unique; the position of $Z(z)$ is not affected by adding an integer multiple of $2\pi$ to $\t$. Therefore, if $\arg{z} = \f$, then $\f + 2k\pi$, where $k \in \ZZ$, is also an argument of $z$. We hence introduce the principal argument of $z$.
+
+\begin{definition}
+    The value of $\arg{z}$ in the interval $(-\pi, \pi]$ is known as the \vocab{principal argument} of $z$.
+\end{definition}
+
+The modulus $r = \abs{z}$, complex conjugate $z\conj$ and argument $\t = \arg{z}$ of a complex number $z$ can easily be identified on an Argand diagram:
+
+\begin{figure}[H]\tikzsetnextfilename{342}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:10,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xmin=-3,
+            xmax=9,
+            ymin=-6,
+            ymax=6,
+            xlabel = {$\Re$},
+            ylabel = {$\Im$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+
+            \coordinate (A) at (4, 0);
+            \coordinate (B) at (0, 0);
+            \coordinate (C) at (3, 4);
+            \coordinate (D) at (3, -4);
+
+            \fill (3, 4) circle[radius=2.5pt];
+            \fill (3, -4) circle[radius=2.5pt];
+            \draw (0, 0) -- (3, 4);
+            \draw[dashed] (0, 0) -- (D);
+            \node[anchor=south east] at (1.5, 2) {$r$};
+            \node[anchor=south] at (3, 4) {$Z_1(z)$};
+            \node[anchor=north] at (D) {$Z_2(z\conj)$};
+
+            \draw pic [draw, angle radius=10mm, "$\t$"] {angle = A--B--C};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+\section{Polar Form}
+
+Instead of using Cartesian coordinates on an Argand diagram, we can use polar coordinates, leading to the polar form of a complex number. This polar form can be expressed in two ways: trigonometric form and exponential form.
+
+\begin{definition}
+    The \vocab{trigonometric form} of the complex number $z$ is \[z = r\bp{\cos \t + \i \sin \t},\] where $r = \abs{z}$ and $\t = \arg{z}$, $-\pi < \t \leq \pi$.
+\end{definition}
+
+\begin{theorem}[Euler's Identity]
+    For all $\t \in \RR$, \[\e^{\i \t} = \cos \t + \i \sin \t.\]
+\end{theorem}
+\begin{proof}[Proof 1 (Series Expansion)]
+    By the standard series expansion of $\e^x$, we have \[\e^{\i \t} = 1 + \i \t + \frac{(\i \t)^2}{2!} + \frac{(\i \t)^3}{3!} + \frac{(\i \t)^4}{4!} + \frac{(\i \t)^5}{5!} + \dots.\] Simplifying and grouping real and imaginary parts together, \[\e^{\i \t} = \bp{1 - \frac{\t^2}{2!} + \frac{\t^4}{4!} + \dots} + \i \bp{\t - \frac{\t^3}{3!} + \frac{\t^5}{5!} + \dots},\] which we recognize to be the standard series expansions of $\cos \t$ and $\sin \t$ respectively. Hence, \[\e^{\i \t} = \cos \t + \i \sin \t.\]
+\end{proof}
+\begin{proof}[Proof 2 (Differentiation)]
+    Let $f(\t) = \e^{-\i \t} \bp{\cos \t + \i \sin \t}$. Differentiating with respect to $\t$, \[f'(\t) = \e^{-\i \t} \bp{-\sin \t + \i \cos \t} - \i \e^{-\i \t} \bp{\cos \t + \i \sin \t} = 0.\] Hence, $f(\t)$ is constant. Evaluating $f(\t)$ at $\t = 0$, we have $f(\t) = 1$, whence \[\e^{-\i \t} \bp{\cos \t + \i \sin \t} = 1 \implies \e^{\i \t} = \cos \t + \i \sin \t.\]
+\end{proof}
+
+\begin{definition}
+    The \vocab{exponential form} of the complex number $z$ is \[z = r \e^{\i \t},\] where $r = \abs{z}$ and $\t = \arg{z}$, $-\pi < \t \leq \pi$.
+\end{definition}
+
+Recall $z\conj$ is the reflection of $z$ about the real axis. Hence, we clearly have the following:
+
+\begin{proposition}[Conjugation in Polar Form]
+    If $z = r \e^{\i \t}$, then $z\conj = r\e^{-\i \t}$. Also, \[\arg{z\conj} = -\t = -\arg{z}, \qquad \abs{z} = r = \abs{z \conj}.\]
+\end{proposition}
+
+Using the proposition above, we can convert the results $z + z\conj = 2\Re{z}$ and $z - z\conj = 2 \Im{z} \i$ into polar form:
+
+\begin{proposition}
+    \[\e^{\i \t} + \e^{-\i \t} = 2\cos \t, \qquad \e^{\i \t} - \e^{-\i \t} = \bp{2 \sin \t} \i.\]
+\end{proposition}
+
+Lastly, we observe the effect of multiplication and division on the modulus and argument of complex numbers.
+
+\begin{proposition}[Multiplication in Polar Form]
+    Let $z_1 = r_1 \e^{\i \t_1}$ and $z_2 = r_2 \e^{\i \t_2}$. Then \[\abs{z_1 z_2} = r_1 r_2 = \abs{z_1} \abs{z_2}, \qquad \arg{z_1 z_2} = \t_1 + \t_2 = \arg{z_1} + \arg{z_2}.\]
+\end{proposition}
+\begin{proof}
+    Observe that \[z_1 z_2 = \bp{r_1 \e^{\i \t_1}}\bp{r_2 \e^{\i \t_2}} = (r_1 r_2) \e^{\i (\t_1 + \t_2)}.\] The results follow immediately.
+\end{proof}
+
+\begin{corollary}[Exponentiation in Polar Form]
+    For $n \in \ZZ$, \[\abs{z^n} = r^n = \abs{z}^n, \qquad \arg{z^n} = n \t = n \arg{z}.\]
+\end{corollary}
+\begin{proof}
+    Repeatedly apply the above proposition.
+\end{proof}
+
+\begin{proposition}[Division in Polar Form]
+    Let $z_1 = r_1 \e^{\i \t_1}$ and $z_2 = r_2 \e^{\i \t_2}$. Then \[\abs{\frac{z_1}{z_2}} = \frac{r_1}{r_2} = \frac{\abs{z_1}}{\abs{z_2}}, \qquad \arg{\frac{z_1}{z_2}} = \t_1 - \t_2 = \arg{z_1} - \arg{z_2}.\]
+\end{proposition}
+\begin{proof}
+    Observe that \[\frac{z_1}{z_2} = \frac{r_1 \e^{\i \t_1}}{r_2 \e^{\i \t_2}} = \frac{r_1}{r_2} \e^{\i (\t_1 - \t_2)}.\] The results follow immediately.
+\end{proof}
+
+\section{De Moivre's Theorem}
+
+\begin{theorem}[De Moivre's Theorem]
+    For $n \in \QQ$, if $z = r\bp{\cos \t + \i \sin \t} = r \e^{\i \t}$, then \[z^n = r^n \e^{\i n \t} = r^n \bp{\cos n\t + \i \sin n\t}.\]
+\end{theorem}
+\begin{proof}
+    Write $z^n$ in exponential form before converting it into trigonometric form.
+\end{proof}
+
+We now discuss some of the applications of de Moivre's theorem.
+
+\begin{recipe}[Finding $n$th Roots]
+    Suppose we want to find the $n$th roots of a complex number $w = r \e^{\i \t}$. We begin by setting up the equation \[z^n = w = r \e^{\i \bp{\t + 2k\pi}},\] where $k \in \ZZ$. Next, we take $n$th roots on both sides, which yields \[z = r^{1/n} \e^{\i \bp{\t + 2k\pi} /n}.\] Lastly, we pick values of $k$ such that $\arg z = \frac{\t + 2k\pi}{n}$ lies in the principal interval $(-\pi, \pi]$.
+\end{recipe}
+
+\begin{definition}
+    Let $n \in \ZZ$. The \vocab{$n$th roots of unity} are the $n$ solutions to the equation \[z^n - 1 = 0.\]
+\end{definition}
+
+\begin{proposition}[Roots of Unity in Polar Form]
+    The $n$th roots of unity are given by \[z = \cos \frac{2k \pi}{n} + \i \sin \frac{2k \pi}{n} = \e^{\i \bp{2k \pi / n}},\] where $k \in \ZZ$.
+\end{proposition}
+\begin{proof}
+    Use de Moivre's theorem.
+\end{proof}
+
+\begin{fact}[Geometric Properties of Roots of Unity]
+    On an Argand diagram, the $n$th roots of unity
+    \begin{itemize}
+        \item all lie on a circle of radius 1.
+        \item are equally spaced apart.
+        \item form a regular $n$-gon.
+    \end{itemize}
+\end{fact}
+
+De Moivre's theorem can also be used to derive trigonometric identities. The trigonometric identities one will be required to prove typically involve reducing ``powers'' to ``multiple angles'' (e.g. expressing $\sin^3 \t$ in terms of $\sin \t$ and $\sin 3\t$), or vice versa.
+
+\begin{proposition}[Power to Multiple Angles]
+    Let $z = \cos \t + \i \sin \t = \e^{\i \t}$. Then \[z^n + z^{-n} = 2\cos n\t, \qquad z^n - z^{-n} = 2\i \sin n\t.\]
+\end{proposition}
+\begin{proof}
+    Use de Moivre's theorem
+\end{proof}
+
+\begin{recipe}[Multiple Angles to Powers]
+    Suppose we want to express $\cos n\t$ and $\sin n\t$ in terms of powers of $\sin \t$ and $\cos \t$. We begin by invoking de Moivre's theorem: \[\cos n\t + \i \sin n\t = \bp{\cos \t + \i \sin \t}^n.\] Next, using the binomial theorem, \[\cos n\t + \i \sin n\t = \sum_{k = 0}^n \binom{n}{k} \cos^k \t \sin^{n-k} \t.\] We then take the real and imaginary parts of both sides to isolate $\cos n\t$ and $\sin n\t$: \[\cos n\t = \Re \sum_{k = 0}^n \binom{n}{k} \cos^k \t \sin^{n-k} \t, \qquad \sin n\t = \Im \sum_{k = 0}^n \binom{n}{k} \cos^k \t \sin^{n-k} \t.\]
+\end{recipe}
+
+\begin{example}
+    Suppose we want to write $\sin 2\t$ in terms of $\sin \t$ and $\cos \t$. Using de Moivre's theorem, \[\cos 2\t + \i \sin 2\t = \bp{\cos \t + \i \sin \t}^2 = \cos^2 \t + 2\i \cos \t \sin \t - \sin^2 \t.\] Comparing imaginary parts, we obtain \[\sin 2\t = 2\cos\t\sin\t\] as expected.
+\end{example}
+
+Another way to derive new trigonometric identities is to differentiate known identities.
+
+\begin{example}
+    Using the ``power to multiple angle'' formula above, one can show that \[\cos^6 \t = \frac1{32} \bp{\cos 6\t + 6\cos4\t + 15\cos2\t + 10}.\] Differentiating, we obtain a new trigonometric identity: \[\sin \t \cos^5 \t = \frac1{32} \bp{\sin 6\t + 4\sin 4\t + 5\sin 2\t}.\]
+\end{example}
+
+\section{Solving Polynomial Equations over $\CC$}
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+    A non-zero, single-variable, degree $n$ polynomial with complex coefficients has $n$ roots in $\CC$, counted with multiplicity.
+\end{theorem}
+
+\begin{theorem}[Conjugate Root Theorem]
+    For a polynomial equation with all real coefficients, non-real roots must occur in conjugate pairs.
+\end{theorem}
+\begin{proof}
+    Suppose $z$ is a non-real root to the polynomial $P(z) = a_n z^n + a_{n-1} z^{n-1} + \dots + a_1 z + a_0$, where $a_n, a_{n-1}, \dots, a_1, a_0 \in \RR$. Consider $P(z\conj)$. \[P(z\conj) = a_n \bp{z\conj}^n + a_{n-1} \bp{z\conj}^{n-1} + \dots + a_1 \bp{z\conj} + a_0.\] By conjugation properties, this simplifies to \[P(z\conj) = \bp{a_n z^n + a_{n-1} z^{n-1} + \dots + a_1 z + a_0}\conj,\] which clearly evaluates to 0, whence $z\conj$ is also a root of $P(z)$.
+\end{proof}

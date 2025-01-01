@@ -1,0 +1,402 @@
+\chapter{Applications of Integration}
+
+\section{Area}\label{sec:Applications-of-Integration:Area}
+
+\subsection{The Riemann Sum and Integral}
+
+Suppose we wish to find exact area bounded by the graph of $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$, where $a \leq b$ and $f(x) \geq 0$ for $a \leq x \leq b$. 
+
+We can approximate this area by drawing $n$ rectangles of equal width, as shown in the diagram below:
+
+\begin{figure}[H]\tikzsetnextfilename{364}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:1.2,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {0.1, 1},
+            xticklabels = {$a$, $b$},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {x + sin(pi * \x r)};
+
+            \addlegendentry{$y = f(x)$};
+
+            \draw[plotBlue, fill=plotBlue, fill opacity=0.3] (0.1, 0) rectangle (0.2, 0.788);
+            \draw[plotBlue, fill=plotBlue, fill opacity=0.3] (0.2, 0) rectangle (0.3, 1.11);
+            \draw[plotBlue, fill=plotBlue, fill opacity=0.3] (0.3, 0) rectangle (0.4, 1.35);
+            \draw[plotBlue, fill=plotBlue, fill opacity=0.3] (0.4, 0) rectangle (0.5, 1.5);
+
+            \draw[plotBlue, fill=plotBlue, fill opacity=0.3] (0.8, 0) rectangle (0.9, 1.21);
+            \draw[plotBlue, fill=plotBlue, fill opacity=0.3] (0.9, 0) rectangle (1, 1);
+
+            \node[plotBlue] at (0.65, 0.5) {$\ldots$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+Observe that the $k$th rectangle has width $\D x = (b-a)/n$ and height $f(a + k \D x)$. The total area of the rectangles is hence \[\sum_{k = 1}^n f(a + k \D x) \D x.\] This is known as the \vocab{Riemann sum} of $f$ over $[a, b]$.
+
+As the number of rectangles approaches $\infty$, the total area of rectangles approaches the actual area under the curve. In other words, \[\area = \lim_{n \to 0} \sum_{k = 1}^n f(a + k \D x) \D x = \lim_{\D x \to 0} \sum_{k = 1}^n f(a + k \D x) \D x.\] In the limit, the Riemann sum becomes the \vocab{Riemann integral}, which is conventionally written as the definite integral \[\int_a^b f(x) \d x.\]
+
+Note that this is where the integral and differential sign comes from: in the limit, $\sum \to \int$ and $\D x \to \d x$.
+
+\subsection{Definite Integral as the Area under a Curve}
+
+\begin{proposition}[Area between a Curve and the $x$-axis]
+    Let $A$ denote the area bounded by the curve of $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$. Then \[\area A = \int_a^b \abs{y} \d x = \int_a^b \abs{f(x)} \d x.\]
+\end{proposition}
+
+\begin{proposition}[Area between Two Curves]
+    The area $A$ between two curves $y = f(x)$ and $y = g(x)$ is given by \[\area A = \int_a^b \abs{f(x) - g(x)} \d x.\]
+\end{proposition}
+
+Similar results hold when integrating with respect to the $y$-axis instead.
+
+\begin{proposition}[Area between a Parametric Curve and the $x$-axis]
+    Let $C$ be the curve with parametric equations $x = f(t)$ and $y = g(t)$. Then the area $A$ bounded between $C$ and the $x$-axis is \[\area A = \int_a^b \abs{y} \d x = \int_{t_1}^{t_2} \abs{g(t)} \der{x}{t} \d t,\] where $t_1$ and $t_2$ are the values of $t$ when $x = a$ and $b$ respectively.
+\end{proposition}
+
+The formula can be applied simiarly when we wish to find the area bounded between $C$ and the $y$-axis.
+
+\begin{proposition}[Area Enclosed by Polar Curve]
+    Let $r = f(\t)$ be a polar curve, and let $A$ be the area of the region bounded by a segment of the curve and two half-lines $\t = \a$ and $\t = \b$. Then \[\area A = \frac12 \int_{\a}^{\b} r^2 \d \t.\]
+\end{proposition}
+\begin{proof}
+    Divide the enclosed region $A$ into $n$ sectors with the same interior angle $\D \t$. Consider that a typical sector of $A$ can be approximated by a sector of a circle. Thus, the area of that sector is approximately \[\D A \approx \frac12 r^2 \D \t.\] Summing up these approximations, we see that \[A \approx \sum_{\t = \a}^{\t = \b} \frac12 r^2 \D \t.\] This approximation will improve as the number of sectors increases, i.e. $\D \t \to 0$. Hence, \[\area A = \lim_{\D \t \to 0} \sum_{\t = \a}^{\t = \b} \frac12 r^2 \D \t = \frac12 \int_{\a}^{\b} r^2 \d \t.\]
+\end{proof}
+
+\section{Volume}
+
+\begin{definition}
+    If an enclosed region is rotated about a straight line, the three-dimensional object formed is called a \vocab{solid of revolution}, and its volume is a \vocab{volume of revolution}.
+\end{definition}
+
+The line about which rotation takes place is always an axis of symmetry for the solid of revolution, and any cross-section of the solid which is perpendicular to the axis of rotation is circular.
+
+\subsection{Disc Method}
+
+Consider the solid of revolution formed when the region bounded between $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated about the $x$-axis.
+
+\begin{figure}[H]\tikzsetnextfilename{365}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[thick,ticks=none,
+            scale only axis,
+            axis lines=middle,
+            ymin=-5,
+            ymax=5,
+            xmin=-1,
+            xmax=3,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            ]
+            \addplot[name path=f,thick,black,samples=1000,domain=0.2:2]{x^2+1};
+            \addplot[name path=g,thick,black,samples=1000,domain=0.2:2]{-x^2-1};
+            \draw[thick,black] (2, -5) arc(-90:90:0.5 and 5);
+            \draw[thick,black] (1, -2) arc(-90:90:0.1 and 2);
+            \draw[thick,dashed] (1, 2) arc(90:270:0.1 and 2);
+            \draw[thick,black] (1.2, -2.44) arc(-90:90:0.17 and 2.44);
+            \draw[thick,black] (0.2, 0) ellipse [x radius=0.05,y radius=1.04];
+
+            \fill (1, 2) circle[radius=2.5pt] node[anchor=south east] {$P(x, y)$};
+
+            \draw[->] (0.8, -1.22) -- (1.04, -1.22);
+            \draw[->] (1.64, -1.22) -- (1.4, -1.22);
+            \node[anchor=west] at (1.63, -1.22) {$\D x$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+To calculate the volume of this solid, we can cut it into thin slices (or discs) of thickness $\D x$. Each disc is approximately a cylinder and the approximate volume of the solid can be found by summing the volumes of these cylinders. The smaller $\D x$ is, the better the approximation.
+
+Consider a typical disc formed by a one cut through the point $P(x, y)$ and the other cut distant $\D x$ from the first. The volume of this disc is approximately \[\D V \approx \pi y^2 \D x.\] Summing over all discs, \[V \approx \sum_{x = a}^{b} \pi y^2 \D x.\] As more cuts are made, $\D x \to 0$, whence \[V = \lim_{\D x \to 0} \sum_{x = a}^{b} \pi y^2 \D x = \pi \int_a^b y^2 \d x.\]
+
+\begin{proposition}[Disc Method]
+    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ radians about the $x$-axis, the volume of the solid of revolution generated is given by \[V = \pi \int_a^b y^2 \d x = \pi \int_a^b \bs{f(x)}^2 \d x.\]
+\end{proposition}
+
+\begin{proposition}[Disc Method: Volume Enclosed by Two Curves]
+    When the region enclosed by two curves $y = f(x)$ and $y = g(x)$ is rotated $2\pi$ radians about the $x$-axis, the volume of the solid of revolution generated is given by \[V = \pi \int_a^b \bs{f(x)}^2 \d x - \pi \int_a^b \bs{g(x)}^2 \d x = \pi \int_a^b \bp{\bs{f(x)}^2 - \bs{g(x)}^2} \d x.\]
+\end{proposition}
+
+Similar results hold when the axis of rotation is the $y$-axis.
+
+\subsection{Shell Method}
+
+Suppose a region $R$ is rotated about the $y$-axis. Consider a typical vertical strip in the region $R$ with height $y$ and thickness $\D x$. It will form a cylindrical shell with inner radius $x$, outer radius $x + \D x$ and height $y$ when rotated about the $y$-axis. Hence, it has volume \[\D V = \pi (x + \D x)^2 y - \pi x^2 y = 2 \pi xy \D x + \pi \D x^2 y \approx 2 \pi xy \D x.\] Hence, the volume of revolution is approximately \[V \approx \sum_{x = a}^b 2 \pi xy \D x.\] As more strips are considered, $\D x \to 0$, whence \[V = \lim_{\D x \to 0} = 2\pi \int_a^b xy \d x.\]
+
+\begin{proposition}[Shell Method]
+    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ redians about the $y$-axis, the volume of the solid of revolution is given by \[V = 2\pi \int_a^b xy \d x.\]
+\end{proposition}
+
+A similar result holds when the axis of rotation is the $x$-axis.
+
+\section{Arc Length}
+
+\subsection{Parametric Form}
+
+\begin{proposition}[Arc Length of Parametric Curve]
+    Let $A(t_1)$ and $B(t_2)$ be points the parametric curve with equations $x = f(t)$, $y = g(t)$, $t \in [t_1, t_2]$. Then \[\overbow{AB} = \int_{t_1}^{t_2} \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t = \int_{t_1}^{t_2} \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t.\]
+\end{proposition}
+\begin{proof}
+    Let $s = \overbow{AB}$ be the arc length of $AB$. Let $P$ and $Q$ be points on $AB$ with parameters $t$ and $t + \D t$ respectively. By the Pythagorean theorem, the straight line $PQ$ is given by \[PQ^2 = \bs{f(t + \D t) - f(t)}^2 + \bs{g(t + \D t) - g(t)}.\] Dividing both sides by $(\D t)^2$, \[\bp{\frac{PQ}{\D t}}^2 = \bs{\frac{f(t + \D t) - f(t)}{\D t}}^2 + \bs{\frac{g(t + \D t) - g(t)}{\D t}}^2.\] As $\D t \to 0$, we can write the RHS in terms of $f'(t) $ and $g'(t)$: \[\lim_{\D t \to 0} \bp{\frac{PQ}{\D t}}^2 = \bs{f'(t)}^2 + \bs{g'(t)}^2.\] Rearranging, \[\lim_{\D t \to 0} PQ = \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \D t.\] However, observe that as $\D t \to 0$, the straight line $PQ$ approximates the arc length $PQ$ (i.e. $\D s$) better and better. Hence, \[\D s = \overbow{PQ} = \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \D t.\] Integrating from $A$ to $B$, we thus obtain \[s = \overbow{AB} = \int_{t_1}^{t_2} \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t = \int_{t_1}^{t_2} \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t.\]
+\end{proof}
+
+\subsection{Cartesian Form}
+
+Taking $t = x$ or $t = y$, we get the following formulas involving $\derx{y}{x}$ and $\derx{x}{y}$, which is suitable for Cartesian curves.
+
+\begin{proposition}[Arc Length of Cartesian Curve]
+    Let $A(x_1, y_1)$ and $B(x_2, y_2)$ be points on the curve $y = f(x)$. The arc length $AB$ is given by \[\overbow{AB} = \int_{x_1}^{x_2} \sqrt{1 + \bp{\der{y}{x}}^2} \d x = \int_{y_1}^{y_2} \sqrt{\bp{\der{x}{y}}^2 + 1} \d y.\]
+\end{proposition}
+
+\subsection{Polar Form}
+
+\begin{proposition}
+    Let $A(r_1, \t_1)$ and $B(r_2, \t_2)$ be points on the polar curve $r = f(\t)$. Then the arc length $AB$ is given by \[\overbow{AB} = \int_{\t_1}^{\t_2} \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t.\]
+\end{proposition}
+\begin{proof}
+    Recall that $x = r\cos \t$ and $y = r\sin \t$. Hence, \[\der{x}{\t} = \cos \t \der{r}{\t} - r \sin \t, \qquad \der{y}{\t} = \sin \t \der{r}{t} + r \cos \t.\] It follows that \[\bp{\der{(r\cos \t)}{\t}}^2 + \bp{\der{(r\sin \t)}{\t}}^2 = \bp{\cos^2 \t + \sin^2 \t} \bs{r^2 + \bp{\der{r}{\t}}^2} = r^2 + \bp{\der{r}{\t}}^2.\] Taking $t = \t$, \[\overbow{AB} = \int_{\t_1}^{\t_2} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = \int_{\t_1}^{\t_2} \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t.\]
+\end{proof}
+
+\section{Surface Area of Revolution}
+
+\begin{definition}
+    The surface area of a solid of revolution is called the \vocab{surface area of revolution}.
+\end{definition}
+
+\begin{proposition}[Surface Area of Revolution of Parametric Curve]
+    Let $A(t_1)$ and $B(t_2)$ be points the parametric curve with equations $x = f(t)$, $y = g(t)$, $t \in [t_1, t_2]$. Then the surface area of revolution about the $x$-axis of arc $AB$ is given by \[A = 2\pi \int_{t_1}^{t_2} y \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t.\] Similarly, the surface area of revolution about the $y$-axis is given by \[A = 2\pi \int_{t_1}^{t_2} x \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t.\]
+\end{proposition}
+\begin{proof}
+    Let $s = \overbow{AB}$ be the arc length of $AB$. Let $P$ and $Q$ be points on $AB$ with parameters $t$ and $t + \D t$ respectively. Recall that \[\D s = \overbow{PQ} = \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \D t.\] Now consider the surface area of revolution about the $x$-axis of arc $PQ$. For small $\D s$, the solid of revolution is approximately a disc wish radius $y$ and width $\D s$. The surface area of this disc can be calculated as \[\D A = 2 \pi y \D s = 2 \pi y \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \D t.\] Integrating from $A$ to $B$, we see that \[A = 2\pi \int_{t_1}^{t_2} y \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t.\] A similar argument is used when the axis of rotation is the $y$-axis.
+\end{proof}
+
+\section{Approximating Definite Integrals}
+
+In \SS~\ref{sec:Applications-of-Integration:Area}, we saw how Riemann sums could approximate definite integrals using rectangles. This is a blunt tool which utilizes very little information from the curve and thus will often not give a good estimate of the definite integral for a fixed number of rectangles.
+
+In this chapter, we will be exploring two other methods: the trapezium rule and Simpson's rule, for finding the approximate value of an area under a curve. These methods often give better approximations to the actual area as compared to using Riemann sums. Similar to Riemann sums, these methods can be extended to estimate the value of a definite integral.
+
+\subsection{Trapezium Rule}
+
+Consider the curve $y = f(x)$ which is non-negative over the interval $[a, b]$.
+
+\begin{figure}[H]\tikzsetnextfilename{366}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:1.2,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {0.1, 1},
+            xticklabels = {$a$, $b$},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {x + sin(pi * \x r)};
+
+            \addlegendentry{$y = f(x)$};
+
+            \draw[dashed, thick] (0.1, 0) -- (0.1, 0.409) -- (0.3, 1.11) -- (0.3, 0);
+            \draw[dashed, thick] (0.3, 1.11) -- (0.5, 1.5) -- (0.5, 0);
+            \draw[dashed, thick] (1, 0) -- (1, 1) -- (0.8, 1.39) -- (0.8, 0);
+
+            \node at (0.65, 0.5) {$\ldots$};
+
+            \node[anchor=west] at (0.1, 0.2) {$y_0$};
+            \node[anchor=west] at (0.3, 0.2) {$y_1$};
+            \node[anchor=west] at (0.5, 0.2) {$y_2$};
+
+            \node[anchor=west] at (0.8, 0.2) {$y_{n-1}$};
+            \node[anchor=west] at (1, 0.2) {$y_n$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+Divide the interval $[a, b]$ into $n$ equal intervals (strips) with each having width $h = (b-a)/n$. Then the area of the $n$ trapeziums is given by \[\area = \sum_{k = 0}^n \frac{h}{2} \bp{y_k + y_{k+1}} = \frac{h}{2} \bs{y_0 + 2(y_1 + y_2 + \dots + y_{n-1}) + y_n}.\]
+
+\begin{recipe}[Trapezium Rule]
+    The trapezium rule with ($n+1$) ordinates (or $n$ intervals) gives the approximation \[\int_a^b f(x) \d x \approx \sum_{k = 0}^n \frac{h}{2} \bp{y_k + y_{k+1}} = \frac{h}{2} \bs{y_0 + 2(y_1 + y_2 + \dots + y_{n-1}) + y_n},\] where $h = (b-a)/n$.
+\end{recipe}
+
+\begin{example}[Trapezium Rule]
+    \phantom{.}
+
+    \textbf{Q:} Use Simpson's rule with 4 strips to find an approximation for \[\int_0^2 \ln{x + 2} \d x.\]
+    
+    \textbf{A:} Let $f(x) = \ln{x+2}$. By the trapezium rule,
+    \begin{align*}
+        \int_0^2 \ln{x + 2} \d x &\approx \frac{1}{2} \cdot \frac{2 - 0}{4} \Big(f(0) + 2\bs{f(0.5) + f(1) + f(1.5)} + f(2)\Big) \\
+        &= 2.15369 \todp{5}.
+    \end{align*}
+
+    Note that the actual value is $2.15888 \todp{5}$. Hence, the trapezium rule gives a decent estimate in this case (0.240\% error).
+\end{example}
+
+\subsubsection{Error in Trapezium Rule Approximation}
+
+If the curve is concave upward, the secant lines lie above the curve. Hence, the trapezium rule will give an overestimate.
+
+\begin{figure}[H]\tikzsetnextfilename{367}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:1.2,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {x^2};
+
+            \addlegendentry{$y = f(x)$};
+
+            \draw[dashed, thick] (0.2, 0) -- (0.2, 0.04) -- (1, 1) -- (1, 0);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+If the curve is concave downward, the secant lines lie below the curve. Hence, the trapezium rule will give an underestimate.
+
+\begin{figure}[H]\tikzsetnextfilename{368}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:1.2,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {-x^2+1.44};
+
+            \addlegendentry{$y = f(x)$};
+
+            \draw[dashed, thick] (0.2, 0) -- (0.2, 1.40) -- (1, 0.44) -- (1, 0);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+\subsection{Simpson's Rule}
+
+Previously, we explored how Riemann sums approximate definite integrals using horizontal lines (i.e. degree 0 polynomials). We also saw how the trapezium rule improves this approximation by using sloped lines (i.e. degree 1 polynomials). Now, we introduce Simpson's rule, which takes this a step further by using quadratics (i.e. degree 2 polynomials) to achieve even greater accuracy in approximating definite integrals.
+
+Consider the curve $y = f(x)$, which is non-negative over the interval $[a, b]$. Suppose the area represented by $\int_a^b f(x) \d x$ is divided by the ordinates $y_0$, $y_1$, $y_2$ into two strips each of width $h$ as shown below. A particular parabola can be found passing through the three points on the curve with ordinates $y_0$, $y_1$, $y_2$. Simpson's rule uses the area under the parabola to approximate the area represented by $\int_a^b f(x) \d x$.
+
+To deduce the area under the parabola, we consider the case where $y = f(x)$ is translated $x_1$ units to the left, i.e. the line $x = x_1$ is now the $y$-axis. 
+
+\begin{figure}[H]\tikzsetnextfilename{369}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -0.6:0.6,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {-0.4, 0.4},
+            xticklabels = {$-h$, $h$},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+
+            \addplot[plotRed, very thick] {x + 0.8 + sin(pi * (\x + 0.4) r)};
+
+            \addlegendentry{$y = f(x + x_1)$};
+
+            \addplot[dashed, thick] {(-4.107) * x^2 + 1.735 * x + 1.751};
+
+            \addlegendentry{$y = Ax^2 + Bx + C$};
+
+            \draw[dashed, thick] (-0.4, 0) -- (-0.4, 0.4);
+            \draw[dashed, thick] (0, 1.751) -- (0, 0);
+            \draw[dashed, thick] (0.4, 0) -- (0.4, 1.788);
+
+            \fill (-0.4, 0.4) circle[radius=2.5pt];
+            \fill (0., 1.751) circle[radius=2.5pt];
+            \fill (0.4, 1.788) circle[radius=2.5pt];
+
+            \node[anchor=west] at (-0.4, 0.2) {$y_0$};
+            \node[anchor=west] at (0, 0.2) {$y_1$};
+            \node[anchor=west] at (0.4, 0.2) {$y_2$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+Under this translation, \[\int_a^b f(x) \d x = \int_{-h}^h f(x + x_1) \d x.\] This area will now be approximated by a parabola $y = g(x) = Ax^2 + Bx + C$, where $A$, $B$ and $C$ are constants. The area under the parabola is given by \[\int_{-h}^h \bp{Ax^2 + Bx + C} \d x = \evalint{\frac{A}3 x^3 + \frac{B}{2} x^2 + Cx}{-h}{h} = \frac{h}{3} \bp{2Ah^2 + 6C}.\]
+
+Now, observe that the parabola $y = g(x)$ intersects the curve at $(-h, y_1)$, $(0, y_2)$ and $(h, y_3)$. Hence, \[g(-h) = Ah^2 - Bh + C = y_0, \quad g(0) = C = y_1, \quad g(h) = Ah^2 + Bh + C = y_2.\] Thus, \[\frac{h}{3} \bp{2Ah^2 + 6C} = \frac{h}{3} \bs{\bp{Ah^2 - Bh + C} + 4C + \bp{Ah^2 + Bh + C}} = \frac{h}{3} (y_0 + 4y_1 + y_2).\] We hence arrive at Simpson's rule with 2 strips: \[\int_a^b f(x) \d x \approx \frac{h}{3} (y_0 + 4y_1 + y_2).\] We can extend Simpson's rule to cover any even number of strips. In general,
+
+\begin{recipe}[Simpson's Rule]
+    Simpson's rule with $2n$ strips (or $2n+1$ ordinates) gives the approximation
+    \begin{align*}
+        \int_a^b f(x) \d x &\approx \sum_{k = 0}^n \frac{h}{3} (y_{2k} + 4y_{2k+1} + y_{2k+2})\\
+        &= \frac{h}{3} \bs{y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4 + \dots + 2y_{2n-2} + 4y_{2n-1} + y_{2n}}.
+    \end{align*}
+\end{recipe}
+
+\begin{example}[Simpson's Rule]
+    \phantom{.}
+
+    \textbf{Q:} Use Simpson's rule with 4 strips to find an approximation for \[\int_0^2 \ln{x + 2} \d x.\]
+    
+    \textbf{A:} Let $f(x) = \ln{x+2}$. By the trapezium rule,
+    \begin{align*}
+        \int_0^2 \ln{x + 2} \d x &\approx \frac{1}{3} \cdot \frac{2 - 0}{4} \Big[f(0) + 4f(0.5) + 2f(1) + 4f(1.5) + f(2)\Big] \\
+        &= 2.15881 \todp{5}.
+    \end{align*}
+
+    In the previous example, the trapezium rule gave an estimate of $2.15369 \todp{5}$, which had an error of 0.240\%. In the case of Simpson's rule, the error is 0.00324\%, vastly better than that of the trapezium rule's.
+\end{example}
+
+In general, Simpson's rule gives a better approximation than the trapzium rule as the quadratics used account for the concavity of the curve.

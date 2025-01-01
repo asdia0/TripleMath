@@ -1,0 +1,127 @@
+\chapter{Differentiation}
+
+\section{Limits}
+
+Let $a$ be a constant. 
+\begin{itemize}
+    \item $x \to a$ means ``$x$ approaches the value $a$'',
+    \item $x \to a^-$ means ``$x$ approaches the value $a$ from a value slightly more than $a$'',
+    \item $x \to a^+$ means ``$x$ approaches the value $a$ from a value slightly more than $a$'',
+    \item $\lim_{x \to a} f(x)$ means ``the limit of $f(x)$ as $x$ approaches $a$''.
+\end{itemize}
+
+\begin{definition}
+    The \vocab{limit} of $f(x)$ as $x$ approaches $a$ exists if there exists some $l \in \RR$ such that \[\lim_{x \to a^-} f(x) = l = \lim_{x \to a^+} f(x).\] We write \[\lim_{x \to a} f(x) = l.\]
+\end{definition}
+
+\section{Derivative}
+
+\begin{definition}
+    The \vocab{gradient of a straight line} is defined as the ratio of the change in the $y$-coordinate to that of the $x$-coordinate between any two points on the line. Mathematically, the gradient $m$ is given by \[m = \frac{y_2 - y_1}{x_2 - x_1},\] where $(x_1, y_1)$ and $(x_2, y_2)$ are two points on the line.
+\end{definition}
+
+\begin{definition}
+    The \vocab{tangent to the curve at $A$} is the line \textit{touching} the curve at $A$.
+\end{definition}
+
+\begin{definition}
+    The \vocab{instantaneous rate of change} or \vocab{gradient} of a curve at any point is defined as the gradient of the tangent to the curve at the point.
+\end{definition}
+
+\begin{definition}
+    The \vocab{derivative} of a function $f(x)$, denoted $\der{}{x} f(x)$ or $f'(a)$, represents the instantaneous rate of change of $f(x)$ with respect to $x$.
+\end{definition}
+
+If $y = f(x)$, we write the derivative as $\der{y}{x}$ or $y'$. Note that the symbol $\der{}{x}$ means ``the derivative with respect to $x$ of'' and should be treated as an operation, not a fraction.
+
+\begin{definition}
+    The \vocab{$n$th derivative} of $y$ with respect to $x$ is \[\der[n]{y}{x} = f^{(n)}(x) = \der{}{x} \bp{\der[n-1]{y}{x}},\] where $n \in \ZZ^+$.
+\end{definition}
+
+\subsection{Differentiation from First Principles}
+
+Consider a curve $y = f(x)$. Let $A(x, f(x))$ and $B(x + \D x, f(x + \D x))$ be two points on the curve, where $\D x$ is a small increment in $x$.
+
+Observe that the gradient of the tangent to the curve at $A$ can be approximated by the gradient of the chord $AB$, denoted $m_{AB}$. The closer $B$ is to $A$, the better the approximation. Therefore, the gradient of the curve at point $A$ is $\lim_{B \to A} m_{AB}$. Now observe that \[m_{AB} = \frac{f(x + \D x) - f(x)}{(x + \D x) - x} = \frac{f(x + \D x) - f(x)}{\D x}.\] Additionally, as $B \to A$, $\D x \to 0$. Hence, \[\lim_{B \to A} m_{AB} = \lim_{\D x \to 0} \frac{f(x + \D x) - f(x)}{\D x} = \lim_{\D x \to 0} \frac{\D y}{\D x} = \der{y}{x}.\] For convenience, we replace $\D x$ with $h$. The derivative is hence \[\der{y}{x} = \der{}{x} f(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}.\]
+
+\section{Differentiation Rules}
+
+\begin{fact}[Differentiation Rules]
+    Let $k \in \RR$ and suppose $u$ and $v$ are functions of $x$. Then
+    \begin{itemize}
+        \item (Sum/Difference Rule) If $y = u \pm v$ then $y' = u' \pm v'$.
+        \item (Product Rule) If $y = uv$, then $y' = u' v + u v'$.
+        \item (Quotient Rule) If $y = \frac{u}{v}$, then $y' = \frac{u' v - u v'}{v^2}$.
+        \item (Chain Rule) If $y = g(u)$ and $u = u(x)$, then $\der{y}{x} = \der{y}{u} \der{u}{x}$.
+        \item $\der{y}{x} = \frac1{\derx{x}{y}}$.
+    \end{itemize}
+\end{fact}
+
+Note that the last property does not generalize to higher derivatives. For instance, $\der[2]{y}{x} \neq \frac1{\derx[2]{x}{y}}$.
+
+\section{Derivatives of Standard Functions}
+
+Let $n, a \in \RR$.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $y$ & $y'$ & $y$ & $y'$ & $y$ & $y'$ \\ \hline\hline
+    $x^n$ & $n x^{n-1}$ & $\sin x$ & $\cos x$ & $\cos x$ & $-\sin x$\\ \hline
+    $a^x$ & $a^x \ln a$ & $\sec x$ & $\sec x \tan x$ & $\csc x$ & $-\csc x \cot x$\\ \hline
+    $\log_a x$ & $1/(x\ln a)$ & $\tan x$ & $\sec^2 x$ & $\cot x$ & $-\csc^2 x$\\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    $y$ & $y'$ \\ \hline\hline
+    $\arcsin x$ & $1/\sqrt{1 - x^2}$, $\abs{x} < 1$ \\ \hline
+    $\arccos x$ & $-1/\sqrt{1 - x^2}$, $\abs{x} < 1$ \\ \hline
+    $\arctan x$ & $1/(1 + x^2)$ \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Implicit Differentiation}
+
+\begin{definition}
+    An \vocab{explicit function} is one of the form $y = f(x)$, i.e. the dependent variable $y$ is expressed explicitly in terms of the independent variable $x$, e.g. $y = 2x \sin x + 3$. An \vocab{implicit function} is one where the dependent variable $y$ is expressed implicitly in terms of the independent variable $x$, e.g. $xy + \sin y = 2$.
+\end{definition}
+
+\begin{recipe}[Implicit Differentiation]
+    $y'$ is found by differentiating every term in the equation with respect to $x$ and with subsequent arrangement, making $y'$ the subject.
+\end{recipe}
+
+Implicit differentiation requires the use of the chain rule: \[\der{}{x} g(y) = \der{}{y} g(y) \cdot \der{y}{x}.\]
+
+\begin{example}[Implicit Differentiation]
+    Consider the implicit function $3y^3 + x^2 y = 2$. Implicitly differentiating each term with respect to $x$, we obtain \[9y^2 y' + \bp{x^2 y' + 2x y} = 0 \implies y' = \frac{-2xy}{9y^2 + x^2}.\]
+\end{example}
+
+\begin{proposition}[Derivative of Inverse Functions]
+    \[\der{}{x} \inv f(x) = \frac1{{f'\bp{\inv f(x)}}}.\]
+\end{proposition}
+\begin{proof}
+    Let $y = \inv f(x)$. Then $f(y) = x$. Implicitly differentiating, \[f'(y) \, y' = 1 \implies y' = \frac1{f'(y)} = \frac1{{f'\bp{\inv f(x)}}}.\]
+\end{proof}
+
+We can use the above result to derive the derivatives of the inverse trigonometric functions and the logarithm.
+
+\begin{example}[Derivative of $\arcsin x$]
+    Let $f(x) = \sin x$. Then $f'(x) = \cos x$. Using the above result, \[\der{}{x} \arcsin x = \frac{1}{\cos{\arcsin x}} = \frac1{\sqrt{1 - x^2}}.\]
+\end{example}
+
+\begin{example}[Derivative of $\log_a x$]
+    Let $f(x) = a^x$. Then $f'(x) = a^x \ln a$. Using the above result, \[\der{}{x} \log_a x = \frac1{a^{\log_a x} \ln a} = \frac1{x \ln a}.\]
+\end{example}
+
+\section{Parametric Differentiation}
+
+Sometimes it is difficult to obtain the Cartesian form of a parametric equation, so we are unable to express $\derx{y}{x}$ in terms of $x$. However, we are still able to obtain $\derx{y}{x}$ in terms of the parameter $t$ using the chain rule. If $x = f(t)$ and $g(t)$, then \[\der{y}{x} = \der{y}{t} \der{t}{x}.\]
+
+\begin{example}[Parametric Differentiation]
+    Suppose $x = \sin 2\t$, $y = \cos 4\t$. Differentiating $x$ and $y$ with respect to $\t$, we see that \[\der{x}{\t} = 2\cos 2\t, \qquad \der{y}{\t} = -4\sin 4\t.\] Hence, by the chain rule, \[\der{y}{x} = \der{y}{\t} \der{\t}{x} = \frac{-2 \sin 4\t}{\cos 2\t}.\]
+\end{example}

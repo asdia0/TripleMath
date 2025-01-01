@@ -1,20 +1,42 @@
 \chapter{Numerical Methods of Finding Roots}
 
-\paragraph{Prerequisites.} None.
-\paragraph{Exercises.} \nameref{sec:A2}
+\section{Bolzano's Theorem}
 
-\begin{proposition}[Location of Root Theorem]
-    Let $f(x)$ be a continuous function on the interval $[a, b]$. If $f(a)$ and $f(b)$ have opposite signs, i.e. $f(a) f(b) < 0$, then there exists at least one real root in $[a, b]$. Furthermore, if $f(x)$ is strictly monotonic on $[a, b]$, then there is exactly one real root in $[a, b]$.
-\end{proposition}
+The following theorem forms the basis for finding roots numerically.
+
+\begin{theorem}[Bolzano's Theorem]
+    Let $f(x)$ be a continuous function on the interval $[a, b]$. If $f(a)$ and $f(b)$ have opposite signs, i.e. $f(a) f(b) < 0$, then there exists at least one real root in $[a, b]$.
+\end{theorem}
 \begin{proof}
     Follows immediately from the Intermediate Value Theorem.
 \end{proof}
+
+Additionally, if $f(x)$ is strictly monotonic on $[a, b]$, then there is exactly one real root in $[a, b]$.
+
+\section{Numerical Methods for Finding Roots}
+
+A numerical method for finding roots typically consists of two stages:
+\renewcommand{\theenumi}{\arabic{enumi}.}%
+\begin{enumerate}
+    \item \textbf{Estimate the location of the root}
+    
+    Obtain an initial approximate value of this root.
+    \item \textbf{Improve on the estimate (via an iterative process)}
+
+    An iterative process is a repetitive procedure designed to produce a sequence of approximations $\bc{x_n}$ so that the sequence converges to a root. The process is continued until the required accuracy is reached.
+\end{enumerate}
+\renewcommand{\theenumi}{(\alph{enumi})}
+
+In this chapter, we will look at three numerical methods for finding roots, namely linear interpolation, fixed point iteration and the Newton-Raphson method.
 
 \section{Linear Interpolation}
 
 Linear interpolation is a numerical method based on approximating the curve $y = f(x)$ to a straight line in the vicinity of the root. The approximate root of the equation $f(x) = 0$ is the intersection of this straight line with the $x$-axis.
 
-\begin{center}\tikzsetnextfilename{113}
+\subsection{Derivation}
+
+\begin{figure}[H]\tikzsetnextfilename{113}
+    \centering
     \begin{tikzpicture}
         \begin{axis}[
                 domain = -4.8:-0.5,
@@ -35,37 +57,33 @@ Linear interpolation is a numerical method based on approximating the curve $y =
         \fill (A) circle[radius=2.5pt];
         \fill (B) circle[radius=2.5pt];
         \end{axis}
-        \end{tikzpicture}
-\end{center}
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
 
-\begin{method}[Linear Interpolation]
-    Suppose $f(x) = 0$ has exactly one root $\a$ in the interval $[a, b]$, where $f(a)$ and $f(b)$ have opposite signs. Then linear interpolation gives \[\a \approx \frac{af(b) - bf(a)}{f(b)-f(a)}.\]
-\end{method}
-\begin{sketch}
-    By the point-slope formula, the line connecting the points $(a, f(a))$ and $(b, f(b))$ is given by \[y - f(a) = \frac{f(b) - f(a)}{b - a} (x - a).\] At the point $(c, 0)$, \[0 - f(a) = \frac{f(b)-f(a)}{b-a} (c -a) \implies c = \frac{af(b) - bf(a)}{f(b)-f(a)}.\]
-\end{sketch}
+Suppose $f(x) = 0$ has exactly one root $\a$ in the interval $[a, b]$, where $f(a)$ and $f(b)$ have opposite signs. By the point-slope formula, the line connecting the points $(a, f(a))$ and $(b, f(b))$ is given by \[y - f(a) = \frac{f(b) - f(a)}{b - a} (x - a).\] At the point $(c, 0)$, \[0 - f(a) = \frac{f(b)-f(a)}{b-a} (c -a) \implies c = \frac{af(b) - bf(a)}{f(b)-f(a)}.\]
 
 Linear interpolation can be repeatedly applied by replacing either the lower or upper bound of the interval with the previously found approximation.
+
+\subsection{Convergence}
 
 Convergence of the approximations is guaranteed for linear interpolation. However, how good the estimation is depends on how "straight" the graph of $y = f(x)$ is in $[a, b]$, i.e. the rate at which $f'(x)$ is changing in $[a, b]$. This rate also affects the rate of convergence: if $f'(x)$ changes considerably, the rate of convergence is slow; if $f'(x)$ does not change much, the rate of convergence is fast.
 
 \section{Fixed Point Iteration}
 
-\begin{method}
-    Suppose $f(x) = 0$ can be rewritten into the form $x = F(x)$. Then \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
-\end{method}
-\begin{sketch}
-    If $\a$ is a root to $f(x) = 0$, it must also be a root to $\a = F(\a)$. Due to the recursive nature of this equation, we can keep replacing the $\a$ in the argument with $F(\a)$: \[\a = F(\a) = F(F(\a)) = F(F(F(\a))) = \cdots.\] Let $\{x_{n}\}$ be a sequence such that $x_{n+1} = F(x_n)$ (i.e. $x_n = F^{n} (x)$). Then $\a = \lim_{n \to \infty} x_n$ (assuming it exists). Equivalently, \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
-\end{sketch}
+Fixed point iteration is used to find a root of an equation $f(x) = 0$ which can be written in the form $x = F(x)$. The roots of the equation are the abscissae of the points of intersection of the line $y = x$ and $y = F(x)$.
+
+\subsection{Derivation}
+
+Let $\a$ be a root to $f(x) = 0$. Since $f(x) = 0$ can be written in the form $x = F(x)$, we clearly have $\a = F(\a)$. Now observe that we can replace the argument $\a$ with $F(\a)$: \[\a = F(\a) = F \circ F(\a) = F \circ F \circ F(\a) = \dots.\] Hence, \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
+
+\subsection{Geometrical Interpretation}
 
 Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the initial approximation point $(x_1, F(x_1))$ about the line $y = x$, while keeping the resultant point on the curve $y = F(x)$.
 
-\medskip
-
-\begin{minipage}{0.45\textwidth}
+\begin{figure}[H]\tikzsetnextfilename{331}
     \centering
-    \tikzsetnextfilename{331}
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}
         \begin{axis}[
             domain = 0:2,
             samples = 101,
@@ -99,11 +117,16 @@ Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the 
             \end{scope}
         \end{axis}
     \end{tikzpicture}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
+    \caption{}
+\end{figure}
+
+\subsection{Convergence}
+
+Convergence is not guaranteed. The rate at which the approximations converge to $\a$ depends on the value of $\abs{F'(x)}$ near $\a$. The smaller $\abs{F'(x)}$ is, the faster the convergence. It should be noted that fixed-point iteration fails if $\abs{F'(x)} > 1$ near $\a$.
+
+\begin{figure}[H]\tikzsetnextfilename{332}
     \centering
-    \tikzsetnextfilename{332}
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}
         \begin{axis}[
             domain = 0:pi/2,
             samples = 101,
@@ -138,28 +161,17 @@ Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the 
             \end{scope}
         \end{axis}
     \end{tikzpicture}
-\end{minipage}
-
-\medskip
-
-Convergence is not guaranteed (see the above diagram on the right). The rate at which the approximations converge to $\a$ depends on the value of $\abs{F'(x)}$ near $\a$. The smaller $\abs{F'(x)}$ is, the faster the convergence. It should be noted that fixed-point iteration fails (almost surely) if $\abs{F'(x)} > 1$ near $\a$.
+    \caption{Divergence occurs when $\abs{F'(x)} > 1$ near $\a$.}
+\end{figure}
 
 \section{Newton-Raphson Method}
 
 The Newton-Raphson method is a numerical method that improves on linear interpolation by considering the tangent line at the initial approximation to the root.
 
-\begin{method}[Newton-Raphson Method]
-    Let $\a$ be a root to $f(x) = 0$. The sequence $\{x_n\}$ defined by \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\] converges to $\a$, provided certain conditions are met.
-\end{method}
-\begin{sketch}
-    Consider the tangent to $y = f(x)$ at the point where $x = x_1$. In most circumstances, the point $(x_2, 0)$ where this tangent cuts the $x$-axis will be nearer to the point $(\a, 0)$ than $(x_1, 0)$ was. By the point-slope formula, the equation of the tangent to the curve at $x = x_1$ is \[y - f(x_1) = f'(x_1)(x-x_1).\] Since $(x_2, 0)$ lies on the tangent line, we have \[x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}.\] By repeating the Newton-Raphson process, we are able to get better approximations to $\a$. In general, \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.\]
-\end{sketch}
+\subsection{Derivation}
 
-\medskip
-
-\begin{minipage}{0.45\textwidth}
+\begin{figure}[H]\tikzsetnextfilename{329}
     \centering
-    \tikzsetnextfilename{329}
     \begin{tikzpicture}[scale=0.8]
         \begin{axis}[
             domain = 1.5:2.5,
@@ -187,10 +199,22 @@ The Newton-Raphson method is a numerical method that improves on linear interpol
             \addplot[blue!50] {11.48 * (x-2.4) + 4.644};
         \end{axis}
     \end{tikzpicture}
-\end{minipage}\hspace{0.05\textwidth}
-\begin{minipage}{0.45\textwidth}
+    \caption{}
+\end{figure}
+
+Let $\a$ be a root to $f(x) = 0$. Consider the tangent to $y = f(x)$ at the point where $x = x_1$. In most circumstances, the point $(x_2, 0)$ where this tangent cuts the $x$-axis will be nearer to the point $(\a, 0)$ than $(x_1, 0)$ was. By the point-slope formula, the equation of the tangent to the curve at $x = x_1$ is \[y - f(x_1) = f'(x_1)(x-x_1).\] Since $(x_2, 0)$ lies on the tangent line, we have \[x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}.\] By repeating the Newton-Raphson process, we are able to get better approximations to $\a$. In general, \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.\]
+
+\subsection{Convergence}
+
+The rate of convergence when using the Newton-Raphson method depends on the first approximation used and the shape of the curve in the neighbourhood of the root. In extreme cases, these factors may lead to failure (divergence). The three main cases are:
+\begin{itemize}
+    \item $\abs{f'(x_1)}$ is too small (extreme case when $f'(x_1) = 0$),
+    \item $f'(x)$ increases/decreases too rapidly ($\abs{f''(x)}$ is too large),
+    \item $x_1$ is too far away from $\a$.
+\end{itemize}
+
+\begin{figure}[H]\tikzsetnextfilename{330}
     \centering
-    \tikzsetnextfilename{330}
     \begin{tikzpicture}[scale=0.8]
         \begin{axis}[
             domain = -1.3:1.3,
@@ -219,13 +243,5 @@ The Newton-Raphson method is a numerical method that improves on linear interpol
             \addplot[blue!50] {-0.23 * (x - 0.5) - 0.35};
         \end{axis} 
     \end{tikzpicture}
-\end{minipage}
-
-\medskip
-
-The rate of convergence when using the Newton-Raphson method depends on the first approximation used and the shape of the curve in the neighbourhood of the root. In extreme cases, these factors may lead to failure (divergence). The three main cases are:
-\begin{itemize}
-    \item $\abs{f'(x_1)}$ is too small (extreme case when $f'(x_1) = 0$),
-    \item $f'(x)$ increases/decreases too rapidly ($\abs{f''(x)}$ is too large),
-    \item $x_1$ is too far away from $\a$.
-\end{itemize}
+    \caption{Divergence occurs when $x_1$ is too far away from $\a$.}
+\end{figure}

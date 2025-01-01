@@ -1,0 +1,151 @@
+\chapter{Scalar and Vector Products}
+
+\section{Scalar Product}
+
+\begin{definition}
+    The \vocab{scalar product} (or dot product) of two vectors $\vec a$ and $\vec b$ is defined by \[\vec a \dotp \vec b = \abs{\vec a} \abs{\vec b} \cos \t,\] where $\t$ is the angle between the two vectors (note that $0 \leq \t \leq \pi$).
+\end{definition}
+\begin{remark}
+    $\vec a \dotp \vec b$ is called the scalar product as the result is a real number (a scalar). It is also called the dot product because of the notation.
+\end{remark}
+
+\begin{fact}[Algebraic Properties of Scalar Product]
+    Let $\vec a$, $\vec b$ and $\vec c$ be vectors and let $\l \in \RR$. Then
+    \begin{itemize}
+        \item (commutative) $\vec a \dotp \vec b = \vec b \dotp \vec a$.
+        \item (distributive over addition) $\vec a \dotp (\vec b + \vec c) = \vec a \dotp \vec b + \vec a \dotp \vec c$.
+        \item $\vec a \dotp \vec a = \abs{\vec a}^2$.
+        \item $(\l \vec a) \dotp \vec b = \vec a \dotp (\l \vec b) = \l (\vec a \dotp \vec b)$.
+    \end{itemize}
+\end{fact}
+
+\begin{proposition}[Geometric Properties of Scalar Product]
+    Let $\vec a$ and $\vec b$ be non-zero vectors, and let $\t$ be the angle between them.
+    \begin{itemize}
+        \item $\vec a \dotp \vec b = 0$ if and only if $\t = \frac\pi2$, i.e. $\vec a \perp \vec b$.
+        \item $\vec a \dotp \vec b > 0$ if and only if $\t$ is acute.
+        \item $\vec a \dotp \vec b < 0$ if and only if $\t$ is obtuse.
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    The sign of $\vec a \dotp \vec b$ is determined solely by $\cos \t$.
+\end{proof}
+
+\begin{proposition}[Scalar Product in Cartesian Unit Vector Form]
+    \[\cveciii{x_1}{y_1}{z_1} \dotp \cveciii{x_2}{y_2}{z_2} = x_1 x_2 + y_1 y_2 + z_1 z_2.\]
+\end{proposition}
+\begin{proof}
+    Since $\vec i$, $\vec j$ and $\vec k$ are pairwise perpendicular, their pairwise scalar products are 0. That is, \[\vec i \dotp \vec j = \vec j \dotp \vec k = \vec k \dotp \vec i = 0.\] Hence, by the distributive property of the scalar product, \[(x_1 \vec i + y_1 \vec j + z_1 \vec k) \dotp (x_2 \vec i + y_2 \vec j + z_2 \vec k) = x_1 x_2 \vec i \dotp \vec i + y_1 y_2 \vec j \dotp \vec j + z_1 z_2 \vec k \dotp \vec k.\] Lastly, since $\vec i$, $\vec j$ and $\vec k$ are all unit vectors, \[\vec i \dotp \vec i = \vec j \dotp \vec j = \vec k \dotp \vec k = 1.\] Thus, \[\cveciii{x_1}{y_1}{z_1} \dotp \cveciii{x_2}{y_2}{z_2} = x_1 x_2 + y_1 y_2 + z_1 z_2.\]
+\end{proof}
+
+\subsection{Applications of Scalar Product}
+
+\begin{proposition}[Angle between Two Vectors]
+    Let $\t$ be the angle between two non-zero vectors $\vec a$ and $\vec b$. Then \[\cos \t = \frac{\vec a \dotp \vec b}{\abs{\vec a} \abs{\vec b}}.\]
+\end{proposition}
+\begin{proof}
+    Follows immediately from the definition of the scalar product.
+\end{proof}
+
+\begin{definition}
+    Let $\vec a$ and $\vec b$ denote the position vectors of $A$ and $B$ respectively, relative to the origin $O$. Let $\t$ be the angle between $\vec a$ and $\vec b$, and let $N$ be the foot of the perpendicular from the point $A$ to the line passing through $O$ and $B$.
+
+    Then, the length $ON$ is defined to be the \vocab{length of projection} of the vector $\vec a$ onto the vector $\vec b$. Also, $\oa{ON}$ is the \vocab{vector projection} of $\vec a$ onto $\vec b$.
+\end{definition}
+
+\begin{proposition}[Length of Projection]
+    The length of projection of $\vec a$ onto $\vec b$ is $\abs{\vec a \dotp \hat{\vec b}}$.
+\end{proposition}
+\begin{proof}
+    Consider the case where $\t$ is acute.
+
+    \begin{figure}[H]\tikzsetnextfilename{336}
+        \centering
+        \begin{tikzpicture}
+            \coordinate[label=right:$A$] (A) at (2, 2);
+            \coordinate[label=right:$B$] (B) at (3, 0);
+            \coordinate[label=below:$N$] (N) at (2, 0);
+            \coordinate[label=below left:$O$] (O) at (0, 0);
+    
+            \draw[->] (O) -- (A);
+            \draw[->] (O) -- (B);
+            \draw[dotted] (A) -- (N);
+
+            \node[anchor=south east] at (1, 1) {$\vec a$};
+            \node[anchor=north] at (0.5, 0) {$\vec b$};
+    
+            \draw pic [draw, angle radius=3mm] {right angle = B--N--A};
+            \draw pic [draw, angle radius=10mm, "$\t$"] {angle = B--O--A};
+        \end{tikzpicture}
+        \caption{\label{fig:336}}
+    \end{figure}
+
+    From the diagram, \[ON = OA \cos \t = \abs{\vec a} \frac{\vec a \dotp \vec b}{\abs{\vec a} \abs{\vec b}} = \frac{\vec a \dotp \vec b}{\abs{\vec b}} = \vec a \dotp \hat{\vec b}.\] A similar argument shows that when $\t$ is obtuse, $ON = -\vec a \dotp \hat{\vec b}$. Hence, in any case, $ON = \abs{\vec a \dotp \hat{\vec b}}$.
+\end{proof}
+
+\begin{proposition}[Vector Projection]
+    The vector projection of $\vec a$ onto $\vec b$ is $(\vec a \dotp \hat{\vec b}) \hat{\vec b}$.
+\end{proposition}
+\begin{proof}
+    \case{1}[$\t$ is acute] Then $\oa{ON}$ is in the same direction as $\vec b$. Hence, \[\oa{ON} = \abs{ON} \hat{\vec b} = (\vec a \dotp \hat{\vec b}) \hat{\vec b}.\]
+
+    \case{2}[$\t$ is obtuse] Then $\oa{ON}$ is in the opposite direction as $\vec b$. Hence, \[\oa{ON} = \abs{ON} \bp{-\hat{\vec b}} = -(\vec a \dotp \hat{\vec b}) (-\hat{\vec b}) = (\vec a \dotp \hat{\vec b}) \hat{\vec b}.\]
+\end{proof}
+
+\section{Vector Product}
+
+\begin{definition}
+    The \vocab{vector product} (or cross product) of two vectors $\vec a$ and $\vec b$ is denoted by $\vec a \crossp \vec b$ and is defined by \[\vec a \crossp \vec b = \abs{\vec a}\abs{\vec b} \sin \t \hat{\vec n},\] where $\t$ is the angle between $\vec a$ and $\vec b$ and $\hat{\vec n}$ is the unit vector perpendicular to both $\vec a$ and $\vec b$, in the direction determined by teh right-hand grip rule.
+\end{definition}
+\begin{remark}
+    $\vec a \crossp \vec b$ is called the vector product as the result is a vector. It is also called the cross product due to its notation.
+\end{remark}
+
+\begin{fact}[Algebraic Properties of Vector Product]
+    Let $\vec a$, $\vec b$ and $\vec c$ be three vectors, and $\t$ be the angle between $\vec a$ and $\vec b$.
+    \begin{itemize}
+        \item (anti-commutative) $\vec a \crossp \vec b = -\vec b \crossp \vec a$.
+        \item (distributive over addition) $\vec a \crossp (\vec b + \vec c) = (\vec a \crossp \vec b) + (\vec a \crossp \vec c)$.
+        \item $\abs{\vec a \crossp \vec b} = \abs{a} \abs{b} \sin \t$.
+        \item $(\l \vec a) \crossp \vec b = \vec a \crossp (\l \vec b) = \l (\vec a \crossp \vec b)$, where $\l \in \RR$.
+    \end{itemize}
+\end{fact}
+
+\begin{proposition}[Geometric Properties of Vector Product]
+    Let $\vec a$ and $\vec b$ be non-zero vectors and $\t$ be the angle between them.
+    \begin{itemize}
+        \item $\abs{\vec a \crossp \vec b} = 0$ if and only if $\vec a \parallel \vec b$.
+        \item $\abs{\vec a \crossp \vec b} = \abs{\vec a} \abs{\vec b}$ if and only if $\vec a \perp \vec b$.
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    Follows from the definition of the vector product (consider $\t = 0, \frac\pi2, \pi$).
+\end{proof}
+
+\begin{proposition}[Vector Product in Cartesian Unit Vector Form]
+    \[\cveciii{x_1}{y_1}{z_1} \dotp \cveciii{x_2}{y_2}{z_2} = \cveciii{y_1 z_2 - z_1 y_2}{z_1 x_2 - x_1 z_2}{x_1 y_2 - y_1 x_2}.\]
+\end{proposition}
+\begin{proof}
+    From the geometric properties of the vector product, we have \[\vec i \crossp \vec i = \vec j \crossp \vec j = \vec k \crossp \vec k = \vec 0.\] Furthermore, since $\vec i$, $\vec j$ and $\vec k$ are pairwise perpendicular, by the right-hand grip rule, one has \[\vec i \crossp \vec j = \vec k, \quad \vec j \crossp \vec k = \vec i, \quad \vec k \crossp \vec i = \vec j.\] Hence, by the distributive property of the vector product,
+    \begin{align*}
+        &(x_1 \vec i + y_1 \vec j + z_1 \vec k) \crossp (x_2 \vec i + y_2 \vec j + z_2 \vec k) \\
+        &\hspace{2em}= x_1 y_2 \vec k + x_1 z_2 (-\vec j) + y_1 x_2 (-\vec k) + y_1 z_2 \vec i + z_1 x_2 \vec j + z_1 y_2 (-\vec i) \\
+        &\hspace{2em}=(y_1 z_2 - z_1 y_2) \vec i + (z_1 x_2 - x_1 z_2) \vec j + (x_1 y_2 - y_1 x_2) \vec k.
+    \end{align*}
+\end{proof}
+
+\subsection{Applications of Vector Product}
+
+\begin{proposition}[Length of Side of Right-Angled Triangle]
+    Let $\vec a$ and $\vec b$ denote the position vectors of $A$ and $B$ respectively, relative to the origin $O$. Let $\t$ be the angle between $\vec a$ and $\vec b$, and let $N$ be the foot of the perpendicular from $A$ to $OB$. Then \[AN = \abs{\vec a \crossp \hat{\vec b}}.\]
+\end{proposition}
+\begin{proof}
+    With reference to Fig.~\ref{fig:336}, we have \[AN = OA \sin \t = \abs{\vec a} \frac{\abs{\vec a \crossp \vec b}}{\abs{\vec a}\abs{\vec b}} = \frac{\abs{\vec a \crossp \vec b}}{\vec b} = \abs{\vec a \crossp \hat{\vec b}}.\]
+\end{proof}
+
+\begin{proposition}[Area of Triangles and Parallelogram]
+    Let $ABCD$ be a parallelogram. Let $\vec a = \oa{AB}$ and $\vec b = \oa{AC}$. Let $\t$ be the angle between $\vec a$ and $\vec b$. Then \[[\triangle ABC] = \frac12 \abs{\vec a \crossp \vec b}\] and \[[ABCD] = \abs{\vec a \crossp \vec b}.\]
+\end{proposition}
+\begin{proof}
+    Recall that the formula for the area of a triangle is \[[\triangle ABC] = \frac12 (AB)(AC) \sin \t = \frac12 \abs{\vec a} \abs{\vec b} \sin \t = \frac12 \abs{\vec a \crossp \vec b}.\] Since the area of parallelogram $ABCD$ is twice that of $\triangle ABC$, we immediately have \[[ABCD] = \abs{\vec a \crossp \vec b}.\]
+\end{proof}

@@ -1,4 +1,5 @@
-\begin{center}\tikzsetnextfilename{}
+\begin{figure}[H]\tikzsetnextfilename{}
+    \centering
     \begin{tikzpicture}[trim axis left, trim axis right]
         \begin{axis}[
             domain = 0:10,
@@ -28,4 +29,5 @@
             \fill [name intersections={of=f1 and f2,by={E1}}] (E1) circle[radius=2.5pt] node[anchor=south east, fill=white, opacity = 0.6, text opacity=1] {$(10.7, 3210)$};
         \end{axis}
     \end{tikzpicture}
-\end{center}
+    \caption{}
+\end{figure}
