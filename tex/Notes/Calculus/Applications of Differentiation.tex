@@ -142,14 +142,14 @@ Suppose $y = f(x)$ has stationary point at $x = a$.
     Thus, by the first derivative test, the stationary point at $x = 0$ is a minimum point.
 \end{example}
 
-\begin{recipe}[Second Derivative Test]
-    Check the sign of $f''(a)$.
+\begin{proposition}[Second Derivative Test]\label{prop:Second-Derivative-Test}
+    Suppose $f(x)$ has a stationary point at $x = a$.
     \begin{itemize}
         \item If $f''(a) < 0$, then the stationary point is a maximum.
         \item If $f''(a) > 0$, then the stationary point is a minimum.
         \item If $f''(a) = 0$, the test is inconclusive.
     \end{itemize}
-\end{recipe}
+\end{proposition}
 \begin{proof}
     At $x = a$, the function $f(x)$ is given by the Taylor series \[f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n = f(a) + f'(a) (x-a) + \frac{f''(a)}{2} (x-a)^2 + \cdots.\] When $x$ is arbitrarily close to $a$, the terms $(x-a)^3$, $(x-a)^4$, $\dots$ become negligibly small, whence $f(x)$ is well-approximated by \[f(x) \approx f(a) + f'(a) (x-a) + \frac{f''(a)}{2} (x-a)^2.\] Since $x = a$ is a stationary point, $f'(a) = 0$, whence \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2.\] Now observe that $\frac12 (x-a)^2$ is non-negative. Hence, the sign of $\frac{f''(a)}{2} (x-a)^2$ depends solely on the sign of $f''(a)$: if $f''(a)$ is positive, the entire term is positive and \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2 > f(a),\] whence $f(a)$ is a minimum (since $f(a) < f(x)$ for all $x$ in the neighbourhood of $a$). Similarly, if $f''(a)$ is negative, the entire term is negative and \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2 < f(a),\] whence $f(a)$ is a maximum. If $f''(a)$ is zero, we cannot say anything about $f(x)$ around $f(a)$ and the test is inconclusive.
 \end{proof}

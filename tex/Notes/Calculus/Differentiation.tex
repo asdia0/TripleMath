@@ -46,18 +46,40 @@ Observe that the gradient of the tangent to the curve at $A$ can be approximated
 
 \section{Differentiation Rules}
 
-\begin{fact}[Differentiation Rules]
+\begin{proposition}[Differentiation Rules]
     Let $k \in \RR$ and suppose $u$ and $v$ are functions of $x$. Then
     \begin{itemize}
         \item (Sum/Difference Rule) If $y = u \pm v$ then $y' = u' \pm v'$.
         \item (Product Rule) If $y = uv$, then $y' = u' v + u v'$.
         \item (Quotient Rule) If $y = \frac{u}{v}$, then $y' = \frac{u' v - u v'}{v^2}$.
-        \item (Chain Rule) If $y = g(u)$ and $u = u(x)$, then $\der{y}{x} = \der{y}{u} \der{u}{x}$.
-        \item $\der{y}{x} = \frac1{\derx{x}{y}}$.
+        \item (Chain Rule) If $y = f(x)$ and $x = g(t)$, then $\der{y}{t} = \der{y}{x} \der{x}{t}$.
     \end{itemize}
-\end{fact}
+\end{proposition}
+The sum, product and quotient rules are easy to prove from first principles. We hence only prove the chain rule. However, we first need to define differentiability of a function:
+\begin{definition}\label{def:Differentiability}
+    A function $f(x)$ is \vocab{differentiable} at $a$ if there exists some function $q(x)$ continuous at $a$ such that \[[q(x) = \frac{f(x) - f(a)}{x - a}.\] Note that there is at most one such $q(x)$, and if it exists, then $q(x) = f'(x)$.
+\end{definition}
+We now prove the chain rule.
+\begin{proof}[Proof of Chain Rule]    
+    Suppose $y = f(x)$ and $x = g(t)$. Suppose also that $f(x)$ is differentiable at $x = g(a)$, and that $g(t)$ is differentiable at $a$.
 
-Note that the last property does not generalize to higher derivatives. For instance, $\der[2]{y}{x} \neq \frac1{\derx[2]{x}{y}}$.
+    Since $f(x)$ is differentiable at $x = g(a)$, by the above definition, there exists a function $q(x)$ such that \[q(x) = \frac{f(x) - f(g(a))}{x - g(a)}.\] Replacing $x$ with $g(t)$, we get \[q(g(t)) = \frac{f(g(t)) - f(g(a))}{g(t) - g(a)} \implies g(t) - g(a) = \frac{f(g(t)) - f(g(a))}{q(g(t))}. \tag{1}\]
+
+    Similarly, since $g(t)$ is differentiable at $a$, by the above definition, there must exist a function $r(t)$ continuous at $a$ such that \[r(t) = \frac{g(t) - g(a)}{t - a} \implies g(t) - g(a) = r(t) (t - a). \tag{2}\]
+
+    Equating (1) and (2), we have \[\frac{f(g(t)) - f(g(a))}{q(g(t))} = r(t) (t - a).\] Rearranging, \[q(g(t)) r(t) = \frac{f(g(t)) - f(g(a))}{t - a} = \frac{(f \circ g)(t) - (f \circ g)(a)}{t - a}.\] By our assumptions, $q(g(t)) r(t)$ is continuous at $t = a$. Hence, by the above definition, $q(g(t)) r(t)$ is the derivative of $(f \circ g)'(t)$. Since $q(x) = f'(x)$ and $r(t) = g'(t)$, we arrive at \[(f \circ g)'(t) = f'(g(t)) g'(t).\] In Liebniz notation, this reads as \[\der{}{t} f(g(t)) = \bs{\der{}{x} f(g(t))} \bs{\der{}{t} g(t)}.\] Since $x = g(t)$ and $y = f(x) = f(g(t))$, this can be written more compactly as \[\der{y}{t} = \der{y}{x} \der{x}{t}.\]
+\end{proof}
+
+From the chain rule, we can derive the following property:
+
+\begin{proposition}
+    Suppose $\derx{x}{y} \not\equiv 0$. Then \[\der{y}{x} = \frac1{\derx{x}{y}}.\]
+\end{proposition}
+\begin{proof}
+    By the chain rule, \[1 = \der{y}{y} = \der{y}{x} \der{x}{y} \implies \der{y}{x} = \frac1{\derx{x}{y}}.\]
+\end{proof}
+
+Note that this property does not generalize to higher derivatives. For instance, $\der[2]{y}{x} \neq \frac1{\derx[2]{x}{y}}$.
 
 \section{Derivatives of Standard Functions}
 
