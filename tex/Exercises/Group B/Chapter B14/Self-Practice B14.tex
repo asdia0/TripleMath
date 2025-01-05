@@ -1,0 +1,73 @@
+\section{Self-Practice B14}
+
+\begin{problem}
+    A solution of the differential equation $\der{x}{t} + x \cot t = \csc t$ has $x = 0$ when $t = 1$.
+    \begin{enumerate}
+        \item Use the improved Euler method with a step size of $0.5$ to estimate $x$ at $t = 2$.
+        \item Solve the differential equation to find the exact value of $x$ when $t = 2$.
+        \item By considering the gradients of the curve at $t = 1.5$, $t = 2$ and $t = 2.5$, comment
+        on the accuracy of the Euler method to estimate x at $t = 2$ and $t = 3$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    For the differential equation $\der{y}{x} + \frac{y}{x} = 3x$, consider the solution curve passing through the point $(1, 2)$.
+    \begin{enumerate}
+        \item Compute the Euler approximation to $y(1.1)$ using step-size $h = 0.1$.
+        \item State, giving a reason, if you would expect the estimate in part (a) to be an underestimate or an overestimate of the true value.
+        \item Find the general solution of the differential equation $\der{y}{x} + \frac{y}{x} = 3x$.
+        \item Hence, find the solution curve that passes through the point $(1, 2)$ and calculate
+        the percentage error of your estimate in (a).
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A differential equation is of the form \[\der{y}{x} = \frac{y}{x} {f\bp{\frac{y}{x}}}.\]
+
+    \begin{enumerate}
+        \item By using the substitution $z = y/x$, show that \[\ln \abs{x} = \int \frac1{z\bs{f(z) - 1}} \d z.\]
+        \item A particular solution of the differential equation \[\der{y}{x} = \frac{y}{x} \ln{\frac{x}{y}}\] has $y = 1$ when $x = 1$. Find $y$ in terms of $x$.
+        \item Copy and complete the table below, using the improved Euler method with step size $0.5$ to estimate $y$ at $x = 2$.
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            $x$ & $y$ & $\derx{y}{x}$ & $\wt{y}$ & $\D y / \D x$ \\ \hline\hline
+            1 & 1 & 0 & 1 & 0.13516 \\ \hline
+            1.5 & 1.06758 & & & \\ \hline
+            2 & & \cellcolor{black!10} & \cellcolor{black!10} &  \cellcolor{black!10} \\ \hline
+            \end{tabular}
+        \end{table}
+        \item Use a graphical method to explain whether the estimated value of $y$ found in part (c) is an under-estimate or over-estimate.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The variables $P$ and $t$ are related by the ``modified'' logistic equation \[\der{P}{t} = \frac1{10} P\bp{1 - \frac{P}{10}} (P - 1).\] The differential equation is used to model the size, $P$ (in thousands), of species of wolves in time, $t$ (in years) in a given habitat.
+
+    \begin{enumerate}
+        \item Biologists observe that if the population of wolves is ``too small'', adults run the risk of being unable to find a mate, resulting in a decrease to the population.
+        \begin{enumerate}
+            \item Explain how the model accounts for this observation.
+            \item State the maximum population that the resources in the habitat can support.
+            \item Find the equilibrium solutions.
+            \item Sketch the possible solution curves for $P$ as a function of $t$.
+        \end{enumerate}
+        \item You are given that the population is now 2000.
+        \begin{enumerate}
+            \item Copy and complete the table showing the use of the improved Euler method with step size $0.5$ to estimate the population in a year's time.
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                $t$ & $P$ & $\derx{P}{t}$ & $\wt{P}$ & $\D P / \D t$ \\ \hline\hline
+                0 & 2 & 0.16 & 2.08 & 0.16896 \\ \hline
+                0.5 & 2.08448 & & & \\ \hline
+                1 & & \cellcolor{black!10} & \cellcolor{black!10} &  \cellcolor{black!10} \\ \hline
+                \end{tabular}
+            \end{table}
+            \item How could the accuracy of the numerical method in part (b)(i) be improved?
+        \end{enumerate}
+        \item Suppose the wolves are being hunted at a fixed rate $E$ (in thousands per year). Write down the new model for the population.
+    \end{enumerate}
+\end{problem}

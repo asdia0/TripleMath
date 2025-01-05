@@ -68,7 +68,7 @@ We may identify a surface by examining these traces to visualize graphs of two v
                 xlabel = {$x$},
                 ylabel = {$y$},
                 zlabel = {$z$},
-                samples=50,
+                samples=20,
                 ]
                 \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7, ]{ln(x^2 + y^2)};
             \end{axis}
@@ -102,7 +102,7 @@ Examples of cylinders include the graphs of $x^2 + z^2 = 1$ and $z = y^2$, as sh
             xlabel = {$x$},
             ylabel = {$y$},
             zlabel = {$z$},
-            samples=50,
+            samples=20,
             ]
             \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7,y domain=0:2*pi] ({cos(deg(y))},{x},{sin(deg(y))});
         \end{axis}
@@ -122,7 +122,7 @@ Examples of cylinders include the graphs of $x^2 + z^2 = 1$ and $z = y^2$, as sh
             xlabel = {$x$},
             ylabel = {$y$},
             zlabel = {$z$},
-            samples=50,
+            samples=20,
             ]
             \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7, ] {y^2};
         \end{axis}
@@ -340,7 +340,7 @@ Consider the unit circle, which has equation \[x^2 + y^2 = r^2.\] Previously, we
 Going back to our example of the unit circle, if we move all terms to one side of the equation, we get \[x^2 + y^2 - r^2 = 0.\] Now, observe that the LHS is simply a function of $x$ and $y$, i.e. \[f(x, y) = x^2 + y^2 - r^2.\] Hence, we can define $y$ implicitly as a function of $x$ that satisfies \[f(x, y) = 0.\] If we differentiate the above equation with respect to $x$, by the multivariate chain rule, we get \[\der{f}{x} = \pder{f}{x} \der{x}{x} + \pder{f}{y} \der{y}{x} = 0.\] Clearly, $\derx{x}{x} = 1$. Rearranging, we get \[\der{y}{x} = -\frac{f_x(x, y)}{f_y(x, y)}.\] Since \[f_x(x, y) = 2x, \quad \land \quad f_y(x, y) = 2y,\] we get \[\der{y}{x} = -\frac{2x}{2y} = -\frac{x}{y}\] as expected. 
 
 More generally,
-\begin{proposition}[Implicit Differentiation for Univariate Function]
+\begin{proposition}[Implicit Differentiation for Univariate Functions]
     If the equation \[f(x, y) = 0\] implicitly defines $y$ as a function of $x$, then \[\der{y}{x} = -\frac{f_x(x, y)}{f_y(x,  y)},\] given that $f_y(x, y) \neq 0$.
 \end{proposition}
 
@@ -446,7 +446,7 @@ In functions of two variables, the stationary points we often come across are ma
       \begin{tikzpicture}[scale=0.7,trim axis left, trim axis right]
         \begin{axis}[
             hide axis,
-            samples=50,
+            samples=20,
             legend cell align={left},
             legend style={at={(0.5, -0.05)},anchor=north},
             ]
@@ -461,7 +461,7 @@ In functions of two variables, the stationary points we often come across are ma
       \begin{tikzpicture}[scale=0.7,trim axis left, trim axis right]
         \begin{axis}[
             hide axis,
-            samples=50,
+            samples=20,
             legend cell align={left},
             legend style={at={(0.5, -0.05)},anchor=north},
             ]
@@ -476,7 +476,7 @@ In functions of two variables, the stationary points we often come across are ma
     \begin{tikzpicture}[scale=0.7,trim axis left, trim axis right]
         \begin{axis}[
             hide axis,
-            samples=50,
+            samples=20,
             legend cell align={left},
             legend style={at={(0.5, -0.05)},anchor=north},
             ]
@@ -491,16 +491,16 @@ In functions of two variables, the stationary points we often come across are ma
 
 In optimization, we may distinguish between a \vocab{local extremum} (a collective term used to refer to the maximum and minimum) from a \vocab{global extremum}. Basically, a global maximum/minimum is the highest/lowest value which the function can achieve.
 
-Local extrema are like the stationary points which we just discussed. For example, consider the following graph of $f(x, y) = \cos{5x} \cos{5y} \e^{-x^2 - y^2}$:
+Local extrema are like the stationary points which we just discussed. For example, consider the following graph of $f(x, y) = x\e^{-x^2-y^2}$:
 
 \begin{figure}[H]\tikzsetnextfilename{386}
     \centering
     \begin{tikzpicture}[scale=0.7,trim axis left, trim axis right]
         \begin{axis}[
             hide axis,
-            samples=50,
+            samples=20,
             ]
-            \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7,domain=-2:2,y domain=-2:2] {cos(5*\x r) * cos(5*\y r) * e^(-x^2 - y^2)};
+            \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7,domain=-2:2,y domain=-2:2] {3 * x * e^(-x^2 - y^2)};
         \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -513,7 +513,7 @@ The intuitive idea behind local extrema is that when we move away from the maxim
     \begin{tikzpicture}[scale=0.7,trim axis left, trim axis right]
         \begin{axis}[
             hide axis,
-            samples=50,
+            samples=20,
             xmax = 2.2,
             xmin = -2.2,
             ymax = 2.2,

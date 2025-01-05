@@ -1,0 +1,328 @@
+\section{Self-Practice B8}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find $\int x\sin^2 x \d x$.
+        \item The region $R$ is bounded by the curve $y=\sqrt{x}\sin x$, the lines $x=0$ and $x=\pi$, and the $x$-axis. Find the volume of the solid of revolution formed when $R$ is rotated through 4 right angles about the $x$-axis.
+        \item Hence, calculate the volume of the solid of revolution formed when $S$ is rotated through 4 right angles about the $x$-axis, where $S$ is the region bounded by the curve $y=\sqrt{x}\sin x$, the lines $x=\pi$ and $y=\sqrt{\pi}$, and the $y$-axis.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The diagram shows the curve $C$ with the equation $y^{2}=x\sqrt{1-x}$. The region enclosed by $C$ is denoted by $R$.
+
+    \begin{figure}[H]\tikzsetnextfilename{390}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:1,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {0.5, 1},
+                ytick = {-0.5, 0.5},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ymin = -0.7,
+                ymax = 0.7,
+                xmin = 0,
+                xmax = 1.1,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {sqrt(x * sqrt(1-x))};
+                \addplot[plotRed] {-sqrt(x * sqrt(1-x))};
+    
+                \addlegendentry{$y^2 = x\sqrt{1-x}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+    
+    \begin{enumerate}
+        \item Write down an integral that gives the area of $R$, and evaluate this integral numerically.
+        \item The part of $R$ above the $x$-axis is rotated through $2\pi$ radians about the $x$-axis. By using the substitution $u=1-x$, or otherwise, find the exact value of the volume obtained.
+        \item Find the exact $x$-coordinate of the maximum point of $C$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the exact value of $\int_{0}^{5\pi/3}\sin^{2}x \d x$. Hence, find the exact value of $\int_{0}^{5\pi/3}\cos^{2}x \d x$.
+        \item The region $R$ is bounded by the curve $y=x^{2}\sin x$, the line $x=\frac{1}{2}\pi$ and the part of the $x$-axis between $0$ and $\frac{1}{2}\pi$. Find
+        \begin{enumerate}
+            \item the exact area of $R$,
+            \item the numerical value of the volume of revolution formed when $R$ is rotated completely about the $x$-axis, giving your answer correct to 3 decimal places.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The diagram below shows the graphs of $y=-\frac{1}{\sqrt{9-2x^{2}}}$ and $y=\e^{\abs{x}}$.
+
+    \begin{figure}[H]\tikzsetnextfilename{391}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -3:3,
+                restrict y to domain =-10:5,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {-1/sqrt(9 - 2*x^2)};
+                \addlegendentry{$y = -1/\sqrt{9 - 2x^2}$};
+    
+                \addplot[plotBlue] {e^(abs(x))};
+                \addlegendentry{$y=\e^{\abs{x}}$};    
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    \begin{enumerate}
+        \item The region $A$ is bounded by the curves $y=-\frac{1}{\sqrt{9-2x^{2}}}$ and $y=\e^{\abs{x}}$, and the lines $x=-1$ and $x=2$. Find the area of $A$, giving your answer to 3 significant figures.
+        \item The region bounded by the curves $y=-\frac{1}{\sqrt{9-2x^{2}}}$, $y=\e^{\abs{x}}$, the $y$-axis and the line $x=2$ is rotated through $2\pi$ radians about the $y$-axis. Prove that the volume generated is $2\pi\bp{\e^2 + 2}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item The region $S$, is enclosed by the $x$-axis, the line $x=1$ and the curve given by the parametric equations \[x = (1 + t)^{3/2}, \quad y = (1 - t)^{1/2}, \quad t \in [0, 1].\] Find the exact area of $S$.
+            \item Find also the volume of the solid obtained when the region $S$ is rotated about the $y$-axis.
+        \end{enumerate}
+        \item The region $R$ is bounded by the curve $y=\bp{\frac{x-2}{4-x}}^{1/4}$, the line $x=2$ and the line $y=1$. By using the substitution $x=2\bp{1 + \cos^2 \t}$, or otherwise, find the exact volume of the solid generated when $R$ is rotated through four right angles about the $x$-axis.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The diagram shows the region $R$ in the first quadrant bounded by the curve $C$ with equation $y=\sqrt{x}+\frac{2}{\sqrt{x}}$ and the line $y=3$. The line and the curve intersect at the points $(1, 3)$ and $(4, 3)$. Calculate the exact area of $R$. Write down the equation of the curve obtained when $C$ is translated by 3 units in the negative $y$-direction. Hence, or otherwise, show that the volume of the solid formed when $R$ is rotated completely about the line $y=3$ is given by \[\pi \int_1^4 \bp{x - 6\sqrt{x} + 13 - \frac{12}{\sqrt x} + \frac4x} \d x,\] and evaluate this integral exactly.
+
+    \begin{figure}[H]\tikzsetnextfilename{392}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:8,
+                samples = 101,
+                ymin = 0,
+                ymax = 1,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {1, 4},
+                ytick = {0.6},
+                yticklabels = {3},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {sqrt(x) + 2/sqrt(x) - 2.4};
+                \addlegendentry{$C$};
+                \addplot[plotBlue] {0.6};
+                \draw[dashed] (1, 0) -- (1, 0.6);
+                \draw[dashed] (4, 0) -- (4, 0.6);
+                \node at (2, 0.53) {$R$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+\end{problem}
+
+\begin{problem}
+    The diagram shows the circle, centre $O$ and radius $r$, with equation $x^{2}+y^{2}=r^{2}$. The points $A$, $B$, $C$, $D$ on the circle form a rectangle with sides parallel to the axes. $\angle AOD = \angle BOC = 2\a$. The region bounded by the line $AB$, the line $DC$ and the circular arc $BC$ and $AD$ is rotated about the $x$-axis to form a solid of rotation $S$.
+
+    \begin{figure}[H]\tikzsetnextfilename{395}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                axis on top,
+                domain = -1:1,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ymin = -1.2,
+                ymax = 1.2,
+                xmin = -1.3,
+                xmax = 1.3,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+
+                \coordinate[label=above left:$A$] (A) at (-0.866, 0.5);
+                \coordinate[label=above right:$B$] (B) at (0.866, 0.5);
+                \coordinate[label=below right:$C$] (C) at (0.866, -0.5);
+                \coordinate[label=below left:$D$] (D) at (-0.866, -0.5);
+                \coordinate (E) at (3, 0);
+                \coordinate (F) at (0, 0);
+
+                \addplot[black, name path=f1, domain=0.866:1] {sqrt(1 - x^2)};
+                \addplot[black, name path=f2, domain=0.866:1] {-sqrt(1 - x^2)};
+                \addplot[black, domain=-1:-0.866] {sqrt(1 - x^2)};
+                \addplot[black, domain=-1:-0.866] {-sqrt(1 - x^2)};
+                \addplot[color=black!20] fill between[of=f1 and f2,soft clip={domain=0.866:1}];
+
+                \draw[dashed] (0, 0) circle[radius=1];
+                \draw (A) -- (B);
+                \draw (C) -- (D);
+                \draw[dashed] (B) -- (C);
+                \draw[dashed] (D) -- (A);
+                \draw[dashed] (0, 0) -- (B);
+                \node[anchor=south east] at (0.433, 0.25) {$r$};
+
+                \draw pic [draw, angle radius=6mm] {angle = E--F--B};
+                \node[anchor=south west] at (0.2, 0) {$\a$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    \begin{enumerate}
+        \item Show that the volume obtained by rotating the shaded part of the region about the $x$-axis is $\frac13 \pi r^3 \bp{\cos^3 \a - 3\cos \a + 2}$.
+        \item Show that the total volume of $S$ is $\frac43 \pi r^3 \bp{1 - \cos^3 \a}$.
+        \item Given that the volume of $S$ is half the volume of a sphere of radius $r$, find the value of $\a$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    An ellipse $E$ has equation $\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$, where $a$ and $b$ are positive constants. Show that the area $A$ of the region enclosed by $E$ is given by $A=\frac{4b}{a}\int_{0}^{a}\sqrt{\left(a^{2}-x^{2}\right)} \d x$. By using the substitution $x=a\sin\t$, or otherwise, find the value of $A$ in terms of $a$, $b$, and $\pi$. Show on a sketch the region $R$ of points inside the ellipse $E$ such that $x>0$ and $y<x$. Given that $a^{2}=3b^{2}$, find the area of $R$ in terms of $a$ and $\pi$.
+\end{problem}
+
+\begin{problem}
+    Sketch the polar curve $r=a(1-\sin2\t)$, where $a>0$ and $0\leq\t<2\pi$. Prove that the area enclosed by each loop of the curve is $\frac{3}{4}\pi a^{2}$.
+\end{problem}
+
+\begin{problem}
+    The diagram shows the curves $C_{1}$ and $C_{2}$ whose respective polar equations are
+    \begin{align*}
+        r &= \cos 3\t, \tag{$0 \leq \t \leq 2\pi$}\\
+        r &= 1 + \frac12 \cos \t. \tag{$0 \leq \t \leq 2\pi$}
+    \end{align*}
+    \begin{center}\tikzsetnextfilename{394}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2*pi,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmin=-1.6,
+                xmax=1.6,
+                ymin=-1.6,
+                ymax=1.6,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] {cos(3*\x r)};
+                \addlegendentry{$C_1$};
+
+                \addplot[color=plotBlue,data cs=polarrad] {1 + 0.5 * cos(\x r)};
+                \addlegendentry{$C_2$};
+
+                \node at (-0.24, 0.445) {$R$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    $R$ is the region bounded by the curve $C_{2}$ and one loop of the curve $C_{1}$. Find the area of the region $R$.
+\end{problem}
+
+\begin{problem}
+    The curve with polar equation $r^2 = a^2 \sin \t (1 + 2\cos \t)$, where $r\geq0$ and $a$ is a positive constant, is shown. Show that the area of the larger loop is nine times that of the smaller loop.
+
+    \begin{center}\tikzsetnextfilename{393}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2*pi,
+                samples = 100,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmin=-1.3,
+                xmax=1.3,
+                ymin=-1.3,
+                ymax=1.3,
+                xlabel = {$\t=0$},
+                ylabel = {$\t = \frac\pi2$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north west] {$O$};
+                    }
+                ]
+                \addplot[color=plotRed,data cs=polarrad] {sqrt(sin(\x r) * (1 + 2*cos(\x r)))};
+    
+                \addlegendentry{$r^2 = a^2 \sin \t \bp{1 + 2\cos\t}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{problem}
+
+\begin{problem}
+    The diagram shows a sketch of the graph of $y=1/\sqrt{x}$.
+    
+    \begin{figure}[H]\tikzsetnextfilename{396}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:5,
+                restrict y to domain = 0:2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {2, 3},
+                ymin = 0,
+                xmin = 0,
+                xticklabels = {$n-1$, $n$},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {1/sqrt(x)};
+    
+                \addlegendentry{$y = 1/\sqrt{x}$};
+
+                \draw (2, 0) -- (2, 0.577) -- (3, 0.577) -- (3, 0);
+                \fill[black!20] (2, 0) rectangle (3, 0.577);
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+    
+    By considering the shaded rectangle, and the area of the region between the graph and the $x$-axis for $n - 1 \leq x \leq n$, where $n\geq1,$ show that \[\frac1{\sqrt n} < 2 \bp{\sqrt{n} - \sqrt{n-1}}.\] Deduce that \[1+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\dots+\frac{1}{\sqrt{n}}<2\sqrt{n}.\] Show also that \[\frac{1}{\sqrt{n}}>2\bp{\sqrt{n+1}-\sqrt{n}}.\] Deduce that \[1+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\dots+\frac{1}{\sqrt{n}}>2\sqrt{n+1}-2.\] Hence, find a value of $N$ for which \[1+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\dots+\frac{1}{\sqrt{N}}>1000.\]
+\end{problem}

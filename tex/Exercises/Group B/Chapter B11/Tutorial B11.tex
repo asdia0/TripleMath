@@ -52,6 +52,7 @@
                     zmin = -10,
                     legend cell align={left},
                     legend pos=outer north east,
+                    samples=20,
                     ]
                     \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7]{x^2 * y + 1};
                 \end{axis}
@@ -73,6 +74,7 @@
                     samples=50,
                     legend cell align={left},
                     legend pos=outer north east,
+                    samples=20,
                     ]
                     \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7, ]{-1/(x^2 + y^2)};
                 \end{axis}
@@ -93,6 +95,7 @@
                     zlabel = {$z$},
                     legend cell align={left},
                     legend pos=outer north east,
+                    samples=20,
                     ]
                     \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7, ]{cos(\x r + \y r)};
                 \end{axis}
@@ -113,6 +116,7 @@
                     zlabel = {$z$},
                     legend cell align={left},
                     legend pos=outer north east,
+                    samples=20,
                     ]
                     \addplot3[surf,shader=faceted interp, colormap/hot,opacity=0.7, ]{3 - x + y};
                 \end{axis}

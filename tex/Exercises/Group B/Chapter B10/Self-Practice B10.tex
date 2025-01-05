@@ -1,0 +1,60 @@
+\section{Self-Practice B10}
+
+\begin{problem}
+    Use the trapezium rule, with 6 intervals to estimate the value of $\int_{0}^{3}\ln(1+x) \d x$, showing your working. Give your answer to 3 significant figures. Hence, write down an approximate value for $\int_{0}^{3}\ln\sqrt{1+x} \d x$.
+\end{problem}
+
+\begin{problem}
+    Use the trapezium rule with 5 intervals to estimate the value of $\int_{0}^{0.5}\sqrt{1+x^{2}} \d x$, showing your working. Give your answer to 2 decimal places.
+
+    By expanding $(1+x^{2})^{1/2}$ in powers of $x$ as far as the term in $x^{4}$, obtain a second estimate for the value of $\int_{0}^{0.5}\sqrt{1+x^{2}} \d x$ giving this answer also correct to 2 decimal places.
+\end{problem}
+
+\begin{problem}
+    The trapezium rule, with 2 intervals of equal width, is to be used to find an approximate value for $\int_{0}^{1}\e^{-x} \d x$. Explain, with the aid of a sketch, why the approximation will be greater than the exact value of the integral. Calculate the approximate value and the exact value, giving each answer correct to 3 decimal places.
+
+    Another approximation to $\int_{0}^{1}\e^{-x} \d x$ is to be calculated by using two trapezia of unequal width. The first trapezium has width $h$ and the second has width $1-h$, so that the three ordinates are at $x=0$, $x=h$ and $x=1$. Show that the total area $T$ of these two trapezia is given by \[T = \frac12 \bs{\e^{-1} + h \bp{1 - \e^{-1}} + \e^{-h}}.\] Show that the value of $h$ for which $T$ is a minimum is given by $h=\ln \frac{\e}{\e - 1}$. 
+\end{problem}
+
+\begin{problem}
+    Derive Simpson's rule with 2 strips for evaluating $\int_{a}^{b} f(x) \d x$. 
+    
+    Use Simpson's composite rule with 4 strips to obtain an estimate of $\int_{2}^{3} \cos{x - 2} \ln x \d x$, giving your answer to 5 decimal places.
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that $\int_n^{n+1} \ln x \d x = (n+1)\ln{n+1} - n\ln n - 1$.
+        \item The diagram below shows the graph of $y=\ln x$ between $x=n$ and $x=n+1$. The area of the shaded region represents the error when the value of the integral in part (a) is approximated by using a single trapezium. Show that the area of the shaded region is \[\bp{n + \frac12} \ln{1 + \frac1n} - 1.\]
+
+        \begin{center}\tikzsetnextfilename{389}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    axis on top,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1.3, 2.3},
+                    xticklabels = {$n$, $n+1$},
+                    ymin = 0,
+                    xmin = 1.1,
+                    xmax = 2.5,
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    ]
+                    \addplot[plotRed, name path=f1, domain=1.3:2.3] {ln(x)};
+                    \addlegendentry{$y = \ln x$};
+                    \addplot[thin, name path=null, domain=1.3:2.3] {0.571 * (x - 1.3) + 0.262};
+                    \addplot[color=black!20] fill between[of=null and f1,soft clip={domain=1.3:2.3}];
+
+                    \draw (1.3, 0) -- (1.3, 0.262);
+                    \draw (2.3, 0) -- (2.3, 0.833);
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        \item Use a series expansion to show that if $n$ is large enough for $\frac{1}{n^{3}}$ and higher powers of $\frac{1}{n}$ to be neglected, then the area in part (b) is approximately equal to $\frac{k}{n^2}$, where $k$ is a constant to be determined.
+    \end{enumerate}
+\end{problem}
