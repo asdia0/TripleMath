@@ -1,0 +1,148 @@
+\section{Self-Practice B5B}
+
+\begin{problem}
+    Find the coordinates of the points on the curve $3x^{2}+xy+y^{2}=33$ at which the tangent is parallel to the $x$-axis.
+\end{problem}
+
+\begin{problem}
+    Given the equation $x^{1/2}+y^{1/2}=k^{1/2}$, where $k$ is a constant,
+    \begin{enumerate}
+        \item show that the equation of the tangent at the point $(p,\,q)$ is given by \[y = -\sqrt{\frac{q}{p}} x + q + \sqrt{pq}.\]
+        \item Hence or otherwise, prove that the sum of the $x$ and $y$-intercepts of any tangent line to the curve $x^{1/2}+y^{1/2}=k^{1/2}$ is constant and equal to $k$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A curve $C$ is defined by the parametric equations $x=t^{2}(t+1)$, $y=4t-5$, $t\geq0$.
+
+    \begin{enumerate}
+        \item Find the equation of the tangent to the curve $C$ at the point where $y=-5$.
+        \item Find the equation of the normal to the curve $C$ when $t=2$ and hence show that this normal does not intersect the curve $C$ again.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A curve $C$ has parametric equations \[x = t + \frac1t, \quad y = t - \frac1t.\]
+
+    \begin{enumerate}
+        \item The point $P$ on the curve has parameter $p$. Show that the equation of the tangent at $P$ is $\bp{p^2 + 1} x - \bp{p^2 - 1} y = 4p$.
+        \item The tangent at $P$ meets the line $y=x$ at the point $A$ and the line $y=-x$ at the point $B$. Show that the area of triangle $OAB$ is independent of $p$, where $O$ is the origin.
+        \item Find a cartesian equation of $C$. Sketch $C$, giving the coordinates of any points where $C$ crosses the $x$- and $y$-axes and the equations of any asymptotics.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The diagram shows two circles, of radii 1 and 3, each with centre $O$. The angle between the lines $OAC$ and $OBD$ is $\t$ radians. The region $R$ is bounded by the minor arc $AB$ and the lines $AC$, $CD$ and $DB$.
+
+    \begin{center}\tikzsetnextfilename{399}
+        \begin{tikzpicture}
+            \coordinate[label=left:$A$] (A) at (-0.707, -0.707);
+            \coordinate[label=right:$B$] (B) at (0.707, -0.707);
+            \coordinate[label=left:$C$] (C) at (-2.121, -2.121);
+            \coordinate[label=right:$D$] (D) at (2.121, -2.121);
+            \coordinate[label=above:$O$] (O) at (0, 0);
+
+            \draw (O) circle[radius=1];
+            \draw (O) circle[radius=3];
+
+            \draw (O) -- (C) -- (D) -- (O);
+    
+            \draw pic [draw, angle radius=5mm, "$\t$"] {angle = A--O--B};
+    
+            \node[anchor=east] at ($(A)!0.5!(O)$) {1};
+            \node[anchor=east] at ($(C)!0.5!(O)$) {3};
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{enumerate}
+        \item Find the area of $R$.
+        \item Find the value of $\t$ for which the area of $R$ is greatest.
+        \item Find the greatest value of $\t$ which ensures that the whole line segment $CD$ lies between the two circles.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A company manufactures closed hollow cylindrical cans of cross-sectional radius $r$ cm$^2$ and height $h$ cm. A can is made of two different materials. Its top and base cost 0.09 cents per cm$^2$ and its curved surface costs 0.06 cents per cm$^2$ to manufacture.
+
+    Show that the radius of the cheapest can of volume 300 cm$^3$ is $\sqrt[3]{a/\pi}$, where $a$ is a constant to be determined.
+\end{problem}
+
+\begin{problem}
+    A hemispherical goldfish tank with radius 15 cm (as shown in the figure above) was initially filled with water. The tank has a defect and water is leaking at a constant rate of 20 cm$^3$ per min. The volume of water in the tank is given by $V = \frac\pi3 \bp{45 h^2 - h^3}$ where $h$ is the depth of water at the centre of the tank in cm. Show that $r,$ the radius of the water surface in cm, is given by $r=\sqrt{30h-h^{2}}$.
+
+    \begin{center}\tikzsetnextfilename{398}
+        \begin{tikzpicture}
+            \def\radius{3}
+            \coordinate (A) at (\radius, 0);
+            \coordinate (B) at (-\radius, 0);
+            \coordinate (C) at (0, -\radius/2);
+            \coordinate (D) at (0, -\radius);
+            \coordinate (E) at (-0.866 * \radius, -\radius/2);
+            \coordinate (F) at (0.866 * \radius, -\radius/2);
+            \coordinate (O) at (0, 0);
+            \coordinate (Ca) at ($(C)+(0, 0.1)$);
+            \coordinate (Ea) at ($(E)+(0, 0.1)$);
+
+            \draw (A) -- (B);
+            \draw (E) -- (F);
+            \draw (B) arc(-180:0:\radius);
+            \draw[dashed] (O) -- (C);
+            \draw[<->] (C) -- (D);
+            \node[anchor=west] at ($(C)!0.5!(D)$) {$h$};
+            \draw[<->] (Ca) -- (Ea);
+            \node[anchor=south] at ($(Ca)!0.5!(Ea)$) {$r$};
+            \node[anchor=south] at ($(O)!0.5!(A)$) {15};
+        \end{tikzpicture}
+    \end{center}
+
+    Given that the minimum depth of water needed for the goldfish to survive is 5 cm, find, at this instant,
+    \begin{enumerate}
+        \item the rate of change of the depth of water, and
+        \item the rate of decrease of the radius of the water surface.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A circular cylinder is expanding in such a way that, at time $t$ seconds, the height of the cylinder is $y$ cm and the area of the cross-section is $\frac13 y^2$ cm$^2$. At the instant when $y=3$ cm, the height is increasing at a rate of 0.5 cm/s. Find the rate of increase, at this instant, of:
+    \begin{enumerate}
+        \item the area of the cross-section of the cylinder,
+        \item the volume of the cylinder.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Two variables $u$ and $v$ are connected by the relation $\frac1u + \frac1v = \frac1f$, where $f$ is a constant.
+
+    Given that $u$ and $v$ both vary with time, $t$, find an equation connecting $\der{u}{t}$, $\der{v}{t}$, $u$ and $v$. Given also that $u$ is decreasing at a constant rate of 2 cm per second and that $f=10$ cm, calculate the rate of increase of $v$ when $u=50$ cm.
+\end{problem}
+
+\begin{problem}
+    In the diagram, $O$ and $A$ are fixed points 1000 m apart on horizontal ground. The point $B$ is vertically above $A$, and represents a balloon which is ascending at a steady rate of 2 ms$^{-1}$. The balloon is being observed from a moving point $P$ on the line $OA$.
+
+    \begin{center}\tikzsetnextfilename{397}
+        \begin{tikzpicture}
+            \coordinate[label=below:$A$] (A) at (5, 0);
+            \coordinate[label=above:$B$] (B) at (5, 3);
+            \coordinate[label=below:$P$] (P) at (2, 0);
+            \coordinate[label=below:$O$] (O) at (0, 0);
+    
+            \draw (O) -- (A) -- (B) -- (P);
+            \fill (O) circle[radius=2.5pt];
+    
+            \draw pic [draw, angle radius=5mm] {angle = A--P--B};
+            \node[anchor=south] at (2.8, 0) {$\t$};
+        \end{tikzpicture}
+    \end{center}
+
+    At time $t=0$, the balloon is at $A$ and the observer is at $O$. The observation point $P$ moves towards $A$ with steady speed 6 ms$^{-1}$. At time $t$, the angle $APB$ is $\t$ radians.
+
+    Show that \[\der{\t}{t} = \frac{500}{t^2 + (500 - 3t)^2}.\]
+\end{problem}
+
+\begin{problem}[\chili]
+    The normal to the rectangular hyperbola $xy = c^2$ at the point $P(cp, c/p)$, $p > 0$, meets the curve again at the point $Q$.
+    \begin{enumerate}
+        \item Determine the coordinates of $Q$.
+        \item Prove that $PQ^2 = 3 OP^2 + OQ^2$.
+    \end{enumerate}
+\end{problem}

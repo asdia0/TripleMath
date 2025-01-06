@@ -1,0 +1,220 @@
+\section{Self-Practice B2}
+
+\begin{problem}
+    Show that the equation $y=\frac{2x+7}{x+2}$ can be written as $y=A+\frac{B}{x+2}$, where $A$ and $B$ are constants to be found. Hence, state a sequence of transformations which transform the graph of $y=\frac{1}{x}$ to the graph of $y=\frac{2x+7}{x+2}$.
+
+    Sketch the graph of $y=\frac{2x+7}{x+2}$, giving the equations of any asymptotes and the coordinates of any points of intersection with the $x$- and $y$-axes.
+\end{problem}
+
+\begin{problem}
+    The diagram shows the curve with equation $y=f(x)$. The curve passes through the origin, and has asymptotes $x=a$ and $y=b$, where $a$ and $b$ are positive constants.
+    
+    \begin{figure}[H]\tikzsetnextfilename{403}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -3:5,
+                restrict y to domain = -3:5,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, unbounded coords = jump] {1/(x-1) + 1};
+    
+                \addlegendentry{$y = f(x)$};
+
+                \draw[dashed] (1,-3) -- (1, 5);
+                \addplot[dashed] {1};
+                \node[anchor=south west] at (-2, 1) {$y = b$};
+                \node[anchor=south west] at (1, -2) {$x = a$};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{}
+    \end{figure}
+
+    On separate diagrams, draw sketches of the graphs of
+    \begin{enumerate}
+        \item $y = f(x + a) - b$,
+        \item $y = 1/f(x)$,
+    \end{enumerate}
+    showing clearly the axial intercepts and asymptotes (if any).
+\end{problem}
+
+\begin{problem}
+    The curves $C_{1}$ and $C_{2}$ are given by the equations $x^{2}+y^{2}=1$ and $x^{2}-2x+9y^{2}=a$ respectively, where $a$ is a real constant. The curve $C_{2}$ cuts the $x$-axis at the origin $O$ and is symmetrical about the line $x=b$, as shown in the diagram below.
+
+    \begin{figure}[H]\tikzsetnextfilename{404}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                ymin=-5,
+                ymax=5,
+                xmin=0,
+                xmax=10,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=east] {$O$};
+                    }
+                ]
+                \draw[plotRed] (5, 0) ellipse (5 and 3);
+                \draw[dashed] (5, -5) -- (5, 5) node[anchor=north west] {$x = b$};
+
+                \addlegendimage{plotRed};
+                \addlegendentry{$C_2$};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{}
+    \end{figure}
+
+    \begin{enumerate}
+        \item Determine the values of $a$ and $b$.
+        \item Describe clearly a sequence of transformations that maps $C_{1}$ onto $C_{2}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    It is given that the curve $y = f(x)$, where $f(x) = \frac{ax + b}{2x + c}$, where $a$, $b$, $c$ are constants, has an asymptote $x=\frac{1}{2}.$ The point $A$ with coordinates $(2, \frac53)$ lies on the curve. The tangent to the curve at $A$ has gradient $\frac29$.
+
+    \begin{enumerate}
+        \item Write down the value of $c$.
+        \item Show that $a=4$ and $b=-3$.
+        \item Sketch the graph of $y=f(x),$ showing clearly all the asymptotes and the exact coordinates of the intersection with the axes.
+        \item Describe a sequence of three transformations which transforms the graph $y = 2 + \frac1x$ to $y = f(x)$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The curve whose equation is $\frac{(x-3)^2}{2^2} + \frac{y^2}{3^2} = 1$ undergoes, in succession, the following transformations:
+    \begin{align*}
+        A &: \quad \text{A translation of magnitude 1 unit in the direction of the $x$-axis.}\\
+        B &: \quad \text{A reflection in the $y$-axis.}\\
+        C &: \quad \text{A scaling parallel to the $y$-axis by a scale factor of $k$.}
+    \end{align*}
+
+    \begin{enumerate}
+        \item Find the equation of the resulting curve.
+        \item State the value of $k$ for which the resulting curve takes on the shape of a circle.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The diagram shows the graph of $y=f(x)$.
+
+    \begin{figure}[H]\tikzsetnextfilename{406}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -6:8,
+                restrict y to domain =-2:7.5,
+                samples = 91,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = {5},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, unbounded coords = jump, domain=-6:-2] {1/(x+2) + 2};
+                \addplot[plotRed, domain=-2:2] {-1/((x-2)*(x+2)) + 4.75};
+                \addplot[plotRed, domain=2:6, unbounded coords = jump] {-2/(x-2) + 3.5};
+                \addplot[plotRed, domain=6:8] {(x-5)/(x^2 - 11*x + 31) + 2};
+    
+                \addlegendentry{$y = f(x)$};
+    
+                \draw[dashed] (-2, -2) -- (-2, 7.5) node[anchor=north east] {$x = -2$};
+                \draw[dashed] (2, -2) -- (2, 7.5) node[anchor=north west] {$x = 2$};
+                \addplot[dashed] {2};
+
+                \node[anchor=north] at (6, 2) {$y = 2$};
+
+                \fill (-2.5, 0) circle[radius=2.5pt] node[anchor=north east] {$A(-3,0)$};
+                \fill (2.57, 0) circle[radius=2.5pt] node[anchor=north west] {$B(3,0)$};
+                \fill (0, 5) circle[radius=2.5pt] node[anchor=north west] {$C$};
+                \fill (6, 3) circle[radius=2.5pt] node[anchor=south] {$D(6, 4)$};
+                \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    On separate diagrams, sketch the graphs of
+    \begin{enumerate}
+        \item $y = f(4x + 3)$,
+        \item $y = 1/f(x)$.
+    \end{enumerate}
+    In each case, state the equations of any asymptotes and the coordinates of the points corresponding to $A$, $B$, $C$ and $D$ where appropriate.
+\end{problem}
+
+\begin{problem}
+    A curve $C_{1}$ is defined parametrically by \[x = \frac2{t-1}, \quad y = \frac{4}{t+1}, \quad t \neq \pm 1.\] Sketch a clearly labelled diagram of $C_{1}$.
+
+    Describe a sequence of geometrical transformations which maps $C_{1}$ to $C_{2}$ defined by \[x = \frac1{1-t}, \quad t = \frac4{t+1}, \quad t \neq \pm 1.\]
+
+    Sketch $C_{3}$, which is the reciprocal function of $C_{1}$, stating the equations of any asymptotes and any points of intersection with the axes.
+\end{problem}
+
+\begin{problem}[\chili]
+    The curve of $y = \frac{x^2}{4-x}$ undergoes two transformations. The resulting curve whose equation is $y=\frac{(x-a)^2}{10-bx}$ has stationary points $A(1, 0)$ and $B(9,-8)$, and asymptotes $x=5$ and $y=cx+d$, where $a$, $b$, $c$ and $d$ are constants.
+
+    \begin{figure}[H]\tikzsetnextfilename{405}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -10:20,
+                restrict y to domain =-17:14,
+                samples = 91,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, unbounded coords = jump] {(x-1)^2 / (10 - 2*x)};
+    
+                \addlegendentry{$y = (x-a)^2/(10-bx)$};
+    
+                \addplot[dashed] {-0.5 * x - 1.5};
+                \node[anchor=south west, rotate=-27] at (10, -6.5) {$y = cx + d$};
+                \draw[dashed] (5, -17) -- (5, 14) node[anchor=north west] {$x = 5$};
+
+                \fill (1, 0) circle[radius=2.5pt] node[anchor=south] {$A$};
+                \fill (9, -8) circle[radius=2.5pt] node[anchor=north] {$B$};
+                \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    \begin{enumerate}
+        \item Show that $a=1$, and find the values of $b$, $c$ and $d$.
+        \item Describe the sequence of transformations undergone by the graph of $y= \frac{x^2}{4-x}$ to attain that of $y=\frac{(x-a)^2}{10-bx}$, where $a$ and $b$ are the values found in (a).
+    \end{enumerate}
+\end{problem}
