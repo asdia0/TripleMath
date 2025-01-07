@@ -195,13 +195,12 @@ We can extend this notion to functions of two variables $z = f(x, y)$. There are
     To partially differentiate a function $f(x, y)$ with respect to $x$, we differentiate $f(x, y)$ as we normally would, treating $y$ as a constant. Similarly, if we are partially differentiating with respect to $y$, we treat $x$ as a constant.
 \end{recipe}
 
-\begin{example}[Partial Differentiation]
-    \phantom{.}
-
-    \textbf{Q:} Given $f(x, y) = \cos{xy + y^2}$, find $f_x(x, y)$.
-
-    \textbf{A:} To partially differentiate it with respect to $x$, we treat $y$ as a constant. Using the chain rule, \[f_x (x, y) = -\sin{xy + y^2} \, \pder{}{x} \bs{xy + y^2}.\] Since $y$ is a constant, \[\pder{}{x} (xy) = y, \quad \pder{}{x} y^2 = 0.\] Hence, \[f_x (x, y) = -y\sin{xy + y^2}.\]
-\end{example}
+\begin{sample}
+    Given $f(x, y) = \cos{xy + y^2}$, find $f_x(x, y)$.
+\end{sample}
+\begin{sampans}
+    To partially differentiate it with respect to $x$, we treat $y$ as a constant. Using the chain rule, \[f_x (x, y) = -\sin{xy + y^2} \, \pder{}{x} \bs{xy + y^2}.\] Since $y$ is a constant, \[\pder{}{x} (xy) = y, \quad \pder{}{x} y^2 = 0.\] Hence, \[f_x (x, y) = -y\sin{xy + y^2}.\]
+\end{sampans}
 
 \subsection{Geometric Interpretation}\label{subsec:Partial-Derivative-Geometric}
 
@@ -349,15 +348,14 @@ We can extend this result to functions of two variables.
     If the equation \[f(x, y, z) = 0\] implicitly defines $z$ as a function of $x$ and $y$, then \[\pder{z}{x} = -\frac{f_x(x, y, z)}{f_z(x,  y, z)} \quad \land \quad \pder{z}{y} = -\frac{f_y(x, y, z)}{f_z(x, y, z),}\] given that $f_z(x, y, z) \neq 0$.
 \end{proposition}
 
-To see this in action, consider the following example problem:
+To see this in action, consider the following sample problem:
 
-\begin{example}[Implicit Differentiation for Functions of Two Variables]
-    \phantom{.}
-
-    \textbf{Q:} Find the value of $\pderx[2]{z}{x}$ at $(0, 0, c)$ of the ellipsoid \[\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1.\]
-
-    \textbf{A:} Let \[f(x, y, z) = \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} - 1.\] Applying the above result, we have \[\pder{z}{x} = -\frac{f_x(x, y, z)}{f_z(x,  y, z)} = -\frac{2x / a^2}{2z / c^2} = -\frac{c^2}{a^2} \frac{x}{z}.\] Partially differentiating with respect to $x$ once more, \[\pder[2]{z}{x} = \pder{z}{x} \bp{-\frac{c^2}{a^2} \frac{x}{z}} = -\frac{c^2}{a^2 z}.\] Hence, \[\pder[2]{z}{x}{(0, 0, c)} = -\frac{c}{a^2}.\]
-\end{example}
+\begin{sample}
+    Find the value of $\pderx[2]{z}{x}$ at $(0, 0, c)$ of the ellipsoid \[\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1.\]
+\end{sample}
+\begin{sampans}
+    Let \[f(x, y, z) = \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} - 1.\] Applying the above result, we have \[\pder{z}{x} = -\frac{f_x(x, y, z)}{f_z(x,  y, z)} = -\frac{2x / a^2}{2z / c^2} = -\frac{c^2}{a^2} \frac{x}{z}.\] Partially differentiating with respect to $x$ once more, \[\pder[2]{z}{x} = \pder{z}{x} \bp{-\frac{c^2}{a^2} \frac{x}{z}} = -\frac{c^2}{a^2 z}.\] Hence, \[\pder[2]{z}{x}{(0, 0, c)} = -\frac{c}{a^2}.\]
+\end{sampans}
 
 \section{Approximations}
 

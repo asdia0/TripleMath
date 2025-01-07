@@ -242,19 +242,17 @@ Divide the interval $[a, b]$ into $n$ equal intervals (strips) with each having 
     The trapezium rule with ($n+1$) ordinates (or $n$ intervals) gives the approximation \[\int_a^b f(x) \d x \approx \sum_{k = 0}^n \frac{h}{2} \bp{y_k + y_{k+1}} = \frac{h}{2} \bs{y_0 + 2(y_1 + y_2 + \dots + y_{n-1}) + y_n},\] where $h = (b-a)/n$.
 \end{recipe}
 
-\begin{example}[Trapezium Rule]
-    \phantom{.}
-
-    \textbf{Q:} Use Simpson's rule with 4 strips to find an approximation for \[\int_0^2 \ln{x + 2} \d x.\]
-    
-    \textbf{A:} Let $f(x) = \ln{x+2}$. By the trapezium rule,
+\begin{sample}\label{samp:Trapezium-Rule}
+    Use the trapezium rule with 4 strips to find an approximation for \[\int_0^2 \ln{x + 2} \d x.\] Find the percentage error of the approximation.
+\end{sample}
+\begin{sampans}
+    Let $f(x) = \ln{x+2}$. By the trapezium rule,
     \begin{align*}
         \int_0^2 \ln{x + 2} \d x &\approx \frac{1}{2} \cdot \frac{2 - 0}{4} \Big(f(0) + 2\bs{f(0.5) + f(1) + f(1.5)} + f(2)\Big) \\
         &= 2.15369 \todp{5}.
     \end{align*}
-
-    Note that the actual value is $2.15888 \todp{5}$. Hence, the trapezium rule gives a decent estimate in this case (0.240\% error).
-\end{example}
+    One can easily verify that the integral evaluates to $2.15888 \todp{5}$. Hence, the percentage error is \[\abs{\frac{2.15888 - 2.15369}{2.15888}} = 0.240 \%.\]
+\end{sampans}
 
 \subsubsection{Error in Trapezium Rule Approximation}
 
@@ -385,18 +383,18 @@ Now, observe that the parabola $y = g(x)$ intersects the curve at $(-h, y_1)$, $
     \end{align*}
 \end{recipe}
 
-\begin{example}[Simpson's Rule]
-    \phantom{.}
-
-    \textbf{Q:} Use Simpson's rule with 4 strips to find an approximation for \[\int_0^2 \ln{x + 2} \d x.\]
-    
-    \textbf{A:} Let $f(x) = \ln{x+2}$. By the trapezium rule,
+\begin{sample}
+    Use Simpson's rule with 4 strips to find an approximation for \[\int_0^2 \ln{x + 2} \d x.\] Find the percentage error of the approximation.
+\end{sample}
+\begin{sampans}
+    Let $f(x) = \ln{x+2}$. By the trapezium rule,
     \begin{align*}
         \int_0^2 \ln{x + 2} \d x &\approx \frac{1}{3} \cdot \frac{2 - 0}{4} \Big[f(0) + 4f(0.5) + 2f(1) + 4f(1.5) + f(2)\Big] \\
         &= 2.15881 \todp{5}.
     \end{align*}
+    As previously mentioned in Sample Problem~\ref{samp:Trapezium-Rule} the actual value of the integral is $2.15888 \todp{5}$. Hence, the percentage error is \[\abs{\frac{2.15888 - 2.15881}{2.15888}} = 0.00324\%.\]
+\end{sampans}
 
-    In the previous example, the trapezium rule gave an estimate of $2.15369 \todp{5}$, which had an error of 0.240\%. In the case of Simpson's rule, the error is 0.00324\%, vastly better than that of the trapezium rule's.
-\end{example}
+In the previous example, the trapezium rule gave an estimate of $2.15369 \todp{5}$, which has an error of 0.240\%. In the case of Simpson's rule, the error is 0.00324\%, vastly better than that of the trapezium rule's.
 
 In general, Simpson's rule gives a better approximation than the trapzium rule as the quadratics used account for the concavity of the curve.

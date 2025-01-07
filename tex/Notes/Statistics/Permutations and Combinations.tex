@@ -62,13 +62,12 @@ Note that both the Addition and Multiplication Principles can be extended to any
     $\frac{n!}{n_1! n_2! \dots n_k!}$ is known as a \vocab{multinomial coefficient}, which is a generalization of the binomial coefficient and is related to the expansion of $(x_1 + x_2 + \dots + x_k)^n$.
 \end{remark}
 
-\begin{example}[Permutations of Non-Distinct Objects in a Row]
-    \phantom{.}
-
-    \textbf{Q:} Find the number of different permutations of the letters in the word ``BEEN''.
-
-    \textbf{A:} Note that there is 1 `B', 2`E's and 1 `N' in ``BEEN''. Using the above result, the number of different permutations is given by \[\frac{4!}{1! 2! 1!} = 12.\]
-\end{example}
+\begin{sample}
+    Find the number of different permutations of the letters in the word ``BEEN''.
+\end{sample}
+\begin{sampans}
+    Note that there is 1 `B', 2`E's and 1 `N' in ``BEEN''. Using the above result, the number of different permutations is given by \[\frac{4!}{1! 2! 1!} = 12.\]
+\end{sampans}
 
 \begin{proposition}[Circular Permutations]
     The number of permutations of $n$ distinct objects in a circle is given by $(n-1)!$.
@@ -114,51 +113,47 @@ Some problems involving permutations and combinations may involve restrictions. 
     When certain objects must be at certain positions, place those objects first.
 \end{recipe}
 
-\begin{example}[Fixing Positions]
-    \phantom{.}
-    
-    \textbf{Q:} How many ways are there to arrange the letters of the word ``SOCIETY'' if the arrangements start and end with a vowel?
-    
-    \textbf{A:} We first address the restriction by placing the vowels at the start and end of the arrangement. Since there are 3 vowels in ``SOCIETY'', there are $3 \cdot 2 = 6$ ways to do so. Next, observe there are $5!$ ways to arrange the remaining 5 letters. Thus, by the Multiplication Principle, there are \[6 \cdot 5! = 720\] arrangements that satsify the given restriction.
-\end{example}
+\begin{sample}
+    How many ways are there to arrange the letters of the word ``SOCIETY'' if the arrangements start and end with a vowel?
+\end{sample}
+\begin{sampans}
+    We first address the restriction by placing the vowels at the start and end of the arrangement. Since there are 3 vowels in ``SOCIETY'', there are $3 \cdot 2 = 6$ ways to do so. Next, observe there are $5!$ ways to arrange the remaining 5 letters. Thus, by the Multiplication Principle, there are \[6 \cdot 5! = 720\] arrangements that satsify the given restriction.
+\end{sampans}
 
 \begin{recipe}[Grouping Method]
     When certain objects must be placed together, group them together as one unit.
 \end{recipe}
 
-\begin{example}[Grouping Method]
-    \phantom{.}
-
-    \textbf{Q:} Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be together.
-
-    \textbf{A:} Consider the consonants `C', `M', `B' and `N' as one unit: \[\boxed{\text{C} \quad \text{M} \quad \text{B} \quad \text{N}} \quad \boxed{\text{O}} \quad \boxed{\text{I}} \quad \boxed{\text{E}}.\]
+\begin{sample}
+    Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be together.
+\end{sample}
+\begin{sampans}
+    Consider the consonants `C', `M', `B' and `N' as one unit: \[\boxed{\text{C} \quad \text{M} \quad \text{B} \quad \text{N}} \quad \boxed{\text{O}} \quad \boxed{\text{I}} \quad \boxed{\text{E}}.\]
     \begin{itemize}
         \item \textbf{Stage 1.} There are $4!$ ways to arrange the 4 units.
         \item \textbf{Stage 2.} There are $4!$ ways to arrange `C', `M', `B' and `N' within the group.
     \end{itemize}
     Hence, by the Multiplication Principle, the total number of arrangements is \[4! \cdot 4! = 576.\]
-\end{example}
+\end{sampans}
 
 \begin{recipe}[Slotting Method]
     When certain objects are to be separated, we first arrange the other objects to form barriers before slotting in those to be separated.
 \end{recipe}
 
-\begin{example}[Slotting Method]
-    \phantom{.}
-
-    \textbf{Q:} Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
-
-    \textbf{A:} We begin by arranging the vowels, of which there are $3!$ ways to do so. \[\uparrow \quad \boxed{\text{O}} \quad \uparrow \quad \boxed{\text{I}} \quad \uparrow \quad \boxed{\text{E}} \quad \uparrow.\] Next, we slot the 4 consonants into the 4 gaps in between the vowels (i.e. where the arrows are). There are $4!$ ways to do so. Thus, by the Multiplication Principle, the total number of arrangements is \[3! \cdot 4! = 144.\]
-\end{example}
+\begin{sample}
+    Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
+\end{sample}
+\begin{sampans}
+    We begin by arranging the vowels, of which there are $3!$ ways to do so. \[\uparrow \quad \boxed{\text{O}} \quad \uparrow \quad \boxed{\text{I}} \quad \uparrow \quad \boxed{\text{E}} \quad \uparrow.\] Next, we slot the 4 consonants into the 4 gaps in between the vowels (i.e. where the arrows are). There are $4!$ ways to do so. Thus, by the Multiplication Principle, the total number of arrangements is \[3! \cdot 4! = 144.\]
+\end{sampans}
 
 \begin{recipe}[Complementary Method]
     If the direct method is too tedious, it is more efficient to count by taking all possibilities minus the complementary sets. This method can also be used for ``at least/at most'' problems.
 \end{recipe}
 
-\begin{example}[Complementary Method]
-    \phantom{.}
-    
-    \textbf{Q:} Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
-
-    \textbf{A:} Note that, without restrictions, there are a total of $7!$ ways to arrange the letters in ``COMBINE''. From the previous example, we saw that the number of arrangements where all consonants are together is $576$. Thus, by the complementary method, the number of arrangement where all consonants are separated is \[\text{total} - \text{complementary} = 7! - 576 = 144,\] which matches the answer given in the above example.
-\end{example}
+\begin{sample}
+    Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
+\end{sample}
+\begin{sampans}
+    Note that, without restrictions, there are a total of $7!$ ways to arrange the letters in ``COMBINE''. From the previous example, we saw that the number of arrangements where all consonants are together is $576$. Thus, by the complementary method, the number of arrangement where all consonants are separated is \[\text{total} - \text{complementary} = 7! - 576 = 144,\] which matches the answer given in the above example.
+\end{sampans}

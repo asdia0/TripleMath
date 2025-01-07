@@ -89,13 +89,12 @@ Sometimes, we are given a DE that is not of the forms described in this section.
     \renewcommand{\theenumi}{(\alph{enumi})}
 \end{recipe}
 
-\begin{example}[Solving via Substitution]
-    \phantom{.}
-
-    \textbf{Q:} By using the substitution $y = ux^2$, find the general solution of the differential equation \[x^2 \der{y}{x} - 2xy = y^2, \quad x > 0.\]
-
-    \textbf{A:} From $y = ux^2$, we see that \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the original DE, \[x^2 \bp{2ux + x^2 \der{u}{x}} - 2x \bp{ux^2} = \bp{ux^2}^2.\] Simplifying, we get the separable DE \[\der{u}{x} = u^2,\] which we can easily solve: \[\int \frac1{u^2} \d u = \int 1 \d x \implies -\frac1{u} = x + C.\] Re-substituting $y$ back in, we have the general solution \[-\frac{x^2}{y} = x + C.\]
-\end{example}
+\begin{sample}
+    By using the substitution $y = ux^2$, find the general solution of the differential equation \[x^2 \der{y}{x} - 2xy = y^2, \quad x > 0.\]
+\end{sample}
+\begin{sampans}
+    From $y = ux^2$, we see that \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the original DE, \[x^2 \bp{2ux + x^2 \der{u}{x}} - 2x \bp{ux^2} = \bp{ux^2}^2.\] Simplifying, we get the separable DE \[\der{u}{x} = u^2,\] which we can easily solve: \[\int \frac1{u^2} \d u = \int 1 \d x \implies -\frac1{u} = x + C.\] Re-substituting $y$ back in, we have the general solution \[-\frac{x^2}{y} = x + C.\]
+\end{sampans}
 
 \section{Family of Solution Curves}
 

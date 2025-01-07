@@ -133,12 +133,11 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
     Table of outcomes are useful as they serve as a systematic way of listing all the possible outcomes.
 \end{recipe}
 
-\begin{example}[Table of Outcomes]
-    \phantom{.}
-    
-    \textbf{Q:} Two fair dices are thrown. Find the probability that the sum of the two scores is odd and at least one of the two scores is greater than 4.
-
-    \textbf{A:}
+\begin{sample}
+    Two fair dices are thrown. Find the probability that the sum of the two scores is odd and at least one of the two scores is greater than 4.
+\end{sample}
+\begin{sampans}
+    Consider the following table of outcomes.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|}
             \hline  & 1 & 2 & 3 & 4 & 5 & 6\\\hline
@@ -151,18 +150,17 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
           \end{tabular}
     \end{center}
     From the table of outcomes, the required probability is clearly $\frac{10}{36}$.
-\end{example}
+\end{sampans}
 
 \begin{recipe}[Venn Diagrams]
     Venn diagrams are useful when we need to visualize how the events are interacting with each other.
 \end{recipe}
 
-\begin{example}[Venn Diagrams]
-    \phantom{.}
-
-    \textbf{Q:} Let $A$ and $B$ be independent events. If $\P{A' \cap B'} = 0.4$, find the range of $\P{A \cap B}$.
-
-    \textbf{A:}
+\begin{sample}
+    Let $A$ and $B$ be independent events. If $\P{A' \cap B'} = 0.4$, find the range of $\P{A \cap B}$.
+\end{sample}
+\begin{sampans}
+    Consider the following Venn diagram.
     \begin{figure}[H]\tikzsetnextfilename{351}
         \centering
         \begin{tikzpicture}[scale=0.7]
@@ -178,19 +176,18 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
         \end{tikzpicture}
         \caption{}
     \end{figure}
-    From the above Venn diagram, we see that \[a + b + c = 0.6. \tag{$\ast$}\] Further, since $A$ and $B$ are independent, we know \[\P{A \cap B} = \P{A} \P{B} \implies b = (a+b)(c+b) = (a+b)(0.6 - a).\] Expanding, we get a quadratic in $a$: \[a^2 + (b - 0.6)a + 0.4 b = 0.\] Since we want $a$ to be real, the discriminant $\D$ is non-negative. Hence, \[(b-0.6)^2 - 4(1)(0.4b) \geq 0 \implies b \leq 0.135 \quad \lor \quad b \geq 2.66.\] Since $0 \leq b \leq 1$, we reject the latter. Thus, the range of $\P{A \cap B} = b$ is $[0, 0.135]$.
-\end{example}
+    We see that \[a + b + c = 0.6. \tag{$\ast$}\] Further, since $A$ and $B$ are independent, we know \[\P{A \cap B} = \P{A} \P{B} \implies b = (a+b)(c+b) = (a+b)(0.6 - a).\] Expanding, we get a quadratic in $a$: \[a^2 + (b - 0.6)a + 0.4 b = 0.\] Since we want $a$ to be real, the discriminant $\D$ is non-negative. Hence, \[(b-0.6)^2 - 4(1)(0.4b) \geq 0 \implies b \leq 0.135 \quad \lor \quad b \geq 2.66.\] Since $0 \leq b \leq 1$, we reject the latter. Thus, the range of $\P{A \cap B} = b$ is $[0, 0.135]$.
+\end{sampans}
 
 \begin{recipe}[Probability Trees]
     A probability tree is a useful tool for sequential events, or events that appear in stages. The number indicated on each branch represents the conditonal probability of the event at the end node given that all the events at the previous nodes have occurred.
 \end{recipe}
 
-\begin{example}[Probability Tree]
-    \phantom{.}
-
-    \textbf{Q:} Peter has a bag containing 6 black marbles and 3 white marbles. He takes out two marbles at random from the bag. Find the probability that he has taken out a black marble and a white marble.
-
-    \textbf{A:}
+\begin{sample}
+    Peter has a bag containing 6 black marbles and 3 white marbles. He takes out two marbles at random from the bag. Find the probability that he has taken out a black marble and a white marble.
+\end{sample}
+\begin{sampans}
+    Consider the following propbability tree.
     \begin{figure}[H]\tikzsetnextfilename{350}
         \centering
         \begin{tikzpicture}
@@ -218,17 +215,16 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
         \end{tikzpicture}
         \caption{}
     \end{figure}
-    From the probability tree, the required probability is \[\bp{\frac69}\bp{\frac38} + \bp{\frac39}\bp{\frac68} = \frac12.\]
-\end{example}
+    The required probability is thus \[\bp{\frac69}\bp{\frac38} + \bp{\frac39}\bp{\frac68} = \frac12.\]
+\end{sampans}
 
 \begin{recipe}[Permutations and Combinations]
     Using combinatorical methods is useful when the most direct way to calculate $\P{E}$ is to find $n(E)$ and $n(S)$.
 \end{recipe}
 
-\begin{example}[Permutations and Combinations]
-    \phantom{.}
-
-    \textbf{Q:} A choir has 7 sopranos, 6 altos, 3 tenors and 4 basses. At a particular rehearsal, three members of the choir are chosen at random. Find the probability that exactly one bass is chosen.
-
-    \textbf{A:} Note that there are a total of 20 people in the choir. Hence, the number of ways to choose three members of the choir, without restriction, is given by $\comb{20}{3}$. Meanwhile, the number of ways to choose exactly one bass is given by $\comb{4}{1} \cdot \comb{16}{2}$: first choose one bass out of the four, then choose 2 members out of the remaining 16. Thus, the required probability is \[\frac{\comb{4}{1} \cdot \comb{16}{2}}{\comb{20}3} = \frac8{19}.\]
-\end{example}
+\begin{sample}
+    A choir has 7 sopranos, 6 altos, 3 tenors and 4 basses. At a particular rehearsal, three members of the choir are chosen at random. Find the probability that exactly one bass is chosen.
+\end{sample}
+\begin{sampans}
+    Note that there are a total of 20 people in the choir. Hence, the number of ways to choose three members of the choir, without restriction, is given by $\comb{20}{3}$. Meanwhile, the number of ways to choose exactly one bass is given by $\comb{4}{1} \cdot \comb{16}{2}$: first choose one bass out of the four, then choose 2 members out of the remaining 16. Thus, the required probability is \[\frac{\comb{4}{1} \cdot \comb{16}{2}}{\comb{20}3} = \frac8{19}.\]
+\end{sampans}
