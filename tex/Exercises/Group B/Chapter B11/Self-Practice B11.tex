@@ -10,22 +10,49 @@
 \begin{problem}
     A particle moving along a metal plate in the $xy$-plane has the velocity $\vec v = \vec i - 4 \vec j$ cm/s at the point $(3, 2)$. If the temperature of the plate at points in the $xy$-plane is $T(x, y) = y^2 \ln x$ where $x \geq 1$, in degrees Celsius, find $\derx{T}{t}$ at $(3, 2)$.
 \end{problem}
+\begin{solution}
+    Note that \[\der{T}{t} = \pder{T}{x} \der{x}{t} + \pder{T}{y} \der{y}{t} = \bp{\frac{y^2}{x}} (1) + \bp{2y \ln x} (-4) = \frac{y^2}{x} - 9y \ln x.\] At $(3, 2)$, we have \[\evalder{\der{T}{t}}{(3, 2)} = \frac{2^2}{3} - 9(2) \ln 3 = -16.2 \todp{3}.\]
+\end{solution}
 
 \begin{problem}
     Given that $f(x, y) = x^2 \e^y$, find the maximum value of a directional derivative at $(-2, 0)$ and give a unit vector in the direction in which the maximum value occurs.
 \end{problem}
+\begin{solution}
+    At $(-2, 0)$, we have \[\nabla f = \cvecii{2x \e^y}{x^2 \e^y} = \cvecii{-4}{4}.\] Note that \[D_{\vec u} f(x, y) = \nabla f \dotp \vec u = \abs{\nabla f} \cos \t,\] where $\t$ is the angle between $\nabla f$ and $\vec u$. Hence, the maximum value of the directional derivative is \[\abs{\cvecii{-4}{4}} = \sqrt{(-4)^2 + 4^2} = 4\sqrt{2}.\] This occurs when $\t = 0$, i.e. when $\vec u$ is the same direction as $\nabla f$. Hence, \[\vec u = \frac1{4\sqrt{2}} \cvecii{-4}{4} = \frac1{\sqrt2} \cvecii{-1}{1}.\]
+\end{solution}
 
 \begin{problem}
     If the electric potential at a point $(x, y)$ in the $xy$-plane is $V(x, y)$, where $V(x, y) = \e^{-2x} \cos 2y$, find the direction where $V$ decreases most rapidly at $(0, \pi/6)$.
 \end{problem}
+\begin{solution}
+    At $(0, \pi/6)$, we have \[\nabla V = \cvecii{-2\e^{-2x} \cos 2y}{-2\e^{-2x}\sin 2y} = -\cvecii{1}{\sqrt3}.\] Note that \[D_{\vec u} V(x, y) = \nabla V \dotp \vec u = \abs{\nabla V} \cos \t,\] where $\t$ is the angle between $\nabla V$ and $\vec u$. Hence, $V$ decreases the most when $\t = \pi$, i.e. when $\vec u$ is in the opposite direction as $\nabla V$. Thus, the desired direction is $\cvecii{1}{\sqrt3}$.
+\end{solution}
 
 \begin{problem}
     Find all local extrema and saddle points of $f(x, y) = 4xy - x^4 - y^4$.
 \end{problem}
+\begin{solution}
+    Note that \[\nabla f = \cvecii{4y - 4x^3}{4x - 4y^3}.\] Setting this equal to the zero vector, we have the system \[\systeme{4y - 4x^3 = 0,4x - 4y^3 = 0}.\] From the first equation, we get $y = x^3$. Substituting this into the second equation yields \[x - x^9 = x\bp{1 - x^8} = 0.\] Note that $x^8 - 1$ factors as $\bp{x^4 + 1}\bp{x^2 + 1}\bp{x + 1}\bp{x - 1}$. We thus have $x = -1, 0, 1$, which correspond to the points $(-1, -1)$, $(0, 0)$ and $(1, 1)$.
+
+    Let \[D = f_{xx}f_{yy} - f_{xy}^2 = \bp{-12x^2}\bp{-12y^2} - \bp{4}^2 = 144x^2y^2 - 16.\]
+
+    \case{1} At $(-1, -1)$, we have \[D = 144(-1)^2(-1)^2 - 16 = 128 > 0.\] Since $f_{xx} = -12(-1)^2 = -12 < 0$, by the second partial derivative test, $(-1, -1)$ is a maximum point.
+
+    \case{2} At $(0, 0)$, we have \[D = 144(0)^2(0)^2 - 16 = -16 < 0.\] By the second partial derivative test, $(0, 0)$ is a saddle point.
+
+    \case{3} At $(1, 1)$, we have \[D = 144(1)^2(1)^2 - 16 = 128 > 0.\] Since $f_{xx} = -12(1)^2 = -12 < 0$, by the second partial derivative test, $(1, 1)$ is a maximum point.
+\end{solution}
 
 \begin{problem}
     Find the absolute extrema of $f(x, y) = x^2 + 2y^2 - x$ such that the domain of this function $f$ is the circular region $x^2 + y^2 \leq 4$.
 \end{problem}
+\begin{solution}
+    Note that \[\nabla f = \cvecii{2x - 1}{4y}.\] Setting this equal to the zero vector, we see that $f$ has only one stationary point at $(1/2, 0)$, which is in the domain. At this point, \[f\bp{\frac12, 0} = \bp{\frac12}^2 + 2(0)^2  - \frac12 = -\frac14.\]
+
+    We now consider the points along the boundary of $\dom f$, which is given by the equation $x^2 + y^2 = 4$. Substituting $y^2 = 4 - x^2$ into the definition of $f(x, y)$, we get the univariate function $g(x)$: \[g(x) =  x^2 + 2\bp{4 - x^2} - x = -\bp{x + \frac12}^2 + \frac{33}{4}.\] Also note that $x \in [-2, 2]$. Clearly, $g(x)$ attains a maximum of $33/4$ at $x = -1/2$ and a minimum of 2 at $x = 2$.
+
+    Thus, the absolute maximum of $f(x, y)$ is $33/4$, while the absolute minimum of $f(x, y)$ is $-1/4$.
+\end{solution}
 
 \begin{problem}
     A length of sheet metal 27 cm wide is to be made into a water trough by bending up two sides as shown in the figure below. Find the values of $x$ and $\t$ such that the trapezoid-shaped cross-section has a maximum area.
@@ -46,6 +73,20 @@
         \end{tikzpicture}
     \end{center}
 \end{problem}
+\begin{solution}[1]
+    Take the mirror image of the figure and place it on top of the original image. We get a hexagon with perimeter 54, and we are tasked with maximizing its area. It is a well-known result that for $n$-sided polygons with fixed perimeters, the regular $n$-gon encloses the largest area. Hence, we have $x = 54/6 = 9$ and $\t = 2\pi/6 = \pi/3$.
+\end{solution}
+\begin{solution}[2]
+    Observe that the longer side of the trapezium is given by $(27 - 2x) + 2(x\cos \t)$, while the height of the trapezium is given by $x \sin \t$. The area $A$ of the trapezium is thus given by \[A = \frac{\bp{27-2x} + \bp{27-2x+2x\cos\t}}{2} \bp{x \sin \t} = 27x\sin \t + x^2 \sin \t \bp{\cos \t - 2}.\] Observe that \[\nabla A = \cvecii{A_x}{A_{\t}} = \cvecii{27\sin \t + 2x \sin \t \bp{\cos \t -2}}{27x \cos \t + x^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t}}.\] Setting this equal to the zero vector, we get the following system: \[\begin{cases}
+            27\sin \t + 2x \sin \t \bp{\cos \t -2} &= 0,\\
+            27x \cos \t + x^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t} &= 0.
+        \end{cases}\]
+    From the first equation, we get \[x = \frac{-27}{2\bp{\cos \t - 2}}.\] Substituting this into the second equation, \[27\bp{\frac{-27}{2\bp{\cos \t - 2}}}\cos \t + \bp{\frac{-27}{2\bp{\cos \t - 2}}}^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t} = 0.\] Clearing denominators and simplifying, we get \[-2\cos\t \bp{\cos \t - 2} + \bp{\cos^2\t - \sin^2 \t -2\cos\t} = 0.\] Expanding, we have \[-\cos^2 \t + 2\cos \t - \sin^2 \t = 0,\] from which we immediately get $\cos \t = 1/2$, whence $\t = \pi/3$ and $x = 9$.
+
+    We now calculate the second partial derivatives of $A$ at $\t = \pi/3$ and $x = 9$. First, we have \[A_{xx} = 2\sin\t \bp{\cos \t - 2} = -2.5981 \tosf{5}.\] Secondly, we have \[A_{\t\t} = -27x\sin\t + x^2\bp{-2\cos\t\sin\t -2\sin\t\cos\t+2\sin\t} = -210.44 \tosf{5}.\] Lastly, we have \[A_{\t x} = 27\cos \t + 2x\bp{\cos^2 \t - \sin^2 \t -2\cos \t} = -13.5.\]
+
+    Since \[D = A_{xx} A_{\t\t} - A_{\t x}^2 = (-2.5981)(-210.44) - (-13.5)^2 = 364.5 > 0\] and $A_{xx} = -2.5981 < 0$, by the second partial derivative test, $A$ attains a maximum when $x = 9$ and $\t = \pi/3$.
+\end{solution}
 
 \begin{problem}
     A Further Maths student smiled when a question asked for him to find the quadratic approximation for the function of $f(x, y) = xy - 3y - x$ around the point $(2, 3)$. Explain why he is so delighted.
@@ -57,3 +98,92 @@
 \begin{problem}
     A company produces two products, $A$ and $B$, which require different amounts of two resources, Resource 1 and Resource 2. The profit generated by selling product $A$ is \$10 per unit, and the profit from selling product $B$ is \$15 per unit. Each unit of product $A$ requires 2 units of Resource 1 and 1 unit of Resource 2. Each unit of product $B$ requires 1 unit of Resource 1 and 3 units of Resource 2. The company has a total of 100 units of Resource 1 and 90 units of Resource 2. What should the company produce in order to maximize its profitability?
 \end{problem}
+\begin{solution}
+    We use linear programming to solve this problem.
+
+    Let $n$ and $m$ be the amount of product $A$ and $B$ produced by the company. Let $\Pi$ be the total revenue earned, i.e. \[\Pi = 10n + 15 m.\] Due to resource constraints, we have the inequalities \[\begin{cases}
+        2n + m &\leq 100,\\
+        n + 3m &\leq 90.
+    \end{cases}\]
+    Additionally, we have $n, m \geq 0$.
+
+    We can visualize these inequalities graphically:
+    \begin{figure}[H]\tikzsetnextfilename{35}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain=0:100,
+                xmin=0,
+                xmax=100,
+                ymin=0,
+                ymax=100,
+                samples=101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {50, 90},
+                ytick = {30, 100},
+                xlabel = {$n$},
+                ylabel = {$m$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {100 - 2*x};
+                \addlegendentry{$2n + m = 100$};
+    
+                \addplot[plotBlue] {30 - x/3};
+                \addlegendentry{$n + 3m = 90$};
+
+                \fill (42, 16) circle[radius=2.5pt] node[anchor=south west] {$\bp{42, 16}$};
+                \node at (25, 10) {$R$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+    Here, $R$ represents the feasible zone, i.e. the region where both inequalities are satisfied. This is the region where the company can produce. Also note that the two ``boundaries'' intersect at $(42, 16)$.
+
+    Now, recall that $\Pi = 10n + 15m$. Rearranging, \[m = \frac{\Pi}{15} - \frac23 n.\] If we plot this, we get a line with $m$-intercept $\Pi/15$ and gradient $-2/3$. Our goal of maximizing $\Pi$ can be restated as ``find the largest value $\Pi/15$ such that a line with gradient $-2/3$ intersects the region $R$ once''.
+
+    \begin{figure}[H]\tikzsetnextfilename{36}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:100,
+                xmin=0,
+                xmax=100,
+                ymin=0,
+                ymax=100,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {50, 90},
+                ytick = {30, 100},
+                xlabel = {$n$},
+                ylabel = {$m$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {100 - 2*x};
+                \addlegendentry{$2n + m = 100$};
+    
+                \addplot[plotBlue] {30 - x/3};
+                \addlegendentry{$n + 3m = 90$};
+
+                \fill (42, 16) circle[radius=2.5pt] node[anchor=south west] {$\bp{42, 16}$};
+                \node at (25, 10) {$R$};
+
+                \addplot[dashed] {44 - 2/3 * x};
+                \addplot[dotted] {54 - 2/3 * x};
+                \addplot[dotted] {34 - 2/3 * x};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    From the figure above, it is easy to see that the ``optimal line'' will only intersect the region $R$ at only one point: $(42, 16)$. Hence, the company should produce 42 units of product A and 16 units of product B.
+\end{solution}
