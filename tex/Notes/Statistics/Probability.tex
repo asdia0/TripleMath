@@ -21,7 +21,7 @@
 \section{Probability}
 
 \begin{definition}[Classical Probability]
-    If the sample space $S$ consists of a finite number of equally likely outcomes, then the probability of an event $E$ occuring (a measure of the likelihood that $E$ occurs) is denoted $\P{E}$ and is defined as \[\P{E} = \frac{n(E)}{n(S)}.\]
+    If the sample space $S$ consists of a finite number of equally likely outcomes, then the probability of an event $E$ occurring (a measure of the likelihood that $E$ occurs) is denoted $\P{E}$ and is defined as \[\P{E} = \frac{n(E)}{n(S)}.\]
 \end{definition}
 
 \begin{proposition}[Range of Probabilities]
@@ -78,7 +78,7 @@
     In layman terms, the above statement translates to \[\P{\text{neither $A$ nor $B$}} = 1 - \P{\text{$A$ or $B$}},\] which is clearly true.
 \end{proof}
 
-\section{Mutually Exlusive Events}
+\section{Mutually Exclusive Events}
 
 \begin{definition}
     Two events $A$ and $B$ are said to be \vocab{mutually exclusive} if they cannot occur at the same time. Mathematically, \[\P{A \cap B} = 0.\]
@@ -89,10 +89,10 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
 \section{Conditional Probability and Independent Events}
 
 \begin{proposition}[Conditional Probability]
-    The probability of an event $A$ occuring, given that another event $B$ has already occured, is given by \[\P{A}{B} = \frac{\P{A \cap B}}{\P{B}}.\]
+    The probability of an event $A$ occurring, given that another event $B$ has already occurred, is given by \[\P{A}{B} = \frac{\P{A \cap B}}{\P{B}}.\]
 \end{proposition}
 \begin{proof}
-    Since $B$ has already occured, the sample space is reduced to $B$. Hence, \[\P{A}{B} = \frac{n(A \cap B)}{n(B)}.\] Dividing the numerator and denominator by $n(S)$ completes the proof.
+    Since $B$ has already occurred, the sample space is reduced to $B$. Hence, \[\P{A}{B} = \frac{n(A \cap B)}{n(B)}.\] Dividing the numerator and denominator by $n(S)$ completes the proof.
 \end{proof}
 
 \begin{corollary}
@@ -124,7 +124,7 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
 \begin{proof}
     We only prove that $A'$ and $B$ are independent. The proofs for the other pairs are almost identical.
 
-    Since $A$ and $B$ are independente events, we have $\P{A \cap B} = \P{A} \P{B}$. Now consider $\P{A' \cap B}$. \[\P{A' \cap B} = \P{B} - \P{A \cap B} = \P{B} - \P{A}\P{B} = \P{B} \bs{1 - \P{A}} = \P{B} \P{A'}.\] Hence, $A'$ and $B$ are independent.
+    Since $A$ and $B$ are independent events, we have $\P{A \cap B} = \P{A} \P{B}$. Now consider $\P{A' \cap B}$. \[\P{A' \cap B} = \P{B} - \P{A \cap B} = \P{B} - \P{A}\P{B} = \P{B} \bs{1 - \P{A}} = \P{B} \P{A'}.\] Hence, $A'$ and $B$ are independent.
 \end{proof}
 
 \section{Common Heuristics used in Solving Probability Problems}
@@ -180,14 +180,14 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
 \end{sampans}
 
 \begin{recipe}[Probability Trees]
-    A probability tree is a useful tool for sequential events, or events that appear in stages. The number indicated on each branch represents the conditonal probability of the event at the end node given that all the events at the previous nodes have occurred.
+    A probability tree is a useful tool for sequential events, or events that appear in stages. The number indicated on each branch represents the conditional probability of the event at the end node given that all the events at the previous nodes have occurred.
 \end{recipe}
 
 \begin{sample}
     Peter has a bag containing 6 black marbles and 3 white marbles. He takes out two marbles at random from the bag. Find the probability that he has taken out a black marble and a white marble.
 \end{sample}
 \begin{sampans}
-    Consider the following propbability tree.
+    Consider the following probability tree.
     \begin{figure}[H]\tikzsetnextfilename{350}
         \centering
         \begin{tikzpicture}
@@ -219,7 +219,7 @@ An equivalent criterion for mutual exclusivity is \[\P{A \cup B} = \P{A} + \P{B}
 \end{sampans}
 
 \begin{recipe}[Permutations and Combinations]
-    Using combinatorical methods is useful when the most direct way to calculate $\P{E}$ is to find $n(E)$ and $n(S)$.
+    Using combinatorial methods is useful when the most direct way to calculate $\P{E}$ is to find $n(E)$ and $n(S)$.
 \end{recipe}
 
 \begin{sample}

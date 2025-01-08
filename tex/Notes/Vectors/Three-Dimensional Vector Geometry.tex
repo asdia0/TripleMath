@@ -78,7 +78,7 @@
     Let the acute angle between two lines with direction vectors $\vec b_1$ and $\vec b_2$ be $\t$. Then \[\cos\t = \frac{\abs{\vec b_1 \dotp \vec b_2}}{\abs{\vec b_1} \abs{\vec b_2}}.\]
 \end{proposition}
 \begin{proof}
-    Observe that we are essentially finding the angle between the direction vectors of the two lines, which is given by \[\cos\t = \frac{\vec b_1 \dotp \vec b_2}{\abs{\vec b_1} \abs{\vec b_2}}.\] However, to ensure that $\t$ is acute (i.e. $\cos \t \geq 0$), we introduce a modulus sign in the numberator. Hence, \[\cos\t = \frac{\abs{\vec b_1 \dotp \vec b_2}}{\abs{\vec b_1} \abs{\vec b_2}}.\]
+    Observe that we are essentially finding the angle between the direction vectors of the two lines, which is given by \[\cos\t = \frac{\vec b_1 \dotp \vec b_2}{\abs{\vec b_1} \abs{\vec b_2}}.\] However, to ensure that $\t$ is acute (i.e. $\cos \t \geq 0$), we introduce a modulus sign in the numerator. Hence, \[\cos\t = \frac{\abs{\vec b_1 \dotp \vec b_2}}{\abs{\vec b_1} \abs{\vec b_2}}.\]
 \end{proof}
 
 \section{Planes}
@@ -142,7 +142,7 @@
 \end{recipe}
 
 \begin{example}[Foot of Perpendicular from Point to Plane]
-    Let the plane $\pi$ have equation $\pi : \vec r \dotp \cveciiix123 = 10$. Let $Q(4, 5, 6)$. Let $F$ be the foot of perpendicular from $Q$ to $\pi$. We wish to find $\oa{OF}$.
+    Let the plane $\pi$ have equation $\pi : \vec r \dotp \cveciiix123 = 10$. Let $Q(4, 5, 6)$, and let $F$ be the foot of perpendicular from $Q$ to $\pi$. We wish to find $\oa{OF}$.
 
     Since $QF$ is perpendicular to $\pi$, we have \[\oa{QF} = \l \cveciii123, \quad \l \in \RR.\] Hence, \[\oa{OF} = \oa{OQ} + \oa{QF} = \cveciii456 + \l\cveciii123.\] Taking the scalar product on both sides, we get \[10 = \oa{OF} \dotp \cveciii123 = \bs{\cveciii456 + \l\cveciii123} \dotp \cveciii123 = 32 + 14\l.\] Thus, $\l = -11/7$, whence \[\oa{OF} = \cveciii456 - \frac{11}{7}\cveciii123 = \frac17 \cveciii{17}{13}{9}.\]
 \end{example}

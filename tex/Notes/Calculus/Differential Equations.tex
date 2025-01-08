@@ -314,7 +314,7 @@ We now find $m_0$ and $m_1$. Note that \[m_0 = f(t_0, y(t_0)) \quad \land \quad 
 
 We are now ready to approximate $y(t_1)$. By the point-slope formula, the line with gradient $m$ passing through $(t_0, y_0)$ has equation \[y - y_0 = m (t - t_0) \approx \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2} (t - t_0).\] When $t = t_1$, we get \[y(t_1) \approx y_1 = y_0 + \D t \bs{\frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}}. \tag{1}\]
 
-A similar derivation can be obtained when the actual solution curve is concave downards.
+A similar derivation can be obtained when the actual solution curve is concave downwards.
 
 Extending (1), we get the usual statement of the improved Euler's method:
 
@@ -355,9 +355,9 @@ Recall that generally, the trapezium rule is a much better approximation than a 
 
 Populations, however defined, generally change their magnitude as a function of time. The main goal here is to provide some mathematical models as to how these populations change, construct the corresponding solutions, analyse the properties of these solutions, and indicate some applications.
 
-For the case of living biological populations, we assume that all environment and/or cultural factors operate on a timescale which is much longer than the intrinsic timescale of the population of interest. If this holds, then the mathematical model takes the following form of a simple population: \[\der{P}{t} = f(P), \quad P(0) = p_0 \geq 0,\] where $P(t)$ is the value of the population $P$ at time $t$. THe function $f(P)$ is what distinguishes one model from another.
+For the case of living biological populations, we assume that all environment and/or cultural factors operate on a timescale which is much longer than the intrinsic timescale of the population of interest. If this holds, then the mathematical model takes the following form of a simple population: \[\der{P}{t} = f(P), \quad P(0) = p_0 \geq 0,\] where $P(t)$ is the value of the population $P$ at time $t$. The function $f(P)$ is what distinguishes one model from another.
 
-We would expect the model to have the same structure \[\der{P}{t} = g(P) - d(P),\] where $g(P)$ and $d(P)$ are the growth and decline factors respectively. Also, we assume $g(0) = d(0) = 0$, whence $f(0) = 0$. This is related to the \vocab{axiom of parenthood}, which states the ``every organism must have parents; there is no spontaneous generateion of organisms''.
+We would expect the model to have the same structure \[\der{P}{t} = g(P) - d(P),\] where $g(P)$ and $d(P)$ are the growth and decline factors respectively. Also, we assume $g(0) = d(0) = 0$, whence $f(0) = 0$. This is related to the \vocab{axiom of parenthood}, which states the ``every organism must have parents; there is no spontaneous generation of organisms''.
 
 In this section, we will look at two common population growth models, namely the exponential growth model and the logistic growth model.
 
@@ -540,7 +540,7 @@ There are many single population systems for which harvesting takes place. \voca
 
 The most direct way of harvesting is to use a strategy where a constant number, $H \geq 0$, of individuals are removed during each time period. For this situation, the logistic equation gets modified to the form \[\der{P}{t} = kP\bp{1 - \frac{P}{N}} - H,\] where $H$ is known as the \vocab{harvesting rate}.
 
-Observe that the equilibrium solutions to this modified logistic equation are: \[\der{P}{t} = kP\bp{1 - \frac{P}{N}} - H = 0 \implies P = \frac{N}{2} \pm \sqrt{\frac{N^2}{4} - \frac{NH}{k}}.\] With the equilbrium solutions, we can do the same analysis above to determine the long-term behaviour of the model.
+Observe that the equilibrium solutions to this modified logistic equation are: \[\der{P}{t} = kP\bp{1 - \frac{P}{N}} - H = 0 \implies P = \frac{N}{2} \pm \sqrt{\frac{N^2}{4} - \frac{NH}{k}}.\] With the equilibrium solutions, we can do the same analysis above to determine the long-term behaviour of the model.
 
 \subsubsection{Variable Harvesting}
 
@@ -548,4 +548,4 @@ The model \[\der{P}{t} = kP \bp{1 - \frac{P}{N}} - HP\] results by harvesting at
 
 \subsubsection{Restocking}
 
-The equation \[\der{P}{t} = kP \bp{1 - \frac{P}{N}} - H \sin{\o t}\] modelsa logistic equation that is periodically harvested and restocked with maximal rate $H$. For sufficiently large $p_0$, the equation models a stable population that oscillates about the carrying capacity $N$ with period $T = 2\pi / \o$.
+The equation \[\der{P}{t} = kP \bp{1 - \frac{P}{N}} - H \sin{\o t}\] models a logistic equation that is periodically harvested and restocked with maximal rate $H$. For sufficiently large $p_0$, the equation models a stable population that oscillates about the carrying capacity $N$ with period $T = 2\pi / \o$.

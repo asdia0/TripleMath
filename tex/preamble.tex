@@ -39,12 +39,11 @@
   \setbox\sepbox=\vbox{\begin{center}$\ast$ $\ast$ $\ast$ $\ast$ $\ast$\end{center}}%
   \cleaders\copy\sepbox\vskip\ht\sepbox}
 
-
 \usepackage{scalerel}
 \NewDocumentCommand\chili{}{\scalerel*{\includegraphics{media/chili.png}}{X}}
 
 \NewDocumentCommand{\problem}{o}{\ifnum\value{problemnum}>0\separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum\IfNoValueF{#1}{ (#1)}.}}}
-\newcommand*{\solution}{\medbreak\noindent{\large\sffamily\bfseries{Solution.}}}
+\NewDocumentCommand{\solution}{o}{\medbreak\noindent{\large\sffamily\bfseries{\IfNoValueTF{#1}{Solution.}{Solution #1.}}}}
 \newcommand*{\ppart}{\stepcounter{partnum}\smallbreak\noindent{\sffamily\bfseries{Part (\thepartnum).}}}
 \newcommand*{\psubpart}{\stepcounter{subpartnum}\smallbreak\noindent{\sffamily\bfseries\small{Part (\thepartnum)(\thesubpartnum).}}}
 

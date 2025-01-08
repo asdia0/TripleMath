@@ -284,7 +284,7 @@ Observe that if we partially differentiate (2) with respect to $x$, we get \[f_x
     f(x + \D x, y + \D y) &= f(x, y) + \D y f_y(x,y) + \D x \bs{f_x(x, y) + \D y f_{yx}(x, y)}\\
     &= f(x, y) + \D y f_y(x,y) + \D x f_x(x, y) + \D x\D y f_{yx}(x, y). \tag{4}
 \end{align*}
-Since $\D x$ and $\D y$ are both infinitesimally small, the quantity $\D x \D y$ is negligble and can be disregarded. We thus have \[\D f = f(x + \D x, y + \D y) - f(x, y) = \D x f_x(x, y) + \D y f_y(x,y).\] Dividing throughout by $\D t$ and writing $f_x$, $f_y$ in Liebniz notation, we have \[\frac{\D f}{\D t} = \pder{f}{x} \frac{\D x}{\D t} + \pder{f}{y} \frac{\D y}{\D t}.\] In the limit as $\D t \to 0$, we have \[\frac{\D f}{\D t} \to \der{x}{t}, \quad \frac{\D x}{\D t} \to \der{x}{t}, \quad \frac{\D y}{\D t} \to \der{y}{t}.\] Thus, \[\der{f}{t} = \pder{f}{x} \der{x}{t} + \pder{f}{y} \der{y}{t}.\] \qed
+Since $\D x$ and $\D y$ are both infinitesimally small, the quantity $\D x \D y$ is negligible and can be disregarded. We thus have \[\D f = f(x + \D x, y + \D y) - f(x, y) = \D x f_x(x, y) + \D y f_y(x,y).\] Dividing throughout by $\D t$ and writing $f_x$, $f_y$ in Liebniz notation, we have \[\frac{\D f}{\D t} = \pder{f}{x} \frac{\D x}{\D t} + \pder{f}{y} \frac{\D y}{\D t}.\] In the limit as $\D t \to 0$, we have \[\frac{\D f}{\D t} \to \der{x}{t}, \quad \frac{\D x}{\D t} \to \der{x}{t}, \quad \frac{\D y}{\D t} \to \der{y}{t}.\] Thus, \[\der{f}{t} = \pder{f}{x} \der{x}{t} + \pder{f}{y} \der{y}{t}.\] \qed
 
 Observe that if we had applied (2) before (1) on $f(x + \D x, y + \D y)$, we would have got \[f(x + \D x, y + \D y) = f(x, y) + \D y f_y(x,y) + \D x f_x(x, y) + \D x\D y f_{xy}(x, y).\] However, by Clairaut's theorem, we know $f_{xy} = f_{yx}$, so we would still have ended up with (4).
 
@@ -315,7 +315,7 @@ We now relate the directional derivative with the gradient of $f$.
 With this relation, we can prove several neat results.
 
 \begin{proposition}
-    If $f$ is differentiable at $(x_0, y_0)$ and $\nabla f(x_0, y_0) \neq \vec 0$, then $\nabla f(x_0, y_0)$ is perpendicular to the level curve of $f$ through $(x_0, y_0)$.
+    Suppose $f$ is differentiable at $(x_0, y_0)$, and $\nabla f(x_0, y_0) \neq \vec 0$. Then $\nabla f(x_0, y_0)$ is perpendicular to the level curve of $f$ through $(x_0, y_0)$.
 \end{proposition}
 \begin{proof}
     Let $f(x, y) = (x(t), y(t))$. Note that the tangent to the level curve at $(x_0, y_0)$ has direction vector $\vec u = \cveciix{\derx{x}{t}}{\derx{y}{t}}$.
@@ -431,7 +431,7 @@ Note that by Clairaut's theorem, we can interchange $f_{xy}$ and $f_{yx}$ in the
 
 \section{Maxima, Minima and Saddle Points}
 
-One important application of calculus is the optimization of functions which have many dependent variables. For example, one may maximize the amount of porift based on parameters such as the cost of raw materials, workers' salaries, time needed for production, etc.
+One important application of calculus is the optimization of functions which have many dependent variables. For example, one may maximize the amount of profit based on parameters such as the cost of raw materials, workers' salaries, time needed for production, etc.
 
 To find stationary points of a univariate function, we equate its gradient to 0. Similarly, for functions of two variables $f(x, y)$, if we want to find stationary points, we look for points where its gradient, $\nabla f$, is the zero vector, i.e. \[\nabla f = \cvecii{f_x}{f_y} = \cvecii00.\]
 

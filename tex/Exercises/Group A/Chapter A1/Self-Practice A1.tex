@@ -15,15 +15,14 @@
         \end{tabularx}
     \end{table}
 
-    In a typical month, the school collects a total of \$3,721 for membershipo fee from the students, and pays the instructors a total sum of \$11,830 (assuming that this sum of money is fully paid by the students). As for the training in a typical week, students from CHinese Orchestra and Concert Band spend in total 431 hours more than their peers in Choir and Dance. Find the enrolment in each of the performing arts groups.
+    In a typical month, the school collects a total of \$3,721 for membership fee from the students, and pays the instructors a total sum of \$11,830 (assuming that this sum of money is fully paid by the students). As for the training in a typical week, students from Chinese Orchestra and Concert Band spend in total 431 hours more than their peers in Choir and Dance. Find the enrolment in each of the performing arts groups.
 
     Hence, find the costume fee paid by each student from Chinese Orchestra if a vendor charges a total of \$9,440 for all the costumes for the four performing arts groups.
 \end{problem}
 \begin{solution}
-    Let $a$, $b$, $c$, $d$ be the number of students in choir, chinese orchestra, concert band and dance respectively. From the given information, we have the following equations: \[\systeme{a+b+c+d=200,15a + 20b + 20c + 18d = 3721,50a+60b+75c+40d=11830,-5a+6b+8c-7d=431}\] Using G.C., we obtain the unique solution \[a = 43, \quad b = 65, \quad c = 60, \quad d = 32.\] Let the Chinese Orchestra's custom fee (per student) be $x$. From the given information, we have the following equation: \[45a + xb + 40c + 60d = 9440.\] Hence, \[x = \frac{9440 - 45a - 40c - 60d}{b} = \frac{9440 - 45(43) - 40(60) - 60(32)}{65} = 49.\] Thus, the costume fee paid by each student from Chinese Orchestra is \$49.
+    Let $a$, $b$, $c$, $d$ be the number of students in Choir, Chinese Orchestra, Concert Band and Dance respectively. From the given information, we have the following equations: \[\systeme{a+b+c+d=200,15a + 20b + 20c + 18d = 3721,50a+60b+75c+40d=11830,-5a+6b+8c-7d=431}\] Using G.C., we obtain the unique solution \[a = 43, \quad b = 65, \quad c = 60, \quad d = 32.\] Let the Chinese Orchestra's custom fee (per student) be $x$. From the given information, we have the following equation: \[45a + xb + 40c + 60d = 9440.\] Hence, \[x = \frac{9440 - 45a - 40c - 60d}{b} = 49.\] Thus, the costume fee paid by each student from Chinese Orchestra is \$49.
 \end{solution}
 
-\clearpage
 \begin{problem}
     Solve the inequality $(x + 2)^2 \bp{x^2 + 2x - 8} \geq 0$.
 \end{problem}
@@ -34,11 +33,51 @@
 \begin{problem}
     By using a graphical method, solve the inequality $\abs{x^2 - x - 2} \geq \frac{x-1}{x+2}$.
 \end{problem}
+\begin{solution}
+    \begin{figure}[H]\tikzsetnextfilename{29}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -3:3,
+            restrict y to domain =-1:8,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {abs(x^2 - x - 2)};
+            \addlegendentry{$\abs{x^2 - x - 2}$};
+
+            \addplot[plotBlue] {(x-1)/(x+2)};
+            \addlegendentry{$(x-1)/(x-2)$};
+        \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+
+    From the graph, the $x$-coordinates of the intersection points are $-2.51$, $1.92$ and $2.09$. Hence, \[x \leq -2.51 \quad \land \quad -2 \leq x \leq 1.92 \quad \land \quad x \geq 2.09.\]
+\end{solution}
 
 \begin{problem}
     Show that $x^2 + 2x + 3$ is always positive for all real values of $x$. Hence, solve the inequality $\frac{x^2 + 2x + 3}{3 + 2x - x^2} \leq 0$. Deduce the solution set of the inequality $\frac{x^2 + 2\abs{x} + 3}{3 + 2\abs{x} - x^2} \leq 0$.
 \end{problem}
+\begin{solution}
+    Note that the discriminant of $x^2 + 2x + 3 = 0$ is $\D = 2^2 - 4(1)(3) = -8 < 0$. Since the $y$-intercept is positive ($3 > 0$), it follows that $x^2 + 2x + 3$ is always positive for real $x$.
 
+    Consider the inequality $\frac{x^2 + 2x + 3}{3 + 2x - x^2} \leq 0$. Since $x^2 + 2x + 3$ is always positive, it suffices to solve $3 + 2x - x^2 \leq 0$. Observe that the roots of $3 + 2x - x^2 = 0$ are $x = 3$ and $x = -1$. Since $3 + 2x - x^2$ is concave down, we have \[x \leq -1 \quad \lor \quad x \geq 3.\]
+
+    Replacing $x$ with $\abs{x}$, we get $\abs{x} \leq -1$ (no solutions) and $\abs{x} \geq 3$, whence $x \leq -3$ or $x \geq 3$. The solution set is thus \[\bc{x \in \RR : x \leq -3 \lor x \geq 3}.\]
+\end{solution}
+
+\clearpage
 \begin{problem}
     Without use of a graphing calculator, solve the inequality $\frac{2x^2 - 7x + 6}{x^2 - x - 2} \geq 1$. Deduce the range of values of $x$ such that
     \begin{enumerate}
@@ -46,22 +85,42 @@
         \item $\frac{2 - 7x + 6x^2}{1 - x - 2x^2} \geq 1$
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    Moving all terms to one side, we get \[\frac{2x^2 - 7x + 6}{x^2 - x - 2} \geq 1 \implies \frac{x^2 - 6x + 8}{x^2 - x - 2} \geq 0.\] Note that $x^2 - 6x + 8$ factors as $(x-2)(x-4)$ while $x^2 - x - 2$ factors as $(x-2)(x+1)$. Hence, \[\frac{x-4}{x+1} \geq 0 \implies (x-4)(x+1) \geq 0.\] Thus, we clearly have \[x < -1 \quad \lor \quad x \geq 4.\] Note that $x \neq -1$ since $x^2 - x - 2 \neq 0$.
+
+    \begin{ppart}
+        Replacing $x$ with $\ln x$, we get \[\ln x < -1 \quad \lor \quad \ln x \geq 4,\] whence \[0 \leq x < \e^{-1} \quad \lor \quad x \geq \e^4.\]
+    \end{ppart}
+    \begin{ppart}
+        Replacing $x$ with $1/x$, we get \[\frac1x < -1 \quad \lor \quad \frac1x \geq 4.\] Hence, \[-1 < x < 0 \quad \lor \quad 0 < x \leq \frac14.\] Note that $x = 0$ also satisfies the inequality ($2 \geq 1$). Hence, \[-1 < x \leq \frac14.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     It is given that $y = \frac{x^2 + x + 1}{x - 1}$, $x \in \RR$, $x \neq 1$. Without using a calculator, find the set of values that $y$ can take.
 \end{problem}
 \begin{solution}
-    Clearing denominators, we have \[y(x-1) = x^2 + x + 1 \implies x^2 + (1-y)x + (1+y) = 0.\] Since we are intereseted in the set of values that $y$ can take, we want this quadratic to have roots. Hence, the discriminant $\D$ is non-negative: \[\D = (1-y)^2 - 4(1 + y) = y^2 - 6y - 3 \geq 0.\] Completing the square, \[(y-3)^2 \geq 12 \implies \abs{y - 3} \geq \sqrt{12} = 2\sqrt3.\] Hence, \[y \leq 3 - 2\sqrt3 \lor y \geq 3 + 2\sqrt3,\] whence the solution set is \[\bc{y \in \RR: y \leq 3 - 2\sqrt3 \lor y \geq 3 + 2\sqrt3}.\]
+    Clearing denominators, we have \[y(x-1) = x^2 + x + 1 \implies x^2 + (1-y)x + (1+y) = 0.\] Since we are interested in the set of values that $y$ can take, we want this quadratic to have roots. Hence, the discriminant $\D$ should be non-negative: \[\D = (1-y)^2 - 4(1 + y) = y^2 - 6y - 3 \geq 0.\] Completing the square, \[(y-3)^2 \geq 12 \implies \abs{y - 3} \geq \sqrt{12} = 2\sqrt3.\] Hence, \[y \leq 3 - 2\sqrt3 \lor y \geq 3 + 2\sqrt3,\] whence the solution set is \[\bc{y \in \RR: y \leq 3 - 2\sqrt3 \lor y \geq 3 + 2\sqrt3}.\]
 \end{solution}
 
 \begin{problem}[\chili]
-    Solve for $x$, in terms of $a$, the inequality $\abs{x^2 - 3ax + 2a^2} < \abs{x^2 + 3ax - a^2}$, where $x \in \RR$, $a \neq 0$.
+    Solve for $x$, in terms of $a$, the inequality \[\abs{x^2 - 3ax + 2a^2} < \abs{x^2 + 3ax - a^2},\] where $x \in \RR$, $a \neq 0$.
 \end{problem}
+\begin{solution}
+    Squaring both sides, we get \[\bp{x^2 - 3ax + 2a^2}^2 < \bp{x^2 + 3ax - a^2}^2.\] Collecting terms on one side, \[\bp{x^2 + 3ax - a^2}^2 - \bp{x^2 - 3ax + 2a^2}^2 = 3a\bp{2x - a}\bp{2x^2 + a^2} > 0.\] Clearly, $2x^2 + a^2 > 0$ for all $x$. We are hence left with $a(2x - a) > 0$.
+
+    \case{1} If $a > 0$, then $2x - a > 0$, whence $x > a/2$.
+
+    \case{2} If $a < 0$, then $2x - a < 0$, whence $x < a/2$.
+\end{solution}
 
 \begin{problem}[\chili]
     Find constants $a$, $b$, $c$ and $d$ such that $1 + 2^3 + 3^3 + \dots + n^3 = an^4 + bn^3 + cn^2 + dn$.
 \end{problem}
-\begin{solution}
+\begin{solution}[1]
+    Substituting $n = 1, 2, 3, 4$ into the equation, we get the system \[\systeme{a + b + c + d = 1, 16a + 8b + 4c + 2d = 9, 81a + 27b + 9c + 3d = 36, 256a + 64b + 16c + 4d = 100}.\] Solving, we have \[a = \frac14, \quad b = \frac12, \quad c = \frac14, \quad d = 0.\]
+\end{solution}
+\begin{solution}[2]
     Recall that \[\sum_{k = 1}^n k = \frac{n(n+1)}{2}.\] Now observe that \[(k+1)^3 - 1 = \sum_{k = 1}^n \bs{(k+1)^3 - k^3} = \sum_{k = 1}^n \bp{3k^2 + 3k + 1}.\] Rearranging, we obtain \[\sum_{k = 1}^n k^2 = \frac{n(n+1)(2n+1)}6.\] Similarly, we have \[(k+1)^4 - 1 = \sum_{k = 1}^n \bs{(k+1)^4 - k^4} = \sum_{k = 1}^n \bp{4k^3 + 6k^2 + 4k + 1},\] whence we obtain, upon rearranging, \[\sum_{k = 1}^n k^3 = \frac{n^4 + 2n^3 + n^2}{4}.\] Comparing coefficients, we have \[a = \frac14, \quad b = \frac12, \quad c = \frac14, \quad d = 0.\]
 \end{solution}
 
@@ -71,3 +130,153 @@
         \item Solve the inequality $\abs{x + 2} < ax + 4$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{30}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {abs(x+2)};
+                    \addlegendentry{$\abs{x+2}$};
+                    \addplot[dashed] {-x + 4};
+                    \addplot[dashed] {x + 4};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+        Consider the figure above. Clearly, for 2 distinct roots (i.e. 2 distinct intersection points), we need $-1 < a < 1$.
+    \end{ppart}
+    \begin{ppart}
+        Note that the $x$-coordinate of the point of intersection between $y = ax + 4$ and $y = x + 2$ is: \[x + 2 = ax + 4 \implies x = \frac{-2}{a-1}.\] Similarly, the $x$-coordinate of the point of intersection between $y = ax + 4$ and $y = -(x+2)$ is: \[x + 2 = ax + 4 \implies x = \frac{-6}{a+1}.\]
+
+        Now consider the inequality $\abs{x + 2} < ax + 4$.
+
+        \case{1}[$a > 2$] $y = ax + 4$ only intersects the line $y = x + 2$. Hence, \[x > \frac{-2}{a - 1}.\]
+        \begin{figure}[H]\tikzsetnextfilename{31}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {abs(x+2)};
+                    \addlegendentry{$\abs{x+2}$};
+                    \addplot[dashed] {2*x + 4};
+                    \addplot[plotBlue] {3 * x + 4};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        \case{2}[$1 \leq a \leq 2$] $y = ax + 4$ only intersects the line $y = -(x + 2)$. Hence, \[x \geq \frac{-6}{a-1}.\]
+        \begin{figure}[H]\tikzsetnextfilename{32}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {abs(x+2)};
+                    \addlegendentry{$\abs{x+2}$};
+                    \addplot[dashed] {2*x + 4};
+                    \addplot[dashed] {x + 4};
+                    \addplot[plotBlue] {1.5 * x + 4};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        \case{3}[$-1 < a < 1$] $y = ax + 4$ intersects both $y = x + 2$ and $y = -(x+2)$. Hence, \[\frac{-6}{a-1} < x < \frac{-2}{a-1}.\]
+        \begin{figure}[H]\tikzsetnextfilename{33}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {abs(x+2)};
+                    \addlegendentry{$\abs{x+2}$};
+                    \addplot[dashed] {-x + 4};
+                    \addplot[dashed] {x + 4};
+                    \addplot[plotBlue] {0.5 * x + 4};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        \case{4}[$a \leq -1$] $y = ax + 4$ only intersects the line $y = x + 2$. Hence, \[x \leq \frac{-2}{a - 1}.\]
+        \begin{figure}[H]\tikzsetnextfilename{34}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = -7:3,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2},
+                    ytick = {4},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {abs(x+2)};
+                    \addlegendentry{$\abs{x+2}$};
+                    \addplot[dashed] {-x + 4};
+                    \addplot[plotBlue] {-2 * x + 4};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+    \end{ppart}
+\end{solution}

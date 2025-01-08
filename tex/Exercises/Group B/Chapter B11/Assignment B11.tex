@@ -28,7 +28,7 @@
     A common problem in experimental work is to obtain a mathematical relationship between two variables $x$ and $y$ by ``fitting'' a curve to points in the plane corresponding to various experimentally determines values of $x$ and $y$, say \[(x_1, y_1), (x_2, y_2), (x_3, y_3), \ldots, (x_n, y_n).\] Based on theoretical considerations, or simply on the pattern of the points, one decides on the general form of the curve to be fitted. Often, the ``curve'' to be fitted is a straight line, $y = ax + b$. One criterion for selecting a line of ``best fit'' is to choose $a$ and $b$ to minimize the function \[f(a, b) = \sum_{k = 1}^n (ax_k + b - y_k)^2.\] Geometrically, $\abs{ax_k + b - y_k}$ is the vertical distance between the data point $(x_k, y_k)$ and the line $y = ax + b$, so in effect, minimizing $f(a, b)$ minimizes the sum of the squares of the vertical distances. This procedure is called the method of least squares.
 
     \begin{enumerate}
-        \item Sbow that the conditions $\pderx{f}{a} = 0$ and $\pderx{f}{b} = 0$ result in the equations
+        \item Show that the conditions $\pderx{f}{a} = 0$ and $\pderx{f}{b} = 0$ result in the equations
         \begin{align*}
             \bp{\sum_{k = 1}^n x_k^2} a + \bp{\sum_{k = 1}^n x_k} b &= \sum_{k = 1}^n (x_k y_k)\\
             \bp{\sum_{k = 1}^n x_k} a + nb &= \sum_{k = 1}^n y_k

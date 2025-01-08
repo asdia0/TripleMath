@@ -144,7 +144,7 @@
 \end{solution}
 
 \begin{problem}
-    Show that the subtitution $v = \ln y$ transforms the differential equation $\der{y}{x} + P(x) y = Q(x) (y \ln y)$ into the linear equation $\der{v}{x} + P(x) = Q(x)v(x)$. Hence, solve the equation $x \der{y}{x} - 4x^2 y + 2y \ln y = 0$.
+    Show that the substitution $v = \ln y$ transforms the differential equation $\der{y}{x} + P(x) y = Q(x) (y \ln y)$ into the linear equation $\der{v}{x} + P(x) = Q(x)v(x)$. Hence, solve the equation $x \der{y}{x} - 4x^2 y + 2y \ln y = 0$.
 \end{problem}
 \begin{solution}
     Note that \[v = \ln y \implies \der{y}{x} = \frac1y \cdot \der{y}{x} \implies \der{y}{x} = y \der{v}{x}.\] Substituting this into the differential equation, we get \[\der{y}{x} + P(x) y = Q(x) (y \ln y) \implies y \der{v}{x} + P(x) y = Q(x) (y v) \implies \der{v}{x} + P(x) = Q(x) v.\]
@@ -157,14 +157,14 @@
 \end{solution}
 
 \begin{problem}
-    The normal at any point on a certain curve always passes through the point $(2, 3)$. Form a differential equation to express this property. Without solving the differential equation, find the equation of the curve where the stationary points of the famility of curves will lie on. Which family of standard curves will have their stationary points lying along a curve with such an equation found earlier?
+    The normal at any point on a certain curve always passes through the point $(2, 3)$. Form a differential equation to express this property. Without solving the differential equation, find the equation of the curve where the stationary points of the family of curves will lie on. Which family of standard curves will have their stationary points lying along a curve with such an equation found earlier?
 \end{problem}
 \begin{solution}
     Clearly, \[y - 3 = \frac{-1}{\derx{y}{x}} (x- 2).\]
     
     Note that \[\der{y}{x} = -\frac{x-2}{y-3}.\] For stationary points, $\der{y}{x} = 0$, whence $x = 2$ and $y \neq 3$.
     
-    Also note that \[\der[2]{y}{x} = -\frac{(y-3) - (x-2)\der{y}{x}}{(y-3)^2}.\] At stationary points, $\der{y}{x} = 0$, giving \[\der[2]{y}{x} = -\frac1{y-3}.\] Hence, when $y > 3$, we have $\der[2]{y}{x} < 0$, giving a maximimum. Likewise, when $y < 3$, we have $\der[2]{y}{x} > 0$, giving a minimum. This suggests that the required family of standard curves is the family of circles with center $(2, 3)$.
+    Also note that \[\der[2]{y}{x} = -\frac{(y-3) - (x-2)\der{y}{x}}{(y-3)^2}.\] At stationary points, $\der{y}{x} = 0$, giving \[\der[2]{y}{x} = -\frac1{y-3}.\] Hence, when $y > 3$, we have $\der[2]{y}{x} < 0$, giving a maximum. Likewise, when $y < 3$, we have $\der[2]{y}{x} > 0$, giving a minimum. This suggests that the required family of standard curves is the family of circles with centre $(2, 3)$.
 \end{solution}
 
 \begin{problem}
@@ -236,7 +236,7 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that the integrating factor is $\exp{ \int 2x \d x} = \e^{x^2}$. Multiplying the integrating factor thorughout the differential equation, we get
+    Note that the integrating factor is $\exp{ \int 2x \d x} = \e^{x^2}$. Multiplying the integrating factor throughout the differential equation, we get
     \begin{gather*}
         \e^{x^2}\der{y}{x} + 2x\e^{x^2}y = \der{}{x} \bp{\e^{x^2} y} = 2x\e^{x^2} \bp{x^2 + 1} \\
         \implies \e^{x^2} y = \int 2x\e^{x^2} \bp{x^2 + 1} \d x = \e^{x^2}(x^2 + 1) - \int 2x \e^{x^2} \d x = \e^{x^2} (x^2 + 1) - \e^{x^2} + C\\

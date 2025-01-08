@@ -1,7 +1,7 @@
 \section{Tutorial A14B}
 
 \begin{problem}
-    In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A - I (see diagram).
+    In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A{\textendash}I (see diagram).
 
     \begin{enumerate}
         \item Show that the probability that the bug finishes its journey at D is $56p^5 q^3$.
@@ -17,7 +17,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Relabel each endpoint from A - I to 0 - 8. Let the random variable $X$ be the end-point that the bug ends up at. Clearly, to reach endpoint $i$, the bug must take $i$ right forks and $8-i$ left forks. Hence, $X \sim \Binom{8}{q}$ and the probability that the bug reaches endpoint 3 (i.e. endpoint D) is \[\P{X = 3} = \binom{8}{3} q^3 (1-q)^{8-3} = 56p^5q^3.\]
+        Relabel each endpoint from A{\textendash}I to 0{\textendash}8. Let the random variable $X$ be the end-point that the bug ends up at. Clearly, to reach endpoint $i$, the bug must take $i$ right forks and $8-i$ left forks. Hence, $X \sim \Binom{8}{q}$ and the probability that the bug reaches endpoint 3 (i.e. endpoint D) is \[\P{X = 3} = \binom{8}{3} q^3 (1-q)^{8-3} = 56p^5q^3.\]
     \end{ppart}
     \begin{ppart}
         Since $X$ follows a binomial distribution, it suffices to find the range of values of $p$ that satisfy $\P{X = 2} < \P{X = 3} > \P{X = 4}$.

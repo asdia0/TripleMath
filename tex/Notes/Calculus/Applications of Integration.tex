@@ -68,7 +68,7 @@ Similar results hold when integrating with respect to the $y$-axis instead.
     Let $C$ be the curve with parametric equations $x = f(t)$ and $y = g(t)$. Then the area $A$ bounded between $C$ and the $x$-axis is \[\area A = \int_a^b \abs{y} \d x = \int_{t_1}^{t_2} \abs{g(t)} \der{x}{t} \d t,\] where $t_1$ and $t_2$ are the values of $t$ when $x = a$ and $b$ respectively.
 \end{proposition}
 
-The formula can be applied simiarly when we wish to find the area bounded between $C$ and the $y$-axis.
+The formula can be applied similarly when we wish to find the area bounded between $C$ and the $y$-axis.
 
 \begin{proposition}[Area Enclosed by Polar Curve]
     Let $r = f(\t)$ be a polar curve, and let $A$ be the area of the region bounded by a segment of the curve and two half-lines $\t = \a$ and $\t = \b$. Then \[\area A = \frac12 \int_{\a}^{\b} r^2 \d \t.\]
@@ -139,7 +139,7 @@ Similar results hold when the axis of rotation is the $y$-axis.
 Suppose a region $R$ is rotated about the $y$-axis. Consider a typical vertical strip in the region $R$ with height $y$ and thickness $\D x$. It will form a cylindrical shell with inner radius $x$, outer radius $x + \D x$ and height $y$ when rotated about the $y$-axis. Hence, it has volume \[\D V = \pi (x + \D x)^2 y - \pi x^2 y = 2 \pi xy \D x + \pi \D x^2 y \approx 2 \pi xy \D x.\] Hence, the volume of revolution is approximately \[V \approx \sum_{x = a}^b 2 \pi xy \D x.\] As more strips are considered, $\D x \to 0$, whence \[V = \lim_{\D x \to 0} = 2\pi \int_a^b xy \d x.\]
 
 \begin{proposition}[Shell Method]
-    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ redians about the $y$-axis, the volume of the solid of revolution is given by \[V = 2\pi \int_a^b xy \d x.\]
+    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ radians about the $y$-axis, the volume of the solid of revolution is given by \[V = 2\pi \int_a^b xy \d x.\]
 \end{proposition}
 
 A similar result holds when the axis of rotation is the $x$-axis.
@@ -397,4 +397,4 @@ Now, observe that the parabola $y = g(x)$ intersects the curve at $(-h, y_1)$, $
 
 In the previous example, the trapezium rule gave an estimate of $2.15369 \todp{5}$, which has an error of 0.240\%. In the case of Simpson's rule, the error is 0.00324\%, vastly better than that of the trapezium rule's.
 
-In general, Simpson's rule gives a better approximation than the trapzium rule as the quadratics used account for the concavity of the curve.
+In general, Simpson's rule gives a better approximation than the trapezium rule as the quadratics used account for the concavity of the curve.
