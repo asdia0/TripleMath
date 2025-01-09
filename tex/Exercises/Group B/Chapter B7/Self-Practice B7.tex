@@ -46,7 +46,7 @@
 \begin{solution}
     We have \[\der{}{x} \sin x^2 = 2x \cos x^2.\]
 
-    Consider the substitution $u = \sin x^2$. Using the above result, we have \[\int x^2 \cos x^2 \d x =\frac12 \bp{2x \cos x^2} x^2 \d x = \frac12 \int \arcsin u \d u.\] Integrating by parts, we get \[\frac12 \bp{u \arcsin u - \int \frac{u}{\sqrt{1 - u^2}} \d u}.\] The integral is fairly simple to evaluate: \[\int \frac{u}{\sqrt{1 - u^2}} = -\frac12 \int \frac{-2u}{\sqrt{1 - u^2}} \d u = -\sqrt{1 - u^2} + C.\] Thus, \[\int x^3 \cos x^2 \d x = \frac12 \bp{x^2 \sin x^2 + \sqrt{1 - \sin^2 x^2}} + C = \frac12 \bp{x^2 \sin x^2 + \cos x^2} + C.\]
+    Consider the substitution $u = \sin x^2$. Using the above result, we have \[\int x^2 \cos x^2 \d x =\frac12 \int \bp{2x \cos x^2} x^2 \d x = \frac12 \int \arcsin u \d u.\] Integrating by parts, we get \[\frac12 \bp{u \arcsin u - \int \frac{u}{\sqrt{1 - u^2}} \d u}.\] The integral is fairly simple to evaluate: \[\int \frac{u}{\sqrt{1 - u^2}} = -\frac12 \int \frac{-2u}{\sqrt{1 - u^2}} \d u = -\sqrt{1 - u^2} + C.\] Thus, \[\int x^3 \cos x^2 \d x = \frac12 \bp{x^2 \sin x^2 + \sqrt{1 - \sin^2 x^2}} + C = \frac12 \bp{x^2 \sin x^2 + \cos x^2} + C.\]
 \end{solution}
 
 \begin{problem}

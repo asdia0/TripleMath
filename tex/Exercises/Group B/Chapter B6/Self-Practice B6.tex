@@ -3,22 +3,45 @@
 \begin{problem}
     Express $\frac{6x+4}{(1-2x)(1+3x^{2})}$ in partial fractions. Hence, find the coefficients of $x^{5}$ and $x^{6}$ in the expansion, in ascending powers of $x$, of $\frac{6x+4}{(1-2x)(1+3x^{2})}$.
 \end{problem}
+\begin{solution}
+    Let \[\frac{6x+4}{(1-2x)(1+3x^{2})} = \frac{A}{1-2x} + \frac{Bx + C}{1 + 3x^2},\] where $A$, $B$ and $C$ are constants to be determined. Using the cover-up rule, we immediately get \[A = \frac{6(1/2) + 4}{1 + 3(1/2)^2} = 4.\] Clearing denominators, we get \[6x + 4 = 4\bp{1 + 3x^2} + \bp{Bx + C} \bp{1 - 2x} = \bp{12 - 2B} x^2 \bp{B - 2C} x + \bp{4 + C}.\] Comparing coefficients, we have $B = 6$ and $C = 0$. Hence, \[\frac{6x+4}{(1-2x)(1+3x^{2})} = \frac{4}{1-2x} + \frac{6x}{1 + 3x^2}.\]
+
+    Note that \[\frac{4}{1-2x} = \dots + (2x)^5 + (2x)^6 + \dots = 4\bs{\dots + 128x^5 + 256x^6 + \dots}\] and \[\frac{6x}{1 + 3x^2} = 6x \bs{\dots + \bp{-3x^2}^2 + \dots} = \dots + 54x^5 + \dots.\] Hence, \[\frac{6x+4}{(1-2x)(1+3x^{2})} = \dots + 182x^5 + 256x^6 + \dots.\]
+\end{solution}
 
 \begin{problem}
     If $x$ is so small that terms in $x^n$, $n \geq 3$, can be neglected and $\frac{3+ax}{3+bx}=(1-x)^{1/3}$, find the values of $a$ and $b$. Hence, find an approximation for $\sqrt[3]{0.96}$ in the form $\frac{p}{q}$, where $p$ and $q$ are integers.
 \end{problem}
+\begin{solution}
+    Rearranging, \[3 + ax = (3+bx) (1-x)^{1/3} = (3+bx) \bp{1 - \frac{x}{3} - \frac{x^2}{9}} = 3 + (b-1)x - \frac{b+1}{3} x^2.\] Comparing coefficients, we have $a = -2$ and $b = -1$. Thus, \[\frac{3 - 2x}{3 - x} = (1 - x)^{1/3}.\]
+
+    Substituting $x = 0.04$, we get \[\sqrt[3]{0.96} = \frac{3 - 2(0.04)}{3 - 0.04} = \frac{73}{74}.\]
+\end{solution}
 
 \begin{problem}
     Given that $y=\tan{\frac12 \arctan x}$, show that \[\bp{1 + x^2} \der{y}{x} = \frac12 \bp{1 + y^2}.\] By differentiating this result twice, show that, up to and including the term in $x^{3}$, the Maclaurin series for $\tan{\frac12 \arctan x}$ is $\frac12x - \frac18 x^3$.
 \end{problem}
+\begin{solution}
+    Note that $\arctan y = \frac12 \arctan x$. Differentiating with respect to $x$, \[\frac{y'}{1 + y^2} = \frac12 \cdot \frac{1}{1 + x^2} \implies \bp{1 + x^2} y' = \frac12 \bp{1 + y^2}.\] Differentiating with respect to $x$, \[\bp{1 + x^2} y'' + 2xy' = y y'.\] Differentiating once more, \[\bp{1 + x^2} y''' + 4xy'' + 2y' = y \cdot y'' + \bp{y'}^2.\] When $x = 0$, we get \[y(0) = 0, \quad y'(0) = \frac12, \quad y''(0) = 0, \quad y'''(0) = -\frac34.\] Thus, \[y = \tan{\frac12 \arctan x} = \frac12 x + \frac{-3/4}{3!} x^3 = \frac12 x - \frac18 x^3.\]
+\end{solution}
 
 \begin{problem}
-    Given that $\cos y=\sqrt{1-\frac{1}{4} \e^x}$ and $0<y<\frac{\pi}{2}$, show that $\sin 2y \der{y}{x} = \frac14 \e^x$. By further differentiation of this result, find the Maclaurin series for $y$, up to and including the term in $x^{2}$, leaving your answer in exact form. Deduce the equation of the tangent to the curve $y=\arccos \sqrt{1-\frac{1}{4} \e^x}$ at $x=0$.
+    Given that $\cos y=\sqrt{1-\frac{1}{4} \e^x}$ and $0<y<\frac{\pi}{2}$, show that $\sin{2y}\der{y}{x} = \frac14 \e^x$. By further differentiation of this result, find the Maclaurin series for $y$, up to and including the term in $x^{2}$, leaving your answer in exact form. Deduce the equation of the tangent to the curve $y=\arccos \sqrt{1-\frac{1}{4} \e^x}$ at $x=0$.
 \end{problem}
+\begin{solution}
+    Rearranging, we get \[\cos^2 y = 1 - \frac14 \e^x.\] Differentiating with respect to $x$, \[-2\cos y \sin y \cdot y' = -\frac14 \e^x \implies \sin{2y} y' = \frac14 \e^x.\] Differentiating once more, \[\sin{2y} y'' + 2 \cos{2y} \bp{y'}^2 = \frac14 \e^x.\] When $x = 0$, we get \[y(0) = \frac\pi6, \quad y'(0) = \frac1{2\sqrt3}, \quad y''(0) = \frac1{3\sqrt3}.\] Thus, \[y = \arccos \sqrt{1-\frac{1}{4} \e^x} = \frac\pi6 + \bp{\frac1{2\sqrt3}} x + \bp{\frac{1}{3\sqrt3}} \bp{\frac{x^2}{2}} + \dots = \frac\pi6 + \frac{x}{2\sqrt3} + \frac{x^2}{6\sqrt3} + \dots.\]
+
+    The equation of the tangent at $x = 0$ is simply \[y = \frac\pi6 + \frac{x}{2\sqrt3}.\]
+\end{solution}
 
 \begin{problem}
     By expressing $\sin{\frac\pi3 + 2x}$ in terms of $\sin2x$ and $\cos2x$, show that \[\sin{\frac\pi3 + 2x} \approx \frac{\sqrt{3}}{2} + x - \sqrt{3}x^2\] if $x$ is sufficiently small. Hence, by using a suitable value of $x$, estimate the value of $\sin\frac{\pi}{9}$, giving your answer to 3 significant figures.
 \end{problem}
+\begin{solution}
+    By the angle-sum formula, \[\sin{\frac\pi3 + 2x} = \sin \frac\pi3 \cos 2x + \cos \frac\pi3 \sin 2x = \frac{\sqrt{3}}2 \cos 2x + \frac12 \sin 2x.\] For sufficiently small $x$, we have $\sin x \approx x$ and $\cos x = 1 - x^2 / 2$. Hence, \[\sin{\frac\pi3 + 2x} \approx \frac{\sqrt3}{2} \bp{1 - \frac{(2x)^2}{2}} + \frac12 \bp{2x} = \frac{\sqrt3}{2} + x - \sqrt3 x^2.\]
+
+    Consider $\pi/3 + 2x = \pi/9$. Clearly $x = -\pi/9$. Substituting this into the above approximation, we get \[\sin \frac\pi9 \approx \frac{\sqrt3}2 + \bp{-\frac\pi9} -\sqrt3 \bp{-\frac\pi9}^2 = 0.306 \tosf{3}.\]
+\end{solution}
 
 \begin{problem}[\chili]
     Consider the infinite series $\frac{1}{1!}+\frac{4}{2!}+\frac{7}{3!}+\frac{10}{4!}+\dots$.
@@ -28,11 +51,45 @@
         \item By rewriting the infinite series in terms of sigma notation and using the standard series for $\e^{x}$, show that the series evaluates to $\e+2$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        The $n$th term is given by $\frac{3n-2}{n!}$, where $n \geq 1$.
+    \end{ppart}
+    \begin{ppart}
+        The infinite series is given by
+        \begin{align*}
+            \sum_{n = 1}^\infty \frac{3n-2}{n!} &= 3\sum_{n=1}^\infty \frac{n}{n!} - 2\sum_{n=1}^\infty \frac1{n!} \\
+            &= 3\sum_{n=1}^\infty \frac{1}{(n-1)!} - 2\bp{1 + \sum_{n=1}^\infty \frac1{n!}} + 2\\
+            &= 3\sum_{n = 0}^\infty \frac1{n!} - 2\sum_{n=0}^\infty \frac1{n!} + 2\\
+            &= 3\e - 2\e + 2 = \e + 2.
+        \end{align*}
+    \end{ppart}
+\end{solution}
 
+\clearpage
 \begin{problem}[\chili]
     Find the function represented by each of the following series by expressing it as a sum or difference of two standard series.
     \begin{enumerate}
-        \item $f(x) = 2+x+\frac{x^{3}}{3!}+\frac{2x^{4}}{4!}+\frac{x^{5}}{5!}+\frac{x^{7}}{7!}+\frac{2x^{3}}{8!}+\dots$, $x\in\RR$.
+        \item $f(x) = 2+x+\frac{x^{3}}{3!}+\frac{2x^{4}}{4!}+\frac{x^{5}}{5!}+\frac{x^{7}}{7!}+\frac{2x^{8}}{8!}+\dots$, $x\in\RR$.
         \item $g(x)= (a+b)x-\frac{a^{2}+b^{2}}{2}x^{2}+\frac{a^{3}+b^{3}}{3}x^3 - \frac{a^4 + b^4}4 x^4 + \dots$, where $a$ and $b$ are positive constants such that $-\frac1a < x \leq \frac1a$ and $-\frac1b < x \leq \frac1b$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that $f(x)$ is defined for all $x \in \RR$. This suggests that $f(x)$ is composed of $\e^x$, $\cos x$ and $\sin x$. Also observe that the powers of 2, 6, 10, $\dots$ are missing. This suggests that we are adding $\cos x$ to $\e^x$:
+        \begin{align*}
+            f(x) &= 2+x+\frac{x^{3}}{3!}+\frac{2x^{4}}{4!}+\frac{x^{5}}{5!}+\frac{x^{7}}{7!}+\frac{2x^{8}}{8!}+\dots\\
+            &= \bp{1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \frac{x^6}{6!} + \frac{x^7}{7!} + \frac{x^8}{8!} + \dots}\\
+            &+ \bp{1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \frac{x^8}{8!} + \dots}\\
+            &=\e^x + \cos x.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        We can easily separate $g(x)$ as follows:
+        \begin{align*}
+            g(x) &= (a+b)x-\frac{a^{2}+b^{2}}{2}x^{2}+\frac{a^{3}+b^{3}}{3}x^3 - \frac{a^4 + b^4}4 x^4 + \dots\\
+            &= \bp{ax - \frac{(ax)^2}{2} + \frac{(ax)^3}{3} - \frac{(ax)^4}{4} + \dots} + \bp{bx - \frac{(bx)^2}{2} + \frac{(bx)^3}{3} - \frac{(bx)^4}{4} + \dots}\\
+            &= \ln{1 + ax} + \ln{1 + bx}.
+        \end{align*}
+    \end{ppart}
+\end{solution}

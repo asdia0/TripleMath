@@ -3,9 +3,15 @@
 \usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage[headsepline]{scrlayer-scrpage}
 \usepackage{tocloft}
+\usepackage{scalerel}
 
 \usetikzlibrary{external}
 \tikzexternalize[prefix=figures/]
+
+\title{Double Math}
+\subtitle{\url{https://asdia.dev/projects/doublemath}}
+\author{{\normalsize Notes taken by}\\Eytan Chong}
+\date{2024\textendash2025\\{\normalsize Last updated \today}}
 
 \hypersetup{pdfauthor={Eytan Chong},pdfsubject={Dunman High Maths Notes},pdftitle={Double Math},pdfkeywords={Dunman High Math Notes}}
 
@@ -35,7 +41,6 @@
   \setbox\sepbox=\vbox{\begin{center}$\ast$ $\ast$ $\ast$ $\ast$ $\ast$\end{center}}%
   \cleaders\copy\sepbox\vskip\ht\sepbox}
 
-\usepackage{scalerel}
 \NewDocumentCommand\chili{}{\scalerel*{\includegraphics{media/chili.png}}{X}}
 
 \NewDocumentCommand{\problem}{o}{\ifnum\value{problemnum}>0\separator \fi\stepcounter{problemnum}\noindent{\large\sffamily\bfseries{Problem \theproblemnum\IfNoValueF{#1}{ (#1)}.}}}
