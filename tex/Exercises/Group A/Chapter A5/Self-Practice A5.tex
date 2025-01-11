@@ -13,10 +13,29 @@
         \item find the maximum percentage of the total amount of money in the bank that Tom should spend on transport and food every month in order to be able to buy the Aphone11 on the last day of December 2012.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[u_n = \frac12 u_{n-1} + 400, \quad u_0 = 250.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the complementary solution is \[u_n^{(c)} = C \bp{\frac12}^n,\] where $C$ is an arbitrary constant. Let the particular solution be $u_n^{(p)} = k$. Then \[k = \frac12 k + 400 \implies k = 800.\] Hence, \[u_n = u_n^{(c)} + u_n^{(p)} = C\bp{\frac12}^n + 800.\] Using the condition $u_0 = 250$, we get \[250 = C + 800 \implies C = -500,\] whence \[u_n = 800 - 500\bp{\frac12}^n.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, $-500 (1/2)^n < 0$ for all $n > 0$. Hence, \[u_n = 800 - 500\bp{\frac12}^n < 800 < 850.\] Thus, Tom is unable to buy the Aphone11.
+    \end{ppart}
+    \begin{ppart}
+        Let the desired percentage be $p\%$. Then \[u_n = \bp{1 - \frac{p}{100}} u_{n-1} + 400.\] Let the particular solution be $u_n^{(p)} = k$. Then \[k = \bp{1 - \frac{p}{100}} k + 400 \implies k = \frac{40000}{p}.\] We thus want \[\frac{40000}{p} \geq 850 \implies p \leq \frac{800}{17}  = 47.059.\] Hence, the maximum percentage is 47\%.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     A sequence of real numbers $u_1, u_2, u_3, \dots$ satisfies the recurrence relation \[u_n = 2u_{n-1} + 1, \quad n \geq 1.\] Given that $u_1 = 2$, show that $u_n = 2^n + 2^{n-1} - 1$. Hence, determine the behaviour of the sequence.
 \end{problem}
+\begin{solution}
+    Note that the complementary solution is \[u_n^{(c)} = C 2^n,\] where $C$ is an arbitrary constant. Let the particular solution be $u_n^{(p)} = k$. Then \[k = 2k + 1 \implies k = -1.\] Hence, \[u_n = u_n^{(c)} + u_n^{(p)} = C 2^n - 1.\] Using the condition $u_1 = 2$, we get \[2 = 2C - 1 \implies C = \frac32,\] whence \[u_n = \frac32 \cdot 2^n - 1 = (2 + 1) 2^{n-1} - 1 = 2^n + 2^{n-1} - 1.\]
+
+    Clearly, $u_n$ is increasing and diverges to infinity.
+\end{solution}
 
 \begin{problem}
     Solve these recurrence relations together with the initial conditions.
@@ -28,15 +47,69 @@
         \item $u_{n+2} = -4u_{n+1} + 5u_n$ for $n \geq 0$, $u_0 = 2$, $u_1 = 8$.
     \end{enumerate}
 \end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Consider the characteristic equation $x^2 - 7x + 10 = 0$, which has distinct roots $x = 2$ and $x = 5$. Hence, \[u_n = A\bp{2^n} + B\bp{5^n}.\] Using the conditions $u_0 = 2$ and $u_1 = 1$, we get the system \[\systeme{A + B = 2, 2A + 5B = 1},\] whence $A = 3$ and $B = -1$. Thus, \[u_n = 3\bp{2^n} - 5^n.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation $x^2 = 1/4$, which has distinct roots $x = \pm 1/2$. Hence, \[u_n = A\bp{\frac12}^n + B\bp{-\frac12}^n = \frac1{2^n} \bs{A + (-1)^n B}.\] Using the conditions $u_0 = 1$ and $u_1 = 0$, we get the system \[\systeme{A - B = 1,A + B = 0},\] whence $A = 1/2$ and $B = -1/2$. Thus, \[u_n = \frac1{2^n} \bs{\frac12 + (-1)^n \bp{-\frac12}} = \frac{1 + (-1)^{n-1}}{2^{n+1}}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation $x^2 - 4x + 4 =0 $, which has the unique root $x = -2$. Hence, \[u_n = (A + Bn) (-2)^n.\] Using the conditions $u_0 = 0$ and $u_1 = 1$, we get the system \[\systeme{A = 0, -2 A - 2B = 1},\] whence $A = 0$ and $B = -1/2$. Thus, \[u_n = \bp{0-\frac{n}2} (-2)^n = n (-2)^{n-1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation $x^2 + 4x - 5 = 0$, which has distinct roots $x = -5$ and $x = 1$. Hence, \[u_n = A (-5)^n + B(1)^n = A(-5)^n + B.\] Using the conditions $u_0 = 2$ and $u_1 = 8$, we get the system \[\systeme{A + B = 2, -5A + B = 8},\] whence $A = -1$ and $B = 3$. Thus, \[u_n = 3 - (-5)^n.\]
+    \end{ppart}
+\end{solution}
 
+\clearpage
 \begin{problem}[\chili]
     Find the unit digit of the number $\bp{3 + \sqrt5}^{2016} + \bp{3 - \sqrt5}^{2016}$.
 \end{problem}
+\begin{solution}
+    Let $u_n$ be a sequence such that \[u_n = \bp{3 + \sqrt5}^n + \bp{3 - \sqrt5}^n.\] We aim to find a recurrence relation for $u_n$. First, observe that $3 + \sqrt5$ and $3 - \sqrt5$ are roots to the characteristic polynomial $P(x)$ of $u_n$: \[P(x) = \bs{x - \bp{3 + \sqrt5}}\bs{x - \bp{3 - \sqrt5}} = x^2 - 6x + 4.\] Thus, $u_n$ satisfies the recurrence relation \[u_n = 6u_{n-1} - 4u_{n-2}.\]
+
+    Since we are interested in the unit digit of $u_{2016}$, we consider $u_n \pmod{10}$: \[u_n = 6u_{n-1} - 4u_{n-2} \equiv 6u_{n-1} + 6u_{n-2} = 6\bp{u_{n-1} + u_{n-2}} \pmod{10}.\] Since $u_0 = 2$ and $u_1 = 6$, we construct the following table:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        $n$ & $u_n \pmod{10}$ \\ \hline\hline
+        0 & 2 \\ \hline
+        1 & 6 \\ \hline
+        2 & 8 \\ \hline
+        3 & 4 \\ \hline
+        4 & 2 \\ \hline
+        5 & 6 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Observe that the pattern repeats every four terms: 2, 6, 8, 4, 2, 6, 8, 4, 2, $\dots$. Thus, \[u_n \pmod{10} \equiv \begin{cases}
+        2, & n \equiv 0 \pmod{4} \\
+        6, & n \equiv 1 \pmod{4} \\
+        8, & n \equiv 2 \pmod{4} \\
+        4, & n \equiv 3 \pmod{4}
+    \end{cases}.\] Since $2016 \equiv 0 \pmod{4}$, it follows that the unit digit of $u_{2016}$ is 2.
+\end{solution}
 
 \begin{problem}[\chili]
-    A person attempts to cut a circular pizza into as many pieces as possible with a given number of straight cuts. In order to have as many slices as possible with each cut, no three cuts are concurrent, no two cuts are parallel, and the intersection of any two cuts should lie in the interior of the pizza. Find the maximum number of slices of a circular pizza that a person can obtain by making $n$ straight cuts with a knife.
+    A person attempts to cut a circular pizza into as many pieces as possible with a given number of straight cuts. In order to have as many slices as possible with each cut, no three cuts are concurrent, no two cuts are parallel, and the intersection of any two cuts should lie in the interior of the pizza. 
+    
+    \begin{figure}[H]
+        \import{figures}{37.pdf_tex}
+    \end{figure}
+
+    Find the maximum number of slices of a circular pizza that a person can obtain by making $n$ straight cuts with a knife.
 \end{problem}
+\begin{solution}
+    Let $u_n$ be the maximum number of slices obtainable from $n$ cuts. From the above diagrams, we see that the $n$th slice can add at most $n$ new slices. Hence, \[u_n = u_{n-1} + n.\] We can rewrite this as \[u_n - u_{n-1} = n.\] Summing over $k = 2, 3, \dots, n$, \[u_n - a_1 = \sum_{k = 1}^n \bp{u_k - u_{k-1}} = \sum_{k = 2}^n k = \frac{n^2 + n}{2} - 1.\] Since $a_1 = 2$, we have \[u_n = \frac{n^2 + n}{2} + 1 = \frac{n^2 + n + 2}{2}.\]
+\end{solution}
 
 \begin{problem}[\chili]
     Solve the simultaneous recurrence relations: \[a_n = 3a_{n-1} + 2b_{n-1}, \quad b_n = a_{n-1} + 2b_{n-1}\] with $a_0 = 1$ and $b_0 = 2$.
 \end{problem}
+\begin{solution}
+    Adding the two equations together, we see that $\bc{a_n + b_n}$ is in geometric progression: \[a_n + b_n = 4\bp{a_{n-1} + b_{n-1}} = 4^n \bp{a_0 + b_0} = 3 \cdot 4^n.\] Substituting this into the first equation, we get \[a_n - a_{n-1} = 2\bp{a_{n-1} + b_{n-1}} = 6 \cdot 4^{n-1}.\] Summing over $k = 1, 2, \dots, n$, \[a_n - a_0 = \sum_{k = 1}^{n} \bp{a_k - a_{k-1}} = \sum_{k = 1}^n 6 \cdot 4^{k-1} = 6 \bp{\frac{1 - 4^n}{1 - 4}} = 2\bp{4^n - 1}.\] Thus, \[a_n = a_0 + 2\bp{4^n - 1} = 2^{2n+1} - 1\] and \[b_n = 3\cdot4^n - a_n = 3\cdot 2^{2n} - \bp{2^{2n+1} - 1} = 2^{2n} + 1.\]
+\end{solution}
