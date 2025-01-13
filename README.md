@@ -1,6 +1,6 @@
 # Double Math
 
-Solutions to all tutorials and assignments, typewritten in $\LaTeX$.
+Notes and exercises for A Level H2/3 Mathematics and H2 Further Mathematics.
 
 ## Compiling
 

@@ -11,6 +11,25 @@
         \item Find the position vector of the foot $N$ of the perpendicular from $A$ to $l$. Hence, find the position vector of the image of $A$ in the line $l$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\oa{AB} = \oa{OB} - \oa{OA} = \cveciii{-2}34 - \cveciii832 = 2\cveciii{-5}01.\] Hence, \[AB = \abs{\oa{AB}} = 2\sqrt{(-5)^2 + 0^2 + 1^2} = 2\sqrt{26} \units.\]
+    \end{ppart}
+    \begin{ppart}
+        The vector equation of the line $AB$ is \[\vec r = \cveciii832 + \l \cveciii{-5}01, \quad \l \in \RR.\] Hence, the Cartesian equation is \[\frac{x-8}{-5} = z-2, \, y = 3.\]
+    \end{ppart}
+    \begin{ppart}
+        The length of projection of $AB$ onto $l$ is given by \[\frac{\abs{2\cveciiix{-5}01 \dotp \cveciiix265}}{\abs{\cveciiix265}} = \frac{10}{\sqrt{65}} \units.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the acute angle be $\t$. \[\cos \t = \frac{\abs{\cveciiix{-5}01 \dotp \cveciiix265}}{\abs{\cveciiix{-5}01} \abs{\cveciiix265}} = \frac{5}{\sqrt{65} \sqrt{26}} \implies \t = 83 \deg.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $N$ is on $l$, there exists some $t \in \RR$ such that \[\oa{ON} = \frac{-2}34 + t \cveciii265.\] Hence, \[\oa{AN} = \bs{\cveciii{-2}34 + t \cveciii265} - \cveciii832 = 2\cveciii{-5}01 + t\cveciii265.\] Since $AN$ is perpendicular to $l$, we have \[\oa{AN} \dotp \cveciii265 = \bs{2\cveciii{-5}01 + t\cveciii265} \dotp \cveciii265 = -10 + 65 t = 0.\] Hence, $t = 2/13$, whence \[\oa{ON} = \cveciii{-2}34 + \frac2{13} \cveciii265 = \frac1{13} \cveciii{-22}{51}{62}.\]
+
+        Let the image of $A$ in $l$ be $A'$. By the midpoint theorem, \[\oa{ON} = \frac{\oa{OA} + \oa{OA'}}{2}.\] Hence, \[\oa{OA'} = 2\oa{ON} - \oa{OA} = \frac2{13} \cveciii{-22}{51}{62} - \cveciii832 = \frac1{13} \cveciii{-148}{63}{98}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The position vectors of the points $A$ and $B$ are $\vec i + 2 \vec j + 3 \vec k$ and $2\vec i + 3 \vec j + p \vec k$ respectively, where $p$ is a constant. The point $C$ is such that $OABC$ is a rectangle, where $O$ is the origin.
@@ -28,12 +47,26 @@
         \item Show that the lines $BC$ and $l$ are skew.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\oa{AB} = \oa{OB} - \oa{OA} = \cveciii23p - \cveciii123 = \cveciii11{p-3}.\] Since $OABC$ is a rectangle, $\oa{OA} \perp \oa{AB}$. Hence, \[\oa{OA} \dotp \oa{AB} = \cveciii123 \dotp \cveciii11{p-3} = 3 + 3(p-3) = 0 \implies p = 2.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $OABC$ is a rectangle, \[\oa{OC} = \oa{AB} = \cveciiix11{-1}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $OABC$ is a rectangle, \[\oa{BC} = \oa{OA} = \cveciii123.\] Thus, the vector equation of line $BC$ is \[l_{BC} : \vec r = \cveciii11{-1} + \l \cveciii123, \quad \l \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the vector equation of $l$ is \[\vec r = \cveciii111 + \m \cveciii330.\] Consider $l \cap l_{BC}$: \[\cveciii11{-1} + \l \cveciii123 = \cveciii111 + \m \cveciii330 \implies \l\cveciii123 - \m \cveciii330 = \cveciii002.\] This gives the system \[\systeme{\l - 3 \m = 3, 2\l - 3\m = 3, 3\l = 2},\] which has no solution. Since the direction vectors of $l$ and $l_{BC}$ are not parallel (i.e. $\cveciiix123 \nparallel \cveciiix330$), the two lines are skew.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The lines $l_1$ and $l_2$ have equations $\vec r = \cveciiix312 + \l \cveciiix{b}1{-1}$, where $b > 1$, and $\vec r = \cveciiix401 + \m\cveciiix{-1}{-1}1$ respectively.
 
     \begin{enumerate}
-        \item Given that the acute angle between $l_1$ and $l_2$ is $30\deg$, find the value of $b$, giving your answer correct to 3 decimal places.
+        \item Given that the acute angle between $l_1$ and $l_2$ is $30\deg$, find the value of $b$, giving your answer correct to 2 decimal places.
     \end{enumerate}
 
     For the rest of the question, use $b = 3$.
@@ -44,6 +77,23 @@
         \item The point $C$ has position vector $2\vec i + 7\vec j + 3\vec k$. Find whether $C$ is closer to $l_1$ or $l_2$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\frac{\sqrt3}{2} = \cos 30\deg = \frac{\abs{\cveciiix{b}{1}{-1} \dotp \cveciiix{-1}{-1}1}}{\abs{\cveciiix{b}{1}{-1}} \abs{\cveciiix{-1}{-1}1}} = \frac{\abs{-b-2}}{\sqrt{b^2 + 2} \sqrt{3}}.\] Since $b > 1$, we clearly have $\abs{-b-2} = b+2$. Thus, \[\frac{b+2}{\sqrt{b^2 + 2}} = \frac32.\] Using G.C., we have $b = 0.13$ or $b = 3.07$. Since $b > 1$, we take $b = 3.07$.
+    \end{ppart}
+    \begin{ppart}
+        Note that the $xy$-plane has equation $z = 0$. Consider the intersection between $l_1$ and the $xy$-plane. Clearly, we need $\l = 2$, whence \[\oa{OA} = \cveciii312 + 2\cveciii31{-1} = \cveciii930,\] and $A(9, 3, 0)$.
+
+        Consider the intersection between $l_2$ and the $xy$-plane. Clearly, we need $\m = -1$, whence \[\oa{OB} = \cveciii401 - \cveciii{-1}{-1}{1} = \cveciii510,\] and $B(5, 1, 0)$.
+    \end{ppart}
+    \begin{ppart}
+        The perpendicular distance between $C$ and $l_1$ is given by \[\frac{\abs{\bs{\cveciiix273 - \cveciiix312} \crossp \cveciiix31{-1}}}{\abs{\cveciiix31{-1}}} = \frac{\abs{\cveciiix{-7}{2}{19}}}{\sqrt{11}} = \frac{\sqrt{414}}{\sqrt{11}} = 6.13 \units.\]
+
+        The perpendicular distance between $C$ and $l_2$ is given by \[\frac{\abs{\bs{\cveciiix273 - \cveciiix401}} \crossp \cveciiix{-1}{-1}1}{\abs{\cveciiix{-1}{-1}1}} = \frac{\abs{\cveciiix909}}{\sqrt3} = \frac{\sqrt{162}}{\sqrt3} = 7.35 \units.\]
+
+        Thus, $C$ is closer to $l_1$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Relative to an origin $O$, points $C$ and $D$ have position vectors $\cveciiix732$ and $\cveciiix{10}ab$ respectively, where $a$ and $b$ are constants.
@@ -54,6 +104,17 @@
         \item Find the position vector of the point $Q$ on the line $CD$ such that the angle between $\oa{OQ}$ and $\oa{OC}$ is equal to the angle between $\oa{OQ}$ and $\oa{OD}$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\oa{CD} = \cveciii{10}{a}{b} - \cveciii732 = \cveciii3{a-3}{b-2}.\] Since $\oa{CD}$ is parallel to $\cveciiix130$, we have \[\cveciii{3}{a-3}{b-2} = 3\cveciii130 = \cveciii390,\] whence $a = 12$ and $b = 2$.
+    \end{ppart}
+    \begin{ppart}
+        Since $P$ is on $CD$, there exists some $t \in \RR$ such that \[\oa{OP} = \cveciii732 + t \cveciii130.\] Since $\oa{OP}$ is perpendicular to $\oa{CD}$, we have \[\oa{OP} \dotp \oa{CD} = \bs{\cveciii732 + t\cveciii130} \dotp 3\cveciii130 = 16 + 10t = 0,\] whence $t = -8/5$ and \[\oa{OP} = \cveciii732 - \frac85 \cveciii130 = \frac15 \cveciii{27}{-9}{10}.\]
+    \end{ppart}
+    \begin{ppart}
+        By the angle bisector theorem, \[\frac{OC}{CQ} = \frac{OD}{DQ} \implies CQ:QD = OC : OD.\] Since \[OC = \abs{\cveciii732} = \sqrt{62} \quad \land \quad OD = \abs{\cveciii{10}{12}{2}} = \sqrt{248},\] we have \[CQ : QD = \sqrt{62} : \sqrt{248} = 1 : 2.\] By the ratio theorem, \[\oa{OQ} = \frac{\oa{OD} + 2 \oa{OC}}{1 + 2} = \frac13 \bs{\cveciii{10}{12}{2} + 2\cveciii732} = \cveciii862.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Relative to an origin $O$, points $A$ and $B$ have position vectors $\cveciiix341$ and $\cveciiix{-1}20$ respectively. The line $l$ has vector equation $\vec r = \cveciiix6a0 + t\cveciiix13a$, where $t$ is a real parameter and $a$ is a constant. The line $m$ passes through the point $A$ and is parallel to the line $OB$.
@@ -64,6 +125,21 @@
         \item If the acute angle between the line $l$ and the $z$-axis is $60\deg$, find the exact values of the constant $a$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that the line $m$ has vector equation \[m : \vec r = \cveciii341 + s \cveciii{-1}{2}{0}, \quad s \in \RR.\] Since $P$ is on $m$, there exists some $s \in \RR$ such that \[\oa{OP} = \cveciii341 + s \cveciii{-1}{2}{0}.\] Since $\oa{OP}$ is perpendicular to $m$, we have \[\oa{OP} \dotp \cveciii{-1}20 = \bs{\cveciii341 + s\cveciii{-1}20} \dotp \cveciii{-1}20 = 5 + 5s = 0,\] whence $s = -1$ and \[\oa{OP} = \cveciii341 - \cveciii{-1}20 = \cveciii421.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider $l \cap m$: \[\cveciii6a0 + t\cveciii13a = \cveciii341 + s\cveciii{-1}20.\] Comparing $z$-coordinates, we have \[ta = 1 \implies t = \frac1a.\] Substituting this into the equation, we get \[\cveciii6a0 + \frac1a \cveciii13a = \cveciii341 + s\cveciii{-1}20.\] This yields the system \begin{align*}
+            6 + \frac1a &= 3 - s\\
+            a + \frac3a = 4 + 2s
+        \end{align*}
+        Adding the second equation to twice the first yields \[2\bp{6 + \frac1a} + \bp{a + \frac3a} = 2\bp{3 - s} + \bp{4 + 2s} \implies a + \frac5a + 2 = 0.\] Multiplying through by $a$ gives the quadratic \[a^2 + 2a + 5 = (a + 1)^2 + 4 = 0,\] which clearly has no real solution. Hence, $l \cap m$ has no solution, whence the two lines do not have any common point
+    \end{ppart}
+    \begin{ppart}
+        Note that the $z$-axis is parallel to the vector $\cveciiix001$. Thus, \[\frac12 = \cos 60\deg = \frac{\abs{\cveciiix13a \dotp \cveciiix001}}{\abs{\cveciiix13a} \abs{\cveciiix001}} = \frac{\abs{a}}{\sqrt{10 + a^2} \sqrt{1}}.\] Squaring, we get \[\frac14 = \frac{a^2}{10 + a^2} \implies 10 + a^2 = 4a^2 \implies a^2 = \frac{10}{3} \implies a = \pm \sqrt{\frac{10}3}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The lines $l_1$ and $l_2$ have vector equations \[\vec r = \cveciii1{-2}3 + \l \cveciii021 \quad \land \quad \vec r = \cveciii104 + \m \cveciii1{-2}1\] respectively, where $\l$ and $\m$ are real parameters.
@@ -73,6 +149,21 @@
         \item Show that $l_1$ passes through the point $P$ with position vector $\cveciiix{1}{-4}2$. Hence, show that the distance between point $P$ and any point on the line $l_2$ is given by $\sqrt{6\m^2 - 12\m + 20}$. Deduce the shortest distance between point $P$ and the line $l_2$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let the acute angle be $\t$. Then \[\cos \t = \frac{\abs{\cveciiix021 \dotp \cveciiix1{-2}1}}{\abs{\cveciiix021} \cveciiix1{-2}{1}} = \frac{3}{\sqrt5 \sqrt6} \implies \t = 56.8\deg.\]
+    \end{ppart}
+    \begin{ppart}
+        Take $\l = -1$. Then \[\vec r = \cveciii123 - \cveciii021 = \cveciii1{-4}2.\] Hence, $l_1$ passes through $P(1, -4, 2)$.
+
+        Note that $l_2$ has vector equation \[\vec r = \cveciii104 + \m \cveciii1{-2}{1} = \cveciii{1 + \m}{-2\m}{4 + \m}.\] Hence, \[\vec r - \oa{OP} = \cveciii{1 + \m}{-2\m}{4 + \m} - \cveciii1{-4}{2} = \cveciii{\m}{4 -2\m}{2 + \m}.\] Thus, the distance between $P$ and any point on $l_2$ is given by
+        \begin{align*}
+            \sqrt{\m^2 + (4-2 \m)^2 + (2+\m)^2} &= \sqrt{\m^2 + \bp{4\m^2 - 16\m + 16} + \bp{\m^2 + 4\m + 4}}\\
+            &= \sqrt{6\m^2 - 12 \m + 20} \units.
+        \end{align*}
+        Since $6\m^2 - 12 \m + 20 = 6(\m + 1)^2 + 13$, the shortest distance is $\sqrt{14}$ units.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}[\chili]
     The coordinates of the points $A$, $B$ and $C$ are given by $A(0, 2, 4)$, $B(4, 6, 11)$ and $C(8, 1, 0)$.
@@ -82,6 +173,24 @@
         \item Find the position vector of point $D$ in the same plane as $A$, $B$ and $C$ such that $BCD$ is an equilateral triangle.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that \[\oa{AB} = \cveciii46{11} - \cveciii024 = \cveciii447 \implies AB = \sqrt{4^2 + 4^2 + 7^2} = 9\] and \[\oa{CA} = \cveciii024 - \cveciii810 = \cveciii{-8}{1}{4} \implies AC = \sqrt{(-8)^2 + 1^2 + 4^2} = 9.\] Since $AB = AC$, triangle $ABC$ is isosceles.
+
+        Consider $\oa{AB} \dotp \oa{CA}$: \[\oa{AB} \dotp \oa{CA} = \cveciii447 \dotp \cveciii{-8}14 = -32 + 4 + 28 = 0.\] Thus, $\oa{AB} \perp \oa{CA}$, whence triangle $ABC$ is a right-angled triangle.
+
+        Hence, triangle $ABC$ is an isosceles right-angled triangle.
+    \end{ppart}
+    \begin{ppart}
+        Let $N$ be the foot of perpendicular of $A$ on $BC$. Since $\triangle ABC$ is isosceles, with $AB = AC$, by symmetry, $N$ is the midpoint of $BC$: \[\oa{ON} = \frac{\oa{OB} + \oa{OC}}{2} = \frac12 \cveciii{12}{7}{11}.\]
+
+        Consider point $D$. Since $\triangle BCD$ is equilateral, it must also be isosceles, with $DB = DC$. Hence, $D$ lies on $AN$ (extended). Also, we have $ND/BC = \sin 60\deg = \sqrt{3}/2$.
+
+        Since \[\oa{AN} = \frac12 \cveciii{12}7{11} - \cveciii024 = \frac32 \cveciii411,\] the line $AN$ has vector equation \[\vec r = \cveciii024 + \l \cveciii411, \quad \l \in \RR.\] Hence, there exists some $\l \in \RR$ such that \[\oa{OD} = \cveciii024 + \l \cveciii411.\] Thus, \[\oa{ND} = \bs{\cveciii024 + \l \cveciii411} - \frac12 \cveciii{12}{7}{11} = \bp{\l - \frac32} \cveciii411.\]
+
+        Note that $\oa{BC} = \cveciiix4{-5}{-11}$. Hence, \[\frac{ND}{BC} = \frac{\abs{\l - 3/2} \sqrt{4^2 + 1^2 + 1^2}}{\sqrt{4^2 + (-5)^2 + (-11)^2}} = \frac{\abs{\l - 3/2} \sqrt{18}}{\sqrt{162}} = \frac{\sqrt3}{2}.\] Rearranging, we get \[\abs{\l - \frac32} = \frac{\sqrt{3} \sqrt{162}}{2 \sqrt{18}} = \frac{3 \sqrt3}{2} \implies \l = \frac{3 \pm 3\sqrt3}{2}.\] Thus, \[\oa{OD} = \cveciii024 + \frac{3 \pm 3\sqrt3}{2} \cveciii411.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}[\chili]
     The equations of the lines $l_1$ and $l_2$ are given by \[l_1: \vec r = \cveciii100 + \l \cveciii123, \, \l \in \RR \quad \land \quad l_2: \vec r = \cveciii100 + \m \cveciii10{-1}, \, \m \in \RR.\]
@@ -92,3 +201,14 @@
         \item The line $l_4$ is such that it is parallel to $l_1$ and its distance between the two lines is $\sqrt{13/14}$. Find two possible vector equations of $l_4$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $N$ be the foot of perpendicular of $P$ on $l_2$. Since $N$ lies on $l_2$, there exists some $\m \in \RR$ such that \[\oa{ON} = \cveciii100 + \m \cveciii10{-1}.\] Thus, \[\oa{PN} = \bs{\cveciii100 + \m \cveciii10{-1}} - \cveciii223 = -\cveciii123 + \m \cveciii10{-1}.\] Since $PN$ is perpendicular to $l_2$, \[\oa{PN} \dotp \cveciii10{-1} = \bs{-\cveciii123 + \m \cveciii10{-1}} \dotp \cveciii10{-1} = 2 + 2\m = 0,\] whence $\m = -1$ and \[\oa{ON} = \cveciii100 - \cveciii10{-1} = \cveciii001.\] Let $P$ be the reflection of $P$ in $l_2$. By the midpoint theorem, \[\oa{ON} = \frac{\oa{OP} + \oa{OP'}}{2} \implies \oa{OP'} = 2\oa{ON} - \oa{OP} = 2\cveciii001 - \cveciii223 = -\cveciii221.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $l_1$ and $l_2$ have a common point $(1, 0, 0)$. Under reflection, this point is an invariant. Hence, $l_3$ must also contain the point $(1, 0, 0)$. Additionally, $l_3$ must contain $P'$, the reflection of $P$ in $l_2$. Since \[-\cveciii221 - \cveciii100 = -\cveciii321 \parallel \cveciii321,\] $l_3$ has vector equation \[\l_3 : \vec r = \cveciii100 + \n \cveciii321, \quad \n \in \RR.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, $l_4$ is given by \[l_4: \vec r = \cveciii{a}{b}{c} \x \cveciii123, \quad \x \in \RR.\] The perpendicular distance between $l_1$ and $l_4$ is hence given by \[\frac{\abs{\bs{\cveciiix{a}{b}{c} - \cveciiix1000} \crossp \cveciiix123}}{\abs{\cveciiix123}} = \frac{\abs{\cveciiix{3b-2c}{c-3a+3}{2a-2-b}}}{\sqrt{14}} = \frac{\sqrt{13}}{\sqrt{14}}.\] Hence, \[\abs{\cveciii{3b-2c}{c-3a+3}{2a-2-b}} = \sqrt{13}.\] This immediately gives \[(3b-2c)^2 + (c-3a+3)^2 + (2a-2-b)^2 = 13.\] Taking $a = 0$, $b=0$, this reduces to \[(-2c)^2 + (c+3)^2 + (-2)^2 = 13 \implies 5c^2 + 6c = 0 \implies c = 0 \lor -\frac65.\] Thus, \[l_4 : \vec r = \cveciii000 + \x \cveciii123, \quad \x \in \RR\] or \[l_4: \vec r = \cveciii00{-6/5} + \x \cveciii123, \quad \x \in \RR.\]
+    \end{ppart}
+\end{solution}
