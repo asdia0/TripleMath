@@ -1,0 +1,134 @@
+\chapter{Propositional Logic}
+
+Mathematics is a deductive science, where from a set of basic axioms, we prove more complex results. To do so, we often restate a sentence into \vocab{statements}, which are mathematical expressions. One important axiom that all statements obey is the law of the excluded middle.
+
+\begin{axiom}[Law of the Excluded Middle]
+    The \vocab{law of the excluded middle} states that either a statement or its negation is true. Equivalently, a statement cannot be both true and false, nor can it be neither true nor false.
+\end{axiom}
+
+\section{Conditional and Biconditional Statements}
+
+The first type of statement we will examine is the conditional statement.
+
+\begin{definition}
+    A \vocab{conditional statement} has the form ``if $P$ then $Q$''. Here, $P$ is the \vocab{hypothesis} and $Q$ is the \vocab{conclusion}, denoted by $P \implies Q$. This statement is defined to have the truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \implies Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & F \\ \hline
+        F & T & T \\ \hline
+        F & F & T \\ \hline
+        \end{tabular}
+    \end{table}
+    In words, the statement $P \implies Q$ also reads:
+    \begin{itemize}
+        \item $P$ \vocab{implies} $Q$.
+        \item $P$ is a \vocab{sufficient condition} for $Q$.
+        \item $Q$ is a \vocab{necessary condition} for $P$.
+        \item $P$ \vocab{only if} $Q$.
+    \end{itemize}
+\end{definition}
+
+To justify the truth table of $P \implies Q$, consider the following example:
+\begin{example}[Conditional Statement]
+    Suppose I say \[\text{``If it is raining, then the floor is wet.''}\] We can write this as $P \implies Q$, where $P$ is the statement ``it is raining'' and $Q$ is the statement ``the floor is wet''.
+
+    \begin{itemize}
+        \item Suppose both $P$ and $Q$ are true, i.e. it is raining, and the floor is wet. It is reasonable to say that I am telling the truth, whence $P \implies Q$ is true.
+        \item Suppose $P$ is true but $Q$ is false, i.e. it is raining, and the floor is not wet. Clearly, I am not telling the truth; the floor would be wet if I was. Hence, $P \implies Q$ is false.
+        \item Suppose $P$ is false, i.e. it is not raining. Notice that the hypothesis of my claim is not fulfilled; I did not say anything about the floor when it is not raining. Hence, I am not lying, so $P \implies Q$ is true whenever $P$ is false.
+    \end{itemize}
+\end{example}
+
+Examples of conditional statements in mathematics include
+\begin{itemize}
+    \item If $\abs{x - 1} < 4$, then $-3 < x < 5$.
+    \item If a function $f$ is differentiable, then $f$ is continuous.
+\end{itemize}
+
+We now look at biconditional statements. As the name suggests, a biconditional statement comprises two conditional statements: $P \implies Q$ and $Q \implies P$. The conditional statement is much stronger than the conditional statement.
+
+\begin{definition}
+    A \vocab{biconditional statement} has the form ``$P$ if and only if'', denoted $P \iff Q$. This statement is defined to have the truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \iff Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & F \\ \hline
+        F & T & F \\ \hline
+        F & F & T \\ \hline
+        \end{tabular}
+    \end{table}
+
+    When $P \iff Q$ is true, we say that $P$ and $Q$ are \vocab{equivalent}, i.e. $P \equiv Q$.
+\end{definition}
+
+An equivalent definition of $P \iff Q$ is the statement \[(P \implies Q) \quad \land \quad (Q \implies P).\] This allows us to easily justify the truth table of $P \iff Q$:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $P$ & $Q$ & $P \implies Q$ & $Q \implies P$ & $P \iff Q$ \\ \hline\hline
+    T & T & T & T & T \\ \hline
+    T & F & F & T & F \\ \hline
+    F & T & T & F & F \\ \hline
+    F & F & T & T & T \\ \hline
+    \end{tabular}
+\end{table}
+
+Examples of conditional statements in mathematics include
+\begin{itemize}
+    \item A triangle $ABC$ is equilateral if and only if its three angles are congruent.
+    \item $a$ is a rational number if and only if $2a + 4$ is rational.
+\end{itemize}
+
+\section{Notation}
+
+We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``statement about $x$''. We can denote this statement more compactly as $P(x)$. For instance, $P(5)$ is the statement ``5 is even'', while $P(72)$ is the statement ``72 is even'', and so forth.
+
+We now introduce two important symbols, namely the ``for all'' symbol ($\forall$) and the ``there exists'' symbol ($\exists$)
+
+\begin{definition}
+    Let $P(x)$ be a statement about $x$, where $x$ is a member of some set $S$. Then the notation \[(\forall x \in S) \, P(x)\] means that $P(x)$ is true for every $x$ in the set $S$. The notation \[(\exists x \in S) \, P(x)\] means that there exists at least one element of $x$ of $S$ for which $P(x)$ is true.
+\end{definition}
+
+\begin{example}
+    Let $P(x)$ be the statement ``$x$ is even''. Clearly, the statement \[(\forall x \in \ZZ) \, P(x)\] is not true; not all integers are even. However, the statement \[(\exists x \in \ZZ) \, P(x)\] is true, because we can find an integer that is even (e.g. $x = 8$).
+\end{example}
+
+Note that a statement $P(x)$ does not necessarily have to mention $x$. For instance, we could define $P(x)$ as the statement ``5 is even''. Compare this with how a function $f(x)$ does not necessarily have to ``mention'' $x$, e.g. we could have $f(x) = 5$.
+
+\section{Proofs}
+
+Mathematical proofs are convincing arguments expressed in mathematical language, i.e. a sequence of statements leading logically to the conclusion, where each statement is either an accepted truth, or an assumption, or a statement derived from previous statements. Occasionally there will be the clarifying remark, but this is just for the reader and has no logical bearing on the structure of the proof.
+
+As an example, we will prove the following statement:
+
+\begin{statement}\label{st:Proof-Eg}
+    For all $n \in \ZZ^+$, both $n$ and $n^2$ have the same parity.
+\end{statement}
+
+To prove this statement, we will need the following definitions:
+
+\begin{definition}
+    An integer $x$ is even if there exists some integer $y$ such that $x = 2y$.
+\end{definition}
+
+\begin{definition}
+    An integer $x$ is odd if there exists some integer $y$ such that $x = 2y + 1$.
+\end{definition}
+
+We are now ready to prove Statement~\ref{st:Proof-Eg}.
+
+\begin{proof}[Proof of Statement~\ref{st:Proof-Eg}]
+    Since $n$ can only be either odd or even, we just need to consider the following cases:
+
+    \case{1} Suppose $n$ is even. By definition, there exists some $k \in \ZZ$ such that $n = 2k$. Then \[n^2 = (2k)^2 = 4k^2 = 2\bp{2k^2} = 2a,\] where $a = 2k^2$. Since $a$ is an integer, it follows from our definition that $n^2$ is even. Hence, $n$ and $n^2$ have the same parity.
+
+    \case{2} Suppose $n$ is odd. By definition, there exists some $h \in \ZZ$ such that $n = 2h + 1$. Then \[n^2 = (2h+1)^2 = 4h^2 + 4h + 1 = 2\bp{2h^2 + 2h} + 1 = 2b + 1,\] where $b = 2h^2 + 2h$. Since $b$ is an integer, it follows from our definition that $n^2$ is odd. Hence, $n$ and $n^2$ have the same parity.
+\end{proof}

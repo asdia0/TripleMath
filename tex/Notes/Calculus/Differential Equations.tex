@@ -169,7 +169,7 @@ Note that $y_c$ is called the \vocab{complementary function} while $y_p$ is call
 We know how to solve the homogeneous DE, so getting $y_c$ is easy. The hard part is getting a particular solution $y_p$. However, if we make some intelligent guesses, we can determine the general form of $y_p$. This is called the \vocab{method of undetermined coefficients}. We demonstrate this method with the following example:
 
 \begin{example}[Method of Undetermined Coefficients]
-    Consider the differential equation \[\der[2]{y}{x} = 3\der{y}{x} - 4y = 3 + 8x^2.\] $y_c$ can easily be obtained: \[y_c = A\e^x + B\e^{-4x}.\] Now, observe that $f(x) = 3 + 8x^2$ is a polynomial of degree 2. Thus, we guess that $y_p$ is also a polynomial of degree 2, i.e. $y_p = Cx^2 + Dx + E$, where $C$, $D$ and $E$ are coefficients to be determined (hence the name ``method of undetermined coefficients''). Substituting this into the DE yields \[\bp{2C} + 3\bp{2Cx + D} - 4\bp{Cx^2 + Dx + E} = 3 + 8x^2.\] Comparing coefficients, we get the system \[\systeme{-4C = 8,6C-4D = 0,2C + 3D - 4E = 3},\] whence $C = -2$, $D = -3$ and $E = -4$. Thus, the particular solution is \[y_p = -2x^2 - 3x - 4\] and the general solution is \[y = y_c + y_p = A\e^x + B\e^{-4x} - 2x^2 - 3x - 4.\]
+    Consider the differential equation \[\der[2]{y}{x} = 3\der{y}{x} - 4y = 3 + 8x^2.\] $y_c$ can easily be obtained: \[y_c = A\e^x + B\e^{-4x}.\] Now, observe that $f(x) = 3 + 8x^2$ is a polynomial of degree 2. Thus, we guess that $y_p$ is also a polynomial of degree 2, i.e. $y_p = Cx^2 + Dx + E$, where $C$, $D$ and $E$ are coefficients to be determined (hence the name ``method of undetermined coefficients''). Substituting this into the DE yields \[\bp{2C} + 3\bp{2Cx + D} - 4\bp{Cx^2 + Dx + E} = 3 + 8x^2.\] Comparing coefficients, we get the system \[\systeme[CDE]{-4C = 8,6C-4D = 0,2C + 3D - 4E = 3},\] whence $C = -2$, $D = -3$ and $E = -4$. Thus, the particular solution is \[y_p = -2x^2 - 3x - 4\] and the general solution is \[y = y_c + y_p = A\e^x + B\e^{-4x} - 2x^2 - 3x - 4.\]
 \end{example}
 
 In our syllabus, we are only required to solve non-homogeneous DEs where $f(x)$ is a polynomial of degree $n$ (as above), of the form $p\e^{kx}$, or of the form $p\cos kx + q\sin kx$. The ``guess'' for $y_p$ in each of the three cases is tabulated below:
@@ -190,8 +190,8 @@ In the event where our ``guess'' for $y_p$ appears in the complementary function
 \begin{example}[Adjusting $y_p$]
     \phantom{.}
     \begin{itemize}
-        \item If $a y'' + by' + cy = \e^{2x}$ has complementary function $y_c = A\e^{-5x} + B\e^{2x}$ we try $y_p = Cx\e^{2x}$.
-        \item If $a y'' + by' + cy = \e^{2x}$ has complementary function $y_c = (A + Bx) \e^{2x}$ we try $y_p = Cx^2\e^{2x}$.
+        \item If $a y'' + by' + cy = \e^{2x}$ has complementary function $y_c = A\e^{-5x} + B\e^{2x}$, we try $y_p = Cx\e^{2x}$.
+        \item If $a y'' + by' + cy = \e^{2x}$ has complementary function $y_c = (A + Bx) \e^{2x}$, we try $y_p = Cx^2\e^{2x}$.
     \end{itemize}
 \end{example}
 

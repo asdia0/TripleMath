@@ -1,0 +1,100 @@
+\section{Tutorial B16}
+
+\begin{problem}
+    Find the general solution of $3\der[2]{x}{t} + 4\der{x}{t} -7x = 0$.
+\end{problem}
+\begin{solution}
+    Consider the characteristic equation of the DE: \[3m^2 + 4m - 7 = (3m+7)(m-1) = 0.\] We hence have $m = -7/3$ or $m = 1$, whence \[x = A \e^{-\frac73 t} + B \e^t.\]
+\end{solution}
+
+\begin{problem}
+    Solve the following homogeneous second-order linear differential equations.
+    \begin{enumerate}
+        \item $\der[2]{y}{x} + 4\der{y}{x} + 3y = 0$, given that $y = 0$ and $\der{y}{x} = -4$ when $x = 0$.
+        \item $\der[2]{y}{x} + 6\der{y}{x} + 9y = 0$, given that $y = 1$ and $\der{y}{x} = 1$ when $x = 0$.
+        \item $\der[2]{y}{x} + \sqrt3 \der{y}{x} + 3y = 0$, given that $y = 0$ and $\der{y}{x} = -4$ when $x = 0$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Consider the characteristic equation of the DE: \[m^2 + 4m + 3 = (m+1)(m+3) = 0.\] We hence have $m = -1$ or $m = -3$, whence \[y = A\e^{-x} + B\e^{-3x} \implies \der{y}{x} = -A\e^{-x} - 3 B\e^{-3x}.\] Using the given conditions, we obtain the system \[\systeme[AB]{A + B = 0, -A - 3B = -4},\] which has solution $A = -2$ and $B = 2$. Thus, \[y = -2\e^{-x} + 2\e^{-3x}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation of the DE: \[m^2 + 6m + 9 = (m+3)^2 = 0.\] We have a repeated root $m = -3$, whence \[y = (A + Bx) \e^{-3x} \implies \der{y}{x} = -3(A + Bx)\e^{-3x} + B\e^{-3x}.\] Using the given conditions, we obtain the system \[\systeme[AB]{A = 1, -3 A + B = 1},\] which has solution $A = 1$ and $B = 4$. Thus, \[y = (1 + 4x)\e^{-3x}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation of the DE: \[m^2 + \sqrt3 m + 3 = 0.\] Solving, we get \[m = \frac{-\sqrt3}{2} \pm \frac{3}{2} \i,\] whence \[y = \e^{-\frac{\sqrt3}2 x} \bp{A \cos \frac32 x + B \sin \frac32 x}.\] Differentiating, we get \[\der{y}{x} = \e^{-\frac{\sqrt3}2 x} \bs{\bp{-\frac{\sqrt3}2 A + \frac32 B}\cos \frac32 x + \bp{-\frac{\sqrt3}{2} B - \frac32 A} \sin \frac32x}.\] Using the given conditions, we obtain the system \[\systeme[AB]{A = 0, -\frac{\sqrt3}{2}A + \frac32 B = -4},\] whence $A = 0$ and $B = -8/3$. Thus, \[y = -\frac83 \e^{-\frac{\sqrt3}2 x} \sin \frac32 x.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Find the general solution of
+    \begin{enumerate}
+        \item $2\der[2]{y}{x} - 3\der{y}{x} - 5y = 10x^2 + 1$,
+        \item $\der[2]{y}{x} - 2\der{y}{x} + 3y = 22\e^{4x}$,
+        \item $\der[2]{s}{t} - 2\der{s}{t} + s = 4\e^t$,
+        \item $\der[2]{x}{t} + 16x = 3\cos 4t$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the general solution of the differential equation $\der[2]{y}{x} - 4y = 10 \e^{3x}$.
+        \item Hence, find the solution for which $y = -2$ and $\der{y}{x} = -6$ when $x = 0$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the general solution of the differential equation $\der[2]{y}{x} = \sin x$. Find the particular solution that passes through the points $(0, \sqrt2)$ and $\bp{\frac\pi4, -\sqrt2}$.
+        \item Find the general solution of the differential equation
+        \begin{enumerate}
+            \item $\der[2]{y}{x} = 16 - 9x^2$,
+            \item $\bp{9 - x^2}^2 \der[2]{y}{x} - x = 0$,
+        \end{enumerate}
+        giving your answer in the form $y = f(x)$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find the particular solution of $\der[2]{x}{t} + 16x = 0$, given that $x = 3$ and $\der{x}{t} = -8$ when $t = 0$.
+        \item By writing the particular solution as $R\cos{4t + \a}$, find the first positive value of $t$ for which $x$ is maximum.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Using the substitution $x= \e^u$, find the general solution of
+    \begin{enumerate}
+        \item $x^2 \der[2]{y}{x} + 2x \der{y}{x} - 2y = 0$,
+        \item $x^2 \der[2]{y}{x} - 5x \der{y}{x} - 6y = 0$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Show, by means of the substitution $y = x^{-4} z$, that the differential equation \[x^2 \der[2]{y}{x} + \bp{4x^2 + 8x} \der{y}{x} + \bp{3x^2 + 16x + 12} y = 0\] can be reduced to the form \[\der[2]{z}{x} + a\der{z}{x} + bz = 0,\] where $a$ and $b$ are constants to be determined. Hence, find the general solution of the above differential equation.
+\end{problem}
+
+\begin{problem}
+    By letting $x = \sqrt t$, show that the differential equation \[\der[2]{y}{x} + \bp{2x - \frac1x} \der{y}{x} + 24 x^2 = 0\] where $x > 0$, may be transformed to \[\der[2]{y}{t} + a \der{y}{t} + b = 0,\] where $a$ and $b$ are constants to be determined. Hence, find the general solution of $y$ in terms of $x$.
+\end{problem}
+
+\begin{problem}
+    A damped vibrating spring system is described by the differential equation \[m \der[2]{y}{t} = -ky - \l \der{y}{t},\] where $m$, $k$ and $\l$ are positive constants. The variable $y$ represents the displacement of the object from equilibrium position in centimetres, and $t$ is time measured in seconds. Given that $m = 1$, $k = 25$ and $\l = 10$, and the object was initially released from rest at $y = 1$, find the equation of motion and sketch its graph. Briefly explain if this motion is suitable to be used to close a door.
+\end{problem}
+
+\begin{problem}
+    The motion of the tip of a tuning fork can be modelled by the differential equation \[m \der[2]{x}{t} + k \der{x}{t} + m \o^2 x = 0,\] where $x$ is the displacement of the tip from its equilibrium position at time $t$ and $m$, $k$ and $\o$ are positive constants. It is known that $k$ is so small that $k^2$ can be ignored as $k$ models the slight damping due to the resistance of the air. It is given that the tip of the fork is initially in its equilibrium position and moving with speed $v$ in the positive $x$-direction.
+
+    \begin{enumerate}
+        \item Solve the differential equation.
+    \end{enumerate}
+
+    The amplitude of a vibration is the maximum displacement of the tip from its equilibrium position and one period of a vibration is the time interval between the occurrences of two consecutive amplitudes.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Comment on the period of the vibrations over time and show that the amplitude of successive vibrations follows a geometric progression.
+        \item Given that $k$ is no longer small and $k^2 > 4m^2 \o^2$, describe the behaviour of $x$ as time progresses and sketch a possible graph of $x$ against $t$. Justify your answer.
+    \end{enumerate}
+\end{problem}
