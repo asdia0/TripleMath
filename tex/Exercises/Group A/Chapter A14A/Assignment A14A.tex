@@ -1,0 +1,132 @@
+\section{Assignment A14A}
+
+\begin{problem}
+    On a long train journey, a statistician is invited by a gambler to play a dice game. The game uses two ordinary dice which the statistician is to throw.
+
+    If the total score is 12, the statistician is paid \$6 by the gambler. If the total score is 8, the statistician is paid \$3 by the gambler. However, if both or either dice show a 1, the statistician pays the gambler \$2. The game is considered a draw if none of the 3 scenarios occur.
+
+    Let \$$X$ be the amount paid to the statistician by the gambler after the dice are thrown once.
+
+    \begin{enumerate}
+        \item Determine the probability that
+        \begin{enumerate}
+            \item $X = 6$,
+            \item $X = 3$,
+            \item $X = -2$.
+        \end{enumerate}
+        \item Find the expected value of $X$ and show that, if the statistician played the game 100 times, his expected loss would be \$$2.78$, to the nearest cent.
+        \item Find the amount \$$a$ that the \$6 would have to be changed to in order to make the game unbiased.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{ccccccc}
+            & 1 & 2 & 3  & 4 & 5 & 6  \\ \cline{2-7} 
+            \multicolumn{1}{c|}{1} & 2 & 3 & 4 & 5 & 6 & 7  \\
+            \multicolumn{1}{c|}{2} & 3 & 4 & 5 & 6 & 7 & 8 \\
+            \multicolumn{1}{c|}{3} & 4 & 5 & 6 & 7 & 8 & 9\\
+            \multicolumn{1}{c|}{4} & 5 & 6 & 7 & 8 & 9 & 10\\
+            \multicolumn{1}{c|}{5} & 6 & 7 & 8 & 9 & 10 & 11\\
+            \multicolumn{1}{c|}{6} & 7 & 8 & 9 & 10 & 11 & 12\\
+            \end{tabular}
+        \end{table}
+
+        From the table of outcomes, we clearly have
+        \begin{psubpart}
+            \[\P{X = 6} = \frac1{36}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\P{X = 3} = \frac{5}{36}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \[\P{X = -2} = \frac{11}{36}.\]    
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        We have \[\E{X} = (6)\bp{\frac1{36}} + (3)\bp{\frac5{36}} + (-2)\bp{\frac{11}{36}} = -\frac1{36}.\] Thus, the expected value of $X$ after 100 games is \[\E{X_1 + X_2 + \dots + X_{100}} = -\frac1{36} \cdot 100 = -2.78.\]
+    \end{ppart}
+    \begin{ppart}
+        Replacing \$6 with \$$a$, the expected value of $X$ becomes \[\E{X} = (a)\bp{\frac1{36}} + (3)\bp{\frac5{36}} + (-2)\bp{\frac{11}{36}} = \frac1{36} \bp{a - 7}.\] For the game to be unbiased, $\E{X} = 0$. Hence, $a = 7$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Four rods of length 1, 2, 3, and 4 units are placed in a bag from which one rod is selected at random. The probability of selecting a rod of length $l$ is $kl$.
+
+    \begin{enumerate}
+        \item Find the value of $k$.
+        \item Show that the expected value of $X$, the length of the selected rod, is 3 units and find the variance of $X$.
+    \end{enumerate}
+
+    After a rod has been selected it is not replaced. The probabilities of selection for each of the three rods that remain are in the same ratio as they were before the first selection. A second rod is now selected from the bag. Let $Y$ be the length of this rod.
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Show that $16\P{Y = 1}{X = 2} = 9\P{Y = 2}{X = 1}$.
+        \item Show that $\P{X + Y = 3} = 17/370$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The sum of probabilities must be 1. Hence, \[1k + 2k + 3k + 4k = 1 \implies k = \frac1{10}.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\E{X} = 1\bp{\frac1{10}} + 2\bp{\frac2{10}} + 3\bp{\frac3{10}} + 4\bp{\frac4{10}} = 3.\] Also, \[\E{X^2} = 1^2\bp{\frac1{10}} + 2^2\bp{\frac2{10}} + 3^2\bp{\frac3{10}} + 4^2\bp{\frac4{10}} = 10.\] Thus, \[\Var{X} = \E{X^2} - \bp{\E{X}}^2 = 10 - 3^2 = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider $\P{Y = 1}{X = 2}$. Since the rod of length 2 has already been chosen, we are left with the rods of length 1, 3, and 4. Thus, \[\P{Y = 1}{X = 2} = \frac1{1 + 3 + 4} = \frac18.\]
+
+        Consider $\P{Y = 2}{X = 1}$. Since the rod of length 1 has already been chosen, we are left with the rods of length 2, 3, and 4. Thus, \[\P{Y = 2}{X = 1} = \frac{2}{2 + 3 + 4} = \frac29.\]
+
+        Thus, \[16\P{Y = 1}{X = 2} = 16\bp{\frac{1}{8}} = 2 = 9\bp{\frac29} = 9\P{Y = 2}{X = 1}.\]
+    \end{ppart}
+    \begin{ppart}
+        For $X + Y = 3$, either $X = 1$, $Y = 2$ or $X = 2$, $Y = 1$. Thus, \[\P{X + Y = 3} = \P{X = 1, Y=2} + \P{X = 2, Y=1} = \bp{\frac1{10}}\bp{\frac29} + \bp{\frac2{10}} \bp{\frac18} = \frac{17}{360}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The random variable has the following probability distribution:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        $x$ & 1 & 2 & 3  \\ \hline
+        $\P{X = x}$ & $\t$ & $2\t$ & $1-3\t$ \\\hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item It is given that $0 < \t < 1/3$. Show that $\E{X} = 3 - 4\t$, and find $\Var{X}$ in terms of $\t$.
+    \end{enumerate}
+
+    The random variable $S$ is the sum of $n$ independent values of $X$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Write down $\E{S}$ and $\Var{S}$ in terms of $\t$ and $n$.
+    \end{enumerate}
+
+    The random variable $T$ is defined by $T = a + bS$. The values of $a$ and $b$ are such that $\E{T} = \t$ for all $\t$ in the interval $0 < \t < 1/3$. Show that
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item $a = 3/4$ and $b = -1/4n$,
+        \item $\Var{T} = \t(3-8\t)/8n$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\E{X} = 1(\t) + 2(2\t) + 3(1 - 3\t) = 3 - 4\t.\] Also, \[\E{X^2} = 1^2(\t) + 2^2 (2\t) + 3^2(1 - 3\t) = 9 - 18\t.\] Hence, \[\Var{\t} = \E{X^2} - \bp{\E{X}}^2 = \bp{9 - 18\t} - \bp{3-4\t}^2 = 6\t - 16\t^2.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\E{S} = \E{X_1 + X_2 + \dots + X_n} = n \E{X} = n\bp{3 - 4\t}.\] Also, \[\Var{S} = \Var{X_1 + X_2 + \dots + X_n} = n\Var{X} = n\bp{6\t - 16\t^2}.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\E{T} = \E{a + bS} = a + b\E{S} = a + bn\bp{3 - 4\t} = \bp{a + 3bn} - \bp{4bn} \t.\] Since $\E{T} = \t$, we have the system \[a = 3bn = 0, \qquad 4bn = 1,\] whence $b = -1/4n$. Substituting this into the first equation yields \[a + 3\bp{-\frac1{4n}}n = 0 \implies a = \frac34.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\Var{T} = \Var{a + bS} = \Var{bS} = b^2 \Var{S} = \bp{-\frac1{4n}}^2 \bs{n \bp{6\t - 16\t^2}} = \frac{\t (3 - 8\t)}{8n}.\]
+    \end{ppart}
+\end{solution}
