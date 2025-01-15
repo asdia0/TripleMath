@@ -36,6 +36,25 @@
         \item $\der[2]{x}{t} + 16x = 3\cos 4t$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Consider the characteristic equation of the DE: \[2m^2 - 3m - 5 = (2m-5)(m+1) = 0.\] The roots are $m = 5/2$ and $m = -1$, whence the complementary function is \[y_c = A \e^{\frac52x} + B \e^{-x}.\] For the particular solution, we try \[y_p = Cx^2 + Dx + E.\] Note that \[y_p' = 2Cx + D \quad \land \quad y_p'' = 2C.\] Substituting this into the DE, \[2\bp{2C} + -3\bp{2Cx + D} - 5\bp{Cx^2 + Dx + E} = 10x^2 + 1.\] Comparing coefficients, we get the system \[\systeme[CDE]{-5C = 10,-6C-5D = 0,4C-3D-5E=1},\] which has solution $C = -2$, $D = 12/5$ and $E = -81/25$. The general solution is thus \[y = y_c + y_p = A \e^{\frac52x} + B \e^{-x} - 2x^2 + \frac{12}5 x - \frac{81}{25}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation of the DE: \[m^2 - 2m + 3 = 0 \implies m = 1 \pm 2 \i.\] The complementary function is hence \[y_c = \e^x \bp{A\cos 2x + B\sin 2x}.\] For the particular solution, we try \[y_p = C\e^{4x}.\] Note that \[y_p' = 4C\e^{4x} \quad \land \quad y_p'' = 16C\e^{4x}.\] Substituting this into the DE, \[16C\e^{4x} - 2\bp{4C\e^{4x}} + 3C\e^{4x}  22\e^{4x} \implies C = 2.\] The general solution is thus \[y = y_c + y_p = \e^x \bp{A \cos 2x + B \sin 2x} + 2\e^{4x}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation of the DE: \[m^2 - 2m + 1 = (m-1)^2 = 0.\] The only root is $m = 1$, whence the complementary function is \[s_c = (A + Bt) \e^{t}.\] For the particular solution, we try \[s_p = Ct^2 \e^t.\] Note that \[s_p' = C\e^t\bp{t^2 + 2t} \quad \land \quad s_p'' = C\e^t \bp{t^2 + 4t + 2}.\] Substituting this into the DE, \[C\e^t \bp{t^2 + 4t + 2} - 2C\e^t \bp{t^2 + 2t} + C\e^t \bp{t^2} = 4\e^t \implies C = 2.\] The general solution is thus \[s = s_c + s_p = \bp{A + Bt + 2t^2} \e^{t}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider the characteristic equation of the DE: \[m^2 + 16m = 0 \implies m = \pm 4 \i.\] The complementary function is hence \[x_c = A\cos 4t + B \sin 4t.\] For the particular solution, we try \[x_p = t\bp{C\cos 4t + D \sin 4t}.\] Note that \[x_p' = 4t\bp{-C\sin 4t + D\cos 4t} + \bp{C \cos 4t + D \sin 4t}\] and \[x_p'' = 16t\bp{-C\cos 4t - D\sin 4t} + 8\bp{-C\sin 4t + D \cos 4t}.\] Substituting this into the DE, 
+        \begin{align*}
+            &16t\bp{-C\cos 4t - D\sin 4t} + 8\bp{-C\sin 4t + D \cos 4t}\\
+            &\hspace{2em}+ 16t\bp{C\cos 4t + D \sin 4t} = 3\cos 4\t.
+        \end{align*}
+        Simplifying, we get \[-8C \sin 4t + 8D \cos 4t = 3\cos 4t,\] whence $C = 0$ and $D = 3/8$. Thus, the general solution is \[x = A\cos4t + B \sin 4t + \frac38 t\sin 4t.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -43,6 +62,14 @@
         \item Hence, find the solution for which $y = -2$ and $\der{y}{x} = -6$ when $x = 0$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that the characteristic equation of the DE is $m^2 -4 = 0$, whence the roots are $m = \pm 2$. Hence, the complementary function is \[y_c = A\e^{2x} + B\e^{-2x}.\] For the particular solution, we try $y_p = C\e^{3x}$. Note that \[y_p' = 3C\e^{3x} \quad \land \quad y_p'' = 9C\e^{3x}.\] Substituting this into the DE, get \[9C\e^{3x} - 4C\e^{3x} = 10\e^{3x} \implies C = 2,\] whence the general solution is \[y = y_c + y_p = A\e^{2x} + B\e^{-2x} + 2\e^{3x}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\der{y}{x} = 2A\e^{2x} - 2B\e^{-2x} + 6\e^{3x}.\] The given conditions thus give the system \[\systeme[AB]{A + B + 2= -2, 2A - 2B + 6 = -6},\] whence $A = -5$ and $B = 1$. Hence, \[y = -5\e^{2x} + \e^{-2x} + 2\e^{3x}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -55,6 +82,30 @@
         giving your answer in the form $y = f(x)$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Integrating the DE with respect to $x$, \[\der{y}{x} = \int \sin x \d x = -\cos x + A.\] Integrating once more, \[y = \int \bp{-\cos x + A} \d x = -\sin x + Ax + B.\] At $(0, \sqrt2)$, we have $B = \sqrt{2}$. At $(\frac\pi4, -\sqrt2)$, we have \[-\frac{\sqrt2}{2} + A\bp{\frac\pi4} + B = -\sqrt2 \implies A = -\frac{6\sqrt2}{\pi}.\] Thus, the particular solution is \[y = -\sin x - \frac{6\sqrt2}{\pi} x + \sqrt2.\]
+    \end{ppart}
+    \clearpage
+    \begin{ppart}
+        \begin{psubpart}
+            Integrating with respect to $x$, \[\der{y}{x} = \int \bp{16 - 9x^2} \d x= 16 x - 3x^2 + A.\] Integrating once more, \[y = \int \bp{16x - 3x^2 + A} \d x = 8x^2 - \frac34 x^4 + Ax + B.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Rewriting, we get \[\der[2]{y}{x} = \frac{x}{\bp{9-x^2}^2}.\] Integrating with respect to $x$, \[\der{y}{x} = \int \frac{x}{\bp{9 - x^2}^2} \d x.\] Using the substitution $x = 3 \sin \t$, we have
+            \begin{gather*}
+                \der{y}{x} = \int \frac{3\sin\t}{81 \cos^4 \t} 3\cos \t \d \t = \frac19 \int \tan \t \sec^2 \t \d \t\\
+                = \frac19\bp{\frac{\tan^2 \t}{2}} + C = \frac1{18}\bp{\frac{(x/3)^2}{1 - (x/3)^2}} + C = \frac1{18} \bp{\frac{x^2}{9 - x^2}} + C.
+            \end{gather*}
+            Integrating once more,
+            \begin{gather*}
+                y = \int \bs{\frac1{18} \bp{\frac{x^2}{9 - x^2}} + C} \d x = \int \bs{\frac1{18} \bp{\frac{9}{9 - x^2} - 1} + C} \d x\\
+                = \frac1{18} \bs{\frac{3}{2} \ln \abs{\frac{3+x}{3-x}} - x} + Cx + D = \frac{1}{12} \ln \abs{\frac{3+x}{3-x}} + Ex + D,
+            \end{gather*}
+            where $E = -1/18 + C$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -62,6 +113,14 @@
         \item By writing the particular solution as $R\cos{4t + \a}$, find the first positive value of $t$ for which $x$ is maximum.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that the characteristic equation of the DE is $m^2 + 16 = 0$, whence the roots are $m = \pm 4 \i$. Hence, \[x = A\cos 4t + B \sin 4\t.\] Differentiating with respect to $t$, we obtain \[\der{x}{t} = -4A\sin4t + 4B\cos4t.\] When $x = 3$ and $t = 0$, we have $A = 3$. When $\der{x}{t} = -8$ and $t =0$, we have $B = -2$. Thus, \[x = 3\cos4t - 2\sin 4t.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[x = 3\cos4t - 2\sin 4t = \sqrt{3^2 + 2^2} \cos{4t - \arctan \frac{-2}{3}} = \sqrt{13} \cos{4t + 0.58800}.\] $x$ attains a maximum whenever $\cos{4t + 0.58800} = 1$. Thus, \[4t + 0.58800 = 2\pi n \implies t = \frac{2\pi n - 0.58800}{4},\] where $n$ is an integer. The first positive value of $t$ is hence \[t = \frac{2\pi - 0.58800}{4} = 1.42 \tosf{3},\] which occurs when $n = 1$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Using the substitution $x= \e^u$, find the general solution of
@@ -70,18 +129,76 @@
         \item $x^2 \der[2]{y}{x} - 5x \der{y}{x} - 6y = 0$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    Note that \[\der{y}{x} = \der{y}{u} \der{u}{x}\] and \[\der[2]{y}{x} = \der[2]{y}{u} \bp{\der{u}{x}}^2 + \der{y}{u} \der[2]{u}{x}.\] Since $u = \ln x$, we have $\derx{u}{x} = 1/x$ and $\derx[2]{u}{x} = -1/x^2$. Thus, \[\der{y}{x} = \frac1x \der{y}{u} \quad \land \quad \der[2]{y}{x} = \frac1{x^2} \der[2]{y}{u} - \frac1{x^2} \der{y}{u}.\]
 
+    \begin{ppart}
+        Substituting the above expressions into the DE, we have \[x^2 \bp{\frac1{x^2} \der[2]{y}{u} - \frac1{x^2} \der{y}{u}} + 2x \bp{\frac1x \der{y}{u}} - 2y = 0.\] Simplifying, we get \[\der[2]{y}{u} + \der{y}{u} - 2y = 0.\] The characteristic equation $m^2 + m - 2 = (m+2)(m-1) = 0$ has roots $m = -2$ and $m = 1$. Thus, \[y = A\e^{-2u} + B\e^u = Ax^{-2} + Bx.\]
+    \end{ppart}
+    \begin{ppart}
+        Substituting the above expressions into the DE, we have \[x^2 \bp{\frac1{x^2} \der[2]{y}{u} - \frac1{x^2} \der{y}{u}} - 5x \bp{\frac1x \der{y}{u}} - 6y = 0.\] Simplifying, we get \[\der[2]{y}{u} - 6 \der{y}{u} - 6y = 0.\] The characteristic equation $m^2 - 6m - 6 = 0$ has roots $m = 3 \pm \sqrt{15}$. Thus, \[y = A\e^{(3 + \sqrt{15}) u} + B\e^{(3 - \sqrt{15}) u} = Ax^{3+\sqrt{15}} + Bx^{3 - \sqrt{15}}.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
 \begin{problem}
     Show, by means of the substitution $y = x^{-4} z$, that the differential equation \[x^2 \der[2]{y}{x} + \bp{4x^2 + 8x} \der{y}{x} + \bp{3x^2 + 16x + 12} y = 0\] can be reduced to the form \[\der[2]{z}{x} + a\der{z}{x} + bz = 0,\] where $a$ and $b$ are constants to be determined. Hence, find the general solution of the above differential equation.
 \end{problem}
+\begin{solution}
+    Note that $z = x^4y$. Differentiating with respect to $x$, \[\der{z}{x} = x^4 \der{y}{x} + 4yx^3.\] Differentiating with respect to $x$ again, \[\der[2]{z}{x} = x^4 \der[2]{y}{x} + 8x^3 \der{y}{x} + 12yx^2.\]
+
+    Consider the DE in question. Multiplying through by $x^2$, \[x^4 \der[2]{y}{x} + \bp{4x^4 + 8x^3} \der{y}{x} + \bp{3x^4 + 16x^3 + 12x^2} y = 0.\] Now observe that we can split the LHS as \[\bp{x^4 \der[2]{y}{x} + 8x^3 \der{y}{x} + 12yx^2} + 4\bp{x^4 \der{y}{x} + 4yx^3} + 3x^4 y.\] Thus, \[\der[2]{z}{x} + 4\der{z}{x} + 3z = 0.\] Hence, $a = 4$ and $b = 3$.
+
+    Note that the characteristic equation of this new DE is $m^2 + 4m + 3 = (m+3)(m+1) = 0$. Thus, the roots are $m =-3$ and $m =-1$, whence \[z = A\e^{-3x} + B\e^{-x} \implies y = x^{-4}\bp{A\e^{-3x} + B\e^{-x}}.\]
+\end{solution}
 
 \begin{problem}
     By letting $x = \sqrt t$, show that the differential equation \[\der[2]{y}{x} + \bp{2x - \frac1x} \der{y}{x} + 24 x^2 = 0\] where $x > 0$, may be transformed to \[\der[2]{y}{t} + a \der{y}{t} + b = 0,\] where $a$ and $b$ are constants to be determined. Hence, find the general solution of $y$ in terms of $x$.
 \end{problem}
+\begin{solution}
+    Note that \[\der{y}{x} = \der{y}{t} \der{t}{x}\] and \[\der[2]{y}{x} = \der[2]{y}{t} \bp{\der{t}{x}}^2 + \der{y}{t} \der[2]{t}{x}.\] Since $t = x^2$, we have $\derx{t}{x} = 2x$ and $\derx[2]{u}{x} = 2$. Thus, \[\der{y}{x} = 2x \der{y}{t} \quad \land \quad \der[2]{y}{x} = 4x^2 \der[2]{y}{t} + 2 \der{y}{u}.\] Substituting this into the given DE, \[\bp{4x^2 \der[2]{y}{t} + 2 \der{y}{u}} + \bp{2x - \frac1x} \bp{2x \der{y}{t}} + 24x^2 = 0.\] Simplifying, we get \[\der[2]{y}{t} + \der{y}{t} + 6 = 0,\] whence $a = 1$ and $b = 6$.
+
+    Rewriting, \[\der[2]{y}{t} + \der{y}{t} = -6.\] Integrating with respect to $t$, we get \[\der{y}{t} + y = -6t + C.\] Multiplying through by $\e^t$ yields \[\e^t \der{y}{t} + \e^t y = \der{}{t} \bp{\e^t y} = \e^t \bp{-6t + C}.\] Integrating with respect to $t$, \[\e^t y = \int \e^t \bp{-6t + C} \d t = -6 \bp{t\e^t - \e^t} + C\e^t = \e^t \bp{-6t + A} + B.\] Thus, \[y = -6t + A + B\e^{-t} = -6x^2 + A + B\e^{-x^2}.\]
+
+\end{solution}
 
 \begin{problem}
     A damped vibrating spring system is described by the differential equation \[m \der[2]{y}{t} = -ky - \l \der{y}{t},\] where $m$, $k$ and $\l$ are positive constants. The variable $y$ represents the displacement of the object from equilibrium position in centimetres, and $t$ is time measured in seconds. Given that $m = 1$, $k = 25$ and $\l = 10$, and the object was initially released from rest at $y = 1$, find the equation of motion and sketch its graph. Briefly explain if this motion is suitable to be used to close a door.
 \end{problem}
+\begin{solution}
+    We have \[\der[2]{y}{t} + 10 \der{y}{t} + 25y = 0.\] The characteristic equation $r^2 + 10r + 25 = (r + 5)^2 = 0$ has a single root $r = -5$. Thus, \[y = \bp{A + Bt} \e^{-5 t}.\] Since $y = 1$ when $t = 0$, we get $A = 1$. Hence, \[y = \bp{1 + Bt} \e^{-5 t} \implies \der{y}{t} = B\e^{-5t} - 5\bp{1 + Bt}\e^{-5t}.\] Since the object is initially at rest, $\der{y}{t} = 0$ when $t = 0$. This gives $B = 5$. Thus, \[y = \bp{1 + 5t}\e^{-5t}.\]
+    
+    \begin{figure}[H]\tikzsetnextfilename{42}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2,
+                ymin=0,
+                ymax=1.5,
+                xmin=0,
+                xmax=2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = {1},
+                xlabel = {$t$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {(1 + 5*x) * e^(-5*x)};
+                \addlegendentry{$y = (1 + 5t) \e^{-5t}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    Since the object does not oscillate ($y$ does not change sign) and $y$ approaches $y = 0$ quite quickly, the motion is suitable to be used to close a door.
+\end{solution}
 
 \begin{problem}
     The motion of the tip of a tuning fork can be modelled by the differential equation \[m \der[2]{x}{t} + k \der{x}{t} + m \o^2 x = 0,\] where $x$ is the displacement of the tip from its equilibrium position at time $t$ and $m$, $k$ and $\o$ are positive constants. It is known that $k$ is so small that $k^2$ can be ignored as $k$ models the slight damping due to the resistance of the air. It is given that the tip of the fork is initially in its equilibrium position and moving with speed $v$ in the positive $x$-direction.
@@ -98,3 +215,47 @@
         \item Given that $k$ is no longer small and $k^2 > 4m^2 \o^2$, describe the behaviour of $x$ as time progresses and sketch a possible graph of $x$ against $t$. Justify your answer.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        The characteristic equation of the DE is given by $m r^2 + kr + m \o^2 = 0$. Let the roots be $r_1$ and $r_2$. We have \[r_{1, 2} = \frac{-k \pm \sqrt{k^2 - 4m^2 \o^2}}{2m}.\] Since $k^2$ can be ignored, \[r_{1, 2} = \frac{-k \pm \sqrt{-4m^2 \o^2}}{2m} = \frac{-k \pm 2m \o \i}{2m} = -\frac{k}{2m} \pm \o \i.\] The general solution is thus given by \[x = \e^{-\frac{k}{2m} t} \bp{A \cos \o t + B \sin \o t}.\] Since the object is initially at equilibrium, we have $x = 0$ at $t = 0$. There is hence no contribution from the cosine term, i.e. $A = 0$. Thus, \[x = B \e^{-\frac{k}{2m} t} \sin \o t.\] Differentiating with respect to $t$, \[\der{x}{t} = B \e^{-\frac{k}{2m} t} \bp{\o \cos \o t - \frac{k}{2m} \sin \o t}.\] Since the object was initially released with speed $v > 0$, we have $\derx{x}{t} = v$ at $t = 0$. Hence, \[B \o = v \implies B = \frac{v}{\o}.\] We hence obtain the solution \[x = \frac{v}{\o} \e^{-\frac{k}{2m} t} \sin \o t.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $x_n$ be the amplitude of the $n$ vibration, and let $t_n$ be the corresponding time, where $n \in \NN$.
+
+        To find $t_n$, we consider the stationary points of $x$: \[\evalder{\der{x}{t}}{t = t_n} = \frac{v}{\o} \e^{-\frac{k}{2m} t_n} \bp{\o \cos \o t_n - \frac{k}{2m} \sin \o t_n} = 0 \implies \tan \o t_n = \frac{2m\o}{k}.\] Since tangent has period $\pi$, \[t_n = \frac{1}{\o} \bp{\arctan \frac{2m\o}{k} + \pi n}.\] Quite clearly, $x$ has a constant period $2\pi / \o$.
+        
+        We now find $x_n$. Evaluating $x$ at $t_n$, \[x_n = \frac{v}{\o} \exp{-\frac{k}{2m \o} \bs{\arctan \frac{2m\o}{k} + \pi n}} \sin{\arctan \frac{2m\o}{k} + \pi n}.\] Note that $\sin{X + \pi n} = (-1)^n \sin X$. Hence, \[x_n = \bs{-\exp{-\frac{k\pi}{2m \o}}}^n \underbrace{\bs{\frac{v}{\o} \exp{-\frac{k}{2m \o} \arctan \frac{2m\o}{k}} \sin{\arctan \frac{2m\o}{k}}}}_{\text{constant}}.\] Hence, \[\frac{x_{n+1}}{x_n} = -\e^{-\frac{k\pi}{2m \o}},\] whence $x_n$ is in geometric progression with common ratio $-\e^{-\frac{k\pi}{2m \o}}$.
+    \end{ppart}
+    \begin{ppart}
+        Recall that the roots of the characteristic equation are given by \[r_{1, 2} = \frac{-k \pm \sqrt{k^2 - 4m^2 \o^2}}{2m}.\] If $k^2 > 4m^2 \o^2$, then the roots are real and distinct, whence $x$ has general solution \[x = A\e^{r_1 t} + B\e^{r_2 t}.\] Since $x = 0$ at $t = 0$, we obtain $A + B = 0$. Thus, \[x = A\bp{\e^{r_1 t} - \e^{r_2 t}}.\] Note that both roots are negative (since $\sqrt{k^2 - X^2} < \sqrt{k^2} = k$). Hence, as $t$ tends to infinity, $\e^{r_1 t} - \e^{r_2 t}$ (and by extension $x$) tends to 0.
+
+        A possible graph of $x$ is
+        \begin{figure}[H]\tikzsetnextfilename{41}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:2,
+                    samples = 101,
+                    ymin = 0,
+                    ymax = 0.25,
+                    xmin = 0,
+                    xmax = 2,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xlabel = {$t$},
+                    ylabel = {$x$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[black] {e^(-3*x) - e^(-5*x)};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+    \end{ppart}
+\end{solution}
