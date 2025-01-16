@@ -1,0 +1,36 @@
+\section{Exercises}
+
+\begin{problem}
+    Let $m$ and $N$ be positive integers. Prove that $\sqrt[m]{N}$ is either an integer or an irrational.
+\end{problem}
+\begin{proof}
+    Let $x = \sqrt[m]{N}$. Let $A$ be the nearest integer to $x$.
+    
+    Consider $(x-A)^n$. By the binomial theorem, \[(x-A)^n = \sum_{k = 0}^n \binom{n}{k} x^k (-A)^{n-k}.\] Since $x^m = N \in \ZZ$, the above $n$-degree polynomial reduces to an $m-1$ degree polynomial with integer coefficients, i.e. \[(x-A)^n = \sum_{k = 0}^{m-1} c_k x^k, \tag{1}\] where $\bc{c_k}$ are integers.
+
+    Now, suppose $x \in \QQ$. Then we can write $x = p/q$, where $p, q \in \ZZ$ and $q \neq 0$. Substituting this into (1), we get \[(x-A)^n = \sum_{k = 0}^{m-1} c_k \bp{\frac{p}{q}}^k = \sum_{k = 0}^{m-1} \frac{c_k p^k}{q^k}.\] By combining all terms into a single fraction, we can write \[(x-A)^n = \frac{l}{p^{m-1}},\] where $l$ is an integer. Thus, the only possible values that $(x-A)^n$ can take on are \[\dots, \frac{-2}{p^{m-1}}, \frac{-1}{p^{m-1}}, 0, \frac{1}{p^{m-1}}, \frac{2}{p^{m-1}}, \dots.\]
+
+    Observe that $1/p^{m-1}$ is constant with respect to $n$, i.e. $p$ and $m$ do not depend on $n$. Since $\abs{x - A} < 1$, for arbitrarily large $n$, we can make $(x-A)^n$ as close to 0 as we wish. In other words, we can always find an $n$ large enough such that \[\abs{(x-A)^n} < \frac1{p^{m-1}}.\] Thus, $(x-A)^n$ must be 0, whence $x = A \in \ZZ$. Hence, if $x$ is rational, it must necessarily be an integer. This completes the proof.
+\end{proof}
+
+\begin{problem}
+    Prove that $\pi$ is irrational.
+\end{problem}
+
+\begin{problem}
+    Prove that $\e$ is irrational.
+\end{problem}
+\begin{proof}
+    By definition, \[\e = \sum_{n = 0}^\infty \frac1{n!}.\] Seeking a contradiction, suppose $\e$ is rational, i.e. $\e = a/b$, where $a, b \in \ZZ$ and $b \neq 0$. Define $x$ as \[x = b! \bp{\e - \sum_{n = 0}^b \frac1{n!}}. \tag{1}\]
+    
+    Replacing $\e$ with $a/b$, we get \[x = b! \bp{\frac{a}{b} - \sum_{n = 0}^b \frac1{n!}} = a(b-1)! - \sum_{n = 0}^b \frac{b!}{n!}.\] Since $b!/n!$ is an integer for $0 \leq n \leq b$, it follows that $x$ is also an integer.
+
+    Using the definition of $\e$, we can rewrite (1) as \[x = b! \bp{\sum_{n = 0}^\infty \frac1{n!} - \sum_{n = 0}^b \frac1{n!}} = \sum_{n = b+1}^\infty \frac{b!}{n!}.\] It follows that $x > 0$. Now, observe that
+    \begin{align*}
+        x &= \sum_{n = b+1}^\infty \frac{b!}{n!}\\
+        &= \frac1{b + 1} + \frac1{(b+1)(b+2)} + \frac1{(b+1)(b+2)(b+3)} + \dots\\
+        &< \frac1{b+1} + \frac1{(b+1)^2} + \frac1{(b+1)^3} + \dots\\
+        &= \frac1{b+1} \bp{\frac1{1 - \frac1{b+1}}} = \frac1b \leq 1.
+    \end{align*}
+    Hence, $0 < x < 1$ but $x \in \ZZ$, a contradiction. Thus, $\e$ must be irrational.
+\end{proof}

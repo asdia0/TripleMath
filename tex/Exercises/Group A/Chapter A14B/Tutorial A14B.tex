@@ -1,6 +1,114 @@
 \section{Tutorial A14B}
 
 \begin{problem}
+    For each of the following situations, determine whether it can be modelled by a binomial distribution, geometric distribution, a Poisson distribution, or neither of the mentioned.
+    \begin{enumerate}
+        \item The number of heads obtained when a biased coin is tossed three times.
+        \item The number of phone calls received in a randomly chosen hour.
+        \item The number of accidents occurring in a factory in a randomly chosen week.
+        \item The number of accidents until the first fatal accident at a traffic junction.
+        \item The number of red balls obtained when 3 balls are chosen from a bag containing 4 red, 3 green and 3 white balls
+        \begin{enumerate}
+            \item with replacement;
+            \item without replacement.
+        \end{enumerate}
+        \item The number of typing errors on a randomly chosen page in a draft of a novel.
+        \item The number of seeds in a chosen packet of 12 seeds that fail to germinate.
+        \item The number of throws of a die until a six is obtained.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Explain why each of the following situations is not a good model for the proposed distribution.
+    \begin{enumerate}
+        \item Using the Poisson distribution to model the number of cars sold at a particular car deal in a randomly chosen year.
+        \item Using the Binomial distribution to model the number of family members that will vote for Party A in the coming election.
+        \item Using the Poisson distribution to model the number of people using a particular ATM during a randomly chosen day.
+        \item Using the Geometric distribution to model the number of train trips for a particular train before the first breakdown.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Calculate the probability that in a group of ten people,
+    \begin{enumerate}
+        \item none has his or her birthday on a Saturday,
+        \item at least two have their birthdays on Saturday,
+        \item more than two but at most five have their birthdays on Saturday.
+        \item less than four have their birthdays on other days except Saturday,
+    \end{enumerate}
+    Find also the mean number of people whose birthday falls on Saturday.
+\end{problem}
+
+\begin{problem}
+    In a binomial experiment, the mean number of successful trials is 24 and the variance is 20. Find the number of trials conducted and the probability of success for each trial.
+\end{problem}
+
+\begin{problem}
+    If $Y \sim \Po{2.5}$, state the expected value, $\m$, and the standard deviation, $\s$, of $Y$. Use your GC to evaluate the following correct to 3 significant figures.
+    \begin{enumerate}
+        \item $\P{Y = 3}$
+        \item $\P{Y > 4.5}$
+        \item $\P{Y \leq 5}$
+        \item $\P{6 < Y < 10}$
+        \item $\P{Y \text{ is 0 or 1}}$
+        \item $\P{\abs{Y - \m} < \s}$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Epple Company manufactures many E-phones. It is known that 1\% of the E-phones manufactured are defective.
+    \begin{enumerate}
+        \item A random sample of $n$ phones was selected. Using an algebraic method, find the smallest value of $n$ such that the probability that there is at least one defective phone in the sample is more than 0.95.
+        \item A carton, which consists of 24 E-phones, will be rejected if there are at least two defective phones. Show that the probability that a randomly chosen carton is being rejected is 0.0239.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    In an opinion poll before an election, a sample of 30 voters is obtained.
+    \begin{enumerate}
+        \item The number of voters in the sample who support the Alliance Party is denoted by $A$. State, in context, what must be assumed for $A$ to be well modelled by a binomial distribution.
+    \end{enumerate}
+    Assume now that $A$ has the distribution $\Binom{30}{p}$.
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Given that $p = 0.15$, find $\P{A = 3 \lor 4}$.
+        \item For an unknown value of $p$, it is given that $\P{A = 15} = 0.06864$ correct to 5 decimal places. Show that $p$ satisfies an equation of the form $p(1-p)=k$, where $k$ is a constant to be determined. Hence, find the value of $p$ to a suitable degree of accuracy, given that $p<0.5$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    In a large population, the proportion having blood group A is 35\%. Specimens of blood from the first five people attending a clinic are to be tested. It can be assumed that these five people are a random sample from the population. The random variable $X$ denotes the number of people in the sample we are found to have blood group A.
+
+    \begin{enumerate}
+        \item Find $\P{X \leq 2}$, correct to 3 decimal places.
+        \item Three such samples of five people are taken. Find
+        \begin{enumerate}
+            \item the probability that each of these three samples has more than two people with blood group A,
+            \item the probability that one of these three samples has exactly one person with blood group A, another has exactly two people with blood group A, and the remaining sample has more than two people with blood group A.
+        \end{enumerate}
+        \item Ten such samples of five people were taken. Find the probability that seven samples have exactly one person with blood group A.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Every student in Sunny Junior College owns a graphic calculator (GC). The probability of a student carrying a GC to school is $0.98$. Assume that the number of students who carries a GC to school follows a binomial distribution.
+
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item Given that the probability that more than $m$ students, in a random sample of 30 students, carry a GC to school is at most $0.99$, find the least value of $m$.
+            \item Give a reason why in real life, the number of students who carries a GC to school may not follow a binomial distribution.
+        \end{enumerate}
+    \end{enumerate}
+
+    The latest operating system (OS) of the GC is required for the installation of a new application. On average, 3 out of 4 students have the latest OS in their GC. A class of 26 students is to report to their mathematics tutor, Mr Ng, to install the new application.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Find the probability that the 15th student who reports to Mr Ng is the 9th student whose GC has the latest OS while the last student is the 10th student without the latest OS.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
     In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A{\textendash}I (see diagram).
 
     \begin{enumerate}
@@ -12,7 +120,7 @@
 
     \begin{enumerate}
         \setcounter{enumi}{2}
-        \item Find the probability that, in this version of the game, the bug reaches one of the endpoints A - I, without being swallowed up by a black hole.
+        \item Find the probability that, in this version of the game, the bug reaches one of the endpoints A{\textendash}I, without being swallowed up by a black hole.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -32,3 +140,105 @@
         Note that the bug most take a total of 8 forks. Since the probability of not getting swallowed by a black hole at each fork is $0.9$, the desired probability is clearly $0.9^8 = 0.430 \tosf{3}$.
     \end{ppart}
 \end{solution}
+
+\begin{problem}
+    The number of injuries, $X$, sustained by workers in a factory per week follows a Poisson distribution with standard deviation $\s$. Given that $3\P{X = 2} = 16\P{X = 4}$ determine the value of $\s$ and hence state the mean of $X$.
+    \begin{enumerate}
+        \item Find the probability that, in a randomly chosen week, there is at least one injury.
+        \item Assuming that a month consists of four weeks, find the probability that, in a randomly chosen month, there are less than 4 injuries.
+        \item Calculate the probability that there will be more than 1 but less than 4 injuries in each of two consecutive weeks.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    During a weekday, heavy lorries pass a census point $P$ on a village high street independently and at random times. The mean rate for westward travelling lorries is 2 in any 30-minute period and for eastward travelling lorries is 3 in any 30-min period. Find the probability
+
+    \begin{enumerate}
+        \item that there will be no lorries passing $P$ in a given 10-min period,
+        \item that at least one lorry from each direction will pass $P$ in a given 10-minute period,
+        \item more than 2 westward travelling lorries will pass $P$ between the time 1410 and 1445,
+        \item that there will be exactly 4 lorries passing $P$ in a given 20-minutes period
+        \item at least 2 eastward travelling lorries passing $P$ in a period of 20 minutes given that there are exactly 4 lorries passing P at that time.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A car rental company has $n$ cars which may be hired on a daily basis. The demand for cars in a day follows a Poisson distribution with variance $1.5$. For $n=5$, for any one day,
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item find the probability that less than 3 cars are hired.
+            \item find the probability that all the cars are hired.
+        \end{enumerate}
+        \item The probability that the demand for cars being met on any day is at least $0.95$. Find the least value of $n$.
+        \item The probability that no car is rented out on $k$ consecutive days is less than $0.01$. Find the least value of $k$.
+        \item The probability that there are less than two cars rented out on $h$ consecutive days is less than $0.005$. Find the least value of $h$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A randomly chosen doctor in general practices sees, on average, one case of a broken nose per year and each case is independent of other similar cases.
+
+    \begin{enumerate}
+        \item Regarding a month as a twelfth part of a year,
+        \begin{enumerate}
+            \item show that the probability that, between them, three such doctors see no cases of a broken nose in a period of one month is $0.779$, correct to three significant figures,
+            \item find the variance of the number of cases seen by three such doctors in a period of six months.
+        \end{enumerate}
+        \item Find the probability that, between them, three such doctors see at least three cases in one year.
+        \item Find the probability that, of three such doctors, one sees three cases and the other two see no cases in one year.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    During the winter in New York, the probability that snow will fall on any given day is $0.1$. Taking November 1st as the first day of winter and assuming independence from day to day, find the probability that the first snow of winter will fall in New York on the last day of November (30th).
+
+    Given that no snow has fallen at New York during the whole of November, a teacher decides not to wait any longer to book a skiing holiday. The teacher decides to book for the earliest date for which the probability that snow will have fallen on, or before, that date is at least $0.9$. Find the date of the booking.
+\end{problem}
+
+\begin{problem}
+    A salesman sells goods by telephone. The probability that any particular call achieves a sale is $1/12$. The salesman continues to make calls until one call achieves a sale.
+
+    \begin{enumerate}
+        \item State one assumption need for this to be modelled by a Geometric distribution.
+        \item Given that a Geometric distribution is used to model this, find the probability that the call achieves a sale
+        \begin{enumerate}
+            \item is the fifth call made,
+            \item does not occur in the first five calls.
+        \end{enumerate}
+        \item The salesman uses 5 minutes for each call, find the expected amount of time he has to spend to reach his first sale.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    If $X \sim \Binom{n}{p}$ and $Y \sim \Geo{p}$, explain why $\P{Y = n} < \P{X = 1}$.
+\end{problem}
+
+\begin{problem}
+    Serious delays on a certain railway line occurs at random, at an average rate of one per week. Show that the probability of at least 4 serious delays occurring during a particular 4-week period is $0.567$, correct to 3 decimal places.
+
+    Taking a year to consist of thirteen 4-week periods, find the probability that, in a particular year, there are at least ten of these 4-week periods during which at least 4 serious delays occur.
+
+    Given that the probability of at least $n$ serious delay occurring in a period of 6 weeks is greater than $0.795$, find the largest possible integer value of $n$.
+\end{problem}
+
+\begin{problem}
+    The demand for XO pies in a confectionary shop may be taken to follow a Poisson distribution with a mean of $0.4$ pies per hour. The shop opens for 5 days in a week and does business for 8 hours per day.
+
+    \begin{enumerate}
+        \item Find the probability that the demand for XO pies is at least 3 in a day.
+        \item Find the probability that there is one day with demand for XO pies of at least 3, and another two days with demand 0.
+        \item Find the probability that there is at most one day with zero demand for XO pies in a week.
+        \item Given that the demand for XO pies is exactly 3 on a particular day, what is the probability that this occurred within the first hour of business.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Given the climate of the country and duration of transportation, the probability of a strawberry from a particular orchard turning rotten is believed to be $0.15$. In a fruits wholesale centre where strawberries from that orchard are sold, they are packed and sold in trays of 20.
+
+    \begin{enumerate}
+        \item Show that the probability that there are at most 5 rotten strawberries in a try is $0.933$.
+        \item Find, to 3 decimal places, the probability that there are exactly 3 rotten strawberries in 2 randomly selected trays.
+    \end{enumerate}
+    
+    A cold desserts hawker bought 60 trays of strawberries from the wholesaler centre. Using a suitable approximation, find the probability that there are at least 4 trays with more than 5 rotten strawberries in each tray.
+\end{problem}
