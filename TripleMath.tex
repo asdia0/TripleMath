@@ -1,11 +1,14 @@
-\documentclass[a4paper,listof=totoc,openany,numbers=noenddot]{scrbook}
+\documentclass[a4paper,listof=totoc,openany,numbers=noenddot, titlepage=false]{scrbook}
 
 \input{tex/preamble}
 
 \begin{document}
-\maketitle
 
 \frontmatter
+{\let\clearpage\relax
+\maketitle
+\input{tex/titlepage}
+}
 
 \input{tex/preface}
 
