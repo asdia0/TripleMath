@@ -17,16 +17,48 @@
         \item The number of throws of a die until a six is obtained.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Part} & \textbf{Distribution} \\ \hline\hline
+        (a) & Binomial \\ \hline
+        (b) & Poisson \\ \hline
+        (c) & Poisson \\ \hline
+        (d) & Geometric \\ \hline
+        (e)(i) & Binomial \\ \hline
+        (e)(ii) &  - \\ \hline
+        (f) & Poisson \\ \hline
+        (g) & Binomial \\ \hline
+        (h) & Geometric \\ \hline
+        \end{tabular}
+    \end{table}
+\end{solution}
 
 \begin{problem}
     Explain why each of the following situations is not a good model for the proposed distribution.
     \begin{enumerate}
-        \item Using the Poisson distribution to model the number of cars sold at a particular car deal in a randomly chosen year.
+        \item Using the Poisson distribution to model the number of cars sold at a particular car dealer in a randomly chosen year.
         \item Using the Binomial distribution to model the number of family members that will vote for Party A in the coming election.
         \item Using the Poisson distribution to model the number of people using a particular ATM during a randomly chosen day.
         \item Using the Geometric distribution to model the number of train trips for a particular train before the first breakdown.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Over the course of a year, the mean rate will likely not be uniform. For instance, the car dealer may only be open on weekdays, so the mean rate on weekdays is different from that on weekends.
+    \end{ppart}
+    \begin{ppart}
+        The probability that one will vote for Party A is not uniform.
+    \end{ppart}
+    \begin{ppart}
+        Over the course of a day, the mean rate will likely not be uniform. For instance, the mean rate at night will be less than the mean rate in the afternoon.
+    \end{ppart}
+    \begin{ppart}
+        The trials are not independent. For instance, wear and tear from previous trials will affect the probability that the next train will break down.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Calculate the probability that in a group of ten people,
@@ -38,10 +70,30 @@
     \end{enumerate}
     Find also the mean number of people whose birthday falls on Saturday.
 \end{problem}
+\begin{solution}
+    Let $X$ be the number of people with a birthday on Saturday. Note that $X \sim \Binom{10}{1/7}$.
+    \begin{ppart}
+        $\P{X = 0} = 0.214$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{X \geq 2} = 1 - \P{X \leq 1} = 0.429$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{2 < X < \leq 5} = \P{X = 3} + \P{X = 4} + \P{X = 5} = 0.161$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{X > 6} = 1 - \P{X \leq 6} = 9.77 \times 10^{-5}$.
+    \end{ppart}
+
+    Since $n = 10$ and $p = 1/7$, the expected value of $X$ is \[\E{X} = np = \frac{10}{7}.\]
+\end{solution}
 
 \begin{problem}
     In a binomial experiment, the mean number of successful trials is 24 and the variance is 20. Find the number of trials conducted and the probability of success for each trial.
 \end{problem}
+\begin{solution}
+    Let $n$ be the number of trials and $p$ be the probability of success of each trial. We have \[\m = np = 24 \quad \land \quad \s^2 = np(1-p) = 20.\] Thus, \[p = 1 - \frac{20}{np} = \frac16 \implies n = \frac{24}{p} = 144.\]
+\end{solution}
 
 \begin{problem}
     If $Y \sim \Po{2.5}$, state the expected value, $\m$, and the standard deviation, $\s$, of $Y$. Use your GC to evaluate the following correct to 3 significant figures.
@@ -54,6 +106,28 @@
         \item $\P{\abs{Y - \m} < \s}$
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    Since $Y$ follows a Poisson distribution, $\m = \s^2 = 2.5$, whence $\s = \sqrt{2.5}$.
+
+    \begin{ppart}
+        $\P{Y = 3} = 0.214$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{Y > 4.5} = 1- \P{Y \leq 4} = 0.109$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{Y \leq 5} = 0.958$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{6 < Y < 10} = \P{Y \leq 9} - \P{Y \leq 6} = 0.0139$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{Y \text{ is 0 or 1}} = \P{Y = 0} + \P{Y = 1} = 0.287$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{\abs{Y - \m} < \s} = \P{2.5 - \sqrt{2.5} < Y < 2.5 + \sqrt{2.5}} = \P{1 \leq Y \leq 4} = \P{Y \leq 4} - \P{Y = 0} = 0.809$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Epple Company manufactures many E-phones. It is known that 1\% of the E-phones manufactured are defective.
@@ -62,6 +136,14 @@
         \item A carton, which consists of 24 E-phones, will be rejected if there are at least two defective phones. Show that the probability that a randomly chosen carton is being rejected is 0.0239.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $X$ be the number of defective phones in the sample. Then $X \sim \Binom{n}{0.01}$. Consider $\P{X \geq 1} \geq 0.95$: \[\P{X \geq 1} \geq 0.95 \implies \P{X = 0} = 0.99^n \leq 0.05 \implies n \geq 298.1.\] Since $n \in \NN$, the least $n$ is $299$.
+    \end{ppart}
+    \begin{ppart}
+        Take $n = 24$. Then \[\P{X \geq 2} = 1- \P{X \leq 1} = 0.0239.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     In an opinion poll before an election, a sample of 30 voters is obtained.
@@ -75,6 +157,17 @@
         \item For an unknown value of $p$, it is given that $\P{A = 15} = 0.06864$ correct to 5 decimal places. Show that $p$ satisfies an equation of the form $p(1-p)=k$, where $k$ is a constant to be determined. Hence, find the value of $p$ to a suitable degree of accuracy, given that $p<0.5$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Votes must be made independently, and the probability of voting $A$ is the same for all voters.
+    \end{ppart}
+    \begin{ppart}
+        $\P{A = 3 \lor 4} = \P{A = 3} + \P{A = 4} = 0.373$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $k = p(1- p) = \Var{A}$ is a constant. Consider $\P{A = 15}$: \[\P{A = 15} = \binom{30}{15} p^{15} (1-p)^{15} = 0.06864 \implies k = p(1-p) = \sqrt[15]{\frac{0.06864}{\binom{30}{15}}} = 0.23790.\] Expanding $k = p(1-p)$ into a quadratic in $p$, we have \[p^2 - p + 0.23790 = 0 \implies p = 0.390 \lor 0.610.\] Since $p < 0.5$, we take $p = 0.390$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     In a large population, the proportion having blood group A is 35\%. Specimens of blood from the first five people attending a clinic are to be tested. It can be assumed that these five people are a random sample from the population. The random variable $X$ denotes the number of people in the sample we are found to have blood group A.
@@ -89,6 +182,9 @@
         \item Ten such samples of five people were taken. Find the probability that seven samples have exactly one person with blood group A.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    
+\end{solution}
 
 \begin{problem}
     Every student in Sunny Junior College owns a graphic calculator (GC). The probability of a student carrying a GC to school is $0.98$. Assume that the number of students who carries a GC to school follows a binomial distribution.
