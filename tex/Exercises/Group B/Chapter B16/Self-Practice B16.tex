@@ -1,0 +1,85 @@
+\section{Self-Practice B16}
+
+\begin{problem}
+    Find the general solution of the differential equation \[\der[2]{y}{x} + 4y = 24\e^{-2x}.\] Show that when $x \to \infty$, the solution can be expressed as a single trigonometric expression.
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item By using the substitution $z = xy$, show that the differential equation \[x\der[2]{y}{x} + (2-4x)\der{y}{x} + 4y(x-1) = 0\] can be simplified into the differential equation \[\der[2]{z}{x} - 4\der{z}{x} + 4z = 0.\] Hence, find the general solution for $y$ in terms of $x$.
+        \item Using a machine, a particle is accelerated from rest such that at a time $t$ seconds after the machine is turned on, its displacement $s$ from its initial starting point is modelled by the following differential equation: \[\der[2]{s}{t} -4 \der{s}{t} + 4s = \cos t.\] Find $s$ in terms of $t$. Hence, find the amount of time required for the particle's speed to exceed the speed of sound (340 ms$^{-1}$), giving your answer to the nearest hundredth of a second.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Given that $\der{x}{t} = 5x - 9t + y$, $\der{y}{t} = y - 4x + 9$, by eliminating the variable $y$, show that \[\der[2]{x}{t} - 6\der{x}{t}+ 9x = 9t.\] Find the general solution of $x$ in terms of $t$ and hence obtain the general solution of $y$ in terms of $t$. Find the ratio $x:y$ when $t \to -\infty$.
+\end{problem}
+
+\begin{problem}
+    A teacher gave his class the following differential equation \[x\der[2]{y}{x} - \der{y}{x} + 16x^3 y = 8x^3 \tag{1}\] and asked them to find the solution. One of the students, Adrian, who had come across (1) before recalled that the solution is $y= \cos[2]{x^2}$.
+
+    \begin{enumerate}
+        \item Show that $y = \cos[2]{x^2}$ satisfies (1).
+    \end{enumerate}
+
+    Another student, Bobby, decided to use the substitution $t = x^2$ to solve (1).
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Show that by using the substitution, (1) can be transformed into the equation \[\der[2]{y}{t} + ay = b,\] where $a$ and $b$ are constants to be determined.
+        \item Find the general solution of (1).
+        \item Show that Adrian's solution can be obtained from Bobby's solution be choosing suitable values of the arbitrary constants in the solution.
+    \end{enumerate}
+
+    The teacher found out later that there was a typing error in (1). The differential equation should be \[x\der[2]{y}{x} - \der{y}{x} - 16x^3 y = 8x^3. \tag{2}\] Deduce the general solution of (2).
+\end{problem}
+
+\begin{problem}
+    Use the substitution $x = \sec \t$, where $0 < \t < \pi/2$, to show that the differential equation \[\bp{x^3 - x} \der[2]{y}{x} + \bp{2x^2 - 1} \der{y}{x} + \frac{ky}{x} = \frac2{x^3},\] where $k$ is a positive integer, can be reduced to \[\der[2]{y}{\t} + ky = 2\cos^2 \t.\] Hence, obtain the general solution for the differential equation in $x$ and $y$ for $k \neq 4$ in the form \[y = A \cos \sqrt{k} \bp{\arcsec x} + B \sin \sqrt{k} \bp{\arcsec k} + f(x),\] where $A$ and $B$ are arbitrary constants and $f(x)$ is a function of $x$ to be determined.
+\end{problem}
+
+\begin{problem}
+    Two 50-litre tanks, Tank A and Tank B (as shown in the diagram below), containing salt solution are connected by two horizontal pipes. Both tanks have inlets and outlets where salt solution flows in and out of the tanks. The rates of flow in the inlets, outlets and pipes are managed in such a way that both tanks will be full at all times.
+
+    Tank A is receiving salt solution at a concentration of 1 gram per litre at a rate of 1 litre per minute and Tank B is receiving pure water at the same rate. Salt solution is flowing out from Tank A from the bottom outlet at a rate of 2 litres per minute. Salt solution flows from Tank A to Tank B through one of the horizontal pipes at a rate of 2 litres per minute and flows in the reverse direction through the other horizontal pipe at a rate of 3 litres per minute.
+
+    \begin{figure}[H]
+        \centering
+        \import{figures}{44.pdf_tex}
+    \end{figure}
+
+    \begin{enumerate}
+        \item Suppose that at time $t$ minutes, the amount of salt in Tank A and Tank B are $x$ grams and $y$ grams respectively. Show that \[\der{x}{t} = -\frac2{25} x + \frac3{50} y + 1 \quad \land \quad \der{y}{t} = \frac1{25} x - \frac3{50} y.\]
+        \item Prove that \[\der[2]{y}{t} + p \der{y}{t} + qy = r,\] where $p$, $q$ and $r$ are constants to be determined.
+        \item Find the general solution of the differential equation in (b).
+        \item By expressing $x$ in terms of $t$, find the ratio of the amount of salt in Tank A to the amount of salt in Tank B in the long run.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}[\chili]
+    A model for the vibrations of a wine glass when struck by an external force is \[\der[2]{x}{t} + \l \der{x}{t} + \o^2 x = 0,\] where $\l$ is a constant due to the external force, $\o$ is a constant of the wine glass, $2\o > \l > 0$, and $x$ is the deformation of the glass.
+
+    \begin{enumerate}
+        \item Find the general solution of the model in the form \[x = \e^{At} \bp{c_1 \cos Bt + c_2 \sin Bt},\] where $A$ and $B$ are expressions to be determined in terms of $\l$ and $\o$, and $c_1$ and $c_2$ are arbitrary constants.
+    \end{enumerate}
+
+    Suppose that the wine glass vibrates at 440 Hz when struck, that is, the period of the oscillation is $1/440$ second.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Show that $\sqrt{4\o^2 - \l^2} = 1760 \pi$.
+    \end{enumerate}
+
+    If it takes about 2 second for the sound to die away, and this happens when the original vibrations have reduced to one hundredth of their initial amplitude,
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item show that $\l = \ln 100$ and hence find $\o$, correct to three significant figures.
+    \end{enumerate}
+
+    A pure tone at 440 Hz is produced at $D$ decibels and aimed at the glass, forcing it to vibrate at its natural frequency. The glass will shatter if the amplitude of the pure tone is approximately 1. The vibrations are now modelled by \[\der[2]{x}{t} + \l \der{x}{t} + \o^2 x = \frac{10^{D/10 - 8}}{3} \cos{880\pi t}.\]
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Determine how loud the sound show be, i.e. how large $D$ should be, in order to shatter the glass.
+    \end{enumerate}
+\end{problem}
