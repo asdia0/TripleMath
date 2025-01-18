@@ -183,7 +183,21 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    
+    Note that $X \sim \Binom{5}{0.35}$.
+    \begin{ppart}
+        $\P{X \leq 2} = 0.76483 \tosf{5} = 0.765 \todp{3}$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            The required probability is given by \[\bs{\P{X > 2}}^3 = \bs{1 - \P{X \leq 2}}^3 = 0.0130.\]
+        \end{psubpart}
+        \begin{psubpart}
+            The required probability is given by \[3! \bs{\P{X = 1} \P{X = 2} \P{X > 2}} = 0.148.\]
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Note that $\P{X = 1} = 0.31239$. Let $Y$ be the number of samples with exactly one person with blood group A. Then $Y \sim \Binom{10}{0.31239}$. Hence, $\P{Y = 7} = 0.0113$.
+    \end{ppart}
 \end{solution}
 
 \begin{problem}
@@ -203,9 +217,83 @@
         \item Find the probability that the 15th student who reports to Mr Ng is the 9th student whose GC has the latest OS while the last student is the 10th student without the latest OS.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            Let $X$ be the number of students who bring a GC to school. Then $X \sim \Binom{30}{0.98}$. Consider $\P{X > m} \leq 0.99$. Using GC, the least $m$ is 27.
+        \end{psubpart}
+        \begin{psubpart}
+            The probability that a student brings their GC to school is not the same for all students, as different students may have different timetables.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Number the students in the order in which they report to Mr Ng.
+        \begin{itemize}
+            \item Students 1--14: 8 students have the latest OS installed, remaining 6 students do not.
+            \item Student 15: Has the latest OS installed.
+            \item Students 16--25: 10 students have the latest OS installed, remaining 3 students do not.
+            \item Student 26: Does not have the latest OS installed.
+        \end{itemize}
+        The probability of this happening is given by \[\bs{\binom{14}{8} \bp{\frac34}^8 \bp{\frac14}^6} \bs{\frac34} \bs{\binom{10}{3} \bp{\frac34}^7 \bp{\frac14}} \bs{\frac14} = 0.00344.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
-    In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A{\textendash}I (see diagram).
+    In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A--I (see diagram below).
+
+    \begin{center}\tikzsetnextfilename{43}
+        \begin{tikzpicture}
+            \def\width{1}
+            \def\height{0.5}
+            \coordinate[label=left:$S$] (S) at (-1, 0);
+
+            \coordinate (T0) at (0*\width, 0*\height);
+            \coordinate (T1) at (1*\width, 1*\height);
+            \coordinate (T2) at (2*\width, 2*\height);
+            \coordinate (T3) at (3*\width, 3*\height);
+            \coordinate (T4) at (4*\width, 4*\height);
+            \coordinate (T5) at (5*\width, 5*\height);
+            \coordinate (T6) at (6*\width, 6*\height);
+            \coordinate (T7) at (7*\width, 7*\height);
+
+            \coordinate (B1) at (1*\width, -1*\height);
+            \coordinate (B2) at (2*\width, -2*\height);
+            \coordinate (B3) at (3*\width, -3*\height);
+            \coordinate (B4) at (4*\width, -4*\height);
+            \coordinate (B5) at (5*\width, -5*\height);
+            \coordinate (B6) at (6*\width, -6*\height);
+            \coordinate (B7) at (7*\width, -7*\height);
+
+            \coordinate[label=right:$A$] (A) at (8*\width, 8*\height);
+            \coordinate[label=right:$B$] (B) at (8*\width, 6*\height);
+            \coordinate[label=right:$C$] (C) at (8*\width, 4*\height);
+            \coordinate[label=right:$D$] (D) at (8*\width, 2*\height);
+            \coordinate[label=right:$E$] (E) at (8*\width, 0*\height);
+            \coordinate[label=right:$F$] (F) at (8*\width, -2*\height);
+            \coordinate[label=right:$G$] (G) at (8*\width, -4*\height);
+            \coordinate[label=right:$H$] (H) at (8*\width, -6*\height);
+            \coordinate[label=right:$I$] (I) at (8*\width, -8*\height);
+
+            \draw (S) -- (T0);
+            \draw (T0) -- (I);
+            \draw (T1) -- (H);
+            \draw (T2) -- (G);
+            \draw (T3) -- (F);
+            \draw (T4) -- (E);
+            \draw (T5) -- (D);
+            \draw (T6) -- (C);
+            \draw (T7) -- (B);
+            \draw (T0) -- (A);
+
+            \draw (B1) -- (B);
+            \draw (B2) -- (C);
+            \draw (B3) -- (D);
+            \draw (B4) -- (E);
+            \draw (B5) -- (F);
+            \draw (B6) -- (G);
+            \draw (B7) -- (H);
+        \end{tikzpicture}
+    \end{center}
 
     \begin{enumerate}
         \item Show that the probability that the bug finishes its journey at D is $56p^5 q^3$.
@@ -216,12 +304,12 @@
 
     \begin{enumerate}
         \setcounter{enumi}{2}
-        \item Find the probability that, in this version of the game, the bug reaches one of the endpoints A{\textendash}I, without being swallowed up by a black hole.
+        \item Find the probability that, in this version of the game, the bug reaches one of the endpoints A--I, without being swallowed up by a black hole.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Relabel each endpoint from A{\textendash}I to 0{\textendash}8. Let the random variable $X$ be the end-point that the bug ends up at. Clearly, to reach endpoint $i$, the bug must take $i$ right forks and $8-i$ left forks. Hence, $X \sim \Binom{8}{q}$ and the probability that the bug reaches endpoint 3 (i.e. endpoint D) is \[\P{X = 3} = \binom{8}{3} q^3 (1-q)^{8-3} = 56p^5q^3.\]
+        Relabel each endpoint from A--I to 0--8. Let the random variable $X$ be the end-point that the bug ends up at. Clearly, to reach endpoint $i$, the bug must take $i$ right forks and $8-i$ left forks. Hence, $X \sim \Binom{8}{q}$ and the probability that the bug reaches endpoint 3 (i.e. endpoint D) is \[\P{X = 3} = \binom{8}{3} q^3 (1-q)^{8-3} = 56p^5q^3.\]
     \end{ppart}
     \begin{ppart}
         Since $X$ follows a binomial distribution, it suffices to find the range of values of $p$ that satisfy $\P{X = 2} < \P{X = 3} > \P{X = 4}$.
@@ -230,7 +318,7 @@
 
         \case{2}[$\P{X = 3} > \P{X = 4}$] Note that $\P{X = 4} = \binom{8}{4} q^4 (1 - q)^{8-4} = 70 p^4 q^4$. \[\P(X = 3) > \P(X = 4) \implies 56p^5q^3 > 70p^4q^4 \implies 56p > 70(1-p) \implies p > \frac59.\]
 
-        Hence, $\frac59 < p < \frac23$.
+        Hence, $5/9 < p < 2/3$.
     \end{ppart}
     \begin{ppart}
         Note that the bug most take a total of 8 forks. Since the probability of not getting swallowed by a black hole at each fork is $0.9$, the desired probability is clearly $0.9^8 = 0.430 \tosf{3}$.
@@ -245,6 +333,18 @@
         \item Calculate the probability that there will be more than 1 but less than 4 injuries in each of two consecutive weeks.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    We have \[3\e^{-\m} \frac{\m^2}{2!} = 3\P{X = 2} = 16\P{X = 4} = 16\e^{-\m} \frac{\m^4}{4!} \implies \m^2 = \s = 2.25 \implies \m = 1.5.\] Thus, $X \sim \Po{1.5}$.
+    \begin{ppart}
+        $\P{X \geq 1} = 1 - \P{X = 0} = 0.777$.
+    \end{ppart}
+    \begin{ppart}
+        Let $Y$ be the number of injuries in a month. Then $Y \sim \Po{6}$. Hence, $\P{Y < 4} = \P{Y \leq 3} = 0.151$.
+    \end{ppart}
+    \begin{ppart}
+        The required probability is given by \[\bs{\P{1 < X < 4}}^2 = \bs{\P{X = 2} + \P{X = 3}}^2 = 0.142.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     During a weekday, heavy lorries pass a census point $P$ on a village high street independently and at random times. The mean rate for westward travelling lorries is 2 in any 30-minute period and for eastward travelling lorries is 3 in any 30-min period. Find the probability
@@ -257,11 +357,30 @@
         \item at least 2 eastward travelling lorries passing $P$ in a period of 20 minutes given that there are exactly 4 lorries passing P at that time.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    Let $W_k$ and $E_k$ be the number of westward and eastward travelling lorries passing $P$ in a $k$-minute period. Then \[W_k \sim \Po{\frac{k}{15}} \quad \land \quad E_k \sim \Po{\frac{k}{10}}.\]
+    \begin{ppart}
+        $\P{W_{10} = 0} \P{E_{10} = 0} = 0.189$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{W_{10} \geq 1} \P{E_{10} \geq 1} = \bs{1 - \P{W_{10} = 0}} \bs{1 - \P{E_{10} = 0}} = 0.308$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{W_{35} \geq 2} = 1 - \P{W_{35} \leq 2} = 0.413$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $W_{20} + E_{20} \sim \P{\frac{20}{15} + \frac{20}{10}} = \P{\frac{10}{3}}$. Thus, $\P{W_{20} + E_{20} = 4} = 0.184$.
+    \end{ppart}
+    \begin{ppart}
+        The desired probability is given by \[1 - \frac{\P{W_{20} = 4}\P{E_{20} = 0} + \P{W_{20} = 3}\P{E_{20} = 1}}{\P{W_{20} + E_{20} = 4}} = 0.821.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
-    A car rental company has $n$ cars which may be hired on a daily basis. The demand for cars in a day follows a Poisson distribution with variance $1.5$. For $n=5$, for any one day,
+    A car rental company has $n$ cars which may be hired on a daily basis. The demand for cars in a day follows a Poisson distribution with variance $1.5$. 
     \begin{enumerate}
-        \item \begin{enumerate}
+        \item For $n=5$, for any one day,
+        \begin{enumerate}
             \item find the probability that less than 3 cars are hired.
             \item find the probability that all the cars are hired.
         \end{enumerate}
@@ -270,6 +389,26 @@
         \item The probability that there are less than two cars rented out on $h$ consecutive days is less than $0.005$. Find the least value of $h$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    Let $X$ be the number of cars hired in a given day. Then $X \sim \Po{1.5}$.
+    \begin{ppart}
+        \begin{psubpart}
+            $\P{X < 3} = \P{X \leq 2} = 0.809 \tosf{3}$.
+        \end{psubpart}
+        \begin{psubpart}
+            $\P{X \geq 5} = 1 - \P{X \leq 4} = 0.0186$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Consider $\P{X \leq n} \geq 0.95$. Using G.C., the least $n$ is 4.
+    \end{ppart}
+    \begin{ppart}
+        Consider $\P{X = 0}^k \leq 0.01$. Using G.C., the least $k$ is 4.
+    \end{ppart}
+    \begin{ppart}
+        Consider $\P{X < 2}^h = \P{X \leq 1}^h \leq 0.005$. Using G.C., the least $h$ is 10.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     A randomly chosen doctor in general practices sees, on average, one case of a broken nose per year and each case is independent of other similar cases.
@@ -284,12 +423,34 @@
         \item Find the probability that, of three such doctors, one sees three cases and the other two see no cases in one year.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    Let $X_{t,n}$ be the number of cases of a broken nose seen by $n$ doctors in $t$ months. Then $X \sim \Po{tn/12}$.
+    \begin{ppart}
+        \begin{psubpart}
+            The required probability is \[\P{X_{1,3} = 0} = 0.779 \tosf{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Since $X_{t,n}$ follows a Poisson distribution, $\m = \s^2$. Hence, \[\Var{X_{6, 3}} = \frac{(6)(3)}{12} = \frac32.\]
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        The required probability is \[\P{X_{12,3} \geq 3} = 1- \P{X_{12,3} \leq 2} = 0.577 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        The required probability is \[\comb{3}{1} \P{X_{12,1} = 3}\P{X_{12,2} = 0} = 0.0249 \tosf{3}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     During the winter in New York, the probability that snow will fall on any given day is $0.1$. Taking November 1st as the first day of winter and assuming independence from day to day, find the probability that the first snow of winter will fall in New York on the last day of November (30th).
 
     Given that no snow has fallen at New York during the whole of November, a teacher decides not to wait any longer to book a skiing holiday. The teacher decides to book for the earliest date for which the probability that snow will have fallen on, or before, that date is at least $0.9$. Find the date of the booking.
 \end{problem}
+\begin{solution}
+    The probability that the first snow of winter will fall on 30 November is given by \[(0.9)^{29} (0.1) = 0.00471 \tosf{3}.\]
+
+    Let $n$ be the number of days after 30 November. Consider $\P{X \leq n} \geq 0.9$, where $X \sim \Geo{0.1}$. Using G.C., the least $n$ is 22. Hence, the date of the booking is 22 December.
+\end{solution}
 
 \begin{problem}
     A salesman sells goods by telephone. The probability that any particular call achieves a sale is $1/12$. The salesman continues to make calls until one call achieves a sale.
@@ -304,18 +465,45 @@
         \item The salesman uses 5 minutes for each call, find the expected amount of time he has to spend to reach his first sale.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        The calls must be independent.
+    \end{ppart}
+    \begin{ppart}
+        Let $X$ be the number of calls made under the salesman achieves a sale. Then $X \sim \Geo{1/12}$.
+        \begin{psubpart}
+            $\P{X = 5} = 0.0588 \tosf{3}$.
+        \end{psubpart}
+        \begin{psubpart}
+            $\P{X > 5} = (1 - 1/12)^5 = 0.647$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Note that $\E{X} = 1/p = 12$. Hence, the expected amount of time he has to spend to reach his first sale is $5 \times 12 = 60$ minutes.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
-    If $X \sim \Binom{n}{p}$ and $Y \sim \Geo{p}$, explain why $\P{Y = n} < \P{X = 1}$.
+    If $X \sim \Binom{n}{p}$ and $Y \sim \Geo{p}$, explain why $\P{Y = n} \leq \P{X = 1}$.
 \end{problem}
+\begin{solution}
+    Both $X = 1$ and $Y = n$ represent the event that there is exactly one success in $n$ trials. However, the event $Y = n$ has the added restriction that the success must come on the last trial, whereas the event $X = 1$ has no such restriction; the success can occur in any of the $n$ trials. Hence, the event $Y = n$ is a subset of the event $X = 1$, thus $\P{Y = n} \leq \P{X = 1}$, with equality only when $n = 1$.
+\end{solution}
 
 \begin{problem}
     Serious delays on a certain railway line occurs at random, at an average rate of one per week. Show that the probability of at least 4 serious delays occurring during a particular 4-week period is $0.567$, correct to 3 decimal places.
 
     Taking a year to consist of thirteen 4-week periods, find the probability that, in a particular year, there are at least ten of these 4-week periods during which at least 4 serious delays occur.
 
-    Given that the probability of at least $n$ serious delay occurring in a period of 6 weeks is greater than $0.795$, find the largest possible integer value of $n$.
+    Given that the probability of at least $n$ serious delays occurring in a period of 6 weeks is greater than $0.795$, find the largest possible integer value of $n$.
 \end{problem}
+\begin{solution}
+    Let the number of serious delays in $k$ weeks be $X_k \sim \Po{k}$. We have \[\P{X_4 \geq 4} = 1 - \P{X_4 \leq 3} = 0.56653 = 0.567 \todp{3}.\]
+    
+    Let $Y$ be the number of 4-week periods during which at least 4 serious delays occur. Note that $Y \sim \Binom{13}{0.56653}$. Hence, \[\P{Y \geq 10} = 1 - \P{Y \leq 9} = 0.115 \tosf{3}.\]
+    
+    Consider $\P{X_6 \geq n} \geq 0.795$. Using G.C., the greatest value of $n$ is 4.
+\end{solution}
 
 \begin{problem}
     The demand for XO pies in a confectionary shop may be taken to follow a Poisson distribution with a mean of $0.4$ pies per hour. The shop opens for 5 days in a week and does business for 8 hours per day.
@@ -327,14 +515,42 @@
         \item Given that the demand for XO pies is exactly 3 on a particular day, what is the probability that this occurred within the first hour of business.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    Let the number of XO pies demanded in $k$ hours be $X_k \sim \Po{0.4k}$.
+
+    \begin{ppart}
+        $\P{X_8 \geq 3} = 1 - \P{X_8 \leq 2} = 0.620 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\P{X_8 = 0} = 0.40762$. The required probability is \[\comb{3}{1} \P{X_8 \geq 3} \P{X_8 = 0} = 0.00309.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the number of days in a week where there is 0 demand for XO pies be $Y \sim \Binom{5}{0.40762}$. Then $\P{Y \leq 1} = 0.985 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        If all three pies for the day were sold within the first hour of business, then no pies were sold in the remaining seven hours. Hence, the required probability is \[\frac{\P{X_1 = 3}\P{X_1 = 0}^7}{\P{X_8 = 3}} = 0.00195.\]
+    \end{ppart}
+
+\end{solution}
 
 \begin{problem}
     Given the climate of the country and duration of transportation, the probability of a strawberry from a particular orchard turning rotten is believed to be $0.15$. In a fruits wholesale centre where strawberries from that orchard are sold, they are packed and sold in trays of 20.
 
     \begin{enumerate}
-        \item Show that the probability that there are at most 5 rotten strawberries in a try is $0.933$.
+        \item Show that the probability that there are at most 5 rotten strawberries in a tray is $0.933$.
         \item Find, to 3 decimal places, the probability that there are exactly 3 rotten strawberries in 2 randomly selected trays.
     \end{enumerate}
     
     A cold desserts hawker bought 60 trays of strawberries from the wholesaler centre. Using a suitable approximation, find the probability that there are at least 4 trays with more than 5 rotten strawberries in each tray.
 \end{problem}
+\begin{solution}
+    Let $X_k$ be the number of rotten strawberries in $k$ trays. We have $X_k \sim \Binom{20k}{0.15}$.
+    \begin{ppart}
+        $\P{X_1 \leq 5} = 0.933 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{X_2 = 3} = 0.0816 \tosf{3}$.
+    \end{ppart}
+
+    Note that $\P{X_1 > 5} = 1 - \P{X_1 \leq 5} = 0.067308$. Let $Y$ be the number of trays with more than 5 rotten strawberries. We can approximate $Y$ using a Poisson distribution since $n = 60$ is large and $p = 0.067308$ is small. We hence have $Y \sim \Po{np} = \Po{4.0385}$. Then $\P{Y \geq 4} = 1 - \P{Y \leq 3} = 0.574 \tosf{3}$.
+\end{solution}
