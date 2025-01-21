@@ -10,9 +10,9 @@ In the previous chapters, we learnt about differentiation, which can be thought 
     We write the \vocab{indefinite integral} with respect to $x$ of a function $f(x)$ as \[\int f(x) \d x.\] Here, $f(x)$ is called the \vocab{integrand}.
 \end{definition}
 
-Let the derivative of $F(x)$ be $f(x)$, and let $c$ be an arbitrary constant. Since the derivative of a constant is zero, the function $F(x) + c$ will always have the same derivative: $f(x)$. Thus, when we integrate $f(x)$, we don't get back a single function $F(x)$. Instead, we get back a \textit{class} of functions of the form $F(x) + c$. We call $F(x)$ the \vocab{primitive} of $f(x)$, and $c$ the \vocab{constant of integration}.
+Let the derivative of $F(x)$ be $f(x)$, and let $c$ be an arbitrary constant. Since the derivative of a constant is zero, the function $F(x) + C$ will always have the same derivative: $f(x)$. Thus, when we integrate $f(x)$, we don't get back a single function $F(x)$. Instead, we get back a \textit{class} of functions of the form $F(x) + C$. We call $F(x)$ the \vocab{primitive} of $f(x)$, and $c$ the \vocab{constant of integration}.
 
-With our notation, we can write down the notion of integration ``undoing'' differentiation mathematically: \[\int \der{}{x} \bs{f(x)} \d x = f(x) + c, \qquad \der{}{x} \bs{\int f(x) \d x} = f(x).\]
+With our notation, we can write down the notion of integration ``undoing'' differentiation mathematically: \[\int \der{}{x} \bs{f(x)} \d x = f(x) + C, \qquad \der{}{x} \bs{\int f(x) \d x} = f(x).\]
 
 \subsection{Basic Rules}
 
@@ -27,7 +27,7 @@ With our notation, we can write down the notion of integration ``undoing'' diffe
 \section{Definite Integration}
 
 \begin{definition}
-    Suppose $f$ is a continuous function defined on the interval $[a, b]$ and $\int f(x) \d x = F(x) + c$. Then, the \vocab{definite integral} of $f(x)$ from $a$ to $b$ with respect to $x$ is denoted by \[\int_a^b f(x) \d x = \evalint{F(x)}{a}{b} = F(b) - F(a).\] We call $a$ the \vocab{lower limit} and $b$ the \vocab{upper limit} of the integral.
+    Suppose $f$ is a continuous function defined on the interval $[a, b]$ and $\int f(x) \d x = F(x) + C$. Then, the \vocab{definite integral} of $f(x)$ from $a$ to $b$ with respect to $x$ is denoted by \[\int_a^b f(x) \d x = \evalint{F(x)}{a}{b} = F(b) - F(a).\] We call $a$ the \vocab{lower limit} and $b$ the \vocab{upper limit} of the integral.
 \end{definition}
 
 Note that the indefinite integral $\int f(x) \d x$ is a function in $x$, while the definite integral $\int_a^b f(x) \d x$ is a numerical value. Also note that $x$ is a \vocab{dummy variable} as it does not appear in the final expression of the definite integral; it can be replaced by any symbol.
@@ -49,17 +49,17 @@ Note that from the last property, we can deduce the following properties: \[\int
 
 \begin{proposition}[Integrals of Standard Functions]
     \begin{align*}
-        \int x^n \d x &= \frac{x^{n+1}}{n+1} + c, \tag{$n \neq -1$}\\
-        \int \frac1x \d x &= \ln \abs{x} + c,\\
-        \int \e^x \d x &= \e^x + c.
+        \int x^n \d x &= \frac{x^{n+1}}{n+1} + C, \tag{$n \neq -1$}\\
+        \int \frac1x \d x &= \ln \abs{x} + C,\\
+        \int \e^x \d x &= \e^x + C.
     \end{align*}
 \end{proposition}
 
 \begin{proposition}[Integrals of Trigonometric Functions]
     \begin{alignat*}{3}
-        \int \sin x \d x &= -\cos x + c, \qquad & \int \cos x \d x &= \sin x + c,\\
-        \int \sec x \d x &= -\ln \abs{\sec x - \tan x} + c, \qquad & \int \csc x \d x &= \ln \abs{\csc x - \cot x} + c,\\
-        \int \tan x \d x &= -\ln \abs{\cos x} + c, \qquad & \int \cot x \d x &= \ln \abs{\sin x} + c.
+        \int \sin x \d x &= -\cos x + C, \qquad & \int \cos x \d x &= \sin x + C,\\
+        \int \sec x \d x &= -\ln \abs{\sec x - \tan x} + C, \qquad & \int \csc x \d x &= \ln \abs{\csc x - \cot x} + C,\\
+        \int \tan x \d x &= -\ln \abs{\cos x} + C, \qquad & \int \cot x \d x &= \ln \abs{\sin x} + C.
     \end{alignat*}
 \end{proposition}
 
@@ -79,9 +79,9 @@ Powers of trigonometric functions can also be integrated using the following ide
 
 \begin{proposition}[Algebraic Fractions]
     \begin{align*}
-        \int \frac1{\sqrt{a^2 - x^2}} \d x &= \arcsin \frac{x}{a} + c\\
-        \int \frac1{a^2 + x^2} \d x &= \frac1{a} \arctan \frac{x}{a} + c\\
-        \int \frac1{a^2 - x^2} \d x &= \frac1{2a} \ln \abs{\frac{a + x}{a-x}} + c
+        \int \frac1{\sqrt{a^2 - x^2}} \d x &= \arcsin \frac{x}{a} + C\\
+        \int \frac1{a^2 + x^2} \d x &= \frac1{a} \arctan \frac{x}{a} + C\\
+        \int \frac1{a^2 - x^2} \d x &= \frac1{2a} \ln \abs{\frac{a + x}{a-x}} + C
     \end{align*}
 \end{proposition}
 
@@ -90,10 +90,10 @@ Powers of trigonometric functions can also be integrated using the following ide
 If the given integrand is not in one of the standard forms, it may be possible to reduce it to a standard form by a change of variable. This method is called \vocab{integration by substitution}, and it ``undoes the chain rule''.
 
 \begin{proposition}[Integration by Substitution]
-    Let $F' = f$. Then \[\int f(g(x)) g'(x) \d x = F(g(x)) + c.\]
+    Let $F' = f$. Then \[\int f(g(x)) g'(x) \d x = F(g(x)) + C.\]
 \end{proposition}
 \begin{proof}
-    Recall that by the chain rule, \[\der{}{x} \bs{F(g(x))} = F'(g(x)) g'(x) = f(g(x)) g'(x).\] Integrating both sides with respect to $x$, \[\int f(g(x)) g'(x) \d x = F(g(x)) + c.\]
+    Recall that by the chain rule, \[\der{}{x} \bs{F(g(x))} = F'(g(x)) g'(x) = f(g(x)) g'(x).\] Integrating both sides with respect to $x$, \[\int f(g(x)) g'(x) \d x = F(g(x)) + C.\]
 \end{proof}
 
 A simpler way to interpret the above formula is as follows:
@@ -107,7 +107,7 @@ A simpler way to interpret the above formula is as follows:
 \end{example}
 
 \begin{example}[Indefinite Integration by Substitution]
-    Consider the indefinite integral \[\int \frac1{x\sqrt{x^2 - 1}} \d x.\] Following the same substitution as above ($x = 1/u$), we get \[\int \frac1{x\sqrt{x^2 - 1}} \d x = \int \frac1{\sqrt{1 - u^2}} \d u = \arcsin u + c = \arcsin \frac1x + c.\] 
+    Consider the indefinite integral \[\int \frac1{x\sqrt{x^2 - 1}} \d x.\] Following the same substitution as above ($x = 1/u$), we get \[\int \frac1{x\sqrt{x^2 - 1}} \d x = \int \frac1{\sqrt{1 - u^2}} \d u = \arcsin u + C = \arcsin \frac1x + C.\] 
 \end{example}
 
 \subsection{Integration by Parts}
@@ -120,6 +120,8 @@ Just like integration by substitution ``undoes'' the chain rule, \vocab{integrat
 \begin{proof}
     By the product rule, \[(uv)' = uv' + u'v.\] Integrating both sides and rearranging yields the desired result.
 \end{proof}
+
+The statement is also sometimes written as \[\int u \d v = uv - \int v \d u.\] As we just learnt in the previous section, the two forms are perfectly equivalent under substitution (simply substitute $x$ for $u$ and $v$ in the integrands).
 
 Care must be exercised in the choice of the factor $u$. The aim is to ensure that $u' v$ on the RHS is easier to integrate than $u v'$. To choose $u$, we can use the following guideline:
 
@@ -135,7 +137,15 @@ Care must be exercised in the choice of the factor $u$. The aim is to ensure tha
 \end{recipe}
 
 \begin{example}[Integration by Parts]
-    Consider the integral $\int \ln x \d x$. Picking $u = \ln x$ and $v' = 1$, we get \[\int \ln x \d x = uv - \int u' v \d x = (\ln x)(x) - \int \bp{\frac1x} (x) \d x = x\ln x - x + c.\]
+    Consider the integral $\int \ln x \d x$. Picking $u = \ln x$ and $v' = 1$, we get \[\int \ln x \d x = uv - \int u' v \d x = (\ln x)(x) - \int \bp{\frac1x} (x) \d x = x\ln x - x + C.\]
+\end{example}
+
+The astute reader would have noticed that we actually dropped an arbitrary constant when integrating $v$ in the above example. We picked $v' = 1$ but only got $v = x$, instead of the expected $v = x + C$. However, including the arbitrary constant does not matter: if we replace $v$ with $v + C$ into the integration by parts formula, we get \[\int u \d v = u(v + C) - \int (v + C) \d u = uv + Cu - \bp{\int v \d u + Cu} = uv - \int v \d u,\] which is what we would have got had we not included the arbitrary constant $C$.
+
+However, this is not to say that we should always drop the arbitrary constant. In certain situations, including it might actually prove more useful, as demonstrated in the following example.
+
+\begin{example}[Including Arbitrary Constant]
+    Consider the integral $\int \ln{x + 1} \d x$. Picking $u = \ln{x+1}$ and $v' = 1$ (which implies $v = x + C$), we get \[\int \ln{x+1} \d x = uv - \int u' v \d x = (x + C) \ln{x+1} - \int \frac{x+C}{x+1} \d x.\] Here, a convenient choice for $C$ would be 1, as the integral on the RHS would simplify to $\int 1 \d x$, which we can easily integrate. Thus, \[\int \ln{x+1} \d x = (x+1) \ln{x+1} - x + C.\]
 \end{example}
 
 If evaluating an integral requires doing multiple integration by parts in succession, the DI method is more convenient.
@@ -148,7 +158,6 @@ If evaluating an integral requires doing multiple integration by parts in succes
         + & u & v \\
         - & u' & v^{(-1)} \\
         + & u'' & v^{(-2)} \\
-        - & u^{(3)} & v^{(-3)} \\
         \vdots & \vdots & \vdots \\
         \pm & u^{(n)} & v^{(-n)}\\\bottomrule
     \end{array}
@@ -156,9 +165,9 @@ If evaluating an integral requires doing multiple integration by parts in succes
     In other words, keep differentiating the middle column ($u$) and keep integrating the right column ($v$), while alternating the sign in the left column. This sign is ``attached'' to the $u$ terms.
 
     Next, draw diagonal arrows from the middle column to the right column one row below. For instance, $u$ is arrowed to $v^{(-1)}$, while $u'$ is arrowed to $v^{(-2)}$ and so on. Multiply the terms connected by an arrow, keeping in mind the sign of the $u$ terms. Add these terms up, and add the integral of the product of the last row (i.e. $\int u^{(n)} v^{(-n)} \d x$).
-
-    Mathematically, \[\int uv \d x = u v^{-1} - u' v^{(-2)} + u'' v^{(-3)} - u^{(3)} v^{(-4)} + \dots \pm \int \int u^{(n)} v^{(-n)} \d x,\] where the sign of the integral depends on the parity of $n$.
 \end{recipe}
+
+Essentially, the DI method allows us to easily compute the extended integration by parts formula, which states that \[\int uv \d x = u v^{(-1)} - u' v^{(-2)} + u'' v^{(-3)} - u^{(3)} v^{(-4)} + \dots \pm \int u^{(n)} v^{(-n)} \d x,\] where the sign of the integral depends on the parity of $n$.
 
 \begin{example}[DI Method]
     Consider the integral $\int x^3 \sin x \d x$. Taking $u = x^3$ and $v = \sin x$, we construct the DI table:
@@ -174,6 +183,6 @@ If evaluating an integral requires doing multiple integration by parts in succes
     Thus,
     \begin{align*}
         \int x^3 \sin x \d x &= x^3 (-\cos x) - 3x^2(-\sin x) + 6x(\cos x) - 6\int \cos x \d x\\
-        &= -x^3 \cos x + 3x^2 \sin x + 6x\cos x - 6\sin x + c.
+        &= -x^3 \cos x + 3x^2 \sin x + 6x\cos x - 6\sin x + C.
     \end{align*}
 \end{example}
