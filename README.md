@@ -68,7 +68,6 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
   <th></th>
   <th>9758</th>
   <th>9649</th>
-  
  </tr>
  <tr>
   <td rowspan="3">JC1</td>
