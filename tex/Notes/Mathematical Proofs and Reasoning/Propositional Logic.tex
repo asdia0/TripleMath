@@ -6,7 +6,9 @@ Mathematics is a deductive science, where from a set of basic axioms, we prove m
     The \vocab{law of the excluded middle} states that either a statement or its negation is true. Equivalently, a statement cannot be both true and false, nor can it be neither true nor false.
 \end{axiom}
 
-\section{Conditional and Biconditional Statements}
+\section{Statements}
+
+We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``statement about $x$''. We can denote this statement more compactly as $P(x)$. For instance, $P(5)$ is the statement ``5 is even'', while $P(72)$ is the statement ``72 is even'', and so forth. We can also write $P(x)$ more compactly as $P$.
 
 The first type of statement we will examine is the conditional statement.
 
@@ -87,25 +89,41 @@ Examples of conditional statements in mathematics include
     \item $a$ is a rational number if and only if $2a + 4$ is rational.
 \end{itemize}
 
-\section{Notation}
+\section{Quantifiers}
 
-We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``statement about $x$''. We can denote this statement more compactly as $P(x)$. For instance, $P(5)$ is the statement ``5 is even'', while $P(72)$ is the statement ``72 is even'', and so forth.
-
-We now introduce two important symbols, namely the ``for all'' symbol ($\forall$) and the ``there exists'' symbol ($\exists$)
+We now introduce two important symbols, namely the universal quantifier ($\forall$) and the existential quantifier ($\exists$)
 
 \begin{definition}
-    Let $P(x)$ be a statement about $x$, where $x$ is a member of some set $S$. Then the notation \[(\forall x \in S) \, P(x)\] means that $P(x)$ is true for every $x$ in the set $S$. The notation \[(\exists x \in S) \, P(x)\] means that there exists at least one element of $x$ of $S$ for which $P(x)$ is true.
+    Let $P(x)$ be a statement about $x$, where $x$ is a member of some set $S$ (i.e. $S$ is the \vocab{domain} of $x$). Then the notation \[\forall x \in S, \, P(x)\] means that $P(x)$ is true for every $x$ in the set $S$. The notation \[\exists x \in S, \, P(x)\] means that there exists at least one element of $x$ of $S$ for which $P(x)$ is true.
 \end{definition}
 
 \begin{example}
-    Let $P(x)$ be the statement ``$x$ is even''. Clearly, the statement \[(\forall x \in \ZZ) \, P(x)\] is not true; not all integers are even. However, the statement \[(\exists x \in \ZZ) \, P(x)\] is true, because we can find an integer that is even (e.g. $x = 8$).
+    Let $P(x)$ be the statement ``$x$ is even''. Clearly, the statement \[\forall x \in \ZZ, \, P(x)\] is not true; not all integers are even. However, the statement \[\exists x \in \ZZ, \, P(x)\] is true, because we can find an integer that is even (e.g. $x = 8$).
 \end{example}
 
 Note that a statement $P(x)$ does not necessarily have to mention $x$. For instance, we could define $P(x)$ as the statement ``5 is even''. Compare this with how a function $f(x)$ does not necessarily have to ``mention'' $x$, e.g. we could have $f(x) = 5$.
 
+\section{More Types of Statements}
+
+\begin{definition}
+    A \vocab{definition} is a true mathematical statement that gives the precise meaning of a word or phrase that represents some object, property or other concepts.
+\end{definition}
+
+\begin{definition}
+    An \vocab{axiom} is a mathematical statement that does not require proof.
+\end{definition}
+
+\begin{definition}
+    A \vocab{theorem} is a true mathematical statement that can be proven mathematically.
+\end{definition}
+
 \section{Proofs}
 
 Mathematical proofs are convincing arguments expressed in mathematical language, i.e. a sequence of statements leading logically to the conclusion, where each statement is either an accepted truth, or an assumption, or a statement derived from previous statements. Occasionally there will be the clarifying remark, but this is just for the reader and has no logical bearing on the structure of the proof.
+
+\begin{definition}
+    A \vocab{proof} is a deductive argument for a mathematical statement, showing that the stated assumptions logically guarantee the conclusion.
+\end{definition}
 
 As an example, we will prove the following statement:
 
@@ -113,7 +131,7 @@ As an example, we will prove the following statement:
     For all $n \in \ZZ^+$, both $n$ and $n^2$ have the same parity.
 \end{statement}
 
-To prove this statement, we will need the following definitions:
+We first define what it means for an integer to be even and odd:
 
 \begin{definition}
     An integer $x$ is even if there exists some integer $y$ such that $x = 2y$.
@@ -132,3 +150,15 @@ We are now ready to prove Statement~\ref{st:Proof-Eg}.
 
     \case{2} Suppose $n$ is odd. By definition, there exists some $h \in \ZZ$ such that $n = 2h + 1$. Then \[n^2 = (2h+1)^2 = 4h^2 + 4h + 1 = 2\bp{2h^2 + 2h} + 1 = 2b + 1,\] where $b = 2h^2 + 2h$. Since $b$ is an integer, it follows from our definition that $n^2$ is odd. Hence, $n$ and $n^2$ have the same parity.
 \end{proof}
+
+The above proof is an example of a direct proof.
+
+\begin{definition}
+    A \vocab{direct proof} is an approach to prove a conditional statement $P \implies Q$. It is a series of valid arguments that starts with the hypothesis $P$, and ends with the conclusion $Q$.
+\end{definition}
+
+In the case where we wish to prove a statement false, we can find a counter-example. In providing a counter-example, it must fulfil the hypothesis, but not the conclusion. That is, to show that $P \implies Q$ is false, we must show that $P$ is true but $Q$ is false.
+
+\begin{example}[Counter-Example]
+    Consider the statement $c \mid ab$, then $c \mid a$ or $c \mid b$, where $a, b, c \in \ZZ^+$. We can easily find a counter-example to this statement, e.g. $a = 3 \times 37$, $b = 7 \times 37$, $c = 3 \times 7$.
+\end{example}

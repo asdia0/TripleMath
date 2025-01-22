@@ -1,0 +1,64 @@
+\chapter{Number Theory}
+
+\begin{definition}
+    Let two integers $a$ and $b$ (with $b \neq 0$). If there exists some integer $n$ such that $a = bn$, we say
+    \begin{itemize}
+        \item $b$ divides $a$, and
+        \item $a$ is divisible by $b$.
+    \end{itemize}
+    We write this as $b \mid a$.
+\end{definition}
+
+\begin{proposition}
+    For $a, b, c \in \ZZ$, if $a \mid b$ and $a \mid c$, then $a \mid (b \pm c)$.
+\end{proposition}
+\begin{proof}
+    From our definition, we there exists integers $x$ and $y$ such that $b = ax$ and $c = ay$. Hence, \[b \pm c = ax \pm ay = a\bp{x \pm y}.\] Since $x \pm y$ is an integer, $a \mid (b \pm c)$.
+\end{proof}
+
+\begin{definition}[Congruence Modulo]
+    Let $a, b, n \in \ZZ$ with $n > 0$. We say that $a$ is \vocab{congruent} to $b$ \vocab{modulo} $n$, denoted as \[a \equiv b \pmod{n},\] iff $n$ divides $a - b$. Equivalently, $a = b + nk$ for some $k \in ZZ$.
+\end{definition}
+
+\begin{example}
+    $25 \equiv 7$ modulo 3 since $25 - 7 = 18$ is a multiple of 3.
+\end{example}
+
+\begin{proposition}[Congruence is an Equivalence Relation]
+    Let $a, b, n \in \ZZ$.
+    \begin{itemize}
+        \item Congruence is reflexive, i.e. $a \equiv a$ modulo $n$.
+        \item Congruence is symmetric, i.e. if $a \equiv b$ then $b \equiv a$ (modulo n).
+        \item Congruence is transitive, i.e. if $a \equiv b$ and $b \equiv c$, then $a \equiv c$ (all modulo $n$).
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    Exercise.
+\end{proof}
+
+\begin{proposition}
+    For all integers $a, b, c, d, k, n$, with $n > 1$, suppose $a \equiv b \pmod{n}$ and $c \equiv d \pmod{n}$. Then
+    \begin{itemize}
+        \item $a \pm c \equiv b \pm d \pmod{n}$.
+        \item $a \cdot c \equiv b \cdot d \pmod{n}$.
+        \item $a + k \equiv b + k \pmod{n}$.
+        \item $ka \equiv kb \pmod{n}$.
+        \item $a^m \equiv b^m \pmod{n}$ for all $m \in \ZZ^+$.
+    \end{itemize}
+\end{proposition}
+
+In other words, congruence modulo preserves addition, subtraction, multiplication, and exponentiation. Take not that congruence modulo does NOT always preserve division. That is, if $c \mid a$ and $d \mid b$, it is not always true that \[\frac{a}{c} \equiv \frac{b}{d} \pmod{n}.\]
+
+We now state an important theorem
+
+\begin{theorem}[Euclid's Division Lemma]
+    Let $n \in \ZZ^+$. Then for any $m \in \ZZ$, there exists a unique integer $r$ with $0 \leq r < n$ such that \[m \equiv r \pmod{n}.\] Equivalently, there exists an integer $q$ such that \[m = qn + r.\]
+\end{theorem}
+We will prove this statement for $m, n > 0$. We can take $m > n$ since if $0 < m < n$, we can simply take $q = 0$ and $r = m$.
+\begin{proof}
+    We prove that such an $r$ exists, and show that it must be unique.
+
+    \item\paragraph{Existence.} Let $q$ be the largest number such that $m \geq nq$ and let $r = m - nq \geq 0$. Seeking a contradiction, suppose $r \geq n$, i.e. $r = n + d$ for $d \geq 0$. Then \[m = nq + r = nq + \bp{n + d} = n(q+1) + d \geq n(q+1),\] contradicting the maximality of $q$. Hence, $0 \leq r < n$, i.e. $r$ exists.
+
+    \item\paragraph{Uniqueness.} Suppose there exist $r_1$, $r_2$, with $0 \leq r_1, r_2 < n$ such that \[m = q_1 n + r_1 = q_2 n + r_2.\] Then $r_1 = (q_2 - q_1) n + r_2$. Since $0 \leq r_1, r_2 < n$, we must have $r_1 = r_2$. Hence, $r$ must be unique. This concludes the proof.
+\end{proof}
