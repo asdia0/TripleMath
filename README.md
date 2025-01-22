@@ -68,26 +68,24 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
   <th></th>
   <th>9758</th>
   <th>9649</th>
-  <th>9820</th>
+  
  </tr>
  <tr>
   <td rowspan="3">JC1</td>
   <td>WA 1</td>
   <td>🟢</td>
   <td>🟢</td>
-  <td>🔴</td>
  </tr>
  <tr>
   <td>WA 2</td>
   <td>🟢</td>
   <td>🟢</td>
-  <td>🔴</td>
  </tr>
  <tr>
   <td>Promos</td>
   <td>🟢</td>
   <td>🟢</td>
-  <td>🔴</td>
+  <th>9820</th>
  </tr>
   <tr>
   <td rowspan="2">JC2</td>
