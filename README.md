@@ -29,6 +29,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  A13  | Introduction to Statistics                                    |  🟡  |   🔴    |      🔴      |    🔴     |
 | A14A  | Discrete Random Variables                                     |  🟡  |   🟢    |      🟡      |    🟢     |
 | A14B  | Special Discrete Random Variables                             |  🟡  |   🟢    |      🟡      |    🟢     |
+| A15A  | Continuous Random Variables                                   |  🟡  |   🟡    |      🟡      |    🟡     |
 
 ### Group B
 
@@ -50,15 +51,14 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B14  | Euler Method and Improved Euler Method                         |  🟢  |   🟢    |      🟡      |    🟢     |
 | B15  | Modelling Populations with First Order DE                      |  🟢  |   🔴    |      🔴      |    🔴     |
 | B16  | Second Order DE                                                |  🟢  |   🟢    |      🟡      |    🟡     |
+| B17A | Matrices and Linear Spaces                                     |  🟡  |   🟡    |      🟡      |    🟡     |
 
 
 ### H3 Mathematics
 
-| Topic                                       | Notes | Exercises |
-| ------------------------------------------- | :---: | :-------: |
-| Introduction to the Mathematical Vernacular |  🟢  |    🟢    |
-| Introduction to Proofs                      |  🟢  |    🟢    |
-| Mathematical Proofs and Reasoning I         |  🟡  |    🟡    |
+| Topic                             | Notes | Exercises |
+| --------------------------------- | :---: | :-------: |
+| Mathematical Proofs and Reasoning |  🟡  |    🟡    |
 
 ### Examinations
 
