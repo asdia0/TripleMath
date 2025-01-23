@@ -1,0 +1,111 @@
+\section{Assignment A14B}
+
+\begin{problem}
+    In a school with many students, an average of 1 out of 5 students is sick in a month.
+
+    \begin{enumerate}
+        \item State, in this context, two conditions that must be met for the number of students who are sick in a month to be well modelled by a binomial distribution. Explain why each of these conditions may not be met.
+    \end{enumerate}
+
+    For the remainder of this question, assume that these conditions are met.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item 25 students are randomly selected, one after another. Find the probability that the last student selected is the fifth student who is sick in a month.
+        \item Find the least value of $n$ such that in a sample of $n$ randomly selected students, the probability that at least 6 are sick in a month is more than $0.95$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The students fall sick independently, e.g. there is no herd immunity to sickness, nor does sickness spread among the students.
+    \end{ppart}
+    \begin{ppart}
+        Since the last (25th) student is the fifth student who is sick, there must only be 4 sick students in the 24 students sampled before. Hence, the required probability is \[\comb{24}{4} \bp{\frac15}^4 \bp{1 - \frac15}^{24-4} \cdot \frac15 = 0.0392 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $X$ be the number of students that are sick. Then $X \sim \Binom{n}{1/5}$. Note that $\P{X \geq 6} \geq 0.95$ is equivalent to $\P{X \leq 5} \leq 0.05$. Using G.C., the least $n$ that satisfies this inequality is $n = 50$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A factory produced plastic cups. It is known that 10\% of the cups have cracks. For quality control purposes, the factory adopts two kinds of checks on the day's produce.
+    
+    \renewcommand{\theenumi}{\textbf{\Alph{enumi}}:}
+    \begin{enumerate}
+        \item Multiple checks are performed. In each check, individual cups are randomly selected and checked for cracks.
+        \item A random sample of 15 cups is first tested. The day's produce is rejected if more than four cups have cracks, and accepted if three or fewer have cracks. If exactly four cups have cracks, another random sample of 10 cups will be tested. The day's produce is accepted if none of the cups in the second sample have cracks and rejected otherwise.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+
+    \begin{enumerate}
+        \item Find the probability that the first cracked cup appears before the 7th random check in a day under Scheme \textbf{A}.
+        \item Find the probability that the batch of cups is rejected under Scheme \textbf{B}.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $X$ be the number of cups checked before the first cracked cup appears under Scheme \textbf{A}. Then $X \sim \Geo{1/10}$. Hence, the required probability is \[\P{X < 7} = \P{X \leq 6} = 0.469 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $Y$ and $Z$ be the number of cracked cups in the first and second rounds of Scheme \textbf{B}, respectively. Then $Y \sim \Binom{15}{1/10}$ and $Z \sim \Binom{10}{1/10}$.
+
+        There are two ways for the batch of cups to be rejected:
+        \renewcommand{\theenumi}{\arabic{enumi}.}%
+        \begin{enumerate}
+            \item Directly rejected in round 1 ($Y > 4$).
+            \item Proceeded to round 2 ($Y = 4$), and rejected in round 2 ($Z \geq 1$).
+        \end{enumerate}
+        \renewcommand{\theenumi}{(\alph{enumi})}
+        
+        The probability that the batch of cups is rejected is hence given by \[\P{Y > 4} + \P{Y = 4}\P{Z \geq 1} = 0.0406 \tosf{3}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Floral Junior College faces two major disciplinary problems regarding their students, namely, littering and unauthorized flower-plucking. On average, there are two cases of littering per day and three cases of unauthorized flower-plucking per school week. You may assume that a school week consists of 5 days. The two types of offences are independent of each other and occur randomly.
+
+    \begin{enumerate}
+        \item Find the probability that in a period of three consecutive days, there are at least 10 cases of littering or unauthorized flower-plucking.
+        \item The school principal, Mrs Green, decides to activate the whole school to do a mass clean-up once the total number of new cases of littering exceeds $m$. Find the least value of $m$ if the probability that the school is activated within the next three days is less than 0.7.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Let $L_k$ and $P_k$ be the number of cases of littering and flower-plucking in a period of $k$ consecutive school days, respectively. Then $L_k \sim \Po{2k}$ and $P_k \sim \Po{3k/5}$.
+
+    \begin{ppart}
+        Since $L_3 + P_3 \sim \Po{2(3) + 3(3)/5} = \Po{7.8}$, the required probability is \[\P{L_3 + P_3 \geq 10} = 1 - \P{L_3 + P_3 \leq 9} = 0.259 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        The probability that the number of new littering cases does not exceed $m$ is given by $\P{L_1 \leq m}$. This is also the probability that the school is not activated on any given day. Hence, the probability that the school is not activated in three consecutive days is $\P{L_1 \leq m}^3$. We thus consider the inequality \[1 - \P{L_1 \leq m}^3 < 0.7 \implies \P{L_1 \leq m} > \sqrt[3]{0.3}.\] Using G.C., the least $m$ is 2.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    In a sales campaign, a company gives each customer who purchases more than one hundred dollars' worth of goods a card with a picture of a film star on it. There are 10 different pictures, one each of 10 different film stars. On any occasion, the card received by any customer is equally likely to carry any one of the 10 pictures. Any customer who collects a complete set of all the 10 pictures gets a reward.
+
+    Suppose a customer has already collected $r$ different pictures where $r = 1, 2, 3, \dots, 9$. Let $X_r$ be the random variable denoting the additional number of cards that needs to be collected by the customer until he gets a card that carries a different picture from his $r$ pictures.
+
+    \begin{enumerate}
+        \item Find $\P{X_r = X}$, where $x \in \ZZ^+$ and state $\E{X_r}$.
+        \item Prove that $\P{X_{r+1} + X_r \leq a}{X_r = b} = \P{X_{r+1} \leq a - b}$ where $a > b$. Deduce that $\P{X_{r+1} + X_r \leq 4}{X_r = 2} = 1 - \bp{\frac{r+1}{10}}^2$.
+        \item Let $Y$ be the random variable denoting the total number of cards that needs to be collected by a new customer until he obtains a complete set of 10 different picture cards. By expressing $Y$ in terms of $X_r$, find the value of $\E{Y}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since the customer already has $r$ different pictures, the probability of the next card having a new picture is $1 - r/10$. Hence, $X_r \sim \Geo{1 - r/10}$, whence \[\P{X_r = X} = \bs{1 - \bp{1 - \frac{r}{10}}}^{X - 1} \bp{1 - \frac{r}{10}} = \bp{\frac{r}{10}}^{X-1} - \bp{\frac{r}{10}}^{X}\] and \[\E{X_r} = \frac{1}{1- r/10} = \frac{10}{10 - r}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that
+        \begin{align*}
+            \P{X_{r+1} + X_r \leq a}{X_r = b} &= \frac{\P{X_{r+1} + X_r \leq a \land X_r = b}}{\P{X_r = b}}\\
+            &= \frac{\P{X_{r+1} \leq a - b \land X_r = b}}{\P{X_r = b}}.
+        \end{align*}
+        Since the events $X_{r+1} \leq a - b$ and $X_r = b$ are independent, we get \[\P{X_{r+1} + X_r \leq a}{X_r = b} = \frac{\P{X_{r+1} \leq a - b} \P{X_r = b}}{\P{X_r = b}} = \P{X_{r+1} \leq a - b}.\]
+
+        Taking $a = 4$ and $b = 2$, \[\P{X_{r+1} + X_r \leq 4}{X_r = 2} = \P{X_{r+1} \leq 2} = 1 - \bs{1 - \bp{1 - \frac{r + 1}{10}}}^2 = 1 - \bp{\frac{r+1}{10}}^2.\]
+    \end{ppart}
+    \begin{ppart}
+        The customer has 0 pictures at first. To get 1 picture, he simply collects one card. Then, to get 2 different pictures, he collects another $X_1$ cards. To get 3 different pictures, he collects another $X_2$ cards. This continues until he collects all 10 pictures. Hence, \[Y = 1 + X_1 + X_2 + \dots + X_9.\] The expectation of $Y$ is hence \[\E{Y} = \E{1 + X_1 + \dots + X_9} = 1 + \sum_{r = 1}^9 \E{X_r} = 1 + \sum_{r = 1}^9 \frac{10}{10 - r} = 29.3 \tosf{3}.\]
+    \end{ppart}
+\end{solution}
