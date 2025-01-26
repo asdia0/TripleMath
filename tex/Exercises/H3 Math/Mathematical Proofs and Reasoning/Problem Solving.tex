@@ -1,0 +1,25 @@
+\section{Problem Solving}
+
+\begin{problem}
+    A warden wishes to give a group of 10 prisoners a change to be released early. He tells the group that the following day, he will line all 10 of them on a flight of stairs such that each prisoner faces downwards and can only see the heads of the prisoners in front of him. The warden will then put a hat, either black or white, on each of the prisoners' heads. The prisoners, starting from the highest stair, are then to `guess' the colour of the hat on their own head, calling out only ```Black''' or ``White''; and they can hear all preceding guesses. If at least 9 of them match what they say with the colour of that hat on their head, the whole group is released early. The warden gives the group time to discuss a strategy beforehand.
+
+    \begin{enumerate}
+        \item Is there a strategy to guarantee that at least nine of them will get the colour of the hat correct?
+        \item What if the warden used black, white, and red hats?
+        \item What if there are now $m$ prisoners and $n$ different hats, where $m \geq n$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The prisoners can guarantee an early release. The strategy is to let the first prisoner say ``Black'' if he sees an even number of black hats, and ``White'' if he sees an odd number of black hats. This enables the 9 other prisoners to logically deduce the colour of their own hat by comparing the parity of black hats with what they see.
+
+        To illustrate this, suppose Prisoner 1 sees 4 black hats and says ``Black''. However, Prisoner 2 only sees 3 black hats, which is an odd number. He thus deduces that he must be wearing a black hat (for if he was not, Prisoner 1 would only see 3 black hats and say ``White''). Prisoner 2 hence says ``Black''. It is now Prisoner 3's turn. From the preceding answers, he deduces that there must be an odd number of black hats in front of Prisoner 2. Since he sees 3 black hats in front of him, he concludes that his hat must be white (for if it was black, there would have been an even number of black hats in front of Prisoner 2). This goes on until the last prisoner, who will also be able to deduce the colour of his own hat by keeping track of the number of black hats reported in the preceding answers.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Two players are playing a coin game. An even number of coins of non-unique integer values are placed in random order in a row. The players take turns collecting a coin from either end of the row. The player with the highest total value of his collected coins wins. Does either player have a winning strategy, and what is the strategy if there is one?
+\end{problem}
+\begin{solution}
+    Player 1 can guarantee a win or a draw. Index the coins from 1 to $2n$. Observe that Player 1 will always have the choice of an odd and even index, e.g. coins 1 (odd) and $2n$ (even). Thus, the indices of the coins available to Player 2 will have the same parity, and it will be opposite that of the index taken by Player 1 on the previous turn. For instance, if Player 1 takes coin 1 at the start (odd parity), then Player 2 must choose between coins 2 and $2n$ (both even parity). This means that Player 1 can take all coins whose index is of the same parity, e.g. all coins with odd index, or all coins with even index. Player 1 can thus take the parity which results in a higher sum and win the game.
+\end{solution}

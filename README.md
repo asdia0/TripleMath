@@ -29,7 +29,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  A13  | Introduction to Statistics                                    |  🟡  |   🔴    |      🔴      |    🔴     |
 | A14A  | Discrete Random Variables                                     |  🟡  |   🟢    |      🟡      |    🟢     |
 | A14B  | Special Discrete Random Variables                             |  🟡  |   🟢    |      🟡      |    🟢     |
-| A15A  | Continuous Random Variables                                   |  🟡  |   🟡    |      🟡      |    🟡     |
+| A15A  | Continuous Random Variables                                   |  🟡  |   🟢    |      🟡      |    🟡     |
 
 ### Group B
 
