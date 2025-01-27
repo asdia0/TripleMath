@@ -50,7 +50,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B13  | Linear First Order DE                                          |  🟢  |   🟢    |      🟡      |    🟢     |
 | B14  | Euler Method and Improved Euler Method                         |  🟢  |   🟢    |      🟡      |    🟢     |
 | B15  | Modelling Populations with First Order DE                      |  🟢  |   🔴    |      🔴      |    🔴     |
-| B16  | Second Order DE                                                |  🟢  |   🟢    |      🟡      |    🟡     |
+| B16  | Second Order DE                                                |  🟢  |   🟢    |      🟡      |    🟢     |
 | B17A | Matrices and Linear Spaces                                     |  🟡  |   🟡    |      🟡      |    🟡     |
 
 

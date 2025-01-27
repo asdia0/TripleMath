@@ -11,9 +11,51 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        The prisoners can guarantee an early release. The strategy is to let the first prisoner say ``Black'' if he sees an even number of black hats, and ``White'' if he sees an odd number of black hats. This enables the 9 other prisoners to logically deduce the colour of their own hat by comparing the parity of black hats with what they see.
+        Label the prisoners $n = 1, 2, \dots, 10$, starting from the prisoner on the lowest stair. Let $u_n$ be the colour of Prisoner $n$'s hat, where 0 represents a white hat, and 1 represents a black hat. Let $S_n = u_1 + u_2 + \dots + u_{n-1}$ be the sum of `hats' visible by the $n$th prisoner. For instance, if Prisoner 10 sees 7 black hats and 2 white hats, then $S_{10} = 7$.
 
-        To illustrate this, suppose Prisoner 1 sees 4 black hats and says ``Black''. However, Prisoner 2 only sees 3 black hats, which is an odd number. He thus deduces that he must be wearing a black hat (for if he was not, Prisoner 1 would only see 3 black hats and say ``White''). Prisoner 2 hence says ``Black''. It is now Prisoner 3's turn. From the preceding answers, he deduces that there must be an odd number of black hats in front of Prisoner 2. Since he sees 3 black hats in front of him, he concludes that his hat must be white (for if it was black, there would have been an even number of black hats in front of Prisoner 2). This goes on until the last prisoner, who will also be able to deduce the colour of his own hat by keeping track of the number of black hats reported in the preceding answers.
+        The prisoners can guarantee an early release. The strategy is to let Prisoner 10 say ``Black'' if $S_{10}$ is even, and ``White'' if $S_{10}$ is odd. This enables the 9 other prisoners to logically deduce the colour of their own hat by comparing the parity of black hats with what they see.
+
+        \begin{center}\tikzsetnextfilename{410}
+            \begin{tikzpicture}
+                \coordinate (P1) at (0, 0);
+                \coordinate (P2) at (1, 0.2);
+                \coordinate (P3) at (2, 0.4);
+                \coordinate (P4) at (3, 0.6);
+                \coordinate (P5) at (4, 0.8);
+                \coordinate (P6) at (5, 1);
+                \coordinate (P7) at (6, 1.2);
+                \coordinate (P8) at (7, 1.4);
+                \coordinate (P9) at (8, 1.6);
+                \coordinate (P10) at (9, 1.8);
+
+                \node at ($ (P1) + (0,0.7) $) {1};
+                \node at ($ (P2) + (0,0.7) $) {2};
+                \node at ($ (P3) + (0,0.7) $) {3};
+                \node at ($ (P4) + (0,0.7) $) {4};
+                \node at ($ (P5) + (0,0.7) $) {5};
+                \node at ($ (P6) + (0,0.7) $) {6};
+                \node at ($ (P7) + (0,0.7) $) {7};
+                \node at ($ (P8) + (0,0.7) $) {8};
+                \node at ($ (P9) + (0,0.7) $) {9};
+                \node at ($ (P10) + (0,0.7) $) {10};
+
+                \draw (P1) circle[radius=0.4];
+                \fill (P2) circle[radius=0.4];
+                \draw (P3) circle[radius=0.4];
+                \draw (P4) circle[radius=0.4];
+                \fill (P5) circle[radius=0.4];
+                \fill (P6) circle[radius=0.4];
+                \draw (P7) circle[radius=0.4];
+                \draw (P8) circle[radius=0.4];
+                \fill (P9) circle[radius=0.4];
+                \draw (P10) circle[radius=0.4];
+            \end{tikzpicture}
+        \end{center}
+
+        To illustrate this, consider the above illustration. Here, Prisoner 10 sees 4 black hats ($S_{10} = 4$), thus Prisoner 10 says ``Black''. This tells the other prisoners that $S_{10} \equiv 0 \pmod{2}$. Since Prisoner 9 only sees 3 black hats ($S_9 = 3$), he deduces that \[u_9 = S_{10} - S_{9} \equiv 1 \pmod{2} \implies u_9 = 1,\] i.e. his hat is black. He thus says ``Black''. It is now Prisoner 8's turn. From the preceding answers, he deduces that $S_9$ is odd, whence \[u_8 = S_{9} - S_{8} \equiv 0 \pmod{2} \implies u_8 = 0,\] i.e. his hat is white. A chain of similar reasoning continues all the way to Prisoner 1, at which point Prisoners 1 -- 9 have correctly guessed the colours of their hats.
+    \end{ppart}
+    \begin{ppart}
+        Following a similar argument, the prisoners can simply number the colours as $1, 2, \dots, n$ and consider $S_{k} - S_{k-1}$ modulo $n$, from which Prisoners 1 -- $(m-1)$ will be able to deduce their own hat colour.
     \end{ppart}
 \end{solution}
 

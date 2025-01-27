@@ -1,0 +1,227 @@
+\section{Tutorial B17A}
+
+\begin{problem}
+    Without the use of G.C., find the following matrix products:
+    \begin{enumerate}
+        \item $\begin{pmatrix}
+            -1 & 4 & 2
+        \end{pmatrix}
+        \begin{pmatrix}
+            5\\
+            1\\
+            3
+        \end{pmatrix}$
+        \item $\begin{pmatrix}
+            3\\
+            9\\
+            2
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & -6 & 3
+        \end{pmatrix}$
+        \item $\begin{pmatrix}
+            4 & -1 & 1\\2&3&0
+        \end{pmatrix}
+        \begin{pmatrix}
+            7 & -3\\
+            5 & 4\\
+            1 & 2
+        \end{pmatrix}$
+        \item $\begin{pmatrix}
+            2 & 2 & 1\\1 & 0 & 2\\2 & 1 & 2
+        \end{pmatrix}
+        \begin{pmatrix}
+            -2 & -3 & 4\\2 & 2 & -3\\1 & 2 & -2
+        \end{pmatrix}$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \[\begin{pmatrix}
+            -1 & 4 & 2
+        \end{pmatrix}
+        \begin{pmatrix}
+            5\\
+            1\\
+            3
+        \end{pmatrix} = \begin{pmatrix}
+            5
+        \end{pmatrix}\]
+    \end{ppart}
+    \begin{ppart}
+        \[\begin{pmatrix}
+            3\\
+            9\\
+            2
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & -6 & 3
+        \end{pmatrix} = \begin{pmatrix}
+            3 & -18 & 9\\
+            9 & -54 & 27\\
+            2 & -12 & 6
+        \end{pmatrix}\]
+    \end{ppart}
+    \begin{ppart}
+        \[\begin{pmatrix}
+            4 & -1 & 1\\2&3&0
+        \end{pmatrix}
+        \begin{pmatrix}
+            7 & -3\\
+            5 & 4\\
+            1 & 2
+        \end{pmatrix} = \begin{pmatrix}
+            24 & -14\\
+            29 & 6
+        \end{pmatrix}\]
+    \end{ppart}
+    \begin{ppart}
+        \[\begin{pmatrix}
+            2 & 2 & 1\\1 & 0 & 2\\2 & 1 & 2
+        \end{pmatrix}
+        \begin{pmatrix}
+            -2 & -3 & 4\\2 & 2 & -3\\1 & 2 & -2
+        \end{pmatrix} = \begin{pmatrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1
+        \end{pmatrix}\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    An orthogonal matrix $\mat M$ has the property \[\mat M \mat M \trp = \mat M \trp \mat M = \mat I,\] where $\mat M \trp$ and $\mat I$ denote the transpose of the matrix $\mat M$ and the identity matrix respectively.
+
+    Given that matrices $\mat A$ and $\mat B$ are orthogonal, are the following true or false?
+    \begin{enumerate}
+        \item $\mat{AB}$ is orthogonal.
+        \item $\mat A + \mat B$ is orthogonal.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\vec v$ be a vector. $\mat M$ is orthogonal if and only if $\mat M \vec v$ is norm-preserving: \[\norm{\mat M \vec v}^2 = \bp{\mat M \vec v}\trp \bp{\mat M \vec v} = \vec v \trp \bp{\mat M \trp \mat M} \vec v = \vec v \trp \vec v = \norm{\vec v}^2.\] Since both $\mat A$ and $\mat B$ are orthogonal, \[\norm{\vec v}^2 = \norm{\mat B \vec v}^2 = \norm{\mat A \mat B \vec v}^2.\] Hence, $\mat A \mat B \vec v$ is norm-preserving, thus $\mat A \mat B$ is orthogonal.
+    \end{ppart}
+    \begin{ppart}
+        Let $\mat M$ be orthogonal. Then $-\mat M$ is also orthogonal (reflection is linear and norm-preserving). However, their sum, $\mat 0$, is clearly not orthogonal. Hence, the statement is false in general.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    It is given that a matrix $\mat A$ is symmetric if and only if $\mat A \trp = \mat A$. Suppose that $\mat A$ is a symmetric $m \times m$ matrix and that $\mat P$ is any $m \times m$ matrix. Prove that $\mat P \trp \mat A \mat P$ is symmetric.
+\end{problem}
+\begin{solution}
+    \[\bp{\mat P \trp \mat A \mat P}\trp = \mat P \trp \mat A \trp \bp{\mat P \trp}\trp = \mat P \trp \mat A \trp \mat P = \mat P \trp \mat A \mat P.\]
+\end{solution}
+
+\begin{problem}
+    For what value(s) of the constant $k$ does the following system of linear equations \[\systeme{x - y = 3, 2x-2y =k}\] have
+    \begin{enumerate}
+        \item no solutions?
+        \item exactly one solution?
+        \item infinitely many solutions?
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Note that we have $2x - 2y = 6$ and $2x - 2y = k$. 
+    \begin{ppart}
+        If $k \neq 6$, there are no solutions.
+    \end{ppart}
+    \begin{ppart}
+        It is impossible for the system to have a unique solution.
+    \end{ppart}
+    \begin{ppart}
+        If $k = 6$, there are infinitely many solutions.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Solve the following system of linear equations by using row operations to express the matrix representation of the following system of linear equations in row echelon form. \[\systeme{x_1 + x_2 + x_3 = 8, -x_1 - 2x_2 + 3x_3 = 1, 3x_1 - 7x_2 + 4x_3 = 10}.\]
+        \item Solve the following system of linear equations by using row operations to express the matrix representation of the following system of linear equations in reduced row echelon form. \[\systeme{x + y + z = 0, -2x + 5y + 2z = 0, -7x+7y+z = 0}.\]
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    What conditions must the $b$'s satisfy in order for the following system of linear equations to be consistent?
+    \begin{enumerate}
+        \item $\systeme{x_1-x_2+3x_3=b_1,3x_1-3x_2+4x_3=b_2,-2x_1+2x_2-6x_3=b_3}$
+        \item $\systeme{2x_1+3x_2-x_3+x_4=b_1,x_1+5x_2+x_3-2x_4=b_2,-x_1+2x_2+2x_3-3x_4=b_3,3x_1+x_2-3x_3+4x_4=b_4}$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Without the use of a graphing calculator, find $\inv{\mat A}$ for each of the following cases of $\mat A$.
+    \begin{enumerate}
+        \item $\begin{pmatrix}
+            2 & 3 & 1\\3 & 1 & 2\\1 & 2 & 3
+        \end{pmatrix}$
+        \item $\begin{pmatrix}
+            \cos \a & \sin \a \\ -\sin \a & \cos \a
+        \end{pmatrix}$
+        \item $\begin{pmatrix}
+            1 & 0 & 0\\0 & \cos \a & -\sin \a\\0 & \sin \a & \cos \a
+        \end{pmatrix}$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Without the use of a graphing calculator, find the determinants of the following matrices:
+    \begin{enumerate}
+        \item $\mat A = \begin{pmatrix}
+            0 & 4 \\ -1 & 2
+        \end{pmatrix}$
+        \item $\mat B = \begin{pmatrix}
+            2 & -1 & 4 \\ 4 & -3 & 1 \\ 1 & 2 & 1
+        \end{pmatrix}$
+        \item $\mat C = \begin{pmatrix}
+            2 & 0 & 0 \\ 4 & -3 & 0 \\ 1 & 2 & 1
+        \end{pmatrix}$
+        \item $\mat D = \begin{pmatrix}
+            2 & -1 & 4 \\ 4 & -3 & 1 \\ 3 & 6 & 3
+        \end{pmatrix}$
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    For the case where $\mat A = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}$ and $\mat B = \begin{pmatrix} 1 & 0 & 2 \\ 2 & 1 & 0 \\ -1 & 1 & -1 \end{pmatrix}$, verify the results
+    \begin{enumerate}
+        \item $\det{\mat A \mat B} = \det{\mat A} \det{\mat B}$,
+        \item $\det{\inv{\mat A}} = 1/\det{\mat A}$.
+    \end{enumerate}
+    Determine also if
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item $\det{\mat A + \mat B} = \det{\mat A} + \det{\mat B}$,
+        \item $\det{\mat A} = \det{\mat A\trp}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    It is given that matrices $\mat A = \begin{pmatrix}2 & 1 & 3  \\ -1 & 0 & 4 \\ 3 & 1 & 0\end{pmatrix}$, $\mat B = \begin{pmatrix} 2 & 1 & 3 \\ -1 & 1 & 12 \\ 3 & 1 & 0 \end{pmatrix}$. Without the use of the G.C., find the inverse of $\mat A$ and $\mat B$ if it exists. For each of (a) and (b) below, solve, if possible, the equation, giving your answers in terms of $a$ (where applicable).
+
+    \begin{enumerate}
+        \item $\mat A \vec x = \cveciiix41a$,
+        \item $\mat B \vec x = \cveciiix41a$.
+    \end{enumerate}
+
+    Hence, determine whether it is possible for $\vec x$ to have a unique solution when \[\mat A \mat B \vec x = \cveciii41a.\]
+\end{problem}
+
+\begin{problem}
+    Let $\mat A \vec x = \vec 0$ be a homogeneous system of $n$ linear equations in $n$ unknowns that has only the trivial solution. Show that if $k$ is any positive integer, then the system $\mat A^k \vec x = \vec 0$ also has only the trivial solution.
+\end{problem}
+\begin{solution}
+    Since $\mat A \vec x = \vec 0$ has only the trivial solution, $\det{\mat A} \neq 0$. Thus, $\det{\mat A^k} = \det{\mat A}^k \neq 0$, whence $\mat A^k \vec x = \vec 0$ has a unique solution, which must clearly be the trivial solution.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Let $\mat A$ be a non-zero square matrix such that $\mat A^2 = \mat A$. Determine all possible values of $\det{\mat A}$. Determine if the following statements are true. Justify your answer.
+        \begin{enumerate}
+            \item $\mat I - \mat A$ is always invertible.
+            \item $\mat I + \mat A$ is always invertible.
+        \end{enumerate}
+        \item Let $\mat B = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}$. Given that $\mat B$ is the inverse of a matrix $\mat C$, and $\mat D$ is the matrix obtained from $\mat C$ by adding to the second row of $\mat C$ twice the first row of $\mat C$, find $\inv{\mat D}$ in a similar form to $\mat B$.
+    \end{enumerate}
+\end{problem}
