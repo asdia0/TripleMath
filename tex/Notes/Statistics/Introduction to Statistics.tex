@@ -1,14 +1,14 @@
 \chapter{Introduction to Statistics}
 
+Statistics is the art of learning from data. It is concerned with the collection of data, its subsequent description, and its analysis, which often leads to the drawing of conclusions. 
+
+Unlike other real-life problems that can be modelled with maths, the ``answers'' provided by statistics are never exact; there is always error. However, statistics allows us to \emph{control} this error. Indeed, it is this precise control of statistical error that is at the heart of every statistical technique.
+
 \section{Samples and Populations}
 
 \begin{definition}
     A \vocab{population} (or universe) is all possible subjects that meet certain criteria. It is the entire group of subjects that we are interested in studying.
 \end{definition}
-
-\begin{example}[Population]
-    If we were interested in the weight of all 12-year-old kids on Earth, then all the kids who meet the criteria (i.e. 12-year-old kids on Earth) would constitute the population.
-\end{example}
 
 We want to know something about a population, but there is a good chance that we can never get a very accurate picture of the population simply because it is constantly changing. Not only are populations often in a constant state of flux, practically speaking, we cannot always have access to an entire population for study. Time and cost often get in the way. As a result, we turn to a sample as a substitute of the entire population.
 
@@ -16,28 +16,168 @@ We want to know something about a population, but there is a good chance that we
     A \vocab{sample} is a subset of the population. A \vocab{random sample} is a sample that is representative of the population.
 \end{definition}
 
-\begin{example}[Sample]
-    Realistically, there is no way we can accurately weigh all 12-year-old kids on Earth. Instead, we could weigh a sample of 500 12-year-old kids from all around the globe, which would be representative of the population.
+\begin{example}
+    If we were interested in the weight of all 12-year-old kids on Earth, then all the kids who meet the criteria (i.e. 12-year-old kids on Earth) would constitute the population.
+
+    However, realistically speaking, there is no way we can accurately weigh all 12-year-old kids on Earth. Instead, we could weigh a sample of 500 12-year-old kids from all around the globe, which would be representative of the population.
 \end{example}
 
 \section{Two Categories of Statistics}
 
+Broadly speaking, the usage of statistics can be split into two categories: descriptive and inferential.
+
 \subsection{Descriptive Statistics}
 
-\begin{definition}
-    \vocab{Descriptive statistics} refer to statistics used to summarize or describe data from samples and populations.
-\end{definition}
+Descriptive statistics are used to summarize or describe data from samples and populations.
 
-\begin{example}
-    Suppose we are interested in the test results of a class of students. We could create a data distribution by listing the test scores of all students in the class and looking at it with the idea of getting some intuitive picture of how they are doing. Alternatively, we could simply calculate the mean of the students' test scores. The calculation of the mean represents the use of descriptive statistics, allowing us to summarize or describe our data.
-
-    Another example of descriptive statistics is the reporting of daily temperatures by weather forecasts. The low and high temperatures are usually reported, i.e. we are given the range - a descriptive statistic that summarizes the temperatures throughout the day.
-\end{example}
+Suppose we are interested in the test results of a class of students. We could create a data distribution by listing the test scores of all students in the class and looking at it with the idea of getting some intuitive picture of how they are doing. Alternatively, we could simply calculate the mean of the students' test scores. The calculation of the mean represents the use of descriptive statistics, allowing us to summarize or describe our data.
 
 \subsection{Inferential Statistics}
 
-We first look at the difference between statistics and parameters.
+Using descriptive statistics, we can calculate the characteristics of a data set, e.g. mean, mode, etc. If this data set was collected from the entire population, we call such a characteristic a \vocab{parameter} of the population. This could be ``mean test score of a cohort of students''. However, if the data set was collected from a sample (i.e. not the entire population), we call the characteristic a \vocab{statistic}. This could be ``mean test score of a class''.
+
+Because we are often not directly able to obtain a population parameter, we have to rely on sample data to make inferences about the population. This branch of statistics is known as inferential statistics -- using sample statistics to make inferences about population parameters. 
+
+\section{Measures of Central Tendency}
+
+A \vocab{central tendency} can be thought of as the ``typical'' value of a data set. There are three main measures of central tendency, namely the mean, median and mode.
+
+\subsection{Mean}
 
 \begin{definition}
-    A \vocab{statistic} is a characteristic of a sample, while a \vocab{parameter} is a characteristic of the population.
+    The \vocab{mean} is the sum of all observations, divided by the total number of observations.
 \end{definition}
+
+Mathematically, given $n$ observations $x_1$, $x_2$, $x_3$, $\dots$, $x_n$, \[\text{Mean} = \frac{x_1 + x_2 + x_3 + \dots + x_n}{n} = \frac1n \sum_{i = 1}^n x_i.\]
+
+Here, a lower-case `$n$` represents the sample size. We use the uppercase `$N$' to represent the population size. It is essential to make it clear when we are referring to the mean of a sample or when we are referring to the mean of a population. To do so, statisticians use different symbols ($\bar{x}$ and $\m$): \[\text{Sample mean} = \bar{x} = \frac1n \sum x, \quad \text{Population mean} = \m = \frac1N \sum x.\]
+
+We can also calculate the mean of a data set from its frequency table: \[\text{Mean} = \frac{\sum xf}{\sum f},\] where $f$ represents the frequency of a value $x$. 
+
+\begin{example}
+    Suppose the test scores of students in a particular class has the following frequency table:
+
+    \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Test score, $x$} & \textbf{Frequency, $f$} \\ \hline\hline
+        12 & 2 \\ \hline
+        13 & 3 \\ \hline
+        15 & 6 \\ \hline
+        16 & 5 \\ \hline
+        17 & 4 \\ \hline
+        \end{tabular}
+    \end{center}
+
+    Then, the mean test score can be calculated as \[\bar{x} = \frac{\sum xf}{\sum f} = \frac{(12)(2) + (13)(3) + (15)(6) + (16)(5) + (17)(4)}{2 + 3 + 6 + 5 + 4} = 15.05.\]
+\end{example}
+
+Since the mean takes into account the entire sample data, it is very sensitive to outliers. Hence, the mean may be insufficient for data sets with outliers. 
+
+\begin{example}
+    Suppose now that another student in the class obtained a `1' on the test. The new mean can be calculated as \[\bar{x} = \frac{\sum xf}{\sum f} = \frac{(1)(1) + (12)(2) + (13)(3) + (15)(6) + (16)(5) + (17)(4)}{1 + 2 + 3 + 6 + 5 + 4} = 14.14,\] which is much less than the previous mean of $15.05$. 
+\end{example}
+
+\subsection{Median}
+
+\begin{definition}
+    The \vocab{median} is the point in a distribution that divides the distribution into halves, i.e. the midpoint of a distribution.
+\end{definition}
+
+Generally, for $n$ values $x_1$, $x_2$, $\dots$, $x_n$ arranged in ascending order, \[\text{Median} = \begin{cases}
+    x_{(n+1)/2}, & \text{$n$ odd},\\
+    \frac12 \bp{x_{n/2} + x_{n/2 + 1}}, & \text{$n$ even}
+\end{cases}\]
+
+\begin{example}
+    For the original data of 20 students, the set of data in ascending order is \[12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is hence the average of the two middle values, i.e. $\frac12 (15 + 15) = 15$.
+\end{example}
+
+Unlike the mean, the median is not sensitive to outliers.
+
+\begin{example}
+    For the data of 21 students (original 20 + one outlier), the set of data in ascending order is \[1, 12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is hence the 11th value, $15$.
+\end{example}
+
+\subsection{Mode}
+
+\begin{definition}
+    The \vocab{mode} is the value that occurs the most frequently in a distribution.
+\end{definition}
+
+In the previous examples, the mode for the original sample of 20 and the new sample of 21 are both 15.
+
+A distribution containing the values 2, 3, 6, 1, 3, 7 and 7 would be referred to as a \vocab{bimodal distribution} because it has two modes -- 3 and 7. A distribution with a single mode is called \vocab{unimodal}. If each value appears the same number of times, the distribution has no mode.
+
+The mode, unlike the mean, is not affected by outliers. It is easy to state as it does not require any calculation. However, it is a crude measure of central tendency as it ignores a substantial part of the data and is thus usually not very representative and useful.
+
+\section{Measures of Spread}
+
+Suppose that the original 20 test scores come from students from a particular class, and that there is another class of 20 whose test score has the following frequency distribution table:
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Test score, $x$} & \textbf{Frequency, $f$} \\ \hline\hline
+    9 & 2 \\ \hline
+    10 & 2 \\ \hline
+    13 & 4 \\ \hline
+    15 & 2 \\ \hline
+    16 & 2 \\ \hline
+    17 & 3 \\ \hline
+    18 & 2 \\ \hline
+    20 & 1 \\ \hline
+    21 & 2 \\ \hline
+    \end{tabular}
+\end{center}
+
+The mean test score of both classes are the same (15.05). However, the second class clearly has a wider spread of test scores.
+
+Measures of central tendencies do not give any indication of these differences in spread, so it is necessary to devise some other measures to summarize the spread of data.
+
+\subsection{Range and Interquartile Range}
+
+\begin{definition}
+    The \vocab{range} is the difference between the maximum and minimum values in the set of data.
+\end{definition}
+
+\begin{example}
+    The first class has a range of $17 - 12 = 5$, while the second class has a range of $21 - 9 = 12$. Hence, the test scores for the second class are more diverse as compared to that for the first class.
+\end{example}
+
+Note, however, that the range is usually not a good measure of dispersion as it only considers the extreme values which may be atypical of the rest of the distribution and does not give any information about the distribution of the values in between. For instance, if we include the outlier in the first class, the range becomes $17 - 1 = 16$.
+
+For this reason, we typically consider the interquartile range instead.
+
+\begin{definition}
+    The \vocab{interquartile range} is the difference between the first and third quartiles, i.e. $Q_3 - Q_1$.
+\end{definition}
+
+Recall that the $n$th percentile of a distribution is the value such that $n$\% of the data is less than or equal to that number. The first and third quartiles are hence the 25th and 75th percentile respectively. Note that the second quartile (50th percentile) is simply the median.
+
+\begin{example}
+    The first class has interquartile range $16 - 14 = 2$, while the second class has interquartile range $17.5 - 13 = 4.5$.
+    
+    If we include the outlier in the first class, then the interquartile range becomes $16 - 13 = 3$, which is a much smaller change compared to that of the range.
+\end{example}
+
+Again, the interquartile range may not be a good measure of dispersion as it only takes into account the two specific percentiles.
+
+\subsection{Variance and Standard Deviation}
+
+One of the main reasons for using the interquartile range in preference to the range as a measure of spread is that it takes some account of how the interior values are spread rather than concentrating on the spread of the extreme values. The interquartile range, however, does not take into account of the spread of all the data values and so, in some sense, it is still an inadequate measure. An alternative measure of spread, which takes into account of all the values, can be devised by finding how far each data value is from the mean.
+
+This can be represented mathematically with the formula \[\text{Mean distance} = \frac1n \sum \abs{x - \bar x}.\] Unfortunately, a formula involving the modulus sign is awkward to handle algebraically. This can be avoided by squaring each of the quantities $x - \bar x$, leading to the expression \[\frac1n \sum \bp{x - \bar x}^2\] as a measure of spread. We call this quantity the \vocab{variance} of the distribution.
+
+If the data values $x_1$, $\dots$, $x_n$ have units associated with them, then the variance will be measured in units$^2$. This can be avoided by taking the positive square root of the variance. The positive square root of the variance is known as the \vocab{standard deviation}, and it always has the same units as the original data values, i.e. \[\text{Standard deviation} = \sqrt{\frac1n \sum \bp{x - \bar x}^2}.\]
+
+When referring to the standard deviation of the population, we use the symbol $\s$. Hence, the population variance is denoted by $\s^2$.
+
+In its given form, the variance of a data set is tedious to calculate. Fortunately, an alternative formula is easier to use is available:
+
+\begin{proposition}
+    \[\text{Variance} = \frac1n \sum x^2 - \bar{x}^2.\]
+\end{proposition}
+\begin{proof}
+    We have \[\text{Variance} = \frac1n \sum \bp{x - \bar x}^2 = \frac1n \sum \bp{x^2 - 2x \bar{x} + \bar{x}^2} = \frac1n \sum x^2 - \frac{2\bar{x} \sum x}{n} + \frac{\bar{x}^2 \sum 1}{n}.\] Observe that $\frac1n \sum x = \bar x$ and $\sum 1 = n$. Thus, \[\text{Variance} = \frac1n \sum x^2 - 2\bar{x}^2 + \bar{x}^2 = \frac1n \sum x^2 - \bar{x}^2.\]
+\end{proof}
