@@ -100,9 +100,9 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        The statement is true. Since $\mat A$ and $\mat B$ are both orthogonal, \[\bp{\mat A \mat B}\trp \bp{\mat A \mat B} = \mat B\trp \bp{\mat A \trp \mat A} \mat B = \mat B \trp \mat B = \mat I.\]
+        The statement is true. Since $\mat A$ and $\mat B$ are both orthogonal, \[\bp{\mat A \mat B}\trp \bp{\mat A \mat B} = \mat B\trp \bp{\mat A \trp \mat A} \mat B = \mat B \trp \mat B = \mat I,\] and \[\bp{\mat A \mat B} \bp{\mat A \mat B}\trp = \mat A \bp{\mat B \mat B \trp} \mat A \trp = \mat A \mat A \trp = \mat I,\] thus $\mat A \mat B$ is orthogonal.
 
-        \noindent\textit{Geometric Approach.} A matrix is orthogonal if and only if it is norm-preserving. Since $\mat A$ and $\mat B$ are both orthogonal, \[\norm{\vec v} = \norm{\mat B \vec v} = \norm{\mat A \mat B \vec v},\] thus $\mat A \mat B$ is also orthogonal.
+        \noindent\textit{Geometric Approach.} A real matrix is orthogonal if and only if it is norm-preserving. Since $\mat A$ and $\mat B$ are both orthogonal, \[\norm{\vec v} = \norm{\mat B \vec v} = \norm{\mat A \mat B \vec v},\] thus $\mat A \mat B$ is also orthogonal.
     \end{ppart}
     \begin{ppart}
         The statement is false. Let $\mat M$ be orthogonal. Then $-\mat M$ is also orthogonal (reflection preserves norm). However, their sum, $\mat 0$, is clearly not orthogonal.
@@ -301,7 +301,7 @@
     \begin{ppart}
         Taking determinants on both sides of the given equation, we have \[\det{\mat A^2} = \det{\mat A} \implies \det{\mat A}^2 = \det{\mat A}.\] Thus, the possible values of $\det{\mat A}$ are 0 and 1. An example of $\mat A$ with determinant 0 is \[\mat A = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\] while an example of $\mat A$ with determinant 1 is simply $\mat I$.
 
-        In fact, $\mat I$ is the only such matrix that has determinant 1: if $\mat A$ is invertible, we can pre-multiply its inverse to the equation $\mat A^2 = \mat A$, yielding \[\inv{\mat A} \mat A^2 = \inv{\mat A} \mat A \implies \mat A = \mat I.\]
+        In fact, $\mat I$ is the only such matrix that has determinant 1: if $\mat A$ is invertible, we can pre-multiply its inverse to the equation $\mat A^2 = \mat A$ to get \[\inv{\mat A} \mat A^2 = \inv{\mat A} \mat A \implies \mat A = \mat I.\]
         
         \noindent\textit{Geometric Approach.} Let $\mat A$ represent a linear transformation of $\RR^n$. $\mat A$ is idempotent if and only if all vectors $\vec v \in \Img A$ are invariant under $\mat A$. If $\mat A$ has non-zero determinant, then its image is $\RR^n$, i.e. $\mat A \vec v = \vec v$ for all $\vec v \in \RR^n$, which is only possible if $\mat A = \mat I$.
 
