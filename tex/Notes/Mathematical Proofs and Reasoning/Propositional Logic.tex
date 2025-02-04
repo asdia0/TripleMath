@@ -8,11 +8,58 @@ Mathematics is a deductive science, where from a set of basic axioms, we prove m
 
 \section{Statements}
 
+\subsection{Forming Statements}
+
 We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``statement about $x$''. We can denote this statement more compactly as $P(x)$. For instance, $P(5)$ is the statement ``5 is even'', while $P(72)$ is the statement ``72 is even'', and so forth. We can also write $P(x)$ more compactly as $P$.
 
-\subsection{Structure of Statements}
+\begin{definition}
+    The \vocab{negation} of a statement $P$, denoted $\lnot P$, is false when $P$ is true, and true when $P$ is false. In a truth table,
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        $P$ & $\lnot P$ \\ \hline\hline
+        T & F \\ \hline
+        F & T \\ \hline
+        \end{tabular}
+    \end{table}
+\end{definition}
 
-In this section, we examine how statements are linked together to form new statements. The first type of statement we will examine is the conditional statement.
+\begin{definition}
+    Let $P$ and $Q$ be statements. The \vocab{conjunction} of $P$ and $Q$, denoted $P \land Q$, has truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \land Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & F \\ \hline
+        F & T & F \\ \hline
+        F & F & F \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Similarly, the \vocab{disjunction} of $P$ and $Q$, denoted $P \lor Q$, has truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \lor Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & T \\ \hline
+        F & T & T \\ \hline
+        F & F & F \\ \hline
+        \end{tabular}
+    \end{table}
+\end{definition}
+
+\begin{proposition}[De Morgan's Law]
+    
+\end{proposition}
+
+\subsection{Conditional and Biconditional Statements}
+
+In this section, we examine how statements are linked together to form more complicated statements. The first type of statement we will examine is the conditional statement.
 
 \begin{definition}
     A \vocab{conditional statement} has the form ``if $P$ then $Q$''. Here, $P$ is the \vocab{hypothesis} and $Q$ is the \vocab{conclusion}, denoted by $P \implies Q$. This statement is defined to have the truth table
@@ -72,7 +119,7 @@ We now look at biconditional statements. As the name suggests, a biconditional s
     When $P \iff Q$ is true, we say that $P$ and $Q$ are \vocab{equivalent}, i.e. $P \equiv Q$.
 \end{definition}
 
-An equivalent definition of $P \iff Q$ is the statement \[(P \implies Q) \quad \land \quad (Q \implies P).\] This allows us to easily justify the truth table of $P \iff Q$:
+An equivalent definition of $P \iff Q$ is the statement \[(P \implies Q) \quad \tand \quad (Q \implies P).\] This allows us to easily justify the truth table of $P \iff Q$:
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|}
@@ -105,6 +152,13 @@ We now introduce two important symbols, namely the universal quantifier ($\foral
 
 Note that a statement $P(x)$ does not necessarily have to mention $x$. For instance, we could define $P(x)$ as the statement ``5 is even''. Compare this with how a function $f(x)$ does not necessarily have to ``mention'' $x$, e.g. we could have $f(x) = 5$.
 
+\begin{proposition}
+    The negation of a universal statement is an existential statement, and vice versa. \[\lnot \bp{\exists x \in D, \, P(x)} \quad \iff \forall x \in D, \, \lnot P(x).\]
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
 \subsection{Types of Statements}
 
 Most of the statements we will encounter can be grouped into three classes, namely axioms, definitions and theorems.
@@ -125,6 +179,10 @@ Mathematical proofs are convincing arguments expressed in mathematical language,
 \begin{definition}
     A \vocab{proof} is a deductive argument for a mathematical statement, showing that the stated assumptions logically guarantee the conclusion.
 \end{definition}
+
+There are three main types of proofs: direct proof, proof by contrapositive and proof by contradiction.
+
+\subsection{Direct Proof}
 
 As an example, we will prove the following statement:
 
@@ -157,6 +215,28 @@ The above proof is an example of a direct proof.
 \begin{definition}
     A \vocab{direct proof} is an approach to prove a conditional statement $P \implies Q$. It is a series of valid arguments that starts with the hypothesis $P$, and ends with the conclusion $Q$.
 \end{definition}
+
+\subsection{Proof by Contrapositive}
+
+\begin{proposition}
+    Let $P$ and $Q$ be statements. Then \[P \implies Q \quad \iff \quad \lnot Q \implies \lnot P.\]
+\end{proposition}
+\begin{proof}
+    Truth table.
+\end{proof}
+
+\subsection{Proof by Contradiction}
+
+\begin{recipe}[Proof by Contradiction]
+    To prove $P$, we can
+    \begin{itemize}
+        \item Assume $\not P$.
+        \item Derive a contradiction.
+        \item Conclude that $\not P$ is false, which implies $P$ is true.
+    \end{itemize}
+\end{recipe}
+
+\subsection{Counter-Example}
 
 In the case where we wish to prove a statement false, we can find a counter-example. In providing a counter-example, it must fulfil the hypothesis, but not the conclusion. That is, to show that $P \implies Q$ is false, we must show that $P$ is true but $Q$ is false.
 

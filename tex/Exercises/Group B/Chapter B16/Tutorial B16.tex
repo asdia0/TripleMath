@@ -38,13 +38,13 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Consider the characteristic equation of the DE: \[2m^2 - 3m - 5 = (2m-5)(m+1) = 0.\] The roots are $m = 5/2$ and $m = -1$, whence the complementary function is \[y_c = A \e^{\frac52x} + B \e^{-x}.\] For the particular solution, we try \[y_p = Cx^2 + Dx + E.\] Note that \[y_p' = 2Cx + D \quad \land \quad y_p'' = 2C.\] Substituting this into the DE, \[2\bp{2C} + -3\bp{2Cx + D} - 5\bp{Cx^2 + Dx + E} = 10x^2 + 1.\] Comparing coefficients, we get the system \[\systeme[CDE]{-5C = 10,-6C-5D = 0,4C-3D-5E=1},\] which has solution $C = -2$, $D = 12/5$ and $E = -81/25$. The general solution is thus \[y = y_c + y_p = A \e^{\frac52x} + B \e^{-x} - 2x^2 + \frac{12}5 x - \frac{81}{25}.\]
+        Consider the characteristic equation of the DE: \[2m^2 - 3m - 5 = (2m-5)(m+1) = 0.\] The roots are $m = 5/2$ and $m = -1$, whence the complementary function is \[y_c = A \e^{\frac52x} + B \e^{-x}.\] For the particular solution, we try \[y_p = Cx^2 + Dx + E.\] Note that \[y_p' = 2Cx + D \quad \tand \quad y_p'' = 2C.\] Substituting this into the DE, \[2\bp{2C} + -3\bp{2Cx + D} - 5\bp{Cx^2 + Dx + E} = 10x^2 + 1.\] Comparing coefficients, we get the system \[\systeme[CDE]{-5C = 10,-6C-5D = 0,4C-3D-5E=1},\] which has solution $C = -2$, $D = 12/5$ and $E = -81/25$. The general solution is thus \[y = y_c + y_p = A \e^{\frac52x} + B \e^{-x} - 2x^2 + \frac{12}5 x - \frac{81}{25}.\]
     \end{ppart}
     \begin{ppart}
-        Consider the characteristic equation of the DE: \[m^2 - 2m + 3 = 0 \implies m = 1 \pm \sqrt{2} \i.\] The complementary function is hence \[y_c = \e^x \bp{A\cos \sqrt{2}x + B\sin \sqrt{2}x}.\] For the particular solution, we try \[y_p = C\e^{4x}.\] Note that \[y_p' = 4C\e^{4x} \quad \land \quad y_p'' = 16C\e^{4x}.\] Substituting this into the DE, \[16C\e^{4x} - 2\bp{4C\e^{4x}} + 3C\e^{4x}  22\e^{4x} \implies C = 2.\] The general solution is thus \[y = y_c + y_p = \e^x \bp{A \cos \sqrt{2}x + B \sin \sqrt{2}x} + 2\e^{4x}.\]
+        Consider the characteristic equation of the DE: \[m^2 - 2m + 3 = 0 \implies m = 1 \pm \sqrt{2} \i.\] The complementary function is hence \[y_c = \e^x \bp{A\cos \sqrt{2}x + B\sin \sqrt{2}x}.\] For the particular solution, we try \[y_p = C\e^{4x}.\] Note that \[y_p' = 4C\e^{4x} \quad \tand \quad y_p'' = 16C\e^{4x}.\] Substituting this into the DE, \[16C\e^{4x} - 2\bp{4C\e^{4x}} + 3C\e^{4x}  22\e^{4x} \implies C = 2.\] The general solution is thus \[y = y_c + y_p = \e^x \bp{A \cos \sqrt{2}x + B \sin \sqrt{2}x} + 2\e^{4x}.\]
     \end{ppart}
     \begin{ppart}
-        Consider the characteristic equation of the DE: \[m^2 - 2m + 1 = (m-1)^2 = 0.\] The only root is $m = 1$, whence the complementary function is \[s_c = (A + Bt) \e^{t}.\] For the particular solution, we try \[s_p = Ct^2 \e^t.\] Note that \[s_p' = C\e^t\bp{t^2 + 2t} \quad \land \quad s_p'' = C\e^t \bp{t^2 + 4t + 2}.\] Substituting this into the DE, \[C\e^t \bp{t^2 + 4t + 2} - 2C\e^t \bp{t^2 + 2t} + C\e^t \bp{t^2} = 4\e^t \implies C = 2.\] The general solution is thus \[s = s_c + s_p = \bp{A + Bt + 2t^2} \e^{t}.\]
+        Consider the characteristic equation of the DE: \[m^2 - 2m + 1 = (m-1)^2 = 0.\] The only root is $m = 1$, whence the complementary function is \[s_c = (A + Bt) \e^{t}.\] For the particular solution, we try \[s_p = Ct^2 \e^t.\] Note that \[s_p' = C\e^t\bp{t^2 + 2t} \quad \tand \quad s_p'' = C\e^t \bp{t^2 + 4t + 2}.\] Substituting this into the DE, \[C\e^t \bp{t^2 + 4t + 2} - 2C\e^t \bp{t^2 + 2t} + C\e^t \bp{t^2} = 4\e^t \implies C = 2.\] The general solution is thus \[s = s_c + s_p = \bp{A + Bt + 2t^2} \e^{t}.\]
     \end{ppart}
     \begin{ppart}
         Consider the characteristic equation of the DE: \[m^2 + 16m = 0 \implies m = \pm 4 \i.\] The complementary function is hence \[x_c = A\cos 4t + B \sin 4t.\] For the particular solution, we try \[x_p = t\bp{C\cos 4t + D \sin 4t}.\] Note that \[x_p' = 4t\bp{-C\sin 4t + D\cos 4t} + \bp{C \cos 4t + D \sin 4t}\] and \[x_p'' = 16t\bp{-C\cos 4t - D\sin 4t} + 8\bp{-C\sin 4t + D \cos 4t}.\] Substituting this into the DE, 
@@ -64,7 +64,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that the characteristic equation of the DE is $m^2 -4 = 0$, whence the roots are $m = \pm 2$. Hence, the complementary function is \[y_c = A\e^{2x} + B\e^{-2x}.\] For the particular solution, we try $y_p = C\e^{3x}$. Note that \[y_p' = 3C\e^{3x} \quad \land \quad y_p'' = 9C\e^{3x}.\] Substituting this into the DE, get \[9C\e^{3x} - 4C\e^{3x} = 10\e^{3x} \implies C = 2,\] whence the general solution is \[y = y_c + y_p = A\e^{2x} + B\e^{-2x} + 2\e^{3x}.\]
+        Observe that the characteristic equation of the DE is $m^2 -4 = 0$, whence the roots are $m = \pm 2$. Hence, the complementary function is \[y_c = A\e^{2x} + B\e^{-2x}.\] For the particular solution, we try $y_p = C\e^{3x}$. Note that \[y_p' = 3C\e^{3x} \quad \tand \quad y_p'' = 9C\e^{3x}.\] Substituting this into the DE, get \[9C\e^{3x} - 4C\e^{3x} = 10\e^{3x} \implies C = 2,\] whence the general solution is \[y = y_c + y_p = A\e^{2x} + B\e^{-2x} + 2\e^{3x}.\]
     \end{ppart}
     \begin{ppart}
         Note that \[\der{y}{x} = 2A\e^{2x} - 2B\e^{-2x} + 6\e^{3x}.\] The given conditions thus give the system \[\systeme[AB]{A + B + 2= -2, 2A - 2B + 6 = -6},\] whence $A = -5$ and $B = 1$. Hence, \[y = -5\e^{2x} + \e^{-2x} + 2\e^{3x}.\]
@@ -130,7 +130,7 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that \[\der{y}{x} = \der{y}{u} \der{u}{x}\] and \[\der[2]{y}{x} = \der[2]{y}{u} \bp{\der{u}{x}}^2 + \der{y}{u} \der[2]{u}{x}.\] Since $u = \ln x$, we have $\derx{u}{x} = 1/x$ and $\derx[2]{u}{x} = -1/x^2$. Thus, \[\der{y}{x} = \frac1x \der{y}{u} \quad \land \quad \der[2]{y}{x} = \frac1{x^2} \der[2]{y}{u} - \frac1{x^2} \der{y}{u}.\]
+    Note that \[\der{y}{x} = \der{y}{u} \der{u}{x}\] and \[\der[2]{y}{x} = \der[2]{y}{u} \bp{\der{u}{x}}^2 + \der{y}{u} \der[2]{u}{x}.\] Since $u = \ln x$, we have $\derx{u}{x} = 1/x$ and $\derx[2]{u}{x} = -1/x^2$. Thus, \[\der{y}{x} = \frac1x \der{y}{u} \quad \tand \quad \der[2]{y}{x} = \frac1{x^2} \der[2]{y}{u} - \frac1{x^2} \der{y}{u}.\]
 
     \begin{ppart}
         Substituting the above expressions into the DE, we have \[x^2 \bp{\frac1{x^2} \der[2]{y}{u} - \frac1{x^2} \der{y}{u}} + 2x \bp{\frac1x \der{y}{u}} - 2y = 0.\] Simplifying, we get \[\der[2]{y}{u} + \der{y}{u} - 2y = 0.\] The characteristic equation $m^2 + m - 2 = (m+2)(m-1) = 0$ has roots $m = -2$ and $m = 1$. Thus, \[y = A\e^{-2u} + B\e^u = Ax^{-2} + Bx.\]
@@ -156,7 +156,7 @@
     By letting $x = \sqrt t$, show that the differential equation \[\der[2]{y}{x} + \bp{2x - \frac1x} \der{y}{x} + 24 x^2 = 0\] where $x > 0$, may be transformed to \[\der[2]{y}{t} + a \der{y}{t} + b = 0,\] where $a$ and $b$ are constants to be determined. Hence, find the general solution of $y$ in terms of $x$.
 \end{problem}
 \begin{solution}
-    Note that \[\der{y}{x} = \der{y}{t} \der{t}{x}\] and \[\der[2]{y}{x} = \der[2]{y}{t} \bp{\der{t}{x}}^2 + \der{y}{t} \der[2]{t}{x}.\] Since $t = x^2$, we have $\derx{t}{x} = 2x$ and $\derx[2]{u}{x} = 2$. Thus, \[\der{y}{x} = 2x \der{y}{t} \quad \land \quad \der[2]{y}{x} = 4x^2 \der[2]{y}{t} + 2 \der{y}{u}.\] Substituting this into the given DE, \[\bp{4x^2 \der[2]{y}{t} + 2 \der{y}{u}} + \bp{2x - \frac1x} \bp{2x \der{y}{t}} + 24x^2 = 0.\] Simplifying, we get \[\der[2]{y}{t} + \der{y}{t} + 6 = 0,\] whence $a = 1$ and $b = 6$.
+    Note that \[\der{y}{x} = \der{y}{t} \der{t}{x}\] and \[\der[2]{y}{x} = \der[2]{y}{t} \bp{\der{t}{x}}^2 + \der{y}{t} \der[2]{t}{x}.\] Since $t = x^2$, we have $\derx{t}{x} = 2x$ and $\derx[2]{u}{x} = 2$. Thus, \[\der{y}{x} = 2x \der{y}{t} \quad \tand \quad \der[2]{y}{x} = 4x^2 \der[2]{y}{t} + 2 \der{y}{u}.\] Substituting this into the given DE, \[\bp{4x^2 \der[2]{y}{t} + 2 \der{y}{u}} + \bp{2x - \frac1x} \bp{2x \der{y}{t}} + 24x^2 = 0.\] Simplifying, we get \[\der[2]{y}{t} + \der{y}{t} + 6 = 0,\] whence $a = 1$ and $b = 6$.
 
     Rewriting, \[\der[2]{y}{t} + \der{y}{t} = -6.\] Integrating with respect to $t$, we get \[\der{y}{t} + y = -6t + C.\] Multiplying through by $\e^t$ yields \[\e^t \der{y}{t} + \e^t y = \der{}{t} \bp{\e^t y} = \e^t \bp{-6t + C}.\] Integrating with respect to $t$, \[\e^t y = \int \e^t \bp{-6t + C} \d t = -6 \bp{t\e^t - \e^t} + C\e^t = \e^t \bp{-6t + A} + B.\] Thus, \[y = -6t + A + B\e^{-t} = -6x^2 + A + B\e^{-x^2}.\]
 

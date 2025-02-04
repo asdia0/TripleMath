@@ -92,7 +92,7 @@
     In a binomial experiment, the mean number of successful trials is 24 and the variance is 20. Find the number of trials conducted and the probability of success for each trial.
 \end{problem}
 \begin{solution}
-    Let $n$ be the number of trials and $p$ be the probability of success of each trial. We have \[\m = np = 24 \quad \land \quad \s^2 = np(1-p) = 20.\] Thus, \[p = 1 - \frac{20}{np} = \frac16 \implies n = \frac{24}{p} = 144.\]
+    Let $n$ be the number of trials and $p$ be the probability of success of each trial. We have \[\m = np = 24 \quad \tand \quad \s^2 = np(1-p) = 20.\] Thus, \[p = 1 - \frac{20}{np} = \frac16 \implies n = \frac{24}{p} = 144.\]
 \end{solution}
 
 \begin{problem}
@@ -153,7 +153,7 @@
     Assume now that $A$ has the distribution $\Binom{30}{p}$.
     \begin{enumerate}
         \setcounter{enumi}{1}
-        \item Given that $p = 0.15$, find $\P{A = 3 \lor 4}$.
+        \item Given that $p = 0.15$, find $\P{A = 3 \tor 4}$.
         \item For an unknown value of $p$, it is given that $\P{A = 15} = 0.06864$ correct to 5 decimal places. Show that $p$ satisfies an equation of the form $p(1-p)=k$, where $k$ is a constant to be determined. Hence, find the value of $p$ to a suitable degree of accuracy, given that $p<0.5$.
     \end{enumerate}
 \end{problem}
@@ -162,10 +162,10 @@
         Votes must be made independently, and the probability of voting $A$ is the same for all voters.
     \end{ppart}
     \begin{ppart}
-        $\P{A = 3 \lor 4} = \P{A = 3} + \P{A = 4} = 0.373$.
+        $\P{A = 3 \tor 4} = \P{A = 3} + \P{A = 4} = 0.373$.
     \end{ppart}
     \begin{ppart}
-        Note that $k = p(1- p) = \Var{A}$ is a constant. Consider $\P{A = 15}$: \[\P{A = 15} = \binom{30}{15} p^{15} (1-p)^{15} = 0.06864 \implies k = p(1-p) = \sqrt[15]{\frac{0.06864}{\binom{30}{15}}} = 0.23790.\] Expanding $k = p(1-p)$ into a quadratic in $p$, we have \[p^2 - p + 0.23790 = 0 \implies p = 0.390 \lor 0.610.\] Since $p < 0.5$, we take $p = 0.390$.
+        Note that $k = p(1- p) = \Var{A}$ is a constant. Consider $\P{A = 15}$: \[\P{A = 15} = \binom{30}{15} p^{15} (1-p)^{15} = 0.06864 \implies k = p(1-p) = \sqrt[15]{\frac{0.06864}{\binom{30}{15}}} = 0.23790.\] Expanding $k = p(1-p)$ into a quadratic in $p$, we have \[p^2 - p + 0.23790 = 0 \implies p = 0.390 \tor 0.610.\] Since $p < 0.5$, we take $p = 0.390$.
     \end{ppart}
 \end{solution}
 
@@ -358,7 +358,7 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Let $W_k$ and $E_k$ be the number of westward and eastward travelling lorries passing $P$ in a $k$-minute period. Then \[W_k \sim \Po{\frac{k}{15}} \quad \land \quad E_k \sim \Po{\frac{k}{10}}.\]
+    Let $W_k$ and $E_k$ be the number of westward and eastward travelling lorries passing $P$ in a $k$-minute period. Then \[W_k \sim \Po{\frac{k}{15}} \quad \tand \quad E_k \sim \Po{\frac{k}{10}}.\]
     \begin{ppart}
         $\P{W_{10} = 0} \P{E_{10} = 0} = 0.189$.
     \end{ppart}

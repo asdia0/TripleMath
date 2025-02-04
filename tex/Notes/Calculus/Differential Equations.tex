@@ -432,7 +432,7 @@ Now, observe what happens when we translate $T_1$ such that it passes through $(
 
 The translated $T_1$ is now overestimating the actual solution curve at $t = t_1$! Hence, the optimal gradient $m$ is somewhere between $m_0$ and $m_1$. This motivates us to approximate $m$ by taking the average of $m_0$ and $m_1$: \[m \approx \frac{m_0 + m_1}{2}.\]
 
-We now find $m_0$ and $m_1$. Note that \[m_0 = f(t_0, y(t_0)) \quad \land \quad m_1 = f(t_1, y(t_1)).\] This poses a problem, as the value of $y(t_1)$ is not known to us. However, we can estimate it using the Euler method: \[y(t_1) \approx \wt{y}_1 = y_0 + \D t f(t_0, y_0).\] Note that we denote this approximation as $\wt{y}_0$. We thus have \[m \approx \frac{m_0 + m_1}{2} = \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}.\]
+We now find $m_0$ and $m_1$. Note that \[m_0 = f(t_0, y(t_0)) \quad \tand \quad m_1 = f(t_1, y(t_1)).\] This poses a problem, as the value of $y(t_1)$ is not known to us. However, we can estimate it using the Euler method: \[y(t_1) \approx \wt{y}_1 = y_0 + \D t f(t_0, y_0).\] Note that we denote this approximation as $\wt{y}_0$. We thus have \[m \approx \frac{m_0 + m_1}{2} = \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}.\]
 
 We are now ready to approximate $y(t_1)$. By the point-slope formula, the line with gradient $m$ passing through $(t_0, y_0)$ has equation \[y - y_0 = m (t - t_0) \approx \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2} (t - t_0).\] When $t = t_1$, we get \[y(t_1) \approx y_1 = y_0 + \D t \bs{\frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}}. \tag{1}\]
 

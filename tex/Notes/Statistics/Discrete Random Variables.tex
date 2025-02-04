@@ -387,7 +387,7 @@ We can prove this statement more rigorously using the probability distribution o
     Let $X \sim \Po{\l_1}$, $Y \sim \Po{\l_2}$ be independent random variables. Then $X + Y \sim \Po{\l_1 + \l_2}$
 \end{proposition}
 \begin{proof}
-    Consider the event $X + Y = n$. This can only happen if $X = m$ and $Y = n - m$. Thus, \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m \land Y = n -m}.\] Since $X$ and $Y$ are independent, we can split the summands into products: \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m} \P{Y = n -m}.\] Using the probability distribution we derived earlier, \[\P{X + Y = n} = \sum_{m = 0}^n \bs{\e^{-\l_1} \frac{\l_1^m}{m!}} \bs{\e^{-\l_2} \frac{\l_2^{n-m}}{(n-m)!}} = \frac{\e^{-(\l_1 + \l_2)}}{n!} \sum_{m = 0}^n \frac{n!}{m! (n-m)!} \l_1^m \l_2^{n-m}.\] Observe that the sum is simply the binomial expansion of $(\l_1 + \l_2)^{n}$. Thus, \[\P{X + Y = n} = \e^{-(\l_1 + \l_2)} = \frac{(\l_1 + \l_2)^n}{n!},\] which is exactly the probability distribution of a Poisson random variable with parameter $\l_1 + \l_2$.
+    Consider the event $X + Y = n$. This can only happen if $X = m$ and $Y = n - m$. Thus, \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m \tand Y = n -m}.\] Since $X$ and $Y$ are independent, we can split the summands into products: \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m} \P{Y = n -m}.\] Using the probability distribution we derived earlier, \[\P{X + Y = n} = \sum_{m = 0}^n \bs{\e^{-\l_1} \frac{\l_1^m}{m!}} \bs{\e^{-\l_2} \frac{\l_2^{n-m}}{(n-m)!}} = \frac{\e^{-(\l_1 + \l_2)}}{n!} \sum_{m = 0}^n \frac{n!}{m! (n-m)!} \l_1^m \l_2^{n-m}.\] Observe that the sum is simply the binomial expansion of $(\l_1 + \l_2)^{n}$. Thus, \[\P{X + Y = n} = \e^{-(\l_1 + \l_2)} = \frac{(\l_1 + \l_2)^n}{n!},\] which is exactly the probability distribution of a Poisson random variable with parameter $\l_1 + \l_2$.
 \end{proof}
 
 \subsection{Expectation and Variance}
@@ -609,7 +609,7 @@ This actually implies a much stronger property about the geometric distribution:
 \end{proposition}
 \begin{proof}
     \begin{gather*}
-        \P{X > s + t}{X > t} = \frac{\P{X > s + t \and X > t}}{\P{X > t}} = \frac{\P{X > s + t}}{\P{X > t}}\\
+        \P{X > s + t}{X > t} = \frac{\P{X > s + t \tand X > t}}{\P{X > t}} = \frac{\P{X > s + t}}{\P{X > t}}\\
         = \frac{(1-p)^{s+t}}{(1-p)^t} = (1-p)^s = \P{X > s}.
     \end{gather*}
 \end{proof}
