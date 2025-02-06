@@ -1,0 +1,94 @@
+\section{Problem Set 2}
+
+\begin{problem}
+    Is each of the following statements true or false? Give a proof if it is true, and give a counter-example if it is false.
+
+    \begin{enumerate}
+        \item For each pair of real numbers $x$ and $y$, if $x + y$ is irrational, then $x$ is irrational and $y$ is irrational.
+        \item For each pair of real numbers $x$ and $y$, if $x + y$ is irrational, then $x$ is irrational or $y$ is irrational.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    The first statement is false: Take $x = 0$ and $y = \sqrt2$. Then $x + y = \sqrt2$ is irrational, but $x = 0$ is rational.
+
+    The second statement is true.
+    \begin{proof}[Proof of \textit{(b)}]
+        Suppose $x$ and $y$ are rational. Then $x + y$ is also rational ($\QQ$ is closed under addition). Thus, by the contrapositive, if $x + y$ is irrational, either $x$ or $y$ must be irrational.
+    \end{proof}
+\end{solution}
+
+\begin{problem}
+    Determine whether each of the following real numbers is rational or irrational. Justify your answers.
+    
+    \begin{enumerate}
+        \item $\sqrt3 + \sqrt5$;
+        \item $\sqrt2 + \sqrt8$;
+        \item $\bp{1 + \sqrt2} / \bp{1 + \sqrt3}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Seeking a contradiction, suppose $\sqrt 3 + \sqrt 5$ is rational. Then \[\sqrt 3 - \sqrt 5 = \frac{3^2 - 5^2}{\sqrt3 + \sqrt5}\] is also rational. Thus, both $\sqrt3$ and $\sqrt5$ are rational. But 3 and 5 are not perfect squares, so by P6, they must be irrational, a contradiction. Thus, $\sqrt3 + \sqrt5$ must be irrational.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\sqrt 2 + \sqrt8 = \sqrt2 + 2\sqrt2 = 3 \sqrt2.\] Seeking a contradiction, suppose $3\sqrt2$ is rational. Then $\sqrt2$ must also be rational. But 2 is not a perfect square, so by P6, $\sqrt2$ is irrational, a contradiction. Thus, $\sqrt2 + \sqrt8$ must be irrational.
+    \end{ppart}
+    \begin{ppart}
+        Rationalizing the fraction, \[\frac{1 + \sqrt2}{1 + \sqrt3} = \frac{\bp{1 + \sqrt2}\bp{1 - \sqrt3}}{\bp{1 + \sqrt3}\bp{1 - \sqrt3}} = \frac{1 + \sqrt2 - \sqrt3 - \sqrt6}{-8}.\] Using an identical argument as part (a), one can show that the numerator is irrational, whence the original fraction must also be irrational.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Use proof by contradiction to show that the sum of squares of two odd integers is not divisible by 4.
+\end{problem}
+\begin{proof}
+    Seeking a contradiction, suppose there exist two odd integers $k_1 = 2n_1 + 1$ and $k_2 = 2n_2 + 1$ such that $k_1^2 + k_2^2 \equiv 0 \pmod{4}$. However, \[k_1^2 + k_2^2 = \bp{2n_1 + 1}^2 + \bp{2n_2 + 1}^2 = \bp{4n_1^2 + 4n_1 + 1} + \bp{4n_2^2 + 4n_2 + 1} \equiv 2 \pmod{4}.\] Thus, $0 \equiv 2 \pmod{4}$, a contradiction. Hence, the sum of squares of two odd integers is not divisible by 4.
+\end{proof}
+
+\begin{problem}
+    Prove that there are no integers $a$ and $n$ with $n \geq 2$ and $a^2 + 1 = 2^n$.
+\end{problem}
+\begin{proof}
+    Note that the only possible remainders of $a^2 + 1 \pmod{4}$ are 1 and 2. However, for $n \geq 2$, we have $2^n \equiv 0 \pmod{4}$. Since $0 \not\equiv 1, 2 \pmod{4}$, the desired statement holds.
+\end{proof}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Let $p$ be a prime number greater than 2. Write down the possible remainders of $p$ when divided by 4.
+    \end{enumerate}
+
+    Fermat's Little Theorem states that if $p$ is prime and $a$ is an integer, which is not divisible by $p$, then $a^{p-1} \equiv 1 \pmod{p}$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Use Fermat's Little Theorem to prove that if $p$ is a prime number greater than 2, and there exists an integer $z$ such that $z^2 \equiv -1 \pmod{p}$, then $p$ is not congruent to 3 (mod 4).
+        \item Write down the possible remainders of $w^2$ when divided by 8, where $w$ is an integer.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        All primes greater than 2 are odd. Thus, the only possible remainders when $p$ is divided by 4 are 1 and 3.
+    \end{ppart}
+    \begin{proof}[Proof of \textit{(b)}.]
+        Since $z^2 \equiv -1 \not\equiv 0 \pmod{p}$, we know that $p \nmid z$. Thus, by Fermat's Little Theorem, we have \[z^{p-1} \equiv 1 \pmod{p}.\] Squaring the given congruence, we also have \[z^4 \equiv 1 \pmod{p}.\]
+
+        Seeking a contradiction, suppose $p$ is congruent to 3 (mod 4). Then $p-1 = 4k+2$ for some integer $k$. Thus, \[z^{p-1} = z^{4k+2} = \bp{z^4}^k z^2 \equiv 1^k (-1) = -1 \pmod{p},\] which is only possible for $p = 2$, a contradiction. Thus, $p$ cannot be congruent to 3 (mod 4).
+    \end{proof}
+    \setcounter{partnum}{2}
+    \begin{ppart}
+        The possible remainders of $w^2$ when divided by 8 are 0, 1, and 4.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The Unique Factorization Theorem states that every integer $n > 1$ has a unique standard factored form, i.e. there is exactly one way to express \[n = p_1^{k_1} p_2^{k_2} \dots p_t^{k_t}\] where $p_1 < p_2 < \dots < p_t$ are distinct primes and $k_1, k_2, \dots, k_t$ are some positive integers.
+
+    Use the Unique Factorization Theorem to prove that, if a positive $n$ is not a perfect square, then $\sqrt{n}$ is irrational.
+\end{problem}
+\begin{proof}
+    We prove the claim via the contrapositive. Suppose $\sqrt n$ is rational, where $n$ is an integer. Write $\sqrt{n} = a/b$ for integers $a$, $b$ with $b \neq 0$. Squaring, we get \[n = \frac{a^2}{b^2} \implies b^2 n = a^2 \tag{1}.\] 
+    
+    Let $\nu_p(z)$ represent the power of $p$ in the factorization of an integer $z$. From (1), we have \[\nu_p\bp{b^2} + \nu_p(n) = \nu_p\bp{a^2} \implies 2\nu_p(b) + \nu_p(n) = 2 \nu_p(a) \implies \nu_p(n) = 2\bs{\nu_p(a) - \nu_p(b)},\] which is even. Hence, all prime factors of $n$ have an even power, thus $n$ is a perfect square.
+
+    Hence, by the contrapositive, if $n$ is not a perfect square, then $\sqrt{n}$ is irrational.
+\end{proof}

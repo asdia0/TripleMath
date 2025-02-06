@@ -1,5 +1,7 @@
 \chapter{Number Theory}
 
+\section{Congruence}
+
 \begin{definition}
     Let two integers $a$ and $b$ (with $b \neq 0$). If there exists some integer $n$ such that $a = bn$, we say
     \begin{itemize}
@@ -51,9 +53,9 @@ In other words, congruence modulo preserves addition, subtraction, multiplicatio
 
 We now state an important result that formalizes our notion of remainders when dividing integers.
 
-\begin{theorem}[Euclid's Division Lemma]
+\begin{lemma}[Euclid's Division Lemma]
     Let $n \in \ZZ^+$. Then for any $m \in \ZZ$, there exists a unique integer $r$ with $0 \leq r < n$ such that \[m \equiv r \pmod{n}.\] Equivalently, there exists an integer $q$ such that \[m = qn + r.\]
-\end{theorem}
+\end{lemma}
 We will prove this statement for $m, n > 0$. We can take $m > n$ since if $0 < m < n$, we can simply take $q = 0$ and $r = m$.
 \begin{proof}
     We prove that such an $r$ exists, and show that it must be unique.
@@ -61,4 +63,18 @@ We will prove this statement for $m, n > 0$. We can take $m > n$ since if $0 < m
     \item\paragraph{Existence.} Let $q$ be the largest number such that $m \geq nq$ and let $r = m - nq \geq 0$. Seeking a contradiction, suppose $r \geq n$, i.e. $r = n + d$ for $d \geq 0$. Then \[m = nq + r = nq + \bp{n + d} = n(q+1) + d \geq n(q+1),\] contradicting the maximality of $q$. Hence, $0 \leq r < n$, i.e. $r$ exists.
 
     \item\paragraph{Uniqueness.} Suppose there exist $r_1$, $r_2$, with $0 \leq r_1, r_2 < n$ such that \[m = q_1 n + r_1 = q_2 n + r_2.\] Then $r_1 = (q_2 - q_1) n + r_2$. Since $0 \leq r_1, r_2 < n$, we must have $r_1 = r_2$. Hence, $r$ must be unique. This concludes the proof.
+\end{proof}
+
+\begin{lemma}[Euclid's Lemma]
+    Let $p$ be prime. If $p$ divides $ab$, then $p$ divides $a$ or $p$ divides $b$.
+\end{lemma}
+\begin{proof}
+    Let \[a = \prod_{i = 1}^{k} p_i^{n_i}, \quad b = \prod_{j = 1}^{l} q_j^{m_j},\] where $p_i$ and $q_j$ are primes, while $n_i$ and $m_j$ are positive integers. Then \[p \mid ab = \prod_{i = 1}^{k} p_i^{n_i} \prod_{j = 1}^{l} q_j^{m_j}.\] By the uniqueness of prime decomposition, either $p = p_i$ for some $i = 1, \dots, k$ (in which case $p \mid a$), or $p = q_j$ for some $j = 1, \dots, l$ (in which case $p \mid b$). Hence, either $p \mid a$ or $p \mid b$.
+\end{proof}
+
+\begin{theorem}
+    There are infinitely many primes.
+\end{theorem}
+\begin{proof}
+    Seeking a contradiction, suppose there are finitely many primes $p_1, p_2, \dots, p_n$. Consider \[a = p_1 p_2 \dots p_n + 1.\] Since $a > p_1, p_2, \dots p_n$, by our hypothesis, $a$ cannot be a prime, i.e. $a$ is composite. Hence, it must have a prime factorization. Without loss of generality, suppose $p_1$ be a prime factor of $a$. Then $p_1 \mid a$. However, \[p_1 \mid a - 1 = p_1 p_2 \dots p_n\] too. Hence, by divisibility rules, $p_1$ must divide the difference between $a$ and $a-1$, i.e. \[p_1 \mid \bs{a - (a-1)} = 1,\] which implies that $p_1 = 1$. This is a contradiction, since 1 is not a prime. Thus, there must be infinitely many primes.
 \end{proof}

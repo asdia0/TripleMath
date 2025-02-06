@@ -12,6 +12,8 @@ Mathematics is a deductive science, where from a set of basic axioms, we prove m
 
 We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``statement about $x$''. We can denote this statement more compactly as $P(x)$. For instance, $P(5)$ is the statement ``5 is even'', while $P(72)$ is the statement ``72 is even'', and so forth. We can also write $P(x)$ more compactly as $P$.
 
+We now introduce some operations of statements, namely the negation, conjunction and disjunction operations.
+
 \begin{definition}
     The \vocab{negation} of a statement $P$, denoted $\lnot P$, is false when $P$ is true, and true when $P$ is false. In a truth table,
     \begin{table}[H]
@@ -25,8 +27,12 @@ We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``
     \end{table}
 \end{definition}
 
+\begin{example}
+    If $P(x)$ is the statement ``$x$ is even'', then $\lnot P(x)$ is the statement ``$x$ is odd''.
+\end{example}
+
 \begin{definition}
-    Let $P$ and $Q$ be statements. The \vocab{conjunction} of $P$ and $Q$, denoted $P \land Q$, has truth table
+    The \vocab{conjunction} of two statements $P$ and $Q$, denoted $P \land Q$, has truth table
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|c|}
@@ -38,8 +44,14 @@ We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``
         F & F & F \\ \hline
         \end{tabular}
     \end{table}
+\end{definition}
 
-    Similarly, the \vocab{disjunction} of $P$ and $Q$, denoted $P \lor Q$, has truth table
+\begin{example}
+    If $P$ is the statement ``I like cats'', and $Q$ is the statement ``I like dogs'', then $P \land Q$ is the statement ``I like cats and dogs''.
+\end{example}
+
+\begin{definition}
+    The \vocab{disjunction} of two statements $P$ and $Q$, denoted $P \lor Q$, has truth table
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|c|}
@@ -53,9 +65,36 @@ We call a sentence such as ``$x$ is even'' that depends on the value of $x$ a ``
     \end{table}
 \end{definition}
 
+\begin{example}
+    If $P$ is the statement ``I like cats'', and $Q$ is the statement ``I like dogs'', then $P \lor Q$ is the statement ``I like cats or dogs or both''.
+\end{example}
+
 \begin{proposition}[De Morgan's Law]
-    
+    Let $P$ and $Q$ be statements. Then \[\lnot \bp{P \land Q} \quad \iff \quad (\lnot P) \lor (\lnot Q)\] and \[\lnot \bp{P \lor Q} \quad \iff \quad (\lnot P) \land (\lnot Q).\]
 \end{proposition}
+\begin{proof}
+    Consider the following truth tables:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \land Q$ & $P \lor Q$ & $\lnot (P \land Q)$ & $\lnot (P \lor Q)$ & $\lnot P$ & $\lnot Q$ & $(\lnot P) \land (\lnot Q)$ & $(\lnot P) \lor (\lnot Q)$ \\ \hline
+        T & T & T & T & F & F & F & F & F & F \\ \hline
+        T & F & F & T & T & F & F & T & F & T \\ \hline
+        F & T & F & T & T & F & T & F & F & T \\ \hline
+        F & F & F & F & T & T & T & T & T & T \\ \hline
+        \end{tabular}
+    \end{table}
+
+    We see that the truth table of $\lnot \bp{P \land Q}$ is equivalent to that of $(\lnot P) \lor (\lnot Q)$, thus the statements are equivalent.
+    
+    Similarly, the truth table of $\lnot \bp{P \lor Q}$ is equivalent to that of $(\lnot P) \land (\lnot Q)$, thus the statements are equivalent.
+\end{proof}
+
+\begin{example}
+    Let $P$ be the statement ``I like cats'', and $Q$ be the statement ``I like dogs''. Then $\lnot (P \land Q)$ is ``It is not the case that I like both cats and dogs'', while $(\lnot P) \lor (\lnot Q)$ is ``I do not like cats, or I do not like dogs, or I do not like both''. Clearly, the two statements are equivalent.
+\end{example}
 
 \subsection{Conditional and Biconditional Statements}
 
@@ -153,11 +192,17 @@ We now introduce two important symbols, namely the universal quantifier ($\foral
 Note that a statement $P(x)$ does not necessarily have to mention $x$. For instance, we could define $P(x)$ as the statement ``5 is even''. Compare this with how a function $f(x)$ does not necessarily have to ``mention'' $x$, e.g. we could have $f(x) = 5$.
 
 \begin{proposition}
-    The negation of a universal statement is an existential statement, and vice versa. \[\lnot \bp{\exists x \in D, \, P(x)} \quad \iff \forall x \in D, \, \lnot P(x).\]
+    The negation of a universal statement is an existential statement, and vice versa. \[\lnot \bp{\forall x \in D, \, P(x)} \quad \iff \quad \exists x \in D, \, \lnot P(x).\]
 \end{proposition}
 \begin{proof}
-    
+    We prove that the negation a universal statement is an existential statement. Observe that a universal statement is equivalent to a conjunction of many statements: \[\forall x \in D, \, P(x) \quad \iff \quad P(x_1) \land P(x_2) \land \dots,\] where $D = \bc{x_1, x_2, \dots}$. Using De Morgan's laws, we can easily negate the above statements: \[\lnot \bp{\forall x \in D, \, P(x)} \quad \iff \lnot P(x_1) \lor \lnot P(x_2) \lor \dots.\] However, the last statement is equivalent to the existential statement \[\exists x \in D, \, \lnot P(x).\] Thus, \[\lnot \bp{\forall x \in D, \, P(x)} \quad \iff \quad \exists x \in D, \, \lnot P(x).\]
+
+    Using a similar argument, one can prove that the negation of an existential statement is a universal statement, i.e. \[\lnot \bp{\exists x \in D, \, P(x)} \quad \iff \quad \forall x \in D, \, \lnot P(x).\]
 \end{proof}
+
+\begin{example}
+    Let $D$ be the set of all students in a class, and let $P(x)$ be ``$x$ likes durian''. Then the statement $\forall x \in D, \, P(x)$ reads as ``everyone in the class likes durian''. Intuitively, its negation would be ``someone in the class does not like durian'', which we can write as $\exists x \in D, \, \lnot P(x)$.
+\end{example}
 
 \subsection{Types of Statements}
 
@@ -184,25 +229,14 @@ There are three main types of proofs: direct proof, proof by contrapositive and 
 
 \subsection{Direct Proof}
 
+A \vocab{direct proof} is an approach to prove a conditional statement $P \implies Q$. It is a series of valid arguments that starts with the hypothesis $P$, and ends with the conclusion $Q$.
+
 As an example, we will prove the following statement:
 
-\begin{statement}\label{st:Proof-Eg}
+\begin{statement}
     For all $n \in \ZZ^+$, both $n$ and $n^2$ have the same parity.
 \end{statement}
-
-We first define what it means for an integer to be even and odd:
-
-\begin{definition}
-    An integer $x$ is even if there exists some integer $y$ such that $x = 2y$.
-\end{definition}
-
-\begin{definition}
-    An integer $x$ is odd if there exists some integer $y$ such that $x = 2y + 1$.
-\end{definition}
-
-We are now ready to prove Statement~\ref{st:Proof-Eg}.
-
-\begin{proof}[Proof of Statement~\ref{st:Proof-Eg}]
+\begin{proof}
     Since $n$ can only be either odd or even, we just need to consider the following cases:
 
     \case{1} Suppose $n$ is even. By definition, there exists some $k \in \ZZ$ such that $n = 2k$. Then \[n^2 = (2k)^2 = 4k^2 = 2\bp{2k^2} = 2a,\] where $a = 2k^2$. Since $a$ is an integer, it follows from our definition that $n^2$ is even. Hence, $n$ and $n^2$ have the same parity.
@@ -210,31 +244,63 @@ We are now ready to prove Statement~\ref{st:Proof-Eg}.
     \case{2} Suppose $n$ is odd. By definition, there exists some $h \in \ZZ$ such that $n = 2h + 1$. Then \[n^2 = (2h+1)^2 = 4h^2 + 4h + 1 = 2\bp{2h^2 + 2h} + 1 = 2b + 1,\] where $b = 2h^2 + 2h$. Since $b$ is an integer, it follows from our definition that $n^2$ is odd. Hence, $n$ and $n^2$ have the same parity.
 \end{proof}
 
-The above proof is an example of a direct proof.
-
-\begin{definition}
-    A \vocab{direct proof} is an approach to prove a conditional statement $P \implies Q$. It is a series of valid arguments that starts with the hypothesis $P$, and ends with the conclusion $Q$.
-\end{definition}
-
 \subsection{Proof by Contrapositive}
+
+Suppose we wish to prove $P \implies Q$. Occasionally, the hypothesis $P$ is more complicated than the conclusion $Q$, which is not desirable. In such a scenario, we can choose to prove the statement via the \vocab{contrapositive}, i.e. prove that $\lnot Q \implies \lnot P$. This typically simplifies the proof, since our hypothesis $\lnot Q$ is now simpler.
+
+We now show the equivalence between $P \implies Q$ and $\lnot Q \implies \lnot P$.
 
 \begin{proposition}
     Let $P$ and $Q$ be statements. Then \[P \implies Q \quad \iff \quad \lnot Q \implies \lnot P.\]
 \end{proposition}
 \begin{proof}
-    Truth table.
+    Consider the following truth table:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \implies Q$ & $\lnot Q$ & $\lnot P$ & $\lnot Q \implies \lnot P$ \\ \hline
+        T & T & T & F & F & T \\ \hline
+        T & F & F & T & F & F \\ \hline
+        F & T & T & F & T & T \\ \hline
+        F & F & T & T & T & T \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Since $P \implies Q$ and $\lnot Q \implies \lnot P$ have the same truth table, they are equivalent.
+\end{proof}
+
+As an example, we will prove the following statement using the contrapositive.
+
+\begin{statement}
+    For any real numbers $x$ and $y$, if $x^2 y + x y^2 < 30$, then $x < 2$ or $y < 3$.
+\end{statement}
+\begin{proof}
+    Since the hypothesis is much more complicated than the conclusion, we are motivated to use the contrapositive.
+
+    Suppose $x > 2$ and $y > 3$ (this is the negation of $x < 2$ or $y < 3$). Then $x^2 y > (2)^2 (3) = 12$ and $xy^2 > (2)(3)^2 = 18$. Thus, $x^2 y + xy^2 > 12 + 18 = 30$. (this is the negation of $x^2y + xy^2 < 30$). Thus, by the contrapositive, the statement is true.
 \end{proof}
 
 \subsection{Proof by Contradiction}
 
-\begin{recipe}[Proof by Contradiction]
-    To prove $P$, we can
-    \begin{itemize}
-        \item Assume $\not P$.
-        \item Derive a contradiction.
-        \item Conclude that $\not P$ is false, which implies $P$ is true.
-    \end{itemize}
-\end{recipe}
+A \vocab{proof by contradiction} is a proving technique where we want to prove that a statement is true by assuming that it is false, and arrive at a contradiction. That is, to prove a statement $P$, we can 
+\renewcommand{\theenumi}{\arabic{enumi}.}
+\begin{enumerate}
+    \item Assume $\lnot P$.
+    \item Derive a contradiction, or absurdity.
+    \item Conclude that $\lnot P$ is false, which implies $P$ is true.
+\end{enumerate}
+\renewcommand{\theenumi}{(\alph{enumi})}
+
+A classic example of a proof by contradiction is the irrationality of 2.
+
+\begin{statement}
+    $\sqrt2$ is irrational.
+\end{statement}
+\begin{proof}
+    Seeking a contradiction, suppose $\sqrt2$ is rational. Write $\sqrt2 = a/b$, where $a$ and $b$ are coprime integers with $b \neq 0$. Squaring, we get \[2 = \frac{a^2}{b^2} \implies a^2 = 2b^2. \tag{1}\] Thus, $a^2$ is even, which implies $a$ is even. Hence, $a = 2k$ for some integer $k$. Substituting this back into (1), we get \[(2k)^2 = 2b^2 \implies b^2 = 2k^2,\] whence $b^2$ is even, which implies $b$ is also even. Thus, both $a$ and $b$ have a factor of 2, contradicting our assumption that $a$ and $b$ are coprime. Thus, our assumption that $\sqrt2$ is rational is false, whence $\sqrt2$ is irrational.
+\end{proof}
 
 \subsection{Counter-Example}
 
