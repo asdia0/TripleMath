@@ -16,14 +16,6 @@ There are two types of random variables: discrete and continuous.
 
 Examples of discrete random variables include the number that shows on the toss of a fair die ($X = 1, 2, \dots, 6$), and the number of times a fair die is thrown until a `6' is obtained ($Y = 1, 2, \dots,$ to infinity).
 
-\begin{definition}
-    A \vocab{continuous random variable} is a random variable that can take on any value in a given interval.
-\end{definition}
-
-Note that the value of a continuous random variable is uncountable. It can only take on an interval of values, not a specific value.
-
-An example of continuous random variables is the volume of beverage (in ml) in a 500 ml bottle ($100 \leq X \leq 200$, $200 \leq X \leq 300$, etc.)
-
 In this chapter, we will only discuss discrete random variables. We will deal more with continuous random variables in \SS\ref{chap:Continuous-Random-Variables}.
 
 \section{Properties}
@@ -78,7 +70,7 @@ From the above example, the discrete random variable $X$ takes on only countable
     \end{itemize}
 \end{condition}
 
-\subsection{Expectation}
+\subsection{Expectation}\label{ssec:DRV-Exp}
 
 Recall that in descriptive statistics, the mean of a sample can be calculated as \[\text{Mean} = \frac{\sum xf}{n},\] where $x$ is a data value and $f$ is its frequency. In the case of a discrete random variable $X$, we can think of $x$ as a particular value of $X$, and $f/n$ as the probability that $x$ occurs (i.e. how ``frequently'' $x$ occurs). Thus, \[\text{Mean} = \sum_{x} x \P{X = x}.\] We call this ``mean'' the expectation of $X$.
 
@@ -116,7 +108,7 @@ In fact, the last property is a direct consequence of the linearity of the expec
     Let $X$ and $Y$ be random variables (dependent or independent), and let $a$ and $b$ be real constants. Then \[\E{aX \pm bY} = a\E{X} \pm b\E{Y}.\]
 \end{proposition}
 
-\subsection{Variance}
+\subsection{Variance}\label{ssec:DRV-Var}
 
 Recall that in descriptive statistics, the variance of a sample can be calculated as \[\text{Variance} = \frac1n \sum f\bp{x - \bar x}^2,\] where $f$ is the frequency of a data value $x$ and $\bar x$ is the mean of the sample. In the context of discrete random variables, $\P{X = x}$ corresponds to $f/n$, while $\m$ corresponds to $\bar x$. Thus, \[\text{Variance} = \sum \bp{x - \m}^2 \P{X = x} = \E{(x- \m)^2}.\]
 
@@ -312,7 +304,7 @@ Also note that a binomial distribution can only have 1 or 2 modes. In addition, 
 \section{Poisson Distribution}
 
 \begin{definition}
-    Let $X$ be the number of occurrences of a particular event over an interval of time (or space) $t$. Let $\l$ be the mean rate of occurrence per unit time. Then $X$ is said to follow a Poisson distribution with parameter $\l t$, written as \[X \sim \Po{\l t}.\]
+    Let $X$ be the number of occurrences of a particular event over an interval of time (or space) $t$. Let $\l$ be the mean rate of occurrence per unit time. Then $X$ is said to follow a \vocab{Poisson distribution} with parameter $\l t$, written as \[X \sim \Po{\l t}.\]
 \end{definition}
 \begin{remark}
     Typically, we assume $t$ to be the unit time interval, in which case we simply write $X \sim \Po{\l}$.
@@ -328,6 +320,8 @@ For $X$ to follow the Poisson distribution, the following conditions must also b
         \item Events occur at a constant average rate, i.e. for a given interval of time (or space), the mean number of occurrences is proportional to the length of the interval.
     \end{itemize}
 \end{condition}
+
+Such a model is also called a Poisson process.
 
 Situations where a Poisson model could be used include:
 \begin{itemize}
@@ -391,7 +385,6 @@ We can prove this statement more rigorously using the probability distribution o
 \end{proof}
 
 \subsection{Expectation and Variance}
-
 
 \begin{proposition}[Expectation of Poisson Distribution]
     Let $X \sim \Po{\l t}$. Then $\E{X} = \l t$.
