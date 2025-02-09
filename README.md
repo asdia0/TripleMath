@@ -6,7 +6,6 @@ Notes and exercises for A Level H2/3 Mathematics and H2 Further Mathematics.
 
 A green icon (🟢) indicates the relevant section has been added. A yellow icon (🟡) indicates a work in progress. A red icon (🔴) indicates there is no such section (e.g. the tutorial does not exist).
 
-
 ### Group A
 
 | Code  | Chapter                                                       | Notes | Tutorial | Self-Practice | Assignment |
@@ -30,7 +29,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A14A  | Discrete Random Variables                                     |  🟢  |   🟢    |      🟡      |    🟢     |
 | A14B  | Special Discrete Random Variables                             |  🟢  |   🟢    |      🟡      |    🟢     |
 | A15A  | Continuous Random Variables                                   |  🟢  |   🟢    |      🟡      |    🟢     |
-| A15B  | Special Continuous Random Variables                           |  🟢  |   🟡    |      🟡      |    🟡     |
+| A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟡     |
 
 ### Group B
 

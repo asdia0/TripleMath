@@ -1,0 +1,467 @@
+\section{Tutorial A15B}
+
+\begin{problem}
+    A continuous random variable $X$ has a uniform distribution over the interval $[0, n]$. Write down $\E{X}$ and show that $\Var{X} = \frac1{12} n^2$. Denoting the expectation and standard deviation by $\m$ and $\s$ respectively, evaluate $\P{\abs{X - \m} < \s}$.
+\end{problem}
+\begin{solution}
+    We have $X \sim \Uni{0}{n}$. Hence, $\E{X} = n/2$. Note that $X$ has pdf \[f(x) = \begin{cases}
+        \frac1n, & 0 \leq x \leq n,\\
+        0, & \ow.
+    \end{cases}\] Thus, \[\E{X^2} = \int_{-\infty}^\infty x^2 f(x) \d x = \int_0^\infty \frac{x^2}{n} \d x = \evalint{\frac{x^3}{3n}}{0}{n} = \frac{n^2}{3},\] whence \[\Var{X} = \E{X^2} - \E{X}^2 = \frac{n^2}{3} - \bp{\frac{n}{2}}^2 = \frac{n^2}{12}.\] Thus, \[\s = \sqrt{\Var{X}} = \frac{n}{2\sqrt3}.\]
+
+    Note that $X$ has cdf \[F(x) = \begin{cases}
+        0, & x < 0,\\
+        \frac{x}n, & 0 \leq x \leq n,\\
+        1, & x > n.
+    \end{cases}\] Thus, \[\P{\abs{X - \m} < \s} = \P{\m - \s < X < \m + \s} = \frac{\m + \s}{n} - \frac{\m - \s}{n} = \frac{2\s}{n} = \frac1{\sqrt3}.\]
+\end{solution}
+
+\begin{problem}
+    The continuous random variable $X$ has probability density function defined by \[f(x) = \begin{cases}
+        k \e^{-\l x}, & x \geq 0,\\
+        0, & \ow,
+    \end{cases}\] where $k$ and $\l$ are positive constants.
+
+    \begin{enumerate}
+        \item Show that $k = \l$.
+        \item Show that $\E{X} = 1/\l$.
+        \item Find $\Var{X}$.
+        \item Find the median of $X$.
+    \end{enumerate}
+
+    The random variable $X$ represents the lifetime in hours of a particular brand of torch battery. Show that the probability that a particular battery lasts at least twice as long as the mean lifetime is $\e^{-2}$. Find, to three decimal places, the probability that the lifetime of a particular battery lies between the median and mean lifetimes.
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(x) \d x = \int_0^\infty k\e^{-\l x} \d x = \evalint{\frac{-k\e^{-\l x}}{\l}}0\infty = \frac{k}{\l} \implies k = \l.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\E{X} = \int_{-\infty}^\infty x f(x) \d x = \int_0^\infty \l x \e^{-\l x} \d x = \evalint{-x\e^{-\l x} - \frac1\l \e^{-\l x}}0\infty = \frac1\l.\]
+    \end{ppart}
+    \begin{ppart}
+        We have
+        \begin{gather*}
+            \E{X^2} = \int_{-\infty}^\infty x^2 f(x) \d x = \int_0^\infty \l x^2 \e^{-\l x} \d x\\
+            = \evalint{-x^2 \e^{-\l x}}0\infty + \frac2{\l} \int_0^\infty \l x \e^{-\l x} \d x= \frac2\l \E{X} = \frac2{\l^2}.
+        \end{gather*}
+        Thus, \[\Var{X} = \E{X^2} - \E{X}^2 = \frac2{\l^2} - \bp{\frac1\l}^2 = \frac1{\l^2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $F$ be the cdf of $X$. For $x \geq 0$, \[F(x) = \int_0^x f(t) \d t = \int_0^x \l \e^{-\l t} \d t = \evalint{-\e^{-\l t}}0x = 1 - \e^{-\l x}.\] Let $m$ be the median. Then \[\frac12 = F(m) = 1 - \e^{-\l m} \implies m = \frac{\ln 2}{\l}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Given that $X \sim \Normal{21.5}{7}$, evaluate
+    \begin{enumerate}
+        \item $\P{18.7 < X \leq 24.5}$
+        \item $\P{X < 21.5}$
+        \item $\P{X \geq 23}$
+        \item $\P{\abs{X - 21.5} < 6}$
+        \item $\P{\abs{X - 21.5} > 4.5}$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        $\P{18.7 < X \leq 24.5} = 0.727 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{X < 21.5} = 0.5$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{X \geq 23} = 1 - \P{X < 23} = 0.285 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{\abs{X - 21.5} < 6} = \P{15.5 < X < 27.5} = 0.977 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{\abs{X - 21.5} > 4.5} = 1 - \P{17 < X < 26} = 0.0890 \tosf{3}$.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    If $X \sim \Normal{33}{10}$, find the value (or range of values) of $a$ such that
+    \begin{enumerate}
+        \item $\P{X < a} = 0.14$
+        \item $\P{X > a} = 0.5$
+        \item $\P{X \geq a} > 0.2$
+    \end{enumerate}
+
+    Find the value (or range of values) of $c$ such that
+    \begin{enumerate}
+        \item $\P{Z < c} = 0.86$
+        \item $\P{\abs{Z} > c} = 0.05$
+        \item $\P{\abs{Z} \leq c} < 0.7$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Using G.C.,
+    \begin{ppart}
+        $\P{X < a} = 0.14 \implies a = 29.6$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{X > a} = 0.5 \implies a = 33$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{X \geq a} > 0.2 \implies a < 35.7$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{Z < c} = 0.86 \implies c = 1.08$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{\abs{Z} > c} = 0.05 \implies \P{Z > c} = 0.025 \implies c = 1.96$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{\abs{Z} \leq c} < 0.7 \implies \P{0 \leq Z \leq c} < 0.35 \implies \P{Z \leq c} < 0.85 \implies c < 1.04$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The continuous random variable $X$ has a uniform distribution over the interval $0\leq x \leq1$. Write down $\E{X}$ and $\Var{X}$. The random variable $Y$ is defined by $Y=\e^{-X}$. By considering $\P{Y\leq y}$, obtain the cumulative density function of $Y$. Hence, find $\E{Y}$ and $\Var{Y}$, leaving your answers correct to 2 decimal places.
+\end{problem}
+\begin{solution}
+    Since $X \Uni{0}{1}$, we clearly have $\E{X} = 0.5$ and $\Var{X} = \frac1{12}$.
+
+    Since \[F_X(x) = \begin{cases}
+        0, & x < 0,\\
+        x, & 0 \leq x \leq 1,\\
+        1, & x > 1,
+    \end{cases}\] we have
+    \begin{gather*}
+        F_Y(y) = \P{Y \leq y} = \P{\e^{-X} \leq y} = \P{X \geq -\ln y} = 1 - \P{X \leq -\ln y} \\
+        = \begin{cases}
+            1, & -\ln y < 0,\\
+            1 + \ln y, & 0 \leq -\ln y \leq 1,\\
+            0, & -\ln y > 1,
+        \end{cases}
+        = \begin{cases}
+            1, & y > 1,\\
+            1 + \ln y, & \e^{-1} \leq y \leq 1,\\
+            0, & y < \e^{-1}.
+        \end{cases}
+    \end{gather*}
+
+    Differentiating, we obtain the pdf of $y$: \[f_Y(y) = \begin{cases}
+        \frac1{y}, & \e^{-1} \leq y \leq 1,\\
+        0, & \ow.
+    \end{cases}\] Thus, \[\E{Y} = \int_{-\infty}^\infty y f_Y(y) \d y = \int_{\e^{-1}}^1 1 \d y = 0.63212 = 0.63 \todp{2}.\] Also, we have \[\E{Y^2} = \int_{-\infty}^\infty y^2 f_Y(y) \d y = \int_{\e^{-1}}^1 y \d y = 0.43233.\] Thus, \[\Var{Y} = \E{Y^2} - \E{Y}^2 = 0.63212 - 0.43233^2 = 0.03 \todp{2}.\]
+\end{solution}
+
+\begin{problem}
+    A semicircular arc, with centre $O$ and radius $a$, is drawn with $AB$ as diameter. A point $Q$ is taken at random on this arc, such that the angle $BOQ = \t$ has the rectangular distribution between $0$ and $\pi$. $N$ is the point on the line segment $AB$ such that $QN$ is perpendicular to $AB$.
+
+    \begin{enumerate}
+        \item Calculate, in terms of $a$, the mean and standard deviation of the length of $QN$.
+        \item Find the probability that $QN$ is longer than $a/2$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $\t$ has pdf \[f(\t) = \begin{cases}
+            \frac1\pi, & 0 \leq \t \leq \pi,\\
+            0, & \ow.
+        \end{cases}\] Since $QN = a\sin \t$, we have \[\E{QN} = \int_0^\pi \bp{a \sin \t} \bp{\frac1\pi} \d \t = \frac{a}{\pi} \evalint{-\cos \t}0{\pi} = \frac{2a}{\pi}.\] Further, \[\E{QN^2} = \int_0^\pi \bp{a \sin \t}^2 \bp{\frac1\pi} \d \t = \frac{a^2}{\pi} \int_0^\pi \frac{1 - \cos 2\t}{2} \d t = \frac{a^2}{2\pi} \evalint{\t - \frac{\sin 2\t}{2}}0{\pi} = \frac{a^2}{2}.\] Thus, \[\Var{QN} = \E{QN^2} - \E{QN}^2 = \frac{a^2}{2} - \bp{\frac{2a}{\pi}}^2 = \frac{a^2}{\pi^2} \frac{\pi^2 - 8}{2}.\] The standard deviation $\s$ of $QN$ is thus \[\s = \sqrt{\Var{QN}} = \frac{a}{\pi} \sqrt{\frac{\pi^2 - 8}{2}}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that if $QN > a/2$, then $\sin \t > 1/2$, whence $\pi/6 < \t < 5\pi/6$. Since $\t$ is uniformly distributed, we have \[\P{QN > \frac{a}{2}} = \frac{5\pi/6 - \pi/6}{\pi} = \frac23.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The object distance $U$ and the image distance $V$ for a concave mirror are related to the focal distance $f$ by the formula \[\frac1u + \frac1v = \frac1f,\] where $f$ is a constant. $U$ is a random variable uniformly distributed over the interval $(2f,3f)$. Show that $V$ is distributed with probability density function \[\frac{f}{(v-f)^2}\] and state the range of corresponding values for $V$. Obtain the mean and median of $V$.
+\end{problem}
+\begin{solution}
+    Since $U \sim \Uni{2f}{3f}$, we have $u-f>0$ and \[F_U(u) = \begin{cases}
+        0, & u < 2f,\\
+        \frac{u}{f} - 2, & 2f \leq u \leq 3f,\\
+        1, & u > 3f.
+    \end{cases}\] Note also that \[\frac1u + \frac1v = \frac1f \implies v = \frac{uf}{u-f}.\] Thus,
+    \begin{gather*}
+        F_V(v) = \P{V < v} = \P{\frac{uf}{u-f} < v} = \P{u > \frac{vf}{v-f}} = 1 - \P{u < \frac{vf}{v-f}}\\
+        = \begin{cases}
+            1, & \frac{vf}{v-f} < 2f,\\
+            3 - \frac{v}{v-f}, & 2f \leq \frac{vf}{v-f} \leq 3f,\\
+            0, & \frac{vf}{v-f} > 3f,
+        \end{cases} = \begin{cases}
+            1, & v > 2f,\\
+            3 - \frac{v}{v-f}, & \frac32 f \leq v \leq 2f,\\
+            0, & v < \frac32 f.
+        \end{cases}
+    \end{gather*}
+    Differentiating, we obtain the pdf of $V$: \[f_V(v) = F'_V(v) = \begin{cases}
+        \frac{f}{(v-f)^2}, & \frac32 f \leq v \leq 2f,\\
+        0, & \ow.
+    \end{cases}\] The range of $V$ is hence $[\frac32f, 2f]$.
+
+    We have \[\E{V} = \int_{-\infty}^\infty v f_V(v) \d v = \int_{3f/2}^{2f} \frac{vf}{(v-f)^2} \d v.\] Consider the substitution $w = v - f$. The integral transforms as \[\E{V} = \int_{f/2}^f \frac{(w+f)f}{w^2} \d w = \int_{f/2}^f \bp{\frac{f}{w} + \frac{f^2}{w^2}} \d w = \evalint{f \ln w - \frac{f^2}{w}}{f/2}{f} = f + f \ln 2.\]
+
+    Let $m$ be the median. We have \[\frac12 = F_V(m) = 3 - \frac{m}{m-f} \implies m = \frac{5f}{3}.\]
+\end{solution}
+
+\begin{problem}
+    The lifetime, $T$ hours, of a certain kind of lamp has probability density function \[f(t) = \begin{cases}
+        \frac1a \e^{-t/b}, & t \geq 0,\\
+        0, & \ow,
+    \end{cases}\] where $a$ and $b$ are positive constants. Show that $a = b$.
+    
+    Given that 42.6\% of lamps have a lifetime longer than 2000 hours, calculate the common value of $a$ and $b$, correct to 3 significant figures.
+
+    Find the (cumulative) distribution function of $T$ and hence prove that \[\P{T > t + c}{T > c} = \P{T > t},\] where $t \geq 0$ and $c$ is a positive constant.
+    
+    Three of the lamps are fitted in a laboratory. One of the lamps is turned on end is still working 200 hours later. At this time the other two lamps are turned on. Calculate the probability that after a further 480 hours
+    \begin{enumerate}
+        \item all three lamps are working,
+        \item just one lamp is working.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(t) \d t = \int_0^\infty \frac1a \e^{-t/b} \d t = \evalint{-\frac{b}{a} \e^{-t/b}}0\infty = \frac{b}{a} \implies a = b.\]
+
+    Note that the cdf of $T$ is given by \[F(t) = \begin{cases}
+        0, & t < 0,\\
+        1 - \e^{-t/a}, & t \geq 0.
+    \end{cases}\] We are given that $\P{T > 2000} = 0.426$. Thus, \[0.574 = \P{T \leq 2000} = 1 - \e^{-2000/a} \implies a = 2340 \tosf{3}.\]
+
+    Note that $\P{T > t} = \e^{-t/a}$. Thus,
+    \begin{gather*}
+        \P{T > t + c}{T > c} = \frac{\P{T > t + c \tand T > c}}{\P{T > c}}\\
+        = \frac{\P{T > t + c}}{\P{T > c}} = \frac{\e^{-(t + c)/a}}{\e^{-c/a}} = \e^{-t/a} = \P{T > t}
+    \end{gather*}
+
+    \begin{ppart}
+        The probability that all three lamps are working is given by \[\bs{\P{T > 480}}^3 = \bp{\e^{-480/2340}}^3 = 0.540 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        The probability that only one lamp is working is \[\comb{3}{1} \P{T > 480} \bs{1 - \P{T < 480}}^2 = 3 \e^{-480/2340} \bp{1 - \e^{-480/2340}}^2 = 0.840.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The working life, $T$, in hours, of a drill used in tunnelling machinery is a random variable with probability density function defined as \[f(t) = \begin{cases}
+        \m \e^{-\m t}, & t > 0,\\
+        0, & \ow,
+    \end{cases}\] where $\m$ is a positive constant.
+
+    \begin{enumerate}
+        \item If the mean life is 20 hours, show that $\m=0.05$.
+        \item Drilling is planned to take place continuously for one six-hour shift each day. If a new drill is used for each shift, what is the probability that it will fail during the shift?
+        \item How long should the shift be to yield a probability of $0.8$ for the drill not to fail?
+        \item If a drill fails while in use, half an hours' drilling time is lost while it is repaired, but if it fails during the last hour of the shift, drilling is abandoned for the day. The cost of any time loss during shifts is at a rate of \$10,000 per hour. Find the expected cost per six-hour shift of lost drilling time. (Ignore the possibility of a replacement drill also failing during the shift.)
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[20 = \E{T} = \int_{-\infty}^\infty t f(t) \d t = \int_0^\infty \m t \e^{-\m t} \d t = \evalint{-t\e^{-\m t} - \frac1\m \e^{-\m t}}0\infty = \frac1\m \implies \m = 0.05.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the cdf of $T$ is given by \[F(t) = \begin{cases}
+            0, & t \leq 0,\\
+            1 - \e^{-t/20}, & t > 0.
+        \end{cases}\] Thus, the probability that the drill fails during the six-hour shift is \[\P{T < 6} = 1 - \e^{-6/20} = 0.259 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $t$ be the required time. Then \[\P{T \geq t} = 0.8 \implies \P{T < t} = 0.2 \implies 1 - \e^{-t/20} = 0.2 \implies t = 4.46.\] Thus, the shift should be $4.46$ hours long.
+    \end{ppart}
+    \begin{ppart}
+        Let $W_1$ be the time wasted (measured in hours) in the first 5 hours of the shift, and let $W_2$ be the time wasted (measured in hours) in the last hour of the shift.
+
+        We have \[\E{W_1} = \frac12 \P{T < 5} = \frac12 \bp{1 - \e^{-5/20}} = 0.11059961 \todp{8}.\]
+
+        Now consider $W_2$. Let $t \in [5, 6]$ be the total number of hours elapsed. If the drill fails at time $t$, then the rest of the day is wasted, i.e. $6-t$ hours are wasted. This gives \[\E{W_2} = \int_5^6 (6-t) \P{T < t} \d t = \int_5^6 (6-t) \frac{\e^{-t/20}}{20} \d t = 0.01914954 \todp{8}.\] Thus, the total expected time wasted is \[\E{W_1} + \E{W_2} = 0.11059961 + 0.01914954 = 0.129749 \tosf{6}.\] The expected cost due to wasted time is hence $10000 \cdot 0.129749 = \$ 1297.49$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The lifetime, $T$ years, before a particular type of washing machine breaks down may be taken to have the probability density function f given by \[f(t) = \begin{cases}
+        at \e^{-bt}, & t > 0,\\
+        0, & \ow,
+    \end{cases}\] where $a$ and $b$ are positive constants. It may be assumed that, if $n$ is a positive integer, \[\int_0^\infty t^n \e^{-bt} \d t = \frac{n!}{b^{n+1}}.\]
+
+    \begin{enumerate}
+        \item Records show that the mean of $T$ is $1.5$. Show that $b=4/3$ and find the value of $a$.
+        \item Find $\Var{T}$.
+        \item Calculate $\P{T<1.5}$. State, giving a reason, whether this value indicates that the median of $T$ is smaller than the mean of $T$ or greater than the mean of $T$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(t) \d t = \int_0^\infty a t \e^{-bt} \d t = a \frac{1!}{b^{1+1}} = \frac{a}{b^2} \implies a = b^2. \tag{1}\] Since the mean of $T$ is $1.5$, \[1.5 = \int_{-\infty}^\infty t f(t) \d t = \int_0^\infty a t^2 \e^{-bt} \d t = a \frac{2!}{b^{2+1}} = \frac{2a}{b^3} \implies a = \frac34 b^3. \tag{2}\] Solving (1) and (2) simultaneously, we get $a = 16/9$ and $b = 4/3$.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\E{T^2} = \int_{-\infty}^\infty t^2 f(t) \d t = \int_0^\infty a t^3 \e^{-bt} \d t = a \frac{3!}{b^{3+1}} = \frac{6a}{b^4} = \frac{6(16/9)}{(4/3)^4} = \frac{27}{8}.\] Thus, \[\Var{T} = \E{T^2} -\E{T}^2 = \frac{27}{8} - 1.5^2 = \frac98.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\P{T < 1.5} = \int_{-\infty}^{1.5} f(t) \d t = \int_0^{1.5} \frac{16}9 t\e^{-4t/3} \d t = 0.594.\] Thus, $\P{T < \m} = 0.594 > 0.5 = \P{T < m}$, whence the median $m$ is smaller than the mean $\m$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    $X$ and $Y$ are continuous random variables having independent normal distributions. The means of $X$ and $Y$ are 10 and 12 respectively, and the standard deviations are 2 and 3 respectively. Find
+    \begin{enumerate}
+        \item $\P{Y < 10}$,
+        \item $\P{Y < X}$,
+        \item $\P{4X +5Y > 90}$,
+        \item the value of $a$ such that $\P{X_1 + X_2 > a} = 1/4$, where $X_1$ and $X_2$ are independent observations of $X$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Note that $X \sim \Normal{10}{4}$ and $Y \sim \Normal{12}{9}$.
+    \begin{ppart}
+        $\P{Y \leq 10} = 0.252 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $Y - X \sim \Normal{12-10}{4+9} = \Normal{10}{13}$. Thus, \[\P{Y < X} = \P{Y - X < 0} = 0.290 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $4X + 5Y \sim \Normal{4(10) + 5(12)}{4^2 (4) + 5^2 (9)} = \Normal{100}{289}$. Thus, \[\P{4X + 5Y > 90} = 0.722 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $X_1 + X_2 \sim \Normal{2(10)}{2(4)} = \Normal{20}{8}$. Thus, \[\P{X_1 + X_2 > a} = \frac14 \implies a = 21.9 \tosf{3}.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The weights of Sunny brand oranges are normally distributed with mean $\m$ grams and standard deviation $\s$ grams respectively. An inspection of a shipment of Sunny brand oranges shows that 37\% of the oranges have weights exceeding 379 grams and 40\% of the oranges have weights between 366 grams and 379 grams. Find $\m$ and $\s$.
+
+    Three oranges are selected at random. Find the probability that one orange has weight exceeding 379 grams and two oranges have weights between 366 grams and 379 grams.
+\end{problem}
+\begin{solution}
+    Let $W$ g be the weight of a Sunny brand orange. We are given \[\P{W > 379} = 0.37 \implies \P{W \leq 379} = 1 - 0.37 = 0.63.\] Normalizing this, we get \[z = \frac{x - \m}{\s} \implies 0.33185 = \frac{379 - \m}{\s} \implies \m + 0.33185 \s = 379. \tag{1}\] We are also given \[\P{366 < W < 379} = 0.40 \implies \P{W \leq 366} = 1 - \P{W > 366} = 1 - (0.40 + 0.37) = 0.23.\] Normalizing this, we get \[z = \frac{x - \m}{\s} \implies -0.73885 = \frac{366 - \m}{\s} \implies \m - 0.73885 \s = 366 \tag{2}.\] Solving (1) and (2) simultaneously, we get $\m = 375 \tosf{3}$ and $\s = 12.1 \tosf{3}$.
+
+    The required probability is given by \[\comb{3}{1} \P{W > 379} \bs{\P{366 < W < 379}}^2 = 3 (0.37) (0.40)^2 = 0.178 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    A shopper buys two kinds of vegetables in a shop. The mass of potatoes and the mass of onions bought are modelled as having independent normal distributions with the following means and standard deviations.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|}
+        \hline
+         & Mean & Standard deviation \\ \hline
+        Mass of potatoes & 3 kg & $0.2$ kg \\ \hline
+        Mass of onions & 1 kg & $0.05$ kg \\ \hline
+        \end{tabular}
+    \end{table}
+
+    The price of potatoes is 50 cents a kilogram and the price of onions is \$$1.20$ a kilogram.
+
+    \begin{enumerate}
+        \item Find the mean of the total cost of the vegetables and show that the standard deviation of the total cost is \$$0.117$, correct to 3 significant figures.
+        \item Find the probability that the total cost of the vegetables lies between \$$2.50$ and \$$2.80$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let the random variables $P$ kg and $O$ kg be the mass of potatoes and onions respectively. We have $P \sim \Normal{3}{0.2^2}$ and $O \sim \Normal{1}{0.05^2}$.
+
+        Let the random variable $T = 0.50 P + 1.20 O$ be the total cost of the vegetables. Then \[T \sim \Normal{0.50(3) + 1.20(1)}{0.50^2 \bp{0.20^2} + 1.20^2 \bp{0.05^2}} = \Normal{2.7}{0.0136}.\] Thus, the mean of the total cost of the vegetables is \$$2.7$ and the standard deviation is $\sqrt{0.0136} = \$0.117$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{2.50 < T < 2.80} = 0.761 \tosf{3}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    It is given that $X \sim \Normal{\m}{\s^2}$ and $\P{X < 1} = \P{X > 9}$. Write down the value of $\m$. It is also given that $2\P{X < 2} = \P{X < 8}$. Find $\s$.
+
+    Three observations of $X$ are taken. Determine the probability that two will be more than 7 and the other will be between 3 and 5 inclusive.
+\end{problem}
+\begin{solution}
+    Clearly, $\m = 5$. Using G.C., $\s = 6.96 \tosf{3}$.
+
+    The required probability is \[\comb{3}{1} \bs{\P{X > 7}}^2 \P{3 \leq X \leq 5} = 0.0508 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    The thickness in cm of a mechanics textbook is a random variable with the distribution $\Normal{2.5}{0.1^2}$.
+
+    \begin{enumerate}
+        \item The mean thickness of $n$ randomly chosen mechanics textbooks is denoted by $\ol{M}$ cm. Given that $\P{\ol{M} > 2.53} = 0.0668$, find the value of $n$.
+    \end{enumerate}
+
+    The thickness in cm of a statistics textbook is a random variable with the distribution $\Normal{2.0}{0.08^2}$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Calculate the probability that 21 mechanics textbooks and 24 statistics textbooks will fit onto a bookshelf of length 1 m. State clearly the mean and variance of any normal distribution you use in your calculation.
+        \item  Calculate the probability that the total thickness of 4 statistics textbooks is less than three times the thickness of 1 mechanics textbook. State clearly the mean and variance of any normal distribution you use in your calculation.
+        \item State an assumption needed for your calculations in parts (ii) and (iii).
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\ol{M} = \frac{X_1 + X_2 + \dots + X_n}{n} \sim \Normal{2.5}{\frac{0.1^2}{n}}.\] Using G.C., \[\P{\ol{M} > 2.53} = 0.0668 \implies n = 25.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the random variable $T$ cm be the total length of 21 mechanics and 24 statistics textbooks. Then \[T \sim \Normal{21(2.5) + 24(2.0)}{21\bp{0.1^2} + 24\bp{0.08^2}} = \Normal{100.5}{0.3636}.\] Thus, the probability that the textbooks will fit on the shelf is \[\P{T < 100} = 0.203 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the random variable $D$ cm be the difference between the total thickness of 4 statistics textbooks and 3 times the thickness of 1 mechanics textbook. Then \[D = S_1 + \dots + S_4 - 3 M = \Normal{4(2.0) - 3(2.5)}{4\bp{0.08^2} + 3^2\bp{0.1^2}} = \Normal{0.5}{0.1156}.\] The required probability is thus \[\P{D < 0} = 0.0707 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        The thickness of the mechanics and statistics textbooks are independent of each other.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The lengths of metal rods in a box are normally distributed with mean 1.3 m and variance 0.7 m$^{2}$.
+
+    \begin{enumerate}
+        \item Find the greatest length $l$ for which the probability that a randomly chosen metal rod is shorter than $l$ m is less than 0.3.
+        \item Eight metal rods are chosen at random. Determine the probability that at least three are longer than 1.4 m.
+        \item A random sample of 100 metal rods is selected. Find the expected number of metal rods with lengths that are between 1.2 m and 1.6 m.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let the random variable $L$ be the length of a metal rod. Then $L \sim \Normal{1.3}{0.7}$. Hence, if $\P{L < l} < 0.3$, then $l < 0.861$, whence the largest possible $l$ is $0.861$ m.
+    \end{ppart}
+    \begin{ppart}
+        Let the number of rods longer than $1.4$ m be $X$. Note that $\P{L > 1.4} = 0.45243$. Thus, $X \sim \Binom{8}{0.45243}$, and \[\P{X \geq 3} = 1 - \P{X \leq 2} = 0.784 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the number of rods whose lengths are between 1.2 m and 1.6 m be $Y$. Note that $\P{1.2 < L < 1.6} = 0.18761$. Thus, $Y \sim \Binom{100}{0.18761}$, whence \[\E{Y} = (100)(0.18761) = 18.8 \tosf{3}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    An ice-cream shop provides two types of paper cups, regular or large, for its customers. Each customer picks a cup according to his appetite and fills it with ice-cream of flavours of his choice. The mass of each cup together with its ice-cream content is measured at the cashier with a weighing machine, and the customer is charged at a rate of \$2 per 100g measured.
+
+    Let $X$ and $Y$ be the respective mass, in grams, of the regular and large cups with their ice-cream content. It is found that both $X$ and $Y$ independently follows a normal distribution, with parameters given in the table below:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+         & Mean & Standard Deviation \\ \hline
+        X & 200 & 30 \\ \hline
+        Y & 350 & 60 \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    A family of six, consisting of a couple and four boys, enter the ice-cream shop. The couple decides to share ice-cream in a large cup and each of the boys independently takes a regular cup of ice-cream.
+
+    \begin{enumerate}
+        \item Find the probability that one of the boys pay more than \$5 for his regular cup of ice-cream and the other three pay less than \$4 each.
+        \item Find the probability that the total cost of the children's regular cups of ice-cream exceeds twice that of the parents' large cup of ice-cream.
+    \end{enumerate}
+
+    The mass, in grams, of an empty regular cup is known to follow a normal distribution with mean 30g and standard deviation 5g. The ice-cream content, in grams, in a regular cup also follows independently a normal distribution.
+
+    Find, with adequate justification, the variance of the ice-cream content in a regular cup.
+\end{problem}
+\begin{solution}
+    We have $X \sim \Normal{200}{30^2}$ and $Y \sim \Normal{350}{60^2}$.
+
+    \begin{ppart}
+        Note that a price of \$5 corresponds to a mass of 250 g, while a price of \$4 corresponds to a mass of 200 g. The required probability is thus \[\comb{4}{1} \P{X > 250} \bp{\P{X < 200}}^3 = 0.0239 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the difference in cost $D$ has distribution \[D = X_1 + \dots + X_4 - 2Y \sim \Normal{4(200) - 2(350)}{4\bp{30^2} + 2^2 \bp{60^2}} = \Normal{100}{18000}.\] Thus, the required probability is \[\P{D > 0} = 0.772 \tosf{3}.\]
+    \end{ppart}
+
+    The variance of the total mass is the sum of the variance of the mass of ice-cream and the variance of the mass of the empty cup. Thus, the variance of the mass of ice-cream is $30^2 - 5^2 = 875$ g.
+\end{solution}
