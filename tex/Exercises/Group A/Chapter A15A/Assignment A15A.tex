@@ -1,0 +1,90 @@
+\section{Assignment A15A}
+
+\begin{problem}
+    The continuous random variable $X$ has probability density function given by \[f(x) = \begin{cases}
+        a, & 0 \leq x \leq 1,\\
+        b, & 1 < x \leq 3,\\
+        0, & \ow,
+    \end{cases}\] where $a$ and $b$ are constants.
+
+    \begin{enumerate}
+        \item If the mean of $X$ is $5/4$, find $a$ and $b$.
+        \item Find the exact value of $k$ such that $\P{X \leq k} = 5/8$.
+    \end{enumerate}
+
+    Ten independent observations of $X$ are taken, and the random variable $R$ is the number of observations such that $X < 1/2$. Find $\P{R > 4}$.
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since the probabilities must sum to 1, \[1 = \int_{-\infty}^\infty f(x) \d x = \int_0^1 a \d x + \int_1^3 b \d x = a + 2b. \tag{1}\] Since the mean of $X$ is $5/4$, \[\frac54 = \E{X} = \int_{-\infty}^\infty x f(x) \d x = \int_0^1 ax \d x + \int_1^3 bx \d x = \evalint{\frac{ax^2}{2}}01 + \evalint{\frac{bx^2}2}13 = \frac12 a + 4b. \tag{2}\] Solving (1) and (2) simultaneously, we get $a = 1/2$ and $b = 1/4$.
+    \end{ppart}
+    \begin{ppart}
+        Let $F(x)$ be the cdf of $X$. For $x < 0$, we have $F(x) = 0$. For $0 \leq x \leq 1$, \[F(x) = F(0) + \int_0^x f(t) \d t = 0 + \int_0^x \frac12 \d t = \frac12 x.\] For $1 < x \leq 3$, \[F(x) = F(1) + \int_1^x f(t) \d t = \frac12 + \int_1^x \frac14 \d t = \frac14 + \frac14 x.\] For $x > 3$, we have $F(x) = 1$. Thus, \[F(x) = \begin{cases}
+            0, & 0 < x,\\
+            \frac12 x, & 0 \leq x \leq 1,\\
+            \frac14 + \frac14 x, & 1 < x \leq 3,\\
+            1, & x > 3.
+        \end{cases}\]
+
+        Note that $F(1) = 1/2 < 5/8$. Thus, $k \in (1, 3]$. Hence, \[\frac58 = \P{X \leq k} = \frac14 + \frac14 k \implies k = \frac32.\]
+    \end{ppart}
+
+    Since $\P{X < 1/2} = F(1/2) = 1/4$, it follows that $R \sim \Binom{10}{1/4}$. Using G.C., $\P{R > 4} = 0.224 \tosf{3}$.
+\end{solution}
+
+\begin{problem}
+    The random variable $X$ is the distance, in metres, that an inexperienced tightrope walker has moved along a given tightrope before falling off. It is given that \[\P{X > x} = 1 - \frac1{64} x^3, \quad 0 \leq x \leq 4.\]
+
+    \begin{enumerate}
+        \item Show that $\E{X} = 3$.
+        \item Find $\s$, the standard deviation of $X$.
+        \item Show that $\P{\abs{X - 3} < \s} = \frac{69}{80} \sqrt{\frac35}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $F(x)$ be the cdf of $X$. Then \[F(x) = \begin{cases}
+            0, & x < 0,\\
+            \frac1{64} x^3, & 0 \leq x \leq 4,\\
+            1, & x > 4.
+        \end{cases}\] Let $f(x)$ be the pdf of $X$. Then \[f(x) = F'(x) = \begin{cases}
+            \frac3{64}x^2, & 0 \leq x \leq 4,\\
+            0, & \ow.
+        \end{cases}\]
+        Thus, \[\E{X} = \int_{-\infty}^{\infty} x f(x) \d x = \int_0^4 \frac3{64} x^3 \d x = \frac3{64} \evalint{\frac{x^4}4}04 = 3.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\E{X^2} = \int_{-\infty}^{\infty} x^2 f(x) \d x = \int_0^4 \frac3{64} x^4 \d x = \frac3{64} \evalint{\frac{x^5}5}04 = \frac{48}5.\] Thus, \[\s^2 = \Var{X} = \E{X^2} - \E{X}^2 = \frac{48}{5} - 3^2 = \frac35 \implies \s = \sqrt{\frac35}.\]
+    \end{ppart}
+    \begin{ppart}
+        We have
+        \begin{gather*}
+            \P{\abs{X - 3} < \s} = \P{3 - \s < X < 3 + \s} = F(3 + \s) - F(3 - \s)\\
+            = \frac1{64} \bp{3 + \s}^3 - \frac1{64} \bp{3 - \s}^3 = \frac1{32} \s \bp{27 + \s^2} = \frac{69}{80} \sqrt{\frac35}.
+        \end{gather*}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    In the triangle $PQR$, $PR = 6$ cm, $QR = 10$ cm and $\angle PRQ = y$ radians, where $y$ is uniformly distributed on the interval from 0 to $\pi/2$. The area of triangle $PQR$ is $A$ cm$\units[2]$. Find the probability density function of $A$.
+\end{problem}
+\begin{solution}
+    Since $Y \sim \Uni{0}{\pi/2}$, its cdf is given by \[\F_Y(y) = \begin{cases}
+        0, & y < 0,\\
+        \frac2\pi y, & 0 \leq y \leq \frac\pi2,\\
+        1, & y > \frac\pi2.
+    \end{cases}\]
+    Since \[A = \frac12 (PR)(QR)\sin PRQ = \frac12 (6)(10) \sin y = 30 \sin y,\] we have \[F_A(a) = \P{A < a} = \P{30\sin y < a} = \P{y < \arcsin \frac{a}{30}}.\] Hence, \[F_A(a) = \begin{cases}
+        0, & \arcsin \frac{a}{30} < 0,\\
+        \frac2\pi \arcsin \frac{a}{30}, & 0 \leq \arcsin \frac{a}{30} \leq \frac\pi2,\\
+        1, & \arcsin \frac{a}{30} > \frac\pi2.
+    \end{cases} = \begin{cases}
+        0, & a < 0\\
+        \frac2\pi \arcsin \frac{a}{30}, & 0 \leq a \leq 30,\\
+        1, & a > 30.
+    \end{cases}\]
+    Since \[\der{}{a} \frac2\pi \arcsin \frac{a}{30} = \frac2\pi \frac{1}{\sqrt{1 - (a/30)^2}} \frac1{30} = \frac2{\pi \sqrt{30^2 - a^2}},\] the pdf of $A$ is given by \[f_A(a) = F'_A(a) = \begin{cases}
+        \frac2{\pi \sqrt{30^2 - a^2}}, & 0 \leq a < 30,\\
+        0, & \ow.
+    \end{cases}\]
+\end{solution}
