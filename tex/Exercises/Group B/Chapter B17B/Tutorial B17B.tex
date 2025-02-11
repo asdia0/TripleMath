@@ -1,0 +1,166 @@
+\section{Tutorial B17B}
+
+\begin{problem}
+    Determine which of the following functions are linear transformations, and if they are, find the matrix representing the linear transformation.
+
+    \begin{enumerate}
+        \item $T : \RR^2 \to \RR^2$ given by \[T\of{\cvecii{x}{y}} = \cvecii{2x-3y}{3x+4y}.\]
+        \item $T : \RR^3 \to \RR^3$ given by \[T\of{\cveciii{x_1}{x_2}{x_3}} = \cveciii{x_1+1}{x_2-2}{x_3}.\]
+        \item $T : \RR^2 \to \RR$ given by \[T\of{\cvecii{x}{y}} = \sqrt{x^2 + y^2}.\]
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Let $T : \RR^2 \to \RR^2$ be the linear transformation such that $T(\cveciix11) = \cveciix02$ and $T(\cveciix1{-1}) = \cveciix20$.
+
+    \begin{enumerate}
+        \item Compute $T(\cveciix14)$ and $T(\cveciix{-2}{1})$.
+        \item Find the matrix representing the linear transformation $T$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    In each part, determine whether the given set of vectors span $\RR^3$.
+
+    \begin{enumerate}
+        \item $\bc{\cveciii222, \cveciii003, \cveciii011}$,
+        \item $\bc{\cveciii126, \cveciii341, \cveciii431, \cveciii331}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Determine whether the set of vectors are linearly independent.
+
+    \begin{enumerate}
+        \item $\bc{\cveciii314, \cveciii2{-3}5, \cveciii5{-2}{9}, \cveciii14{-1}}$,
+        \item $\bc{\cveciii2{-4}6, \cveciii{-1}3{-5}, \cveciii{-2}58}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that the value of \[\det \begin{pmatrix}
+            -2 & 1 & 2k\\
+            -1 & 1 & k+1\\
+            2 & k-1 & 1
+        \end{pmatrix}\] is independent of $k$.
+        \item State, with a reason, whether the vectors \[\cveciii{-2}{1}{2}, \cveciii111, \cveciii431\] are linearly independent.
+        \item \begin{enumerate}
+            \item State, with a reason, whether the system of equations \[\systeme{-2x+y+6z=1,-x+y+4z=0,2x+2y+z=-2}\] is consistent.
+            \item The three equations given in part (c)(i) are the Cartesian equations of three planes. Describe the geometrical relationship of the three planes.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Find a basis for the row space and a basis for the column space of the matrix \[\mat A = \begin{pmatrix}2 & 1 & 3 & 3 \\ 0 & -3 & 1 & -2 \\ 4 & 5 & 5 & 8\end{pmatrix}.\] State the rank of $\mat A$.
+\end{problem}
+
+\begin{problem}
+    In this question, $V$ denotes the set of vectors of the form $\cvecivx{a}{b}{c}{d}$, where $a$, $b$, $c$ and $d$ are real numbers. You may assume that $V$ forms a linear space under the usual operations of vector addition and multiplication by scalar.
+
+    \begin{enumerate}
+        \item Show that the subset of $V$ for which $a + b + c + d = 0$ forms a linear space.
+        \item Show that the subset of $V$ for which $a = b + c + d = 1$ does not form a linear space.
+        \item Determine whether the subset for which $a + b = c + d$ and $a + 2b = c + 3d$ forms a linear space.
+        \item State the dimension of the linear space defined in part (a) and provide a basis for this linear space.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The vector spaces $S_1$, $S_2$ and $S_3$ are given by
+    \begin{align*}
+        S_1 &= \bc{x \in \RR^4 : x = \l \cveciv1010 + \m \cveciv0101 + \g \cveciv0011},\\
+        S_2 &= \bc{x \in \RR^4 : x = \l \cveciv1010 + \m \cveciv0101 + \g \cveciv001{-1}},\\
+        S_3 &= \bc{x \in \RR^4 : x = \l \cveciv1010 + \m \cveciv0101}.
+    \end{align*}
+    
+    \begin{enumerate}
+        \item Find a basis for the vector space $S_1 \cap S_2$.
+        \item Show that $S_1 \cup S_2$ is not a vector space.
+        \item Determine whether the set $(S_2 \setminus S_3) \cup \bc{\vec 0}$ is a vector space.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Three $n \times 1$ column vectors are denoted by $\vec x_1$, $\vec x_2$, $\vec x_3$ and $\mat M$ is an $n \times n$ matrix. Show that if $\vec x_1$, $\vec x_2$, $\vec x_3$ are linearly dependent then the vectors $\mat M \vec x_1$, $\mat M \vec x_2$, $\mat M \vec x_3$ are also linearly dependent.
+        \item The vectors $\vec y_1$, $\vec y_2$, $\vec y_3$ and the matrix $\mat P$ are defined as follows: \[\vec y_1 = \cveciii157, \, \vec y_2 = \cveciii2{-3}{4}, \, \vec y_3 = \cveciii5{51}{55}, \, \mat P \begin{pmatrix}1 & -4 & 3 \\ 0 & 2 & 5 \\ 0 & 0 & 7\end{pmatrix}.\] Show that $\vec y_1$, $\vec y_2$, $\vec y_3$ are linearly dependent.
+        \item Find a basis for the linear space spanned by the vectors $\mat P \vec y_1$, $\mat P \vec y_2$, $\mat P \vec y_3$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    In the equation \[\begin{pmatrix}1 & 1 & -1 & 1 \\ 2 & 3 & 0 & 5 \\ 1 & 0 & -2 & -6 \\ 2 & 5 & 4 & 11 - \a\end{pmatrix} \vec x = \cveciv000\b,\] $\a$ and $\b$ are real constants.
+
+    \begin{enumerate}
+        \item Show that if $\a = \b = 0$, then the set of solutions for $\vec x$ is a vector space $V$ of dimension 1, and find a basis for $V$ with integer elements.
+        \item The set of all solutions for which $\a$ and $\b$ are both non-zero is denoted by $S$. Show that $S$ is a subset of $V$, but is not itself a vector space.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The elements of the matrices $\mat A$ and $\mat B$ are given by \[\mat A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix} \tand \mat B = \begin{pmatrix}b_{11} & b_{12} & b_{13} \\ b_{21} & b_{22} & b_{23} \\ b_{31} & b_{32} & b_{33}\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \item Write down in full the first column of the product $\mat A \mat B$ and show that this can be put in the form $b_{11} \vec c_1 + b_{21} \vec c_2 + b_{31} \vec c_3$, where \[\vec c_1 = \cveciii{a_{11}}{a_{21}}{a_{31}}, \, \vec c_2 = \cveciii{a_{12}}{a_{22}}{a_{32}}, \, \vec c_3 = \cveciii{a_{13}}{a_{23}}{a_{33}}.\]
+        \item Write down the corresponding expressions for the second and third columns of $\mat A \mat B$. Hence, show that the rank of $\mat A \mat B$ cannot be greater than the rank of $\mat A$.
+        \item For the case where \[\mat A = \begin{pmatrix}1 & \a & \b \\ 2 & 2\a + \b - 1 & \a + 2 \b \\ 5 & 5\a + 3\b - 3 & 3\a + 5\b \end{pmatrix},\] $\a, \b \in \RR$, show that
+        \begin{enumerate}
+            \item for all values of $\a$ and $\b$, the rank of $\mat A$ is not greater than 2,
+            \item if $\a = 0$ and $\b = 1$, then, for all $3 \times 3$ matrices $\mat B$, there are at least 2 linearly independent solutions for $\vec x$ of the equation $\mat A \mat B \vec x = \vec 0$, where $\vec x \in \RR^3$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The linear transformation $T : \RR^4 \to \RR^3$ is represented by the matrix $\mat M$, where \[\mat M = \begin{pmatrix}1 & -2 & 2 & 2 \\ 4 & -7 & \l & 5 \\ 3 & \l & -7 & 3\end{pmatrix},\] where $\l \in \RR$.
+
+    \begin{enumerate}
+        \item Show that the rank of $\mat M$ is 2 if $\l = -5$ and determine the dimension of the null space, $K$ of $T$ if $\l \neq -5$.
+        \item If $\l = -5$, write down a basis for the range space, $R$, and the null space, $K$ of $T$.
+        \item If $\l = -5$, find the set of vectors $\vec x$ such that \[\mat M \vec x = \cveciii110\] and state whether this set forms a vector space, justifying your answer.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The linear transformation $T : \RR^4 \to \RR^4$ is represented by the matrix $\mat A$, where \[\mat A = \begin{pmatrix}1 & 2 & -3 & -4 \\ 2 & 5 & 1 & 3 \\ 3 & 7 & -2 & -1 \\ 7 & 16 & -7 & q\end{pmatrix}.\] The range space of $T$ is denoted by $R$.
+
+    \begin{enumerate}
+        \item Show that $q = -6$ if the dimension of $R$ is 2, and that $q \neq -6$ if the dimension of $R$ is 3.
+        \item For the case where $q = -6$, write down a basis for $R$, and hence, find a vector $\vec x$ such that $\mat A \vec x = \cvecivx156{13}$.
+        \item The null space of $T$, for the case where $q \neq -6$, is denoted by $K_1$. Find a basis for $K_1$.
+        \item The null space of $T$, for the case where $q = -6$, is denoted by $K_2$. Without using a calculator, find a basis for $K_2$. Show that $K_1$ is a subspace of $K_2$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Let $\vec u = \cveciiix110$ and $T : \RR^3 \to \RR^3$ be the linear transformation \[T(\vec v) = \bp{\frac{\vec u \dotp \vec v}{\vec u \dotp \vec u}} \vec u.\]
+
+    \begin{enumerate}
+        \item Find the null space, $\Ker{T}$ and a basis for it. State also its geometrical interpretation and write down its Cartesian equation.
+        \item Find the range space of $T$ and its rank. State also a geometrical interpretation of the range space of $T$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The linear transformation $T : \RR^4 \to \RR^3$ is represented by the matrix $\mat M$, where \[\mat M = \begin{pmatrix}1 & 5 & -1 & -2 \\ -1 & -3 & 4 & 3 \\ 1 & 11 & 8 & 1\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item Find a basis for $R(T)$, the range space of $T$. Give a precise geometrical description of $R(T)$.
+            \item Find a basis for $K(T)$, the null space of $T$.
+            \item Hence, find the general solution of the equation \[T(\vec x) = \cveciii{6\a - 5\b}{-4a + 3\b}{12\a - 11\b},\] where $\a, \b \in \RR$, leaving your answer in terms of $\a$ and $\b$.
+        \end{enumerate}
+        \item Let $V \subseteq \RR^3$ be the set that satisfies the following properties: \[V \cap R(T) = \bc{\vec 0}, \quad V \cup R(T) = \RR^3.\] Determine whether $V$ is a subspace of $\RR^3$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Matrices $\mat M_1$ and $\mat M_2$ define linear transformations from $\RR^4$ and $\RR^4$ and are respectively defined as follows: \[\mat M_1 = \begin{pmatrix}1 & 2 & 1 & a \\ 0 & 1 & 1 & b \\ 0 & 0 & 0 & c \\ 0 & 0 & 0 & d\end{pmatrix}, \quad \mat M_2 = \begin{pmatrix} 1 & 2 & -1 & 1 \\ 0 & 1 & 3 & -2 \\ 0 & 0 & c-1 & 1 \\ 0 & 0 & 0 & c+1 \end{pmatrix},\] where $a$, $b$, $c$ and $d$ are real constants.
+
+    \begin{enumerate}
+        \item The null spaces of $\mat M_1$ and $\mat M_2$ are denoted by $N_1$ and $N_2$ respectively. For the case where $a = b = c = 1$ and $d = 0$, find a basis for $N_1$ and a basis for $N_2$. Hence, determine whether $N_1 \cup N_2$ is a vector space.
+        \item The range spaces of the linear transformations defined by $\mat M_1$ and $\mat M_2$ are denoted by $R_1$ and $R_2$ respectively. Given that $R_1 \cup R_2$ is a vector space, find the possible conditions to be satisfied by $a$, $b$, $c$ and $d$.
+    \end{enumerate}
+\end{problem}
