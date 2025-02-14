@@ -9,15 +9,40 @@
         \item $T : \RR^2 \to \RR$ given by \[T\of{\cvecii{x}{y}} = \sqrt{x^2 + y^2}.\]
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[T\of{\cvecii{x}{y}} = x \cvecii23 + y \cvecii{-3}{4}.\] Hence,
+        \begin{gather*}
+            T\of{\cvecii{u_x}{u_y} + \cvecii{v_x}{v_y}} = T\of{\cvecii{u_x + v_x}{u_y + v_y}} = (u_x + v_x) \cvecii23 + (u_y + v_y) \cvecii{-3}{4}\\
+            = \bs{u_x \cvecii23 + u_y \cvecii{-3}{4}} + \bs{v_x \cvecii23 + v_y \cvecii{-3}{4}} = T\of{\cvecii{u_x}{u_y}} + T\of{\cvecii{v_x}{v_y}}.
+        \end{gather*} Let $k \in \RR$. Then \[T\of{k\cvecii{x}{y}} = T\of{\cvecii{kx}{ky}} = kx \cvecii23 + ky \cvecii{-3}{4} = k \bs{x \cvecii23 + y \cvecii{-3}4} = k T\of{\cvecii{x}{y}}.\] Thus, $T$ is a linear transformation.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[T\of{\cveciii000} = \cveciii{1}{-2}{0}.\] Let $k \in \RR$. Then \[T\of{k\cveciii000} = T\of{\cveciii000} = \cveciii{1}{-2}{0} \neq k \cveciii{1}{-2}{0} = kT\of{\cveciii000}.\] Thus, $T$ is not a linear transformation.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[T\of{\cvecii01} + T\of{\cvecii01} = \sqrt{0^2 + 1^2} + \sqrt{1^2 + 0^2} = 2.\] However, \[T\of{\cvecii11} = \sqrt{1^2 + 1^2} = \sqrt2.\] Thus, \[T\of{\cvecii01} + T\of{\cvecii01} = 2 \neq \sqrt2 = T\of{\cvecii11} = T\of{\cvecii01 + \cvecii10}.\] Thus, $T$ is not a linear transformation.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
-    Let $T : \RR^2 \to \RR^2$ be the linear transformation such that $T(\cveciix11) = \cveciix02$ and $T(\cveciix1{-1}) = \cveciix20$.
+    Let $T : \RR^2 \to \RR^2$ be the linear transformation such that \[T\of{\cvecii11} = \cvecii02 \quad \tand \quad T\of{\cvecii1{-1}} = \cvecii20.\]
 
     \begin{enumerate}
         \item Compute $T(\cveciix14)$ and $T(\cveciix{-2}{1})$.
         \item Find the matrix representing the linear transformation $T$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[T\of{\cvecii10} = T\of{\frac12 \cvecii11 + \frac12 \cvecii1{-1}} = \frac12 T\of{\cvecii11} + \frac12 T\of{\cvecii1{-1}} = \cvecii11.\] Also note that \[T\of{\cvecii01} = T\of{\frac12 \cvecii11 - \frac12 \cvecii1{-1}} = \frac12 T\of{\cvecii11} - \frac12 T\of{\cvecii1{-1}} = \cvecii{-1}{1}.\]
+
+        Thus, \[T\of{\cvecii14} = T\of{\cvecii10 + 4\cvecii01} = T\of{\cvecii10} + 4T\of{\cvecii01} = \cvecii{-3}{5}\] and \[T\of{\cvecii{-2}1} = T\of{-2\cvecii10 + \cvecii01} = -2 T\of{\cvecii10} + T\of{\cvecii01} = \cvecii{-3}{-1}.\]
+    \end{ppart}
+    \begin{ppart}
+        The matrix representing $T$ is \[\begin{pmatrix}1 & -1 \\ 1 & 1\end{pmatrix}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     In each part, determine whether the given set of vectors span $\RR^3$.
@@ -27,6 +52,14 @@
         \item $\bc{\cveciii126, \cveciii341, \cveciii431, \cveciii331}$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\cveciiix{a}{b}{c} \in \RR^3$ be an arbitrary vector. Consider \[x_1 \cveciii222 + x_2 \cveciii003 + x_3 \cveciii011 = \cveciii{a}{b}{c}. \tag{1}\] We can rewrite this equation as \[\begin{pmatrix}2 & 0 & 0 \\ 2 & 0 & 1 \\ 2 & 3 & 1\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cveciii{a}{b}{c}.\] However, observe that \[\det \begin{pmatrix}2 & 0 & 0 \\ 2 & 0 & 1 \\ 2 & 3 & 1\end{pmatrix} = -6 \neq 0.\] Thus, there will always be solutions $x_1$, $x_2$ and $x_3$ that satisfy (1). Hence, the set of vectors spans $\RR^3$.
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\Span \bc{\cveciii126, \cveciii341, \cveciii431, \cveciii331} \supseteq \Span \bc{\cveciii126, \cveciii341, \cveciii431}.\] Let $\cveciiix{a}{b}{c} \in \RR^3$ be an arbitrary vector. Consider \[x_1 \cveciii126 + x_2 \cveciii341 + x_3 \cveciii011 = \cveciii{a}{b}{c}, \tag{2}\] which we can rewrite as \[\begin{pmatrix}1 & 3 & 4 \\ 2 & 4 & 3 \\ 6 & 1 & 1\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cveciii{a}{b}{c}.\] Since \[\det \begin{pmatrix}1 & 3 & 4 \\ 2 & 4 & 3 \\ 6 & 1 & 1\end{pmatrix} = -39 \neq 0,\] there will always be solutions $x_1$, $x_2$, $x_3$ that satisfy (2). Hence, the set of vectors span $\RR^3$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Determine whether the set of vectors are linearly independent.
@@ -36,14 +69,18 @@
         \item $\bc{\cveciii2{-4}6, \cveciii{-1}3{-5}, \cveciii{-2}58}$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since the set consists of 4 vectors in $\RR^3$ space, it is not linearly independent.
+    \end{ppart}
+    \begin{ppart}
+        Consider \[x_1 \cveciii2{-4}{6} + x_2 \cveciii{-1}{3}{-5} + x_3 \cveciii{-2}{5}8 = \cveciii000. \tag{1}\] We can rewrite this as \[\begin{pmatrix}2 & -1 & -2 \\ -4 & 3 & 5 \\ 6 & -5 & 8\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cveciii000.\] Since \[\det \begin{pmatrix}2 & -1 & -2 \\ -4 & 3 & 5 \\ 6 & -5 & 8\end{pmatrix} = 32 \neq 0,\] the only solution to (1) is the trivial solution $x_1 = x_2 = x_3 = 0$. Thus, the set of vectors is linearly independent.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Show that the value of \[\det \begin{pmatrix}
-            -2 & 1 & 2k\\
-            -1 & 1 & k+1\\
-            2 & k-1 & 1
-        \end{pmatrix}\] is independent of $k$.
+        \item Show that the value of \[\det \begin{pmatrix}-2 & 1 & 2k\\ -1 & 1 & k+1\\ 2 & k-1 & 1\end{pmatrix}\] is independent of $k$.
         \item State, with a reason, whether the vectors \[\cveciii{-2}{1}{2}, \cveciii111, \cveciii431\] are linearly independent.
         \item \begin{enumerate}
             \item State, with a reason, whether the system of equations \[\systeme{-2x+y+6z=1,-x+y+4z=0,2x+2y+z=-2}\] is consistent.
@@ -51,10 +88,34 @@
         \end{enumerate}
     \end{enumerate}
 \end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Expanding along column 2,
+        \begin{align*}
+            \det \begin{pmatrix}-2 & 1 & 2k\\ -1 & 1 & k+1\\ 2 & k-1 & 1\end{pmatrix} &= -\begin{vmatrix}-1 & k+1 \\ 2 & 1\end{vmatrix} + \begin{vmatrix}-1 & 2k \\ 2 & 1\end{vmatrix} - (k-1) \begin{vmatrix}-2 & 2k \\ -1 & k + 1\end{vmatrix}\\
+            &= \bp{2k + 3} + \bp{-2 - 4k} + \bp{2k - 2} = -1.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Taking $k = 2$, we see that \[\begin{pmatrix}-2 & 1 & 4\\ -1 & 1 & 3\\ 2 & 1 & 1\end{pmatrix}\] is invertible (since its determinant is $-1 \neq 0$). Thus, \[x_1 \cveciii{-2}{-1}{2} + x_2 \cveciii111 + x_3 \cveciii431 = \begin{pmatrix}-2 & 1 & 4\\ -1 & 1 & 3\\ 2 & 1 & 1\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cveciii000\] has only the trivial solution $x_1 = x_2 = x_3 = 0$. Thus, the vectors \[\cveciii{-2}{1}{2}, \cveciii111, \cveciii431\] are linearly independent.
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            The system of equations can be rewritten as \[\begin{pmatrix}-2 & 1 & 6\\ -1 & 1 & 4\\ 2 & 2 & 1\end{pmatrix} \cveciii{x}{y}{z} = \cveciii10{-1}.\] Taking $k = 3$, we see that \[\begin{pmatrix}-2 & 1 & 6\\ -1 & 1 & 4\\ 2 & 2 & 1\end{pmatrix}\] is invertible (since its determinant is $-1 \neq 0$). Thus, the system is consistent and has a unique solution.
+        \end{psubpart}
+        \begin{psubpart}
+            The three planes intersect at a single common point.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Find a basis for the row space and a basis for the column space of the matrix \[\mat A = \begin{pmatrix}2 & 1 & 3 & 3 \\ 0 & -3 & 1 & -2 \\ 4 & 5 & 5 & 8\end{pmatrix}.\] State the rank of $\mat A$.
 \end{problem}
+\begin{solution}
+    Observe that the RREF of $\mat A$ is \[\begin{pmatrix}1 & 0 & 5/3 & 7/6 \\ 0 & 1 & -1/3 & 2/3 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, a basis for the row space of $\mat A$ is simply \[\bc{\cveciv10{5/3}{7/6}, \cveciv01{-1/3}{2/3}},\] while a basis for the column space of $\mat A$ is \[\bc{\cveciii204, \cveciii1{-3}{5}}.\] The rank of $\mat A$ is given by \[\Rank \mat A = \Dim \Range \mat A = \Dim \Col \mat A = 2.\]
+\end{solution}
 
 \begin{problem}
     In this question, $V$ denotes the set of vectors of the form $\cvecivx{a}{b}{c}{d}$, where $a$, $b$, $c$ and $d$ are real numbers. You may assume that $V$ forms a linear space under the usual operations of vector addition and multiplication by scalar.
@@ -66,6 +127,22 @@
         \item State the dimension of the linear space defined in part (a) and provide a basis for this linear space.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that $V_1$ is precisely the set of vectors $\vec r \in \RR^4$ such that \[\vec r \dotp \cveciv1111 = 0.\] That is, $V_1$ is a hyperplane in $\RR^4$. Since $V_1$ passes through the origin, it is a subspace of $\RR^4$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that $V_2$ does not contain the zero vector. Hence, it is not a subspace.
+    \end{ppart}
+    \begin{ppart}
+        Let $V_3$ be the subset for which $a + b = c + d$. This is the set of vectors $\vec r \in \RR^4$ such that \[\vec r \dotp \cveciv11{-1}{-1} = 0.\] Once again, this describes a hyperplane that passes through the origin. Hence, $V_3$ is a subspace.
+
+        Let $V_4$ be the subset for which $a + 2b = c + 3d$. Once again, this is the hyperplane with equation \[\vec r \dotp \cveciv{1}{2}{-1}{-3} = 0.\] Since it passes through the origin, it is a subspace.
+    \end{ppart}
+    \begin{ppart}
+        The dimension of $V_1$ is 3. Its basis is \[\bc{\cveciv1{-1}00, \cveciv11{-2}{0}, \cveciv111{-3}}.\] One can easily see that the three vectors are mutually orthogonal and are hence linearly independent.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The vector spaces $S_1$, $S_2$ and $S_3$ are given by
@@ -81,6 +158,17 @@
         \item Determine whether the set $(S_2 \setminus S_3) \cup \bc{\vec 0}$ is a vector space.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Clearly, \[S_1 \cap S_2 = \bc{x \in \RR^4 : x = \l \cveciv1010 + \m \cveciv0101}.\] Hence, its basis is simply \[\bc{\cveciv1010, \cveciv0101}.\]
+    \end{ppart}
+    \begin{ppart}
+        Take \[\vec v_1 = \cveciv0011, \quad \vec v_2 = \cveciv001{-1}.\] Clearly, $\vec v_1, \vec v_2 \in S_1 \cup S_2$. However, their sum is \[\vec v_1 + \vec v_2 = \cveciv002{0} \notin S_1 \cup S_2.\] Thus, $S_1 \cup S_2$ is not closed under addition and is thus not a vector space.
+    \end{ppart}
+    \begin{ppart}
+        Take \[\vec v_1 = \cveciv1010 + \cveciv0101 + \cveciv001{-1}, \quad \vec v_2 = \cveciv1010 + \cveciv0101 - \cveciv001{-1}.\] Clearly, $\vec v_1, \vec v_2 \in (S_2 \setminus S_3) \cup \bc{\vec 0}$. However, their sum is \[\vec v_1 + \vec v_2 = \cveciv2222 \in S_3.\] Thus, $S_2 \setminus S_3 \cup \bc{\vec 0}$ is not closed under addition and is hence not a vector space.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -89,6 +177,17 @@
         \item Find a basis for the linear space spanned by the vectors $\mat P \vec y_1$, $\mat P \vec y_2$, $\mat P \vec y_3$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since $\vec x_1$, $\vec x_2$, $\vec x_3$ are linearly dependent, there exists $a, b, c \in \RR$ that are not all 0 such that \[a \vec x_1 + b \vec x_2 + c \vec x_3 = \vec 0.\] Applying $\mat M$ to both sides of the equation, \[a \mat M \vec x_1 + b \mat M \vec x_2 + c \mat M \vec x_3 = \vec 0.\] Since $a$, $b$ and $c$ are not all 0, by definition, $\mat M \vec x_1$, $\mat M \vec x_2$, $\mat M \vec x_3$ are also linearly dependent.
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[8 \vec y_1 - 2 \vec y_2 - \vec y_3 = 9 \cveciii157 - 2 \cveciii2{-3}4 - \cveciii5{51}{55} = \cveciii000.\] Hence, $\vec y_1$, $\vec y_2$, $\vec y_3$ are linearly dependent.
+    \end{ppart}
+    \begin{ppart}
+        Note that the basis of $\Span \bc{\vec y_1, \vec y_2, \vec y_3}$ is simply $\bc{\vec y_1, \vec y_2}$. Thus, the basis of $\Span \bc{\mat P \vec y_1, \mat P \vec y_2, \mat P \vec y_3}$ is $\bc{\mat P \vec y_1, \mat P \vec y_2}$, which works out to be \[\bc{\cveciii2{45}{49}, \cveciii{26}{14}{28}}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     In the equation \[\begin{pmatrix}1 & 1 & -1 & 1 \\ 2 & 3 & 0 & 5 \\ 1 & 0 & -2 & -6 \\ 2 & 5 & 4 & 11 - \a\end{pmatrix} \vec x = \cveciv000\b,\] $\a$ and $\b$ are real constants.
@@ -98,6 +197,14 @@
         \item The set of all solutions for which $\a$ and $\b$ are both non-zero is denoted by $S$. Show that $S$ is a subset of $V$, but is not itself a vector space.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        When $\a = \b = 0$, our equation becomes \[\begin{pmatrix}1 & 1 & -1 & 1 \\ 2 & 3 & 0 & 5 \\ 1 & 0 & -2 & -6 \\ 2 & 5 & 4 & 11\end{pmatrix} \vec x = \cveciv0000.\] The RREF of the matrix is \[\begin{pmatrix}1 & 0 & 0 & -14 \\ 0 & 1 & 0 & 11 \\ 0 & 0 & 1 & -4 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] We thus have the system of linear equations \[\systeme{x_1 - 14x_4 = 0, x_2 + 11x_4, x_3 - 4x_4 = 0},\] where $x = \cvecivx{x_1}{x_2}{x_3}{x_4}$. Taking $x_4 = \l$, where $\l \in \RR$, we get \[\vec x = \l \cveciv{14}{-11}{4}{1}.\] This describes a line that passes through the origin. Hence, $V$ is a vector space with dimension 1 and basis $\cvecivx{14}{-11}{4}{1}$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that any solution to \[\begin{pmatrix}1 & 1 & -1 & 1 \\ 2 & 3 & 0 & 5 \\ 1 & 0 & -2 & -6 \\ 2 & 5 & 4 & 11 - \a\end{pmatrix} \vec x = \cveciv000\b\] must be of the form \[\vec x = \l \cveciv{14}{-11}{4}{1} \tag{1}\] since the first three rows of its RREF is the same as in part (a). Meanwhile, we can expand the last row as \[2x_1 + 5x_2 + 4x_3 + (11 - \a) x_4 = \b.\] Substituting (1), we have \[2 (14 \l) - 5 (11 \l) + 4 (4 \l) + (11 - \a) \l = \b \implies \l = -\frac{\b}{\a}.\] Thus, \[S = \bc{x \in \RR^4 : x = -\frac{\b}{\a} \cveciv{14}{-11}{4}{1}, \a, \b \neq 0},\] which is clearly a subset of $V$. However, because $S$ does not contain the zero vector ($-\b/\a \neq 0$), it is not a vector space.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The elements of the matrices $\mat A$ and $\mat B$ are given by \[\mat A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix} \tand \mat B = \begin{pmatrix}b_{11} & b_{12} & b_{13} \\ b_{21} & b_{22} & b_{23} \\ b_{31} & b_{32} & b_{33}\end{pmatrix}.\]
@@ -112,6 +219,28 @@
         \end{enumerate}
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        The first column of $\mat A \mat B$ is given by
+        \begin{gather*}
+            \cveciii{a_{11}b_{11} + a_{12}b_{21} + a_{13} b_{31}}{a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31}}{a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31}} \\
+            = b_{11} \cveciii{a_{11}}{a_{21}}{a_{31}} + b_{21} \cveciii{a_{12}}{a_{22}}{a_{32}} + b_{31} \cveciii{a_{13}}{a_{23}}{a_{33}} = b_{11} \vec c_1 + b_{21} \vec c_2 + b_{31} \vec c_3.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        The second column is given by \[b_{12} \vec c_1 + b_{22} \vec c_2 + b_{32} \vec c_3,\] while the third column is given by \[b_{13} \vec c_1 + b_{23} \vec c_2 + b_{33} \vec c_3.\]
+
+        Observe that every column of $\mat A \mat B$ lies in $\Span{\vec c_1, \vec c_2, \vec c_3}$. Thus, \[\Col{\mat A \mat B} \subseteq \Col{\mat A} \implies \Rank{\mat A \mat B} = \Dim \Col{\mat A \mat B} \leq \Dim \Col{\mat A} = \Rank{\mat A}.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that \[\cveciii{\a}{2\a + 3\b}{5\a + 3\b - 3} = \a \cveciii125 + (\b - 1) \cveciii103\] and \[\cveciii{\b}{\a + 2\b}{3\a + 3\b} = \b\cveciii125 + \a \cveciii103.\] Thus, $\Col{\mat A}$ is given by \[\Span{\cveciii125, \a \cveciii125 + (\b - 1) \cveciii103, \b\cveciii125 + \a \cveciii103} = \Span{\cveciii125, \cveciii103},\] whence \[\Rank{\mat A} = \Dim \Col{\mat A} = 2.\]
+        \end{psubpart}
+        \begin{psubpart}
+            When $\a = 0$ and $\b = 1$, we have \[\mat A = \begin{pmatrix}1 & 0 & 1 \\ 2 & 0 & 2 \\ 5 & 0 & 5 \end{pmatrix}.\] Hence, \[\Rank{\mat A \mat B} \leq \Rank{\mat A} = \Dim \Span{\cveciii125, \cveciii000, \cveciii125} = 1.\] By the rank-nullity theorem, \[\Nullity{\mat A \mat B} = 3 - \Rank{\mat A \mat B} \geq 3 - 1 = 2.\] Thus, the kernel of $\mat A \mat B$ has dimension at least 2, whence there are at least 2 linearly independent solutions to $\mat A \mat B \vec x = \vec 0$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The linear transformation $T : \RR^4 \to \RR^3$ is represented by the matrix $\mat M$, where \[\mat M = \begin{pmatrix}1 & -2 & 2 & 2 \\ 4 & -7 & \l & 5 \\ 3 & \l & -7 & 3\end{pmatrix},\] where $\l \in \RR$.
@@ -122,6 +251,19 @@
         \item If $\l = -5$, find the set of vectors $\vec x$ such that \[\mat M \vec x = \cveciii110\] and state whether this set forms a vector space, justifying your answer.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Performing elementary row operations on $\mat M$, we get \[\begin{pmatrix}1 & -2 & 2 & 2 \\ 4 & -7 & \l & 5 \\ 3 & \l & -7 & 3\end{pmatrix} \rightarrow \begin{matrix}[r] \\ \scriptstyle R_2 - 4R_1 \\ \scriptstyle (4\l+21)R_1 - (\l+6)R-2 + R_3\end{matrix}\begin{pmatrix}1 & -2 & 2 & 2 \\ 0 & 1 & \l-8 & - 3 \\ 0 & 0 & -(\l+5)(\l-7) & 3(\l + 5)\end{pmatrix}.\] Thus, if $\l = -5$, then the last row is entirely 0, whence $\Rank \mat M = 2$. If $\l \neq -5$, then the last row is not entirely 0, whence $\Rank \mat M = 3$ and \[\Dim K = 4 - \Rank \mat M = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        When $\l = -5$, the RREF of $\mat M$ is \[\begin{pmatrix}1 & 0 & -24 & -4 \\ 0 & 1 & -13 & -3 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, the basis of $R$ is simply \[\bc{\cveciii143, \cveciii{-2}{-7}{-5}}.\]
+
+        Now consider $K$, the solution set of $\mat M \vec x = \vec 0$, which is equivalent to the solution set of \[\begin{pmatrix}1 & 0 & -24 & -4 \\ 0 & 1 & -13 & -3 \\ 0 & 0 & 0 & 0\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv0000,\] where $x = \cvecivx{x_1}{x_2}{x_3}{x_4}$. This gives the system of linear equations \[\systeme{x_1 - 24 x_3 - 4 x_4 = 0, x_2 - 13 x_3 - 3x_4 = 0}.\] Let $x_3 = s$ and $x_4 = t$ be free variables, with $s, t \in \RR$. Then \[\vec x = \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv{24s + 4t}{13s + 3t}{s}{t} = s\cveciv{24}{13}{1}{0} + t\cveciv4301.\] Thus, the basis of $K$ is \[\bc{\cveciv{24}{13}{1}{0}, \cveciv4301}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider a particular solution to $\mat M \vec x = \cveciiix110$. Since there are two free variables, we take $\vec x = \cvecivx{x_1}{x_2}00$. Then \[\begin{pmatrix}1 & -2 & 2 & 2 \\ 4 & -7 & -5 & 5 \\ 3 & -5 & -7 & 3\end{pmatrix}\cveciv{x_1}{x_2}00 = \cveciii110.\] This gives the system of linear equations \[\systeme{x_1 - 2x_2 = 1, 4x_1 - 7x_2 = 1, 3x_1 - 5x_2 = 0}.\] Solving, we get $x_1 = -5$ and $x_2 = -3$. Thus, the set of all solutions to $\mat M \vec x = \cveciiix110$ is \[\bc{\vec x \in \RR^4: \vec x = \cveciv{-5}{-3}00 + s\cveciv{24}{13}{1}{0} + t\cveciv4301, \, s, t \in \RR}.\] This set is not a vector space since it does not contain the zero vector.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The linear transformation $T : \RR^4 \to \RR^4$ is represented by the matrix $\mat A$, where \[\mat A = \begin{pmatrix}1 & 2 & -3 & -4 \\ 2 & 5 & 1 & 3 \\ 3 & 7 & -2 & -1 \\ 7 & 16 & -7 & q\end{pmatrix}.\] The range space of $T$ is denoted by $R$.
@@ -133,6 +275,22 @@
         \item The null space of $T$, for the case where $q = -6$, is denoted by $K_2$. Without using a calculator, find a basis for $K_2$. Show that $K_1$ is a subspace of $K_2$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Performing elementary row operations on $\mat A$, we get \[\begin{pmatrix}1 & 2 & -3 & -4 \\ 2 & 5 & 1 & 3 \\ 3 & 7 & -2 & -1 \\ 7 & 16 & -7 & q\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle 5R_1 - 2R_2 \\ \scriptstyle R_2 - 2R_1 \\ \scriptstyle -2R_3 - R_1 + R_4 \\ \scriptstyle R_3 - R_1 - R_2\end{matrix} \begin{pmatrix}1 & 0 & -17 & -26 \\ 0 & 1 & 7 & 11 \\ 0 & 0 & 0 & q+6 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Clearly, if $q = -6$, then we have two non-zero rows, whence $\Dim R = \Rank \mat A = 2$. If $q \neq -6$, then we have three non-zero rows, whence $\Dim R = \Rank \mat A = 3$.
+    \end{ppart}
+    \begin{ppart}
+        When $q = -6$, we have from the above calculation that the RREF of $\mat A$ is \[\begin{pmatrix}1 & 0 & -17 & -26 \\ 0 & 1 & 7 & 11 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, the range space of $T$ has basis \[\bc{\cveciv1237, \cveciv256{16}}.\] Thus, the solution $\vec x = \cveciv{a}{b}{0}{0}$ to $\mat A \vec x = \cvecivx156{13}$ also satisfies the equation \[a \cveciv1237 + b \cveciv257{16} = \cveciv156{13}.\] This is equivalent to the system of linear equations \[\systeme{a + 2b = 1, 2a + 5b = 5, 3a + 7b = 6, 7a + 16b = 13},\] which has the unique solution $x_1 = -5$ and $x_2 = 3$. Thus, \[\vec x = \cveciv{-5}{3}00.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider $\mat A \vec x = 0$. This is equivalent to solving \[\begin{pmatrix}1 & 0 & -17 & -26 \\ 0 & 1 & 7 & 11 \\ 0 & 0 & 0 & q+6 \\ 0 & 0 & 0 & 0\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv0000.\] This yields the system of equations \[\systeme[x_1x_2x_3x_4]{x_1 - 17x_3 - 26x_4 = 0, x_2 + 7x_3 + 11x_4 = 0, (q\+6) x_4 = 0}.\] Note that $x_4 = 0$. Let $x_3 = \l$, where $\l \in \RR$. Then \[\vec x = \cveciv{x_1}{x_2}{x_3}{x_4} = \l\cveciv{17}{-7}{1}{0}.\] Thus, the basis of $K_1$ is \[\bc{\cveciv{17}{-7}{1}{0}}.\]
+    \end{ppart}
+    \begin{ppart}
+        Consider $\mat A \vec x = 0$. This is equivalent to solving \[\begin{pmatrix}1 & 0 & -17 & -26 \\ 0 & 1 & 7 & 11 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv0000.\] This yields the system of equations \[\systeme[x_1x_2x_3x_4]{x_1 - 17x_3 - 26x_4 = 0, x_2 + 7x_3 + 11x_4 = 0}.\] Let $x_3 = \l$ and $x_4 = \m$. Then \[\vec x = \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv{17\l + 26\m}{-7\l - 11 \m}{\l}{\m} = \l \cveciv{17}{-7}{1}{0} + \m \cveciv{26}{-11}{0}{1}.\]
+
+        Since $K_1$ and $K_2$ are both null spaces, they must be vector spaces. Since $K_1 \subset K_2$, it follows that $K_1$ is a subspace of $K_2$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Let $\vec u = \cveciiix110$ and $T : \RR^3 \to \RR^3$ be the linear transformation \[T(\vec v) = \bp{\frac{\vec u \dotp \vec v}{\vec u \dotp \vec u}} \vec u.\]
@@ -142,6 +300,15 @@
         \item Find the range space of $T$ and its rank. State also a geometrical interpretation of the range space of $T$.
     \end{enumerate}
 \end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Consider $T(\vec v) = \vec 0$: \[T(\vec v) = \bp{\frac{\vec u \dotp \vec v}{\vec u \dotp \vec u}} \vec u = \vec 0 \implies \vec u \dotp \vec v = 0 \implies \vec v \dotp \cveciii110 = 0.\] Let $\vec v = \cveciiix{x}{y}{z}$. Expanding the dot product, we see that $\Ker{T}$ has Cartesian equation $x + y = 0$, $z \in \RR$. Let $y = \l$ and $z = \m$. Then \[\vec v = \cveciii{x}{y}{z} = \cveciii{-\l}{\l}{\m} = \l \cveciii{-1}{1}0 + \m \cveciii001.\] Thus, the kernel of $T$ is \[\Ker{T} = \bc{\vec x \in \RR^3 : \vec x = \l \cveciii{-1}{1}0 + \m \cveciii001, \, \l, \m \in \RR},\] and its basis is \[\bc{\cveciii{-1}{1}{0}, \cveciii001}.\] $\Ker{T}$ is the plane passing through the origin that is normal to $\cveciiix{1}{1}{0}$. 
+    \end{ppart}
+    \begin{ppart}
+        Note that $\frac{\vec u \dotp \vec v}{\vec u \dotp \vec u}$ is simply a scalar. Thus, \[\Range{T} = \bc{\vec x \in \RR^3 : \n \cveciii110, \, \n \in \RR}.\] The range of $T$ is a line passing through the origin with direction vector $\vec u$. Thus, the rank of $T$ is 1. 
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The linear transformation $T : \RR^4 \to \RR^3$ is represented by the matrix $\mat M$, where \[\mat M = \begin{pmatrix}1 & 5 & -1 & -2 \\ -1 & -3 & 4 & 3 \\ 1 & 11 & 8 & 1\end{pmatrix}.\]
@@ -155,12 +322,59 @@
         \item Let $V \subseteq \RR^3$ be the set that satisfies the following properties: \[V \cap R(T) = \bc{\vec 0}, \quad V \cup R(T) = \RR^3.\] Determine whether $V$ is a subspace of $\RR^3$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., we see that the RREF of $\mat M$ is \[\begin{pmatrix}1 & 0 & -17/2 & -9/2 \\ 0 & 1 & 3/2 & 1/2 \\ 0 & 0 & 0 & 0\end{pmatrix}.\]
+
+        \begin{psubpart}
+            $R(T)$ has basis \[\bc{\cveciii1{-1}{1}, \cveciii{5}{-3}{11}}.\] $R(T)$ represents the plane passing through the origin that contains the points $(1, -1, 1)$ and $(5, -3, 11)$.
+        \end{psubpart}
+        \begin{psubpart}
+            Consider $\mat M \vec x = \vec 0$. This is equivalent to \[\begin{pmatrix}1 & 0 & -17/2 & -9/2 \\ 0 & 1 & 3/2 & 1/2 \\ 0 & 0 & 0 & 0\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \vec 0,\] which gives the system of linear equations \[\systeme{x_1 - \frac{17}{2} x_3 - \frac92 x_4 = 0, x_2 + \frac32 x_3 + \frac12 x_4 = 0}.\] Let $x_3 = s$ and $x_4 = t$, where $s, t \in \RR$. Then $x_1 = \frac{17}2s + \frac92t$ and $x_2 = -\frac32s - \frac12t$, whence \[\vec x = \cveciv{x_1}{x_2}{x_3}{x_4} = s \cveciv{17/2}{-3/2}{1}{0} + t \cveciv{9/2}{-1/2}{0}{1}.\] Thus, a basis of $K(T)$ is \[\bc{\cveciv{17}{-3}{2}{0}, \cveciv{9}{-1}{0}{2}}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Consider \[\begin{pmatrix}1 & 5 & -1 & -2 \\ -1 & -3 & 4 & 3 \\ 1 & 11 & 8 & 1\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciii{6\a - 5\b}{-4a + 3\b}{12\a - 11\b}.\] Expanding the LHS and RHS, we see that \[x_1 \cveciii1{-1}1 + x_2 \cveciii5{-3}{11} + x_3 \cveciii{-1}{4}{8} + x_4 \cveciii{-2}{3}1 = \a \bs{\cveciii1{-1}{1} + \cveciii{5}{-3}{11}} - \b \cveciii{5}{-3}{11}.\] It is hence obvious that taking $x_1 = \a$, $x_2 = \a - \b$, $x_3 = x_4 = 0$ yields a particular solution to the equation. Thus, the general solution is \[\vec x = \cveciii{\a}{\a - \b}00 + s \cveciv{17}{-3}{2}{0} + t \cveciv{9}{-1}{0}{2}, \quad s, t \in \RR.\]
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        From the given equations, it is obvious that $V = \RR^3 \setminus R(T) \cup \bc{\vec 0}$. Take \[\vec v_1 = \cveciii1{-1}{1} + \cveciii001 \quad \tand \quad \vec v_2 = \cveciii1{-1}{1} - \cveciii001.\] Clearly, both $\vec v_1$ and $\vec v_2$ are not in $R(T)$. Thus, $\vec v_1, \vec v_2 \in V$. However, their sum \[\vec v_1 + \vec v_2 = \cveciii2{-2}{2} = 2\cveciii1{-1}{1}\] is clearly in $R(T)$ and is also not the zero vector, thus it cannot be in $V$. Hence, $V$ is not closed under addition, thus it is not a subspace of $\RR^3$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
-    Matrices $\mat M_1$ and $\mat M_2$ define linear transformations from $\RR^4$ and $\RR^4$ and are respectively defined as follows: \[\mat M_1 = \begin{pmatrix}1 & 2 & 1 & a \\ 0 & 1 & 1 & b \\ 0 & 0 & 0 & c \\ 0 & 0 & 0 & d\end{pmatrix}, \quad \mat M_2 = \begin{pmatrix} 1 & 2 & -1 & 1 \\ 0 & 1 & 3 & -2 \\ 0 & 0 & c-1 & 1 \\ 0 & 0 & 0 & c+1 \end{pmatrix},\] where $a$, $b$, $c$ and $d$ are real constants.
+    Matrices $\mat M_1$ and $\mat M_2$ define linear transformations from $\RR^4$ to $\RR^4$ and are respectively defined as follows: \[\mat M_1 = \begin{pmatrix}1 & 2 & 1 & a \\ 0 & 1 & 1 & b \\ 0 & 0 & 0 & c \\ 0 & 0 & 0 & d\end{pmatrix}, \quad \mat M_2 = \begin{pmatrix} 1 & 2 & -1 & 1 \\ 0 & 1 & 3 & -2 \\ 0 & 0 & c-1 & 1 \\ 0 & 0 & 0 & c+1 \end{pmatrix},\] where $a$, $b$, $c$ and $d$ are real constants.
 
     \begin{enumerate}
         \item The null spaces of $\mat M_1$ and $\mat M_2$ are denoted by $N_1$ and $N_2$ respectively. For the case where $a = b = c = 1$ and $d = 0$, find a basis for $N_1$ and a basis for $N_2$. Hence, determine whether $N_1 \cup N_2$ is a vector space.
         \item The range spaces of the linear transformations defined by $\mat M_1$ and $\mat M_2$ are denoted by $R_1$ and $R_2$ respectively. Given that $R_1 \cup R_2$ is a vector space, find the possible conditions to be satisfied by $a$, $b$, $c$ and $d$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        When $a = b = c = 1$ and $d = 0$, we have \[\mat M_1 = \begin{pmatrix}1 & 2 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix}, \quad \mat M_2 = \begin{pmatrix} 1 & 2 & -1 & 1 \\ 0 & 1 & 3 & -2 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 2 \end{pmatrix}.\] Note also that the RREF of $\mat M_1$ and $\mat M_2$ are given by \[\begin{pmatrix}1 & 0 & -1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix} \quad \tand \quad \begin{pmatrix}1 & 0 & -7 & 0 \\ 0 & 1 & 3 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix}\] respectively.
+
+        Consider $\mat M_1 \vec x = \vec 0$. This is equivalent to solving \[\begin{pmatrix}1 & 0 & -1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv0000,\] which yields the system of linear equations \[\systeme{x_1 - x_3 = 0, x_2 + x_3 = 0, x_4 = 0}.\] Let $x_3 = \l$, where $\l \in \RR$. Then $x_1 = \l$ and $x_2 = -\l$, whence \[\vec x = \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv{\l}{-\l}{\l}{0} = \l \cveciv{1}{-1}{1}{0}.\] Thus, $N_1$ has basis \[\bc{\cveciv1{-1}10}.\]
+
+        Consider $\mat M_2 \vec x = \vec 0$. This is equivalent to solving \[\begin{pmatrix}1 & 0 & -7 & 0 \\ 0 & 1 & 3 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv0000,\] which yields the system of linear equations \[\systeme{x_1 - 7x_3 = 0, x_2 + 3x_3 = 0, x_4 = 0}.\] Let $x_3 = \m$, where $\m \in \RR$. Then $x_1 = 7\m$ and $x_2 = -3\m$, whence \[\vec x = \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv{7\m}{-3\m}{\m}{0} = \m \cveciv{7}{-3}{1}{0}.\] Thus, $N_2$ has basis \[\bc{\cveciv{7}{-3}{1}{0}}.\]
+
+        Clearly, \[\vec v_1 = \cveciv1{-1}10 \quad \tand \quad \vec v_2 = \cveciv{7}{-3}{1}{0}\] are both in $N_1 \cup N_2$. However, their sum \[\vec v_1 + \vec v_2 = \cveciv{8}{-4}20\] is neither a scalar multiple of $\vec v_1$ nor $\vec v_2$, hence it is neither in $N_1$ nor $N_2$, so $\vec v_1 + \vec v_2 \notin N_1 \cup N_2$. Thus, $N_1 \cup N_2$ is not closed under addition, and it cannot be a vector space.
+    \end{ppart}
+    \begin{ppart}
+        Note that because both $R_1$ and $R_2$ are already vector spaces, for their union $R_1 \cup R_2$ to be also a vector space, either $R_1 \subseteq R_2$ or $R_2 \subseteq R_1$.
+
+        Performing elementary column operations on $\mat M_1$ and $\mat M_2$, we see that the two matrices are column equivalent to \[\mat M_1' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & c \\ 0 & 0 & 0 & d\end{pmatrix} \quad \tand \quad \mat M_2' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & c-1 & 1 \\ 0 & 0 & 0 & c+1 \end{pmatrix}.\]
+
+        \case{1} Suppose $c \notin \bc{-1, 1}$. Then $\mat M_2'$ has no row of zeroes and thus has full rank. Hence, $\mat M_2$ also has full rank, i.e. $R_2 = \RR^4$. Thus, regardless of what $d$ is, we will always have $R_1 \subseteq R_4 = \RR^4$, whence $R_1 \cup R_4$ is a vector space.
+
+        \case{2} Suppose $c = 1$. Then \[\mat M_1' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & d\end{pmatrix} \quad \tand \quad \mat M_2' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 2 \end{pmatrix}.\] Thus, \[R_1 = \Span{\cveciv1000, \cveciv0100, \cveciv001d} \quad \tand \quad R_2 = \Span{\cveciv1000, \cveciv0100, \cveciv0012}.\] Since both $R_1$ and $R_2$ have equal dimension (3), we require $R_1 = R_2$, which is only possible if $d = 2$.
+
+        \case{3} Suppose $c = -1$. Then \[\mat M_1' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & -1 \\ 0 & 0 & 0 & d\end{pmatrix} \quad \tand \quad \mat M_2' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & -2 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix}.\] Thus, \[R_1 = \Span{\cveciv1000, \cveciv0100, \cveciv001{-d}} \quad \tand \quad R_2 = \Span{\cveciv1000, \cveciv0100, \cveciv0010}.\] Since both $R_1$ and $R_2$ have equal dimension (3), we require $R_1 = R_2$, which is only possible if $d = 0$.
+
+        Thus, if $R_1 \cup R_2$ is a vector space, then $a, b \in \RR$, with
+        \begin{itemize}
+            \item $c \in \RR \setminus \bc{-1, 1}$, $d \in \RR$, or
+            \item $c = 1$, $d = 2$, or
+            \item $c = -1$, $d = 0$.
+        \end{itemize}
+    \end{ppart}
+\end{solution}
