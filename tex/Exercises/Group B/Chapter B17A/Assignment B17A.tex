@@ -1,0 +1,81 @@
+\section{Assignment B17A}
+
+\begin{problem}
+    The equations of three planes $p$, $q$ and $r$ are \[\systeme{2x + y + 3z = 4, 8x + 6y + 5z = \m, -4x + 8y + \l z = 7}\] respectively, where $\l$ and $\m$ are constants.
+
+    Determine the conditions on $\l$ and $\m$ such that the three planes
+    \begin{enumerate}
+        \item intersect at exactly one point,
+        \item intersect at a line,
+        \item have no point in common.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    The system of equations can be rewritten as the matrix equation \[\begin{pmatrix}2 & 1 & 3 \\ 8 & 6 & 5 \\ -4 & 8 & \l\end{pmatrix} \cveciii{x}{y}{z} = \cveciii{4}{\m}{7}.\] The augmented matrix corresponding to this equation is row-equivalent to \[\begin{pmatrix}[ccc|c]2 & 1 & 3 & 4 \\ 8 & 6 & 5 & \m \\ -4 & 8 & \l & 7\end{pmatrix} \rightarrow \begin{matrix}[r] \\ \scriptstyle R_2 - 4R_1 \\ \scriptstyle R_3 + 22R_1 - 5R_2\end{matrix} \begin{pmatrix}[ccc|c] 2 & 1 & 3 & 4 \\ 0 & 2 & -7 & \m - 16 \\ 0 & 0 & \l + 41 & 95 - 5 \m\end{pmatrix}.\]
+
+    \begin{ppart}
+        For the three planes to intersect at exactly one point, the system of equations must have a unique solution. Hence, there must be no row of 0's, whence $\l + 41 = 0$. Thus, $\l \neq -41$ and $\m \in \RR$.
+    \end{ppart}
+    \begin{ppart}
+        For the three planes to intersect at a line, the system of equations must have infinitely many solutions. Hence, there are must a consistent row of 0's. This gives $\l + 41 = 0$ and $95 - 5\m = 0$, whence $\l = -41$ and $\m = 19$.
+    \end{ppart}
+    \begin{ppart}
+        For the three planes to have no common point, the system of equations must be inconsistent. Thus, $\l + 41 = 0$ and $95 - 5\m \neq 0$, whence $\l = -41$ and $\m \neq 19$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    An $n \times n$ matrix $\mat A$ is said to be an \emph{involutory matrix} if $\mat A^2 = \mat I$, where $\mat I$ is the identity matrix. It is an \emph{idempotent matrix} if $\mat A^2 = \mat A$.
+
+    \begin{enumerate}
+        \item Find the possible values of the determinant of an involutory matrix.
+        \item State the expression of $\mat A^{2n+1}$ where $n \in \ZZ^+$, where $\mat A$ is an involutory matrix.
+        \item Prove that $\mat A$ is an involutory matrix if and only if $\frac12 \bp{\mat A + \mat I}$ is idempotent.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Taking determinants on both sides, \[\det \mat A^2 = \det \mat I \implies \bp{\det \mat A}^2 = 1 \implies \det \mat A = \pm 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\mat A^{2n+1} = \mat A \bs{\bp{\mat A}^{2}}^{n} = \mat A \mat I^n = \mat A.\]
+    \end{ppart}
+    \begin{ppart}
+        Suppose $\mat A$ is involutory. Then $\mat A^2 = \mat I$. Consider $\bs{\frac12 \bp{\mat A + \mat I}}^2$:
+        \begin{gather*}
+            \bs{\frac12 \bp{\mat A + \mat I}} = \frac14 \bp{\mat A^2 + \mat A \mat I + \mat I \mat A + \mat I^2} = \frac14 \bp{\mat A^2 + 2\mat A + \mat I}\\
+            = \frac14 \bp{\mat I + 2\mat A + \mat I} = \frac12 \bp{\mat A + \mat I}.    
+        \end{gather*}
+        Thus, $\frac12\bp{\mat A + \mat I}$ is idempotent.
+
+        Suppose that $\frac12 \bp{\mat A + \mat I}$ is idempotent. Then
+        \begin{gather*}
+            \bs{\frac12 \bp{\mat A + \mat I}}^2 = \frac12 \bp{\mat A + \mat I} \implies \bp{\mat A + \mat I}^2 = 2 \bp{\mat A + \mat I} \\
+            \implies \mat A^2 + 2\mat A + \mat I = 2\mat A + 2 \mat I \implies \mat A^2 = \mat I,
+        \end{gather*}
+        hence $\mat A$ is involutory.
+
+        Thus, $\mat A$ is involutory if and only if $\frac12\bp{\mat A + \mat I}$ is idempotent.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The matrix $\mat A$ is given by \[\mat A = \begin{pmatrix}[rrr]-5 & 4 & 3 \\ 10 & -7 & -6 \\ -8 & 6 & 5\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \item By performing row operations on the matrix $\begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix}$, find $\mat A^{-1}$.
+        \item Solve the equation $\mat x \mat A = \begin{pmatrix}-1 & 2 & 3\end{pmatrix}$, where $\mat x$ is a $1 \times 3$ matrix.
+        \item Solve, by multiplying both sides of the equation by $\mat A^{-1}$, the equation \[\begin{pmatrix}x & y & z & t\end{pmatrix} \begin{pmatrix}[rrr]-1 & 2 & 3 \\ -5 & 4 & 3 \\ 10 & -7 & -6 \\ -8 & 6 & 5\end{pmatrix} = \begin{pmatrix}2 & -2 & 1\end{pmatrix}.\]
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Performing row operations on the augmented matrix $\begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix}$, we have \[\begin{pmatrix}[ccc|ccc]-5 & 4 & 3 & 1 & 0 & 0 \\ 10 & -7 & -6 & 0 & 1 & 0 \\ -8 & 6 & 5 & 0 & 0 & 1\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle -R_1 + 2R_2 + 3R_3 \\ \scriptstyle R_2 + 2R_1 \\ \scriptstyle 5R_3 - 4R_1 + 2R_2\end{matrix} \begin{pmatrix}[ccc|ccc]1 & 0 & 0 & -1 & 2 & 3 \\ 0 & 1 & 0 & 2 & 1 & 0 \\ 0 & 0 & 1 & -4 & 2 & 5\end{pmatrix}.\] Thus, \[\mat A^{-1} = \begin{pmatrix}-1 & 2 & 3 \\ 2 & 1 & 0 \\ -4 & 2 & 5\end{pmatrix}.\]
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., we have $\mat x = \begin{pmatrix}-7 & 6 & 12\end{pmatrix}$.
+    \end{ppart}
+    \begin{ppart}
+        Post-multiplying the given equation with $\mat A^{-1}$, we have \[\begin{pmatrix}x & y & z & t\end{pmatrix} \begin{pmatrix}[rrr]-1 & 2 & 3 \\ & \mat A & \end{pmatrix} \mat A^{-1} = \begin{pmatrix}2 & -2 & 1\end{pmatrix} \mat A^{-1}.\] Block-multiplying the LHS yields \[\begin{pmatrix}x & y & z & t\end{pmatrix}  \begin{pmatrix}-7 & 6 & 12 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix}-10 & 4 & 11\end{pmatrix}.\] This gives the system of linear equations \[\systeme[xyzt]{-7x + y = -10, 6x + z = 4, 12x + t = 11}.\] Let $x = \l$, where $\l \in \RR$. Then \[x = \l, \quad y = -10 + 7\l, \quad z = 4 - 6\l, \quad t = 11 - 12\l.\]
+    \end{ppart}
+\end{solution}
