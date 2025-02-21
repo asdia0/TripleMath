@@ -122,25 +122,31 @@
 
     \begin{enumerate}
         \item Show that the subset of $V$ for which $a + b + c + d = 0$ forms a linear space.
-        \item Show that the subset of $V$ for which $a = b + c + d = 1$ does not form a linear space.
+        \item Show that the subset of $V$ for which $a + b + c + d = 1$ does not form a linear space.
         \item Determine whether the subset for which $a + b = c + d$ and $a + 2b = c + 3d$ forms a linear space.
         \item State the dimension of the linear space defined in part (a) and provide a basis for this linear space.
     \end{enumerate}
 \end{problem}
 \begin{solution}
+    Let $\Pi$ be the null space of a matrix $\mat A$.
+    \begin{itemize}
+        \item $\Pi$ contains the zero vector: $\mat A \vec 0 = \vec 0$.
+        \item $\Pi$ is closed under addition: for any $\vec v_1, \vec v_2 \in \Pi$, \[\mat A \bp{\vec v_1 + \vec v_2} = \mat A \vec v_1 + \mat A \vec v_2 = \vec 0 + \vec 0 = \vec 0.\]
+        \item $\Pi$ is closed scalar multiplication: for any $\vec v \in \Pi$ and $k \in \RR$, \[\mat A \bp{k \vec v} = k \mat A \vec v = k \vec 0 = \vec 0.\]
+    \end{itemize}
+    Thus, null spaces are linear spaces.
+        
     \begin{ppart}
-        Observe that $V_1$ is precisely the set of vectors $\vec r \in \RR^4$ such that \[\vec r \dotp \cveciv1111 = 0.\] That is, $V_1$ is a hyperplane in $\RR^4$. Since $V_1$ passes through the origin, it is a subspace of $\RR^4$.
+        Let $V_1$ be the subset for which $a + b + c + d = 0$. Then \[V_1 = \bc{\vec r \in \RR^4 : \begin{pmatrix}1 & 1 & 1 & 1\end{pmatrix} \vec r = \vec 0},\] which is a null space and thus forms a linear space.
     \end{ppart}
     \begin{ppart}
-        Observe that $V_2$ does not contain the zero vector. Hence, it is not a subspace.
+        Let $V_2$ be the subset for which $a + b + c + d = 1$. Clearly, $V_2$ does not contain the zero vector ($a = b = c = d = 0$) and is thus not a linear space.
     \end{ppart}
     \begin{ppart}
-        Let $V_3$ be the subset for which $a + b = c + d$. This is the set of vectors $\vec r \in \RR^4$ such that \[\vec r \dotp \cveciv11{-1}{-1} = 0.\] Once again, this describes a hyperplane that passes through the origin. Hence, $V_3$ is a subspace.
-
-        Let $V_4$ be the subset for which $a + 2b = c + 3d$. Once again, this is the hyperplane with equation \[\vec r \dotp \cveciv{1}{2}{-1}{-3} = 0.\] Since it passes through the origin, it is a subspace.
+        Let $V_3$ be the subset for which $a + b = c + d$ and $a + 2b = c + 3d$. Then \[V_3 = \bc{\vec r \in \RR^4 : \begin{pmatrix}1 & 1 & -1 & -1 \\ 1 & 2 & -1 & -3\end{pmatrix} \vec r = \vec 0},\] which is clearly a null space. Hence, $V_3$ is a linear space.
     \end{ppart}
     \begin{ppart}
-        The dimension of $V_1$ is 3. Its basis is \[\bc{\cveciv1{-1}00, \cveciv11{-2}{0}, \cveciv111{-3}}.\] One can easily see that the three vectors are mutually orthogonal and are hence linearly independent.
+        The dimension of $V_1$ is 3. Its basis is \[\bc{\cveciv1{-1}00, \cveciv11{-2}{0}, \cveciv111{-3}}.\] One can easily see that the three vectors are pairwise orthogonal and are thus linearly independent.
     \end{ppart}
 \end{solution}
 
@@ -360,11 +366,11 @@
         Clearly, \[\vec v_1 = \cveciv1{-1}10 \quad \tand \quad \vec v_2 = \cveciv{7}{-3}{1}{0}\] are both in $N_1 \cup N_2$. However, their sum \[\vec v_1 + \vec v_2 = \cveciv{8}{-4}20\] is neither a scalar multiple of $\vec v_1$ nor $\vec v_2$, hence it is neither in $N_1$ nor $N_2$, so $\vec v_1 + \vec v_2 \notin N_1 \cup N_2$. Thus, $N_1 \cup N_2$ is not closed under addition, and it cannot be a vector space.
     \end{ppart}
     \begin{ppart}
-        Note that because both $R_1$ and $R_2$ are already vector spaces, for their union $R_1 \cup R_2$ to be also a vector space, either $R_1 \subseteq R_2$ or $R_2 \subseteq R_1$.
+        Note that because both $R_1$ and $R_2$ are already vector spaces, for their union $R_1 \cup R_2$ to also be a vector space, either $R_1 \subseteq R_2$ or $R_2 \subseteq R_1$.
 
-        Performing elementary column operations on $\mat M_1$ and $\mat M_2$, we see that the two matrices are column equivalent to \[\mat M_1' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & c \\ 0 & 0 & 0 & d\end{pmatrix} \quad \tand \quad \mat M_2' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & c-1 & 1 \\ 0 & 0 & 0 & c+1 \end{pmatrix}.\]
+        Performing elementary column operations on $\mat M_1$ and $\mat M_2$, we see that the two matrices are column-equivalent to \[\mat M_1' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & c \\ 0 & 0 & 0 & d\end{pmatrix} \quad \tand \quad \mat M_2' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & c-1 & 1 \\ 0 & 0 & 0 & c+1 \end{pmatrix}.\]
 
-        \case{1} Suppose $c \notin \bc{-1, 1}$. Then $\mat M_2'$ has no row of zeroes and thus has full rank. Hence, $\mat M_2$ also has full rank, i.e. $R_2 = \RR^4$. Thus, regardless of what $d$ is, we will always have $R_1 \subseteq R_4 = \RR^4$, whence $R_1 \cup R_4$ is a vector space.
+        \case{1} Suppose $c \notin \bc{-1, 1}$. Then $\mat M_2'$ has no row or column full of zeroes and thus has full rank. Hence, $\mat M_2$ also has full rank, i.e. $R_2 = \RR^4$. Thus, regardless of what $d$ is, we will always have $R_1 \subseteq R_4 = \RR^4$, whence $R_1 \cup R_4$ is a vector space.
 
         \case{2} Suppose $c = 1$. Then \[\mat M_1' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & d\end{pmatrix} \quad \tand \quad \mat M_2' = \begin{pmatrix}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 2 \end{pmatrix}.\] Thus, \[R_1 = \Span{\cveciv1000, \cveciv0100, \cveciv001d} \quad \tand \quad R_2 = \Span{\cveciv1000, \cveciv0100, \cveciv0012}.\] Since both $R_1$ and $R_2$ have equal dimension (3), we require $R_1 = R_2$, which is only possible if $d = 2$.
 
