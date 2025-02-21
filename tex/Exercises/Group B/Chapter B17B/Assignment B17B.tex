@@ -1,0 +1,92 @@
+\section{Assignment B17B}
+
+\begin{problem}
+    In $\RR^2$, a horizontal shear is a mapping that takes a generic point with position vector $\cveciix{x}{y}$ to the point with position vector $\cveciix{x + my}{y}$, where $m$ is a fixed parameter called the \emph{shear factor}.
+
+    Show that every horizontal shear mapping in $\RR^2$ is a linear transformation. State the matrix that represents the horizontal shear with shear factor $m$.
+\end{problem}
+\begin{solution}
+    Let $T : \RR^2 \to \RR^2$ such that \[T\of{\cvecii{x}{y}} = \cvecii{x + my}{y}.\] Let $\a, \b \in \RR$. Observe that
+    \begin{gather*}
+        T\of{\a \cvecii{x_1}{y_1} + \b \cvecii{x_2}{y_2}} = T\of{\cvecii{\a x_1 + \b x_2}{\a y_1 + \b y_2}} = \cvecii{\a x_1 + \b x_2 + m \a y_1 + m \b y_2}{\a y_1 + \b y_2}\\
+        = \a \cvecii{x_1 + m y_1}{y_1} + \b \cvecii{x_2 + m y_2}{y_2} = \a T\of{\cvecii{x_1}{y_1}} + \b T\of{\cvecii{x_2}{y_2}}.
+    \end{gather*}
+    Hence, $T$ preserves both addition and scalar multiplication, whence it is a linear transformation.
+
+    Note that \[T\of{\cvecii{x}{y}} = \cvecii{x + my}{y} = x \cvecii10 + y \cvecii{m}{1} = \begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix} \cvecii{x}{y}.\] Thus, \[\begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix}\] is the matrix representation of $T$.
+\end{solution}
+
+\begin{problem}
+    Given that \[\bc{\cveciii1ab, \cveciii{b}1a, \cveciii{a}{b}1}\] is not a basis for $\RR^3$, prove that $a^3 - 3ab + b^3 + 1 = 0$.
+\end{problem}
+\begin{solution}
+    Since the vectors do not form a basis of $\RR^3$, they must be linearly dependent. Thus, there exist $x_1, x_2, x_3 \in \RR$ that are not all 0 such that \[x_1 \cveciii1ab + x_2 \cveciii{b}1a + x_3 \cveciii{a}{b}{1} = \vec 0,\] which is equivalent to the matrix equation \[\begin{pmatrix}1 & b & a \\ a & 1 & b \\ b & a & 1\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \vec 0.\] Thus, the above matrix has a non-trivial kernel, whence its determinant is 0. Thus, \[0 = \det \begin{pmatrix}1 & b & a \\ a & 1 & b \\ b & a & 1\end{pmatrix} = 1 \begin{vmatrix}1 & b \\ a & 1 \end{vmatrix} - a \begin{vmatrix}b & a \\ a & 1\end{vmatrix} + b \begin{vmatrix}b & a \\ 1 & b\end{vmatrix} = a^3 - 3ab + b^3 + 1.\]
+\end{solution}
+
+\begin{problem}
+    Let $\mat A$ be an $n \times n$ matrix and $W$ to be the subset $\bc{\vec u \in \RR^n \mid \mat A \vec u = \vec u}$ of $\RR^n$.
+
+    \begin{enumerate}
+        \item Show that $W$ is a subspace of $\RR^n$.
+        \item Let \[\mat A = \begin{pmatrix}1 & 0 & -1 \\ 0 & 1 & 0 \\ 0 & 0 & -1\end{pmatrix}.\] Find a basis of $W$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[W = \bc{\vec u \in \RR^n \mid \mat A \vec u = \vec u} = \bc{\vec u \in \RR^n \mid (\mat A - \mat I) \vec u = \vec 0},\] which is a null space. Hence, $W$ is a subspace of $\RR^n$.
+    \end{ppart}
+    \begin{ppart}
+        Consider the solutions to $(\mat A - \mat I) \vec u = \vec 0$: \[(\mat A - \mat I) \vec u = \vec 0 \implies \begin{pmatrix}0 & 0 & -1 \\ 0 & 0 & 0 \\ 0 & 0 & -2 \end{pmatrix} \cveciii{x}{y}{z} = \cveciii{0}{0}{0}.\] We immediately see that $x, y \in \RR$ and $z = 0$. Letting $x = \l$ and $y = \m$, where $\l, \m \in \RR$, we have \[\vec u = \cveciii{x}{y}{z} = \cveciii{\l}{\m}{0} = \l \cveciii100 + \m \cveciii010.\] Thus, a basis of $W$ is \[\bc{\cveciii100, \cveciii010}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The linear transformation $T : \RR^4 \to \RR^3$ is represented by the matrix \[\mat A = \begin{pmatrix}1 & 3 & -2 & a \\ 2 & -1 & 3 & -5 \\ -3 & -3 & 0 & 3\end{pmatrix}\] where $a$ is a real constant.
+
+    \begin{enumerate}
+        \item It is given that the dimension of the null space of $T$ is 2. Find the value of $a$. Hence, find a basis for the null space of $T$.
+        \item Show that $R$, the range space of $T$, is a plane, and find the Cartesian equation of $R$.
+        \item Let $V$ be a vector space spanned by $\vec v$ where $\vec v = \cveciiix0bc$, $b, c \in \RR$. If $R \cup V$ is a vector space, find a relationship between $b$ and $c$.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Since $\Dim \Ker T = 2$, we have $\Dim \Range T = 4 - 2 = 2$. Since \[\cveciii12{-3} \quad \tand \quad \cveciii3{-1}{3}\] are linearly independent, they form a basis for $\Range T$. Hence, there exist $\l, \m \in \RR$ such that \[\cveciii{a}{-5}{3} = \l \cveciii12{-3} + \m \cveciii3{-1}{-3},\] which is equivalent to the system of linear equations \[\systeme{\l + 3\m = a, 2\l - \m = -5, -3\l - 3\m = 3}.\] Solving the last two equations simultaneously yields $\l = -2$ and $\m = 1$, whence $a = 1$. Thus, \[\mat A = \begin{pmatrix}1 & 3 & -2 & 1 \\ 2 & -1 & 3 & -5 \\ -3 & -3 & 0 & 3\end{pmatrix},\] and its RREF is \[\begin{pmatrix}1 & 0 & 1 & -2 \\ 0 & 1 & -1 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix}.\]
+
+        Consider the equation $\mat A \vec x = \vec 0$. Then $\vec x$ also satisfies \[\begin{pmatrix}1 & 0 & 1 & -2 \\ 0 & 1 & -1 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix} \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv0000,\] which is equivalent to the system of linear equations \[\systeme{x_1 + x_3 - 2x_4 = 0, x_2 - x_3 + x_4 = 0}.\] Let $x_3 = \a$ and $x_4 = \b$, where $\a, \b \in \RR$. Then \[\vec x = \cveciv{x_1}{x_2}{x_3}{x_4} = \cveciv{-\a + 2\b}{\a - \b}{\a}{\b} = \a \cveciv{-1}110 + \b \cveciv2{-1}01.\] Thus, $\Ker T$ has basis \[\bc{\cveciv{-1}110, \cveciv2{-1}01}.\]
+    \end{ppart}
+    \begin{ppart}
+        We have $\Dim R = \Dim \Range T = 2$, hence $R$ is a plane. From the RREF of $\mat A$, the basis of $R$ is \[\bc{\cveciii12{-3}, \cveciii3{-1}3}.\] Since \[\cveciii12{-3} \crossp \cveciii3{-1}{-3} = -\cveciii967,\] $R$ has scalar product form \[R : \vec r \dotp \cveciii967 = 0,\] which translates into the Cartesian equation $9x + 6y + 7z = 0$.
+    \end{ppart}
+    \begin{ppart}
+        Since $R$ and $V$ are both vector spaces, for their union $R \cup V$ to also be a vector space, we require either $R \subseteq V$ or $V \subseteq R$. However, since $\Dim R = 2 > 1 \geq \Dim V$, we can only have $V \subset R$. Thus, there exist $s, t \in \RR$ such that \[\cveciii0bc = s \cveciii12{-3} + t\cveciii3{-1}{-3}.\] We immediately have $s = -3t$. Thus, $b = -7t$ and $c = 6t$, whence $6b = -7c$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The matrix $\mat A$ and the vectors $\vec x_1$, $\vec x_2$, $\vec x_3$, $\vec x_4$ are defined as follows: \[\mat A = \begin{pmatrix}1 & 1 & 1 & 1 \\ -3 & 4 & 11 & -10 \\ 4 & 5 & 6 & 3 \\ 6 & -2 & -10 & 14\end{pmatrix}, \, \vec x_1 = \cveciv1000, \, \vec x_2 = \cveciv1100, \, \vec x_3 = \cveciv1110, \, \vec x_4 = \cveciv1111.\]
+
+    The vector space $V$ is the set of all vectors of the form $\l_1 \mat A \vec x_1 + \l_2 \mat A \vec x_2 + \l_3 \mat A \vec x_3 + \l_4 \mat A \vec x_4$, where $\l_1, \l_2, \l_3, \l_4 \in \RR$.
+
+    \begin{enumerate}
+        \item Show that $\vec x_1$, $\vec x_2$, $\vec x_3$, $\vec x_4$ form a basis of $\RR^4$.
+        \item Find the rank of $\mat A$. Deduce the dimension of the null space of $\mat A$.
+        \item Explain why the dimension of $V$ is 2 and state a basis of $V$.
+        \item The vector $\cvecivx{p}{q}{23}{6}$ belongs to $V$. Find $p$ and $q$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\mat B = \begin{pmatrix}\vec x_1 & \vec x_2 & \vec x_3 & \vec x_4\end{pmatrix}$. In full, \[\mat B = \begin{pmatrix}1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] Observe that $\det \mat B = 1 \neq 0$. Thus, the column space of $\mat B$ (i.e. the span of $\vec x_1, \dots, \vec x_4$) is $\RR^4$. Also, the columns of $\mat B$ are linearly independent. Thus, $\vec x_1, \dots, \vec x_4$ form a basis of $\RR^4$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\mat A$ has RREF \[\begin{pmatrix}1 & 0 & -1 & 2 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, $\Rank \mat A = \dim \Range \mat A = 2$. By the rank-nullity theorem, $\dim \Ker \mat A = 4 - 2 = 2$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $V$ is the range (or column space) of $\mat A \mat B = \begin{pmatrix}\mat A \vec x_1 & \mat A \vec x_2 & \mat A \vec x_3 & \mat A \vec x_4 \end{pmatrix}$. Thus, $\dim V = \Rank{\mat A \mat B} = \Rank \mat A = 2$. Note that in the second-last step, we used the fact that $\mat B$ has full rank and thus does not affect the rank of $\mat A \mat B$. A basis of $V$ is \[\bc{\mat A \vec x_1, \mat A \vec x_2} = \bc{\cveciv87{10}6, \cveciv873{-2}}.\]
+    \end{ppart}
+    \begin{ppart}
+        There exists $\l, \m \in \RR$ for which \[\cveciv{p}{q}{23}{6} = \l \cveciv87{10}6 + \m \cveciv873{-2}.\] The last two rows give the system of linear equations \[\systeme{10\l + 3\m = 23, 6\l - 2\m = 6},\] whence $\l = 32/19$ and $\m = 39/19$. Thus, \[p = 8(\l + \m) = \frac{568}{19}, \quad q = 7(\l + \m) = \frac{497}{19}.\]
+    \end{ppart}
+\end{solution}

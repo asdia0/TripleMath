@@ -29,7 +29,8 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A14A  | Discrete Random Variables                                     |  🟢  |   🟢    |      🟡      |    🟢     |
 | A14B  | Special Discrete Random Variables                             |  🟢  |   🟢    |      🟡      |    🟢     |
 | A15A  | Continuous Random Variables                                   |  🟢  |   🟢    |      🟡      |    🟢     |
-| A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟡     |
+| A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟢     |
+|  A16  | Sampling                                                      |  🟡  |   🟡    |      🟡      |    🟡     |
 
 ### Group B
 
@@ -52,7 +53,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B15  | Modelling Populations with First Order DE                      |  🟢  |   🔴    |      🔴      |    🔴     |
 | B16  | Second Order DE                                                |  🟢  |   🟢    |      🟡      |    🟢     |
 | B17A | Matrices and Linear Spaces - Matrices                          |  🟡  |   🟢    |      🟡      |    🟢     |
-| B17B | Matrices and Linear Spaces - Linear Spaces                     |  🟡  |   🟢    |      🟡      |    🟡     |
+| B17B | Matrices and Linear Spaces - Linear Spaces                     |  🟡  |   🟢    |      🟡      |    🟢     |
 
 ### H3 Mathematics
 
