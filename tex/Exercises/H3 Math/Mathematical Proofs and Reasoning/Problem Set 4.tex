@@ -1,0 +1,126 @@
+\section{Problem Set 4}
+
+\begin{problem}
+    Prove that for every pair of irrational numbers $p$ and $q$ such that $p < q$, there is an irrational $x$ such that $p < x < q$.
+\end{problem}
+\begin{proof}
+    Since $\QQ$ is dense in $\RR$, it follows that $\QQ + \sqrt2$ is also dense in $\RR$. Hence, there must exist some irrational $x$ (of the form $q + \sqrt2$, where $q \in \QQ$) such that $p < x < q$.
+\end{proof}
+
+\begin{problem}
+    Show that there is one and only one integer $t$ such that $t$, $t+2$, $t+4$ are all prime numbers.
+\end{problem}
+\begin{solution}
+    Let $T = \bc{t, t+2, t+4}$. Observe that $T$ forms a complete residue system modulo 3. Hence, $3 \in T$.
+
+    \case{1} If $t = 3$, then $T = \bc{3, 5, 7}$, which are all prime.
+
+    \case{2} If $t + 2 = 3$, then $t = 1$ which is not prime.
+
+    \case{3} If $t + 4 = 3$, then $t = -1$ which is not prime.
+
+    Thus, $t$, $t+2$ and $t+4$ are all prime only when $t = 3$.
+\end{solution}
+
+\begin{problem}
+    Show that there exist integers $x$ and $y$ that satisfy \[(2n + 1) x + (9n + 4)y = 1\] for every integer $n$.
+\end{problem}
+\begin{proof}
+    Rearranging, we get \[x = \frac{1 - (9n+4)y}{2n+1}.\] Let $y = 2k$ for some integer $k$. Then \[x = \frac{1 - 18nk - 8k}{2n+1} = \frac{k + 1}{2n+1} - 9k.\] Taking $k = 2n$, we have $x = 1 - 9k = 1-18n$ and $y = 2k = 4n$. Indeed, one can verify that \[(2n+1)x + (9n+4)y = (2n+1)(1-18n) + (9n+4)(4n) \equiv 1.\]
+\end{proof}
+
+\begin{problem}
+    Given $n$ real numbers $a_1, a_2, \dots, a_n$, show that there exists an $a_i$ ($1 \leq i \leq n$) such that $a_i$ is greater than or equal to the mean value of the $n$ numbers.
+\end{problem}
+\begin{solution}
+    Let $m$ be the mean of the $n$ real numbers. Seeking a contradiction, suppose there does not exist an $a_i$ such that $a_i \geq m$. Then $a_k < m$ for all $1 \leq k \leq n$, from which it follows that \[m = \frac{a_1 + a_2 + \dots + a_n}{n} < \frac{m + m + \dots + m}{n} = m,\] a contradiction. Thus, there must exist some $a_i$ greater than or equal to $m$.
+\end{solution}
+
+\begin{problem}
+    Determine whether the two statements below are true or false. Justify your answers.
+
+    \begin{enumerate}
+        \item There is an irrational number $a$ such that for all irrational numbers $b$, $ab$ is rational.
+        \item For every irrational number $a$, there is an irrational number $b$ such that $ab$ is rational.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The statement is false. Let $a = b = 2^{1/3}$. Clearly, both $a$ and $b$ are irrational. However, $ab = 2^{2/3}$ is also irrational.
+    \end{ppart}
+    \begin{ppart}
+        The statement is true. Take $b = 1/a$, which is irrational if $a$ is irrational. Then $ab = 1$ which is rational.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Prove that there are infinitely many prime numbers that are congruent to 3 modulo 4.
+\end{problem}
+\begin{solution}
+    Seeking a contradiction, suppose there are finitely many prime numbers congruent to 3 modulo 4. Label them $p_1, p_2, \dots, p_n$. Now consider \[P = 2\bp{p_1p_2\dots p_n} + 1 \equiv 2\bp{3^n} + 1 \equiv 3 \pmod{4}.\] By construction, $p_i \nmid P$ for all $1 \leq i \leq n$. Thus, $P$ must also be a prime with residue 3 modulo 4, a contradiction. Thus, there are infinitely many primes congruent to 3 modulo 4.
+\end{solution}
+
+\begin{problem}
+    Prove that, for any positive integer $n$, there is a perfect square $m^2$ such that $n \leq m^2 \leq 2n$.
+\end{problem}
+\begin{solution}
+    Seeking a contradiction, suppose there exists an $n \in \ZZ^+$ such that there does not exist a perfect square in $[n, 2n]$. Then there exists some $m \in \ZZ$ such that $m^2 < n$ and $2n < (m+1)^2$. Putting the two inequalities together, \[2m^2 < 2n < (m+1)^2 \implies 2m^2 + 2\leq (m+1)^2 \implies (m-1)^2 \leq 0,\] which immediately implies $m = 1$. However, we can rule this possibility out, since $1 \leq 1^2 \leq 2$. Thus, such an $m$ cannot exist, a contradiction. Thus, for all $n \in \ZZ^+$, there must exist a perfect square $m^2$ such that $n \leq m^2 \leq 2n$.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item For any positive integer $a$ and real number $t$, it is given that $t$ can be written as $an + p$ where $n$ is an integer and $a > p \geq 0$. Prove that \[\int_0^a \floor{\frac{x+t}{a}} \d x = t.\]
+        \item For any positive integers $a$ and $b$ and real number $x$,
+        \begin{enumerate}
+            \item prove that \[\floor{\frac{\floor{x/a}}{b}} = \floor{\frac{x}{ab}},\] and
+            \item find \[\int_0^{ab} (fg(x) - gf(x)) \d x,\] where $f(x) = \floor{(x+a)/b}$ and $g(x) = \floor{(x+b)/a}$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Writing $t = an + p$, we have \[\int_0^a \floor{\frac{x+t}{a}} \d x = \int_0^a \floor{\frac{x + an + p}{a}} \d x = \int_0^a \bp{n + \floor{\frac{x + p}{a}}} \d x = an + \int_0^a \floor{\frac{x+p}{a}} \d x.\] Now observe that \[\floor{\frac{x+p}{a}} = \begin{cases}
+            0, & x \in [0, a-p], \\
+            1, & x \in [a-p, a].
+        \end{cases}\] Thus, \[\int_0^a \floor{\frac{x+t}{a}} \d x = an + \int_0^a \floor{\frac{x+p}{a}} \d x = an + \bp{\int_0^{a-p} 0 \d x + \int_{a-p}^a 1 \d x} = an + p = t.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Write $x = a(bd + r_2) + r_1$, where $d, r_1, r_2 \in \ZZ$ with $0 \leq r_1 < a$ and $0 \leq r_2 < b$. Then \[\floor{\frac{\floor{x/a}}{b}} = \floor{\frac{bd + r_2}{b}} = d,\] and \[\floor{\frac{x}{ab}} = \floor{\frac{abd + ar_2 + r_1}{ab}} = d + \floor{\frac{ar_2 + r_1}{ab}}.\] Since \[ar_2 + r_1 \leq a(b-1) + (a-1) = ab - 1 < ab,\] it follows that \[\floor{\frac{x}{ab}} = d.\] Thus, \[\floor{\frac{\floor{x/a}}{b}} = d = \floor{\frac{x}{ab}},\] as desired.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that \[fg(x) = \floor{\frac{\floor{(x+b)/a} + a}b} = \floor{\frac{\floor{(x+b+a^2)/a}}{b}} = \floor{\frac{x + \bp{b + a^2}}{ab}}.\] Using the result from part (a), we have \[\int_0^{ab} fg(x) \d x = \int_0^{ab} \floor{\frac{x + \bp{b + a^2}}{ab}} \d x = b + a^2.\] Similarly, \[gf(x) = \floor{\frac{\floor{(x+a)/b} + b}{a}} = \floor{\frac{\floor{(x+a + b^2)/b}}{a}} = \floor{\frac{x + \bp{a + b^2}}{ab}}.\] Using the result from part (a), \[\int_0^{ab} gf(x) \d x = \int_0^{ab} \floor{\frac{x + \bp{a + b^2}}{ab}} \d x = a + b^2.\] Thus, \[\int_0^{ab} (fg(x) - gf(x)) \d x = \bp{b + a^2} - \bp{a + b^2}.\]
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Let $S = \bc{1, 2, \dots, 50}$ and let $D$ be a subset of $S$ of size 27.
+
+    \begin{enumerate}
+        \item Show that there are 25 subsets of $S$ of the form $\bc{a, a+5}$ whose union is $S$. Apply the pigeonhole principle to prove that $D$ must contain two numbers that differ by exactly 5.
+        \item Prove that $D$ must contain two numbers that differ by exactly 6. Show that $D$ does not necessarily contain two numbers that differ by exactly 7.
+        \item Determine the maximum possible size of a subset of $S$ that contains no four consecutive numbers.
+        \item Determine the maximum possible size of a subset of $S$ that contains no two numbers whose sum is a multiple of 10.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let \[L = \bc{1, \dots, 5} \cup \bc{11, \dots, 15} \cup \dots \cup \bc{41, \dots 45}.\] For each $a \in L$, define $l_a = \bc{a, a+5}$. Then \[S = \bigcup_{a \in L} l_a.\] Since $\abs{L} = 25$, there are 25 subsets of $S$ of the form $\bc{a, a+5}$ whose union is $S$.
+
+        All 27 elements of $D$ must be placed into the 25 subsets $l_a$. Since $27 > 25$, by the pigeonhole principle, at least one subset must have both its elements in $D$. That is, $D$ contains two numbers that differ by exactly 5.
+    \end{ppart}
+    \begin{ppart}
+        Let \[L = \bc{1, \dots, 6} \cup \bc{13, \dots, 18} \cup \dots \cup \bc{37, \dots, 42} \cup \bc{43, 44}.\] For each $a \in L$, define $l_a = \bc{a, a+6}$. Note that $\abs{L} = 26$, and \[S = \bigcup_{a \in L} l_a.\]
+
+        All 27 elements of $D$ must be placed into the 26 subsets $l_a$. Since $27 > 26$, by the pigeonhole principle, at least one subset must have both its elements in $D$. That is, $D$ contains two numbers that differ by exactly 6.
+
+        However, $D$ does not necessarily contain two numbers that differ by exactly 7. For instance, the set \[\bc{1, \dots, 7} \cup \bc{15, \dots, 21} \cup \bc{29, \dots, 35} \cup \bc{43, \dots, 48}\] contains 27 elements such that no two differ by exactly 7.
+    \end{ppart}
+    \begin{ppart}
+        Let $D$ be a subset of $S$ that contains no four consecutive numbers. At best, every group of four consecutive numbers have 3 elements in $D$, i.e. $\abs{D} \leq \frac34 \times \abs{S} = 37.5$, i.e. $\abs{D} \leq 37$. Indeed, we can construct such a set with 37 elements: \[D = \bc{1, 2, 3} \cup \bc{5, 6, 7} \cup \bc{9, 10, 11} \cup \dots \cup \bc{45, 46, 47} \cup \bc{49, 50}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $D$ be a subset of $S$ that contains no two numbers whose sum is a multiple of 10. Minimally, $D$ contains all integers that have units digit $\bc{1, 2, 3, 4}$ or $\bc{6, 7, 8, 9}$ (both have the same number of elements). We can then add on a number with units digit $0$ and another with units digit $5$; we cannot have multiple numbers with units digit 0 or 5 since we can sum them to get a multiple of 10. Thus, the maximum size of $D$ is \[\max \abs{D} = 4 \times \frac{50}{10} + 2 = 22.\]
+    \end{ppart}
+\end{solution}
