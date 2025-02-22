@@ -1,0 +1,147 @@
+\section{Problem Set 3}
+
+\begin{problem}
+    Use Mathematical Induction to prove the following:
+
+    \begin{enumerate}
+        \item For each positive integer $n$, $1(1!) + 2(2!) + 3(3!) + \dots + n(n!) = (n+1)! - 1$.
+        \item For each positive integer $n$, $(-7)^n - 9^n$ is divisible by 16.
+        \item For each positive integer $n$ with $n \geq 3$, $\bp{1 + \frac1n}^n < n$.
+        \item For each positive integer $n \geq 6$, $n^3 < n!$.
+    \end{enumerate}
+\end{problem}
+\begin{proof}[Proof of \emph{(a)}]
+    Let $n \in \NN$, and let $P(n)$ be the statement \[P(n) : \sum_{i = 1}^{n} i (i!) = (n+1)! - 1.\] The base case $P(1)$ is trivial: \[\sum_{i = 1}^1 i(i!) = 1 = (1 + 1)! - 1.\] Suppose that $P(k)$ is true for some $k \in \NN$. Then
+    \begin{gather*}
+        \sum_{i = 1}^{k+1} i(i!) = \sum_{i = 1}^k i(i!) + (k+1)(k+1)!\\
+        = \bs{(k+1)! - 1} + (k+1)(k+1)! = (k+2)(k+1)! - 1 = (k+2)! - 1.
+    \end{gather*}
+    Thus, $P(k) \implies P(k+1)$. Hence, by the principle of mathematical induction, $P(n)$ is true for all $n \in \NN$.
+\end{proof}
+\begin{proof}[Proof of \emph{(b)}]
+    Let $n \in \NN$ and let $P(n)$ be the statement \[P(n): 16 \mid (-7)^n - 9^n.\] The base case $P(1)$ clearly holds, since $(-7)^1 - 9^1 = -16$, which is divisible by 16. Suppose that $P(k)$ is true for some $k \in \NN$. Then
+    \begin{gather*}
+        (-7)^{k+1} - 9^{k+1} = (-7) (-7)^k - 9 (9)^k = (-7) \bs{(-7)^k - 9^k} - 16(9)^k\\
+        \equiv (-7)(0) - (0)(9^n) = 0 \pmod{16}.
+    \end{gather*}
+    Thus, $P(k) \implies P(k+1)$. Hence, by the principle of mathematical induction, $P(n)$ is true for all $n \in \NN$.
+\end{proof}
+\begin{proof}[Alternative proof of \emph(b)]
+    Let $u_n = (-7)^n - 9^n$. Then $u_n$ is the general solution of a second-order homogenous linear recurrence relation with characteristic equation $(x+7)(x-9) = x^2 - 2x - 63$. Thus, \[u_n = 2u_{n-1} - 63 u_{n-2} \tag{1}\] for $n \geq 2$ with initial conditions $u_0 = 0$ and $u_1 = -16$. Since both $u_0$ and $u_1$ are divisible by 16, and (1) is homogenous, it follows that $16 \mid u_n = (-7)^n - 9^n$ for all $n \in \ZZ_{\geq 0}$.
+\end{proof}
+\begin{proof}[Proof of \emph{(c)}]
+    Let $n \in \ZZ_{\geq 3}$, and let $P(n)$ be the statement \[P(n) : \bp{1 + \frac1n}^n < n.\] The base case $P(3)$ is trivial: \[\bp{1 + \frac13}^3 = \frac{64}{27} < 3.\] Suppose that $P(k)$ is true for some $k \in \ZZ_{\geq 3}$. Then \[\bp{1 + \frac1{k+1}}^{k+1} < \bp{1 + \frac1k}^{k+1} < k \bp{1 + \frac1k} = k + 1.\] Thus, $P(k) \implies P(k+1)$. Hence, by the principle of mathematical induction, $P(n)$ is true for all $n \in \ZZ_{\geq 3}$.
+\end{proof}
+\begin{proof}[Proof of \emph(d)]
+    We begin by proving that $n^3 - (n + 1)^2 > 0$ for all integers $n \geq 6$. Firstly, observe that \[n^3 - (n+1)^2 = n^3 - n^2 - 2n - 1 = \bp{n^2 - 2}\bp{n - 1} - 3,\] which is increasing for $n \geq 6$. Thus, \[n^3 - (n+1)^2 \geq \bp{6^2 - 2} \bp{6 - 1} - 3 > 0.\]
+
+    Let $P(n)$ be the statement that $n^3 < n!$. We now prove that $P(n)$ is true for all integers $n \geq 6$. The base case is trivial: \[6^3 = 216 < 720 = 6!.\] Suppose that $P(k)$ is true for some integer $k \geq 6$. Then \[(k+1)^3 = (k+1) (k+1)^2 < (k+1) k^3 < (k+1) k! = (k+1)!.\] Thus, $P(k) \implies P(k+1)$. Hence, by the principle of mathematical induction, $P(n)$ is true for all $n \in \ZZ_{\geq 6}$.
+\end{proof}
+
+\begin{problem}
+    Let $f_1, f_2, \dots, f_n, \dots$ be the Fibonacci sequence. That is, the sequence is defined recursively by \[f_n = f_{n-1} + f_{n-2}\] for all $n \geq 3$, with initial conditions $f_1 = 1$ and $f_2 = 1$.
+
+    Prove each of the following:
+
+    \begin{enumerate}
+        \item For each positive integer $n$, $f_{5n}$ is a multiple of $5$.
+        \item For each positive integer $n$, $f_1 + f_3 + \dots + f_{2n-1} = f_{2n}$.
+        \item For each positive integer $n$, $2f_n + 3f_{n+1} = f_{n+4}$.
+        \item For each positive integer $n$, $f_{n}$ is even if and only if $3 \mid n$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We first prove two identities involving the Fibonacci sequence:
+
+    \begin{lemma}[Honsberger's Identity]
+        For all $m, n \in \NN_0$, $f_{m+n} = f_{m+1} f_n + f_m f_{n-1}$.
+    \end{lemma}
+    \begin{proof}
+        $f_k$ counts the number of ways to climb $k-1$ steps, taking either 1 or 2 steps each time. Now consider climbing $m+n-1$ steps. 
+        
+        \case{1}[We step on the $m$th step] We effectively climb $m$ steps before climbing another $n-1$ steps. This gives a total of $f_{m+1} f_n$ possibilities.
+
+        \case{2}[We do not step on the $(m-1)$th step] We effectively climb the first $m-1$ steps, are forced to jump 2 steps to the $(m+1)$th step, and climb the remaining $n-2$ steps. This gives a total of $f_m f_{n-1}$ possibilities.
+
+        Thus, the total number of ways to climb $m+n-1$ is \[f_{m+n} = f_{m+1} f_n + f_m f_{n-1}.\]
+    \end{proof}
+
+    \begin{lemma}\label{lem:fibonacci}
+        For all $m, n \in \ZZ_{> 2}$, $m \mid n \iff f_m \mid f_n$.
+    \end{lemma}
+    \begin{proof}
+        Let $n = km - r$, where $k, r \in \ZZ$ with $k \in \NN$ and $0 \leq r < m$. Note that $m \mid n \iff r = 0$. Let $P(k)$ be the statement \[P(k) : r = 0 \iff f_m \mid f_{km-r}.\] 
+        
+        Base case: Note that $f_m \geq f_{m-r}$ with equality only when $r = 0$. Thus, $r = 0 \iff f_m \mid f_{m-r}$, hence $P(1)$ holds.
+
+        Suppose $P(k)$ is true for some $k \in \NN$. Let $f_{km-r} = a f_m + b$, where $a, b \in \ZZ$ and $0 \leq b < f_m$. Consider $f_{(k+1)m - r}$. Using Honsberger's identity
+        \begin{gather*}
+            f_{(k+1)m - r} = f_{km - r} f_{m-1} + f_m f_{km - r + 1} = \bp{a f_m + b} f_{m-1} + f_m f_{km -r + 1}\\
+            = f_m \bp{a f_{m-1} + f_{km-r+1}} + b f_{m-1}.
+        \end{gather*}
+        It is well-known fact that $f_m$ and $f_{m-1}$ are always coprime. Hence, \[f_m \mid f_{(k+1)m - r} \iff f_m \mid b f_{m-1} \iff f_m \mid b \iff b = 0.\] However, by our induction hypothesis, \[r = 0 \iff f_m \mid f_{km-r} \iff b = 0.\] Thus, \[r = 0 \iff f_m \mid f_{(k+1)m - r}.\] Hence, $P(k) \implies P(k+1)$, and by the principle of mathematical induction, $P(k)$ holds for all $k \in \NN$.
+    \end{proof}
+
+    \begin{ppart}
+        By Lemma~\ref{lem:fibonacci}, $5 = f_5 \mid f_{5n}$ for all positive integers $n$.
+    \end{ppart}
+    \begin{ppart}
+        Let $P(n)$ be the statement that \[P(n) : f_1 + f_3 + \dots + f_{2n-1} = f_{2n}.\] The base case $P(1)$ clearly holds, since $f_1 = 1 = f_2$. Now suppose $P(k)$ holds for some $k \in \NN$. Then
+        \begin{gather*}
+            f_1 + f_3 + \dots + f_{2(k+1) - 1} = f_1 + f_3 + \dots + f_{2k-1} + f_{2k+1} = f_{2k} + f_{2k+1} = f_{2k+2} = f_{2(k+1)}.
+        \end{gather*}
+        Hence, $P(k) \implies P(k+1)$. Thus, by the principle of mathematical induction, $P(n)$ is true for all $n \in \NN$.
+    \end{ppart}
+    \begin{ppart}
+        Using Honsberger's identity, $f_{n+4} = f_3 f_n + f_4 f_{n+1} = 2 f_n + 3 f_{n+1}$.
+    \end{ppart}
+    \begin{ppart}
+        By Lemma~\ref{lem:fibonacci}, $2 = f_3 \mid f_{n}$ if and only if $3 \mid n$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Euclid's lemma states that for any prime $p$ and any integers $a$ and $b$, if $p \mid ab$ and $p \nmid a$, then $p \mid b$.
+
+    Use mathematical induction together with Euclid's lemma to prove that for any prime $p$ and any integers $q_1, q_2, \dots, q_n$, if $p \mid q_1 q_2 \dots q_n$, then $p \mid q_i$ for some $i$.
+\end{problem}
+\begin{proof}
+    Let $P(n)$ be the statement that for any prime $p$ and any integers $q_1, q_2, \dots, q_n$, if $p \mid q_1 q_2 \dots q_n$, then $p \mid q_i$ for some $i$.
+
+    The base case $P(1)$ is trivial: since $p \mid q_1$, we are done. The case $P(2)$ is also trivial: suppose $p \mid q_1 q_2$. If $p \mid q_1$, we are done. If not, by Euclid's lemma, $p \mid q_2$ and we are done.
+
+    Now suppose that $P(k)$ holds for some $k \in \NN$. Suppose $p \mid q_1 q_2 \dots q_{k+1}$. If $p \mid q_{k+1}$, we are done. Else, $p \mid q_1 q_2 \dots q_k$, then by our inductive hypothesis, there exists some $1 \leq i \leq k$ such that $p \mid q_i$ and we are done. Thus, $P(k) \implies P(k+1)$ and by the principle of mathematical induction, $P(n)$ holds for all $n \in \NN$.
+\end{proof}
+
+\begin{problem}
+    Suppose you want to prove $P(n)$ is true (only) for all integers $n \geq 7$ that are not divisible by 4 using a version of mathematical induction as follows:
+
+    \renewcommand{\theenumi}{\roman{enumi}.}
+    \begin{enumerate}
+        \item Basis step: $P(a)$, $P(b)$, $P(c)$ are true; and
+        \item Inductive step: $(\forall k \in \ZZ^+) P(k) \implies P(k+d)$ is true.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+
+    What should the values for $a$, $b$, $c$, $d$?
+\end{problem}
+\begin{solution}
+    Clearly, $a = 7$, $b = 9$, $c = 10$ and $d = 4$.
+\end{solution}
+
+\begin{problem}
+    Find the mistake in the following ``proof'' that purports to show that every non-negative integer power of every non-zero real number is 1.
+
+    \begin{proof}[``Proof''.]
+        Let $r$ be any non-zero real number and let the predicate $P(n)$ be \[P(n) : r^n = 1.\]
+        
+        Basis step: $P(0)$ is true because $r^0 = 1$ by definition of 0-th power.
+
+        Inductive step: $P(k-1)$ and $P(k) \implies P(k+1)$.
+
+        Suppose that $r^{k-1} = 1$ and $r^k = 1$. This is the induction hypothesis. We must show that $r^{k+1} = 1$. Now \[r^{k+1} = r^{k + k - (k-1)} = \frac{r^k \cdot r^k}{r^{k-1}} = \frac{1 \cdot 1}{1} = 1.\] Thus, $r^{k+1} = 1$. Hence, the inductive step is proven.
+    \end{proof}
+\end{problem}
+\begin{solution}
+    Since the inductive step requires $P(k-1)$ and $P(k)$, the basis step should also show that $P(1)$ holds. However, $P(1)$ is clearly false, since $r^1 \neq 1$ in general.
+\end{solution}
