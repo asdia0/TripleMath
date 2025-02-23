@@ -1,0 +1,153 @@
+\section{Tutorial A16}
+
+\begin{problem}
+    In a country, 75\% of the population have height exceeding $1.50$ m and 10\% have height exceeding $1.90$ m. Assuming a normal distribution of heights, show that the height exceeded by 20\% of the population is $1.81$ m, correct to 3 significant figures.
+
+    A random sample of 80 people is taken from the population. Find the probability that the sample mean exceeds $1.69$ m.
+\end{problem}
+\begin{solution}
+    Let the random variable $H$ m be the height of a person. Let $H \sim \Normal{\m}{\s^2}$. We are given that $\P{H > 1.50} = 0.75$ and $\P{H > 1.90} = 0.10$. Standardizing, \[\frac{1.50 - \m}{\s} = -0.6745 \quad \tand \quad \frac{1.90 - \m}{\s} = 1.2816.\] Solving, we get $\m = 1.6379$ and $\s = 0.2045$. Thus, \[\P{H > h} = 0.20 \implies h = 1.81 \tosf{3}.\]
+
+    Let $\ol{H} = \frac1{80} (H_1 + \dots + H_{80})$. Then $\ol{H} \sim \Normal{1.6379}{\frac1{80} (0.2045)^2}$. Hence, \[\P{\ol{H} > 1.69} = 0.0113 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    A factory produces packets of peanuts. The mass of peanuts in a packet has mean 605 g and standard deviation 6 g. A sample of sixty packets is chosen. Find the probability that the mean mass of peanuts in a packet from this sample is between 600 g and 606 g. State the assumptions that you have made.
+\end{problem}
+\begin{solution}
+    Let $\ol{M}$ g be the mean mass of a packet of peanuts in a sample. Assuming $\ol{M}$ follows a normal distribution (since the size of a sample, 60 packets, is large), we have $\ol{M} \sim \Normal{605}{6^2}$. Thus, \[\P{600 < \ol{M} < 606} = 0.902 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    A beekeeper sells jars of honey which are labelled, "Total weight: 300 grams". She takes a random sample of 10 filled jars and records the weight, $x$ grams, of each filled jar. Her results are summarized below, with $\ol{x}$ denoting the sample mean. \[\sum x = 3030, \quad \sum \bp{x - \ol{x}}^2 = 148.\] Calculate unbiased estimates of the mean $\m$, and the variance $\s^2$, of the weight, $X$ grams of a jar of honey.
+\end{problem}
+\begin{solution}
+    We have \[\ol{x} = \frac1{n} \sum x = \frac{3030}{10} = 303 \text{ g},\] and \[s^2 = \frac1{n-1} \sum \bp{x - \ol{x}}^2 = \frac{148}{10 - 1} = 16.4 \text{ g}^2.\]
+\end{solution}
+
+\begin{problem}
+    A large multinational company has 100,000 employees based in several different countries. To celebrate the 90th anniversary of the founding of the company, the Chief Executive wishes to invite a representative sample of 90 employees to a party, to be held at the company's Headquarters in Singapore. Explain how simple random sampling could be carried out to choose the 90 employees.
+\end{problem}
+\begin{solution}
+    Assign a unique number to each of the 100,000 employees. For each employee, place a corresponding numbered ball in a bag. Draw 90 balls from the bag, without replacement, at random. The numbers on the balls identify the chosen employees.
+\end{solution}
+
+\begin{problem}
+    The mass of an abalone of a certain grade follows a normal distribution with mean 180 g and standard deviation $14.2$ g.
+
+    \begin{enumerate}
+        \item Find the probability that the mean mass of a sample of sixty abalones chosen at random differs from the population mean mass by more than 2g.
+        \item This grade of abalones is priced at 450 dollars per kilogram. A customer orders five abalones. Find the probability that the customer ends up paying an average of more than 84 dollars per abalone.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Let the random variable $\ol{M}_i$ g be the mean mass of an abalone in a sample of $i$ abalones. Note that $\ol{M}_i \sim \Normal{180}{14.2^2 / n}$.
+
+    \begin{ppart}
+        $\P{\abs{\ol{M}_{60} - 180} < 2} = \P{178 < \ol{M}_{60} < 182} = 0.725 \tosf{3}$.
+    \end{ppart}
+    \begin{ppart}
+        $\P{\frac{450}{1000} \ol{M}_5 > 84} = \P{\ol{M}_5 > \frac{560}{3}} = 0.147 \tosf{3}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The random variable $X$ has the distribution $\Normal{1}{20}$.
+
+    \begin{enumerate}
+        \item Given that $\P{X < a} = 2\P{X > a}$, find $a$.
+        \item A random sample of $n$ observations of $X$ is taken. Given that the probability that the sample mean exceeds $1.5$ is at most $0.01$, find the possible values of $n$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., $a = 2.93$.
+    \end{ppart}
+    \begin{ppart}
+        Let $\ol{X} = \frac1n (X_1 + \dots X_n)$. Then $\ol{X} \sim \Normal{1}{20/n}$. Consider $\P{\ol{X} > 1.5} \leq 0.01$. Using G.C., $n \geq 433$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The random variable $X$ has a Poisson distribution with mean 4. The random variable $\ol{X}$ is the mean of a random sample of 100 values of $X$. By using a suitable approximation, find $\P{\ol{X} < 3.5}$. The random variable $Y$ has a binomial distribution with mean 4 and variance 3. The random variable $\ol{Y}$ is the mean of a random sample of 60 values of $Y$. By using a suitable approximation, find $\P{\ol{Y} - \ol{X} > 0.5}$.
+\end{problem}
+\begin{solution}
+    Let $\ol{X} = \frac1{100} (X_1 + \dots + X_{100})$. Since the sample size (100) is large, by the Central Limit Theorem, $\ol{X} \sim \Normal{4}{4/100}$. Thus, $\P{\ol{X} < 3.5} = 0.00621$.
+
+    Let $\ol{Y} = \frac1{60} (Y_1 + \dots + Y_{60})$. Since the sample size (60) is large, by the Central Limit Theorem, $\ol{Y} \sim \Normal{4}{3/60}$. Thus, $\ol{Y} - \ol{X} \sim \Normal{4-4}{4/100 + 3/60} = \Normal{0}{0.09}$. Thus, \[\P{\ol{Y} - \ol{X} > 0.5} = 0.0478 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    The continuous random variable $X$ has $\E{X} = 0$ and $\Var{X} = 4/5$. The random variable $Y$ is defined by $Y=aX+b$, where $a$ and $b$ are positive constants. It is given that $\E{Y}=50$ and $\Var{Y}=80$. Find $a$ and $b$.
+
+    A random sample consists of 160 independent observations of $Y$. Find an approximate value for the probability that the sample sum lies between 7840 and 8080.
+\end{problem}
+\begin{solution}
+    Note that \[50 = \E{Y} = \E{aX + b} = a\E{X} + b = b,\] and \[80 = \Var{Y} = \Var{aX+b} = a^2 \Var{X} = a^2 \bp{\frac45} \implies a^2 = 100 \implies a = 10.\] Note that we reject $a = -10$ since $a$ is positive.
+
+    Let $\S = Y_1 + \dots + Y_{160}$. Since the sample size (160) is large, $\S \sim \Normal{160(50)}{160(80)}$. Thus, \[\P{7840 < \S < 8080} = 0.682 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    The speeds of 120 randomly selected cars are measured as they pass a camera on a motorway. Denoting the speed by $x$ km per hour, the results are summarized by \[\sum (x - 100) = -221, \quad \sum (x - 100)^2 = 4708.\] 
+    
+    Suggest a reason why, in this context, the given data is summarized in terms of $(x-100)$ rather than $x$.
+
+    Giving your answers correct to 2 places of decimals, find unbiased estimates of the population mean and variance.
+
+    If another sample of 50 cars is chosen, estimate the probability that mean speed of the 50 cars is at least 100 km per hour. State one assumption and one approximation used in obtaining this estimate.
+\end{problem}
+\begin{solution}
+    The given data may be summarized in terms of $(x-100)$ because the sample mean is 100 km/h.
+
+    Note that \[\sum x = \sum (x-100) + 100n = -221 + 100(120) = 11779\] and
+    \begin{gather*}
+        \sum x^2 = \sum (x-100)^2 + 200 \sum x - 100^2n\\
+        = 4708 + 200(11779) - 100^2 (120) = 1160508.    
+    \end{gather*}
+    Thus, \[\ol{x} = \frac1n \sum x = \frac{11779}{120} = 98.16 \todp{2}\] and \[s^2 = \frac1{n-1} \bs{\sum x^2 - \frac1n \bp{\sum x}^2} = \frac{1}{120 - 1} \bs{1160508 - \frac{11779^2}{120}} = 36.14 \todp{2}.\]
+
+    Let $\ol{X}$ km/h be the mean speed of the 50 cars. Assuming that the speeds of the cars are independent, by the Central Limit Theorem, we can approximate $\ol{X}$ using a normal distribution: $\ol{X} \sim \Normal{98.16}{36.14/50}$. Hence, \[\P{\ol{X} > 100} = 0.0152 \tosf{3}.\]
+\end{solution}
+
+\begin{problem}
+    $100p$\% of all insurance agents from a large insurance company, Avila, have an advanced diploma in insurance (ADI), where $p<0.5$. A sample of 10 agents from Avila is obtained. It is given that the number of insurance agents with ADI in this sample can be modelled by a binomial distribution.
+
+    \begin{enumerate}
+        \item It is given that the probability that 5 of the agents in this sample have an ADI each is $0.12294$, correct to 5 decimal places. Show that $p$ satisfies an equation of the form $p(1-p)=k$ for some real constant $k$ to be determined, and hence find the value of $p$ correct to 2 decimal places.
+        \item Suppose instead that $p=0.24$ and forty samples of 10 Avila insurance agents each are obtained. Find the probability that the average number of insurance agents with ADI of the forty samples is between 2.3 and 2.5.
+        \item Explain, stating a reason, how increasing the number of samples of 10 Avila insurance agents each will affect your answer in part (b).
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $X$ be the number of insurance agents with an ADI in a sample. Then $X \sim \Binom{10}{p}$. Since $\P{X = 5} = 0.12294$, we have \[\binom{10}{5} p^5 (1-p)^5 = 0.12294 \implies p(1-p) = \sqrt[5]{\frac{0.12294}{\binom{10}{5}}} = 0.217600.\] Thus, $k = 0.217600$. Solving for $p$, we get $p = 0.32$ or $p = 0.68$, which we reject since $p < 0.5$.
+    \end{ppart}
+    \begin{ppart}
+        Taking $p = 0.24$, we have \[\m = np = 2.4 \quad \tand \quad \s^2 = np(1-p) = 1.824.\] Let $\ol{X} = \frac1{40} (X_1 + \dots + X_{40})$. Since the sample size (40) is large, $\ol{X} \sim \Normal{2.4}{1.824/40}$. Hence, \[\P{2.3 < \ol{X} < 2.5} = 0.360 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        AS the number of samples increases, the variance of $\ol{X}$ will decrease. The distribution of $\ol{X}$ becomes more concentrated around $2.4$, hence $\P{2.3 < \ol{X} < 2.5}$ will tend to 1.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    In a certain country there are 100 professional football clubs, arranged in 4 divisions. There are 22 clubs in Division One, 24 in Division Two, 26 in Division Three and 28 in Division Four.
+
+    \begin{enumerate}
+        \item Alice wishes to find out about approaches to training by clubs in Division One, so she sends a questionnaire to the 22 clubs in Division One. Explain whether these 22 clubs form a sample or a population.
+        \item Dilip wishes to investigate the facilities for supporters at the football clubs, but does not want to obtain the detailed information necessary from all 100 clubs. Explain how he should carry out this investigation, and why he should do the investigation in this way.
+        \item Find the number of different possible samples of 20 football clubs, with 5 clubs chosen from each division.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The 22 clubs form a population because she is studying the entire group relevant to her research question (training in Division One clubs).
+    \end{ppart}
+    \begin{ppart}
+        Let $k$ be the number of clubs Dilip wishes to investigate. Assign each club a unique number. For each club, place a corresponding numbered ball in a bag. Draw $k$ balls from the bag, without replacement, at random. The numbers on the balls identify the clubs that Dilip should investigate.
+    \end{ppart}
+    \begin{ppart}
+        The required number is \[\comb{22}{5} \comb{24}{5} \comb{26}{5} \comb{28}{5} = 7.24 \times 10^{18}.\]
+    \end{ppart}
+\end{solution}
