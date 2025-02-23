@@ -1,4 +1,120 @@
-\chapter{Scalar and Vector Products}
+\chapter{Vectors}
+
+\section{Basic Definitions and Notations}
+
+\begin{definition}
+    A \vocab{vector} is an object that has both magnitude and direction. Geometrically, we can represent a vector by a \textbf{directed} line segment $\oa{PQ}$, where the length of the line segment represents the magnitude of the vector, and the direction of the line segment represents the direction of the vector. Vectors are typically denoted by bold print (e.g. $\vec a$) or by $\oa{PQ}$.
+\end{definition}
+
+\begin{definition}
+    The \vocab{magnitude} of a vector $\vec a$ is the length of the line representing $\vec a$, and is denoted by $\abs{\vec a}$.
+\end{definition}
+
+\begin{definition}
+    Two vectors $\vec a$ and $\vec b$ are said to be \vocab{equal vectors} if they both have the same magnitude and direction. $\vec a$ and $\vec b$ are said to be \vocab{negative vectors} if they have the same magnitude but opposite directions.
+\end{definition}
+
+\begin{definition}[Multiplication of a Vector by a Scalar]
+    Let $\l$ be a scalar. If $\l > 0$, then $\l \vec a$ is a vector of magnitude $\l \abs{\vec a}$ and has the same direction as $\vec a$. If $\l < 0$, then $\l \vec a$ is a vector of magnitude $-\l \abs{\vec a}$ and is in the opposite direction of $\vec a$.
+\end{definition}
+
+\begin{definition}
+    The \vocab{zero vector} is the vector with a magnitude of 0 and is denoted $\vec 0$.
+\end{definition}
+
+\begin{definition}
+    Let $\vec a$ and $\vec b$ be non-zero vectors. Then $\vec a$ and $\vec b$ are said to be \vocab{parallel} if and only if $\vec b$ can be expressed as a non-zero scalar multiple of $\vec a$. Mathematically, \[\vec a \parallel \vec b \iff (\exists \l \in \RR \setminus \bc{0}): \quad \vec b = \l \vec a.\]
+\end{definition}
+
+\begin{definition}
+    A \vocab{unit vector} is a vector with a magnitude of 1. Unit vectors are typically denoted with a hat (e.g. $\hat{\vec a}$).
+\end{definition}
+Observe that for any non-zero vector $\vec a$, the unit vector parallel to $\vec a$ is given by \[\hat{\vec a} = \frac{\vec a}{\abs{\vec a}}.\]
+
+\begin{definition}
+    The \vocab{Triangle Law of Vector Addition} states that \[\oa{AB} + \oa{BC} = \oa{AC}.\] Geometrically, we add two vectors $\vec a$ and $\vec b$ by placing them head to tail, taking the resultant vector as their sum.
+
+    \begin{figure}[H]\tikzsetnextfilename{335}
+        \centering
+        \begin{tikzpicture}
+            \coordinate[label=left:$A$] (A) at (0, 0);
+            \coordinate[label=above:$B$] (B) at (2, 1);
+            \coordinate[label=right:$C$] (C) at (5, 1);
+
+            \draw[->-=0.5] (A) -- (B);
+            \draw[->-=0.5] (B) -- (C);
+            \draw[->-=0.5] (A) -- (C);
+
+            \node[anchor=south east] at (1, 0.5) {$\vec a$};
+            \node[anchor=south] at (3.5, 1) {$\vec b$};
+            \node[anchor=north west, rotate=11.3] at (2, 0.2) {$\vec a + \vec b$};
+        \end{tikzpicture}
+        \caption{}
+    \end{figure}
+
+    We subtract vectors by adding $\vec a + -(\vec b)$.
+\end{definition}
+
+\begin{definition}
+    The \vocab{angle between two vectors} refers to the angle between their directions when the arrows representing them \textit{both converge} or \textit{both diverge}.
+\end{definition}
+
+\begin{definition}
+    A \vocab{free vector} is a vector that has no specific location in space. The \vocab{position vector} of some point $A$ relative to the origin $O$ is unique and is denoted $\oa{OA}$. A \vocab{displacement vector} is a vector that joins its initial position to its final position. For instance, $\oa{OA}$ is the displacement vector from $O$ to $A$.
+\end{definition}
+
+\begin{definition}
+    A set of vectors are said to be \vocab{coplanar} if their directions are all parallel to the same plane.
+\end{definition}
+
+\begin{fact}
+    Any vector $\vec c$ that is coplanar with $\vec a$ and $\vec b$ can be expressed as a \textbf{unique linear combination} of $\vec a$ and $\vec b$, i.e. \[(\exists! \, \l, \m \in \RR): \quad \vec c = \l \vec a + \m \vec b.\]
+\end{fact}
+
+\begin{theorem}[Ratio Theorem]
+    If $P$ divides $AB$ in the ratio $\l : \m$, then \[\oa{OP} = \frac{\m \vec a + \l \vec b}{\l + \m}.\]
+\end{theorem}
+\begin{proof}
+    Since $P$ divides $AB$ in the ratio $\l : \m$, we have \[\oa{AP} = \frac{\l}{\l + \m} \oa{AB} = \frac{\l}{\l + \m} (\vec b - \vec a).\] Thus, \[\oa{OP} = \oa{OA} + \oa{AP} = \vec a + \frac{\l}{\l + \m} (\vec b - \vec a) = \frac{\m \vec a + \l \vec b}{\l + \m}.\]
+\end{proof}
+
+\begin{corollary}[Mid-Point Theorem]
+    If $P$ is the mid-point of $AB$, then \[\oa{OP} = \frac{\vec a + \vec b}{2}.\]
+\end{corollary}
+
+\section{Vector Representation using Cartesian Unit Vectors}
+
+\subsection{2-D Cartesian Unit Vectors}
+
+\begin{definition}[2-D Cartesian Unit Vectors]
+    In the 2-D Cartesian plane, $\vec i = \cveciix10$ is defined to be the unit vector in the positive direction of the $x$-axis, while $\vec j = \cveciix01$ is defined to be the unit vector in the positive direction of the $y$-axis.
+\end{definition}
+
+Thus, if $P$ is the point with coordinates $(a, b)$, then we can express $\oa{OP}$ in terms of the unit vectors $\vec i$ and $\vec j$. In particular, $\oa{OP} = a\vec i + b \vec j$.
+
+\begin{proposition}[Magnitude in 2-D]
+    \[\abs{\cvecii{a}{b}} = \sqrt{a^2 + b^2}.\]
+\end{proposition}
+\begin{proof}
+    Follows immediately from Pythagoras' theorem.
+\end{proof}
+
+\subsection{3-D Cartesian Unit Vectors}
+
+\begin{definition}[3-D Cartesian Unit Vectors]
+    In the 3-D Cartesian plane, $\vec i = \cveciiix100$, $\vec j = \cveciiix010$ and $\vec k = \cveciiix001$ denote the unit vectors in the positive direction of the $x$, $y$ and $z$-axes respectively.
+\end{definition}
+
+\begin{proposition}[Magnitude in 3-D]
+    \[\abs{\cveciii{a}{b}{c}} = \sqrt{a^2 + b^2 + c^2}.\]
+\end{proposition}
+\begin{proof}
+    Use Pythagoras' theorem twice.
+\end{proof}
+
+\begin{fact}[Operations on Cartesian Vectors]
+    To add vectors given in Cartesian unit vector form, the coefficients of $\vec i$, $\vec j$ and $\vec k$ are added separately. \[\cveciii{x_1}{y_1}{z_1} + \cveciii{x_2}{y_2}{z_2} = \cveciii{x_1+x_2}{y_1+y_2}{z_1+z_2}.\] Subtraction and scalar multiplication follows immediately.
+\end{fact}
 
 \section{Scalar Product}
 

@@ -1,0 +1,424 @@
+\chapter{Matrices}
+
+\begin{definition}
+    An \vocab{$m \times n$ matrix} $\mat A$ is an array of numbers with $m$ rows and $n$ columns, with $\mat A = (a_{ij})$, where $a_{ij}$ is the entry in row $i$ and column $j$. \[\mat A = \begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}.\]
+\end{definition}
+
+\begin{example}
+    If \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6\end{pmatrix},\] then $\mat A$ is a $2 \times 3$ matrix with $a_{21} = 4$.
+\end{example}
+
+Note that row and column vectors are effectively matrices with one row and one column respectively.
+
+\section{Special Matrices}
+
+\begin{definition}
+    A \vocab{null matrix} is a matrix with all entries equal to 0. We denote the $m \times n$ null matrix by $\mat 0_{m \times n}$, or simply $\mat 0$.
+\end{definition}
+
+\begin{example}
+    Examples of null matrices include \[\begin{pmatrix}0\end{pmatrix}, \quad \begin{pmatrix}0 & 0 \\ 0 & 0\end{pmatrix}, \quad \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix}.\]
+\end{example}
+
+\begin{definition}
+    A \vocab{square matrix} of order $n$ is a matrix with $n$ rows and $n$ columns.
+\end{definition}
+
+\begin{example}
+    Examples of square matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}1 & 2 \\ 3 & 0\end{pmatrix}, \quad \begin{pmatrix}1 & 2 & 3 \\ 2 & 5 & 3 \\ 1 & 0 & 8\end{pmatrix}.\]
+\end{example}
+
+\begin{definition}
+    Given a square matrix $\mat A = (a_{ij})$, the \vocab{diagonal} of $\mat A$ (also called the main, principal or leading diagonal) is the sequence of entries $a_{11}, a_{22}, \dots, a_{nn}$. The entries $a_{ii}$ are called the \vocab{diagonal entries} while $a_{ij}$, $i \neq j$ are called \vocab{non-diagonal entries}.
+\end{definition}
+
+\begin{definition}
+    A \vocab{diagonal matrix} is a square matrix whose non-diagonal entries are zero, i.e. $a_{ij} = 0$ whenever $i \neq j$.
+\end{definition}
+
+\begin{example}
+    Examples of diagonal matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}1 & 0 \\ 0 & 2\end{pmatrix}, \quad \begin{pmatrix}2 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 0\end{pmatrix}.\]
+\end{example}
+
+\begin{definition}
+    An \vocab{identity matrix} is a diagonal matrix whose diagonal entries are all 1. We denote the identity matrix of order $n$ by $\mat I_n$, or simply as $\mat I$.
+\end{definition}
+
+\begin{example}
+    Examples of identity matrices include \[\mat I_1 = \begin{pmatrix}1\end{pmatrix}, \quad \mat I_2 = \begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}, \quad I_3 = \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}.\]
+\end{example}
+
+\begin{definition}
+    A \vocab{symmetric matrix} is a square matrix such that $a_{ij} = a_{ji}$ for all $i, j$.
+\end{definition}
+
+\begin{example}
+    Examples of symmetric matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}0 & 4 \\ 4 & 2\end{pmatrix}, \quad \begin{pmatrix}1 & -1 & 0 \\ -1 & 3 & 2 \\ 0 & 2 & 2\end{pmatrix}.\]
+\end{example}
+
+\begin{definition}
+    A square matrix $(a_{ij})$ is \vocab{upper triangular} if $a_{ij} = 0$ whenever $i > j$; and \vocab{lower triangular} if $a_{ij} = 0$ whenever $i < j$.
+\end{definition}
+
+\begin{example}
+    Examples of triangular matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}1 & -1 & 0 \\ 0 & 3 & 2 \\ 0 & 0 & 2\end{pmatrix}, \quad \begin{pmatrix}2 & 0 & 0 & 0 \\ 1 & 3 & 0 & 0 \\ 6 & 0 & 0 & 0 \\ -2 & -1 & 0 & 1\end{pmatrix}.\] The second matrix is an upper triangular matrix, while the third matrix is a lower triangular matrix. The first matrix can be considered both an upper and lower triangular matrix.
+\end{example}
+
+Note that a diagonal matrix is both an upper and lower triangular matrix.
+
+\section{Matrix Operations}
+
+\subsection{Equality}
+
+\begin{definition}
+    Two matrices $\mat A$ and $\mat B$ are equal if and only if they have the same size and their entries are identical.
+\end{definition}
+
+\subsection{Addition}
+
+\begin{definition}
+    Let $\mat A$ and $\mat B$ be matrices of the same size, and let $\mat C = \mat A + \mat B$ be their sum. Then $(c_{ij}) = (a_{ij} + b_{ij})$. That is, to add two matrices (of the same size), we simply add their corresponding entries.
+\end{definition}
+
+\begin{example}
+    \[\begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} + \begin{pmatrix}1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9\end{pmatrix} = \begin{pmatrix}2 & 4 & 6 \\ 6 & 9 & 12 \\ 10 & 14 & 18\end{pmatrix}.\]
+\end{example}
+
+\begin{fact}[Properties of Matrix Addition]
+    The set of matrices forms an Abelian group under addition.
+    \begin{itemize}
+        \item Matrix addition is commutative, i.e. $\mat A + \mat B = \mat B + \mat A$.
+        \item Matrix addition is associative, i.e. $\mat A + \bp{\mat B + \mat C} = \bp{\mat A + \mat B} + \mat C$.
+        \item The null matrix is the additive identity, i.e. $\mat A + \mat 0 = \mat 0 + \mat A = \mat A$.
+        \item All matrices have an additive inverse, i.e. $\mat A - \mat A = \mat 0$.
+    \end{itemize}
+\end{fact}
+
+\subsection{Scalar Multiplication}
+
+\begin{definition}
+    Let $\mat A$ be a matrix and let $\l \in \RR$ be a scalar. Then $\l (a_{ij}) = (\l a_{ij})$. That is, to multiply a matrix by a scalar $\l$, we simply multiply each entry by $\l$.
+\end{definition}
+
+\begin{example}
+    \[2 \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} = \begin{pmatrix}2 & 4 & 6 \\ 8 & 10 & 12 \\ 14 & 16 & 18\end{pmatrix}.\]
+\end{example}
+
+\begin{fact}[Properties of Scalar Multiplication]
+    Let $\a, \b \in \RR$ be scalars, and let $\mat A$ and $\mat B$ be matrices of the same size.
+    \begin{itemize}
+        \item Scalar multiplication is associative, i.e. $\a (\b \mat A) = (\a \b) \mat A$.
+        \item Scalar multiplication is distributive over addition, i.e. $(\a + \b) \mat A = \a \mat A + \b \mat A$ and $\a (\mat A + \mat B) = \a \mat A + \a \mat B$.
+        \item 1 is the multiplicative identity, i.e. $1 \mat A = \mat A$.
+        \item $0 \mat A = \mat 0$.
+    \end{itemize}
+\end{fact}
+
+\subsection{Matrix Multiplication}
+
+\begin{definition}
+    Let $\mat A$ be an $m \times p$ matrix, and let $\mat B$ be a $p \times n$ matrix. Then the matrix product $\mat C = \mat A \mat B$ is the $m \times n$ matrix with entries determined by \[c_{ij} = \sum_{k = 1}^p a_{ik} b_{kj}\] for $i = 1, \dots, m$ and $j = 1, \dots, n$. Here, $c_{ij}$ can be viewed as the dot product of the $i$th row of $\mat A$ with the $j$th column of $\mat B$.
+\end{definition}
+
+\begin{example}
+    Let \[\mat A = \begin{pmatrix}-1 & 0 \\ 2 & 3\end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix}1 & 2 \\ 3 & 0\end{pmatrix}.\] Then the matrix product $\mat A \mat B$ is given by \[\mat A \mat B = \begin{pmatrix}(-1)(1) + (0)(3) & (-1)(2) + (0)(0) \\ (2)(1) + (3)(3) & (2)(2) + (3)(0)\end{pmatrix} = \begin{pmatrix}-1 & -2 \\ 11 & 4\end{pmatrix}.\] Meanwhile, the matrix product $\mat B \mat A$ is given by \[\mat B \mat A = \begin{pmatrix}(1)(-1) + (2)(2) & (1)(0) + (2)(3) \\ (3)(-1) + (0)(2) & (3)(0) + (0)(3)\end{pmatrix} = \begin{pmatrix}3 & 6 \\ -3 & 0\end{pmatrix}.\]
+\end{example}
+
+\begin{fact}[Properties of Matrix Multiplication]
+    \phantom{.}
+    \begin{itemize}
+        \item Matrix multiplication is \emph{not} commutative, i.e. $\mat A \mat B \neq \mat B \mat A$.
+        \item Matrix multiplication is associative, i.e. $\mat A \bp{\mat B \mat C} = \bp{\mat A \mat B} \mat C$.
+        \item Matrix multiplication is distributive over addition, i.e. $\mat A \bp{\mat B + \mat C} = \mat A \mat B + \mat A \mat C$ and $\bp{\mat B + \mat C} \mat A = \mat B \mat A + \mat C \mat A$.
+        \item $\mat A \mat B = \mat 0$ does not imply that $\mat A = \mat 0$ or $\mat B = \mat 0$.
+        \item $\mat A \mat B = \mat A \mat C$ does not imply that $\mat B = \mat C$, i.e. the cancellation law does not apply.
+    \end{itemize}
+\end{fact}
+
+\begin{definition}[Powers of Matrices]
+    If $\mat A$ is a square matrix, and $n$ is a non-negative integer, we define $\mat A^n$ as follows: \[\mat A^n = \begin{cases}
+        \mat I, & n = 0,\\
+        \underbrace{\mat A \mat A \dots \mat A}_{\text{$n$ times}}, & n \geq 1.
+    \end{cases}\] Here, $\mat I$ is the identity matrix of the same size as $\mat A$.
+\end{definition}
+
+Note that in general, $(\mat A \mat B)^n \neq \mat A^n \mat B^n$, where $\mat B$ is also a square matrix of suitable size.
+
+\subsection{Transpose}
+
+\begin{definition}
+    The \vocab{transpose} of a matrix $\mat A = (a_{ij})$ is denoted $\mat A \trp$ and is given by $(a_{ji})$, i.e. the rows and columns are switched.
+\end{definition}
+
+\begin{example}
+    Let \[\mat A = \begin{pmatrix}1 & 2 \\ 3 & 4 \\ 5 & 6\end{pmatrix}.\] Then \[\mat A \trp = \begin{pmatrix}1 & 3 & 5 \\ 2 & 4 & 6\end{pmatrix}.\]
+\end{example}
+
+\begin{fact}[Properties of Transpose]
+    Let $\mat A$ be a matrix and let $c \in \RR$ be a scalar.
+    \begin{itemize}
+        \item The transpose is an involution, i.e. $\bp{\mat A \trp} \trp = \mat A$.
+        \item The transpose is associative, i.e. $(c\mat A) \trp = c \mat A \trp$.
+        \item The transpose is additive, i.e. $(\mat A + \mat B)\trp = \mat A \trp + \mat B \trp$.
+        \item The transpose reverses the order of matrix multiplication, i.e. $(\mat A \mat B) \trp = \mat B \trp \mat A \trp$.
+    \end{itemize}
+\end{fact}
+
+Note also that $\mat A = \mat A \trp$ if and only if $\mat A$ is a symmetric matrix.
+
+\section{Solving Systems of Linear Equations}
+
+One use of matrix multiplication is to express a system of linear equations. For example, \[\systeme{3x_1 + 4x_2 + 5x_3 = 6, x_1 + 5x_2 - 6x_3 = 5} \implies \begin{pmatrix}3 & 4 & 5 \\ 1 & 5 & -6\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cvecii65.\] The system of equations on the left can be expressed as a matrix equation on the right. What is great about a matrix equation is that we can express a large system of linear equations in a very compact form $\mat A \vec x = \vec b$, where $\vec x$ and $\vec b$ are column vectors. In general, \[\left\{ \begin{matrix}a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\ a_{21} x_1 + \dots + a_{2n} x_n = b_2 \\ \vdots \\ a_{m1} x_1 + \dots + a_{mn} x_n = b_m \end{matrix} \right. \implies \underbrace{\begin{pmatrix}a_{11} & \cdots & a_{1n} \\ a_{21} & \cdots & a_{2n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{pmatrix}}_{\mat A} \underbrace{\cveciv{x_1}{x_2}{\vdots}{x_n}}_{\vec x} = \underbrace{\cveciv{b_1}{b_2}{\vdots}{b_m}}_{\vec b}.\]
+
+By translating a system of linear equations into a matrix equation, we can use the power of linear algebra to systematically solve for $\vec x$, which in turn will yield solutions $(x_1, x_2, \dots, x_n)$ to our original system of linear equations. We now look at how to systematically solve such matrix equations of the form $\mat A \vec x = \vec b$ using Gaussian elimination.
+
+\subsection{Elementary Row Operations}
+
+\begin{definition}
+    An \vocab{elementary row operation} on a matrix refers to one of the following actions performed on it:
+    \begin{itemize}
+        \item Interchanging row $i$ and row $j$, denoted $R_i \leftrightarrow R_j$.
+        \item Multiply row $i$ by a non-zero constant $k$, denoted $k R_i$.
+        \item Adding $k$ times of row $i$ to row $j$, denoted $R_j + k R_i$.
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    The following examples demonstrate the three elementary row operations. Observe how the elementary row operations are written directly to the left of the corresponding rows.
+    \begin{align*}
+        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle \\ \scriptstyle R_2 \leftrightarrow R_3 \\ \scriptstyle \end{matrix} \begin{pmatrix}1 & 2 & 3 \\ 7 & 8 & 9 \\ 4 & 5 & 6\end{pmatrix}\\
+        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle 10R_1\\ \scriptstyle \\ \scriptstyle \end{matrix} \begin{pmatrix}10 & 20 & 30 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix}\\
+        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle \\ \scriptstyle \\ \scriptstyle R_3 - 7R_1\end{matrix}\begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 0 & -6 & -12\end{pmatrix}
+    \end{align*}
+    Multiple elementary row operations can also be combined in a single step:
+    \[\begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle 2R_1 \\ \scriptstyle R_2 - R_1 \\ \scriptstyle 2R_3\end{matrix} \begin{pmatrix}2 & 4 & 6 \\ 3 & 3 & 3 \\ 14 & 16 & 18\end{pmatrix}.\]
+\end{example}
+
+\subsection{Gaussian Elimination}
+
+Gaussian elimination (also known as Gauss-Jordan elimination, or row reduction) is a systematic algorithm used to convert a system of equations into an \emph{equivalent} system of equations using elementary row operations. That is, the new system of equations has the same solution as the origin system of equations.
+
+Firstly, we rewrite our system of equations as an \vocab{augmented matrix} $\begin{pmatrix}[c|c]\mat A & \vec b\end{pmatrix}$: \[\left\{ \begin{matrix}a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\ a_{21} x_1 + \dots + a_{2n} x_n = b_2 \\ \vdots \\ a_{m1} x_1 + \dots + a_{mn} x_n = b_m \end{matrix} \right. \implies \begin{pmatrix}[c|c]\mat A & \vec b\end{pmatrix} = \begin{pmatrix}[ccc|c] a_{11} & \cdots & a_{1n} & b_1 \\ a_{21} & \cdots & a_{2n} & b_2 \\ \vdots & \ddots & \vdots & \vdots \\ a_{m1} & \cdots & a_{mn} & b_m \end{pmatrix}.\] The augmented part is the right-most column, separated by a vertical line to help remind us that these numbers come from the constants in the linear equations ($\vec b$).
+
+Observe the equivalence between performing elementary row operations on this augmented matrix versus what we might do algebraically to solve the system: 
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\columnwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+    \hline
+    \textbf{Operations on Equations} & \textbf{Elementary Row Operations on Augmented Matrix} \\ \hline
+    swapping two equations & swapping two rows \\ \hline
+    multiplying an equation by a non-zero constant & multiplying a row by a non-zero constant \\ \hline
+    adding a multiple of one equation to another equation & adding a multiple of one row to another row \\ \hline
+    \end{tabularx}
+\end{table}
+
+The objective of Gaussian elimination is thus to repeatedly perform elementary row operations to our augmented matrix until we get a form where we can easily solve for $x_1, \dots, x_n$.
+
+\subsubsection{Row-Echelon Form}
+
+One such form we aim for is the row-echelon form.
+
+\begin{definition}
+    A matrix is said to be in \vocab{row-echelon form} (REF) if
+    \begin{itemize}
+        \item the first non-zero term in any row (called a \vocab{leading term}) is always to the right of the leading term of the previous row, and
+        \item rows consisting of only zeros are at the bottom.
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    Consider the following matrices: \[\mat A = \begin{pmatrix} {\color{ForestGreen}1} & 3 & 4 & 5 \\ 0 & {\color{ForestGreen}4} & 2 & 8 \\ 0 & 0 & 0 & {\color{ForestGreen} 5} \end{pmatrix}, \quad \mat B = \begin{pmatrix}{\color{ForestGreen} 1} & 3 & 4 & 5 \\ {\color{red} 1} & 4 & 2 & 8 \\ 0 & 0 & 0 & 0 \end{pmatrix}.\] $\mat A$ is in REF since all leading terms (coloured green) are to the right of the leading term of the previous row. On the other hand, $\mat B$ is not in REF, since the leading term $b_{21}$ (coloured red) is not to the right of the leading term $b_{11}$.
+\end{example}
+
+Note that a matrix may have multiple row-echelon forms, i.e. REF is not unique.
+
+Once we manipulate our augmented matrix into its REF, we can easily solve for our solutions $x_1, \dots, x_n$ using back-substitution.
+
+\begin{example}
+    Consider the following augmented matrix, which has been manipulated into its REF via elementary row operations: \[\begin{pmatrix}[ccc|c]1 & 1 & 3 & 2 \\ 0 & -4 & -4 & 4 \\ 0 & 0 & -15 & 9\end{pmatrix} \implies \systeme{x_1 + x_2 + 3x_3 = 2, -4x_2 - 4x_3 = 4, -15x_3 = 9}.\] From the third equation, we easily get $x_3 = -3/5$. Substituting this into the second equation, we get $x_2 = -2/5$. Further substituting this into the first equation, we have $x_1 = 11/5$.
+\end{example}
+
+\subsubsection{Reduced Row-Echelon Form}
+
+Another form we typically aim for when performing Gaussian elimination is the reduced row-echelon form.
+
+\begin{definition}
+    A matrix is said to be in \vocab{reduced row-echelon form} (RREF) if it is already in REF, with two further restrictions:
+    \begin{itemize}
+        \item all leading terms are 1, and
+        \item a column with a leading term has zeroes for all other terms in that column.
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    Consider the following matrices: \[\mat A = \begin{pmatrix}{\color{ForestGreen}1} & 0 & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & 0 & 0\end{pmatrix}, \quad \mat B = \begin{pmatrix}1 & {\color{red}3} & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & {\color{red}4} & 0\end{pmatrix}.\] $\mat A$ is in RREF, since all leading terms (coloured green) are 1 and all other entries in those columns are 0. However, $\mat B$ is not in RREF. This is because $b_{22}$ is a leading term, but there are non-zero entries in that column (coloured red).
+\end{example}
+
+Unlike REF, the RREF of a matrix is unique.
+
+By manipulating our augmented matrix into its RREF, we can easily obtain our solutions $x_1, \dots, x_n$.
+
+\begin{example}
+    Consider the following augmented, which has been manipulated into RREF using elementary row operations: \[\begin{pmatrix}[ccc|c] 1 & 0 & 3 & 4 \\ 0 & 1 & 4 & 8 \\ 0 & 0 & 0 & 0\end{pmatrix} \implies \systeme{x_1 + 3x_3 = 4, x_2 + 4x_3 = 8}.\] Letting $x_3$ be a free parameter $\l \in \RR$, we have \[x_1 = 4 - 3\l, \quad x_2 = 8 - 4\l, \quad x_3 = \l.\]
+\end{example}
+
+\subsection{Consistent and Inconsistent Systems}
+
+Back in \SS\ref{chap:Equations-and-Inequalities}, we termed a system of linear equations \emph{consistent} if it admits a solution, and \emph{inconsistent} if it does not. We also learnt that a consistent system of linear equations either has a unique solution or infinitely many solutions. Using Gaussian elimination, we can easily determine the number of solutions it admits.
+
+\begin{proposition}
+    Let $\begin{pmatrix}[c|c] \mat A' & \vec b'\end{pmatrix}$ be the RREF of $\begin{pmatrix}[c|c] \mat A & \vec b\end{pmatrix}$.
+    \begin{itemize}
+        \item If $\mat A' = \mat I$, the system has a unique solution.
+        \item If the $i$th row of $\mat A'$ is all zeroes, and $b'_{i} = 0$, then the system has infinitely many solutions.
+        \item If the $i$th row of $\mat A'$ is all zeroes, and $b'_{i} = 1$, then the system has no solution.
+    \end{itemize}
+\end{proposition}
+
+The first statement is trivially true, since $\mat I \vec x = \vec b' \implies \vec x = \vec b'$. To see why the second and third statements are true, consider the following matrices: \[\mat B = \begin{pmatrix}[ccc|c] 1 & 0 & 3 & 1 \\ 0 & 1 & 1 & 2 \\ 0 & 0 & 0 & 0\end{pmatrix}, \quad \mat C = \begin{pmatrix}[ccc|c] 1 & 0 & 3 & 1 \\ 0 & 1 & 1 & 2 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] $\mat B$ represents the system \[\systeme{x_1 + 3x_3 = 1, x_2 + x_3 = 2}.\] In this case, we have more unknowns than equations, so we will obtain infinitely many solutions (e.g. by taking $x_3 = \l$, where $\l \in \RR$ is a free parameter). On the other hand, the third row of $\mat C$ represents the equation \[0x_1 + 0x_2 + 0x_3 = 1,\] which is clearly impossible. Thus, there will be no solutions to the system.
+
+\subsection{Homogeneous Systems of Linear Equations}
+
+Recall that a system of linear equations is said to be \emph{homogeneous} if all the constant terms are zero. The corresponding matrix equation is thus $\mat A \vec x = \vec 0$. Clearly, every homogeneous system has $\vec x = \vec 0$ as a solution. This solution is called the \vocab{trivial solution}. If there are other solutions, they are called non-trivial solutions.
+
+\section{Invertible Matrices}
+
+While Gaussian elimination remains a good way of solving a system of linear equations, looking at them as a matrix equation can also be useful.
+
+The left side of $\mat A \vec x = \vec b$ may be viewed as a matrix $\mat A$ acting on a vector $\vec x$ and sending it to the vector $\vec b$. Solving the matrix equation hence amounts to finding the pre-image of $\vec b$ under $\mat A$. This motivates us to find a multiplicative inverse to $\mat A$.
+
+\begin{definition}
+    The \vocab{multiplicative inverse} of a square matrix $\mat A$, denoted $\mat A^{-1}$, has the property \[\mat A^{-1} \mat A = \mat A \mat A^{-1} = \mat I.\] If such a matrix $\mat A^{-1}$ exists, then $\mat A$ is said to be \vocab{invertible}, or \vocab{non-singular}.
+\end{definition}
+
+If $\mat A^{-1}$ exists, the solution for the equation $\mat A \vec x = \vec b$ will simply be $\vec x = \mat A^{-1} \vec b$. Further, this solution will be unique for each $\vec b$ (since $\mat A^{-1}$ will not map $\vec b$ to multiple vectors).
+
+
+We now state some properties regarding the inverse of a matrix:
+
+\begin{fact}[Properties of Invertible Matrices]
+    Let $\mat A$ and $\mat B$ be square matrices of the same size. Let $a \in \RR$ be a scalar and let $n$ be a non-negative integer.
+    \begin{itemize}
+        \item The inverse of a matrix is unique.
+        \item If $a\mat A$ is invertible, then $(a\mat A)^{-1} = \frac1a \mat A^{-1}$.
+        \item If $\mat A$ is invertible, then $\bp{\mat A^{-1}}^{-1} = \mat A$.
+        \item If $\mat A \trp$ is invertible, then $\bp{\mat A \trp}^{-1} = \bp{\mat A^{-1}}\trp$.
+        \item If $\mat A \mat B$ is invertible, then $\bp{\mat A \mat B}^{-1} = \mat B^{-1} \mat A^{-1}$.
+        \item If $\mat A^n$ is invertible, then $\bp{\mat A^n}^{-1} = \mat A^{-n} = \bp{\mat A^{-1}}^n$.
+    \end{itemize}
+\end{fact}
+
+We now discuss how to find the inverses of matrices.
+
+\subsection{Inverse of a \texorpdfstring{$2 \times 2$}{2 x 2} Matrix}
+
+\begin{proposition}[$2 \times 2$ Inverse Formula]
+    Let \[\mat A = \begin{pmatrix}a & b \\ c & d\end{pmatrix}.\] Then its inverse is given by \[\mat A^{-1} = \frac1{ad - bc} \begin{pmatrix}d & - b \\ -c & a\end{pmatrix}.\]
+\end{proposition}
+
+Notice that the $2 \times 2$ inverse formula is not valid in the case where $ad - bc = 0$. This quantity, $ad - bc$, is called the \vocab{determinant} of the $2 \times 2$ matrix, and it plays a special role in determining whether a matrix is invertible. We will discuss more about determinants in the next chapter.
+
+\subsection{Inverse of an \texorpdfstring{$n \times n$}{n x n} Matrix}
+
+Though there is a general formula for the inverse of an $n \times n$ matrix, it is tedious to compute for $n \geq 3$. Luckily, there is a general procedure that we can employ. This procedure rests on the fact that any elementary row operation can be represented as a left-multiplication by an \vocab{elementary matrix}.
+
+\begin{definition}
+    An $n \times n$ matrix is an \vocab{elementary matrix} if it can be obtained from the $n \times n$ identity matrix $\mat I_n$ by performing a single row operation.
+\end{definition}
+
+\begin{example}
+    As an example, consider \[\mat A = \begin{pmatrix}1 & 0 & 2 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix}.\] If we add 3 times the 3rd row to the 1st row, we will obtain \[\begin{pmatrix}1 & 0 & 2 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle R_1 + 3R_3 \\ \scriptstyle \\ \scriptstyle\end{matrix} \begin{pmatrix}4 & 12 & 14 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix}.\]
+
+    Now observe that if we pre-multiply $\mat A$ by the elementary matrix \[\mat B = \begin{pmatrix}1 & 0 & 3 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix},\] we get \[\mat B \mat A = \begin{pmatrix}1 & 0 & 3 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix}1 & 0 & 2 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix} = \begin{pmatrix}4 & 12 & 14 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix},\] which is exactly the same result as doing the row operation.
+\end{example}
+
+The correspondence between elementary row operations and elementary matrices allows us to construct the following algorithm to find the inverse of an invertible matrix $\mat A$.
+
+\begin{recipe}[Finding Matrix Inverse]
+    If $\mat A$ is invertible, then $\mat A^{-1} \mat A = \mat I$. If we can find a sequence of elementary row operations, corresponding to successive matrix left-multiplications of the elementary matrices $\mat E_1, \mat E_2, \dots, \mat E_k$, such that \[\mat E_k \dots \mat E_2 \mat E_1 \mat A = \mat I,\] then we have $\mat E_k \dots \mat E_2 \mat E_1 = \mat A^{-1}$.
+\end{recipe}
+
+In practice, however, we will perform the left-multiplications on an augmented matrix of the form $\begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix}$: \[\mat E_k \dots \mat E_2 \mat E_1 \begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix} = \begin{pmatrix}[c|c] \mat E_k \dots \mat E_2 \mat E_1 \mat A & \mat E_k \dots \mat E_2 \mat E_1\end{pmatrix} = \begin{pmatrix}[c|c]\mat I & \mat A^{-1}\end{pmatrix}.\]
+
+\section{Determinant of a Matrix}
+
+The previous section showed the importance of invertibility and uses elementary row operations to help us determine if a matrix is invertible. Here, we introduce the idea of the determinant of a matrix and how this number tells us if a matrix is invertible.
+
+\begin{definition}
+    The \vocab{determinant} of an $n \times n$ matrix $\mat A$, denoted by \[\abs{\mat A} = \det{\mat A} = \begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{vmatrix},\] is the minimal polynomial (in the entries of $\mat A$, i.e. $a_{11}$, $a_{12}$, etc.) that is 0 if and only if $\mat A$ is singular.
+\end{definition}
+
+\subsection{The \texorpdfstring{$1 \times 1$}{1 x 1} and \texorpdfstring{$2 \times 2$}{2 x 2} Determinant}
+
+For $1 \times 1$ matrices, $(a)^{-1} = (1/a)$, so the matrix has an inverse if and only if $a \neq 0$. Thus, $\abs{a} = a$.
+
+For $2 times 2$ matrices, recall that \[\begin{pmatrix}a & b \\ c & d\end{pmatrix}^{-1} = \frac1{ad - bc} \begin{pmatrix}d & -b \\ -c & a\end{pmatrix}.\] The inverse hence does not exist when $ad - bc = 0$. Hence, \[\begin{vmatrix}a & b \\ c& d\end{vmatrix} = ad - bc.\]
+
+\subsection{Cofactor Expansion}
+
+Beyond the $2 \times 2$ matrix, the closed form of an $n \times n$ determinant becomes much more unwieldy to remember and use. Luckily, there is a general procedure that we can use to calculate the determinant of any $n \times n$ matrix.
+
+\begin{proposition}[Cofactor Expansion]\label{prop:cofactor}
+    Suppose we have an $n \times n$ matrix $\mat A = (a_{ij})$. Let $\mat M_{ij}$ be the $(n-1) \times (n-1)$ matrix obtained from $\mat A$ by deleting the $i$th row and the $j$th column. Then the determinant of $\mat A$ is given by \[\det{\mat A} = \begin{cases}
+        a_{11}, & n = 1,\\
+        a_{11} A_{11} + a_{12} A_{12} + \dots + a_{1n} A_{1n}, & n > 1
+    \end{cases},\] where $A_{ij} = (-1)^{i+j} \det{\mat M_{ij}}$ is the \vocab{cofactor} of entry $a_{ij}$.
+\end{proposition}
+
+Note that the term $(-1)^{i+j}$ has value 1 when the sum of $i$ and $j$ is even, and $-1$ when the sum is odd. This may be viewed as a ``signed'' array as follows: \[\begin{pmatrix}+ & - & + & - & \cdots \\ - & + & - & + & \cdots \\ + & - & + & - & \cdots \\ - & + & - & + & \cdots \\ \vdots & \vdots & \vdots & \vdots & \ddots \end{pmatrix}.\]
+
+\begin{example}
+    Using the method of cofactor expansion along the first row, the determinant of a $3 \times 3$ matrix \[\mat A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix}\] is given by \[\det{\mat A} = a_{11} \begin{vmatrix}a_{22} & a_{23} \\ a_{32} & a_{33}\end{vmatrix} - a_{12} \begin{vmatrix}a_{21} & a_{23} \\ a_{31} & a_{33}\end{vmatrix} + a_{13} \begin{vmatrix}a_{21} & a_{22} \\ a_{31} & a_{32}\end{vmatrix}.\]
+\end{example}
+
+The formula given by Proposition~\ref{prop:cofactor} is not unique: we can expand cofactors along any row or column of the matrix to get the determinant. This is particularly useful when a particular row/column contains many zeroes.
+
+\begin{example}
+    Let \[\mat A = \begin{pmatrix}1 & 0 & 3 \\ 2 & 0 & 4 \\ 3 & 2 & 9\end{pmatrix}.\] Expanding along the second column, we see that \[\det{\mat A} = -0 \begin{vmatrix}2 & 4 \\ 3 & 9\end{vmatrix} + 0 \begin{vmatrix}1 & 3 \\ 3 & 9\end{vmatrix} - 2 \begin{vmatrix}1 & 3 \\ 2 & 4\end{vmatrix} = 4.\]
+\end{example}
+
+\subsection{Properties}
+
+We now look at the properties of determinants.
+
+\begin{fact}[Properties of Determinants]
+    Let $\mat A$ and $\mat B$ be square matrices of order $n$.
+    \begin{itemize}
+        \item $\det{\mat A} = \det{\mat A \trp}$.
+        \item $\det{\mat A + \mat B} \neq \det{\mat A} + \det{\mat B}$.
+        \item $\det{c \mat A} = c^n \det{\mat A}$, where $c$ is a scalar.
+        \item $\det{\mat A \mat B} = \det{\mat A} \det{\mat B}$.
+        \item If $\mat A$ is a triangular matrix, then $\det{\mat A}$ is the product of the diagonal entries of $\mat A$.
+        \item $\mat A$ is invertible if and only if $\det{\mat A} \neq 0$.
+        \item If $\mat A$ is invertible, then $\det{\mat A^{-1}} = 1/\det{\mat A}$.
+        \item If $\mat A$ has a row or column of zeroes, then $\det{\mat A} = 0$.
+    \end{itemize}
+\end{fact}
+
+\begin{fact}[Effects of Elementary Row/Column Operations on Determinant]
+    \phantom{.}
+    \begin{itemize}
+        \item If $\mat B$ is the matrix that results when a row/column of $\mat A$ is multiplied by a scalar $k$, then $\det{\mat B} = k \det{\mat A}$.
+        \item If $\mat B$ is the matrix that results when two rows/columns of $\mat A$ are interchanged, then $\det{\mat B} = -\det{\mat A}$.
+        \item If $\mat B$ is the matrix that results when a multiple of one row/column of $\mat A$ is added to another row/column, then $\det{\mat B} = \det{\mat A}$.
+    \end{itemize}
+\end{fact}
+
+The above results are a result of the fact that $\det{\mat E \mat A} = \det{\mat E}\det{\mat A}$, where $\mat E$ is an elementary matrix.
+
+To finish this chapter off, the following list consolidates all statements that are equivalent to a matrix being invertible. 
+
+\begin{fact}[Equivalences (Part 1)]
+    If $\mat A$ is an $n \times n$ matrix, then the following are equivalent:
+    \begin{itemize}
+        \item $\mat A$ is invertible.
+        \item $\det{\mat A} \neq 0$.
+        \item $\mat A$ is the product of elementary matrices.
+        \item The RREF of $\mat A$ is $\mat I$.
+        \item $\mat A \vec x = \vec b$ has a unique solution for all $n \times 1$ matrices $\vec b$.
+        \item $\mat A \vec x = \vec 0$ has only the trivial solution $\vec x = \vec 0$.
+    \end{itemize}
+\end{fact}
+
+This list will continue to grow as we learn more in the next few chapters.

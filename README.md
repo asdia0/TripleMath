@@ -52,7 +52,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B14  | Euler Method and Improved Euler Method                         |  🟢  |   🟢    |      🟡      |    🟢     |
 | B15  | Modelling Populations with First Order DE                      |  🟢  |   🔴    |      🔴      |    🔴     |
 | B16  | Second Order DE                                                |  🟢  |   🟢    |      🟡      |    🟢     |
-| B17A | Matrices and Linear Spaces - Matrices                          |  🟡  |   🟢    |      🟡      |    🟢     |
+| B17A | Matrices and Linear Spaces - Matrices                          |  🟢  |   🟢    |      🟡      |    🟢     |
 | B17B | Matrices and Linear Spaces - Linear Spaces                     |  🟡  |   🟢    |      🟡      |    🟢     |
 
 ### H3 Mathematics
