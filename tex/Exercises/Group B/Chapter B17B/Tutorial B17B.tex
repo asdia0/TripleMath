@@ -240,7 +240,7 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Note that \[\cveciii{\a}{2\a + 3\b}{5\a + 3\b - 3} = \a \cveciii125 + (\b - 1) \cveciii103\] and \[\cveciii{\b}{\a + 2\b}{3\a + 3\b} = \b\cveciii125 + \a \cveciii103.\] Thus, $\Col{\mat A}$ is given by \[\Span{\cveciii125, \a \cveciii125 + (\b - 1) \cveciii103, \b\cveciii125 + \a \cveciii103} = \Span{\cveciii125, \cveciii103},\] whence \[\Rank{\mat A} = \Dim \Col{\mat A} = 2.\]
+            Note that \[\cveciii{\a}{2\a + \b - 1}{5\a + 3\b - 3} = \a \cveciii125 + (\b - 1) \cveciii013\] and \[\cveciii{\b}{\a + 2\b}{3\a + 5\b} = \b\cveciii125 + \a \cveciii013.\] Thus, $\Col{\mat A}$ is given by \[\Span{\cveciii125, \a \cveciii125 + (\b - 1) \cveciii013, \b\cveciii125 + \a \cveciii013} = \Span{\cveciii125, \cveciii013},\] whence \[\Rank{\mat A} = \Dim \Col{\mat A} = 2.\]
         \end{psubpart}
         \begin{psubpart}
             When $\a = 0$ and $\b = 1$, we have \[\mat A = \begin{pmatrix}1 & 0 & 1 \\ 2 & 0 & 2 \\ 5 & 0 & 5 \end{pmatrix}.\] Hence, \[\Rank{\mat A \mat B} \leq \Rank{\mat A} = \Dim \Span{\cveciii125, \cveciii000, \cveciii125} = 1.\] By the rank-nullity theorem, \[\Nullity{\mat A \mat B} = 3 - \Rank{\mat A \mat B} \geq 3 - 1 = 2.\] Thus, the kernel of $\mat A \mat B$ has dimension at least 2, whence there are at least 2 linearly independent solutions to $\mat A \mat B \vec x = \vec 0$.
