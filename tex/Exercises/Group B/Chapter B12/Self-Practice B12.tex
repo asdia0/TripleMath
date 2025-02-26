@@ -3,17 +3,71 @@
 \begin{problem}
     Show that the differential equation $x^2 \der{y}{x} - 2xy + 3 = 0$ may be reduced by means of the substitution $y = ux^2$ to $\der{u}{x} = -\frac3{x^4}$. Hence, other otherwise, show that the general solution for $y$ in terms of $x$ is $y = Cx^2 + \frac1x$, where $C$ is an arbitrary constant.
 \end{problem}
+\begin{solution}
+    Since $y = ux^2$, by the chain rule, one has \[\der{y}{x} = \der{u}{x} x^2 + 2ux.\] Substituting this into the given DE, we obtain \[x^2 \bp{\der{u}{x} x^2 + 2ux} - 2x\bp{ux^2} + 3 = 0 \implies \der{u}{x} = -\frac3{x^4}.\] Integrating both sides with respect to $x$, \[\int \d u = \int -\frac3{x^4} \d x \implies u = x^{-3} + C.\] Since $u = y/x^2$, we have the general solution $y = Cx^2 + 1/x$.
+\end{solution}
 
 \begin{problem}
     Use the substitution $z = y \e^x$ to find the general solution of the differential equation $\der{y}{x} + y = 2x + 3$. Sketch on one diagram, the curve of a particular solution for which $y \to \infty$ as $x \to -\infty$, labelling the equation of this particular solution.
 \end{problem}
+\begin{solution}
+    Since $z = y\e^{x}$, by the chain rule, one has \[\der{z}{x} = \der{y}{x} \e^x + y\e^{x} \implies \der{y}{x} = \der{z}{x} \e^{-x} - y.\] Substituting this into the given DE, we have \[\bp{\der{z}{x}\e^{-x} - y} + y = 2x + 3 \implies \der{z}{x} = (2x+3)\e^x.\] Integrating both sides with respect to $x$, \[\int \d z = \int \bp{2x+3} \e^x \d x \implies y\e^x = z = (2x+1) \e^x + C.\] Thus, $y = 2x+1 + C\e^{-x}$.
 
+    \begin{figure}[H]\tikzsetnextfilename{434}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -5:5,
+            ymax = 10,
+            ymin = 0,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = {1},
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                node [anchor=north] {$O$};
+                }
+            ]
+            \addplot[plotRed] {2*x + 1 + 1/e^x};
+            \addlegendentry{$y = 2x + 1 + \e^{-x}$};
+
+            \addplot[dashed] {2*x + 1};
+            \addlegendentry{$y = 2x + 1$};
+        \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+\end{solution}
+
+\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Find the general solution of the differential equation \[\der{y}{x} = (x+2)(y-3),\] giving your answer in the form $y = f(x)$.
         \item Given that $u$ and $t$ are related by \[\der{u}{t} = 16 - 9u^2,\] and that $u = 1$ when $t = 0$, find $t$ in terms of $u$, simplifying your answer.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Manipulating the given DE, we have
+        \begin{gather*}
+            \frac{1}{y-3} \der{y}{x} = x+2 \implies \int \frac1{y-3} \d y = \int (x+2) \d x
+            \\\implies \ln \abs{y-3} + A = \frac12x^2 + 2x \implies B(y-3) = \e^{\frac12x^2 + 2x} \implies y = C\e^{\frac12x^2 + 2x} + 3.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Manipulating the given DE, we have
+        \begin{gather*}
+            \frac1{16-9u^2} \der{u}{t} = 1 \implies \int \frac1{4^2 - (3u)^2} \d u = \int \d t\\
+            \implies t = \frac13 \cdot \frac1{2(4)} \ln{\frac{4 + 3u}{4 - 3u}} + C = \frac{1}{24} \ln{\frac{4 + 3u}{4 - 3u}} + C.
+        \end{gather*}
+        At $t=0$, $u = 1$. Hence, \[0 = \frac1{24} \ln{\frac{4 + 3}{4 - 3}} + C \implies C = -\frac1{24} \ln 7.\] Thus, \[t = \frac{1}{24} \ln{\frac{4 + 3u}{4 - 3u}} - \frac1{24} \ln 7 = \frac1{24} \ln{\frac{4+3u}{7(4-3u)}}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     At each instant of time the rate of increase of money in a savings account is proportional to the amount in the account at that instant. The constant of proportionality does not vary with time. Denote the amount in the account at time $t$ years by \$$x$. When $x = 1000$, the rate of increase is \$50 per year. Obtain a differential equation relating $x$ and $t$. 
@@ -24,6 +78,24 @@
         \item Comment on whether the model can be regarded as a good model of the situation in the real world.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    We have $\der{x}{t} = kx$ for some $k \in \RR^+$. Thus, \[\evalder{\der{x}{t}}{x = 1000} = 50 \implies k(10000) = 50 \implies k = \frac1{20}.\] Hence, \[\der{x}{t} = \frac1{20} x.\]
+
+    \begin{ppart}
+        Solving for $x$, we get
+        \begin{gather*}
+            \frac1x \der{x}{t} = \frac1{20} \implies \int \frac1x \d x = \int \frac1{20} \d t\\
+            \implies \ln \abs{x} + A = \frac1{20} t \implies Bx = \e^{t/20} \implies x = C \e^{t/20}.
+        \end{gather*}
+        When $t = 0$, $x = 900$. Hence, $C = 900$ and \[x = 900 \e^{t/20}.\] At $t = 3$, \[x = 900 \e^{3/20} = 1045.65 \todp{2}.\] Hence, there will be \$$1045.65$ in the account 3 years later.
+    \end{ppart}
+    \begin{ppart}
+        Let $x = 900\e^{t/20} = 1800$. Using G.C., $t = 13.86 \todp{2}$. Hence, it will take $13.86$ years for the account to contain \$1800.
+    \end{ppart}
+    \begin{ppart}
+        The model is not a good model of the situation in the real world as there is finite money in the world, but the model predicts that the amount of money in the bank account will grow forever.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Salt is dissolved in a tank filled with 120 litres of water. Salt water containing 20 g of salt per litre is poured in at a rate of 3 litres per minute and the mixture flows out at a constant rate of 3 litres per minute. The contents of the tank are kept well mixed at all times. Let the amount of salt in the tank (in grams) be denoted by $S$ and the time (in minutes) be denoted by $t$. 
@@ -33,6 +105,14 @@
         \item Given that 400g of salt was dissolved in the tank initially, find the amount of salt in the tank after 1 hour, giving your answer to the nearest grams. 
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        At any instant, the amount of salt entering the tank is $3(20/1)$ g, while the amount of salt leaving the tank is $3(S/120)$. Thus, \[\der{S}{t} = 3\bp{\frac{20}{1}} - 3\bp{\frac{S}{120}} = 60 - \frac{1}{40} S = \frac{2400 - S}{40}.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\der{S}{t} + \frac1{40} S = 60.\] Multiplying through by $\e^{t/40}$, we have \[\der{}{t} \bp{S\e^{t/40}} = \der{S}{t}\e^{t/40} + \frac1{40} S \e^{t/40} = 60 \e^{t/40}.\] Integrating both sides with respect to $t$, \[S \e^{t/40} = \int 60 \e^{t/40} \d t = 2400 \e^{t/40} + C \implies S = 2400 + C\e^{-t/40}.\] At $t = 0$, $S = 400$. Hence, \[400 = 2400 + C \implies C = -2000.\] At $t = 60$, \[S = 2400 - 2000\e^{60/40} = 1954.\] Thus, there will be 1954 g of salt in the tank after 1 hour.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     In a certain country, the price of a brand-new car of a particular make, manufactured on 1 January 1996, is \$32,000. According to a model of car pricing, the price $P$ of the car (in \$) depreciates at a rate proportional to $P$ when the car is $t$ years old (as from 1 January 1996). Write down a differential equation relating $P$ and $t$.
@@ -41,3 +121,8 @@
     
     A man purchased a used car of this particular make for \$2000, at the price predicted by the model, on 1 January 2006. Subsequently on 1 January 2007, the man sold the used car for \$800. Determine if the man sold his car below the price predicted by the model.
 \end{problem}
+\begin{solution}
+    We have \[\der{P}{t} = -k P,\] where $k$ is a positive real number. Solving, we have \[\frac1P \der{P}{t} = -k \implies \int \frac1P \d P = -k \int \d t \implies \ln P = -kt + C \implies P = Ce^{-kt}.\] At $t = 0$, $P = 32000$. Hence, $C = 32000$, whence \[P = 32000\e^{-kt}.\]
+
+    When $t = 10$, $P = 2000$. Thus, \[2000 = 32000 \e^{-10k} \implies k = \frac1{10} \ln 16.\] Hence, at $t = 11$, the model predicts $P$ to be \[P = 32000 \e^{-11 \bp{\frac1{10} \ln 16}} = 1515 > 800.\] Thus, the man sold his car below the price predicted by the model.
+\end{solution}
