@@ -59,7 +59,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 
 | Topic                             | Notes | Exercises |
 | --------------------------------- | :---: | :-------: |
-| Mathematical Proofs and Reasoning |  🟡  |    🟡    |
+| Mathematical Proofs and Reasoning |  🟡  |    🟢    |
 
 ### Examinations
 
