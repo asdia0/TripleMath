@@ -1,0 +1,191 @@
+\section{Tutorial B17C}
+
+\begin{problem}
+    For each of the following matrices $\mat A$, determine the eigenvalue(s) and corresponding eigenvector(s). Where $\mat A$ is diagonalizable, write down the matrix $\mat Q$ and $\mat D$ where $\mat A= \mat Q \mat D \mat Q^{-1}$.
+
+    \begin{tasks}(3)
+        \task $\begin{pmatrix}0 & -1 \\ -2 & 0\end{pmatrix}$
+        \task $\begin{pmatrix}2 & 0 \\ -3 & 2\end{pmatrix}$
+        \task $\begin{pmatrix}-3 & 0 \\ 0 & -3\end{pmatrix}$
+        \task $\begin{pmatrix}19 & -9 & -6 \\ 25 & -11 & -9 \\ 17 & -9 & -4\end{pmatrix}$
+        \task $\begin{pmatrix}5 & 0 & 0 \\ 1 & 5 & 0 \\ 0 & 1 & 5\end{pmatrix}$
+        \task $\begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 3 & 0 & 1\end{pmatrix}$
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Consider $\det{\mat A - \l \mat I} = 0$: \[0 = \det{\mat A - \l \mat I} = \begin{vmatrix}-\l & -1 \\ -2 & -\l\end{vmatrix} = \l^2 - 2 \implies \l = \pm \sqrt2.\]
+
+        Let $\vec x = \cvecii{x}{y} \neq \cvecii00$ be an eigenvector.
+
+        \case{1}[$\l = \sqrt2$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}-\sqrt2 & -1 \\ -2 & -\sqrt2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x + \frac1{\sqrt2} y = 0$. Taking $y = -\sqrt2$, we have $\vec x = \cvecii{1}{-\sqrt2}$.
+
+        \case{2}[$\l = -\sqrt2$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}\sqrt2 & -1 \\ -2 & \sqrt2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x - \frac1{\sqrt2} y = 0$. Taking $y = \sqrt2$, we have $\vec x = \cvecii1{\sqrt2}$.
+
+        Thus, \[\mat Q = \begin{pmatrix}1 & 1 \\ -\sqrt2 & \sqrt2 \end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}\sqrt2 & 0 \\ 0 & -\sqrt2 \end{pmatrix}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Find the eigenvalues and corresponding eigenvectors of the matrix $\mat A$, where \[\mat A = \begin{pmatrix}-3 & 5 & 5 \\ -4 & 6 & 5 \\ 4 & -4 & -3\end{pmatrix}.\] Hence, find a matrix $\mat P$ and a diagonal matrix $\mat D$ such that $\mat A = \mat P^{-1} \mat D \mat P$. Find also a diagonal matrix $\mat E$ such that $\mat A^3 = \mat P^{-1} \mat E \mat P$.
+\end{problem}
+
+\begin{problem}
+    Find the eigenvalues and corresponding eigenvectors of the matrix $\mat A$, where \[\mat A = \begin{pmatrix}2 & -3 & 0 \\ 1 & - 1 & 1 \\ - 1 & 3 & 1\end{pmatrix}.\] Hence, or otherwise,
+    \begin{enumerate}
+        \item find the eigenvalues and corresponding eigenvectors of the matrix $\mat A + 10 \mat I$, where $\mat I$ is the unit matrix of order 3,
+        \item find a matrix $\mat P$ such that $\mat P \mat A \mat P^{-1}$ is a diagonal matrix.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Given two square matrices $\mat A$ and $\mat B$ of the same order, show that if there exists a non-singular matrix $\mat P$ such that $\mat A = \mat P \mat B \mat P^{-1}$, then, $\mat A$ and $\mat B$ have the same eigenvalues.
+        \item Hence, by considering the product \[\begin{pmatrix}1 & 0 & -1 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix}4 & 0 & 0 \\ 1 & 5 & 0 \\ 2 & 3 & 7\end{pmatrix} \begin{pmatrix}1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}\] or otherwise, find the eigenvalues and corresponding eigenvectors of the matrix $\mat M$, where \[\mat M = \begin{pmatrix}2 & -3 & -5 \\ 1 & 5 & 1 \\ 2 & 3 & 9\end{pmatrix}.\]
+        \item Find a matrix $\mat Q$ and a diagonal matrix $\mat D$ such that $\mat M = \mat Q \mat D \mat Q^{-1}$, and deduce that if $n$ is a positive integer, then \[\mat M^n = \mat Q \begin{pmatrix}4^n & 0 & 0 \\ 0 & 5^n & 0 \\ 0 & 0 & 7^n\end{pmatrix} \mat Q^{-1}.\]
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The matrix $\mat A$ is given by \[\mat A = \begin{pmatrix}-1 & 5 & 0 \\ 2 & 3 & b \\ 0 & a & -1\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \item Given that 5 is an eigenvalue of $\mat A$ with eigenvector $\cveciiix562$, find the values of $a$ and $b$.
+        \item Find the other eigenvalues of $\mat A$ and their corresponding eigenvectors.
+        \item Hence, state the matrices $P$ and $D$ such that $\mat A = \mat P \mat D \mat P^{-1}$
+    \end{enumerate}
+
+    The matrix $\mat B$ is such that $\mat B = \mat A^2 - 2 \mat A + 3 \mat I$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Find matrix $\mat Q$ and diagonal matrix $\mat E$ such that $\mat E = \mat Q \mat B \mat Q^{-1}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Determine the eigenvalues of a square matrix, $\mat A$, if
+        \begin{enumerate}
+            \item $\mat A^n = \mat 0$ for some positive integer $n$,
+            \item $\mat A^3 = \mat A$.
+        \end{enumerate}
+        \item The matrices $\mat A$ and $\mat B$ have the same eigenvectors $\vec e_1$, $\vec e_2$, $\vec e_3$. The corresponding eigenvalues of $\mat A$ are $\l_1$, $\l_2$ and $\l_3$ while the corresponding eigenvalues of $\mat B$ are $\m_1$, $\m_2$ and $\m_3$.
+        \begin{enumerate}
+            \item Show that the matrix $\mat A + \mat B$ has eigenvalues $\l_1 + \m_1$, $\l_2 + \m_2$ and $\l_3 + \m_3$ with corresponding common eigenvectors $\vec e_1$, $\vec e_2$, $\vec e_3$.
+        \end{enumerate}
+
+        It is given that \[\mat A = \begin{pmatrix}0 & -1 & 0 \\ -4 & -9 & -6 \\ 5 & 11 & 7\end{pmatrix}, \quad \mat B = \begin{pmatrix}-4 & -16 & -11 \\ -9 & -27 & -19 \\ 14 & 44 & 31\end{pmatrix}\] and $\m_1 = -3$, $\m_2 = 2$, $\m_3 = 1$.
+
+        \begin{enumerate}
+            \setcounter{enumii}{1}
+            \item Find $\l_1$, $\l_2$, $\l_3$, where $\l_1 < \l_2 < \l_3$, and the corresponding $\vec e_1$, $\vec e_2$, $\vec e_3$.
+            \item Find matrices $\mat R$ and $\mat S$ and a diagonal matrix $\mat D$ such that $(\mat A + \mat B)^5 = \mat R \mat D \mat S$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\l$ be an eigenvalue of $\mat A$.
+
+        \begin{psubpart}
+            Since $\mat A^5 = \mat 0$, we have $\l^5 = 0$. Hence, the eigenvalues of $\mat A$ are all 0.
+        \end{psubpart}
+        \begin{psubpart}
+            Since $\mat A^3 = \mat A$, we have $\l^3 = \l$. Hence, $\l = -1, 0, 1$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Since \[\bp{\mat A + \mat B} \vec e_i = \mat A \vec e_i + \mat B \vec e_i = \l_i \vec e_i + \m_i \vec e_i = (\l_i + \m_i) \vec e_i,\] it follows that $\mat A + \mat B$ has eigenvalues $\l_i + \m_i$ with corresponding eigenvectors $\vec e_i$ for $i = 1, 2, 3$.
+        \end{psubpart}
+        \begin{psubpart}
+            Note that \[\l_1 + \l_2 + \l_3 = \tr \mat A = 0 - 9 + 7 = -2 \tag{1}\] and \[\l_1 \l_2 \l_3 = \det \mat A = -(-1) \begin{vmatrix}-4 & -6 \\ 5 & 7\end{vmatrix} = 2. \tag{2}\] Further, \[\l_1^2 + \l_2^2 + \l_3^2 = \tr \mat A^2 = \tr \begin{pmatrix}4 & 9 & 6 \\ 6 & 19 & 12 \\ -9 & -27 & -17\end{pmatrix} = 4 + 19 - 17 = 6. \tag{3}\] Solving (1), (2) and (3) simultaneously, we have $\l_1 = -2$, $\l_2 = -1$ and $\l_3 = 1$.
+
+            Note that \[\mat A - \l_i \mat I = \begin{pmatrix}-\l_i & -1 & 0 \\ -4 & -9 - \l_i & -6 \\ 5 & 11 & 7 - \l_i\end{pmatrix}.\] Hence, we take
+            \begin{gather*}
+                \vec e_1 = \frac16 \cveciii{- (-2)}{-1}{0} \crossp \cveciii{-4}{-9 - (-2)}{-6} = \cveciii12{-3},\\
+                \vec e_2 = \frac16 \cveciii{- (-1)}{-1}{0} \crossp \cveciii{-4}{-9 - (-1)}{-6} = \cveciii11{-2}\\
+                \vec e_3 = \frac16 \cveciii{-1}{-1}0 \crossp \cveciii{-4}{-9 - 1}{-6} = \cveciii1{-1}1.
+            \end{gather*}
+        \end{psubpart}
+        \begin{psubpart}
+            Note that $\mat A + \mat B = \mat P \mat E \mat P^{-1}$, where \[\mat P = \begin{pmatrix}\vec e_1 & \vec e_2 & \vec e_3 \end{pmatrix} = \begin{pmatrix}1 & 1 & 1 \\ 2 & 1 & -1 \\ -3 & -2 & 1\end{pmatrix}\] and \[\mat E = \begin{pmatrix}\l_1 + \m_1 & 0 & 0 \\ 0 & \l_2 + \m_2 & 0 \\ 0 & 0 & \l_3 + \m_3\end{pmatrix} = \begin{pmatrix}-5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2\end{pmatrix}.\] Hence, $\bp{\mat A + \mat B}^5 = \mat P \mat E^5 \mat P^{-1} = \mat R \mat D \mat S$. We thus take
+            \begin{gather*}
+                \mat R = \mat P = \begin{pmatrix}1 & 1 & 1 \\ 2 & 1 & -1 \\ -3 & -2 & 1\end{pmatrix},\\
+                \mat S = \mat P^{-1} = \begin{pmatrix}1 & 3 & 2 \\ -1 & -4 & -3 \\ 1 & 1 & 1\end{pmatrix},\\
+                \mat D = \mat E^5 = \begin{pmatrix}-3125 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 32\end{pmatrix}.
+            \end{gather*}
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A square matrix $\mat A$ has eigenvector $\vec x$ with corresponding eigenvalue $\l$.
+
+    \begin{enumerate}
+        \item Show that $\vec x$ is also an eigenvector of $\mat A + \mat A^2 + \mat A^3 + \mat A^4$ with corresponding eigenvalue $\l + \l^2 + \l^3 + \l^4$.
+    \end{enumerate}
+
+    Let $\mat B = \mat A + \mat A^2 + \mat A^3 + \mat A^4$, where \[\mat A = \begin{pmatrix}1 & 3 & 4 \\ 0 & 2 & 8 \\ 0 & 0 & -3\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Using the result from part (a), find the eigenvectors and corresponding eigenvalues of $\mat B$.
+        \item Hence, write down a non-singular matrix $\mat Q$ and a diagonal matrix $\mat D$ such that $\mat B = \mat Q \mat D \mat Q^{-1}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Two $n \times n$ square matrices $\mat A$ and $\mat B$ are said to commute if $\mat A \mat B = \mat B \mat A$.
+
+    \begin{enumerate}
+        \item Show that any two diagonal $n \times n$ square matrices commute.
+        \item Let $\mat A$ and $\mat B$ be two $n \times n$ square matrices with the same eigenvectors. By diagonalizing the square matrices, show that $\mat A$ and $\mat B$ commute.
+        \item The matrix $\mat A$ is given by \[\mat A = \begin{pmatrix}-5 & -5 & -2 \\ 8 & 4 & 4 \\ 16 & 10 & 7\end{pmatrix}.\] Find the eigenvalues of $\mat A$ and corresponding eigenvectors with integer entries.
+        \item Write down a matrix $\mat P$ and a diagonal matrix $\mat D$ such that $\mat P^{-1} \mat A \mat P = \mat D$.
+        \item The matrix $\mat B$ is given by \[\mat B = \begin{pmatrix}-11 & 3 & -6 \\ 8 & -2  & 4 \\ 16 & -6 & 9\end{pmatrix}.\] Determine whether $\mat B$ is diagonalizable with your matrix $\mat P$ from (d), and hence deduce whether $\mat A$ and $\mat B$ commutes.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The linear transformation $T : \RR^2 \to \RR^2$ is represented by the matrix $\mat A$, where \[\mat A = \begin{pmatrix}2 & -4 \\ -1 & -1\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \item Show that $T$ transforms any point on the line $y = x$ to a point on the same line.
+        \item Explain what happens to the points on the line $4y = x = 0$ when they are transformed by $T$.
+        \item State the two eigenvalues of $\mat A$ and state two eigenvectors corresponding to the two eigenvalues.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item Suppose that an invertible $3 \times 3$ matrix $\mat A$ has non-zero eigenvalues $\l_1$, $\l_2$, $\l_3$ with corresponding eigenvectors $\vec e_1$, $\vec e_2$, $\vec e_3$. Show that the matrix $\mat A^{-1}$ has the same eigenvectors and find the corresponding eigenvalues of $\mat A^{-1}$.
+            \item Another $3 \times 3$ matrix $\mat B$ has eigenvalues $\m_1$, $\m_2$, $\m_3$ with corresponding eigenvectors $\vec e_1$, $\vec e_2$, $\vec e_3$. Determine the eigenvalues and the corresponding eigenvectors of the matrix $\mat A^{-1} \mat B$. Hence, find the eigenvalue of the matrix $\mat C$ corresponding to the eigenvector $\vec e_1$, where \[\mat C = \mat I + \mat A^{-1} \mat B + \bp{\mat A^{-1} \mat B}^2 + \dots + \bp{\mat A^{-1} \mat B}^n,\] where $n \in \ZZ^+$ and $\m_1 \neq \l_1$.
+        \end{enumerate}
+        \item The matrix \[\mat E = \begin{pmatrix}a & b \\ -1 & 0\end{pmatrix},\] where $a, b \in \RR$, has real eigenvalues $\b_1$, $\b_2$.
+        \begin{enumerate}
+            \item If $\b_1 \neq \b_2$, show that $a^2 > 4b$.
+            \item Assume that $a \neq 0$. State the value of $b$ when $\mat E$ is singular. Find a matrix $\mat P$ and a diagonal matrix $\mat D$ such that $\mat E = \mat P \mat E \mat P^{-1}$ when $\mat E$ is singular.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A microbiologist wants to investigate the growth of three different species of microorganisms in a controlled habitat. She sets up the following model \[\cveciii{a_n}{b_n}{c_n} = \mat Q\cveciii{a_{n-1}}{b_{n-1}}{c_{n-1}}, \quad \mat Q = \begin{pmatrix}0.42 & 0.076 & 1.16 \\ 0.6 & 0.68 & -1.2 \\ -0.1 & 0.02 & 1.2\end{pmatrix},\] where $a_n$, $b_n$ and $c_n$ represents the number of microorganisms $A$, $B$ and $C$ (in billions) respectively, $n$ hours after the start of the experiment.
+
+    \begin{enumerate}
+        \item Give an observation that the microbiologist may expect to see pertaining to the population of each of the microorganisms $A$, $B$ and $C$, justifying your answer by drawing references to the entries in the matrix $\mat Q$.
+        \item Explain numerically why the model will fail in predicting the growth of the microorganisms for the initial population of $a_0 = 10$, $b_0 = 20$ and $c_0 = 30$.
+    \end{enumerate}
+
+    The microbiologist wants to predict the long-term growth of the microorganisms for the case where the scenario in (b) does not occur. She turns to a mathematician for help. The mathematician advises her to diagonalize $\mat Q$ into the form $\mat P \mat D \mat P^{-1}$, such that \[\mat P = \begin{pmatrix}5 & 1 & 2 \\ -10 & 5 & 0 \\ 1 & 0 & 1\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Find the matrices $\mat D$ and $\mat P^{-1}$ corresponding to the given matrix $\mat P$.
+        \item Show how this diagonalization process can be used to help the microbiologist predict that the population of the microorganisms stabilize in the long run. Determine the equilibrium population of the microorganisms in the long run for the case where $a_0 = 40$, $b_0 = 20$ and $c_0 = 6$.
+        \item Comment on one possible drawback of the model.
+    \end{enumerate}
+\end{problem}
