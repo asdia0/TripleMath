@@ -25,7 +25,10 @@
 \begin{problem}
     Show that there exist integers $x$ and $y$ that satisfy \[(2n + 1) x + (9n + 4)y = 1\] for every integer $n$.
 \end{problem}
-\begin{proof}
+\begin{proof}[Proof 1.]
+    Observe that \[\gcd{2n+1, 9n+4} = \gcd{2n+1, n} = \gcd{1, n} = 1.\] Thus, by B\'ezout's identity, there exist integers $x$ and $y$ such that \[(2n + 1) x + (9n + 4)y = 1\] for all integers $n$.
+\end{proof}
+\begin{proof}[Proof 2.]
     Rearranging, we get \[x = \frac{1 - (9n+4)y}{2n+1}.\] Let $y = 2k$ for some integer $k$. Then \[x = \frac{1 - 18nk - 8k}{2n+1} = \frac{k + 1}{2n+1} - 9k.\] Taking $k = 2n$, we have $x = 1 - 9k = 1-18n$ and $y = 2k = 4n$. Indeed, one can verify that \[(2n+1)x + (9n+4)y = (2n+1)(1-18n) + (9n+4)(4n) \equiv 1.\]
 \end{proof}
 
