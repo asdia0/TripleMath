@@ -227,3 +227,9 @@ headpunct={.},
 \let\@ifnextchar\new@ifnextchar
 \array{#1}}
 \makeatother
+
+\usepackage{verse}
+
+\newcommand{\attrib}[1]{%
+\nopagebreak{\raggedleft\footnotesize #1\par}}
+\renewcommand{\poemtitlefont}{\normalfont\large\itshape\centering}

@@ -31,7 +31,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A15A  | Continuous Random Variables                                   |  🟢  |   🟢    |      🟡      |    🟢     |
 | A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A16  | Sampling                                                      |  🟡  |   🟢    |      🟡      |    🟡     |
-|  A16  | Confidence Intervals                                          |  🟡  |   🟡    |      🟡      |    🟡     |
+|  A17  | Confidence Intervals                                          |  🟡  |   🟡    |      🟡      |    🟡     |
 
 ### Group B
 
@@ -55,13 +55,14 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B16  | Second Order DE                                                |  🟢  |   🟢    |      🟡      |    🟢     |
 | B17A | Linear Algebra - Matrices                                      |  🟢  |   🟢    |      🟡      |    🟢     |
 | B17B | Linear Algebra - Linear Spaces                                 |  🟡  |   🟢    |      🟡      |    🟢     |
-| B17C | Linear Algebra - Eigenvalues and Eigenspaces                   |  🟡  |   🟡    |      🟡      |    🟡     |
+| B17C | Linear Algebra - Eigenvalues and Eigenvectors                  |  🟡  |   🟢    |      🟡      |    🟡     |
 
 ### H3 Mathematics
 
 | Topic                             | Notes | Exercises |
 | --------------------------------- | :---: | :-------: |
 | Mathematical Proofs and Reasoning |  🟡  |    🟢    |
+| Analysis                          |  🟡  |    🟡    |
 
 ### Examinations
 
