@@ -60,8 +60,8 @@
 
 \mdfdefinestyle{mdbluebox}{%
 linewidth=1.5pt,
-innerbottommargin=1pt,
-innertopmargin=-2pt,
+innerbottommargin=0pt,
+innertopmargin=0pt,
 linecolor=MidnightBlue,
 nobreak=false,
 rightline=false,
@@ -71,8 +71,11 @@ bottomline=false,
 usetwoside=false,
 leftmargin=-10pt,
 innerleftmargin=8.5pt,
+nobreak=true,
 }
 \declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
 headfont=\sffamily\bfseries\color{MidnightBlue},
 mdframed={style=mdbluebox},
 headpunct={.},
@@ -87,8 +90,8 @@ headpunct={.},
 
 \mdfdefinestyle{mdpurplebox}{%
 linewidth=1.5pt,
-innerbottommargin=1pt,
-innertopmargin=-2pt,
+innerbottommargin=0pt,
+innertopmargin=0pt,
 linecolor=Mulberry!80!black,
 nobreak=false,
 rightline=false,
@@ -98,8 +101,11 @@ bottomline=false,
 usetwoside=false,
 leftmargin=-10pt,
 innerleftmargin=8.5pt,
+nobreak=true,
 }
 \declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
 headfont=\sffamily\bfseries\color{Mulberry!80!black},
 mdframed={style=mdpurplebox},
 headpunct={.},
@@ -109,8 +115,8 @@ headpunct={.},
 
 \mdfdefinestyle{mdgreenbox}{%
 linewidth=1.5pt,
-innerbottommargin=1pt,
-innertopmargin=-2pt,
+innerbottommargin=0pt,
+innertopmargin=0pt,
 linecolor=ForestGreen,
 nobreak=false,
 rightline=false,
@@ -120,8 +126,11 @@ bottomline=false,
 usetwoside=false,
 leftmargin=-10pt,
 innerleftmargin=8.5pt,
+nobreak=true,
 }
 \declaretheoremstyle[
+spaceabove=0pt, 
+spacebelow=0pt,
 headfont=\sffamily\bfseries\color{ForestGreen!70!black},
 mdframed={style=mdgreenbox},
 headpunct={.},
@@ -134,8 +143,8 @@ headpunct={.},
 
 \mdfdefinestyle{mdredbox}{%
 linewidth=1.5pt,
-innerbottommargin=1pt,
-innertopmargin=-2pt,
+innerbottommargin=0pt,
+innertopmargin=0pt,
 linecolor=RawSienna,
 nobreak=false,
 rightline=false,
@@ -147,6 +156,8 @@ leftmargin=-10pt,
 innerleftmargin=8.5pt,
 }
 \declaretheoremstyle[
+spaceabove=0pt,
+spacebelow=0pt,
 headfont=\sffamily\bfseries\color{RawSienna},
 mdframed={style=mdredbox},
 headpunct={.},
@@ -224,3 +235,6 @@ headpunct={.},
 \newcommand{\attrib}[1]{%
 \nopagebreak{\raggedleft\footnotesize #1\par}}
 \renewcommand{\poemtitlefont}{\normalfont\large\itshape\centering}
+
+\usepackage{needspace}
+\pretocmd{\section}{\needspace{10\baselineskip}}{}{}
