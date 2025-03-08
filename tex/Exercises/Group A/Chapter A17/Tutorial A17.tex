@@ -1,0 +1,144 @@
+\section{Tutorial A17}
+
+\begin{problem}
+    The weights of 4-month-old pigs are known to be normally distributed with standard deviation 4 kg. A new diet is suggested and a sample of 25 pigs given this new diet have an average weight of $30.42$ kg. Determine a 99\% confidence interval for the mean weight of 4-month-old pigs that are fed this diet.
+\end{problem}
+\begin{solution}
+    Let $X$ kg be the weight of a pig. We are given that $\ol{x} = 30.42$. Hence, $\ol{X} \sim \Normal{30.42}{4^2/25}$. Using G.C., a 99\% confidence interval for $\m$ is $(28.4, 32.5)$.
+\end{solution}
+
+\begin{problem}
+    A firm produces a type of car types called Standard. A random sample of 150 Standard types is examined, and the lifetimes (in thousands of kilometres) are summarized by \[\sum x = 2850, \quad \sum (x-\ol{x})^2 = 1931.04.\]
+
+    \begin{enumerate}
+        \item Obtain the unbiased estimates of the mean and variance of the lifetimes of Standard tyres.
+        \item Calculate a 97\% confidence interval for the mean lifetime of Standard tyres.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\ol{x} = \frac1n \sum x = \frac1{150} \bp{2850} = 19\] and \[s^2 = \frac1{n-1} \sum \bp{x - \ol{x}}^2 = \frac1{150-1} \bp{1931.04} = 12.96.\]
+    \end{ppart}
+    \begin{ppart}
+        By the Central Limit Theorem, $\ol{X} \sim \Normal{19}{12.96}$. Using G.C., a 97\% confidence interval for $\m$ is $\bp{18.4, 19.6}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The 95\% confidence interval for the mean length of life, in hours, of a particular brand of light bulb is $(1023.3, 1101.7)$. It is known that standard deviation of the length of life in the brand of light bulb is $\s$. This interval is based on results from a random sample of 36 light bulbs. Find a 99\% confidence interval for the mean length of life of this brand of light bulb, assuming the length of life is normally distributed.
+\end{problem}
+\begin{solution}
+    Note that \[\ol{x} = \frac{1107.7 - 1023.3}{2} + 1023.3 = 1065.5.\] Hence, \[\ol{x} + z_{0.975} \frac{\s}{\sqrt{n}} = 1107.7 \implies \s = \frac{\bp{1101.7 - \ol{x}} \sqrt{n}}{z_{0.975}} = 110.8.\] Thus, using G.C., a 99\% confidence interval for $\m$ is $\bp{1020, 1110}$.
+\end{solution}
+
+\begin{problem}
+    A coin is chosen at random from a population of recently produced coins. The discrete random variable $X$ is the age, in years, of the coin. The population mean of $X$ is denoted by $\m$, the population standard deviation is denoted by $\s$, and the population proportion for which $X\leq1$ is denoted by $p$. A random sample of 120 independent observations of $X$ was taken, and the results can be summarized as follows.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|c|c|}
+            \hline
+            Age ($x$) & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+            Frequency ($f$) & 14 & 26 & 24 & 23 & 17 & 19 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Calculate unbiased estimates of $\m$, $\s^2$ and $p$.
+        \item Find a symmetric 95\% confidence interval for $\m$.
+        \item It is desired to find a symmetric 95\% confidence interval for $\m$, of width $0.2$, using a random sample of $n$ coins. Estimate the smallest possible value for $n$.
+        \item Find a 95\% confidence interval for $p$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., we have $\ol{x} = 2.5$, $s^2 = 2.6387$ and $p_s = (14+26)/120 = 1/3$.
+    \end{ppart}
+    \begin{ppart}
+        By the Central Limit Theorem, $\ol{X} \sim \Normal{2.5}{2.6387/n}$ approximately. Taking $n = 120$, using G.C., a 95\% confidence interval for $\m$ is $\bp{2.21, 2.79}$.
+    \end{ppart}
+    \begin{ppart}
+        We require \[z_{0.975} \frac{s}{\sqrt{n}} \leq \frac{0.2}{2} = 0.1 \implies n \geq \bp{\frac{z_{0.975} s}{0.1}}^2 = 1013.6.\] Thus, the least $n$ is 1014.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., a 95\% confidence interval for $p$ is $\bp{0.249, 0.418}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item $\ol{X}$ is the mean of a large random sample of size $n_1$ from a population with mean $\m_1$ and variance $\s_1^2$. $\ol{Y}$ is the mean of a large random sample of size $n_2$ from a population with mean $\m_2$ and variance $\s_2^2$. State the sampling distribution of $\bp{\ol{Y}-\ol{X}}$, giving its mean and variance.
+        \item Buildrite and Constructall are two building firms. The amount, $X$ thousand dollars, paid to Buildrite by each 100 randomly chosen customers is summarized by $\sum x = 160$, $\sum x^2 = 265$.
+        \begin{enumerate}
+            \item Find an approximate $99.8$\% confidence interval for the mean amount paid per customer to Buildrite.
+        \end{enumerate}
+        The amount paid to Constructall by each customer was $Y$ thousand dollars. Based on a random sample of 200 customers, unbiased estimates of the mean and variance of $Y$ were $1.8$ and $0.3216$ respectively.
+        \begin{enumerate}
+            \setcounter{enumii}{1}
+            \item Find, to the nearest dollar, an approximate 90\% confidence interval for the value by which the mean amount paid per customer to Constructall exceeds that paid to Buildrite.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        By the Central Limit Theorem, $\ol{X} \sim \Normal{\m_1}{\s_1^2/n_1}$ and $\ol{Y} \sim \Normal{\m_2}{\s_2^2/n_2}$, it follows that $\ol{Y} - \ol{X} \sim \Normal{\m_2 - \m_1}{\s_1^2/n_1 + \s_2^2/n_2}$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            We have \[\ol{x} = \frac1n \sum x = \frac1{100} (160) = 1.6\] and \[\s_x^2 = \frac1{n-1} \bs{\sum x^2 - \frac1n \bp{\sum x}^2} = \frac1{100-1} \bs{265 - \frac1{100} \bp{160}^2} = 0.0909 \tosf{3}.\] Thus, by the Central Limit Theorem, $\ol{X} \sim \Normal{1.6}{0.0909}$ approximately. Hence, using G.C., a $99.8$\% confidence interval for $\m_x$ is $\bp{1.507, 1.693}$. In dollars, this is $\bp{1507, 1693}$.
+        \end{psubpart}
+        \begin{psubpart}
+            By the Central Limit Theorem, $\ol{Y} \sim \Normal{1.8}{0.3216/200}$. Hence, \[\ol{Y} - \ol{X} \sim \Normal{1.8-1.6}{\frac{0.0909}{100} + \frac{0.3216}{200}} = \Normal{0.2}{0.002517}.\] Using G.C., a 90\% confidence interval for $\m_y - \m_x$ is $\bp{0.117 - 0.283}$. In dollars, this is $\bp{117, 283}$.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The speed at which a baseball is thrown, $x$ km/h, is measured at the instant that it leaves the pitcher's hand. To join a particular baseball club, a pitcher has to be able to throw balls at 140 km/h. The results for 10 randomly chosen through by a young pitcher on a cool day are summarized by \[\sum \bp{x - 128} = 7.9, \quad \sum \bp{x - 128}^2 = 338.4.\] Assuming that these results are observations from a normal distribution, obtain unbiased estimates of the mean and variance of this distribution, and obtain a symmetric 99.5\% confidence interval for the mean, and explain in context what it means. Can the young pitcher throw balls at 140 km/h on average?
+\end{problem}
+\begin{solution}
+    Note that \[\sum \bp{x - 128} = 7.9 \implies \sum x = 1287.9\] and \[\sum \bp{x - 128}^2 = \sum \bp{x^2 - 256 x + 128^2} = 338.4 \implies \sum x^2 = 166200.8.\] Thus, \[\ol{x} = \frac1n \sum x = 128.79 \quad \tand \quad s^2 = \frac1{n-1} \bs{\sum x^2 - \frac1n \bp{\sum x}^2} = 36.907.\] Since $X$ follows a normal distribution and the sample size is small, \[\frac{\ol{X} - \m}{S / \sqrt{n}} \sim \StudentT{n-1}.\] Using G.C., a symmetric 99.5\% confidence interval for $\m$ is $\bp{122, 136}$. This means that we are 99.5\% confident that the interval 122 -- 136 km/h contains the average speed of a baseball thrown by the young pitcher. Hence, on average, the young pitcher cannot throw balls at 140 km/h.
+\end{solution}
+
+\begin{problem}
+    Ten students independently performed an experiment to estimate the value of $\pi$. Their results were: \[3.12, \, 3.16, \, 2.94, \, 3.33, \, 3.00, \, 3.11, \, 3.50, \, 2.81, \, 3.02, \, 3.10.\]
+    
+    \begin{enumerate}
+        \item Calculate the unbiased estimates of the population mean and variance.
+        \item Stating any necessary assumption, calculate a 95\% confidence interval for $\pi$ based on these data, giving your answer to two decimal places.
+        \item Estimate the minimum number of results that would be needed if it is required that the width of the resulting 95\% confidence interval be at most 0.02.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., $\ol{x} = 3.109$ and $s^2 = 0.038032$.
+    \end{ppart}
+    \begin{ppart}
+        Assuming that $X$ follows a normal distribution, we have \[\frac{\ol{X} - \m}{S / \sqrt{n}} \sim \StudentT{n-1}.\] Using G.C., a 95\% confidence interval for $\pi$ is $\bp{2.97, 3.25}$.
+    \end{ppart}
+    \begin{ppart}
+        We require \[t_{0.975} \frac{s}{\sqrt{n}} \leq \frac{0.02}{2} = 0.01 \implies n \geq \bp{\frac{t_{0.975} s}{0.01}}^2 = 1946.2.\] Thus, the least $n$ needed is $1947$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item In a market research survey 25 people out of a random sample of 100 from a certain area said that they used a particular brand of soap. Find a 97\% confidence interval for the proportion of people in the area who use this brand of soap.
+        \item A research lab published an article about this brand of soap, reporting it contains ingredients that is beneficial to one's health. A new survey was conducted, and a 97\% confidence interval was found to be $(0.450, 0.620)$. Comment, with reference to the confidence interval computed in (a), whether the proportion of people in the area who use this brand of soap has changed after the research article was published.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have $p_s = 25/100 = 1/4$. Using G.C., a 97\% confidence interval for $p$ is $\bp{0.156, 0.344}$.
+    \end{ppart}
+    \begin{ppart}
+        Since $\bp{0.156, 0.344} \cap \bp{0.450, 0.620} = \varnothing$, there is sufficient evidence at a 97\% confidence level that the mean has changed.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Based on previous records, it is known that $p$, the proportion of workers supporting the Thunder party, is about 40\% in the last election. For this coming election, a market research organization intends to interview a random sample of $n$ voters, and wishes to ensure that the probability is about $0.8$ that its sample estimate of the proportion of Thunder voters lies within two percentage points of the sample percentage. Assuming that all voters interviewed do reveal which party they support, what is the least sample size the organization should take?
+\end{problem}
+\begin{solution}
+    For large $n$, by the Central Limit Theorem, $P_s \sim \Normal{p_s}{p_s (1-p_s) / n}$. Given $p_s = 0.40$, for an 80\% confidence interval with error less than 0.02, we require \[z_{0.9} \sqrt{\frac{p_s (1-p_s)}{n}} \leq 0.02 \implies n \geq \bp{\frac{z_{0.9} \sqrt{p_s (1 - p_s)}}{0.02}}^2 = 985.4.\] Hence, the least $n$ needed is 986.
+\end{solution}
