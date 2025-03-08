@@ -10,45 +10,13 @@ To define a function, we must state its rule and specify the domain. There are t
 
 Note that two functions are equal if and only if they have the same rule and domain. For instance, the function $g : x \mapsto x^2 + 1$, $x \in \ZZ$ is not equal to $f$ (as defined above) since their domains are not equal ($\RR \neq \ZZ$).
 
-Note that $f$ is not the same as $f(x)$! $f$ is a \textit{map}, while $f(x)$ is the \textit{value} that $f$ maps $x$ to.
+Note that $f$ is not the same as $f(x)$; $f$ is a \textit{map}, while $f(x)$ is the \textit{value} that $f$ maps $x$ to.
 
 \section{Graph of a Function}
 
 \begin{definition}
     The \vocab{graph} of $f(x)$ is the collection of all points $(x, y)$ in the $xy$-plane such that the values $x$ and $y$ satisfy $y = f(x)$.
 \end{definition}
-
-\begin{example}[Graph of a Function]
-    \phantom{.}
-    \begin{figure}[H]\tikzsetnextfilename{360}
-        \centering
-        \begin{tikzpicture}[trim axis left, trim axis right]
-            \begin{axis}[
-                domain = -2.75:2.5,
-                ymax = 100,
-                ymin = -50,
-                samples = 101,
-                axis y line=middle,
-                axis x line=middle,
-                xtick = \empty,
-                ytick = \empty,
-                xlabel = {$x$},
-                ylabel = {$y$},
-                legend cell align={left},
-                legend pos=outer north east,
-                after end axis/.code={
-                    \path (axis cs:0,0) 
-                        node [anchor=north east] {$O$};
-                    }
-                ]
-                \addplot[plotRed] {-3*x^3 + 7*x^2 + 10*x + 30 + x^5};
-    
-                \addlegendentry{$y = f(x)$};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{An example of a graph of a function.}
-    \end{figure}
-\end{example}
 
 \begin{proposition}[Vertical Line Test]
     A relation $f$ is a function if and only if every vertical line $x = k$, $k \in \dom f$ cuts the graph of $y = f(x)$ at one and only one point.

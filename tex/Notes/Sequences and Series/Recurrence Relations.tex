@@ -41,6 +41,7 @@ There are two main ways to solve the above recurrence relation: by converting th
     Consider the recurrence relation \[u_1 = 0, \quad u_n = \frac12 u_{n-1} + 10, \quad n > 1.\] Observe that the associated homogeneous recurrence relation is $u_n = \frac12 u_{n-1}$. Hence, the complementary solution is \[u_n^{(c)} = C\bp{\frac12}^n\] for some arbitrary constant $C$. Let the particular solution be $u_n^{(p)} = k$. Then \[k = \frac12 k + 10 \implies k = 20.\] Hence, the general solution is \[u_n = u_n^{(c)} + u_n^{(p)} = C\bp{\frac12}^n + 20.\] Using the initial condition $u_1 = 0$, we have \[0 = C\bp{\frac12}^1 + 20 \implies C = -40.\] Thus, \[u_n =-40\bp{\frac12}^n + 20.\]
 \end{example}
 
+\clearpage
 \section{Second Order Linear Homogeneous Recurrence Relation with Constant Coefficients}
 
 \begin{definition}
