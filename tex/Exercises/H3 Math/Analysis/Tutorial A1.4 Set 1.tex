@@ -1,0 +1,24 @@
+\section{Tutorial A1.4 Set 1}
+
+\begin{problem}
+    The notation $(1 + D)^{[n]}(y)$ is used to denote \[y + \binom{n}{1} \der{y}{x} + \binom{n}{2} \der[2]{y}{x} + \dots + \der[n]{y}{x}.\] Show that \[(1 + D)^{[1]} \bs{(1 + D)^{[1]} (y)} = (1 + D)^{[2]} (y).\] Use an integrating factor to solve the differential equation \[(1 + D)^{[1]}(y) = x.\] Use your solution of this equation to solve the differential equation \[(1 + D)^{[2]}(y) = x.\]
+\end{problem}
+\begin{solution}
+    \begin{gather*}
+        (1 + D)^{[1]} \bs{(1 + D)^{[1]} (y)} = (1 + D)^{[1]} \bp{y + \der{y}{x}} = \bp{y + \der{y}{x}} + \bp{\der{y}{x} + \der[2]{y}{x}}\\
+        = y + \binom{2}{1} \der{y}{x} + \der[2]{y}{x} = (1 + D)^{[2]} (y).
+    \end{gather*}
+
+    The differential equation $(1 + D)^{[1]}(y) = x$ can be expanded as \[\der{y}{x} + y = x.\] The integrating factor is $\e^{\int \d x} = \e^x$. Multiplying through by $\e^x$, we get \[\der{}{x} \bp{\e^x y} = \e^x \der{y}{x} + \e^x y = x \e^x.\] Hence, \[\e^x y = \int x \e^x \d x = \bp{x-1} \e^x + C.\] Thus, the general solution is \[y = x - 1 + C\e^{-x}.\]
+
+    We have \[(1 + D)^{[2]}(y) = (1 + D)^{[1]} \bs{(1 + D)^{[1]} (y)} = x.\] Using the above solution, we see that \[(1 + D)^{[1]}(y) = x - 1 + C\e^{-x}.\] Once again, the integrating factor is $\e^x$. Multiplying it through yields \[\der{}{x} \bp{\e^x y} = x - 1 + C\e^{-x}.\] Thus, \[\e^x y = \int \bs{(x-1)\e^x + C} \d x = (x-2)\e^x + Cx + D.\] Hence, the general solution is \[y = x-2 + \bp{Cx + D} \e^{-x}.\]
+\end{solution}
+
+\clearpage
+\begin{problem}
+    \begin{enumerate}
+        \item Use the substitution $y = v/t$ to reduce the differential equation \[2t^2 \der[2]{y}{t} + t\der{y}{t} - 3y = 0\] for $t > 0$ to \[2t\der[2]{v}{t} - 3\der{v}{t} = 0.\]
+        \item Using a suitable substitution, show that the differential equation \[2t\der[2]{v}{t} - 3\der{v}{t} = 0\] can be reduced to \[2t \der{w}{t} - 3w = 0.\]
+        \item Hence, find a general solution to the differential equation \[2t^2 \der[2]{y}{t} + t\der{y}{t} - 3y = 0.\]
+    \end{enumerate}
+\end{problem}

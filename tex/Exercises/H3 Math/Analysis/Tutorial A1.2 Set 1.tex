@@ -1,0 +1,99 @@
+\section{Tutorial A1.2 Set 1}
+
+\begin{problem}
+    Let $f(x) = x^\e/\e^x$, where $x > 0$. Find the maximum value of $f(x)$ and hence prove that $\e^\pi > \pi^\e$.
+\end{problem}
+\begin{solution}
+    Note that $f'(x) = x^\e \e^{-x} \bp{\e/x - 1}$. For stationary points, $f'(x) = 0$. Since $x > 0$, this only occurs when $\e/x - 1$, whence $x = \e$. By the first derivative test, we see that this is a maximum. Thus, the maximum value of $f(x)$ is $f(\e) = 1$.
+
+    Note that $f(x)$ is decreasing for $x > \e$. Since $\pi > \e$, it follows that \[\frac{\pi^\e}{\e^\pi} = f(\pi) < f(\e) = 1 \implies \pi^\e < \e^\pi.\]
+\end{solution}
+
+\begin{problem}
+    By applying Rolle's Theorem on the function $f(x) = \e^{-x} - \sin x$, show that there is at least one real root of $\e^x \cos x = -1$ between any two real roots of $\e^x \sin x = 1$.
+\end{problem}
+\begin{proof}
+    Let $\a$ be a root of $\e^x \sin x = 1$. Then \[\e^{\a} \sin \a = 1 \implies 1 - \e^{\a} \sin \a = 0 \implies \e^{-\a} - \sin \a = 0.\] Hence, $\a$ is also a root of $f(x) = 0$.
+
+    Let $\a_1$ and $\a_2$ be two distinct roots of $\e^x \sin x = 1$. Then $\a_1$ and $\a_2$ are also roots of $f(x) = 0$, i.e. $f(\a_1) = f(\a_2) = 0$. By Rolle's Theorem, it follows that there exists some $\b \in (\a_1, \a_2)$ such that \[f'(\b) = -\e^{-\b} - \cos \b = 0 \implies \cos \b = -\e^{-b} \implies \e^{-b} \cos \b = -1.\] Hence, $\b$ is a root of $\e^x \cos x = -1$. Thus, there is at least one real root of $\e^x \cos x = -1$ (given by $\b$) between any two real roots of $\e^x \sin x = 1$ (given by $\a_1$ and $\a_2$).
+\end{proof}
+
+\begin{problem}
+    By using the Theorem of the Mean, show that \[\frac\pi6 + \frac{\sqrt3}{15} < \arcsin 0.6 = \frac\pi6 + \frac18.\]
+\end{problem}
+\begin{proof}
+    Let $f(x) = \arcsin x$. By the Theorem of the Mean, there exists some $c \in (0.5, 0.6)$ such that \[f'(c) = \frac{f(0.6) - f(0.5)}{0.6 - 0.5} \implies \frac1{\sqrt{1 - c^2}} = \frac{\arcsin 0.6 - \pi/6}{0.1}.\] Observe that $1/\sqrt{1 - x^2}$ is increasing on $(0.5, 0.6)$. Hence, \[\frac{2\sqrt3}3 = \frac1{\sqrt{1 - 0.5^2}} < \frac1{\sqrt{1 - c^2}} < \frac1{\sqrt{1 - 0.6^2}} = \frac54.\] Thus, \[\frac{2\sqrt3}3 < \frac{\arcsin 0.6 - \pi/6}{0.1} < \frac54 \implies \frac\pi6 + \frac{\sqrt3}{15} < \arcsin 0.6 = \frac\pi6 + \frac18.\]
+\end{proof}
+
+\begin{problem}
+    Show that the line with gradient $m$ through the point $(t, 2t)$ is a tangent to the curve $xy = k^2$, where $k \neq 0$, if $t^2 (2-m)^2 + 4mk^2 = 0$. Hence, or otherwise, investigate how the number of tangents from the point $(t, 2t)$ to the curve $xy = k^2$ varies as $t$ varies.
+\end{problem}
+\begin{solution}
+    Note that $y = k^2/x$. Hence, $y' = -k^2/x^2$. The tangent to $y = k^2/x$ at $(x_0, k^2/x_0)$ is thus given by \[y - \frac{k^2}{x_0} = -\frac{k^2}{x_0^2} \bp{x - x_0} \implies y = -\frac{k^2}{x_0^2} x + \frac{2k^2}{x_0}.\] Meanwhile, the line $l$ with gradient $m$ passing through $(t, 2t)$ has equation $y = mx + (2-m)t$. Thus, for $l$ to be tangent to $y = k^2/x$, we require \[-\frac{k^2}{x_0^2} = m \quad \tand \quad \frac{2k^2}{x_0} = (2-m)t.\] Eliminating $x_0$, we see that \[\frac{(2-m)^2 t^2}{m} = \frac{4k^4 / x_0^2}{-k^2 / x_0^2} = -4k^2 \implies t^2 (2-m)^2 + 4mk^2 = 0.\]
+
+    Expanding this quadratic in $m$, we have \[t^2 m^2 + \bp{4k^2 - 4t^2} m + 4t^2 = 0. \tag{1}\] Notice that the number of tangents from the point $(t, 2t)$ to the curve $xy = k^2$ is exactly the number of possible $m$'s, which is determined by the discriminant of the quadratic in (1). One can easily calculate this discriminant as \[\D = \bp{4k^2 - 4t^2} = 4\bp{t^2}\bp{4t^2} = 16k^2 \bp{k^2 - 2t^2}.\]
+
+    We now examine the number of tangents case by case. Without loss of generality, suppose $k > 0$.
+
+    \case{1} Suppose there are two tangents. Then $D > 0 \implies k^2 - 2t^2 > 0$. Thus, $-\frac1{\sqrt 2} k < t < \frac1{\sqrt2} k$.
+
+    \case{2} Suppose there is one tangent. Then $D = 0 \implies k^2 - 2t^2 = 0$. Thus, $t = \pm \frac1{\sqrt2} k$.
+
+    \case{3} Suppose there are no tangents. Then $D < 0 \implies k^2 - 2t^2 < 0$. Thus, $t < -\frac1{\sqrt2} k$ or $t > \frac1{\sqrt2} k$.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Let $f(t) = \e^t /t$. Show that the minimum value of $f(t)$ occurs when $t = 1$.
+        \item With the aid of a diagram, or otherwise, prove that if $\e^x / x = \e^y / y$, where $y > x > 0$, then $xy < 1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $f'(t) = (t-1) \e^t / t^2$. For stationary points, $f'(t) = 0$, which can only occur when $t = 1$. By the first derivative test, we see that this is a minimum. Hence, the minimum value of $f(t)$ is $f(1) = \e$.
+    \end{ppart}
+    \begin{ppart}
+        Taking logarithms on both sides, we get \[x - \ln x = y - \ln y \implies x - y = \ln \frac{x}{y}.\] Let $u = x/y$. Since $0 < x < y$, it follows that $0 < u < 1$. Substituting this into our equation yields \[uy - y = \ln u \implies y = \frac{\ln u}{u-1} \implies x = \frac{u \ln u}{u-1}.\] Thus, \[xy = \frac{u \ln^2 u}{(u-1)^2}.\] Let the RHS be $g(u)$.
+
+        \begin{figure}[H]\tikzsetnextfilename{438}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:1,
+                ymin = 0,
+                ymax = 1.2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {1},
+                ytick = {1},
+                xlabel = {$u$},
+                ylabel = {$g(u)$},
+                legend cell align={left},
+                axis equal,
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                    node [anchor=north] {$O$};
+                    }
+                ]
+                \addplot[black, very thick] {x * (ln(x))^2 / (x-1)^2};
+                \draw[dotted] (0, 1) -- (1, 1);
+            \end{axis}
+        \end{tikzpicture}
+        \end{figure}
+
+        From the above graph, it is clear that the maximum value of $g(u)$ is 1, whence $xy < 1$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    By differentiating the series $(1 + x)^n$ with respect to $x$, where $n$ is an integer greater than 1, show that \[\sum_{r = 1}^n r \binom{n}{r} = n 2^{n-1}.\] Find a similar expression for the sum \[\sum_{r = 1}^n r(r-1) \binom{n}{r}.\] Hence, or otherwise, show that \[\sum_{r = 1}^n r^2 \binom{n}{r} = n(n+1) 2^{n-2}.\]
+\end{problem}
+\begin{solution}
+    Note that \[(1 + x)^n = \sum_{r = 1}^n \binom{n}{r} x^r.\] Differentiating with respect to $x$, we have \[n (1 + x)^{n-1} = \sum_{r = 1}^n r \binom{n}{r} x^{r-1}. \tag{1}\] Taking $x = 1$, we see that \[\sum_{r = 1}^n r \binom{n}{r} = n 2^{n-1}.\] Differentiating (1) once more, we have \[n(n-1) (1 + x)^{n-2} = \sum_{r = 1}^n r(r-1) \binom{n}{r} x^{r-2}.\] Taking $x = 1$, \[\sum_{r = 1}^n r(r-1) \binom{n}{r} = n(n-1) 2^{n-2}.\] Thus,
+    \begin{gather*}
+        \sum_{r = 1}^n r^2 \binom{n}{r} = \sum_{r = 1}^n \bs{r(r-1) + r} \binom{n}{r} = n 2^{n-1} = n(n-1) 2^{n-2} + n 2^{n-1}\\
+        = n(n-1)2^{n-2} + n(2)2^{n-2} = n(n+1) 2^{n-2}.
+    \end{gather*}
+\end{solution}

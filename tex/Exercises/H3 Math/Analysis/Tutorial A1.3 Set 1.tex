@@ -1,0 +1,49 @@
+\section{Tutorial A1.3 Set 1}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Let \[I = \int_0^a \frac{f(x)}{f(x) + f(a-x)} \d x.\] Use a substitution to show that \[I = \int_0^a \frac{f(a - x)}{f(x) + f(a-x)} \d x\] and hence evaluate $I$ in terms of $a$. Use this result to evaluate the integrals \[\int_0^1 \frac{\ln{x+1}}{\ln{2 + x - x^2}} \d x \quad \tand \quad \int_0^{\pi/2} \frac{\sin x}{\sin{x + \pi/4}} \d x.\]
+        \item Using a suitable substitution, evaluate \[\int_{1/2}^{2} \frac{\sin x}{x \bp{\sin x + \sin 1/x}} \d x.\]
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that \[\der{}{x} \bp{\frac1{\sqrt2} \arctan \frac{\tan x}{\sqrt2}} = \frac1{1 + \cos^2 x}.\]
+        \item Use (a) to show that \[\int_0^\pi \frac{x}{1 + \cos^2 x} \d x = \frac{\pi^2}{2\sqrt2}.\]
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    (In this question all indices $n$ are integers)
+
+    Let \[I_n = \int_0^{\pi/2} \sin^n x \d x, \quad n \geq 0.\]
+
+    \begin{enumerate}
+        \item Show that \[I_n = \frac{n-1}{n} I_{n-2}, \quad n \geq 2.\]
+        \item Use (a) to show that \[I_{2n+1} = \frac{2 \cdot 4 \cdot 6 \cdots \bp{2n}}{3 \cdot 5 \cdot 7 \cdots \bp{2n+1}}, \quad n \geq 1.\]
+        \item Use (a) to show that \[I_{2n} = \frac{1 \cdot 3 \cdot 5 \cdots \bp{2n-1}}{2 \cdot 4 \cdot 6 \cdots \bp{2n}} \frac\pi2, \quad n \geq 1.\]
+        \item Use (a) or (c) to show that \[\frac{I_{2n+2}}{I_{2n}} = \frac{2n+1}{2n+2}, \quad n \geq 1.\]
+        \item By considering the integral and comparing $\sin^{k+1} x$ with $\sin^k x$, show that $I_{2n+2} \leq I_{2n+1} \leq I_{2n}$, $n \geq 1.$
+        \item Use (d) and (e) to show that \[\frac{2n+1}{2n+2} \leq \frac{I_{2n+1}}{I_{2n}}, \quad n \geq 1.\] Hence, deduce that \[\lim_{n \to \infty} \frac{I_{2n+1}}{I_{2n}} = 1.\]
+        \item Use (b), (c) and (f) to show that \[\frac21 \cdot \frac23 \cdot \frac43 \cdot \frac45 \cdot \frac65 \cdot \frac67 \dots = \frac\pi2.\]
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    It is given that the following integrals converge. Evaluate the following integrals.
+    \begin{tasks}
+        \task $\displaystyle\int_1^\infty \frac{3x-1}{4x^3 - x^2} \d x$.
+        \task $\displaystyle\int_0^\infty x^2 \e^{-x} \d x$.
+        \task $\displaystyle\int_{-\infty}^{\infty} \frac1{4x^2 + 9} \d x$.
+    \end{tasks}
+\end{problem}
+
+\begin{problem}
+    Determine which of the following integrals converge.
+
+    \begin{tasks}(2)
+        \task $\displaystyle\int_0^\infty \frac{\d x}{\sqrt{x^2 + 1}}$,
+        \task $\displaystyle\int_{-\infty}^\infty \frac{2 \d x}{\sqrt{\e^x + \e^{-x}}}$.
+    \end{tasks}
+\end{problem}
