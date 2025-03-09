@@ -71,13 +71,15 @@ However, if the population does not follow a normal distribution, then the sampl
     If $X$ does not follow a normal distribution, with $\E{X} = \m$ and $\Var{X} = \s^2$, and $n$ is large (typically $n \geq 30$), then \[\ol{X} \sim \Normal{\m}{\frac{\s^2}{n}} \text{ approximately}.\]
 \end{theorem}
 
+Here, we are assuming that the samples $X_1, X_2, \dots, X_n$ are independent and identically distributed. Further, the variance $\s^2$ must be finite.
+
 Note that the condition $n \geq 30$ is only a guideline. Depending on the context, the distribution of the sample mean can still be approximated using a normal distribution with a smaller sample size.
 
 \section{Estimation}
 
 In many cases, we are concerned with two population parameters, namely, the population mean ($\m$) and population variance ($\s^2$). So far, we have studied the distribution of the sample mean assuming complete knowledge of these parameters. In most situations, however, it is difficult to compute these parameters. Hence, we will often need to use sample statistics to help us estimate the population parameters.
 
-\subsection{Estimator and Estimates}
+\subsection{Estimators and Estimates}
 
 \begin{definition}
     An \vocab{estimator} is a method for estimating the quantity of interest. An \vocab{estimate} is a numerical estimate of the quantity of interest that results from the use of a particular estimator.
