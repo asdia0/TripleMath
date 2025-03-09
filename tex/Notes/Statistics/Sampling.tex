@@ -1,0 +1,134 @@
+\chapter{Sampling}
+
+\section{Random Sampling}
+
+In \SS\ref{chap:Intro-To-Stats}, we saw how we cannot always have access to an entire population for study. Hence, we often turn to a sample to make inferences about the characteristics of the population.
+
+A central notion about samples is the idea of them being representative of the population. We use the phrase \vocab{random sample} to denote such samples. We can think of random samples as a ``fair'' or ``unbiased'' sample; every member of the population has an equal, non-zero probabilities of getting sampled. On the other hand, a \vocab{non-random sample} is biased and are not representative of the sample; every member of the population does not have an equal chance of getting sampled.
+
+\subsection{Simple Random Sampling}
+
+\vocab{Simple random sampling} is a method of selecting $n$ members from a population of size $N$ such that each possible sample of that size has the same chance of being chosen.
+
+One procedure for obtaining a simple random sample is the following:
+
+\begin{recipe}[Simple Random Sampling]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \begin{enumerate}
+        \item Make a list of all $N$ members of the population. This is called the \vocab{sampling frame}.
+        \item Assign each member of the population a different number.
+        \item For each member of the population, place a corresponding numbered ball in a bag.
+        \item Draw $n$ balls from the bag, without replacement. The balls should be chosen at random.
+        \item The numbers on the ball identify the chosen members of the population.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
+
+\section{Sample Mean}
+
+We now look at the first objective of obtaining a random sample: calculating probabilities relating to the sample mean.
+
+\begin{definition}
+    If $X_1, X_2, \dots, X_n$ is a random sample of $n$ independent observations from a population, then the sample mean $\ol{X}$ is defined as \[\ol{X} = \frac{X_1 + X_2 + \dots + X_n}{n}.\]
+\end{definition}
+
+Note that the sample mean $\ol{X}$ is also a random variable since it varies depending on the samples taken.
+
+\begin{proposition}
+    Let the population mean be $\m$ and the population variance be $\s^2$. Then the sample mean $\ol{X}$ has expectation $\m$ and variance $\s^2/n$.
+\end{proposition}
+\begin{proof}
+    We have
+    \begin{gather*}
+        \E{\ol{X}} = \E{\frac{X_1 + X_2 + \dots + X_n}{n}} = \frac{\E{X_1 + X_2 + \dots + X_n}}n\\
+        = \frac{\E{X_1} + \E{X_2} + \dots + \E{X_n}}n = \frac{n \E{X}}n = \E{X} = \m
+    \end{gather*}
+    and
+    \begin{gather*}
+        \Var{\ol{X}} = \Var{\frac{X_1 + X_2 + \dots + X_n}{n}} = \frac1{n^2} \Var{X_1 + X_2 + \dots + X_n} \\
+        = \frac{\Var{X_1} + \Var{X_2} + \dots + \Var{X_n}}{n^2} = \frac{n \Var{X}}{n^2} = \frac{\s^2}{n}.
+    \end{gather*}
+\end{proof}
+
+\begin{definition}
+    The standard deviation of $\ol{X}$, $\s/\sqrt{n}$, is known as the \vocab{standard error} of the mean.
+\end{definition}
+
+Observe that as $n$ increases, the standard error of the sample mean decreases. This aligns with our intuition: as $n$ increases, we are effectively sampling a larger proportion of the population, so our statistic (the sample mean) should tend towards the parameter (the population mean).
+
+\subsection{Distribution of Sample Mean}
+
+If sampling is done from a normal population, then the sample mean will also follow a normal distribution.
+
+\begin{proposition}
+    If $X \sim \Normal{\m}{\s^2}$, then \[\ol{X} \sim \Normal{\m}{\frac{\s^2}{n}} \text{ exactly}.\]
+\end{proposition}
+
+However, if the population does not follow a normal distribution, then the sample mean also does not follow a normal distribution. However, if the sample size is large, then the distribution of the sample mean will be approximately normal. This result is known as the Central Limit Theorem.
+
+\begin{theorem}[Central Limit Theorem]
+    If $X$ does not follow a normal distribution, with $\E{X} = \m$ and $\Var{X} = \s^2$, and $n$ is large (typically $n \geq 30$), then \[\ol{X} \sim \Normal{\m}{\frac{\s^2}{n}} \text{ approximately}.\]
+\end{theorem}
+
+Note that the condition $n \geq 30$ is only a guideline. Depending on the context, the distribution of the sample mean can still be approximated using a normal distribution with a smaller sample size.
+
+\section{Estimation}
+
+In many cases, we are concerned with two population parameters, namely, the population mean ($\m$) and population variance ($\s^2$). So far, we have studied the distribution of the sample mean assuming complete knowledge of these parameters. In most situations, however, it is difficult to compute these parameters. Hence, we will often need to use sample statistics to help us estimate the population parameters.
+
+\subsection{Estimator and Estimates}
+
+\begin{definition}
+    An \vocab{estimator} is a method for estimating the quantity of interest. An \vocab{estimate} is a numerical estimate of the quantity of interest that results from the use of a particular estimator.
+\end{definition}
+
+\begin{example}
+    Suppose our quantity of interest is the mean height $\m$ of all male adults in Singapore. Suppose we take a random sample of 100 adult mean in Singapore and measure their heights.
+    
+    Using this data, we can compute the sample average, $\ol{x}$ of the heights. That is, the sample mean random variable, $\ol{X} = \frac1{100} \bp{X_1 + \dots + X_{100}}$, is an estimator that provides an estimate of our quantity of interest. For instance, if $\ol{x} = 170$ cm, then 170 cm is the estimate of $\m$ provided by the ``sample average'' estimator.
+
+    Another strategy could be to use the ``sample median'' of the heights as an estimator. Suppose the sample median is 169 cm. Then 169 cm is the estimate of $\m$ provided by the ``sample median'' estimator.
+\end{example}
+
+\subsection{Unbiased Estimators}
+
+As illustrated by the above example, there are many estimators we can use to estimate $\m$. However, we would want to choose the estimator that performs the best. Logically, a good estimator should be \emph{unbiased}. That is, the expected value of the estimator should be equal to the true value of the quantity it estimates. 
+
+\begin{definition}
+    If a population has an unknown parameter $\t$ and $T$ is a statistic derived from a random sample taken from the population, then $T$ is an \vocab{unbiased estimator} for $\t$ if and only if $\E{T} = \t$.
+\end{definition}
+
+\begin{proposition}
+    The sample mean $\ol{X} = \frac1n \sum x$ is an unbiased estimator for the population mean $\m$.
+\end{proposition}
+\begin{proof}
+    Previously, we showed that $\E{\ol{X}} = \m$. Hence, by definition, $\ol{X}$ is an unbiased estimator for $\m$.
+\end{proof}
+
+\begin{proposition}
+    Let $\ol{x}$ be the sample mean. Then \[s^2 = \frac{1}{n-1} \sum \bp{x - \ol{x}}^2 = \frac1{n-1} \bs{\sum x^2 - \frac1n \bp{\sum x}^2}\] is an unbiased estimator for the population variance $\s^2$.
+\end{proposition}
+\begin{proof}
+    We first show that the two forms of $s^2$ are equivalent:
+    \begin{gather*}
+        \sum \bp{x - \ol{x}}^2 = \sum \bp{x^2 - 2x\ol{x} + \ol{x}^2} = \sum x^2 - 2\ol{x} \sum x + n \ol{x}^2\\
+        = \sum x^2 - 2\bp{\frac1n \sum x}\bp{\sum x} + n \bp{\frac1{n} \sum x}^2 = \sum x^2 - \frac1n \bp{\sum x}^2.
+    \end{gather*}
+    Dividing throughout by $n-1$ gives us the desired equality. In fact, we can go one step further and write $s^2$ as \[s^2 = \frac1{n-1} \bp{\sum x^2 - n \ol{x}^2}.\] This is the form of $\s^2$ we will work with.
+
+    Before we process, we note that \[\Var{X} = \E{X^2} - \E{X}^2 \implies \E{X^2} = \m^2 + \s^2.\] Similarly, \[\Var{\ol{X}} = \E{\ol{X}^2} - \E{\ol{X}}^2 \implies \E{\ol{X}^2} = \m^2 + \frac{\s^2}{n}.\] Now consider $\E{S^2}$:
+    \begin{gather*}
+        \E{S^2} = \E{\frac1{n-1} \bp{\sum X^2 - n \ol{X}^2}} = \frac1{n-1} \bp{\sum \E{X^2} - n \E{\ol{X}^2}}\\
+        = \frac1{n-1} \bs{n \bp{\m^2 + \s^2} - n \bp{\m^2 + \frac{\s^2}{n}}} = \s^2.
+    \end{gather*}
+    Hence, $s^2$ is an unbiased estimator for the population variance $\s^2$.
+\end{proof}
+
+Note that the presence of $n-1$ in the denominator reflects the \emph{degrees of freedom} we have when calculating $s^2$. We will elaborate more on this in the next chapter.
+
+\begin{corollary}
+    If $c$ is a constant, then \[s^2 = \frac1{n-1} \bs{\sum \bp{x-c}^2 - \frac1n \bp{\sum \bp{x-c}}^2}.\]
+\end{corollary}
+
+This is particularly useful when the sample data is given in summarized form.

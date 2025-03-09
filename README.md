@@ -30,7 +30,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A14B  | Special Discrete Random Variables                             |  🟢  |   🟢    |      🟡      |    🟢     |
 | A15A  | Continuous Random Variables                                   |  🟢  |   🟢    |      🟡      |    🟢     |
 | A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟢     |
-|  A16  | Sampling                                                      |  🟡  |   🟢    |      🟡      |    🟢     |
+|  A16  | Sampling                                                      |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A17  | Confidence Intervals                                          |  🟡  |   🟢    |      🟡      |    🟡     |
 
 ### Group B
