@@ -1,0 +1,177 @@
+\section{Tutorial A1.1 Set 1}
+
+\begin{problem}
+    The function $f$ is defined for all $x \in \RR$ by \[f(x) = \begin{cases}
+        k, & \abs{x} \leq l,\\
+        0, & \abs{x} > l,
+    \end{cases}\] where $k$ and $l$ are positive constants.
+
+    Sketch on three separate diagrams, using the same scales for each, the graph of the function $g$ defined by \[g(x) = \frac{f(x+a) + f(x-a)}2\] in the cases $a = l/4$, $a = 3l/4$ and $a = 3l/2$.
+\end{problem}
+\begin{solution}
+    \begin{figure}[H]\tikzsetnextfilename{435}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -2.75:2.75,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {-1.25, -0.75, 0.75, 1.25},
+            xticklabels = {$\frac{-5l}4$, $\frac{-3l}4$, $\frac{3l}4$, $\frac{5l}4$},
+            ytick = {1, 2},
+            yticklabels = {$\frac{k}2$, $k$},
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            axis equal,
+            axis on top,
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                node [anchor=south east] {$O$};
+                }
+            ]
+            \addplot[plotRed, very thick, domain=-2.75:-1.25] {0};
+            \addplot[plotRed, very thick, domain=-1.25:-0.75] {1};
+            \addplot[plotRed, very thick, domain=-0.75:0.75] {2};
+            \addplot[plotRed, very thick, domain=0.75:1.25] {1};
+            \addplot[plotRed, very thick, domain=1.25:2.75] {0};
+            \addlegendentry{$a = l/4$};
+        \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+
+    \begin{figure}[H]\tikzsetnextfilename{436}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -2.75:2.75,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {-1.75, -0.25, 0.25, 1.75},
+                xticklabels = {$\frac{-7l}4$, $\frac{-l}4$, $\frac{l}4$, $\frac{7l}4$},
+                ytick = {1, 2},
+                yticklabels = {$\frac{k}2$, $k$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                axis equal,
+                axis on top,
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                    node [anchor=south east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, very thick, domain=-2.75:-1.75] {0};
+                \addplot[plotRed, very thick, domain=-1.75:-0.25] {1};
+                \addplot[plotRed, very thick, domain=-0.25:0.25] {2};
+                \addplot[plotRed, very thick, domain=0.25:1.75] {1};
+                \addplot[plotRed, very thick, domain=1.75:2.75] {0};
+                \addlegendentry{$a = 3l/4$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+    \begin{figure}[H]\tikzsetnextfilename{437}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -2.75:2.75,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {-2.5, -0.5, 0.5, 2.5},
+                xticklabels = {$\frac{-5l}2$, $\frac{-l}2$, $\frac{l}2$, $\frac{5l}2$},
+                ytick = {1, 2},
+                yticklabels = {$\frac{k}2$, $k$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                axis equal,
+                axis on top,
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                    node [anchor=south east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, very thick, domain=-2.75:-2.5] {0};
+                \addplot[plotRed, very thick, domain=-2.5:-0.5] {1};
+                \addplot[plotRed, very thick, domain=-0.5:0.5] {0};
+                \addplot[plotRed, very thick, domain=0.5:2.5] {1};
+                \addplot[plotRed, very thick, domain=2.5:2.75] {0};
+                \addlegendentry{$a = 3l/2$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+\end{solution}
+
+\begin{problem}
+    Prove that
+    \begin{enumerate}
+        \item $\floor{\sqrt{x}} = \floor{\sqrt{\floor{x}}}$,
+        \item $\ceil{\sqrt{x}} = \ceil{\sqrt{\ceil{x}}}$.
+    \end{enumerate}
+
+    Is $\ceil{\sqrt{x}} = \ceil{\sqrt{\floor{x}}}$? If so, give a proof. If not, provide a counterexample.
+\end{problem}
+\begin{proof}[Proof of \emph{(a)}]
+    Let $n = \floor{\sqrt{x}}$, where $n \in \ZZ$. By the definition of the floor function, \[n \leq \sqrt{x} < n+1.\] Squaring, we get \[n^2 \leq x < (n+1)^2.\] Taking the floor, we have \[n^2 \leq \floor{x} \leq x < (n+1)^2.\] Rooting, we have \[n \leq \sqrt{\floor{x}} < n+1.\] Once again, by the definition of the floor function, $n = \floor{\sqrt{\floor{x}}}$. Thus, \[\floor{\sqrt{x}} = n = \floor{\sqrt{\floor{x}}}.\]
+\end{proof}
+\begin{proof}[Proof of \emph{(b)}]
+    Let $n = \ceil{\sqrt{x}}$, where $n \in \ZZ$. By the definition of the ceiling function, \[n - 1 < \sqrt{x} \leq n.\] Squaring, we get \[(n-1)^2 < x \leq n^2.\] Taking the ceiling, we have \[(n-1)^2 < x \leq \ceil{x} \leq n^2.\] Rooting, we have \[n-1 < \sqrt{\ceil{x}} \leq n.\] Once again, by the definition of the ceiling function, $n = \ceil{\sqrt{\ceil{x}}}$. Thus, \[\ceil{\sqrt{x}} = n = \ceil{\sqrt{\ceil{x}}}.\]
+\end{proof}
+\setcounter{partnum}{2}
+\begin{ppart}
+    It is not true that $\ceil{\sqrt{x}} = \ceil{\sqrt{\floor{x}}}$. Take $x = 1.21$. Then \[\ceil{\sqrt{x}} = \ceil{\sqrt{1.21}} = \ceil{1.1} = 2,\] but \[\ceil{\sqrt{\floor{x}}} = \ceil{\sqrt{\floor{1.1}}} = \ceil{\sqrt{1}} = \ceil{1} = 1.\]
+\end{ppart}
+
+\begin{problem}
+    Given that $f : \RR \to \RR$ such that for all $x, y \in \RR \setminus \bc{0}$, $f(xy) = f(x) + f(y)$, find the values of $f(1)$ and $f(-1)$. Hence, show that $f$ is even. Give an example of a function that satisfies the above properties and sketch its graph.
+\end{problem}
+\begin{solution}
+    Taking $x = 1$, we see that \[f(y) = f(1) + f(y) \implies f(1) = 0.\] Taking $x = y = -1$, \[f(1) = f(-1) + f(-1) \implies f(-1) = 0.\] Taking $y = -1$, \[f(-x) = f(x) + f(-1) = f(x).\] Thus, by definition, $f$ is even.
+
+    An example of $f$ is $f(x) = \ln \abs{x}$.
+    \begin{figure}[H]\tikzsetnextfilename{360}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -5:5,
+            restrict y to domain =-5:5,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {-1, 1},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                node [anchor=south east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {ln(abs(x))};
+            \addlegendentry{$y = \ln \abs{x}$};
+        \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+\end{solution}
+
+\begin{problem}
+    If $f$ and $g$ are convex functions, show that the function $h$ given by $h(x) = f(x) g(x)$ is not necessarily a convex function with a suitable example.
+\end{problem}
+\begin{solution}
+    Let $f(x) = x^2$ and $g(x) = x^2 - 1$. Then $h(x) = x^2\bp{x^2 - 1}$ is clearly not convex.
+\end{solution}
+
+\begin{problem}
+    For a triangle $ABC$ with corresponding angles $a$, $b$ and $c$, show that \[\sin a + \sin b + \sin c \leq \frac{3\sqrt3}{2}\] and determine when equality holds.
+\end{problem}
+\begin{proof}
+    Since $y = \sin x$ is concave, by Jensen's inequality, \[\frac{\sqrt3}2 = \sin \frac\pi3 = \sin \frac{a + b + c}{3} \geq \frac{\sin a + \sin b + \sin c}{3}.\] The desired inequality follows immediately.
+\end{proof}
