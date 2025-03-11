@@ -6,6 +6,25 @@
         \item Using a suitable substitution, evaluate \[\int_{1/2}^{2} \frac{\sin x}{x \bp{\sin x + \sin 1/x}} \d x.\]
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Under the substitution $u = a - x$, we have \[I = \int_0^a \frac{f(x)}{f(x) + f(a-x)} \d x = -\int_a^0 \frac{f(a-u)}{f(a-u) + f(u)} \d u = \int_0^a \frac{f(a-u)}{f(a-u) + f(u)} \d u.\] Renaming the dummy variable back to $x$, we have \[I = \int_0^a \frac{f(a - x)}{f(x) + f(a-x)} \d x\] as desired.
+
+        Observe that \[2I = \int_0^a \frac{f(x)}{f(x) + f(a-x)} \d x + \int_0^a \frac{f(a - x)}{f(x) + f(a-x)} \d x = \int_0^a \d x = a,\] so $I = a/2$.
+
+        We have \[\int_0^1 \frac{\ln{x+1}}{\ln{2 + x - x^2}} \d x = \int_0^1 \frac{\ln{x+1}}{\ln{(x+1)(2-x)}} \d x = \int_0^1 \frac{\ln{x+1}}{\ln{x+1} + \ln{2-x}} \d x.\] Let $f(x) = \ln{1+x}$. Then \[\int_0^1 \frac{\ln{x+1}}{\ln{2 + x - x^2}} \d x = \int_0^1 \frac{f(x)}{f(x) + f(1-x)} \d x = \frac12.\]
+
+        We have \[\int_0^{\pi/2} \frac{\sin x}{\sin{x + \pi/4}} \d x = \frac2{\sqrt2} \int_0^{\pi/2} \frac{\sin x}{\sin x + \cos x} = \frac2{\sqrt2} \int_0^{\pi/2} \frac{\sin x}{\sin x + \sin{\pi/2 - x}}.\] Let $f(x) = \sin x$. Then \[\int_0^{\pi/2} \frac{\sin x}{\sin{x + \pi/4}} \d x = \frac2{\sqrt2} \frac{f(x)}{f(x) + f(\pi/2 - x)} = \frac2{\sqrt2} \cdot \frac{\pi/2}{2} = \frac{\pi}{2\sqrt2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let \[I = \int_{1/2}^{2} \frac{\sin x}{x \bp{\sin x + \sin 1/x}} \d x. \tag{1}\] Under the substitution $x \mapsto 1/x$, we have \[I = \int_{2}^{1/2} \frac{\sin 1/x}{(1/x) \bp{\sin 1/x + \sin x}} \bp{-\frac1{x^2}} \d x = \int_{1/2}^2 \frac{\sin 1/x}{x \bp{\sin x + \sin 1/x}} \d x. \tag{2}\] Adding (1) and (2) together,
+        \begin{gather*}
+            2I = \int_{1/2}^{2} \frac{\sin x}{x \bp{\sin x + \sin 1/x}} \d x + \int_{1/2}^2 \frac{\sin 1/x}{x \bp{\sin x + \sin 1/x}} \d x\\
+            = \int_{1/2}^2 \frac1x \d x = \evalint{\ln x}{1/2}{2} = 2\ln 2.
+        \end{gather*}
+        Thus, $I = \ln 2$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -13,6 +32,23 @@
         \item Use (a) to show that \[\int_0^\pi \frac{x}{1 + \cos^2 x} \d x = \frac{\pi^2}{2\sqrt2}.\]
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have
+        \begin{gather*}
+            \der{}{x} \bp{\frac1{\sqrt2} \arctan \frac{\tan x}{\sqrt2}} = \frac1{\sqrt2} \bp{\frac1{1 + (\tan x/\sqrt2)^2}} \bp{\frac1{\sqrt2} \sec^2 x}\\
+            = \frac12 \bp{\frac1{1 + \tan[2]{x}/2}} \bp{\frac1{\cos^2 x}} = \frac1{2 + \tan^2 x} \frac{1}{\cos^2 x} =\frac1{2\cos^2 x + \sin^2 x} = \frac1{1 + \cos^2 x}.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Let the target integral be $I$. Note that \[I = \int_0^\pi \frac{x}{1 + \cos^2 x} \d x = \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x + \int_{\pi/2}^\pi \frac{x}{1 + \cos^2 x} \d x.\] Applying the transformation $x \mapsto \pi -x$ to the second integral, we get
+        \begin{gather*}
+            I = \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x + \bp{\pi \int_0^{\pi/2} \frac{1}{1 + \cos^2 x} \d x - \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x}\\
+            = \pi\int_0^{\pi/2} \frac{1}{1 + \cos^2 x} \d x = \pi \evalint{\frac1{\sqrt2} \arctan \frac{\tan x}{\sqrt2}}0{\pi/2}.
+        \end{gather*}
+        The $x = 0$ term vanishes, so \[I = \frac{\pi}{\sqrt2} \lim_{x \to \frac\pi2^{-}} \arctan \frac{\tan x}{\sqrt2}.\] As $x \to (\pi/2)^-$, $\tan x \to \infty$. Thus, $\arctan \frac{\tan x}{\sqrt2} \to \frac\pi2$, whence \[I = \frac{\pi}{\sqrt2} \cdot \frac{\pi}{2} = \frac{\pi^2}{2\sqrt2}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     (In this question all indices $n$ are integers)
@@ -28,7 +64,34 @@
         \item Use (d) and (e) to show that \[\frac{2n+1}{2n+2} \leq \frac{I_{2n+1}}{I_{2n}}, \quad n \geq 1.\] Hence, deduce that \[\lim_{n \to \infty} \frac{I_{2n+1}}{I_{2n}} = 1.\]
         \item Use (b), (c) and (f) to show that \[\frac21 \cdot \frac23 \cdot \frac43 \cdot \frac45 \cdot \frac65 \cdot \frac67 \dots = \frac\pi2.\]
     \end{enumerate}
-\end{problem}
+\end{problem}\begin{solution}
+    \begin{ppart}
+        Note that
+        \begin{gather*}
+            I_n = \int_{0}^{\pi/2} \sin^2 x \sin^{n-2} x \d x = \int_0^{\pi/2} \bp{1 - \cos^2 x} \sin^{n-2} \d x \\
+            = I_{n-2} - \int_0^{\pi/2} \cos x \bp{\cos x \sin^{n-2} x} \d x.
+        \end{gather*}
+        Integrating by parts, we obtain \[I_n = I_{n-2} - \bp{\evalint{\frac{\cos x \sin^{n-1} x}{n-1}}0{\pi/2} + \frac1{n-1} \int_0^{\pi/2} \sin^{n} x \d x}.\] We thus have \[I_n = I_{n-2} - \frac1{n-1} I_n \implies I_n = \frac{n-1}{n} I_{n-2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[I_{2n+1} = \frac{2n}{2n+1} I_{2n-1} = \frac{2n}{2n+1} \cdot \frac{2n-2}{2n-1} I_{2n-3} = \dots = \frac{2n}{2n+1} \cdot \frac{2n-2}{2n-1} \dots \frac{2}{3} I_1.\] Since \[I_1 = \int_0^{\pi/2} \sin x \d x = \evalint{-\cos x}0{\pi/2} = 1,\] we conclude that \[I_{2n+1} = \frac{2 \cdot 4 \cdot 6 \cdots \bp{2n}}{3 \cdot 5 \cdot 7 \cdots \bp{2n+1}}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[I_{2n} = \frac{2n-1}{2n} I_{2n-2} = \frac{2n-1}{2n} \cdot \frac{2n-3}{2n-2} I_{2n-4} = \dots = \frac{2n-1}{2n} \cdot \frac{2n-3}{2n-2} \dots \frac{1}{2} I_0.\] Since \[I_0 = \int_0^{\pi/2} \sin^0 x \d x = \frac{\pi}{2},\] we conclude that \[I_{2n} = \frac{1 \cdot 3 \cdot 5 \cdots \bp{2n-1}}{2 \cdot 4 \cdot 6 \cdots \bp{2n}} \frac\pi2.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[I_{2n+2} = \frac{2n+1}{2n+2} I_{2n} \implies \frac{I_{2n+2}}{I_n} = \frac{2n+1}{2n+2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $\abs{\sin x} \leq 1$, it follows that $\sin^n x \geq \sin^{n+1} x$ for all real $x$. This in turn implies that $I_{n+1} \leq I_{n}$. Thus, \[I_{2n+2} \leq I_{2n+1} \leq I_{2n}.\]
+    \end{ppart}
+    \begin{ppart}
+        Dividing the inequality in (e) throughout by $I_{2n}$, we have \[\frac{2n+1}{2n+2} \leq \frac{I_{2n+2}}{I_{2n}} = \frac{I_{2n+1}}{I_{2n}} \leq \frac{I_{2n}}{I_{2n}} = 1.\] Taking the limit as $n \to \infty$, we see that \[1 = \lim_{n \to \infty} \frac{2n+1}{2n+2} \leq \lim_{n \to \infty} \frac{I_{2n+1}}{I_{2n}} \leq 1.\] Thus, by the Squeeze Theorem, it follows that \[\lim_{n \to \infty} \frac{I_{2n+1}}{I_{2n}} = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        The above limit implies that \[\lim_{n \to \infty} I_{2n+1} = \lim_{n \to \infty} I_{2n}.\] Thus, \[\frac{2 \cdot 4 \cdot 6 \cdots}{3 \cdot 5 \cdot 7 \cdots} = \frac{1 \cdot 3 \cdot 5 \cdots}{2 \cdot 4 \cdot 6 \cdots} \frac\pi2.\] Rearranging, we recover the Wallis product: \[\frac\pi2 = \frac21 \cdot \frac23 \cdot \frac43 \cdot \frac45 \cdot \frac65 \cdot \frac67 \dots.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     It is given that the following integrals converge. Evaluate the following integrals.
@@ -38,6 +101,23 @@
         \task $\displaystyle\int_{-\infty}^{\infty} \frac1{4x^2 + 9} \d x$.
     \end{tasks}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $I$ be the target integral. We have
+        \begin{gather*}
+            I = \int_1^\infty \frac{3x-1}{4x^3 - x^2} \d x = \int_1^\infty \frac{3x-1}{x^2 \bp{4x - 1}} \d x = \int_1^\infty \bp{\frac{4x-1}{x^2 \bp{4x-1}} - \frac{x}{x^2 \bp{4x-1}}} \d x \\
+            = \int_1^\infty \frac1{x^2} \d x - \int_1^\infty \frac1{x \bp{4x-1}} \d x = \evalint{-\frac1x}1\infty - \int_1^\infty \frac1{x \bp{4x-1}} \d x\\
+            = 1 - \int_1^\infty \frac1{x \bp{4x-1}} \d x = 1 - \int_1^\infty \frac1{(2x - 1/4)^2 - (1/4)^2} \d x.
+        \end{gather*}
+        Under the substitution $u = 2x - 1/4$, the integral evaluates to \[I = 1 - \frac12 \int_{7/4}^\infty \frac1{u^2 - (1/4)^2} \d u = 1 - \frac12 \evalint{\frac1{2(1/4)} \ln{\frac{u - 1/4}{u + 1/4}}}{7/4}\infty = 1 - \ln \frac43.\]
+    \end{ppart}
+    \begin{ppart}
+        Integrating by parts, we have \[\int_0^\infty x^2 \e^{-x} \d x = \evalint{-\e^{-x} \bp{x^2 + 2x + 2}}0\infty = 2.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $I$ be the target integral. We have \[I = \int_{-\infty}^{\infty} \frac1{4x^2 + 9} \d x = \int_0^\infty \frac2{(2x)^2 + 3^2} \d x.\] Under the substitution $u = 2x$, the integral evaluates to \[I = \int_0^\infty \frac1{u^2 + 3^2} \d u = \evalint{\frac13 \arctan \frac{u}{3}}0\infty = \frac{\pi}{6}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Determine which of the following integrals converge.
@@ -47,3 +127,11 @@
         \task $\displaystyle\int_{-\infty}^\infty \frac{2 \d x}{\sqrt{\e^x + \e^{-x}}}$.
     \end{tasks}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Clearly, the integral $\int_0^\infty \frac1x \d x$ diverges. Since \[\lim_{x \to \infty} \frac{1/\sqrt{x^2 + 1}}{1/x} = 1,\] by the limit comparison test, it follows that $\int_0^\infty \frac{\d x}{\sqrt{x^2 + 1}}$ also diverges.
+    \end{ppart}
+    \begin{ppart}
+        Note that the integral \[\int_0^\infty \e^{-x/2} \d x = -2 \evalint{\e^{-x/2}}0\infty = 2\] converges. Since \[\lim_{x \to \infty} \frac{4 / \sqrt{e^x + e^{-x}}}{\e^{-x/2}} = \lim_{x \to \infty} \frac{4}{\sqrt{1 + \e^{-2x}}} = 4,\] by the limit comparison test, it follows that \[\int_{-\infty}^\infty \frac{2 \d x}{\sqrt{\e^x + \e^{-x}}} = \int_0^\infty \frac{4 \d x}{\sqrt{\e^x + \e^{-x}}}\] converges.
+    \end{ppart}
+\end{solution}

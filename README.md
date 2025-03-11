@@ -93,8 +93,8 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
   <tr>
   <td rowspan="2">JC2</td>
   <td>WA 1</td>
-  <td>🔴</td>
-  <td>🔴</td>
+  <td>🟡</td>
+  <td>🟡</td>
   <td>🔴</td>
  </tr>
  <tr>
