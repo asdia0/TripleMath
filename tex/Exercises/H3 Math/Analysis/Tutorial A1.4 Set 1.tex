@@ -22,3 +22,14 @@
         \item Hence, find a general solution to the differential equation \[2t^2 \der[2]{y}{t} + t\der{y}{t} - 3y = 0.\]
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $y = v/t \implies v = yt$. Differentiating with respect to $t$, \[\der{v}{t} = t \der{y}{t} + y, \quad \der[2]{v}{t} = t\der[2]{y}{t} + 2 \der{y}{t}.\] Since \[2t^2 \der[2]{y}{t} + t\der{y}{t} - 3y = 2t \bp{t\der[2]{y}{t} + 2 \der{y}{t}} - 3\bp{t \der{y}{t} + y} = 0,\] we have \[2t\der[2]{v}{t} - 3\der{v}{t} = 0\] as desired.
+    \end{ppart}
+    \begin{ppart}
+        Let $w = \derx{v}{t}$. Then the DE becomes \[2t \der{w}{t} - 3w = 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that the above DE can be written as \[\frac1w \der{w}{t} = \frac3{2t}.\] Integrating with respect to $t$, \[\ln \abs{w} + A = \frac32 \ln \abs{t} \implies w = B t^{3/2}.\] Hence, \[v = \int w \d t = \int B t^{3/2} \d t = C t^{5/2} + D.\] Finally, \[y = \frac{v}{t} = C t^{3/2} + D t^{-1}.\]
+    \end{ppart}
+\end{solution}
