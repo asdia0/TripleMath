@@ -1,0 +1,61 @@
+\section{Tutorial A1.4 Set 2}
+
+\begin{problem}
+    Reduce the differential equation \[\frac{x}{y} \der{y}{x} + \ln \frac{x^2}{y} = 2, \quad y > 0,\] to a differential equation in $x$ and $u$, where $u = y/x^2$. Hence, express $y$ in terms of $x$ and an arbitrary constant. Find the equation of the solution curve that passes through the point $(x, y) = (1, \e)$.
+\end{problem}
+\begin{solution}
+    Note that $u = y/x^2 \implies y = ux^2$. Differentiating with respect to $x$, \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the given DE, we have \[\frac{x}{ux^2} \bp{2ux + x^2 \der{u}{x}} + \ln{\frac{x^2}{ux^2}} = 2,\] which simplifies to \[\frac1{u \ln u} \der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$ yields \[\ln \abs{\ln u} = \ln \abs{x} + A \implies \ln u = Bx \implies u = \e^{Bx} \implies y = ux^2 = x^2 \e^{Bx}.\] At $(x, y) = (1, \e)$, we have $\e = \e^B$, whence $B = 1$. Thus, $y = x^2 \e^x$.
+\end{solution}
+
+\begin{problem}
+    $T_n(x)$ is a polynomial of degree $n$ in $x$ defined by \[T_n(x) = \cos{n \arccos x},\] so that $T_n(\cos \t) = \cos{n \t}$.
+
+    \begin{enumerate}
+        \item Show that \[T_2(x) = 2x^2 - 1, \quad T_3(x) = 4x^3 - 3x.\]
+        \item Show that \[T_{n+1} (x) = 2x T_n (x) - T_{n-1} (x).\]
+        \item Use the results in (a) and (b) to find $T_4(x)$.
+    \end{enumerate}
+
+    $U_n(x)$ is a polynomial of degree $n$ in $x$ defined by \[U_n(x) = \frac{\sin (n+1)\t}{\sin \t}\] where $x = \cos \t$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Show that \[\der{}{x} T_n(x) = nU_{n-1}(x).\]
+        \item Show that \[\der{}{x} U_{n-1}(x) = \frac{xU_{n-1}(x) - n T_n(x)}{1 - x^2}.\]
+        \item Deduce that $y = T_n(x)$ satisfies the differential equation \[\bp{1 - x^2} \der[2]{y}{x} - x\der{y}{x} + n^2 y = 0.\]
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Since \[T_2(\cos \t) = \cos 2\t = 2\cos^2 - 1,\] it follows that $T_2(x) = 2x^2 - 1$. Similarly, since \[T_3(\cos \t) = \cos 3\t = 4\cos^3 x - 3\cos x,\] it follows that $T_3(x) = 4x^3 - 3x$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that
+        \begin{gather*}
+            T_{n+1}(\cos \t) = \cos (n+1)\t = \cos n\t \cos \t - \sin n\t \sin \t\\
+            = 2\cos n\t \cos \t - \bp{\cos n\t \cos \t + \sin n\t \sin \t} = 2\cos n\t \cos \t - \cos (n-1)\t.
+        \end{gather*}
+        Thus, $T_{n+1}(x) = 2x T_n(x) - T_{n-1}(x)$.
+    \end{ppart}
+    \begin{ppart}
+        We have \[T_4(x) = 2xT_3(x) - T_2(x) = 2x\bp{4x^3 - 3x} - \bp{2x^2 - 1} = 8x^4 - 8x^2 + 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $x = \cos \t$, we have $\sin \t = \sqrt{1 - x^2}$. Hence, \[U_{n} (x) = \frac{\sin (n+1)\t}{\sin \t} = \frac{\sin{(n+1)\arccos x}}{\sqrt{1 - x^2}}.\] Thus, we have
+        \begin{gather*}
+            \der{}{x} T_n (x) = \der{}{x} \cos{n \arccos x} = -\sin{n \arccos x} \bp{\frac{-n}{\sqrt{1 - x^2}}}\\
+        = n \frac{\sin{n \arccos x}}{\sqrt{1 -x^2}} = n U_{n-1}(x).
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        We have
+        \begin{gather*}
+            \der{}{x} U_{n-1}(x) = \der{}{x} \frac{\sin{n\arccos x}}{\sqrt{1 - x^2}} \\
+            = \frac{1}{1 - x^2} \bs{\sqrt{1 - x^2} \bp{\frac{-n \cos{n \arccos x}}{\sqrt{1 - x^2}}} - \sin{n\arccos x} \bp{\frac{-x}{\sqrt{1 - x^2}}}}\\
+            = \frac{1}{1 - x^2} \bs{-n \cos{n \arccos x} + x \frac{\sin{n\arccos x}}{\sqrt{1 - x^2}} } = \frac{-nT_n(x) + xU_{n-1}(x)}{1 - x^2}.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Note that $y = T_n(x)$ implies $y' = n U_{n-1}(x)$. Differentiating once more yields \[y'' = n \bp{\frac{xU_{n-1}(x)-nT_n(x)}{1 - x^2}} = \frac{nxU_{n-1}(x)-n^2T_n(x)}{1 - x^2} = \frac{x y' - n^2 y}{1 - x^2}.\] Rearranging, we obtain \[\bp{1 - x^2} y'' - x y' + n^2 y = 0.\]
+    \end{ppart}
+\end{solution}
