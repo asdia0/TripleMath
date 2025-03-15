@@ -1,0 +1,63 @@
+\section{Tutorial A1.2 Set 2}
+
+\begin{problem}
+    Let $f$ be a differentiable function on $(0, \infty)$ and suppose that \[\lim_{x \to \infty} \bp{f(x) + f'(x)} = L.\] By considering $f(x) = \frac{\e^x f(x)}{\e^x}$, show that $\lim_{x \to \infty} f(x) = L$ and $\lim_{x \to \infty} f'(x) = 0$.
+\end{problem}
+\begin{proof}
+    By L'Hospital's Rule, \[\lim_{x \to \infty} \frac{\e^x f(x)}{\e^x} = \lim_{x \to \infty} \frac{\e^x f'(x) + \e^x f(x)}{\e^x} = \lim_{x \to \infty} \bp{f(x) + f'(x)} = L.\] Hence, \[\lim_{x \to \infty} f'(x) = \lim_{x \to \infty} \bp{f(x) + f'(x)} - \lim_{x \to \infty} f(x) = L - L = 0.\]
+\end{proof}
+
+\begin{problem}
+    It is given that the functions $f(x)$ and $g(x)$ are non-constant, differentiable functions that are defined on $\RR$, and $f(0) = f(2) = g(0) = g(2) = 0$. Suppose that $g''(x) \neq 0$ for all $x \in (0, 2)$.
+
+    \begin{enumerate}
+        \item Show that $g(x) \neq 0$ for all $x \in (0, 2)$.
+        \item Using part (a), or otherwise, prove that there exists $d \in (0, 2)$ such that \[\frac{f(d)}{g(d)} = \frac{f''(d)}{g''(d)}.\]
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        By way of contradiction, suppose $g(x_0) = 0$ for some $x \in (0, 2)$. Then $g(0) = g(x_0) = g(2) = 0$. By Rolle's Theorem, there exists some $x_1 \in (0, x_0)$ and $x_2 \in (x_0, 2)$ such that \[g'(x_1) = 0 \quad \tand \quad g'(x_2) = 0.\] Applying Rolle's Theorem once more, we see that there exists some $x_3 \in (x_1, x_2)$ such that $g''(x_3) = 0$, a contradiction. Thus, $g(x) \neq 0$ for all $x \in (0, 2)$.
+    \end{ppart}
+    \begin{ppart}
+        Let \[h(x) = f(x)g''(x) - g(x)f''(x).\] Clearly, $h(x)$ is continuous on $[0,2]$. Note also that $h(0) = h(2) = 0$. We now integrate $h(x)$ over $(0, 2)$: \[\int_0^2 h(x) \d x = \int_0^2 f(x) g''(x) \d x - \int_0^2 g(x) f''(x) \d x.\] Integrating by parts, the first integral reduces to \[\int_0^2 f(x) g''(x) \d x = \evalint{f(x) g'(x)}02 - \int_0^2 f'(x) g'(x) \d x = - \int_0^2 f'(x) g'(x) \d x.\] Similarly, the second integral reduces to \[\int_0^2 g(x) f''(x) \d x = \evalint{g(x) f'(x)}02 - \int_0^2 f'(x) g'(x) \d x = \int_0^2 f'(x) g'(x) \d x.\] Thus, \[\int_0^2 h(x) \d x = - \int_0^2 f'(x) g'(x) \d x + \int_0^2 f'(x) g'(x) \d x = 0. \tag{1}\] If $h(x)$ is not identically zero, then from (1), it follows that $h(x)$ attains positive and negative values in $(0, 2)$. Thus, by the Intermediate Value Theorem, there exists some $d \in (0, 2)$ such that $h(d) = 0$. If $h(x)$ is identically zero, then $h(d) = 0$ for all $d \in (0, 2)$. In any case, we get \[\frac{f(d)}{g(d)} = \frac{f''(d)}{g''(d)}\] upon rearrangement.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Let $f : [0, 1] \to \RR$ be a differentiable function defined on $[0, 1]$. Suppose that \[f'(c) = f''(c) = f'''(c) = 0\] and $f^{(4)}(c) > 0$ for some $c \in (0, 1)$.
+
+    \begin{enumerate}
+        \item Let $g: [a, b] \to \RR$ be a function that is twice differentiable on $(a, b)$, where $a < b$. Suppose that there exists $d \in (a, b)$ such that $g''(d) > 0$. With the aid of a diagram, explain why there exists $s > 0$ such that for all $x \in [d -s , d + s] \setminus \bc{d} \subseteq [a, b]$, $g(x) > g(d)$.
+        \item Hence, show that $f$ attains a minimum point at $x = c$.
+        \item Write down a similar result for $f$ to attain a maximum point when $x = c$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+    \end{ppart}
+    \begin{ppart}
+        Take $g(x) = f''(x)$. Since $f^{(4)}(c) > 0$, there exists $s > 0$ such that $f''(x) > f''(c)$ for all $x \in [c-s, c+s] \setminus \bc{c} \subseteq [0, 1]$. This means that $f(c)$ is a minimum. 
+    \end{ppart}
+    \begin{ppart}
+        $f$ attains a maximum point when $x = c$ if $f^{(4)}(c) < 0$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Let $f, g : [a, b] \to \RR$ be differentiable functions defined on $[a, b]$ with $a < b$. Suppose that $f(a) = f(b) = 0$, $f(x) \neq 0$ for all $x \in (a, b)$, and $g(a), g(b) \neq 0$.
+
+    \begin{enumerate}
+        \item Let $h : [a, b] \to \RR$ be a differentiable function defined on $[a, b]$ with $a < b$. Suppose that $h(a) = h(b)$. With the aid of a diagram, explain why there exists $c \in (a, b)$ such that $h'(c) = 0$.
+        \item Prove that if $g(x) \neq 0$ for all $x \in (a, b)$, then there exists $c_1 \in (a, b)$ such that \[f(c_1) g'(c_1) = f'(c_1) g(c_1).\]
+        \item Prove that if there exists $d_1, d_2 \in (a, b)$ such that $g(d_1) = g(d_2) = 0$, then there exists $c_2 \in (a, b)$ such that \[f(c_2) g'(c_2) = f'(c_2) g(c_2).\]
+        \item Deduce that $g(x)$ has exactly one zero in $[a, b]$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Let $f: [0,1] \to \RR$ be a differentiable function such that $f(0) = 0$, $f(1) = 1$. Prove that there exists $c, d \in (0, 1)$ such that $c \neq d$ and \[\frac{f'(c)}{c^2} + \frac{f'(d)}{d} = 5.\]
+\end{problem}
+\begin{proof}
+    Consider the function $g(x) = f(x) - x^3$. Since $g(0) = 0$ and $g(1) = 0$, by Rolle's Theorem, there exists a $c \in (0, 1)$ such that \[g'(c) = 0 \implies f'(c) - 3c^2 = 0 \implies \frac{f'(c)}{c^2} = 3.\] Similarly, consider the function $h(x) = f(x) - x^2$. Since $h(0) = h(1) = 0$, by Rolle's Theorem, there exists a $d \in (0, 1)$ such that \[h'(d) = 0 \implies f'(d) - 2d = 0 \implies \frac{f'(d)}{d} = 2.\] Thus, there exists distinct $c, d \in (0, 1)$ such that \[\frac{f'(c)}{c^2} + \frac{f'(d)}{d} = 5.\]
+\end{proof}

@@ -1,0 +1,151 @@
+\section{Tutorial A1.1 Set 2}
+
+\begin{problem}
+    The functions $f$, $g$ are defined on $\RR$ such that for any $x, y \in \RR$, \[f(x-y) = f(x)g(y) - f(y)g(x) \quad \tand \quad f(1) \neq 0.\]
+
+    \begin{enumerate}
+        \item Prove that $f$ is an odd function.
+        \item If $f(1) = f(2)$, find the value of $g(1) + g(-1)$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $x = y$. Then \[f(0) = f(x)g(x) - f(x)g(x) = 0.\] Let $y = 0$. Then \[f(x) = f(x)g(0) - f(0)g(x) = f(x)g(0) \implies g(0) = 1.\] Let $x = 0$. Then \[f(-y) = f(0)g(y) - f(y)g(0) = -f(y).\] Thus, $f$ is odd.
+    \end{ppart}
+    \begin{ppart}
+        Let $x = 1$ and $y = -1$. Then \[f(2) = f(1)g(-1) - f(-1)g(1).\] Since $f$ is odd, we have $f(-1) = -f(1)$. Further, we are given $f(2) = f(1)$. Hence, \[f(1) = f(1)g(-1) + f(1)g(1) \implies g(-1) + g(1) = 1.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The function $h$ is defined for $x \in \RR$ by \[h(x) = x \cos x, \quad 0 \leq x \leq \frac\pi2\] with the additional properties \[h(-x) = h(x) \quad \tand \quad h(\pi + x) = -h(x).\] Sketch the graph of $h$ for $-2\pi \leq x \leq 2\pi$.
+\end{problem}
+\begin{solution}
+    \begin{figure}[H]\tikzsetnextfilename{439}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -2*pi:2*pi,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {-2*pi, -1.5*pi, -pi, -pi/2, 0, pi/2, pi, 1.5*pi, 2*pi},
+            ytick = \empty,
+            xticklabels = {$-2\pi$, $\frac{-3}2 \pi$, $-\pi$, $\frac{-1}2\pi$, 0, $\frac12\pi$, $\pi$, $\frac32 \pi$, $2\pi$},
+            axis equal,
+            xlabel = {$x$},
+            ylabel = {$h(x)$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[black, domain=-2*pi:-1.5*pi] {(x+2*pi) * cos(\x r)};
+
+            \addplot[black, domain=-1.5*pi:-pi] {-(x+pi)*cos(\x r)};
+            \addplot[black, domain=-pi:-pi/2] {(x+pi)*cos(\x r)};
+
+            \addplot[black, domain=-pi/2:0] {-x*cos(\x r)};
+            \addplot[black, domain=0:pi/2] {x*cos(\x r)};
+
+            \addplot[black, domain=pi/2:pi] {-(x-pi)*cos(\x r)};
+            \addplot[black, domain=pi:1.5*pi] {(x-pi)*cos(\x r)};
+
+            \addplot[black, domain=1.5*pi:2*pi] {-(x-2*pi)*cos(\x r)};
+        \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+\end{solution}
+
+\begin{problem}
+    Functions $f$ and $g$ are defined for $x \in \RR$ by \[f(x) = ax + b, \quad g(x) = cx + d,\] where $a$, $b$, $c$ and $d$ are constants with $a \neq 0$. Given that $gf = \inv f g$, show that at least one of the following statements is true:
+    \begin{itemize}
+        \item $g$ is a constant function,
+        \item $f^2$ is the identity function,
+        \item $g^2$ is the identity function.
+    \end{itemize}
+\end{problem}
+\begin{proof}
+    Note that $\inv f = (x-b)/a$. Hence, the condition $gf = \inv fg$ implies that \[c\bp{ax + b} + d = \frac{\bp{cx + d} -b}{a}.\] Comparing coefficients of $x$ and constant terms, we see that \[\frac{c}{a} = ac \quad \tand \quad \frac{d-b}{a} = bc + d.\]
+
+    \case{1}[$c = 0$] Then $g(x) = d$ is a constant function.
+
+    \case{2}[$c \neq 0$] Then $1/a = a \implies a = \pm 1$.
+
+    \case{2a}[$a = -1$] Then $f(x) = -x + b$, whence $f^2(x) = -(-x+b)+b = x$ is the identity function.
+
+    \case{2b}[$a = 1$] Then $d - b = bc + d \implies b(c+1) = 0$. If $b = 0$, then $f(x) = x$ is the identity function. If $c = -1$, then $g(x) = -x+d$, whence $g^2(x) = -(-x+d)+d = x$ is the identity function.
+\end{proof}
+
+\begin{problem}
+    Let $f : \QQ \to \ZZ$ be a function satisfying the following:
+
+    \begin{itemize}
+        \item For any $x, y \in \QQ$, we have $f(x + y) = f(x) + f(y)$,
+        \item For any $r \in \ZZ$ and any $x \in \QQ$, we have $f(rx) = rf(x)$.
+    \end{itemize}
+
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item Explain why for any $n \in \ZZ$, we have $f(1/n) \in \ZZ$.
+            \item Suppose that $0 \neq f(1)$. Let $p \in \ZZ$ be a prime such that $p \nmid f(1)$. By writing $f(1)$ as $f(p \cdot 1/p)$, explain why $f(1/p)$ cannot be an integer. Hence, prove that $f(1) = 0$.
+        \end{enumerate}
+        \item Show that for any $a \in \QQ$, $f(a) = 0$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            $f(1/n) \in \Im f = \ZZ$.
+        \end{psubpart}
+        \begin{psubpart}
+            Suppose $f(1) \neq 0$. Then there exists a prime $p$ such that $p \nmid f(1)$. Then \[f(1) = f\of{p \cdot \frac1p} = p f\of{\frac1p} \implies f\of{\frac1p} = \frac{f(1)}{p}.\] Since $p \nmid f(1)$, it follows that $f(1/p)$ is not an integer. However, this contradicts (a)(i). Hence, our assumption that $f(1) \neq 0$ is false, i.e. $f(1) = 0$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        From the second property, it follows that for any $r \in \ZZ$, \[f(r) = f(r \cdot 1) = r f(1) = 0.\] Let $a \in \QQ$. Write $a = \a/\b$, where $\a, \b \in \ZZ$ with $\b \neq 0$. Then \[f(a) = \frac1\b \b f(a) = \frac1\b f(\b a) = \frac1\b f(\a) = 0.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Let $f : \RR \to \RR$ be an additive function, i.e. for any $x, y \in \RR$, we have $f(x + y) = f(x) + f(y)$.
+
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item Show that $f(0) = 0$.
+            \item Prove that for any $n \in \ZZ$ and any $x \in \RR$, we have $f(nx) = nf(x)$.
+            \item Prove that for any $r \in \QQ$ and any $x \in \RR$, we have $f(rx) = rf(x)$.
+            \item Deduce that for any $r, x \in \RR$, we have $f(rx) = rf(x)$.
+        \end{enumerate}
+        \item Use (a)(iv) to show that if there exists $M \in \RR^+$ such that $\abs{f(x)} \leq M$ for all $x \in \RR$, then $f$ is identically zero.
+        \item Let $g : \RR \to \RR$ be a periodic function with period $T > 0$, and suppose that there exists $a \in \RR$ such that $\abs{g(x)} \leq N$ for all $x \in [a, a + T]$. Let $n$ be the largest integer such that $a + nT \leq y$. Prove that $\abs{g(x)} \leq N$ for all $x \in \RR$.
+        \item Suppose further that $g$ is an additive function. Show that there exists $\a \in \RR$ such that $g(x) = \a x$ for all $x \in \RR$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            Taking $x = y = 0$, \[f(0) = f(0) + f(0) \implies f(0) = 0.\]
+        \end{psubpart}
+        \begin{psubpart}
+            For $n \in \NN_0$, we have \[f(nx) = f(\underbrace{x + x + \dots + x}_{\text{$n$ times}}) = \underbrace{f(x) + f(x) + \dots + f(x)}_{\text{$n$ times}} = nf(x).\] Now, observe that \[0 = f(0) = f(nx + (-nx)) = f(nx) + f(-nx) \implies f(-nx) = -f(nx) = -nf(x).\] Thus, $f(nx) = nf(x)$ for all $n \in \ZZ$.
+        \end{psubpart}
+        \begin{psubpart}
+            Let $b$ be a non-zero integer. Then \[f(x) = f\of{\underbrace{\frac{x}{b} + \dots + \frac{x}{b}}_{\text{$b$ times}}} = \underbrace{f\of{\frac{x}{b}} + \dots + f\of{\frac{x}{b}}}_{\text{$b$ times}} = b f\of{\frac{x}{b}}.\] Thus, \[f\of{\frac{x}{b}} = \frac1b f(x).\] Let $r \in \QQ$. Without loss of generality, write $r = a/b$, where $a, b \in \ZZ$ and $b \geq 1$. Then \[f(rx) = f\of{\frac{ax}{b}} = a f\of{\frac{x}{b}} = \frac{a}{b} f(x) = rf(x).\]
+        \end{psubpart}
+        \begin{psubpart}
+            Since $\QQ$ is dense in $\RR$, it follows that we have $f(rx) = rf(x)$ for all $r, x \in \RR$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Seeking a contradiction, suppose $f(x) \neq 0$ for some $x \in \RR$. Then $f(kx) = kf(x)$ is unbounded, a contradiction. Thus, $f(x)$ must be identically zero.
+    \end{ppart}
+    \begin{ppart}
+        For all $x \in \RR$, we have \[a \leq x - kT < a + T\] where $k = \floor{(x-a)/T}$. Since $g$ has period $T$, it follows that \[\abs{g(x)} = \abs{g(x-kT)} \leq N.\]
+    \end{ppart}
+    \begin{ppart}
+        By part (b), it must be that $g(x) \equiv 0$. Thus, $\a = 0$.
+    \end{ppart}
+\end{solution}

@@ -1,0 +1,173 @@
+\section{Tutorial A1.3 Set 2}
+
+\begin{problem}
+    Let $I = \int_0^{2\pi} \frac{1}{2 - \cos x} \d x$. Explain the error in the following argument:
+
+    \begin{quote}\itshape
+        Since $\abs{\cos x} \leq 1$, it follows that $1/(2-\cos x) > 0$, and, interpreting the integral as an area, it follows that $I$ is positive. However, putting $t = \tan{x/2}$, \[I = \int_{\tan 0}^{\tan \pi} \frac{\frac{2}{1+t^2}}{2 - \frac{1-t^2}{1 + t^2}} \d t = 2\int_0^0 \frac{1}{1 + 3t^2} \d t = 0.\] Thus, the positive number $I$ is equal to 0.
+    \end{quote}
+
+    Prove that $I = \int_0^\pi \frac1{2 - \cos x} \d x$, and deduce that $I = \frac{2\pi\sqrt3}{3}$.
+\end{problem}
+\begin{solution}
+    $t = \tan{x/2}$ is discontinuous at $x = \pi$. Hence, direct substitution is not allowed.
+
+    Splitting $I$, we have \[I = \int_0^{2\pi} \frac1{2 - \cos x} \d x = \int_0^{\pi} \frac1{2 - \cos x} \d x + \int_{\pi}^{2\pi} \frac1{2 - \cos x} \d x.\] Applying the substitution $x \mapsto 2\pi - x$ on the latter integral,
+    \begin{gather*}
+        I = \int_0^{\pi} \frac1{2 - \cos x} \d x + \int_{\pi}^0 \frac1{2 - \cos{2\pi - x}} (-\d x)\\
+        = \int_0^{\pi} \frac1{2 - \cos x} \d x + \int_0^{\pi} \frac1{2 - \cos x} \d x = 2 \int_0^{\pi} \frac1{2 - \cos x} \d x.
+    \end{gather*}
+
+    Using the substitution $t = \tan{x/2}$, we have
+    \begin{gather*}
+        I = 2\int_0^{\pi} \frac1{2 - \cos x} \d x = 2\int_0^{\infty} \frac{\frac{2}{1+t^2}}{2 - \frac{1-t^2}{1 + t^2}} \d t = 4\int_0^\infty \frac1{1 + 3t^2} \d t\\
+        = 4 \evalint{\frac1{\sqrt3} \arctan{\sqrt3 x}}{0}{\infty} = \frac{4}{\sqrt3} \cdot \frac\pi2 = \frac{2\pi \sqrt3}3.\
+    \end{gather*}
+\end{solution}
+
+\begin{problem}
+    Without using G.C., evaluate
+    \begin{tasks}
+        \task $\displaystyle\int_0^{\pi/2} \sin x \cos 2x \sin 3x \d x,$
+        \task $\displaystyle\int_1^2 \frac1{x + \sqrt{x}} \d x$.
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that 
+        \begin{gather*}
+            \sin x \cos 2x \sin 3x = \cos 2x \bp{\frac{\cos{3x - x} - \cos{3x + x}}{2}} = \frac12 \cos^2 2x - \frac12 \cos 2x \cos 4x \\
+            = \frac12 \bp{\frac{1 + \cos 4x}{2}} - \frac12 \cos 2x \bp{1 - 2 \sin^2 2x} = \frac14 + \frac{\cos 4x}{4} - \frac{\cos 2x}{2} + \cos 2x \sin^2 2x.
+        \end{gather*}
+        Hence,
+        \begin{gather*}
+            I = \int_0^{\pi/2} \bp{\frac14 + \frac{\cos 4x}{4} - \frac{\cos 2x}{2} + \cos 2x \sin^2 2x} \d x\\
+            = \evalint{\frac{x}4 + \frac{\sin 4x}{16} - \frac{\sin 2x}{4} + \frac{\sin^3 2x}{6}}{0}{\pi/2} = \frac\pi8.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Consider the substitution $u = 1 + \sqrt{x}$. \[I = \int_1^2 \frac1{\sqrt{x} \bp{1 + \sqrt{x}}} \d x = \int_1^{1 + \sqrt2} \frac{2 \d u}{u} = 2 \evalint{\ln u}{2}{1 + \sqrt2} = 2\ln \frac{1 + \sqrt 2}2.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Let $f: [0, 1] \to \RR$ be a continuous and twice differentiable function on $(a, b)$. Suppose that \[\int_0^1 f(x) \d x = f(0) = f(1).\]
+    
+    \begin{enumerate}
+        \item Let $G(x) = \int_0^x f(t) \d t$. Explain why $G'(x) = f(x)$.
+        \item Let $F(x) = \int_0^x \bs{f(t) - f(1)} \d t$. Show that there exists $c \in (0, 1)$ such that $f(c) = f(1)$.
+        \item Hence, show that there exists $d \in (0, 1)$ such that $f''(d) = 0$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        By the Fundamental Theorem of Calculus, \[G'(x) = \der{}{x} \int_0^x f(t) \d t = f(x).\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $F(x) = G(x) - x f(1)$. Notice further that \[F(0) = \int_0^0 \bs{f(t) - f(1)} \d t = 0 \quad \tand \quad F(1) = \int_0^1 f(t) \d t - f(1) = f(1) - f(1) = 0.\] Since \[F'(x) = G'(x) - f(1) = f(x) - f(1),\] by Rolle's Theorem, there exists some $c \in (0, 1)$ such that \[F'(c) = 0 \implies f(c) - f(1) = 0 \implies f(c) = f(1).\]
+    \end{ppart}
+    \begin{ppart}
+        By the Mean Value Theorem, there exists some $c_1 \in (0, 1)$ such that \[f'(c_1) = \frac{f(1) - f(0)}{1 - 0} = 0.\] Likewise, there exists some $c_2 \in (0, 1)$ such that \[f'(c_2) = \frac{f(1) - f(c)}{1 - c} = 0.\] Invoking Rolle's Theorem on $f'(x)$, it follows that there exists some $d \in (c_1, c_2) \subseteq (0, 1)$ such that \[f''(d) = 0.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    \begin{enumerate}
+        \item Let \[I_n = \int \frac1{x^n \bp{ax^2 + bx + c}} \d x\] for $x > 0$. Show that \[aI_{n-2} + bI_{n-1} + cI_n = \frac1{\bp{1-n} x^{n-1}} + k\] for $n \geq 2$, where $k$ is an arbitrary constant.
+        \item Hence, find \[\int \frac{x^3 + 2}{x^2 \bp{x^2 + 2}} \d x.\]
+        \item Let $f(x)$, $g(x)$ and $h(x)$ be functions of $x$ such that $f'(x) = x^2 g'(x)$ and $h'(x) = \bp{1 + x^4} g'(x) g(x)$. Use integration by parts to find the following:
+        \begin{tasks}
+            \task $\displaystyle\int xg(x) \d x,$
+            \task $\displaystyle\int xf(x)g(x) \d x.$
+        \end{tasks}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have
+        \begin{align*}
+            aI_{n-2} &+ bI_{n-1} + cI_n\\
+            &= \int \bp{\frac{a}{x^{n-2} \bp{ax^2 + bx + c}} + \frac{b}{x^{n-1} \bp{ax^2 + bx + c}} + \frac{c}{x^{n} \bp{ax^2 + bx + c}}} \d x \\
+            &= \int \bp{\frac{a x^2 }{x^{n} \bp{ax^2 + bx + c}} + \frac{b x}{x^{n} \bp{ax^2 + bx + c}} + \frac{c}{x^{n} \bp{ax^2 + bx + c}}} \d x\\
+            &= \int \frac{a x^2 + bx + c }{x^{n} \bp{ax^2 + bx + c}} = \int \frac1{x^n} \d x = \frac1{\bp{1 - n} x^{n-1}} + k.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Let $n = 2$, $a = 1$, $b = 0$ and $c = 2$. Using the above result, \[I_{0} + 2I_2 = -\frac{1}{x} + k.\] Rearranging, \[\int \frac2{x^2 \bp{x^2 + 2}} \d x = 2I_2 = -\frac{1}{x} + k - \underbrace{\int \frac{1}{x^2 + 2} \d x}_{I_0} = -\frac1{x} + k - \frac1{\sqrt2} \arctan \frac{x}{\sqrt2}.\] Thus, the target integral is given by
+        \begin{gather*}
+            \int \frac{x^3 + 2}{x^2 \bp{x^2 + 2}} \d x = \int \frac{x}{x^2 + 2} \d x + \int \frac2{x^2 \bp{x^2 + 2}} \d x\\
+            = \frac12 \ln{x^2 + 2} - \frac1{x} + k - \frac1{\sqrt2} \arctan \frac{x}{\sqrt2}.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        For brevity, we write $f(x)$ as $f$, $g(x)$ as $g$, etc.
+        \begin{psubpart}
+            Integrating by parts, we see that \[\int x g \d x = \frac12 g x^2 - \frac12 \int x^2 g' \d x = \frac12 x^2 g - \frac12 \int f' \d x = \frac{x^2 g - f}2 + C.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Using the above result to integrate by parts, we see that \[\int xfg \d x = \frac{x^2 fg - f^2}{2} - \frac12 \int \bp{x^2 f' g - f f'} \d x.\] Clearly, \[\int f f' \d x = \frac12 f^2 + C.\] Also, \[\int x^2 f' g \d x = \int x^4 g' g \d x = \int \bp{h' - g' g} \d x = h - \frac12 g^2 + C.\] Putting everything together, \[\int xfg \d x = \frac{x^2 fg - f^2}{2} - \frac12 \bp{h - \frac12 g^2 - \frac12 f^2} + C = \frac{2x^2 fg - f^2 - 2h + g^2}{4} + C.\]
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that if $n > 0$ then \[\int_n^\infty \frac1{x^2 + n^2} \d x = \frac\pi{4n}.\]
+        \item Show that if $0 < a < b$, then \[\int_b^\infty \frac1{x^2 + n^2} \d x \leq \int_a^\infty \frac1{x^2 + n^2 } \d x.\]
+        \item Hence, deduce that \[\sum_{n = 1}^N \frac1n > \frac4\pi \int_n^\infty \frac{N}{x^2 + N^2} \d x,\] where $N$ is an integer, $N > 1$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\int_n^\infty \frac1{x^2 + n^2} \d x = \evalint{\frac1n \arctan \frac{x}{n}}n{\infty} = \frac1n \bp{\frac\pi2 - \frac\pi4} = \frac{\pi}{4n}.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\int_b^\infty \frac1{x^2 + n^2} \d x = \frac{\pi}{4b} < \frac{\pi}{4a} = \int_a^\infty \frac1{x^2 + n^2 } \d x.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\sum_{n = 1}^N \frac1n > 1 = \frac{4}{\pi} \bp{N \cdot \frac\pi{4N}} = \frac4\pi \int_n^\infty \frac{N}{x^2 + N^2} \d x.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    The functions $f : \RR \to \RR$ and $g : \RR \to [-1, \infty)$ are defined by \[f(x) = \begin{cases}-x , & x \leq 0,\\-x^2, & x> 0,\end{cases} \quad \tand \quad g(x) = \begin{cases}2014 \e^x, & x < 0, \\ x-1, & x \geq 0.\end{cases}\]
+
+    \begin{enumerate}
+        \item Given that the function $f$ is bijective, find $\inv f$ in a similar form.
+        \item By expressing $fg(x)$ and $gf(x)$ in a similar form, solve $fg(x) > gf(x)$.
+    \end{enumerate}
+
+    Given the greatest integer function $h : \RR \to \ZZ$ such that $h(x) = \floor{x}$,
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Show that for $n \in \ZZ^+$, \[\int_{-\infty}^n hg(x) \d x = a \ln b - \ln{b!} + \frac{n(n-c)}{2},\] where $a$, $b$ and $c$ are integers to be determined.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        For $x \leq 0$, $f(x) = -x \geq 0$, so $\inv f = -x$ for $x \geq 0$. For $x > 0$, $f(x) = -x^2 < 0$, so $\inv f = \sqrt{-x}$ for $x < 0$. Thus, \[\inv f(x)= \begin{cases}-x , & x \geq 0, \\ \sqrt{-x} , & x < 0.\end{cases}\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[fg(x) = f\begin{cases}2014 \e^x, & x< 0 \\ x-1 , & 0 \leq  x \leq 1 \\ x-1, & x > 1,\end{cases} = \begin{cases}-\bp{2014\e^x}^2 , & x < 0, \\ -(x-1), & 0 \leq x \leq 1, \\ -(x-1)^2, & x > 1.\end{cases}\] Similarly, we have \[gf(x) = \begin{cases}-x, & x \leq 0, \\ -x^2, & x > 0,\end{cases} = \begin{cases}-x - 1, & x \leq 0, \\ 2014 \e^{-x^2}, & x > 0.\end{cases}\] To solve the inequality $fg(x) > gf(x)$, we consider the following cases:
+
+        \case{1}[$x < 0$] The inequality simplifies down to \[-\bp{2014\e^x}^2 > -x -1 \implies 2014^2 \e^{2x} < x + 1,\] which is never satisfied for all $x < 0$.
+
+        \case{2}[$0 \leq x \leq 1$] The inequality simplifies down to \[-(x-1) > 2014\e^{-x^2},\] which is clearly never satisfied since $-(x-1) < 0$ for all $x \in [0, 1]$, but $2014 \e^{-x^2} > 0$.
+
+        \case{3}[$x > 1$] The inequality simplifies down to \[-(x-1)^2 > 2014\e^{-x^2}.\] For identical reasons (the LHS is non-positive but the RHS is positive), this is never satisfied.
+
+        Thus, we conclude that $fg(x) > gf(x)$ has no solutions.
+    \end{ppart}
+    \begin{ppart}
+        We have \[\int_{-\infty}^n hg(x) \d x = \int_{-\infty}^0 hg(x) \d x + \int_{0}^n hg(x) \d x = \underbrace{\int_{-\infty}^0 \floor{2014 \e^x} \d x}_{I_1} + \underbrace{\int_0^n \floor{x-1} \d x}_{I_2}.\] We first consider $I_2$. Observe that \[\floor{x-1} = k-1, \quad \text{$k \leq x < k-1$}.\] Thus, \[I_2 = \sum_{k = 0}^{n-1} (k-1) = \frac{n(n-1)}{2} - n = \frac{n(n-3)}{2}.\] We now consider $I_1$. Under the transformation $x \mapsto -x$, we obtain \[I_1 = \int_0^\infty \floor{2014\e^{-x}}\d x.\] Observe that \[\floor{2014\e^{-x}} = k, \quad \text{$\ln \frac{2014}{k+1} \leq x < \ln \frac{2014}{k}$}.\] Thus, \[I_1 = \sum_{k=1}^{2013} \int_{\ln{2014/k+1}}^{\ln{2014/k}} k \d x = \sum_{k=1}^{2013} k \bp{\ln \frac{2014}{k} - \ln \frac{2014}{k+1}} = \sum_{k=1}^{2013} k \bs{\ln{k+1} - \ln k}.\] Expanding this sum, we quickly see that it telescopes:
+        \begin{gather*}
+            I_1 = \bp{\ln 2 - \ln 1} + 2\bp{\ln 3 - \ln 2} + 3 \bp{\ln 4 - \ln 3} + \dots + 2013 \bp{\ln 2014 - \ln 2013}\\
+            = 2013 \ln 2014 -\bp{\ln 1 + \ln 2 + \ln 3 + \dots + \ln 2013} = 2013 \ln 2014 - \ln 2013!.
+        \end{gather*}
+        Note that we can also write $I_1$ as $2014 \ln 2014 - \ln 2014!$. 
+        
+        Putting everything together, we see that \[\int_{-\infty}^n hg(x) \d x = 2014 \ln 2014 - \ln 2014! + \frac{n(n-3)}{2},\] whence $a = 2014$, $b = 2014$ and $c = 3$.
+    \end{ppart}
+\end{solution}
