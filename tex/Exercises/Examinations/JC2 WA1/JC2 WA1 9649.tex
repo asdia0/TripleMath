@@ -1,0 +1,80 @@
+\section{JC2 Weighted Assessment 1 - H2 Further Mathematics 9649}
+
+\begin{problem}
+    A popular food chain Dunman Fried Chicken (DFC) is giving out 9 types of LaTuTu dolls as a promotional item. Each customer will randomly get any one of the 9 types of dolls when they purchase a meal. Suppose a customer has already collected $r$ different types of dolls where $r = 1, 2, 3, \dots, 8$. Let $X_r$ be the random variable denoting the additional number of dolls that needs to be collected by the customer until he gets a different type of doll from his current collection of $r$ types of dollts. It can be assumed that the food chain has many dolls for each type.
+
+    \begin{enumerate}
+        \item Find $\P{X_r \leq n}$ in terms of $n$.
+        \item Given that it took 6 attempts for the customer to collect the $(r+1)$th doll, find the probability that the customer takes either less than 9 or more than 12 attempts in total to collect the $(r+1)$th and $(r+2)$th dolls.
+        \item If the customer gets a type of doll that he already possessed, he will sell the doll at a loss of \$2, after taking into account the cost of purchasing a meal for DFC. There is no loss if the customer gets a different type of doll when he purchases a meal. Find the expected amount of money that he will lose for him to collect the entire collection of dolls.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The probability of getting a different doll is $(9-r)/9 = 1 - r/9$. Thus, $X_r \sim \Geo{1 - r/9}$. Hence, \[\P{X_r > n} = \P{\text{first $n$ trials all failures}} = \bp{\frac{r}9}^n.\] Thus, \[\P{X_r \leq n} = 1 - \P{X_r > n} = 1 - \bp{\frac{r}9}^n.\]
+    \end{ppart}
+    \begin{ppart}
+        The desired probability is
+        \begin{gather*}
+            \P{X_r + X_{r+1} < 9 \tor X_r + X_{r+1} > 12}{X_r = 6} = \P{X_{r+1} < 3 \tor X_{r+1} > 6}\\
+            = \P{X_{r+1} < 3} + \P{X_{r+1} > 6} = 1 - \bp{\frac{r+1}9}^2 + \bp{\frac{r+1}9}^6.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Note that $\E{X_r} = 1/(1 - r/9)$. Hence, the expected number of attempts is given by \[1 + \sum_{r = 1}^8 \E{X_r} = 1 + \sum_{r=1}^8 \frac1{1 - r/9} = \frac{7129}{280}.\] Hence, the expected amount of money that he will lose is \[2\bp{\frac{7129}{280} - 8} = \$32.92 \todp{2}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A car salesman receives \$1000 commission for each new car that he sells and \$600 for each used car that he sells. The weekly number of new cars that he sells has a Poisson distribution with mean 3 and, independently, the number of used cars that he sells has a Poisson distribution with mean 2.
+
+    \begin{enumerate}
+        \item Find the probability that his commission in a week is exactly \$3000.
+        \item Calculate the mean and variance of the salesman's weekly commission and determine whether the commission has a Poisson distribution.
+        \item The salesman sold a total of 16 cars in 4 weeks. Find the probability that he sold less than half of it in the first week.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Let the number of new and used cards sold in a week be $N$ and $U$ respectively. Then $N \sim \Po{3}$ and $U \sim \Po{5}$.
+
+    \begin{ppart}
+        For his weekly commission to be exactly \$3000, he must either sell only 3 new cars, or only 5 used cards. The required probability is thus \[\P{N = 3}{U = 0} + \P{N = 0}\P{U = 5} = 0.0321 \tosf{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let his weekly commission be $C$. Then $C = 1000 N + 600 U$. The mean is \[\E{C} = 1000\E{N} + 600\E{U} = 1000(3) + 600(2) = 4200.\] However, the variance is \[\Var{C} = 1000^2\Var{N} + 600^2\Var{U} = 1000^2 (3) + 600^2 (2) = 3720000.\] Since $\E{C} \neq \Var{C}$, it follows that $C$ does not follow a Poisson distribution.
+    \end{ppart}
+    \begin{ppart}
+        Let $X$ be the number of cars sold in the first week. Then $X \sim \Binom{16}{1/4}$. The required probability is thus \[\P{X < 8} = 0.973 \tosf{3}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The variables $x$, $y$ and $z$ are related by the two differential equations
+    \begin{align*}
+        \der{y}{x} - 2y + z &= 4 \sin {2x}, \tag{1}\\
+        \der{z}{x} - 8y + 2z &= 2\cos{2x}. \tag{2}
+    \end{align*}
+    When $x = 0$, $y = z = 0$.
+
+    \begin{enumerate}
+        \item Show that the system of differential equations can be reduced to the second-order differential equation \[\der[2]{y}{x} + 4y = 6\cos{2x} + 8\sin{2x}.\]
+        \item Hence, solve the differential equation in (a) to find $y$ in terms of $x$. Hence, find $z$ in terms of $x$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Differentiating (1) with respect to $x$, \[\der[2]{y}{x} - 2\der{y}{x} + \der{z}{x} = 8\cos{2x}.\] Taking (2) - 2(1) and rearranging, we have \[\der{z}{x} = 4y + 2\der{y}{x} + 2\cos{2x} - 8\sin{2x}.\] Substituting this into (3) yields \[\der[2]{y}{x} - 2\der{y}{x} + \bp{4y + 2\der{y}{x} + 2\cos{2x} - 8\sin{2x}} = 8\cos{2x}.\] Rearranging, we get \[\der[2]{y}{x} + 4y = 6\cos{2x} + 8\sin{2x}.\]
+    \end{ppart}
+    \begin{ppart}
+        The characteristic equation of the DE is $m^2 + 4 = 0$, whence its roots are $m \pm 2\i$. The complementary solution is thus \[y_c = A\sin{2x} + B\cos{2x}.\] For the particular solution, we try $y_p = x\bs{C\sin{2x} + D\cos{2x}}$. Differentiating, we get \[\der{y_p}{x} = 2x\bs{C\cos{2x} - D\sin{2x}} + \bs{C\sin{2x} + D\cos{2x}}.\] Differentiating once more, we get \[\der[2]{y_p}{x} = -4x\bs{C\sin{2x} + D\cos{2x}} + 4\bs{C\cos{2x} - D\sin{2x}}.\] Substituting this into the DE, we obtain
+        \begin{align*}
+            &-4x\bs{C\sin{2x} + D\cos{2x}} + 4\bs{C\cos{2x} - D\sin{2x}}\\
+            &\hspace{6em}+4x\bs{C\sin{2x} + D\cos{2x}} = 6\cos{2x} + 8\sin{2x}.
+        \end{align*}
+        Simplifying, \[C\cos{2x} - D\sin{2x} = \frac32 \cos{2x} + 2\sin{2x}.\] Comparing coefficients, we see that $C = 3/2$ and $D = -2$. Thus, the general solution for $y$ is \[y = y_c + y_p = A\sin{2x} + B\cos{2x} + \frac32 x \sin{2x} -2 x \cos{2x}.\] When $x = 0$, $y = 0$. Thus, $B = 0$. 
+        
+        Differentiating $y$, we get \[\der{y}{x} = 2A\cos{2x} + 3x\cos{2x} + \frac32 \sin{2x} + 4x\sin{2x} - 2\cos{2x}.\] Substituting the initial conditions into (1), we see that $\derx{y}{x} = 0$ when $x = 0$. Thus, $2A - 2 = 0$, whence $A = 1$. Thus, \[y = \sin{2x} + \frac32 x \sin{2x} -2 x \cos{2x}.\]
+
+        Substituting our expressions for $y$ and $\derx{y}{x}$ into (1) and simplifying, we see that \[z = \frac92 \sin{2x} - 7x\cos{2x} - x\sin{2x}.\]
+    \end{ppart}
+\end{solution}
