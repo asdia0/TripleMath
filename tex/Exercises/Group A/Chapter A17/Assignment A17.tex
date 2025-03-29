@@ -1,0 +1,49 @@
+\section{Assignment A17}
+
+\begin{problem}
+    The proportion of letters sent by first-class post which are delivered on the next working day after they are posted is $p$. In order to obtain an estimate of $p$, 1000 letters were posted at randomly chosen times and places, and their times of arrivals were recorded. It was found that 900 were delivered on the next working day after posting. Calculate a 99.5\% confidence interval for $p$.
+
+    Explain briefly what a 99.5\% confidence interval means in this context.
+
+    Subsequently, it is proposed to conduct a larger trial to obtain a more precise estimate of $p$. Estimate the least number of letters to be posted in order for the value of $p$ to be determined to within $\pm 0.005$ with 99.9\% confidence.
+\end{problem}
+\begin{solution}
+    By the Central Limit Theorem, $P_s \sim \Normal{p}{p(1-p)/n}$ approximately. From the given sample, we have $p_s = 900/1000$ and $n = 1000$. Using G.C., a 99.5\% confidence interval for $p$ is $(0.87337, 0.92663)$.
+
+    We can say at a 99.5\% confidence interval that the interval $(0.87337, 0.92663)$ contains the proportion of letters delivered on the next working day.
+
+    For the width to be within $\pm 0.005$, we must have \[z_{0.9995} \sqrt{\frac{p(1-p)}{n}} \leq 0.005.\] Using our estimate $p_s = 900/1000$, by G.C., we have $n \geq 38979.2$. Thus, at least 38980 letters should be posted.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item A research firm conducted a survey to determine the mean amount students spent on drinks during a week. A sample of 60 students revealed that \[\sum (x - 18) = 388, \quad \sum (x - 18)^2 = 2550,\] where $x$ is the amount a student spent on drinks during a week.
+        \begin{enumerate}
+            \item Find the unbiased estimates of the population mean and variance, correct to 3 decimal places.
+            \item Estimate the sample size if it is intended that the resulting 94\% confidence interval for the population mean should have a width of $0.18$.
+            \item Based on the sample size found in (a)(ii), if a confidence interval has width greater than $0.18$, should the confidence level be higher or lower than 94\%? Justify your answer.
+        \end{enumerate}
+        \item A random sample of 50 Year 6 H2 Mathematics preliminary examination scripts are marked, and the passing rate is 60\%. The 95\% confidence interval for the passing rate of all Year 6 H2 Mathematics candidates sitting for the preliminary examination is $(a\%, b\%)$. Calculate the values of $a$ and $b$.
+
+        Asked to explain the meaning of this interval, a student states that ``95\% of the Year 6 classes has a passing rate between $a$\% and $b$\% in their H2 Mathematics preliminary examination.'' Is this statement correct? State your reason.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            We have \[\ol{x} = \frac1n \sum x = \frac{1}{n} \sum (x-18) + 18 = 24.467 \todp{3}\] and \[s^2 = \frac1{n-1} \bs{\sum (x - 18)^2 - \frac1n \bp{\sum (x-18)}^2} = 0.694 \todp{3}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Since the sample size (60) is large, by the Central Limit Theorem, \[\ol{X} \sim \Normal{\ol{x}}{s^2} = \Normal{24.467}{0.694} \text{approximately}.\] For the width to be 0.18, we must have \[z_{0.97} \sqrt{\frac{s^2}{n}} \leq \frac{0.18}{2} = 0.09.\] Using G.C., we have $n \geq 303.0796$. Thus, the sample size should be approximately 304.
+        \end{psubpart}
+        \begin{psubpart}
+            The higher the confidence level, the longer the width. Hence, if the confidence interval has a width greater than 0.18, the confidence level should be larger than 94\%.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        By the Central Limit Theorem, $P_s \sim \Normal{p}{p(1-p)/n}$ approximately. From the sample, $p_s = 0.60$ and $n = 50$. Using G.C., a 95\% confidence interval for $p$ is $(0.464, 0.736)$. Hence, $a = 46.4$ and $b = 73.6$.
+
+        His statement is incorrect. The confidence interval does not say anything about the distribution of passes within a class.
+    \end{ppart}
+\end{solution}

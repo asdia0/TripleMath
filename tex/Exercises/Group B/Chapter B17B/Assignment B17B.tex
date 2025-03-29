@@ -33,7 +33,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[W = \bc{\vec u \in \RR^n \mid \mat A \vec u = \vec u} = \bc{\vec u \in \RR^n \mid (\mat A - \mat I) \vec u = \vec 0},\] which is a null space. Hence, $W$ is a subspace of $\RR^n$.
+        Note that \[W = \bc{\vec u \in \RR^n \mid \mat A \vec u = \vec u} = \bc{\vec u \in \RR^n \mid (\mat A - \mat I) \vec u = \vec 0},\] which is a null space in $\RR^n$. Hence, $W$ is a subspace of $\RR^n$.
     \end{ppart}
     \begin{ppart}
         Consider the solutions to $(\mat A - \mat I) \vec u = \vec 0$: \[(\mat A - \mat I) \vec u = \vec 0 \implies \begin{pmatrix}0 & 0 & -1 \\ 0 & 0 & 0 \\ 0 & 0 & -2 \end{pmatrix} \cveciii{x}{y}{z} = \cveciii{0}{0}{0}.\] We immediately see that $x, y \in \RR$ and $z = 0$. Letting $x = \l$ and $y = \m$, where $\l, \m \in \RR$, we have \[\vec u = \cveciii{x}{y}{z} = \cveciii{\l}{\m}{0} = \l \cveciii100 + \m \cveciii010.\] Thus, a basis of $W$ is \[\bc{\cveciii100, \cveciii010}.\]
@@ -81,7 +81,7 @@
         Let $\mat B = \begin{pmatrix}\vec x_1 & \vec x_2 & \vec x_3 & \vec x_4\end{pmatrix}$. In full, \[\mat B = \begin{pmatrix}1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] Observe that $\det \mat B = 1 \neq 0$. Thus, the column space of $\mat B$ (i.e. the span of $\vec x_1, \dots, \vec x_4$) is $\RR^4$. Also, the columns of $\mat B$ are linearly independent. Thus, $\vec x_1, \dots, \vec x_4$ form a basis of $\RR^4$.
     \end{ppart}
     \begin{ppart}
-        Note that $\mat A$ has RREF \[\begin{pmatrix}1 & 0 & -1 & 2 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, $\Rank \mat A = \dim \Range \mat A = 2$. By the rank-nullity theorem, $\dim \Ker \mat A = 4 - 2 = 2$.
+        Note that $\mat A$ has RREF \[\begin{pmatrix}1 & 0 & -1 & 2 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, the dimension of the column space of $\mat A$ is $\Rank \mat A = 2$. By the rank-nullity theorem, the dimension of the null space of $\mat A$ is $4- 2 = 2$.
     \end{ppart}
     \begin{ppart}
         Note that $V$ is the range (or column space) of $\mat A \mat B = \begin{pmatrix}\mat A \vec x_1 & \mat A \vec x_2 & \mat A \vec x_3 & \mat A \vec x_4 \end{pmatrix}$. Thus, $\dim V = \Rank{\mat A \mat B} = \Rank \mat A = 2$. Note that in the second-last step, we used the fact that $\mat B$ has full rank and thus does not affect the rank of $\mat A \mat B$. A basis of $V$ is \[\bc{\mat A \vec x_1, \mat A \vec x_2} = \bc{\cveciv87{10}6, \cveciv873{-2}}.\]

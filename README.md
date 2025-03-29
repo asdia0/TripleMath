@@ -32,6 +32,8 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A16  | Sampling                                                      |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A17  | Confidence Intervals                                          |  🟡  |   🟢    |      🟡      |    🟡     |
+| A18A  | Hypothesis Testing I - Single Value                           |  🟡  |   🟡    |      🟡      |    🟡     |
+
 
 ### Group B
 
@@ -56,6 +58,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B17A | Linear Algebra - Matrices                                      |  🟢  |   🟢    |      🟡      |    🟢     |
 | B17B | Linear Algebra - Linear Spaces                                 |  🟡  |   🟢    |      🟡      |    🟢     |
 | B17C | Linear Algebra - Eigenvalues and Eigenvectors                  |  🟡  |   🟢    |      🟡      |    🟡     |
+| B18  | Correlation and Regression                                     |  🟡  |   🟡    |      🟡      |    🟡     |
 
 ### H3 Mathematics
 
