@@ -1,0 +1,75 @@
+\chapter{Linear Transformations}
+
+\begin{definition}
+    A \vocab{linear transformation} is a function $T : \RR^n \to \RR^m$ is a function that satisfies the following two properties:
+    \begin{itemize}
+        \item $T(\vec u + \vec v) = T(\vec u) + T(\vec v)$ for all vectors $\vec u, \vec v \in \RR^n$,
+        \item $T(k \vec u) = k T(\vec u)$ for all scalars $k \in \RR$ and vectors $\vec u \in \RR^n$.
+    \end{itemize}
+\end{definition}
+
+Taken together, these two properties mean that linear transformations preserve the structure of linear combinations.
+
+\begin{proposition}[Linear Transformations Preserve Linear Combinations]
+    Let $k_1, \dots, k_r \in \RR$ and $\vec v_1, \dots, \vec v_r \in \RR^n$. Then \[T(k_1 \vec v_1 + \dots + k_r \vec v_r) = k_1 T(\vec v_1) + \dots + k_r T(\vec v_r).\]
+\end{proposition}
+
+When $k = 0$, the second property of linear transformations also implies that $T(\vec 0) = \vec 0$. That is, a linear transformation must map $\vec 0$ to $\vec 0$.
+
+\begin{recipe}[Determining if a Function is a Linear Transformation]
+    To determine if a function $f : \RR^n \to \RR^m$ is a linear transformation, we go through the following ``checklist'', arranged in increasing difficulty to see:
+    \begin{itemize}
+        \item Check if $f(\vec 0) = \vec 0$.
+        \item Check if $f(k \vec v) = k f(\vec v)$.
+        \item Check if $f(\vec u + \vec v) = f(\vec u) + f(\vec v)$.
+    \end{itemize}
+    If $f$ passes the above checklist, we then proceed to show that $f(k_1 \vec v_1 + k_2 \vec v_2) = k_1 f(\vec v_1) + k_2 f(\vec v_2)$. This would immediately imply that $f$ satisfies the two properties and is thus a linear transformation.
+\end{recipe}
+
+\begin{example}
+    Let $T: \RR^2 \to \RR^3$ be a function defined by \[T\cvecii{x}{y} = \cveciii{x}{x+y}{x-y}.\] Clearly, $T(\vec 0) = \vec 0$, so $T$ passes the first check. By inspection, $T$ also satisfies the remaining two checks. We are now confident that $T$ is a linear transformation, so we consider $T(k_1 \vec v_1 + k_2 \vec v_2)$, where $\vec v_1 = \cveciix{x_1}{y_1}$ and $\vec v_2 = \cveciix{x_2}{y_2}$. Then
+    \begin{gather*}
+        T(k_1 \vec v_1 + k_2 \vec v_2) = T\cvecii{k_1 x_1 + k_2 x_2}{k_1 y_1 + k_2 y_2} = \cveciii{k_1 x_1 + k_2 x_2}{\bp{k_1 x_1 + k_2 x_2} + \bp{k_1 y_1 + k_2 y_2}}{\bp{k_1 x_1 + k_2 x_2} - \bp{k_1 y_1 + k_2 y_2}}\\
+        = k_1\cveciii{x_1}{x_1 + y_1}{x_1 - y_1} + k_2 \cveciii{x_2}{x_2 + y_2}{x_2 - y_2} = k_1 T(\vec v_1) + k_2 T(\vec v_2).
+    \end{gather*}
+    Thus, $T$ is indeed a linear transformation.
+\end{example}
+
+\section{Matrix Representation}
+
+Observe that the transformation $T$ in the above example may also be written as \[T\cvecii{x}{y} = \cveciii{x}{x+y}{x-y} = \begin{pmatrix}1 & 0 \\ 1 & 1 \\ 1 & -1\end{pmatrix} \cvecii{x}{y}.\] This is because matrix multiplication may also be seen as a form of linear transformation.
+
+\begin{proposition}[Matrix Multiplication is a Linear Transformation]
+    Let $\mat A$ be an $m \times n$ matrix. Then, multiplication by $\mat A$ will take an $n$-dimensional vector to an $m$-dimensional vector, so $T(\vec x) = \mat A \vec x$ is a function from $\RR^n$ to $\RR^m$. Moreover, it is linear, as for any $\vec x, \vec y \in \RR^n$ and $k \in \RR$, \[T(\vec x + \vec y) = \mat A (\vec x + \vec y) = \mat A \vec x + \mat A \vec y = T(\vec x) + T(\vec y)\] and \[T(k\vec x) = \mat A (k \vec x) = k \mat A \vec x = k T(\vec x).\]
+\end{proposition}
+
+Surprisingly, there are no other examples of linear transformations from $\RR^n$ to $\RR^m$; matrix multiplication is the only kind of linear transformation there is for functions between finite-dimensional spaces:
+
+\begin{proposition}
+    Let $T : \RR^n \to \RR^m$ be a linear transformation. Let $\vec x \in \RR^n$. Then $T(\vec x) = \mat A \vec x$ for some $m \times n$ matrix $\mat A$.
+\end{proposition}
+\begin{proof}
+    Let $\vec e_i$ be the $i$th standard basis vector. Let $\vec x = (x_1, \dots, x_n)$ be an $n$-dimensional vector. Then \[T(\vec x) = T(x_1 \vec e_1 + \dots + x_n \vec e_n) = x_1 T(\vec e_1) + \dots + x_n T(\vec e_n) = \begin{pmatrix}T(\vec e_1) & \cdots & T(\vec e_n)\end{pmatrix} \vec x = \mat A \vec x.\] Since $T(\vec e_i)$ is an $m$-dimensional vector (by the definition of $T$), it follows that $\mat A$ has $m$ rows and $n$ columns, i.e. $\mat A$ is an $m \times n$ matrix.
+\end{proof}
+
+\section{Linear Spaces}
+
+\begin{definition}
+    A \vocab{linear space} (or \vocab{vector space}) over $\RR$ is a set $V$ equipped with two operations, addition ($+$) and scalar multiplication ($\cdot$), such that for any vectors $\vec u, \vec v, \vec w \in V$ and for all $c, d \in \RR$, the following ten axioms are satisfied:
+    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \begin{enumerate}
+        \item Closure under addition: $\vec u + \vec v \in V$.
+        \item Addition is commutative: $\vec u + \vec v = \vec v + \vec u$.
+        \item Addition is associative: $(\vec u + \vec v) + \vec w = \vec u + (\vec v + \vec w)$.
+        \item Existence of additive identity: There is a zero vector, $\vec 0$, such that $\vec 0 + \vec u = \vec u$.
+        \item Existence of additive inverse: There is a vector $-\vec u$ such that $\vec u + (-\vec u) = \vec 0$.
+        \item Closure under scalar multiplication: $c\vec u \in V$.
+        \item Scalar multiplication is distributive over vector addition: $c(\vec u + \vec v) = c \vec u + c \vec v$.
+        \item Scalar multiplication is distributive over scalar addition: $(c + d) \vec u = c \vec u + d \vec u$.
+        \item Scalar multiplication is associative: $c(d \vec u) = (cd) \vec u$.
+        \item Existence of scalar multiplicative identity: There exists a scalar, 1, such that $1 \vec u = \vec u$.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{definition}
+
+One can think of a linear space as an Abelian group (under addition, Axioms 1-5) with the added structure of ``scalar multiplication'' (Axioms 6-10).
