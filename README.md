@@ -6,6 +6,16 @@ Notes and exercises for A Level H2/3 Mathematics and H2 Further Mathematics.
 
 A green icon (🟢) indicates the relevant section has been added. A yellow icon (🟡) indicates a work in progress. A red icon (🔴) indicates there is no such section (e.g. the tutorial does not exist).
 
+### Progress
+
+|              | 🟢 | 🟡 | 🔴 | Percentage                                              |
+| -----------: | :-: | :-: | :-: | ------------------------------------------------------- |
+|      Group A | 70  | 27  |  3  | <progress id="file" value="73" max="100" title="73%"/>  |
+|      Group B | 56  | 25  |  3  | <progress id="file" value="59" max="84" title="70%"/>   |
+|           H3 |  3  |  6  |  0  | <progress id="file" value="3" max="9" title="33%"/>     |
+| Examinations |  8  |  4  |  0  | <progress id="file" value="8" max="12" title="67%"/>    |
+|    **Total** | 137 | 62  |  6  | <progress id="file" value="143" max="205" title="70%"/> |
+
 ### Group A
 
 | Code  | Chapter                                                       | Notes | Tutorial | Self-Practice | Assignment |
@@ -33,7 +43,8 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  A16  | Sampling                                                      |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A17  | Confidence Intervals                                          |  🟡  |   🟢    |      🟡      |    🟢     |
 | A18A  | Hypothesis Testing I - Single Value                           |  🟡  |   🟡    |      🟡      |    🟡     |
-
+| A18B  | Hypothesis Testing II                                         |  🟡  |   🟡    |      🟡      |    🟡     |
+| A18C  | Hypothesis Testing III                                        |  🟡  |   🟡    |      🟡      |    🟡     |
 
 ### Group B
 
@@ -59,14 +70,15 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B17B | Linear Algebra - Linear Spaces                                 |  🟡  |   🟢    |      🟡      |    🟢     |
 | B17C | Linear Algebra - Eigenvalues and Eigenvectors                  |  🟡  |   🟢    |      🟡      |    🟡     |
 | B18  | Correlation and Regression                                     |  🟡  |   🟡    |      🟡      |    🟡     |
+| B19  | Non-Parametric Test                                            |  🟡  |   🟡    |      🟡      |    🟡     |
 
 ### H3 Mathematics
 
 | Topic                             | Notes | Tutorials | Self-Practice |
 | --------------------------------- | :---: | :-------: | :-----------: |
 | Mathematical Proofs and Reasoning |  🟡  |    🟢    |      🟡      |
-| Analysis Part 1                   |  🟡  |    🟢    |      🟡      |
-| Analysis Part 2                   |  🟡  |    🟢    |      🟡      |
+| Analysis 1                        |  🟡  |    🟢    |      🟡      |
+| Analysis 2                        |  🟡  |    🟢    |      🟡      |
 
 
 ### Examinations
@@ -100,13 +112,13 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
   <td>WA 1</td>
   <td>🟢</td>
   <td>🟢</td>
-  <td>🔴</td>
+  <td>🟡</td>
  </tr>
  <tr>
   <td>WA 2</td>
-  <td>🔴</td>
-  <td>🔴</td>
-  <td>🔴</td>
+  <td>🟡</td>
+  <td>🟡</td>
+  <td>🟡</td>
  </tr>
 </table>
 
