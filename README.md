@@ -62,10 +62,12 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 
 ### H3 Mathematics
 
-| Topic                             | Notes | Exercises |
-| --------------------------------- | :---: | :-------: |
-| Mathematical Proofs and Reasoning |  🟡  |    🟢    |
-| Analysis                          |  🟡  |    🟡    |
+| Topic                             | Notes | Tutorials | Self-Practice |
+| --------------------------------- | :---: | :-------: | :-----------: |
+| Mathematical Proofs and Reasoning |  🟡  |    🟢    |      🟡      |
+| Analysis Part 1                   |  🟡  |    🟢    |      🟡      |
+| Analysis Part 2                   |  🟡  |    🟢    |      🟡      |
+
 
 ### Examinations
 
