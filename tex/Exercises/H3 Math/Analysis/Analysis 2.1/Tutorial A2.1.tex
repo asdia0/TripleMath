@@ -1,0 +1,243 @@
+\section{Tutorial A2.1}
+
+\begin{problem}
+    Evaluate the following limits:
+
+    \begin{tasks}(2)
+        \task $\displaystyle \lim_{n \to \infty} \frac{3 + n^2 - n^3}{1 - 3n\sqrt{n} + 5n^3}$,
+        \task $\displaystyle \lim_{n \to \infty} n^4 \bp{\sqrt{1 + \frac1{n^4}} - 1}$,
+        \task $\displaystyle \lim_{n \to \infty} \frac{3^n + (-3)^n}{4^n}$,
+        \task $\displaystyle \lim_{n \to \infty} \prod_{k = 2}^n \bp{1 - \frac1{k^2}}$,
+        \task $\displaystyle \lim_{n \to \infty} \bp{\frac{\sin{n^2 +1}}{5} + \frac{\cos{2n}}{4}}^n$,
+        \task $\displaystyle \lim_{n \to \infty} \sum_{k = 1}^n \frac1{n^2 + 3k}$.
+    \end{tasks}
+\end{problem}
+
+\begin{problem}
+    For each of the following statements, determine whether it is true or false. If it is true, give a proof. If it is false, provide a counter-example.
+    \begin{enumerate}
+        \item If $\bc{x_n}_{n=1}^\infty$ and $\bc{y_n}_{n=1}^\infty$ are both divergent, then $\bc{x_n + y_n}_{n=1}^\infty$ is divergent.
+        \item If $\bc{x_n}_{n=1}^\infty$ is convergent and $\bc{y_n}_{n=1}^\infty$ is divergent, then $\bc{x_n + y_n}_{n=1}^\infty$ is divergent.
+        \item If $\bc{x_n}_{n=1}^\infty$ is convergent and $\bc{y_n}_{n=1}^\infty$ is divergent, then $\bc{x_n y_n}_{n=1}^\infty$ is divergent.
+        \item If $\lim_{n \to \infty} \frac1n \bp{x_1 + x_2 + \dots + x_n} = x$, then $\lim_{n \to \infty} x_n = x$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        False. Take $x_n = n$ and $y_n = -n$. Clearly, both sequences are divergent (to $\infty$ and $-\infty$ respectively), but their sum is the zero sequence.
+    \end{ppart}
+    \begin{ppart}
+        True. Seeking a contradiction, suppose $\bc{x_n}_{n=1}^\infty$ is convergent, $\bc{y_n}_{n=1}^\infty$ divergent and $\bc{x_n + y_n}_{n=1}^\infty$ convergent. Then there exists finite constants $x$ and $s$ such that \[x = \lim_{n \to \infty} x_n \quad \tand \quad s = \lim_{n \to \infty} \bp{x_n + y_n}.\] This implies that \[\lim_{n \to \infty} y_n = \lim_{n \to \infty} \bp{x_n + y_n - x_n} = s - x\] must also be finite, contradicting the divergence of $\bc{y_n}_{n=1}^\infty$.
+    \end{ppart}
+    \begin{ppart}
+        False. Take $x_n = 0$ (which is clearly convergent) and $y_n = n$ (which diverges to $\infty$). Then their product $x_n y_n = 0$ is clearly convergent.
+    \end{ppart}
+    \begin{ppart}
+        False. Take $x_n = (-1)^n$. Then \[\abs{\lim_{n \to \infty} \frac{x_1 + x_2 + \dots + x_n}{n}} = \lim_{n \to \infty} \abs{\frac{x_1 + x_2 + \dots + x_n}{n}} \leq \lim_{n \to \infty} \frac1n = 0\] so \[\lim_{n \to \infty} \frac{x_1 + x_2 + \dots + x_n}{n} = 0,\] but \[\lim_{n \to \infty} x_n = \lim_{n \to \infty} (-1)^n\] does not exist.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Use the result that the sequence $\bc{e_n}_{n=1}^\infty$ defined by $e_n = (1 + 1/n)^n$ converges to $\e$ as $n \to \infty$ to evaluate the following limits.
+    \begin{table}[H]
+        \begin{tabularx}{0.9\linewidth}{@{}l *3{>{\centering\arraybackslash}X}@{}}
+            (a) $\displaystyle\lim_{n \to \infty} \bp{1 + \frac1{4n+1}}^{2n+1}$, & (b) $\displaystyle\lim_{n \to \infty} \bp{1 + \frac3n}^n$, & (c) $\displaystyle\lim_{n \to \infty} \bp{1 - \frac1n}^n$.
+        \end{tabularx}
+    \end{table}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let \[L = \lim_{n \to \infty} \bp{1 + \frac1{4n+1}}^{2n+1}.\] Then \[L^2 = \lim_{n \to \infty} \bp{1 + \frac1{4n+1}}^{4n+2} = \lim_{n \to \infty} \bp{1 + \frac1{4n+1}} \bp{1 + \frac1{4n+1}}^{4n+1} = \e,\] so $L = \sqrt{e}$.
+    \end{ppart}
+    \begin{ppart}
+        Let \[L = \lim_{n \to \infty} \bp{1 + \frac3n}^n = \lim_{n \to \infty} \bp{1 + \frac1{n/3}}^n.\] Then \[L^{1/3} = \lim_{n \to \infty} \bp{1 + \frac1{n/3}}^{n/3} = \e,\] so $L = \e^3$.
+    \end{ppart}
+    \begin{ppart}
+        Let \[L = \lim_{n \to \infty} \bp{1 - \frac1n}^n.\] Then \[L\e = \lim_{n \to \infty} \bp{1 - \frac1n}^n \bp{1 + \frac1n}^n = \lim_{n \to \infty} \bp{1 - \frac1{n^2}}^n.\] By Bernoulli's inequality, one obtains the bound \[1 - \frac{n}{n^2} \leq \bp{1 - \frac1{n^2}}^n \leq 1.\] Taking limits on both sides, we have \[1 \leq \lim_{n \to \infty} \bp{1 - \frac1{n^2}}^n \leq 1,\] so by the Squeeze Theorem, $L\e = 1$, which implies $L = 1/\e$.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Evaluate the following limits, without using L'H\^{o}pital's rule.
+
+    \begin{tasks}(2)
+        \task $\displaystyle \lim_{t \to 6} 8(t-5)(t-7)$,
+        \task $\displaystyle \lim_{y \to -3} (5-y)^{4/3}$,
+        \task $\displaystyle \lim_{y \to 2} \frac{y+2}{y^2 + 5y + 6}$,
+        \task $\displaystyle \lim_{h \to 0} \frac{\sqrt{5h + 4} - 2}{h}$,
+        \task $\displaystyle \lim_{u \to 0} \frac{u^4 - 1}{u^3 - 1}$,
+        \task $\displaystyle \lim_{x \to 0} \frac{1/(x-1) + 1/(x+1)}{x}$,
+        \task $\displaystyle \lim_{x \to 4} \frac{4-x}{5 - \sqrt{x^2 + 9}}$.
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Clearly, \[\lim_{t \to 6} 8(t-5)(t-7) = 8(6-5)(6-7) = -8.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\lim_{y \to -3} (5-y)^{4/3} = (5 - (-3))^{4/3} = 16.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\lim_{y \to 2} \frac{y+2}{y^2 + 5y + 6} = \frac{2 + 2}{2^2 + 5(2) + 6} = \frac15.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\lim_{h \to 0} \frac{\sqrt{5h + 4} - 2}{h} = \evalder{\der{}{x} \sqrt{5x + 4}}{x = 0} = \evalder{\frac5{2\sqrt{5x + 4}}}{x=0} = \frac54.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\lim_{u \to 0} \frac{u^4 - 1}{u^3 - 1} = \frac{-1}{-1} = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\lim_{x \to 0} \frac{1/(x-1) + 1/(x+1)}{x} = \lim_{x \to 0} \frac2{(x-1)(x+1)} = \frac2{(-1)(1)} = -2.\]
+    \end{ppart}
+    \begin{ppart}
+        Rationalizing, we obtain \[\lim_{x \to 4} \frac{4-x}{5 - \sqrt{x^2 + 9}} = \lim_{x \to 4} \frac{\bp{4-x} \bp{5 + \sqrt{x^2 + 9}}}{16 - x^2} = \lim_{x \to 4} \frac{5 + \sqrt{x^2 + 9}}{4 + x} = \frac{5 + \sqrt{4^2 + 9}}{4 + 4} = \frac54.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Suppose that $\displaystyle\lim_{x \to 0} f(x) = 1$ and $\displaystyle\lim_{x \to 0} g(x) = -5$. Find the value of \[\lim_{x \to 0} \frac{2f(x) - g(x)}{\bs{f(x) + 7}^{2/3}}.\]
+\end{problem}
+\begin{solution}
+    Clearly, \[\lim_{x \to 0} \frac{2f(x) - g(x)}{\bs{f(x) + 7}^{2/3}} = \frac{2(1) - (-5)}{(1 + 7)^{2/3}} = \frac74.\]
+\end{solution}
+
+\begin{problem}
+    Suppose that $\displaystyle\lim_{x \to 4} \frac{f(x) - 5}{x-2} = 1$. Find the value of $\displaystyle\lim_{x \to 4} f(x)$.
+\end{problem}
+\begin{solution}
+    Trivially, \[\lim_{x \to 4} \frac{f(x) - 5}{x-2} = \frac{\lim_{x \to 4} f(x) - 5}{4 - 2} = 1 \implies \lim_{x \to 4} f(x) = 7.\]
+\end{solution}
+
+\begin{problem}
+    Suppose that $\displaystyle\lim_{x \to 0} \frac{f(x)}{x^2} = 1$. Find the values of $\displaystyle\lim_{x \to 0} \frac{f(x)}{x}$ and $\displaystyle\lim_{x \to 0} f(x)$.
+\end{problem}
+\begin{solution}
+    We have \[\lim_{x \to 0} \frac{f(x)}{x} = \lim_{x \to 0} x\bs{\frac{f(x)}{x^2}} = 0 \cdot 1 = 0\] and \[\lim_{x \to 0} f(x) = \lim_{x \to 0} x^2 \bs{\frac{f(x)}{x^2}} = 0^2 \cdot 1 = 0.\]
+\end{solution}
+
+\begin{problem}
+    Find the value of the following one-sided limits.
+
+    \begin{tasks}(2)
+        \task $\displaystyle\lim_{x \to -2^+} (x+3) \frac{\abs{x+2}}{x+2}$,
+        \task $\displaystyle\lim_{x \to 0^+} \frac{1 - \cos x}{\abs{\cos x - 1}}$,
+        \task $\displaystyle\lim_{t \to 4^+} \bp{t - \floor{t}}$,
+        \task $\displaystyle\lim_{t \to 4^-} \bp{t - \floor{t}}$,
+        \task $\displaystyle\lim_{h \to 0^+} \frac{\sqrt6 - \sqrt{5h^2 + 11h + 6}}{h}$,
+        \task $\displaystyle\lim_{x \to 0^+} \sqrt{x^3 + x^2 + x} \sin \frac\pi{x}$.
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that \[\lim_{x \to -2^+} (x+3) \frac{\abs{x+2}}{x+2} = \lim_{x \to -2^+} (x+3) \, \sgn{x+2} = (-2 + 3) \, \sgn{0^+} = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\lim_{x \to 0^+} \frac{1 - \cos x}{\abs{\cos x - 1}} = \lim_{x \to 0^+} \sgn{1 - \cos x} = \sgn{0^+} = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\lim_{t \to 4^+} \bp{t - \floor{t}} = 4 - 4 = 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Clearly, \[\lim_{t \to 4^-} \bp{t - \floor{t}} = 4 - 3 = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that
+        \begin{gather*}
+            \lim_{h \to 0^+} \frac{\sqrt6 - \sqrt{5h^2 + 11h + 6}}{h} = -\evalder{\der{}{x} \sqrt{5x^2 + 11x + 6}}{x = 0}\\
+            = -\evalder{\frac{10x + 11}{2\sqrt{5x^2 + 11x + 6}}}{x = 0} = -\frac{11}{2\sqrt6}.
+        \end{gather*}
+    \end{ppart}
+    \begin{ppart}
+        Since $\sin{\pi/x} \in [-1, 1]$, it follows that \[0 = -\lim_{x \to 0} \sqrt{x^3 + x^2 + x} \leq \lim_{x \to 0} \sqrt{x^3 + x^2 + x} \sin \pi t \leq \lim_{x \to 0} \sqrt{x^3 + x^2 + x} = 0.\] Thus, by the Squeeze Theorem, the limit is simply 0.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Find the value of the following limits, without using L'H\^{o}pital's rule.
+
+    \begin{tasks}(2)
+        \task $\displaystyle\lim_{x \to 0} \frac{x \csc 2x}{\cos 5x}$,
+        \task $\displaystyle\lim_{x \to 0} \frac{x + x \cos x}{\sin x \cos x}$,
+        \task $\displaystyle\lim_{x \to 0} \frac{\sin{1 - \cos x}}{1 - \cos x}$,
+        \task $\displaystyle\lim_{x \to 0} \frac{x \cot 4x}{\sin^2 x \cot^2 2x}$.
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Observe that \[\lim_{x \to 0} \frac{x \csc 2x}{\cos 5x} = \lim_{x \to 0} \frac12 \frac{2x}{\sin 2x} \frac1{\cos 5x} = \frac12.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\lim_{x \to 0} \frac{x + x \cos x}{\sin x \cos x} = \lim_{x \to 0} \frac{x}{\sin x} \frac{1 + \cos x}{\cos x} = 2.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $u = 1 - \cos x$. Then \[\lim_{x \to 0} \frac{\sin{1 - \cos x}}{1 - \cos x} = \lim_{u \to 0} \frac{\sin u}{u} = 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\lim_{x \to 0} \frac{x \cot 4x}{\sin^2 x \cot^2 2x} = \lim_{x \to 0} \bp{\frac{x}{\sin x}}^2 \bp{\frac{4x}{\sin 4x}} \bp{\frac{\sin 2x}{2x}}^2 \bp{\frac{\cos 4x}{\cos^2 2x}} = 1.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    For what values of $a$ and $b$ is \[g(x) = \begin{cases}
+        ax + b, & x \leq 0,\\
+        x^2 + 3a - b, & 0 < x \leq 2,\\
+        3x - 5, & x > 2
+    \end{cases}\] continuous at every $x$?
+\end{problem}
+\begin{solution}
+    Equating the left and right limits at $x = 0$, we get \[b = \lim_{x \to 0^-} g(x) = \lim_{x \to 0^+} g(x) = 3a - b.\] Equating the left and right limit at $x = 2$, we get \[4 + 3a - b = \lim_{x \to 2^-} g(x) = \lim_{x \to 2^+} g(x) = 1.\] Solving these two linear equations simultaneous, we get $a = b = -3/2$.
+\end{solution}
+
+\begin{problem}
+    For what values of $a$ and $b$ is \[f(x) = \begin{cases}
+        \frac{\bp{\sin x - a}\bp{\cos x - b}}{\e^x - 1}, & x \neq 0,\\
+        5, & x = 0
+    \end{cases}\] continuous at every $x$?
+\end{problem}
+\begin{ppart}
+    For the limit to exist and be finite, we require the numerator to be 0 as $x \to 0$. This gives $-a(1-b) = 0$, whence $a = 0$ or $b = 1$.
+
+    \case{1} Suppose $a = 0$. Invoking L'H\^{o}pital's rule, we see that \[\lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{\sin x\bp{\cos x - b}}{\e^x - 1} = \lim_{x \to 0} \frac{\cos x \bp{\cos x - b} - \sin^2 x}{\e^x} = 1 - b.\] For $f(x)$ to be continuous, we require $1-b = 5$. Thus, $a = 0$ and $b = -4$.
+
+    \case{2} Suppose $b = 1$. Invoking L'H\^{o}pital's rule, we see that \[\lim_{x \to 0} f(x) = \lim_{x \to 0} \frac{\bp{\sin x - a}\bp{\cos x - 1}}{\e^x - 1} = \lim_{x \to 0} \frac{\cos x \bp{\cos x - 1} -\sin x\bp{\sin x - a}}{\e^x} = 0.\] Since $0 \neq 5$, this case yields no solutions.
+
+    Hence, the only values of $a$ and $b$ that makes $f(x)$ continuous over $\RR$ is $a = 0$ and $b = -4$.
+\end{ppart}
+
+\begin{problem}
+    Find the value of the following limits.
+
+    \begin{tasks}(2)
+        \task $\displaystyle\lim_{x \to 0} \frac{x^2 \sin{1/x}}{\sin x}$,
+        \task $\displaystyle\lim_{x \to \infty} \frac{2x^3 + \sin{x^2}}{1 + x^3}$.
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $x\sin{1/x} \in [-x, x]$. Thus, by the Squeeze Theorem, \[\lim_{x \to 0} x\sin{\frac1x} = 0.\] Hence, the limit in question is simply \[\lim_{x \to 0} \frac{x^2 \sin{1/x}}{\sin x} = \lim_{x \to 0} \bp{\frac{x}{\sin x}} \bs{x\sin{\frac1x}} = 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\abs{\lim_{x \to \infty} \frac{\sin{x^2}}{1 + x^3}} = \lim_{x \to \infty} \abs{\frac{\sin{x^2}}{1 + x^3}} \leq \lim_{x \to \infty} \frac{1}{1 + x^3} = 0.\] Thus, \[\lim_{x \to \infty} \frac{2x^3 + \sin{x^2}}{1 + x^3} = \lim_{x \to \infty} \bp{\lim_{x \to \infty} \frac{2x^3}{1 + x^3} + \lim_{x \to \infty} \frac{\sin{x^2}}{1 + x^3}} = 2.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Evaluate the limit \[\lim_{x \to 1} \bp{\frac{1}{\ln x} - \frac{x^2}{x - 1}}.\]
+\end{problem}
+\begin{solution}
+    Let the limit be $L$. We have \[L = \lim_{x \to 1} \bp{\frac{1}{\ln x} - \frac{x^2}{x - 1}} = \lim_{x \to 1} \frac{x - 1 - x^2 \ln x}{(x-1)\ln x}.\] Invoking L'H\^{o}pital's rule, we have \[L = \lim_{x \to 1} \frac{1 - 2x \ln x - x}{(x-1)/x + \ln x} = \lim_{x \to 1} \frac{1 - 2x \ln x - x}{x - 1 + x \ln x},\] where we multiplied the denominator by $x = 1$. Invoking L'H\^{o}pital's rule once more, we obtain \[L = \lim_{x \to 1} \frac{-1 -2 - 2\ln x}{1 + \ln x + 1} = -\frac32.\]
+\end{solution}
+
+\begin{problem}
+    Evaluate the limit \[\lim_{n \to \infty} \frac{\sum_{k = 1}^n \sqrt{k}}{\sum_{k = 1}^n \sqrt{n + k}}.\]
+\end{problem}
+\begin{solution}
+    Observe that \[\lim_{n \to \infty} n^{-3/2} \sum_{k = 1}^n \sqrt{k} = \lim_{n \to \infty} \sum_{k = 1}^n \frac1n \sqrt{\frac{k}{n}} = \int_0^1 \sqrt{x} \d x = \evalint{\frac23 x^{3/2}}01 = \frac23.\] Likewise,
+    \begin{gather*}
+        \lim_{n \to \infty} n^{-3/2} \sum_{k = 1}^n \sqrt{n + k} = \lim_{n \to \infty} \sum_{k = 1}^n \frac1n \sqrt{1 + \frac{k}{n}}\\
+        = \int_0^1 \sqrt{1 + x} \d x = \evalint{\frac23 (1+x)^{3/2}}01 = \frac23 \bp{2^{3/2} - 1}.
+    \end{gather*}
+    Thus, the limit in question is simply \[\lim_{n \to \infty} \frac{\sum_{k = 1}^n \sqrt{k}}{\sum_{k = 1}^n \sqrt{n + k}} = \lim_{n \to \infty} \frac{n^{-3/2} \sum_{k = 1}^n \sqrt{k}}{n^{-3/2} \sum_{k = 1}^n \sqrt{n + k}} = \frac{2/3}{(2/3)(2^{3/2} - 1)} = \frac1{2^{3/2} - 1}.\]
+\end{solution}

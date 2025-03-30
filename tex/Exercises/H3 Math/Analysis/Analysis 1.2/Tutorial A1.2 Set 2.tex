@@ -4,7 +4,7 @@
     Let $f$ be a differentiable function on $(0, \infty)$ and suppose that \[\lim_{x \to \infty} \bp{f(x) + f'(x)} = L.\] By considering $f(x) = \frac{\e^x f(x)}{\e^x}$, show that $\lim_{x \to \infty} f(x) = L$ and $\lim_{x \to \infty} f'(x) = 0$.
 \end{problem}
 \begin{proof}
-    By L'Hospital's Rule, \[\lim_{x \to \infty} \frac{\e^x f(x)}{\e^x} = \lim_{x \to \infty} \frac{\e^x f'(x) + \e^x f(x)}{\e^x} = \lim_{x \to \infty} \bp{f(x) + f'(x)} = L.\] Hence, \[\lim_{x \to \infty} f'(x) = \lim_{x \to \infty} \bp{f(x) + f'(x)} - \lim_{x \to \infty} f(x) = L - L = 0.\]
+    By L'H\^{o}pital's Rule, \[\lim_{x \to \infty} \frac{\e^x f(x)}{\e^x} = \lim_{x \to \infty} \frac{\e^x f'(x) + \e^x f(x)}{\e^x} = \lim_{x \to \infty} \bp{f(x) + f'(x)} = L.\] Hence, \[\lim_{x \to \infty} f'(x) = \lim_{x \to \infty} \bp{f(x) + f'(x)} - \lim_{x \to \infty} f(x) = L - L = 0.\]
 \end{proof}
 
 \begin{problem}
@@ -44,16 +44,16 @@
     \end{ppart}
 \end{solution}
 
-\begin{problem}
-    Let $f, g : [a, b] \to \RR$ be differentiable functions defined on $[a, b]$ with $a < b$. Suppose that $f(a) = f(b) = 0$, $f(x) \neq 0$ for all $x \in (a, b)$, and $g(a), g(b) \neq 0$.
-
-    \begin{enumerate}
-        \item Let $h : [a, b] \to \RR$ be a differentiable function defined on $[a, b]$ with $a < b$. Suppose that $h(a) = h(b)$. With the aid of a diagram, explain why there exists $c \in (a, b)$ such that $h'(c) = 0$.
-        \item Prove that if $g(x) \neq 0$ for all $x \in (a, b)$, then there exists $c_1 \in (a, b)$ such that \[f(c_1) g'(c_1) = f'(c_1) g(c_1).\]
-        \item Prove that if there exists $d_1, d_2 \in (a, b)$ such that $g(d_1) = g(d_2) = 0$, then there exists $c_2 \in (a, b)$ such that \[f(c_2) g'(c_2) = f'(c_2) g(c_2).\]
-        \item Deduce that $g(x)$ has exactly one zero in $[a, b]$.
-    \end{enumerate}
-\end{problem}
+%\begin{problem}
+%    Let $f, g : [a, b] \to \RR$ be differentiable functions defined on $[a, b]$ with $a < b$. Suppose that $f(a) = f(b) = 0$, $f(x) \neq 0$ for all $x \in (a, b)$, and $g(a), g(b) \neq 0$.
+%
+%    \begin{enumerate}
+%        \item Let $h : [a, b] \to \RR$ be a differentiable function defined on $[a, b]$ with $a < b$. Suppose that $h(a) = h(b)$. With the aid of a diagram, explain why there exists $c \in (a, b)$ such that $h'(c) = 0$.
+%        \item Prove that if $g(x) \neq 0$ for all $x \in (a, b)$, then there exists $c_1 \in (a, b)$ such that \[f(c_1) g'(c_1) = f'(c_1) g(c_1).\]
+%        \item Prove that if there exists $d_1, d_2 \in (a, b)$ such that $g(d_1) = g(d_2) = 0$, then there exists $c_2 \in (a, b)$ such that \[f(c_2) g'(c_2) = f'(c_2) g(c_2).\]
+%        \item Deduce that $g(x)$ has exactly one zero in $[a, b]$.
+%    \end{enumerate}
+%\end{problem}
 
 \begin{problem}
     Let $f: [0,1] \to \RR$ be a differentiable function such that $f(0) = 0$, $f(1) = 1$. Prove that there exists $c, d \in (0, 1)$ such that $c \neq d$ and \[\frac{f'(c)}{c^2} + \frac{f'(d)}{d} = 5.\]

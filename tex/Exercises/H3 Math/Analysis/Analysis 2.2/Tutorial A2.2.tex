@@ -1,0 +1,466 @@
+\section{Tutorial A2.2}
+
+\begin{problem}
+    The geometric progression $U$ has terms $u_1, u_2, u_3, \dots$, with common ratio $r$, where $\abs{r} < 1$. It is given that $v_i = u_i^2$ for $i = 1, 2, 3, \dots$.
+
+    \begin{enumerate}
+        \item Show that \[\sum_{i = 1}^n v_i = \frac{u_1}{1 + r}\sum_{i = 1}^{2n} u_i.\]
+    \end{enumerate}
+
+    It is given further that $w_i = v_i - v_{i+1}$ for $i = 1, 2, 3, \dots$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Show that \[\sum_{i = 1}^n w_i = u_1 \bp{1-r} \sum_{i = 1}^{2n} u_i.\]
+    \end{enumerate}
+
+    Let \[S_U = \sum_{i = 1}^\infty u_i, \quad S_V = \sum_{i = 1}^\infty v_i, \quad S_W = \sum_{i = 1}^\infty w_i.\] Show that
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item $\displaystyle\frac{S_U}{S_V} + \frac1{S_U} = \frac2{u_1}$,
+        \item $S_W = u_1^2$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $u_i = r^{i-1} u_1$. Hence, \[\sum_{i = 1}^{2n} u_i = \sum_{i = 1}^{2n} r^{i-1} u_1 = u_1 \bp{\frac{1-r^{2n}}{1-r}}.\] Meanwhile, we have $v_1 = r^{2i-2} u_1^2$. Thus, \[\sum_{i = 1}^n v_i = \sum_{i = 1}^n r^{2i-2} u_1^2 = u_1^2 \bp{\frac{1 - r^{2n}}{1 - r^2}} = \frac{u_1}{1 + r} \bp{u_1 \frac{1 - r^{2n}}{1 - r}} = \frac{u_1}{1 + r} \sum_{i = 1}^{2n} u_i.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\sum_{i = 1}^n w_i = \sum_{i = 1} \bp{v_i - v_{i+1}}.\] Quite clearly, this sum telescopes, giving \[\sum_{i = 1}^n w_i = v_1 - v_{n+1} = u_1^2 \bp{1 - r^{2n}} = u_1 \bp{1 - r} \bp{u_1 \frac{1 - r^{2n}}{1 - r}} = u_1 \bp{1-r} \sum_{i = 1}^{2n} u_i.\]
+    \end{ppart}
+    \begin{ppart}
+        From part (a), we have \[S_V = \frac{u_1}{1 + r} S_U \implies \frac{S_U}{S_V} = \frac{1 + r}{u_1}.\] Note also that \[S_U = \sum_{i = 1}^\infty u_i = \sum_{i = 1}^\infty r^{i-1} u_1 = \frac{u_1}{1 - r}.\] Thus, \[\frac{S_U}{S_V} + \frac1{S_U} = \frac{1 + r}{u_1} + \frac{1 - r}{u_1} = \frac{2}{u_1}.\]
+    \end{ppart}
+    \begin{ppart}
+        From part (b), we have \[S_W = u_1 \bp{1 - r} S_U = u_1 \bp{1 - r} \frac{u_1}{1 - r} = u_1^2.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    For each of the following sequences, determine if it converges or diverges. Take $n = 1, 2, 3, \dots$.
+
+    \begin{tasks}(2)
+        \task $u_n = \sin{n\pi/2}$,
+        \task $u_n = n^3/3^n$,
+        \task $u_n = n^n / n!$,
+        \task $u_n = (\sin n)/n$.
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[u_n = \begin{cases}
+            \phantom{-}0, & n \equiv 0, 2 \pmod{4},\\
+            \phantom{-}1, & n \equiv 1 \pmod{4},\\
+            -1, & n \equiv 3 \pmod{4}.
+        \end{cases}\] Thus, $u_n$ is divergent.
+    \end{ppart}
+    \begin{ppart}
+        Invoking L'H\^{o}pital's rule repeatedly, \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} \frac{n^3}{3^n} = \frac{3}{\ln 3} \lim_{n \to \infty} \frac{n^2}{3^n} = \frac{6}{\bp{\ln 3}^2} \lim_{n \to \infty} \frac{n}{3^n} = \frac{6}{\bp{\ln 3}^3} \lim_{n \to \infty} \frac1{3^n} = 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the limit be $L$. Then \[\ln L = \lim_{n \to \infty} \bp{n \ln n - \ln n!}.\] By Stirling's approximation, $\ln n! = n\ln n - n + \bigo{\ln n}$. Thus, \[\ln L = \lim_{n \to \infty} \bp{n - \bigo{\ln n}} = \lim_{n \to \infty} \bigo{n},\] which diverges to $\infty$. Hence, $L$ diverges to $\infty$.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\abs{\lim_{n \to \infty} u_n} = \lim_{n \to \infty} \abs{u_n} \leq \lim_{n \to \infty} \frac{1}{n} = 0.\] Thus, the limit converges to 0.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Show that the following series is divergent: \[5 + \sqrt5 + \sqrt[3]{5} + \sqrt[4]{5} + \dots.\]
+\end{problem}
+\begin{solution}
+    We have \[\sum_{i = 1}^\infty 5^{1/i} \geq \sum_{i = 1}^\infty 1^{1/i} = \sum_{i = 1}^\infty 1,\] which clearly diverges to $\infty$.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that \[\sum_{n = 2^{k-1} + 1}^{2^k} \frac1n \geq \frac12\] for every positive integer $k$.
+        \item Show that \[\sum_{n = 1}^{2^k} \frac1n \geq 1 + k/2\] for every positive integer $k$.
+        \item Hence, determine if the harmonic series converges or diverges.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\sum_{n = 2^{k-1} + 1}^{2^k} \frac1n \geq \sum_{n = 2^{k-1} + 1}^{2^k} \frac1{2^k} = \frac1{2^k} \bp{2^{k} - 2^{k-1}} = \frac{2^{k-1}}{2^k} = \frac12.\]
+    \end{ppart}
+    \begin{ppart}
+        We have \[\sum_{n = 1}^{2^k} \frac1n = 1 + \sum_{i = 1}^k \sum_{n = 2^{i-1} + 1}^{2^i} \frac1n \geq 1 + \sum_{i = 1}^k \frac12 = 1 + \frac{k}{2}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\sum_{n = 1}^\infty \frac1n = \lim_{k \to \infty} \sum_{n = 1}^{2^k} \frac1n \geq \lim_{k \to \infty} \bp{1 + \frac{k}2},\] which clearly diverges to $\infty$. Hence, the harmonic series diverges.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Prove that the following sum of series is less than $3/2$ using the formula for the sum of an infinite geometric series: \[1 + \frac13 + \frac1{4^2} + \frac1{5^3} + \frac1{6^4} + \dots.\]
+\end{problem}
+\begin{ppart}
+    Clearly, \[1 + \frac13 + \frac1{4^2} + \frac1{5^3} + \frac1{6^4} + \dots < 1 + \frac13 + \frac1{3^2} + \frac1{3^3} + \frac1{3^4} + \dots = \frac1{1 - 1/3} = \frac32.\]
+\end{ppart}
+
+\begin{problem}
+    The diagram below shows a sketch of the graph $y = 1/x^p$, where $p > 0$, $p \neq 1$.
+
+    \begin{figure}[H]\tikzsetnextfilename{440}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            xmin = 0,
+            ymin = 0,
+            domain = 0:5,
+            restrict y to domain =0:5,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = {1, 2},
+            xticklabels = {$n$, $n+1$},
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[plotRed] {1/x^2};
+            \addlegendentry{$y = 1/x^p$};
+
+            \draw[dashed] (1, 0) -- (1, 1) -- (2, 1) -- (2, 0);
+            \draw[dashed] (2, 0.25) -- (1, 0.25);
+        \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+
+    By considering the area of appropriate rectangles and the area between the graph and the $x$-axis, where $n \geq 1$, show that \[\frac1{(n+1)^p} < \frac1{1-p} (n+1)^{1-p} - \frac1{1-p} n^{1-p} < \frac1{n^p}.\] Deduce that \[\frac1{2^p} + \frac1{3^p} + \dots + \frac1{n^p} + \frac1{(n+1)^p} < \frac1{1-p} \bs{(n+1)^{1-p} - 1} < 1 + \frac1{2^p} + \dots + \frac1{(n-1)^p} + \frac1{n^p}.\] Deduce the convergence of the series \[\sum_{n = 1}^\infty \frac1{n^p}\] when
+    \begin{tasks}(2)
+        \task $p = 1/2$,
+        \task $p = 2$.
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    The area of the big rectangle, denoted $A_1$, is given by \[A_1 = \text{base $\times$ height} = \bp{\frac{1}{(n+1) - n}}\bp{\frac1{n^p}} = \frac{1}{n^p}.\] Meanwhile, the area under the curve $y = 1/x^p$ from $x = n$ to $n+1$, denoted $A_2$, is given by \[A_2 = \int_{n}^{n+1} \frac1{x^p} \d x = \evalint{\frac{x^{1-p}}{1 - p}}{n}{n+1} = \frac1{1-p} \bs{\bp{n+1}^{1-p} - n^{1-p}}.\] Lastly, the area of the small rectangle, denoted $A_3$, is given by \[A_3 = \text{base $\times$ height} = \bp{\frac{1}{(n+1) - n}}\bp{\frac1{(n+1)^p}} = \frac{1}{(n+1)^p}.\]
+
+    From the above diagram, it is clear that $A_3 < A_2 < A_1$. Thus, \[\frac1{(n+1)^p} < \frac1{1-p} (n+1)^{1-p} - \frac1{1-p} n^{1-p} < \frac1{n^p}.\]
+
+    Summing the above result from $n = 1$ to $n = m$, we get \[\frac1{2^p} + \frac1{3^p} + \dots + \frac1{n^p} + \frac1{(n+1)^p} < \frac{(n+1)^{1-p} - 1}{1-p} < 1 + \frac1{2^p} + \dots + \frac1{(n-1)^p} + \frac1{n^p}.\] Note that the middle term telescopes.
+
+    \begin{ppart}
+        When $p = 1/2$, we have \[\sum_{m = 1}^\infty \frac1{m^p} > \lim_{m \to \infty} \frac{(m+1)^{1/2} -1}{1/2},\] which diverges to $\infty$. Thus, the series diverges when $p = 1/2$.
+    \end{ppart}
+    \begin{ppart}
+        When $p = 2$, the sequence $1/x^2$ is strictly positive, so the series is strictly increasing. Since \[\sum_{m = 1}^\infty \frac1{m^p} = 1 + \lim_{m \to \infty} \bs{\frac1{2^p} + \frac1{3^p} + \dots + \frac1{m^p} + \frac1{(m+1)^p}} < 1 + \lim_{m \to \infty} \frac{(m+1)^{-1} - 1}{-1} = 2,\] the series is also bounded above. Thus, the series is convergent.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Sketch the graph of $y = 1/x$ and hence explain why \[\frac11 + \frac12 + \frac13 + \dots + \frac1n > \int_{1}^{n+1} \frac{\d x}{x}.\]
+        \item Sketch the graph of $y = \sin x$ and determine the largest constant $a$ such that $ax \leq \sin x$ for $0 \leq x \leq \pi/2$.
+        \item Part of a proof of convergence and divergence of series in a textbook is as follows:
+        \begin{quote}\itshape
+            Let $n$ be an integer. Then
+            \begin{align*}
+                \sum_{i = 1}^n \sin \frac1i &\geq \frac2\pi \sum_{i = 1}^n \frac1i \geq \frac2\pi \ln{n+1}.\\
+                \sum_{i = 1}^n \sin^2 \frac1i &\leq \sum_{i = 1}^n \frac1{i^2} < 1 + \sum_{i = 2}^n \frac1{i(i-1)} < 2.
+            \end{align*}
+        \end{quote}
+        Explain the second line of the proof. Hence, determine for every positive integer $k$, if the series \[\sin^k \frac11 + \sin^k \frac12 + \sin^k \frac13 + \dots\] is convergent or divergent.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{442}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = 0,
+                    ymin = 0,
+                    domain = 0:5,
+                    restrict y to domain =0:5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1, 2},
+                    xticklabels = {$k$, $k+1$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {1/x};
+                    \addlegendentry{$y = 1/x$};
+        
+                    \draw[dashed] (1, 0) -- (1, 1) -- (2, 1) -- (2, 0);
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+        Clearly, the area of the rectangle is greater than the area under the curve $y = 1/x$ over $[k, k+1]$. Hence, \[\frac1k > \int_{k}^{k+1} \frac1x \d x.\] Summing this result from $k = 1$ to $k = n$, we see that \[\frac11 + \frac12 + \frac13 + \dots + \frac1n > \int_{1}^{n+1} \frac{\d x}{x}.\]
+    \end{ppart}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{443}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:pi/2+0.3,
+                restrict y to domain =0:1.3,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {pi/2},
+                xticklabels = {$\pi/2$},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, domain=0:pi/2] {sin(\x r)};
+                \addlegendentry{$y = \sin x$};
+                \addplot[dashed] {2/pi * x};
+                \fill (pi/2, 1) circle[radius=2.5pt];
+                \node[anchor=north east] (pi/2, 1) {$\bp{\frac\pi2, 1}$};
+            \end{axis}
+        \end{tikzpicture}
+        \end{figure}
+        From the above figure, the line $y = 2x/\pi$ intersects the maximum point $(\pi/2, 1)$. Hence, the maximum such $a$ is $2/\pi$.
+    \end{ppart}
+    \begin{ppart}
+        From (b), we know that $\sin x \geq 2x/\pi$ for all $x \in [0, \pi/2]$. Since $0 < 1/i < 1 < \pi/2$ for all $i = 1, 2, \dots, n$, we have \[\sum_{i = 1}^n \sin \frac1i \geq \sum_{i = 1}^n \frac2\pi \frac1i = \frac2\pi \sum_{i = 1}^n \frac1i.\] From (a), we know that \[\sum_{i = 1}^n \frac1i > \int_1^{n + 1} \frac{\d x}{x} = \ln{n+1}.\] Thus, \[\sum_{i = 1}^n \sin \frac1i \geq \frac2\pi \sum_{i = 1}^n \frac1i \geq \frac2\pi \ln{n+1}.\]
+
+        When $k = 1$, we have \[\sum_{i = 1}^\infty \frac1i \geq \lim_{n \to \infty} \frac2\pi \ln{n+1},\] which diverges. For $k > 2$, by the Cauchy-Schwarz inequality, we have \[\bp{\sum_{i = 1}^n \sin^2 \frac1i}^k \geq \bp{\sum_{i = 1}^n \sin^k \frac1i}^2.\] Thus, \[\sum_{i = 1}^n \sin^k \frac1i \leq \bp{\sum_{i = 1}^n \sin^2 \frac1i}^{k/2} \leq \bp{2}^{k/2}.\] Note also that $\sin[k]{1/i} > 0$ for all $i > 1$. Since our series is increasing and bounded above, it is convergent.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A sequence $u_1, u_2, u_3, \dots$ is given by \[u_r = \begin{cases}
+        0, & r = 2,\\
+        f(r-1) - 2f(r-3), & r \text{ even, } r \neq 2,\\
+        f(r), & r \text{ odd}.
+    \end{cases}\]
+    Let \[S_{n} = \sum_{r = 1}^{n} u_r.\]
+
+    \begin{enumerate}
+        \item Use the method of differences to find $S_{2n}$.
+    \end{enumerate}
+
+    It is given that $f(r) = \ln{(r+1)/r}$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Use your answer to part (a) to show that \[S_{2n} = -\ln 2 + 2\ln \bp{1 + \frac1{2n-1}}.\] Hence, state the value of the sum to infinity.
+        \item Find the smallest value of $n$ for which $S_{2n}$ is within $10^{-2}$ of the sum to infinity.
+        \item By considering the graph of $y = 1/x$ for $x > 0$, show, with the aid of a sketch, that \[\frac1{2n} < u_{2n-1} < \frac1{2n-1}, \quad n \in \ZZ^+.\]
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We begin by splitting the $S_{2n}$ into odd and even sums:
+        \begin{gather*}
+            S_{2n} = \sum_{m = 1}^{n} u_{2m-1} + \sum_{m = 2}^n u_{2m} = \sum_{m = 1}^n f(2m-1) + \sum_{m = 2}^n \bs{f(2m-1) - 2f(2m-3)}\\
+            = f(1) + 2\sum_{m = 2}^n \bs{f(2m-1) - f(2m-3)}.
+        \end{gather*}
+        The resulting sum telescopes, giving \[S_{2n} = f(1) + 2\bs{f(2n-1) - f(1)} = 2f(2n-1) - f(1).\]
+    \end{ppart}
+    \begin{ppart}
+        Using (a), we have \[S_{2n} = 2\ln{\frac{2n}{2n-1}} - \ln 2 = -\ln 2 + 2\ln{1 + \frac1{2n-1}}.\] As $n \to \infty$, $\ln{1 + 1/(2n-1)} \to \ln 1 = 0$. Thus, the sum to infinity is $-\ln 2$.
+    \end{ppart}
+    \begin{ppart}
+        Consider \[\abs{S_{2n} - (-\ln 2)} \leq 10^{-2} \implies 2\ln{1 + \frac1{2n-1}} \leq 10^{-2}.\] Using G.C., $n \geq 100.25$, so the least $n$ is 101.
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[u_{2n-1} = f(2n-1) = \ln{\frac{2n}{2n-1}} = \ln{2n} - \ln{2n-1} = \int_{2n-1}^{2n} \frac1x \d x,\] which is the area under $y = 1/x$ over $[2n-1, 2n]$. Consider the following diagram:
+        \begin{figure}[H]\tikzsetnextfilename{441}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = 0,
+                    ymin = 0,
+                    domain = 0:5,
+                    restrict y to domain =0:5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1, 2},
+                    xticklabels = {$2n-1$, $2n$},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {1/x};
+                    \addlegendentry{$y = 1/x$};
+        
+                    \draw[dashed] (1, 0) -- (1, 1) -- (2, 1) -- (2, 0);
+                    \draw[dashed] (2, 0.5) -- (1, 0.5);
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+        The area under the curve is larger than the area of the smaller rectangle, but smaller than the area of the larger rectangle. Hence, \[\frac1{2n} < u_{2n-1} < \frac1{2n-1}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Use the Binomial Theorem to that for each $n \in \NN$,
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item $\displaystyle\bp{1 + \frac1n}^n \leq \sum_{j = 0}^n \frac1{j!}$,
+            \item $\displaystyle\bp{1 + \frac1n}^n \geq \sum_{j = 0}^k \frac1{j!}\bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}n}$ for any $k < n$.
+        \end{enumerate}
+        \item Deduce that \[\e = \sum_{j = 0}^\infty \frac1{j!}.\]
+        \item Let \[s_n = \sum_{j = 0}^n \frac1{j!}.\] Show that for any $m, n \in \NN$ such that $m > n$, we have \[s_m - s_n < \frac1{n\bp{n!}}.\] Hence, prove that \[\e - \sum_{j = 0}^n \frac1{j!} \leq \frac1{n\bp{n!}}.\]
+        \item Use (c) to explain why $2 < e < 3$.
+        \item Conclude that $\e$ is irrational.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            By the Binomial Theorem, \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \binom{n}{j} \frac1{n^j} = \sum_{j = 0}^n \frac{n!}{(n-j)! j! n^j}.\] Now observe that \[\frac{n!}{(n-j)! \, n^j} = \frac{n(n-1)(n-2)\dots(n-j+1)}{n^j} = \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.\] A trivial upper bound is \[\frac{n!}{(n-j)! n^j} \leq 1 \cdot 1 \dots 1 = 1.\] Thus, \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \frac{n!}{(n-j)! j! n^j} \leq \sum_{j = 0}^n \frac{1}{j!}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Substituting the expression for $\frac{n!}{(n-j)! n^j}$ we found into the sum, we obtain \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.\] Now observe that all the summands are strictly positive. Thus, the sequence of partial sums is increasing. That is, for all positive integers $k < n$, we have
+            \begin{align*}
+                \bp{1 + \frac1n}^n &= \sum_{j = 0}^n \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}\\
+                &\geq \sum_{j = 0}^k \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.
+            \end{align*}
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        From (a)(i) and (ii), we have \[\sum_{j = 0}^k \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}} \leq \bp{1 + \frac1n}^n \leq \sum_{j = 0}^n \frac{1}{j!}.\] As $k, n \to \infty$, we have \[\sum_{j = 0}^\infty \frac1{j!} \leq \e \leq \sum_{j = 0}^\infty \frac{1}{j!}.\] By the Squeeze Theorem, we have \[\e = \sum_{j = 0}^\infty \frac{1}{j!}.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that
+        \begin{align*}
+            s_m - s_n &= \frac1{(n+1)!} + \frac1{(n+2)!} + \frac1{(n+3)!} + \dots + \frac1{m!}\\
+            &= \frac1{(n+1)!} \bs{1 + \frac1{n+2} + \frac1{(n+3)(n+2)} + \dots + \frac1{m(m-1)\dots(n+2)}}\\
+            &< \frac1{(n+1)!} \bs{1 + \frac1{(n+1)} + \frac1{(n+1)^2} + \dots}\\
+            &= \frac1{(n+1)!} \bs{\frac1{1 - 1/(n+1)}} = \frac1{(n+1)!} \bs{\frac{n+1}{n}} = \frac{1}{n\bp{n!}}.
+        \end{align*}
+        Note also that $1/j! > 0$ for all natural $j$, so $s_m > s_n$. This gives the inequality \[0 < s_m - s_n < \frac{1}{n\bp{n!}}.\] As $m \to \infty$, we have \[0 < \e - \sum_{j = 0}^n \frac1{j!} < \frac1{n\bp{n!}}\] for all $n \in \NN$.
+    \end{ppart}
+    \begin{ppart}
+        Taking $n = 1$, the above inequality becomes \[0 < \e - \bp{\frac1{0!} + \frac1{1!}} < \frac1{1 \bp{1!}} \implies 0 < \e - 2 < 1 \implies 2 < \e < 3.\]
+    \end{ppart}
+    \begin{ppart}
+        Seeking a contradiction, suppose $\e$ is rational. Write $\e = a/b$, where $a, b \in \ZZ$ with $b \neq 0$. From part (d), $\e$ is not an integer, so $b \neq 1$. Define \[x = b! \bp{\e - \sum_{j = 0}^b \frac1{j!}}.\] Note that $x > 0$. 
+        
+        Firstly, observe that we can write \[x = a\bp{b - 1}! - \sum_{j = 0}^b \frac{b!}{j!}.\] Since $b!/j! \in \ZZ$ for all $b \geq j$, it follows that $x \in \ZZ$.
+
+        Now, observe that \[0 < x = b! \bp{\e - \sum_{j = 0}^b \frac1{j!}} \leq b! \bp{\frac1{b \bp{b!}}} = \frac1b < 1,\] since $b \neq 1$. This implies that $x \notin \ZZ$, a contradiction. Thus, $\e$ must be irrational.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Taking $x$ to be positive, expand $\bp{2 + x^2}^{1/2}$ in a series of decreasing powers of $x$, as far as the term in $x^{-5}$, and state the set of values of $x$ for which the expansion is valid.
+        \item Given that $f(x) = a + bx + cx^2 - x\bp{2 + x^2}^{1/2}$, where $a$, $b$ and $c$ are constants, and that $f(x) \to 0$ as $x \to \infty$, show that $a = 1$, $b = 0$ and $c = 1$.
+        \item Replacing $a$, $b$ and $c$ by the values given in (b), obtain an expression for the area $A(X)$ between the curve $y = f(x)$ and the $x$-axis for $0 \leq x \leq X$, where $X > 0$.
+        \item Determine the limit $A(X)$ as $X \to \infty$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have
+        \begin{align*}
+            &\bp{2 + x^2}^{1/2} = x\bp{1 + \frac2x}^{1/2}\\
+            &\hspace{1em}= x\bs{1 + \frac12\bp{\frac2{x^2}} + \frac{(1/2)(-1/2)}{2}\bp{\frac2{x^2}}^2 + \frac{(1/2)(-1/2)(-3/2)}6 \bp{\frac2{x^2}}^3 + \bigo{x^{-8}}}\\
+            &\hspace{1em}= x + x^{-1} - \frac12 x^{-3} + \frac12 x^{-5} + \bigo{x^{-7}}.
+        \end{align*}
+        The radius of convergence is given by \[\abs{\frac2{x^2}} = \frac2{x^2} < 1 \implies x > \sqrt{2}.\] Note that we reject $x < -\sqrt{2}$ since $x > 0$.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[f(x) = a + bx + cx^2 - x\bp{2 + x^2}^{1/2} = (a-1) + bx + \bp{c-1}x^2 + \bigo{x^{-2}}.\] For $f(x) \to 0$ as $x \to \infty$, we must have $a-1 = b = c-1 = 0$, whence $a = 1$, $b = 0$ and $c = 1$.
+    \end{ppart}
+    \begin{ppart}
+        We now have \[f(x) = 1 + x^2 - x\bp{2 + x^2}^{1/2}.\] Note that $f(x)$ is always positive:
+        \begin{align*}
+            1 + x^2 - x\bp{2 + x^2}^{1/2} > 0 &\iff \bp{1 + x^2}^2 > x^2 \bp{2 + x^2}\\
+            &\iff 1 + 2x^2 + x^4 > 2x^2 + x^4\\
+            &\iff 1 > 0.
+        \end{align*}
+        Thus,
+        \begin{align*}
+            A(x) &= \int_0^X \abs{f(x)} \d x = \int_0^X \bs{1 + x^2 - x\bp{2 + x^2}^{1/2}} \d x\\
+            &= \int_0^X \bp{1 + x^2} \d x - \frac12 \int_0^X \sqrt{2 + x^2} \d{\bp{2 + x^2}} = \evalint{x + \frac{x^3}{3} - \frac23\bp{2 + x^2}^{3/2}}0X\\
+            &= X + \frac13 X^3 - \frac13 \bp{2 + X^2}^{3/2} + \frac{2^{3/2}}3.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Note that
+        \begin{align*}
+            \frac13 \bp{2 + X^2}^{3/2} &= \frac13 \bp{2 + X^2}\bp{2 + X^2}^{1/2} = \frac13 \bp{2 + X^2} \bp{X + X^{-1} - \frac12 X^{-3}}\\
+            &= \frac13 \bp{3X + X^3 + \bigo{X^{-1}}} = X + \frac13X^3 + \bigo{X^{-1}}.
+        \end{align*}
+        Thus, \[A(X) = -\bigo{X^{-1}} + \frac{2^{3/2}}{3},\] so \[\lim_{X \to \infty} A(X) = \frac{2^{3/2}}{3}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Express $\bp{x^2 + 2}/\bp{x^3 + 1}$ in partial fractions. Hence, or otherwise, show that the coefficient of $x^n$ in the expansion in ascending powers of $x$ of $\bp{1 - x + x^2}^{-1}$ is given by \[\begin{cases}
+        (-1)^m, & n = 3m,\\
+        (-1)^m, & n = 3m+1,\\
+        0, & n = 3m+2,
+    \end{cases}\] where $m$ is a non-negative integer.
+\end{problem}
+\begin{solution}
+    Note that \[\frac{x^2 + 2}{x^3 + 1} = \frac{x^2 + 2}{(x+1)\bp{x^2 - x + 1}} = \frac{A}{x+1} + \frac{Bx + C}{x^2 - x + 1}.\] By the cover-up rule, we immediately have $A = 1$. Multiplying through by $x^3 + 1$, we get \[x^2 + 2 = \bp{x^2 - x + 1} + (x+1)\bp{Bx + C}.\] Comparing constant terms, we get $2 = 1 + C \implies C = 1$. Comparing $x^2$ terms, we have $1 = 1 + B \implies B = 0$. Thus, \[\frac{x^2 + 2}{x^3 + 1} = \frac{1}{x + 1} + \frac{1}{x^2 - x + 1}.\] Now observe that \[\frac1{x + 1} = \sum_{n = 0}^\infty (-x)^n = \sum_{n = 0}^\infty (-1)^n x^n\] and
+    \begin{align*}
+        \frac{x^2 + 2}{x^3 + 1} &= \bp{x^2 + 2} \sum_{m = 0}^\infty \bp{-x^3}^m = \bp{x^2 + 2} \sum_{m = 0}^\infty (-1)^m x^{3m}\\
+        &= \sum_{m = 0}^\infty (-1)^m x^{3m + 2} + \sum_{m = 0}^\infty 2(-1)^m x^{3m}.    
+    \end{align*}
+    Hence, \[\frac1{x^2 - x + 1} = \frac{x^2 + 2}{x^3 + 1} - \frac{1}{x + 1} = \underbrace{\sum_{m = 0}^\infty (-1)^m x^{3m + 2}}_{S_1} + \underbrace{\sum_{m = 0}^\infty 2(-1)^m x^{3m}}_{S_2} - \underbrace{\sum_{n = 0}^\infty (-1)^n x^n}_{S_3}.\]
+
+    \case{1} Suppose $n = 3m$ for some $m \in \NN_0$. $S_1$ does not contribute anything, while $S_2$ contributes a coefficient of $2(-1)^m$ and $S_3$ contributes a coefficient of $-(-1)^n$. Thus, the coefficient of $x^n$ is \[2(-1)^m - (-1)^n = 2(-1)^m - (-1)^{3m} = 2(-1)^m - (-1)^m = (-1)^m.\]
+
+    \case{2} Suppose $n = 3m+1$ for some $m \in \NN_0$. $S_1$ and $S_2$ do not contribute anything, while $S_3$ contributes a coefficient of $-(-1)^n$. Thus, the coefficient of $x^n$ is \[-(-1)^{n} = -(-1)^{3m+1} = (-1)^{3m+2} = (-1)^m.\]
+
+    \case{3} Suppose $n = 3m+2$ for some $M \in \NN_0$. $S_1$ contributes a coefficient of $(-1)^m$. $S_2$ does not contribute anything. $S_3$ contributes a coefficient of $-(-1)^n$. Thus, the coefficient of $x^n$ is \[(-1)^m - (-1)^n = (-1)^m - (-1)^{3m+2} = (-1)^m - (-1)^{m} = 0.\]
+\end{solution}
+
+\begin{problem}
+    The expansion of $E = (1 + x)^n/(1-x)$ in ascending powers of $x$, for small values of $x$ and for any real value of $n$, is denoted by \[1 + p_1(n) x + p_2(n) x^2 + \dots + p_r(n) x^r + \dots.\] Show that $p_r(n)$ is a polynomial in $n$ of degree $r$, given by \[p_r(n) = 1 + n + \frac{n(n-1)}{2} + \frac{n(n-1)(n-2)}{3!} + \dots + \frac{n(n-1)(n-2)\dots(n-r+1)}{r!}.\] By putting $n = -1$ in $E$ and its expansion, and by using the factor theorem, or otherwise, show that
+    \begin{enumerate}
+        \item when $r$ is odd, $(n+1)$ is a factor of the polynomial $p_r(n)$.
+        \item when $r$ is even, $(n+1)$ is a factor of the polynomial $p_r(n) - 1$.
+        \item Deduce that if $f(n)$ and $g(n)$ are any polynomials in $n$ such that \[F(n) = \bs{f(n) + g(n)} p_r(n) - g(n),\] then $F(-1) = -g(-1)$ if $r$ is odd and $F(-1) = f(-1)$ if $r$ is even.
+        \item Prove that, if $N$ is a positive integer, $p_r(N) = 2^N$ for all $r \geq N$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Observe that \[E = \frac{(1 + x)^n}{1 - x} = \bp{\sum_{i = 0}^n \binom{n}{i} x^i} \bp{\sum_{j = 0}^\infty x^j} = \sum_{r = 0}^\infty \bp{\sum_{i + j = r} \binom{n}{i}} x^r.\] Thus,
+    \begin{align*}
+        p_r(n) &= \sum_{i + j = r} \binom{n}{i} = \sum_{i = 0}^r \binom{n}{i} = \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{r}\\
+        &\hspace{1em}= 1 + n + \frac{n(n-1)}{2} + \frac{n(n-1)(n-2)}{3!} + \dots + \frac{n(n-1)(n-2)\dots(n-r+1)}{r!}.
+    \end{align*}
+
+    Observe that \[p_r(-1) = 1 - 1 + \frac{(-1)(-2)}{2!} + \dots + \frac{(-1)(-2)\dots(-r)}{r!} = 1 - 1 + 1 + 1 + \dots \pm 1.\] Since $p_r(n)$ has degree $r$, there are $r+1$ terms above.
+
+    \begin{ppart}
+        When $k$ is odd, there are an even number of terms, so $p_r(-1) = 0$. By the Factor Theorem, it follows that $x+1$ is a factor of $p_r(n)$.
+    \end{ppart}
+    \begin{ppart}
+        When $k$ is even, there are an odd number of terms, so $p_r(-1) = 1$, whence $p_r(-1) - 1 = 0$. By the Factor Theorem, it follows that $x+1$ is a factor of $p_r(n) - 1$.
+    \end{ppart}
+    \begin{ppart}
+        If $r$ is odd, we have \[F(-1) = \bs{f(-1) + g(-1)} \underbrace{p_r(-1)}_{0} - g(-1) = -g(-1).\] If $r$ is even, \[F(-1) = \bs{f(-1) + g(-1)} \underbrace{p_r(-1)}_{1} - g(-1) = f(-1) + g(-1) - g(-1) = f(-1).\]
+    \end{ppart}
+    \begin{ppart}
+        For all $r \geq N$, \[p_r(N) = \sum_{i = 0}^r \binom{N}{i} = \sum_{i = 0}^N \binom{N}{i} + \sum_{i = N+1}^r \binom{N}{i} = 2^N + 0 = 2^N.\]
+    \end{ppart}
+\end{solution}
