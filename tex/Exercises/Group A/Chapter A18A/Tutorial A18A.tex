@@ -1,0 +1,266 @@
+\section{Tutorial A18A}
+
+\begin{problem}
+    For the scenario described below, set up the null and alternative hypotheses required in testing the various claims for (a), (b) and (c). Write the concluding statement for the following cases: (i) \nullhyp{} is rejected, or (ii) \nullhyp{} is not rejected.
+
+    The Health Ministry claimed that the average weight of babies born last year is 3 kg. Test at 10\% significance level whether
+    \begin{enumerate}
+        \item the average weight of babies born last year differs from the claim.
+        \item the Health Ministry has overstated the average weight.
+        \item the Health Ministry has understated the average weight.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let \nullhyp: $\m = 3$, \althyp: $\m \neq 3$.
+        \begin{psubpart}
+            We reject \nullhyp{} and conclude there is sufficient evidence at the 10\% significance level that there is a change in the weight of babies born last year.
+        \end{psubpart}
+        \begin{psubpart}
+            We do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that there is a change in the weight of babies born last year.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: $\m = 3$, \althyp: $\m < 3$.
+        \begin{psubpart}
+            We reject \nullhyp{} and conclude there is sufficient evidence at the 10\% significance level that there is a decrease in the weight of babies born last year.
+        \end{psubpart}
+        \begin{psubpart}
+            We do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that there is decrease in the weight of babies born last year.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: $\m = 3$, \althyp: $\m > 3$.
+        \begin{psubpart}
+            We reject \nullhyp{} and conclude there is sufficient evidence at the 10\% significance level that there is an increase in the weight of babies born last year.
+        \end{psubpart}
+        \begin{psubpart}
+            We do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that there is an increase in the weight of babies born last year.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A random variable $X$ is known to have a normal distribution with variance 36. The mean of the distribution of $X$ is denoted by $\m$. A random sample of 50 observations of $X$ has mean 23.8. Test, at 2\% significance level, the null hypothesis $\m=22$ against the alternative hypothesis $\m>22$.
+\end{problem}
+\begin{solution}
+    Let \nullhyp: $\m = 22$, \althyp: $\m > 2$. We perform a 1-tail test at 2\% significance level. Under \nullhyp, $\ol{X} \sim \Normal{22}{36/50}$. From the sample, $\ol{x} = 23.8$. Using G.C., the $p$-value is 0.0169, which is less than the significance level of 2\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at 2\% significance level that $\m > 22$.
+\end{solution}
+
+\begin{problem}
+    A random sample of 10 observations of a normal variable $X$ has mean $\ol{x}$, where \[\ol{x}=4.344 \quad \tand \quad \sum \bp{x - \ol{x}}^{2}=0.8022.\] Carry out a 2-tail test, at the 5\% level of significance, to test whether the mean of $X$ is 4.58. State your null and alternative hypotheses clearly.
+\end{problem}
+\begin{solution}
+    Let \nullhyp: $\m = 4.58$, \althyp: $m \neq 4.58$. We perform a 2-tail test at 5\% significance level. Under \nullhyp, \[\frac{\ol{X} - \m}{S/\sqrt{10}} \sim \StudentT{9}.\] From the sample, $\ol{x} = 4.344$ and \[s^2 = \frac1{9} \sum \bp{x - \ol{x}}^2 = 0.089133 \tosf{5}.\] Using G.C., the $p$-value is 0.0339, which is less than the significance level of 5\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at 5\% significance level that $\m \neq 4.58$.
+\end{solution}
+
+\begin{problem}
+    The mean of a normally distributed random variable $X$ is denoted by $\m$, and it is given that the population variance is 15. A sample of 50 random observations of $X$ is taken, and the results are summarized by $\sum x= 527.1$.
+
+    \begin{enumerate}
+        \item Carry out a 2-tail test of the null hypothesis $\m=9.5$, at the 5\% significance level.
+        \item Carry out an appropriate 1-tail test of the null hypothesis $\m=11.5$ at the 5\% significance level. State your alternative hypothesis clearly, with explanation.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let \nullhyp: $\m = 9.5$, \althyp: $\m \neq 9.5$. We perform a 2-tail test at 5\% significance level. Under \nullhyp, $\ol{X} \sim \Normal{9.5}{15/50}$. From sample, \[\ol{x} = \frac1{50} \sum x = 10.542 \tosf{5}.\] Using G.C., the $p$-value is 0.0571, which is greater than the significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at 5\% significance level that $\m \neq 9.5$.
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: $\m = 11.5$. Since $\ol{x} = 10.542 < 11.5$, the alternative hypothesis \althyp is $\m < 11.5$. We perform a 1-tail test at 5\% significance level. Under \nullhyp, $\ol{X} \sim \Normal{11.5}{15/50}$. Using G.C., the $p$-value is 0.0401, which is less than the significance level of 5\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at 5\% significance level that $\m < 11.5$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    `Brilliant' fireworks are intended to burn for 40 seconds. A random sample of 50 `Brilliant' fireworks is taken. Each firework in the sample is ignited and the burning time, $x$ seconds, is measured. The results are summarized by \[\sum(x-40)=-27, \quad \sum(x-40)^{2}=167.\]
+
+    \begin{enumerate}
+        \item Test, at the 5\% level of significance, whether the mean burning time of `Brilliant' fireworks differs from 40 seconds.
+        \item Suggest a reason why, in this context, the given data is summarized in terms of $(x-40)$ rather than x.
+        \item State, with a reason, whether, in using the above test, it is necessary to assume that the burning times of `Brilliant' fireworks have a normal distribution.
+        \item State what you understand by the expression `at the 5\% level of significance' in the context of the question.
+        \item Explain what is meant by critical region of the test conducted in (c) in the context of the question. State the critical region.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let \nullhyp: $\m = 40$, \althyp: $\m \neq 40$. We perform a 2-tail test at 5\% significance level. Under \nullhyp, by the Central Limit Theorem, $\ol{X} \sim \Normal{40}{\s^2/50}$ approximately. From the sample, \[\ol{x} = \frac1{50} \sum \bp{x - 40} + 40 = 39.46\] and \[s^2 = \frac1{49}\bs{\sum (x-40)^2 - \frac1{50} \bp{\sum (x-40)}^2} = 3.1106.\] Thus, $\ol{X} \sim \Normal{40}{3.1106/50}$ approximately. Using G.C., the $p$-value is 0.0303, which is less than the significance level of 5\%. Thus, we reject \nullhyp{} and conclude that there is sufficient evidence at 5\% significance level that the mean burning time of `Brilliant' fireworks differs from 40 seconds.
+    \end{ppart}
+    \begin{ppart}
+        The claimed mean burning time is 40 seconds.
+    \end{ppart}
+    \begin{ppart}
+        No. Because the sample size (50) is large, the Central Limit Theorem ensures that $\ol{X}$ approximately follows a normal distribution, regardless of the distribution of $X$.
+    \end{ppart}
+    \begin{ppart}
+        There is a 5\% chance of rejecting \nullhyp{} given that the mean burning time of `Brilliant' fireworks is actually 40 seconds.
+    \end{ppart}
+    \begin{ppart}
+        The critical region is the set of values of $\ol{x}$ that leads to rejecting \nullhyp. Using G.C., the critical region is $\ol{x} < 39.138$ or $\ol{x} > 40.862$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A coin is chosen at random from a population of recently produced coins. The discrete random variable $X$ is the age, in years, of the coin. The population mean of $X$ is denoted by $\m$, and the population standard deviation is denoted by $\s$. A random sample of 150 independent observations of $X$ was taken, and the results can be summarized as follows.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|c|c|c|}
+            \hline
+            Age ($x$) & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+            Frequency ($f$) & 24 & 36 & 31 & 23 & 17 & 19 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Explain what is meant by random sample in context of the question.
+        \item Calculate unbiased estimates of $\m$ and $\s^{2}$.
+        \item What do you understand by the term unbiased estimate?
+        \item A one-tail test to test $\m=2$ against $\m>2$ is carried out. Find the smallest significance level of the test at which the claim $\m>2$ is supported.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Each recently-produced coin has an equal and independent chance of being selected for observation.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $\ol{x} = 2.2$ and $s^2 = 1.614^2 = 2.60$.
+    \end{ppart}
+    \begin{ppart}
+        An unbiased estimate is an estimate of a population parameter such that the expected value of the estimator is equal to the true value of the parameter.
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: $\m = 2$, \althyp: $\m > 2$. Under \nullhyp, by the Central Limit Theorem, $\ol{X} \sim \Normal{2}{2.60/150}$ approximately. Using G.C., the $p$-value is 0.0646. Thus, 6.46\% is the smallest significance level that results in the rejection of \nullhyp.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A random sample of 90 batteries, used in a particular model of mobile phone, is tested and the `standby-time', $x$ hours which is normally distributed, is measured. The results are summarized by \[\sum x=3040.8 \quad \tand \quad \sum x^{2}=115773.66.\] Test, at the 1\% significance level, whether the mean standby-time is less than 36.0 hours.
+
+    In a test at the 5\% significance level, it is found that there is significant evidence that the population mean talk-time is less than 5 hours.
+
+    Using only this information, and giving a reason in each case, state whether each of the following statements is (i) necessarily true, (ii) necessarily false, or (iii) neither necessary true nor necessarily false.
+
+    \begin{enumerate}
+        \item There is significant evidence at the 10\% significance level that the population mean talk-time is less than 5 hours.
+        \item There is significant evidence at the 5\% significance level that the population mean talk-time is not 5 hours.
+    \end{enumerate}
+    
+    The manufacturer changed the production method of the batteries. It took a sample of 100 batteries, and obtained a 95\% confidence interval for the mean standby-time of $(36.2, 37.4)$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Without further computation, explain if the mean standby-time of the batteries have changed from 36.0 hours.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Let \nullhyp: $\m = 36.0$, \althyp: $\m < 36.0$. We perform a 1-tail test at 1\% significance level. From the sample, \[\ol{x} = \frac1{90} \sum x = 33.787 \tosf{5}\] and \[s^2 = \frac1{89} \bs{\sum x^2 - \frac1{90} \bp{\sum x}^2} = 146.46 \tosf{5}.\] Under \nullhyp, $\ol{X} \sim \Normal{36.0}{146.46/90}$ approximately. Using G.C., the $p$-value is 0.0414, which is greater than the significance level of 1\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at 1\% significance level that the mean standby-time is less than 36.0 hours.
+
+    \begin{ppart}
+        It is necessarily true. The higher the significance level, the larger the critical region.
+    \end{ppart}
+    \begin{ppart}
+        It is neither necessarily true nor necessarily false. If the $p$-value is less than 2.5\%, \nullhyp{} would be rejected under a 2-tail test. However, if the $p$-value is between 2.5\% and 5\%, \nullhyp{} would not be rejected.
+    \end{ppart}
+    \begin{ppart}
+        Since the 95\% confidence interval $(36.2, 37.4)$ does not contain $\m = 36.0$, under a 2-tail test at 5\% significance level, we can reject \nullhyp{}. Thus, there is sufficient evidence at a 5\% significance level that the mean standby-time of the batteries has changed from 36.0 hours.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    In a factory, the time in minutes for an employee to install an electronic component is a normally distributed continuous random variable $T$. The standard deviation of $T$ is 5.0 and under ordinary conditions, the expected value of $T$ is 38.0. After background music is introduced into the factory, a sample of $n$ components is taken and the mean time for randomly chosen employees to install them is found to be $\ol{t}$ minutes. A test is carried out, at the 5\% significance level, to determine whether the mean time taken to install a component has been reduced.
+
+    \begin{enumerate}
+        \item State appropriate hypotheses for the test, defining any symbols you use.
+        \item Given that $n=50$, state the set of values of $\ol{t}$ for which the result of the test would be to reject the null hypothesis.
+        \item It is given instead that $\ol{t}=37.1$ and the result of the test is that the null hypothesis is not rejected. Obtain an inequality involving $n$, and hence find the set of values that $n$ can take.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\m = \E{T}$. The hypotheses are \nullhyp: $\m = 38.0$, \althyp: $\m < 38.0$.
+    \end{ppart}
+    \begin{ppart}
+        We perform a 1-tail test at 5\% significance level. Under \nullhyp, $\ol{T} \sim \Normal{38.0}{5.0^2/50}$. Normalizing, \[\frac{\ol{T} - 38.0}{5.0/\sqrt{50}} \sim \Normal{0}{1}.\] For the null hypotheses to be rejected, we must have \[\frac{\ol{t} - 38.0}{5.0/\sqrt{50}} \leq z_{0.05}.\] Thus, $\ol{t} < 36.8$. Further, $t > 0$, so $0 < \ol{t} < 36.8$.
+    \end{ppart}
+    \begin{ppart}
+        We perform a 1-tail test at 5\% significance level. Under \nullhyp, $\ol{T} \sim \Normal{38.0}{5.0^2/n}$. Normalizing, \[\frac{\ol{T} - 38.0}{5.0/\sqrt{n}} \sim \Normal{0}{1}.\] For the null hypotheses to be rejected, we must have \[\frac{37.1 - 38.0}{5.0/\sqrt{n}} \leq z_{0.05}.\] Thus, $1 \leq n \leq 83$. The set of values that $n$ can take is thus $\bc{n \in \ZZ : 1 \leq n \leq 83}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A motoring magazine editor believes that the figures quoted by car manufacturers for distances travelled per litre of fuel are too high. He carries out a survey into this by asking for information by readers. For a certain model of car, 8 readers reply with the following data, measured in km per litre. \[14.0 \quad 12.5 \quad 11.0 \quad 11.0 \quad 12.5 \quad12.6 \quad 15.6 \quad 13.2.\]
+
+    \begin{enumerate}
+        \item Calculate unbiased estimates of the population mean and variance.
+    \end{enumerate}
+    
+    The manufacturer claims that this model of car will travel 13.8 km per litre on average.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Stating two assumptions, carry out a $t$-test of the magazine editor's belief at the 5\% significance level.
+        \item Explain the meaning of $p$-value in the context of the question.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., $\ol{x} = 12.8$, $s^2 = 1.518458^2 = 2.3057$.
+    \end{ppart}
+    \begin{ppart}
+        Let the random variable $X$ be the distance travelled per litre, measured in km. We assume that $X$ is normally distributed, and that the information provided by the readers are truthful. Let \nullhyp: $\m = 13.8$, \althyp: $\m < 13.8$. We perform a 1-tail test at 5\% significance level. Under \nullhyp, \[\frac{\ol{X} - 13.8}{2.3057/\sqrt{8}} \sim \StudentT{7}.\] Using G.C., the $p$-value is 0.0524, which is greater than the significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at 5\% significance level that the model of car travels less than 13.8 km per litre.
+    \end{ppart}
+    \begin{ppart}
+        There is a 5.24\% chance of obtaining a sample mean less than 12.8.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A company supplies sugar in small packets. The mass of sugar in one packet is denoted by $X$ grams. The masses of a random sample of 9 packets are summarized by \[\sum x = 86.4 \quad \tand \quad \sum x^2 = 835.82.\]
+    
+    \begin{enumerate}
+        \item Calculate unbiased estimates of the mean and variance of $X$.
+    \end{enumerate}
+
+    The mean mass of sugar in a packet is claimed to be 10 grams. The company directors want to know whether the sample indicates that this claim is over-stated.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Stating a necessary assumption, carry out a $t$-test at the 5\% significance level. Explain why the Central Limit Theorem does not apply in this context.
+        \item Suppose now that the population variance of $X$ is known, and the assumption made in part (b) is still valid. What change would there be in carrying out the test? You do not have to carry out the test.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\ol{x} = \frac19 \sum x = 9.6\] and \[s^2 = \frac18 \bs{\sum x^2 - \frac19 \bp{\sum x}^2} = 0.81.\]
+    \end{ppart}
+    \begin{ppart}
+        Assume that $X$ is normally distributed. Let \nullhyp: $\m = 10$ and \althyp: $\m < 10$. We perform a 1-tail test at 5\% significance level. Under \nullhyp{}, \[\frac{\ol{X} - 10}{\sqrt{0.81/9}} \sim \StudentT{8}.\] Using G.C., the $p$-value is 0.110, which is greater than the significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at 5\% significance level that the mean mass of sugar per packet is less than 10g.
+
+        The Central Limit Theorem does not apply here as the sample size, 10, is too small.
+    \end{ppart}
+    \begin{ppart}
+        If the population variance of $X$ is known, we will use a $z$-test instead of a $t$-test to calculate the $p$-value.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The number of minutes that the 0815 bus arrives late at my local bus stop has a normal distribution; the mean number of minutes the bus is late has been 4.3. A new company takes over the service, claiming the punctuality will be improved. After the new company takes over, a random sample of 10 days is taken and the number of minutes that the bus is late is recorded. The sample mean is $\ol{t}$ minutes and the sample variance is $k^2$ minutes$^2$. A test is to be carried out at the 10\% level of significance to determine whether the mean number of minutes late has been reduced.
+
+    \begin{enumerate}
+        \item State appropriate hypothesis for the test, defining any symbols that you use.
+        \item Given that $k^2 = 3.2$, find the set of values of $\ol{t}$ for which the result of the test would be that the null hypothesis is not rejected.
+        \item Given instead that $\ol{t} = 4.0$, find the set of values of $k^2$ for which the result of the test would be to reject the null hypothesis.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $T$ be the number of minutes that the bus is late. Let $\m = \E{T}$. The hypotheses are \nullhyp: $\m = 4.3$, \althyp: $\m < 4.3$.
+    \end{ppart}
+    \begin{ppart}
+        We perform a 1-tail test at 10\% significance level. Under \nullhyp, \[\frac{\ol{T} - 4.3}{\sqrt{3.2/10}} \sim \StudentT{9}.\] To not reject \nullhyp, we require \[\frac{\ol{t} - 4.3}{\sqrt{3.2/10}} > t_{0.10}.\] Solving, we get $\ol{t} > 3.52$. Thus, the set of values that $\ol{t}$ can take on is \[\bc{\ol{t} \in \RR: \ol{t} > 3.52}.\]
+    \end{ppart}
+    \begin{ppart}
+        We perform a 1-tail test at 10\% significance level. Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/\sqrt{10}} \sim \StudentT{9}.\] To reject \nullhyp, we require \[\frac{4.0 - 4.3}{k/\sqrt{10}} \leq t_{0.10}.\] Solving, we get $k^2 \leq 0.470$. Thus, the set of values that $k^2$ can take on is \[\bc{k^2 \in \RR : 0 < k^2 \leq 0.470}.\]
+    \end{ppart}
+\end{solution}

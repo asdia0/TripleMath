@@ -10,11 +10,11 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 
 |              | 🟢 | 🟡 | 🔴 | Percentage                                              |
 | -----------: | :-: | :-: | :-: | ------------------------------------------------------- |
-|      Group A | 70  | 27  |  3  | <progress id="file" value="73" max="100" title="73%"/>  |
+|      Group A | 71  | 26  |  3  | <progress id="file" value="74" max="100" title="74%"/>  |
 |      Group B | 56  | 25  |  3  | <progress id="file" value="59" max="84" title="70%"/>   |
 |           H3 |  3  |  6  |  0  | <progress id="file" value="3" max="9" title="33%"/>     |
 | Examinations |  8  |  4  |  0  | <progress id="file" value="8" max="12" title="67%"/>    |
-|    **Total** | 137 | 62  |  6  | <progress id="file" value="143" max="205" title="70%"/> |
+|    **Total** | 138 | 61  |  6  | <progress id="file" value="144" max="205" title="70%"/> |
 
 ### Group A
 
@@ -42,7 +42,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A16  | Sampling                                                      |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A17  | Confidence Intervals                                          |  🟡  |   🟢    |      🟡      |    🟢     |
-| A18A  | Hypothesis Testing I - Single Value                           |  🟡  |   🟡    |      🟡      |    🟡     |
+| A18A  | Hypothesis Testing I - Single Value                           |  🟡  |   🟢    |      🟡      |    🟡     |
 | A18B  | Hypothesis Testing II                                         |  🟡  |   🟡    |      🟡      |    🟡     |
 | A18C  | Hypothesis Testing III                                        |  🟡  |   🟡    |      🟡      |    🟡     |
 
