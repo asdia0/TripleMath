@@ -19,6 +19,7 @@
 
 \hypersetup{pdfauthor={Eytan Chong},pdfsubject={Dunman High Maths Notes},pdftitle={Triple Math},pdfkeywords={Dunman High Math Notes}}
 
+\AfterTOCHead{\pagestyle{plain}}
 \AfterStartingTOC{\clearpage}
 
 \newcommand{\partx}[1]{\cleardoubleoddpage\part{#1}\cleardoubleoddpage}
@@ -238,3 +239,5 @@ headpunct={.},
 
 \usepackage{needspace}
 \pretocmd{\section}{\needspace{10\baselineskip}}{}{}
+
+\newcommand{\vocab}[1]{\textbf{\color{ForestGreen!90!black}\sffamily #1}}

@@ -58,7 +58,7 @@
         Invoking L'H\^{o}pital's rule repeatedly, \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} \frac{n^3}{3^n} = \frac{3}{\ln 3} \lim_{n \to \infty} \frac{n^2}{3^n} = \frac{6}{\bp{\ln 3}^2} \lim_{n \to \infty} \frac{n}{3^n} = \frac{6}{\bp{\ln 3}^3} \lim_{n \to \infty} \frac1{3^n} = 0.\]
     \end{ppart}
     \begin{ppart}
-        Let the limit be $L$. Then \[\ln L = \lim_{n \to \infty} \bp{n \ln n - \ln n!}.\] By Stirling's approximation, $\ln n! = n\ln n - n + \bigo{\ln n}$. Thus, \[\ln L = \lim_{n \to \infty} \bp{n - \bigo{\ln n}} = \lim_{n \to \infty} \bigo{n},\] which diverges to $\infty$. Hence, $L$ diverges to $\infty$.
+        Let the limit be $L$. Then \[\ln L = \lim_{n \to \infty} \bp{n \ln n - \ln n!}.\] By Stirling's approximation, $\ln n! = n\ln n - n + \bigO{\ln n}$. Thus, \[\ln L = \lim_{n \to \infty} \bp{n - \bigO{\ln n}} = \lim_{n \to \infty} \bigO{n},\] which diverges to $\infty$. Hence, $L$ diverges to $\infty$.
     \end{ppart}
     \begin{ppart}
         Note that \[\abs{\lim_{n \to \infty} u_n} = \lim_{n \to \infty} \abs{u_n} \leq \lim_{n \to \infty} \frac{1}{n} = 0.\] Thus, the limit converges to 0.
@@ -379,13 +379,13 @@
         We have
         \begin{align*}
             &\bp{2 + x^2}^{1/2} = x\bp{1 + \frac2x}^{1/2}\\
-            &\hspace{1em}= x\bs{1 + \frac12\bp{\frac2{x^2}} + \frac{(1/2)(-1/2)}{2}\bp{\frac2{x^2}}^2 + \frac{(1/2)(-1/2)(-3/2)}6 \bp{\frac2{x^2}}^3 + \bigo{x^{-8}}}\\
-            &\hspace{1em}= x + x^{-1} - \frac12 x^{-3} + \frac12 x^{-5} + \bigo{x^{-7}}.
+            &\hspace{1em}= x\bs{1 + \frac12\bp{\frac2{x^2}} + \frac{(1/2)(-1/2)}{2}\bp{\frac2{x^2}}^2 + \frac{(1/2)(-1/2)(-3/2)}6 \bp{\frac2{x^2}}^3 + \bigO{x^{-8}}}\\
+            &\hspace{1em}= x + x^{-1} - \frac12 x^{-3} + \frac12 x^{-5} + \bigO{x^{-7}}.
         \end{align*}
         The radius of convergence is given by \[\abs{\frac2{x^2}} = \frac2{x^2} < 1 \implies x > \sqrt{2}.\] Note that we reject $x < -\sqrt{2}$ since $x > 0$.
     \end{ppart}
     \begin{ppart}
-        Note that \[f(x) = a + bx + cx^2 - x\bp{2 + x^2}^{1/2} = (a-1) + bx + \bp{c-1}x^2 + \bigo{x^{-2}}.\] For $f(x) \to 0$ as $x \to \infty$, we must have $a-1 = b = c-1 = 0$, whence $a = 1$, $b = 0$ and $c = 1$.
+        Note that \[f(x) = a + bx + cx^2 - x\bp{2 + x^2}^{1/2} = (a-1) + bx + \bp{c-1}x^2 + \bigO{x^{-2}}.\] For $f(x) \to 0$ as $x \to \infty$, we must have $a-1 = b = c-1 = 0$, whence $a = 1$, $b = 0$ and $c = 1$.
     \end{ppart}
     \begin{ppart}
         We now have \[f(x) = 1 + x^2 - x\bp{2 + x^2}^{1/2}.\] Note that $f(x)$ is always positive:
@@ -405,9 +405,9 @@
         Note that
         \begin{align*}
             \frac13 \bp{2 + X^2}^{3/2} &= \frac13 \bp{2 + X^2}\bp{2 + X^2}^{1/2} = \frac13 \bp{2 + X^2} \bp{X + X^{-1} - \frac12 X^{-3}}\\
-            &= \frac13 \bp{3X + X^3 + \bigo{X^{-1}}} = X + \frac13X^3 + \bigo{X^{-1}}.
+            &= \frac13 \bp{3X + X^3 + \bigO{X^{-1}}} = X + \frac13X^3 + \bigO{X^{-1}}.
         \end{align*}
-        Thus, \[A(X) = -\bigo{X^{-1}} + \frac{2^{3/2}}{3},\] so \[\lim_{X \to \infty} A(X) = \frac{2^{3/2}}{3}.\]
+        Thus, \[A(X) = -\bigO{X^{-1}} + \frac{2^{3/2}}{3},\] so \[\lim_{X \to \infty} A(X) = \frac{2^{3/2}}{3}.\]
     \end{ppart}
 \end{solution}
 
