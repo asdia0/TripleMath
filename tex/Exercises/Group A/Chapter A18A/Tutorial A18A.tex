@@ -258,9 +258,9 @@
         Let $T$ be the number of minutes that the bus is late. Let $\m = \E{T}$. The hypotheses are \nullhyp: $\m = 4.3$, \althyp: $\m < 4.3$.
     \end{ppart}
     \begin{ppart}
-        We perform a 1-tail test at 10\% significance level. Under \nullhyp, \[\frac{\ol{T} - 4.3}{\sqrt{3.2/10}} \sim \StudentT{9}.\] To not reject \nullhyp, we require \[\frac{\ol{t} - 4.3}{\sqrt{3.2/10}} > t_{0.10}.\] Solving, we get $\ol{t} > 3.52$. Thus, the set of values that $\ol{t}$ can take on is \[\bc{\ol{t} \in \RR: \ol{t} > 3.52}.\]
+        We perform a 1-tail test at 10\% significance level. Note that the sample variance $s^2$ is given by \[s^2 = \frac{n}{n-1} k^2 \implies \frac{s^2}{n} = \bp{\frac{k}{3}}^2.\] Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/3} \sim \StudentT{9}.\] To not reject \nullhyp, we require \[\frac{\ol{t} - 4.3}{k/3} > t_{0.10}.\] Solving, we get $\ol{t} > 3.48$. Thus, the set of values that $\ol{t}$ can take on is \[\bc{\ol{t} \in \RR: \ol{t} > 3.48}.\]
     \end{ppart}
     \begin{ppart}
-        We perform a 1-tail test at 10\% significance level. Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/\sqrt{10}} \sim \StudentT{9}.\] To reject \nullhyp, we require \[\frac{4.0 - 4.3}{k/\sqrt{10}} \leq t_{0.10}.\] Solving, we get $k^2 \leq 0.470$. Thus, the set of values that $k^2$ can take on is \[\bc{k^2 \in \RR : 0 < k^2 \leq 0.470}.\]
+        We perform a 1-tail test at 10\% significance level. Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/3} \sim \StudentT{9}.\] To reject \nullhyp, we require \[\frac{4.0 - 4.3}{k/3} \leq t_{0.10}.\] Solving, we get $0 \leq k \leq 0.651$. Thus, the set of values that $k^2$ can take on is \[\bc{k^2 \in \RR : 0 < k^2 \leq 0.423}.\]
     \end{ppart}
 \end{solution}
