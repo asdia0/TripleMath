@@ -28,16 +28,42 @@
     Let $f : [0, 1] \to \RR$ be a differentiable function defined on $[0, 1]$. Suppose that \[f'(c) = f''(c) = f'''(c) = 0\] and $f^{(4)}(c) > 0$ for some $c \in (0, 1)$.
 
     \begin{enumerate}
-        \item Let $g: [a, b] \to \RR$ be a function that is twice differentiable on $(a, b)$, where $a < b$. Suppose that there exists $d \in (a, b)$ such that $g''(d) > 0$. With the aid of a diagram, explain why there exists $s > 0$ such that for all $x \in [d -s , d + s] \setminus \bc{d} \subseteq [a, b]$, $g(x) > g(d)$.
+        \item Let $g: [a, b] \to \RR$ be a function that is twice differentiable on $(a, b)$, where $a < b$. Suppose that there exists $d \in (a, b)$ such that $g'(d) = 0$ and $g''(d) > 0$. With the aid of a diagram, explain why there exists $s > 0$ such that for all $x \in [d -s , d + s] \setminus \bc{d} \subseteq [a, b]$, $g(x) > g(d)$.
         \item Hence, show that $f$ attains a minimum point at $x = c$.
         \item Write down a similar result for $f$ to attain a maximum point when $x = c$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{445}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -3.5:5.5,
+                ymin = -4,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {-1, 3, 1},
+                xticklabels = {$d-s$, $d+s$, $d$},
+                ytick = {-3},
+                yticklabels = {$g(d)$},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                ]
+                \addplot[black] {(x-1)^2-3};
+                \addlegendentry{$y = g(x)$};
+                \draw[dashed] (-1, 1) -- (3, 1);
+                \draw[dashed] (0, -3) -- (1, -3);
+            \end{axis}
+        \end{tikzpicture}
+        \end{figure}
+        From the above diagram, it is immediately clear that there exists some $s > 0$ such that for all $x \in [d -s , d + s] \setminus \bc{d} \subseteq [a, b]$, $g(x) > g(d)$.
     \end{ppart}
     \begin{ppart}
-        Take $g(x) = f''(x)$. Since $f^{(4)}(c) > 0$, there exists $s > 0$ such that $f''(x) > f''(c)$ for all $x \in [c-s, c+s] \setminus \bc{c} \subseteq [0, 1]$. This means that $f(c)$ is a minimum. 
+        Take $g(x) = f''(x)$. Since $g'(c) = f'''(c) = 0$ and $g''(c) = f^{(4)}(c) > 0$, by (a), there exists $s > 0$ such that $f''(x) > f''(c)$ for all $x \in [c-s, c+s] \setminus \bc{c} \subseteq [0, 1]$. This means that $f(c)$ is a minimum. 
     \end{ppart}
     \begin{ppart}
         $f$ attains a maximum point when $x = c$ if $f^{(4)}(c) < 0$.
