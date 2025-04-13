@@ -74,6 +74,8 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 
 ### Examinations
 
+#### H2 Mathematics and H2 Further Mathematics
+
 <table style="text-align: center; vertical-align: middle;">
  <tr>
   <th></th>
@@ -96,22 +98,27 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
   <td>Promos</td>
   <td>🟢</td>
   <td>🟢</td>
-  <th>9820</th>
  </tr>
   <tr>
   <td rowspan="2">JC2</td>
   <td>WA 1</td>
   <td>🟢</td>
   <td>🟢</td>
-  <td>🟡</td>
  </tr>
  <tr>
   <td>WA 2</td>
   <td>🟡</td>
   <td>🟡</td>
-  <td>🟡</td>
  </tr>
 </table>
+
+#### H3 Mathematics
+
+|                  | 9820 |
+| ---------------- | ---- |
+| Timed Practice 1 | 🟡  |
+| Timed Practice 2 | 🟡  |
+
 
 ## Compiling
 
