@@ -1,0 +1,17 @@
+\section{Assignment A18A}
+
+\begin{problem}
+    The manufacturers of an electric water heater claim that their heaters will heat 500 litres of water from a temperature of 10$\deg$C to a temperature of 35$\deg$C in, on average no longer than 12 minutes. In order to test their claim, 14 randomly chosen heaters are bought and the times ($x$ minutes) to heat 500 litres of water from 10$\deg$C to 35$\deg$C are measured. Correct to 1 decimal place, the results are as follows: \[13.2, \, 12.2, \, 11.4, \, 14.5, \, 11.6, \, 12.9, \, 12.4, \, 10.3, \, 12.3, \, 11.8, \, 11.0, \, 13.0, \, 12.1, \, 12.6.\] Stating an assumption necessary for validity, test the manufacturers' claim at a 10\% significance level.
+\end{problem}
+\begin{solution}
+    Let $X$ min be the amount of time taken by a heater to heat 500 litres of water from 10$\deg$C to 35$\deg$C. Let $\m$ min be the mean time taken. Let \nullhyp: $\m = 12$ and \althyp: $\m > 12$. We perform a one-tail test at 10\% significance level. Assuming $X$ is normally distributed, under \nullhyp, \[\frac{\ol{X} - 12}{S/\sqrt{14}} \sim \StudentT{13}.\] From the sample, $\ol{x} = 12.246$ min and $s = 1.0315$ min. Using G.C., the $p$-value is 0.204, which is greater than the 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at a 10\% significance level that the mean amount of time taken is greater than 12 min.
+\end{solution}
+
+\begin{problem}
+    The mass of vegetables in a randomly chosen bag has a normal distribution. The mass of the contents of a bag is supposed to be 10 kg. A random sample of 80 bags is taken and the mass of the contents of each bag, $x$ grams, is measured. The data is summarized by \[\sum \bp{x - 10000} = -2510 \quad \tand \quad \sum\bp{x - 10000}^2 = 2010203.\] Test, at the 5\% significance level, whether the mean mass of the contents of a bag is less than 10 kg. Explain, in the context of the questions, the meaning of `at the 5\% significance level', and the meaning of `$p$-value'.
+\end{problem}
+\begin{solution}
+    Let $X$ g be the mass of vegetables in a bag, and let $\m$ g be the mean mass of vegetables in a bag. Let \nullhyp: $\m = 10000$ and \althyp: $\m < 10000$. We perform a one-tail test at 5\% significance level. From sample, \[\ol{x} = 10000 + \frac1{80} \bp{-2510} = 9968.63 \text{ g}\] and \[s^2 = \frac1{80-1} \bs{2010203 - \frac1{80} \bp{-2510}^2} = 24449 \text{ g}^2.\] Under \nullhyp, \[\ol{X} \sim \Normal{10000}{\frac{24449}{80}} \text{ approximately}.\] Using G.C., the $p$-value is 0.0364, which is less than the 5\% significance level. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that the mean mass of vegetables in a bag is less than 10 kg.
+
+    `at the 5\% significance level' means there is a 5\% chance that we reject \nullhyp{} when the mean mass of vegetables in a bag is actually 10 kg. `$p$-value' is the lowest significance level needed to reject \nullhyp.
+\end{solution}
