@@ -33,7 +33,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  A16  | Sampling                                                      |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A17  | Confidence Intervals                                          |  🟡  |   🟢    |      🟡      |    🟢     |
 | A18A  | Hypothesis Testing I - Single Value                           |  🟡  |   🟢    |      🟡      |    🟡     |
-| A18B  | Hypothesis Testing II - Two Values                            |  🟡  |   🟡    |      🟡      |    🟡     |
+| A18B  | Hypothesis Testing II - Two Values                            |  🟡  |   🟢    |      🟡      |    🟡     |
 | A18C  | Hypothesis Testing III                                        |  🟡  |   🟡    |      🟡      |    🟡     |
 
 ### Group B

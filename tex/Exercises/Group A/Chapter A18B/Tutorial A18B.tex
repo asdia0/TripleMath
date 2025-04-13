@@ -1,0 +1,97 @@
+\section{Tutorial A18B}
+
+\begin{problem}
+    A machine assesses the life of a ball-point pen by measuring the length of a continuous line drawn using the pen. A random sample of 80 pens of brand $A$ have a total writing length of 96.84 km. A random sample of 75 pens of brand $B$ have a total writing length of 93.75 km. Assuming that the standard deviation of the writing length of a single pen is 0.25 km for both brands, test at the 5\% level, whether the mean writing lengths of the two brands differ significantly.
+\end{problem}
+\begin{solution}
+    Let $X_A$ km and $X_B$ km be the total writing length of Brand A and Brand B pens respectively. Let $\m_A = \E{X_A}$ and $\m_B = \E{X_B}$.
+    
+    Let \nullhyp: $\m_A - \m_B = 0$ and \althyp: $\m_A - \m_B \neq 0$. We perform a two-tail two-sample $z$-test at 5\% significance level. Under \nullhyp, \[\ol{X}_A - \ol{X}_B \sim \Normal{0}{0.25^2 \bp{\frac1{80} + \frac1{75}}}.\] From the sample, \[\ol{x}_A = \frac{96.84}{80} = 1.2105 \quad \tand \quad \ol{x}_B = \frac{93.75}{75} = 1.25.\] Using G.C., the $p$-value is $0.326$, which is greater than the 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that the mean writing lengths of the two brands differ significantly.
+\end{solution}
+
+\begin{problem}
+    I have two alternative routes to work. The times taken on the 8 randomly chosen occasions that I use route 1 are summarized by $\sum x=182$ and $\sum x^{2}=4202$, while the times taken on the 12 randomly chosen occasions that I take route 2 are summarized by $\sum y=238$ and $\sum y^{2}=5108$, with time being measured in minutes. Determine whether there is significant evidence, at the 5\% level, of a difference in the mean times taken on the two routes. State any assumptions needed.
+\end{problem}
+\begin{solution}
+    Let \nullhyp: $\m_X - \m_Y = 0$ and \althyp: $\m_X - \m_Y \neq 0$. We perform a two-tail two-sample $t$-test at 5\% significance level. Assuming that $X$ and $Y$ are normally distributed and have a common variance, under \nullhyp, \[\frac{\ol{X} - \ol{Y}}{s_p \sqrt{1/8 + 1/12}} \sim \StudentT{8 + 12 - 2} = \StudentT{18}.\] From the sample, \[\ol{x} = \frac18 \bp{182} = 22.75, \quad \ol{y} = \frac1{12} \bp{238} = 19.833.\] Also, \[s_X^2 = \frac1{8-1}\bs{4202 - \frac18 \bp{182}^2} = 8.7857, \quad s_Y^2 = \frac1{12-1} \bs{5108 - \frac1{12} \bp{238}^2} = 35.242.\] Thus, the pooled variance is \[s_p^2 = \frac{\bp{8-1} \bp{8.7857} + \bp{12 - 1} \bp{35.242}}{8 + 12 - 2} = 24.953.\] Using G.C., the $p$-value is $0.217$, which is greater than the 5\% significance level. Thus, we do not reject \nullhyp{} and conclude that there is insufficient evidence at the 5\% significance level that there is a difference in the mean times taken on the two routes.
+\end{solution}
+
+\begin{problem}
+    In an experiment, twelve pairs of plants were positioned close to each other in various different locations in a large greenhouse. One plant in each pair was given fertilizer in April and the other in May. The yields are given below.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline Pair & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+            April & 344 & 307 & 339 & 256 & 398 & 267 & 256 & 407 & 335 & 381 & 300 & 388 \\ \hline
+            May & 315 & 289 & 317 & 277 & 363 & 258 & 283 & 385 & 269 & 355 & 275 & 363 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Test at 5\% significance level whether the mean yield in April is at least 30 more than the mean yield in May. State any assumptions needed.
+\end{problem}
+\begin{solution}
+    Let $D = \text{April yield} - \text{May yield}$. Let \nullhyp: $\m_D = 30$ and \althyp: $\m_D > 30$. We perform a one-tail paired-sample $t$-test at 5\% significance level. Assuming that $D$ is normally distributed, under \nullhyp, \[\frac{\ol{D} - 30}{S_D / \sqrt{12}} \sim \StudentT{11}.\] From the sample, $\ol{d} = 19.083$ and $s_D = 24.347$. Using G.C. the $p$-value is $0.926$, which is greater than the 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at 5\% significance level that the mean yield in April is at least 30 more than the mean yield in May.
+\end{solution}
+
+\begin{problem}
+    A school teacher decides to test the effectiveness of using a computer-based lesson to teach trigonometry. The teacher selects and pairs students of equal ability. One student from each pair is randomly chosen and assigned to a control group that receives the standard lesson, while the other student in the pair is then assigned to the experimental group that receives the computer-based lesson. On completion of the course, students in both groups sat for the same test to evaluate their learning outcomes. The test consists of multiple-choice questions, and is administered and marked online. The marks are given in the table below.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            Pair & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+            Control & 70 & 65 & 70 & 79 & 72 & 60 & 53 & 50 & 72 & 91 \\ \hline
+            Experiment & 89 & 80 & 72 & 72 & 91 & 65 & 60 & 65 & 70 & 88 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Find the largest value of significance level, $\a$, at which it could not be rejected that there is no difference in the two methods. State any assumption(s) necessary for the test to be valid.
+        \item At the 10\% significance level it is to be concluded that the experimental group scores higher than the control group by more than $k$ marks. Find the values of $k$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $D = \text{experiment score} - \text{control score}$. Let \nullhyp: $\m_D = 0$ and \althyp: $\m_D \neq 0$. We perform a two-tail paired-sample $t$-test. Assuming that $D$ is normally distributed, under \nullhyp, our test statistic is \[\frac{\ol{D}}{S_D / \sqrt{10}} \sim \StudentT{9}.\] From the sample, $\ol{d} = 7$ and $s_D = 9.5568$. Using G.C., the $p$-value is $0.0457$. Thus, the largest value of $\a$ to not reject \nullhyp{} is $0.0457$.
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: $\m_D = k$ and \althyp: $\m_D > k$. We perform a one-tail paired-sample $t$-test at the 10\% significance level. Assuming that $D$ is normally distributed, under \nullhyp, our test statistic is \[\frac{\ol{D} - k}{S_D / \sqrt{10}} \sim \StudentT{9}.\] The observed test statistic is thus \[\frac{7-k}{9.5568/\sqrt{10}} = 2.3163 - 0.33089 k.\] For \nullhyp{} to be rejected, we require \[2.3163 - 0.33089 k > t_{0.9} \implies k < \frac{2.3163 - t_{0.9}}{0.33089} = 2.82.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Two cyclists cycled to work every weekday and recorded the times (in minutes) that they took each day.
+    
+    The records for one randomly chosen week is as follows, where Cyclist 1 took $x$ minutes and Cyclist 2 took $y$ minutes: \[\sum \bp{x - \ol{x}}^2 = 90.5, \quad \sum y = 160.6, \quad \sum y^2 = 5244.8.\] Assuming that the variances of the times they took each day are the same, find an unbiased estimate for the common variance.
+
+    During another randomly chosen week, the times (in minutes) that they took is recorded as follows: 
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Cyclist 1 ($x$) & 30.1 & 21.9 & 34.1 & 33.8 & $c$ \\ \hline
+        Cyclist 2 ($y$) & 31.7 & 30.5 & 40.1 & 30.2 & 28.1 \\ \hline
+        \end{tabular}
+    \end{table}
+    The missing data is denoted by $c$.
+
+    Based on the second set of data, the hypothesis that the mean time of the two cyclists does not differ is not rejected at 5\% significance level. Find the range of values of $c$. State any assumptions needed for your test to be valid.
+\end{problem}
+\begin{solution}
+    Their individual sample variances are given by \[s_X^2 = \frac1{n - 1} \sum \bp{x - \ol{x}}^2 = \frac1{5 - 1} \bp{90.5} = 22.625\] and \[s_Y^2 = \frac1{n - 1} \bs{\sum y^2 - \frac1{n} \bp{\sum y}^2} = \frac1{5 - 1} \bs{5244.8 - \frac15 \bp{160.6}^2} = 21.582.\] Thus, the pooled variance is \[s_p^2 = \frac{s_X^2 + s_Y^2}{2} = \frac{22.625 + 21.582}{2} = 22.104.\]
+
+    Let \nullhyp: $\m_X - \m_Y = 0$ and \althyp: $\m_X - \m_Y \neq 0$. We perform a two-tail two-sample $t$-test at a 5\% significance level. Assuming the pooled variance is the same, and that $X$ and $Y$ are normally distributed, under \nullhyp, our test statistic is \[T = \frac{\ol{X} - \ol{Y}}{S_p \sqrt{1/5 + 1/5}} \sim \StudentT{5 + 5 - 2} = \StudentT{8}.\] From the sample, \[\ol{x} - \ol{y} = \frac{119.9 + c}{5} - 32.12 = \frac{c}{5} - 8.14.\] Our observed test statistic is thus \[t = \frac{\ol{x} - \ol{y}}{s_p \sqrt{1/5 + 1/5}} = \frac{c/5 - 8.14}{\sqrt{22.104} \sqrt{2/5}} = 0.067261 c - 2.7375.\] For the null hypothesis to not be rejected, we must have \[t_{0.025} < 0.067261 c - 2.7375 < t_{0.975}.\] Solving for $c$, we get \[6.42 = \frac{t_{0.025} + 2.7375}{0.067261} < c < \frac{t_{0.975} + 2.7375}{0.067261} = 74.9.\]
+\end{solution}
+
+\begin{problem}
+    Due to the differences in environment, the masses of a certain species of small amounts are believed to be greater in Region $A$ than in Region $B$. It is known that the masses in both regions are normally distributed, with masses in Region $A$ having a standard deviation of 0.004 kg and masses in Region $B$ having a standard deviation of 0.09 kg. To test the theory, random samples are taken: 60 animals from Region $A$ had a mean of 3.03 kg and 50 animals from Region $B$ had a mean mass of 3.00 kg. Test at the 1\% significance level, whether the animals of this species in Region $A$ have a greater mean mass than those in Region $B$.
+
+    Will your conclusion be affected if we do not have the information that the masses of the animals are normally distributed? Explain your answer.
+\end{problem}
+\begin{solution}
+    Let $X$ kg and $Y$ kg represent the mass of the animal in Regions $A$ and $B$ respectively. Let \nullhyp: $\m_x - \m_y = 0$ and \althyp: $\m_x - \m_y > 0$. We perform a one-tail two-sample $z$-test at 1\% significance level. Under \nullhyp, \[\ol{X} - \ol{Y} \sim \Normal{0}{\frac{0.04^2}{60} + \frac{0.09^2}{50}}.\] From the sample, $\ol{x} = 3.03$ and $\ol{y} = 3.00$. Using G.C., the $p$-value is 0.0145, which is greater than the 1\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at 1\% significance level that the animals of this species in Region $A$ have a greater mean mass than those in Region $B$.
+
+    The conclusion will not be affected. This is because the sizes of both samples are large, so the test statistics will be approximately the same by the Central Limit Theorem.
+\end{solution}
