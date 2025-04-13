@@ -1,0 +1,115 @@
+\section{Assignment B17C}
+
+\begin{problem}
+    \begin{enumerate}
+        \item The matrix $\mat A$ is given by \[\mat A = \begin{pmatrix}1 & c & 3 \\ 4 & 1 & 0 \\ 3 & 0 & 1\end{pmatrix}.\] It is given that $\mat A$ has an eigenvalue of 6. Find the value of $c$ and the remaining eigenvalues.
+        \item Hence, find matrices $\mat P$ and $\mat D$ such that $\mat A = \mat P \mat D \mat P^{-1}$, where $\mat D$ is a diagonal matrix.
+        \item It is given that three functions $y_1, y_2, y_3$ are the solutions of the following system of differential equations:
+        \begin{align*}
+            \der{y_1}{x} &= y_1 + c y_2 + 3 y_3,\\
+            \der{y_2}{x} &= 4y_1 + y_2,\\
+            \der{y_3}{x} &= 3y_1 + y_3,
+        \end{align*}
+        where $c$ is the value found in (a).
+
+        By considering $\vec U = \mat P^{-1} \vec Y$, where \[\vec U = \cveciii{u_1}{u_2}{u_3} \quad \tand \quad \vec Y = \cveciii{y_1}{y_2}{y_3},\] show that the above system can be rewritten as $\vec U' = \mat D \vec U$, where \[\vec U' = \cveciii{\derx{u_1}{x}}{\derx{u_2}{x}}{\derx{u_3}{x}}.\] You may assume that $\vec U' = \mat P^{-1} \vec Y'$, where \[\vec Y' = \cveciii{\derx{y_1}{x}}{\derx{y_2}{x}}{\derx{y_3}{x}}.\]
+        \item Hence, or otherwise, find the general solution of the functions $y_1, y_2, y_3$ in terms of $x$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let the characteristic polynomial of $\mat A$ be $\c(\l) = -\l^3 + E_1 \l^2 - E_2 \l^1 + E_3$. We have
+        \begin{align*}
+            E_1 &= \abs{1} + \abs{1} + \abs{1} = 3,\\
+            E_2 &= \begin{vmatrix}1 & c \\ 4 & 1 \end{vmatrix} + \begin{vmatrix}1 & 0 \\ 0 & 1\end{vmatrix} + \begin{vmatrix}1 & 3 \\ 3 & 1\end{vmatrix} = -6 - 4c,\\
+            E_3 &= \begin{vmatrix}1 & c & 3 \\ 4 & 1 & 0 \\ 3 & 0 & 1\end{vmatrix} = -8-4c.
+        \end{align*}
+        Thus, \[\c(\l) = -\l^3 + 3\l^2 + \bp{6 + 4c} \l - \bp{8 + 4c}.\] Since 6 is an eigenvalue, it is a root to the characteristic polynomial. Thus, \[\c(6) = -6^3 + 3 \bp{6^2} + \bp{6 + 4c}6 - \bp{8 + 4c} = 0 \implies c = 4.\] Hence, \[\c(\l) = -\l^3 + 3\l^2 + 22\l - 24 = -\bp{\l-6}\bp{\l-1}\bp{\l+4}.\] The other eigenvalues are thus 1 and $-4$.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\mat A - \l \mat I = \begin{pmatrix}1 - \l & 4 & 3 \\ 4 & 1 - \l & 0 \\ 3 & 0 & 1 - \l\end{pmatrix}.\]
+        
+        \case{1}[$\l = 6$] Note that \[\cveciii4{1-6}0 \crossp \cveciii30{1-6} = 5\cveciii543.\] We thus take $\cveciiix543$ to be our eigenvector corresponding to $\l = 6$.
+
+        \case{2}[$\l = 1$] Note that \[\cveciii{1-1}43 \crossp \cveciii30{1-1} = 3\cveciii03{-4}.\] We thus take $\cveciiix03{-4}$ to be our eigenvector corresponding to $\l = 1$.
+
+        \case{1}[$\l = -4$] Note that \[\cveciii4{1-(-4)}0 \crossp \cveciii30{1-(-4)} = -5\cveciii{-5}43.\] We thus take $\cveciiix{-5}43$ to be our eigenvector corresponding to $\l = -4$.
+
+        Thus, \[\mat P = \begin{pmatrix}5 & 0 & -5 \\ 4 & 3 & 4 \\ 3 & -4 & 3\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}6 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -4\end{pmatrix}.\]
+    \end{ppart}
+    \begin{ppart}
+        Rewriting the given system of equations, we have \[\mat Y' = \mat A \mat Y = \mat P \mat D \mat P^{-1} \mat Y \implies \mat P^{-1} \mat Y' = \mat D \mat P^{-1} \mat Y.\] Since $\mat U = \mat P^{-1} \mat Y$ and $\mat U' = \mat P^{-1} \mat Y'$, we have $\mat U' = \mat D \mat U$ as desired.
+    \end{ppart}
+    \begin{ppart}
+        $\mat U' = \mat D \mat U$ expands as \[\vec U' = \cveciii{\derx{u_1}{x}}{\derx{u_2}{x}}{\derx{u_3}{x}} = \begin{pmatrix}6 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -4\end{pmatrix} \cveciii{u_1}{u_2}{u_3}.\] This gives us the system of differential equations \[\der{u_1}{x} = 6 u_1, \quad \der{u_2}{x} = u_2, \quad \der{u_3}{x} = -4 u_3,\] which we can easily solve: \[u_1 = c_1 \e^{6x}, \quad u_2 = c_2 \e^{x}, \quad u_3 = c_3 \e^{-4x}.\] Since $\mat U = \mat P^{-1} \mat Y$, we have \[\mat Y = \mat P \mat U \implies \cveciii{y_1}{y_2}{y_3} = \begin{pmatrix}5 & 0 & -5 \\ 4 & 3 & 4 \\ 3 & -4 & 3\end{pmatrix} \cveciii{c_1 \e^{6x}}{c_2 \e^{x}}{c_3 \e^{-4x}},\] so
+        \begin{align*}
+            y_1 &= 5c_1 \e^{6x} - 5c_3 \e^{-4x},\\
+            y_2 &= 4c_1 \e^{5x} + 3c_2 \e^{x} + 4c_3 \e^{-4x},\\
+            y_3 &= 3c_1 \e^{6x} - 4c_2 \e^{x} + 3c_3 \e^{-4x}.
+        \end{align*}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The $3 \times 3$ non-singular matrix $\mat A$ has eigenvectors $\vec e_1, \vec e_2, \vec e_3$ with corresponding eigenvalues $\a$, $\b$ and $\g$ respectively. The three eigenvectors are linearly independent, and the eigenvalues are all non-zero real numbers. The eigenvectors of the $3 \times 3$ matrix $\mat B$ are also $\vec e_1, \vec e_2, \vec e_3$ and the corresponding eigenvalues are $\a - \b \g$, $\b - \g \a$ and $\g - \a \b$ respectively.
+
+    \begin{enumerate}
+        \item The characteristic equation of $\mat A$ is $x^3 - x^2 + k x + 4 = 0$, where $k$ is a real constant. Find an expression for the matrix $\mat B$ but in terms of the matrix $\mat A$.
+    \end{enumerate}
+
+    The transformation $T : \RR^3 \to \RR^3$ is represented by the matrix $\mat B$.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Show that $\bc{\vec e_1, \vec e_2, \vec e_3}$ forms a basis for the range of $T$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[x^3 - x^2 + k x + 4 = (x - \a)(x - \b)(x - \g).\] By Vieta's formula, we see that $\a\b\g = -4$. Thus, $\mat B$ has eigenvalues $\a + 4/\a$, $\b + 4/\b$ and $\g + 4/\g$, so $\mat B = \mat A + 4 \mat A^{-1}$.
+    \end{ppart}
+    \begin{ppart}
+        Since the three eigenvectors are linearly independent, it suffices to show that $\bc{\vec e_1, \vec e_2, \vec e_3}$ spans $\Range{T}$. This is equivalent to showing that there exist $a, b, c \in \RR$ such that for all $\vec v \in \RR^3$, \[a \vec e_1 + b \vec e_2 + c \vec e_3 = \vec v.\] But this is clearly true, since \[a \vec e_1 + b \vec e_2 + c \vec e_3 = \mat P \cveciii{a}{b}{c} \implies \cveciii{a}{b}{c} = \mat P^{-1} \vec v.\] Note that $\mat P^{-1}$ exists since the columns of $\mat P$, which are $\vec e_1, \vec e_2, \vec e_3$, are linearly independent, so $\mat P$ has full rank and is thus invertible.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The matrix $\mat A$ is given by \[\mat A = \begin{pmatrix}p & 5 & 0 \\ -1 & - 1 & 1 - p \\ -1 & 2 & 1\end{pmatrix}.\]
+
+    \begin{enumerate}
+        \item Find the possible number(s) of real eigenvalues of $\mat A$, and the corresponding range of values of $p$.
+    \end{enumerate}
+
+    Joe makes the following assertion: ``If $p = -1$, then $\mat A$ is not diagonalizable.''
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Explain, with working, whether Joe's assertion is true.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\c(\l) = -\l^3 + E_1 \l^2 - E_2 \l + E_3$. Note that
+        \begin{align*}
+            E_1 &= \abs{p} + \abs{-1} + \abs{1} = p,\\
+            E_2 &= \begin{vmatrix}p & 5 \\ -1 & - 1\end{vmatrix} + \begin{vmatrix}-1 & 1-p \\ 2 & 1\end{vmatrix} + \begin{vmatrix}p & 0 \\ -1 & 1\end{vmatrix} = 2p+2,\\
+            E_3 &= \begin{vmatrix}p & 5 & 0 \\ -1 & - 1 & 1 - p \\ -1 & 2 & 1\end{vmatrix} = p\bp{2p+2}.
+        \end{align*}
+        Thus, \[\c(\l) = -\l^3 + p\l^2 - \bp{2p+2}\l + p \bp{2p+2} = \bp{-\l + p} \bp{\l^2 + 2p + 2}.\]
+
+        \case{1} If $2p + 2 < 0$, i.e. $p < -1$, then $\mat A$ has three real eigenvalues, namely $p$, $\sqrt{-\bp{2p- 2}}$ and $\sqrt{-\bp{2p-2}}$.
+
+        \case{2} If $2p + 2 = 0$, i.e. $p = -1$, then $\mat A$ has two real eigenvalues, namely $p = -1$ and $0$.
+
+        \case{3} If $2p + 2 > 0$, i.e. $p > -1$, then $\mat A$ has one real eigenvalue, namely $p$.
+    \end{ppart}
+    \begin{ppart}
+        When $p = -1$, $\mat A$ has two eigenvalues, namely $-1$ and $0$. Note that \[\mat A - \l \mat I = \begin{pmatrix}-1-\l & 5 & 0 \\ -1 & - 1-\l & 2 \\ -1 & 2 & 1-\l\end{pmatrix}.\]
+
+        \case{1}[$\l = -1$] Note that \[\cveciii050 \crossp \cveciii{-1}02 = 5\cveciii201.\] The eigenvector corresponding to $\l = -1$ is thus $\cveciiix201$.
+
+        \case{2}[$\l = 0$] Note that \[\cveciii{-1}50 \crossp \cveciii{-1}{-1}{2} = 2\cveciii513.\] The eigenvector corresponding to $\l = 0$ is thus $\cveciiix513$.
+
+        Thus, $\mat A$ has two eigenvectors when $p = -1$. Since there are less than 3 eigenvectors, $\mat A$ is not diagonalizable, so Joe is correct.
+    \end{ppart}
+\end{solution}
