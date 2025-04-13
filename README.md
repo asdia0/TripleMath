@@ -116,7 +116,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 
 |                  | 9820 |
 | ---------------- | ---- |
-| Timed Practice 1 | 🟡  |
+| Timed Practice 1 | 🟢  |
 | Timed Practice 2 | 🟡  |
 
 
