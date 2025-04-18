@@ -1,0 +1,227 @@
+\section{Assignment B18}
+
+\begin{problem}
+    The table below gives the observed values of bivariate $x$ and $y$.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 20 & 30 & 34 & 35 & 36 & 40 & 42 \\ \hline
+        $y$ & 32 & 25 & $a$ & 22 & 26 & 18 & 19 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    It is given that the equation of the regression line $y$ on $x$ is $y = 43.5 - 0.602x$.
+
+    \begin{enumerate}
+        \item Find the value of $a$ correct to the nearest integer.
+        \item Using the result in part (a), write down the equation of the regression line $x$ on $y$ and the value of the product moment correlation coefficient between $x$ and $y$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., $\ol{x} = 33.857$. Since $\bp{\ol{x}, \ol{y}}$ lies on the regression line $y$ on $x$, we have \[\frac{32 + 25 + a + 22 + 26 + 18 + 19}{7} = \ol{y} = 43.5 - 0.602 \bp{33.857},\] whence $a = 20$ (to the nearest integer).
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., the regression line $x$ on $y$ is \[x = -1.3176 y + 64.349\] and the product moment correlation coefficient is $r = -0.891$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A medical statistician wishes to carry out a test to see if there is any correlation between the head circumference and body length of newborn babies. A random sample of ten newborn babies have their head circumference, $c$ cm and body length, $l$ cm measured. This bivariate data is illustrated in the table below.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $c$ & 31.0 & 32.0 & 33.5 & 34.0 & 34.0 & 51.0 & 35.0 & 36.0 & 36.5 & 37.5 \\ \hline
+        $l$ & 45.0 & 49.0 & 49.0 & 47.0 & 50.0 & 34.0 & 50.0 & 53.0 & 51.0 & 51.0 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    One particular data has been recorded incorrect with its values of $c$ and $l$ interchanged. Identify the point.
+
+    \begin{enumerate}
+        \item Make the necessary correction and use a suitable regression line to estimate the length of a baby whose head has the circumference of
+        \begin{enumerate}
+            \item 34.5 cm,
+            \item 45.0 cm.
+        \end{enumerate}
+        \item Give a reason why the estimation found in (a)(ii) may not be a good one.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    The point is $(c, l) = (51.0, 34.0)$.
+
+    \begin{ppart}
+        Since $c$ is given, we use the regression line $l$ on $c$. Using G.C., this is given by \[l = 0.86981 c + 19.722.\]
+        \begin{psubpart}
+            When $c = 34.5$, $l = 49.7$ cm.
+        \end{psubpart}
+        \begin{psubpart}
+            When $c = 45.0$, $l = 58.9$ cm.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        $c = 45.0$ is out of the given range of values ($31.0 \leq c \leq 37.5$). Hence, the estimate found is an extrapolation, so it is unreliable.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A car is placed in a wind tunnel and the drag force $F$ for different wind speeds $v$, in appropriate units, is recorded. The results are shown in the table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $v$ & 0 & 4 & 8 & 12 & 16 & 20 & 24 & 28 & 32 & 36 \\ \hline
+        $F$ & 0 & 2.5 & 5.1 & 8.8 & 11.2 & 13.6 & 17.6 & 22.0 & 27.8 & 33.9 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Draw the scatter diagram for these values, labelling the axes correctly.
+    \end{enumerate}
+
+    It is thought that the drag force $F$ can be modelled by one of the formulae \[F = a + bc \quad \tor \quad F = c + dv^2,\] where $a$, $b$, $c$ and $d$ are constants.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Find, correct to 4 decimal places, the value of the product moment correlation coefficient between
+        \begin{enumerate}
+            \item $v$ and $F$,
+            \item $v^2$ and $F$.
+        \end{enumerate}
+        \item Use your answers to parts (a) and (b) to explain why of $F = a + bv$ or $F = c + dv^2$ is the better model.
+        \item It is required to estimate the value of $v$ for which $F = 26.0$. Find the equation of a suitable regression line, and use it to find the required estimate. Explain why neither the regression line of $v$ on $F$ nor the regression line of $v^2$ on $F$ should be used.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{452}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$v$},
+                    ylabel = {$F$},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x    y      label
+                    0    0      a
+                    4    2.5    a
+                    8    5.1    a
+                    12   8.8    a
+                    16   11.2   a
+                    20   13.6   a
+                    24   17.6   a
+                    28   22.0   a
+                    32   27.8   a
+                    36   33.9   a
+                };
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Using G.C., $r = 0.9860$.
+        \end{psubpart}
+        \begin{psubpart}
+            Using G.C., $r = 0.9906$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Since $r = 0.9907$ is closer to 1 than $r = 0.9860$, there is a stronger linear correlation between $v^2$ and $F$ than $v$ and $F$. Further, from the scatter diagram of $v$ and $F$, there is a slight curvature present, so a linear model may not be suitable for $v$ and $F$.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., the regression line $F$ on $v^2$ is given by \[F = 0.024242v^2 + 3.1957.\] When $F = 26.0$, $v = 30.7$. Note that we reject $v = -30.7$ since $v \geq 0$.
+
+        $v$ is the independent variable while $F$ is the dependent variable, so the regression lines $v$ on $F$ and $v^2$ on $F$ should not be used.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The number of employees, $y$, who stay back and continue in the office $t$ minutes after 5 pm on a particular day in a company is recorded. The results are shown in the table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        $t$ & 15 & 30 & 45 & 60 & 75 & 90 & 105 \\ \hline
+        $y$ & 30 & 19 & 15 & 13 & 12 & 11 & 10 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Draw a scatter diagram for these values, labelling the axes clearly.
+        \item Find, correct to 4 decimal places, the product moment correlation coefficient between
+        \begin{enumerate}
+            \item $t$ and $y$,
+            \item $\sqrt{t}$ and $t$,
+            \item $1/t$ and $y$.
+        \end{enumerate}
+        Hence, state with a valid reason, which of the above models is the most appropriate model of the relationship between $t$ and $y$.
+        \item Using the model you chose in part (b), find the equation for the relationship between $t$ and $y$.
+        \item Predict, to the nearest whole number, the number of employees who stay back and continue to work in the office at 7 pm on that particular day. Comment on the reliability of your prediction.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{451}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel = {$t$},
+                ylabel = {$y$},
+                ylabel style={rotate=-90},
+            ]
+            \addplot [
+                scatter,
+                only marks,
+                point meta=explicit symbolic,
+                scatter/classes={
+                    a={mark=*}
+                },
+            ] table [meta=label] {
+                x    y   label
+                15   30  a
+                30   19  a
+                45   15  a
+                60   13  a
+                75   12  a
+                90   11  a
+                105  10  a
+            };
+            \end{axis}
+        \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Using G.C., $r = -0.8745$.
+        \end{psubpart}
+        \begin{psubpart}
+            Using G.C., $r = -0.9288$.
+        \end{psubpart}
+        \begin{psubpart}
+            Using G.C., $r = 0.9993$.
+        \end{psubpart}
+
+        The model between $1/t$ and $y$ is the most appropriate, since its $\abs{r}$ is the closest to 1 among the three, thus it has the strongest linear correlation among the three models.
+    \end{ppart}
+    \begin{ppart}
+        Since $t$ is independent, we use the regression line $1/t$ on $y$. Using G.C., this is given by \[y = \frac{344.60}{t} + 7.2048.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that 7 pm corresponds to $t = 120$, which gives $y = 10$ (to the nearest integer). Thus, the number of employees staying back until 7 pm is 10. However, because $t = 120$ is outside the given range of values ($15 \leq t \leq 105$), the estimate is an extrapolation and hence unreliable.
+    \end{ppart}
+\end{solution}
