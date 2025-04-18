@@ -1,0 +1,814 @@
+\section{Tutorial B18}
+
+\begin{problem}
+    The product moment correlation coefficient is denoted by $r$. Comment on the validity of following:
+
+    \begin{enumerate}
+        \item $r=0$ for a set of data $(x,y)$ implies $x$ and $y$ are unrelated.
+        \item If $x$ is the number of cigarettes smoked per day by lung cancer patients and $y$ is the age of the lung cancer patients at death, then $r=-0.9$ implies that smoking more cigarettes per day causes lung cancer patients to die at a younger age.
+        \item The value of $r$ for a sample $(x,y)$ being 1 means that a linear relation holds for $x$ and $y$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        False. $r = 0$ implies that $x$ and $y$ are not linearly correlated; $x$ and $y$ could be related by another model (e.g. quadratic).
+    \end{ppart}
+    \begin{ppart}
+        False. Though $r = -0.9$ implies that $x$ and $y$ have a strong negative linear correlation, it does not imply a causal relationship between $x$ and $y$.
+    \end{ppart}
+    \begin{ppart}
+        False. If $r = 1$, we can say that a linear relation holds for $x$ and $y$ within the range provided by the sample. However, outside this range, we cannot say that $x$ and $y$ still share a linear relationship.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    For a random sample of 12 observations of pairs of values ($x$, $y$), the equation of the regression line of $y$ on $x$ is $y=4.82-2.25x$. The sum of the 12 values of $x$ is 20.64 and the product moment correlation coefficient for the sample is $-0.3$.
+
+    \begin{enumerate}
+        \item Find the sum of the 12 values of $y$.
+        \item Find the estimated value of $y$ when $x=2.8$ and comment on the reliability of this estimate.
+    \end{enumerate}
+\end{problem}
+\begin{ppart}
+    \begin{ppart}
+        Note that $\ol{x} = 20.64/12 = 1.72$. Since $\bp{\ol{x}, \ol{y}}$ lies on the regression line, we have \[\ol{y} = 4.82 - 2.25\bp{1.72} = 0.95,\] so the sum of the 12 values of $y$ is $12\bp{0.95} = 11.4$.
+    \end{ppart}
+    \begin{ppart}
+        When $x = 2.8$, we have \[y = 4.82 - 2.25\bp{2.8} = -1.48.\] Since $\abs{r} = 0.3$, there is a weak linear relationship between $x$ and $y$, so the estimate is unreliable.
+    \end{ppart}
+\end{ppart}
+
+\begin{problem}
+    With the aid of suitable scatter diagrams, describe the differences between the least squares linear regression line of $y$ on $x$ and that of $x$ on $y$. Show clearly on these diagrams, the distances which are used to draw the least squares linear regression lines from 5 data points. Explain why these distances are squared.
+\end{problem}
+\begin{solution}
+    \begin{figure}[H]\tikzsetnextfilename{462}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                xlabel = {$x$},
+                ylabel = {$y$},
+                xtick = {1, 5},
+                ytick = \empty,
+                ylabel style={rotate=-90},
+                legend cell align={left},
+                legend pos=outer north east,
+            ]
+            \addplot[plotRed, thick, domain=0:6] {1.04 * x + 0.14};
+            \addlegendentry{$y$ on $x$};
+            \addplot [
+                scatter,
+                only marks,
+                point meta=explicit symbolic,
+                scatter/classes={
+                    a={mark=*}
+                },
+            ] table [meta=label] {
+                x  y    label
+                1  0.5  a
+                2  2.8  a
+                3  3.8  a
+                4  4.2  a
+                5  5.0  a
+            };
+            \draw[dotted, thick] (1, 0.5) -- (1, 1.18);
+            \draw[dotted, thick] (2, 2.8) -- (2, 2.22);
+            \draw[dotted, thick] (3, 3.8) -- (3, 3.26);
+            \draw[dotted, thick] (4, 4.2) -- (4, 4.3);
+            \draw[dotted, thick] (5, 5.0) -- (5, 5.34);
+            \end{axis}
+        \end{tikzpicture} 
+    \end{figure}
+    The least squares linear regression line of $y$ on $x$ is the line that minimizes the squares of the vertical distances (dotted lines) between the data points to the line.
+
+    \begin{figure}[H]\tikzsetnextfilename{463}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                xlabel = {$x$},
+                ylabel = {$y$},
+                xtick = {1, 5},
+                ytick = \empty,
+                ylabel style={rotate=-90},
+                legend cell align={left},
+                legend pos=outer north east,
+            ]
+            \addplot[plotRed, thick, domain=0:6] {(x - 0.18218)/0.86436};
+            \addlegendentry{$x$ on $y$};
+            \addplot [
+                scatter,
+                only marks,
+                point meta=explicit symbolic,
+                scatter/classes={
+                    a={mark=*}
+                },
+            ] table [meta=label] {
+                x  y    label
+                1  0.5  a
+                2  2.8  a
+                3  3.8  a
+                4  4.2  a
+                5  5.0  a
+            };
+            \draw[dotted, thick] (1, 0.5) -- (0.614, 0.5);
+            \draw[dotted, thick] (2, 2.8) -- (2.604, 2.8);
+            \draw[dotted, thick] (3, 3.8) -- (3.467, 3.8);
+            \draw[dotted, thick] (4, 4.2) -- (3.812, 4.2);
+            \draw[dotted, thick] (5, 5.0) -- (4.504, 5.0);
+            \end{axis}
+        \end{tikzpicture} 
+    \end{figure}
+    The least squares linear regression line of $x$ on $y$ is the line that minimizes the squares of the horizontal distances (dotted lines) between the data points to the line.
+
+    The regression lines aim to minimize the ``distance'' between the line and the data points. This is equivalent to minimizing the squared deviations. Hence, the distances (deviations) are squared.
+\end{solution}
+
+\begin{problem}
+    An engineering company makes cranes. The numbers, $x$, sold in each three-month period for two years, together with the profits, $y$ thousand dollars, on the sale of these cranes are given in the following table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c}
+            \hline
+            $x$ & 15 & 17 & 13 & 21 & 16 & 22 & 14 & 18 \\ \hline
+            $y$ & 290 & 350 & 270 & 430 & 340 & 410 & 300 & 360\\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Give a sketch of the scatter diagram for the data as shown on your calculator.
+        \item Find $\ol{x}$ and $\ol{y}$ and mark the point $(\ol{x},\ol{y})$ on your scatter diagram.
+        \item Calculate the equation of the regression line of $y$ on $x$, and draw this line on your scatter diagram. Interpret the gradient of this line in the context of question.
+        \item Calculate the product moment correlation coefficient, and comment on its value in relation to your scatter diagram.
+        \item For the next three-month period, the sales target is 20 cranes. Estimate the corresponding profit.
+        \item The company's sales director uses the regression line in part (c) to predict the profit if 40 cranes were to be sold in a three-month period. Comment on the validity of this prediction.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{454}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xtick = {13, 22},
+                    ytick = {270, 430},
+                    ylabel style={rotate=-90},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                ]
+                \addplot[plotRed, thick, domain=13:22] {17.083 * x + 53.333};
+                \addlegendentry{$y$ on $x$};
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x    y    label
+                    15   290  a
+                    17   350  a
+                    13   270  a
+                    21   430  a
+                    16   340  a
+                    22   410  a
+                    14   300  a
+                    18   360  a
+                };
+                \draw (17, 343.75) circle[radius=2pt] node[anchor=west] {$\bp{\ol{x}, \ol{y}}$};
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $\ol{x} = 17$ and $\ol{y} = 343.75$.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., the equation of the regression line of $y$ on $x$ is $y = 17.083x + 53.333$. Each additional crane yields a profit of \$17 083.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $r = 0.969$, indicating that $x$ and $y$ have a strong positive linear correlation.
+    \end{ppart}
+    \begin{ppart}
+        Using the regression line of $y$ on $x$ at $x = 20$, we have \[y = 17.083\bp{20} + 53.333 = 395,\] so the corresponding profit is \$395 000.
+    \end{ppart}
+    \begin{ppart}
+        $x = 40$ lies outside the given range of values ($13 \leq x \leq 22$), so the estimate is an extrapolation and is hence unreliable.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A study was carried out to investigate possible links between the weights of hens ($x$ kg) and their eggs ($y$ g). A sample of 15 hens was chosen at random and the weights of these hens and their eggs were noted. The scatter diagram and the summarized information for the sample are shown below. The linear product moment coefficient was also computed and found to be 0.200.
+
+    \begin{figure}[H]\tikzsetnextfilename{453}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                xlabel = {$x$},
+                ylabel = {$y$},
+                xtick = {0.8, 4},
+                ytick = {16, 63},
+                ylabel style={rotate=-90},
+            ]
+            \addplot [
+                scatter,
+                only marks,
+                point meta=explicit symbolic,
+                scatter/classes={
+                    a={mark=*}
+                },
+            ] table [meta=label] {
+                x    y   label
+                0.8  20  a
+                1.0  21  a
+                1.2  22  a
+                1.5  30  a
+                1.7  29  a
+                1.8  36  a
+                1.9  48  a
+                2.1  45  a
+                2.3  55  a
+                2.5  63  a
+                2.7  57  a
+                2.8  52  a
+                3.0  58  a
+                3.1  60  a
+                4.0  16  a
+            };
+            \end{axis}
+        \end{tikzpicture} 
+    \end{figure}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            $n$ & $\sum x$ & $\sum x^2$ & $\sum y$ & $\sum y^2$ & $\sum xy$ \\ \hline
+            15 & 33.9 & 85.99 & 690 & 34432 & 1591.2 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    By referring to the scatter diagram and the given value of the linear product moment correlation coefficient, comment on the appropriateness of a linear model.
+
+    One of the points, $(4, 16)$, was identified as an outlier and removed.
+
+    \begin{enumerate}
+        \item For the remaining sample of size 14, recalculate the values in the table above and determine the value of the linear product moment correlation coefficient. Show your workings clearly.
+        \item Use a suitable regression line to estimate the weight of an egg laid by a hen weighing 4 kg, giving your answer to the nearest grams.
+        \item Comment on the reliability of your answer.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have
+        \begin{gather*}
+            \sum x = 33.9 - 4 = 29.9,\\
+            \sum x^2 = 85.99 - 4^2 = 69.99,\\
+            \sum y = 690 - 16 = 674,\\
+            \sum y^2 = 34432 - 16^2 = 34176,\\
+            \sum xy = 1591.2 - (4)(16) = 1527.2,
+        \end{gather*}
+        so \[r = \frac{\sum xy - \frac1{n} \sum x \sum y}{\sqrt{\bs{\sum x^2 - \frac1n \bp{\sum x}^2} \bs{\sum y^2 - \frac1n \bp{\sum y}^2}}} = 0.852.\]
+    \end{ppart}
+    \begin{ppart}
+        The equation of the regression line $y$ on $x$ is given by \[y - \ol{y} = b \bp{x - \ol{x}},\] where \[b = \frac{\sum xy - \frac1{n} \sum x \sum y}{\sum x^2 - \frac1n \bp{\sum x}^2} = 14.3063.\] Thus, \[y = 14.306x + 17.589.\] At $x = 4$, $y = 75$, so the weight of an egg laid by a hen weighing 4 kg is approximately 75 g.
+    \end{ppart}
+    \begin{ppart}
+        $x = 4$ is outside the given range of values (since we removed the point $(4, 16)$). Thus, the estimate is an extrapolation and is hence unreliable.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The table gives the world record time, in seconds above 3 minutes 30 seconds, for running 1 mile as at $1$st January in various years.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+            Year, $x$ & 1930 & 1940 & 1950 & 1960 & 1970 & 1980 & 1990 & 2000 \\ \hline
+            Time, $t$ & 40.4 & 36.4 & 31.3 & 24.5 & 21.1 & 19.0 & 16.3 & 13.1 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Draw a scatter diagram to illustrate the data.
+        \item Comment on whether a linear model would be appropriate, referring to both the scatter diagram and the context of the question.
+        \item Explain why in this context a quadratic model would probably not be appropriate for long-term predictions.
+        \item Fit a model of the form $\ln t = a + b x$ to the data, and use it to predict the world record time as at 1st January 2010. Comment on the reliability of your prediction.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{455}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xtick = {1930, 2000},
+                    ytick = {40.4, 13.1},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x     y     label
+                    1930  40.4  a
+                    1940  36.4  a
+                    1950  31.3  a
+                    1960  24.5  a
+                    1970  21.1  a
+                    1980  19.0  a
+                    1990  16.3  a
+                    2000  13.1  a
+                };
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        Based on the scatter plot, a linear model is appropriate. However, it is unlikely for the world record time to keep on decreasing at its current rate; one would expect it to taper off (approach a limiting value). Thus, a linear model is not appropriate in the given context.
+    \end{ppart}
+    \begin{ppart}
+        The rate of decrease in time will likely decrease, not increase, as a quadratic model would predict.
+    \end{ppart}
+    \begin{ppart}
+        The equation of the regression line $\ln t$ on $x$ is \[\ln t = -0.39512 x + 801.67.\] At $x = 2010$, we have $t = \e^{2.43589} = 11.426$. Hence, the model predicts the world recorded time, at 1st January 2010, to be 3 minutes and 41 seconds.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Sketch a scatter diagram that might be expected for the case when $x$ and $y$ are related approximately by $y=a+bx^{2}$, where $a$ is positive and $b$ is negative. Your diagram should include 5 points, approximately equally spaced with respect to $x$, and with all $x$- and $y$-values positive.
+    \end{enumerate}
+
+    The table gives the values of seven observations of bivariate data, $x$ and $y$.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 2.0 & 2.5 & 3.0 & 3.5 & 4.0 & 4.5 & 5.0 \\ \hline
+        $y$ & 18.8 & 16.9 & 14.5 & 11.7 & 8.6 & 4.9 & 0.8 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Calculate the value of the product moment correlation coefficient, and explain why its value does not necessarily mean that the best model for the relationship between $x$ and $y$ is $y=c+dx$.
+        \item Explain how to use the values obtained by calculating product moment correlation coefficients to decide, for this data, whether $y=a+bx^{2}$ or $y=c+dx$ is the better model.
+        \item It is desired to use the data in the table to estimate the value of $y$ for which $x=3.2$. Find the equation of the least-squares regression line of $y$ on $x^{2}$. Use your equation to calculate the desired estimate.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{456}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xtick = {1, 5},
+                    ytick = {29.3, 4.6},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x  y     label
+                    1  29.3  a
+                    2  25.8  a
+                    3  21    a
+                    4  14.2  a
+                    5  4.6   a
+                };
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $r = -0.992$. The rate of decrease of $y$ is not constant; it seems to be decreasing at an increasing rate. Hence, a linear model may not be best. 
+    \end{ppart}
+    \begin{ppart}
+        The product moment correlation coefficient for $y = a + bx^2$ is $r = -0.99998$, which is much closer to $-1$ than the coefficient for $y = cx + d$, indicating that $y = a + bx^2$ is the better model.
+    \end{ppart}
+    \begin{ppart}
+        The equation for the regression line of $y$ on $x^2$ is \[y = -0.85621x^2 + 22.230.\] At $x = 3.2$, $y = 13.5$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A certain metal discolours when exposed to air. To protect the metal against discolouring, it is treated with a chemical. In an experiment, different quantities, $x$ ml, of the chemical were applied to standard samples of the metal, and the times, $t$ hours, for the metal to discolour were measured. The results are given in the table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+            $x$ & 1.2 & 2.0 & 2.7 & 3.8 & 4.8 & 5.6 & 6.9 \\ \hline
+            $t$ & 2.2 & 4.5 & 5.8 & 7.3 & 7.6 & 9.0 & 9.9 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Calculate the product moment correlation coefficient between $x$ and $t$, and explain whether your answer suggests that a linear model is appropriate.
+        \item Draw a scatter diagram for the data.
+    \end{enumerate}
+
+    One of the values of $t$ appears to be incorrect.
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Indicate the corresponding point on your diagram by labelling it $P$, and explain why the scatter diagram for the remaining points may be consistent with a model of the form $t=a+b\ln x$.
+        \item Omitting $P$, calculate the least squares estimate of $a$ and $b$ for the model $t=a+b\ln x$.
+        \item Assume that the value of $x$ at $P$ is correct. Estimate the value of $t$ for this value of $x$.
+        \item Comment on the use of the model in part (d) in predicting the value of $t$ when $x=8.0$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Using G.C., $r = 0.970$. Since $\abs{r}$ is close to 1, there is a strong linear correlation between $x$ and $t$, so a linear model is appropriate.
+    \end{ppart}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{457}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$x$},
+                    ylabel = {$t$},
+                    xtick = {1.2, 6.9},
+                    ytick = {2.2, 9.9},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x     y     label
+                    1.2   2.2   a
+                    2.0   4.5   a
+                    2.7   5.8   a
+                    3.8   7.3   a
+                    4.8   7.6   a
+                    5.6   9.0   a
+                    6.9   9.9   a
+                };
+                \draw (4.8, 7.6) circle[radius=5pt];
+                \node at (5.3, 7.6) {$P$};
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        Removing $P$, the product moment correlation coefficient of $t$ on $\ln x$ is $r = 0.99998$, indicating a near perfect linear correlation between $t$ and $\ln x$, suggesting that $t = a + b \ln x$ is a suitable model.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $a = 1.4247$ and $b = 4.3966$.
+    \end{ppart}
+    \begin{ppart}
+        At $x = 4.8$, we have \[t = 1.4247 + 4.3966 \ln 4.8 = 8.3.\]
+    \end{ppart}
+    \begin{ppart}
+        $x = 8.0$ is outside the given range of values ($1.2 \leq x \leq 6.9$), hence the estimate is an extrapolation and will be unreliable.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Amy is revising for a mathematics examination and takes a different practice paper each week. Her marks, $y \%$ in week $x$, are as follows:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|c|c|}
+            \hline
+            Week $x$ & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline 
+            Percentage mark $y$ & 38 & 63 & 67 & 75 & 71 & 82 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Draw a scatter diagram showing these marks.
+        \item Suggest a possible reason why one of the marks does not seem to follow the trend.
+        \item It is desired to predict Amy's marks on future papers. Explain why, in this context, neither a linear nor a quadratic model is likely to be appropriate.
+    \end{enumerate}
+    
+    It is desired to fit a model of the form $\ln{L-y}=a+bx$, where $L$ is a suitable constant. The product moment correlation coefficient between $x$ and $\ln{L-y}$ is denoted by $r$. The following table gives values of $r$ for some positive values of $L$.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|} \hline
+            $L$ & 91 & 92 & 93 \\ \hline
+            $r$ & & $-0.929944$ & $-0.929918$ \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Calculate the value of $r$ for $L=91$, giving your answer correct to 6 decimal places.
+        \item Use the table and your answer to part (d) to suggest with a reason which of 91, 92 or 93 is the most appropriate value of $L$.
+        \item Using the value for $L$, calculate the values of $a$ and $b$, and use them to predict the week in which Amy will obtain her first mark of at least 90\%.
+        \item Give an interpretation, in context, of the value of $L$.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{458}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xtick = {1, 6},
+                    ytick = {38, 82},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x   y    label
+                    1   38   a
+                    2   63   a
+                    3   67   a
+                    4   75   a
+                    5   71   a
+                    6   82   a
+                };
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        The paper might have been much more difficult than usual, so she scored lower than usual.
+    \end{ppart}
+    \begin{ppart}
+        There is a maximum score for the papers. Since linear and quadratic models grow without bound, they are not appropriate.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $\ln{91-y}$ and $x$ have a product moment correlation coefficient of $r = -0.929744$.
+    \end{ppart}
+    \begin{ppart}
+        $L = 92$ is the most suitable, as its value of $r$ is the closest to $-1$.
+    \end{ppart}
+    \begin{ppart}
+        The regression line of $\ln{92-y}$ on $x$ is \[\ln{92-y} = -0.27960x + 4.1045,\] so $a = 4.1045$ and $b = -0.27960$. If $y \geq 90$, then \[\ln{92 - 90}  \geq -0.27960 + 4.1045,\] so the least integral $x$ is 13. Hence, Amy will obtain her first mark of at least 90\% in week 13.
+    \end{ppart}
+    \begin{ppart}
+        $L$ is the highest mark obtainable by Amy.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    In an experiment, the following information was gathered about air pressure $P$, measured in inches of mercury, at different heights above sea level $h$, measured in feet.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $h$ & 2000 & 5000 & 10000 & 15000 & 20000 & 25000 & 30000 & 35000 & 40000 & 45000 \\ \hline
+        $P$ & 27.8 & 24.9 & 20.6 & 16.9 & 13.8 & 11.1 & 8.89 & 7.04 & 5.52 & 4.28 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Draw a scatter diagram for these values, labelling the axes.
+        \item Find, correct to 4 decimal places, the product moment correlation coefficient between
+        \begin{enumerate}
+            \item $h$ and $P$,
+            \item $\ln h$ and $P$,
+            \item $\sqrt h$ and $P$.
+        \end{enumerate}
+        \item Using the most appropriate case from part (b), find the equation which best models air pressure at different heights.
+        \item Given that 1 metre = 3.28 feet, re-write your equation from part (c) so that it can be used to estimate the air pressure when the height is measured in metres.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{459}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$h$},
+                    ylabel = {$P$},
+                    xtick = {2000, 45000},
+                    ytick = {4.28, 27.8},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x       y      label
+                    2000    27.8   a
+                    5000    24.9   a
+                    10000   20.6   a
+                    15000   16.9   a
+                    20000   13.8   a
+                    25000   11.1   a
+                    30000   8.89   a
+                    35000   7.04   a
+                    40000   5.52   a
+                    45000   4.28   a
+                };
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Using G.C., $r = -0.98073$.
+        \end{psubpart}
+        \begin{psubpart}
+            Using G.C., $r = -0.97480$.
+        \end{psubpart}
+        \begin{psubpart}
+            Using G.C., $r = -0.99864$.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        The most appropriate case is $\sqrt{h}$ and $P$, since its value of $r$ is the closest to $-1$. Its regression line is given by \[P = -0.14687\sqrt{h} + 34.789.\]
+    \end{ppart}
+    \begin{ppart}
+        The equation becomes \[P = -0.14687\sqrt{3.28 h} + 34.789 = -0.26599 \sqrt{h} + 34.789.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A website about electric motors gives information about the percentage efficiency $y$ of motors depending on their power $x$, measured in horsepower. Xian has copied the following table for a particular type of electric motor, but he has copied one of the efficiency values wrongly.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 1 & 1.5 & 2 & 3 & 5 & 7.5 & 10 & 20 & 30 & 40 & 50 \\ \hline
+        $y$ & 72.5 & 82.5 & 84.0 & 87.4 & 87.5 & 88.5 & 89.5 & 90.2 & 91.0 & 91.7 & 92.4 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Plot a scatter diagram for these values. On your diagram, circle the point that Xian has copied wrongly.
+    \end{enumerate}
+
+    For parts (b), (c) and (d) of this question you should exclude the point for which Xian has copied the efficiency value wrongly.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Explain from your scatter diagram why the relationship between $x$ and $y$ should not be modelled by an equation of the form $y=ax+b$.
+        \item Suppose that the relationship between $x$ and $y$ is modelled by an equation of the form $y= c/x + d$, where $c$ and $d$ are constants. State with reason whether each of $c$ and $d$ is positive or negative.
+        \item Find the product moment correlation coefficient and the constants $c$ and $d$ for the model in part (c).
+        \item Use the model $y= c/x + d$, with the values of $c$ and $d$ found in part (d), to estimate the efficiency value ($y$) that Xian copied wrongly. Give two reasons why you would expect this estimate to be reliable.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{460}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    xtick = {1, 50},
+                    ytick = {72.5, 92.4},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x     y      label
+                    1.0   72.5   a
+                    1.5   82.5   a
+                    2.0   84.0   a
+                    3.0   87.4   a
+                    5.0   87.5   a
+                    7.5   88.5   a
+                    10    89.5   a
+                    20    90.2   a
+                    30    91.0   a
+                    40    91.7   a
+                    50    92.4   a
+                };
+                \draw (3.0, 87.4) circle[radius=5pt];
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        $y$ is increasing at a decreasing rate, not at a constant rate as a linear model would suggest.
+    \end{ppart}
+    \begin{ppart}
+        $c$ is negative since the rate of increase is decreasing. $d$ is positive since the $y$-values are positive.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., $r = -0.97955$. The regression line of $y$ on $1/x$ is \[y = \frac{-17.484}{x} + 91.750.\]
+    \end{ppart}
+    \begin{ppart}
+        At $x = 3$, $y = 85.9$. $x = 3$ is within the given range of values ($1 \leq x \leq 50$), so the estimate is an interpolation. Further, $\abs{r}$ is close to 1. Thus, the estimate is reliable.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    An athletic coach believes that athletes with longer legs can run faster. He selected 10 of his athletes and recorded their leg lengths, $x$ metres and their times, $t$ seconds, in a 100 m race. The results are given in the table.
+        
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
+            $x$ & 0.70 & 0.76 & 0.80 & 0.84 & 0.85 & 0.89 & 0.92 & 0.95 & 0.98 & 1.00 \\ \hline
+            $t$ & 13.90 & 12.73 & 12.12 & 11.89 & 11.80 & 11.42 & 11.29 & 10.94 & 11.00 & 10.80 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    It is given that the value of the product moment correlation coefficient for this data is $-0.963$, correct to 3 decimal places.
+
+    \begin{enumerate}
+        \item State, with a reason, whether the value of the product moment correlation coefficient would be different if the leg lengths had been measured in centimetres instead.
+        \item One of the athletes, Aaron, had missed the race. Assuming a linear model, the coach decides to use a regression line to estimate Aaron's 100 m race timing by measuring his leg length. Explain which of the least squares regression lines, $x$ on $t$ or $t$ on $x$, should be used.
+        \item Draw a scatter diagram to illustrate the data.
+        \item Aaron disagreed with the coach and claimed that $x$ and $t$ do not have a linear correlation. Comment on Aaron's statement with reference to the scatter diagram.
+        \item To be fair to Aaron, the coach considered another possible model for the relationship between $x$ and $t$: $t= a + b/x^2$, where $a$ and $b$ are constants.
+        \begin{enumerate}
+            \item Find the value of the product moment correlation coefficient between $t$ and $1/x^2$, and hence explain why this new model is better than the linear model.
+            \item The coach wants to train an athlete to run the 100 m race in 10 seconds. Calculate the equation of the regression line based on the new model, and use it to estimate the minimum leg length required for the potential athlete. Comment on the reliability of the estimate.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        $r$ is invariant under scaling, hence $r$ will remain the same even if the leg lengths were measured in cm.
+    \end{ppart}
+    \begin{ppart}
+        Since the leg length ($x$) is given, he should use the regression line of $t$ on $x$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{461}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    xlabel = {$x$},
+                    ylabel = {$t$},
+                    xtick = {0.7, 1},
+                    ytick = {13.9, 10.8},
+                    ylabel style={rotate=-90},
+                ]
+                \addplot [
+                    scatter,
+                    only marks,
+                    point meta=explicit symbolic,
+                    scatter/classes={
+                        a={mark=*}
+                    },
+                ] table [meta=label] {
+                    x      y       label
+                    0.70   13.90   a
+                    0.76   12.73   a
+                    0.80   12.12   a
+                    0.84   11.89   a
+                    0.85   11.80   a
+                    0.89   11.42   a
+                    0.92   11.29   a
+                    0.95   10.94   a
+                    0.98   11.00   a
+                    1.00   10.80   a
+                };
+                \end{axis}
+            \end{tikzpicture} 
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        $t$ seems to approach a limiting value as $x$ increases. Hence, Aaron's statement is correct.
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Using G.C., $r = 0.9951$. Since $\abs{r}$ is now closer to 1 ($0.9951 > 0.963$), the new model is better than the linear model.
+        \end{psubpart}
+        \begin{psubpart}
+            The regression line $t$ on $1/x^2$ is given by \[t = \frac{2.8616}{x^2} + 7.8603.\] When $t = 10$, we have $x = 1.16$. Since $t$ is outside the given range of values ($10.80 \leq t \leq 13.90$), the estimate is an extrapolation and thus unreliable.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
