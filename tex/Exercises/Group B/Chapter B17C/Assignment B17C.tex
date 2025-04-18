@@ -69,7 +69,7 @@
         Note that \[x^3 - x^2 + k x + 4 = (x - \a)(x - \b)(x - \g).\] By Vieta's formula, we see that $\a\b\g = -4$. Thus, $\mat B$ has eigenvalues $\a + 4/\a$, $\b + 4/\b$ and $\g + 4/\g$, so $\mat B = \mat A + 4 \mat A^{-1}$.
     \end{ppart}
     \begin{ppart}
-        Since the three eigenvectors are linearly independent, it suffices to show that $\bc{\vec e_1, \vec e_2, \vec e_3}$ spans $\Range{T}$. This is equivalent to showing that there exist $a, b, c \in \RR$ such that for all $\vec v \in \RR^3$, \[a \vec e_1 + b \vec e_2 + c \vec e_3 = \vec v.\] But this is clearly true, since \[a \vec e_1 + b \vec e_2 + c \vec e_3 = \mat P \cveciii{a}{b}{c} \implies \cveciii{a}{b}{c} = \mat P^{-1} \vec v.\] Note that $\mat P^{-1}$ exists since the columns of $\mat P$, which are $\vec e_1, \vec e_2, \vec e_3$, are linearly independent, so $\mat P$ has full rank and is thus invertible.
+        Let $\l$ be an eigenvalue of $\mat A$. The corresponding eigenvalue of $\mat B$ is $\l + 4/\l$, which is non-zero, since \[\l + \frac4\l = \frac1\l \bp{\l^2 + 4}\] has no real roots. Hence, $\mat B$ has full rank, so $\Range{T} = \RR^3$. But because the eigenvectors $\vec e_1, \vec e_2, \vec e_3$ are linearly independent, they span $\RR^3$, so they form a basis for $\Range{T}$.
     \end{ppart}
 \end{solution}
 
@@ -97,9 +97,9 @@
         \end{align*}
         Thus, \[\c(\l) = -\l^3 + p\l^2 - \bp{2p+2}\l + p \bp{2p+2} = \bp{-\l + p} \bp{\l^2 + 2p + 2}.\]
 
-        \case{1} If $2p + 2 < 0$, i.e. $p < -1$, then $\mat A$ has three real eigenvalues, namely $p$, $\sqrt{-\bp{2p- 2}}$ and $\sqrt{-\bp{2p-2}}$.
+        \case{1} If $2p + 2 < 0$, i.e. $p < -1$, then $\mat A$ has three real and distinct eigenvalues, namely $p$, $\sqrt{-\bp{2p- 2}}$ and $\sqrt{-\bp{2p-2}}$.
 
-        \case{2} If $2p + 2 = 0$, i.e. $p = -1$, then $\mat A$ has two real eigenvalues, namely $p = -1$ and $0$.
+        \case{2} If $2p + 2 = 0$, i.e. $p = -1$, then $\mat A$ has two real and distinct eigenvalues, namely $p = -1$ and $0$.
 
         \case{3} If $2p + 2 > 0$, i.e. $p > -1$, then $\mat A$ has one real eigenvalue, namely $p$.
     \end{ppart}
@@ -110,6 +110,6 @@
 
         \case{2}[$\l = 0$] Note that \[\cveciii{-1}50 \crossp \cveciii{-1}{-1}{2} = 2\cveciii513.\] The eigenvector corresponding to $\l = 0$ is thus $\cveciiix513$.
 
-        Thus, $\mat A$ has two eigenvectors when $p = -1$. Since there are less than 3 eigenvectors, $\mat A$ is not diagonalizable, so Joe is correct.
+        Thus, $\mat A$ has two independent eigenvectors when $p = -1$. Since there are less than 3 independent eigenvectors, $\mat A$ is not diagonalizable, so Joe is correct.
     \end{ppart}
 \end{solution}
