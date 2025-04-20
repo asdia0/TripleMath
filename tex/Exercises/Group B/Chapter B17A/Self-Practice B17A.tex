@@ -1,0 +1,123 @@
+\section{Self-Practice B17A}
+
+\begin{problem}
+    Find the $2 \times 2$ matrix $\mat T$ such that \[\begin{pmatrix}2 & 1 \\ 3 & 0\end{pmatrix} = \mat T \begin{pmatrix}1 & 0 \\ 2 & 2\end{pmatrix}.\]
+\end{problem}
+\begin{solution}
+    We have \[\mat T = \begin{pmatrix}2 & 1 \\ 3 & 0\end{pmatrix}\begin{pmatrix}1 & 0 \\ 2 & 2\end{pmatrix}^{-1} = \begin{pmatrix}1 & \frac12 \\ 3 & 0\end{pmatrix}.\]
+\end{solution}
+
+\begin{problem}
+    If \[\mat A = \begin{pmatrix}1 & 3 \\ 2 & 2\end{pmatrix},\] show that the roots of the equation $\det{\mat A - \l \mat I} = 0$ are $\l = -1$ and $\l = 4$.
+\end{problem}
+\begin{solution}
+    Note that \[\det{\mat A - \l \mat I} = \det \begin{pmatrix}1 - \l & 3 \\ 2 & 2 - \l\end{pmatrix} = \l^2 - 3\l - 4 = \bp{\l + 1}\bp{\l - 4},\] so the roots are $\l = -1$ and $\l = 4$.
+\end{solution}
+
+\begin{problem}
+    Consider the matrix \[\mat A = \begin{pmatrix}1 & 0 \\ 3 & 4\end{pmatrix}.\]
+    \begin{enumerate}
+        \item Find the elementary matrices $\mat E_1$ and $\mat E_2$ such that $\mat E_2 \mat E_1 \mat A = \mat I$.
+        \item Write $\mat A^{-1}$ as a product of two elementary matrices.
+        \item Write $\mat A$ as a product of two elementary matrices.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We can reduce $\mat A$ to the identity matrix $\mat I$ using two elementary row operations: \[\begin{pmatrix}1 & 0 \\ 3 & 4\end{pmatrix} \rightarrow \begin{matrix}[r] \\ \scriptstyle R_2 - 3R_1\end{matrix} \begin{pmatrix}1 & 0 \\ 0 & 4 \end{pmatrix} \rightarrow \begin{matrix}[r] \\ \scriptstyle \frac14 R_2\end{matrix} \begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}.\] The two elementary matrices representing these operations are given by \[\mat E_1 = \begin{pmatrix}1 & 0 \\ -3 & 1\end{pmatrix} \quad \tand \quad \mat E_2 = \begin{pmatrix}1 & 0 \\ 0 & \frac14\end{pmatrix}.\]
+    \end{ppart}
+    \begin{ppart}
+        From $\mat E_2 \mat E_1 \mat A = \mat I$, we have \[\mat A^{-1} = \mat E_2 \mat E_1 = \begin{pmatrix}1 & 0 \\ 0 & \frac14\end{pmatrix} \begin{pmatrix}1 & 0 \\ -3 & 1\end{pmatrix}.\]
+    \end{ppart}
+    \begin{ppart}
+        Taking the inverse of the previous part, we have \[\mat A = \mat E_1^{-1} \mat E_2^{-1} = \begin{pmatrix}1 & 0 \\ 3 & 1\end{pmatrix} \begin{pmatrix}1 & 0 \\ 0 & 4\end{pmatrix}.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    Given that the matrix $\mat A$ is singular, where \[\mat A = \begin{pmatrix}1 & 2 & 1 \\ a & -1 & -11 \\ -2 & a & 12\end{pmatrix},\] find the possible values of $a$. For each of these values, determine the number of solutions to the equation \[\mat A \vec x = \cveciii321.\] If there are infinitely many solutions for a particular value of $a$, give the general solution.
+\end{problem}
+\begin{solution}
+    Note that \[\det \mat A = \begin{vmatrix}-1 & -11 \\ a & 12\end{vmatrix} - 2 \begin{vmatrix}9 & -11 \\ -2 & 12\end{vmatrix} + \begin{vmatrix}a & -1 \\ -2 & a\end{vmatrix} = a^2 - 13 a + 30 = \bp{a-10}\bp{a-3}.\] For $\mat A$ to be singular, its determinant must be 0, so we have $a = 10$ or $a = 3$.
+
+    \case{1}[$a = 10$] The equation can be represented by the following augmented matrix, which we reduce to its RREF: \[\begin{pmatrix}[ccc|c] 1 & 2 & 1 & 3 \\ 10 & -1 & -11 & 2 \\ -2 & 10 & 12 & 1\end{pmatrix} \rightarrow \begin{pmatrix}[ccc|c]1 & 0 & -1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] From the last row, we see that the system is inconsistent, so there are no solutions.
+
+    \case{2}[$a = 3$] The equation can be represented by the following augmented matrix, which we reduce to its RREF: \[\begin{pmatrix}[ccc|c] 1 & 2 & 1 & 3 \\ 3 & -1 & -11 & 2 \\ -2 & 3 & 12 & 1\end{pmatrix} \rightarrow \begin{pmatrix}[ccc|c]1 & 0 & -3 & 1 \\ 0 & 1 & 2 & 1 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Since the last row is full of zeroes, there are infinitely many solutions.
+
+    Let $\vec x = \cveciiix{x}{y}{z}$. Then \[\begin{pmatrix}1 & 0 & -3 \\ 0 & 1 & 2 \\ 0 & 0 & 0\end{pmatrix}\cveciii{x}{y}{z} = \cveciii110 \implies \systeme{x-3z=1,y+2z=1}.\] Let $z = \l \in \RR$. Then the general solution is given by \[\vec x = \cveciii{x}{y}{z} = \cveciii{1 + 3\l}{1 - 2\l}{\l} = \cveciii110 + \l \cveciii{3}{-2}0.\]
+\end{solution}
+
+\begin{problem}
+    Given that \[\mat Y = \begin{pmatrix}p & q \\ r & s\end{pmatrix} \quad \tand \quad \mat Y \mat Y \trp = \begin{pmatrix}2 & 0 \\ 0 & 2 \end{pmatrix},\] show that, if $p$, $q$, $r$, $s$ are real, they all lie in the interval $\bs{-\sqrt2, \sqrt2}$.
+\end{problem}
+\begin{solution}
+    Note that \[\mat Y \mat Y \trp = \begin{pmatrix}p & q \\ r & s\end{pmatrix} \begin{pmatrix}p & r \\ q & s\end{pmatrix} = \begin{pmatrix}p^2 + q^2 & pr + qs \\ pr + qs & r^2 + s^2\end{pmatrix} = \begin{pmatrix}2 & 0 \\ 0 & 2 \end{pmatrix},\] so we have $p^2 + q^2 = 2$ and $r^2 + s^2 = 2$. It immediately follows that $p, q, r, s \in \bs{-\sqrt2, \sqrt2}$.
+\end{solution}
+
+\begin{problem}
+    Let $\mat A \vec x = \vec 0$ be a homogeneous system of $n$ linear equations in $n$ unknowns, and let $\mat Q$ be an invertible matrix. Show that $\mat A \vec x = \vec 0$ has just the trivial solution if and only if $\mat Q \mat A \vec x = \vec 0$ has just the trivial solution.
+\end{problem}
+\begin{solution}
+    Suppose $\mat A \vec x = \vec 0$ has just the trivial solution. Then $\mat A$ is invertible, so $\det \mat A \neq 0$, whence $\det{\mat Q \mat A} = \det{\mat Q} \det{\mat A} \neq 0$. Thus, $\mat Q \mat A$ is also invertible, so $\mat Q \mat A \vec x = \vec 0$ has just the trivial solution.
+
+    Suppose $\mat Q \mat A \vec x = \vec 0$ has just the trivial solution. Then $\mat Q \mat A$ is invertible, so $\det{\mat Q \mat A} \neq 0$. Since $\mat Q$ is invertible, we have $\det{\mat Q} \neq 0$, whence it follows that $\det{\mat A} \neq 0$, so $\mat A$ is invertible and $\mat A \vec x = \vec 0$ has just the trivial solution.
+\end{solution}
+
+\begin{problem}
+    Let \[\begin{pmatrix}[ccc|c] a & 0 & b & 2 \\ a & a & 4 & 4 \\ 0 & a & 2 & b\end{pmatrix}\] be the augmented matrix for a linear system. For what values of $a$ and $b$ does the system have
+    \begin{itemize}
+        \item a unique solution?
+        \item a one-parameter solution?
+        \item a two-parameter solution?
+        \item no solution?
+    \end{itemize}
+\end{problem}
+\begin{solution}
+    Note that \[\begin{pmatrix}[ccc|c] a & 0 & b & 2 \\ a & a & 4 & 4 \\ 0 & a & 2 & b\end{pmatrix} \rightarrow \begin{matrix}[r] \\ \scriptstyle R_2 - R_1 \\ \scriptstyle R_3 + R_1 - R_2\end{matrix} \begin{pmatrix}[ccc|c]a & 0 & b & 2 \\ 0 & a & 4-b & 2 \\ 0 & 0 & b-2 & b-2\end{pmatrix}.\]
+    
+    \case{1}[$a \neq 0$, $b \neq 2$] Note that \[\det \begin{pmatrix} a & 0 & b \\ a & a & 4 \\ 0 & a & 2 \end{pmatrix} = a^2 \bp{b-2} \neq 0,\] so the matrix is invertible and we obtain a unique solution.
+
+    \case{2}[$a = 0$, $b = 2$] Our matrix can be further reduced to \[\begin{pmatrix}[ccc|c]a & 0 & b & 2 \\ 0 & a & 4-b & 2 \\ 0 & 0 & b-2 & b-2\end{pmatrix} = \begin{pmatrix}[ccc|c]0 & 0 & 2 & 2 \\ 0 & 0 & 2 & 2 \\ 0 & 0 & 0 & 0\end{pmatrix} \rightarrow \begin{pmatrix}[ccc|c]0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Since there are two rows of zeroes, we have a two-parameter solution.
+
+    \case{3}[$a = 0$, $b \neq 2$] Our matrix can be further reduced to \[\begin{pmatrix}[ccc|c]a & 0 & b & 2 \\ 0 & a & 4-b & 2 \\ 0 & 0 & b-2 & b-2\end{pmatrix} = \begin{pmatrix}[ccc|c]0 & 0 & b & 2 \\ 0 & 0 & 4-b & 2 \\ 0 & 0 & b-2 & b-2\end{pmatrix} \rightarrow \begin{pmatrix}[ccc|c]0 & 0 & 1 & 1 \\ 0 & 0 & 0 & b-2 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Since $b - 2 \neq 0$, the second row is inconsistent, so there are no solutions in this case.
+
+    \case{4}[$a \neq 0$, $b = 2$] Substituting $b = 2$ into the reduced augmented matrix, we see that \[\begin{pmatrix}[ccc|c]a & 0 & b & 2 \\ 0 & a & 4-b & 2 \\ 0 & 0 & b-2 & b-2\end{pmatrix} = \begin{pmatrix}[ccc|c]a & 0 & 2 & 2 \\ 0 & a & 2 & 2 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] There is only one row of zeroes, so we have a one-parameter solution in this case.
+
+    To summarize,
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Solution} & $a$ & $b$ \\ \hline\hline
+            None & $a = 0$ & $b \neq 2$ \\ \hline
+            Unique & $a \neq 0$ & $b \neq 2$ \\ \hline
+            One-parameter & $a \neq 0$ & $b = 2$ \\ \hline
+            Two-parameter & $a = 0$ & $b = 2$\\ \hline
+        \end{tabular}
+    \end{table}
+\end{solution}
+
+\begin{problem}
+    The matrix $\mat A$ is given by \[\mat A = \begin{pmatrix}6 & 3 & 2 \\ 3 & 2 & 1 \\ 8 & 4 & 3\end{pmatrix}.\] By performing row-operations on the matrix $\begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix}$, find $\mat A^{-1}$. Hence, or otherwise, find $\mat B^{-1}$ where \[\mat B = \begin{pmatrix}1 & \frac12 & \frac13 \\[0.5em] \frac12 & \frac13 & \frac16 \\[0.5em] \frac13 & \frac16 & \frac18\end{pmatrix}.\] Given that the real numbers $x_1$, $x_2$ and $x_3$ satisfy the equation \[\mat B \cveciii{x_1}{x_2}{x_3} = \cveciii{c_1}{c_2}{c_3},\] show that the solution of the equation \[\mat B \vec x = \cveciii{c_1 + \de}{c_2 - \de}{c_3 - \de}\] is \[\vec x = \cveciii{x_1 + 42\de}{x_2 - 18\de}{x_3 - 96\de}.\]
+\end{problem}
+\begin{solution}
+    We have \[\begin{pmatrix}[ccc|ccc] 6 & 3 & 2 & 1 & 0 & 0 \\ 3 & 2 & 1 & 0 & 1 & 0 \\ 8 & 4 & 3 & 0 & 0 & 1\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle 2R_1 - R_2 - R_3 \\ \scriptstyle 2R_2-2R_1 \\ \scriptstyle 3R_3 - 4R_1\end{matrix} \begin{pmatrix}[ccc|ccc] 1 & 0 & 0 & 2 & -1 & -1 \\ 0 & 1 & 0 & -1 & 2 & 0 \\ 0 & 0 & 1 & -4 & 0 & 3\end{pmatrix},\] so \[\mat A^{-1} = \begin{pmatrix}2 & -1 & -1 \\ -1 & 2 & 0 \\ -4 & 0 & 3\end{pmatrix}.\]
+
+    Note that \[\mat B = \begin{pmatrix}1 & \frac12 & \frac13 \\[0.5em] \frac12 & \frac13 & \frac16 \\[0.5em] \frac13 & \frac16 & \frac18\end{pmatrix} = \begin{pmatrix}\frac16 & 0 & 0 \\[0.5em] 0 & \frac16 & 0 \\[0.5em] 0 & 0 & \frac1{24}\end{pmatrix} \mat A,\] so \[\mat B^{-1} = \mat A^{-1} \begin{pmatrix}\frac16 & 0 & 0 \\[0.5em] 0 & \frac16 & 0 \\[0.5em] 0 & 0 & \frac1{24}\end{pmatrix}^{-1} = \begin{pmatrix}2 & -1 & -1 \\ -1 & 2 & 0 \\ -4 & 0 & 3\end{pmatrix} \begin{pmatrix}6 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 24\end{pmatrix} = \begin{pmatrix}12 & -6 & -24 \\ -6 & 12 & 0 \\ -24 & 0 & 72\end{pmatrix}.\]
+
+    Note that \[\mat B \vec x = \cveciii{c_1 + \de}{c_2 - \de}{c_3 - \de} = \cveciii{c_1}{c_2}{c_3} + \de \cveciii1{-1}{-1} = \mat B \cveciii{x_1}{x_2}{x_3} + \de \cveciii1{-1}{-1}.\] Pre-multiplying $\mat B^{-1}$ on both sides, \[\vec x = \cveciii{x_1}{x_2}{x_3} + \de \mat B^{-1} \cveciii1{-1}{-1} = \cveciii{x_1}{x_2}{x_3} + \de \cveciii{42}{-18}{-96} = \cveciii{x_1 + 42\de}{x_2 - 18\de}{x_3 - 96\de}.\]
+\end{solution}
+
+\begin{problem}
+    Given that \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 5 & 4 & a \\ -5 & a & 11\end{pmatrix},\] find the values of $a$ for which the equation $\mat A \vec x = \vec b$ does not have exactly one solution where $\vec x$ and $\vec b$ are $3 \times 1$ matrices.
+
+    Using each of these values of $a$, find the solutions, if any, of the equation \[\mat A \vec x = \cveciii14{-3}.\]
+\end{problem}
+\begin{solution}
+    Note that \[\det \mat A = \begin{vmatrix}4 & a \\ a & 11\end{vmatrix} - 2\begin{vmatrix}5 & a \\ -5 & 11\end{vmatrix} + 3\begin{vmatrix}5 & 4 \\ -5 & a\end{vmatrix} = -a^2 + 5a - 6 = -\bp{a-3}\bp{a-2}.\] For $\mat A \vec x = \vec b$ to not have a unique solution, we require $\det \mat A = 0$, so $a = 2$ or $a = 3$.
+
+    \case{1}[$a = 2$] The equation can be represented by the following augmented matrix, which we reduce to its RREF: \[\begin{pmatrix}[ccc|c] 1 & 2 & 3 & 1 \\ 5 & 4 & 2 & 4 \\ -5 & 2 & 11 & -3\end{pmatrix} \rightarrow \begin{pmatrix}[ccc|c] 1 & 0 & -\frac43 & \frac23 \\[0.5em] 0 & 1 & \frac{13}{6} & \frac16 \\[0.5em] 0 & 0 & 0 & 0\end{pmatrix}.\] Let $\vec x = \cveciiix{x}{y}{z}$. Then the system becomes \[\systeme{x - \frac43 z = \frac23, y + \frac{13}{6} = \frac16}.\] Let $z = \l \in \RR$. Then \[\vec x = \cveciii{x}{y}{z} = \cveciii{2/3}{1/6}{0} + \l \cveciii{4/3}{-13/6}{1}.\]
+
+    \case{2}[$a = 3$] The equation can be represented by the following augmented matrix, which we reduce to its RREF: \[\begin{pmatrix}[ccc|c] 1 & 2 & 3 & 1 \\ 5 & 4 & 3 & 4 \\ -5 & 3 & 11 & -3\end{pmatrix} \rightarrow \begin{pmatrix}[ccc|c] 1 & 0 & -1 & 0 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] From the last row, we see that the system is inconsistent, so it has no solutions.
+\end{solution}

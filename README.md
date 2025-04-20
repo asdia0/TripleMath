@@ -56,7 +56,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B14  | Euler Method and Improved Euler Method                         |  🟢  |   🟢    |      🟡      |    🟢     |
 | B15  | Modelling Populations with First Order DE                      |  🟢  |   🔴    |      🔴      |    🔴     |
 | B16  | Second Order DE                                                |  🟢  |   🟢    |      🟡      |    🟢     |
-| B17A | Linear Algebra - Matrices                                      |  🟢  |   🟢    |      🟡      |    🟢     |
+| B17A | Linear Algebra - Matrices                                      |  🟢  |   🟢    |      🟢      |    🟢     |
 | B17B | Linear Algebra - Linear Spaces                                 |  🟢  |   🟢    |      🟡      |    🟢     |
 | B17C | Linear Algebra - Eigenvalues and Eigenvectors                  |  🟢  |   🟢    |      🟡      |    🟢     |
 | B18  | Correlation and Regression                                     |  🟡  |   🟢    |      🟡      |    🟢     |
