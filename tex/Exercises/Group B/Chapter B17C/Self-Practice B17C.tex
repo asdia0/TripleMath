@@ -1,0 +1,152 @@
+\section{Self-Practice B17C}
+
+\begin{problem}
+    The vector $\vec x$ is an eigenvector of the matrices $\mat A$ and $\mat B$ with corresponding eigenvalues $\l$ and $\m$ respectively. Show that $\vec x$ is an eigenvector of $\mat A \mat B$ with corresponding eigenvalues $\l \m$.
+
+    Find the eigenvalues and corresponding eigenvectors of $\mat A$, where \[\mat A = \begin{pmatrix}-11 & 3 & -6 \\ 8 & -2 & 4 \\ 16 & -6 & 9\end{pmatrix}.\] The matrix $\mat B$ has eigenvectors \[\cveciii10{-2}, \, \cveciii1{-1}{-2}, \, \cveciii9{-8}{-16},\] with corresponding eigenvalues $-1$, 3, 4 respectively.
+
+    \begin{enumerate}
+        \item Without evaluating $\mat A \mat B$ and $\mat B \mat A$, determine whether $\mat A \mat B = \mat B \mat A$. Justify your conclusion.
+        \item Find a matrix $\mat P$ and a diagonal matrix $\mat D$ such that $\bp{\mat A \mat B}^2 = \mat P \mat D \mat P^{-1}$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    By the definition of an eigenvector, one has $\mat A \vec x = \l \vec x$ and $\mat B \vec x = \m \vec x$. Thus, \[\mat A \mat B \vec x = \mat A \m \vec x = \m \vec A \vec x = \m \l \vec x = \l \m \vec x,\] so $\vec x$ is an eigenvector of $\mat A \mat B$ with corresponding eigenvalue $\l \m$.
+
+    Let the characteristic polynomial of $\mat A$ be $\c(\l) = \l^3 - c_2 \l^2 + c_1 \l - c_0$. Then
+    \begin{align*}
+        c_0 &= \abs{\mat A} = 6,\\
+        c_1 &= \begin{vmatrix}-11 & 3 \\ 8 & -2\end{vmatrix} + \begin{vmatrix}-2 & 4 \\ -6 & 9\end{vmatrix} + \begin{vmatrix}-11 & -6 \\ 16 & 9\end{vmatrix} = 1,\\
+        c_2 &= \abs{-11} + \abs{-2} + \abs{9} = -4,
+    \end{align*}
+    Thus, the characteristic polynomial of $\mat A$ is \[\c(\l) = \l^3 + 4\l^2 + \l - 6 = (\l - 1)(\l + 2)(\l + 3),\] so $\mat A$ has eigenvalues $\l = 1, -2, -3$.
+
+    Note that \[\mat A - \l \mat I = \begin{pmatrix}-11-\l & 3 & -6 \\ 8 & -2-\l & 4 \\ 16 & -6 & 9-\l\end{pmatrix}.\]
+
+    \case{1}[$\l = 1$] Observe that \[\cveciii{-12}3{-6} \crossp \cveciii8{-3}{4} = -6 \cveciii10{-2}.\] We hence take $\vec x = \cveciiix10{-2}$ to be the corresponding eigenvector of $\l = 1$.
+
+    \case{2}[$\l = -2$] Observe that \[\cveciii{-9}3{-6} \crossp \cveciii8{0}{4} = 12 \cveciii1{-1}{-2}.\] We hence take $\vec x = \cveciiix1{-1}{-2}$ to be the corresponding eigenvector of $\l = -2$.
+
+    \case{3}[$\l = -3$] Observe that \[\cveciii{-8}3{-6} \crossp \cveciii8{1}{4} = 2 \cveciii9{-8}{-16}.\] We hence take $\vec x = \cveciiix9{-8}{-16}$ to be the corresponding eigenvector of $\l = -3$.
+
+    \begin{ppart}
+        Since $\mat A$ and $\mat B$ share the same linearly independent eigenvectors, we can write $\mat A = \mat P \mat D_A \mat P^{-1}$ and $\mat B = \mat P \mat D_B \mat P^{-1}$ for some diagonal matrices $\mat D_A$ and $\mat D_B$. Then \[\mat A \mat B = \bp{\mat P \mat D_A \mat P^{-1}} \bp{\mat P \mat D_B \mat P^{-1}} = \mat P \mat D_A \mat D_B \mat P^{-1}.\] Since diagonal matrices commute, we see that \[\mat A \mat B = \mat P \mat D_B \mat D_A \mat P^{-1} = \bp{\mat P \mat D_B \mat P^{-1}} \bp{\mat P \mat D_A \mat P^{-1}} = \mat B \mat A.\]
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\bp{\mat A \mat B}^2 = \mat P \bp{\mat D_A \mat D_B}^2 \mat P^{-1},\] so the desired matrices are \[\mat P = \begin{pmatrix}1 & 1 & 9 \\ 0 & -1 & -8 \\ -2 & -2 & -16\end{pmatrix}\] and \[\mat D = \bp{\mat D_A \mat D_B}^2 = \bs{\begin{pmatrix}1 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & -3\end{pmatrix}\begin{pmatrix}-1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 4\end{pmatrix}}^2 = \begin{pmatrix}1 & 0 & 0 \\ 0 & 36 & 0 \\ 0 & 0 & 144\end{pmatrix}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The eigenvector $\vec x$ is an eigenvector of the matrix $\mat A$, with corresponding eigenvalue $\l$, and $\vec x$ is also an eigenvector of the matrix $\mat B$, with corresponding eigenvalue $\m$. Prove that $\vec x$ is an eigenvector of the matrix $p\mat A + q \mat B$, with corresponding eigenvalue $p \l + q \m$, where $p, q \in \RR$. Find the eigenvalues and corresponding eigenvectors of the matrix \[\mat L = \begin{pmatrix}-11 & 3 & -6 \\ 8 & -2 & 4 \\ 16 & -6 & 9\end{pmatrix}.\] The matrix $\mat M$ has eigenvectors \[\cveciii10{-2}, \, \cveciii1{-1}{-2}, \, \cveciii9{-8}{-16},\] with corresponding eigenvalues $-1$, 3, 4 respectively. Find a matrix $\mat P$ and a diagonal matrix $\mat D$ such that $(2\mat L + 3\mat M)^4 = \mat P \mat D \mat P^{-1}$.
+\end{problem}
+\begin{solution}
+    By the definition of an eigenvector, one has $\mat A \vec x = \l \vec x$ and $\mat B \vec x = \m \vec x$. Thus, \[\bp{p\mat A + q\mat B}\vec x = p \mat A \vec x + q\mat B \vec x = p \l \vec x + q \m \vec x = \bp{p \l + q \m} \vec x,\] so $\vec x$ is an eigenvector of $p\mat A + q\mat B$ with corresponding eigenvalue $p\l + q\m$.
+
+    Let the characteristic polynomial of $\mat L$ be $\c(\l) = \l^3 - c_2 \l^2 + c_1 \l - c_0$. Then
+    \begin{align*}
+        c_0 &= \abs{\mat L} = 6,\\
+        c_1 &= \begin{vmatrix}-11 & 3 \\ 8 & -2\end{vmatrix} + \begin{vmatrix}-2 & 4 \\ -6 & 9\end{vmatrix} + \begin{vmatrix}-11 & -6 \\ 16 & 9\end{vmatrix} = 1,\\
+        c_2 &= \abs{-11} + \abs{-2} + \abs{9} = -4,
+    \end{align*}
+    Thus, the characteristic polynomial of $\mat L$ is \[\c(\l) = \l^3 + 4\l^2 + \l - 6 = (\l - 1)(\l + 2)(\l + 3),\] so $\mat A$ has eigenvalues $\l = 1, -2, -3$.
+
+    Note that \[\mat L - \l \mat I = \begin{pmatrix}-11-\l & 3 & -6 \\ 8 & -2-\l & 4 \\ 16 & -6 & 9-\l\end{pmatrix}.\]
+
+    \case{1}[$\l = 1$] Observe that \[\cveciii{-12}3{-6} \crossp \cveciii8{-3}{4} = -6 \cveciii10{-2}.\] We hence take $\vec x = \cveciiix10{-2}$ to be the corresponding eigenvector of $\l = 1$.
+
+    \case{2}[$\l = -2$] Observe that \[\cveciii{-9}3{-6} \crossp \cveciii8{0}{4} = 12 \cveciii1{-1}{-2}.\] We hence take $\vec x = \cveciiix1{-1}{-2}$ to be the corresponding eigenvector of $\l = -2$.
+
+    \case{3}[$\l = -3$] Observe that \[\cveciii{-8}3{-6} \crossp \cveciii8{1}{4} = 2 \cveciii9{-8}{-16}.\] We hence take $\vec x = \cveciiix9{-8}{-16}$ to be the corresponding eigenvector of $\l = -3$.
+
+    Note that $2\mat L + 3\mat M$ has eigenvalues $2\l_i + 3\m_i = -1, 5, 6$ with corresponding eigenvectors \[\cveciii10{-2}, \, \cveciii1{-1}{-2}, \, \cveciii9{-8}{-16}.\] Thus, the desired matrices are \[\mat P = \begin{pmatrix}1 & 1 & 9 \\ 0 & -1 & -8 \\ -2 & -2 & -16\end{pmatrix}, \quad \mat D = \begin{pmatrix}(-1)^4 & 0 & 0 \\ 0 & 5^4 & 0 \\ 0 & 0 & 6^4\end{pmatrix} = \begin{pmatrix}1 & 0 & 0 \\ 0 & 625 & 0 \\ 0 & 0 & 1296\end{pmatrix}.\]
+\end{solution}
+
+\begin{problem}
+    Given \[\vec a = \cveciii31{-1}, \quad \vec b = \cveciii11{-1}, \quad \vec c = \cveciii10{-1},\] find a $3 \times 3$ matrix $\mat U$ having eigenvectors $\vec a$, $\vec b$, $\vec c$ corresponding to the eigenvalues 1, $-1$ and 2 respectively.
+
+    For the transformation $\mat y = \mat U \vec x$ from vector $\vec x$ to vector $\vec y$,
+    \begin{enumerate}
+        \item find all the invariant points and all the invariant lines,
+        \item given that $\vec x = \cveciiix32{-3}$ is in the plane spanned by $\vec b$ and $\vec c$, find $\mat U^{10} \vec x$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We have \[\mat U = \begin{pmatrix}3 & 1 & 1 \\ 1 & 1 & 0 \\ -1 & - 1 & -1\end{pmatrix} \begin{pmatrix}1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 2\end{pmatrix} \begin{pmatrix}3 & 1 & 1 \\ 1 & 1 & 0 \\ -1 & - 1 & -1\end{pmatrix}^{-1} = \begin{pmatrix}2 & -3 & 0 \\ 1 & -1 & 1 \\ -1 & 3 & 1\end{pmatrix}.\]
+
+    \begin{ppart}
+        The invariant points correspond to eigenvectors with eigenvalue 1, so they have the form $\l \cveciiix31{-1}$ for some $\l \in \RR$. The invariant lines correspond to all other eigenvectors, so they have the form $\m \cveciiix11{-1}$ or $\n \cveciiix10{-1}$ for some $\m, \n \in \RR$.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\vec x = 2\vec b + \vec c$. Thus, \[\mat U^{10} \vec x = \mat U^{10} \bp{2\vec b + \vec c} = 2 \mat U^{10} \vec b + \mat U^{10} \vec c = 2 (-1)^{10} \vec b + 2^{20} \vec c = \cveciii{1026}0{-1026}.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A Leslie matrix is often used to model population dynamics for different stages of a life cycle of certain species of animals of interest. A general form of a Leslie matrix is given by \[\begin{pmatrix}f_0 & f_1 & f_2 & \cdots & f_{n-2} & f_{n-1} \\ s_0 & 0 & 0 & \cdots & 0 & 0 \\ 0 & s_1 & 0 & \cdots & 0 & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & 0 & \cdots & s_{n-2} & 0 \end{pmatrix},\] where $f_i$ and $s_i$ are non-negative real numbers.
+
+    \begin{enumerate}
+        \item Consider a $3 \times 3$ Leslie matrix \[\mat L = \begin{pmatrix}f_0 & f_1 & f_2 \\ s_0 & 0 & 0 \\ 0 & s_1 & 0 \end{pmatrix}.\] If $\mat L$ has complex eigenvalues, prove that $\mat L$ has exactly one positive eigenvalue.
+        \item In the study of the population of locusts in a particular region, it is of important to track the number of locusts in various stages of their life cycle. In particular, the tracking of the number of eggs, nymphs (young locust) and adults are of interest. Let $x_1(t)$, $x_2(t)$ and $x_3(t)$ denote the number of eggs, nymphs and adults at time $t$, where time in measured in years. From years of studies, the relations between $x_1$, $x_2$ and $x_3$ are given as follows:
+        \begin{align*}
+            x_1(t+1) &= 1000 x_3(t),\\
+            x_2(t+1) &= 0.02 x_1(t),\\
+            x_3(t+1) &= 0.05 x_2(t).
+        \end{align*}
+        Let $\vec x_t = \cveciiix{x_1(t)}{x_2(t)}{x_3(t)}$. The relations can be represented by a Leslie matrix $\mat M$, where $\vec x_{t+1} = \mat M \vec x_t$.
+        \begin{enumerate}
+            \item Identify the matrix $\mat M$ that represents the growth.
+            \item Given at time $t = 0$, there are only 50 adults and no eggs or nymphs, compute the values of $x_1$, $x_2$ and $x_3$ for the first 6 years.
+            \item Using your answer to (b)(ii), predict the behaviour of the population of locusts.
+        \end{enumerate}
+        \item Consider a population in which both juveniles and adults can reproduce. Denote $v_1(t)$ and $v_2(t)$ as the number of juveniles and adults at time $t$ respectively, and let $\vec v_t = \cveciix{v_1(t)}{v_2(t)}$. The recurrence relation for $\vec v_t$ is given by $\vec v_{t+1} = \mat A \vec v_t$, where \[\mat A = \begin{pmatrix}1 & 4 \\ 0.5 & 0\end{pmatrix} \quad \tand \quad \vec v_0 = \cvecii{a}{b}.\]
+        \begin{enumerate}
+            \item Find the eigenvalues and eigenvectors of the matrix $\mat A$.
+            \item By using a suitable diagonalization of the matrix $\mat A$, express $\vec v_t$ in terms of $a$, $b$ and $t$.
+            \item Hence, find the long term proportion of juveniles and adults in this population.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $\a$ be a complex eigenvalue. Then $\a$ is a root to the characteristic polynomial $\c(\l)$ of $\mat L$. Since $\c(\l)$ has real coefficients, by the conjugate root theorem, $\a\conj$ is also a solution to $\c(\l)$ and is hence an eigenvalue too. Let $\b$ be the remaining eigenvalue. Since the product of eigenvalues is equal to the determinant of $\mat L$, we have \[\a \a \conj \b = \det \mat L = f_2 s_0 s_1.\] But $\a \a\conj = \abs{\a}^2$, so \[\b = \frac{f_2 s_0 s_1}{\abs{\a}^2},\] which is clearly a positive number (since we are given $f_2, s_0, s_1 > 0$).
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that \[\vec x_{t+1} = \cveciii{x_1(t+1)}{x_2(t+1)}{x_3(t+1)} = \cveciii{1000x_3(t)}{0.02x_1(t)}{0.05x_2(t)} = \begin{pmatrix}0 & 0 & 1000 \\ 0.02 & 0 & 0 \\ 0 & 0.05 & 0 \end{pmatrix}\cveciii{x_1(t)}{x_2(t)}{x_3(t)},\] so the desired matrix is \[\mat M = \begin{pmatrix}0 & 0 & 1000 \\ 0.02 & 0 & 0 \\ 0 & 0.05 & 0 \end{pmatrix}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                $t$ & $x_1(t)$ & $x_2(t)$ & $x_3(t)$ \\ \hline
+                1 & 50000 & 0 & 0 \\ \hline
+                2 & 0 & 1000 & 0 \\ \hline
+                3 & 0 & 0 & 50 \\ \hline
+                4 & 50000 & 0 & 0 \\ \hline
+                5 & 0 & 1000 & 0 \\ \hline
+                6 & 0 & 0 & 50 \\ \hline
+                \end{tabular}
+            \end{table}
+        \end{psubpart}
+        \begin{psubpart}
+            The population will remain in this cycle, where there are only 50 adults every third year.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that \[\det{\mat A - \l \mat I} = \begin{vmatrix}1 - \l & 4 \\ 0.5 & -\l\end{vmatrix} = \l^2 - \l - 2 = \bp{\l + 1}\bp{\l - 2},\] so the eigenvalues of $\mat A$ are $\l = -1, 2$.
+
+            \case{1}[$\l = -1$] Let $\vec x = \cveciix{x}{y}$ be an eigenvector. Then \[\begin{pmatrix}1-(-1) & 4 \\ 0.5 & -(-1)\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Using G.C., $\vec x = -2\l$ and $\vec y = \l$, where $\l \in \RR$, so we take $\vec x = \cveciix{-2}{1}$ to be the corresponding eigenvector.
+
+            \case{2}[$\l = 2$] Let $\vec x = \cveciix{x}{y}$ be an eigenvector. Then \[\begin{pmatrix}1-(2) & 4 \\ 0.5 & -(2)\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Using G.C., $\vec x = 4\m$ and $\vec y = \m$, where $\m \in \RR$, so we take $\vec x = \cveciix{4}{1}$ to be the corresponding eigenvector.
+        \end{psubpart}
+        \begin{psubpart}
+            Write $\mat A = \mat P \mat D \mat P^{-1}$, where \[\mat P = \begin{pmatrix}-2 & 4 \\ 1 & 1\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}-1 & 0 \\ 0 & 2\end{pmatrix}.\] Then \[\vec v_t = \mat A^t \vec v_0 = \mat P \mat D^t \mat P^{-1} \vec v_0.\] Substituting, we get \[\vec v_t = \begin{pmatrix}-2 & 4 \\ 1 & 1\end{pmatrix} \begin{pmatrix}(-1)^t & 0 \\ 0 & 2^t\end{pmatrix} \bs{\frac16 \begin{pmatrix}-1 & 4 \\ 1 & 2\end{pmatrix}} \cvecii{a}{b},\] which simplifies to \[\vec v_t = \frac16 \cvecii{-2(-1)^t (-a+4b) + 4\cdot2^t(a+2b)}{(-1)^t (-a+4b) + 2^t(a+2b)}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            The proportion of juveniles to adults in the long term is given by \[\lim_{t \to \infty} \frac{\frac16 \bs{-2(-1)^t (-a+4b) + 4\cdot2^t(a+2b)}}{\frac16 \bs{(-1)^t (-a+4b) + 2^t(a+2b)}} = \lim_{t \to \infty} \frac{4\cdot2^t(a+2b)}{2^t(a+2b)} = 4.\]
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
