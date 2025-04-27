@@ -1,0 +1,383 @@
+\section{Tutorial A18C}
+
+\begin{problem}
+    The positioning of nests in shrubs was noted for a species of birds.
+    
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|c|c|}
+        \hline
+        Nest position & N & NE & E & SE & S & SW & W & NW \\ \hline
+        Number of nests & 65 & 73 & 67 & 51 & 47 & 45 & 45 & 48 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Using a 5\% significance level, test the hypothesis that the birds have no directional preference in positioning their nests.
+\end{problem}
+\begin{solution}
+    Let \nullhyp: data consistent with (discrete) uniform distribution, and \althyp: data inconsistent with  uniform distribution. We take a 5\% level of significance.
+
+    Under \nullhyp, the observed and expected frequencies are
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|c|c|}
+        \hline
+        Nest position & N & NE & E & SE & S & SW & W & NW \\ \hline
+        $O_i$ & 65 & 73 & 67 & 51 & 47 & 45 & 45 & 48 \\ \hline
+        $E_i$ & 55.125 & 55.125 & 55.125 & 55.125 & 55.125 & 55.125 & 55.125 & 55.125 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Our test statistic is $\sum (O_i - E_i)^2 / E_i \sim \ChiSq{8-1} = \ChiSq{7}$, so our $p$-value is 0.0228, which is less than our significance level of 5\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% level of significance that the birds have a directional preference in positioning their nests.
+\end{solution}
+
+\begin{problem}
+    When a tetrahedral dice is thrown, the number landing face down counts as the score. Four such dice are thrown 200 times and the number of fours obtained are shown.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|l|l|l|l|l|}
+        \hline
+        Number of fours & 0 & 1 & 2 & 3 & 4 \\ \hline
+        Frequency & 20 & 47 & 83 & 41 & 9 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Use a $\ChiSq$ test at the 5\% level to test whether the dice are fair, that is, a $\Binom{4}{1/4}$ model is appropriate.
+        \item Use the data to estimate a value for $p$, the probability that the score from a tetrahedral die is 4. Test at the 5\% level whether a $\Binom{4}{p}$ model is appropriate.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let \nullhyp: data is consistent with $\Binom{4}{1/4}$, and \althyp: data is inconsistent with $\Binom{4}{1/4}$. We take a 5\% level of significance.
+
+        Under \nullhyp, the observed and expected frequencies are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|c|}
+            \hline
+            Number of fours & 0 & 1 & 2 & 3 & 4 \\ \hline
+            $O_i$ & 20 & 47 & 83 & 41 & 9 \\ \hline
+            $E_i$ & 63.281 & 84.375 & 42.187 & 9.375 & 0.7812 \\ \hline
+            \end{tabular}
+        \end{table}
+    
+        Since the expected frequency in the last columns is less than 5, we group the last two columns together. Our test statistic is hence $\sum (O_i - E_i)^2 / E_i \sim \ChiSq{4-1} = \ChiSq{3}$, giving a $p$-value of $3.60 \times 10^{-52}$, which is less than our significance level of 5\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% level of significance that a $\Binom{4}{1/4}$ model is not appropriate.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\wh{p} = \frac{\ol{x}}{n} = \frac{1.86}{4} = 0.465.\] Let \nullhyp: data is consistent with $\Binom{4}{0.465}$, and \althyp: data is inconsistent with $\Binom{4}{0.465}$. We take a 5\% level of significance.
+
+        Under \nullhyp, the observed and expected frequencies are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|c|}
+            \hline
+            Number of fours & 0 & 1 & 2 & 3 & 4 \\ \hline
+            $O_i$ & 20 & 47 & 83 & 41 & 9 \\ \hline
+            $E_i$ & 16.385 & 56.964 & 74.267 & 43.033 & 9.3507 \\ \hline
+            \end{tabular}
+        \end{table}
+    
+        Since we estimated $\wh{p}$ using $\ol{x}$, our test statistic is $\sum (O_i - E_i)^2 / E_i \sim \ChiSq{5-2} = \ChiSq{3}$, giving a $p$-value of $0.299$, which is larger than our significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is sufficient evidence at the 5\% level of significance that a $\Binom{4}{p}$ model is appropriate.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The accident rates, taken over a twelve-month period, for the workers in a particular company, classified by age, are given in the following table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|}
+        \hline
+        Age (years) & 18-25 & 26-40 & 41-50 & Over 50 & Total \\ \hline
+        At least one accident & 112 & 156 & 75 & 77 & 420 \\ \hline
+        No accidents & 175 & 267 & 179 & 228 & 849 \\ \hline
+        Total & 287 & 423 & 254 & 305 & 1269 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Show that the data provides evidence, at the 0.1\% significance level, that age and accident rate are not independent. Comment on the relation between age and accident rate.
+\end{problem}
+\begin{solution}
+    Let \nullhyp: age and accident rate are independent, and \althyp: age and accident rate are dependent. We perform a $\ChiSq$ independence test at a 0.1\% level of significance. Our test statistic is $\sum (O_i - E_i)^2/E_i \sim \ChiSq{(2-1)(4-1)} = \ChiSq{3}$. Under \nullhyp, our $p$-vale is $6.31 \times 10^{-4}$, which is less than our significance level of 0.1\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence, at the 0.1\% level of significance, that age and accident rate are not independent.
+
+    From the data, the older workers are, the less likely they get into an accident, possibly because older workers have been working for a longer period of time, hence they have more experience when it comes to safety.
+\end{solution}
+
+\begin{problem}
+    A random variable $X$ is equally likely to take each integer value from 1 to $n$ inclusive. In a random sample of $N$ observations, the value of $r$ is obtained $O_r$ times for $r = 1, 2, \dots, n$. Show that the calculated $\ChiSq$ statistics for these data can be expressed in the form \[\frac{n}{N} \sum_{r = 1}^n O_r^2 - N.\]
+
+    The table shows the monthly figures for road deaths occurring in a certain country over a 12-month period.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Month & Dec & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov \\ \hline
+        Deaths & 326 & 356 & 301 & 292 & 279 & 286 & 285 & 298 & 308 & 284 & 291 & 303 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item Show that at the 5\% significance level, these monthly figures conform to a uniform distribution.
+        \item Partition the data in four groups of consecutive months, starting on December, March, June and September respectively. Show that there is evidence, at 5\% significance level, of a seasonal variation and describe it. State what might cause the variation.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Note that \[E_r = \P{X_1 = r} + \dots + \P{X_N = r} = N \P{X = r} = \frac{N}{n}.\] Hence, \[\ChiSq = \sum_{r = 1}^n \frac{\bp{O_r - E_r}^2}{E_r} = \sum_{r = 1}^n \frac{\bp{O_r - N/n}^2}{N/n} = \frac{n}{N} \sum_{r = 1}^n \bp{O_r^2 - \frac{2N}{n} O_r + \frac{N^2}{n^2}}.\] Since $\sum O_r = N$, we have \[\ChiSq = \frac{n}{N} \sum_{r = 1}^n O_r^2 - \frac{n}{N} \cdot \frac{2N}{n} \cdot N + \frac{n}{N} \cdot n \cdot \frac{N^2}{n^2} = \frac{n}{N} \sum_{r = 1}^n O_r^2 - N.\]
+
+    \begin{ppart}
+        Let \nullhyp: data is consistent with uniform distribution, and \althyp: data is inconsistent with uniform distribution. We take a 5\% level of significance.
+
+        Our test statistic is $\sum (O_r - E_r)^2/E_r \sim \ChiSq{12-1} = \ChiSq{11}$. Under \nullhyp, this evaluates to \[\frac{n}{N} \sum_{r = 1}^{n} O_r^2 - N = \frac{12}{3609} \bp{1090553} - 3609 = 17.111,\] which gives a $p$-value of 0.10464, which is greater than our 5\% level of significance. Thus, we do not reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that these monthly figures conform to a uniform distribution.
+    \end{ppart}
+    \begin{ppart}
+        Grouping by season, we get
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|}
+            \hline
+            Month & Dec -- Feb & Mar -- May & Jun -- Aug & Sep -- Nov \\ \hline
+            Deaths & 983 & 857 & 891 & 878 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        Let \nullhyp: data is consistent with uniform distribution, and \althyp: data is inconsistent with uniform distribution. We take a 5\% level of significance.
+
+        Our test statistic is $\sum (O_r - E_r)^2 / E_r \sim \ChiSq{4-1} = \ChiSq{3}$. Under \nullhyp, this evaluates to \[\frac{n}{N} \sum_{r = 1}^{n} O_r^2 - N = \frac{4}{3609} \bp{3265503} - 3609 = 10.288,\] which gives a $p$-value of $0.0358$, which is less than our 5\% level of significance. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that there is a seasonal variation, which peaks during winter (Dec -- Feb). This could be due to shorter days in winter, which leads to lower visibility and hence more car accidents, resulting in more deaths.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item The random variable $X$ has a normal distribution with mean 5 and standard deviation 3. The random variable $Y$ is given by $Y = \bp{\frac{X-5}{3}}^2$. State the distribution of $Y$, giving the value of any associated parameter. By considering the distribution of $Y$ and $X$, use two methods to find $\P{Y < 1.35}$.
+        \item A wine store wished to investigate whether there was an association between the sex of customers and their preference for red or white wine. During one week, 200 of the store's customers were questioned. The results are shown in the table.
+        
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|}
+            \hline
+             & Red & White & No preference & Total \\ \hline
+            Male & 59 & 37 & 26 & 122 \\ \hline
+            Female & 25 & 40 & 13 & 78 \\ \hline
+            Total & 84 & 77 & 39 & 200 \\ \hline
+            \end{tabular}
+        \end{table}
+        
+        Stating any necessary assumption, test at the 5\% significance level whether there is an association between the sex of a customer and wine preference. Show in your working the contribution to the test statistic in each cell of the table.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $(X-5)/3 \sim \Normal{0}{1}$. Hence, $Y = Z^2 \sim \ChiSq{1}$.
+
+        Using the distribution of $Y$, we have $\P{Y < 1.35} = 0.755$. Alternatively, using the distribution of $(X-5)/3 = Z$, we have \[\P{Y < 1.35} = \P{Z^2 < 1.35} = \P{-\sqrt{1.35} < Z < \sqrt{1.35}} = 0.755.\]
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: sex of a customer and wine preference are independent, and \althyp: sex of a customer and wine preference are dependent. We take a 5\% level of significance. We assume that the data comes from a random sample and are representative of the population.
+
+        Under \nullhyp, the expected frequencies are given by
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|}
+            \hline
+             & Red & White & No preference \\ \hline
+            Male & 51.24 & 46.97 & 23.79\\ \hline
+            Female & 32.76 & 30.03 & 15.21 \\ \hline
+            \end{tabular}
+        \end{table}
+        Hence, the contributions are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|}
+            \hline
+             & Red & White & No preference \\ \hline
+            Male & 1.1752 & 2.1163 & 0.2053 \\ \hline
+            Female & 1.8381 & 3.3101 & 0.32111 \\ \hline
+            \end{tabular}
+        \end{table}
+        Our test statistic is $\sum (O_i - E_i)^2/E_i \sim \ChiSq{(2-1)(3-1)} = \ChiSq{2}$, which gives a $p$-value of 0.0113, which is less than the 5\% significance level. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that there is an association between the sex of a customer and wine preference.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    During the Second World War, records of the number of V-2 rockets launched by the Germans and their exact point of impact in South London were recorded. The rockets were launched from Germany and did not have sophisticated guidance systems. The particular part of the city studied was divided into 576 regions each having an area of 0.25 km$^2$. The table gives the number of regions experiencing $x$ hits.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 & 5 & Total \\ \hline
+        Frequency & 229 & 211 & 93 & 35 & 7 & 1 & 576 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Give reasons why these data might be expected to fit a Poisson distribution. Test the above data at 1\% significance level for a goodness of fit to a Poisson distribution with mean 0.95, listing the expected frequencies.
+
+    An important factory covered two neighbouring regions. It was estimated that two direct hits would cripple the factory. Find the probability that it was crippled.
+\end{problem}
+\begin{solution}
+    Since the rockets do not have sophisticated guidance systems, the rocket strikes effectively form a Poisson process, with each region having an equal probability of being struck by each rocket.
+
+    Let \nullhyp: data is consistent with $\Po{0.95}$, and \althyp: data is inconsistent with $\Po{0.95}$. Under \nullhyp, the expected frequencies are given by 
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+        $O_i$ & 229 & 211 & 93 & 35 & 7 & 1 \\ \hline
+        $E_i$ & 222.76 & 211.62 & 100.52 & 31.832 & 7.5601 & 1.4364 \\ \hline
+        \end{tabular}
+    \end{table}
+    Since the last column has an expected frequency of less than 5, we combine it with the second-last column. Our test statistic is hence $\sum (O_i - E_i)^2/E_i \sim \ChiSq{5-1} = \ChiSq{4}$, which gives a $p$-value of 0.884, which is greater than our level of significance of 1\%. Thus, we do not reject \nullhyp{} and conclude there is sufficient evidence at the 1\% level of significance that the data is consistent with a Poisson distribution with mean 0.95.
+
+    Note that $X_1 + X_2 \sim \Po{0.95 + 0.95} = \Po{1.9}$, so the desired probability is \[\P{X_1 + X_2 \geq 2} = 1 - \P{X_1 + X_2 \leq 1} = 0.566.\]
+\end{solution}
+
+\begin{problem}
+    A meteorologist conjectures that, at a certain location, the rainfall ($x$ mm) on June 30th may be regarded as an observation from the exponential distribution with probability density function given by \[f(x) = \l \e^{-\l x},\] where $x \geq 0$. Show that $\E{X} = 1/\l$.
+
+    It is known that during the 25-year period 1992 to 2016, a total of 260 mm of rain fell on June 30th.
+    \begin{enumerate}
+        \item Find an estimate for the value of $\l$. Hence, show that the probability that more than 20 mm of rain will fall at this location on June 30th, 2017 is 0.146.
+    \end{enumerate}
+
+    The individual rainfall measurements on June 30th for the period 1961 to 1985 are summarized in the table below. 
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|}
+        \hline
+        Rainfall ($x$ mm) & $x \leq 4$ & $4 < x \leq 9$ & $9 < x \leq 16$ & $x > 16$ \\ \hline
+        Number of days & 10 & 5 & 6 & 4 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Using your estimate of $\l$ obtained above as the true value, test the goodness of fit of the exponential distribution to the data, using a 5\% significance level.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    We have \[\E{X} = \int_0^\infty xf(x) \d x = \int_0^\infty x \e^{-\l x} \d x = \evalint{-x\e^{-\l x} - \frac1\l \e^{-\l x}}{0}{\infty} = \frac1\l.\]
+
+    \begin{ppart}
+        Note that \[\l = \frac1{\ol{x}} = \frac1{25/260} = \frac5{52}.\] Hence, the desired probability is \[\P{X > 20} = \e^{-\frac5{52} (20)} = 0.146.\]
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: data is consistent with $\Exp{5/52}$, and \althyp: data is inconsistent with $\Exp{5/52}$. We take a 5\% level of significance.
+
+        Under \nullhyp, the expected frequencies are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|}
+            \hline
+            Rainfall ($x$ mm) & $x \leq 4$ & $4 < x \leq 9$ & $9 < x \leq 16$ & $x > 16$ \\ \hline
+            $O_i$ & 10 & 5 & 6 & 4 \\ \hline
+            $E_i$ & 7.9822 & 6.4956 & 5.1545 & 5.3678 \\ \hline
+            \end{tabular}
+        \end{table}
+        Our test statistic is $\sum (O_i - E_i)^2 / E_i \sim \ChiSq{4-1} = \ChiSq{3}$, which gives a $p$-value of 0.719, which is greater than the 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that the data is consistent with $\Exp{5/52}$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The following table shows the number of participants who received Gold, Silver and Bronze awards in a telematch.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|}
+        \hline
+        \multicolumn{1}{|l|}{} & Gold & Silver & Bronze & Total \\ \hline
+        Male & 50 & $s$ &  & 120 \\ \hline
+        Female &  &  &  &  \\ \hline
+        Total & 100 & 100 &  & 300 \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    Copy and complete the missing entries in the observed frequency table. Construct in similar form, the expected frequency table for a $\ChiSq$ test that the gender of the participant is independent of the type of awards. State your hypotheses clearly. Show that $\ChiSq = \frac1{12} \bp{s^2 - 70s + 1300}$. What is the range of $s$ that leads to the rejection of the hypothesis at 2.5\% of significance?
+\end{problem}
+\begin{solution}
+    The complete observed frequency table is 
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|}
+        \hline
+        \multicolumn{1}{|l|}{} & Gold & Silver & Bronze & Total \\ \hline
+        Male & 50 & $s$ & $70-s$  & 120 \\ \hline
+        Female & 50 & $100-s$ & $30+s$ & 180 \\ \hline
+        Total & 100 & 100 & 100 & 300 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Let \nullhyp: gender and type of award are independent, and \althyp: gender and type of award are dependent. Under \nullhyp, the expected frequency table is 
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|}
+        \hline
+        \multicolumn{1}{|l|}{} & Gold & Silver & Bronze & Total \\ \hline
+        Male & 40 & 40 & 40  & 120 \\ \hline
+        Female & 60 & 60 & 60 & 180 \\ \hline
+        Total & 100 & 100 & 100 & 300 \\ \hline
+        \end{tabular}
+    \end{table}
+    Hence, the test statistic is \[\ChiSq = \sum \frac{\bp{O_i - E_i}^2}{E_i} = \frac{25}{6} + \bp{\frac1{40} + \frac1{60}} \bp{(s-40)^2 + (30-s)^2} = \frac{s^2 - 70s + 1300}{12}.\]
+
+    To reject \nullhyp{} at a 2.5\% significance level, we require $\ChiSq \geq 7.3778$, so $s \leq 31$ or $s \geq 39$. But both $s$ and $70-s$ must be positive integers, so we ultimately have $0 \leq s \leq 31$ or $39 \leq s \leq 70$.
+\end{solution}
+
+\begin{problem}
+    A large international company employs university graduates having Class I, II or III degrees. After one year's employment, the performance of 250 of their graduates was assessed. It was found that 32 were graded $A$ (high), 140 were graded $B$ (average) and the rest were graded $C$ (below average). Of these 250 graduates, 30 had Class I degrees, 150 had Class II degrees and the rest had Class III degrees.
+
+    \begin{enumerate}
+        \item Assuming that performance grade and degree class are independent, draw up a table showing the expected frequencies of each performance grade for each degree class. Explain why, in this case, two rows, or two columns, must be combined in order for a $\ChiSq$ test of independence to be applied.
+        \item Of the graduates with Class I degrees, 8 were graded $A$ and 14 were graded $B$. Of those with Class II degrees, 21 were graded $A$ and 90 were graded $B$. The rest were each graded $C$. Using the data for all 250 graduates, test, at the 5\% significance level, whether performance grade and degree class are independent. State any assumptions necessary for the validity of your test.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let \nullhyp: performance grade and degree class are independent, and \althyp: performance grade and degree class are dependent.
+
+        From the given data, we can construct the expected frequency table under \nullhyp:
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|}
+            \hline
+             & Class I & Class II & Class III & Total \\ \hline
+            $A$ & 3.84 & 19.2 & 8.96 & 32 \\ \hline
+            $B$ & 16.8 & 84 & 39.2 & 140 \\ \hline
+            $C$ & 9.36 & 46.8 & 21.84 & 78 \\ \hline
+            Total & 30 & 150 & 70 & 250 \\ \hline
+            \end{tabular}
+        \end{table}
+        Since the expected frequency of a Class I degree, performance grade $A$ graduate is less than 5, two rows or two columns must be combined for a $\ChiSq$ test to be applied.
+    \end{ppart}
+    \begin{ppart}
+        Combining the rows corresponding to performance grades $A$ and $B$, the expected frequency table becomes
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|}
+            \hline
+             & Class I & Class II & Class III & Total \\ \hline
+            $A$/$B$ & 20.64 & 103.2 & 48.16 & 172 \\ \hline
+            $C$ & 9.36 & 46.8 & 21.84 & 78 \\ \hline
+            Total & 30 & 150 & 70 & 250 \\ \hline
+            \end{tabular}
+        \end{table}
+        Further, from the given data, the observed frequency table is
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|r|c|c|c|c|}
+            \hline
+             & Class I & Class II & Class III & Total \\ \hline
+            $A$/$B$ & 22 & 111 & 39 & 172 \\ \hline
+            $C$ & 8 & 39 & 31 & 78 \\ \hline
+            Total & 30 & 150 & 70 & 250 \\ \hline
+            \end{tabular}
+        \end{table}
+        We take a 5\% significance level and assume that the graduates were randomly hired and are thus representative of the population.
+        
+        Our test statistic is $\sum (O_i - E_i)^2 / E_i \sim \ChiSq{(2-1)(3-1)} = \ChiSq{2}$, which gives a $p$-value of 0.206, which is greater than our significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that performance grade and degree class are independent.
+    \end{ppart}
+\end{solution}
