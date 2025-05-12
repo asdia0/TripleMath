@@ -1,0 +1,78 @@
+\section{Assignment A18B}
+
+\begin{problem}
+    A lorry is transporting a large number of red apples. As it passes over a bump in the road 10 apples fall off its back. The masses (in g) of the fallen apples are summarized by \[\sum (x - 100) = 23.7, \quad \sum (x - 100)^2 = 1374.86.\]
+
+    \begin{enumerate}
+        \item Treating the fallen apples as being a random sample, determine a symmetric 99\% confidence interval for the mean mass of a red apple, stating any assumptions that you have made.
+        \item A two-tailed test of the null hypothesis \nullhyp: $\mu_x = 116$, where $\m_x$ is the population mean mass of red apples, is to be carried out at the 5\% level of significance. Using the confidence interval obtained in (i), state the conclusion of the test. 
+    \end{enumerate}
+
+    On its return down the road the lorry is carrying a large number of green apples. When it passes over the bump 15 green apples fall off its back and are collected. The masses (in g) of these apples are summarized by \[\sum (y - 110) = -73.2, \quad \sum (y - 110)^2 = 2114.33.\]
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Assuming that the distribution of the masses of green apples has the same variance as that for the red apples, and that the fallen apples constitute a random sample, obtain a pooled estimate of the common variance.
+        \item Carry out an appropriate test on the data, using a 10\% significance level, on whether the two distributions have the same mean. State any further assumptions needed for the test to be valid.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $X$ g be the mass of a red apple. Let $\m_X = \E{X}$. From the sample, \[\ol{x} = 100 + \frac{23.7}{10} = 102.37 \quad \tand \quad s_X^2 = \frac1{10-1} \bp{1374.86 - \frac{23.7^2}{10}} = 146.52.\] Assuming that $X$ is normally distributed, a 99\% confidence interval is $(89.93, 114.81)$.
+    \end{ppart}
+    \begin{ppart}
+        Since $116 \notin (89.93, 114.81)$, at a 1\% significance level, we can reject \nullhyp. Thus, at a 5\% significance level, we also reject \nullhyp.
+    \end{ppart}
+    \begin{ppart}
+        Let $Y$ g be the mass of a green apple. Let $\m_Y = \E{Y}$. From the sample, \[\ol{y} = 110 + \frac{-73.2}{15} = 105.12 \quad \tand \quad s_Y^2 = \frac1{15-1} \bp{2114.33 - \frac{(-73.2)^2}{15}} = 125.51.\] Let the pooled variance be $s_p^2$. Then \[s_p^2 = \frac{(10-1)s_X^2 + (15-1)s_Y^2}{10 + 15 - 2} = 133.73.\]
+    \end{ppart}
+    \begin{ppart}
+        Let \nullhyp: $\m_X - \m_Y = 0$ and \althyp: $\m_X - \m_Y \neq 0$. Assuming that $X$ and $Y$ are independently and normally distributed, we perform a 2-tail 2-sample $t$-test at the 10\% significance level. Under \nullhyp, \[\frac{\ol{X} - \ol{Y}}{s_p \sqrt{\frac1{10} + \frac1{15}}} \sim \StudentT{10 + 15 - 2} = \StudentT{23}.\] Using G.C., the $p$-value is $0.566$, which is greater than our 10\% significance level. We thus do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that the two distributions have different means.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The thickness of plaque (measured in mm) in the carotid artery of 10 randomly selected patients with mild atherosclerotic disease were measured. Two measurements are taken: thickness before treatment with vitamin E ($x$) and after two years of taking vitamin E daily ($y$). The readings are given below.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            X & 0.66 & 0.72 & 0.85 & 0.62 & 0.54 & 0.63 & 0.64 & 0.67 & 0.73 & 0.68 \\ \hline
+            Y & 0.60 & 0.65 & 0.79 & 0.63 & 0.59 & 0.55 & 0.64 & 0.70 & 0.68 & 0.64 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    The medical research team is interested on whether taking vitamin E daily for two years will reduce the thickness of plaque.  
+
+    Explain which test the medical research team should use. Carry out a suitable test at the 5\% level of significance, stating the necessary assumptions.
+\end{problem}
+\begin{solution}
+    They should use a 1-tail paired-sample $t$-test since the observations are taken from the same patients.
+
+    Let $D = Y - X$. We perform a 1-tail paired-sample $t$-test at the 5\% significance level, assuming that $D$ is normally distributed. Our hypotheses are \nullhyp: $\m_D = 0$ and \althyp: $\m_D < 0$.
+
+    From the sample, $\ol{d} = -0.027$ and $s_D = 0.0457$. Under \nullhyp, \[\frac{\ol{D}}{s_D / \sqrt{10}} \sim \StudentT{9}.\] Using G.C., the $p$-value is $0.0473$, which is less than our significance level of 5\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% significance level that taking vitamin E daily for two years will reduce thickness of plaque.
+\end{solution}
+
+\begin{problem}
+    A supermarket get its supplies of potatoes from two different suppliers, A and B. The weights, $x$ and $y$ grams of random samples of potatoes from supplier A and B respectively are summarized as follows.
+
+    \[\begin{array}{llll}
+        \text{Supplier A:} & \text{Sample size } n_1 = 100, & \displaystyle\sum x = 10313, & \displaystyle\sum x^2 = 1072660. \\
+        \text{Supplier B:} & \text{Sample size } n_2 = 85, & \displaystyle\sum y = 8982, & \displaystyle\sum y^2 = 956540. \\
+        \end{array}\]
+
+    \begin{enumerate}
+        \item Test, at the 5\% level of significance, whether the potatoes supplied by the two suppliers have the same mean weight.
+        \item State 2 changes you would need to make to the test statistic if both sample sizes are small.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We perform a 2-tail 2-sample $z$-test at the 5\% significance level. Our hypotheses are \nullhyp: $\m_X - \m_Y = 0$ and \althyp: $\m_X - \m_Y \neq 0$. From the sample, \[\ol{x} = \frac{10313}{100} = 103.13 \quad \tand \quad s_X^2 = \frac1{100-1}\bp{1072660 - \frac{10313^2}{100}} = 91.720,\] and \[\ol{y} = \frac{8982}{85} = 105.67 \quad \tand \quad s_Y^2 = \frac1{85-1} \bp{956540 - \frac{8982^2}{85}} = 88.176.\] Under \nullhyp, \[\ol{X} - \ol{Y} \sim \Normal{0}{\frac{91.720}{100} + \frac{88.176}{85}} \text{ approximately}.\] Using G.C., the $p$-value is 0.0692, which is greater than our significance level of 5\%. Thus, we do not reject \nullhyp and conclude there is insufficient evidence at the 5\% significance level that the potatoes supplied by the two suppliers have different mean weight.
+    \end{ppart}
+    \begin{ppart}
+        The test statistic would follow a $t$-distribution, and would use a pooled variance.
+    \end{ppart}
+\end{solution}
