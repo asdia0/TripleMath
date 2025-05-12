@@ -1,0 +1,121 @@
+\section{9649 JC2 Weighted Assessment 1}
+
+\begin{problem}
+    The matrix $\mat A$ is given by \[\mat A = \begin{pmatrix}8 & 3 & -12 \\ -5 & -2 & 8 \\ 10 & 4 & -15\end{pmatrix}.\]
+    
+    \begin{enumerate}
+        \item By performing elementary row operations on the matrix $\begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix}$, showing all necessary working, find $\mat A^{-1}$.
+        \item Solve the equation \[\begin{pmatrix}x & y & z & w\end{pmatrix} \begin{pmatrix}8 & 3 & -12 \\ -1 & 2 & k \\ -5 & -2 & 8 \\ 10 & 4 & -15\end{pmatrix} = \begin{pmatrix}2 & -2 & 1\end{pmatrix},\] where $k$ is a real constant, leaving your answers in terms of $k$ where appropriate.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\begin{pmatrix}[ccc|ccc]8 & 3 & -12 & 1 & 0 & 0 \\ -5 & -2 & 8 & 0 & 1 & 0 \\ 10 & 4 & -15 & 0 & 0 & 1\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle 2R_1 + 3R_2 \\ \scriptstyle -5R_1 + 4R_3 \\ \scriptstyle 2R_2 + R_3\end{matrix} \begin{pmatrix}[ccc|ccc]1 & 0 & 0 & 2 & 3 & 0 \\ 0 & 1 & 0 & -5 & 0 & 4 \\ 0 & 0 & 1 & 0 & 2 & 1\end{pmatrix},\] so \[\mat A^{-1} = \begin{pmatrix}2 & 3 & 0 \\ -5 & 0 & 4 \\ 0 & 2 & 1\end{pmatrix}.\]
+    \end{ppart}
+    \begin{ppart}
+        Rearranging rows, we see that \[\begin{pmatrix}x & z & w & y\end{pmatrix} \begin{pmatrix} & \mat A & \\ -1 & 2 & k\end{pmatrix} = \begin{pmatrix}2 & -2 & 1\end{pmatrix}.\] Post-multiplying by $\mat A^{-1}$, we get \[\begin{pmatrix}x & z & w & y\end{pmatrix} \begin{pmatrix} & \mat I & \\ -12 & 2k-3 & k+8 \end{pmatrix} = \begin{pmatrix}14 & 8 & -7\end{pmatrix}.\] We thus get the system of equations \[\systeme[xyzw]{x - 12y = 14, \bp{2k-3}y + z = 8, \bp{k+8}y + w = -7}.\] Let $y = t \in \RR$. The solution to the equation is thus \[\begin{pmatrix}x \\ y \\ z \\ w\end{pmatrix} = \begin{pmatrix}14+12t \\ t \\ 8-(2k-3)t \\ -7-(k+8)t\end{pmatrix}.\]
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    \begin{enumerate}
+        \item A square matrix $\mat A$ of order $n$ is said to be skew symmetric if $\mat A \trp = - \mat A$. Prove that a skew symmetric matrix is not invertible if $n$ is odd.
+        \item Let $T$ be the linear transformation such that \[T : \RR^3 \to \RR^3 \quad \tand \quad T(\vec x) = \mat A \vec x,\] where \[\mat A = \begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & b & 0\end{pmatrix},\] where $a$ and $b$ are real numbers. It is given that the nullity of $T$ is 1.
+        \begin{enumerate}
+            \item Show that $\mat A$ must be a skew symmetric matrix.
+            \item Find the kernel of $T$ in terms of $a$.
+            \item State a basis, in terms of $a$ where appropriate, for the range space of $T$ and give a geometrical interpretation of your answer of the range space of $T$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\det \mat A = \det \mat A \trp = \det{-A} = (-1)^n \det \mat A.\] For odd $n$, $\det \mat A = -\det \mat A$ so $\det \mat A = 0$, whence $\mat A$ is not invertible.
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Since the nullity of $T$, is 1, the rows of $\mat A$ must be linearly dependent. That is, there exist $\l, \m \in \RR$ such that \[\l \cveciii0{-1}{-5} + \m \cveciii10a = \cveciii5b0.\] From the first and second rows, we immediately have $\l = -b$ and $\m = 5$. Substituting this into the third row, we get $a = -b$. Thus, \[\mat A = \begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & -a & 0\end{pmatrix}\] and is skew symmetric.
+        \end{psubpart}
+        \begin{psubpart}
+            Consider $\mat A \vec v = \vec 0$, where $\vec v = (x, y, z)\trp \in \RR^3$. Then \[\begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & -a & 0\end{pmatrix} \cveciii{x}{y}{z} = \cveciii000 \implies \left\{\begin{aligned}y + 5z = 0 \\ x + az = 0 \\ 5x-ay = 0\end{aligned}\right..\] Let $z = \l \in \RR$. From the first two equations, we see that $y = -5\l$ and $x = -a\l$. Thus, $\vec v$ is of the form $\l (-a, -5, 1)\trp$, whence the kernel of $T$ is given by \[\Ker T = \bc{\vec v \in \RR^3 : \vec v = \l \cveciii{-a}{-5}{1}, \, \l \in \RR}.\]
+        \end{psubpart}
+        \begin{psubpart}
+            A basis is \[\bc{\cveciii015, \cveciii{-5}{a}{0}}.\] Note that the range and null spaces of $T$ are orthogonal. Thus, the range space of $T$ is the plane normal to $\cveciiix{-a}{-5}{1}$ that passes through the origin.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A company invests its funds in 3 interdependent sectors of Manufacturing, Research and Development, and Services. While these sectors had typically generated good profits of 200 million each monthly, the company is concerned that recent and rapid changes in the economic conditions in the country will very quickly negatively affect the returns from these sectors.
+
+    To model the possible profits from the sectors given the current conditions, the company's analyst suggested the following systems of equations:
+    \begin{align*}
+        M_{n+1} &= \frac23 M_n - \frac13 R_n + \frac13 S_n,\\
+        R_{n+1} &= \frac12 M_n - \frac16 R_n - \frac12 S_n,\\
+        S_{n+1} &= \frac56 M_n - \frac56 R_n + \frac16 S_n,
+    \end{align*}
+    where $M_n$, $R_n$ and $S_n$ are the profits (in millions) earned from the Manufacturing, Research and Development, and Services respectively after $n$ months.
+
+    The system of equations may be written in the form $\vec P_{n+1} = \mat A \vec P_n$, where $P_n = \cveciiix{M_n}{R_n}{S_n}$ and $\mat A$ is an appropriate matrix.
+
+    \begin{enumerate}
+        \item Evaluate $\vec P_1$ and $\vec P_2$.
+        \item Determine the eigenvalues and the corresponding eigenvectors of $\mat A$.
+        \item Use your answers above to explain why the company's concern is valid.
+    \end{enumerate}
+
+    The company decide to re-strategise its position in the 3 sectors, following which the analyst revises the model to the following:
+    \begin{align*}
+        M_{n+1} &= 2 M_n - R_n + S_n,\\
+        R_{n+1} &= \frac32 M_n - \frac12 R_n - \frac32 S_n,\\
+        S_{n+1} &= \frac52 M_n - \frac52 R_n + \frac12 S_n,
+    \end{align*}
+    which may be expressed in the form $\vec P_{n+1} = \mat B \vec P_n$, where $\mat B$ is an appropriate matrix.
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item Write down the eigenvalues of $\mat B$.
+        \item Explain, with appropriate working, the profit trend the company will see arising from the 3 sectors after re-strategising.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[\mat A = \frac16\begin{pmatrix}4 & -2 & 2 \\ 3 & -1 & -3 \\ 5 & -5 & 1\end{pmatrix}.\] The first few values of $\vec P_n$ are \[\vec P_0 = \cveciii{200}{200}{200}, \quad \vec P_1 = \cveciii{133.33}{-33.333}{33.333}, \quad \vec P_2 = \cveciii{111.11}{55.556}{144.44}.\]
+    \end{ppart}
+    \begin{ppart}
+        Let the characteristic polynomial of $\mat A$ be $\c(\l) = \l^3 - a_2 \l^2 + a_1 \l - a_0$. Then
+        \begin{align*}
+            a_0 &= \abs{\mat A} = -\frac29,\\
+            a_1 &= \frac1{6^2} \bp{\begin{vmatrix}4 & -2 \\ 3 & -1\end{vmatrix} + \begin{vmatrix}-1 & -3 \\ -5 & 1\end{vmatrix} + \begin{vmatrix}4 & 2 \\ 5 & 1\end{vmatrix}} = \frac{-5}{9},\\
+            a_2 &= \frac16 \bp{\abs{4} + \abs{-1} + \abs{1}} = \frac23.
+        \end{align*}
+        Thus, $\c(\l) = \l^3 - \frac23 \l^2 - \frac59 \l + \frac29$, which has roots $\l = 1$, $\l = -2/3$ and $\l = 1/3$.
+
+        Let $\vec x$ be a non-zero eigenvector of $\mat A$.
+
+        \case{1}[$\l = 1$] Consider \[\bs{\frac16\begin{pmatrix}4 & -2 & 2 \\ 3 & -1 & -3 \\ 5 & -5 & 1\end{pmatrix} - \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}} \vec x = \vec 0.\] Using G.C., $\vec x = \cveciiix101$.
+
+        \case{2}[$\l = -2/3$] Consider \[\bs{\frac16\begin{pmatrix}4 & -2 & 2 \\ 3 & -1 & -3 \\ 5 & -5 & 1\end{pmatrix} + \frac23 \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}} \vec x = \vec 0.\] Using G.C., $\vec x = \cveciiix011$.
+
+        \case{3}[$\l = 1/3$] Consider \[\bs{\frac16\begin{pmatrix}4 & -2 & 2 \\ 3 & -1 & -3 \\ 5 & -5 & 1\end{pmatrix} - \frac13 \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}} \vec x = \vec 0.\] Using G.C., $\vec x = \cveciiix110$.
+
+        Thus, $\mat A = \mat Q \mat D \mat Q^{-1}$, where \[\mat Q = \begin{pmatrix}1 & 0 & 1 \\ 0 & 1 & 1 \\ 1 & 1 & 0\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}1 & 0 & 0 \\ 0 & -2/3 & 0 \\ 0 & 0 & 1/3\end{pmatrix}.\] 
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\lim_{n \to \infty} \vec P_n = \lim_{n \to \infty} A^n \vec P_0 = \lim_{n \to \infty} \mat Q \mat D^n \mat Q^{-1} \vec P_0 = \mat Q \begin{pmatrix}1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix} \mat Q^{-1} \vec P_0 = \cveciii{100}0{100}.\] Thus, in the long run, profits from Manufacturing and Services will fall from \$200 million to \$100 million, while profits from Research and Development will completely vanish. Hence, the companies concern is valid.
+    \end{ppart}
+    \begin{ppart}
+        Clearly, $\mat B = 3 \mat A$, so its eigenvalues are 3, $-2$ and 1.
+    \end{ppart}
+    \begin{ppart}
+        Note that $\mat B = \mat Q (3\mat D) \mat Q^{-1}$. Thus, 
+        \begin{align*}
+            \vec P_n &= A^n \vec P_0 = \mat Q (3\mat D)^n \mat Q^{-1} \vec P_0 \\
+            &= \begin{pmatrix}1 & 0 & 1 \\ 0 & 1 & 1 \\ 1 & 1 & 0\end{pmatrix} \begin{pmatrix}3^n & 0 & 0 \\ 0 & (-2)^n & 0 \\ 0 & 0 & 1\end{pmatrix} \frac12 \begin{pmatrix}1 & -1 & 1 \\ -1 & 1 & 1 \\ 1 & 1 & -1\end{pmatrix} 200 \cveciii111\\
+            &= 200 \cveciii{3^n + 1}{(-2)^n + 1}{3^n + (-2)^n}.
+        \end{align*}
+
+        Profits from Manufacturing and Services will increase greatly over time. However, Research and Development will fluctuate between earning large profits and incurring large losses.
+    \end{ppart}
+\end{solution}
