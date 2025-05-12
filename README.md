@@ -107,7 +107,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
  </tr>
  <tr>
   <td>WA 2</td>
-  <td>🟡</td>
+  <td>🟢</td>
   <td>🟢</td>
  </tr>
 </table>

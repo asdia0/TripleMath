@@ -1,0 +1,86 @@
+\section{9758 JC2 Weighted Assessment 2}
+
+\begin{problem}
+    Futsal is a type of indoor football game. A futsal club has 12 players of which 8 are local players and 4 are foreign players. Each of the 12 players is either a goalkeeper, defender, winger or striker.
+
+    Of the 8 local players, 1 is a goalkeeper, 2 are defenders, 2 are wingers and 3 are strikers. Of the 4 foreign players, 1 is a goalkeeper, 1 is a defender and 2 are wingers.
+
+    \begin{enumerate}
+        \item All the players of the club stand in a line for photo taking. Find the number of different possible arrangements if no two foreign players are next to each other.
+        \item All the players of the club sit in a circle for a pre-game talk. Find the number of different possible arrangements if the players of the same position are seated together, and a goalkeeper must not sit next to a winger.
+        \item A team comprises 1 goalkeeper, 1 defender, 2 wingers are 1 striker. Find the number of ways the futsal club can form a team if it includes exactly 3 foreign players.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        First, arrange the local players in a line. There are $8!$ ways to do so. Next, slot in the foreign players into the 9 available slots. There are $\perm{9}{4}$ ways to do so. Thus, the required answer is $8! \cdot \perm{9}{4} = 121927680$.
+    \end{ppart}
+    \begin{ppart}
+        First, group players by their position. Next, we arrange the non-goalkeepers in a circle. There are $(3-1)!$ ways to do so. Next, we slot in the goalkeeper group. Note that there is only 1 way to do so. Now, note that there are 2 goalkeepers, 3 defenders, 4 wingers and 3 strikers. There are hence $2! \, 3! \, 4! \, 3!$ ways to arrange the players within their groups. Altogether, the required answer is $(3-1)! \cdot 1 \cdot 2! \, 3! \, 4! \, 3! = 3436$.
+    \end{ppart}
+    \begin{ppart}
+        We split our analysis into three cases, depending on which foreign players are selected.
+
+        \case{1}[1 goalkeeper, 1 defender, 1 winger] There are $\comb{1}{1} \cdot \comb{1}{1} \cdot \comb{2}{1}$ ways to select the foreign players. There are a further $\comb{2}{1} \cdot \comb{3}{1}$ ways to select the remaining winger and striker from the local players. In this case, we have a total of \[\comb{1}{1} \cdot \comb{1}{1} \cdot \comb{2}{1} \cdot \comb{2}{1} \cdot \comb{3}{1} = 12\] ways to choose the players.
+
+        \case{2}[1 goalkeeper, 2 wingers] There are $\comb{1}{1} \cdot \comb{2}{2}$ ways to select the foreign players. There are a further $\comb{2}{1} \cdot \comb{3}{1}$ ways to select the remaining defender and striker from the local players. In this case, we have a total of \[\comb{1}{1} \cdot \comb{2}{2} \cdot \comb{2}{1} \cdot \comb{3}{1} = 6\] ways to choose the players.
+
+        \case{3}[1 defender, 2 wingers] There are $\comb{1}{1} \cdot \comb{2}{2}$ ways to select the foreign players. There are a further $\comb{1}{1} \cdot \comb{3}{1}$ ways to select the remaining goalkeeper and striker from the local players. In this case, we have a total of \[\comb{1}{1} \cdot \comb{2}{2} \cdot \comb{1}{1} \cdot \comb{3}{1} = 3\] ways to choose the players.
+
+        Altogether, there are $12 + 6 + 3 = 21$ ways to choose the players.
+    \end{ppart}
+\end{solution}
+
+\clearpage
+\begin{problem}
+    \textbf{Do not use a calculator in answering this question.}
+
+    \begin{enumerate}
+        \item Find the complex numbers $w$ and $z$ which satisfy the following simultaneous equations. \[2\i z - w = -7 \quad \tand \quad \bp{2 - \i} z - 3\i w\conj = 10\i.\] Give your answers in the form $a + b\i$, where $a$ and $b$ are real numbers.
+        \item One of the roots of the equation $3x^3 - 28x^2 + 58x + c = 0$, where $c$ is real, is $5 + \i$.
+        \begin{enumerate}
+            \item Find the other roots of the equation and the value of $c$.
+            \item Deduce the roots of the equation $-3\i w^3 + 28 w^2 + 58\i w + c = 0$, where $c$ takes the value obtained in (i).
+            \item Suppose the points $P$ and $Q$ represent the complex numbers $5 + \i$ and $-5-\i$ respectively. State the geometrical relationship between the points $P$ and $Q$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $z = x + \i y$, where $x, y \in \RR$. From the first equation, we get \[w = 2\i z + 7 = 2\i \bp{x + \i y} + 7 = \bp{7 - 2y} + \i\bp{2x}.\] Substituting this into the second equation, we obtain \[\bp{2-\i}\bp{x + \i y} - 3\i \bp{7-2y - 2\i x} = 10 \i \implies \bp{-4x + y} + \i\bp{-x + 8y} = 31\i.\] Comparing real and imaginary parts, we have \[\systeme{-4x + y = 0, -x + 8y = 31},\] whence $x = 1$ and $y = 4$. Thus, $z = 1 + 4\i$ and $w = -1 + 2\i$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Since the coefficients of the polynomial are real, by the conjugate root theorem, $(5+\i)\conj = 5-\i$ is also a root. Let $\a$ be the other root. By Vieta's formula, \[\bp{5 + \i} + \bp{5 - \i} + \a = \frac{28}{3} \implies \a = -\frac23.\] Invoking Vieta's formula once more, \[\bp{5 + \i}\bp{5 - i}\bp{-\frac23} = -\frac{c}{3} \implies c = 52.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Observe that the given polynomial is equivalent to \[-3\i w^3 + 28 w^2 + 58\i w + c = 3\bp{\i w}^3 - 28\bp{\i w}^2 + 58\bp{\i w} + 52.\] Thus, \[\i w = 5+\i, \, 5 - \i, \, -\frac23 \implies w = 1 - 5\i, \, -1 - 5\i, \quad \frac23\i.\]
+        \end{psubpart}
+        \begin{psubpart}
+            The points are reflections of each other in the origin.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The line $l_1$ has equation \[-\frac{x+1}{2} = 8 - y = \frac{3 - z}{5}\] and the line $l_2$ passes through the points $A(-1, -2, 3)$ and $B(-9, 4, 1)$. The plane $p_1$ has equation $ax + by = 17$, where $a$ and $b$ are real constants. It is given that $l_1$ lies on $p_1$.
+
+    \begin{enumerate}
+        \item Show that $a = -1$ and $b = 2$.
+        \item The line $l_2$ meets the $xz$-plane at point $C$. Find the coordinates of $C$.
+        \item Another plane $p_2$ is parallel to $p_1$ and contains $C$. Find, in scalar product form, an equation of the third plane $p_3$ which is a reflection of $p_1$ in $p_2$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The Cartesian equation of $l_1$ can be rewritten as \[\frac{x+1}{-2} = \frac{y-8}{-1} = \frac{z-3}{-5},\] so $l_1$ has vector equation \[l_1 : \vec r = \cveciii{-1}83 + \l \cveciii215, \quad \l \in \RR.\] Further, $p_1$ has equation \[p_1 : \vec r \dotp \cveciii{a}{b}0 = 17.\]
+
+        Since $l_1$ lies on $p_1$, we have \[\bs{\cveciii{-1}83 + \l \cveciii215} \dotp \cveciii{a}{b}0 = 17 \implies \bp{-a + 8b} + \l \bp{2a + b} = 17.\] For this to hold true for all $\l \in \RR$, we require \[\systeme{-a + 8b = 17, 2a + b = 0},\] which gives $a = -1$ and $b = 2$.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\oa{AB} = \cveciii{-9}{4}{1} - \cveciii{-1}{-2}{3} = -2\cveciii{4}{-3}{1}.\] Thus, $l_2$ has vector equation \[l_2 : \vec r = \cveciii{-1}{-2}{3} + \m \cveciii4{-3}{1}, \quad \m \in \RR.\] Let $C(x, 0, z)$. Since $C$ lies on the $xz$-plane, its $y$-component is 0, so $C$ corresponds to $\m = -2/3$, which gives $C(-11/3, 0, 7/3)$.
+    \end{ppart}
+    \begin{ppart}
+        Let $F$ and $G$ be a point on $p_1$ and $p_3$ respectively such that \[\oa{OC} = \frac{\oa{OF} + \oa{OG}}{2}.\] Then \[\oa{OG} \dotp \cveciii{-1}{2}0 = \bp{2\oa{OC} - \oa{OF}} \dotp \cveciii{-1}{2}0 = 2 \cveciii{-1}20 \dotp \cveciii{-11/3}0{7/3} - 17 = -\frac{29}{3}.\] Thus, the equation of $p_3$ is \[p_3: \vec r \dotp \cveciii{-1}{2}0 = -\frac{29}{3}.\]
+    \end{ppart}
+\end{solution}
