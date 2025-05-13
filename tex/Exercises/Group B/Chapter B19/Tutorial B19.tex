@@ -1,0 +1,274 @@
+\section{Tutorial B19}
+
+\begin{problem}
+    In your own words, explain the rejection criterion for the Sign Test using the test statistic $K_-$, the number of negative signs, for the left-tail, right-tail and two-tail test.
+\end{problem}
+\begin{solution}
+    Let $m$ be the population median and let $m_0$ be a fixed value.
+
+    For the left-tail test, \nullhyp: $m = m_0$ and \althyp: $m < m_0$. In this case, \nullhyp{} will be rejected if the observed number of negatives, $k_-$, is too large (i.e. more than some critical value corresponding to the level of significance). \[\P{K_- \geq k_-} \leq \frac{\a}{100}.\]
+
+    For the right-tail test, \nullhyp: $m = m_0$ and \althyp: $m > m_0$. In this case, \nullhyp{} will be rejected if $k_-$ is too small (i.e. less than some critical value corresponding to the level of significance). \[\P{K_- \leq k_-} \leq \frac{\a}{100}.\]
+
+    For the two-tail test, \nullhyp: $m = m_0$ and \althyp: $m \neq m_0$. In this case, \nullhyp{} will be rejected if $k_-$ is too small or too large (i.e. less/greater than some critical value corresponding to the level of significance). \[2 \min{\P{K_- \geq k_-}, \P{K_- \leq k_-}} \leq \frac{\a}{100}.\]
+\end{solution}
+
+\begin{problem}
+    Show that if the sign test is applied to $n = 5$ pairs, the null hypothesis will never be rejected in favour of a two-sided alternative hypothesis at the 5\% level of significance, no matter how extreme the sample results are. Why does this imply there is no point in carrying out this test when $n = 5$ (or less)?
+
+    What is the corresponding value of $n$ in the case where the null hypothesis will never be rejected in favour of a one-sided alternative hypothesis at the 5\% level of significance.
+\end{problem}
+\begin{solution}
+    Let $m$ be the population median, and let $m_0$ be a fixed value. Our hypotheses are \nullhyp: $m = m_0$, \althyp: $m \neq m_0$. Let $K_+$ be the number of observed data greater than $m_0$. Under a sign test, \[K_+ \sim \Binom{5}{\frac12}.\] In the extreme case where all observed data aligns with our alternative hypothesis, say (without loss of generality) $k_+ = 0$, then the $p$-value is $2\P{K_+ \leq 0} = 2/2^5$, which is greater than the 5\% significance level we took. Hence, we will never reject \nullhyp{}. Since there is only one possible outcome, there is no point in carrying out this test when $n = 5$. A similar situation occurs when $n \leq 5$. The corresponding lowest $p$-value is $2/2^n$, which is always greater than 5\% for all $n \leq 5$.
+
+    For a one-sided \althyp, the lowest $p$-value is now $1/2^n$. For \nullhyp{} to never be rejected, we require \[\frac1{2^n} \geq 0.05 \implies n \leq 4.\]
+\end{solution}
+
+\begin{problem}
+    In the Wilcoxon matched-pair signed rank test, why should $P + Q = \frac12 n (n+1)$?
+\end{problem}
+\begin{solution}
+    $P$ corresponds to the sum of the positive ranks while $Q$ corresponds to the sum of the negative ranks. Altogether, $P + Q$ corresponds to the sum of all $n$ ranks, so \[P + Q = 1 + 2 + \dots + n = \frac{n(n+1)}{2}.\]
+\end{solution}
+
+\begin{problem}
+    The manufacturers of an electric water heater claim that their heaters will heat 500 litres of water from a temperature of 10$\deg$C to a temperature of 55$\deg$C in, on average, no longer than 12 minutes. In order to test this claim, 14 randomly chosen heaters are bought and the times ($x$ minutes) to heat 500 litres of water from 10$\deg$C to 55$\deg$C are measured. Correct to 1 decimal place, the results are as follows. \[13.2, \, 12.2, \, 11.4, \, 14.5, \, 11.6, \, 12.9, \, 12.4, \, 10.3, \, 12.3, \, 11.8, \, 11.0, \, 13.0, \, 12.1, \, 12.6.\] Stating, in each case, any assumption necessary for validity, test the manufacturer's claim at the 10\% significance level using
+    \begin{enumerate}
+        \item a $t$-test,
+        \item a sign test.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $m$ be the median time taken, in minutes. Our hypotheses are \nullhyp: $m = 12$, \althyp: $m > 12$. We perform a sign test at the 10\% significance level. Let $K_+$ be the number of values larger than 12. Under \nullhyp, $K_+ \sim \Binom{14}{1/2}$. From the sample, $k_+ = 9$, so the $p$-value is $0.21$, which is greater than the 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level to reject the manufacturer's claim.
+    \end{ppart}
+    \begin{ppart}
+        Let $X$ be the time taken in minutes. Our hypotheses are \nullhyp: $\m = 12$, \althyp: $\m > 12$. Assuming that $X$ is normally distributed, we perform a $t$-test at the 10\% significance level. From the sample, $\ol{x} = 12.236$ and $s = 1.0315$. Under \nullhyp, \[\frac{\ol{X} - 12}{s / \sqrt{14}} \sim \StudentT{13}.\] The $p$-value is 0.204, which is greater than our significance level of 10\%, hence we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level to reject the manufacturer's claim.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    In order to compare the effectiveness of two mail delivery services, $A$ and $B$, two samples of 12 identical deliveries were arranged. The number of hours taken for each delivery was recorded, with the following results, to the nearest half hour.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        $A$ & 26.0 & 21.0 & 35.0 & 24.5 & 26.0 & 31.0 & 28.5 & 18.5 & 25.0 & 27.5 & 15.5 & 29.5 \\ \hline
+        $B$ & 26.5 & 20.0 & 27.0 & 27.0 & 24.5 & 34.0 & 33.5 & 20.5 & 28.5 & 32.0 & 19.5 & 37.0 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item It is required to test, at the 5\% significance level, whether the data indicate that, on average, service $A$ takes a shorter time for its deliveries than service $B$. Without assuming that the data are samples taken from normal distributions, perform a suitable test, clearly stating your hypothesis.
+        \item Service $A$ claims that its average delivery time is 25 hours. Use a non-parametric test, at the 10\% significance level, to test this claim against the alternative hypothesis that the average delivery time exceeds 25 hours.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        We perform a Wilcoxon matched-pair signed rank test. Let $m$ be the median of $B-A$, in hours. Our hypotheses are \nullhyp: $m = 0$ and \althyp: $m > 0$. We take a 5\% significance level. 
+
+        From the sample, the ranks are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $B - A$ & 0.5 & $-1.0$ & $-8.0$ & 2.5 & $-1.5$ & 3.0 & 5.0 & 2.0 & 3.5 & 4.5 & 4.0 & 7.5 \\ \hline
+            Rank & 1 & 2 & 12 & 5 & 3 & 6 & 10 & 4 & 7 & 9 & 8 & 11 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        Let $P$ and $Q$ be the sum of the ranks corresponding to the positive and negative differences respectively. Let $T$ be the smaller of the two. From the above table, we see that $p = 61$ and $q = 17$, so $t = 17$. From the formula list, with $n = 12$, we reject \nullhyp{} if $t \leq 17$. Since $t = 17 \leq 17$, we reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that service $A$ takes a shorter time for its deliveries than service $B$.
+    \end{ppart}
+    \begin{ppart}
+        We perform a sign test. Let $m'$ be the median time taken by service $A$'s deliveries, in hours. Our hypotheses are \nullhyp: $m' = 25$, \althyp: $m' > 25$. We take a 10\% significance level. Let $K_+$ be the number of values larger than 25. From the sample, the signs are \[+, \, -, \, +, \, -, \, +, \, +, \, +, \, -, \, 0, \, +, \, -, \, +,\] so $k_+ = 7$. We discard the 0 and reduce our sample size to $n = 11$. Under \nullhyp, $K_+ \sim \Binom{11}{1/2}$. Our $p$-value is thus $\P{K_+ \geq 7} = 0.274$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at a 10\% significance level that the median time taken by service $A$ is greater than 25 hours.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The weights of fish in two populations were compared by analysing the differences in the weights of a sample of pairs of fish (one from each population) matched by length. The weight differences, in g, for 10 pairs of fish were as follows: \[11, \, -13, \, -125, \, -210, \, -73, \, 2, \, 3, \, -147, \, -12, \, -4.\]
+
+    Give a reason why a parametric test is unsuitable in the context of this question.
+
+    Perform two tests, each at 5\% significance level, to test for a difference in average weights of fish in the two populations, where one test
+    \begin{enumerate}
+        \item ignores the magnitudes of the differences; while the other
+        \item uses both the signs and magnitudes of the difference.
+    \end{enumerate}
+    Draw an overall conclusion from (a) and (b).
+\end{problem}
+\begin{solution}
+    The differences in the weights of the fish vary wildly, and hence do not seem to follow a familiar distribution. Thus, we cannot assume any underlying distribution, so a parametric test is unsuitable in the context of this question.
+
+    Let $m$ be the median difference in weights, in grams. Our hypotheses are \nullhyp: $m = 0$, \althyp: $m \neq 0$. We take a 5\% significance level.
+    \begin{ppart}
+        We perform a sign test. Let $K_+$ be the number of positive differences. From the sample, we see that $k_+ = 3$. Under \nullhyp, $K_+ \sim \Binom{10}{1/2}$, so the $p$-value is $2\P{K_+ \leq 3} = 0.344$, which is greater than our significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that there is a difference in the average weights of fish in the two populations.
+    \end{ppart}
+    \begin{ppart}
+        We perform a Wilcoxon matched-pair signed rank test. From the given data, the ranks are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            Differences & 11 & $-13$ & $-125$ & $-210$ & $-73$ & 2 & 3 & $-147$ & $-12$ & $-4$ \\ \hline
+            Rank & 4 & 6 & 8 & 10 & 7 & 1 & 2 & 9 & 5 & 3 \\ \hline
+            \end{tabular}
+        \end{table}
+        Let $P$ and $Q$ be the sum of ranks corresponding to the positive and negative differences respectively. Let $T$ be the smaller of the two. From the above table, we see that $p = 7$ and $q = 48$, so $t = 7$. From the formula list, we reject \nullhyp{} if $t \leq 8$. Since $t = 7 \leq 8$, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% significance level that there is a difference in the average weights of fish in the two populations.
+    \end{ppart}
+
+    Overall, we use the result of the Wilcoxon matched-pair signed rank test and reject \nullhyp. This is because the positive values are relatively small (11, 2, 3) while the negatives are relatively large ($-125$, $-210$, $-147$), thus considering the magnitude is very important.
+\end{solution}
+
+\begin{problem}
+    Briefly describe circumstances in which each of the following are used:
+    \begin{enumerate}
+        \item parametric tests of significance,
+        \item non-parametric tests of significance.
+    \end{enumerate}
+
+    It is believed that the material from which running tracks are made has a significant effect on the times taken for athletes to run specified distances. In order to test this, 12 athletes ran on two tracks over a distance of 200 m. One track was made from synthetic material and the other from cinders. The times, in seconds, are given in the table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Athlete & A & B & C & D & E & F & G & H & I & J & K & L \\ \hline
+        Synthetic & 26.5 & 26.3 & 24.9 & 25.7 & 26.5 & 24.8 & 26.1 & 27.0 & 24.4 & 24.7 & 24.6 & 24.5 \\ \hline
+        Cinder & 27.3 & 26.4 & 26.6 & 25.1 & 26.0 & 27.0 & 26.8 & 27.0 & 25.4 & 26.7 & 25.0 & 24.7 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item Use a Wilcoxon matched-pair signed rank test to show that, at the 1\% significance level, there is insufficient evidence that the median time on the synthetic track is lower than that on the cinder track. State the lowest significance level at which it can be concluded that the median time on the synthetic track is lower.
+        \item By using a sign test, show that, at the 10\% significance level, the median times on each of the tracks could be 26 seconds.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        Parametric tests are used when we can make assumptions about the underlying distribution of the parameter we wish to test, e.g. when the data is normally distributed.
+    \end{ppart}
+    \begin{ppart}
+        Non-parametric tests are used when we cannot make assumptions about the underlying distribution of the parameter we wish to test, e.g. when the data is normally distributed and there is a small sample size.
+    \end{ppart}
+    \begin{ppart}
+        Consider the difference ``cinder'' $-$ ``synthetic''. Let $m$ be the median time of these differences, measured in seconds. We perform a Wilcoxon matched-pair signed rank test. Our hypotheses are \nullhyp: $m = 0$ and \althyp: $m > 0$. We take a 1\% significance level.
+
+        From the sample, the ranks are given by
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $C - S$ & 0.8 & 0.1 & 1.7 & $-0.6$ & $-0.5$ & 2.2 & 0.7 & 0 & 1 & 2 & 0.4 & 0.2 \\ \hline
+            Rank & 7 & 1 & 9 & 5 & 4 & 11 & 6 & -- & 8 & 10 & 3 & 2 \\ \hline
+            \end{tabular}
+        \end{table}
+        We discard the 0 and reduce our sample size to $n = 11$. Let $P$ and $Q$ be the sum of the ranks corresponding to the positive and negative differences. Let $T$ be the smaller of the two. From the above table, $p = 57$ and $q = 9$, so $t = 9$. From the formula list, we reject \nullhyp{} if $t \leq 7$. Since $t = 9 > 7$, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 1\% significance level that the median time on the synthetic track is lower than that on the cinder track.
+
+        The lowest significance level at which it can be concluded that the median time on the synthetic track is lower is 2.5\%.
+    \end{ppart}
+    \begin{ppart}
+        Let $m'$ be the median time taken on a track. We perform two sign tests. Our hypotheses are \nullhyp: $m' = 26$ and \althyp: $m' \neq 26$. We take a 10\% level of significance. Let $K_+$ be the number of values larger than 26.
+
+        \case{1}[Synthetic Track] From the data, the signs are \[+, \, +, \, -, \, -, \, +, \, -, \, +, \, +, \, -, \, -, \, -, \, -,\] so $k_+ = 5$. Under \nullhyp, $K_+ \sim \Binom{12}{1/2}$, so the $p$-value is $2\P{K_+ \leq 5} = 0.774$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that the median time on the synthetic track differs from 26 seconds.
+
+        \case{2}[Cinder Track] From the data, the signs are \[+, \, +, \, +, \, -, \, +, \, +, \, +, \, +, \, -, \, +, \, -, \, -,\] so $k_+ = 8$. Under \nullhyp, $K_+ \sim \Binom{12}{1/2}$, so the $p$-value is $2\P{K_+ \geq 8} = 0.388$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that the median time on the cinder track differs from 26 seconds.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    For the case of paired samples, explain briefly
+    \begin{enumerate}
+        \item the circumstances under which the $t$-test would be appropriate; and
+        \item the relative advantages and disadvantages of the sign test and of the Wilcoxon matched-pair signed rank test.
+    \end{enumerate}
+
+    A teacher in charge of bowling wants to find out if switching to a Class III coach affected the bowling team's A division results. To do that, he randomly selected 8 students and compared their A division results in 2016 (taught by the Class II coach) and in 2017 (taught by the Class III coach). The total pin falls of their results in 2016 and 2017 are recorded in the table below.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Student & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+        Total pin fall (2016) & 1758 & 1961 & 1787 & 1626 & 1600 & 1859 & 1764 & 1680 \\ \hline
+        Total pin fall (2017) & 1757 & 1964 & 2023 & 1984 & 1610 & 1857 & 1990 & 1744 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \setcounter{enumi}{2}
+        \item State explicitly suitable null and alternative hypothesis.
+        \item Using the sign test, carry out a test of the null hypothesis at the 5\% significance level, and state your conclusions.
+        \item Using the Wilcoxon matched-pair signed rank test, carry out a test of the null hypothesis at the 5\% significance level, and state your conclusions.
+        \item Comment on the conclusions of the 2 tests.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        A $t$-test is appropriate if the differences can be assumed to be normally distributed.
+    \end{ppart}
+    \begin{ppart}
+        The sign test is easier to compute, while the Wilcoxon matched-pair signed rank test is more powerful, as it considers both sign and magnitude.
+    \end{ppart}
+    \begin{ppart}
+        Consider the difference ``pinfall in 2017'' $-$ ``pinfall in 2016''. Let $m$ be the median of these differences. Our hypotheses are \nullhyp: $m = 0$ and \althyp: $m \neq 0$.
+    \end{ppart}
+    \begin{ppart}
+        We perform a sign test at the 5\% significance level. Let $K_+$ be the number of positive differences. From the data, the signs are \[-, \, +, \, +, \, +, \, +, \, -, \, +, \, +,\] so $k_+ = 6$. Under \nullhyp, $K_+ \sim \Binom{8}{1/2}$, so the $p$-value is $2\P{K_+ \geq 6} = 0.289$, which is greater than our 5\% significance level. This, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that the average pinfall differs between 2016 and 2017.
+    \end{ppart}
+    \begin{ppart}
+        We perform a Wilcoxon matched-pair signed rank test at the 5\% significance level. From the data, the ranks are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            Difference & $-1$ & 3 & 236 & 358 & 10 & $-2$ & 226 & 64 \\ \hline
+            Rank & 1 & 3 & 7 & 8 & 4 & 2 & 6 & 5 \\ \hline
+            \end{tabular}
+        \end{table}
+        Let $P$ and $Q$ be the sum of ranks corresponding to the positive and negative differences respectively. Let $T$ be the smaller of the two. From the above table, $p = 33$ and $q = 3$, so $t = 3$. From the formula list, we reject \nullhyp{} if $t \leq 3$. Sicne $t = 3 \leq 3$, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% significance level that the average pinfall differs between 2016 and 2017.
+    \end{ppart}
+    \begin{ppart}
+        The Wilcoxon matched-pair signed rank test is more powerful than the sign test as it takes both sign and magnitude into account. Thus, we use the result of the Wilcoxon matched-pair signed rank test, so we reject \nullhyp.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A device for reducing air conditioning costs has been produced, and in order to test its effectiveness, 11 households were selected at random and the device was fitted. The annual costs for the year before fitting the device and for the year after fitting the device are shown in teh table. It may be assumed that the price of electricity had not risen over the two-year period and that the weather patterns in the two years were similar.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Cost before (\$) & 756 & 650 & 855 & 533 & 796 & 1128 & 591 & 656 & 976 & 844 & 681 \\ \hline
+        Cost after (\$) & 711 & 608 & 833 & 551 & 776 & 1096 & 608 & 648 & 942 & 859 & 644 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Stating your null and alternative hypotheses, perform two non-parametric tests, each at the 5\% significance level, to determine whether the average cost had decreased after fitting the device.
+
+    State how the conclusion in the Wilcoxon matched-pairs signed rank test would be affected if the price of electricity had risen in the year after fitting the device.
+
+    The manufacturer claims that the average reduction in the annual bill would be at least \$35. Test the manufacturer's claim using a 5\% significance level.
+\end{problem}
+\begin{solution}
+    Consider the difference ``cost after'' $-$ ``cost before''. Let $m$ be the median difference in cost. Our hypotheses are \nullhyp: $m = 0$, \althyp: $m < 0$. We take a 5\% significance level.
+
+    \case{1}[Sign Test] Let $K_-$ be the number of negative differences. From the data, the signs are \[-, \, -, \, -, \, +, \, -, \, -, \, +, \, -, \, -, \, +, \, -,\] so $k_- = 8$. Under \nullhyp, $K_- \sim \Binom{11}{1/2}$, so the $p$-value is $\P{K_- \geq 8} = 0.113$, which is greater than our 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance that the average cost decreased after fitting the device.
+
+    \case{2}[Wilcoxon Matched-Pair Signed Rank Test] From the data, the ranks are
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Difference & $-45$ & $-42$ & $-22$ & 18 & $-20$ & $-32$ & 17 & $-8$ & $-34$ & 13 & $-37$ \\ \hline
+        Rank & 11 & 10 & 6 & 4 & 5 & 7 & 3 & 1 & 8 & 2 & 9 \\ \hline
+        \end{tabular}
+    \end{table}
+    Let $P$ and $Q$ be the sum of ranks corresponding to the positive and negative difference respectively. Let $T$ be the smaller of the two. From the above table, $p = 9$ and $q = 57$, so $t = 9$. From the formula list, we reject \nullhyp if $t \leq 13$. Since $t = 9 \leq 13$, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% significance that the average cost decreased after fitting the device.
+
+    If the price of electricity had risen in the year after fitting the device, the difference between the cost before and the cost after will generally decrease throughout. This results in more positive ranks, therefore the value of $t$ associated with the Wilcoxon matched-pair signed rank test will likely increase, so the conclusion may change.
+
+    Let $m$ be the median cost reduction. Our hypotheses are \nullhyp: $m = 35$, \althyp: $m < 35$. We perform a sign test at a 5\% significance level. Let $K_-$ be the number of cost reductions less than \$35. From the data, the signs are \[+, \, +, \, -, \, -, \, -, \, -, \, -, \, -, \, -, \, -, \, +,\] so $k_- = 8$. Under \nullhyp, $K_- \sim \Binom{11}{1/2}$, so the $p$-value is $\P{K_- \geq 8} = 0.113$, which is greater than our 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that the average cost reduction is less than \$35.
+\end{solution}
