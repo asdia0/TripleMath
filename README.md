@@ -60,7 +60,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | B17B | Linear Algebra - Linear Spaces                                 |  🟢  |   🟢    |      🟢      |    🟢     |
 | B17C | Linear Algebra - Eigenvalues and Eigenvectors                  |  🟢  |   🟢    |      🟢      |    🟢     |
 | B18  | Correlation and Regression                                     |  🟡  |   🟢    |      🟡      |    🟢     |
-| B19  | Non-Parametric Tests                                           |  🟡  |   🟢    |      🟡      |    🟡     |
+| B19  | Non-Parametric Tests                                           |  🟡  |   🟢    |      🟡      |    🟢     |
 
 ### H3 Mathematics
 
