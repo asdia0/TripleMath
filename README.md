@@ -67,10 +67,14 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | Topic                             | Notes | Tutorials | Self-Practice |
 | --------------------------------- | :---: | :-------: | :-----------: |
 | Mathematical Proofs and Reasoning |  🟡  |    🟢    |      🟡      |
-| Analysis 1                        |  🟡  |    🟢    |      🟡      |
-| Analysis 2                        |  🟡  |    🟢    |      🟡      |
-| Analysis 3                        |  🟡  |    🟢    |      🟡      |
-| Analysis 4                        |  🟡  |    🟡    |      🟡      |
+| Analysis 1.1                      |  🟡  |    🟢    |      🟡      |
+| Analysis 1.2                      |  🟡  |    🟢    |      🟡      |
+| Analysis 1.3                      |  🟡  |    🟢    |      🟡      |
+| Analysis 1.4                      |  🟡  |    🟢    |      🟡      |
+| Analysis 2.1                      |  🟡  |    🟢    |      🔴      |
+| Analysis 2.2                      |  🟡  |    🟢    |      🟡      |
+| Analysis 3                        |  🟡  |    🟢    |      🔴      |
+| Analysis 4                        |  🟡  |    🟢    |      🔴      |
 
 ### Examinations
 
