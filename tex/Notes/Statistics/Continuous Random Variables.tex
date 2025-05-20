@@ -567,7 +567,7 @@ However, unlike the case of binomial to Poisson, which is a discrete-to-discrete
 \subsubsection{Approximating the Binomial Distribution}
 
 \begin{proposition}
-    If $X \sim \Binom{n}{p}$ and $n$ is sufficiently large such that $\m = np > 5$ and $n(1-p) > 5$, then $X$ can be approximated by $\Normal{np}{npq}$, taking into account the continuity correction.
+    If $X \sim \Binom{n}{p}$ and $n$ is sufficiently large such that $\m = np > 5$ and $n(1-p) > 5$, then $X$ can be approximated by $\Normal{np}{np(1-p)}$, taking into account the continuity correction.
 \end{proposition}
 
 If $p$ is close to $0.5$, the binomial distribution is almost symmetrical. Thus, the approximation by a normal distribution (which is symmetrical) gets better as $p$ gets closer to $0.5$.

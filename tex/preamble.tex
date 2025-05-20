@@ -242,3 +242,5 @@ headpunct={.},
 
 \newcommand{\vocab}[1]{\textbf{\color{ForestGreen!90!black}\sffamily #1}}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\pgfmathdeclarefunction{gauss}{2}{\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}}

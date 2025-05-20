@@ -57,7 +57,7 @@ Note that the sample mean $\ol{X}$ is also a random variable since it varies dep
 
 Observe that as $n$ increases, the standard error of the sample mean decreases. This aligns with our intuition: as $n$ increases, we are effectively sampling a larger proportion of the population, so our statistic (the sample mean) should tend towards the parameter (the population mean).
 
-\subsection{Distribution of Sample Mean}
+\subsection{The Central Limit Theorem}
 
 If sampling is done from a normal population, then the sample mean will also follow a normal distribution.
 
@@ -101,12 +101,16 @@ As illustrated by the above example, there are many estimators we can use to est
     If a population has an unknown parameter $\t$ and $T$ is a statistic derived from a random sample taken from the population, then $T$ is an \vocab{unbiased estimator} for $\t$ if and only if $\E{T} = \t$.
 \end{definition}
 
+\subsubsection{Population Mean}
+
 \begin{proposition}
     The sample mean $\ol{X} = \frac1n \sum x$ is an unbiased estimator for the population mean $\m$.
 \end{proposition}
 \begin{proof}
     Previously, we showed that $\E{\ol{X}} = \m$. Hence, by definition, $\ol{X}$ is an unbiased estimator for $\m$.
 \end{proof}
+
+\subsubsection{Population Variance}
 
 \begin{proposition}
     Let $\ol{x}$ be the sample mean. Then \[s^2 = \frac{1}{n-1} \sum \bp{x - \ol{x}}^2 = \frac1{n-1} \bs{\sum x^2 - \frac1n \bp{\sum x}^2}\] is an unbiased estimator for the population variance $\s^2$.
@@ -134,3 +138,22 @@ Note that the presence of $n-1$ in the denominator reflects the \emph{degrees of
 \end{corollary}
 
 This is particularly useful when the sample data is given in summarized form.
+
+\subsubsection{Population Proportion}
+
+\begin{definition}
+    A \vocab{population proportion} $p$ is a parameter that describes the percentage of individuals in a population that exhibit a certain property that we wish to investigate. Mathematically, \[p = \frac{X}{N},\] where $X$ is the number of ``successes'' in the population (individuals who exhibit the property), and $N$ is the population size. The sample proportion $P_S$ is defined similarly: \[P_S = \frac{X_S}{n},\] where $X_S$ is the number of ``successes'' in the sample.
+\end{definition}
+
+\begin{example}
+    Suppose we wish to investigate the number of Singaporean citizens aged 35 years or older. The associated population parameter $P$ is then calculated as \[P = \frac{\text{number of Singaporean citizens aged 35 years or older}}{\text{total number of Singaporean citizens}}.\] If we obtain a sample of 1000 Singapore citizens, of whom 750 are aged 35 years or older, then the observed sample proportion, which we denote $\hat{p}$, is simply $\hat{p} = 750/1000$.
+\end{example}
+
+\begin{proposition}
+    The sample proportion $P_S$ is an unbiased estimator for the population proportion $p$.
+\end{proposition}
+\begin{proof}
+    Consider a population in which the proportion of ``success'' is $p$. If a random variable of size $n$ is taken from this population, and $X_S$ is the random variable denoting the number of ``successes'' in this sample, then \[X_S \sim \Binom{n}{p}.\] The expected value of $P_S$ is thus \[\E{P_S} = \E{\frac{X_S}{n}} = \frac{\E{X_S}}{n} = \frac{np}{n} = p.\] Thus, $P_S$ is an unbiased estimator for $p$.
+\end{proof}
+
+We can use the same idea to calculate $\Var{P_S}$: \[\Var{P_S} = \Var{\frac{X_S}{n}} = \frac{\Var{X_S}}{n^2} = \frac{np(1-p)}{n^2} = \frac{p(1-p)}{n}.\] Hence, for large $n$, by the Central Limit Theorem, we have the following approximation: \[P_S \sim \Normal{p}{\frac{p(1-p)}{n}} \text{ approximately}.\] The distribution of $P_S$ is known as the \vocab{sampling distribution of the sample proportion} and its standard deviation, $\sqrt{p(1-p)/n}$, is known as the \vocab{standard error of proportion}.
