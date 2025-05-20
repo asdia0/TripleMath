@@ -31,7 +31,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A15A  | Continuous Random Variables                                   |  🟢  |   🟢    |      🟡      |    🟢     |
 | A15B  | Special Continuous Random Variables                           |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A16  | Sampling                                                      |  🟢  |   🟢    |      🟡      |    🟢     |
-|  A17  | Confidence Intervals                                          |  🟡  |   🟢    |      🟡      |    🟢     |
+|  A17  | Confidence Intervals                                          |  🟢  |   🟢    |      🟡      |    🟢     |
 | A18A  | Hypothesis Testing I - Single Value                           |  🟡  |   🟢    |      🟡      |    🟢     |
 | A18B  | Hypothesis Testing II - Two Values                            |  🟡  |   🟢    |      🟡      |    🟢     |
 | A18C  | Hypothesis Testing III - Goodness of Fit and Independence     |  🟡  |   🟢    |      🟡      |    🟡     |
@@ -64,17 +64,18 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 
 ### H3 Mathematics
 
-| Topic                             | Notes | Tutorials | Self-Practice |
-| --------------------------------- | :---: | :-------: | :-----------: |
-| Mathematical Proofs and Reasoning |  🟡  |    🟢    |      🟡      |
-| Analysis 1.1                      |  🟡  |    🟢    |      🟡      |
-| Analysis 1.2                      |  🟡  |    🟢    |      🟡      |
-| Analysis 1.3                      |  🟡  |    🟢    |      🟡      |
-| Analysis 1.4                      |  🟡  |    🟢    |      🟡      |
-| Analysis 2.1                      |  🟡  |    🟢    |      🔴      |
-| Analysis 2.2                      |  🟡  |    🟢    |      🟡      |
-| Analysis 3                        |  🟡  |    🟢    |      🔴      |
-| Analysis 4                        |  🟡  |    🟢    |      🔴      |
+| Topic                                 | Notes | Tutorials | Self-Practice |
+| ------------------------------------- | :---: | :-------: | :-----------: |
+| Mathematical Proofs and Reasoning     |  🟡  |    🟢    |      🟡      |
+| Analysis 1.1 - Functions and Graphs   |  🟡  |    🟢    |      🟡      |
+| Analysis 1.2 - Differentiation        |  🟡  |    🟢    |      🟡      |
+| Analysis 1.3 - Integration            |  🟡  |    🟢    |      🟡      |
+| Analysis 1.4 - Differential Equations |  🟡  |    🟢    |      🟡      |
+| Analysis 2.1 - Limits                 |  🟡  |    🟢    |      🔴      |
+| Analysis 2.2 - Sequences and Series   |  🟡  |    🟢    |      🟡      |
+| Analysis 3 - Inequalities             |  🟡  |    🟢    |      🔴      |
+| Analysis 4 - Complex Numbers          |  🟡  |    🟢    |      🔴      |
+| Combinatorics 1 - Bijection Principle |  🟡  |    🟡    |      🔴      |
 
 ### Examinations
 
