@@ -76,6 +76,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | Analysis 3 - Inequalities             |  🟡  |    🟢    |      🔴      |
 | Analysis 4 - Complex Numbers          |  🟡  |    🟢    |      🔴      |
 | Combinatorics 1 - Bijection Principle |  🟡  |    🟡    |      🔴      |
+| Combinatorics 2 - Inclusion-Exclusion |  🟡  |    🟡    |      🔴      |
 
 ### Examinations
 
