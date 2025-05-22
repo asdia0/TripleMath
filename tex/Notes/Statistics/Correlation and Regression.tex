@@ -28,7 +28,7 @@ Informally, the independent variable is the variable we can ``control'' in an ex
 Note however, that not all bivariate relationships have an independent and dependent variable. For instance, consider the following example:
 
 \begin{example}
-    Six newly-born babies were randomly selected. Their head circumference $x$ cm, and body length, $y$ cm were measured by the pediatrician and tabulated.
+    Six newly-born babies were randomly selected. Their head circumference $x$ cm, and body length, $y$ cm were measured by the paediatrician and tabulated.
 
     \begin{table}[H]
         \centering
@@ -44,15 +44,15 @@ Note however, that not all bivariate relationships have an independent and depen
 
 \section{Scatter Diagram}
 
-A scatter diagram is obtained when each pair of data value $(x_i, y_i)$ from a set of bivariate sample $\bc{(x_1, y_1), \dots, (x_n, y_n)}$ is plotted as a point on a $x$-$y$ graph.
+A scatter diagram is obtained when each pair of data value $(x_i, y_i)$ from a set of bivariate sample $\bc{(x_1, y_1), \dots, (x_n, y_n)}$ is plotted as a point on an $x$-$y$ graph.
 
 \begin{recipe}[Drawing a Scatter Diagram]
     When drawing a scatter diagram, note that
     \begin{itemize}
         \item data points should be marked with a cross ($\times$);
         \item axes need not start from 0;
-        \item axes need to be labelled acoording to context;
-        \item the range of data values and the relative scsle of the axes need to be indicated;
+        \item axes need to be labelled according to context;
+        \item the range of data values and the relative scale of the axes need to be indicated;
         \item the relative position of the points should be accurate.
     \end{itemize}
 \end{recipe}
@@ -292,7 +292,7 @@ $r$ can only take on values between $-1$ and 1. A summary of the value(s) of $r$
     \end{tabularx}
 \end{table}
 
-To understand why this is the case, consider the sign of $r$. Looking at the definition of $r$, it is clear that \[r > 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}}.\] Likewise, \[r < 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}}.\] Consider now the following figure:
+To understand why this is the case, consider the sign of $r$. Looking at the definition of $r$, it is clear that \[r > 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}} > 0.\] Likewise, \[r < 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}} < 0.\] Consider now the following figure:
 
 \begin{figure}[H]\tikzsetnextfilename{482}
 \centering
@@ -313,7 +313,7 @@ To understand why this is the case, consider the sign of $r$. Looking at the def
 \caption{}
 \end{figure}
 
-Consider quadrant $A$. Any data point $(x, y)$ within this quadrant will satisfy $x > \ol{x}$ and $y > \ol{y}$, so $\bp{x - \ol{x}}\bp{y - \ol{y}} > 0$. Similarly analysis reveals that \[\bp{x - \ol{x}}\bp{y - \ol{y}} = \begin{cases}>0 & \text{ for quadrants $A$ and $C$},\\<0 & \text{ for quadrants $B$ and $D$}.\end{cases}\] Thus, if the overall sum is positive, the points must have been largely scattered within quadrants $A$ and $C$, which we visually interpret as a ``positive gradient''. Likewise, if the overall sum is negative, the points must have been largely scattered within quadrants $B$ and $D$, which we interpret as a ``negative gradient''. Lastly, if the overall sum is near 0, the points must have been scattered randomly throughout all four quadrants, so there is no linear relationship between the variables.
+Consider quadrant $A$. Any data point $(x, y)$ within this quadrant will satisfy $x > \ol{x}$ and $y > \ol{y}$, so $\bp{x - \ol{x}}\bp{y - \ol{y}} > 0$. Similar analysis reveals that \[\bp{x - \ol{x}}\bp{y - \ol{y}} = \begin{cases}>0 & \text{ for quadrants $A$ and $C$},\\<0 & \text{ for quadrants $B$ and $D$}.\end{cases}\] Thus, if the overall sum is positive, the points must have been largely scattered within quadrants $A$ and $C$, which we visually interpret as a ``positive gradient''. Likewise, if the overall sum is negative, the points must have been largely scattered within quadrants $B$ and $D$, which we interpret as a ``negative gradient''. Lastly, if the overall sum is near 0, the points must have been scattered randomly throughout all four quadrants, so there is no linear relationship between the variables.
 
 \subsection{Importance of Scatter Diagram}
 
@@ -398,7 +398,7 @@ Thus, the scatter diagram should always be used in the interpretation of correla
 
 \subsection{Correlation and Causation}
 
-A strong or perfect linear correlation between two variables does not necessarily imply one directly causes the other; correlation doesnot imply causation.
+A strong or perfect linear correlation between two variables does not necessarily imply one directly causes the other; correlation does not imply causation.
 
 \section{Predicting or Estimating Using Regression Line}
 
@@ -596,7 +596,7 @@ There are three criteria we typically use when commenting on the reliability of 
 
 For an estimate to be reliable, all three criteria should be satisfied. If at least one of the criteria is not satisfied, we deem the estimate to be unreliable.
 
-\section{Transformations to Linearise Bivariate Data}
+\section{Transformations to Linearize Bivariate Data}
 
 The relationship between two variables involved, $x$ and $y$, may not always be linear. Thus, it would be inappropriate to use the regression lines relating to $x$ and $y$ to make estimations. However, non-linear relationships can be transformed into a linear form by a process usually called \vocab{transformation to linearity}. The table below shows some examples:
 
@@ -615,11 +615,11 @@ Sometimes, we are given a scatter diagram and are tasked with comparing two or m
 
 \section{Bonus: A Probabilistic Approach to Linear Regression}
 
-In an ideal world, our variables will be exactly related by the model $y = a + bx$. However, in the real world, whenever we observe a data point, our readings will contain some error $\ep$, so our observations are actually modelled by $y = a + bx + \ep$. In real life, these errors are caused by thousands of different factors. We can hence think of $\ep$ as the sum of a large number of independent random variables. But by the Central Limit Theorem, it follows that $\ep$ is distributed normally, so \[\ep \sim \Normal{0}{\s^2}.\]
+In an ideal world, our variables will be exactly related by the model $y = a + bx$. However, in the real world, whenever we observe a data point, our readings will contain some error $\ep$, so our observations are actually modelled by $y = a + bx + \ep$. In real life, these errors are caused by thousands of different factors. We can hence think of $\ep$ as the sum of many independent random variables. But by the Central Limit Theorem, it follows that $\ep$ is distributed normally, so \[\ep \sim \Normal{0}{\s^2}.\]
 
 Suppose now that we obtain an observation, $\bp{x_i, y_i}$. Since $\ep_i = y_i - \bp{a + bx_i}$, the probability of observing this data point is given by \[\P{(x_i, y_i)} = \P{\ep = \ep_i} = \P{\ep = y_i - \bp{a + bx_i}} = \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\] If we make $n$ \emph{independent} observations, then the overall probability of observing all $n$ data points is simply the product of each individual probability: \[\P{\text{data}} = \prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\]
 
-It is now natural to define the ``best'' model ($y = a + bx$) as the one that maximizes the probability of observing our data. That is, we wish to find $a$ and $b$ that maximizes \[\prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\] Since the logarithm is monotonic, we can convert our objective function from a product into a sum: \[\argmax_{a, b} \ln \prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}} = \argmax_{a, b} \sum_{i = 1}^n \bp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}},\] where we ignored the constant terms contributed by $1/\sqrt{2\pi} \s$ since they do not affect the location of the maxmima. We can further ignore the $1/\s^2$ term since it is a constant factor. Lastly, flipping the sign changes our objective into a minimization problem, so we get \[\argmin_{a, b} \sum_{i = 1}^n \bp{y_i - \bp{a + b x_i}}^2.\] But this is exactly the objective of the least-squares regression line of $x$ on $y$ we introduced earlier!
+It is now natural to define the ``best'' model ($y = a + bx$) as the one that maximizes the probability of observing our data. That is, we wish to find $a$ and $b$ that maximizes \[\prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\] Since the logarithm is monotonic, we can convert our objective function from a product into a sum: \[\argmax_{a, b} \ln \prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}} = \argmax_{a, b} \sum_{i = 1}^n \bp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}},\] where we ignored the constant terms contributed by $1/\sqrt{2\pi} \s$ since they do not affect the location of the maxima. We can further ignore the $1/\s^2$ term since it is a constant factor. Lastly, flipping the sign changes our objective into a minimization problem, so we get \[\argmin_{a, b} \sum_{i = 1}^n \bp{y_i - \bp{a + b x_i}}^2.\] But this is exactly the objective of the least-squares regression line of $x$ on $y$ we introduced earlier!
 
 \section{Bonus: $r$ and Vectors}
 
