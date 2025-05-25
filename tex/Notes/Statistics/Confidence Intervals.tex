@@ -27,7 +27,7 @@ We can express the above notions diagrammatically:
 \end{figure}
 \footnotetext{Source: \url{https://amsi.org.au/ESA_Senior_Years/SeniorTopic4/4h/4h_2content_10.html}}
 
-\section{Population Mean}
+\section{Population Mean}\label{S:Confidence-Intervals-Mean}
 
 In this section, we explore interval estimates for the population mean $\m$.
 
@@ -189,15 +189,18 @@ The following table shows the appropriate margin of error to be used in differen
 
 \begin{table}[H]
     \centering
+    \bgroup
+    \def\arraystretch{1.5}
     \begin{tabular}{|c|c|cc|}
     \hline
     \multirow{2}{*}{$\s^2$} & \multirow{2}{*}{$n$} & \multicolumn{2}{c|}{Population Distribution} \\ \cline{3-4} 
     &  & \multicolumn{1}{c|}{Normal} & Unknown \\ \hline
-    \multirow{2}{*}{Known} & Large & \multicolumn{1}{c|}{\multirow{2}{*}{$z_c \frac{\s}{\sqrt{n}}$}} & \cellcolor{black!20} $z_c \frac{\s}{\sqrt{n}}$ \\ \cline{2-2} \cline{4-4} 
+    \multirow{2}{*}{Known} & Large & \multicolumn{1}{c|}{\multirow{2}{*}{$\displaystyle z_c \frac{\s}{\sqrt{n}}$}} & \cellcolor{black!20} $\displaystyle z_c \frac{\s}{\sqrt{n}}$ \\ \cline{2-2} \cline{4-4} 
     & Small & \multicolumn{1}{c|}{} & \cellcolor{black} \\ \hline
-    \multirow{2}{*}{Unknown} & Large & \multicolumn{2}{c|}{\cellcolor{black!20} $z_c \frac{s}{\sqrt{n}}$} \\ \cline{2-4} 
-    & Small & \multicolumn{1}{c|}{$t_c \frac{\s}{\sqrt{n}}$} & \cellcolor{black} \\ \hline
+    \multirow{2}{*}{Unknown} & Large & \multicolumn{2}{c|}{\cellcolor{black!20} $\displaystyle z_c \frac{s}{\sqrt{n}}$} \\ \cline{2-4} 
+    & Small & \multicolumn{1}{c|}{$\displaystyle t_c \frac{s}{\sqrt{n}}$} & \cellcolor{black} \\ \hline
     \end{tabular}
+    \egroup
 \end{table}
 
 \section{Population Parameter}

@@ -1,0 +1,579 @@
+\chapter{Hypothesis Testing (Parametric)}
+
+Hypothesis testing is a statistical procedure used to determine if the data supports a particular assumption (hypothesis) about the population. In this chapter, we will examine various statistical tests employed in \emph{parametric} hypothesis testing. Here, ``parametric'' means that we are given (or assuming) that the observed data have well-known distributions, such as the normal distribution. If we cannot make such assumptions, we will use a \emph{non-parametric} test, which is covered in the next chapter.
+
+\section{An Introductory Example}
+
+Let us look at a simple example. The manufacturer of a beverage claims that each bottle they produce contains 500 ml of beverage on average. However, a consumer believes that the mean volume is actually smaller than claimed. To investigate this, the consumer takes a random sample of 30 bottles and finds that the mean volume of beverage in these 30 bottles is 498 ml.
+
+The sample mean is certainly lower than the manufacturer's claim, but how low is too low? To answer this, we perform a hypothesis test.
+
+Let $X$ ml the volume of beverage in each bottle, and let the mean of $X$ be $\m$, where $\m$ is unknown. Assume that the standard deviation $\s = 5$, so that $X \sim \Normal{\m}{25}$.
+
+First, a hypothesis is made that $\m = 500$ ml. This is known as the \vocab{null hypothesis}, \nullhyp, and is written \[\nullhyp: \quad \m = 500.\] Since it is suspected that the mean volume is \emph{lower than} the claimed 500 ml, we establish the \vocab{alternative hypothesis}, \althyp, which is that the mean is \emph{lesser than} 500 ml. This is written \[\althyp: \quad \m < 500.\]
+
+To carry out the test, the focus moves from $X$, the volume of liquid in each can, to the distribution of $\ol{X}$, the \emph{mean} volume of a sample of 30 cans. In this test, $\ol{X}$ is known as the \vocab{test statistic} and its distribution is needed. Luckily for us, because we assumed that $X \sim \Normal{\m}{25}$, we know from previous chapters that $\ol{X} \sim \Normal{\m}{25/30}$.
+
+The hypothesis test starts by assuming the null hypothesis is true, so $\m = 500$. Under \nullhyp, \[\ol{X} \sim \Normal{500}{\frac{25}{30}}.\] The result of the test depends on the whereabouts in the sampling distribution of the observed sample mean of $\ol{x} = 498$. We need to find out whether $\ol{x}$ is close to 500 or far away from 500. If $\ol{x}$ is close to 500, then it is likely that $\ol{x}$ comes from a distribution with mean 500, so there would not be enough evidence to say that the mean volume has decreased. On the other hand, if the $\ol{x}$ is far away from 500, than it is unlikely that $\ol{x}$ comes from a distribution with mean 500, so the mean $\m$ is then likely to be lower than 500.
+
+To quantify this ``closeness'', we can look at the \vocab{probability value} (also called \vocab{$p$-value}) associated with the test statistic $\ol{X}$. In our case, the $p$-value is $\P{\ol{X} \leq 498}$. A large $p$-value will indicate that if \nullhyp: $\m = 500$ is true, then obtaining a value of $\ol{x} = 498$ is likely and hence a reasonable variation we should allow. However, a small $p$-value will indicate that obtaining a value of $\ol{x} = 498$ is a rare event if \nullhyp{} is true, and hence, perhaps $\m $ isn't 500, but something else (in this case, less than 500).
+
+\begin{figure}[H]\tikzsetnextfilename{487}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 495:505,
+            xmin = 495,
+            xmax = 505,
+            ymax = 0.45,
+            ymin = 0,
+            restrict y to domain =-10:5,
+            samples = 101,
+            axis x line=middle,
+            xtick = {500, 498},
+            y axis line style={opacity=0},
+            ytick=\empty,
+            legend cell align={left},
+            legend pos=outer north east,
+            ]
+            
+            \addplot[fill=orange!20, draw=none, domain=485:498] {gauss(500,0.912)} \closedcycle;
+            \addplot[black, very thick] {gauss(500, 0.912)};
+            \draw[dashed] (498, 0) -- (498, 0.0396);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{The $p$-value $\P{\ol{X} \leq 489}$ is given by the shaded area.}
+\end{figure}
+
+Note that whenever we use the test-statistic or $p$-value in this example, both are associated with the left tail of the distribution. This is because we began with the suspicion that $\m$ was \emph{lower} than claimed. This type of test is called a 1-tail (left tail) test.
+
+To determine if the $p$-value is small enough, we introduce a cut-off point, $c$, known as the \vocab{critical value}, which indicates the boundary of the region where values of $\ol{x}$ would be considered \emph{too far away} from 500 ml and therefore would be unlikely to occur. This region is known as the \vocab{critical/rejection region}. The probability corresponding to this critical region will then become the upper probability limit of what we will consider to imply that an unlikely or rare event has occurred. This probability, $\a$, is called the \vocab{significance level} of the test. In general for a left tail test at the $\a$ level, the critical value $c$ is fixed so that $\P{\ol{X} \leq c} = \a$ and the critical region is $\ol{x} \leq c$. In practice, to avoid being influenced by sample readings, it is important that $\a$ is decided before any samples values are taken.
+
+\begin{figure}[H]\tikzsetnextfilename{488}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 497:503,
+            xmin = 497,
+            xmax = 503,
+            ymax = 0.45,
+            ymin = 0,
+            restrict y to domain =-10:5,
+            samples = 101,
+            axis x line=middle,
+            xtick = {500, 499.38},
+            xticklabels = {500, $c$},
+            y axis line style={opacity=0},
+            ytick=\empty,
+            legend cell align={left},
+            legend pos=outer north east,
+            ]
+            
+            \addplot[fill=orange!20, draw=none, domain=485:499.38] {gauss(500,0.912)} \closedcycle;
+            \addplot[black, very thick] {gauss(500, 0.912)};
+            \draw[dashed] (499.38, 0) -- (499.38, 0.348);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{The critical region for $\a = 0.25$.}
+\end{figure}
+
+The hypothesis test then involves finding whether the sample value $\ol{x}$ lies in the critical region, or whether the $p$-value is smaller than the significance level $\a$. If $\ol{x}$ lies in the critical region or if the $p$-value $\leq \a$, then a decision is taken that $\ol{x}$ is too far away from the mean associated with \nullhyp{} to have come from a distribution with this mean, hence we reject \nullhyp{} in favour of \althyp. Else, if $\ol{x}$ lies outside the critical region or if the $p$-value $> \a$, we do not reject \nullhyp. For a significance level of $\a$, if the null hypotheses \nullhyp is rejected, then the result is said to be \vocab{significant at the $\a$ level}.
+
+To complete our example, suppose that a significance level of 1\% is chosen. Since $\ol{X} \sim \Normal{500}{25/30}$, we can work out the critical value or the $p$-value.
+
+\paragraph{Critical Value Approach} Using G.C., \[\P{\ol{X} \leq c} = 0.01 \implies c = 497.88\] Since $\ol{x} = 498$ lies outside the critical region ($\ol{x} = 498 > 497.88 = c$), we do not reject \nullhyp{} and conclude there is insufficient evidence at the 1\% significance level than the mean volume of beverage in each bottle is lesser than 500 ml.
+
+\paragraph{$p$-Value Approach} The $p$-value of our sample is \[\P{\ol{X} \leq 498} = 0.14230.\] Since the $p$-value is greater than our significance level ($0.14230 > 0.01 = \a$), we do not reject \nullhyp{} and conclude there is insufficient evidence at the 1\% significance level than the mean volume of beverage in each bottle is lesser than 500 ml.
+
+\section{Terminology}
+
+\subsection{Formal Definitions of Statistical Terms}
+
+\begin{definition}
+    The \vocab{level of significance} of a hypothesis test, denoted by $\a$, is defined as the probability of rejecting \nullhyp{} when \nullhyp{} is true.
+\end{definition}
+
+\begin{definition}
+    The \vocab{$p$-value} is the probability of getting a test statistic as extreme or more extreme than the observed value. Equivalently, it is the lowest significance level at which \nullhyp{} is rejected.
+\end{definition}
+
+\subsection{Types of Tests}
+
+Suppose that the null hypothesis is \nullhyp: $\m = \m_0$.\footnote{In the introductory example, we saw how \nullhyp{} was defined to be the ``status quo''. However, this is not always the case. Given two hypotheses $P$ and $\lnot P$, the null hypothesis is the one that contains the \emph{equality case}. For instance, if $P :\m > 500$, then we take $\lnot P: \m \leq 500$ to be our null hypothesis, in which case we write \nullhyp: $\m = 500$ and \althyp: $\m > 500$.}
+
+There are three types of tests we can use, depending on what our alternative hypothesis looking for:
+\begin{itemize}
+    \item If \althyp{} is looking for an increase in $\m$, we employ a 1-tail (right tail) test.
+    \item If \althyp{} is looking for a decrease in $\m$, we employ a 1-tail (left tail) test.
+    \item If \althyp{} is looking for a change (either increase or decrease) in $\m$, we employ a 2-tail test.
+\end{itemize}
+
+\subsubsection{1-Tail (Right Tail) Test}
+
+In a 1-tail (right tail) test, \althyp: $\m > \m_0$. Both the critical region and $p$-value are in the right tail, with $\a = \P{\ol{X} \geq c}$ and the $p$-value $= \P{\ol{X} \geq \ol{x}}$.
+
+\begin{figure}[H]\tikzsetnextfilename{489}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -2.5:2.5,
+            xmin = -2.5,
+            xmax = 2.5,
+            ymax = 0.43,
+            ymin = 0,
+            samples = 101,
+            axis x line=middle,
+            xtick = {0, 0.8416},
+            xticklabels = {$\m_0$, $c$},
+            y axis line style={opacity=0},
+            ytick=\empty,
+            legend cell align={left},
+            legend pos=outer north east,
+            ]
+            
+            \addplot[fill=orange!20, draw=none, domain=0.8416:2.5] {gauss(0,1)} \closedcycle;
+            \addplot[black, very thick] {gauss(0,1)};
+            \draw[dashed] (0.8416, 0) -- (0.8416, 0.27997);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{The critical region for a right tail test.}
+\end{figure}
+
+\subsubsection{1-Tail (Left Tail) Test}
+
+In a 1-tail (left tail) test, \althyp: $\m < \m_0$. Both the critical region and $p$-value are in the left tail, with $\a = \P{\ol{X} \leq c}$ and the $p$-value $= \P{\ol{X} \leq \ol{x}}$.
+
+\begin{figure}[H]\tikzsetnextfilename{490}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -2.5:2.5,
+            xmin = -2.5,
+            xmax = 2.5,
+            ymax = 0.43,
+            ymin = 0,
+            samples = 101,
+            axis x line=middle,
+            xtick = {0, -0.8416},
+            xticklabels = {$\m_0$, $c$},
+            y axis line style={opacity=0},
+            ytick=\empty,
+            legend cell align={left},
+            legend pos=outer north east,
+            ]
+            
+            \addplot[fill=orange!20, draw=none, domain=-2.5:-0.8416] {gauss(0,1)} \closedcycle;
+            \addplot[black, very thick] {gauss(0,1)};
+            \draw[dashed] (-0.8416, 0) -- (-0.8416, 0.27997);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{The critical region for a left tail test.}
+\end{figure}
+
+\subsubsection{2-Tail Test}
+
+In a 2-tail test, \althyp: $\m \neq \m_0$. The critical region and the $p$-value are in two parts. The critical value is given by any one of the following expressions \[\a = \P{\ol{X} \leq c_1} + \P{\ol{x} \geq c_2} = 2\P{\ol{X} \leq c_1} = 2\P{\ol{X} \geq c_2},\] while the $p$-value is given by \[\text{$p$-value} = \begin{cases}2\P{\ol{X} \leq \ol{x}}, & \text{if $\ol{x} < \m_0$}, \\ 2\P{\ol{X} \geq \ol{x}}, & \text{if $\ol{x} > \m_0$}.\end{cases}.\]
+
+\begin{figure}[H]\tikzsetnextfilename{491}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -2.5:2.5,
+            xmin = -2.5,
+            xmax = 2.5,
+            ymax = 0.43,
+            ymin = 0,
+            samples = 101,
+            axis x line=middle,
+            xtick = {0, -1.2816, 1.2816},
+            xticklabels = {$\m_0$, $c_1$, $c_2$},
+            y axis line style={opacity=0},
+            ytick=\empty,
+            legend cell align={left},
+            legend pos=outer north east,
+            ]
+            
+            \addplot[fill=orange!20, draw=none, domain=-2.5:-1.2816] {gauss(0,1)} \closedcycle;
+            \addplot[fill=orange!20, draw=none, domain=1.2816:2.5] {gauss(0,1)} \closedcycle;
+            \addplot[black, very thick] {gauss(0,1)};
+            \draw[dashed] (-1.2816, 0) -- (-1.2816, 0.17549);
+            \draw[dashed] (1.2816, 0) -- (1.2816, 0.17549);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{The critical region for a two-tail test.}
+\end{figure}
+
+\subsection{Procedure}
+
+Below is a general framework for performing a hypothesis test.
+
+\begin{recipe}[Hypothesis Testing]
+    \phantom{.}
+    \begin{enumerate}
+        \item State the null hypothesis, \nullhyp, and the alternative hypothesis, \althyp.
+        \item State the level of significance, $\a$.
+        \item Consider the distribution of the test statistic, assuming that \nullhyp{} is true.
+        \item {\sffamily \textbf{Critical Value Approach.}} Calculate the critical value based on $\a$, and the test statistic value based on the sample data. Reject \nullhyp{} if the value of the test statistic falls in the critical region. Otherwise, do not reject \nullhyp.
+
+        {\sffamily \textbf{$p$-Value Approach.}} Calculate the $p$-value based on the sample data. Reject \nullhyp{} if the $p$-value $\leq \a$. Otherwise, do not reject \nullhyp.
+        \item Write down the conclusion in the context of the question.
+    \end{enumerate}
+\end{recipe}
+
+Apart from step 3, the other steps are purely procedural. Hence, the most crucial step is to decide the test statistic. This is what we will focus on in the next few sections.
+
+\section{Population Mean}
+
+For hypothesis tests on the population mean, the test statistic is the sample mean $\ol{X}$. Similar to what we saw in \SS\ref{S:Confidence-Intervals-Mean}, the following table shows the appropriate distribution to consider for different scenarios. Cells with gray backgrounds indicate an approximation.
+
+\begin{table}[H]
+    \centering
+    \bgroup
+    \def\arraystretch{1.7}
+    \begin{tabular}{|c|c|cc|}
+    \hline
+    \multirow{2}{*}{$\s^2$} & \multirow{2}{*}{$n$} & \multicolumn{2}{c|}{Population Distribution} \\ \cline{3-4} 
+    &  & \multicolumn{1}{c|}{Normal} & Unknown \\ \hline
+    \multirow{2}{*}{Known} & Large & \multicolumn{1}{c|}{\multirow{2}{*}{$\displaystyle \ol{X} \sim \Normal{\m_0}{\frac{\s^2}{n}}$}} & \cellcolor{black!20} $\displaystyle \ol{X} \sim \Normal{\m_0}{\frac{\s^2}{n}}$ \\ \cline{2-2} \cline{4-4} 
+    & Small & \multicolumn{1}{c|}{} & \cellcolor{black} \\ \hline
+    \multirow{2}{*}{Unknown} & Large & \multicolumn{2}{c|}{\cellcolor{black!20} $\displaystyle \ol{X} \sim \Normal{\m_0}{\frac{s^2}{n}}$} \\ \cline{2-4} 
+    & Small & \multicolumn{1}{c|}{$\displaystyle \frac{\ol{X} - \m_0}{S/\sqrt{n}} \sim \StudentT{n-1}$} & \cellcolor{black} \\ \hline
+    \end{tabular}
+    \egroup
+\end{table}
+
+When our test statistic follows a normal distribution, we say that we perform a \vocab{$z$-test}. If instead our test statistic follows a $t$-distribution, we say that we perform a \vocab{$t$-test}.
+
+\begin{sample}
+    The lengths of metal bars produced by a particular machine are normally distributed with mean 420 cm and standard deviation 15 cm. After changing the machine specifications, a sample of 20 metal bars is taken and the length of each bar is measured. The result shows that the sample mean is 413 cm. Is there evidence, at the 5\% significance level, that there is a change in the mean length of the metal bars?
+\end{sample}
+\begin{sampans}
+    Let $X$ cm be the length of a metal bar after the machine specifications were changed. Our hypotheses are \nullhyp: $\m = 420$ and \althyp: $\m \neq 420$. We perform a 2-tail $z$-test at the 5\% significance level. Under \nullhyp, our test statistic is $\ol{X} \sim \Normal{420}{15^2/20}$. From the sample, $\ol{x} = 413$. Using G.C., the $p$-value is 0.0309, which is less than our significance level of 5\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% significance level that there is a change in the mean length of the metal bars.
+\end{sampans}
+
+\subsection{Connection With Confidence Intervals}
+
+The testing of \nullhyp: $\m = \m_0$ against \althyp: $\m \neq \m_0$ at a significance level $100\a$\% is equivalent to computing a symmetric $100(1-\a)$\% confidence interval for $\m$. If $\m_0$ is outside the confidence interval, \nullhyp{} is rejected. If $\m_0$ is within the confidence interval, \nullhyp{} is not rejected.
+
+\begin{sample}
+    In a study on the mathematical competencies of 15-year-old Singaporean students, the following PISA test results for a sample of 17 students is such that its sample mean is 565 with a sample standard deviation of 50. Find a 95\% confidence interval for the population mean of the results of students for the PISA test. Hence, state the conclusion of a hypothesis test, at the 5\% significance level, that tests if the mean of the test results for the Singaporean students differs from 600.
+\end{sample}
+\begin{sampans}
+    Let $X$ be the random variable denoting the PISA test results of a 15-year-old Singaporean student. Our test statistic is \[\frac{\ol{X} - 565}{S/\sqrt{17}} \sim \StudentT{16}.\] From the sample, $s = 50$, so a symmetric 95\% confidence interval for $\m$ is $(539.29, 590.71)$. Since 600 is outside the confidence interval, we reject the null hypothesis that $\m = 600$ and conclude there is sufficient evidence at a 5\% significance level that the mean of the test results differ from 600.
+\end{sampans}
+
+\section{Difference of Population Means}
+
+In this section, we explore the distributions of the differences of population means. This is typically used when we are interested in comparing the population means from two populations. There is a major distinction we must make when we encounter such bivariate data:
+
+\begin{definition}
+    If the data occurs in pairs, we say they are \vocab{paired}. Else, we say they are \vocab{unpaired}.
+\end{definition}
+
+\begin{example}
+    Suppose we measure the blood pressure of a number of hospital patients before and after some treatment aimed at reducing blood pressure. Two values will be recorded from each patient, hence the data is paired.
+
+    However, if we measure the blood pressure of two groups of patients, one receiving treatment in Hospital A and the other in Hospital B, the data is unpaired.
+\end{example}
+
+There are some guidelines we can use to distinguish between paired and unpaired data:
+\begin{itemize}
+    \item If the two samples are of unequal size, then they are unpaired.
+    \item For data to be paired, there must be a reason to associate a particular measurement in one sample with a measurement in the other sample. If there is no reason to pair measurements in this way, the data is treated as unpaired.
+\end{itemize}
+
+\subsection{Unpaired Samples}
+
+Let $X_1$ and $X_2$ be two random variables with random sample sizes $n_1$ and $n_2$, mean $\m_1$ and $\m_2$. In comparing the two populations, we typically set up our null hypothesis as \nullhyp: $\m_1 - \m_2 = \m_0$ with a one- or two-sided alternative hypothesis, similar to the single-value case discussed in the previous section.
+
+When comparing unpaired data, one key assumption we typically make is that $X_1$ and $X_2$ are \emph{independent}, as this allows us to formulate our test statistics nicely. 
+
+\subsubsection{Known Population Variance}
+
+Suppose $X_1$ and $X_2$ have known variances $\s_1^2$ and $\s_2^2$ respectively. If $X_1$ and $X_2$ are normally distributed, then \[\ol{X_1} \sim \Normal{\m_1}{\frac{\s_1^2}{n_1}} \quad \tand \quad \ol{X_2} \sim \Normal{\m_2}{\frac{\s_2^2}{n_2}}.\] If $X_1$ and $X_2$ are not normally distributed, then for large samples ($n_1, n_2 \geq 30$), by the Central Limit Theorem, we can approximate $\ol{X_1}$ and $\ol{X_2}$ using a normal distribution: \[\ol{X_1} \sim \Normal{\m_1}{\frac{\s_1^2}{n_1}} \quad \tand \quad \ol{X_2} \sim \Normal{\m_2}{\frac{\s_2^2}{n_2}} \text{ approximately}.\] Our test statistic is thus \[\ol{X_1} - \ol{X_2} \sim \Normal{\m_1 - \m_2}{\frac{\s_1^2}{n_1} + \frac{\s_2^2}{n_2}},\] and we proceed with the two-sample $z$-test.
+
+\begin{sample}
+    A random sample of size 100 is taken from a population with variance $\s_1^2 = 40$. Its sample mean $\ol{x_1}$ is 38.3. Another random sample of size 80 is taken from a population with variance $\s_2^2 = 30$. Its sample mean $\ol{x_2}$ is 40.1. Assuming that the two populations are independent, test, at the 5\% level, whether there is a difference in the population means $\m_1$ and $\m_2$.
+\end{sample}
+\begin{sampans}
+    Our hypotheses are \nullhyp: $\m_1 - \m_2 = 0$ and \althyp: $\m_1 - \m_2 \neq 0$. Under \nullhyp, our test statistic is \[\ol{X_1} - \ol{X_2} \sim \Normal{0}{\frac{40}{100} + \frac{30}{80}}.\] From the sample, $\ol{x_1} = 38.3$ and $\ol{x_2} = 40.1$. Using G.C., the $p$-value is 0.040888, which is less than our significance level of 5\%. Thus, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% level that there is a difference in the two population means.
+\end{sampans}
+
+\subsubsection{Unknown Population Variance with Large Sample Size}
+
+If we do not know the population variances of $X_1$ and $X_2$, we instead use the unbiased estimates $s_1^2$ and $s_2^2$. For large samples ($n_1, n_2 \geq 30$), we have, by the Central Limit Theorem, the following test-statistic: \[\ol{X_1} - \ol{X_2} \sim \Normal{\m_1 - \m_2}{\frac{\s_1^2}{n_1} + \frac{\s_2^2}{n_2}} \text{ approximately}.\]
+
+If we know further that the two populations have common variance\footnote{As a rule of thumb, the assumption $\s_1 = \s_2$ is considered reasonable if $1/2 \leq s_1/s_2 \leq 2$.}, i.e. $\s_1^2 = \s_2^2$, the \vocab{pooled variance} \[s_p^2 = \frac{\bp{n-1} s_1^2 + \bp{n_2 - 1} s_2^2}{\bp{n_1 - 1} + \bp{n_2 - 2}} = \frac{\sum \bp{x_1 - \ol{x_1}}^2 + \sum \bp{x_2 - \ol{x_2}}^2}{\bp{n_1 - 1} + \bp{n_2 - 1}}\] would provide a more precise estimate of the population variance. Our test statistic is hence \[\ol{X_1} - \ol{X_2} \sim \Normal{\m_1 - \m_2}{s_p^2 \bp{\frac{1}{n_1} + \frac{1}{n_2}}} \text{ approximately}.\]
+
+Either way, we proceed with the two-sample $z$-test.
+
+\begin{sample}
+    Two statistics teachers, Mr Tan and Mr Wee, argue about their abilities at golf. Mr Tan claims that with a number 7 ion he can hit the ball, on average, at least 10 m further than Mr Wee. Denoting the distance Mr Tan hits the ball by $(100 + c)$ m, the following results were obtained: \[n_1 = 40, \quad \sum c = 80, \quad \sum \bp{c - \ol{c}}^2 = 1132.\] Denoting the distance Mr Wee hits the ball by $(100 + t)$ m, the following results were obtained: \[n_2 = 35, \quad \sum t = -175, \quad \sum \bp{t - \ol{t}}^2 = 1197.\] If the distances for both teachers have a common variance, test whether there is any evidence at the 1\% level, to support Mr Tan's claim.
+\end{sample}
+\begin{sampans}
+    Let $X_1$ and $X_2$ be the random variable denoting the distance, in $m$, for Mr Tan and Mr Wee, with population mean $\m_1$ and $\m_2$ respectively. From the data, we have \[\ol{x_1} = 100 + \frac{80}{40} = 102 \quad \tand \quad \ol{x_2} = 100 + \frac{-175}{35} = 95,\] so the pooled variance is \[s_p^2 = \frac{\sum \bp{x_1 - \ol{x_1}}^2 + \sum \bp{x_2 - \ol{x_2}}^2}{\bp{n_1 - 1} + \bp{n_2 - 1}} = \frac{1132 + 1197}{\bp{30 - 1} + \bp{35 - 1}} = 31.90.\] We now perform a two-sample $z$-test at the 1\% level. Our hypotheses are \nullhyp: $\m_1 - \m_2 = 10$ and $\m_1 - \m_2 < 10$. Under \nullhyp, our test statistic is \[\ol{X_1} - \ol{X_2} \sim \Normal{\m_1 - \m_2}{s_p^2 \bp{\frac1{n_1} + \frac1{n_2}}} = \Normal{10}{1.70915}.\] Using G.C., the $p$-value is 0.0109, which is greater than our significance level of 1\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence to suppose Mr Tan's claim.
+\end{sampans}
+
+\subsubsection{Unknown Population Variance with Small Sample Size}
+
+If the random sample sizes are not large, then the normal distribution is no longer a reasonable approximation to the distribution of the test statistic. In order to progress, we must have the following assumptions:
+\begin{itemize}
+    \item $X_1$ and $X_2$ have independent, normal distributions.
+    \item $X_1$ and $X_2$ have a common variance.
+\end{itemize}
+With these assumptions, it can be shown that the test statistic $T$ given by \[T = \frac{\bp{\ol{X_1} - \ol{X_2}} - \bp{\m_1 - \m_2}}{S_p \sqrt{\frac1{n_1} + \frac1{n_1}}} \sim \StudentT{\bp{n_1 - 1} + \bp{n_2 - 1}},\] where \[S^2_p = \frac{\bp{n-1} S_1^2 + \bp{n_2 - 1} S_2^2}{\bp{n_1 - 1} + \bp{n_2 - 2}}\] is the pooled variance (unbiased estimate of the common variance). Note that there we lose 2 degrees of freedom since we use both $\ol{x_1}$ and $\ol{x_2}$ to estimate $s_1^2$ and $s_2^2$.
+
+\begin{sample}
+    The heights (measured to the nearest cm) of a random sample of six policemen from country A were found to be \[176, \quad 180, \quad 179, \quad 181, \quad 183, \quad 179.\] The heights (measured to the nearest cm) of a random sample of eleven policemen from country B have the following data: \[\sum y = 1991, \quad \sum \bp{y - \ol{y}}^2 = 54.\] Test, at the 5\% level, the hypothesis that policemen from country A are shorter than policemen from country B. State any assumptions that are needed for this test.
+\end{sample}
+\begin{sampans}
+    Let $X_A$ and $X_B$ be the height in cm of a policeman from country A and B, with population mean $\m_A$ and $\m_B$ respectively. We assume that $X_A$ and $X_B$ have independent, normal distributions, and they share a common variance. Our hypotheses are \nullhyp: $\m_A - \m_B = 0$ and \althyp: $\m_A - \m_B < 0$. Under \nullhyp, our test statistic is \[T = \frac{\ol{X_A} - \ol{X_B}}{S_p \sqrt{\frac16 + \sqrt1{11}}} \sim \StudentT{15}.\] From the sample, \[\ol{x_A} = 179.67 \quad \tand \quad \ol{x_B} = \frac{1991}{11} = 81.\] The unbiased estimates of each sample variance is \[s_A^2 = 5.4667 \quad \tand \quad s_B^2 = \frac1{10} \sum \bp{y - \ol{y}}^2 = 5.4.\] Thus, the pooled variance is \[s_p^2 = \frac{(6-1)(5.4667) + (11-1)(5.4)}{\bp{6-1} + \bp{11-1}} = 5.4222.\] Using G.C., the $p$-value is 0.139, which is greater than our significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence to claim that policemen from country A are shorter than policemen from country B.
+\end{sampans}
+
+\subsection{Paired Samples}
+
+If the given data is paired, then the two populations are no longer independent, hence we cannot use any of the tests previously discussed. Instead, we will now consider the difference $D = X_1 - X_2$, which is calculated for each matched pair. Writing $\m_D$ for the mean of the distribution of differences between the paired values, our null hypothesis is \nullhyp: $\m_D = \m_0$ with a one-sided or two-sided \althyp{} as appropriate.
+
+Notice that by working with the differences, we have effectively reduced our problem into a single sample situation, so the usual hypothesis test considerations for a single sample mean applies. For instance, if $D$ can be presumed to be normally distributed, or if $n$ is sufficiently large that the Central Limit Theorem can be applied to approximate $D$ to have a normal distribution, then \[\ol{D} \sim \Normal{\m_D}{\frac{s_D^2}{n}},\] and we proceed with a paired-sample $z$-test. Alternatively, if $D$ can be presumed to have a normal distribution, but $n$ is small, then the test statistic \[T = \frac{\ol{D} - \m_D}{S_D / \sqrt{n}} \sim \StudentT{n-1}\] can be used. In this case, we proceed with a paired-sample $t$-test.
+
+\section{\texorpdfstring{$\c^2$}{Chi-Squared} Tests}
+
+\subsection{The \texorpdfstring{$\c^2$}{Chi-Squared} Distribution}
+
+The $\c^2$ distribution is a continuous distribution with a positive integer parameter $\n$.
+
+\begin{definition}
+    The sum of the squares of $\n$ independent standard normal random variables $Z_1, \dots, Z_\n$ is distributed according to a \vocab{$\c^2$ distribution $\n$ degrees of freedom}, denoted $\ChiSq{\n}$. \[Z_1^2 + \dots + Z_\n^2 \sim \ChiSq{\n}.\]
+\end{definition}
+
+\begin{figure}[H]\tikzsetnextfilename{492}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:20,
+            restrict y to domain =0:20,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            legend cell align={left},
+            legend pos=outer north east,
+            ]
+            \addplot[plotRed, very thick] {e^(-x/2) / (sqrt(2 * pi * x))};
+            \addlegendentry{$\n = 1$};
+
+            \addplot[plotGreen, very thick] {e^(-x/2) / 2};
+            \addlegendentry{$\n = 2$};
+
+            \addplot[plotBlue, very thick] {e^(-x/2) * x^(3/2) / (3 * sqrt(2 * pi))};
+            \addlegendentry{$\n = 5$};
+
+            \addplot[black, very thick] {e^(-x/2) * x^4 / 768};
+            \addlegendentry{$\n = 10$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{The $\ChiSq{\n}$ distribution for varying values of $\n$.}
+\end{figure}
+
+The $\c^2$ distribution has a reverse ``J''-shape for $\n = 1, 2$, and is positively skewed for $\n > 2$. As $\n$ increase, the distribution becomes more symmetric. For large $\n$, the distribution is approximately normal.
+
+\begin{fact}[Properties of the $\c^2$ Distribution]
+    \phantom{.}
+    \begin{itemize}
+        \item A $\ChiSq{\n}$ distribution has mean $\n$ and variance $2\n$.
+        \item A $\ChiSq{\n}$ distribution has mode $\n - 2$ for  $\n \geq 2$.
+        \item If $U$ and $V$ are independent random variables such that $U \sim \ChiSq{u}$ and $V \sim \ChiSq{v}$, then $U + V \sim \ChiSq{u + v}$.
+    \end{itemize}
+\end{fact}
+
+\subsection{\texorpdfstring{$\c^2$}{Chi-Squared} Goodness-of-Fit Test}
+
+Previously, we have always assumed that a particular type of distribution is appropriate for the data given and have focused on estimating and testing hypotheses about the parameter of the distribution. In this section, the focus changes to the distribution itself, and we ask ``Does the data support the assumption that a particular type of distribution is appropriate?''
+
+As a motivating example, suppose we roll a six-sided die 60 times and obtain the following observed frequencies:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|r|}{Outcome} & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    Observed frequency, $O$ & 4 & 7 & 16 & 8 & 8 & 17 \\ \hline
+    \end{tabular}
+\end{table}
+
+In this sample, there seems to be a rather large number of 3's and 6's. Is this die fair, or is it biased? With a fair die, the expected frequencies would each be $60/6 = 10$.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|r|}{Outcome} & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    Expected frequency, $E$ & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
+    \end{tabular}
+\end{table}
+
+The question is thus whether the observed frequencies $O$ and the expected frequencies $E$ are reasonably close or unreasonably different. An obvious comparison would be the differences $(O-E)$:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|r|c|c|c|c|c|c|}
+    \hline
+    Outcome & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    Observed frequency, $O$ & 4 & 7 & 16 & 8 & 8 & 17 \\ \hline
+    Expected frequency, $E$ & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
+    Difference, $O-E$ & $-6$ & $-3$ & 6 & $-2$ & $-2$ & 7 \\ \hline
+    \end{tabular}
+\end{table}
+
+The larger the magnitude of the differences, the more the observed data differs from the model that the die was fair. 
+
+Suppose we now roll a second die 660 times and obtain the following results:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|r|c|c|c|c|c|c|}
+    \hline
+    Outcome & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    Observed frequency, $O$ & 104 & 107 & 116 & 108 & 108 & 117 \\ \hline
+    Expected frequency, $E$ & 110 & 110 & 110 & 110 & 110 & 110 \\ \hline
+    Difference, $O-E$ & $-6$ & $-3$ & 6 & $-2$ & $-2$ & 7 \\ \hline
+    \end{tabular}
+\end{table}
+
+This time, the observed and expected frequencies seem close, yet the differences $O-E$ are the same as before. We see that it is not just the size of $O-E$ that matters, but also its relative size to the expected frequency $(O-E)/E$.
+
+Combining the ideas, the goodness-of-fit for an outcome $i$ is measured using \[\bp{O_i - E_i} \cdot \frac{O_i - E_i}{E_i} = \frac{\bp{O_i - E_i}^2}{E_i}.\] The smaller this quantity is, the better the fit. An aggregate measure of goodness-of-fit of the model is thus given by the $\c^2$ statistic: \[\c^2 = \sum \frac{\bp{O_i - E_i}^2}{E_i}.\] As the name suggests, this test statistic follows a $\c^2$ distribution.
+
+Observe that if $\c^2 = 0$, there is exact agreement between $O_i$ and $E_i$, so the model is a perfect fit. If $\c^2 > 0$, then $O_i$ and $E_i$ do not agree exactly. The larger the value of $\c^2$, the greater the discrepancy.
+
+For the test, we define \nullhyp{} as our sample having the expected probabilities of the various categories. The alternative hypothesis \althyp{} will be that \nullhyp{} is incorrect, i.e. the sample does not have the expected probabilities of the various categories. We use the $\c^2$ test statistic, which generally follows a $\ChiSq{m-1-k}$ distribution, where $m$ is the number of categories being compared, and $k$ is the number of parameters estimated from the data.
+
+\begin{example}
+    Suppose we wish to test if a given set of data fits a Poisson model. If we are not given the mean rate $\l$, we can estimate it using $\ol{x} \approx \l$. In doing so, we lose one degree of freedom, so the resulting $\c^2$ test statistic will follow a $\ChiSq{m-2}$ distribution.
+\end{example}
+
+\begin{example}
+    To formalize our motivating example, we define \nullhyp: the die is fair, and \althyp: the die is not fair. We take a 2.5\% level of significance. Our test statistic is \[\c^2 = \sum \frac{(O_i - E_i)^2}{E_i} \sim \ChiSq{6-1} = \ChiSq{5}.\] From the sample, the individual contributions are given by
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|}
+        \hline
+        Outcome & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+        $O_i$ & 4 & 7 & 16 & 8 & 8 & 17 \\ \hline
+        $E_i$ & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
+        $(O_i-E_i)^2/E_i$ & 3.6 & 0.9 & 3.6 & 0.4 & 0.4 & 4.9 \\ \hline
+        \end{tabular}
+    \end{table}
+    The test statistic value is thus \[3.6 + 0.9 + 3.6 + 0.4 + 0.4 + 0.9 = 13.8.\] Using G.C., the $p$-value is \[\P{\c^2 \geq 13.8} = 0.016931.\] Since the $p$-value is less than our significance level of 2.5\%, we reject \nullhyp{} and conclude there is sufficient evidence at the 2.5\% significance level that the die is not fair.
+\end{example}
+
+\subsubsection{Small Expected Frequencies}
+
+The distribution of $\sum (O_i - E_i)^2/E_i$ is discrete. The continuous $\c^2$ distribution is simply a convenient approximation which becomes less accurate as the expected frequencies become smaller. Generally, the approximation may be used only when \emph{all expected frequencies are less than 5}. If a category has an expected frequency less than 5, we must combine it with other categories. This combination may be done in any sensible grounds, but should be done without reference to the observed frequencies to avoid bias.
+
+\begin{sample}
+    A random sample of 40 observations on the discrete random variable $X$ is summarized below:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 & $\geq 5$ \\ \hline
+        Frequency & 4 & 14 & 9 & 7 & 6 & 0 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Test, at the 5\% significance level, whether $X$ has a Poisson distribution with mean equal to 2.
+\end{sample}
+\begin{sampans}
+    Our hypotheses are \nullhyp: the data is consistent with a $\Po{2}$ model, and \althyp: the data is inconsistent with a $\Po{2}$ model. From the given data, the observed and expected frequencies are
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 & $\geq 5$ \\ \hline
+        $O_i$ & 4 & 14 & 9 & 7 & 6 & 0 \\ \hline
+        $E_i$ & 5.4143 & 10.821 & 10.827 & 7.2179 & 3.6089 & 2.1061 \\ \hline
+        \end{tabular}
+    \end{table}
+    The last two categories have expected frequencies less than 5, so we combine them into a single category:
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & $\geq 4$ \\ \hline
+        $O_i$ & 4 & 14 & 9 & 7 & 6 \\ \hline
+        $E_i$ & 5.4143 & 10.821 & 10.827 & 7.2179 & 5.7151 \\ \hline
+        \end{tabular}
+    \end{table}
+    Our test statistic is \[\sum \frac{(O_i - E_i)^2}{E_i} \sim \ChiSq{5-1}.\] Using G.C., the $p$-value is 0.80373, which is larger than our 5\% significance level, thus we do not reject \nullhyp{} and conclude there is insufficient evidence that the data is inconsistent with a $\Po{2}$ model.
+\end{sampans}
+
+In general, we have the following procedure:
+
+\begin{recipe}[$\c^2$ Goodness-of-Fit Test]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}
+    \begin{enumerate}
+        \item State hypotheses and significance level.
+        \item Compute expected frequencies under \nullhyp{}.
+        \item Combine any categories if there are expected frequencies under 5.
+        \item Determine the degrees of freedom and state the test statistic.
+        \item Calculate the $p$-value.
+        \item State the conclusion of the test in context.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
+
+\subsection{\texorpdfstring{$\c^2$}{Chi-Squared} Test for Independence}
+
+Suppose we record data concerning two categorical variables for a sample of individuals chosen randomly from a population. It is convenient to display the data in the form of a \vocab{contingency table}. Here is an example which shows information on voting:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+     & \textbf{Party A} & \textbf{Party B} & \textbf{Party C} & \textbf{Total} \\ \hline
+    \textbf{Male} & 313 & 124 & 391 & 828 \\ \hline
+    \textbf{Female} & 344 & 158 & 388 & 890 \\ \hline
+    \textbf{Total} &  657 & 282 & 779 & 1718 \\ \hline
+    \end{tabular}
+\end{table}
+
+Sample data of this type are collected in order to answer interesting questions about the behaviour of the population, such as ``Are there differences in the way males and females vote?'' If there are differences, then the variables ``vote'' and ``gender'' are said to be \vocab{associated}, else they are \vocab{independent}.
+
+To test for independence between variables, we employ a $\c^2$ test for independence. Our null hypothesis is that the variables are independent, while our alternative hypothesis is that the variables are associated.
+
+Under the null hypothesis, the best estimate of the population proportion voting for Party A is $657/1718$. The expected number of males voting for Party A would thus be $828 \times 657/1718 = 316.64$, and the number of females would be $890 \times 657/1718 = 340.36$. These expected frequencies, $E_i$, are calculated using the formula \[E = \frac{\text{row total} \times \text{column total}}{\text{grand total}}.\]
+
+Doing this for all combination of party and gender, we get the following table of expected frequencies:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccc|}
+    \cline{2-4}
+    & \multicolumn{3}{c|}{\textbf{Expected Frequencies}} \\ \cline{2-4} 
+    & \multicolumn{1}{c|}{\textbf{Party A}} & \multicolumn{1}{c|}{\textbf{Party B}} & \textbf{Party C} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Male}} & \multicolumn{1}{c|}{316.64} & \multicolumn{1}{c|}{135.91} & 375.44 \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Female}} & \multicolumn{1}{c|}{340.36} & \multicolumn{1}{c|}{146.09} & 403.56 \\ \hline
+    \end{tabular}
+\end{table}
+
+The test statistic $\sum (O_i - E_i)^2/E_i$ is computed and compared with the relevant $\c^2$ distribution. For a contingency table with $r$ rows and $c$ columns, the degrees of freedom $\n$ is given by \[\n = (r-1)(c-1),\] since we only need $(r-1)(c-1)$ values to completely determine the entire table (try it!). In our case, $\n = (2-1)(3-1) = 2$.
+
+In general, we have the following procedure:
+
+\begin{recipe}[$\c^2$ Test for Independence]
+    \phantom{.}
+    \renewcommand{\theenumi}{\arabic{enumi}.}
+    \begin{enumerate}
+        \item State hypotheses and significance level.
+        \item Compute expected frequencies under \nullhyp{} and tabulate them.
+        \item Combine any rows/columns if there are expected frequencies under 5.
+        \item Determine the degrees of freedom and state the test statistic.
+        \item Calculate the $p$-value.
+        \item State the conclusion of the test in context.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
