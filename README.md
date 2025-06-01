@@ -34,7 +34,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  A17  | Confidence Intervals                                          |  🟢  |   🟢    |      🟡      |    🟢     |
 | A18A  | Hypothesis Testing I - Single Value                           |  🟢  |   🟢    |      🟡      |    🟢     |
 | A18B  | Hypothesis Testing II - Two Values                            |  🟢  |   🟢    |      🟡      |    🟢     |
-| A18C  | Hypothesis Testing III - Goodness-of-Fit and Independence     |  🟢  |   🟢    |      🟡      |    🟡     |
+| A18C  | Hypothesis Testing III - Goodness-of-Fit and Independence     |  🟢  |   🟢    |      🟡      |    🟢     |
 
 ### Group B
 
@@ -123,7 +123,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |                  | 9820 |
 | ---------------- | ---- |
 | Timed Practice 1 | 🟢  |
-| Timed Practice 2 | 🟡  |
+| Timed Practice 2 | 🟢  |
 
 
 ## Compiling

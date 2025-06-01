@@ -1,0 +1,154 @@
+\section{Assignment A18C}
+
+\begin{problem}
+    For a long time, experts have been trying to explain the complex relations and interactions between leaders and other members in an organization. A study was carried out to investigate the relevance of a leader's gender in adopting a specific leadership style. A survey was given to a random sample of 79 people holding leadership positions from various organizations and institutions. Their responses to the questionnaire served to identify their dominant leadership style. The results are given in the following contingency table.
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            & \textbf{Authoritarian} & \textbf{Democratic} & \textbf{Laissez-faire} \\ \hline
+            \textbf{Male} & 12 & 22 & 9 \\ \hline
+            \textbf{Female} & 20 & 13 & 3 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Carry out a test for the independence of the two factors, gender and the dominant leadership style.
+
+    Discuss what the test indicates about the association, if any, between the two factors. You should refer to the $p$-value for your test and the largest two contributions to the test statistic.
+\end{problem}
+\begin{solution}
+    Our hypotheses are \nullhyp: gender and dominant leadership style are independent, \althyp: gender and dominant leadership style are dependent. Under \nullhyp, the expected frequencies are
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            & \textbf{Authoritarian} & \textbf{Democratic} & \textbf{Laissez-faire} \\ \hline
+            \textbf{Male} & 17.418 & 19.051 & 6.5316 \\ \hline
+            \textbf{Female} & 14.582 & 15.949 & 5.4684 \\ \hline
+        \end{tabular}
+    \end{table}
+    The test statistic is $\sum (O_i - E_i)^2/ E_i \sim \ChiSq{2}$. Using G.C., the $p$-value is 0.034269. The individual contributions to the test statistic are
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            & \textbf{Authoritarian} & \textbf{Democratic} & \textbf{Laissez-faire} \\ \hline
+            \textbf{Male} & 1.6853 & 0.4565 & 0.9328 \\ \hline
+            \textbf{Female} & 2.0131 & 0.5453 & 1.1142 \\ \hline
+        \end{tabular}
+    \end{table}
+    The largest two contributions come from the authoritarian leadership style.
+
+    The small $p$-value indicates that the two factors are associated. Further, the large contributions from the authoritarian leadership style indicates that fewer people identify with the authoritarian leadership style than expected.
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item After the implementation of the Electronic Road Pricing Scheme, a survey was conducted where the number of vehicles passing the gantry point at Pan-Island Expressway in each period of 20 seconds was recorded. The results for 100 periods are as follows:
+
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            \textbf{Number of vehicles in the period} & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+            \textbf{Frequency} & 24 & 36 & 28 & 8 & 3 & 1 \\ \hline
+        \end{tabular}
+        \end{table}
+        \begin{enumerate}
+            \item Calculate the mean number of vehicles per period. Perform a goodness of fit test, at the 5\% level of significance to determine whether the data could be a sample from a Poisson distribution.
+            \item How would the above test change if it were specified as a $\Po{1.33}$ distribution instead?
+        \end{enumerate}
+        \item A survey of 100 families, known to be regular television viewers, was undertaken. They were asked which of the two channels they watched most during an average week. A summary of their replies is given in the following table, together with the region in which they lived.
+        
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                \textbf{Region} & North & South & East & West \\ \hline
+                \textbf{Channel 5} & 10 & 17 & $10 + a$ & $23 - a$ \\ \hline
+                \textbf{Channel 8} & 5 & 8 & $20 - a$ & $7 + a$ \\ \hline
+            \end{tabular}
+        \end{table}
+
+        To test the hypothesis that there is no association between the channel watched most and the region, show that the $\c^2$ statistic in terms of $a$ can be simplified as \[\c^2 = \frac{10a^2 - 130a + 479}{36}.\] Find the set of values of $a$ that would result in the assumption not being rejected at the 5\% level of significance.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            From the data, $\ol{x} = 1.33$. Our hypotheses are \nullhyp: data consistent with $\Po{1.33}$ and \althyp: data inconsistent with $\Po{1.33}$. We take a 5\% level of significance.
+
+            Under \nullhyp, the expected frequencies are
+            \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|}
+                \hline
+                $x$ & 0 & 1 & 2 & 3 & 4 & $\geq 5$ \\ \hline
+                $E_i$ & 26.448 & 35.175 & 23.392 & 10.370 & 3.4481 & 1.1667 \\ \hline
+            \end{tabular}
+            \end{table}
+            The last two columns have expected frequencies less than 5, so we combine the last three columns. The test statistic is $\sum (O_i - E_i)^2 / E_i \sim \ChiSq{2}$. Using G.C., the $p$-value is 0.417, which is greater than our 5\% significance level. Hence, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% level that the data is inconsistent with $\Po{1.33}$.
+        \end{psubpart}
+        \begin{psubpart}
+            The degrees of freedom would be $4-1 = 3$, hence the test statistic would follow a $\ChiSq{3}$ distribution instead.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Our hypotheses are \nullhyp: most watched channel and region are independent, \althyp: most watched channel and region are dependent. Under \nullhyp, the expected frequencies are
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                \textbf{Region} & North & South & East & West \\ \hline
+                \textbf{Channel 5} & 9 & 15 & 18 & 18 \\ \hline
+                \textbf{Channel 8} & 6 & 10 & 12 & 12 \\ \hline
+            \end{tabular}
+        \end{table}
+        The test statistic is
+        \begin{align*}
+            \sum \frac{(O_i - E_i)^2}{E_i} &= \frac{(10-9)^2}{9} + \frac{(5-6)^2}{6} + \frac{(17-15)^2}{15} + \frac{(8-10)^2}{10}\\
+            &\hspace{1em}+ \frac{(10+a-18)^2}{18} + \frac{(20-a-12)^2}{12} + \frac{(23-a-18)^2}{18} + \frac{(7+a-12)^2}{12}\\
+            &= \frac{17}{18} + \bp{\frac1{18} + \frac1{12}}\bs{(a-8)^2 + (a-5)^2}\\
+            &= \frac{10a^2 - 130a + 479}{36}.
+        \end{align*}
+        The critical value for a 5\% level of significance is $7.815$. Hence, to not reject \nullhyp, we require \[\frac{10a^2 - 130a + 479}{36} \leq 7.815 \implies 1.76 \leq a \leq 11.2.\] Since $a$ is an integer, the required range of values of $a$ is $2 \leq a \leq 11$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    The proportions of blood types A, B, AB and O in the population of a country are $p_1$, $p_2$, $p_3$, $p_4$ respectively, where $\sum_{i=1}^4 p_i = 1$. In order to test whether the population of a city in the country conforms to these figures, a random sample of size $n$ is selected and the numbers of people with blood types A, B, AB and O are found to be $a$, $b$, $c$ and $d$ respectively.
+
+    \begin{enumerate}
+        \item Show that the $\c^2$ statistic for a goodness of fit test simplifies to \[\c^2 = \frac{a^2}{np_1} + \frac{b^2}{np_2} + \frac{c^2}{np_3} + \frac{d^2}{np_4} - n.\]
+        \item It is given that $p_1 = p_4$, $p_2 = 3p_3$ and the values of $a, b, c, d$ are 26, 19, 10 and 45 respectively. Denoting the common value of $p_1$ and $p_4$ by $p$, show that \[\c^2 = \frac{2701}{100p} + \frac{661}{75\bp{1 - 2p}} - 100.\] Hence, find the value of $p_0$ of $p$ for which this value of $\chi^2$ is a minimum. 
+        \item Carry out the goodness of fit test at the 10\% significance level, with $p = p_0$.
+        \item State, giving your reason, the conclusion of your test for values of $p$ other than $p_0$.
+        \item Using the values of $a$, $b$, $c$ and $d$ in (b), construct a 95\% confidence interval for the proportion of people in the country with blood type A.
+        \item Discuss one advantage and one disadvantage of finding a 95\% confidence interval instead of a 99\% confidence interval.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        The test statistic is
+        \begin{align*}
+            \c^2 &= \sum \frac{(O_i - E_i)^2}{E_i} = \sum \bp{\frac{O_i^2}{E_i} - 2O_i + E_i} = \sum \bp{\frac{O_i^2}{E_i}} - 2n + n\\
+            &= \frac{a^2}{np_1} + \frac{b^2}{np_2} + \frac{c^2}{np_3} + \frac{d^2}{np_4} - n.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Note that $p_1 + p_2 + p_3 + p_4 = 1$. Hence, \[p_2 = \frac{3\bp{1-2p}}{4} \quad \tand \quad p_3 = \frac{1-2p}{4}.\] The test statistic is thus \[\c^2 = \frac{26^2}{100p} + \frac{19^2}{100\bp{\frac{3\bp{1-2p}}{4}}} + \frac{10^2}{100\bp{\frac{1-2p}{4}}} + \frac{45^2}{100p} - 100 = \frac{2701}{100p} + \frac{661}{75\bp{1 - 2p}} - 100.\] Using G.C., the minimum value of $\c^2$ is 6.47259, occurring when $p = p_0 = 0.35615$.
+    \end{ppart}
+    \begin{ppart}
+        Our hypotheses are \nullhyp: data consistent with proportions $p_1$, $p_2$, $p_3$, $p_4$, and \althyp: data inconsistent with proportions $p_1$, $p_2$, $p_3$, $p_4$. We take a level of significance of 10\%. The test statistic is $\sum (O_i - E_i)^2 / E_i \sim \ChiSq{3}$. From (c), the value of the test statistic is 6.47259, but the critical value for a 10\% significance level is 6.2514. Hence, we reject \nullhyp{} and conclude there is sufficient evidence at the 10\% level that the data is inconsistent with the proportions $p_1$, $p_2$, $p_3$, $p_4$.
+    \end{ppart}
+    \begin{ppart}
+        Because $\c^2$ already attains a minimum at $p = p_0$, the value of the test statistic for all other values of $p$ will remain greater than the critical value of 6.2514m hence leading to a rejection of \nullhyp{} at the 10\% significance level.
+    \end{ppart}
+    \begin{ppart}
+        A 95\% confidence interval is $(0.17403, 0.34597)$.
+    \end{ppart}
+    \begin{ppart}
+        An advantage is that the interval will be smaller and hence more precise. A disadvantage is that we must accept a lower level of confidence.
+    \end{ppart}
+\end{solution}
