@@ -1,0 +1,65 @@
+\section{9820 Timed Practice 1}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Given that $x \geq 1$, $y \geq 1$, $x \geq 1$, and $x^{-1} + y^{-1} + z^{-1} = 2$, by using the Cauchy-Schwarz inequality, prove that \[\sqrt{x + y + z} \geq \sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1}.\]
+        \item If $w$, $x$, $y$, $z$ are positive integers, using the AM-GM inequality, find the maximum possible value of \[\frac{wxyz}{\bp{w + x + y} \bp{x + y + z} \bp{y + z + w} \bp{z + w + x}}.\]
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        By the Cauchy-Schwarz inequality, \[\bp{\sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1}}^2 \leq \bp{\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z}}\bp{x + y + z}.\] From the given condition, we see that \[\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z} = \bp{1 - \frac1x} + \bp{1 - \frac1y} + \bp{1 - \frac1z} = 3 - 2 = 1.\] Thus, \[\sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1} \leq \sqrt{1} \sqrt{x + y + z} = \sqrt{x + y + z}\] as desired.
+    \end{ppart}
+    \begin{ppart}
+        By the AM-GM inequality, $w + x + y \geq 3 \sqrt[3]{wxy}$. Thus, \[\frac{wxyz}{\prod_{\text{cyc}} \bp{w + x + y}} \leq \frac{wxyz}{\prod_{\text{cyc}} 3\sqrt[3]{wxy}} = \frac{wxyz}{3^4 \sqrt[3]{w^3 x^3 y^3 z^3}} = \frac1{3^4}.\] Thus, the maximum is $3^{-4}$, which occurs when $w = x = y = z$.
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    Prove that, for any positive integers $n$ and $r$, \[\frac{1}{\comb{n+r}{r+1}} = \frac{r+1}{r} \bp{\frac1{\comb{n+r-1}{r}} - \frac1{\comb{n+r}{r}}}.\] Hence, determine \[\sum_{n = 1}^\infty \frac1{\comb{n+r}{r+1}}\] in terms of $r$, and use the result obtained to deduce that \[\sum_{n = 2}^\infty \frac1{\comb{n+2}{3}} = \frac12.\]
+\end{problem}
+\begin{solution}
+    Observe that
+    \begin{align*}
+        \frac{r+1}{r} \bp{\frac{\comb{n+r}{r+1}}{\comb{n+r-1}{r}} - \frac{\comb{n+r}{r+1}}{\comb{n+r}{r}}} &= \frac{r+1}{r} \bp{\frac{\frac{(n+1)!}{(r+1)!(n-1)!}}{\frac{(n+r-1)!}{r!(n-1)!}} - \frac{\frac{(n+r)!}{(r+1)!(n-1)!}}{\frac{(n+r)!}{r!n!}}}\\
+        &= \frac{r+1}{r} \bp{\frac{n+r}{r+1} - \frac{n}{r+1}} \\
+        &= \frac{n+r}{r} - \frac{n}{r}\\
+        &= 1.
+    \end{align*}
+    Dividing through by $\comb{n+r}{r+1}$, we get \[\frac{1}{\comb{n+r}{r+1}} = \frac{r+1}{r} \bp{\frac1{\comb{n+r-1}{r}} - \frac1{\comb{n+r}{r}}}.\] Hence, the required sum telescopes to
+    \begin{gather*}
+        \sum_{n = 1}^\infty \frac1{\comb{n+r}{r+1}} = \frac{r+1}{r} \sum_{n = 1}^\infty \bp{\frac1{\comb{n+r-1}{r}} - \frac1{\comb{n+r}{r}}}\\
+        = \frac{r+1}{r} \bp{\frac1{\comb{r}{r}} - \frac1{\comb{r+1}{r}} + \frac1{\comb{r+1}{r}} - \frac1{\comb{r+2}{r}} + \dots} = \frac{r+1}{r} \frac1{\comb{r}{r}} = \frac{r+1}{r}.
+    \end{gather*}
+    Thus, we have \[\sum_{n = 2}^\infty \frac1{\comb{n+2}{3}} = \sum_{n = 1}^\infty \frac1{\comb{n+2}{3}} - \frac1{\comb{3}{3}} = \frac{2+1}{2} - 1 = \frac12.\]
+\end{solution}
+
+\begin{problem}
+    \begin{enumerate}
+        \item By using a suitable substitution or otherwise, find \[\int \frac1{\e^x + 1} \d x,\] expressing your answer as a single logarithm.
+        \item By considering the geometric series $1 - t + t^2 - t^3 + \dots$, show that for $\abs{t} < 1$, \[\ln{1 + t} = \sum_{k = 1}^\infty \frac{(-1)^{k+1} t^k}{k}.\]
+        \item Explain why for all $n \in \ZZ^+$, \[\lim_{x \to \infty} x\e^{n x} = 0.\]
+        \item Prove that \[\int_0^\infty \frac{x}{\e^x + 1} \d x = \sum_{k = 1}^\infty \frac{(-1)^{k+1}}{k^2},\] showing clearly at which step of your working you have used part (c). You may interchange the summation and integral without justification.
+    \end{enumerate}
+\end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        Dividing the integrand by $\e^x$, we see that \[\int \frac1{\e^x + 1} \d x = \int \frac{\e^{-x}}{1 + \e^{-x}} \d x = -\ln{1 + \e^{-x}} + C = \ln{\frac1{1 + \e^{-x}}} + C.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that \[1 - t + t^2 - t^3 + \dots = \sum_{k=0}^\infty (-t)^k = \frac1{1+t}.\] Integrating with respect to $t$, \[\ln{1 + t} = \int \sum_{k=0}^\infty (-t)^k \d t = \sum_{k = 0}^\infty \int (-t)^k \d t = \sum_{k = 0}^\infty \frac{-(-t)^{k+1}}{k+1} + C = \sum_{k = 1}^\infty \frac{(-1)^{k+1} t^k}{k} + C.\] At $t = 0$, we see that $C = 0$, so \[\ln{1 + t} = \sum_{k = 1}^\infty \frac{(-1)^{k+1} t^k}{k}.\]
+    \end{ppart}
+    \begin{ppart}
+        By L'H\^{o}pital's rule, \[\lim_{x \to \infty} x\e^{-nx} = \lim_{x \to \infty} \frac{x}{\e^{nx}} = \lim_{x \to \infty} \frac{1}{n\e^{nx}} = 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Integrating by parts, we see that \[\int_0^\infty \frac{x}{\e^x + 1} \d x = \int_0^\infty \frac{x\e^{-x}}{1 + \e^{-x}} \d x = \evalint{-x\ln{1 + \e^{-x}}}0\infty + \int_0^\infty \ln{1 + \e^{-x}} \d x.\] Notice that \[\lim_{x \to \infty} -x\ln{1 + \e^{-x}} = \lim_{x \to \infty} -x\sum_{k = 1}^\infty \frac{(-1)^{k+1} \e^{-kx}}{k} = \sum_{k = 1}^\infty \frac{(-1)^k}{k} \lim_{x \to \infty} x\e^{-kx} = 0,\] where we used part (b) in the first equality, and part (c) in the last equality.
+
+        Our target integral is hence just
+        \begin{gather*}
+            \int_0^\infty \frac{x}{\e^x + 1} \d x = \int_0^\infty \ln{1 + \e^{-x}} \d x = \int_0^\infty \sum_{k = 1}^\infty \frac{(-1)^{k+1} \e^{-kx}}{k} \d x\\
+            = \sum_{k = 1}^\infty \frac{(-1)^{k+1}}{k} \int_0^\infty \e^{-kx} \d x = \sum_{k = 1}^\infty \frac{(-1)^{k+1}}{k} \evalint{-\frac1k \e^{-kx}}0\infty = \sum_{k = 1}^\infty \frac{(-1)^{k+1}}{k^2}.
+        \end{gather*}
+    \end{ppart}
+\end{solution}
