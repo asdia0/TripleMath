@@ -75,8 +75,11 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | Analysis 2.2 - Sequences and Series   |  🟡  |    🟢    |      🟡      |
 | Analysis 3 - Inequalities             |  🟡  |    🟢    |      🔴      |
 | Analysis 4 - Complex Numbers          |  🟡  |    🟢    |      🔴      |
-| Combinatorics 1 - Bijection Principle |  🟡  |    🟡    |      🔴      |
-| Combinatorics 2 - Inclusion-Exclusion |  🟡  |    🟡    |      🔴      |
+| Counting 1 - Bijection Principle      |  🟡  |    🟡    |      🔴      |
+| Counting 2 - Inclusion-Exclusion      |  🟡  |    🟡    |      🔴      |
+| Counting 3 - Recurrence Relations     |  🟡  |    🟡    |      🔴      |
+| Counting 4 - Probability              |  🟡  |    🟡    |      🔴      |
+
 
 ### Examinations
 
@@ -124,7 +127,6 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | ---------------- | ---- |
 | Timed Practice 1 | 🟢  |
 | Timed Practice 2 | 🟢  |
-
 
 ## Compiling
 
