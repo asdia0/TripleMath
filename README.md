@@ -66,7 +66,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 
 | Topic                                 | Notes | Tutorials | Self-Practice |
 | ------------------------------------- | :---: | :-------: | :-----------: |
-| Mathematical Proofs and Reasoning     |  🟡  |    🟢    |      🟡      |
+| Mathematical Proofs and Reasoning     |  🟢  |    🟢    |      🟡      |
 | Analysis 1.1 - Functions and Graphs   |  🟡  |    🟢    |      🟡      |
 | Analysis 1.2 - Differentiation        |  🟡  |    🟢    |      🟡      |
 | Analysis 1.3 - Integration            |  🟡  |    🟢    |      🟡      |
@@ -79,7 +79,6 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | Counting 2 - Inclusion-Exclusion      |  🟡  |    🟡    |      🔴      |
 | Counting 3 - Recurrence Relations     |  🟡  |    🟡    |      🔴      |
 | Counting 4 - Probability              |  🟡  |    🟡    |      🔴      |
-
 
 ### Examinations
 
