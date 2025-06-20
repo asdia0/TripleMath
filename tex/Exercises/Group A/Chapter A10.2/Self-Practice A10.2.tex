@@ -3,6 +3,9 @@
 \begin{problem}
     The complex numbers $2\e^{\i \pi /12}$ and $2\e^{\i (5\pi/12)}$ are represented by the points $A$ and $B$ respectively in an Argand diagram with origin $O$. Show that the triangle $OAB$ is equilateral.
 \end{problem}
+\begin{solution}
+    Note that $OA = OB = 2$ and \[\angle BOA = \arg{2\e^{\i (5\pi/12)}} - \arg{2\e^{\i (\pi/12)}} = \frac\pi3.\] It follows that $\triangle OAB$ is equilateral.
+\end{solution}
 
 \begin{problem}
     The complex numbers $z$ and $w$ are such that \[\abs{z} = 2, \quad \arg{z} = -\frac{2\pi}3, \qquad \tand \qquad \abs{w} = 5, \quad \arg{w} = \frac{3\pi}4.\]
@@ -12,10 +15,62 @@
         \item Express $w/z^2$ in the exponential form. Hence, or otherwise, find the smallest positive integer $n$ such that $(w/z^2)^n$ is a real number.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\abs{\frac{w}{z^2}} = \frac{\abs{w}}{\abs{z}^2} = \frac{5}{2^2} = \frac54\] and \[\arg{\frac{w}{z^2}} = \arg{w} - 2\arg{z} = \frac{3\pi}4 - 2 \bp{-\frac{2\pi}3} = \frac\pi{12}.\]
+
+        \begin{center}\tikzsetnextfilename{497}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xmax=5,
+                    xmin=-5,
+                    axis equal image,
+                    ymin=-5,
+                    ymax=5,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \coordinate (R) at (10,0);
+                    \coordinate[label=below:$P\bp{z}$] (Z1) at (1, -1.73);
+                    \coordinate[label=above:$Q\bp{w}$] (Z2) at (-3.54, 3.54);
+                    \coordinate[label=above right:$R\bp{\frac{w}{z^2}}$] (Z3) at (1.21, 0.324);
+                    \coordinate (O) at (0, 0);
+            
+                    \draw (O) -- (Z1);
+                    \draw (O) -- (Z2);
+                    \draw (O) -- (Z3);
+            
+                    \fill (Z1) circle[radius=2.5pt];
+                    \fill (Z2) circle[radius=2.5pt];
+                    \fill (Z3) circle[radius=2.5pt];
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        For $(w/z^2)^n$ to be real, its argument must be an integer multiple of $\pi$, i.e. \[\arg \bp{\frac{w}{z^2}}^n = n \arg{\frac{w}{z^2}} = \frac{n\pi}{12} = k\pi \implies n = 12k\] for some $k \in \ZZ$. It is clear that the smallest value $n$ can be is 12 (occurring when $k = 1$).
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Express $\frac{\cot \t + \i}{\cot \t - \i}$ in the exponential form.
 \end{problem}
+\begin{solution}
+    We have \[\frac{\cot \t + \i}{\cot \t - \i} = \frac{\cos \t + \i \sin \t}{\cos \t - \i \sin \t} = \frac{\e^{\i\t}}{\e^{-\i\t}} = \e^{2\i \t}.\]
+\end{solution}
 
 \begin{problem}
     \textbf{Do not use a calculator in answering this question.}
@@ -27,6 +82,14 @@
         \item A third complex number, $z_3$, is such that \[\bp{\frac{z_1^2}{z_1\conj} + z_2} z_3 \in \RR \quad \tand \quad \abs{\bp{\frac{z_1^2}{z_1\conj} + z_2} z_3} = \frac23.\] Find the possible values of $z_3$ in the form of $r\bp{\cos \t + \i \sin \t}$, where $r > 0$ and $-\pi < \t \leq \pi$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[z_1 = 2\bp{\cos{-\frac\pi{18}} + \i \sin{-\frac\pi{18}}} = 2\e^{-\i \pi /18}.\] Thus, \[\frac{z_1^2}{z_1\conj} + z_2 = \frac{z_1^3}{\abs{z_1}^2} + z_2 = \frac{2^3 \e^{-\i \pi/6}}{2^2} + 2\i = 2\bs{\cos{-\frac\pi6} + \i \sin{-\frac\pi6}} + 2\i = \sqrt{3} + \i.\]
+    \end{ppart}
+    \begin{ppart}
+        Let $w = z_1^2/z_1\conj + z_2$. Note that \[\abs{w} = \sqrt{\sqrt{3}^2 + 1^2} = 1 \quad \tand \quad \arg{w} = \arctan{\frac1{\sqrt3}} = \frac\pi6,\] so $w = 2\e^{\i \pi /6}$. Let $z_3 = r\e^{\i \t}$. Since $wz_3$ is real, its argument must be an integer multiple of $\pi$, i.e. \[\arg{w z_3} = \arg{w} + \arg{z_3} = \frac\pi6 + \t = k\pi \implies \t = \frac{\pi \bp{6k - 1}}{6}\] for some $k \in \ZZ$. The only solutions for $\t$ within the specified range $(-\pi, \pi)$ are $\t = -\pi/6$ and $\t = 5\pi/6$. Further, we have \[\frac23 = \abs{wz_3} = \abs{w}\abs{z_3} = 2r \implies r = \frac13.\] Thus, \[z_3 = \frac13 \bp{\cos{-\frac\pi6} + \i \sin{-\frac\pi6}} \quad \tor \quad z_3 = \frac13 \bp{\cos \frac{5\pi}6 + \i \sin \frac{5\pi}6}.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \textbf{Do not use a calculator in answering this question.}
@@ -35,6 +98,11 @@
 
     Hence, find the three smallest positive whole number values of $n$ for which $(iw)^n$ is an imaginary number.
 \end{problem}
+\begin{solution}
+    Multiplying the second equation by $\i$ yields \[\i w - z = -\bp{1 + \sqrt3}.\] Along with the first equation, this gives \[w - \i w = \bp{1 - \sqrt3} + \bp{1 + \sqrt3} = 2 \implies w = \frac2{1-\i} = \frac{2\bp{1 + \i}}{2} = 1 + \i = \sqrt{2} \e^{\i \pi/4}.\]
+
+    For $(\i w)^n$ to be purely imaginary, its argument must be a half-integer multiple of $\pi$, i.e. \[\arg{(\i w)^n} = n \bp{\arg{\i} + \arg{w}} = n \bp{\frac\pi2 + \frac\pi4} = \bp{k + \frac12} \pi \implies n = \frac{4k+2}{3}\] for some $k \in \ZZ$. The first three smallest positive values of $n$ are hence $n = 2, 6, 10$ (occurring when $k = 1, 4, 7$ respectively).
+\end{solution}
 
 \begin{problem}[\chili]
     It is given that $z = \cos \t + \i \sin \t$, where $0 < \t < \pi/2$.
@@ -46,3 +114,56 @@
         \item Given that $\frac{z\conj}{z^3 \bp{1 - z^2}}$ is real, find the possible values of $\t$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        By trigonometric identities, we readily have \[\e^{\i (t - \pi/2)} = \cos{\t - \frac\pi2} + \i \sin{\t - \frac\pi2} = \sin \t - \i \cos \t.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $z = r\e^{\i \t}$. Thus,
+        \begin{align*}
+            1 - z^2 &= -\bp{\e^{2\i\t} - 1} = -\e^{\i \t}\bp{\e^{\i \t} - \e^{-\i \t}} = -\e^{\i \t} \bp{2\i \sin \t}\\
+            &= \bp{2\sin\t} \e^{\i \t} \e^{-\i \pi/2} = \bp{2\sin \t} \e^{\i (\t - \pi/2)}.
+        \end{align*}
+        Thus, $\arg{1 - z^2} = \t - \pi/2$ and $\abs{1 - z^2} = 2\sin\t$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}\tikzsetnextfilename{496}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xmax=5,
+                    xmin=-1,
+                    axis equal image,
+                    ymin=-5,
+                    ymax=1,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \coordinate (R) at (10,0);
+                    \coordinate[label=right:$P\bp{1 - z^2}$] (Z) at (2, -3);
+                    \coordinate (O) at (0, 0);
+            
+                    \draw (O) -- (Z);
+            
+                    \fill (Z) circle[radius=2.5pt];
+                    \draw pic [draw, angle radius=15mm, "$\t - \frac\pi2$"] {angle = Z--O--R};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\arg{\frac{z\conj}{z^3 \bp{1 - z^2}}} = \arg{z\conj} - 3\arg{z} - \arg{1 - z^2} = \bp{-\t} - 3\t - \bp{\t - \frac\pi2} = -5\t + \frac\pi2.\] Since $\frac{z\conj}{z^3 \bp{1 - z^2}}$ is real, its argument is an integer multiple of $\pi$, i.e. \[-5\t + \frac\pi2 = k \pi \implies \t = \frac{\pi\bp{1 - 2k}}{10}\] for some $k \in \ZZ$. Since $\t \in (0, \pi/2)$, the only possible values of $\t$ are $\t = \pi/10$ and $\t = 3\pi/10$ (corresponding to $k = 0$ and $k = -1$ respectively).
+    \end{ppart}
+\end{solution}
