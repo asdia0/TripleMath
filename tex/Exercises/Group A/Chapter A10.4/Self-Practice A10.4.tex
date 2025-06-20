@@ -3,10 +3,59 @@
 \begin{problem}
     If $\arg{z - 2} = 2\pi/3$ and $\abs{z} = 2$, determine $\arg{z}$.
 \end{problem}
+\begin{solution}
+    Let $A(2 + 0\i)$ and $Z(z)$.
+    
+    \begin{center}\tikzsetnextfilename{498}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:10,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmin=-0.5,
+                xmax=3,
+                ymin=-0.5,
+                ymax=3,
+                axis equal image,
+                xlabel = {$\Re$},
+                ylabel = {$\Im$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+
+                \coordinate (R) at (10,0);
+                \coordinate[label=above right:$Z$] (Z) at (1, 1.73);
+                \coordinate[label=below right:$A$] (A) at (2, 0);
+                \coordinate (O) at (0, 0);
+        
+                \draw (O) --node[sloped]{$|$} (Z) -- (A) --node[sloped]{$|$} (O);
+                \draw[dashed] (O) circle[radius=2];
+        
+                \fill (Z) circle[radius=2.5pt];
+                \fill (A) circle[radius=2.5pt];
+                \draw pic [draw, angle radius=8mm, "$\frac{2\pi}3$"] {angle = R--A--Z};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    Observe that $\angle OAZ = \pi -2\pi/3 = \pi/3$. Since $OA = OZ = 2$ it follows that $\triangle OAZ$ is equilateral, so $\arg{z} = \angle AOZ = \pi/3$.
+\end{solution}
 
 \begin{problem}
     $z$ is a complex number such that $\arg{z - 1} = \pi/3$ and $\arg{z - \i} = \pi/6$. By finding the Cartesian equations of the two half-lines, or otherwise, find the value of $\arg{z}$.
 \end{problem}
+\begin{solution}
+    Let $z = x + \i y$, where $x, y \in \RR$. Then \[\arg{z-1} = \arctan \frac{y}{x-1} = \frac\pi3 \implies \frac{y}{x-1} = \sqrt{3} \implies y = \sqrt{3} x - \sqrt3\] and \[\arg{z-\i} = \arctan \frac{y-1}{x} = \frac{\pi}6 \implies \frac{y-1}{x} = \frac1{\sqrt3} \implies y = 1 + \frac1{\sqrt3} x.\]
+
+    Equating the two, we have \[\sqrt{3} x - \sqrt3 = 1 + \frac1{\sqrt3} x \implies x = \frac{1 + \sqrt{3}}{\sqrt3 - 1/\sqrt3} = \frac{\sqrt3 + 3}{2}.\] Thus, \[y = \sqrt{3} \bp{x - 1} = \sqrt{3} \bp{\frac{\sqrt3 + 3}{2} - 1} = \frac{3 + \sqrt3}{2},\] so $x = y$ and \[\arg z = \arctan \frac{y}{x} = \arctan 1 = \frac\pi4.\]
+\end{solution}
 
 \begin{problem}
     The complex number $z$ is given by $z = r\e^{\i \t}$, where $r > 0$ and $0 \leq \t \leq \pi/2$.
@@ -16,12 +65,130 @@
         \item Given that $r$ has a fixed value, draw an Argand diagram to show the locus of $z$ as $\t$ varies. On the same Argand diagram, show the corresponding locus of $w$. You should identify the modulus and argument of the end-point of each locus.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $1 - \i \sqrt{3} = 2\e^{-\pi/3}$. Thus, \[w = \bp{1 - \sqrt3 \i} z = \bp{2\e^{-\pi/3}}\bp{r \e^{\i \t}} = 2r \e^{\i (\t - \pi/3)}.\] Hence, $\abs{w} = 2r$ and $\arg{w} = \t - \pi/3$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}\tikzsetnextfilename{499}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = {1},
+                    xticklabels = {$r$},
+                    yticklabels = {$r$},
+                    xmin=-0.5,
+                    xmax=3,
+                    ymin=-2,
+                    ymax=2,
+                    axis equal image,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \coordinate (R) at (10,0);
+                    \coordinate (Z1) at (1, -1.73);
+                    \coordinate (Z2) at (1.73, 1);
+                    \coordinate (O) at (0, 0);
+
+                    \draw[plotRed, very thick] (1,0) arc (0:90:1);
+                    \draw[plotBlue, very thick] (1, -1.73) arc (-60:30:2);
+
+                    \addlegendimage{plotRed, very thick};
+                    \addlegendentry{locus of $z$};
+                    \addlegendimage{plotBlue, very thick};
+                    \addlegendentry{locus of $w$};
+            
+                    \fill (Z1) circle[radius=2.5pt];
+                    \fill (Z2) circle[radius=2.5pt];
+                    \fill (1, 0) circle[radius=2.5pt];
+                    \fill (0, 1) circle[radius=2.5pt];
+
+                    \draw pic [draw, angle radius=11mm, "${\scriptstyle \pi/6}$"] {angle = R--O--Z2};
+                    \draw pic [draw, angle radius=10mm, "${\scriptstyle -\pi/3}$"] {angle = Z1--O--R};
+
+                    \draw[dashed] (O) -- (Z1) node[pos=0.7, anchor=north east] {$2r$};
+                    \draw[dashed] (O) -- (Z2) node[pos=0.7, anchor=south east] {$2r$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The complex number $z$ satisfies the equation $\abs{z} = \abs{z + 2}$. Show that the real part of $z$ is $-1$. The complex number $z$ also satisfies the equation $\abs{z} = 3$. The two possible values of $z$ are represented by the points $P$ and $Q$ in an Argand diagram. Draw a sketch showing the positions of $P$ and $Q$, and calculate the two possible values of $\arg z$, giving your answers in radians correct to 3 significant figures.
 
     It is given that $P$ and $Q$ lie on the locus $\abs{z - a} = b$, where $a$ and $b$ are real, and $b > 0$. Give a geometrical description of this locus, and hence find the least possible value of $b$ and the corresponding value of $a$.
 \end{problem}
+\begin{solution}
+    Observe that the locus of $\abs{z} = \abs{z+2}$ is the perpendicular bisector of $(0, 0)$ and $(2, 0)$, which has Cartesian equation $x = 1$, $y \in \RR$. Thus, the real part of $z$ (i.e. $x$) is always 1.
+
+    \begin{center}\tikzsetnextfilename{500}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:10,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {3, -3, 2},
+                ytick = {3, -3},
+                xmin=-4,
+                xmax=4,
+                ymin=-4,
+                ymax=4,
+                axis equal image,
+                axis on top,
+                xlabel = {$\Re$},
+                ylabel = {$\Im$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+
+                \coordinate (R) at (10,0);
+                \coordinate[label=above right:$P$] (P) at (1, 2.83);
+                \coordinate[label=below right:$Q$] (Q) at (1, -2.83);
+                \coordinate (O) at (0, 0);
+                \coordinate (A) at (1, 0);
+
+                \draw[plotRed, very thick] (O) circle[radius=3];
+                \draw[plotBlue, very thick] (1, -4) -- (1, 4);
+
+                \addlegendimage{plotRed, very thick};
+                \addlegendentry{$\abs{z} = 3$};
+                \addlegendimage{plotBlue, very thick};
+                \addlegendentry{$\abs{z} = \abs{z + 2}$};
+
+                \draw (O) -- (P);
+                \draw (O) -- (Q);
+
+                \fill (P) circle[radius=2.5pt];
+                \fill (Q) circle[radius=2.5pt];
+
+                \draw pic [draw, angle radius=3mm] {right angle = R--A--P};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    From the diagram, \[\arg{z} = \pm \arccos \frac13 = \pm 1.23 \tosf{3}.\]
+
+    The locus of $\abs{z - a} = b$ is a circle of radius $b$ centred at the point representing $a$.
+
+    For $b$ to be at a minimum, $PQ$ must be the diameter of the circle. By the Pythagorean Theorem, \[3^2 = \bp{\frac{PQ}{2}}^2 + 1^2 \implies PQ = 32.\] Thus, \[\min b = \frac{PQ}{2} = \frac{\sqrt{32}}{2} = 2\sqrt{2}.\] The point representing $a$ is then the midpoint of $P$ and $Q$, i.e. $a = 1$.
+\end{solution}
 
 \begin{problem}
     The complex number $z$ is given by $z = x + \i y$, where $x > 0$ and $y > 0$. Sketch an Argand diagram, with origin $O$, showing points $P$, $Q$ and $R$ representing $z$, $2\i z$ and $(z + 2\i z)$ respectively. State the size of angle $POQ$, and describe briefly the geometrical relationship between $O$, $P$, $Q$ and $R$.
@@ -32,6 +199,109 @@
         \item Given that $\abs{z} \leq 2$ and $\arctan \frac12 \leq \arg z \leq \arctan 2$, calculate the area of the region in which the point $P$ can lie.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{center}\tikzsetnextfilename{501}
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:10,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xmax=2,
+                xmin=-3,
+                ymin=-0.4,
+                ymax=3.4,
+                xlabel = {$\Re$},
+                ylabel = {$\Im$},
+                axis equal image,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+
+                \coordinate (R) at (10,0);
+                \coordinate[label=right:$P(z)$] (Z1) at (1, 1);
+                \coordinate[label=left:$Q(2\i z)$] (Z2) at (-2, 2);
+                \coordinate[label=above:$R(z + 2\i z)$] (Z3) at (-1, 3);
+                \coordinate (O) at (0, 0);
+        
+                \draw (O) -- (Z1);
+                \draw (O) -- (Z2);
+                \draw (O) -- (Z3);
+
+                \draw (Z2) -- (Z3) -- (Z1);
+        
+                \fill (Z1) circle[radius=2.5pt];
+                \fill (Z2) circle[radius=2.5pt];
+                \fill (Z3) circle[radius=2.5pt];
+
+                \draw pic [draw, angle radius=2mm] {right angle = Z1--O--Z2};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    $\angle POQ = \pi/2$, and $OPQR$ forms a rectangle.
+
+    \begin{ppart}
+        Given $x = 2y$, we have \[z + 2\i z = z\bp{1 + 2\i} = \bp{2y + \i y}\bp{1 + 2\i} = 5y\i,\] which is purely imaginary. Hence, $R$ lies on the imaginary axis.
+    \end{ppart}
+    \begin{ppart}
+        Given $y = 2x$, we have \[z = x + 2\i x = x\bp{1 + 2\i} \implies \arg{z^2} = 2\arg{1 + 2\i}.\] Meanwhile, \[\arg{z + 2\i z} = \arg{z} + \arg{1 + 2\i} = \arg{1 + 2\i} + \arg{1 + 2\i} = 2\arg{1 + 2\i}.\] Since $z^2$ and $z + 2\i z$ have identical arguments, the points representing them must be collinear with the origin.
+    \end{ppart}
+    \clearpage
+    \begin{ppart}
+        \begin{center}\tikzsetnextfilename{502}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xmax=1.7,
+                    xmin=-0.2,
+                    ymin=-0.2,
+                    ymax=1.7,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    axis equal image,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \coordinate (R) at (10,0);
+                    \coordinate (Z1) at (1.26, 0.632);
+                    \coordinate (Z2) at (0.632, 1.26);
+                    \coordinate (O) at (0, 0);
+            
+                    \draw (O) -- (Z1);
+                    \draw (O) -- (Z2);
+                    \draw (O) circle[radius=1.41];
+            
+                    \fill (Z1) circle[radius=2.5pt];
+                    \fill (Z2) circle[radius=2.5pt];
+
+                    \node[anchor=north west] at (1.414, 0) {2};
+                    \node[anchor=south east] at (0, 1.414) {2};
+
+                    \draw pic [draw, angle radius=10mm, "$\a$"] {angle = Z1--O--Z2};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        From the above figure, we see that $\a = \arctan 2 - \arctan{1/2}$. The area of the region in which $P$ can lie in is thus \[\area = \pi(2)^2 \times \frac{\arctan 2 - \arctan{1/2}}{2\pi} = 1.29 \units[2].\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     A complex number $z$ satisfies $\abs{z - a} = a$, $a \in \RR^+$.
@@ -42,6 +312,97 @@
         \item For $a = 1/2$, find the range of values of $\arg{z - 1/a}$, giving your answer correct to $0.1\deg$. State the limit of $\arg{z - 1/a}$ when $a$ approaches 0.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\abs{z - a} = \abs{\frac1w - a} = \abs{\frac{1 - aw}{w}} = a \implies \abs{1 - aw} = \abs{aw} \implies \abs{w} = \abs{\frac{1 - aw}{a}} = \abs{\frac1a - w}.\] Hence, the locus of $P$ is the perpendicular bisector of the origin and $(1/a, 0)$. Equivalently, it is the vertical line passing through $(1/2a, 0)$.
+    \end{ppart}
+    \clearpage
+    \begin{ppart}
+        If $0 < a < 1/2$, then $1/a > 2$, so the real part of any point on the locus of $w$ is $1/2a > 1$. The largest real part of any point on the locus of $z$ is $a + a = 2a < 1$. Thus, both loci will not intersect.
+
+        \begin{center}\tikzsetnextfilename{503}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {0.25},
+                    ytick = \empty,
+                    xticklabels = {$a$},
+                    xmin=0,
+                    xmax=2.3,
+                    ymin=-1,
+                    ymax=1,
+                    axis on top,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    axis equal image,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+
+                    \draw[plotRed, very thick] (0.25, 0) circle[radius=0.25];
+                    \draw[plotBlue, very thick] (2, -1) -- (2, 1);
+                    \node[anchor=north east] at (2, 0) {$\frac1{2a}$};
+                    \node[anchor=north west] at (0.5, 0) {$2a$};
+
+                    \addlegendimage{plotRed, very thick};
+                    \addlegendentry{locus of $z$};
+                    \addlegendimage{plotBlue, very thick};
+                    \addlegendentry{locus of $w$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        \begin{center}\tikzsetnextfilename{504}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {0.5, 2},
+                    ytick = \empty,
+                    xticklabels = {$\frac12$},
+                    xmin=0,
+                    xmax=2.3,
+                    ymin=-0.7,
+                    ymax=0.7,
+                    axis on top,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    axis equal image,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+
+                    \draw[plotRed, very thick] (0.5, 0) circle[radius=0.5];
+                    \node[anchor=north west] at (1, 0) {1};
+
+                    \coordinate (A) at (0.691, 0.462);
+                    \coordinate (Z) at (2, 0);
+                    \coordinate (O) at (0.5, 0);
+                    \draw (O) -- (A) -- (Z);
+
+                    \draw pic [draw, angle radius=15mm, "$\t$"] {angle = A--Z--O};
+                    \draw pic [draw, angle radius=3mm] {right angle = O--A--Z};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        From the diagram, \[\sin \t = \frac{1/2}{2 - 1/2} \implies \t = \arcsin \frac13.\] Thus, \[160.5\deg = \pi - \t \leq \arg{z-2} \leq \pi + \t = 199.5\deg.\] As $a \to 0$, $\arg{z-1/a} \to \pi$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Sketch, on an Argand diagram, the locus representing the complex number $z$ for which \[\abs{z - 4 - 3\i} = 2.\]
@@ -52,6 +413,66 @@
         \item Deduce the greatest value of $\arg{z/p}$, giving your answer correct to 2 decimal places.
     \end{enumerate}
 \end{problem}
+\clearpage
+\begin{solution}
+    \begin{center}\tikzsetnextfilename{505}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    domain = 0:10,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xticklabels = {$\frac12$},
+                    xmin=0,
+                    xmax=7,
+                    ymin=0,
+                    ymax=6,
+                    axis on top,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    axis equal image,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=east] {$O$};
+                        }
+                    ]
+
+                    \coordinate[label=right:$\bp{4, 3}$] (A) at (4, 3);
+                    \coordinate[label=left:$P$] (P) at (2.4, 1.8);
+                    \coordinate (Z) at (2.23, 3.93);
+                    \coordinate (O) at (0, 0);
+
+                    \draw (O) -- (A) --node[pos=0.5, anchor=south west] {2} (Z) -- (O);
+
+                    \draw[plotRed, very thick] (A) circle[radius=2];
+
+                    \fill (P) circle[radius=2.5pt];
+                    \fill (A) circle[radius=2.5pt];
+                    \fill (Z) circle[radius=2.5pt];
+
+                    \addlegendimage{plotRed, very thick};
+                    \addlegendentry{locus of $z$};
+
+                    \draw pic [draw, angle radius=3mm] {right angle = O--Z--A};
+                    \draw pic [draw, angle radius=15mm, "$\t$"] {angle = A--O--Z};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+    \begin{ppart}
+        Clearly, $a = \sqrt{4^2 + 3^2} - 2 = 3$.
+    \end{ppart}
+    \begin{ppart}
+        Clearly, $\arg p = \arctan{3/4}$.
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\max \arg \frac{z}{p} = \t = \arcsin \frac25  = 23.58\deg.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}[\chili]
     On an Argand diagram, the point $U$ represents the complex number $z$, and the points $V$ and $W$ represent the complex numbers $z^2$ and $z^2 + 1$ respectively.
@@ -64,3 +485,18 @@
         \item Given instead that $\abs{z} = k$, where $k > 0$, so that $U$ lies on a circle $C$, show that $W$ lies on a circle $C'$, and find its centre and radius. Find the value of $k$ for which the common points of $C$ and $C'$ are $E$ and $F$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            Note that $\arg z^2 = 2\arg z = 2\a$. Let $z^2 = x + \i y$, where $x, y \in \RR$. Then $\arg{z^2} = \arctan{y/x}$. Equating the two yields \[\arctan \frac{y}{x} = 2\a \implies y = x \tan{2\a}.\] Note that $\arg{z^2} = 2\a \in (\pi/2, \pi)$, so $x = \Re{z^2} < 0$.
+
+            $L_3$ is precisely $L_2$ shifted one unit in the positive real axis. Hence, the equation of $L_3$ is $y = (x-1) \tan{2\a}$.
+        \end{psubpart}
+        \begin{psubpart}
+            Since $W$ coincides with $U$, we have $z = z^2 + 1$. Solving, we get \[z = \frac{1 + \sqrt{3} \i}{2}.\] Note that we reject the negative branch since $\arg z \in (\pi/4, \pi/2)$ implies $\Im z > 0$. Thus, \[\a = \arg z = \arctan \frac{\sqrt3}{1} = \frac\pi3.\]
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        Observe that \[\abs{\bp{z^2 + 1} - 1} = \abs{z^2} = k^2,\] so $W$ lies on a circle with radius $k^2$ and centre $(1, 0)$. For $E$ and $F$ to lie on $C$, we require \[k = \abs{\frac{1 \pm \sqrt{3} \i}{2}} = 1.\]
+    \end{ppart}
+\end{solution}

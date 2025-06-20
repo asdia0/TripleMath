@@ -22,7 +22,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A10.1 | Complex Numbers - Cartesian Form                              |  🟢  |   🟢    |      🟢      |    🟢     |
 | A10.2 | Complex Numbers - Polar Form                                  |  🟢  |   🟢    |      🟢      |    🟢     |
 | A10.3 | Complex Numbers - Geometrical Effects and De Moivre's Theorem |  🟢  |   🟢    |      🟢      |    🟢     |
-| A10.4 | Complex Numbers - Loci in Argand Diagram                      |  🟢  |   🟢    |      🟡      |    🟢     |
+| A10.4 | Complex Numbers - Loci in Argand Diagram                      |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A11  | Permutations and Combinations                                 |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A12  | Probability                                                   |  🟢  |   🟢    |      🟡      |    🟢     |
 |  A13  | Introduction to Statistics                                    |  🟢  |   🔴    |      🔴      |    🔴     |
