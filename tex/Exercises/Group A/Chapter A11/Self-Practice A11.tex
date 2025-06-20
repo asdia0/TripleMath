@@ -1,8 +1,17 @@
 \section{Self-Practice A11}
 
 \begin{problem}
-    Find the number of three-letter code words that can be made using the letters of the word ``THREE'' if at least one of the letters is E. 
+    Find the number of three-letter codewords that can be made using the letters of the word ``THREE'' if at least one of the letters is E. 
 \end{problem}
+\begin{solution}
+    \phantom{.}
+
+    \case{1}[Exactly 1 `E'] There are $\comb{3}{2} \times 3! = 18$ ways to form the codeword.
+
+    \case{2}[2 `E's] There are $\comb{3}{1} \times 3!/2! = 9$ ways to form the codeword.
+
+    Thus, there are a total of $18 + 9 = 27$ ways to form a codeword containing at least one `E'.
+\end{solution}
 
 \begin{problem}
     Eight people go to the theatre and sit in a particular group of eight adjacent reserved seats in the front row. Three of the eight belong to one family and sit together. 
@@ -12,6 +21,14 @@
         \item If the other five people do not mind where they sit, except that two of them refuse to sit together, find the number of possible seating arrangements for all eight people.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Treat the family as one unit. Altogether, there are 6 units. There are $6!$ ways to arrange the 6 units, and there are $3!$ ways to arrange the family within their unit. Hence, there are a total of $6! \times 3! = 4320$ possible arrangements for all eight people.
+    \end{ppart}
+    \begin{ppart}
+        We arrange the family unit and the three non-conflicting people first. There are $4!$ ways to do so. Next, we slot in the two conflicting people. There are $\perm{5}{2}$ ways to do so. Lastly, we arrange the family members, of which there are $3!$ ways to do so. Altogether, there are $4! \times \perm{5}{2} \times 3! = 2880$ possible arrangements.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     A panel of judges in an essay competition has to select, and place in order of merit, 4 winning entries from a total entry of 20. Find the number of ways in which this can be done.
@@ -20,6 +37,13 @@
     
     All 20 essays are subsequently assessed by three panels of judges for content, accuracy and style, respectively, and three special prizes are awarded, one by each panel. Find the number of ways in which this can be done, assuming that an essay may win more than one prize.
 \end{problem}
+\begin{solution}
+    There are $\perm{20}{4} = 116280$ ways to select and place the four winning entries.
+
+    There are $\comb{20}{5} = 15504$ ways to select the five finalists.
+
+    There are $\bp{\comb{20}{1}}^3 = 8000$ ways to give out the three prizes.
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -27,6 +51,22 @@
         \item Eight cards each have a single digit written on them. The digits are 2, 2, 4, 5, 7, 7, 7, 7 respectively. Find the number of different 7-digit numbers that can be formed by placing seven of the cards side by side.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        The number of difference selections in both scenarios is given by \[\bp{\comb{10}{2}}^9 = \bp{\comb{10}{8}}^9 = 4100625.\]
+    \end{ppart}
+    \begin{ppart}
+        \phantom{.}
+    
+        \case{1}[A `4' or `5' is not selected] Of the seven digits available, there are two `2's and four `7's. The number of arrangements is hence \[\frac{7!}{2! 4!} \times 2 = 210.\]
+
+        \case{2}[A `7' is excluded] Of the seven digits available, there are two `2's and three `7's. The number of arrangements is hence \[\frac{7!}{2! 3!} = 420.\]
+
+        \case{3}[A `2' is excluded] Of the seven digits available, there are four `7's. The number of arrangements is hence \[\frac{7!}{4!} = 210.\]
+
+        Altogether, there are $210 + 420 + 210 = 840$ different 7-digit numbers that can be formed.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     A team in a particular sport consists of 1 goalkeeper, 4 defenders, 2 midfielders and 4 attackers. A certain club has 3 goalkeepers, 8 defenders, 5 midfielders and 6 attackers.
@@ -49,7 +89,99 @@
         \item How many different teams can now be formed by the club?
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Position & Goalkeeper & Defender & Midfielder & Attacker \\ \hline
+            No. Available & 3 & 8 & 5 & 6 \\ \hline
+            No. to Select & 1 & 4 & 2 & 4 \\ \hline
+            \end{tabular}
+        \end{table}
 
+        The number of teams that can be formed is \[\comb{3}{1} \times \comb{8}{4} \times \comb{5}{2} \times \comb{6}{4} = 31500.\]
+    \end{ppart}
+    \begin{ppart}
+        \case{1} Suppose the midfielder brother is included.
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Position & Goalkeeper & Defender & Midfielder & Attacker \\ \hline
+            No. Available & 3 & 8 & 4 & 6 \\ \hline
+            No. to Select & 1 & 4 & 1 & 4 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        The number of teams that can be formed in this case is \[\comb{3}{1} \times \comb{8}{4} \times \comb{4}{1} \times \comb{6}{4} = 4200.\]
+
+        \case{2} Suppose the attacker brother is included.
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Position & Goalkeeper & Defender & Midfielder & Attacker \\ \hline
+            No. Available & 3 & 8 & 5 & 5 \\ \hline
+            No. to Select & 1 & 4 & 2 & 3 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        The number of teams that can be formed in this case is \[\comb{3}{1} \times \comb{8}{4} \times \comb{5}{2} \times \comb{5}{3} = 12600.\]
+
+        Altogether, there are $4200 + 12600 = 16800$ ways to form a team where exactly one brother plays.
+    \end{ppart}
+    \begin{ppart}
+        \case{1} The midfielder appears as a midfielder.
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Position & Goalkeeper & Defender & Midfielder & Attacker \\ \hline
+            No. Available & 3 & 8 & 3 & 5 \\ \hline
+            No. to Select & 1 & 4 & 1 & 4 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        The number of teams that can be formed in this case is \[\comb{3}{1} \times \comb{8}{4} \times \comb{3}{1} \times \comb{5}{4} = 3150.\]
+
+        \case{2} The midfielder appears as a defender.
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Position & Goalkeeper & Defender & Midfielder & Attacker \\ \hline
+            No. Available & 3 & 8 & 3 & 5 \\ \hline
+            No. to Select & 1 & 3 & 2 & 4 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        The number of teams that can be formed in this case is \[\comb{3}{1} \times \comb{9}{3} \times \comb{3}{2} \times \comb{5}{4} = 2520.\]
+
+        \case{3} The midfielder does not play.
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Position & Goalkeeper & Defender & Midfielder & Attacker \\ \hline
+            No. Available & 3 & 8 & 3 & 5 \\ \hline
+            No. to Select & 1 & 4 & 2 & 4 \\ \hline
+            \end{tabular}
+        \end{table}
+
+        The number of teams that can be formed in this case is \[\comb{3}{1} \times \comb{8}{4} \times \comb{3}{2} \times \comb{5}{4} = 3150.\]
+
+        Altogether, there are $3150 + 2520 + 3150 = 8820$ ways to form a team.
+    \end{ppart}
+\end{solution}
+
+\clearpage
 \begin{problem}
     A group of 12 people consists of 6 married couples.
     
@@ -67,6 +199,27 @@
         \end{enumerate}
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{psubpart}
+            There are $12! = 479001600$ different possible orders.
+        \end{psubpart}
+        \begin{psubpart}
+            Group each couple as one unit, for a total of 6 units. There are $6!$ ways to arrange the 6 units, and 2 ways to arrange each couple within their unit. Thus, there are a total of \[6! \times 2^6 = 46080\] different possible orders.
+        \end{psubpart}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            There are $11! = 39916800$ different possible orders.
+        \end{psubpart}
+        \begin{psubpart}
+            Fix one man. There are then \[6 \times 5 \times 5 \times 4 \times 4 \times 3 \times 3 \times 2 \times 2 \times 1 \times 1 = 86400\] ways to arrange all other 11 people.
+        \end{psubpart}
+        \begin{psubpart}
+            Group each couple as one unit, for a total of 6 units. There are $(6-1)!$ ways to arrangement the 6 units. Since men and women alternate, we either have `man-woman' or `woman-man' within each unit. Thus, there are a total of \[(6-1)! \times 2 = 240\] different possible orders.
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
 
 \begin{problem}[\chili]
     A delegation of four students is to be selected from five badminton players, $m$ floorball players, where $m > 3$, and six swimmers to attend the opening ceremony of the 2017 National Games. A pair of twins is among the floorball players. The delegation is to consist of at least one player from each sport.
@@ -78,3 +231,33 @@
 
     The pair of twins, one badminton player, one swimmer and two teachers, have been selected to attend a welcome lunch at the opening ceremony. Find the number of ways in which the group can be seated at a round table with distinguishable seats if the pair of twins is to be seated together and the teachers are separated.
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \phantom{.}
+        
+        \case{1}[2 badminton players] There are \[\comb{5}{2} \times (m-2) \times 6 = 60(m-2)\] ways to form a delegation without the twins in this case.
+
+        \case{2}[2 floorball players] There are \[5 \times \comb{m-2}{2} \times 6 = 30 \times \frac{(m-2)(m-3)}{2} = 15(m-3)(m-2)\] ways to form a delegation without the twins in this case.
+
+        \case{3}[2 swimmers] There are \[5 \times (m-2) \times \comb{6}{2} = 75(m-2)\] ways to form a delegation without the twins in this case.
+
+        Altogether, there are a total of \[60(m-2) + 15(m-3)(m-2) + 75(m-2) = 15(m+6)(m-2)\] ways to form a delegation without the twins, so $k = 15$.
+    \end{ppart}
+    \begin{ppart}
+                \phantom{.}
+        
+        \case{1}[2 badminton players] There are \[\comb{5}{2} \times 2 \times 6 = 120\] ways to form a delegation with exactly one twin in this case.
+
+        \case{2}[2 floorball players] There are \[5 \times 2\bp{m-2} \times 6 = 60(m-2)\] ways to form a delegation with exactly one twin in this case.
+
+        \case{3}[2 swimmers] There are \[5 \times 2 \times \comb{6}{2} = 150\] ways to form a delegation with exactly one twin in this case.
+
+        Altogether, there are a total of \[120 + 60(m-2) + 150 = 60m + 150\] ways to form a delegation with exactly one twin. From the given condition, \[2\bp{60m + 150} < 15(m-2)(m+6),\] hence the least $m$ is 9.
+    \end{ppart}
+
+    First, consider the case where there are no restrictions on the teachers. Group the twins together as one unit for a total of 5 units. Since the seats are distinguishable, there are $5!$ ways to arrange the 5 units, and 2 ways to arrange the twins within their unit. In total, there are $5! \times 2 = 240$ arrangements without restrictions.
+
+    Now, consider the case where the teachers are together. Group the twins together, and group the teachers together for a total of 4 units. Since the seats are distinguishable, there are $4!$ ways to arrangement the 4 units. There are 2 ways each to arrange the twins and teachers within their unit. In total, there are $4! \times 2^2 = 96$ arrangements where the teachers are together.
+
+    Thus, there are $240 - 96 = 144$ arrangements where the teachers are separated.
+\end{solution}
