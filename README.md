@@ -18,7 +18,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  A6   | Polar Coordinates                                             |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A7   | Vectors I - Basic Properties and Vector Algebra               |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A8   | Vectors II - Lines                                            |  🟢  |   🟢    |      🟢      |    🟢     |
-|  A9   | Vectors III - Planes                                          |  🟢  |   🟢    |      🟡      |    🟢     |
+|  A9   | Vectors III - Planes                                          |  🟢  |   🟢    |      🟢      |    🟢     |
 | A10.1 | Complex Numbers - Cartesian Form                              |  🟢  |   🟢    |      🟢      |    🟢     |
 | A10.2 | Complex Numbers - Polar Form                                  |  🟢  |   🟢    |      🟢      |    🟢     |
 | A10.3 | Complex Numbers - Geometrical Effects and De Moivre's Theorem |  🟢  |   🟢    |      🟢      |    🟢     |
