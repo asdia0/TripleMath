@@ -9,6 +9,119 @@
         \item Taking the value of $\a$ obtained in (a) as the initial value, apply the Newton-Raphson method to find the value of $\a$ correct to 3 decimal places.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{507}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = -2,
+                    xmax = 2,
+                    ymin = -2,
+                    ymax = 2,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = {-1, -0.5},
+                    yticklabels = {-1, $k$},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x-1};
+
+                    \addlegendentry{$y = x-1$};
+
+                    \addplot[plotBlue, domain=-2:2, samples=200, restrict y to domain=-2:2] {-0.5 * exp(-3*x)};
+
+                    \addlegendentry{$y=k\e^{-3x}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        There are 2 real roots to $k \e^{-3x} - (x-1) = 0$ when $-1 < k < 0$.
+
+        Note that $\e^{-3x} - (x-1) = 0$ is equivalent to $\e^{-3x} = x-1$. We hence plot $y = \e^{-3x}$ and $y = x-1$.
+
+        \begin{figure}[H]\tikzsetnextfilename{508}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = -2,
+                    xmax = 2,
+                    ymin = -2,
+                    ymax = 2,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {1},
+                    ytick = {-1, 1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[plotRed] {x-1};
+
+                    \addlegendentry{$y = x-1$};
+
+                    \addplot[plotBlue, domain=-2:2, samples=200, restrict y to domain=-2:2] {exp(-3*x)};
+
+                    \addlegendentry{$y=\e^{-3x}$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        Since the two curves only intersect at one point, there is only one root to the equation $\e^{-3x} - (x-1) = 0$.
+        
+        From the graph, $\a \in (1, 2)$, so $n = 2$. Let $f(x) = \e^{-3x} - (x-1)$. Using linear interpolation on the interval $(1, 2)$, we obtain \[\a_1 = \frac{2f(1) - 1 f(2)}{f(1) - f(2)} = 1.05 \todp{2}.\]
+    \end{ppart}
+    \begin{ppart}
+        For all $x \in \RR$, we have \[f'(x) = -3\e^{-3x} - 1 < 0 \quad \tand \quad f''(x) = 9\e^{-3x} > 0.\] Thus, the graph of $y = f(x)$ is decreasing and convex.
+
+        \begin{figure}[H]\tikzsetnextfilename{509}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = 0.65,
+                    xmax = 1.3,
+                    ymin = -0.4,
+                    ymax = 0.5,
+                    axis y line=middle,
+                    axis x line=middle,
+                    y axis line style={opacity=0},
+                    xtick = {1.0625, 1, 0.75, 1.25},
+                    ytick = \empty,
+                    xticklabels = {$\a_1$, $\a$, 1, 2},
+                    xlabel = {$x$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    axis equal image,
+                    axis on top,
+                    ]
+                    \addplot[plotRed, domain=0.5:1.5, samples=200] {1/x - 1};
+                    \addlegendentry{$y=f(x)$};
+                    \draw[dashed] (0.75, 0.333) -- (1.25, -0.2);
+                    \draw[dotted] (0.75, 0.333) -- (0.75, 0);
+                    \draw[dotted] (1.25, -0.2) -- (1.25, 0);
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        From the above figure, we see that the estimate given by linear interpolation is an overestimate.
+    \end{ppart}
+    \begin{ppart}
+        The recursive formula given by the Newton-Raphson method is \[\a_{n+1} = \a_n - \frac{f(\a_n)}{f'(\a_n)} = \a_n - \frac{\e^{-3\a_n} - \bp{\a_n - 1}}{-3\e^{-3\a_n} - 1}.\] Using the initial estimate $\a_1 = 1.05$, we have $\a_2 = 1.044 \todp{3}$. Indeed, since $f$ is continuous on $(1.0435, 1.0444)$, and \[f(1.0435)f(1.0444) = -1.6 \times 10^{-7} < 0,\] by the Intermediate Value Theorem, we conclude that $\a \in (1.0435, 1.0444)$, thus $\a = 1.044 \todp{3}$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The equation $f(x) = 0$ where $f(x) = \frac1x - 2 + \ln x$ has exactly two real roots $\a$ and $\b$.
@@ -21,6 +134,49 @@
 
     Taking $x = 0.3$ as the initial value, use the Newton-Raphson method to find a second approximation to the root $\a$, giving your answer correct to three decimal places.
 \end{problem}
+\begin{solution}
+    Since $f$ is continuous over $(6, 7)$ and \[f(6) f(7) = -0.00369 < 0,\] by the Intermediate Value Theorem, there exists a root $\b$ within $(6, 7)$. Further, \[f'(x) = -\frac1{x^2} + \frac1x\] is positive for $x > 6$, so $f(x) > f(\b) = 0$ for all $x > \b$, whence $\b$ is the only root greater than 6, i.e. $\b$ is the largest root. Using linear interpolation on the interval $[6, 7]$, we have the estimate \[\b_0 = \frac{6f(7) - 7f(6)}{f(7) - f(6)} = 6.32 \todp{2}.\]
+
+    \begin{figure}[H]\tikzsetnextfilename{510}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                xmin = -1,
+                xmax = 8,
+                ymin = -2,
+                ymax = 2.5,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {0.31784, 6.3054},
+                xticklabels = {$\a$, $\b$},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                axis equal image,
+                axis on top,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, domain=0.2:8, samples=200, restrict y to domain=-2:2.5] {1/x - 2 + ln(x)};
+
+                \addlegendentry{$y=f(x)$};
+
+                \fill (1, -1) circle[radius=2.5pt];
+                \node[anchor=north] at (1, -1) {$\bp{1, -1}$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    From the graph, $\a \in (0, 1)$, hence $N = 1$.
+
+    The Newton-Raphson method gives the following recursion: \[\a_{n+1} = \a_n - \frac{f(\a_n)}{f'(\a_n)} = \a_n - \frac{\frac1{\a_n} - 2 + \ln \a_n}{-\frac1{\a^2} + \frac1{\a}}.\] For $\a_0 = 0$, both $f(\a_0)$ and $f'(\a_0)$ are undefined. For $\a_0 = 1$, the denominator $f'(\a_0) = 0$, so $\a_{1}$ is undefined.
+
+    Using the Newton-Raphson method will initial value $\a_0 = 0.3$, we obtain \[\a_1 = 0.31663 = 0.317 \todp{3} \quad \tand \quad \a_2 = 0.31784 = 0.318 \todp{3}.\] Checking, we see that $f$ is continuous of $(0.3175, 0.3184)$ and \[f(0.3175)f(0.3184) = -8.7 \times 10^{-6} < 0,\] hence by the Intermediate Value Theorem, $\a = (0.3175, 0.3184)$, thus $\a = 0.318 \todp{3}$.
+\end{solution}
 
 \begin{problem}
     Sketch the graph of $y = (1 + x) \e^{-x}$, indicating clearly the turning points and asymptotes (if any). State the transformation by which the graph of $y = x\e^{1-x}$ may be obtained from the graph of $y = (1 + x) \e^{-x}$.
@@ -31,6 +187,48 @@
 
     Using the Newton-Raphson method once with $c$ as the first approximation, obtain a second approximation for $\a$ correct to 3 significant figures.
 \end{problem}
+\begin{solution}
+    \begin{figure}[H]\tikzsetnextfilename{511}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                xmin = -2,
+                xmax = 2,
+                ymin = -3,
+                ymax = 3,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {-1},
+                ytick = {1},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                axis equal image,
+                axis on top,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, domain=-2:2, samples=200, restrict y to domain=-3:3] {(1+x) * exp(-x)};
+
+                \addlegendentry{$y=\bp{1+x} \e^{-x}$};
+
+                \addplot[plotBlue] {-x};
+                \addlegendentry{$y = -x$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    The graph of $y = x\e^{1-x}$ can be obtained by translating the graph of $y = (1 + x) \e^{-x}$ one unit in the negative $x$-direction.
+
+    Note that \[x\bp{1 + \e^{1-x}} = 1 \equiv \bp{1 + x}\e^{-x} = -x.\] Plotting the graph of $y = -x$, we see that the two graphs intersect at only one point. Thus, $x\bp{1 + \e^{1-x}} = 1$ has only one real root.
+
+    Let $f(x) = x\bp{1 + \e^{1-x}} - 1$. Observe that $f$ is continuous on $(0.3, 0.4)$ and \[f(0.3) f(0.4) = -0.01 < 0,\] thus by the Intermediate Value Theorem, $\a \in (0.3, 0.4)$. Using linear interpolating on $(0.3, 0.4)$, \[c = \frac{0.3 f(0.4) - 0.4 f(0.3)}{f(0.4) - f(0.3)} = 0.3427 \todp{4}.\]
+
+    Note that $f'(x) = 1 + \e^{1-x} \bp{1 - x}$. The Newton-Raphson method employs the recursion \[\a_{n+1} = \a_n - \frac{f(\a_n)}{f'(\a_n)} = \a_n - \frac{\a_n \bp{1 + \e^{1 - \a_n}} - 1}{1 + \e^{1 - \a_n} \bp{1 - \a_n}}.\] Using the initial condition $\a_0 = 0.3427$, we see that $\a_1 = 0.3409 = 0.341 \tosf{3}$. Checking, we see that \[f(0.3405)f(0.3414) = -1.0 \times 10^{-6},\] thus $\a \in (0.3405, 0.3414)$, i.e. $\a = 0.341 \tosf{3}$.
+\end{solution}
 
 \begin{problem}
     \textbf{In this question, give all your final answers correct to 3 decimal places.}
@@ -40,6 +238,51 @@
         \item Using the Newton-Raphson method with $\a$ as a first approximation, find $\sqrt[3]{100}$. Explain, using the same diagram as in (a), whether this method yields a series of overestimates or underestimates.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that \[4^3 = 64 < 100 < 125 = 5^3.\] It follows that $4 < \sqrt[3]{100} < 5$, so $n = 5$.
+
+        Let $f(x) = x^3 - 100$. Using linear interpolation on $(4, 5)$, we see that \[\a = \frac{4f(5) - 5f(4)}{f(5) - f(4)} = 4.590 \todp{3}.\] Note that over $(4, 5)$, \[f'(x) = 3x^2 > 0 \quad \tand \quad f''(x) = 6x > 0,\] so $f(x)$ is increasing and convex.
+
+        \begin{figure}[H]\tikzsetnextfilename{512}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = -1.3,
+                    xmax = -0.65,
+                    ymin = -0.4,
+                    ymax = 0.5,
+                    axis y line=middle,
+                    axis x line=middle,
+                    y axis line style={opacity=0},
+                    xtick = {-1.0625, -0.75, -1.25},
+                    ytick = \empty,
+                    xticklabels = {$\a$, 5, 4},
+                    xlabel = {$x$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    axis equal image,
+                    axis on top,
+                    ]
+                    \addplot[plotRed, domain=-1.5:-0.5, samples=200] {-1/x - 1};
+                    \addlegendentry{$y=f(x)$};
+                    \draw[dashed] (-0.75, 0.333) -- (-1.25, -0.2);
+                    \draw[dotted] (-0.75, 0.333) -- (-0.75, 0);
+                    \draw[dotted] (-1.25, -0.2) -- (-1.25, 0);
+                    \addplot[dotted, domain=-1.5:-0.5] {0.8858 * (x + 1.0625) - 0.0588};
+                    \draw[dotted] (-1.0625, 0) -- (-1.0625, -0.0588);
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        From the above figure, we see that the estimate given by linear interpolation is an underestimate.
+    \end{ppart}
+    \begin{ppart}
+        The Newton-Raphson method uses the recursion \[\a_{n+1} = \a_n - \frac{f(\a_n)}{f'(a_n)} = \a_n - \frac{\a_n^3 - 100}{3\a_n^2}.\] With the initial value $\a_1 = 4.590$, we have $\a_2 = 4.64217 = 4.642 \todp{3}$. Checking, we see that $f$ is continuous on $(4.6415, 4.6424)$ and \[f(4.6415)f(4.6424) = -3.0 \times 10^{-4},\] thus $\a \in (4.6415, 4.6424)$ and $\a = \sqrt[3]{100} = 4.642 \todp{3}$.
+
+        Since the graph of $y = f(x)$ is convex, it is always above its tangents. Thus, the Newton-Raphson method gives an underestimate.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The roots of the quadratic equation $x^2 - 7x + 1 = 0$ are to be calculated by the use of the recurrence relation $x_{r + 1} = \frac1{7 - x_r}$. Sketch the graphs of $y = x$ and $y = \frac1{7-x}$ and hence show
@@ -50,3 +293,60 @@
 
     Taking $x_1 = 1$, find the smaller root correct to 3 decimal places. Obtain the value of the larger root to the same degree of accuracy.
 \end{problem}
+\begin{solution}
+    \begin{figure}[H]\tikzsetnextfilename{513}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                xmin = -2,
+                xmax = 8,
+                domain=-2:6.9,
+                ymin = -2,
+                ymax = 8,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {6, 7},
+                xticklabels = {$x_1$, 7},
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                axis equal image,
+                axis on top,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed, samples=200, restrict y to domain=0:8] {1/(7-x)};
+
+                \addlegendentry{$y=1/(7-x)$};
+
+                \addplot[plotBlue] {x};
+                \addlegendentry{$y = x$};
+
+                \draw[dashed] (6, 1) -- (6, 0);
+
+                \begin{scope}[decoration={
+                    markings,
+                    mark=at position 0.5 with {\arrow{>}}}
+                    ] 
+
+                    \draw[postaction={decorate}] (6, 1) -- (1, 1);
+
+                    \draw[postaction={decorate}] (1, 1) -- (1, 0.1667);
+
+                    \draw[postaction={decorate}] (1, 0.1667) -- (0.1667, 0.1667);
+                \end{scope}
+                \draw[dotted] (7, -2) -- (7, 8);
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    (a) and (b) are obvious from the graph.
+
+    Using the given recurrence relation, with initial value $x_1 = 1$, we have \[x_2 = 0.14394 \quad \tand \quad x_3 = 0.14586 = 0.146 \todp{3}.\] Checking, we see that $f(x) = x^2 - 7x + 1$ is continuous and \[f(0.1455) f(0.1464) = -9.0 \times 10^{-6} < 0,\] thus $\a \in (0.1455, 0.1464)$ and $\a = 0.146 \todp{3}$.
+
+    Let $\b$ be the other root. By Vieta's formula, $\a + \b = 7$, so $\b = 7 - 0.14586 = 6.854 \todp{3}$.
+\end{solution}

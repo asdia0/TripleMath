@@ -11,7 +11,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | Code  | Chapter                                                       | Notes | Tutorial | Self-Practice | Assignment |
 | :---: | ------------------------------------------------------------- | :---: | :------: | :-----------: | :--------: |
 |  A1   | Equations and Inequalities                                    |  🟢  |   🟢    |      🟢      |    🟢     |
-|  A2   | Numerical Methods of Finding Roots                            |  🟢  |   🟢    |      🟡      |    🟢     |
+|  A2   | Numerical Methods of Finding Roots                            |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A3   | Sequences and Series I                                        |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A4   | Sequences and Series II                                       |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A5   | Recurrence Relations                                          |  🟢  |   🟢    |      🟢      |    🟢     |
