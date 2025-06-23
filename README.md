@@ -24,7 +24,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | A10.3 | Complex Numbers - Geometrical Effects and De Moivre's Theorem |  🟢  |   🟢    |      🟢      |    🟢     |
 | A10.4 | Complex Numbers - Loci in Argand Diagram                      |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A11  | Permutations and Combinations                                 |  🟢  |   🟢    |      🟢      |    🟢     |
-|  A12  | Probability                                                   |  🟢  |   🟢    |      🟡      |    🟢     |
+|  A12  | Probability                                                   |  🟢  |   🟢    |      🟢      |    🟢     |
 |  A13  | Introduction to Statistics                                    |  🟢  |   🔴    |      🔴      |    🔴     |
 | A14A  | Discrete Random Variables                                     |  🟢  |   🟢    |      🟡      |    🟢     |
 | A14B  | Special Discrete Random Variables                             |  🟢  |   🟢    |      🟡      |    🟢     |
