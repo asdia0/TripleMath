@@ -13,6 +13,21 @@
         \item Find the value of $x$ for which $\inv{(gf)} (x) = 0$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $y = f(x)$. Then \[y = \frac{3x-2}{x+1} \implies xy + y = 3x - 2 \implies x = \frac{y+2}{3-y}.\] Thus, $\inv f(x) = (x+2)/(3-x)$. Further, $\dom{\inv f} = \RR \setminus \bc{3}$ and $\ran{\inv f} = \RR \setminus \bc{-1}$.
+    \end{ppart}
+    \begin{ppart}
+        We have \[g^2(x) = 3\bp{3x+4} + 4 = 9x + 16\] and \[gf(x) = 3\bp{\frac{3x-2}{x+1}} + 4 = \frac{13x-2}{x+1},\] so
+        \begin{align*}
+            g^2 &: x \mapsto 9x + 16, \quad x \in \RR,\\
+            gf &: x \mapsto \frac{13x-2}{x+1}, \quad x \in \RR, \quad x \neq -1.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        We have $\inv{(gf)}(x) = 0$, so $x = gf(0) = -2$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The function $f$ is defined by \[f : x \mapsto 2 - (x-1)^2, \quad x \leq 1.\]
@@ -23,6 +38,61 @@
         \item Define $\inv f$ in a similar form.   
     \end{enumerate}
 \end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{514}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = -2,
+                    xmax = 2.5,
+                    ymin = -2,
+                    ymax = 2.5,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-1, 1},
+                    ytick = {-1, 1},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    axis equal image,
+                    axis on top,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north west] {$O$};
+                        }
+                    ]
+
+                    \addplot[dashed, domain=-2:3] {x};
+                    \addlegendentry{$y = x$};
+
+                    \addplot[plotRed, domain=-2:1] {2 - (x-1)^2};
+                    \addlegendentry{$y = f(x)$};
+                    
+                    \addplot[plotBlue, domain=-2:2] {1 - sqrt(2-x)};
+                    \addlegendentry{$y = \inv f(x)$};
+
+                    \addplot[plotGreen, domain=-2:1] {x};
+                    \addlegendentry{$y= \inv f f(x)$};
+
+                    \fill (-0.618, -0.618) circle[radius=2.5pt];
+                    \fill (1, 2) circle[radius=2.5pt] node[anchor=south] {$(1, 2)$};
+                    \fill (2, 1) circle[radius=2.5pt] node[anchor=south] {$(2, 1)$};
+                    \fill (1, 1) circle[radius=2.5pt] node[anchor=south east] {$(1, 1)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        Graphically, we see that the intersection points of $y = f(\b)$ and $y = \inv f(\b)$ lie on the line $y = x$. It thus suffices to solve $f(\b) = \b$, from which we gather \[2 - \bp{\b - 1}^2 = \b \implies \b^2 - \b - 1 = 0,\] so $p = 1$ and $q = -1$.
+    \end{ppart}
+    \begin{ppart}
+        Let $y = f(x)$. Then \[y = 2 - (x-1)^2 \implies (x-1)^2 = 2-y \implies x - 1 = \pm \sqrt{2-y} \implies x = 1 \pm \sqrt{2 - y}.\] Since $x \leq 1$, we take the negative branch, for \[\inv f : x \mapsto 1 - \sqrt{2-x}, \quad x \leq 2.\]
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The function $f$ is defined by $f : x \mapsto \cos \frac{\pi x}{2}$, $x \in \RR$, $-2 < x \leq 0$.
@@ -40,6 +110,55 @@
         \item Explain clearly why $gf$ exists. Hence, find the range of $gf$.
     \end{enumerate}
 \end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{515}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = -3,
+                    xmax = 0.5,
+                    ymin = -2,
+                    ymax = 2,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-1},
+                    ytick = \empty,
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    axis equal image,
+                    axis on top,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed, domain=-2:0] {cos(\x*pi/2 r)};
+                    \addlegendentry{$y = f(x)$};
+
+                    \fill (0, 1) circle[radius=2.5pt] node[anchor=south east] {$(0, 1)$};
+                    \draw (-2, -1) circle[radius=2.5pt] node[anchor=north west] {$(-2, -1)$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+    \end{ppart}
+    \begin{ppart}
+        For all constants $k$, the line $y = k$ and $y = f(x)$ has at most one intersection point. Hence, $y = f(x)$ passes the horizontal rule test, so it is one-one and thus invertible, i.e. $\inv f$ exists.
+
+        Let $y = f(x)$. Then \[y = \cos \frac{\pi x}{2} \implies \frac{\pi x}{2} = \arccos y \implies x = \frac{2}\pi \arccos y.\] Note further that $\dom{\inv f} = \ran f = [-1, 1]$, so \[\inv f : x \mapsto \frac{2}\pi \arccos x, \quad -1 \leq x \leq 1.\]
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., we see that the solution set is \[\bc{x \in \RR \mid -2 < x \leq 0.673 \, \tor \, x = 0}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $\ran f = (-1, 1]$ and $\dom g (-2, 2]$, we have $\ran f \subseteq \dom g$, thus $gf$ exists.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Functions $f$ and$ g$ are defined by:
@@ -54,6 +173,19 @@
         \item Determine whether each of the two functions, $fg$ and $gf$, exists. Where it exists, express the composite function in similar form and state its range.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Let $x_1, x_2 \in \dom g$ such that $g(x_1) = g(x_2)$. Then \[5 + \frac3{x_1} = 5 + \frac3{x_2} \implies \frac3{x_1} = \frac3{x_2} \implies x_1 = x_2,\] so $g(x)$ is one-one and thus invertible, i.e. $\inv g$ exists.
+    \end{ppart}
+    \begin{ppart}
+        Let $y = g(x)$. Then \[y = 5 + \frac3x \implies \frac3x = y - 5 \implies \frac{x}3 = \frac1{y-5} \implies x = \frac{3}{y-5}.\] Note also that for $x \geq k$, \[5 < 5 + \frac3x \leq 5 + \frac3k,\] so \[\inv g : x \mapsto \frac3{x-5}, \quad 5 < x \leq 5 + \frac3k.\]
+    \end{ppart}
+    \begin{ppart}
+        Note that $\dom f = (-\infty, 2]$, $\ran f = [c, \infty)$, $\dom g = [k, \infty)$, and $\ran g = (5, 5 + 3/k]$.
+
+        Since $\ran g \not\subseteq \dom f$, the composite function $fg$ does not exist. However, because $c>k$, we have $\ran f \subseteq \dom g$, so $gf$ exists and is given by \[gf : x \mapsto 5 + \frac3{x^2 + c}, \quad x \leq 2.\] Its range is $(5, 5 + 3/c]$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}[\chili]
     Functions $f$ and $g$ are defined such that    
@@ -74,3 +206,56 @@
         \item Determine all the possible value(s) of $x$ that satisfies $\inv g(x^2) = 2$. Hence, explain why $\inv h (x^2) = 2$ has no solution.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $\dom f = [-1, 1]$ and $\ran g = \RR$, hence $\ran g \not\subseteq \dom f$, so the function $fg$ does not exist.
+    \end{ppart}
+    \begin{ppart}
+        Note that \[fh(x) = \arccos{\bp{x^3 + 1}^2},\] where $-5/4 \leq x \leq 0$.
+
+        \begin{figure}[H]\tikzsetnextfilename{516}
+            \centering
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    xmin = -1.5,
+                    xmax = 0.5,
+                    ymin = -0.5,
+                    ymax = 1.75,
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-1, -1.25},
+                    ytick = {1.571},
+                    xticklabels = {-1, $-\frac54$},
+                    yticklabels = {$\frac\pi2$},
+                    xlabel = {$x$},
+                    ylabel = {$y$},
+                    axis equal image,
+                    axis on top,
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+
+                    \addplot[plotRed, domain=-1.25:0] {acos((x^3+1)^2)*pi/180};
+                    \addlegendentry{$y = fh(x)$};
+
+                    \fill (0, 0) circle[radius=2.5pt];
+                    \fill (-1.25, 0.43124) circle[radius=2.5pt];
+                    \draw[dashed] (-1.25, 0.43124) -- (-1.25, 0);
+                    \draw[dashed] (-1, 0) -- (-1, 1.571) -- (0, 1.571);
+                \end{axis}
+            \end{tikzpicture}
+        \end{figure}
+
+        From the graph of $y = fh(x)$, we see that the maximum is attained when $x = -1$, where $y = \arccos 0 = \pi/2$. Meanwhile, the minimum is attained when $x = 0$, where $y = arccos 1 = 0$. Thus, $\ran fh = [0, \pi/2]$.
+    \end{ppart}
+    \begin{ppart}
+        We have \[\inv g(x^2) = 2 \implies x^2 = g(2) = 9 \implies x = \pm 3.\]
+        
+        $\inv h (x^2) = 2$ has no solution since $2 \notin \dom{\inv h} = \ran h = [-5/4, 0]$.
+    \end{ppart}
+\end{solution}

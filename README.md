@@ -42,7 +42,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | :--: | -------------------------------------------------------------- | :---: | :------: | :-----------: | :--------: |
 |  B1  | Graphs and Transformations I                                   |  🟢  |   🟢    |      🟡      |    🟢     |
 |  B2  | Graphs and Transformations II                                  |  🟢  |   🟢    |      🟡      |    🟢     |
-|  B3  | Functions                                                      |  🟢  |   🟢    |      🟡      |    🟢     |
+|  B3  | Functions                                                      |  🟢  |   🟢    |      🟢      |    🟢     |
 |  B4  | Differentiation                                                |  🟢  |   🟢    |      🟡      |    🟢     |
 |  B5  | Applications of Differentiation                                |  🟢  |   🟢    |      🟡      |    🟢     |
 |  B6  | MacLaurin Series                                               |  🟢  |   🟢    |      🟢      |    🟢     |
