@@ -189,9 +189,11 @@ Let $P(k, f(k))$ be a point on the graph of $y = f(x)$.
     \centering
     \begin{tikzpicture}[trim axis left, trim axis right]
         \begin{axis}[
-            domain = 0:7,
+            domain = 0:4,
+            xmin = 0,
+            xmax = 4,
             ymin = 0,
-            ymax = 20,
+            ymax = 4,
             samples = 101,
             axis y line=middle,
             axis x line=middle,
@@ -199,6 +201,7 @@ Let $P(k, f(k))$ be a point on the graph of $y = f(x)$.
             ytick = \empty,
             xlabel = {$x$},
             ylabel = {$y$},
+            axis equal image,
             legend cell align={left},
             legend pos=outer north east,
             after end axis/.code={
@@ -206,15 +209,21 @@ Let $P(k, f(k))$ be a point on the graph of $y = f(x)$.
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed] {4*(x - 3) + 8};
+            \addplot[plotRed, very thick] {(x-2)/3 + 1.0986};
             \addlegendentry{tangent};
-            \addplot[plotBlue] {-2 * (x - 3) + 8};
+            \addplot[plotBlue, very thick] {-3*(x-2) + 1.0986};
             \addlegendentry{normal};
 
-            \addplot[black] {(x-1)^2 + 4};
+            \addplot[black] {ln(x+1)};
 
-            \node[anchor=west] at (3, 8) {$P$};
-            \fill (3, 8) circle[radius=2.5pt];
+            \node at (1.91, 0.9) {$P$};
+            \fill (2, 1.0986) circle[radius=2.5pt];
+
+            \coordinate (A) at (2, 1.0986);
+            \coordinate (B) at (3, 1.4319);
+            \coordinate (C) at (0.5, 5.5986);
+
+            \draw pic [draw, angle radius=3mm] {right angle = B--A--C};
         \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -231,7 +240,7 @@ Many real-life situations require that some quantity be minimized (e.g. cost of 
 \end{recipe}
 
 \begin{example}
-    Suppose we wish to enclose the largest rectangular area with only 20 metres of fence. Let $x$ m and $y$ m be the length and width of the rectangular area. The perimeter of the rectangular area is \[2(x + y) = 20 \implies y = 10 - x.\] We can hence express the area of the rectangular area $A$ solely in terms of $x$: \[A = xy = x(10 - x) = -x^2 + 10x.\] Differentiating $A$ with respect to $x$, we see that \[\derx{A}{x} = -2x + 10.\] There is hence a stationary point at $x = 5$. By the second derivative test, this is a maximum point. Thus, $x = y = 5$ gives the largest rectangular area.
+    Suppose we wish to enclose the largest rectangular area with only 20 metres of fence. Let $x$ m and $y$ m be the length and width of the rectangular area. The perimeter of the rectangular area is \[2(x + y) = 20 \implies y = 10 - x.\] We can hence express the area of the rectangular area $A$ solely in terms of $x$: \[A = xy = x(10 - x) = -x^2 + 10x.\] Differentiating $A$ with respect to $x$, we see that \[\der{A}{x} = -2x + 10.\] There is hence a stationary point at $x = 5$. By the second derivative test, this is a maximum point. Thus, $x = y = 5$ gives the largest rectangular area.
 \end{example}
 
 \section{Connected Rates of Change}
