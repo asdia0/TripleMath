@@ -146,8 +146,10 @@
     
                 \addlegendentry{$y = f(x)$};
     
-                \draw[dashed] (-2, -2) -- (-2, 7.5) node[anchor=north east] {$x = -2$};
-                \draw[dashed] (2, -2) -- (2, 7.5) node[anchor=north west] {$x = 2$};
+                \draw[dashed] (-2, -2) -- (-2, 7.5);
+                \node[anchor=north east] at (-2, 5) {$x = -2$};
+                \draw[dashed] (2, -2) -- (2, 7.5);
+                \node[anchor=north west] at (2, 5) {$x = 2$};
                 \addplot[dashed] {2};
 
                 \node[anchor=north] at (6, 2) {$y = 2$};
@@ -171,7 +173,7 @@
 \begin{problem}
     A curve $C_{1}$ is defined parametrically by \[x = \frac2{t-1}, \quad y = \frac{4}{t+1}, \quad t \neq \pm 1.\] Sketch a clearly labelled diagram of $C_{1}$.
 
-    Describe a sequence of geometrical transformations which maps $C_{1}$ to $C_{2}$ defined by \[x = \frac1{1-t}, \quad t = \frac4{t+1}, \quad t \neq \pm 1.\]
+    Describe a sequence of geometrical transformations which maps $C_{1}$ to $C_{2}$ defined by \[x = \frac1{1-t}, \quad y = \frac4{t+1}, \quad t \neq \pm 1.\]
 
     Sketch $C_{3}$, which is the reciprocal function of $C_{1}$, stating the equations of any asymptotes and any points of intersection with the axes.
 \end{problem}
