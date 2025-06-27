@@ -3,24 +3,112 @@
 \begin{problem}
     Use the trapezium rule, with 6 intervals to estimate the value of $\int_{0}^{3}\ln(1+x) \d x$, showing your working. Give your answer to 3 significant figures. Hence, write down an approximate value for $\int_{0}^{3}\ln\sqrt{1+x} \d x$.
 \end{problem}
+\begin{solution}
+    Let $f(x) = \ln{1 = x}$. Then
+    \begin{align*}
+        \int_0^3 \ln{1 + x} \d x &\approx \frac{0.5}{2}\bs{f(0) + 2\bp{f(0.5) + f(1) + f(1.5) + f(2) + f(2.5)} + f(3)}\\
+        &= 2.5297 = 2.53 \tosf{3}.
+    \end{align*}
+    Thus, \[\int_0^3 \ln \sqrt{1 + x} \d x = \frac12 \int_0^3 \ln{1 + x} \d x \approx \frac{2.5297}2 = 1.26 \tosf{3}.\]
+\end{solution}
 
 \begin{problem}
     Use the trapezium rule with 5 intervals to estimate the value of \[\int_{0}^{0.5}\sqrt{1+x^{2}} \d x,\] showing your working. Give your answer to 2 decimal places.
 
     By expanding $(1+x^{2})^{1/2}$ in powers of $x$ as far as the term in $x^{4}$, obtain a second estimate for the value of $\int_{0}^{0.5}\sqrt{1+x^{2}} \d x$ giving this answer also correct to 2 decimal places.
 \end{problem}
+\begin{solution}
+    Let $f(x) = \sqrt{1 + x^2}$. Then \[\int_0^{0.5} \sqrt{1 + x^2} \d x \approx \frac{0.1}{2} \sum_{i = 0}^4 \bs{f(0.1i) + f(0.1(i+1))} = 0.52 \todp{2}.\]
+
+    We have \[\bp{1 + x^2}^{1/2} = 1 + \frac12 x^2 + \frac{\frac12 \bp{\frac12 -1}}{2} \bp{x^2}^2 + \dots \approx 1 + \frac12 x^2 - \frac18 x^4,\] hence \[\int_0^{0.5} \sqrt{1 + x^2} \d x \approx \int_0^{0.5} \bp{1 + \frac12 x^2 - \frac18 x^4} \d x = 0.52 \todp{2}.\]
+\end{solution}
 
 \begin{problem}
     The trapezium rule, with 2 intervals of equal width, is to be used to find an approximate value for $\int_{0}^{1}\e^{-x} \d x$. Explain, with the aid of a sketch, why the approximation will be greater than the exact value of the integral. Calculate the approximate value and the exact value, giving each answer correct to 3 decimal places.
 
     Another approximation to $\int_{0}^{1}\e^{-x} \d x$ is to be calculated by using two trapezia of unequal width. The first trapezium has width $h$ and the second has width $1-h$, so that the three ordinates are at $x=0$, $x=h$ and $x=1$. Show that the total area $T$ of these two trapezia is given by \[T = \frac12 \bs{\e^{-1} + h \bp{1 - \e^{-1}} + \e^{-h}}.\] Show that the value of $h$ for which $T$ is a minimum is given by $h=\ln \frac{\e}{\e - 1}$. 
 \end{problem}
+\begin{solution}
+    Let $f(x) = \e^{-x}$. Note that $\derx[2]{f}{x} = \e^{-x}$, which is positive for $0 \leq x \leq 1$. Thus, the graph of $y = f(x)$ is convex, as shown below.
+
+    \begin{figure}[H]\tikzsetnextfilename{517}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = 0:2,
+                samples = 101,
+                xmin = 0,
+                xmax = 2,
+                ymin = 0,
+                ymax = 1,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {0, 1, 2},
+                ytick = \empty,
+                xticklabels = {0, 0.5, 1},
+                xlabel = {$x$},
+                ylabel = {$y$},
+                ylabel style = {anchor=north east},
+                axis on top,
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {exp(-x)};
+
+                \addlegendentry{$y = \e^{-x}$};
+                
+                \draw[dashed] (0, 1) -- (1, 0.368) -- (2, 0.135);
+                \draw[dashed] (1, 0) -- (1, 0.368);
+                \draw[dashed] (2, 0) -- (2, 0.135);
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+
+    The secant lines lie above the curve $y = f(x)$, thus, the area of the trapeziums is larger than the area under the curve. Thus, the trapezium rule gives an overestimate.
+
+    The exact value of the integral is \[\int_0^1 \e^{-x} \d x = \evalint{-\e^{-x}}01 = 1 - \e^{-1} = 0.632 \todp{3}.\] Using the trapezium rule, we have \[\int_0^1 \e^{-x} \d x \approx \frac{0.5}{2} \bs{f(0) + 2f(0.5) + f(1)} = 0.645 \todp{3}.\]
+
+    The total area is given by
+    \begin{align*}
+        T &= \frac{h}{2} \bp{f(0) + f(h)} + \frac{1-h}{2} \bp{f(h) + f(1)}\\
+        &= \frac{h}2 \bp{1 + \e^{-h}} + \frac{1-h}{2} \bp{\e^{-h} + \e^{-1}}\\
+        &= \frac12 \bs{\e^{-1} + h\bp{1 - \e^{-1}} + \e^{-h}}.
+    \end{align*}
+    Differentiating with respect to $h$, we obtain \[\der{T}{h} = \frac12 \bp{1 - \e^{-1} - \e^{-h}}.\] For stationary points, $\derx{T}{h} = 0$, so \[\e^{-h} = 1 - \e^{-1} \implies -h = \ln{1 - \e^{-1}} \implies h = \ln \frac1{1 - \e^{-1}} = \ln \frac{\e}{\e - 1}.\] Note further that \[\der[2]{T}{h} = \frac12 \e^{-h},\] which is positive at $h = \ln{e/(e-1)}$, thus it is a minimum.
+\end{solution}
 
 \begin{problem}
     Derive Simpson's rule with 2 strips for evaluating $\int_{a}^{b} f(x) \d x$. 
     
     Use Simpson's composite rule with 4 strips to obtain an estimate of $\int_{2}^{3} \cos{x - 2} \ln x \d x$, giving your answer to 5 decimal places.
 \end{problem}
+\begin{solution}
+    Let $c = (b-a)/2$. Define \[g(x) = f\!\bp{x + \frac{a+b}{2}}.\] Then \[g(-c) = f(a), \quad g(0) = f\!\bp{\frac{a+b}{2}}, \quad g(c) = f(b).\]
+
+    Let $h(x) = \a x^2 + \b x + \g$ be the quadratic such that $h(x) = g(x)$ at $x = -c, 0, c$. Then 
+    \begin{align*}
+        g(0) &= \g,\\
+        g(-c) &= \a c^2 - \b c + \g,\\
+        g(c) &= \a c^2 + \b c + \g.
+    \end{align*}
+    From the last two equations, it follows that \[\a c^2 = \frac{g(c) + g(-c)}{2} - g(0).\] Our estimate is thus
+    \begin{align*}
+        \int_a^b f(x) \d x &= \int_{-c}^c g(x) \d x\\
+        &\approx \int_{-c}^c h(x) \d x = \int_{-c}^c \bp{\a x^2 + \b x + \g} \d x\\
+        &= \evalint{\frac\a3 x^3 + \frac\b2 x^2 + \g c}{-c}{c}\\
+        &= \frac{2c}{3} \bp{\a c^2 + 3\g}\\
+        &= \frac{2\bp{\frac{b-a}{2}}}{3} \bs{\frac{g(c) + g(-c)}{2} - g(0) + 3g(0)}\\
+        &= \frac{b-a}{6} \bs{g(-c) + 4g(0) + g(c)}\\
+        &= \frac{b-a}{6} \bs{f(a) + 4f\!\bp{\frac{a+b}{2}} + f(b)},
+    \end{align*}
+    which is precisely Simpson's rule for two strips.
+
+    Let $f(x) = \cos{x-2} \ln x$. Using Simpson's rule, we get \[\int_2^3 \cos{x-2}\ln x \d x = \frac{0.5}{6} \bs{f(2) + 4f(2.25) + 2f(2.5) + 4f(2.75) + f(3)} = 0.74988 \todp{5}.\]
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -58,3 +146,24 @@
         \item Use a series expansion to show that if $n$ is large enough for $\frac{1}{n^{3}}$ and higher powers of $\frac{1}{n}$ to be neglected, then the area in part (b) is approximately equal to $\frac{k}{n^2}$, where $k$ is a constant to be determined.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have
+        \begin{align*}
+            \int_{n}^{n+1} \ln x \d x &= \evalint{x\bp{\ln x- 1}}{n}{n+1}\\
+            &= \bp{n+1} \bp{\ln{n+1} - 1} - n \bp{\ln n - 1}\\
+            &= \bp{n+1} \ln{n+1} - n \ln n - 1.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        The estimate of the area under the curve is \[\frac{\ln n + \ln{n+1}}2.\] The error is thus
+        \begin{align*}
+            &\bp{n+1} \ln{n+1} - n \ln n - 1 - \frac{\ln n + \ln{n+1}}{2}\\
+            &\hspace{2em}= \bp{n + \frac12} \ln{n+1} - \bp{n + \frac12} \ln n - 1\\
+            &\hspace{2em}= \bp{n + \frac12} \ln{\frac{n+1}{n}} - 1 = \bp{n+\frac12} \ln{1 + \frac1n} - 1.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Note that \[\ln{1 + \frac1n} \approx \frac1n - \frac1{2n^2} + \frac1{3n^3}.\] Thus, \[\bp{n+\frac12} \ln{1 + \frac1n} - 1 \approx \bp{n + \frac12} \bp{\frac1n - \frac1{2n^2} + \frac1{3n^3}} - 1 = \frac1{12 n^2},\] so $k = 1/12$.
+    \end{ppart}
+\end{solution}
