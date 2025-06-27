@@ -195,20 +195,6 @@ headpunct={.},
 \setcounter{secnumdepth}{-1}
 }
 
-% DIFFICULTY
-
-\makeatletter
-\newcount\my@repeat@count
-\newcommand{\myrepeat}[2]{%
-  \begingroup
-  \my@repeat@count=\z@
-  \@whilenum\my@repeat@count<#1\do{#2\advance\my@repeat@count\@ne}%
-  \endgroup
-}
-\makeatother
-
-\newcommand{\difficulty}[1]{\myrepeat{#1}{$\blacktriangleright$}}
-
 \newcommand{\overbow}[1]{
   \tikzexternaldisable
   \tikz [baseline = (N.base), every node/.style={}] {

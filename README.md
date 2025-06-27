@@ -48,7 +48,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  B6  | MacLaurin Series                                               |  🟢  |   🟢    |      🟢      |    🟢     |
 |  B7  | Integration Techniques                                         |  🟢  |   🟢    |      🟢      |    🟢     |
 |  B8  | Applications of Integration I - Area and Volume                |  🟢  |   🟢    |      🟡      |    🟢     |
-|  B9  | Applications of Integration II - Arc Length and Surface Area   |  🟢  |   🟢    |      🟡      |    🟢     |
+|  B9  | Applications of Integration II - Arc Length and Surface Area   |  🟢  |   🟢    |      🟢      |    🟢     |
 | B10  | Applications of Integration III - Trapezium and Simpson's Rule |  🟢  |   🟢    |      🟢      |    🟢     |
 | B11  | Functions of Two Variables                                     |  🟢  |   🟢    |      🟢      |    🟢     |
 | B12  | Separable DE                                                   |  🟢  |   🟢    |      🟢      |    🟢     |
