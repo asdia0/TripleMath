@@ -130,7 +130,7 @@ Because subspaces inherit addition and multiplication, we do not need to check A
 Conversely, to show that $W$ is not a subspace, we can try to disprove any of the three conditions. Typically, the first condition ($\vec 0 \in W$) is the easiest to disprove. If that fails, we construct a counter-example for closure under addition/multiplication.
 
 \begin{sample}\label{sample:linear-transformations:planes}
-    Let $W$ be any plane in $\RR^3$ the passes through the origin. Prove that $W$ is a subspace of $\RR^3$ under the standard operations.
+    Let $W$ be any plane in $\RR^3$ that passes through the origin. Prove that $W$ is a subspace of $\RR^3$ under the standard operations.
 \end{sample}
 \begin{sampans}
     Let \[W = \bc{\vec r = \l \vec a + \m \vec b \mid \l, \m \in \RR}.\]
@@ -232,14 +232,14 @@ Equivalently, the set of vectors are linearly dependent if at least one vector i
     Determine if the following set of vectors is linearly independent: \[S = \bc{\cveciii121, \cveciii102}.\]
 \end{sample}
 \begin{sampans}
-    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 = \cveciii000 \implies \begin{pmatrix}1 & 1 \\ 2 & 0 \\ 1 & 2 \end{pmatrix} \cvecii{c_1}{c_2} = \cvecii00.\] Converting to RREF, we obtain \[\begin{pmatrix}1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix} \cvecii{c_1}{c_2} = \cvecii0000.\] Thus, the only solutions are $c_1 = c_2 = 0$, so $S$ is linearly independent.
+    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 = \cveciii000 \implies \begin{pmatrix}1 & 1 \\ 2 & 0 \\ 1 & 2 \end{pmatrix} \cvecii{c_1}{c_2} = \cveciii000.\] Converting to RREF, we obtain \[\begin{pmatrix}1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix} \cvecii{c_1}{c_2} = \cveciii000.\] Thus, the only solutions are $c_1 = c_2 = 0$, so $S$ is linearly independent.
 \end{sampans}
 
 \begin{sample}
     Determine if the following set of vectors is linearly independent: \[S = \bc{\cveciii121, \cveciii102, \cveciii110, \cveciii100}.\]
 \end{sample}
 \begin{sampans}
-    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 + c_3 \cveciii110 + c_4 \cveciii100 = \cveciii000 \implies \begin{pmatrix}1 & 1 & 1 & 1 \\ 2 & 0 & 1 & 0 \\ 1 & 2 & 0 & 0\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciv0000.\] Converting to RREF, we obtain \[\begin{pmatrix}1 & 0 & 0 & -2/3 \\ 0 & 1 & 0 & 1/3 \\ 0 & 0 & 1 & 4/3\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciv0000.\] By backwards substitution, we obtain \[c_1 = -2\l, \quad c_2 = \l, \quad c_3 = 4\l, \quad c_4 = -\l,\] where $\l \in \RR$. Thus, there exist non-trivial solutions, so $S$ is linearly dependent.
+    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 + c_3 \cveciii110 + c_4 \cveciii100 = \cveciii000 \implies \begin{pmatrix}1 & 1 & 1 & 1 \\ 2 & 0 & 1 & 0 \\ 1 & 2 & 0 & 0\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciii000.\] Converting to RREF, we obtain \[\begin{pmatrix}1 & 0 & 0 & -2/3 \\ 0 & 1 & 0 & 1/3 \\ 0 & 0 & 1 & 4/3\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciii000.\] By backwards substitution, we obtain \[c_1 = -2\l, \quad c_2 = \l, \quad c_3 = 4\l, \quad c_4 = -\l,\] where $\l \in \RR$. Thus, there exist non-trivial solutions, so $S$ is linearly dependent.
 \end{sampans}
 
 We now outline a general strategy to test if a set of vectors is linearly independent.
