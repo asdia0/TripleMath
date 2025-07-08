@@ -1,0 +1,143 @@
+\chapter{Distribution Problems}
+
+In the previous chapter, we learnt how to count the number of ways to distribute distinct objects into distinct boxes:
+
+\begin{proposition}
+    The number of ways of distributing $r$ distinct objects into $n$ distinct boxes such that each box can hold
+    \begin{itemize}
+        \item at most one object (assuming $r \leq n$) is $\perm{n}{r}$;
+        \item any number of objects is $n^r$.
+    \end{itemize}
+\end{proposition}
+
+In this chapter, we focus mainly on counting the number of ways to distribute identical objects into distinct boxes.
+
+\section{The Bijection Principle}
+
+\begin{theorem}[Bijection Principle]
+    Let $A$ and $B$ be finite sets. If there exists a bijection $f: A \to B$, then \[\abs{A} = \abs{B}.\]
+\end{theorem}
+
+The bijection principle is particularly useful when enumerating $A$ is hard, but enumerating $B$ is easy.
+
+\begin{sample}
+    Determine the number of positive divisors of 12600.
+\end{sample}
+\begin{sampans}
+    Observe that $12600 = 2^3 \times 3^2 \times 5^2 \times 7^1$. Let $A$ be the set of divisors of 12600. Let $B$ be the set \[B = \bc{(p,q,r,s) \in \ZZ^4 : 0 \leq p \leq 3 \tand 0 \leq q \leq 2 \tand 0 \leq r \leq 2 \tand 0 \leq s \leq 1}.\] Let $f : B \to A$ be such that \[f(p,q,r,s) = 2^p \times 3^q \times 5^r \times 7^s.\] By the Fundamental Theorem of Arithmetic, it is clear that $f$ is injective. Further, it is not hard to see that $f$ is surjective: every divisor $d \in D$ can be expressed as a product of some prime powers of 2, 3, 5 and 7. Thus, $f$ is bijective, so by the bijective principle, we have \[\abs{A} = \abs{B} = (3+1)(2+1)(2+1)(1+1) = 72,\] i.e. 12600 has 72 divisors.
+\end{sampans}
+
+One can easily generalize the above result:
+
+\begin{proposition}
+    Let \[n = \prod_{i = 1}^k p_i^{e_i}\] where $p_i$ are distinct primes and $e_i$ are non-negative integers. Then $n$ has \[\prod_{i = 1}^k (e_i + 1)\] positive divisors.
+\end{proposition}
+
+\section{Identical Objects into Distinct Boxes}
+
+We first prove a standard result:
+
+\begin{proposition}[Stars and Bars]
+    The number of non-negative integer solutions to the equation $x_1 + \dots + x_n = r$ is \[\binom{r + n - 1}{n - 1} = \binom{r + n - 1}{r}.\]
+\end{proposition}
+\begin{proof}
+    Let \[A = \bc{(x_1, \dots, x_n) \in \NN_0 : x_1 + \dots + x_n = r}\] be the set of all non-negative integer solutions to the above equation. Consider a row of $r + n - 1$ objects. Let $B$ be the set of all possible ways to colour $n-1$ of these $r + n - 1$ objects red, and the remaining $r$ objects blue. It is easy to see that \[\abs{B} = \binom{r + n - 1}{n-1} = \binom{r + n - 1}{r}.\]
+
+    \begin{figure}[H]\tikzsetnextfilename{518}
+        \centering
+        \begin{tikzpicture}
+            \fill[plotRed] (0, 0) circle[radius=0.35];
+            \fill[plotRed] (1, 0) circle[radius=0.35];
+            \fill[plotBlue] (2, 0) circle[radius=0.35];
+            \fill[plotRed] (3, 0) circle[radius=0.35];
+            \fill[plotRed] (4, 0) circle[radius=0.35];
+            \fill[plotRed] (5, 0) circle[radius=0.35];
+            \fill[plotBlue] (6, 0) circle[radius=0.35];
+            \fill[plotRed] (7, 0) circle[radius=0.35];
+            \fill[plotRed] (8, 0) circle[radius=0.35];
+            \fill[plotRed] (9, 0) circle[radius=0.35];
+        \end{tikzpicture}
+        \caption{An example colouring, where $r = 2 + 3 + 3 = 8$ and $n = 3$.}
+    \end{figure}
+    
+    We now establish a bijection between $A$ and $B$. Consider the following procedure, starting with a solution $(x_1, \dots, x_n) \in A$:
+    \begin{itemize}
+        \item Colour the first $x_1$ balls blue, and the next ball red.
+        \item Colour the next $x_2$ balls blue, and the next ball red.
+        \item[] $\vdots$
+        \item Colour the next $x_n$ balls blue.
+    \end{itemize}
+    It is easy to see that all $r + n - 1$ balls will be coloured, and exactly $n-1$ balls will be red. Further, each solution $(x_1, \dots, x_n) \in A$ uniquely determines a colouring in $B$ and vice versa, i.e. the procedure is a bijection between $A$ and $B$. By the bijection principle, \[\abs{A} = \abs{B} = \binom{r + n - 1}{n - 1} = \binom{r + n - 1}{r}.\]
+\end{proof}
+
+The name of this bijection is commonly known as ``stars and bars''. We can think of the blue objects as ``stars'' (the objects we wish to distribute), and the red objects as ``bars'' (the dividers separating the objects).
+
+\begin{proposition}[Identical Objects into Distinct Boxes (Part I)]
+    The number of ways of distributing $r$ identical objects into $n$ distinct boxes is given by \[\binom{r + n - 1}{n - 1} = \binom{r + n - 1}{r}.\]
+\end{proposition}
+\begin{proof}
+    Let $x_i$ be the number of objects in the $i$th box. Since we have a total of $r$ identical objects, we require \[x_1 + x_2 + \dots + x_n = r.\] By stars and bars, we attain our desired result.
+\end{proof}
+
+\begin{proposition}[Identical Objects into Distinct Boxes (Part II)]
+    The number of ways of distributing $r$ identical objects into $n$ distinct boxes, such that each box has at least $k$ objects, is given by \[\binom{r-nk + n - 1}{n - 1}\]
+\end{proposition}
+\begin{proof}
+    Let $x_i + k$ be the number of objects in the $i$th box. Since each box has at least $k$ objects, we have $x_i \leq 0$ for all $1 \leq i \leq n$. Since we have a total of $r$ identical objects, we require \[\bp{x_1 + k} + \bp{x_2 + k} + \dots + \bp{x_n + k} = r.\] This equation simplifies to \[x_1 + x_2 + \dots + x_n = r - nk.\] We hence seek the number of non-negative integer solutions to the above equation, which we know to be \[\binom{r-nk + n - 1}{n - 1}\] by stars and bars.
+\end{proof}
+
+\begin{corollary}
+    In the case where we require each box to be non-empty ($k = 1$), the number of distributions is given by \[\binom{r - 1}{n - 1} = \binom{r - 1}{r - n}.\]
+\end{corollary}
+
+\section{Distinct Objects into Identical Boxes}
+
+\begin{definition}
+    A \vocab{Stirling number of the second kind} is defined to be the number of ways of distributing $r$ distinct objects into $n$ identical boxes such that no box is empty. It is denoted $S(r, n)$.
+\end{definition}
+
+\begin{proposition}
+    For $0 < n < r$, we have the recurrence relation \[S(r+1, n) = S(r,n-1) + nS(r,n),\] with initial conditions $S(r, r) = 1$ for $r \geq 0$ and $S(r, 0) = S(0, r) = 0$ for $r > 0$.
+\end{proposition}
+\begin{proof}
+    Let $A$ be an arbitrary object.
+
+    \case{1}[$A$ is alone in a box] There remains $r$ distinct objects to be distributed into $n-1$ identical boxes with no empty boxes. The number of ways to do so is $S(r, n-1)$.
+
+    \case{2}[$A$ is not alone in a box] We first distribute the other $r$ distinct objects into $n$ identical boxes such that no box is empty. This can be done in $S(r, n)$ ways. Then, we place $A$ into one box. There are $n$ boxes, thus by the multiplicative principle, the total number of ways in this case is $n S(r,n)$.
+
+    Altogether, the total number of ways to distribute $r+1$ distinct objects into $n$ identical boxes such that no box is empty is given by \[S(r+1, n) = S(r, n-1) + nS(r,n).\]
+
+    The initial conditions can easily be verified.
+\end{proof}
+
+\begin{sample}
+    Find the number of ways to express 2730 as a product $ab$ of two integers $a$ and $b$, where $2 \geq a \geq b$.
+\end{sample}
+\begin{sampans}
+    Note that $2730 = 2 \times 3 \times 5 \times 7 \times 13$. The number of ways to express 2730 as a product $ab$ is hence given by $S(5,2) = 15$, as we have 5 distinct prime factors and 2 identical boxes ($a$ and $b$).
+\end{sampans}
+
+\begin{proposition}
+    The number of ways to distribute $r$ distinct objects into $n$ identical boxes with empty boxes allowed is given by \[\sum_{k = 1}^n S(r,k).\]
+\end{proposition}
+\begin{proof}
+    Suppose only $k$ boxes are filled. There are $S(r,k)$ ways to distribute the objects into these $k$ boxes. Enumerating over all possible cases, we see that the total possible distributions number \[\sum_{k = 1}^n S(r, k).\]
+\end{proof}
+
+\section{Identical Objects into Identical Boxes}
+
+\begin{definition}
+    The \vocab{partition} of a positive integer $r$ into $n$ parts is a set of $n$ positive integers whose sum is $r$. We denote the number of different partitions of $r$ into $n$ parts with $P(r, n)$.
+\end{definition}
+
+\begin{proposition}
+    We have the recurrence relation \[P(r, n) = P(r-1, n-1) + P(r-n, n),\] with conditions $P(r, 1) = 1$ for all $r \geq 1$, and $P(r, n) = 0$ if $n > r$.
+\end{proposition}
+\begin{proof}
+    \case{1}[At least one box has exactly one object] We place one object in one box. We then distribute the remaining $r-1$ objects into the remaining $n-1$ boxes such that no boxes are empty. The number of ways this can be done is $P(r-1, n-1)$.
+
+    \case{2}[All the boxes have more than one object] We place one object into each of the $n$ boxes. We then distribute the remaining $r-n$ objects into the $n$ boxes so that no boxes are empty. The number of ways this can be done is $P(r-n, n)$.
+
+    Altogether, we have \[P(r, n) = P(r-1, n-1) + P(r-n, n)\] as desired.
+\end{proof}

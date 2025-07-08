@@ -75,7 +75,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | Analysis 2.2 - Sequences and Series   |  🟡  |    🟢    |      🟡      |
 | Analysis 3 - Inequalities             |  🟡  |    🟢    |      🔴      |
 | Analysis 4 - Complex Numbers          |  🟡  |    🟢    |      🔴      |
-| Counting 1 - Bijection Principle      |  🟡  |    🟡    |      🔴      |
+| Counting 1 - Bijection Principle      |  🟢  |    🟡    |      🔴      |
 | Counting 2 - Inclusion-Exclusion      |  🟡  |    🟡    |      🔴      |
 | Counting 3 - Recurrence Relations     |  🟡  |    🟡    |      🔴      |
 | Counting 4 - Probability              |  🟡  |    🟡    |      🔴      |
