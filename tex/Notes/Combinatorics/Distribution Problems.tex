@@ -24,7 +24,7 @@ The bijection principle is particularly useful when enumerating $A$ is hard, but
     Determine the number of positive divisors of 12600.
 \end{sample}
 \begin{sampans}
-    Observe that $12600 = 2^3 \times 3^2 \times 5^2 \times 7^1$. Let $A$ be the set of divisors of 12600. Let $B$ be the set \[B = \bc{(p,q,r,s) \in \ZZ^4 : 0 \leq p \leq 3 \tand 0 \leq q \leq 2 \tand 0 \leq r \leq 2 \tand 0 \leq s \leq 1}.\] Let $f : B \to A$ be such that \[f(p,q,r,s) = 2^p \times 3^q \times 5^r \times 7^s.\] By the Fundamental Theorem of Arithmetic, it is clear that $f$ is injective. Further, it is not hard to see that $f$ is surjective: every divisor $d \in D$ can be expressed as a product of some prime powers of 2, 3, 5 and 7. Thus, $f$ is bijective, so by the bijective principle, we have \[\abs{A} = \abs{B} = (3+1)(2+1)(2+1)(1+1) = 72,\] i.e. 12600 has 72 divisors.
+    Observe that $12600 = 2^3 \times 3^2 \times 5^2 \times 7^1$. Let $A$ be the set of divisors of 12600. Let $B$ be the set \[B = \bc{(p,q,r,s) \in \ZZ^4 : 0 \leq p \leq 3 \tand 0 \leq q \leq 2 \tand 0 \leq r \leq 2 \tand 0 \leq s \leq 1}.\] Let $f : B \to A$ be such that \[f(p,q,r,s) = 2^p \times 3^q \times 5^r \times 7^s.\] It is clear that $f$ is bijective: by the Fundamental Theorem of Algebra, every divisor $d \in A$ is uniquely expressible as a product of prime powers of 2, 3, 5 and 7. Hence, by the bijective principle, we have \[\abs{A} = \abs{B} = (3+1)(2+1)(2+1)(1+1) = 72,\] i.e. 12600 has 72 divisors.
 \end{sampans}
 
 One can easily generalize the above result:
@@ -53,11 +53,10 @@ We first prove a standard result:
             \fill[plotRed] (4, 0) circle[radius=0.35];
             \fill[plotRed] (5, 0) circle[radius=0.35];
             \fill[plotBlue] (6, 0) circle[radius=0.35];
-            \fill[plotRed] (7, 0) circle[radius=0.35];
-            \fill[plotRed] (8, 0) circle[radius=0.35];
+            \fill[plotBlue] (7, 0) circle[radius=0.35];
             \fill[plotRed] (9, 0) circle[radius=0.35];
         \end{tikzpicture}
-        \caption{An example colouring, where $r = 2 + 3 + 3 = 8$ and $n = 3$.}
+        \caption{An example colouring, where $r = 2 + 3 + 1 = 6$ and $n = 4$.}
     \end{figure}
     
     We now establish a bijection between $A$ and $B$. Consider the following procedure, starting with a solution $(x_1, \dots, x_n) \in A$:
@@ -70,7 +69,7 @@ We first prove a standard result:
     It is easy to see that all $r + n - 1$ balls will be coloured, and exactly $n-1$ balls will be red. Further, each solution $(x_1, \dots, x_n) \in A$ uniquely determines a colouring in $B$ and vice versa, i.e. the procedure is a bijection between $A$ and $B$. By the bijection principle, \[\abs{A} = \abs{B} = \binom{r + n - 1}{n - 1} = \binom{r + n - 1}{r}.\]
 \end{proof}
 
-The name of this bijection is commonly known as ``stars and bars''. We can think of the blue objects as ``stars'' (the objects we wish to distribute), and the red objects as ``bars'' (the dividers separating the objects).
+The method of counting is commonly known as ``stars and bars''. We can think of the blue objects as ``stars'' (the objects we wish to distribute), and the red objects as ``bars'' (the dividers separating the objects).
 
 \begin{proposition}[Identical Objects into Distinct Boxes (Part I)]
     The number of ways of distributing $r$ identical objects into $n$ distinct boxes is given by \[\binom{r + n - 1}{n - 1} = \binom{r + n - 1}{r}.\]
