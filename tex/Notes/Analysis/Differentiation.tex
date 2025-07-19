@@ -1,48 +1,20 @@
 \chapter{Differentiation}
 
-\section{Limits}
-
-Let $a$ be a constant. 
-\begin{itemize}
-    \item $x \to a$ means ``$x$ approaches the value $a$'',
-    \item $x \to a^-$ means ``$x$ approaches the value $a$ from a value slightly more than $a$'',
-    \item $x \to a^+$ means ``$x$ approaches the value $a$ from a value slightly more than $a$'',
-    \item $\lim_{x \to a} f(x)$ means ``the limit of $f(x)$ as $x$ approaches $a$''.
-\end{itemize}
+\section{First Principles}
 
 \begin{definition}
-    The \vocab{limit} of $f(x)$ as $x$ approaches $a$ exists if there exists some $l \in \RR$ such that \[\lim_{x \to a^-} f(x) = l = \lim_{x \to a^+} f(x).\] We write \[\lim_{x \to a} f(x) = l.\]
-\end{definition}
-
-\section{Derivative}
-
-\begin{definition}
-    The \vocab{gradient of a straight line} is defined as the ratio of the change in the $y$-coordinate to that of the $x$-coordinate between any two points on the line. Mathematically, the gradient $m$ is given by \[m = \frac{y_2 - y_1}{x_2 - x_1},\] where $(x_1, y_1)$ and $(x_2, y_2)$ are two points on the line.
-\end{definition}
-
-\begin{definition}
-    The \vocab{tangent to the curve at $A$} is the line \textit{touching} the curve at $A$.
-\end{definition}
-
-\begin{definition}
-    The \vocab{instantaneous rate of change} or \vocab{gradient} of a curve at any point is defined as the gradient of the tangent to the curve at the point.
-\end{definition}
-
-\begin{definition}
-    The \vocab{derivative} of a function $f(x)$, denoted $\der{}{x} f(x)$ or $f'(a)$, represents the instantaneous rate of change of $f(x)$ with respect to $x$.
+    A function $f$ is said to be \vocab{differentiable} at some point $a$, if its domain contains an open interval containing $a$, and the limit \[L = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\] exists. If $f$ is differentiable, then $L$ is the \vocab{derivative} of $f$ at $a$, denoted $\der{}{x} f(a)$. If the derivative exists for all points in the domain, we may define a \vocab{derivative function} that maps $x$ to the value of the derivative at $x$, denoted $\der{}{x} f(x)$ or $f'(x)$.
 \end{definition}
 
 If $y = f(x)$, we write the derivative as $\der{y}{x}$ or $y'$. Note that the symbol $\der{}{x}$ means ``the derivative with respect to $x$ of'' and should be treated as an operation, not a fraction.
 
+Geometrically, the derivative of $f$ at $a$ can be understood as the instantaneous rate of change of $f$ at $a$. Consider a curve $y = f(x)$. Let $A(a, f(a))$ and $B(a + h, f(a + h))$ be two points on the curve.
+
+Observe that the gradient of the tangent to the curve at $A$ can be approximated by the gradient of the chord $AB$, denoted $m_{AB}$. The closer $B$ is to $A$, the better the approximation. Therefore, the gradient of the curve at point $A$ is $\lim_{B \to A} m_{AB}$. Now observe that \[m_{AB} = \frac{f(a + h) - f(a)}{(a + h) - a} = \frac{f(a + h) - f(a)}{h}.\] Additionally, as $B \to A$, $h \to 0$. Hence, \[\lim_{B \to A} m_{AB} = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h},\] which is exactly the definition of the derivative of $f$ at $a$.
+
 \begin{definition}
     The \vocab{$n$th derivative} of $y$ with respect to $x$ is \[\der[n]{y}{x} = f^{(n)}(x) = \der{}{x} \bp{\der[n-1]{y}{x}},\] where $n \in \ZZ^+$.
 \end{definition}
-
-\subsection{Differentiation from First Principles}
-
-Consider a curve $y = f(x)$. Let $A(x, f(x))$ and $B(x + \D x, f(x + \D x))$ be two points on the curve, where $\D x$ is a small increment in $x$.
-
-Observe that the gradient of the tangent to the curve at $A$ can be approximated by the gradient of the chord $AB$, denoted $m_{AB}$. The closer $B$ is to $A$, the better the approximation. Therefore, the gradient of the curve at point $A$ is $\lim_{B \to A} m_{AB}$. Now observe that \[m_{AB} = \frac{f(x + \D x) - f(x)}{(x + \D x) - x} = \frac{f(x + \D x) - f(x)}{\D x}.\] Additionally, as $B \to A$, $\D x \to 0$. Hence, \[\lim_{B \to A} m_{AB} = \lim_{\D x \to 0} \frac{f(x + \D x) - f(x)}{\D x} = \lim_{\D x \to 0} \frac{\D y}{\D x} = \der{y}{x}.\] For convenience, we replace $\D x$ with $h$. The derivative is hence \[\der{y}{x} = \der{}{x} f(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}.\]
 
 \section{Differentiation Rules}
 

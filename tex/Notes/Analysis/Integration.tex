@@ -186,3 +186,23 @@ Essentially, the DI method allows us to easily compute the extended integration 
         &= -x^3 \cos x + 3x^2 \sin x + 6x\cos x - 6\sin x + C.
     \end{align*}
 \end{example}
+
+\section{Tests for Convergence}
+
+To determine the convergence of a definite integral, we can employ the following tests.
+
+\begin{proposition}[Direct Comparison Test]
+    Let $f$ and $g$ be continuous on $[a, \infty)$ with $0 \leq f(x) \leq g(x)$ for all $x \geq a$. Then $\int_a^\infty f(x) \d x$ and $\int_a^\infty g(x) \d x$ either both converge or both diverge.
+\end{proposition}
+
+\begin{example}
+    Consider the integral $\int_1^\infty (\sin^2 x)/x^2 \d x$. Since \[0 \leq \frac{\sin^2 x}{x^2} \leq \frac1{x^2}\] on $[1, \infty)$ and the integral $\int_1^\infty 1/x^2 \d x$ converges, then by the direct comparison test, the integral in question converges.
+\end{example}
+
+\begin{proposition}[Limit Comparison Test]
+    If the positive functions $f$ and $g$ are continuous on $[a, \infty)$, and if $\lim_{x \to \infty} f(x)/g(x)$ is finite and positive, then $\int_a^\infty f(x) \d x$ and $\int_a^\infty g(x) \d x$ either both converge or both diverge.
+\end{proposition}
+
+\begin{example}
+    Consider the integral $\int_1^\infty (1-\e^{-x})/x \d x$. Since \[\lim_{x \to \infty} \frac{(1-\e^{-x})/x}{1/x} = \lim_{x \to \infty} (1 - e^{-x}) = 1,\] which is a positive finite limit, by the limit comparison test, the integral in question diverges since $\int_1^\infty 1/x \d x$ diverges.
+\end{example}

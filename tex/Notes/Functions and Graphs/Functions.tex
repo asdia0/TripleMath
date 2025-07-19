@@ -25,38 +25,47 @@ Note that $f$ is not the same as $f(x)$; $f$ is a \textit{map}, while $f(x)$ is 
     By definition, a function $f$ is a relation which maps each element in the domain to one and only one image.
 \end{proof}
 
-\section{One-One Functions}
+\section{Injective, Surjective and Bijective Functions}
 
 \begin{definition}
-    A function is said to be \vocab{one-one} if no two distinct elements in the given domain have the same image under $f$. Mathematically, \[x_1 \neq x_2 \implies f(x_1) \neq f(x_2).\] Equivalently, $f$ is one-one if $f(x_1) = f(x_2)$ implies $x_1 = x_2$.
+    A function is \vocab{injective} (or \vocab{injective}) if each element in its codomain has at most one pre-image. Mathematically, for all $x_1, x_2 \in \dom f$, \[f(x_1) = f(x_2) \implies x_1 = x_2.\]
 \end{definition}
 
 \begin{proposition}[Horizontal Line Test]
-    A function $f$ is one-one if and only if any horizontal line $y = k$, $k \in \ran f$ cuts the graph of $y = f(x)$ at one and only one point.
+    A function $f$ is injective if and only if any horizontal line $y = k$, $k \in \ran f$ cuts the graph of $y = f(x)$ at one and only one point.
 \end{proposition}
 \begin{proof}
-    We only prove the backwards case as the forwards case is trivial. Suppose $y = k$ and $y = f(x)$ intersect more than once. Then there exist two distinct elements $x_1$ and $x_2$ in $\dom f$ such that $f(x_1) = f(x_2)$, whence $f$ is not one-one.
+    We only prove the backwards case as the forwards case is trivial. Suppose $y = k$ and $y = f(x)$ intersect more than once. Then there exist two distinct elements $x_1$ and $x_2$ in $\dom f$ such that $f(x_1) = f(x_2)$, whence $f$ is not injective.
 \end{proof}
 
-\begin{proposition}[Strict Monotonicity Implies One-One]
-    All strictly monotone functions are one-one.
+\begin{proposition}[Strict Monotonicity Implies Injectivity]
+    All strictly monotone functions are injective.
 \end{proposition}
 \begin{proof}
-    Seeking a contradiction, assume that there exists a strictly increasing function $f : X \to Y$ which is not one-one. Then there exists $x_1, x_2 \in X$ such that $x_1 \neq x_2 \implies f(x_1) = f(x_2)$. Without loss of generality, assume $x_1 < x_2$, since $f$ is strictly increasing. Then $f(x_1) < f(x_2)$, a contradiction. Therefore, all strictly increasing functions are one-one. Similarly, all strictly decreasing functions are one-one.
+    Seeking a contradiction, assume that there exists a strictly increasing function $f : X \to Y$ which is not injective. Then there exists $x_1, x_2 \in X$ such that $f(x_1) = f(x_2)$ but $x_1 \neq x_2$. Without loss of generality, assume $x_1 < x_2$. But because $f$ is strictly increasing, we have $f(x_1) < f(x_2)$, a contradiction. Therefore, all strictly increasing functions are injective. Similarly, all strictly decreasing functions are injective.
 \end{proof}
 
-To prove that a function is not one-one, it is sufficient to provide a specific counter-example.
+To prove that a function is not injective, it is sufficient to provide a specific counter-example.
+
+\begin{definition}
+    A function is \vocab{surjective} (onto) if each element in its codomain has at least one pre-image. Mathematically, for all $y \in Y$, there exists some $x \in X$ such that $y = f(x)$.
+\end{definition}
+
+Equivalently, a function is surjective if its range and codomain are equal.
+
+\begin{definition}
+    A function is \vocab{bijective} if it is both injective and surjective. That is, each element in its codomain has exactly one pre-image.
+\end{definition}
 
 \section{Inverse Functions}
 
 \begin{definition}
-    Let $f : X \to Y$ be a function. Its \vocab{inverse function}, $\inv f : Y \to X$ is a function that undoes the operation of $f$. Mathematically, for all $x \in \dom f$, \[\inv f(y) = x \iff f(x) = y.\]
+    Let $f : X \to Y$ be an injective function. Its \vocab{inverse function}, $\inv f : Y \to X$ is a function that undoes the operation of $f$. Mathematically, for all $x \in \dom f$, \[\inv f(y) = x \iff f(x) = y.\]
 \end{definition}
 
 \begin{fact}[Properties of Inverse Function]
     \phantom{.}
     \begin{itemize}
-        \item $\inv f$ exists if and only if $f$ is one-one.
         \item $\dom f = \ran{\inv f}$ and $\ran f = \dom{\inv f}$.
         \item The graphs of $f$ and $\inv f$ are reflections of each other in the line $y = x$.
     \end{itemize}
