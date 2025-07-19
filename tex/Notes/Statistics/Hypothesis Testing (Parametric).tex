@@ -321,7 +321,7 @@ If the random sample sizes are not large, then the normal distribution is no lon
     \item $X_1$ and $X_2$ have independent, normal distributions.
     \item $X_1$ and $X_2$ have a common variance.
 \end{itemize}
-With these assumptions, it can be shown that the test statistic $T$ given by \[T = \frac{\bp{\ol{X_1} - \ol{X_2}} - \bp{\m_1 - \m_2}}{S_p \sqrt{\frac1{n_1} + \frac1{n_1}}} \sim \StudentT{\bp{n_1 - 1} + \bp{n_2 - 1}},\] where \[S^2_p = \frac{\bp{n-1} S_1^2 + \bp{n_2 - 1} S_2^2}{\bp{n_1 - 1} + \bp{n_2 - 2}}\] is the pooled variance (unbiased estimate of the common variance). Note that there we lose 2 degrees of freedom since we use both $\ol{x_1}$ and $\ol{x_2}$ to estimate $s_1^2$ and $s_2^2$.
+With these assumptions, it can be shown that the test statistic $T$ given by \[T = \frac{\bp{\ol{X_1} - \ol{X_2}} - \bp{\m_1 - \m_2}}{S_p \sqrt{\frac1{n_1} + \frac1{n_2}}} \sim \StudentT{\bp{n_1 - 1} + \bp{n_2 - 1}},\] where \[S^2_p = \frac{\bp{n-1} S_1^2 + \bp{n_2 - 1} S_2^2}{\bp{n_1 - 1} + \bp{n_2 - 2}}\] is the pooled variance (unbiased estimate of the common variance). Note that there we lose 2 degrees of freedom since we use both $\ol{x_1}$ and $\ol{x_2}$ to estimate $s_1^2$ and $s_2^2$.
 
 \begin{sample}
     The heights (measured to the nearest cm) of a random sample of six policemen from country A were found to be \[176, \quad 180, \quad 179, \quad 181, \quad 183, \quad 179.\] The heights (measured to the nearest cm) of a random sample of eleven policemen from country B have the following data: \[\sum y = 1991, \quad \sum \bp{y - \ol{y}}^2 = 54.\] Test, at the 5\% level, the hypothesis that policemen from country A are shorter than policemen from country B. State any assumptions that are needed for this test.
