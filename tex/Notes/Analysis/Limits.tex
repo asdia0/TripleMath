@@ -1,0 +1,227 @@
+\chapter{Limits}
+
+\section{Limits for Sequences}
+
+\begin{definition}
+    We say $x$ is the \vocab{limit} of a sequence $\bc{x_n}$ if for all $\ve > 0$, there exists some natural number $N$ such that $\abs{x_n - x} < \ve$ for all $n \geq N$. We write $\displaystyle\lim_{n \to \infty} x_n = x$.
+\end{definition}
+
+Intuitively, if $x$ is the limit of the sequence $\bc{x_n}$, then we can make $x_n$ as close as we want to $x$, just by choosing a sufficiently large enough value of $n$.
+
+If the limit exists, we say $\bc{x_n}$ \vocab{converges}, else it \vocab{diverges}.
+
+\subsection{Operations on Limits}
+
+\begin{fact}
+    If $\displaystyle\lim_{n \to \infty} x_n = x$ and $\displaystyle\lim_{n \to \infty} y_n = y$ both exist, then
+    \begin{itemize}
+        \item $\displaystyle\lim_{n \to \infty} (x_n \pm y_n) = \lim_{n \to \infty} x_n \pm \lim_{n \to \infty} y_n = x \pm y$.
+        \item $\displaystyle\lim_{n \to \infty} (x_n y_n) = \lim_{n \to \infty} x_n \lim_{n \to \infty} y_n = xy$.
+        \item $\displaystyle\lim_{n \to \infty} (x_n/y_n) = \lim_{n \to \infty} x_n / \lim_{n \to \infty} y_n = x/y$, provided that $y_n \neq 0$ for all $n \in \NN$ and that $y \neq 0$.
+    \end{itemize}
+\end{fact}
+
+\begin{sample}
+    Compute the limit $\lim_{n \to \infty} (7n^5 - n^2)/(n^5 + 4)$.
+\end{sample}
+\begin{sampans}
+    We have \[\lim_{n \to \infty} \frac{7n^5 - n^2}{n^5 + 4} = \lim_{n \to \infty} \frac{7 - n^{-3}}{1 + 4n^{-5}} = \frac{7 - \lim_{n \to \infty} n^{-3}}{1 + 4\lim_{n \to \infty} n^{-5}} = \frac{7 - 0}{1 + 0} = 7.\]
+\end{sampans}
+
+\subsection{Limits with Inequalities}
+
+\begin{proposition}
+    Suppose $\bc{x_n}$ and $\bc{y_n}$ are convergent sequences with $x_n \leq y_n$ for each $n \in \NN$. Let $x$ and $y$ denote their respective limits. Then $x \leq y$.
+\end{proposition}
+\begin{proof}
+    Seeking a contradiction, suppose $x > y$. Fix $\ve = (x-y)/2 > 0$. By definition, there exist natural numbers $N_1$ and $N_2$ such that $\abs{x_n - x} < \ve$ for all $n \geq N_1$ and $\abs{y_n - y} < \ve$ for all $n \geq N_2$. Let $N = \max{N_1, N_2}$. We hence have, for all $n \geq N$, \[\abs{x_n - x} < \ve \implies x_n > x - \ve \quad \tand \quad \abs{y_n - y} < \ve \implies y_n < y + \ve.\] Observe that \[x - y = 2\ve \implies x - \ve = y + \ve.\] Thus, we have \[y + \ve = x - \ve < x_n \leq y_n < y + \ve,\] a clear contradiction. Thus, $x \geq y$.
+\end{proof}
+
+\begin{theorem}[Squeeze Theorem]
+    Suppose $\bc{x_n}$, $\bc{y_n}$ and $\bc{z_n}$ are convergent sequences with $x_n \leq y_n \leq z_n$ for each $n \in \NN$. Let $x$, $y$ and $z$ denote their respective limits. Then $x \leq y \leq z$.
+\end{theorem}
+\begin{proof}
+    Apply the above proposition to get $x \leq y$ and $y \leq z$.
+\end{proof}
+
+\section{Limits for Functions}
+
+\begin{definition}
+    We say $f(x)$ has a \vocab{limit} $L$ at $a$, written $\displaystyle \lim_{x \to a} f(x) = L$, if for every $\ve > 0$ there exists a $\de > 0$ such that \[\abs{x - a} < \de \implies \abs{f(x) - L} < \ve.\]
+\end{definition}
+
+Intuitively, no matter how small a ``tolerance'' $\ve$ we choose, we can always find an open interval containing $a$ such that for all $x$ in this interval, the value of $f(x)$ stays within $\ve$ of $L$.
+
+\begin{figure}[H]\tikzsetnextfilename{519}
+\centering
+\begin{tikzpicture}[trim axis left, trim axis right]
+    \begin{axis}[
+        domain = 0.75:2.25,
+        ymin = 1.7,
+        ymax = 3.3,
+        samples = 101,
+        axis y line=middle,
+        axis x line=middle,
+        ytick = {2, 2.5, 3},
+        yticklabels = {$L - \ve$, $L$, $L+\ve$},
+        xtick = {1.20, 1.50, 1.80},
+        xticklabels = {$a - \de$, $a$, $a + \de$},
+        xlabel = {$x$},
+        ylabel = {$y$},
+        legend cell align={left},
+        legend pos=outer north east,
+        ]
+        \addplot[plotRed, very thick] {x + sin(\x r)};
+        \addlegendentry{$y = f(x)$};
+        \addplot[dotted] {3};
+        \addplot[dotted] {2};
+        \draw[dotted] (1.20, 0) -- (1.20, 4);
+        \draw[dotted] (1.80, 0) -- (1.80, 4);
+        \draw[dashed, thick] (1.5, 0) -- (1.5, 2.5) -- (0, 2.5);
+    \end{axis}
+\end{tikzpicture}
+\caption{}
+\end{figure}
+
+\begin{sample}
+    Prove that $\lim_{x \to 9} \sqrt{x-5} = 2$.
+\end{sample}
+\begin{sampans}
+    Fix $\ve > 0$. Choose $\de = \min{1/2, 2\ve}$. If $\abs{x - 9} < \de$, then \[\abs{\sqrt{x-5} - 2} = \frac{\abs{(x - 5) - 2^2}}{\sqrt{x-5} + 2} \leq \frac{\abs{x-9}}{2} < \frac{2\ve}{2} = \ve.\] Thus, $\lim_{x \to 0} \sqrt{x-5} = 2$.
+\end{sampans}
+
+Note that the limit of $f(x)$ at $a$ does not necessarily have to be $f(a)$! For instance, consider the function \[f(x) = \begin{cases}x^2, & x \neq 0, \\ 3, & x = 0.\end{cases}.\] The limit at $x = 0$ is 0, but $f(0) = 3$.
+
+\subsection{One-Sided Limits}
+
+In the definition of a limit, we consider the behaviour of $f(x)$ as $x$ approaches $a$ from both sides within the open interval $(a-\de, a+\de)$. In certain situations, however, we may wish to analyse the behaviour of $f(x)$ as $x$ approaches $a$ from one side only. To do so, we introduce the notion of right- and left-sided limits.
+
+\begin{definition}
+    Suppose the domain of $f$ contains the open interval $(a, b)$. We say $f(x)$ has a \vocab{right-sided limit} $L$ at $a$, written $\displaystyle\lim_{x \to a^+} f(x) = L$, if for every $\ve > 0$ there exists a $\de > 0$ such that \[a < x < a + \de \implies \abs{f(x) - L} < \ve.\]
+
+    Similarly, suppose the domain of $f$ contains the open interval $(c, a)$. We say $f(x)$ has a \vocab{left-sided limit} $L$ at $a$, written $\displaystyle\lim_{x \to a^-} f(x) = L$, if for every $\ve > 0$ there exists a $\de > 0$ such that \[a - \de < x < a \implies \abs{f(x) - L} < \ve.\]
+\end{definition}
+
+\begin{example}
+    Consider the following function: \[f(x) = \begin{cases}x^2, & x \geq 0,\\ x^2 + 2, & x < 0.\end{cases}\] The right-sided limit of $f(x)$ at $x = 0$ is 0, while the left-sided limit is 2.
+\end{example}
+
+\begin{proposition}
+    The limit of $f(x)$ at $x = a$ exists if and only if the right- and left-sided limits of $f(x)$ at $a$ exist and agree.
+\end{proposition}
+
+Using the above example, we see that the limit of $f(x)$ does not exist at $x = 0$, since the right- and left-limits are different ($0 \neq 2$).
+
+\subsection{Limits at Infinity}
+
+\begin{definition}
+    We say that $f(x)$ has a \vocab{limit at positive infinity}, written $\displaystyle\lim_{x \to \infty} f(x) = L$, if for every $\ve > 0$ there exists a real number $M$ such that for all $x$ in the domain of $f$, we have \[x \geq M \implies \abs{f(x) - L} < \ve.\]
+    
+    Similarly, $f(x)$ has a \vocab{limit at negative infinity}, written $\displaystyle\lim_{x \to -\infty} f(x) = L$, if for every $\ve > 0$ there exists a real number $M$ such that for all $x$ in the domain of $f$, we have \[x \leq M \implies \abs{f(x) - L} < \ve.\]
+\end{definition}
+
+\begin{sample}
+    Prove that $\lim_{x \to \infty} 1/x^2 = 0$.
+\end{sample}
+\begin{sampans}
+    Fix $\ve > 0$. Choose $M = 1/\sqrt{ve} + 1$. Whenever $x \leq M > 1/\sqrt{ve}$, we have \[\abs{\frac1{x^2} - 0} < \abs{\frac1{\bp{1/\sqrt{\ve}}^2}} = \ve.\] Thus, $\lim_{x \to \infty} 1/x^2 = 0$.
+\end{sampans}
+
+\subsection{Operations on Limits}
+
+\begin{fact}
+    If $\displaystyle\lim_{x \to a} f(x) = F$ and $\displaystyle\lim_{x \to a} g(x) = G$ both exist, then
+    \begin{itemize}
+        \item $\displaystyle\lim_{x \to a} (f(x) \pm g(x)) = \lim_{x \to a} f(x) \pm \lim_{x \to a} g(x) = F \pm G$.
+        \item $\displaystyle\lim_{x \to a} (f(x) g(x)) = \lim_{x \to a} f(x) \lim_{x \to a} g(x) = FG$.
+        \item $\displaystyle\lim_{x \to a} (f(x)/g(x)) = \lim_{x \to a} f(x) / \lim_{x \to a} g(x) = F/G$, provided that $g(x) \neq 0$ for all $x$ in its domain, and that $G \neq 0$.
+    \end{itemize}
+\end{fact}
+
+\subsection{Limits with Inequalities}
+
+\begin{proposition}
+    Let $f$ and $g$ be defined on a domain $D$. Suppose $\lim_{x \to a} f(x) = F$ and $\lim_{x \to a} g(x) = G$ both exist for some $c \in D$, and that $f(x) \leq g(x)$ for all $x \in D$. Then $F \leq G$.
+\end{proposition}
+\begin{proof}
+    Seeking a contradiction, suppose $F > G$. Fix $\ve = (F-G)/2 > 0$. By definition, there exist positive $\de_x$ and $\de_y$ such that \[\abs{x-a} < \de_x \implies \abs{f(x) - F} < \frac{F-G}{2} \quad \tand \quad \abs{x-a} < \de_y \implies \abs{g(x) - G} < \frac{F-G}{2}.\] Pick $x$ such that $\abs{x - a} < \min{\de_x, \de_y}$. Using the two implications above, we see that \[f(x) > F - \frac{F-G}{2} = \frac{F+G}{2} = G + \frac{F-G}{2} > g(x),\] a contradiction. Thus, $F \leq G$.
+\end{proof}
+
+\begin{theorem}[Squeeze Theorem]
+    Let $f$, $g$ and $h$ be defined on a domain $D$. Suppose the limits of $f$, $g$ and $h$ at $c \in D$ exist. Denote them by $F$, $G$ and $H$ respectively. If $f(x) \leq g(x) \leq h(x)$ for all $x \in D$, then $F \leq G \leq H$.
+\end{theorem}
+\begin{proof}
+    Apply the above result to get $F \leq G$ and $G \leq H$.
+\end{proof}
+
+\begin{sample}
+    Evaluate $\lim_{x \to 0} x^2 \cos{3/x}$.
+\end{sample}
+\begin{sampans}
+    For any $x \in \RR\setminus\bc{0}$, we have $-x^2 \leq x^2 \cos{3/x} \leq x^2$. By the squeeze theorem, we have \[0 = \lim_{x \to 0} -x^2 \leq \lim_{x \to 0} x^2 \cos{\frac3x} \leq \lim_{x \to 0} x^2 = 0,\] so the limit in question is 0.
+\end{sampans}
+
+\subsection{L'H\^{o}pital's Rule}
+
+\begin{definition}
+    An \vocab{indeterminate form} is an expression involving two functions whose limit cannot be determined solely from the limits of the individual functions.
+\end{definition}
+
+Examples of indeterminate forms include \[\frac{0}{0}, \quad \frac{\infty}{\infty}, \quad 0 \times \infty, \quad \infty - \infty, \quad 0^0, \quad 1^\infty, \quad \infty^0.\]
+
+\begin{theorem}[L'H\^{o}pital's Rule]
+    Suppose
+    \begin{itemize}
+        \item $f(x)/g(x)$ is in indeterminate form (i.e. $f(x)/g(x) = 0/0$ or $\pm \infty/\pm \infty$);
+        \item $f$ and $g$ are differentiable on an open interval $I$ except possibly at a point $a \in I$;
+        \item $g'(x) \neq 0$ for all $x \in I \setminus \bc{a}$; and
+        \item $\lim_{x \to a} f'(x)/g'(x)$ exists.
+    \end{itemize}
+    Then \[\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.\]
+\end{theorem}
+
+\begin{sample}
+    Evaluate $\lim_{x \to 0} (\e^x - x - 1)/x^2$.
+\end{sample}
+\begin{sampans}
+    Observe that $(\e^x - x - 1)/x^2$ is of the indeterminate form $0/0$ when $x = 0$. By L'H\^{o}pital's rule, we have \[\lim_{x \to 0} \frac{\e^x - x - 1}{x^2} = \lim_{x \to 0} \frac{\e^x - 1}{2x}.\] Again, this is of the indeterminate form $0/0$. Applying L'H\^{o}pital's rule once more, we finally get \[\lim_{x \to 0} \frac{\e^x - x - 1}{x^2} = \lim_{x \to 0} \frac{\e^x - 1}{2x} = \lim_{x \to 0} \frac{\e^x}{2} = \frac12.\]
+\end{sampans}
+
+\section{Continuity and Continuous Functions}
+
+\begin{definition}
+    A function $f$ is \vocab{continuous at $a$} if $\lim_{x \to a} f(x) = f(a)$. If $f$ is continuous for all $x$ in its domain, then $f$ is said to be a \vocab{continuous function}.
+\end{definition}
+
+Intuitively, a function $f$ is continuous if we can draw the graph of $y = f(x)$ without lifting the pen off the paper. That is, if the graph of $y = f(x)$ has ``breaks'', then $f$ is not continuous.
+
+Examples of continuous functions include polynomials, trigonometric functions and exponentials.
+
+Note that the continuity of a function depends on its domain. For instance, $f : \RR^+ \to \RR$, $x \mapsto 1/x$ is continuous, but $g : \RR \to \RR$, $x \mapsto 1/x$ is not, despite having the same rule.
+
+\begin{fact}[Properties of Continuous Functions]
+    Suppose $f$ and $g$ are continuous at $a$. Then the following algebraic combinations are also continuous at $a$.
+    \begin{itemize}
+        \item $f(x) \pm g(x)$,
+        \item $f(x) g(x)$,
+        \item $f(x)/g(x)$, provided $g(a) \neq 0$.
+    \end{itemize}
+\end{fact}
+
+\begin{proposition}[Composition of Continuous Functions]
+    Suppose $\lim_{x \to a} f(x) = b$ and $g$ is continuous at $a$. Then \[\lim_{x \to a} g(f(x)) = g\!\bp{\lim_{x \to a} f(x)} = g(b).\]
+\end{proposition}
+
+\section{Relative Rates of Growth}
+
+\begin{definition}
+    Let $f$ and $g$ be functions that are positive for sufficiently large values of $x$. 
+    \begin{itemize}
+        \item We say $f$ \vocab{grows faster} than $g$, and that $g$ \vocab{grows slower} than $f$ if \[\lim_{x \to \infty} \frac{f(x)}{g(x)} = \infty \quad \tor \quad \lim_{x \to \infty} \frac{g(x)}{f(x)} = 0.\] We write $f(x) \ll g(x)$, or $g(x) \gg f(x)$, or $f = o(g)$ (read as ``$f(x)$ is little-o of $g(x)$'').
+        \item We say that $f$ and $g$ \vocab{grow at the same rate} if \[0 < \lim_{x \to \infty} \frac{f(x)}{g(x)} < \infty.\] We write $f = O(g)$ (read as ``$f(x)$ is big-o of $g(x)$'').
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    The growth rates of common functions are given by \[\ln x \ll x^p \ll \e^x \ll x^x.\]
+\end{example}

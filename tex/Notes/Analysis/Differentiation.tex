@@ -27,9 +27,9 @@ Observe that the gradient of the tangent to the curve at $A$ can be approximated
         \item (Chain Rule) If $y = f(x)$ and $x = g(t)$, then $\der{y}{t} = \der{y}{x} \der{x}{t}$.
     \end{itemize}
 \end{proposition}
-The sum, product and quotient rules are easy to prove from first principles. We hence only prove the chain rule. However, we first need to define differentiability of a function:
+The sum, product and quotient rules are easy to prove from first principles. We hence only prove the chain rule. To do so, we introduce an equivalent definition of differentiability at a point.
 \begin{definition}\label{def:Differentiability}
-    A function $f(x)$ is \vocab{differentiable} at $a$ if there exists some function $q(x)$ continuous at $a$ such that \[[q(x) = \frac{f(x) - f(a)}{x - a}.\] Note that there is at most one such $q(x)$, and if it exists, then $q(x) = f'(x)$.
+    A function $f(x)$ is \vocab{differentiable} at $a$ if there exists some function $q(x)$ continuous at $a$ such that \[q(x) = \frac{f(x) - f(a)}{x - a}.\] Note that there is at most one such $q(x)$, and if it exists, then $q(x) = f'(x)$.
 \end{definition}
 We now prove the chain rule.
 \begin{proof}[Proof of Chain Rule]    
