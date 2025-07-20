@@ -1,0 +1,69 @@
+\chapter{Convergence Tests}
+
+\section{Tests for Sequences}\label{sec:convergence-sequence}
+
+\begin{theorem}[Monotone Convergence Theorem]
+    Suppose $\bc{u_n}$ is increasing (decreasing). Then $\bc{u_n}$ converges if and only if $\bc{u_n}$ is bounded above (below).
+\end{theorem}
+In the following proof, we take $\bc{u_n}$ to be increasing. The case where $u_n$ is decreasing is entirely analogous.
+\begin{proof}
+    ($\implies$) Suppose $\bc{u_n}$ converges to $L$. By the definition of the limit of a sequence, for all $\ve > 0$, there exists some natural number $N$ such that \[\abs{u_n - L} < \ve \implies u_n < L + \ve\] for all $n \geq N$. Because the sequence is increasing, we also have $u_i \leq u_N < L + \ve$ for all $1 \leq i < N$. Thus, the sequence is bounded above by $L + \ve$.
+    
+    ($\impliedby$) Suppose $\bc{u_n}$ is bounded above. By the completeness of the real numbers, $L = \sup \bc{u_n}$ exists. We now show that $L$ is the limit of $\bc{u_n}$.
+    
+    Fix $\ve > 0$. There exists some index $N$ such that $u_N > L - \ve$ (lest $L - \ve$ be an upper bound, contradicting the minimality of $L$). Since $\bc{u_n}$ is increasing, we have $u_n \geq u_N > L - \ve$ for all $n \geq N$. Further, we must have $u_n < L$ by definition of the supremum. Putting everything together, we obtain \[\abs{u_n - L} < \ve\] for all $n \geq N$, whence $L$ is the limit of $\bc{u_n}$ and the sequence converges.
+\end{proof}
+
+\section{Tests for Series}\label{sec:convergence-series}
+
+\begin{theorem}
+    If $u_n \not\to 0$ as $n \to \infty$, then $S_n$ diverges.
+\end{theorem}
+\begin{proof}
+    We work with the contrapositive. Suppose $S_k$ converges to $S_{\infty}$. Then \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} \bp{S_{n} - S_{n-1}} = S_{\infty} - S_{\infty} = 0,\] so $u_n \to 0$.
+\end{proof}
+
+Note that the converse is not true (consider $\sum_{n = 1}^\infty 1/n$).
+
+\begin{theorem}
+    Suppose $u_n \geq 0$ for all $n$. Then $S_n$ converges if and only if its sequence of partial sums is bounded above.
+\end{theorem}
+\begin{proof}
+    Follows readily from the monotone convergence theorem.
+\end{proof}
+
+\begin{theorem}[Comparison Tests]
+    Suppose there is a positive integer $N$ for which $0 \leq u_n \leq v_n$ for all $n \geq N$. Let $U_n$ and $V_n$ denote the $n$th partial sums of $\bc{u_n}$ and $\bc{v_n}$ respectively.
+    \begin{itemize}
+        \item If $V_n$ converges, then $U_n$ converges.
+        \item If $U_n$ diverges, then $V_n$ diverges.
+    \end{itemize}
+\end{theorem}
+\begin{proof}
+    Follows readily from the monotone convergence theorem.
+\end{proof}
+
+\begin{theorem}[Absolute Convergence]
+    If $\sum_{n = 1}^\infty \abs{u_n}$ converges, then $S_n$ converges.
+\end{theorem}
+\begin{proof}
+    Observe that \[0 \leq u_n + \abs{u_n} \leq 2 \abs{u_n}\] for all $n$, so $\sum_{n = 1}^\infty (u_n + \abs{u_n})$ converges by the comparison test. Hence, \[S_n = \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty (u_n + \abs{u_n}) - \sum_{n = 1}^\infty \abs{u_n}\] is convergent.
+\end{proof}
+
+\section{Tests for Definite Integrals}
+
+\begin{proposition}[Direct Comparison Test]
+    Let $f$ and $g$ be continuous on $[a, \infty)$ with $0 \leq f(x) \leq g(x)$ for all $x \geq a$. Then $\int_a^\infty f(x) \d x$ and $\int_a^\infty g(x) \d x$ either both converge or both diverge.
+\end{proposition}
+
+\begin{example}
+    Consider the integral $\int_1^\infty (\sin^2 x)/x^2 \d x$. Since \[0 \leq \frac{\sin^2 x}{x^2} \leq \frac1{x^2}\] on $[1, \infty)$ and the integral $\int_1^\infty 1/x^2 \d x$ converges, then by the direct comparison test, the integral in question converges.
+\end{example}
+
+\begin{proposition}[Limit Comparison Test]
+    If the positive functions $f$ and $g$ are continuous on $[a, \infty)$, and if $\lim_{x \to \infty} f(x)/g(x)$ is finite and positive, then $\int_a^\infty f(x) \d x$ and $\int_a^\infty g(x) \d x$ either both converge or both diverge.
+\end{proposition}
+
+\begin{example}
+    Consider the integral $\int_1^\infty (1-\e^{-x})/x \d x$. Since \[\lim_{x \to \infty} \frac{(1-\e^{-x})/x}{1/x} = \lim_{x \to \infty} (1 - e^{-x}) = 1,\] which is a positive finite limit, by the limit comparison test, the integral in question diverges since $\int_1^\infty 1/x \d x$ diverges.
+\end{example}
