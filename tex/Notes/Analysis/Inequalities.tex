@@ -61,7 +61,7 @@ If $f$ is concave, we get an analogous result.
     For non-negative real numbers $x_1, \dots, x_n$, the arithmetic mean is greater than or equal to the geometric mean: \[\frac{x_1 + \dots x_n}{n} \geq (x_1 \dots x_n)^{1/n}.\] Equality holds if and only if $x_1 = \dots = x_n$.
 \end{theorem}
 \begin{proof}
-    Since the logarithm function is concave, by Jensen's inequality, we have \[\ln{\sum_{i = 1}^n \frac{x_i}n} \geq \sum_{i = 1}^n \frac{\ln{x_i}}n = \frac1n \ln{\prod_{i = 1}^n x_i} = \ln{\prod_{i = 1}^n x_i^{1/n}}.\] Since exponentiation is monotonic, we have \[\frac{x_1 + \dots x_n}{n} \leq (x_1 \dots x_n)^{1/n},\] which is precisely the AM-GM inequality.
+    Since the logarithm function is concave, by Jensen's inequality, we have \[\ln{\sum_{i = 1}^n \frac{x_i}n} \geq \sum_{i = 1}^n \frac{\ln{x_i}}n = \frac1n \ln{\prod_{i = 1}^n x_i} = \ln{\prod_{i = 1}^n x_i^{1/n}}.\] Since exponentiation is monotonic, we have \[\frac{x_1 + \dots x_n}{n} \geq (x_1 \dots x_n)^{1/n},\] which is precisely the AM-GM inequality.
 \end{proof}
 
 \begin{sample}
@@ -73,10 +73,18 @@ If $f$ is concave, we get an analogous result.
 
 \section{Cauchy-Schwarz Inequality}
 
+The general form of the Cauchy-Schwarz inequality relates the magnitude of an inner product to the product of norms.
+
 \begin{theorem}[Cauchy-Schwarz Inequality]
-    For real numbers $a_1, \dots, a_n$ and $b_1, \dots, b_n$, \[\bp{\sum_{i = 1}^n a_i^2} \bp{\sum_{i = 1}^n b_i^2} \geq \bp{\sum_{i =1}^n a_i b_i}^2\] with equality if and only if $a_i = 0$, $b_i = 0$, or $a_i = \l b_i$ for some constant $\l$.
+    Let $V$ be a vector space with an inner product $\ba{\cdot, \cdot}$. Then for any vectors $\vec u, \vec v \in V$, we have \[\abs{\ba{\vec u, \vec v}}^2 \leq \norm{\vec u} \norm{\vec v},\] where $\norm{\cdot}$ is the norm induced by the inner product. Equality holds if and only if $\vec u$ and $\vec v$ are linearly dependent.
 \end{theorem}
-\begin{proof}[Proof 1 (Inner Product).]
+
+The more familiar Cauchy-Schwarz inequality is recovered when $V$ is the Euclidean $n$-space $\RR^n$ with the dot product as the inner product.
+
+\begin{proposition}[Cauchy-Schwarz Inequality ($\RR^n$)]
+    For real numbers $a_1, \dots, a_n$ and $b_1, \dots, b_n$, \[\bp{\sum_{i = 1}^n a_i^2} \bp{\sum_{i = 1}^n b_i^2} \geq \bp{\sum_{i =1}^n a_i b_i}^2\] with equality if and only if $a_i = 0$, $b_i = 0$, or $a_i = \l b_i$ for some constant $\l$.
+\end{proposition}
+\begin{proof}[Proof 1 (Dot Product).]
     For any two vectors $\vec a, \vec b \in \RR^n$, we have \[\vec a \dotp \vec b = \abs{\vec a} \abs{\vec b} \cos \t \leq \abs{\vec a} \abs{\vec b}.\] Letting $\vec a = \cvecivx{a_1}{a_2}{\dots}{a_n}$ and $\vec b = \cvecivx{b_1}{b_2}{\dots}{b_n}$, we get the Cauchy-Schwarz inequality. Equality holds when the two vectors are parallel, i.e. $a_i = \l b_i$ for constant $\l$, or when either vector is the zero vector.
 \end{proof}
 \begin{proof}[Proof 2 (Discriminant).]
@@ -86,28 +94,24 @@ If $f$ is concave, we get an analogous result.
 \end{proof}
 
 \begin{sample}
-    Show that \[\frac{x_1^2}{y_1} + \dots + \frac{x_n^2}{y_n} \geq \frac{(x_1 + \dots + x_n)^2}{y_1 + \dots + y_n}\] for all positive real numbers $y_1, \dots, y_n$.
+    Prove Titu's Lemma: \[\frac{x_1^2}{y_1} + \dots + \frac{x_n^2}{y_n} \geq \frac{(x_1 + \dots + x_n)^2}{y_1 + \dots + y_n}\] for all positive real numbers $y_1, \dots, y_n$.
 \end{sample}
 \begin{sampans}
     Let $a_i = x_i/\sqrt{y_i}$ and $b_i = \sqrt{y_i}$. By the Cauchy-Schwarz inequality, \[\bp{\frac{x_1^2}{y_1} + \dots + \frac{x_n^2}{y_n}}\bp{y_1 + \dots + y_n} \geq \bp{x_1 + \dots + x_n}^2\] and we immediately acquire the desired result.
 \end{sampans}
 
-The Cauchy-Schwarz inequality can be further extended to any inner product.
+The general triangle inequality is a simple corollary of the Cauchy-Schwarz inequality in $\RR^n$.
 
-\begin{theorem}[Cauchy-Schwarz Inequality (Inner Product)]
-    Let $V$ be a vector space with an inner product $\ba{\cdot, \cdot}$. Then for any vectors $\vec u, \vec v \in V$, we have \[\ba{\vec u, \vec v}^2 \leq \norm{\vec u} \cdot \norm{\vec v},\] where $\norm{\cdot}$ is the norm induced by the inner product. Equality holds if and only if $\vec u$ and $\vec v$ are linearly dependent.
-\end{theorem}
-
-\begin{corollary}
-    For complex numbers $a_1, \dots, a_n$ and $b_1, \dots, b_n$, \[\bp{\sum_{i = 1}^n \abs{a_i}^2} \bp{\sum_{i = 1}^n \abs{b_i}^2} \geq \abs{\sum_{i =1}^n a_i b_i\conj}^2,\] with equality if and only if $a_i = 0$, $b_i = 0$ or $a_i = \l b_i$ for some constant $\l$.
+\begin{corollary}[Triangle Inequalty in $\RR^n$]
+    For $\vec u, \vec v \in \RR^n$, we have $\abs{\vec u + \vec v} \leq \abs{\vec u} + \abs{\vec v}$.
 \end{corollary}
 \begin{proof}
-    Take the inner product on $\CC^n$ defined by $\ba{\vec u, \vec v} = u_1 v_1 \conj + \dots + u_n v_n\conj$.
-\end{proof}
-
-\begin{corollary}
-    For real-valued functions $f(t)$ and $g(t)$ square-integrable over $D$, \[\bp{\int_D \bs{f(t)}^2 \d t} \bp{\int_D \bs{g(t)}^2 \d t} \geq \bp{\int_D f(t)g(t) \d t}^2,\] with equality if and only if $f \equiv 0$, $g \equiv 0$ or $f \equiv \l g$ for some constant $\l$.
-\end{corollary}
-\begin{proof}
-    Take the inner product on the vector space of real-valued square-integrable functions $L^2$ defined by \[\ba{f, g} = \int_D f(x)g(x) \d x.\]
+    Let $\vec u, \vec v \in \RR^n$ with inner product $\ba{\vec u, \vec v} = \vec u \dotp \vec v$. Then
+    \begin{align*}
+        \abs{\vec u + \vec v}^2 &= \abs{\vec u}^2 + 2(\vec u \dotp \vec v) + \abs{\vec v}^2\\
+        &\leq \abs{\vec u}^2 + 2\abs{\vec u \dotp \vec v} + \abs{\vec v}^2\\
+        &\leq \abs{\vec u}^2 + 2\abs{\vec u}\abs{\vec v} + \abs{\vec v}^2\\
+        &\leq \bp{\abs{\vec u} + \abs{\vec v}}^2
+    \end{align*}
+    Taking roots, we get our desired result.
 \end{proof}
