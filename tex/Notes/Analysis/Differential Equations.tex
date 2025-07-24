@@ -366,10 +366,6 @@ Since the actual solution curve is concave upward, both $T_0$ and $T_1$ lie belo
             ylabel = {$y$},
             legend cell align={left},
             legend pos=outer north east,
-            after end axis/.code={
-                \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
-                }
             ]
             \addplot[plotRed] {x^2 + 0.3};
             \addlegendentry{actual solution curve};
@@ -409,10 +405,6 @@ Now, observe what happens when we translate $T_1$ such that it passes through $(
             ylabel = {$y$},
             legend cell align={left},
             legend pos=outer north east,
-            after end axis/.code={
-                \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
-                }
             ]
             \addplot[plotRed] {x^2 + 0.3};
             \addlegendentry{actual solution curve};
