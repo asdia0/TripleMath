@@ -1,0 +1,50 @@
+\section{Tutorial C2}
+
+\begin{problem}
+    How many positive integers $n$ are there such that $n$ is a divisor of at least one of the numbers $10^{40}$, $20^{30}$?
+\end{problem}
+\begin{solution}
+    Let $A$ be the set of positive divisors of $10^{40} = 2^{40} \times 5^{40}$, and $B$ the set of positive divisors of $20^{30} = 2^{60} \times 5^{30}$. Note that \[\abs{A} = (40+1)(40+1) = 1681 \quad \tand \quad \abs{B} = (60+1)(20+1) = 1891.\] Consider $A \cap B$, the set of common positive divisors. Note that the GCD of $10^{40}$ and $20^{30}$ is $2^{40} \times 5^{30}$, so \[\abs{A \cap B} = (40+1)(30+1) = 1271.\] Thus, by the principle of inclusion and exclusion, the number of positive integers $n$ that divide at least one of $10^{40}$ and $20^{30}$ is given by \[\abs{A \cup B} = \abs{A} + \abs{B} - \abs{A \cap B} = 1681 + 1891 - 1271 = 2301.\]
+\end{solution}
+
+\begin{problem}
+    Let $S$ be the set of 3-digit numbers $\ol{abc}$ such that $a, b, c \in [9]$ and $a, b, c$ are pairwise distinct. Find the number of members $\ol{abc} \in S$ such that $a \neq 3$, $b \neq 5$ and $c \neq 7$.
+\end{problem}
+\begin{solution}
+    Define $A$, $B$, $C$ to be the set of all 3-digit numbers in $S$ with $a = 3$, $b = 5$ and $c = 7$ respectively. Note that $\abs{S} = 9\times8\times7 = 504$, \[\abs{A} = \abs{B} = \abs{C} = 1 \times 8 \times 7 = 56.\] The pairwise intersection of any two sets has size \[\abs{A \cap B} = \abs{B \cap C} = \abs{C \cap A} = 1 \times 1 \times 7 = 7,\] while the intersection of all three sets has size 1 (with sole element 357). Thus, by the principle of inclusion and exclusion, the number of elements of $S$ with $a \neq 3$, $b \neq 5$ and $c \neq 7$ is
+    \begin{align*}
+        \abs{\ol{A} \cap \ol{B} \cap \ol{C}} &= \abs{S} - \bp{\abs{A} + \abs{B} + \abs{C}} + \bp{\abs{A \cap B} + \abs{B \cap C} + \abs{C \cap A}} - \abs{A \cap B \cap C}\\
+        &= 504 - (56 + 56 + 56) + (7 + 7 + 7) - 1\\
+        &= 356.
+    \end{align*}
+\end{solution}
+
+\begin{problem}
+    In a shop, five different postcards are on sale. A customer wishes to send postcards to eight of his friends.
+
+    Use the principle of inclusion and exclusion to show that the number of ways in which he can send a postcard to each of his eight friends, buying at last one of each of the five types of cards, is \[5^8 - \binom{5}{1} 4^8 + \binom{5}{2} 3^8 - \binom{5}{3} 2^8 + \binom{5}{4} 1^8.\]
+\end{problem}
+\begin{solution}
+    Let $S$ be the set of all 8-digit numbers whose digits are between 1 and 5 inclusive. Define $A_i$ to be the set of elements of $S$ such that the digit $i$ does not appear in $S$. It is easy to see that the intersection of $k$ such sets has size $(5-k)^8$ (we lose one possible digit per set, for a total of $5-k$ options per digit). Further, there are $\binom{5}{k}$ such intersections. Noting $\abs{S} = 5^8$, by the principle of inclusion and exclusion, the number of ways he can send a postcard to his friends is \[\abs{\bigcap_{i = 1}^5 \ol{A_i}} = 5^8 - \binom{5}{1} 4^8 + \binom{5}{2} 3^8 - \binom{5}{3} 2^8 + \binom{5}{4} 1^8.\]
+\end{solution}
+
+\begin{problem}
+    Each of ten ladies checks her hat and umbrella in a cloakroom and the attendant gives each lady back a hat and an umbrella at random. Show that the number of ways this can be done so that no lady gets back both of her possessions is \[\sum_{r = 0}^{10} (-1)^r \binom{10}{r} \bs{(10-r)!}^2.\]
+\end{problem}
+\begin{solution}
+    Let $S$ be the set of all distributions. Note that $\abs{S} =  10! \times 10! = (10!)^2$. Define $A_i$ to be the set of distributions where the $i$th lady gets back both of her possessions. Suppose now that at least $k$ ladies get back both of their possessions. There are $(10-k)!$ ways to distribute the remaining hats, and $(10-k)!$ ways to distribute the remaining umbrellas to the other ladies. Hence, the intersection of $k$ such sets has size $[(10-k)!]^2$. Further, there are $\binom{10}{k}$ such intersections. By the principle of inclusion and exclusion, the number of derangements in this case is \[\abs{\bigcap_{i = 1}^{10} \ol{A_i}} = (10!)^2 + \sum_{k = 1}^{10} (-1)^k \binom{10}{k} \bs{(10-k)!}^2 = \sum_{i = 0}^{10} (-1)^k \binom{10}{k} \bs{(10-k)!}^2.\]
+\end{solution}
+
+\begin{problem}
+    By using the principle of inclusion and exclusion, show that the number of ways to distribute $r$ distinct objects into $n$ distinct boxes, where $r \geq n$, where no boxes are empty is given by \[\sum_{i = 0}^n (-1)^i \binom{n}{i} (n-i)^r.\]
+\end{problem}
+\begin{solution}
+    Let $S$ be the set of all distributions. Note that $\abs{S} = n^r$. Let $A_i$ be the number of distributions with the $i$th box is empty. The intersection of $k$ such sets has size $(n-k)^r$, and there are $\binom{n}{k}$ such sets. Thus, by the principle of inclusion and exclusion, the number of distributions such that no box is empty is \[\abs{\bigcap_{i = 1}^n \ol{A_i}} = n^r + \sum_{k = 1}^n (-1)^k \binom{n}{k} (n-k)^r = \sum_{k = 0}^n (-1)^k \binom{n}{k} (n-k)^r.\]
+\end{solution}
+
+\begin{problem}
+    There are four types of sandwiches: egg, ham, tuna and chicken. A boy wishes to order 12 sandwiches. How many such orders can he place if the order does not include exactly 3 of any type?
+\end{problem}
+\begin{solution}
+    Let $S$ be the set of all orders. Note that $\abs{S} = 4^{12}$. Assign the numbers 1 through 4 to the four types. Let $A_i$ be the set of orders such that the boy orders exactly three of the $i$th type. The intersection of $k$ such sets has size $4^{12-3k}$, and there are $\binom{4}{k}$ such sets. Thus, by the principle of inclusion and exclusion, the number of orders he can make such that he does not order exactly 3 of any type is \[\abs{\bigcap_{i = 1}^4 \ol{A_i}} = 4^{12} + \sum_{k = 1}^4 (-1)^k \binom{4}{k} 4^{12-3k} = 15,752,961.\]
+\end{solution}
