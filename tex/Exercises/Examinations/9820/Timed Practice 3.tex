@@ -1,0 +1,59 @@
+\section{9820 Timed Practice 3}
+
+\begin{problem}
+    \begin{enumerate}
+        \item A special $n$-digit password used by PUSB bank can only contain the digits 0, 1, and 2. For the password to be valid, it must contain an odd number of zeroes. Let $V_n$ denote the number of such valid $n$-digit passwords. Show that $V_9 = 3^8 + V_8$.
+        \item Suppose a customer chooses to use a combination of the digits 0, 0, 0, 1, 1, 1, 2, 2, 2 as his password. Using the principle of inclusion and exclusion, find the number of ways he can arrange these nine digits so that no three consecutive digits are the same.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{ppart}
+        All 9-digit passwords can be formed by appending a digit to an 8-digit password. There are two cases we have to consider, namely if the 8-digit password is valid or invalid.
+
+        \case{1} Suppose the 8-digit password is valid. We can hence only append a `1' or `2' to obtain a valid 9-digit password. Since there are $V_8$ valid 8-digit passwords, we can form $2 V_8$ valid 9-digit passwords in this case.
+
+        \case{2} Suppose the 8-digit password is invalid. We must append a `0' to obtain a valid 9-digit password. Since there are $3^8 - V_8$ invalid 8-digit passwords, we can form $3^8 - V_8$ valid 9-digit passwords in this case.
+
+        Altogether, the number of valid 9-digit passwords is \[V_9 = (2V_8) + (3^8 - V_8) = 3^8 - V_8\] as desired.
+    \end{ppart}
+    \begin{ppart}
+        Let $A_i$, where $i = 0, 1, 2$, be the set of arrangements such that all the `$i$'s are together. By grouping the `$i$'s together, we see that \[\abs{A_i} = \frac{7!}{3! \, 3!} = 140.\] Similarly, the sizes of an arbitrary 2-way and 3-way intersection of $A_i$ are given by \[\abs{A_i \cap A_j} = \frac{5!}{3!} = 20 \quad \tand \quad \abs{A_0 \cap A_1 \cap A_2} = 3! = 6.\] Note that there are $\binom{3}{k}$ ways to form an intersection of $k$ sets, thus by the principle of inclusion and exclusion, the number of passwords with at least 3 same digits consecutively is \[\abs{A_0 \cup A_1 \cup A_2} = \binom{3}{1} (140) - \binom{3}{2} (20) + \binom{3}{3} (6) = 366.\]
+    \end{ppart}
+\end{solution}
+
+\begin{problem}
+    A number is defined as prime if it is greater than 1 and is not divisible by any other positive integer except 1 and itself. No prime number less than or equal to its square root divides it exactly.
+
+    Show that 653 is a prime number. Hence, find the number of positive divisors of 546561.
+\end{problem}
+\begin{solution}
+    Note that $\sqrt{653} = 25.6$.
+
+    \begin{table}[H]
+    \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        $k$ & $653/k$ (to 1 d.p.) \\ \hline
+        2 & 326.5 \\ \hline
+        3 & 217.7 \\ \hline
+        5 & 130.6 \\ \hline
+        7 & 93.3 \\ \hline
+        11 & 59.4 \\ \hline
+        13 & 50.2 \\ \hline
+        17 & 38.4 \\ \hline
+        19 & 34.4 \\ \hline
+        23 & 28.4 \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    Since 653 is not a multiple of any prime less than 25, it is prime.
+
+    Note that 546561 has prime factorization $3^3 \times 31 \times 653$. Thus, it has a total of $(3+1)(1+1)(1+1) = 16$ positive divisors.
+\end{solution}
+
+\begin{problem}
+    Find the number of common positive divisors of $(10!)^3$ and $(15!)^2$.
+\end{problem}
+\begin{solution}
+    One can verify that \[(10!)^3 = 2^{24} \times 3^{12} \times 5^6 \times 7^3 \quad \tand \quad (15!)^2 = 2^{22} \times 3^{12} \times 5^6 \times 7^4 \times 11^2 \times 13^2,\] so \[\gcd{(10!)^3, (15!)^2} = 2^{22} \times 3^{12} \times 5^6 \times 7^3.\] A positive integer divides both $(10!)^3$ and $(15!)^2$ if and only if it divides their GCD, hence the number of common positive divisors is given by $(22+1)(12+1)(6+1)(3+1) = 8372$.
+\end{solution}
