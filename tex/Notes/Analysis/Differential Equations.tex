@@ -556,7 +556,7 @@ The following figure shows two possible courses for growth of a population. The 
 
 We may account for the growth rate declining to 0 by including in the model a factor $1 - P/N$, which is close to 1 (i.e. no effect) when $P$ is much smaller than $N$, and close to 0 when $P$ is close to $N$. The resulting model \[\der{P}{t} = kP\bp{1 - \frac{P}{N}},\] is called the \vocab{logistic growth model}. $k$ is called the \vocab{intrinsic growth rate}, while $N$ is called the \vocab{carrying capacity}.
 
-Given the initial condition $P(0) = p_0$, the solution of the logistic equation is \[P(t) = \frac{p_0 N}[p_0 + (N-p_0) \e^{-kt}].\]
+Given the initial condition $P(0) = p_0$, the solution of the logistic equation is \[P(t) = \frac{p_0 N}{p_0 + (N-p_0) \e^{-kt}}.\]
 
 \subsubsection{Long-Term Behaviour}
 

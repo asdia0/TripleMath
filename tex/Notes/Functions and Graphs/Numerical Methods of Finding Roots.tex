@@ -72,7 +72,7 @@ Fixed point iteration is used to find a root of an equation $f(x) = 0$ which can
 
 \subsection{Derivation}
 
-Let $\a$ be a root to $f(x) = 0$. Since $f(x) = 0$ can be written in the form $x = F(x)$, we clearly have $\a = F(\a)$. Now observe that we can replace the argument $\a$ with $F(\a)$: \[\a = F(\a) = F \circ F(\a) = F \circ F \circ F(\a) = \dots.\] Hence, \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
+Let $\a$ be a root to $f(x) = 0$. Since $f(x) = 0$ can be written in the form $x = F(x)$, we clearly have $\a = F(\a)$. Now observe that we can replace the argument $\a$ with $F(\a)$: \[\a = F(\a) = F \circ F(\a) = F \circ F \circ F(\a) = \dots.\] Assuming certain conditions on $F$ which we will see below, the repeated composition of $F(x)$ converges to the root $\a$: \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
 
 \subsection{Geometrical Interpretation}
 
@@ -119,7 +119,7 @@ Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the 
 
 \subsection{Convergence}
 
-Convergence is not guaranteed. The rate at which the approximations converge to $\a$ depends on the value of $\abs{F'(x)}$ near $\a$. The smaller $\abs{F'(x)}$ is, the faster the convergence. It should be noted that fixed-point iteration fails if $\abs{F'(x)} > 1$ near $\a$.
+Convergence is not guaranteed. The rate at which the approximations converge to $\a$ depends on the value of $\abs{F'(x)}$ near $\a$. The smaller $\abs{F'(x)}$ is, the faster the convergence. It should be noted that fixed-point iteration fails if $\abs{F'(x)} > 1$ near $\a$.\footnote{More rigorously, by the Banach fixed-point theorem, fixed-point iteration converges to $\a$ if and only if $F$ acts as a contraction mapping around $\a$, i.e. $\abs{F'(x)} < 1$ near $x = \a$.}
 
 \begin{figure}[H]\tikzsetnextfilename{332}
     \centering

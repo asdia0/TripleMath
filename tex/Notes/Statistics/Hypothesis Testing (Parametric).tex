@@ -303,7 +303,7 @@ Suppose $X_1$ and $X_2$ have known variances $\s_1^2$ and $\s_2^2$ respectively.
 
 If we do not know the population variances of $X_1$ and $X_2$, we instead use the unbiased estimates $s_1^2$ and $s_2^2$. For large samples ($n_1, n_2 \geq 30$), we have, by the Central Limit Theorem, the following test-statistic: \[\ol{X_1} - \ol{X_2} \sim \Normal{\m_1 - \m_2}{\frac{\s_1^2}{n_1} + \frac{\s_2^2}{n_2}} \text{ approximately}.\]
 
-If we know further that the two populations have common variance\footnote{As a rule of thumb, the assumption $\s_1 = \s_2$ is considered reasonable if $1/2 \leq s_1/s_2 \leq 2$.}, i.e. $\s_1^2 = \s_2^2$, the \vocab{pooled variance} \[s_p^2 = \frac{\bp{n-1} s_1^2 + \bp{n_2 - 1} s_2^2}{\bp{n_1 - 1} + \bp{n_2 - 2}} = \frac{\sum \bp{x_1 - \ol{x_1}}^2 + \sum \bp{x_2 - \ol{x_2}}^2}{\bp{n_1 - 1} + \bp{n_2 - 1}}\] would provide a more precise estimate of the population variance. Our test statistic is hence \[\ol{X_1} - \ol{X_2} \sim \Normal{\m_1 - \m_2}{s_p^2 \bp{\frac{1}{n_1} + \frac{1}{n_2}}} \text{ approximately}.\]
+If we know further that the two populations have common variance\footnote{As a rule of thumb, the assumption $\s_1 = \s_2$ is considered reasonable if $1/2 \leq s_1/s_2 \leq 2$.}, i.e. $\s_1^2 = \s_2^2$, the \vocab{pooled variance} \[s_p^2 = \frac{\bp{n_1-1} s_1^2 + \bp{n_2 - 1} s_2^2}{\bp{n_1 - 1} + \bp{n_2 - 2}} = \frac{\sum \bp{x_1 - \ol{x_1}}^2 + \sum \bp{x_2 - \ol{x_2}}^2}{\bp{n_1 - 1} + \bp{n_2 - 1}}\] would provide a more precise estimate of the population variance. Our test statistic is hence \[\ol{X_1} - \ol{X_2} \sim \Normal{\m_1 - \m_2}{s_p^2 \bp{\frac{1}{n_1} + \frac{1}{n_2}}} \text{ approximately}.\]
 
 Either way, we proceed with the two-sample $z$-test.
 

@@ -53,7 +53,11 @@ Note that the converse is not true (consider $\sum_{n = 1}^\infty 1/n$).
 \section{Tests for Definite Integrals}
 
 \begin{proposition}[Direct Comparison Test]
-    Let $f$ and $g$ be continuous on $[a, \infty)$ with $0 \leq f(x) \leq g(x)$ for all $x \geq a$. Then $\int_a^\infty f(x) \d x$ and $\int_a^\infty g(x) \d x$ either both converge or both diverge.
+    Let $f$ and $g$ be continuous on $[a, \infty)$ with $0 \leq f(x) \leq g(x)$ for all $x \geq a$.
+    \begin{itemize}
+        \item If $\int_a^\infty f(x) \d x$ diverges, then $\int_a^\infty g(x) \d x$ diverges.
+        \item If $\int_a^\infty g(x) \d x$ converges, then $\int_a^\infty f(x) \d x$ converges.
+    \end{itemize}
 \end{proposition}
 
 \begin{example}

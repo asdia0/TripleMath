@@ -126,6 +126,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | ---------------- | ---- |
 | Timed Practice 1 | 🟢  |
 | Timed Practice 2 | 🟢  |
+| Timed Practice 3 | 🟢  |
 
 ## Compiling
 
