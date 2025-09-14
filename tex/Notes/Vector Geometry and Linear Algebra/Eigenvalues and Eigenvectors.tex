@@ -133,7 +133,7 @@ Also, one eigenvalue may have multiple corresponding eigenvectors. For instance,
 Note that we are taking $a_0$ to mean $a_0 \mat I$ on the RHS.
 
 \begin{definition}
-    A \vocab{submatrix} of $\mat A$ is a matrix obtained from $\mat A$ by deleting a collection of rows and/or columns. A \vocab{principal minor} of $\mat A$ is a submatrix whereby the indices of the deleted rows are the same as the indices of the deleted columns. 
+    A \emph{submatrix} of $\mat A$ is a matrix obtained from $\mat A$ by deleting a collection of rows and/or columns. A \emph{principal submatrix} of $\mat A$ is a submatrix whereby the indices of the deleted rows are the same as the indices of the deleted columns. A \emph{principal minor} of order $k$ is the determinant of a $k \times k$ principal submatrix.
 \end{definition}
 
 \begin{example}
@@ -141,8 +141,10 @@ Note that we are taking $a_0$ to mean $a_0 \mat I$ on the RHS.
 \end{example}
 
 \begin{proposition}
-    Let $\mat A$ be an $n \times n$ matrix. Let \[E_k = \sum_{\mat S \in S_k} \abs{\mat S}\] be the sum of the determinants of all $k \times k$ principal submatrices. We define $E_0 = 1$. Then the characteristic polynomial $\c(\l)$ of $\mat A$ is given by \[\c(\l) = \sum_{i = 0}^n (-1)^i E_{n-i} \l^i.\]
+    Let $\mat A$ be an $n \times n$ matrix. Let $E_k$ be the sum of the determinants of all principal minors of order $k$. We define $E_0 = 1$. Then the characteristic polynomial $\c(\l)$ of $\mat A$ is given by \[\c(\l) = \sum_{i = 0}^n (-1)^i E_{n-i} \l^i.\]
 \end{proposition}
+
+For a proof, see this \href{https://boonsuan.github.io/misc/cauchy_binet.pdf}{wonderful note} by Ho Boon Suan.
 
 \begin{example}
     Consider \[\mat A = \begin{pmatrix}2 & 0 & 1 \\ -1 & 2 & 3 \\ 1 & 0 & 2\end{pmatrix}.\] Then
