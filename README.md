@@ -118,6 +118,11 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
   <td>🟢</td>
   <td>🟢</td>
  </tr>
+ <tr>
+  <td>Prelims</td>
+  <td>🟡</td>
+  <td>🟡</td>
+ </tr>
 </table>
 
 #### H3 Mathematics
@@ -127,6 +132,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 | Timed Practice 1 | 🟢  |
 | Timed Practice 2 | 🟢  |
 | Timed Practice 3 | 🟢  |
+| Prelims          | 🟡  |
 
 ## Compiling
 
