@@ -1,0 +1,129 @@
+\section{9649 JC2 Preliminary Examination Paper 1}
+
+\begin{problem}
+    The terms in the sequence $\bc{u_n}$ satisfy the recurrence relation \[u_n = \frac12 u_{n-1} + 3.\]
+
+    \begin{enumerate}
+        \item Find an expression for $u_n$ in terms of $n$ in the case that $u_0 = 1$.
+        \item Describe the behaviour of the sequence as $n$ tends to infinity.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Suppose $S_1$ and $S_2$ are the column spaces of matrices $\mat A_1$ and $\mat A_2$, where \[\mat A_1 = \begin{pmatrix}1 & -1 & a \\ 0 & 0 & b \\ 0 & 0 & c\end{pmatrix} \quad \tand \quad \mat A_2 = \begin{pmatrix}1 & -1 & -1 \\ 0 & 3 & 0 \\ 0 & 1 & c\end{pmatrix}.\] Determine the possible values of $a$, $b$ and $c$ such that $S_1$ is a subspace of $S_2$.
+        \item Let $\bc{\vec v_1, \vec v_2, \vec v_3}$ be a basis for $\RR^3$ and $\mat N$ be a non-singular $3 \times 3$ matrix with real entries. Determine whether the set $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ is a basis for $\RR^3$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The complex number $z$ satisfies $\abs{\i z + 6 + \i} < \abs{z - 5 - 6\i}$ and $\abs{\frac12 z - 3 + 4\i} \leq 5$.
+
+    \begin{enumerate}
+        \item Sketch the locus of $z$.
+        \item Find the range of values of $\arg{z-4\i}$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The tangent plant to the point $(a, b, c)$ on the surface with equation $(x-3)^2 + (y-5)^2 + z^2 = 4$ is a subspace of $\RR^3$. Find the range of values of $a$.
+\end{problem}
+
+\begin{problem}
+    A spherical zone is the portion of the curved surface area of a sphere between two parallel planes $h$ units apart as shown in the diagram below.
+
+    \begin{figure}[H]
+        \centering
+        \scalebox{0.6}{\import{media}{sphere.pdf_tex}}
+    \end{figure}
+
+    By using a suitable curve and rotation axis, explain if the location of the two planes will affect the curved surface area of the spherical zone.
+\end{problem}
+
+\begin{problem}
+    The region enclosed by the curve $y = x \ln x$, the $x$-axis and the vertical line $x = 2$ is rotated by $2\pi$ radians about the $y$-axis to form a solid.
+
+    \begin{enumerate}
+        \item Show that the volume of the solid is $\int_1^2 2\pi g(x) \d x$, where $g(x)$ is a function to be determined. Hence, find the exact volume of the solid.
+        \item Using Simpson's Rule with $n = 4$ strips, estimate the value of the integral $\int_1^2 2\pi g(x) \d x$ up to 4 decimal places. You may assume that the intervals are equally spaces.
+        \item Calculate the percentage error in your answer in part (b).
+        \item Without performing the calculations to find an approximation using the Trapezium Rule, explain with reasoning whether your answer will be an over-estimate or under-estimate.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A differential equation is given by \[\cos x \der{y}{x} - y \sin x = 2 \cos x,\] where $-\pi/2 < x < \pi/2$.
+
+    \begin{enumerate}
+        \item Show that the general solution of the differential equation is $y = 2 \tan x + C \sec x$, where $C$ is the arbitrary constant.
+        \item Explain why the solution curves have turning points when $C < -k$ or when $C > k$, where $k$ is a constant to be determined.
+        \item On the same diagram, sketch the family of solution curves where $C \neq -k$ or $k$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Let $z = \cos \t + \i \sin \t$. By considering $z^5$, show that \[\sin 5\t = 16\sin^5 \t - 20 \sin^3 \t + 5 \sin \t.\]
+        \item Using your result in part (a),
+        \begin{enumerate}
+            \item find the distinct real roots to the equation \[16x^5 - 20x^3 +5x + 1 = 0,\] giving your answer, where appropriate, in exact trigonometric form; and
+            \item find the exact value of $\tan[2]{\pi/5}$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    The polar curves $C_1$ and $C_2$ are given by the following equations in the respective intervals.
+
+    \begin{alignat*}{2}
+        C_1: r &= 2 + 2\sin \t, &\quad 0 \leq \t \leq 2\pi,\\
+        C_2: r &= -2\sin\t, &\quad \pi < \t < 2\pi.
+    \end{alignat*}
+
+    \begin{enumerate}
+        \item On a single diagram, sketch $C_1$ and $C_2$.
+    \end{enumerate}
+
+    The region $R$ is enclosed by the polar curves $C_1$ and $C_2$ in the third and fourth quadrants.
+
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item Show that the perimeter of the region $R$ can be expressed as \[4 \int_p^q \sqrt{2 + 2 \sin \t} \d \t + \frac{2\pi}3,\] where $p$ and $q$ are exact real numbers to be determined. Evaluate this integral in exact form. You may use the identity \[1 + \sin \t = 2\sin[2]{\frac\t2 + \frac\pi4}\] without proof.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    In a population of plants, a particular gene has two versions (called alleles): $A$ and $a$. A genotype is a combination of two alleles. Hence, for this particular gene, individual plants can have one of three genotypes: $AA$, $Aa$ or $aa$. The order of the sequence of genotypes does not matter.
+
+    To breed a new plant, two plants, termed as its parents, are used. The new plane will inherit one gene from each of its parents' pairs of genes to form its own particular pair. For example, if one parent is of genotype $Aa$, it is equally likely that the new plant will inherit an $A$ gene or an $a$ gene from that parent, and if the other parent is of genotype $aa$, the new plant will definitely inherit an $a$ gene from that parent. Thus, the new plant will either be of genotype $Aa$ or $aa$.
+
+    Suppose a farmer has a large population of plants consisting of some distribution of all three possible genotypes $AA$, $Aa$ and $aa$. He starts a breeding programme where each plant in the population is always bred with a plant with genotype $Aa$ to produce the next generation of plants.
+
+    Let the vector $\cveciii{p_i}{q_i}{r_i}$ represent the proportion of plants with genotype $AA$, $Aa$ and $aa$ respectively in generation $i$, and $T : \RR^3 \to \RR^3$ be the transformation that maps $\cveciii{p_i}{q_i}{r_i}$ to $\cveciii{p_{i+1}}{q_{i+1}}{r_{i+1}}$.
+
+    \begin{enumerate}
+        \item Show that \[T: \cveciii{p_i}{q_i}{r_i} \mapsto \begin{pmatrix}2\b & \b & 0 \\ 2\b & 2\b & 2\b \\ 0 & \b & 2\b\end{pmatrix} \cveciii{p_i}{q_i}{r_i},\] where $\b$ is a non-zero constant to be determined. Find the nullity of $T$.
+        \item Find the eigenvalues of $T$ and their corresponding eigenvectors of $T$.
+        \item By diagonalizing the matrix representing $T$, find the proportion of the plants in the long run.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Two tanks are filled with salt water and are interconnected by pipes as shown below:
+
+    \begin{figure}[H]
+        \centering
+        \import{media}{tank_prelim.pdf_tex}
+    \end{figure}
+
+    Tank $X$ and Tank $Y$ initially contain 600 litres and 500 litres of salt solution respectively.
+
+    Salt water with a concentration of 1 gram per litre of salt enters Tank $X$ at a rate of 2 litres per minute. Pure water enters Tank $Y$ at a rate of 13 litres per minute. Through the connecting pipes, the salt solution in Tank $X$ flows into Tank $Y$ at 12 litres per minute. To keep the levels of the tanks the same, salt solution in Tank $Y$ flows into Tank $X$ at 10 litres per minute, and drains out at 15 litres per minute. The amount of salt in Tank $X$ and $Y$ are denoted as $x$ grams and $y$ grams respectively.
+
+    \begin{enumerate}
+        \item Show that \[\der{x}{t} = 2 - \frac1{50} x + \frac1{50} y \quad \tand \quad \der{y}{t} = \frac1{50} x - \frac1{20} y.\]
+        \item Find a second order differential equation involving $y$.
+        \item Find the general solution of the differential equation found in part (b).
+        \item Find the ratio of the amount of salt in tank $X$ to the amount of salt in tank $Y$ in the long run.
+    \end{enumerate}
+\end{problem}
