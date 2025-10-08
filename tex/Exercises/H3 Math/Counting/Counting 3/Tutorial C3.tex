@@ -1,0 +1,56 @@
+\section{Tutorial C3}
+
+\begin{problem}
+    Let $a_n$ represent the number of arrangements of the integers $1, 2, \dots, n$ where $n \geq 1$. Find a recurrence relation for $a_n$, $n \geq 2$.
+\end{problem}
+
+\begin{problem}
+    Kenny buys exactly one item from the following list each day:
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    Item & Cost \\ \hline
+    Scissors & \$1 \\ \hline
+    Glue & \$2 \\ \hline
+    Paper & \$2 \\ \hline
+    Pens & \$2 \\ \hline
+    Tape & \$2 \\ \hline
+    File & \$4 \\ \hline
+    \end{tabular}
+    \end{table}
+
+    Assuming unlimited supply, find a recurrence relation for $c_n$, the number of different sequences by which Kenny could spend exactly $n$ dollars and write down the initial conditions.
+\end{problem}
+
+\begin{problem}
+    Find a recurrence relation with initial conditions for $b_n$, the number of sequences in which 10 cents, 20 cents and 50 cents could be inserted into a vending machine to purchase a drink costing $10n$ cents. How many sequences are there to purchase an 80 cents drink?
+\end{problem}
+
+\begin{problem}
+    Suppose that there is an unlimited supply of blue, green, red and yellow counters, which are indistinguishable except for colour. Find a recurrence relation for the number of ways $s_n$, to stack $n$ counters such that a red counter and a green counter are not adjacent, and there is also no adjacent red counters or adjacent green counters.
+\end{problem}
+
+\begin{problem}
+    A $2 \times n$ rectangle is to be paved by $1 \times 2$ identical blocks. Let $a_n$ represent the number of ways this can be done. Find a recurrence relation for $a_n$.
+\end{problem}
+
+\begin{problem}
+    The number of squares that can be found on an $n \times n$ checkerboard is represented by $b_n$. Find a recurrence relation for $b_n$ and write down the initial conditions. Hence find the number of squares on an $8 \times 8$ checkerboard.
+\end{problem}
+
+\begin{problem}
+    An $n$-digit number uses no digits other than 1, 2, and 3. It does not have any 2's adjacent to each other and it does not have any 3's adjacent to each other. Let there be $T_n$ such numbers, with $X_n$ of these having first digit 1 and $Y_n$ having first digit 2.
+
+    \begin{enumerate}
+        \item Prove that for $n \geq 2$,
+        \begin{enumerate}
+            \item $Y_n = X_{n-1} + Y_{n-1}$,
+            \item $X_n = X_{n-1} + 2Y_{n-1}$,
+            \item $X_{n+1} = 2X_n + X_{n-1}$.
+        \end{enumerate}
+        \item Use mathematical induction to prove that for $n \geq 1$, \[X_n \equiv n^2 - n + 1 \pmod{4}.\]
+        \item Find and simplify an expression for $T_n \pmod{4}$.
+    \end{enumerate}
+\end{problem}

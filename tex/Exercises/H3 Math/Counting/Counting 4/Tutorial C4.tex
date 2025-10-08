@@ -1,0 +1,80 @@
+\section{Tutorial C4}
+
+\begin{problem}
+    Find the least number of people that have to be in a room in order for the probability that at least two of them celebrate their birthday in the same month is at least $1/2$. Assume that all possible monthly outcomes are equally likely.
+\end{problem}
+
+\begin{problem}
+    An urn contains $n$ red and $m$ blue balls. They are withdrawn one at a time until a total of $r$ (where $r \leq n$) red balls have been withdrawn. Find the probability that a total of $k$ balls are withdrawn.
+\end{problem}
+
+\begin{problem}
+    Prove Boole's inequality for any positive integer $n$: \[\P{\bigcup_{i = 1}^n A_i} \leq \sum_{i = 1}^n \P{A_i}.\]
+\end{problem}
+
+\begin{problem}
+    Show that if $\P{A} > 0$, then $\P{A \cap B}{A} \geq \P{A \cap B}{A \cup B}$.
+\end{problem}
+
+\begin{problem}
+    In an election, candidate $A$ receives $n$ votes and candidate $B$ receives $m$ votes, where $n > m$. Assuming that all $(n+m)!/n!m!$ orderings of the votes are equally likely, let $P_{n,m}$ denote the probability that $A$ is always ahead in the counting of the votes.
+
+    \begin{enumerate}
+        \item Compute the values of $P_{2,1}$, $P_{3,1}$, $P_{3,2}$, $P_{4,1}$, $P_{4,2}$, $P_{4,3}$.
+        \item Find the value of $P_{n, 1}$ and $P_{n, 2}$.
+        \item On the basis of your results in parts (a) and (b), conjecture the value of $P_{n,m}$.
+        \item Derive a recursion for $P_{n,m}$ in terms of $P_{n-1, m}$ and $P_{n, m-1}$ by conditioning on who receives the last vote.
+        \item Use part (d) to verify your conjecture in part (c) by an induction proof on $n+m$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    Pip and Emma play a game consisting of $n$ red cards and $n$ black cards, where $n \geq 2$. Pip begins by choosing two cards at random from the pack of $2n$ cards. If they are both red, Pip wins the game. If not, Emma than chooses two cards at random from the remaining $2n-2$ cards. If they are both red, Emma wins the game. Otherwise, neither of them has won.
+
+    \begin{enumerate}
+        \item Show that the probability that Pip wins is \[\frac{n-1}{2(2n-1)}.\]
+        \item Show that the probability that Emma wins is \[\frac{n(3n-5)}{4(2n-1)(2n-3)}.\]
+        \item Determine whether there are values of $n$ for which the game is fair, that is, for which Pip and Emma have equal probabilities of winning.
+        \item In the case when $n$ is large, write down the approximate numerical values of the probability that Pip wins and the probability that Emma wins.
+        \item In the case when $n$ is large, a series of six independent games is played. Find the approximate probability that Pip and Emma each win three games, given that all six games are won.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    A domino consists of a rectangular block bearing a number at each end. A set of dominoes corresponds to the number pairs
+
+    \[\begin{array}{ccccc}
+        (0,0), & (0, 1), & (0, 2), & \ldots, & (0, n)\\
+        & (1, 1), & (1, 2), & \ldots, & (1, n)\\
+        & & (2, 2), & \ldots, & (2, n)\\
+        & & & \ldots, & \ldots\\
+        & & & & (n, n)
+    \end{array}\]
+    where $n$ is a positive integer. If the two numbers on any one domino are the same, it is called a double, otherwise it is called a straight.
+
+    \begin{enumerate}
+        \item Show that there are $(n+1)(n+2)/2$ dominoes in the set.
+        \item Two dominoes are chosen at random.
+        \begin{enumerate}
+            \item Show that the probability that they are a double and a straight with a number in common is \[\frac{8}{(n+2)(n+3)}.\]
+            \item Show that the probability that they are two straights with a number in common in \[\frac{4(n-1)}{(n+2)(n+3)}.\]
+            \item One number is chosen at random from each of the two dominoes. Show that the probability that the two chosen numbers are equal is $1/(n+2)$.
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item A box contains $n$ balls, numbered $1, 2, \dots, n$, respectively. A ball is drawn at random, the number on it is noted, and the ball is replaced. This is repeated until $r$ draws have been made. Find the probabilities that
+        \begin{enumerate}
+            \item the greatest, and
+            \item the least number
+        \end{enumerate}
+        noted is $k$, where $1 \leq k \leq n$.
+        \item A box contains $n$ balls, numbered $1, 2, \dots, n$, respectively, where $n \geq 3$. Three balls are drawn at random, in order and without replacement. A ``match'' occurs if the number on the $r$th ball drawn is $r$. Show that
+        \begin{enumerate}
+            \item the probability that there is at least one match in the first two draws is \[\frac{2n-3}{n(n-1)},\]
+            \item the probability that there is at least one match in the first three draws is \[\frac{3n^2 - 12 + 13}{n(n-1)(n-2)}.\]
+        \end{enumerate}
+    \end{enumerate}
+\end{problem}
