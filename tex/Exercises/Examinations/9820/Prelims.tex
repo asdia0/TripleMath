@@ -397,7 +397,7 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            We are given \[F(x) = \sum_{k = 0}^n (-1)^k f^{(2k)}(x).\] Differentiating twice, we get \[F''(x) = \sum_{k = 0}^{n} (-1)^{k+2} f^{(2k+2)}(x) = -\sum_{k = 1}^{n} (-1)^{k} f^{(2k)}(x),\] where we used the fact that $f^{(2k+2)}(x) = 0$ for all $x$, since $f$ has degree $2n < 2n+2$. Thus, \[F(x) + F''(x) = \sum_{k = 0}^n (-1)^k f^{(2k)}(x) -\sum_{k = 1}^{n} (-1)^{k} f^{(2k)}(x) = f^(0)(x) = f(x).\] Rearranging gives $F''(x) = f(x) - F(x)$.
+            We are given \[F(x) = \sum_{k = 0}^n (-1)^k f^{(2k)}(x).\] Differentiating twice, we get \[F''(x) = \sum_{k = 0}^{n} (-1)^{k+2} f^{(2k+2)}(x) = -\sum_{k = 1}^{n} (-1)^{k} f^{(2k)}(x),\] where we used the fact that $f^{(2k+2)}(x) = 0$ for all $x$, since $f$ has degree $2n < 2n+2$. Thus, \[F(x) + F''(x) = \sum_{k = 0}^n (-1)^k f^{(2k)}(x) -\sum_{k = 1}^{n} (-1)^{k} f^{(2k)}(x) = f^{(0)}(x) = f(x).\] Rearranging gives $F''(x) = f(x) - F(x)$.
         \end{psubpart}
         \begin{psubpart}
             Integrating by parts twice, we see that \[\int_0^\pi F''(x) \sin x \d x = F(0) + F(\pi) - \int_0^\pi F(x) \sin x \d x.\] Thus, using (c)(i), \[\int_0^\pi f(x) \sin x \d x = \int_0^\pi F(x) \sin x \d x + \int_0^\pi F''(x) \sin x \d x = F(0) + F(\pi).\]
@@ -415,6 +415,6 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        By (a)(ii), \[F(0) = \sum_{k = 0}^n (-1)^k f^{2k}(0) \in \ZZ.\] Likewise, by (b), $F(\pi) \in \ZZ$. Thus, by (c)(ii), \[\int_0^\pi f(x) \sin x \d x \in \ZZ.\] By (d)(iii), we can take $n$ sufficiently large, so that $2\pi^n m^n/n!$ is arbitrarily close to 0. Applying the bounds given by (d)(ii), \[0 < \int_0^\pi f(x) \sin x \d x < \frac{2\pi^n m^n}{n!} < 1,\] so there is an integer in the interval $(0, 1)$, a contradiction. Thus, our assumption that $\pi$ is rational is flawed, so $\pi$ is irrational.
+        By (a)(ii), \[F(0) = \sum_{k = 0}^n (-1)^k f^{(2k)}(0) \in \ZZ.\] Likewise, by (b), $F(\pi) \in \ZZ$. Thus, by (c)(ii), \[\int_0^\pi f(x) \sin x \d x \in \ZZ.\] By (d)(iii), we can take $n$ sufficiently large, so that $2\pi^n m^n/n!$ is arbitrarily close to 0. Applying the bounds given by (d)(ii), \[0 < \int_0^\pi f(x) \sin x \d x < \frac{2\pi^n m^n}{n!} < 1,\] so there is an integer in the interval $(0, 1)$, a contradiction. Thus, our assumption that $\pi$ is rational is flawed, so $\pi$ is irrational.
     \end{ppart}
 \end{solution}
