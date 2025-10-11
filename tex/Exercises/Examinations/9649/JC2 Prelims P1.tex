@@ -8,6 +8,14 @@
         \item Describe the behaviour of the sequence as $n$ tends to infinity.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        The complementary solution is \[u_n^{(c)} = C \bp{\frac12}^n.\] Let $k$ be a particular solution. Then $k =  \frac12 k + 3$, so $k = 6$. Thus, the general solution is \[u_n = u_{n}^{(c)} + k = C \bp{\frac12}^n + 6.\] Since $u_0 = 1$, we have that $C = -5$, so \[u_n = -\frac{5}{2^n} + 6.\]
+    \end{ppart}
+    \begin{ppart}
+        $u_n$ is increasing and converges to 6.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
@@ -15,6 +23,24 @@
         \item Let $\bc{\vec v_1, \vec v_2, \vec v_3}$ be a basis for $\RR^3$ and $\mat N$ be a non-singular $3 \times 3$ matrix with real entries. Determine whether the set $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ is a basis for $\RR^3$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        \case{1}[$c \neq 0$] Then $\det A_2 = 3c \neq 0$. Thus, $S_2 = \RR^3$, whence $S_1$ is always a subspace of $S_2$.
+
+        \case{2}[$c = 0$] Then \[\mat A_1 = \begin{pmatrix}1 & -1 & a \\ 0 & 0 & b \\ 0 & 0 & 0\end{pmatrix} \quad \tand \quad \mat A_2 = \begin{pmatrix}1 & -1 & -1 \\ 0 & 3 & 0 \\ 0 & 1 & 0\end{pmatrix}.\] By inspection, \[S_1 = \Span{\cveciii100, \cveciii0b0} \quad \tand \quad S_2 = \Span{\cveciii100, \cveciii031}.\] Evidently, $S_1$ is a subspace of $S_2$ if and only if $b = 0$.
+
+        Thus, $S_1$ is a subspace of $S_2$ when
+        \begin{itemize}
+            \item $a \in \RR$, $b \in \RR$, $c \neq 0$; or
+            \item $a \in \RR$, $b = 0$, $c = 0$.
+        \end{itemize}
+    \end{ppart}
+    \begin{ppart}
+        We prove independence. Let $c_1, c_2, c_3 \in \RR$ be scalars such that \[c_1 \mat N \vec v_1 + c_2 \mat N \vec v_2 + c_3 \mat N \vec v_3 = \vec 0.\] Since $\mat N$ is invertible, its inverse $\mat N^{-1}$ exists, so we may left-multiply both sides by $\mat N^{-1}$ to get \[c_1 \vec v_1 + c_2 \vec v_2 + c_3 \vec v_3 = \mat 0.\] But $\bc{\vec v_1, \vec v_2, \vec v_3}$ is a basis of $\RR^3$ and are thus independent, thus $c_1 = c_2 = c_3 = 0$. Hence, $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ are also independent.
+
+        Since $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ are independent, and \[\Dim \RR^3 = 3 = \abs{\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}},\] it must be a basis for $\RR^3$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The complex number $z$ satisfies $\abs{\i z + 6 + \i} < \abs{z - 5 - 6\i}$ and $\abs{\frac12 z - 3 + 4\i} \leq 5$.
@@ -24,11 +50,80 @@
         \item Find the range of values of $\arg{z-4\i}$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that the given conditions are equivalent to \[\abs{z - (-1 + 6\i)} < \abs{z - (5 + 6\i)} \quad \tand \quad \abs{z - (6 - 8\i)} \leq 10.\]
+
+        \begin{center}\tikzsetnextfilename{526}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    samples = 101,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = \empty,
+                    ytick = \empty,
+                    xmin=-8,
+                    xmax=20,
+                    ymin=-21,
+                    ymax=7,
+                    axis equal image,
+                    axis on top,
+                    xlabel = {$\Re$},
+                    ylabel = {$\Im$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=south east] {$O$};
+                        }
+                    ]
+
+                    \coordinate[label=above right:$A$] (A) at (2, 1.165);
+                    \coordinate[label=right:$C\bp{6,-8}$] (C) at (6, -8);
+                    \coordinate[label=left:$F\bp{0, 4}$] (F) at (0, 4);
+                    \coordinate[label=left:$B$] (B) at (-3.2, -4.09);
+                    \coordinate (O) at (0, 0);
+
+                    \begin{scope}
+                        \clip (-8,-20) rectangle (2,7);
+                        \fill[gray!30] (C) circle[radius=10];
+                    \end{scope} 
+            
+                    \draw (C) -- (6,-18);
+                    \node[anchor=west] at (6,-13) {10};
+            
+                    \draw (C) circle[radius=10];
+
+                    \fill (A) circle[radius=2.5pt];
+                    \fill (B) circle[radius=2.5pt];
+                    \fill (C) circle[radius=2.5pt];
+                    \fill (F) circle[radius=2.5pt];
+
+                    \plot[dotted] {4 + 2.525*x};
+
+                    \draw[dashed] (2, -21) -- (2, 7);
+                    \node[anchor=west] at (2, -19.5) {$x = 2$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Let $A(x, y)$ be the point of intersection between the circle and the line $x = 2$, with $y > 0$. The equation of the circle is \[(x-6)^2 + (y+8)^2 = 10^2.\] Substituting $x = 2$ and solving gives $A(2, 2\sqrt{21} - 8)$. Thus, \[\sup \arg{z - 4\i} = \arg{\bs{2 + (2\sqrt{21} - 8)\i} - 4\i} = \arctan \frac{2\sqrt{21} -8 -4}{2} = -0.956 \tosf{3}.\]
+
+        Set $F(0, 4)$. Let $B$ lie on the circumference of the circle such that $BF$ is tangent to the circle, with negative $y$-coordinate. Let $C(6, -8)$ be the centre of the circle. Note that \[FB = \sqrt{6^2 + (4+8)^2} = 6\sqrt{5}.\] Thus, \[\sin \angle CFB = \frac{CB}{BF} = \frac{10}{6\sqrt{5}} \implies \angle CFB = 0.84107 \tosf{5}.\] Next, we note that $C$ is at an angle \[\arg{6-8\i - 4\i} = \arctan \frac{-12}{6} = -1.10715 \tosf{5}\] relative to $F$. Thus, \[\min \arg{z-4\i} = -1.10715 - 0.84107 = -1.95 \tosf{3}.\]
+
+        Hence, $-1.95 \leq \arg{z-4\i} < -0.856$.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The tangent plant to the point $(a, b, c)$ on the surface with equation $(x-3)^2 + (y-5)^2 + z^2 = 4$ is a subspace of $\RR^3$. Find the range of values of $a$.
 \end{problem}
+\begin{solution}
+    Note that the tangent plane must pass through the origin, since it is a subspace of $\RR^3$. Observe also that the equation $(x-3)^2 + (y-5)^2 + z^2 = 4$ describes a sphere with radius 2 and centre $(3, 5, 0)$. Since the sphere is symmetric about the $xy$-plane, the extremal points of $c$ occur on the $xy$-plane. Thus, it suffices to look at the projection of the sphere and the tangent plane on the $xy$-plane. There, the sphere becomes the circle with equation \[(x-3)^2 + (y-5)^2 = 4,\] while the tangent plane becomes the line $y = kx$ passing through the origin. Solving both simultaneously, we get the quadratic \[\bp{1 + k^2} x^2 - (6 + 10k)x + 30 = 0.\] Since $y = kx$ is tangent to the circle, the discriminant of this quadratic must be 0. Hence, \[(6 + 10k)^2 - 4\bp{1 + k^2}(30) = 0 \implies k = \frac{15 \pm 2\sqrt{30}}{5}.\] By the quadratic formula, the $x$-coordinates of the point of tangency are thus \[x = \frac{6+10k}{2\bp{1 + k^2}} = 1.04, \, 4.26.\] Hence, $1.04 \leq c \leq 4.26$, $c \neq 3$.
+\end{solution}
 
+\clearpage
 \begin{problem}
     A spherical zone is the portion of the curved surface area of a sphere between two parallel planes $h$ units apart as shown in the diagram below.
 
@@ -39,6 +134,11 @@
 
     By using a suitable curve and rotation axis, explain if the location of the two planes will affect the curved surface area of the spherical zone.
 \end{problem}
+\begin{solution}
+    Consider the rotation of the region bounded by $y = 0$, $x = a$, $x = b$ and $y = \sqrt{r^2 - x^2}$ about the $x$-axis, with $b-a = h$. The surface area of the resulting solid is precisely the curved surface area of a sphere of radius $r$.
+
+    Note that \[1 + \bp{\der{y}{x}}^2 = 1 + \bp{\frac{-x}{\sqrt{r^2-x^2}}}^2 = 1 + \frac{x^2}{r^2 - x^2} = \frac{r^2}{r^2-x^2}.\] Thus, the surface area of revolution is \[2\pi \int_a^b \sqrt{r^2 - x^2} \sqrt{1 + \bp{\der{y}{x}}^2} \d x = 2\pi \int_a^b r \d x = 2\pi r (b-a) = 2\pi r h \units[2],\] which is independent of $a$ and $b$.
+\end{solution}
 
 \begin{problem}
     The region enclosed by the curve $y = x \ln x$, the $x$-axis and the vertical line $x = 2$ is rotated by $2\pi$ radians about the $y$-axis to form a solid.
@@ -50,6 +150,25 @@
         \item Without performing the calculations to find an approximation using the Trapezium Rule, explain with reasoning whether your answer will be an over-estimate or under-estimate.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $y$ intersects the $x$-axis when $x = 0$ or $x = 1$. By the shell method, the volume of revolution is \[V = 2\pi \int_1^2 xy \d x = 2\pi \int_1^2 x^2 \ln x \d x.\] Thus, $g(x) = x^2 \ln x$. Integrating by parts, we get
+        \begin{align*}
+            V &= 2\pi \bp{\evalint{\frac{x^3 \ln x}{3}}12 - \frac{1}{3} \int_1^2 x^2 \d x}\\
+            &= 2\pi \evalint{\frac{x^3 \ln x}{3} - \frac{x^3}{9}}12\\
+            &= \frac{2\pi}{9} \bp{24 \ln 2 - 7} \units[3].
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Using Simpson's rule, we have the estimate \[\int_1^2 2\pi g(x) \d x \approx 2\pi \cdot \frac{0.5}{6} \bs{g(1) + 4g(1.25) + 2g(1.5) + 4g(1.75) + g(2)} = 6.7267 \todp{4}.\]
+    \end{ppart}
+    \begin{ppart}
+        The percentage error in the estimate is \[\frac{\abs{6.7267 - \frac{2\pi}{9} \bp{24 \ln 2 - 7}}}{\frac{2\pi}{9} \bp{24 \ln 2 - 7}} = 0.00254\%.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $y = x^2 \ln x$ is concave upwards on $(1, 2)$, the trapezium rule will give an overestimate.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     A differential equation is given by \[\cos x \der{y}{x} - y \sin x = 2 \cos x,\] where $-\pi/2 < x < \pi/2$.
@@ -60,6 +179,50 @@
         \item On the same diagram, sketch the family of solution curves where $C \neq -k$ or $k$.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have \[\der{}{x} \bp{y \cos x} = 2\cos x.\] Integrating with respect to $x$, we get \[y \cos x = \int 2 \cos x \d x = 2\sin x + C.\] Thus, $y = 2 \tan x + C \sec x$.
+    \end{ppart}
+    \begin{ppart}
+        Differentiating $y$, we get \[\der{y}{x} = 2\sec^2 x + C \sec x \tan x.\] For turning points, $\derx{y}{x} = 0$, thus \[2 + C \sin x = 0 \implies \sin x = -\frac{2}{C}.\] But $\sin x$ has range $[-1, 1]$, thus $C < -2$ or $C > 2$, i.e. $k = 2$.
+    \end{ppart}
+    \begin{ppart}
+        \begin{figure}[H]\tikzsetnextfilename{527}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right]
+            \begin{axis}[
+                domain = -1.5:1.5,
+                xmin = -1.7,
+                xmax = 1.7,
+                ymin = -8,
+                ymax = 8,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = \empty,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                legend cell align={left},
+                legend pos=outer north east,
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[plotRed] {2*tan(\x r) - 3*sec(\x r)};
+                \addlegendentry{$C < -2$};
+
+                \addplot[black] {2*tan(\x r)};
+                \addlegendentry{$-2 \leq C \leq 2$};
+
+                \addplot[plotBlue] {2*tan(\x r) + 3*sec(\x r)};
+                \addlegendentry{$C > 2$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     \begin{enumerate}
