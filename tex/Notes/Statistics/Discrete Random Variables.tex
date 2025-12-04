@@ -381,7 +381,7 @@ We can prove this statement more rigorously using the probability distribution o
     Let $X \sim \Po{\l_1}$, $Y \sim \Po{\l_2}$ be independent random variables. Then $X + Y \sim \Po{\l_1 + \l_2}$
 \end{proposition}
 \begin{proof}
-    Consider the event $X + Y = n$. This can only happen if $X = m$ and $Y = n - m$. Thus, \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m \tand Y = n -m}.\] Since $X$ and $Y$ are independent, we can split the summands into products: \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m} \P{Y = n -m}.\] Using the probability distribution we derived earlier, \[\P{X + Y = n} = \sum_{m = 0}^n \bs{\e^{-\l_1} \frac{\l_1^m}{m!}} \bs{\e^{-\l_2} \frac{\l_2^{n-m}}{(n-m)!}} = \frac{\e^{-(\l_1 + \l_2)}}{n!} \sum_{m = 0}^n \frac{n!}{m! (n-m)!} \l_1^m \l_2^{n-m}.\] Observe that the sum is simply the binomial expansion of $(\l_1 + \l_2)^{n}$. Thus, \[\P{X + Y = n} = \e^{-(\l_1 + \l_2)} = \frac{(\l_1 + \l_2)^n}{n!},\] which is exactly the probability distribution of a Poisson random variable with parameter $\l_1 + \l_2$.
+    Consider the event $X + Y = n$. This can only happen if $X = m$ and $Y = n - m$. Thus, \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m \tand Y = n -m}.\] Since $X$ and $Y$ are independent, we can split the summands into products: \[\P{X + Y = n} = \sum_{m = 0}^n \P{X = m} \P{Y = n -m}.\] Using the probability distribution we derived earlier, \[\P{X + Y = n} = \sum_{m = 0}^n \bs{\e^{-\l_1} \frac{\l_1^m}{m!}} \bs{\e^{-\l_2} \frac{\l_2^{n-m}}{(n-m)!}} = \frac{\e^{-(\l_1 + \l_2)}}{n!} \sum_{m = 0}^n \frac{n!}{m! (n-m)!} \l_1^m \l_2^{n-m}.\] Observe that the sum is simply the binomial expansion of $(\l_1 + \l_2)^{n}$. Thus, \[\P{X + Y = n} = \e^{-(\l_1 + \l_2)} \frac{(\l_1 + \l_2)^n}{n!},\] which is exactly the probability distribution of a Poisson random variable with parameter $\l_1 + \l_2$.
 \end{proof}
 
 \subsection{Expectation and Variance}
@@ -488,7 +488,7 @@ Given that $X \sim \Po{\l}$, the graphs of the probability distribution of $X$ f
 \begin{proof}
     We know that \[\P{X = k} = \binom{n}{k} p^k (1 - p)^{n-k}. \tag{1}\] Since $n$ is large relative to $k$, we have \[\binom{n}{k} = \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} \approx \frac{n^k}{k!}. \tag{2}\]
     
-    Note also that \[(1-p)^{n-k} = \e^{(n-k) \ln{1-p}}.\] Since $p$ is small, we have $\ln{1-p} \approx -p$. Since $n$ is large relative to $k$, we have $n-k \approx n$. Thus, \[(1-p)^{n-k} \approx \e^{-pn}. \tag{3}\]
+    Note also that \[(1-p)^{n-k} = \e^{(n-k) \ln(1-p)}.\] Since $p$ is small, we have $\ln{1-p} \approx -p$. Since $n$ is large relative to $k$, we have $n-k \approx n$. Thus, \[(1-p)^{n-k} \approx \e^{-pn}. \tag{3}\]
 
     Substituting (2), (3) and $\l = pn$ into (1), we get the approximation \[\P{X = k} \approx \frac{n^k}{k!} p^k \e^{-pn} = \e^{-\l} \frac{n^k}{k!} \bp{\frac{\l}{n}}^k = \e^{-\l} \frac{\l^k}{k!}.\]
 
