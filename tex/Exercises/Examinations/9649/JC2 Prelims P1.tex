@@ -234,6 +234,27 @@
         \end{enumerate}
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        Note that $z = \e^{\i \t}$, so
+        \begin{align*}
+            \sin 5\t &= \Im \e^{\i 5 \t} = \Im z^5 = \Im \bp{\cos \t + \i \sin \t}^5\\
+            &= \Im \big(\cos^5 \t + 5 \i \cos^4 \t \sin \t - 10 \cos^3 \t \sin^2 \t - 10 \i \cos^2 \t \sin^3 \t\\
+            &\hspace{3em}+ 5 \cos \t \sin^4 \t + \i \sin^5 \t\big)\\
+            &= 5 \cos^4 \t \sin \t - 10 \cos^2 \t \sin^3 \t + \sin^5 \t\\
+            &= 5 \bp{1 - \sin^2 \t}^2 \sin \t - 10 \bp{1 - \sin^2 \t} \sin^3 \t + \sin^5 \t\\
+            &= 16\sin^5 \t - 20 \sin^3 \t + 5 \sin \t.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        \begin{psubpart}
+            Let $x = \e^{\i \t}$. By part (a), the given equation becomes $\sin 5\t = -1$. Within the range $0 \leq \t < 2\pi$, the only solutions are \[\t = \frac3{10}\pi, \quad \frac7{10}\pi, \quad \frac{11}{10}\pi, \quad \frac{15}{10}\pi, \quad \frac{19}{10}\pi.\] Since $\sin\frac3{10} \pi = \sin\frac7{10} \pi$ and $\sin\frac{11}{10} \pi = \sin\frac{19}{10} \pi$, the distinct real roots to the original equation are \[x = \sin\frac3{10}\pi, \quad \sin \frac{11}{10} \pi, \quad -1.\]
+        \end{psubpart}
+        \begin{psubpart}
+            Let $s = \sin{\pi/5}$ and $c = \cos{\pi/5}$. From part (a), we see that \[16s^5 - 20s^3 + 5s = \sin \pi = 0.\] Since $s \neq 0$, we may divide both sides by $s$ to get a quadratic in $s^2$: \[16\bp{s^2}^2 - 20s^2 + 5 = 0.\] By the quadratic formula, this gives \[s^2 = \frac{5 - \sqrt{5}}{8}\] where we reject the positive branch since \[s^2 < \sin^2 \frac\pi4 = \frac12 < \frac{5 + \sqrt{5}}{8}.\] Then \[c^2 = 1 - s^2 = \frac{3 + \sqrt5}{8}.\] Hence, \[\tan^2 \frac\pi5 = \frac{s^2}{c^2} = \frac{\frac{5-\sqrt5}{8}}{\frac{3 + \sqrt5}{8}} = 5 - 2\sqrt5.\]
+        \end{psubpart}
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     The polar curves $C_1$ and $C_2$ are given by the following equations in the respective intervals.
@@ -254,6 +275,62 @@
         \item Show that the perimeter of the region $R$ can be expressed as \[4 \int_p^q \sqrt{2 + 2 \sin \t} \d \t + \frac{2\pi}3,\] where $p$ and $q$ are exact real numbers to be determined. Evaluate this integral in exact form. You may use the identity \[1 + \sin \t = 2\sin[2]{\frac\t2 + \frac\pi4}\] without proof.
     \end{enumerate}
 \end{problem}
+\clearpage
+\begin{solution}
+    \begin{ppart}
+        \begin{center}\tikzsetnextfilename{528}
+            \begin{tikzpicture}[trim axis left, trim axis right]
+                \begin{axis}[
+                    samples = 100,
+                    axis y line=middle,
+                    axis x line=middle,
+                    xtick = {-2, 2},
+                    xticklabels = {2, 2},
+                    ytick = {-2, 4},
+                    yticklabels = {2, 4},
+                    xmin=-4,
+                    xmax=4,
+                    ymin=-3,
+                    ymax=5,
+                    xlabel = {$\t=0$},
+                    ylabel = {$\t = \frac\pi2$},
+                    legend cell align={left},
+                    legend pos=outer north east,
+                    after end axis/.code={
+                        \path (axis cs:0,0) 
+                            node [anchor=north east] {$O$};
+                        }
+                    ]
+                    \addplot[color=plotRed,data cs=polarrad, domain=0:2*pi] (x,{2 + 2*sin(\x r)});
+
+                    \addlegendentry{$C_1$};
+
+                    \addplot[color=plotBlue,data cs=polarrad, domain=pi:2*pi] (x,{-2*sin(\x r)});
+
+                    \addlegendentry{$C_2$};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{ppart}
+    \begin{ppart}
+        Consider first the intersection of $C_1$ and $C_2$. Note that $2 + 2\sin \t = -2\sin \t$ is equivalent to $\sin \t = -1/2$, so $C_1$ and $C_2$ intersect when $\t = \frac76 \pi, \frac{11}6\pi$. From the graph in (a), we see that $C_1$ contributes to the perimeter of $R$ when $\frac32 \pi \leq \t \leq \frac{11}{6} \pi$, while $C_2$ contributes to the perimeter of $R$ when $\frac{11}{6} \pi \leq \t \leq 2\pi$.
+
+        Next, for $C_1$, we see that \[r^2 + \bp{\der{r}{\t}}^2 = \bp{2 + 2\sin \t}^2 + \bp{2 \cos \t}^2 = 8\bp{1 + \sin \t}.\] Similarly, for $C_2$, we have \[r^2 + \bp{\der{r}{\t}}^2 = \bp{-2\sin\t}^2 + \bp{-2 \cos \t}^2 = 4.\]
+
+        Thus, the perimeter of $R$ is given by
+        \begin{align*}
+            \text{Perimeter of $R$} &= 2 \int_{3\pi/2}^{11\pi/6} \sqrt{8\bp{1 + \sin \t}} \d \t + 2 \int_{11\pi/6}^{2\pi} \sqrt{4} \d \t\\
+            &= 4 \int_{3\pi/2}^{11\pi/6} \sqrt{2\bp{1 + \sin \t}} \d \t + \frac23 \pi\\
+            &= 4 \int_{3\pi/2}^{11\pi/6} \sqrt{4\sin[2]{\frac\t2 + \frac\pi4}} \d \t + \frac23 \pi\\
+            &= 8 \int_{3\pi/2}^{11\pi/6} \abs{\sin{\frac\t2 + \frac\pi4}} \d \t + \frac23 \pi\\
+            &= -16 \int_{\pi}^{7\pi/6} \sin u \d u + \frac{2}{3}\pi\\
+            &= -16 \evalint{-\cos u}{\pi}{7\pi/6} + \frac{2}3\pi\\
+            &= -16\bp{\frac{\sqrt3}{2} - 1} + \frac23 \pi\\
+            &= 16 - 8\sqrt{3} + \frac23 \pi,
+        \end{align*}
+        where we used the substitution $u = \t/2 + \pi/4$ in the fifth line. 
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     In a population of plants, a particular gene has two versions (called alleles): $A$ and $a$. A genotype is a combination of two alleles. Hence, for this particular gene, individual plants can have one of three genotypes: $AA$, $Aa$ or $aa$. The order of the sequence of genotypes does not matter.
@@ -270,6 +347,43 @@
         \item By diagonalizing the matrix representing $T$, find the proportion of the plants in the long run.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have
+        \begin{align*}
+            p_{i+1} &= \frac12 p_i + \frac14 q_i,\\
+            q_{i+1} &= \frac12 p_i + \frac12 q_i + \frac12 r_i,\\
+            r_{i+1} &= \frac14 q_i + \frac12 r_i.
+        \end{align*}
+        Thus, \[\cveciii{p_{i+1}}{q_{i+1}}{r_{i+1}} = \begin{pmatrix}1/2 & 1/4 & 0 \\ 1/2 & 1/2 & 1/2 \\ 0 & 1/4 & 1/2\end{pmatrix} \cveciii{p_i}{q_i}{r_i},\] and $\b = 1/4$.
+
+        Let $\mat M$ be the matrix associated with $T$. The RREF of $\mat M$ is \[\begin{pmatrix}1 & 0 & -1 \\ 0 & 1 & 2 \\ 0 & 0 & 0\end{pmatrix}.\] Since there is one row of zeroes, the nullity of $T$ is 1.
+    \end{ppart}
+    \begin{ppart}
+        Using G.C., the eigenvalues of $\mat M$ are $\l = 0, 1/2, 1$.
+
+        \case{1}[$\l = 0$] From (a), the RREF of $\mat M$ is \[\begin{pmatrix}1 & 0 & -1 \\ 0 & 1 & 2 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciiix1{-2}1$.
+
+        \case{2}[$\l = 1/2$] The RREF of $\mat M - \frac12 \mat I$ is \[\begin{pmatrix}1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciiix10{-1}$.
+
+        \case{3}[$\l = 1$] The RREF of $\mat M - \mat I$ is \[\begin{pmatrix}1 & 0 & - 1 \\ 0 & 1 & -2 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciii121$.
+    \end{ppart}
+    \begin{ppart}
+        We have $\mat M = \mat P \mat D \mat P^{-1}$, where \[\mat P = \begin{pmatrix}1 & 1 & 1 \\ -2 & 0 & 2 \\ 1 & -1 & 1\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}0 & 0 & 0 \\ 0 & 1/2 & 0 \\ 0 & 0 & 1\end{pmatrix}.\] Note also that \[\lim_{n \to \infty} \mat D^n = \lim_{n \to \infty} \begin{pmatrix}0 & 0 & 0 \\ 0 & 1/2^n & 0 \\ 0 & 0 & 1^n\end{pmatrix} = \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1\end{pmatrix}.\] Hence,
+        \begin{align*}
+            \lim_{n \to \infty} \mat M^n &= \lim_{n \to \infty} \mat P \mat D^n \mat P^{-1}\\
+            &= \begin{pmatrix}1 & 1 & 1 \\ -2 & 0 & 2 \\ 1 & -1 & 1\end{pmatrix} \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix}4 & -4 & 4 \\ 8 & 0 & -8 \\ 4 & 4 & 4\end{pmatrix}\\
+            &= \frac14 \begin{pmatrix}1 & 1 & 1 \\ 2 & 2 & 2 \\ 1 & 1 & 1\end{pmatrix}.
+        \end{align*}
+        Let the initial population be $P = p_0 + q_0 + r_0$. It follows that
+        \begin{align*}
+            \cveciii{p_\infty}{q_\infty}{r_\infty} &= \lim_{n \to \infty} \mat M^n \cveciii{p_0}{q_0}{r_0}\\
+            &= \frac14 \begin{pmatrix}1 & 1 & 1 \\ 2 & 2 & 2 \\ 1 & 1 & 1\end{pmatrix} \cveciii{p_0}{q_0}{r_0}\\
+            &= \cveciii{P/4}{P/2}{P/4}.
+        \end{align*}
+        Thus, in the long run, a quarter of all plants will have $AA$ genotype, half will have $Aa$ genotype, and the remaining quarter will have $aa$ genotype.
+    \end{ppart}
+\end{solution}
 
 \begin{problem}
     Two tanks are filled with salt water and are interconnected by pipes as shown below:
@@ -290,3 +404,33 @@
         \item Find the ratio of the amount of salt in tank $X$ to the amount of salt in tank $Y$ in the long run.
     \end{enumerate}
 \end{problem}
+\begin{solution}
+    \begin{ppart}
+        We have
+        \begin{align*}
+            \der{x}{t} &= \text{salt gained from outside} + \text{salt gained from Tank $Y$} - \text{salt lost to Tank $Y$}\\
+            &= \frac11 \cdot 2 + \frac{y}{500} \cdot 10 - \frac{x}{600} \cdot 12\\
+            &= 2 - \frac1{50} x + \frac1{50} y
+        \end{align*}
+        and
+        \begin{align*}
+            \der{y}{t} &= \text{salt gained from Tank $X$} - \text{salt lost to Tank $X$} - \text{salt lost to outside}\\
+            &= \frac{x}{600} \cdot 12 - \frac{y}{500} \cdot 10 - \frac{y}{500} \cdot 15\\
+            &= \frac1{50} x - \frac1{20} y.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Differentiating the above equation with respect to $t$, we get \[\der[2]{y}{t} = \frac1{50} \der{x}{t} - \frac1{20} \der{y}{t}.\] Noting that \[\frac1{50} x = \der{y}{t} + \frac1{20} y,\] we obtain
+        \begin{align*}
+            \der[2]{y}{t} &= \frac1{50} \bp{2 - \frac1{50} x + \frac1{50} y} - \frac1{20} \der{y}{t}\\
+            &= \frac1{50} \bs{2 - \bp{\der{y}{t} + \frac1{20} y} + \frac1{50} y} - \frac1{20} \der{y}{t}\\
+            &= -\frac7{100} \der{y}{t} - \frac3{5000} y + \frac1{25}.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        The characteristic equation $m^2 + \frac7{100} m + \frac3{5000} = 0$ has roots $m = -\frac1{100}, -\frac3{50}$. Thus, the complementary solution is \[y_{(c)} = A\e^{-t/100} + B\e^{-3t/50}.\] For the particular solution, we guess $y_{(p)} = C$. Then \[\frac3{5000} C = \frac1{25}\] so $C = 200/3$. The general solution is thus \[y = y_{(c)} + y_{(p)} = A\e^{-t/100} + B\e^{-3t/50} + \frac{200}{3}.\]
+    \end{ppart}
+    \begin{ppart}
+        Since $y$ converges as $t \to \infty$, we must have $\derx{y}{t} \to 0$. Thus, the desired ratio in the long run is \[\frac{x}{y} = \frac{50\bp{\der{y}{t} + \frac1{20} y}}{y} \to \frac52.\]
+    \end{ppart}
+\end{solution}
