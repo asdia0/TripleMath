@@ -108,7 +108,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
   <td>🟢</td>
  </tr>
   <tr>
-  <td rowspan="2">JC2</td>
+  <td rowspan="3">JC2</td>
   <td>WA 1</td>
   <td>🟢</td>
   <td>🟢</td>
@@ -121,7 +121,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
  <tr>
   <td>Prelims</td>
   <td>🟡</td>
-  <td>🟡</td>
+  <td>🟢</td>
  </tr>
 </table>
 
