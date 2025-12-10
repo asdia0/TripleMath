@@ -318,6 +318,7 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Write down the integral for the volume of the solid generated when the shaded region is rotated about the $x$-axis through $2\pi$ for questions 1(e), (f) and (h) using the shell method and use the GC to evaluate it.
@@ -353,7 +354,7 @@
     Calculate the area enclosed by the petals of the curve $r = \sin2\t$ where $r \geq 0$.
 \end{problem}
 \begin{solution}
-    Note that $r \geq 0 \implies \sin2\t \geq 0 \implies r \in \left[0, \frac\pi2\right] \cup \left[\pi, \frac{3\pi}2\right]$. Thus, \[\area = 2 \cdot \frac12 \int_0^{\pi/2} \sin^2 2\t \d \t = \int_0^{\pi/2} \frac{1 - \cos 4\t}{2} \d \t = \frac12 \evalint{\t - \frac{\sin 4\t}{4}}0{\pi/2}= \frac{\pi}4 \units[2].\]
+    We have $\sin2\t \geq 0 \implies r \in \left[0, \frac\pi2\right] \cup \left[\pi, \frac{3\pi}2\right]$. Thus, \[\area = 2 \cdot \frac12 \int_0^{\pi/2} \sin^2 2\t \d \t = \int_0^{\pi/2} \frac{1 - \cos 4\t}{2} \d \t = \frac12 \evalint{\t - \frac{\sin 4\t}{4}}0{\pi/2}= \frac{\pi}4 \units[2].\]
 \end{solution}
 
 \begin{problem}
@@ -405,12 +406,7 @@
     \end{center}
 
     \begin{ppart}
-        Consider the intersections between $y = x^2$ and $x^2 + y^2 = 12$.
-        \begin{gather*}
-            x^2 + y^2 = x^2 + \bp{x^2}^2 = 12 \implies x^4 + x^2 - 12 = (x^2 - 3)(x^2 + 4) = 0 \\
-            \implies \bp{x - \sqrt3}\bp{x+\sqrt3}\bp{x^2 + 4} = 0.
-        \end{gather*}
-        Hence, the two curves intersect at $x = -\sqrt3$ and $x = \sqrt3$. Note that $x^2 + 4 = 0$ has no solution since $x^2 + 4 > 0$. Also note that $x^2 + y^2 = 12 \implies y = \sqrt{12 - x^2}$ for $y > 0$. Thus, \[\area = 2\int_0^{\sqrt3} \bp{\sqrt{12-x^2} - x^2} \d x = 8.02 \units[2] \tosf{3}.\]
+        Consider the intersections between $y = x^2$ and $x^2 + y^2 = 12$. We have \[x^2 + \bp{x^2}^2 = 12,\] so \[(x^2 - 3)(x^2 + 4) = 0.\] Hence, the two curves intersect at $x = -\sqrt3$ and $x = \sqrt3$. Also note that $x^2 + y^2 = 12 \implies y = \sqrt{12 - x^2}$ for $y > 0$. Thus, \[\area = 2\int_0^{\sqrt3} \bp{\sqrt{12-x^2} - x^2} \d x = 8.02 \units[2] \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
         Note that $x^2 + y^2 = 12 \implies y^2 = 12 - x^2$.
@@ -423,6 +419,7 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     \begin{center}\tikzsetnextfilename{314}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -491,16 +488,23 @@
         \[\lim_{n \to \infty} A = \lim_{n \to \infty} \frac{1/n}{2^{1/n} - 1} = \lim_{m \to 0} \frac{m}{2^m - 1} = \lim_{m \to 0} \frac{1}{\ln 2 \cdot 2^m} = \frac1{\ln 2}.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            V = \pi \sum_{k=0}^{n-1} \frac1n \bp{2^{k/n}}^2 = \frac\pi{n} \sum_{k=0}^{n-1} \bp{2^{2/n}}^k = \frac\pi{n} \bp{\frac{1 - \bp{2^{2/n}}^{n}}{1 - 2^{2/n}}}\\
-            = \frac\pi{n} \bp{\frac{1 - 4}{1 - 2^{2/n}}} = \frac{3\pi}{n\bp{4^{1/n} - 1}}.
-        \end{gather*}
+        \begin{align*}
+            V &= \pi \sum_{k=0}^{n-1} \frac1n \bp{2^{k/n}}^2\\
+            &= \frac\pi{n} \sum_{k=0}^{n-1} \bp{2^{2/n}}^k\\
+            &= \frac\pi{n} \bp{\frac{1 - \bp{2^{2/n}}^{n}}{1 - 2^{2/n}}}\\
+            &= \frac\pi{n} \bp{\frac{1 - 4}{1 - 2^{2/n}}}\\
+            &= \frac{3\pi}{n\bp{4^{1/n} - 1}}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \lim_{n \to \infty} V = \lim_{n \to \infty} \frac{3\pi}{n\bp{4^{1/n} - 1}} = 3\pi \lim_{n \to \infty} \frac{1/n}{4^{1/n} - 1} = 3\pi \lim_{m \to 0} \frac{m}{4^m - 1} \\
-            = 3\pi \lim_{m \to 0} \frac{1}{4^m \ln 4} = 3\pi \bp{\frac1{\ln 4}} = \frac{3\pi}{2\ln2}.
-        \end{gather*}
+        \begin{align*}
+            \lim_{n \to \infty} V &= \lim_{n \to \infty} \frac{3\pi}{n\bp{4^{1/n} - 1}}\\
+            &= 3\pi \lim_{n \to \infty} \frac{1/n}{4^{1/n} - 1}\\
+            &= 3\pi \lim_{m \to 0} \frac{m}{4^m - 1} \\
+            &= 3\pi \lim_{m \to 0} \frac{1}{4^m \ln 4}\\
+            &= 3\pi \bp{\frac1{\ln 4}}\\
+            &= \frac{3\pi}{2\ln2}.
+        \end{align*}
     \end{ppart}
 \end{solution}
 
@@ -558,10 +562,12 @@
         \[[R] = \int_0^{\pi/3} \tan x \d x = \evalint{\ln \sec x}{0}{\pi/3} = \ln 2 \units[2].\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \volume = \pi \int_0^{\pi/3} \bs{\bp{\sqrt3}^2 - \tan^2 x} \d x = \pi \int_0^{\pi/3} \bp{3 - \sec^2 x + 1} \d x \\
-            = \pi\evalint{4x - \tan x}{0}{\pi/3} = \bp{\frac{4\pi^2}{3} - \sqrt{3}\pi} \units[3].
-        \end{gather*}
+        \begin{align*}
+            \volume &= \pi \int_0^{\pi/3} \bs{\bp{\sqrt3}^2 - \tan^2 x} \d x\\
+            &= \pi \int_0^{\pi/3} \bp{3 - \sec^2 x + 1} \d x \\
+            &= \pi\evalint{4x - \tan x}{0}{\pi/3}\\
+            &= \bp{\frac{4\pi^2}{3} - \sqrt{3}\pi} \units[3].
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Observe that $\int_0^{\sqrt3} \arctan y \d y = [S] = [R \cup S] - [R] = (\pi/3) \cdot \sqrt{3} - \ln 2$.
@@ -625,7 +631,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     The diagram shows the region $R$ bounded by part of the curve $C$ with equation $y = 3 - x^2$, the $y$-axis and the line $y = 2$, lying in the first quadrant.
 
@@ -669,10 +674,12 @@
     Clearly, $C: y = 1-x^2$.
 
     Note that $3 - x^2 = 2 \implies x = \pm 1$, whence $x = 1$ since $x > 0$.
-    \begin{gather*}
-        \volume = \pi\int_0^1 \bp{1 - x^2}^2 \d x = \pi\int_0^1 \bp{1 - 2x^2 + x^4} \d x\\
-        = \pi \evalint{x - \frac23 x^3 + \frac15 x^5}01 = \frac{8}{15} \pi \units[3].
-    \end{gather*}
+    \begin{align*}
+        \volume &= \pi\int_0^1 \bp{1 - x^2}^2 \d x\\
+        &= \pi\int_0^1 \bp{1 - 2x^2 + x^4} \d x\\
+        &= \pi \evalint{x - \frac23 x^3 + \frac15 x^5}01\\
+        &= \frac{8}{15} \pi \units[3].
+    \end{align*}
 \end{solution}
 
 \begin{problem}
@@ -718,7 +725,6 @@
         \end{tikzpicture}
     \end{center}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Consider the intersections between $(y+5)^2 = x-3$ and $y = x-10$. \[(y+5)^2 = (x-5)^2 = x-3 \implies  x^2 - 11x + 28 = (x-4)(x-7) = 0.\] Hence, $x = 4$ and $x = 7$, whence $y = -6$ and $y = -3$. Thus, the two curves intersect at $(4, -6)$ and $(7, -3)$.
@@ -743,6 +749,7 @@
 
     Find the area of the finite region $R$ enclosed by the curve $C$ and the axes as well as the volume of solid obtained when $R$ is rotated about the $x$-axis through 4 right-angles.
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{center}\tikzsetnextfilename{319}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -776,16 +783,20 @@
     \end{center}
 
     Note that when $x = 0$, we have $ t = 1$. Also note that when $y = 0$, we have $t = \sqrt2$, whence $x = \sqrt2 - 1/2$. Thus,
-    \begin{gather*}
-        [R] = \int_0^{\sqrt2 - 1/2} y \d x = \int_1^{\sqrt2} \bp{2 - t^2} \der{x}{t} \d t \\
-        = \int_1^{\sqrt2} \bp{2 - t^2}\bp{1 + \frac2{t^3}} \d t = 0.526 \units[2] \tosf{3}.
-    \end{gather*}
+    \begin{align*}
+        \text{Area of $R$} &= \int_0^{\sqrt2 - 1/2} y \d x\\
+        &= \int_1^{\sqrt2} \bp{2 - t^2} \der{x}{t} \d t \\
+        &= \int_1^{\sqrt2} \bp{2 - t^2}\bp{1 + \frac2{t^3}} \d t\\
+        &= 0.526 \units[2] \tosf{3}.
+    \end{align*}
 
     Also,
-    \begin{gather*}
-        \volume = \pi \int_0^{\sqrt2 - \frac12} y^2 \d x = \pi\int_1^{\sqrt2} \bp{2 - t^2}\der{x}{t} \d t \\
-        = \pi\int_1^{\sqrt2} \bp{2 - t^2}\bp{1 + \frac2{t^3}} \d t = 1.19 \units[3] \tosf{3}.
-    \end{gather*}
+    \begin{align*}
+        \volume &= \pi \int_0^{\sqrt2 - \frac12} y^2 \d x\\
+        &= \pi\int_1^{\sqrt2} \bp{2 - t^2}\der{x}{t} \d t \\
+        &= \pi\int_1^{\sqrt2} \bp{2 - t^2}\bp{1 + \frac2{t^3}} \d t\\
+        &= 1.19 \units[3] \tosf{3}.
+    \end{align*}
 \end{solution}
 
 \begin{problem}
@@ -793,31 +804,34 @@
 \end{problem}
 \begin{solution}
     By symmetry, we only need to consider the area of the ellipse in the first quadrant. Note that $x = 0 \implies t = \pi/2$ and $x = a \implies t = 0$. Hence,
-    \begin{gather*}
-        \area = 4\int_0^a y \d x = 4\int_{\pi/2}^0 y \cdot \der{x}{t} \d t = 4\int_{\pi/2}^0 (b\sin t)(-a\sin t) \d t = 4ab\int_0^{\pi/2} \sin^2 t \d t\\
-        = 4ab\int_0^{\pi/2} \frac{1 - \cos 2t}2 \d t = 2ab \evalint{t - \frac{\sin 2t}2}{0}{\pi/2} = \pi ab \units[2].
-    \end{gather*}
+    
+    \begin{align*}
+        \area &= 4\int_0^a y \d x\\
+        &= 4\int_{\pi/2}^0 y \cdot \der{x}{t} \d t\\
+        &= 4\int_{\pi/2}^0 (b\sin t)(-a\sin t) \d t\\
+        &= 4ab\int_0^{\pi/2} \sin^2 t \d t\\
+        &= 4ab\int_0^{\pi/2} \frac{1 - \cos 2t}2 \d t\\
+        &= 2ab \evalint{t - \frac{\sin 2t}2}{0}{\pi/2}\\
+        &= \pi ab \units[2].
+    \end{align*}
 
     Also,
-    \begin{gather*}
-        \volume = 2\pi \int_0^a y^2 \d x = 2\pi\int_{\pi/2}^0 y^2 \cdot \der{x}{t} \d t = 2\pi\int_{\pi/2}^0 (b\sin t)^2 (-a\sin t) \d t\\
-        = 2\pi a b^2 \int_0^{\pi/2} \sin^3 t \d t = 2\pi a b^2 \int_0^{\pi/2} \frac{3\sin t - \sin 3t}{4} \d t \\
-        = \frac12 \pi a b^2 \evalint{-3\cos t + \frac13 \cos 3t}{0}{\pi/2} = \frac{4\pi}3 ab^2 \units[3].
-    \end{gather*}
+    \begin{align*}
+        \volume &= 2\pi \int_0^a y^2 \d x\\
+        &= 2\pi\int_{\pi/2}^0 y^2 \cdot \der{x}{t} \d t\\
+        &= 2\pi\int_{\pi/2}^0 (b\sin t)^2 (-a\sin t) \d t\\
+        &= 2\pi a b^2 \int_0^{\pi/2} \sin^3 t \d t\\
+        &= 2\pi a b^2 \int_0^{\pi/2} \frac{3\sin t - \sin 3t}{4} \d t \\
+        &= \frac12 \pi a b^2 \evalint{-3\cos t + \frac13 \cos 3t}{0}{\pi/2}\\
+        &= \frac{4\pi}3 ab^2 \units[3].
+    \end{align*}
 \end{solution}
 
 \begin{problem}
-    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \frac\pi2$. Show, using polar coordinates, that the area $A$ of the region enclosed by this part of the curve is given by
-    \[
-        A = \frac{25b^2}2 \int_0^{\frac\pi2} \frac{\sin^4\t\cos^4\t}{(\cos^5\t + \sin^5\t)^2} \d \t
-    \]
-    By differentiating $\frac1{1 + \tan^5\t}$ with respect to $\t$, or otherwise, find the exact value of $A$ in terms of $b$.
+    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \frac\pi2$. Show, using polar coordinates, that the area $A$ of the region enclosed by this part of the curve is given by \[A = \frac{25b^2}2 \int_0^{\frac\pi2} \frac{\sin^4\t\cos^4\t}{(\cos^5\t + \sin^5\t)^2} \d \t.\] By differentiating $\frac1{1 + \tan^5\t}$ with respect to $\t$, or otherwise, find the exact value of $A$ in terms of $b$.
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        x^5 + y^5 = 5bx^2y^2 \implies (r\cos \t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2\\
-        \implies r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t\sin^2\t \implies r = \frac{5b\cos^2\t\sin^2\t}{\cos^5\t + \sin^5\t}.
-    \end{gather*}
+    Substituting $x = r\cos\t$ and $y = r\sin \t$, we have $(r\cos\t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2$. Dividing throughout by $r^4$, we get \[r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t \sin^2\t \implies r = \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}.\]
 
     \begin{center}\tikzsetnextfilename{320}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -843,10 +857,11 @@
         \end{tikzpicture}
     \end{center}
     We have
-    \begin{gather*}
-        A = \frac12 \int_0^{\pi/2} \bp{\frac{5b\cos^2\t\sin^2\t}{\cos^5\t + \sin^5\t}}^2 \d \t = \frac12 \int_0^{\pi/2} \frac{25b^2\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t \\
-        = \frac{25b^2}2 \int_0^{\pi/2} \frac{\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t.
-    \end{gather*}
+    \begin{align*}
+        A &= \frac12 \int_0^{\pi/2} \bp{\frac{5b\cos^2\t\sin^2\t}{\cos^5\t + \sin^5\t}}^2 \d \t\\
+        &= \frac12 \int_0^{\pi/2} \frac{25b^2\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t \\
+        &= \frac{25b^2}2 \int_0^{\pi/2} \frac{\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t.
+    \end{align*}
 
     Note that \[\der{}{\t} \frac1{1 + \tan^5\t} = -\frac{5\tan^4\t \sec^2\t}{\bp{1 + \tan^5\t}^2} = -5 \bp{\frac{\cos^{10}\t}{\cos^5\t + \sin^5\t}}\bp{\frac{\sin^4\t}{\cos^6\t}} = -\frac{5\cos^4\t\sin^4\t}{\cos^5\t + \sin^5\t}.\] Hence, \[A = \frac{-5b^2}2 \int_0^{\pi/2} -\frac{5\cos^4\t\sin^4\t}{\bp{\cos^5\t + \sin^5\t}^2} \d \t = -\frac{5b^2}2 \evalint{\frac{1}{1 + \tan^5\t}}{0}{\pi/2} = \frac{5b^2}2.\]
 \end{solution}

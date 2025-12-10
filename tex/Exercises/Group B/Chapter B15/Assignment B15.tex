@@ -63,17 +63,6 @@
         $H$ must satisfy the inequality $H > 9.375$.
     \end{ppart}
     \begin{ppart}
-        Note that $t = 120$, $P(0) = 100$ and $P(108) = 0$. Now observe that
-        \begin{gather*}
-            \der{P}{t} = -\frac1{600} \bp{P^2 - 150P + 600H} = -\frac1{600} \bs{(P-75)^2 + \bp{600H - 75^2}} \\
-            \implies \frac1{(P-75)^2 + (600H - 75^2)} \der{P}{t} = -\frac1{600}.
-        \end{gather*}
-        Integrating both sides with respect to $t$,
-        \begin{gather*}
-            \int \frac1{(P-75)^2 + (600H - 75^2)} \d P = \int -\frac1{600} \d t\\
-            \implies \frac1{\sqrt{600H - 75^2}} \arctan{\frac{P-75}{\sqrt{600H - 75^2}}} = -\frac1{600} t + C.
-        \end{gather*}
-        Let $X = \frac{1}{\sqrt{600H - 75^2}}$. This simplifies the above result to \[X \arctan{(P-75)X} = -\frac1{600}t + C.\] When $t = 0$, $P = 100$. Hence, \[C = X \arctan{25X}\]
-        When $t = 108$, $P = 0$. Hence, \[X\arctan{-75X} = -\frac{108}{600} + X \arctan{25X},\] which has the solution $X = 0.073145$. Note that we reject $X = -0.073145$ since $X \geq 0$. We thus have \[H = \frac1{600}\bp{\frac1{0.073145^2} + 75^2} = 9.377 \todp{3}.\]
+        Note that $t = 120$, $P(0) = 100$ and $P(108) = 0$. Now observe that \[\der{P}{t} = -\frac1{600} \bp{P^2 - 150P + 600H} = -\frac1{600} \bs{(P-75)^2 + \bp{600H - 75^2}},\] so \[\frac1{(P-75)^2 + (600H - 75^2)} \der{P}{t} = -\frac1{600}.\] Integrating both sides with respect to $t$, we get \[\int \frac1{(P-75)^2 + (600H - 75^2)} \d P = \int -\frac1{600} \d t.\] Thus, \[\frac1{\sqrt{600H - 75^2}} \arctan{\frac{P-75}{\sqrt{600H - 75^2}}} = -\frac1{600} t + C.\] Let $X = \frac{1}{\sqrt{600H - 75^2}}$. This simplifies the above result to \[X \arctan{(P-75)X} = -\frac1{600}t + C.\] When $t = 0$, $P = 100$. Hence, \[C = X \arctan{25X}.\] When $t = 108$, $P = 0$. Hence, \[X\arctan{-75X} = -\frac{108}{600} + X \arctan{25X},\] which has the solution $X = 0.073145$. Note that we reject $X = -0.073145$ since $X \geq 0$. We thus have \[H = \frac1{600}\bp{\frac1{0.073145^2} + 75^2} = 9.377 \todp{3}.\]
     \end{ppart}
 \end{solution}

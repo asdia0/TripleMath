@@ -92,8 +92,9 @@
 \end{problem}
 \begin{solution}
     Note that \[(1 + x)^n = \sum_{r = 1}^n \binom{n}{r} x^r.\] Differentiating with respect to $x$, we have \[n (1 + x)^{n-1} = \sum_{r = 1}^n r \binom{n}{r} x^{r-1}. \tag{1}\] Taking $x = 1$, we see that \[\sum_{r = 1}^n r \binom{n}{r} = n 2^{n-1}.\] Differentiating (1) once more, we have \[n(n-1) (1 + x)^{n-2} = \sum_{r = 1}^n r(r-1) \binom{n}{r} x^{r-2}.\] Taking $x = 1$, \[\sum_{r = 1}^n r(r-1) \binom{n}{r} = n(n-1) 2^{n-2}.\] Thus,
-    \begin{gather*}
-        \sum_{r = 1}^n r^2 \binom{n}{r} = \sum_{r = 1}^n \bs{r(r-1) + r} \binom{n}{r} = n 2^{n-1} = n(n-1) 2^{n-2} + n 2^{n-1}\\
-        = n(n-1)2^{n-2} + n(2)2^{n-2} = n(n+1) 2^{n-2}.
-    \end{gather*}
+    \begin{align*}
+        \sum_{r = 1}^n r^2 \binom{n}{r} &= \sum_{r = 1}^n \bs{r(r-1) + r} \binom{n}{r}\\
+        &= n\bp{n-1} 2^{n-2} + n 2^{n-1}\\
+        &= n\bp{n+1} 2^{n-2}.
+    \end{align*}
 \end{solution}

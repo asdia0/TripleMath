@@ -51,10 +51,11 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \begin{gather*}
-            \der{}{x} \bp{x^2 + 4}^2\bp{2x^3 -1} = \bp{2x^3 - 1} \bs{4x \bp{x^2 + 4}} + \bp{x^2 + 4}^2\bp{6x^2}\\
-            = 2x\bp{x^2 + 4}\bs{2\bp{2x^3 - 1} + 3x\bp{x^2 + 4}} = 2x\bp{x^2 + 4}\bp{7x^3 + 12x - 2}.
-        \end{gather*}
+        \begin{align*}
+            \der{}{x} \bp{x^2 + 4}^2\bp{2x^3 -1} &= \bp{2x^3 - 1} \bs{4x \bp{x^2 + 4}} + \bp{x^2 + 4}^2\bp{6x^2}\\
+            &= 2x\bp{x^2 + 4}\bs{2\bp{2x^3 - 1} + 3x\bp{x^2 + 4}}\\
+            &= 2x\bp{x^2 + 4}\bp{7x^3 + 12x - 2}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         \[\der{}{x} \frac{x^2}{\sqrt{4-x^2}} = \frac{\sqrt{4-x^2} \bp{2x} - x^2 \bp{\frac{-2x}{2\sqrt{4-x^2}}}}{4-x^2} = \frac{2x\bp{4-x^2} + x^3}{(4-x^2)^{3/2}} = \frac{x \bp{8-x^2}}{(4-x^2)^{3/2}}.\]
@@ -74,6 +75,7 @@
     \[\evalder{\der{}{x} \bp{\frac{\e^{2x}}{x^2+1}}}{x = 1.5} = 6.66.\]
 \end{solution}
 
+\clearpage
 \begin{problem}
     Find the derivative with respect to $x$ of
         
@@ -113,6 +115,7 @@
         \item $y = \sqrt[3]{\frac{\e^x (x+1)}{x^2 +1}}, \, x > 0$
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         \[\der{y}{x} =  \der{}{x} \e^{1 + \sin 3x} = 3 \e^{1 + \sin 3x} \cos{3x}.\]

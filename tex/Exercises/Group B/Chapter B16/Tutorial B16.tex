@@ -1,7 +1,7 @@
 \section{Tutorial B16}
 
 \begin{problem}
-    Find the general solution of $3\der[2]{x}{t} + 4\der{x}{t} -7x = 0$.
+    Find the general solution of \[3\der[2]{x}{t} + 4\der{x}{t} -7x = 0.\]
 \end{problem}
 \begin{solution}
     Consider the characteristic equation of the DE: \[3m^2 + 4m - 7 = (3m+7)(m-1) = 0.\] We hence have $m = -7/3$ or $m = 1$, whence \[x = A \e^{-\frac73 t} + B \e^t.\]
@@ -93,15 +93,20 @@
         \end{psubpart}
         \begin{psubpart}
             Rewriting, we get \[\der[2]{y}{x} = \frac{x}{\bp{9-x^2}^2}.\] Integrating with respect to $x$, \[\der{y}{x} = \int \frac{x}{\bp{9 - x^2}^2} \d x.\] Using the substitution $x = 3 \sin \t$, we have
-            \begin{gather*}
-                \der{y}{x} = \int \frac{3\sin\t}{81 \cos^4 \t} 3\cos \t \d \t = \frac19 \int \tan \t \sec^2 \t \d \t\\
-                = \frac19\bp{\frac{\tan^2 \t}{2}} + C = \frac1{18}\bp{\frac{(x/3)^2}{1 - (x/3)^2}} + C = \frac1{18} \bp{\frac{x^2}{9 - x^2}} + C.
-            \end{gather*}
+            \begin{align*}
+                \der{y}{x} &= \int \frac{3\sin\t}{81 \cos^4 \t} 3\cos \t \d \t\\
+                &= \frac19 \int \tan \t \sec^2 \t \d \t\\
+                &= \frac19\bp{\frac{\tan^2 \t}{2}} + C\\
+                &= \frac1{18}\bp{\frac{(x/3)^2}{1 - (x/3)^2}} + C\\
+                &= \frac1{18} \bp{\frac{x^2}{9 - x^2}} + C.
+            \end{align*}
             Integrating once more,
-            \begin{gather*}
-                y = \int \bs{\frac1{18} \bp{\frac{x^2}{9 - x^2}} + C} \d x = \int \bs{\frac1{18} \bp{\frac{9}{9 - x^2} - 1} + C} \d x\\
-                = \frac1{18} \bs{\frac{3}{2} \ln \abs{\frac{3+x}{3-x}} - x} + Cx + D = \frac{1}{12} \ln \abs{\frac{3+x}{3-x}} + Ex + D,
-            \end{gather*}
+            \begin{align*}
+                y &= \int \bs{\frac1{18} \bp{\frac{x^2}{9 - x^2}} + C} \d x\\
+                &= \int \bs{\frac1{18} \bp{\frac{9}{9 - x^2} - 1} + C} \d x\\
+                &= \frac1{18} \bs{\frac{3}{2} \ln \abs{\frac{3+x}{3-x}} - x} + Cx + D\\
+                &= \frac{1}{12} \ln \abs{\frac{3+x}{3-x}} + Ex + D,
+            \end{align*}
             where $E = -1/18 + C$.
         \end{psubpart}
     \end{ppart}
@@ -140,7 +145,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     Show, by means of the substitution $y = x^{-4} z$, that the differential equation \[x^2 \der[2]{y}{x} + \bp{4x^2 + 8x} \der{y}{x} + \bp{3x^2 + 16x + 12} y = 0\] can be reduced to the form \[\der[2]{z}{x} + a\der{z}{x} + bz = 0,\] where $a$ and $b$ are constants to be determined. Hence, find the general solution of the above differential equation.
 \end{problem}

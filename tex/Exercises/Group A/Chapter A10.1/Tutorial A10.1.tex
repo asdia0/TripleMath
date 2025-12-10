@@ -24,10 +24,12 @@
         \[(w - w\conj)^3 = [2 \Im{w} \i]^3 = (8\i)^3 = -512\i.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            z^4 = (3-2\i)^4 = 3^4 + 4 \cdot 3^3 (-2\i) + 6 \cdot 3^2 (-2\i)^2 + 4 \cdot 3 (-2\i)^3 + (-2\i)^4\\
-            = 81 - 216\i - 216 + 96\i + 16 = -119 - 120\i.
-        \end{gather*}
+        \begin{align*}
+            z^4 &= (3-2\i)^4\\
+            &= 3^4 + 4 \cdot 3^3 (-2\i) + 6 \cdot 3^2 (-2\i)^2 + 4 \cdot 3 (-2\i)^3 + (-2\i)^4\\
+            &= 81 - 216\i - 216 + 96\i + 16\\
+            &= -119 - 120\i.
+        \end{align*}
     \end{ppart}
 \end{solution}
 
@@ -49,7 +51,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Find the complex number $z$ such that $\frac{z-2}{z} = 1 + \i$.
@@ -122,10 +123,7 @@
         Let $z = x + \i y$ where $x, y \in \RR$. Then $(x+\i y)^2 = x^2 - y^2 + 2xy\i = -8\i$. Comparing real and imaginary parts, we have the following system: \[x^2 - y^2 = 0, \quad 2xy = 8.\] From the second equation, we know that $x$ and $y$ have opposite signs. Hence, from the first equation, we have that $x = -y$. Thus, $x^2 = 4 \implies x = \pm 2 \implies y = \mp 2$. Thus, $z = \pm2 (1-\i)$, whence $z_1 = 2 - 2\i$ and $z_2 = -2 + 2\i$.
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            w^2 + 4w + (4 + 2\i) = 0 \implies (w + 2)^2 = -2\i \implies (2w + 4)^2 = -8\i\\
-            \implies 2w + 4 = \pm2 (1 - \i) \implies w = 2 \pm (1 - \i).
-        \end{gather*}
+        From $w^2 + 4w + (4 + 2\i) = 0$, we see that $(w + 2)^2 = -2\i$, so $(2w + 4)^2 = -8\i$. Taking roots, we have by part (a) that $2w + 4 = \pm2 (1 - \i)$, whence $w = 2 \pm (1 - \i)$.
     \end{ppart}
 \end{solution}
 
@@ -142,11 +140,12 @@
 \end{problem}
 \begin{solution}
     Let $P(z) = az^3 + bz^2 + cz + d$. Since $P(z)$ is a polynomial with real coefficients, by the conjugate root theorem, we have that $\bp{\frac54 - \frac{\sqrt7}4 \i}\conj = \frac54 + \frac{\sqrt7}4 \i$ is also a root of $P(z)$. We can thus write $P(z)$ as
-    \begin{gather*}
-        P(z) = k(z-2)\bs{z - \bp{\frac54 - \frac{\sqrt7}4 \i}}\bs{z - \bp{\frac54 + \frac{ \sqrt7}4 \i}} \\
-        = k(z-2)\bs{\bp{z - \frac54}^2 + \bp{\frac{\sqrt7}4}^2} = k(z-2)\bp{z^2 - \frac52z + 2}\\
-        = \frac12 k(2z^3 - 9z^2 + 14z - 8),
-    \end{gather*}
+    \begin{align*}
+        P(z) &= k(z-2)\bs{z - \bp{\frac54 - \frac{\sqrt7}4 \i}}\bs{z - \bp{\frac54 + \frac{ \sqrt7}4 \i}} \\
+        &= k(z-2)\bs{\bp{z - \frac54}^2 + \bp{\frac{\sqrt7}4}^2}\\
+        &= k(z-2)\bp{z^2 - \frac52z + 2}\\
+        &= \frac12 k(2z^3 - 9z^2 + 14z - 8),
+    \end{align*}
     where $k$ is an arbitrary real number. Taking $k = 2$, we have $P(z) = 2z^3 - 9z^2 + 14z - 8$, whence $a = 2$, $b = -9$, $c = 14$ and $d = -8$.
 \end{solution}
 
@@ -159,10 +158,11 @@
 \begin{solution}
     \begin{ppart}
         Let $P(w) = w^2 + (-1-8\i)w + (-17+7\i)$. Consider $P(-1 + 5\i)$. 
-        \begin{gather*}
-            P(-1+5\i) = (-1+5\i)^2 + (-1-8\i)(-1+5\i) + (-17+7\i)\\
-            = (1 - 10\i - 25) + (1 - 5\i + 8\i + 40) + (-17 + 7\i) = 0.
-        \end{gather*}
+        \begin{align*}
+            P(-1+5\i) &= (-1+5\i)^2 + (-1-8\i)(-1+5\i) + (-17+7\i)\\
+            &= (1 - 10\i - 25) + (1 - 5\i + 8\i + 40) + (-17 + 7\i)\\
+            &= 0.
+        \end{align*}
         Hence, $-1+5\i$ is a root of $w^2 + (-1-8\i)w + (-17+7\i) = 0$.
 
         Let $\a$ be the other root of the equation. By Vieta's formula, we have \[\a + (-1 + 5\i) = -\bp{\frac{-1 - 8\i}{1}} = 1 + 8\i \implies \a = 2 + 3\i.\]

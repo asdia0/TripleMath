@@ -45,7 +45,7 @@ A green icon (🟢) indicates the relevant section has been added. A yellow icon
 |  B3  | Functions                                                      |  🟢  |   🟢    |      🟢      |    🟢     |
 |  B4  | Differentiation                                                |  🟢  |   🟢    |      🟢      |    🟢     |
 |  B5  | Applications of Differentiation                                |  🟢  |   🟢    |      🟡      |    🟢     |
-|  B6  | MacLaurin Series                                               |  🟢  |   🟢    |      🟢      |    🟢     |
+|  B6  | Maclaurin Series                                               |  🟢  |   🟢    |      🟢      |    🟢     |
 |  B7  | Integration Techniques                                         |  🟢  |   🟢    |      🟢      |    🟢     |
 |  B8  | Applications of Integration I - Area and Volume                |  🟢  |   🟢    |      🟡      |    🟢     |
 |  B9  | Applications of Integration II - Arc Length and Surface Area   |  🟢  |   🟢    |      🟢      |    🟢     |

@@ -48,18 +48,23 @@
     \end{ppart}
     \begin{ppart}
         Note that \[\der{x}{\t} = -2a(\sin\t+\sin2\t), \quad \der{y}{\t} = 2a(\cos\t + \cos2\t).\] Hence,
-        \begin{gather*}
-            \bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2 = (2a)^2 \bp{2 + 2\sin \t \sin 2\t + 2\cos \t \cos 2\t} \\
-            = (2a)^2 \bp{2 + 2\cos \t} = (2a)^2 \bs{2 + \bp{4\cos^2 \frac\t2 - 2}} = \bp{4a\cos \frac\t2}^2.
-        \end{gather*}
+        \begin{align*}
+            \bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2 &= (2a)^2 \bp{2 + 2\sin \t \sin 2\t + 2\cos \t \cos 2\t} \\
+            &= (2a)^2 \bp{2 + 2\cos \t}\\
+            &= (2a)^2 \bs{2 + \bp{4\cos^2 \frac\t2 - 2}}\\
+            &= \bp{4a\cos \frac\t2}^2.
+        \end{align*}
         Thus, \[\length = \int_0^{\pi} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = 4a \int_0^\pi \cos \frac\t2 \d t = 4a \evalint{2\sin \frac\t2}0\pi = 8a \units.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \area = 2\pi \int_0^\pi y \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = 16\pi a^2 \int_0^\pi \sin \t \bp{1 + \cos \t} \cos \frac\t2 \d \t\\
-            = 16\pi a^2 \int_0^\pi \bp{2\sin\frac\t2 \cos \frac\t2}\bp{2\cos^2 \frac\t2} \cos \frac\t2 \d \t = 64 \pi a^2 \int_0^\pi \cos^4 \frac\t2 \sin \frac\t2 \d \t\\
-            = -128\pi a^2 \evalint{-\frac{\cos[5]{\t/2}}5}0\pi = \frac{128}5 \pi a^2 \units[2].
-        \end{gather*}
+        \begin{align*}
+            \area &= 2\pi \int_0^\pi y \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t\\
+            &= 16\pi a^2 \int_0^\pi \sin \t \bp{1 + \cos \t} \cos \frac\t2 \d \t\\
+            &= 16\pi a^2 \int_0^\pi \bp{2\sin\frac\t2 \cos \frac\t2}\bp{2\cos^2 \frac\t2} \cos \frac\t2 \d \t\\
+            &= 64 \pi a^2 \int_0^\pi \cos^4 \frac\t2 \sin \frac\t2 \d \t\\
+            &= -128\pi a^2 \evalint{-\frac{\cos[5]{\t/2}}5}0\pi\\
+            &= \frac{128}5 \pi a^2 \units[2].
+        \end{align*}
     \end{ppart}
 \end{solution}
 
@@ -116,10 +121,14 @@
     \end{ppart}
     \begin{ppart}
         Note that $y = \frac12 (\e^x + \e^{-x}) = \cosh x$ is an even function. Hence,
-        \begin{gather*}
-            \area = \int_{-2}^2 y \d x = 2 \int_0^2 \cosh x \d x = 2 \evalint{\sinh x}02 \\
-            = 2 \bp{\sinh 2 - \sinh 0} = 2 \bp{\frac{e^2 - e^{-2}}{2} - 0} = \e^2 - \e^{-2} \units[2].
-        \end{gather*}
+        \begin{align*}
+            \area &= \int_{-2}^2 y \d x\\
+            &= 2 \int_0^2 \cosh x \d x\\
+            &= 2 \evalint{\sinh x}02 \\
+            &= 2 \bp{\sinh 2 - \sinh 0}\\
+            &= 2 \bp{\frac{e^2 - e^{-2}}{2} - 0}\\
+            &= \e^2 - \e^{-2} \units[2].
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Note that \[\der{y}{x} = \der{}{x} \cosh x = \sinh x,\] whence \[\sqrt{1 + \bp{\der{y}{x}}^2} = \sqrt{1 + \sinh^2 x} = \sqrt{\cosh^2 x} = \cosh x\] Hence, \[\length = \int_{-2}^2 \sqrt{1 + \bp{\der{y}{x}}^2} \d x = \int_{-2}^2 \cosh x \d x = 2 \int_0^2 \cosh x \d x = \e^2 - \e^{-2} \units.\]
@@ -132,19 +141,21 @@
             - & 1 & \sinh x \\
             + & 0 & \cosh x\\\bottomrule
         \end{array}\] Thus,
-        \begin{gather*}
-            \volume = 2\pi \evalint{x\sinh x - \cosh x}02 = 2\pi \bs{\bp{2\sinh 2 - \cosh 2} - \bp{0\sinh 0 - \cosh 0}} \\
-            = 2\pi \bs{2 \bp{\frac{e^2 - e^2}2} - \frac{e^2 + e^{-2}}2 + 1} = \pi \bp{e^2 - 3e^{-2} + 2}.
-        \end{gather*}
+        \begin{align*}
+            \volume &= 2\pi \evalint{x\sinh x - \cosh x}02 = 2\pi \bs{\bp{2\sinh 2 - \cosh 2} - \bp{0\sinh 0 - \cosh 0}} \\
+            &= 2\pi \bs{2 \bp{\frac{e^2 - e^2}2} - \frac{e^2 + e^{-2}}2 + 1}\\
+            &= \pi \bp{e^2 - 3e^{-2} + 2}.
+        \end{align*}
 
         Thus, $\pi \bp{e^2 - 3e^{-2} + 2}$ cm$^3$ of material is required.
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \area = \text{Area of curved surface} + \text{Area of side} + \text{Area of bottom}\\
-            = 2\pi \int_0^2 x\cosh x \d x + 2^2\pi + 2^2\pi\cosh 2 = \pi \bp{e^2 - 3e^{-2} + 2} + 4\pi + 4\pi \bp{\frac{e^2 + e^{-2}}2}\\
-            = \pi \bs{3e^2 - e^{-2} + 6}.
-        \end{gather*}
+        \begin{align*}
+            \area &= \text{Area of curved surface} + \text{Area of side} + \text{Area of bottom}\\
+            &= 2\pi \int_0^2 x\cosh x \d x + 2^2\pi + 2^2\pi\cosh 2\\
+            &= \pi \bp{e^2 - 3e^{-2} + 2} + 4\pi + 4\pi \bp{\frac{e^2 + e^{-2}}2}\\
+            &= \pi \bs{3e^2 - e^{-2} + 6}.
+        \end{align*}
 
         Thus, $2\pi \bp{3e^2 - e^{-2} + 6}$ cm$^3$ of paint is required.
     \end{ppart}

@@ -42,18 +42,15 @@
     \end{ppart}
     \begin{ppart}
         Suppose $\mat A$ is involutory. Then $\mat A^2 = \mat I$. Consider $\bs{\frac12 \bp{\mat A + \mat I}}^2$:
-        \begin{gather*}
-            \bs{\frac12 \bp{\mat A + \mat I}} = \frac14 \bp{\mat A^2 + \mat A \mat I + \mat I \mat A + \mat I^2} = \frac14 \bp{\mat A^2 + 2\mat A + \mat I}\\
-            = \frac14 \bp{\mat I + 2\mat A + \mat I} = \frac12 \bp{\mat A + \mat I}.    
-        \end{gather*}
+        \begin{align*}
+            \bs{\frac12 \bp{\mat A + \mat I}} &= \frac14 \bp{\mat A^2 + \mat A \mat I + \mat I \mat A + \mat I^2}\\
+            &= \frac14 \bp{\mat A^2 + 2\mat A + \mat I}\\
+            &= \frac14 \bp{\mat I + 2\mat A + \mat I}\\
+            &= \frac12 \bp{\mat A + \mat I}.    
+        \end{align*}
         Thus, $\frac12\bp{\mat A + \mat I}$ is idempotent.
 
-        Suppose that $\frac12 \bp{\mat A + \mat I}$ is idempotent. Then
-        \begin{gather*}
-            \bs{\frac12 \bp{\mat A + \mat I}}^2 = \frac12 \bp{\mat A + \mat I} \implies \bp{\mat A + \mat I}^2 = 2 \bp{\mat A + \mat I} \\
-            \implies \mat A^2 + 2\mat A + \mat I = 2\mat A + 2 \mat I \implies \mat A^2 = \mat I,
-        \end{gather*}
-        hence $\mat A$ is involutory.
+        Suppose that $\frac12 \bp{\mat A + \mat I}$ is idempotent. Then \[\bs{\frac12 \bp{\mat A + \mat I}}^2 = \frac12 \bp{\mat A + \mat I}.\] Expanding, we get \[\mat A^2 + 2\mat A + \mat I = 2\bp{\mat A + \mat I},\] from which we see that $\mat A^2 = \mat I$, hence $\mat A$ is involutory.
 
         Thus, $\mat A$ is involutory if and only if $\frac12\bp{\mat A + \mat I}$ is idempotent.
     \end{ppart}

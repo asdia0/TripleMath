@@ -61,10 +61,11 @@ We can use these standard series to find the Maclaurin series of their composite
 
 \begin{example}[Standard Maclaurin Series]
     Suppose we wish to find the first three terms of the Maclaurin series of $\e^x \bp{1 + \sin 2x}$. Using the above standard series, we see that \[\e^x = 1 + x + \frac{x^2}{2} + \cdots, \quad \tand \quad 1 + \sin 2x = 1 + 2x + \cdots.\] Hence,
-    \begin{gather*}
-        \e^x \bp{1 + \sin 2x} = \bp{1 + x + \frac{x^2}{2} + \cdots}\bp{1 + 2x + \cdots}\\
-        = \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \cdots = 1 + 3x + \frac52 x^2 + \cdots.
-    \end{gather*}
+    \begin{align*}
+        \e^x \bp{1 + \sin 2x} &= \bp{1 + x + \frac{x^2}{2} + \cdots}\bp{1 + 2x + \cdots}\\
+        &= \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \cdots\\
+        &= 1 + 3x + \frac52 x^2 + \cdots.
+    \end{align*}
 \end{example}
 
 \subsection{Repeated Implicit Differentiation}
@@ -73,10 +74,12 @@ For complicated functions, it is more efficient to repeatedly implicitly differe
 
 \begin{example}[Repeated Implicit Differentiation]
     Suppose we wish to find the first three terms of the Maclaurin series of $y = \ln{1 + \cos x}$. Rewriting, we get $\e^y = 1 + \cos x$. Implicitly differentiating repeatedly with respect to $x$,
-    \begin{gather*}
-        \e^y y' = -\sin x \implies \e^y \bs{\bp{y'}^2 + y''} = -\cos x \implies \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} = \sin x \\
-        \implies \e^y \bs{\bp{y'}^4 + 3\bp{y''}^2 + 6\bp{y'}^2 y'' + 4y'y''' + y^{(4)}} = \cos x.
-    \end{gather*}
+    \begin{align*}
+        \e^y y' &= -\sin x\\
+        \e^y \bs{\bp{y'}^2 + y''} &= -\cos x\\
+        \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} &= \sin x \\
+        \e^y \bs{\bp{y'}^4 + 3\bp{y''}^2 + 6\bp{y'}^2 y'' + 4y'y''' + y^{(4)}} &= \cos x.
+    \end{align*}
     Evaluating the above at $x = 0$, we get \[y(0) = \ln 2, \quad y'(0) = 0, \quad y''(0) = -\frac12, \quad y'''(0) = 0, \quad y^{(4)}(0) = -\frac14.\] Thus, \[\ln{1 + \cos x} = \ln 2 + \frac{-1/2}{2!} x^2 + \frac{-1/4}{4!} x^4 + \cdots = \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots.\]
 \end{example}
 

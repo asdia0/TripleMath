@@ -40,15 +40,19 @@ Note that the sample mean $\ol{X}$ is also a random variable since it varies dep
 \end{proposition}
 \begin{proof}
     We have
-    \begin{gather*}
-        \E{\ol{X}} = \E{\frac{X_1 + X_2 + \dots + X_n}{n}} = \frac{\E{X_1 + X_2 + \dots + X_n}}n\\
-        = \frac{\E{X_1} + \E{X_2} + \dots + \E{X_n}}n = \frac{n \E{X}}n = \E{X} = \m
-    \end{gather*}
+    \begin{align*}
+        \E{\ol{X}} &= \E{\frac{X_1 + X_2 + \dots + X_n}{n}}\\
+        &= \frac{\E{X_1 + X_2 + \dots + X_n}}n\\
+        &= \frac{\E{X_1} + \E{X_2} + \dots + \E{X_n}}n\\
+        &= \frac{n \E{X}}n = \E{X} = \m
+    \end{align*}
     and
-    \begin{gather*}
-        \Var{\ol{X}} = \Var{\frac{X_1 + X_2 + \dots + X_n}{n}} = \frac1{n^2} \Var{X_1 + X_2 + \dots + X_n} \\
-        = \frac{\Var{X_1} + \Var{X_2} + \dots + \Var{X_n}}{n^2} = \frac{n \Var{X}}{n^2} = \frac{\s^2}{n}.
-    \end{gather*}
+    \begin{align*}
+        \Var{\ol{X}} &= \Var{\frac{X_1 + X_2 + \dots + X_n}{n}}\\
+        &= \frac1{n^2} \Var{X_1 + X_2 + \dots + X_n} \\
+        &= \frac{\Var{X_1} + \Var{X_2} + \dots + \Var{X_n}}{n^2}\\
+        &= \frac{n \Var{X}}{n^2} = \frac{\s^2}{n}.
+    \end{align*}
 \end{proof}
 
 \begin{definition}
@@ -117,17 +121,21 @@ As illustrated by the above example, there are many estimators we can use to est
 \end{proposition}
 \begin{proof}
     We first show that the two forms of $s^2$ are equivalent:
-    \begin{gather*}
-        \sum \bp{x - \ol{x}}^2 = \sum \bp{x^2 - 2x\ol{x} + \ol{x}^2} = \sum x^2 - 2\ol{x} \sum x + n \ol{x}^2\\
-        = \sum x^2 - 2\bp{\frac1n \sum x}\bp{\sum x} + n \bp{\frac1{n} \sum x}^2 = \sum x^2 - \frac1n \bp{\sum x}^2.
-    \end{gather*}
+    \begin{align*}
+        \sum \bp{x - \ol{x}}^2 &= \sum \bp{x^2 - 2x\ol{x} + \ol{x}^2}\\
+        &= \sum x^2 - 2\ol{x} \sum x + n \ol{x}^2\\
+        &= \sum x^2 - 2\bp{\frac1n \sum x}\bp{\sum x} + n \bp{\frac1{n} \sum x}^2\\
+        &= \sum x^2 - \frac1n \bp{\sum x}^2.
+    \end{align*}
     Dividing throughout by $n-1$ gives us the desired equality. In fact, we can go one step further and write $s^2$ as \[s^2 = \frac1{n-1} \bp{\sum x^2 - n \ol{x}^2}.\] This is the form of $\s^2$ we will work with.
 
     Before we process, we note that \[\Var{X} = \E{X^2} - \E{X}^2 \implies \E{X^2} = \m^2 + \s^2.\] Similarly, \[\Var{\ol{X}} = \E{\ol{X}^2} - \E{\ol{X}}^2 \implies \E{\ol{X}^2} = \m^2 + \frac{\s^2}{n}.\] Now consider $\E{S^2}$:
-    \begin{gather*}
-        \E{S^2} = \E{\frac1{n-1} \bp{\sum X^2 - n \ol{X}^2}} = \frac1{n-1} \bp{\sum \E{X^2} - n \E{\ol{X}^2}}\\
-        = \frac1{n-1} \bs{n \bp{\m^2 + \s^2} - n \bp{\m^2 + \frac{\s^2}{n}}} = \s^2.
-    \end{gather*}
+    \begin{align*}
+        \E{S^2} &= \E{\frac1{n-1} \bp{\sum X^2 - n \ol{X}^2}}\\
+        &= \frac1{n-1} \bp{\sum \E{X^2} - n \E{\ol{X}^2}}\\
+        &= \frac1{n-1} \bs{n \bp{\m^2 + \s^2} - n \bp{\m^2 + \frac{\s^2}{n}}}\\
+        &= \s^2.
+    \end{align*}
     Hence, $s^2$ is an unbiased estimator for the population variance $\s^2$.
 \end{proof}
 

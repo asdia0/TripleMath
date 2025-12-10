@@ -295,10 +295,11 @@
 \end{problem}
 \begin{solution}
     Let $V(r, h) = \frac13 \pi r^2 h$ be the volume of the cone. We have $V_r(r, h) = \frac23 \pi r h$ and $V_h(r, h) = \frac13 \pi r^2$. The equation of the tangent plane at $r = 12$ and $h = 10$ is given by
-    \begin{gather*}
-        v = V(12, 10) + V_r(12, 10)(r-12) + V_h(12, 10)(h-10)\\
-        = \frac13\pi(12^2)(10) + \frac23 \pi(12)(10)(r - 12) + \frac13 \pi (12^2) (h-10) = 16\pi(5r + 3h - 60).
-    \end{gather*}
+    \begin{align*}
+        v &= V(12, 10) + V_r(12, 10)(r-12) + V_h(12, 10)(h-10)\\
+        &= \frac13\pi(12^2)(10) + \frac23 \pi(12)(10)(r - 12) + \frac13 \pi (12^2) (h-10)\\
+        &= 16\pi(5r + 3h - 60).
+    \end{align*}
     Evaluating at $r = 11.95$ and $h = 10.01$, we have
     \[v = 16\pi\bs{5(11.95) + 3(10.01) - 60} = 476.48\pi.\] The volume of the cone after the changes is hence approximately $476.48\pi$ cm$^3$.
 \end{solution}
@@ -356,17 +357,15 @@
 \end{problem}
 \begin{solution}
     Let the box have side lengths of $x$, $y$ and $z$ cm. Given that the volume of the box is fixed at 32 cm$^3$, we have \[xyz = 32 \implies z = \frac{32}{xy}\] Let the surface area of the box be measured by $f(x, y)$. Then \[f(x, y) = xy + 2yz + 2xz = xy + 2y\bp{\frac{32}{xy}} + 2x\bp{\frac{32}{xy}} = xy + 64x^{-1} + 64y^{-1}.\] Note that \[\nabla f = \cvecii{f_x(x, y)}{f_y(x, y)} = \cvecii{y-64x^{-2}}{x - 64y^{-2}}.\] For stationary points, $\nabla f = \vec 0$. We hence obtain
-    \[
-        \begin{cases}
-            y = 64x^{-2}\\
-            x = 64y^{-2}
+    \[\begin{cases}
+            y = 64x^{-2},\\
+            x = 64y^{-2},
         \end{cases} \implies
         \begin{cases}
-            yx^2 = 64\\
-            xy^2 = 64
+            yx^2 = 64,\\
+            xy^2 = 64,
         \end{cases}
-        \implies x^3y^3 = 64^2 \implies xy = 16
-    \]
+        \implies x^3y^3 = 64^2 \implies xy = 16.\]
     Hence, \[x = \frac{x^2y}{xy} = \frac{64}{16} = 4,\] whence $y = 4$ and $z = 2$. Thus, $f(x, y)$ has a stationary point at $(4, 4, 2)$. 
     
     We now consider the nature of this stationary point. Note that \[f_{xx}(x, y) = 128x^{-3}, \quad f_{yy} = 128y^{-3},\quad f_{xy} = 1.\] Hence, \[D = f_{xx}(4, 4)f_{yy}(4, 4) - \bs{f_{xy}(4, 4)}^2 = 3\] Since $D > 0$ and $f_{xx}(4, 4) = 2 > 0$, by the second derivative test, $f(x, y)$ attains a minimum at $(4, 4, 2)$. Thus, the amount of material required is lowest for a box of dimension $4 \times 4 \times 2$.
@@ -379,8 +378,8 @@
 \begin{solution}
     Taking partial derivatives, we have
     \begin{gather*}
-        f_x(x, y) = 2xy + y^2, \quad f_y(x, y) = 2xy + x^2\\
-        f_{xx}(x, y) = 2y, \quad f_{xy}(x, y) = 2x + 2y, \quad f_{yy}(x, y) = 2x.
+        f_x(x, y) = 2xy + y^2, \qquad f_y(x, y) = 2xy + x^2\\
+        f_{xx}(x, y) = 2y, \qquad f_{xy}(x, y) = 2x + 2y, \qquad f_{yy}(x, y) = 2x.
     \end{gather*}
     Hence, the required quadratic approximation $Q(x, y)$ is given by
     \begin{align*}

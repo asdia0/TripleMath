@@ -15,12 +15,8 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $x, y > 0$ since they represent volume. Also, for $x \in (0, 2)$, we have $\der{x}{t} = (2-x)y > 0$. When $x = 2$, we have $\der{x}{t} = 0$. Hence, $0 < x \leq 2$. Now observe that \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{y^2/x}{(2-x)y} = \frac{y}{x(2-x)} \implies \frac1y \der{y}{x} = \frac1{x(2-x)}.\] Integrating both sides with respect to $x$, we get
-        \begin{gather*}
-            \implies \int \frac1y \d y = \int \frac1{x(2-x)} \d x = \frac12 \int \bp{\frac1x + \frac1{2-x}} \d x\\
-            \implies \ln y = \frac12 \bs{\ln x - \ln
-            {2-x}} + C_1 \implies y = C_2 \sqrt{\frac{x}{2-x}}.
-        \end{gather*}
+        Note that $x, y > 0$ since they represent volume. Also, for $x \in (0, 2)$, we have $\der{x}{t} = (2-x)y > 0$. When $x = 2$, we have $\der{x}{t} = 0$. Hence, $0 < x \leq 2$. Now observe that \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{y^2/x}{(2-x)y} = \frac{y}{x(2-x)} \implies \frac1y \der{y}{x} = \frac1{x(2-x)}.\] Integrating both sides with respect to $x$, we get \[\int \frac1y \d y = \int \frac1{x(2-x)} \d x = \frac12 \int \bp{\frac1x + \frac1{2-x}} \d x.\] Thus, \[\ln y = \frac12 \bs{\ln x - \ln{2-x}} + C_1,\] so $y = C_2 \sqrt{\frac{x}{2-x}}$.
+
         At $t = 0$, $x = y = 1$. Hence, \[1 = C_2 \sqrt{\frac{1}{2-1}} \implies C_2 = 1.\] Thus, \[y = \sqrt{\frac{x}{2-x}} \implies x = \frac{2y^2}{1 + y^2}.\]
     \end{ppart}
     \begin{ppart}
@@ -75,10 +71,7 @@
     Show that there is a straight line which passes through the maximum point of every member of $F$ and find its equation.
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        x\der{y}{x} + 4y - 10x = 0 \implies x^4\der{y}{x} + 4x^3y = \der{}{x} \bp{x^4 y} = 10x^4\\
-        \implies x^4 y = \int 10 x^4 \d x = 2x^5 + C \implies y = 2x + Cx^{-4}
-    \end{gather*}
+    We have \[x^4\der{y}{x} + 4x^3y = \der{}{x} \bp{x^4 y} = 10x^4.\] Thus, \[x^4 y = \int 10 x^4 \d x = 2x^5 + C,\] and $y = 2x + Cx^{-4}$.
 
     As $x \to 0$, $x^{-4} \to \infty$. Hence, $C$ must be 0, whence the particular solution is $y = 2x$.
 

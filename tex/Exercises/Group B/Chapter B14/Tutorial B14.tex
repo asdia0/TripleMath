@@ -56,10 +56,8 @@
         Observe that for $x \in [0, 1]$, \[\der{y}{x} = y - x < 1 \implies \der[2]{y}{x} = \der{y}{x} - 1 < 0.\] Thus, $y$ is concave downward near $x = 1$, whence the approximation is an overestimate.
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{y}{x} = y - x \implies \e^{-x} \der{y}{x} - \e^{-x}y = \der{}{x} \bp{\e^{-x}y} = -x\e^{-x} \\
-            \implies \e^{-x}y = \int -x\e^{-x} \d x = x\e^{-x} + \e^{-x} + C \implies y = x + 1 + C\e^x.
-        \end{gather*}
+        Multiplying both sides of the differential equation by the integrating factor $\e^{-x}$, we get \[\der{}{x} \bp{\e^{-x}y} = \e^{-x} \der{y}{x} - \e^{-x}y = -x\e^{-x}.\] Integrating, we get \[\e^{-x}y = \int -x\e^{-x} \d x = x\e^{-x} + \e^{-x} + C.\] Thus, $y = x + 1 + C\e^x$.
+
         At $x = 0$, $y = \frac12$. Hence, \[\frac12 = 1 + C \implies C = -\frac12 \implies y = x + 1 - \frac{\e^x}2.\] Evaluating $y$ at $x = 1$ yields, \[y = 1 + 1 - \frac{e^1}2 = 2 - \frac{\e}2.\]
     \end{ppart}
     \begin{ppart}
@@ -75,11 +73,8 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    We begin by finding the exact solution to the differential equation. Observe that
-    \begin{gather*}
-        \der{y}{t} = t + y \implies \e^{-t} \der{y}{t} - \e^{-t}y = \der{}{t} \bp{\e^{-t}y} = t\e^{-t}\\
-        \implies \e^{-t} y = \int t\e^{-t} \d t = -t\e^{-t} - \e^{-t} + C \implies y = -t - 1 + C\e^t.
-    \end{gather*}
+    We begin by finding the exact solution to the differential equation. Multiplying through by the integrating factor $\e^{-t}$, we get \[\der{}{t} \bp{\e^{-t}y} = \e^{-t} \der{y}{t} - \e^{-t}y = t\e^{-t}.\] Integrating, \[\e^{-t} y = \int t\e^{-t} \d t = -t\e^{-t} - \e^{-t} + C.\] Hence, $y = -t - 1 + C\e^t$.
+
     At $t = 0$, $t = 1$. Hence, \[1 = -1 + C \implies C = 2 \implies y = -t - 1 + 2\e^t.\] Evaluating at $t = 0.6$, we get \[y = -0.6 - 1 + 2\e^{0.6} = 2.044.\]
 
     \begin{ppart}
@@ -126,11 +121,9 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \begin{gather*}
-            \der{y}{t} = -y^2 \implies -y^{-2} \der{y}{t} = 1  \implies \int -y^2 \d y = \int \d t\\
-            \implies y^{-1} = t + C \implies y = \frac1{t + C}.
-        \end{gather*}
-        Note that \[y(0) = \frac12 \implies \frac12 = \frac1C \implies C = 2.\] Hence, \[y = \frac1{t + 2}.\]
+        We have \[-y^{-2} \der{y}{t} = 1.\] Integrating with respect to $t$, we get \[\int -y^2 \d y = \int \d t,\] so $y^{-1} = t + C$, whence $y = 1/(t + C)$. 
+        
+        Note that \[y(0) = \frac12 \implies \frac12 = \frac1C \implies C = 2.\] Hence, $y = 1/(t + 2)$.
     \end{ppart}
     \begin{ppart}
         Let $f(y) = -y^2$, $t_0 = 0$, $y_0 = \frac12$ and $\D t = 0.5$. By the improved Euler method,
@@ -216,11 +209,9 @@
     \end{align*}
 
     \textbf{Actual Value.}
-    \begin{gather*}
-        \der{y}{t} = y^2 - 2y + 1 = (y-1)^2 \implies \frac1{(y-1)^2} \der{y}{t} = 1 \implies \int \frac1{(y-1)^2} \d y = \int 1 \d t\\
-        \implies -\frac{1}{y-1} = x + C \implies y = 1 - \frac{1}{x+C}.
-    \end{gather*}
-    Note that \[y(0) = 2 \implies 2 = 1 - \frac1C \implies C = -1.\] Hence, \[y = 1 - \frac1{x-1}.\]
+    We have \[\frac1{(y-1)^2} \der{y}{t} = 1.\] Integrating with respect to $t$, \[\int \frac1{(y-1)^2} \d y = \int 1 \d t,\] so \[-\frac{1}{y-1} = x + C.\] Thus, $y = 1 - 1/(x + C)$. 
+    
+    Note that $y(0) = 2$, so $C = -1$. Hence, $y = 1 - 1/(x-1)$.
 
     \begin{table}[H]
         \centering
@@ -293,10 +284,8 @@
         \end{table}
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{y}{x} = y - x \implies \e^{-x}\der{y}{x} - \e^{-x} y = \der{}{x} \bp{\e^{-x}y} = -x\e^{-x}\\
-            \implies \e^{-x} y = \int \bp{-x\e^{-x}} \d x = x\e^{-x} + \e^{-x} + C \implies y = x + 1 + C\e^x.
-        \end{gather*}
+        Multiplying the differential equation through by the integrating factor $\e^{-x}$, we get \[\der{}{x} \bp{\e^{-x}y} = \e^{-x}\der{y}{x} - \e^{-x} y = -x\e^{-x}.\] Integrating, we see that \[\e^{-x} y = \int \bp{-x\e^{-x}} \d x = x\e^{-x} + \e^{-x} + C,\] so $y = x + 1 + C\e^x$.
+        
         At $x = 0$, $y = 2$, whence \[2 = 1 + C \implies C = 1 \implies y = x + 1 + \e^x.\] Thus, at $x = 1$, \[y = 1 + 1 + \e^1 = 2 + \e.\]
     \end{ppart}
 \end{solution}
@@ -323,11 +312,8 @@
         The concentration of salt in the tank is given by $\frac{S}{V}$. Let $V_i$ and $V_o$ be the volume of liquid entering and leaving the tank in litres, respectively. Then \[\der{V}{T} = \der{V_i}{T} - \der{V_o}{T} = 1 - 2 = -1 \implies V = 100 - T,\] since $V = 100$ initially. Thus, \[\der{S}{T} = 1 \bp{\der{V_i}{T}} - \frac{S}{V} \bp{\der{V_o}{T}} = 1 - \frac{2S}{100 - T} = \frac{100 - T - 2S}{100 - T}.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{S}{T} = 1 - \frac{2S}{100-T} \implies \der{S}{T} + \frac{2S}{100-T} = 1 \\
-            \implies \frac1{(100-T)^2} \der{S}{T} + \frac{2S}{(100-T)^3} = \der{}{T} \bp{\frac{S}{(100-T)^2}} = \frac1{(100-T)^2}\\
-            \implies \frac{S}{(100-T)^2} = \int \frac{\d T}{(100-T)^2} = \frac1{100-T} + C \implies S = 100 - T + C(100-T)^2.
-        \end{gather*}
+        Rearranging, we obtain \[\der{S}{T} + \frac{2S}{100-T} = 1.\] Multiplying through by the integrating factor, we obtain \[\der{}{T} \bp{\frac{S}{(100-T)^2}} = \frac1{(100-T)^2} \der{S}{T} + \frac{2S}{(100-T)^3} = \frac1{(100-T)^2}.\] Integrating, we see that \[\frac{S}{(100-T)^2} = \int \frac{\d T}{(100-T)^2} = \frac1{100-T} + C,\] so $S = 100 - T + C(100-T)^2$.
+
         When $T = 0$, $S = 0$, whence \[0 = 100 + C \bp{100^2} \implies C = -\frac1{100} \implies S = 100 - T - \frac{(100-T)^2}{100}.\] When $T = 75$, \[S = 100 - 75 - \frac{(100-75)^2}{100} = 18.75.\] Hence, the amount of salt in the tank after 75 minutes is 18.75 grams.
     \end{ppart}
     \begin{ppart}
@@ -391,7 +377,6 @@
         \item Given that $x_0 = 0$ and $f(x) = a + bx + cx^2$, where $a$, $b$ and $c$ are constants, find the error in using the improved Euler method with a single step of size $h$.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Let $\D x = x_1 - x_0$.

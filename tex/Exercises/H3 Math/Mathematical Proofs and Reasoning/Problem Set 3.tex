@@ -12,18 +12,22 @@
 \end{problem}
 \begin{proof}[Proof of \emph{(a)}]
     Let $n \in \NN$, and let $P(n)$ be the statement \[P(n) : \sum_{i = 1}^{n} i (i!) = (n+1)! - 1.\] The base case $P(1)$ is trivial: \[\sum_{i = 1}^1 i(i!) = 1 = (1 + 1)! - 1.\] Suppose that $P(k)$ is true for some $k \in \NN$. Then
-    \begin{gather*}
-        \sum_{i = 1}^{k+1} i(i!) = \sum_{i = 1}^k i(i!) + (k+1)(k+1)!\\
-        = \bs{(k+1)! - 1} + (k+1)(k+1)! = (k+2)(k+1)! - 1 = (k+2)! - 1.
-    \end{gather*}
+    \begin{align*}
+        \sum_{i = 1}^{k+1} i(i!) &= \sum_{i = 1}^k i(i!) + (k+1)(k+1)!\\
+        &= \bs{(k+1)! - 1} + (k+1)(k+1)!\\
+        &= (k+2)(k+1)! - 1\\
+        &= (k+2)! - 1.
+    \end{align*}
     Thus, $P(k) \implies P(k+1)$. Hence, by the principle of mathematical induction, $P(n)$ is true for all $n \in \NN$.
 \end{proof}
 \begin{proof}[Proof of \emph{(b)}]
     Let $n \in \NN$ and let $P(n)$ be the statement \[P(n): 16 \mid (-7)^n - 9^n.\] The base case $P(1)$ clearly holds, since $(-7)^1 - 9^1 = -16$, which is divisible by 16. Suppose that $P(k)$ is true for some $k \in \NN$. Then
-    \begin{gather*}
-        (-7)^{k+1} - 9^{k+1} = (-7) (-7)^k - 9 (9)^k = (-7) \bs{(-7)^k - 9^k} - 16(9)^k\\
-        \equiv (-7)(0) - (0)(9^n) = 0 \pmod{16}.
-    \end{gather*}
+    \begin{align*}
+        (-7)^{k+1} - 9^{k+1} &= (-7) (-7)^k - 9 (9)^k\\
+        &= (-7) \bs{(-7)^k - 9^k} - 16(9)^k\\
+        &\equiv (-7)(0) - (0)(9^n)\\
+        &= 0 \pmod{16}.
+    \end{align*}
     Thus, $P(k) \implies P(k+1)$. Hence, by the principle of mathematical induction, $P(n)$ is true for all $n \in \NN$.
 \end{proof}
 \begin{proof}[Alternative proof of \emph(b)]
@@ -75,10 +79,11 @@
         Base case: Note that $f_m \geq f_{m-r}$ with equality only when $r = 0$. Thus, $r = 0 \iff f_m \mid f_{m-r}$, hence $P(1)$ holds.
 
         Suppose $P(k)$ is true for some $k \in \NN$. Let $f_{km-r} = a f_m + b$, where $a, b \in \ZZ$ and $0 \leq b < f_m$. Consider $f_{(k+1)m - r}$. Using Honsberger's identity
-        \begin{gather*}
-            f_{(k+1)m - r} = f_{km - r} f_{m-1} + f_m f_{km - r + 1} = \bp{a f_m + b} f_{m-1} + f_m f_{km -r + 1}\\
-            = f_m \bp{a f_{m-1} + f_{km-r+1}} + b f_{m-1}.
-        \end{gather*}
+        \begin{align*}
+            f_{(k+1)m - r} &= f_{km - r} f_{m-1} + f_m f_{km - r + 1}\\
+            &= \bp{a f_m + b} f_{m-1} + f_m f_{km -r + 1}\\
+            &= f_m \bp{a f_{m-1} + f_{km-r+1}} + b f_{m-1}.
+        \end{align*}
         It is well-known fact that $f_m$ and $f_{m-1}$ are always coprime. Hence, \[f_m \mid f_{(k+1)m - r} \iff f_m \mid b f_{m-1} \iff f_m \mid b \iff b = 0.\] However, by our induction hypothesis, \[r = 0 \iff f_m \mid f_{km-r} \iff b = 0.\] Thus, \[r = 0 \iff f_m \mid f_{(k+1)m - r}.\] Hence, $P(k) \implies P(k+1)$, and by the principle of mathematical induction, $P(k)$ holds for all $k \in \NN$.
     \end{proof}
 
@@ -87,9 +92,12 @@
     \end{ppart}
     \begin{ppart}
         Let $P(n)$ be the statement that \[P(n) : f_1 + f_3 + \dots + f_{2n-1} = f_{2n}.\] The base case $P(1)$ clearly holds, since $f_1 = 1 = f_2$. Now suppose $P(k)$ holds for some $k \in \NN$. Then
-        \begin{gather*}
-            f_1 + f_3 + \dots + f_{2(k+1) - 1} = f_1 + f_3 + \dots + f_{2k-1} + f_{2k+1} = f_{2k} + f_{2k+1} = f_{2k+2} = f_{2(k+1)}.
-        \end{gather*}
+        \begin{align*}
+            f_1 + f_3 + \dots + f_{2(k+1) - 1} &= f_1 + f_3 + \dots + f_{2k-1} + f_{2k+1}\\
+            &= f_{2k} + f_{2k+1}\\
+            &= f_{2k+2}\\
+            &= f_{2(k+1)}.
+        \end{align*}
         Hence, $P(k) \implies P(k+1)$. Thus, by the principle of mathematical induction, $P(n)$ is true for all $n \in \NN$.
     \end{ppart}
     \begin{ppart}

@@ -143,10 +143,11 @@
     \end{ppart}
     \begin{ppart}
         Observe that
-        \begin{gather*}
-            \lim_{h \to 0^+} \frac{\sqrt6 - \sqrt{5h^2 + 11h + 6}}{h} = -\evalder{\der{}{x} \sqrt{5x^2 + 11x + 6}}{x = 0}\\
-            = -\evalder{\frac{10x + 11}{2\sqrt{5x^2 + 11x + 6}}}{x = 0} = -\frac{11}{2\sqrt6}.
-        \end{gather*}
+        \begin{align*}
+            \lim_{h \to 0^+} \frac{\sqrt6 - \sqrt{5h^2 + 11h + 6}}{h} &= -\evalder{\der{}{x} \sqrt{5x^2 + 11x + 6}}{x = 0}\\
+            &= -\evalder{\frac{10x + 11}{2\sqrt{5x^2 + 11x + 6}}}{x = 0}\\
+            &= -\frac{11}{2\sqrt6}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Since $\sin{\pi/x} \in [-1, 1]$, it follows that \[0 = -\lim_{x \to 0} \sqrt{x^3 + x^2 + x} \leq \lim_{x \to 0} \sqrt{x^3 + x^2 + x} \sin \pi t \leq \lim_{x \to 0} \sqrt{x^3 + x^2 + x} = 0.\] Thus, by the Squeeze Theorem, the limit is simply 0.
@@ -235,9 +236,11 @@
 \end{problem}
 \begin{solution}
     Observe that \[\lim_{n \to \infty} n^{-3/2} \sum_{k = 1}^n \sqrt{k} = \lim_{n \to \infty} \sum_{k = 1}^n \frac1n \sqrt{\frac{k}{n}} = \int_0^1 \sqrt{x} \d x = \evalint{\frac23 x^{3/2}}01 = \frac23.\] Likewise,
-    \begin{gather*}
-        \lim_{n \to \infty} n^{-3/2} \sum_{k = 1}^n \sqrt{n + k} = \lim_{n \to \infty} \sum_{k = 1}^n \frac1n \sqrt{1 + \frac{k}{n}}\\
-        = \int_0^1 \sqrt{1 + x} \d x = \evalint{\frac23 (1+x)^{3/2}}01 = \frac23 \bp{2^{3/2} - 1}.
-    \end{gather*}
+    \begin{align*}
+        \lim_{n \to \infty} n^{-3/2} \sum_{k = 1}^n \sqrt{n + k} &= \lim_{n \to \infty} \sum_{k = 1}^n \frac1n \sqrt{1 + \frac{k}{n}}\\
+        &= \int_0^1 \sqrt{1 + x} \d x\\
+        &= \evalint{\frac23 (1+x)^{3/2}}01\\
+        &= \frac23 \bp{2^{3/2} - 1}.
+    \end{align*}
     Thus, the limit in question is simply \[\lim_{n \to \infty} \frac{\sum_{k = 1}^n \sqrt{k}}{\sum_{k = 1}^n \sqrt{n + k}} = \lim_{n \to \infty} \frac{n^{-3/2} \sum_{k = 1}^n \sqrt{k}}{n^{-3/2} \sum_{k = 1}^n \sqrt{n + k}} = \frac{2/3}{(2/3)(2^{3/2} - 1)} = \frac1{2^{3/2} - 1}.\]
 \end{solution}

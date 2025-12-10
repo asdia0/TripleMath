@@ -28,10 +28,10 @@ When $k = 0$, the second property of linear transformations also implies that $T
 
 \begin{example}
     Let $T: \RR^2 \to \RR^3$ be a function defined by \[T\cvecii{x}{y} = \cveciii{x}{x+y}{x-y}.\] Clearly, $T(\vec 0) = \vec 0$, so $T$ passes the first check. By inspection, $T$ also satisfies the remaining two checks. We are now confident that $T$ is a linear transformation, so we consider $T(k_1 \vec v_1 + k_2 \vec v_2)$, where $\vec v_1 = \cveciix{x_1}{y_1}$ and $\vec v_2 = \cveciix{x_2}{y_2}$. Then
-    \begin{gather*}
-        T(k_1 \vec v_1 + k_2 \vec v_2) = T\cvecii{k_1 x_1 + k_2 x_2}{k_1 y_1 + k_2 y_2} = \cveciii{k_1 x_1 + k_2 x_2}{\bp{k_1 x_1 + k_2 x_2} + \bp{k_1 y_1 + k_2 y_2}}{\bp{k_1 x_1 + k_2 x_2} - \bp{k_1 y_1 + k_2 y_2}}\\
-        = k_1\cveciii{x_1}{x_1 + y_1}{x_1 - y_1} + k_2 \cveciii{x_2}{x_2 + y_2}{x_2 - y_2} = k_1 T(\vec v_1) + k_2 T(\vec v_2).
-    \end{gather*}
+    \begin{align*}
+        T(k_1 \vec v_1 + k_2 \vec v_2) &= T\cvecii{k_1 x_1 + k_2 x_2}{k_1 y_1 + k_2 y_2} = \cveciii{k_1 x_1 + k_2 x_2}{\bp{k_1 x_1 + k_2 x_2} + \bp{k_1 y_1 + k_2 y_2}}{\bp{k_1 x_1 + k_2 x_2} - \bp{k_1 y_1 + k_2 y_2}}\\
+        &= k_1\cveciii{x_1}{x_1 + y_1}{x_1 - y_1} + k_2 \cveciii{x_2}{x_2 + y_2}{x_2 - y_2} = k_1 T(\vec v_1) + k_2 T(\vec v_2).
+    \end{align*}
     Thus, $T$ is indeed a linear transformation.
 \end{example}
 

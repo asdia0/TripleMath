@@ -12,10 +12,14 @@
 \begin{solution}
     \begin{ppart}
         Note that \[y^3 = x^2 \implies y = x^{2/3} \implies \der{y}{x} = \frac23 x^{-1/3}.\] Hence, \[\sqrt{1 + \bp{\der{y}{x}}^2} = \sqrt{1 + \bp{\frac23 x^{-1/3}}^2} = \sqrt{1 + \frac49 x^{-2/3}}.\] Thus,
-        \begin{gather*}
-            \length = \int_{-1}^1 \sqrt{1 + \bp{\der{y}{x}}^2} \d x = \int_{-1}^1 \sqrt{1 + \frac49 x^{-2/3}} \d x = 2 \int_0^1 \sqrt{1 + \frac49 x^{-2/3}} \d x \\
-            = 3 \int_0^1 \frac23 x^{-1/3} \sqrt{x^{2/3} + \frac49} \d x = 3 \evalint{\frac23 \bp{x^{2/3} + \frac49}^{3/2}}01 = \frac2{27} \bp{13\sqrt{13} - 8} \units.
-        \end{gather*}
+        \begin{align*}
+            \length &= \int_{-1}^1 \sqrt{1 + \bp{\der{y}{x}}^2} \d x\\
+            &= \int_{-1}^1 \sqrt{1 + \frac49 x^{-2/3}} \d x\\
+            &= 2 \int_0^1 \sqrt{1 + \frac49 x^{-2/3}} \d x \\
+            &= 3 \int_0^1 \frac23 x^{-1/3} \sqrt{x^{2/3} + \frac49} \d x\\
+            &= 3 \evalint{\frac23 \bp{x^{2/3} + \frac49}^{3/2}}01\\
+            &= \frac2{27} \bp{13\sqrt{13} - 8} \units.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Since the arc length of a curve is invariant under translation, it suffices to find the arc length of the curve with parametric equations $x = t^2, y = t^3$, $0 \leq t \leq 1$. The Cartesian equation of this curve is $y = x^{3/2}$, $0 \leq x \leq 1$, which is the inverse of $y = x^{2/3}$, $0 \leq x \leq 1$. From part (a), the required arc length is \[\frac12 \cdot \frac2{27} \bp{13\sqrt{13} - 8} = \frac1{27} \bp{13 \sqrt{13} - 8} \units.\]
@@ -46,16 +50,22 @@
         Note that \[\der{x}{t} = 3t^2 - 3, \quad \der{y}{t} = 6t.\] Hence, \[\sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} = \sqrt{\bp{3t^2 - 3}^2 + (6t)^2} = \sqrt{\bp{3t^2 + 3}^2} = 3t^2 + 3.\]
 
         \begin{psubpart}
-            \begin{gather*}
-                \area = 2\pi \int_1^2 y \, \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t = 2\pi \int_1^2 3\bp{t^2 - 1} \bp{3t^2 + 3} \d t \\
-                = 18\pi \int_1^2 \bp{t^4 - 1} \d t = 18\pi \evalint{\frac15 t^5 - t}12 = \frac{468}5 \pi \units[2].
-            \end{gather*}
+            \begin{align*}
+                \area &= 2\pi \int_1^2 y \, \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t\\
+                &= 2\pi \int_1^2 3\bp{t^2 - 1} \bp{3t^2 + 3} \d t \\
+                &= 18\pi \int_1^2 \bp{t^4 - 1} \d t\\
+                &= 18\pi \evalint{\frac15 t^5 - t}12\\
+                &= \frac{468}5 \pi \units[2].
+            \end{align*}
         \end{psubpart}
         \begin{psubpart}
-            \begin{gather*}
-                \area = 2\pi \int_1^2 x \, \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t = 2\pi \int_1^2 \bp{t^3 - 3t + 2} \bp{3t^2 + 3} \d t \\
-                = 6\pi \int_1^2 \bp{t^5 - 2t^3 + 2t^2 - 3t + 2} \d t = 6\pi \evalint{\frac16 t^6 - \frac24 t^4 - \frac23 t^3 - \frac32 t^2 + 2t}12 = 31 \pi \units[2].
-            \end{gather*}
+            \begin{align*}
+                \area &= 2\pi \int_1^2 x \, \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t\\
+                &= 2\pi \int_1^2 \bp{t^3 - 3t + 2} \bp{3t^2 + 3} \d t \\
+                &= 6\pi \int_1^2 \bp{t^5 - 2t^3 + 2t^2 - 3t + 2} \d t\\
+                &= 6\pi \evalint{\frac16 t^6 - \frac24 t^4 - \frac23 t^3 - \frac32 t^2 + 2t}12\\
+                &= 31 \pi \units[2].
+            \end{align*}
         \end{psubpart}
     \end{ppart}
 \end{solution}
@@ -77,7 +87,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     The curve $y^2 = \frac13 x(1-x)^2$ has a loop between $x = 0$ and $x = 1$. Prove that the total length of the loop is $\frac{4\sqrt{3}}{3}$.
 \end{problem}
@@ -90,15 +99,19 @@
 \end{problem}
 \begin{solution}
     Let $P$ be the point on the curve with parameter $t = t_P$. Note that \[\der{x}{t} = a\bp{1 - t^2}, \quad \der{y}{t} = 2at.\] Thus, \[\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2 = \bs{a\bp{1-t^2}}^2 + (2at)^2 = a^2 \bp{t^2 + 1}^2.\] Thus,
-    \begin{gather*}
-        \text{Length of arc $OP$} = \int_0^{t_P} \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t = a \int_0^{t_P} \bp{t^2 + 1} \d t \\
-        = a \evalint{\frac{t^3}3 + t}0{t_P} = a \bp{\frac{t_P^3}3 + t_P} \units.
-    \end{gather*}
+    \begin{align*}
+        \text{Length of arc $OP$} &= \int_0^{t_P} \sqrt{\bp{\der{x}{t}}^2 + \bp{\der{y}{t}}^2} \d t \\
+        &= a \int_0^{t_P} \bp{t^2 + 1} \d t \\
+        &= a \evalint{\frac{t^3}3 + t}0{t_P}\\
+        &= a \bp{\frac{t_P^3}3 + t_P} \units.
+    \end{align*}
     Note that \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{2at}{a\bp{1 - t^2}} = \frac{2t}{1-t^2}.\] Hence, the equation of the tangent at $P$ is given by \[y - at_P^2 = \frac{2t_P}{1 - t_P^2} \bs{x - a\bp{t_P - \frac{t_P^3}3}}.\] At $T$, $x = OT$ and $y = 0$. Hence, \[0 - at_P^2 = \frac{2t_P}{1 - t_P^2} \bs{OT - a\bp{t_P - \frac{t_P^3}3}},\] whence
-    \begin{gather*}
-        OT = \frac{-a t_P^2 \bp{1 - t_P^2}}{2t_P} + a\bp{t_P - \frac{t_P^3}3} = \frac{a}{2} \bs{\bp{-t_P + t_P^3} + \bp{2t_P - \frac{2t_P^3}3}}\\
-        = \frac{a}2 \bp{\frac{t_P^3}3 + t_P} = \frac{OP}2.
-    \end{gather*}
+    \begin{align*}
+        OT &= \frac{-a t_P^2 \bp{1 - t_P^2}}{2t_P} + a\bp{t_P - \frac{t_P^3}3}\\
+        &= \frac{a}{2} \bs{\bp{-t_P + t_P^3} + \bp{2t_P - \frac{2t_P^3}3}}\\
+        &= \frac{a}2 \bp{\frac{t_P^3}3 + t_P}\\
+        &= \frac{OP}2.
+    \end{align*}
 \end{solution}
 
 \begin{problem}
@@ -109,6 +122,7 @@
         \item The portion of the curve in the first quadrant is revolved through four right angles about the $x$-axis. Prove that the area of the surface thus formed is $\frac65 \pi a^2$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{center}\tikzsetnextfilename{324}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -143,20 +157,27 @@
 
     \begin{ppart}
         By symmetry, we only consider the length of the curve in the first quadrant. Note that $x = 0 \implies \t = \pi/2$ and $x = a \implies \t = 0$. Also, \[\der{x}{\t} = -3a\cos^2 \t \sin \t, \quad \der{y}{\t} = 3a\sin^2 \t \cos \t.\] Hence,
-        \begin{gather*}
-            \bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2 = (-3a\cos^2 \t \sin \t)^2 + (3a\sin^2 \t \cos \t)^2 \\= 9a^2\bp{\cos^4 \t \sin^2 \t + \sin^4 \t \cos^2 \t} = \bp{3a\cos \t \sin \t}^2.
-        \end{gather*}
+        \begin{align*}
+            \bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2 &= (-3a\cos^2 \t \sin \t)^2 + (3a\sin^2 \t \cos \t)^2\\
+            &= 9a^2\bp{\cos^4 \t \sin^2 \t + \sin^4 \t \cos^2 \t}\\
+            &= \bp{3a\cos \t \sin \t}^2.
+        \end{align*}
         Thus,
-        \begin{gather*}
-            \length = 4 \int_0^{\pi/2} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = 12a \int_0^{\pi/2} \cos\t\sin\t \d \t \\
-            = 12a \evalint{\frac{\sin^2 \t}2}0{\pi/2} = 6a \units.
-        \end{gather*}
+        \begin{align*}
+            \length &= 4 \int_0^{\pi/2} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t\\
+            &= 12a \int_0^{\pi/2} \cos\t\sin\t \d \t \\
+            &= 12a \evalint{\frac{\sin^2 \t}2}0{\pi/2}\\
+            &= 6a \units.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \area = 2\pi \int_0^{\pi/2} x \, \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = 2\pi \int_0^{\pi/2} a \cos^3 \t \bp{3a \cos \t \sin \t} \d t \\
-            = 6\pi a^2 \int_0^{\pi/2} \sin \t \cos^4 \t \d \t = 6\pi a^2 \evalint{-\frac{\cos^5 \t}{5}}0{\pi/2} = \frac65 \pi a^2 \units[2].
-        \end{gather*}
+        \begin{align*}
+            \area &= 2\pi \int_0^{\pi/2} x \, \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t \\
+            &= 2\pi \int_0^{\pi/2} a \cos^3 \t \bp{3a \cos \t \sin \t} \d t \\
+            &= 6\pi a^2 \int_0^{\pi/2} \sin \t \cos^4 \t \d \t\\
+            &= 6\pi a^2 \evalint{-\frac{\cos^5 \t}{5}}0{\pi/2}\\
+            &= \frac65 \pi a^2 \units[2].
+        \end{align*}
     \end{ppart}
 \end{solution}
 
@@ -207,10 +228,11 @@
             + & \ln \sec t & \tan t \sec t \\
             - & \tan t & \sec t \\\bottomrule
         \end{array}\] Thus,
-        \begin{gather*}
-            \area = 2\pi \bs{\evalint{\sec t \ln \sec t}{0}{\pi/4} - \int_0^{\pi/4} \tan t \sec t \d t} = 2\pi \bs{\sqrt2 \ln \sqrt2 - \bp{\sqrt2 - 1}} \\
-            = \sqrt2 \pi \bp{\ln2 - 2 + \sqrt2} \units[2].
-        \end{gather*}
+        \begin{align*}
+            \area &= 2\pi \bs{\evalint{\sec t \ln \sec t}{0}{\pi/4} - \int_0^{\pi/4} \tan t \sec t \d t}\\
+            &= 2\pi \bs{\sqrt2 \ln \sqrt2 - \bp{\sqrt2 - 1}} \\
+            &= \sqrt2 \pi \bp{\ln2 - 2 + \sqrt2} \units[2].
+        \end{align*}
     \end{ppart}
 \end{solution}
 
@@ -273,10 +295,12 @@
             + & \sec \t & \sec^2 \t \\
             - & \sec \t \tan \t & \tan t \\\bottomrule
         \end{array}\] Hence,
-        \begin{gather*}
-            kI = \sec\t \tan \t - \int \sec \t \tan^2 \t \d \t = \sec\t \tan \t - \int \sec \t \bp{\sec^2 \t - 1} \d \t\\
-            = \sec\t \tan \t - \int \sec^3 \t \d \t + \int \sec \t \d \t = \sec \t \tan \t - kI + \ln \abs{\sec \t + \tan \t}.
-        \end{gather*}
+        \begin{align*}
+            kI &= \sec\t \tan \t - \int \sec \t \tan^2 \t \d \t\\
+            &= \sec\t \tan \t - \int \sec \t \bp{\sec^2 \t - 1} \d \t\\
+            &= \sec\t \tan \t - \int \sec^3 \t \d \t + \int \sec \t \d \\
+            &= \sec \t \tan \t - kI + \ln \abs{\sec \t + \tan \t}.
+        \end{align*}
         Thus, \[I = \frac{\sec \t \tan \t + \ln \abs{\sec \t + \tan \t}}{2k} + C = \frac1{2k} \bs{kx\sqrt{(kx)^2 + 1} + \ln \abs{\sqrt{(kx)^2 + 1} + kx}} + C.\] In our case, $k = \frac{2H}{S^2} > 0$. Hence,
         {\allowdisplaybreaks
         \begin{align*}
@@ -292,6 +316,7 @@
 
     A solid is formed by rotating the region bounded by the semicircle and its diameter on the line $y = b$ about the $x$-axis through 4 right angles. Find the total surface area of the solid.
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{center}\tikzsetnextfilename{327}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -331,11 +356,14 @@
     \end{center}
 
     Observe that \[x^2 + (y-b)^2 = a^2 \implies y = b + \sqrt{a^2- x^2},\] whence \[\der{y}{x} = \frac{-2x}{2\sqrt{a^2 - x^2}} = -\frac{x}{\sqrt{a^2 - x^2}}.\] Thus, \[1 + \bp{\der{y}{x}}^2 = 1 + \frac{x^2}{a^2 - x^2} = \frac{a^2}{a^2 - x^2}.\] Hence,
-    \begin{gather*}
-        \area = 2\pi \int_{-a}^{a} y \sqrt{1 + \bp{\der{y}{x}}^2} \d x + 2\pi(b)(2a) = 4\pi \int_0^{a} y \sqrt{1 + \bp{\der{y}{x}}^2} \d x + 4\pi ab\\
-        = 4\pi \int_0^a \bp{b + \sqrt{a^2 - x^2}} \bp{\frac{a}{\sqrt{a^2 - x^2}}} \d x + 4\pi ab = 4\pi a \int_0^a \bp{\frac{b}{\sqrt{{a^2-x^2}}} + 1} \d x + 4\pi ab\\
-        = 4\pi a \evalint{b\arcsin \frac{x}{a} + x}{0}{a} + 4\pi ab = \bp{2\pi^2 ab + 4\pi a^2 + 4\pi ab} \units[2]
-    \end{gather*}
+    \begin{align*}
+        \area &= 2\pi \int_{-a}^{a} y \sqrt{1 + \bp{\der{y}{x}}^2} \d x + 2\pi(b)(2a)\\
+        &= 4\pi \int_0^{a} y \sqrt{1 + \bp{\der{y}{x}}^2} \d x + 4\pi ab\\
+        &= 4\pi \int_0^a \bp{b + \sqrt{a^2 - x^2}} \bp{\frac{a}{\sqrt{a^2 - x^2}}} \d x + 4\pi ab\\
+        &= 4\pi a \int_0^a \bp{\frac{b}{\sqrt{{a^2-x^2}}} + 1} \d x + 4\pi ab\\
+        &= 4\pi a \evalint{b\arcsin \frac{x}{a} + x}{0}{a} + 4\pi ab\\
+        &= \bp{2\pi^2 ab + 4\pi a^2 + 4\pi ab} \units[2].
+    \end{align*}
 \end{solution}
 
 \begin{problem}
@@ -354,10 +382,14 @@
     \end{ppart}
     \begin{ppart}
         Note that \[r = a\e^{\t/k} \implies \der{r}{\t} = \frac{a\e^{\t/k}}k  = \frac{r}{k}.\] Hence,
-        \begin{gather*}
-            q = \int_0^\b \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t = \int_0^\b \sqrt{r^2 + \frac{r^2}{k^2}} \d \t = \sqrt{1 + k^{-2}} \int_0^\b r \d \t\\
-            = \sqrt{1 + k^{-2}} \int_0^\b a\e^{\t/k} \d \t = a\sqrt{1 + k^{-2}} \evalint{\frac{\e^{\t/k}}{1/k}}0\b = a \sqrt{k^2 + 1} \bp{\e^{\b/k} - 1}.
-        \end{gather*}
+        \begin{align*}
+            q &= \int_0^\b \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t\\
+            &= \int_0^\b \sqrt{r^2 + \frac{r^2}{k^2}} \d \t\\
+            &= \sqrt{1 + k^{-2}} \int_0^\b r \d \t\\
+            &= \sqrt{1 + k^{-2}} \int_0^\b a\e^{\t/k} \d \t\\
+            &= a\sqrt{1 + k^{-2}} \evalint{\frac{\e^{\t/k}}{1/k}}0\b\\
+            &= a \sqrt{k^2 + 1} \bp{\e^{\b/k} - 1}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         \[\lim_{k \to \infty} \frac{Q}{q} = \lim_{k \to \infty} \frac{\frac14 a^2 k \bp{\e^{2\b/k} - 1}}{a \sqrt{k^2 + 1} \bp{\e^{\b/k} - 1}} = \frac{a}4 \lim_{k \to \infty} \bp{\frac{k}{\sqrt{k^2 + 1}}} \lim_{k \to \infty} \bp{\frac{\e^{2\b/k} - 1}{\e^{\b/k} - 1}}.\] Now observe that \[\lim_{k \to \infty} \bp{\frac{k}{\sqrt{k^2 + 1}}} = \lim_{k \to \infty} \frac{1}{1 + k^{-2}} = 1,\] and by the difference of squares identity, \[\lim_{k \to \infty} \bp{\frac{e^{2\b/k} - 1}{e^{\b/k} - 1}} = \lim_{k \to \infty} \bp{\e^{\b/k} + 1} = 2.\] Hence, \[\lim_{k \to \infty} \frac{Q}{q} = \frac{a}{2}.\]

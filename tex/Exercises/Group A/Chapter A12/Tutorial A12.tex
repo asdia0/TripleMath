@@ -34,10 +34,12 @@
         \[\P{A \cap B} = \P{B} \P{A}{B} = \frac13 \cdot \frac15 = \frac1{15}.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \P{\text{only one occurs}} = \P{A \cup B} - \P{A \cap B} = \P{A} + \P{B} - 2\P{A \cap B} \\
-            = \frac8{15} + \frac13 - 2 \bp{\frac1{15}} = \frac{11}{15}.
-        \end{gather*}
+        \begin{align*}
+            \P{\text{only one occurs}} &= \P{A \cup B} - \P{A \cap B}\\
+            &= \P{A} + \P{B} - 2\P{A \cap B} \\
+            &= \frac8{15} + \frac13 - 2 \bp{\frac1{15}}\\
+            &= \frac{11}{15}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         \[\P{\text{neither occurs}} = 1 - \P{\text{at least one occurs}} = 1 - \bp{\frac1{15} - \frac{11}{15}} = \frac15.\]
@@ -57,10 +59,14 @@
 \begin{solution}
     \begin{ppart}
         Since $A$ and $B$ are independent, we have $\P{A}{B} = \P{A} = p$. Hence,
-        \begin{gather*}
-            p = \P{A}{B} = \frac{\P{A \cap B}}{\P{B}} = \frac{\P{A} + \P{B} - \P{A \cup B}}{\P{B}} = \frac{p + p - 5/9}{p} = 2 - \frac{5}{9p}\\
-            \implies  9p^2 = 18p - 5 \implies 9p^2 - 18p + 5 = 0.
-        \end{gather*}
+        \begin{align*}
+            p &= \P{A}{B}\\
+            &= \frac{\P{A \cap B}}{\P{B}}\\
+            &= \frac{\P{A} + \P{B} - \P{A \cup B}}{\P{B}}\\
+            &= \frac{p + p - 5/9}{p}\\
+            &= 2 - \frac{5}{9p}.
+        \end{align*}
+        Multiplying through by $p$ and rearranging, we get $9p^2 - 18p + 5 = 0$.
     \end{ppart}
     \begin{ppart}
         Observe that $9p^2 - 18p + 5 = (3p - 1)(3p - 5)$.  Thus, $p = \frac13$. Note that $p \neq \frac53$ since $0 < p \leq 1$.
@@ -350,10 +356,12 @@
     \end{ppart}
     \begin{ppart}
         Let $B$ represent the event that a black die is taken from the jar. Then 
-        \begin{gather*}
-            \P{M} = \P{M \cap W} + \P{M \cap B} = \P{M \cap W} + \P{B} \P{M}{B} \\
-            = \frac{3}{14} + \frac35 \bp{\frac47\cdot\frac36 + \frac37\cdot\frac46} = \frac{39}{70}.
-        \end{gather*}
+        \begin{align*}
+            \P{M} &= \P{M \cap W} + \P{M \cap B}\\
+            &= \P{M \cap W} + \P{B} \P{M}{B} \\
+            &= \frac{3}{14} + \frac35 \bp{\frac47\cdot\frac36 + \frac37\cdot\frac46}\\
+            &= \frac{39}{70}.
+        \end{align*}
         Hence, $\P{W}{M} = \frac{\P{W \cap M}}{\P{M}} = \frac{3/14}{39/70} = \frac5{13}$.
     \end{ppart}
     \begin{ppart}
@@ -434,23 +442,27 @@
     \begin{ppart}
         Consider the case where both the sisters are adjacent, and all three brothers are next to one another. Counting the sisters as one unit, and counting the brothers as one unit gives 12 units altogether. There are hence $12! \cdot 2! \cdot 3!$ arrangements with this restriction. Since there are a total of $15!$ arrangements without the restriction, we have \[\P{\text{sisters together $\cap$ brothers together}} = \frac{12! \cdot 2! \cdot 3!}{15!} = \frac2{455}.\]
         Hence,
-        \begin{gather*}
-            \P{\text{sisters together $\cup$ brothers together}} \\
-            = \P{\text{sisters together}} + \P{\text{brothers together}} - \P{\text{sisters together $\cap$ brothers together}}\\
-            = \frac2{15} + \bp{1 - \frac1{35}} - \frac2{455} = \frac{43}{273}.
-        \end{gather*}
+        \begin{align*}
+            &\P{\text{sisters together $\cup$ brothers together}} \\
+            &\hspace{2em}= \P{\text{sisters together}} + \P{\text{brothers together}} - \P{\text{sisters together $\cap$ brothers together}}\\
+            &\hspace{2em}= \frac2{15} + \bp{1 - \frac1{35}} - \frac2{455}\\
+            &\hspace{2em}= \frac{43}{273}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Note that
-        \begin{gather*}
-            \P{\text{sisters together $\cap$ brothers not together}} \\
-            = \P{\text{sisters together}} - \P{\text{sisters together $\cap$ brothers together}}\\
-            = \frac2{15} - \frac{2}{455} = \frac{176}{1365}.
-        \end{gather*}
+        \begin{align*}
+            &\P{\text{sisters together $\cap$ brothers not together}} \\
+            &\hspace{2em}= \P{\text{sisters together}} - \P{\text{sisters together $\cap$ brothers together}}\\
+            &\hspace{2em}= \frac2{15} - \frac{2}{455}\\
+            &\hspace{2em}= \frac{176}{1365}.
+        \end{align*}
         Hence, the required probability can be calculated as
-        \begin{gather*}
-            \P{\text{sisters together}}{\text{brothers not together}} = \frac{\P{\text{sisters together $\cap$ brothers not together}}}{\P{\text{brothers not together}}}\\
-            = \frac{176/1365}{34/35} = \frac{88}{663}.
-        \end{gather*}
+        \begin{align*}
+            &\P{\text{sisters together}}{\text{brothers not together}}\\
+            &\hspace{2em}= \frac{\P{\text{sisters together $\cap$ brothers not together}}}{\P{\text{brothers not together}}}\\
+            &\hspace{2em}= \frac{176/1365}{34/35}\\
+            &\hspace{2em}= \frac{88}{663}.
+        \end{align*}
     \end{ppart}
 \end{solution}

@@ -15,10 +15,11 @@
     \end{ppart}
     \begin{ppart}
         The desired probability is
-        \begin{gather*}
-            \P{X_r + X_{r+1} < 9 \tor X_r + X_{r+1} > 12}{X_r = 6} = \P{X_{r+1} < 3 \tor X_{r+1} > 6}\\
-            = \P{X_{r+1} < 3} + \P{X_{r+1} > 6} = 1 - \bp{\frac{r+1}9}^2 + \bp{\frac{r+1}9}^6.
-        \end{gather*}
+        \begin{align*}
+            \P{X_r + X_{r+1} < 9 \tor X_r + X_{r+1} > 12}{X_r = 6} &= \P{X_{r+1} < 3 \tor X_{r+1} > 6}\\
+            &= \P{X_{r+1} < 3} + \P{X_{r+1} > 6}\\
+            &= 1 - \bp{\frac{r+1}9}^2 + \bp{\frac{r+1}9}^6.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Note that $\E{X_r} = 1/(1 - r/9)$. Hence, the expected number of attempts is given by \[1 + \sum_{r = 1}^8 \E{X_r} = 1 + \sum_{r=1}^8 \frac1{1 - r/9} = \frac{7129}{280}.\] Hence, the expected amount of money that he will lose is \[2\bp{\frac{7129}{280} - 8} = \$32.92 \todp{2}.\]

@@ -87,10 +87,13 @@
     Let $f(x) = ax^2 + bx + c$ be the quadratic such that the graph $y = f(x)$ passes through the points $(-h, y_{-1})$, $(0, y_0)$ and $(h, y_1)$.
 
     Note that we have $y_0 = f(0) = c$. We also have \[y_{-1} + y_1 = f(-h) + f(h) = \bs{a(-h)^2 + b(-h) + c} + \bs{ah^2 + bh + c} = 2ah^2 + 2c.\] Hence,
-    \begin{gather*}
-        \int_{-h}^h f(x) \d x = \int_{-h}^h (ax^2 + bx + c) \d x = \evalint{\frac13 x^3 + \frac12 bx^2 + cx}{-h}{h}= \frac13 h \bp{2h^2 + 6c}\\
-        = \frac13 h \bp{2h^2 + 2c + 4c} = \frac13 h \bp{y_{-1} + y_1 + 4y_0} = \frac13 h \bp{y_{-1} + 4y_0 + y_1}.
-    \end{gather*}
+    \begin{align*}
+        \int_{-h}^h f(x) \d x &= \int_{-h}^h (ax^2 + bx + c) \d x\\
+        &= \evalint{\frac13 x^3 + \frac12 bx^2 + cx}{-h}{h}\\
+        &= \frac13 h \bp{2h^2 + 6c}\\
+        &= \frac13 h \bp{2h^2 + 2c + 4c}\\
+        &= \frac13 h \bp{y_{-1} + y_1 + 4y_0}\\
+    \end{align*}
 
     Let $f(x) = \bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3}$. By Simpson's rule,
     \begin{align*}
@@ -182,6 +185,7 @@
         \end{align*}
         Thus, \[\lim_{n \to \infty} A = \int_0^1 \frac1{1 + x^2} = \frac\pi4.\]
     \end{ppart}
+    \clearpage
     \begin{ppart}
         Consider the following graph of $y = \frac1{1 + x^4}$.
 

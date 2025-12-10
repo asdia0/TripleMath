@@ -266,10 +266,11 @@
 \begin{solution}
     \begin{ppart}
         We begin by splitting the $S_{2n}$ into odd and even sums:
-        \begin{gather*}
-            S_{2n} = \sum_{m = 1}^{n} u_{2m-1} + \sum_{m = 2}^n u_{2m} = \sum_{m = 1}^n f(2m-1) + \sum_{m = 2}^n \bs{f(2m-1) - 2f(2m-3)}\\
-            = f(1) + 2\sum_{m = 2}^n \bs{f(2m-1) - f(2m-3)}.
-        \end{gather*}
+        \begin{align*}
+            S_{2n} &= \sum_{m = 1}^{n} u_{2m-1} + \sum_{m = 2}^n u_{2m}\\
+            &= \sum_{m = 1}^n f(2m-1) + \sum_{m = 2}^n \bs{f(2m-1) - 2f(2m-3)}\\
+            &= f(1) + 2\sum_{m = 2}^n \bs{f(2m-1) - f(2m-3)}.
+        \end{align*}
         The resulting sum telescopes, giving \[S_{2n} = f(1) + 2\bs{f(2n-1) - f(1)} = 2f(2n-1) - f(1).\]
     \end{ppart}
     \begin{ppart}
@@ -316,7 +317,7 @@
 \end{solution}
 
 \begin{problem}
-    Use the Binomial Theorem to that for each $n \in \NN$,
+    Use the Binomial Theorem to show that for each $n \in \NN$,
     \begin{enumerate}
         \item \begin{enumerate}
             \item $\displaystyle\bp{1 + \frac1n}^n \leq \sum_{j = 0}^n \frac1{j!}$,

@@ -413,10 +413,13 @@
 \end{problem}
 \begin{solution}
     We have \[\E{Y} = \E{\cos X} = \frac2\pi \int_0^{\pi/2} \cos{x} \d x = \frac2\pi \evalint{\sin x}0{\pi/2} = \frac2\pi.\] Similarly,
-    \begin{gather*}
-        \E{Y^2} = \E{\cos^2 X} = \frac2\pi \int_0^{\pi/2} \cos[2]{x} \d x = \frac2\pi \int_0^{\pi/2} \frac{1 + \cos{2x}}{2} \d x\\
-        = \frac1\pi \evalint{x + \frac{\sin 2x}2}0{\pi/2} = \frac12.
-    \end{gather*}
+    \begin{align*}
+        \E{Y^2} &= \E{\cos^2 X}\\
+        &= \frac2\pi \int_0^{\pi/2} \cos[2]{x} \d x\\
+        &= \frac2\pi \int_0^{\pi/2} \frac{1 + \cos{2x}}{2} \d x\\
+        &= \frac1\pi \evalint{x + \frac{\sin 2x}2}0{\pi/2}\\
+        &= \frac12.
+    \end{align*}
     Thus, \[\Var{Y} = \E{Y^2} - \E{Y}^2 = \frac12 - \bp{\frac2\pi}^2 = \frac12 - \frac4{\pi^2}.\]
 
     Let $m$ be the median of $Y$. We have \[\frac12 = \P{Y < m} = \P{\cos x < m} = \P{x > \arccos m} = 1 - \frac2\pi \arccos m,\] whence $m = \cos{\pi/4} = 1/\sqrt2$.
@@ -443,10 +446,12 @@
             2-\frac{2}{x}, & 1 \leq x \leq 2,\\
             1, & x > 2.
         \end{cases}\] Thus,
-        \begin{gather*}
-            \P{10 < Y < 20} = \P{10 < 4X^3 < 20} = \P{\sqrt[3]{5/2} < X < \sqrt[3]{5}}\\
-            = F\of{\sqrt[3]{5}} - F\of{\sqrt[3]{5/2}} = 0.304 \tosf{3}.
-        \end{gather*}
+        \begin{align*}
+            \P{10 < Y < 20} &= \P{10 < 4X^3 < 20}\\
+            &= \P{\sqrt[3]{5/2} < X < \sqrt[3]{5}}\\
+            &= F\of{\sqrt[3]{5}} - F\of{\sqrt[3]{5/2}}\\
+            &= 0.304 \tosf{3}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Let $m$ be the median of $Y$. We have \[\frac12 = \P{Y < m} = \P{4X^3 < m} = \P{X < \sqrt[3]{m/4}} = 2 - \frac2{\sqrt[3]{m/4}}.\] Solving, we get $m = 9.48 \tosf{3}$.

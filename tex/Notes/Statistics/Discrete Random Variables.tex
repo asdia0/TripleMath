@@ -391,10 +391,15 @@ We can prove this statement more rigorously using the probability distribution o
 \end{proposition}
 Recall that we defined $\l$ as the mean rate of occurrence per unit time. Since we measure $X$ over a time interval of length $t$, the mean number of events, $\E{X}$, is simply $\l t$. We can verify this with the following calculation:
 \begin{proof}
-    \begin{gather*}
-        \E{X} = \sum_{x = 0}^\infty  x \P{X = x} = \sum_{x = 1}^\infty  x \P{X = x} = \sum_{x = 1}^\infty  x \e^{-\l t} \frac{(\l t)^x}{x!}\\
-        = \l t \e^{-\l t} \sum_{x = 1}^\infty \frac{(\l t)^{x-1}}{(x-1)!} = \l t \e^{-\l t} \sum_{x = 0}^\infty \frac{(\l t)^x}{x!} = \l t \e^{-\l t} \e^{\l t} = \l t.
-    \end{gather*}
+    \begin{align*}
+        \E{X} &= \sum_{x = 0}^\infty  x \P{X = x}\\
+        &= \sum_{x = 1}^\infty  x \P{X = x}\\
+        &= \sum_{x = 1}^\infty  x \e^{-\l t} \frac{(\l t)^x}{x!}\\
+        &= \l t \e^{-\l t} \sum_{x = 1}^\infty \frac{(\l t)^{x-1}}{(x-1)!}\\
+        &= \l t \e^{-\l t} \sum_{x = 0}^\infty \frac{(\l t)^x}{x!}\\
+        &= \l t \e^{-\l t} \e^{\l t}\\
+        &= \l t.
+    \end{align*}
 \end{proof}
 
 \begin{proposition}[Variance of Poisson Distribution]
@@ -402,10 +407,12 @@ Recall that we defined $\l$ as the mean rate of occurrence per unit time. Since 
 \end{proposition}
 \begin{proof}[Proof 1.]
     Consider $\E{X^2 - X} = \E{X(X-1)}$.
-    \begin{gather*}
-        \E{X(X-1)} = \sum_{x = 0}^\infty x(x-1) \P{X = x} = \sum_{x = 2}^\infty x(x-1)\P{X = x}\\
-        = (\l t)^2 \e^{-\l t} \sum_{x = 2}^\infty \frac{(\l t)^{x-2}}{(x-2)!} = (\l t)^2 \e^{-\l t} \e^{\l t} = (\l t)^2.
-    \end{gather*}
+    \begin{align*}
+        \E{X(X-1)} &= \sum_{x = 0}^\infty x(x-1) \P{X = x}\\
+        &= \sum_{x = 2}^\infty x(x-1)\P{X = x}\\
+        &= (\l t)^2 \e^{-\l t} \sum_{x = 2}^\infty \frac{(\l t)^{x-2}}{(x-2)!}\\
+        &= (\l t)^2 \e^{-\l t} \e^{\l t} = (\l t)^2.
+    \end{align*}
     Thus, $\E{X^2} = \E{X^2 - X} + \E{X} = (\l t)^2 + \l t$, from which it follows \[\Var{X} = \E{X^2} - \E{X}^2 = \l t.\]
 \end{proof}
 \begin{proof}[Proof 2.]
@@ -601,10 +608,13 @@ This actually implies a much stronger property about the geometric distribution:
     Let $X \sim \Geo{p}$. Then $X$ is memoryless.
 \end{proposition}
 \begin{proof}
-    \begin{gather*}
-        \P{X > s + t}{X > t} = \frac{\P{X > s + t \tand X > t}}{\P{X > t}} = \frac{\P{X > s + t}}{\P{X > t}}\\
-        = \frac{(1-p)^{s+t}}{(1-p)^t} = (1-p)^s = \P{X > s}.
-    \end{gather*}
+    \begin{align*}
+        \P{X > s + t}{X > t} &= \frac{\P{X > s + t \tand X > t}}{\P{X > t}}\\
+        &= \frac{\P{X > s + t}}{\P{X > t}}\\
+        &= \frac{(1-p)^{s+t}}{(1-p)^t}\\
+        &= (1-p)^s\\
+        &= \P{X > s}.
+    \end{align*}
 \end{proof}
 
 Intuitively, this means that having $s$ more observations before a success does not depend on there already being $t$ observations of failure. In other words, the ``waiting time'' for a success does not depend on how much ``time'' has already passed.

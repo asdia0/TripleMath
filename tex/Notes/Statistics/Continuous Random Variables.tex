@@ -186,9 +186,9 @@ Suppose we have a continuous random variable $Y$ that is given as a function of 
         \frac2\pi x, & 0 \leq x \leq \frac\pi2,\\
         1, & x > \frac\pi2.
     \end{cases}\] Now consider $F_Y(y)$:
-    \begin{gather*}
-        F_Y(y) = \P{Y \leq y} = \P{\sin X \leq y} = \P{X \leq \arcsin y} \\
-        = \begin{cases}
+    \begin{align*}
+        F_Y(y) &= \P{Y \leq y} = \P{\sin X \leq y} = \P{X \leq \arcsin y} \\
+        &= \begin{cases}
             0, & \arcsin y < 0,\\
             \frac2\pi \arcsin y, & 0 \leq \arcsin y \leq \frac\pi2,\\
             1, & \arcsin y > \frac\pi2
@@ -197,7 +197,7 @@ Suppose we have a continuous random variable $Y$ that is given as a function of 
             \frac2\pi \arcsin y, & 0 \leq y \leq 1,\\
             1, & y > 1.
         \end{cases}
-    \end{gather*}
+    \end{align*}
     Differentiating, we obtain the pdf of $Y$: \[f_Y(y) = \begin{cases}
         \frac2{\pi\sqrt{1 - y^2}}, & 0 \leq y < 1,\\
         0, & \ow.
@@ -395,10 +395,13 @@ As its definition suggests, the exponential distribution is often used to model 
 \end{proposition}
 \begin{proof}
     Let $X \sim \Exp{\l}$. We have
-    \begin{gather*}
-        \P{X > a + b}{X > a} = \frac{\P{X > a + b \tand X > a}}{\P{X > a}} = \frac{\P{X > a + b}}{\P{X > a}} \\
-        = \frac{\e^{\l (a + b)}}{\e^{\l a}} = \e^{-\l b} = \P{X > b}.
-    \end{gather*}
+    \begin{align*}
+        \P{X > a + b}{X > a} &= \frac{\P{X > a + b \tand X > a}}{\P{X > a}}\\
+        &= \frac{\P{X > a + b}}{\P{X > a}} \\
+        &= \frac{\e^{\l (a + b)}}{\e^{\l a}}\\
+        &= \e^{-\l b}\\
+        &= \P{X > b}.
+    \end{align*}
     Thus, the probability that one has to ``wait'' another $b$ units of time does not depend on the time already spent ``waiting'', i.e. $X$ is memoryless.
 \end{proof}
 

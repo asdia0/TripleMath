@@ -31,10 +31,11 @@
     \end{ppart}
     \begin{ppart}
         Observe that
-        \begin{gather*}
-            T_{n+1}(\cos \t) = \cos (n+1)\t = \cos n\t \cos \t - \sin n\t \sin \t\\
-            = 2\cos n\t \cos \t - \bp{\cos n\t \cos \t + \sin n\t \sin \t} = 2\cos n\t \cos \t - \cos (n-1)\t.
-        \end{gather*}
+        \begin{align*}
+            T_{n+1}(\cos \t) &= \cos (n+1)\t = \cos n\t \cos \t - \sin n\t \sin \t\\
+            &= 2\cos n\t \cos \t - \bp{\cos n\t \cos \t + \sin n\t \sin \t}\\
+            &= 2\cos n\t \cos \t - \cos (n-1)\t.
+        \end{align*}
         Thus, $T_{n+1}(x) = 2x T_n(x) - T_{n-1}(x)$.
     \end{ppart}
     \begin{ppart}
@@ -42,18 +43,21 @@
     \end{ppart}
     \begin{ppart}
         Since $x = \cos \t$, we have $\sin \t = \sqrt{1 - x^2}$. Hence, \[U_{n} (x) = \frac{\sin (n+1)\t}{\sin \t} = \frac{\sin{(n+1)\arccos x}}{\sqrt{1 - x^2}}.\] Thus, we have
-        \begin{gather*}
-            \der{}{x} T_n (x) = \der{}{x} \cos{n \arccos x} = -\sin{n \arccos x} \bp{\frac{-n}{\sqrt{1 - x^2}}}\\
-        = n \frac{\sin{n \arccos x}}{\sqrt{1 -x^2}} = n U_{n-1}(x).
-        \end{gather*}
+        \begin{align*}
+            \der{}{x} T_n (x) &= \der{}{x} \cos{n \arccos x}\\
+            &= -\sin{n \arccos x} \bp{\frac{-n}{\sqrt{1 - x^2}}}\\
+            &= n \frac{\sin{n \arccos x}}{\sqrt{1 -x^2}}\\
+            &= n U_{n-1}(x).
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         We have
-        \begin{gather*}
-            \der{}{x} U_{n-1}(x) = \der{}{x} \frac{\sin{n\arccos x}}{\sqrt{1 - x^2}} \\
-            = \frac{1}{1 - x^2} \bs{\sqrt{1 - x^2} \bp{\frac{-n \cos{n \arccos x}}{\sqrt{1 - x^2}}} - \sin{n\arccos x} \bp{\frac{-x}{\sqrt{1 - x^2}}}}\\
-            = \frac{1}{1 - x^2} \bs{-n \cos{n \arccos x} + x \frac{\sin{n\arccos x}}{\sqrt{1 - x^2}} } = \frac{-nT_n(x) + xU_{n-1}(x)}{1 - x^2}.
-        \end{gather*}
+        \begin{align*}
+            \der{}{x} U_{n-1}(x) &= \der{}{x} \frac{\sin{n\arccos x}}{\sqrt{1 - x^2}} \\
+            &= \frac{1}{1 - x^2} \bs{\sqrt{1 - x^2} \bp{\frac{-n \cos{n \arccos x}}{\sqrt{1 - x^2}}} - \sin{n\arccos x} \bp{\frac{-x}{\sqrt{1 - x^2}}}}\\
+            &= \frac{1}{1 - x^2} \bs{-n \cos{n \arccos x} + x \frac{\sin{n\arccos x}}{\sqrt{1 - x^2}} }\\
+            &= \frac{-nT_n(x) + xU_{n-1}(x)}{1 - x^2}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Note that $y = T_n(x)$ implies $y' = n U_{n-1}(x)$. Differentiating once more yields \[y'' = n \bp{\frac{xU_{n-1}(x)-nT_n(x)}{1 - x^2}} = \frac{nxU_{n-1}(x)-n^2T_n(x)}{1 - x^2} = \frac{x y' - n^2 y}{1 - x^2}.\] Rearranging, we obtain \[\bp{1 - x^2} y'' - x y' + n^2 y = 0.\]

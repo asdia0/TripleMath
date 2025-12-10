@@ -47,15 +47,15 @@
     Note that \[\der{x}{\t} = \sec^2 \t = \tan^2 \t + 1 = x^2 + 1.\] Thus, \[\der{y}{\t} = \der{y}{x} \der{x}{\t} = \bp{1 + x^2} \der{y}{x}.\] Differentiating once more with respect to $\t$, \[\der[2]{y}{\t} = \bp{1 + x^2} \der[2]{y}{x} \der{x}{\t} + 2x \der{x}{\t} \der{y}{x} = \bp{1 + x^2}^2 \der[2]{y}{x} + 2x \der{y}{\t}.\] Dividing the given DE by $1 + x^2$, we have \[\bp{1 + x^2}^2 \der[2]{y}{x} + 2\bp{1 + x^2} \bp{1 + x} \der{y}{x} - 3 y = \frac{x^2 + 6x - 1}{1 + x^2}.\] We can rewrite this as \[\bp{1 + x^2}^2 \der[2]{y}{x} + 2x\der{y}{\t} + 2\der{y}{\t} - 3 y = \frac{x^2 + 6x - 1}{1 + x^2},\] which quickly simplifies as \[\der[2]{y}{\t} + 2 \der{y}{\t} - 3y =  \frac{x^2 + 6x - 1}{1 + x^2}.\] Now, observe that \[\frac{x^2 + 6x - 1}{1 + x^2} = \frac{\tan^2 \t + 6\tan \t - 1}{\sec^2 \t} = \sin^2 \t + 6\sin\t\cos\t - \cos^2\t = 3\sin2\t - \cos2\t.\] Thus, \[\der[2]{y}{\t} + 2 \der{y}{\t} - 3y = 3\sin2\t - \cos2\t,\] whence $a = 2$, $b = -3$, $c = 3$ and $d = -1$.
 	
 	Note that the characteristic equation $r^2 + 2r - 3 = (r+3)(r-1) = 0$ has roots $r = 1$ and $r = -3$. Thus, \[y_c = A\e^{\t} + B\e^{-3\t}.\] For the particular solution, we try \[y_p = C\sin 2\t + D \cos 2\t.\] Note that \[y_p' = 2C \cos 2\t - 2D \sin 2\t \quad \tand \quad y_p'' = -4C \sin 2\t - 4D \cos 2\t.\] Substituting this into the DE, we get
-    \begin{gather*}
-        \bp{-4C \sin 2\t - 4D \cos 2\t} + 2\bp{2C \cos 2\t - 2D \sin 2\t} - 3\bp{C\sin 2\t + D \cos 2\t}\\
-        = 3\sin 2\t - \cos 2\t.
-    \end{gather*}
+    \begin{align*}
+        &\bp{-4C \sin 2\t - 4D \cos 2\t} + 2\bp{2C \cos 2\t - 2D \sin 2\t} - 3\bp{C\sin 2\t + D \cos 2\t}\\
+        &\hspace{2em}= 3\sin 2\t - \cos 2\t.
+    \end{align*}
     Comparing coefficients, we get \[\systeme[CD]{-7C-4D = 3,4C-7D=-1},\] whence $C = -5/13$ and $D = -1/13$. Thus, \[y = y_c + y_p =  A\e^{\t} + B\e^{-3\t} - \frac5{13} \sin 2\t - \frac1{13} \cos 2\t.\] Substituting $\t = \arctan x$, \[y = A\e^{\arctan x} + B\e^{-3\arctan x} - \frac5{13} \sin{2\arctan x} - \frac1{13} \cos{2\arctan x}.\]
 \end{solution}
 
 \begin{problem}
-    An object of mass $m$, in kilograms, is suspended from one end of a vertical spring of elasticity $k$, $k > 0$, in a resistive medium with resistivity $c$, $c > 0$. When the object is pulled down from its equilibrium position and released, the motion of the object can be described by the following differential equation, where $y$ is the displacement, in metres, of the object from the equilibrium position after time $t$. \[\der[2]{y}{t} + \frac{c}{m} \der{y}{t} + \frac{k}{m} y = 0.\]
+    An object of mass $m$, in kilograms, is suspended from one end of a vertical spring of elasticity $k > 0$, in a resistive medium with resistivity $c > 0$. When the object is pulled down from its equilibrium position and released, the motion of the object can be described by the following differential equation, where $y$ is the displacement, in metres, of the object from the equilibrium position after time $t$. \[\der[2]{y}{t} + \frac{c}{m} \der{y}{t} + \frac{k}{m} y = 0.\]
 
     \begin{enumerate}
         \item The diagram below shows how $y$ varies with $t$ for some values of $c$, $m$ and $k$.
@@ -169,10 +169,10 @@
     \end{ppart}
     \begin{ppart}
         Note that the characteristic equation is $r^2 + r^2 = 0$, whence $r = \pm \i w$. Thus, \[y_c = A\cos wt + B\sin wt.\] For the particular solution, we try \[y_p = Ct\sin wt + Dt \cos wt.\] Note that \[y_p' = wt \bp{C\cos wt - D \sin wt} + C\sin wt + D \cos wt\] and \[y_p'' = w^2 t \bp{-C\sin wt - D \cos wt} + 2w \bp{C \cos wt - D \sin wt}.\] Substituting this into the DE, we get
-        \begin{gather*}
-            w^2 t \bp{-C\sin wt - D \cos wt} + 2w \bp{C \cos wt - D \sin wt} \\
-            + w^2 \bp{Ct\sin wt + Dt \cos wt} = \sin wt.
-        \end{gather*}
+        \begin{align*}
+            &w^2 t \bp{-C\sin wt - D \cos wt} + 2w \bp{C \cos wt - D \sin wt} + w^2 \bp{Ct\sin wt + Dt \cos wt}\\
+            &\hspace{2em}= \sin wt.
+        \end{align*}
         Comparing coefficients, we obtain $C = 0$ and $D = -1/2w$. Thus, \[y = y_c + y_p = A\cos wt + B \sin wt - \frac{t}{2w} \cos wt.\] Note that \[y' = -Aw \sin wt + Bw \cos wt - \frac1{2w} \bp{\cos wt - tw\sin wt}.\] Since $y(0) = y'(0) = 0$, we have $A = 0$ and \[Bw - \frac1{2w} = 0 \implies B = \frac1{2w^2}.\] Thus, \[y = \frac1{2w^2} \sin wt - \frac{t}{2w} \cos wt.\]
     \end{ppart}
 \end{solution}

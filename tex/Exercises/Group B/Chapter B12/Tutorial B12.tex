@@ -1,56 +1,44 @@
 \section{Tutorial B12}
 
 \begin{problem}
-    Given that $y = 1$ when $x = 1$, find the particular solution of the differential equation $\der{y}{x} = \frac{y^2}{x}$.
+    Given that $y = 1$ when $x = 1$, find the particular solution of the differential equation \[\der{y}{x} = \frac{y^2}{x}.\]
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        \der{y}{x} = \frac{y^2}{x} \implies \frac1{y^2} \der{y}{x} = \frac1x \implies \int \frac1{y^2} \d y = \int \frac1x \d x \\
-        \implies -\frac1{y} = \ln \abs{x} + C_1 \implies y = \frac1{C - \ln \abs{x}}, \quad C = -C_1.
-    \end{gather*}
-    Since $y(1) = 1$, we have \[1 = \frac{1}{C - \ln \abs{1}} \implies C = 1 \implies y = \frac1{1 - \ln \abs{x}}.\]
+    We have \[\frac1{y^2} \der{y}{x} = \frac1x.\] Integrating both sides with respect to $x$, \[\int \frac1{y^2} \d y = \int \frac1x \d x.\] Thus, \[-\frac1{y} = \ln \abs{x} + C_1.\] Solving for $y$, we get \[y = \frac1{C - \ln \abs{x}}.\] Since $y(1) = 1$, we have \[1 = \frac{1}{C - \ln \abs{1}} \implies C = 1 \implies y = \frac1{1 - \ln \abs{x}}.\]
 \end{solution}
 
 \begin{problem}
-    Two variables $x$ and $t$ are connected by the differential equation $\der{x}{t} = \frac{kx}{10-x}$, where $0 < x < 10$ and where $k$ is a constant. It is given that $x = 1$ when $t = 0$ and that $x = 2$ when $t = 1$. Find the value of $t$ when $x = 5$, given your answer to three s.f.
+    Two variables $x$ and $t$ are connected by the differential equation \[\der{x}{t} = \frac{kx}{10-x},\] where $0 < x < 10$ and where $k$ is a constant. It is given that $x = 1$ when $t = 0$ and that $x = 2$ when $t = 1$. Find the value of $t$ when $x = 5$, given your answer to three s.f.
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        \der{x}{t} = \frac{kx}{10-x} \implies \frac{10-x}{x} \der{x}{t} = k\\
-        \implies \int \frac{10-x}{x} \d x = \int k \d t \implies 10\ln x - x = kt + C.
-    \end{gather*}
-
-    Evaluating at $x = 1$ and $t = 0$, \[10\ln{1} - 1 = k(0) + C \implies C = -1.\] Evaluating at $x = 2$ and $t = 1$, \[10\ln{2} - 2 = k(1) - 1 \implies k = 10 \ln 2 - 1.\] Hence, evaluating at $x = 5$, we get \[10\ln{5} - 5 = \bp{10 \ln 2 - 1}t - 1 \implies t = 2.04 \tosf{3}.\]
+    We have \[\frac{10-x}{x} \der{x}{t} = k.\] Integrating with respect to $t$, we have \[\int \frac{10-x}{x} \d x = \int k \d t,\] so \[10\ln x - x = kt + C.\] Evaluating at $x = 1$ and $t = 0$, \[10\ln{1} - 1 = k(0) + C \implies C = -1.\] Evaluating at $x = 2$ and $t = 1$, \[10\ln{2} - 2 = k(1) - 1 \implies k = 10 \ln 2 - 1.\] Hence, evaluating at $x = 5$, we get \[10\ln{5} - 5 = \bp{10 \ln 2 - 1}t - 1 \implies t = 2.04 \tosf{3}.\]
 \end{solution}
 
 \begin{problem}
-    Use the substitution $y = u - 2x$ to find the general solution of the differential equation $\der{y}{x} = -\frac{8x + 4y + 1}{4x+2y+1}$.
+    Use the substitution $y = u - 2x$ to find the general solution of the differential equation \[\der{y}{x} = -\frac{8x + 4y + 1}{4x+2y+1}.\]
 \end{problem}
 \begin{solution}
     Note that \[\der{y}{x} = -\frac{8x + 4y + 1}{4x+2y+1} = -2 + \frac1{4x + 2y + 1}.\] Also note that under the substitution $y = u - 2x$, we have \[\der{y}{x} = \der{u}{x} - 2.\] Thus, \[\der{u}{x} = \frac1{4x + 2y + 1} = \frac1{4x + 2(u - 2x) + 1} = \frac1{2u + 1} \implies (2u + 1) \der{u}{x} = 1.\] Integrating with respect to $x$, \[\int \bp{2u + 1} \d u = \int 1 \d x \implies u^2 + u = x + C \implies (y+2x)^2 + y + x = C.\]
 \end{solution}
 
 \begin{problem}
-    By using the substitution $z = y\e^{2x}$, find the general solution of the differential equation $\der{y}{x} + 2y = x\e^{-2x}$.
+    By using the substitution $z = y\e^{2x}$, find the general solution of the differential equation \[\der{y}{x} + 2y = x\e^{-2x}.\]
 
-    Find the particular solution of the differential equation given that $\der{y}{x} = 1$ when $x = 0$.
+    Find the particular solution of the differential equation given that $\derx{y}{x} = 1$ when $x = 0$.
 \end{problem}
 \begin{solution}
     Note that \[z = ye^{2x} \implies \der{z}{x} = \der{y}{x} \e^{2x} + 2y \e^{2x} = \der{y}{x} \e^{2x} + 2z \implies \der{y}{x} = \der{z}{x} \e^{-2x} - 2y.\] Substituting this into the given differential equation, \[\der{z}{x} \e^{-2x} - 2y + 2y = x \e^{-2x} \implies \der{z}{x} = x.\] Integrating with respect to $x$, we easily see that \[y \e^{2x} = z = \frac{z^2}{2} + C \implies y = \frac{x^2}{2 \e^{2x}} + \frac{C}{\e^{2x}}.\] Since $\der{y}{x} = 1$ when $x = 0$, we have \[1 + 2y = 0 \implies y = -\frac12 \implies C = -\frac12.\] The desired particular solution is hence \[y = \frac{x^2 - 1}{2\e^{2x}}.\]
 \end{solution}
 
 \begin{problem}
-    Find the general solution of the differential equation $\der{y}{x} = 6xy^3$.
+    Find the general solution of the differential equation \[\der{y}{x} = 6xy^3.\]
 
     Find its particular solution given that $y = 0.5$ when $x = 0$.
 
     Determine the interval of validity for the particular solution.
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        \der{y}{x} = 6xy^3 \implies \frac{1}{y^3} \der{y}{x} = 6x \implies \int \frac{1}{y^3} \d y = \int 6x \d  x\\
-        \implies -\frac{1}{2y^2} = 3x^2 + C_1 \implies y^2 = \frac{1}{C - 6x^2}.
-    \end{gather*}
+    We have \[\frac{1}{y^3} \der{y}{x} = 6x.\] Integrating both sides with respect to $x$, we get \[\int \frac{1}{y^3} \d y = \int 6x \d x,\] so \[-\frac{1}{2y^2} = 3x^2 + C_1\] and thus \[y^2 = \frac{1}{C - 6x^2}.\]
 
     Since $y(0) = 0.5$, we have \[(0.5)^2 = \frac1{C - 6(0)^2} \implies C = 4.\] Thus, the particular solution is \[y^2 = \frac1{4 - 6x^2}.\]
  
@@ -59,7 +47,7 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item Find the general solution of the differential equation $\der{y}{x} = \frac{3x}{x^2 + 1}$.
+        \item Find the general solution of the differential equation \[\der{y}{x} = \frac{3x}{x^2 + 1}.\]
         \item What can you say about the gradient of every solution as $x \to \pm \infty$?
         \item Find the particular solution of the differential equation for which $y = 2$ when $x = 0$. Hence, sketch the graph of this solution.
     \end{enumerate}
@@ -115,18 +103,13 @@
         \item The curve of the solution in part (b) passes through the points $(0, 1)$ and $\bp{2, 3+\e^{-4}}$. Sketch this curve, indicating its axial intercept and asymptote (if any).
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        \begin{gather*}
-            \der{z}{x} = 3-2z \implies \frac{1}{3-2z} \der{z}{x} = 1 \implies \int \frac{1}{3-2z} \d z = \int 1 \d x\\
-            \implies -\frac12 \ln{3-2z} = x + C_1 \implies z = \frac32 - A \e^{-2x}, \quad A = \frac{\e^{-2C_1}}{2}.
-        \end{gather*}
-        Thus, the general solution is \[z = \frac32 - A \e^{-2x}, \quad A \in \RR^+.\]
+        We have \[\frac{1}{3-2z} \der{z}{x} = 1.\] Integrating both sides with respect to $x$, we get \[\int \frac{1}{3-2z} \d z = \int 1 \d x,\] so \[-\frac12 \ln{3-2z} = x + C_1.\] It follows that \[z = \frac32 - A \e^{-2x}.\] Thus, the general solution is \[z = \frac32 - A \e^{-2x}, \quad A \in \RR^+.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{y}{x} = \frac32 - A \e^{-2x} \implies y = \int \bp{\frac32 - A \e^{-2x}} \d x = \frac32 x + \frac{A}2 \e^{-2x} + B, \quad B \in \RR.
-        \end{gather*}
+        Since \[\der{y}{x} = \frac32 - A \e^{-2x},\] we have \[y = \int \bp{\frac32 - A \e^{-2x}} \d x = \frac32 x + \frac{A}2 \e^{-2x} + B, \quad B \in \RR.\]
     \end{ppart}
     \begin{ppart}
         \[\der{y}{x} = \frac32 - A\e^{-2x} \implies \der[2]{y}{x} = 2A \e^{-2x} = 2\bp{\frac32 - \der{y}{x}} = -2\der{y}{x} + 3.\] Hence, $a = -2$ and $b = 3$.
@@ -171,11 +154,7 @@
     Find the time it takes the liquid to reach a temperature of $15$\,$\deg$C, and state what happens to $\t$ for large values of $t$. Sketch a graph of $\t$ against $t$.
 \end{problem}
 \begin{solution}
-    Since $\der{\t}{t} \propto (20 - \t)$, we have $\der{\t}{t} = k(20 - \t)$, where $k$ is a constant. We now solve for $\t$.
-    \begin{gather*}
-        \der{\t}{t} = k(20 - \t) \implies \frac1{20 - \t} \der{\t}{t} = k \implies \int \frac1{20 - \t} \d \t = \int k \d t \\
-        \implies - \ln{20 - \t} = kt + C_1 \implies \t = 20 - C\e^{-kt}, \quad C = \e^{-C_1}.
-    \end{gather*}
+    Since $\der{\t}{t} \propto (20 - \t)$, we have $\der{\t}{t} = k(20 - \t)$, where $k$ is a constant. We now solve for $\t$. Note that \[\frac1{20 - \t} \der{\t}{t} = k.\] Integrating both sides with respect to $t$, we get \[\int \frac1{20 - \t} \d \t = \int k \d t,\] so \[-\ln{20 - \t} = kt + C_1.\] Thus, $\t = 20 - C\e^{-kt}$.
 
     Evaluating at $\t = 0$ and $\t = 10$, we get \[10 = 20 - C\e^{-0} \implies C = 10.\] Additionally, since $\der{\t}{t} = 1$ when $t = 0$, we have \[1 = k\bs{20 - (20 - 10\e^0)} = 10k \implies k = \frac1{10}.\] Thus, \[\t = 20 - 10\e^{-t/10}.\]
 
@@ -211,9 +190,10 @@
     \end{center}
 \end{solution}
 
+\clearpage
 \begin{problem}
     \begin{enumerate}
-        \item Find $\int \frac1{100-v^2} \d x$.
+        \item Find \[\int \frac1{100-v^2} \d x.\]
         \item A stone is dropped from a stationary balloon. It leaves the balloon with zero speed, and $t$ seconds later its speed $v$ metres per second satisfies the differential equation \[\der{v}{t} = 10 - 0.1v^2.\]
         \begin{enumerate}
             \item Find $t$ in terms of $v$. Hence, find the exact time the stone takes to reach a speed of 5 metres per second.
@@ -228,10 +208,8 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            \begin{gather*}
-                \der{v}{t} = 10 - 0.1v^2 = \frac{100 - v^2}{10} \implies \frac1{100 - v^2} \der{v}{t} = \frac1{10} \implies \int \frac1{100 - v^2} \d v = \int \frac1{10} \d t\\
-                \implies \frac1{20} \ln{\frac{10 + v}{10 - v}} + C_1 = \frac{t}{10} \implies t = \frac1{2} \ln{\frac{10 + v}{10 - v}} + C, \quad C = 10 C_1.
-            \end{gather*}
+            We have \[\frac1{100 - v^2} \der{v}{t} = \frac1{10}.\] Integrating with respect to $t$, we get \[\int \frac1{100 - v^2} \d v = \int \frac1{10} \d t.\] Thus, \[\frac1{20} \ln{\frac{10 + v}{10 - v}} + C_1 = \frac{t}{10},\] from which we find that \[t = \frac1{2} \ln{\frac{10 + v}{10 - v}} + C.\]
+
             Evaluating the solution at $t = 0$ and $v = 0$, we get \[0 = \frac12 \ln{\frac{10 +0}{10 + 0}} + C \implies C = 0.\] Thus, the general solution is \[t = \frac12 \ln{\frac{10 + v}{10 - v}}.\]
 
             Consider $v = 5$, we have \[t = \frac12 \ln{\frac{10+5}{10 - 5}} = \frac12 \ln 3.\] It thus takes $\frac12 \ln 3$ seconds for the stone to reach a speed of 5 m/s.
@@ -248,17 +226,15 @@
 \begin{problem}
     Two scientists are investigating the change of a certain population of an animal species of size $n$ thousand at time $t$ years. It is known that due to its inability to reproduce effectively, the species is unable to replace itself in the long run.
     \begin{enumerate}
-        \item One scientist suggests that $n$ and $t$ are related by the differential equation $\der[2]{n}{t} = 10 - 6t$. Given that $n = 100$ when $t = 0$, show that the general solution of this differential equation is $n = 5t^2 - t^3 + Ct + 100$, where $C$ is a constant. Sketch the solution curve of the particular solution when $C = 0$, stating the axial intercepts clearly.
-        \item The other scientist suggests that $n$ and $t$ are related by the differential equation $\der{n}{t} = 3 - 0.02n$. Find $n$ in terms of $t$, given again that $n = 100$ when $t = 0$. Explain in simple terms what will eventually happen to the population using this model.
+        \item One scientist suggests that $n$ and $t$ are related by the differential equation \[\der[2]{n}{t} = 10 - 6t.\] Given that $n = 100$ when $t = 0$, show that the general solution of this differential equation is $n = 5t^2 - t^3 + Ct + 100$, where $C$ is a constant. Sketch the solution curve of the particular solution when $C = 0$, stating the axial intercepts clearly.
+        \item The other scientist suggests that $n$ and $t$ are related by the differential equation \[\der{n}{t} = 3 - 0.02n.\] Find $n$ in terms of $t$, given again that $n = 100$ when $t = 0$. Explain in simple terms what will eventually happen to the population using this model.
     \end{enumerate}
     Which is a more appropriate model in modelling the population of the animal species?
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \begin{gather*}
-            \der[2]{n}{t} = 10 - 6t \implies \der{n}{t} = \int (10 - 6t) \d \t = 10t - 3t^2 + C\\
-            \implies n = \int \bp{10t - 3t^2 + C} \d t = 5t^2 - t^3 + C t + D.
-        \end{gather*}
+        Integrating the given differential equation, we have \[\der{n}{t} = \int (10 - 6t) \d \t = 10t - 3t^2 + C.\] Integrating once more, we get \[n = \int \bp{10t - 3t^2 + C} \d t = 5t^2 - t^3 + C t + D\]
+
         Evaluating the solution at $t = 0$ and $n = 100$, we obtain $D = 100$. Thus, \[n = 5t^2 - t^3 + Ct + 100.\] Hence, when $C = 0$, \[n = 5t^2 - t^3 + 100.\]
 
         \begin{center}\tikzsetnextfilename{214}
@@ -289,11 +265,8 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{n}{t} = 3 - 0.02n = \frac{150 - n}{50} \implies \frac{1}{150-n} \der{n}{t} = \frac1{50} 
-            \implies \int \frac{1}{150-n} \d n = \int \frac1{50} \d t\\
-            \implies -\ln{150 - n} = \frac1{50} t + C_1  \implies n = 150 - C\e^{-t/50}, \quad C = \e^{-C_1}.
-        \end{gather*}
+        We have \[\frac{1}{150-n} \der{n}{t} = \frac1{50}.\] Integrating, we obtain \[\int \frac{1}{150-n} \d n = \int \frac1{50} \d t,\] so \[-\ln{150 - n} = \frac1{50} t + C_1,\] and \[n = 150 - C\e^{-t/50}.\]
+
         When $t = 0$ and $n = 100$, we have $C = 50$. Hence, \[n = 150 - 50\e^{-t/50}.\] As $t \to \infty$, $n \to 150$. Hence, the population will decrease before plateauing at 150 thousand.
     \end{ppart}
     
@@ -301,16 +274,13 @@
 \end{solution}
 
 \begin{problem}
-    A rectangular tank has a horizontal base. Water is flowing into the tank at a constant rate, and flows out at a rate which is proportional to the depth of water in the tank. At time $t$ seconds, the depth of water in the tank is $x$ metres. If the depth is $0.5$ m, it remains at this constant value. Show that $\der{x}{t} = -k(2x-1)$, where $k$ is a positive constant. When $t = 0$, the depth of water in the tank is $0.75$ m and is decreasing at a rate of $0.01$ m s$^{-1}$. Find the time at which the depth of water is $0.55$ m.
+    A rectangular tank has a horizontal base. Water is flowing into the tank at a constant rate, and flows out at a rate which is proportional to the depth of water in the tank. At time $t$ seconds, the depth of water in the tank is $x$ metres. If the depth is $0.5$ m, it remains at this constant value. Show that \[\der{x}{t} = -k(2x-1),\] where $k$ is a positive constant. When $t = 0$, the depth of water in the tank is $0.75$ m and is decreasing at a rate of $0.01$ m s$^{-1}$. Find the time at which the depth of water is $0.55$ m.
 \end{problem}
 \begin{solution}
     Let $V_i$ m$^3$/s be the rate at which water is flowing into the tank. Note that $V_i \geq 0$. Let the rate at which water is flowing out of the tank be $V_o x$ m$^3$/s. Let the base of the container be $A$ m$^2$. Then \[\der{x}{t} = \frac{V_i - V_o x}{A}.\] At $x = 0.5$, the volume of water in the tank is constant. Thus, \[\evalder{\der{x}{t}}{x = 0.5} = 0 \implies V_i - 0.5 V_o = 0 \implies V_o = 2V_i \implies \der{x}{t} = -\frac{V_i (2x - 1)}{A}.\] Letting $k = V_i/A$, we have \[\der{x}{t} = -k(2x - 1).\]
 
-    We now solve for $t$.
-    \begin{gather*}
-        \der{x}{t} = -k(2x - 1) \implies \frac{1}{2x-1} \der{x}{t} = -k \implies \int \frac{1}{2x-1} \d x = \int -k \d t \\
-        \implies \frac{\ln{2x-1}}2 + C_1 = -kt \implies t = -\frac{\ln{2x-1} + C}{2k}, \quad C = 2C_1
-    \end{gather*}
+    We now solve for $t$. We have \[\frac{1}{2x-1} \der{x}{t} = -k.\] Integrating both sides with respect to $t$, we get \[\int \frac{1}{2x-1} \d x = \int -k \d t.\] Thus, \[\frac{\ln{2x-1}}2 + C_1 = -kt,\] whence \[t = -\frac{\ln{2x-1} + C}{2k}.\]
+
     Evaluating the solution at $t = 0$ and $x = 0.75$, we get \[0 = -\frac{\ln{2(0.75) - 1} + C}{2k} \implies C_2 = \ln 2.\] Additionally, \[\evalder{\der{x}{t}}{t = 0} = -0.01 \implies -0.01 = -k[2(0.75) -1] \implies k = 0.02.\] Thus, \[t = -\frac{\ln{2x-1} + \ln 2}{2(0.02)} = -25 \ln{4x-2}.\] 
     
     Consider $x = 0.55$. Then \[t = -25\ln{4(0.55) - 2} = 25\ln5.\] Thus, when $t = 25 \ln 5$, the depth of the water is 0.55 m.
@@ -319,7 +289,7 @@
 \begin{problem}
     In a model of mortgage repayment, the sum of money owned to the Building Society is denoted by $x$ and the time is denoted by $t$. Both $x$ and $t$ are taken to be continuous variables. The sum of money owned to the Building Society increases, due to interest, at a rate proportional to the sum of money owed. Money is also repaid at a constant rate $r$.
 
-    When $x = a$, interest and repayment balance. Show that, for $x > 0$, $\der{x}{t} = \frac{r}{a} (x - a)$.
+    When $x = a$, interest and repayment balance. Show that, for $x > 0$, \[\der{x}{t} = \frac{r}{a} (x - a).\]
 
     Given that, when $t = 0$, $x = A$, find $x$ in terms of $t$, $r$, $a$ and $A$.
 
@@ -334,11 +304,7 @@
 \begin{solution}
     Let the rate at which money is owned to the Building Society be $kx$. Then \[\der{x}{t} = kx - r.\] At $x = a$, interest and repayment balance. Hence, \[\evalder{\derx{x}{t}}{a} = ka - r = 0 \implies k = \frac{r}{a}.\] Thus, \[\der{x}{t} = \frac{r}{a} x - r = \frac{r}{a} (x - a).\]
 
-    We now solve for $x$.
-    \begin{gather*}
-        \der{x}{t} = \frac{r}{a} (x - a) \implies\frac{1}{x-a} \der{x}{t} = \frac{r}{a} \implies\int \frac{1}{x-a} \d x = \int \frac{r}{a} \d t\\
-        \implies \ln \abs{x-a} = \frac{r}{a} t + C_1 \implies x = C\e^{rt/a} + a.
-    \end{gather*}
+    We now solve for $x$. We have \[\frac{1}{x-a} \der{x}{t} = \frac{r}{a}.\] Integrating with respect to $t$, we get \[\int \frac{1}{x-a} \d x = \int \frac{r}{a} \d t,\] so \[\ln \abs{x-a} = \frac{r}{a} t + C_1,\] whence $x = C\e^{rt/a} + a$.
 
     When $t = 0$, we have $x = A$. Substituting this into the solution, we obtain \[A = C + a \implies C = A - a.\] Thus, \[x = (A-a)\e^{rt/a} + a.\]
 

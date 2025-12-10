@@ -18,10 +18,12 @@
     \end{ppart}
     \begin{ppart}
         Let \[I = \int_{1/2}^{2} \frac{\sin x}{x \bp{\sin x + \sin 1/x}} \d x. \tag{1}\] Under the substitution $x \mapsto 1/x$, we have \[I = \int_{2}^{1/2} \frac{\sin 1/x}{(1/x) \bp{\sin 1/x + \sin x}} \bp{-\frac1{x^2}} \d x = \int_{1/2}^2 \frac{\sin 1/x}{x \bp{\sin x + \sin 1/x}} \d x. \tag{2}\] Adding (1) and (2) together,
-        \begin{gather*}
-            2I = \int_{1/2}^{2} \frac{\sin x}{x \bp{\sin x + \sin 1/x}} \d x + \int_{1/2}^2 \frac{\sin 1/x}{x \bp{\sin x + \sin 1/x}} \d x\\
-            = \int_{1/2}^2 \frac1x \d x = \evalint{\ln x}{1/2}{2} = 2\ln 2.
-        \end{gather*}
+        \begin{align*}
+            2I &= \int_{1/2}^{2} \frac{\sin x}{x \bp{\sin x + \sin 1/x}} \d x + \int_{1/2}^2 \frac{\sin 1/x}{x \bp{\sin x + \sin 1/x}} \d x\\
+            &= \int_{1/2}^2 \frac1x \d x\\
+            &= \evalint{\ln x}{1/2}{2}\\
+            &= 2\ln 2.
+        \end{align*}
         Thus, $I = \ln 2$.
     \end{ppart}
 \end{solution}
@@ -35,17 +37,21 @@
 \begin{solution}
     \begin{ppart}
         We have
-        \begin{gather*}
-            \der{}{x} \bp{\frac1{\sqrt2} \arctan \frac{\tan x}{\sqrt2}} = \frac1{\sqrt2} \bp{\frac1{1 + (\tan x/\sqrt2)^2}} \bp{\frac1{\sqrt2} \sec^2 x}\\
-            = \frac12 \bp{\frac1{1 + \tan[2]{x}/2}} \bp{\frac1{\cos^2 x}} = \frac1{2 + \tan^2 x} \frac{1}{\cos^2 x} =\frac1{2\cos^2 x + \sin^2 x} = \frac1{1 + \cos^2 x}.
-        \end{gather*}
+        \begin{align*}
+            \der{}{x} \bp{\frac1{\sqrt2} \arctan \frac{\tan x}{\sqrt2}} &= \frac1{\sqrt2} \bp{\frac1{1 + (\tan x/\sqrt2)^2}} \bp{\frac1{\sqrt2} \sec^2 x}\\
+            &= \frac12 \bp{\frac1{1 + \tan[2]{x}/2}} \bp{\frac1{\cos^2 x}}\\
+            &= \frac1{2 + \tan^2 x} \frac{1}{\cos^2 x}\\
+            &=\frac1{2\cos^2 x + \sin^2 x}\\
+            &= \frac1{1 + \cos^2 x}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Let the target integral be $I$. Note that \[I = \int_0^\pi \frac{x}{1 + \cos^2 x} \d x = \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x + \int_{\pi/2}^\pi \frac{x}{1 + \cos^2 x} \d x.\] Applying the transformation $x \mapsto \pi -x$ to the second integral, we get
-        \begin{gather*}
-            I = \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x + \bp{\pi \int_0^{\pi/2} \frac{1}{1 + \cos^2 x} \d x - \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x}\\
-            = \pi\int_0^{\pi/2} \frac{1}{1 + \cos^2 x} \d x = \pi \evalint{\frac1{\sqrt2} \arctan \frac{\tan x}{\sqrt2}}0{\pi/2}.
-        \end{gather*}
+        \begin{align*}
+            I &= \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x + \bp{\pi \int_0^{\pi/2} \frac{1}{1 + \cos^2 x} \d x - \int_0^{\pi/2} \frac{x}{1 + \cos^2 x} \d x}\\
+            &= \pi\int_0^{\pi/2} \frac{1}{1 + \cos^2 x} \d x\\
+            &= \pi \evalint{\frac1{\sqrt2} \arctan \frac{\tan x}{\sqrt2}}0{\pi/2}.
+        \end{align*}
         The $x = 0$ term vanishes, so \[I = \frac{\pi}{\sqrt2} \lim_{x \to \frac\pi2^{-}} \arctan \frac{\tan x}{\sqrt2}.\] As $x \to (\pi/2)^-$, $\tan x \to \infty$. Thus, $\arctan \frac{\tan x}{\sqrt2} \to \frac\pi2$, whence \[I = \frac{\pi}{\sqrt2} \cdot \frac{\pi}{2} = \frac{\pi^2}{2\sqrt2}.\]
     \end{ppart}
 \end{solution}
@@ -67,10 +73,11 @@
 \end{problem}\begin{solution}
     \begin{ppart}
         Note that
-        \begin{gather*}
-            I_n = \int_{0}^{\pi/2} \sin^2 x \sin^{n-2} x \d x = \int_0^{\pi/2} \bp{1 - \cos^2 x} \sin^{n-2} \d x \\
-            = I_{n-2} - \int_0^{\pi/2} \cos x \bp{\cos x \sin^{n-2} x} \d x.
-        \end{gather*}
+        \begin{align*}
+            I_n &= \int_{0}^{\pi/2} \sin^2 x \sin^{n-2} x \d x\\
+            &= \int_0^{\pi/2} \bp{1 - \cos^2 x} \sin^{n-2} \d x \\
+            &= I_{n-2} - \int_0^{\pi/2} \cos x \bp{\cos x \sin^{n-2} x} \d x.
+        \end{align*}
         Integrating by parts, we obtain \[I_n = I_{n-2} - \bp{\evalint{\frac{\cos x \sin^{n-1} x}{n-1}}0{\pi/2} + \frac1{n-1} \int_0^{\pi/2} \sin^{n} x \d x}.\] We thus have \[I_n = I_{n-2} - \frac1{n-1} I_n \implies I_n = \frac{n-1}{n} I_{n-2}.\]
     \end{ppart}
     \begin{ppart}
@@ -101,14 +108,19 @@
         \task $\displaystyle\int_{-\infty}^{\infty} \frac1{4x^2 + 9} \d x$.
     \end{tasks}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         Let $I$ be the target integral. We have
-        \begin{gather*}
-            I = \int_1^\infty \frac{3x-1}{4x^3 - x^2} \d x = \int_1^\infty \frac{3x-1}{x^2 \bp{4x - 1}} \d x = \int_1^\infty \bp{\frac{4x-1}{x^2 \bp{4x-1}} - \frac{x}{x^2 \bp{4x-1}}} \d x \\
-            = \int_1^\infty \frac1{x^2} \d x - \int_1^\infty \frac1{x \bp{4x-1}} \d x = \evalint{-\frac1x}1\infty - \int_1^\infty \frac1{x \bp{4x-1}} \d x\\
-            = 1 - \int_1^\infty \frac1{x \bp{4x-1}} \d x = 1 - \int_1^\infty \frac1{(2x - 1/4)^2 - (1/4)^2} \d x.
-        \end{gather*}
+        \begin{align*}
+            I &= \int_1^\infty \frac{3x-1}{4x^3 - x^2} \d x\\
+            &= \int_1^\infty \frac{3x-1}{x^2 \bp{4x - 1}} \d x\\
+            &= \int_1^\infty \bp{\frac{4x-1}{x^2 \bp{4x-1}} - \frac{x}{x^2 \bp{4x-1}}} \d x \\
+            &= \int_1^\infty \frac1{x^2} \d x - \int_1^\infty \frac1{x \bp{4x-1}} \d x\\
+            &= \evalint{-\frac1x}1\infty - \int_1^\infty \frac1{x \bp{4x-1}} \d x\\
+            &= 1 - \int_1^\infty \frac1{x \bp{4x-1}} \d x\\
+            &= 1 - \int_1^\infty \frac1{(2x - 1/4)^2 - (1/4)^2} \d x.
+        \end{align*}
         Under the substitution $u = 2x - 1/4$, the integral evaluates to \[I = 1 - \frac12 \int_{7/4}^\infty \frac1{u^2 - (1/4)^2} \d u = 1 - \frac12 \evalint{\frac1{2(1/4)} \ln{\frac{u - 1/4}{u + 1/4}}}{7/4}\infty = 1 - \ln \frac43.\]
     \end{ppart}
     \begin{ppart}
@@ -119,7 +131,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     Determine which of the following integrals converge.
 

@@ -2,77 +2,84 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item Given that $f(x) = \e^{\cos x}$, find $f(0)$, $f'(0)$ and $f''(0)$. Hence, write down the first two non-zero terms in the MacLaurin series for $f(x)$. Give the coefficients in terms of $e$.
-        \item Given that $g(x) = \tan{2x + \frac14 \pi }$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence, find the first three terms in the MacLaurin series of $g(x)$.
+        \item Given that $f(x) = \exp{\cos x}$, find $f(0)$, $f'(0)$ and $f''(0)$. Hence, write down the first two non-zero terms in the Maclaurin series for $f(x)$. Give the coefficients in terms of $e$.
+        \item Given that $g(x) = \tan{2x + \frac14 \pi }$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence, find the first three terms in the Maclaurin series of $g(x)$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[f'(x) = -\e^{\cos x} \sin x  = -f(x) \sin x \implies f''(x) = -f(x) \cos x  -f'(x) \sin x .\] Evaluating $f(x)$, $f'(x)$ and $f''(x)$ at 0, \[f(0) = \e, \quad f'(0) = 0, \quad f''(0) = -\e.\] Hence, \[f(x) = \frac{\e}{0!} + \frac{0}{1!} x + \frac{-\e}{2!} x^2 = \e - \frac{\e}{2}x^2 + \cdots.\]
+        Note that \[f'(x) = -\exp{\cos x} \sin x  = -f(x) \sin x \implies f''(x) = -f(x) \cos x  -f'(x) \sin x .\] Evaluating $f(x)$, $f'(x)$ and $f''(x)$ at 0, \[f(0) = \e, \quad f'(0) = 0, \quad f''(0) = -\e.\] Hence, \[f(x) = \frac{\e}{0!} + \frac{0}{1!} x + \frac{-\e}{2!} x^2 = \e - \frac{\e}{2}x^2 + \cdots.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[g'(x) = 2\sec[2]{2x + \frac\pi4} = 2\bp{1 + \tan[2]{2x + \frac\pi4}} = 2 + 2g^2(x) \implies g''(x) = 4g(x)g'(x).\] Evaluating $g(x)$, $g'(x)$ and $g''(x)$ at 0, \[g(x) = 1, \quad g'(x) = 4, \quad g''(x) = 16.\] Hence, \[g(x) = \frac{1}{0!} + \frac{4}{1!} x + \frac{16}{2!} x^2 + \cdots = 1 + 4x + 8x^2 + \cdots.\]
+        Note that \[g'(x) = 2\sec[2]{2x + \frac\pi4} = 2\bp{1 + \tan[2]{2x + \frac\pi4}} = 2 + 2g^2(x),\] so \[g''(x) = 4g(x)g'(x).\] Evaluating $g(x)$, $g'(x)$ and $g''(x)$ at 0, \[g(x) = 1, \quad g'(x) = 4, \quad g''(x) = 16.\] Hence, \[g(x) = \frac{1}{0!} + \frac{4}{1!} x + \frac{16}{2!} x^2 + \cdots = 1 + 4x + 8x^2 + \cdots.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    Find the first three non-zero terms of the MacLaurin series for the following in ascending powers of $x$. In each case, find the range of values of $x$ for which the series is valid.
+    Find the first three non-zero terms of the Maclaurin series for the following in ascending powers of $x$. In each case, find the range of values of $x$ for which the series is valid.
 
     \begin{enumerate}
-        \item $\frac{(1+3x)^4}{\sqrt{1+2x}}$
-        \item $\frac{\sin 2x}{2 + 3x}$
+        \item $\displaystyle\frac{(1+3x)^4}{\sqrt{1+2x}}$
+        \item $\displaystyle\frac{\sin 2x}{2 + 3x}$
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Observe that \[(1 + 3x)^4 = 1 + 4(3x) + 6(3x)^2 + \cdots = 1 + 12x + 54x^2 + \cdots\] and \[(1 + 2x)^{-\frac12} = 1 + \bp{-\frac{1}{2}}(2x) + \frac{\bp{-\frac{1}{2}}\bp{-\frac{3}{2}}}{2!} (2x)^2 + \cdots = 1 - x + \frac32 x^2 + \cdots.\] Thus,
-        \begin{gather*}
-            y = \frac{(1+3x)^4}{\sqrt{1 + 2x}} = \bp{1 + 12x + 54x^2 + \cdots}\bp{1 - x + \frac32 x^2 + \cdots}\\
-            = \bp{1 - x + \frac32 x^2} + \bp{12x - 12x^2} + \bp{54x^2} + \cdots = 1 + 11x + \frac{87}{2} x^2 + \cdots.
-        \end{gather*}
+        \begin{align*}
+            y &= \frac{(1+3x)^4}{\sqrt{1 + 2x}}\\
+            &= \bp{1 + 12x + 54x^2 + \cdots}\bp{1 - x + \frac32 x^2 + \cdots}\\
+            &= \bp{1 - x + \frac32 x^2} + \bp{12x - 12x^2} + \bp{54x^2} + \cdots\\
+            &= 1 + 11x + \frac{87}{2} x^2 + \cdots.
+        \end{align*}
 
-        Note that the series is valid only when \[\abs{2x} < 1 \implies -\frac12 < x < \frac12.\]
+        Note that the series is valid only when $\abs{2x} < 1$, i.e. $-1/2 < x < 1/2$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\sin 2x = 2x - \frac{(2x)^3}{3!} + \cdots = 2x - \frac43 x^3 + \cdots\] and \begin{gather*}
-            \frac{1}{2 + 3x} = \frac12 \bp{1 + \frac{3x}{2}}^{-1} = \frac12 \bs{1 - \frac{3x}{2} +  \bp{\frac{3x}{2}}^2 - \bp{\frac{3x}{2}}^3 + \cdots}\\ = \frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \cdots.
-        \end{gather*}
+        Note that \[\sin 2x = 2x - \frac{(2x)^3}{3!} + \cdots = 2x - \frac43 x^3 + \cdots\] and \begin{align*}
+            \frac{1}{2 + 3x} &= \frac12 \bp{1 + \frac{3x}{2}}^{-1}\\
+            &= \frac12 \bs{1 - \frac{3x}{2} +  \bp{\frac{3x}{2}}^2 - \bp{\frac{3x}{2}}^3 + \cdots}\\
+            &= \frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \cdots.
+        \end{align*}
         Thus, 
-        \begin{gather*}
-            \frac{\sin 2x}{2 + 3x} = \bp{2x - \frac43 x^3 + \cdots}\bp{\frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \cdots}\\
-            = \bp{x - \frac32 x^2 + \frac94 x^3} + \bp{-\frac23 x^3} + \cdots = x - \frac32 x^2 + \frac{19}{12} x^3 + \cdots.
-        \end{gather*}
+        \begin{align*}
+            \frac{\sin 2x}{2 + 3x} &= \bp{2x - \frac43 x^3 + \cdots}\bp{\frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \cdots}\\
+            &= \bp{x - \frac32 x^2 + \frac94 x^3} + \bp{-\frac23 x^3} + \cdots\\
+            &= x - \frac32 x^2 + \frac{19}{12} x^3 + \cdots.
+        \end{align*}
 
-        The series is only valid when \[\abs{\frac32 x} < 1 \implies -\frac23 < x < \frac23.\]
+        The series is only valid when $\abs{3x/2} < 1$, i.e. when $-2/3 < x < 2/3$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    Find the MacLaurin series of $\ln{1 + \cos x}$, up to and including the term in $x^4$.
+    Find the Maclaurin series of $\ln{1 + \cos x}$, up to and including the term in $x^4$.
 \end{problem}
 \begin{solution}
     Let $y = \ln{1 + \cos x}$. Then \[y = \ln{1 + \cos x} \implies \e^y = 1 + \cos x.\] Implicitly differentiating repeatedly with respect to $x$,
-    \begin{gather*}
-        \e^y y' = -\sin x \implies \e^y \bs{\bp{y'}^2 + y''} = -\cos x \implies \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} = \sin x \\
-        \implies \e^y \bs{\bp{y'}^4 + 3\bp{y''}^2 + 6\bp{y'}^2 y'' + 4y'y''' + y^{(4)}} = \cos x.
-    \end{gather*}
+    \begin{align*}
+        \e^y y' &= -\sin x\\
+        \e^y \bs{\bp{y'}^2 + y''} &= -\cos x\\
+        \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} &= \sin x \\
+        \e^y \bs{\bp{y'}^4 + 3\bp{y''}^2 + 6\bp{y'}^2 y'' + 4y'y''' + y^{(4)}} &= \cos x.
+    \end{align*}
     Evaluating the above at $x = 0$, we get \[y(0) = \ln 2, \quad y'(0) = 0, \quad y''(0) = -\frac12, \quad y'''(0) = 0, \quad y^{(4)}(0) = -\frac14.\] Thus, \[\ln{1 + \cos x} = \ln 2 + \frac{-1/2}{2!} x^2 + \frac{-1/4}{4!} x^4 + \cdots = \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots.\]
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Find the first three terms of the MacLaurin series for $\e^x (1 + \sin 2x)$.
+        \item Find the first three terms of the Maclaurin series for $\e^x (1 + \sin 2x)$.
         \item It is given that the first two terms of this series are equal to the first two terms in the series expansion, in ascending powers of $x$, of $\bp{1 + \frac43 x}^n$. Find $n$ and show that the third terms in each of these series are equal.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
         Observe that \[\e^x = 1 + x + \frac{x^2}{2} + \cdots\] and \[1 + \sin 2x = 1 + 2x + \cdots.\] Hence,
-        \begin{gather*}
-            \e^x \bp{1 + \sin 2x} = \bp{1 + x + \frac{x^2}{2} + \cdots}\bp{1 + 2x + \cdots}\\
-            = \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \cdots = 1 + 3x + \frac52 x^2 + \cdots.
-        \end{gather*}
+        \begin{align*}
+            \e^x \bp{1 + \sin 2x} &= \bp{1 + x + \frac{x^2}{2} + \cdots}\bp{1 + 2x + \cdots}\\
+            &= \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \cdots\\
+            &= 1 + 3x + \frac52 x^2 + \cdots.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Note that \[\bp{1 + \frac43 x}^n = 1 + n\bp{\frac43 x} + \frac{n(n-1)}{2} \bp{\frac43 x}^2 + \cdots = 1 + \frac{4n}3 x + \frac{8n(n-1)}{9} x^2 \cdots.\] Comparing the second terms of both series, we get \[\frac{4n}{3} = 3 \implies n = \frac94.\] Thus, the third term of $(1 + \frac43 x)^n$ is \[\frac{8(\frac94)(\frac94 - 1)}{9} x^2 = \frac52 x^2.\] Hence, the third terms in each of these series are equal.
@@ -91,10 +98,12 @@
 \begin{solution}
     \begin{ppart}
         We have
-        \begin{gather*}
-            \bp{\frac8{x^3} - 1}^{\frac13} = \frac2x \bp{1 - \frac{x^3}8}^{\frac13} = \frac2x \bs{1 + \frac13 \bp{-\frac{x^3}8} + \frac{\bp{\frac13}\bp{\frac13 - 1}}{2} \bp{-\frac{x^3}8}^2 + \cdots} \\
-            = \frac2x \bp{1 - \frac{x^3}{24} - \frac{x^6}{576} + \cdots} = \frac2x - \frac{x^2}{12} - \frac{x^5}{288} + \cdots.
-        \end{gather*}
+        \begin{align*}
+            \bp{\frac8{x^3} - 1}^{\frac13} &= \frac2x \bp{1 - \frac{x^3}8}^{\frac13}\\
+            &= \frac2x \bs{1 + \frac13 \bp{-\frac{x^3}8} + \frac{\bp{\frac13}\bp{\frac13 - 1}}{2} \bp{-\frac{x^3}8}^2 + \cdots} \\
+            &= \frac2x \bp{1 - \frac{x^3}{24} - \frac{x^6}{576} + \cdots}\\
+            &= \frac2x - \frac{x^2}{12} - \frac{x^5}{288} + \cdots.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Evaluating the above equation at $x = 2/3$, \[\sqrt[3]{26} \approx \bp{\frac8{\bp{2/3}^3} - 1}^{1/3} = \frac2{2/3} - \frac{\bp{2/3}^2}{12} - \frac{\bp{2/3}^5}{288} = \frac{6479}{2187}.\]
@@ -149,10 +158,11 @@
     \end{ppart}
     \begin{ppart}
         Observe that \[\e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}6 + \cdots\] and \[\sin x = x - \frac{x^3}{6} + \cdots.\] Thus,
-        \begin{gather*}
-            \e^x \sin x = \bp{1 + x + \frac{x^2}2 + \frac{x^3}6 + \cdots}\bp{x - \frac{x^3}6 + \cdots}\\
-            = \bp{x - \frac{x^3}6} + \bp{x^2} + \bp{\frac{x^3}2} + \cdots = x + x^2 + \frac{x^3}3 + \cdots.
-        \end{gather*}
+        \begin{align*}
+            \e^x \sin x &= \bp{1 + x + \frac{x^2}2 + \frac{x^3}6 + \cdots}\bp{x - \frac{x^3}6 + \cdots}\\
+            &= \bp{x - \frac{x^3}6} + \bp{x^2} + \bp{\frac{x^3}2} + \cdots\\
+            &= x + x^2 + \frac{x^3}3 + \cdots.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{297}
@@ -189,12 +199,13 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
-    It is given that $y = 1/(1 + \sin 2x)$. Show that, when $x = 0$, $\derx[2]{y}{x} = 8$. Find the first three terms of the MacLaurin series for $y$.
+    It is given that $y = 1/(1 + \sin 2x)$. Show that, when $x = 0$, $\derx[2]{y}{x} = 8$. Find the first three terms of the Maclaurin series for $y$.
 
     \begin{enumerate}
-        \item Use the series to obtain an approximate value for $\int_{-0.1}^{0.1} y \d x$, leaving your answer as a fraction in its lowest terms.
-        \item Find the first two terms of the MacLaurin series for $\derx{y}{x}$.
+        \item Use the series to obtain an approximate value for \[\int_{-0.1}^{0.1} y \d x,\] leaving your answer as a fraction in its lowest terms.
+        \item Find the first two terms of the Maclaurin series for $\derx{y}{x}$.
         \item Write down the equation of the tangent at the point where $x = 0$ on the curve $y = 1/(1 + \sin 2x)$.
     \end{enumerate}
 \end{problem}
@@ -213,40 +224,39 @@
 \end{solution}
 
 \begin{problem}
-    It is given that $y = \e^{\arcsin 2x}$.
+    It is given that $y = \exp{\arcsin 2x}$.
                 
     \begin{enumerate}
-        \item Show that $(1-4x^2)\der[2]{y}{x} - 4x\der{y}{x}=4y$.
-        \item By further differentiating this result, find the MacLaurin series for $y$ in ascending powers of $x$, up to an including the term in $x^3$.
-        \item Hence, find an approximation value of $\e^{\pi/2}$, by substituting a suitable value of $x$ in the MacLaurin series for $y$.
+        \item Show that \[(1-4x^2)\der[2]{y}{x} - 4x\der{y}{x}=4y.\]
+        \item By further differentiating this result, find the Maclaurin series for $y$ in ascending powers of $x$, up to an including the term in $x^3$.
+        \item Hence, find an approximation value of $\e^{\pi/2}$, by substituting a suitable value of $x$ in the Maclaurin series for $y$.
         \item Suggest one way to improve the accuracy of the approximated value obtained.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[y = \e^{\arcsin{2x}} \implies \ln y = \arcsin{2x}.\] Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \frac2{\sqrt{1 - 4x^2}} \implies \der{y}{x} = \frac{2y}{\sqrt{1 - 4x^2}}.\] Implicitly differentiating with respect to $x$ once again, \[\der[2]{y}{x} = \frac{\sqrt{1 - 4x^2} \bp{2 \cdot \der{y}{x}} - 2y \bp{\frac{-4x}{\sqrt{1 - 4x^2}}}}{1 - 4x^2}.\] Now observe that \[2\sqrt{1 - 4x^2} \cdot \der{y}{x} + 4x \bp{\frac{2y}{\sqrt{1 - 4x^2}}} = 4y + 4x \cdot \der{y}{x}.\] Hence, \[\bp{1 - 4x^2}\der[2]{y}{x} = 4y + 4x\cdot\der{y}{x} \implies \bp{1-4x^2}\der[2]{y}{x} - 4x \cdot \der{y}{x} = 4y.\]
+        Note that $\ln y = \arcsin{2x}$. Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \frac2{\sqrt{1 - 4x^2}} \implies \der{y}{x} = \frac{2y}{\sqrt{1 - 4x^2}}.\] Implicitly differentiating with respect to $x$ once again, \[\der[2]{y}{x} = \frac{\sqrt{1 - 4x^2} \bp{2 \cdot \der{y}{x}} - 2y \bp{\frac{-4x}{\sqrt{1 - 4x^2}}}}{1 - 4x^2}.\] Now observe that \[2\sqrt{1 - 4x^2} \cdot \der{y}{x} + 4x \bp{\frac{2y}{\sqrt{1 - 4x^2}}} = 4y + 4x \cdot \der{y}{x}.\] Hence, \[\bp{1 - 4x^2}\der[2]{y}{x} = 4y + 4x\cdot\der{y}{x} \implies \bp{1-4x^2}\der[2]{y}{x} - 4x \cdot \der{y}{x} = 4y.\]
     \end{ppart}
     \begin{ppart}
         Implicitly differentiating with respect to $x$ once again, \[\bp{1 - 4x^2} \der[3]{y}{x} -8x \cdot \der[2]{y}{x} -4 \bp{x \cdot \der[2]{y}{x} + \der{y}{x}} = 4\cdot \der{y}{x}.\] Rearranging, \[\bp{1 - 4x^2} \der[3]{y}{x} -12x \cdot \der[2]{y}{x} - 8 \cdot\der{y}{x} = 0.\] Evaluating the above equations at $x = 0$, we get \[y(0) = 1, \quad y'(0) = 2, \quad y''(0) = 4, \quad y'''(0) = 16.\] Hence, \[y = \frac{1}{0!} + \frac{2}{1!}x + \frac{4}{2!}x^2 + \frac{16}{3!}x^3 + \cdots = 1 + 2x + 2x^2 + \frac83 x^3 + \cdots.\]
     \end{ppart}
     \begin{ppart}
-        Consider $y = \e^{\pi/2}$. \[y = \arcsin 2x = \e^{\pi/2} \implies x = \frac12 \sin \frac\pi2 = \frac12.\] Substituting $x = 1/2$ into the MacLaurin series for $y$, \[\e^{\pi/2} \approx 1 + 2\bp{\frac12} + 2\bp{\frac12}^2 + \frac83 \bp{\frac12}^3 = \frac{17}6.\]
+        Consider $y = \e^{\pi/2}$. \[y = \exp{\arcsin 2x} = \e^{\pi/2} \implies x = \frac12 \sin \frac\pi2 = \frac12.\] Substituting $x = 1/2$ into the Maclaurin series for $y$, \[\e^{\pi/2} \approx 1 + 2\bp{\frac12} + 2\bp{\frac12}^2 + \frac83 \bp{\frac12}^3 = \frac{17}6.\]
     \end{ppart}
     \begin{ppart}
-        More terms of the MacLaurin series of $y$ could be considered.
+        More terms of the Maclaurin series of $y$ could be considered.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The curve $y = f(x)$ passes through the point $(0, 1)$ and satisfies the equation $\der{y}{x} = \frac{6-2y}{\cos 2x}$.
+    The curve $y = f(x)$ passes through the point $(0, 1)$ and satisfies the equation \[\der{y}{x} = \frac{6-2y}{\cos 2x}.\]
         
     \begin{enumerate}
-        \item Find the MacLaurin series of $f(x)$, up to and including the term in $x^3$.
-        \item Using standard results given in the List of Formulae (MF27), express $\frac{1-\sin x}{\cos x}$ as a power series of $x$, up to and including the term in $x^3$.
+        \item Find the Maclaurin series of $f(x)$, up to and including the term in $x^3$.
+        \item Using standard results given in the List of Formulae (MF27), express \[\frac{1-\sin x}{\cos x}\] as a power series of $x$, up to and including the term in $x^3$.
         \item Using the two power series you have found, show to this degree of approximation, that $f(x)$ can be expressed as $a(\tan 2x - \sec 2x) + b$, where $a$ and $b$ are constants to be determined.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Note that \[y' = \frac{6-2y}{\cos 2x} \implies y' \cos 2x = 6-2y.\] Implicitly differentiating with respect to $x$, \[-2y'\sin 2x + y'' \cos 2x = -2 y'.\] Implicitly differentiating once more, \[-2\bp{y'' \sin 2x + 2 y' \cos 2x} + \bp{y''' \cos 2x -2 y'' \sin 2x} = -2y''\] Hence, \[y(0) = 1, \quad y'(0) = 4, \quad y''(0) = -8, \quad y'''(0) = 32,\] whence \[f(x) = \frac{1}{0!} x + \frac{4}{1!} x + \frac{-8}{2!} x^2 + \frac{32}{3!} x^3 + \cdots = 1 + 4x -4x^2 + \frac{16}3 x^3 + \cdots.\]
@@ -256,10 +266,12 @@
     \end{ppart}
     \begin{ppart}
         Note that \[\frac{1 - \sin x}{\cos x} = \sec x - \tan x.\] Hence,
-        \begin{gather*}
-            a(\tan 2x - \sec 2x) + b \approx -a \bs{ 1 - 2x + \frac{(2x)^2}2 - \frac{(2x)^3}3} + b \\
-            = a \bp{-1 + 2x - 2x^2 + \frac83 x^3} + b = a \bp{-\frac32 + \frac{f(x)}2} + b = -\frac32 a + b + \frac{a}2 f(x).
-        \end{gather*}
+        \begin{align*}
+            a(\tan 2x - \sec 2x) + b &\approx -a \bs{ 1 - 2x + \frac{(2x)^2}2 - \frac{(2x)^3}3} + b \\
+            &= a \bp{-1 + 2x - 2x^2 + \frac83 x^3} + b\\
+            &= a \bp{-\frac32 + \frac{f(x)}2} + b\\
+            &= -\frac32 a + b + \frac{a}2 f(x).
+        \end{align*}
         Thus, \[\frac{a}2 f(x) - \frac32 a + b \approx a(\tan 2x - \sec 2x) + b.\] In order to obtain an approximation for $f(x)$, we need $\frac{a}2 = 1$ and $-\frac32 a + b = 0$, whence $a = 2$ and $b = 3$.
     \end{ppart}
 \end{solution}
@@ -276,10 +288,12 @@
 \end{problem}
 \begin{solution}
     By the sine rule, \[\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}.\] Hence, \[b = a\bp{\frac{\sin B}{\sin A}} = \frac{2a}{\sqrt3}\sin B, \quad c = a \bp{\frac{\sin C}{\sin A}} = \frac{2a}{\sqrt3}\sin C.\] Thus,
-    \begin{gather*}
-        b - c = \frac{2a}{\sqrt 3} \bp{\sin B - \sin C} = \frac{2a}{\sqrt3} \bs{\sin{\frac\pi3 + x} - \sin{\frac\pi3 - x}}\\
-        = \frac{2a}{\sqrt3} \bs{2\sin x \cos \frac\pi3} = \frac{2a}{\sqrt3} \sin x.
-    \end{gather*}
+    \begin{align*}
+        b - c &= \frac{2a}{\sqrt 3} \bp{\sin B - \sin C}\\
+        &= \frac{2a}{\sqrt3} \bs{\sin{\frac\pi3 + x} - \sin{\frac\pi3 - x}}\\
+        &= \frac{2a}{\sqrt3} \bs{2\sin x \cos \frac\pi3}\\
+        &= \frac{2a}{\sqrt3} \sin x.
+    \end{align*}
     Since $x$ is small, $\sin x \approx x$. Hence, \[b - c \approx \frac{2ax}{\sqrt3}.\]
 \end{solution}
 

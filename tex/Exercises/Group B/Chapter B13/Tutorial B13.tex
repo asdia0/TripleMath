@@ -3,66 +3,41 @@
 \begin{problem}
     Solve the following differential equations:
     \begin{enumerate}
-        \item $2\sec x \der{y}{x} = \sqrt{1 - y^2}$
-        \item $\der{y}{t} = \frac{t}{y-t^2 y}$, given $y = 4$ when $t = 0$
+        \item $\displaystyle 2\sec x \der{y}{x} = \sqrt{1 - y^2}$
+        \item $\displaystyle \der{y}{t} = \frac{t}{y-t^2 y}$, given $y = 4$ when $t = 0$
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \begin{gather*}
-            2\sec x \der{y}{x} = \sqrt{1 - y^2} \implies \frac{2}{\sqrt{1-y^2}} \der{y}{x} = \cos x \implies \int \frac{2}{\sqrt{1-y^2}} \d y = \int \cos x \d x\\
-            \implies 2\arcsin y = \sin x + C_1 \implies y = \sin{\frac12 \sin x + C}, \quad C = \frac{C_1}{2}.
-        \end{gather*}
+        We have \[\frac{2}{\sqrt{1-y^2}} \der{y}{x} = \cos x.\] Integrating with respect to $x$, we get \[\int \frac{2}{\sqrt{1-y^2}} \d y = \int \cos x \d x,\] so \[2\arcsin y = \sin x + C_1.\] Thus, \[y = \sin{\frac12 \sin x + C}.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{y}{t} = \frac{t}{y-t^2 y} \implies y \der{y}{t} = \frac{t}{1-t^2} \implies \int y \d y = \int \frac{t}{1-t^2} \d t\\
-            \implies \frac12 y^2 = -\frac12 \ln \abs{1-t^2} + C_1 \implies y^2 = C_2 - \ln \abs{1 - t^2}, \quad C_2 = 2C_1.
-        \end{gather*}
-        Since $y = 4 \geq 0$ when $t = 0$, we have \[4^2 = C_2 - \ln \abs{1 - 0} \implies C_2 = 16.\] Hence, \[y = \sqrt{16 - \ln \abs{1 - t^2}}.\]
+        We have \[y \der{y}{t} = \frac{t}{1-t^2}.\] Integrating with respect to $t$, we get \[\int y \d y = \int \frac{t}{1-t^2} \d t,\] so \[\frac12 y^2 = -\frac12 \ln \abs{1-t^2} + C_1.\] Thus, \[y^2 = C_2 - \ln \abs{1 - t^2}.\] Since $y = 4 \geq 0$ when $t = 0$, we have \[4^2 = C_2 - \ln \abs{1 - 0}.\] This gives  $C_2 = 16$, hence \[y = \sqrt{16 - \ln \abs{1 - t^2}}.\]
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     Solve the following differential equations:
     \begin{enumerate}
         \item $xy' + (2x-3)y = 4x^4$
         \item $(1+x)y' + y = \cos x$, $y(0) = 1$
-        \item $(1 + t^2) \der{y}{t} = 2ty+2$
-        \item $(x+1)\der{y}{x} + \frac{y}{\ln{x+1}} = x^2 + x$, where $x > 0$
+        \item $\displaystyle (1 + t^2) \der{y}{t} = 2ty+2$
+        \item $\displaystyle (x+1)\der{y}{x} + \frac{y}{\ln{x+1}} = x^2 + x$, where $x > 0$
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
-        Note that \[xy' + (2x-3)y = 4x^4 \implies y' + \bp{2 - \frac3x} y = 4x^3.\] Hence, the integrating factor is \[\IF = \exp \int \bp{2 - \frac3x} \d x = \exp{2x - \ln 3} = \frac{\e^{2x}}{x^3}.\] Multiplying through by the integrating factor, we get
-        \begin{gather*}
-            \frac{\e^{2x}}{x^3}y' + \frac{\e^{2x}}{x^3} \bp{2 - \frac3x} y = \der{}{x} \bp{\frac{\e^{2x}}{x^3} y} = 4\e^{2x} \implies \frac{\e^{2x}}{x^3} y = \int 4\e^{2x} \d x = 2\e^{2x} + C\\
-            \implies y = \frac{x^3}{\e^{2x}} \bp{2\e^{2x} + C} = 2x^3 + Cx^3\e^{-2x}.
-        \end{gather*}
+        Note that \[xy' + (2x-3)y = 4x^4 \implies y' + \bp{2 - \frac3x} y = 4x^3.\] Hence, the integrating factor is \[\IF = \exp \int \bp{2 - \frac3x} \d x = \exp{2x - \ln 3} = \frac{\e^{2x}}{x^3}.\] Multiplying through by the integrating factor, we get \[\der{}{x} \bp{\frac{\e^{2x}}{x^3} y} = \frac{\e^{2x}}{x^3}y' + \frac{\e^{2x}}{x^3} \bp{2 - \frac3x} y = 4\e^{2x}.\] Integrating, we have \[\frac{\e^{2x}}{x^3} y = \int 4\e^{2x} \d x = 2\e^{2x} + C,\] so \[y = \frac{x^3}{\e^{2x}} \bp{2\e^{2x} + C} = 2x^3 + Cx^3\e^{-2x}.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            (1+x)y' + y = \der{}{x} [(1+x)y] = \cos x \implies (1+x)y = \int \cos x \d x = \sin x + C\\
-            \implies y = \frac{\sin x + C}{x+1}
-        \end{gather*}
-        Since $y(0) = 1$, \[1 = \frac{\sin 0 + C}{0+1} \implies C = 1 \implies y = \frac{\sin x + 1}{x + 1}.\]
+        We have \[\der{}{x} \bs{(1+x)y} = (1+x)y' + y = \cos x.\] Integrating, we get \[(1+x)y = \int \cos x \d x = \sin x + C,\] so \[y = \frac{\sin x + C}{x+1}.\] Since $y(0) = 1$, \[1 = \frac{\sin 0 + C}{0+1},\] which gives $C = 1$, whence \[y = \frac{\sin x + 1}{x + 1}.\]
     \end{ppart}
     \begin{ppart}
-        Let $t = \tan \t$. Observe that \[\der{t}{\t} = \sec^2 \t = 1 + t^2.\] Hence, \[(1 + t^2) \der{y}{t} = (1 + t^2) \der{y}{\t} \cdot \der{\t}{t} = \frac{1 + t^2}{1 + t^2} \cdot \der{y}{\t} = \der{y}{\t}.\] Substituting this into the given differential equation,
-        \begin{gather*}
-            \der{y}{\t} = 2 y \tan \t + 2 \implies \cos^2 \t \der{y}{\t} - 2 y \sin \t \cos \t = 2\cos^2 \t \implies \der{}{\t} \bp{y\cos^2 \t} = 2\cos^2 \t\\
-            \implies y \cos^2 \t = \int 2\cos^2 \t \d t = \int \bp{1 + \cos 2\t} \d \t = \t + \frac{\sin 2\t}{2} + C = \t + \sin \t \cos \t + C\\
-            \implies y = (\t + C)\sec^2 \t + \tan \t = (\arctan t + C)\bp{1 + t^2} + t.
-        \end{gather*}
+        Let $t = \tan \t$. Observe that \[\der{t}{\t} = \sec^2 \t = 1 + t^2.\] Hence, \[(1 + t^2) \der{y}{t} = (1 + t^2) \der{y}{\t} \cdot \der{\t}{t} = \frac{1 + t^2}{1 + t^2} \cdot \der{y}{\t} = \der{y}{\t}.\] Substituting this into the given differential equation, we get \[\der{y}{\t} = 2 y \tan \t + 2.\] Multiplying through by $\cos^2 \t$, we get \[\der{}{\t} \bp{y\cos^2 \t} = \cos^2 \t \der{y}{\t} - 2 y \sin \t \cos \t = 2\cos^2 \t.\] Integrating, we obtain \[y \cos^2 \t = \int 2\cos^2 \t \d t = \int \bp{1 + \cos 2\t} \d \t = \t + \frac{\sin 2\t}{2} + C = \t + \sin \t \cos \t + C.\] Thus, \[y = (\t + C)\sec^2 \t + \tan \t = (\arctan t + C)\bp{1 + t^2} + t.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[(x+1)\der{y}{x} + \frac{y}{\ln{x+1}} = x^2 + x \implies \der{y}{x} + \frac{y}{(x+1)\ln{x+1}} = x.\] Hence, the integrating factor is \[\IF = \exp \int \frac{1/(x+1)}{\ln{x+1}} \d x = \exp \ln \ln{x+1} = \ln{x+1}.\] Multiplying through by the integrating factor, we get
-        \begin{gather*}
-            \ln{x+1} \der{y}{x} + \frac{y}{(x+1)} = \der{}{x} \bp{y\ln{x+1}} = x\ln{x+1}\\
-            \implies y\ln{x+1} = \int x\ln{x+1} \d x.
-        \end{gather*}
-        Integrating by parts, we get
+        Note that \[(x+1)\der{y}{x} + \frac{y}{\ln{x+1}} = x^2 + x \implies \der{y}{x} + \frac{y}{(x+1)\ln{x+1}} = x.\] Hence, the integrating factor is \[\IF = \exp \int \frac{1/(x+1)}{\ln{x+1}} \d x = \exp \ln \ln{x+1} = \ln{x+1}.\] Multiplying through by the integrating factor, we get \[\der{}{x} \bp{y\ln{x+1}} = \ln{x+1} \der{y}{x} + \frac{y}{(x+1)} = x\ln{x+1}.\] Integrating, we obtain \[y\ln{x+1} = \int x\ln{x+1} \d x.\] Integrating by parts, we get
         \begin{align*}
             y \ln{x+1} &= \frac{x^2}2 \ln{x+1} - \frac12 \int \frac{x^2}{x+1} \d x \\
             &= \frac{x^2}2 \ln{x+1} - \frac12 \int \bp{x - 1 + \frac1{x+1}} \d x \\
@@ -73,27 +48,17 @@
 \end{solution}
 
 \begin{problem}
-    Given a general first order differential equation, $\der{y}{x} = f(x, y)$, if $f(x, y)$ is such that $f(kx, ky) = f(x, y)$, then the equation may be reduced to a separable equation by means of the substitution $y = ux$. Hence, solve the following differential equation: $(x+y)y' = x-y$.
+    Given a general first order differential equation, \[\der{y}{x} = f(x, y),\] if $f(x, y)$ is such that $f(kx, ky) = f(x, y)$, then the equation may be reduced to a separable equation by means of the substitution $y = ux$. Hence, solve the differential equation \[(x+y)y' = x-y.\]
 \end{problem}
 \begin{solution}
-    Note that \[(x+y)y' = x-y \implies y' = \frac{x-y}{x+y}.\]Let $f(x, y) = \frac{x-y}{x+y}$. Then \[f(kx, ky) = \frac{kx-ky}{kx+ky} = \frac{x-y}{x+y} = f(x, y).\] Hence, the differential equation can be solved with the substitution $y = ux$, whence $y' = u' x + u$. Substituting this into the differential equation, we get
-    \begin{gather*}
-        u' x + u = \frac{x - ux}{x + ux} = \frac{1-u}{1 + u} \implies \bp{\frac{1 + u}{1 - 2u - u^2}} u' = \frac1x \\
-        \implies \int \frac{1 + u}{1 - 2u - u^2} \d u = \int \frac{1+u}{2-(1+u)^2} \d u = \int \frac1x \d x \\
-        \implies -\frac12 \ln \abs{2 - (1+u)^2} = -\frac12 \ln \abs{2 - \bp{1 + \frac{y}{x}}^2} = \ln x + C_1 \implies (x + y)^2 = 2x^2 + C,
-    \end{gather*}
-    where $C = -\e^{-2C_1} \in \RR^-$.
+    Note that \[(x+y)y' = x-y \implies y' = \frac{x-y}{x+y}.\]Let $f(x, y) = \frac{x-y}{x+y}$. Then \[f(kx, ky) = \frac{kx-ky}{kx+ky} = \frac{x-y}{x+y} = f(x, y).\] Hence, the differential equation can be solved with the substitution $y = ux$, whence $y' = u' x + u$. Substituting this into the differential equation, we get \[u' x + u = \frac{x - ux}{x + ux} = \frac{1-u}{1 + u},\] which simplifies to \[\bp{\frac{1 + u}{1 - 2u - u^2}} u' = \frac1x.\] Integrating with respect to $x$, we get \[\int \frac{1 + u}{1 - 2u - u^2} \d u = \int \frac{1+u}{2-(1+u)^2} \d u = \int \frac1x \d x,\] so \[-\frac12 \ln \abs{2 - (1+u)^2} = -\frac12 \ln \abs{2 - \bp{1 + \frac{y}{x}}^2} = \ln x + C_1.\] Hence, $(x + y)^2 = 2x^2 + C$, where $C = -\e^{-2C_1} \in \RR^-$.
 \end{solution}
 
 \begin{problem}
     Using the substitution $u = \frac1y$, solve $\der{y}{x} + 2y = e^x y^2$.
 \end{problem}
 \begin{solution}
-    Note that \[u = \frac1y \implies y = \frac1u \implies \der{y}{x} = -\frac1{u^2} \cdot \der{u}{x}.\] Substituting this into the differential equation,
-    \begin{gather*}
-        -\frac1{u^2} \cdot \der{u}{x} + \frac2{u} = \frac{\e^x}{u^2} \implies \der{u}{x} -2u = -\e^x \implies \e^{-2x}\der{u}{x} - 2\e^{-2x} u = \der{}{x} \bp{\e^{-2x} u} = -\e^{-x}\\
-        \implies \e^{-2x} u = \int -\e^{-x} \d x = \e^{-x} + C \implies u = \e^x + C\e^{2x} \implies y = \frac{1}{\e^x + C\e^{2x}}.
-    \end{gather*}
+    Note that \[u = \frac1y \implies y = \frac1u \implies \der{y}{x} = -\frac1{u^2} \cdot \der{u}{x}.\] Substituting this into the differential equation, we get \[-\frac1{u^2} \cdot \der{u}{x} + \frac2{u} = \frac{\e^x}{u^2}.\] Multiplying through by $u^2 \e^{-2x}$, we get \[\der{}{x} \bp{\e^{-2x} u} = e^{-2x}\der{u}{x} - 2\e^{-2x} u = -\e^{-x}.\] Integrating, we have \[\e^{-2x} u = \int -\e^{-x} \d x = \e^{-x} + C.\] Thus, $u = \e^x + C\e^{2x}$, so \[y = \frac{1}{\e^x + C\e^{2x}}.\]
 \end{solution}
 
 \begin{problem}
@@ -102,19 +67,9 @@
 \begin{solution}
     The linear equation $y' + p(x) y = f(x)$ is separable if $p(x)$ is a scalar multiple of $f(x)$, i.e. $p(x) = \l f(x)$ for some $\l \in \RR$.
 
-    We begin by solving using separation of variables. Note that \[y' = f(x) - p(x) y = f(x) - \l f(x) y = f(x) 
-    (1 - \l y).\] Hence,
-    \begin{gather*}
-        \frac1{1 - \l y} y' = f(x) \implies \int \frac{1}{1 - \l y} \d y = -\frac{\ln \abs{1 - \l y}}\l = \int f(x) \d x \\
-        \implies \ln \abs{1 - \l y} = -\int \l f(x) \d x = -\int p(x) \d x \\
-        \implies y = \frac1\l \bs{{1 - C_1\e^{-\int p(x) \d x}}} = \frac1{\l} + C\e^{-\int p(x) \d x}.
-    \end{gather*}
+    We begin by solving using separation of variables. Note that \[y' = f(x) - p(x) y = f(x) - \l f(x) y = f(x) (1 - \l y).\] Hence, \[\frac1{1 - \l y} y' = f(x).\] Integrating with respect to $x$, we get \[\int \frac{1}{1 - \l y} \d y = -\frac{\ln \abs{1 - \l y}}\l = \int f(x) \d x.\] Thus, \[\ln \abs{1 - \l y} = -\int \l f(x) \d x = -\int p(x) \d x,\] so \[y = \frac1\l \bs{{1 - C_1\e^{-\int p(x) \d x}}} = \frac1{\l} + C\e^{-\int p(x) \d x}.\]
 
-    \textbf{Integrating Factor.} Note that the integrating factor is $\e^{\int p(x) \d x}$. Multiplying through, we get
-    \begin{gather*}
-        \e^{\int p(x) \d x}y' + \e^{\int p(x) \d x} p(x) y = \der{}{x} \bp{\e^{\int p(x) \d x} y} = \e^{\int p(x) \d x} f(x) = \frac1{\l} e^{\int p(x) \d x} p(x)\\
-        \implies \e^{\int p(x) \d x} y = \int \frac1{\l} \e^{\int p(x) \d x} p(x) \d x = \frac1{\l} \e^{\int p(x) \d x} + C \implies y = \frac1{\lambda} + Ce^{-\int p(x) \d x}.
-    \end{gather*}
+    \textbf{Integrating Factor.} Note that the integrating factor is $\e^{\int p(x) \d x}$. Multiplying through, we get \[\der{}{x} \bp{\e^{\int p(x) \d x} y} = \e^{\int p(x) \d x}y' + \e^{\int p(x) \d x} p(x) y = \e^{\int p(x) \d x} f(x) = \frac1{\l} e^{\int p(x) \d x} p(x).\] Integrating, we get \[\e^{\int p(x) \d x} y = \int \frac1{\l} \e^{\int p(x) \d x} p(x) \d x = \frac1{\l} \e^{\int p(x) \d x} + C,\] whence \[y = \frac1{\lambda} + Ce^{-\int p(x) \d x}.\]
 \end{solution}
 
 \begin{problem}
@@ -133,11 +88,7 @@
         \[\frac{1}{y^2} = -2z \implies \der{z}{x} = \frac{1}{y^3} \cdot \der{y}{x} = \frac{1}{y^3} \bp{y^3 - \frac{y}{x}} = 1 - \frac{1}{y^2} \cdot \frac1x = 1 + \frac{2z}{x} \implies \der{z}{x} - \frac{2z}{x} = 1.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{z}{x} - \frac{2z}{x} = 1 \implies \frac1{x^2} \der{z}{x} - \frac{2z}{x^3} = \der{}{x} \bp{\frac{z}{x^2}} = \frac{1}{x^2}
-            \implies \frac{z}{x^2} = \int \frac{1}{x^2} \d x = -\frac{1}{x} + C_1 \\
-            \implies z = -\frac1{2y^2} = -x + C_1x^2 \implies y^2 = \frac1{2x + C_2 x^2}.
-        \end{gather*}
+        Multiplying through by $x^{-2}$, we get \[\der{}{x} \bp{\frac{z}{x^2}} = \frac1{x^2} \der{z}{x} - \frac{2z}{x^3} = \frac{1}{x^2}.\] Integrating, we get \[\frac{z}{x^2} = \int \frac{1}{x^2} \d x = -\frac{1}{x} + C_1,\] so \[z = -\frac1{2y^2} = -x + C_1x^2.\] Thus, \[y^2 = \frac1{2x + C_2 x^2}.\]
 
         Since $y(1) = 2$, we have \[2^2 = \frac1{2 + C_2} \implies C_2 = -\frac74.\] Thus, \[y^2 = \frac1{2x - 7x^2/4} = \frac{4}{8x - 7x^2} \implies y = \frac2{\sqrt{8x-7x^2}}.\] Note that we reject the negative branch since $y(1) = 2 \geq 0$.
     \end{ppart}
@@ -149,11 +100,7 @@
 \begin{solution}
     Note that \[v = \ln y \implies \der{y}{x} = \frac1y \cdot \der{y}{x} \implies \der{y}{x} = y \der{v}{x}.\] Substituting this into the differential equation, we get \[\der{y}{x} + P(x) y = Q(x) (y \ln y) \implies y \der{v}{x} + P(x) y = Q(x) (y v) \implies \der{v}{x} + P(x) = Q(x) v.\]
     
-    We now solve the given differential equation. Note that \[x \der{y}{x} - 4x^2 y + 2y \ln y = 0 \implies \der{y}{x} - 4x y = -\frac2x (y\ln y).\] Hence, \[P(x) = -4x, \quad Q(x) = -\frac2x.\] Now, from the previous part, we can rewrite the differential equation as \[\der{v}{x} - 4x = -\frac{2v}{x},\] where $v(x) = \ln y$. Thus,
-    \begin{gather*}
-        x^2 \der{v}{x} + 2x v = \der{}{x} \bp{x^2 v} = 4x^3 \implies x^2 v = x^2 \ln y = \int 4x^3 \d x = x^4 + C \\
-        \implies y = \exp{x^2 + Cx^{-2}}.
-    \end{gather*}
+    We now solve the given differential equation. Note that \[x \der{y}{x} - 4x^2 y + 2y \ln y = 0 \implies \der{y}{x} - 4x y = -\frac2x (y\ln y).\] Hence, \[P(x) = -4x, \quad Q(x) = -\frac2x.\] Now, from the previous part, we can rewrite the differential equation as \[\der{v}{x} - 4x = -\frac{2v}{x},\] where $v(x) = \ln y$. Thus, \[\der{}{x} \bp{x^2 v} = x^2 \der{v}{x} + 2x v =  4x^3.\] Integrating, we get \[x^2 v = x^2 \ln y = \int 4x^3 \d x = x^4 + C,\] so \[y = \exp{x^2 + Cx^{-2}}.\]
 \end{solution}
 
 \begin{problem}
@@ -177,10 +124,7 @@
     Sketch some of the family of solution curves including those corresponding to some negative values of $C$, some positive values of $C$, and $C = 0$.
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        x \der{y}{x} - y = x^2 + 1 \implies \frac1x \der{y}{x} - \frac{y}{x^2} = \der{}{x} \frac{y}{x} = 1 + \frac1{x^2}\\
-        \implies \frac{y}{x} = \int \bp{1 + \frac1{x^2}} \d x = x - \frac1x + C \implies y = x^2 + Cx - 1.
-    \end{gather*}
+    Multiplying through by $x^{-2}$, we get \[\der{}{x} \frac{y}{x} = \frac1x \der{y}{x} - \frac{y}{x^2} = 1 + \frac1{x^2}.\] Integrating, we get \[\frac{y}{x} = \int \bp{1 + \frac1{x^2}} \d x = x - \frac1x + C,\] so $y = x^2 + Cx - 1$.
 
     Note that \[y = x^2 + Cx - 1 = \bp{x + \frac{C}{2}}^2 - \bp{1 + \frac{C^2}4}.\] Thus, $y$ has a unique minimum point at $\bp{-\frac{C}2, -\bp{1 + \frac{C^2}4}}$.
 
@@ -236,12 +180,7 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that the integrating factor is $\exp{ \int 2x \d x} = \e^{x^2}$. Multiplying the integrating factor throughout the differential equation, we get
-    \begin{gather*}
-        \e^{x^2}\der{y}{x} + 2x\e^{x^2}y = \der{}{x} \bp{\e^{x^2} y} = 2x\e^{x^2} \bp{x^2 + 1} \\
-        \implies \e^{x^2} y = \int 2x\e^{x^2} \bp{x^2 + 1} \d x = \e^{x^2}(x^2 + 1) - \int 2x \e^{x^2} \d x = \e^{x^2} (x^2 + 1) - \e^{x^2} + C\\
-        \implies y = \bp{x^2 + 1} - 1 + C\e^{-x^2} = x^2 + C\e^{-x^2}.
-    \end{gather*}
+    Note that the integrating factor is $\exp{ \int 2x \d x} = \e^{x^2}$. Multiplying the integrating factor throughout the differential equation, we get \[\der{}{x} \bp{\e^{x^2} y} = \e^{x^2}\der{y}{x} + 2x\e^{x^2}y = 2x\e^{x^2} \bp{x^2 + 1}.\] Integrating, \[\e^{x^2} y = \int 2x\e^{x^2} \bp{x^2 + 1} \d x = \e^{x^2}(x^2 + 1) - \int 2x \e^{x^2} \d x = \e^{x^2} (x^2 + 1) - \e^{x^2} + C.\] Thus, \[y = \bp{x^2 + 1} - 1 + C\e^{-x^2} = x^2 + C\e^{-x^2}.\]
 
     For stationary points, $\der{y}{x} = 0$. Hence, \[2xy - 2x\bp{x^2 + 1} = 0 \implies x = 0 \tor y - \bp{x^2 + 1} = 0.\] Consider $y - \bp{x^2 + 1} = 0$. \[y - \bp{x^2 + 1} = \bp{x^2 + C\e^{-x^2}} - \bp{x^2 + 1} = C\e^{-x^2} - 1 = 0 \implies x^2 = \ln C.\]
 
@@ -264,14 +203,12 @@
 \end{problem}
 \begin{solution}
     Note that \[y = x^2 \ln t \implies \der{y}{t} = \frac{x^2}{t} + 2x\ln t \der{x}{t} \implies 2xt \ln t \der{x}{t} = t\der{y}{t} - x^2.\] Hence,
-    \begin{gather*}
-        2xt \ln t \der{x}{t} + (3\ln t + 1)x^2 = \bp{t\der{y}{t} - x^2} + (3\ln t + 1)x^2 = t\der{y}{t} + 3x^2\ln t = t\der{y}{t} + 3y.
-    \end{gather*}
-    Our differential equation thus becomes \[t\der{y}{t} + 3y = \frac{\e^{-2t}}{t} \implies \der{y}{t} + \frac{3y}{t} = \frac{\e^{-2t}}{t^2},\] whence $P(t) = 3/t$. We now solve the differential equation. Observe that
-    \begin{gather*}
-        t^3 \der{y}{t} + 3t^2y = \der{}{t} \bp{t^3 y} = t \e^{-2t} \implies t^3 y = \int t\e^{-2t} \d t = -\frac{1}{2} t\e^{-2t} - \frac14 \e^{-2t} + C_1\\
-        \implies t^3 x^2 \ln t = -\frac{\bp{2t+1}\e^{-2t}}4 + \frac{C}{4} \implies x^2 = \frac{C-\bp{2t+1}\e^{-2t}}{4t^3 \ln t}.
-    \end{gather*}
+    \begin{align*}
+        2xt \ln t \der{x}{t} + (3\ln t + 1)x^2 &= \bp{t\der{y}{t} - x^2} + (3\ln t + 1)x^2\\
+        &= t\der{y}{t} + 3x^2\ln t\\
+        &= t\der{y}{t} + 3y.
+    \end{align*}
+    Our differential equation thus becomes \[t\der{y}{t} + 3y = \frac{\e^{-2t}}{t} \implies \der{y}{t} + \frac{3y}{t} = \frac{\e^{-2t}}{t^2},\] whence $P(t) = 3/t$. We now solve the differential equation. Observe that \[\der{}{t} \bp{t^3 y} = t^3 \der{y}{t} + 3t^2y = t \e^{-2t}.\] Integrating, \[t^3 x^2 \ln t = t^3 y = \int t\e^{-2t} \d t = -\frac{1}{2} t\e^{-2t} - \frac14 \e^{-2t} + C_1,\] thus \[x^2 = \frac{C-\bp{2t+1}\e^{-2t}}{4t^3 \ln t}.\]
 
     \begin{center}\tikzsetnextfilename{220}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -363,11 +300,8 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{x}{t} = kx(N-x) \implies \frac{1}{x(N-x)} \der{x}{t} = k \implies \int \frac{1}{x(N-x)} \d x = \int k \d t \\
-            \implies \int \frac1N \bp{\frac1x - \frac1{N-x}} = \int k \d t \implies \frac{\ln x - \ln{N-x}}{N} = kt + C_1\\
-            \implies \ln \frac{x}{N-x} = Nkt + C_2 \implies x = \frac{C_3 N\e^{Nkt}}{1 + C_3 \e^{Nkt}}.
-        \end{gather*}
+        We have \[\frac{1}{x(N-x)} \der{x}{t} = k.\] Integrating with respect to $t$, \[\int \frac{1}{x(N-x)} \d x = \int k \d t.\] Performing partial fractions on the integrand on the LHS, we obtain \[\int \frac1N \bp{\frac1x - \frac1{N-x}} = \int k \d t,\] so \[\frac{\ln x - \ln{N-x}}{N} = kt + C_1.\] This yields \[\ln \frac{x}{N-x} = Nkt + C_2,\] whence \[x = \frac{C_3 N\e^{Nkt}}{1 + C_3 \e^{Nkt}}.\]
+        
         At $t = 0$, we have $x = x_0$. Hence, \[x_0 = \frac{C_3 N \e^0}{1 + C_3 \e^0} \implies C_3 = \frac{x_0}{N-x_0}.\] This gives \[x = \frac{\frac{x_0}{N-x_0} N\e^{Nkt}}{1 + \frac{x_0}{N-x_0} \e^{Nkt}} = \frac{Nx_0 \e^{Nkt}}{N-x_0 + x_0\e^{Nkt}}.\]
     \end{ppart}
 \end{solution}
@@ -434,12 +368,7 @@
         Note that $C_1: P = \frac{k_1}{Q}$ and $C_2: P = k_2 Q$ for some constants $k_1$ and $k_2$. At $A(1, 4)$, we obtain $k_1 = k_2 = 4$. Thus, \[C_1 : Q = \frac4P, \quad C_2 : Q = \frac{P}{4}.\]
     \end{ppart}
     \begin{ppart}
-        At a given price $P < 4$, the difference in the amount of rice demanded and produced is given by $\frac{4}{P} - \frac{P}{4} = \frac{16 - P^2}{4P}$. Hence, $\der{P}{t} = k \cdot \frac{16 - P^2}{4P}$.
-        \begin{gather*}
-            \der{P}{t} = k \cdot \frac{16 - P^2}{4P} \implies \frac{2P}{16 - P^2} \der{P}{t} = \frac{k}2 \implies\int \frac{2P}{16 - P^2} \d P = \int \frac{k}2 \d t \\
-            \implies -\ln{16 - P^2} = \frac{kt}{2} + C_1 \implies P = \sqrt{16 - C_2 \e^{-kt/2}}.
-        \end{gather*}
-        Note that we used the fact that $0 < P < 4$ when solving for $P$.
+        At a given price $P < 4$, the difference in the amount of rice demanded and produced is given by $\frac{4}{P} - \frac{P}{4} = \frac{16 - P^2}{4P}$. Hence, $\der{P}{t} = k \cdot \frac{16 - P^2}{4P}$. Rearranging, \[\frac{2P}{16 - P^2} \der{P}{t} = \frac{k}2.\] Integrating with respect to $t$, we obtain \[\int \frac{2P}{16 - P^2} \d P = \int \frac{k}2 \d t,\] so \[-\ln{16 - P^2} = \frac{kt}{2} + C_1,\] whence \[P = \sqrt{16 - C_2 \e^{-kt/2}}.\] Note that we used the fact that $0 < P < 4$ when solving for $P$.
 
         At $t = 0$, $P = 3$. Hence, \[3 = \sqrt{16 - C_2 \e^0} \implies C_2 = 7.\] At $t = 1$, $P = 3.65$. Hence, \[3.65 = \sqrt{16 - 7\e^{-k(1)/2}} \implies \e^{-k/2} = \frac{153}{400}.\] Thus, \[P = \sqrt{16 - 7 \bp{\frac{153}{400}}^t}.\]
 
@@ -487,12 +416,8 @@
 \begin{solution}
     Note that \[\der{y}{t} = 0.5(6) - 4\bp{\frac{y}{100 + (6-4)t}} = 3 - \frac{4y}{100 + 2t}.\] Hence, $k = 4$ and $m = 2$.
 
-    We now solve the differential equation. Multiplying throughout by $(100 + 2t)^2$, we get
-    \begin{gather*}{2}
-        (100+2t)^2 \der{y}{t} + 4(100+2t)y = \der{}{t} \bs{(100+2t)^2 y} = 3(100 + 2t)^2\\
-        \implies (100+2t)^2 y = \int 3 (100+2t)^2 \d t = \frac12 (100 + 2t)^3 + C_1 = 4(50 + t)^3 + C_1\\
-        \implies y = \frac{4(50+t)^3 + C_1}{(100+2t)^2} = \frac{4(50+t)^3 + C_1}{4(50 + t)^2} = 50 + t + \frac{C}{(50 + t)^2}.
-    \end{gather*}
+    We now solve the differential equation. Multiplying throughout by $(100 + 2t)^2$, we get \[\der{}{t} \bs{(100+2t)^2 y} = (100+2t)^2 \der{y}{t} + 4(100+2t)y = 3(100 + 2t)^2.\] Integrating, we obtain \[(100+2t)^2 y = \int 3 (100+2t)^2 \d t = \frac12 (100 + 2t)^3 + C_1 = 4(50 + t)^3 + C_1.\] It follows that \[y = \frac{4(50+t)^3 + C_1}{(100+2t)^2} = 50 + t + \frac{C}{(50 + t)^2}.\]
+
     At $t = 0$, $y = 100(0.01) = 1$. Hence, \[1 = 50 + 0 + \frac{C}{(50+0)^2} \implies C = -122500.\] Thus, \[y = 50 + t - \frac{122500}{(50+t)^2}.\]
 \end{solution}
 
@@ -506,19 +431,10 @@
     State one limitation of this model.
 \end{problem}
 \begin{solution}
-    Note that \[u = y^{1-n} \implies \der{u}{x} = (1-n)y^n \der{y}{x} \implies \der{y}{x} = \der{u}{x} \cdot \frac{y^n}{1-n}.\] Substituting this into the given differential equation, we get
-    \begin{gather*}
-        \der{u}{x} \cdot \frac{y^n}{1-n} + p(x)y = q(x) y^n \implies \der{u}{x} \cdot \frac{1}{1-n} + p(x)u = q(x)\\
-        \implies \der{u}{x} + (1-n)p(x)u = (1-n)q(x)
-    \end{gather*}
-    Let $n = 2$. Then $u = I^{-1}$. We also have $p(x) = \tan t$ and $q(x) = \sin^2 t$.
-    \begin{gather*}
-        \der{I}{t} + (\tan t) I = (I \sin t)^2 \implies \der{u}{t} - (\tan t)u = -\sin^2 t \\
-        \implies \cos t \der{u}{t} - (\sin t) u = -\cos t \sin^2 t \implies \der{}{t} \bp{u \cos t} = -\cos t \sin^2 t\\
-        \implies u \cos t = \int -\cos t \sin^2 \t \d t = -\frac13 \sin^3 t + C\\
-        \implies u = \frac{-1/3 \cdot \sin^3 t + C}{\cos t} \implies I = \frac{\cos t}{-1/3 \cdot \sin^3 t + C} = \frac{3\cos t}{3C - \sin^3 t}
-    \end{gather*}
-    
+    Note that \[u = y^{1-n} \implies \der{u}{x} = (1-n)y^n \der{y}{x} \implies \der{y}{x} = \der{u}{x} \cdot \frac{y^n}{1-n}.\] Substituting this into the given differential equation, we get \[\der{u}{x} \cdot \frac{y^n}{1-n} + p(x)y = q(x) y^n.\] Multiplying by $(1-n) y^{-n}$, we have \[\der{u}{x} + (1-n)p(x)u = (1-n)q(x).\]
+
+    Let $n = 2$. Then $u = I^{-1}$. We also have $p(x) = \tan t$ and $q(x) = \sin^2 t$. Then \[\der{u}{t} - (\tan t)u = -\sin^2 t.\] Multiplying by $\cos t$, we see that \[\der{}{t} \bp{u \cos t} = \cos t \der{u}{t} - (\sin t) u = -\cos t \sin^2 t.\] Integrating, we obtain \[u \cos t = \int -\cos t \sin^2 \t \d t = -\frac13 \sin^3 t + C,\] whence \[u = \frac{-1/3 \cdot \sin^3 t + C}{\cos t}\] and \[I = \frac{\cos t}{-1/3 \cdot \sin^3 t + C} = \frac{3\cos t}{3C - \sin^3 t}.\]
+
     Consider the stationary points of $I$. For stationary points, we have $\der{I}{t} = 0$. Hence, \[\frac{\sin t}{\cos t} I = I^2 \sin^2 t \implies I \sin t \bp{I \sin t - \frac1{\cos t}} = 0.\] Hence, $\sin t = 0$ or $I \sin t - \frac1{\cos t} = 0$. Note that $I = \frac{3\cos t}{3C - \sin^3 t} \neq 0$ since $\cos t \neq 0$. We now consider the latter case. \[I \sin t - \frac1{\cos t} = 0 \implies I \sin t \cos t = 1 \implies I \sin 2t = 2.\] Since $I$ has an amplitude of 1, we have that $I \in [-1, 1]$. Since $\sin 2t \in [-1, 1]$, we have that $I \sin 2t \in [-1, 1]$. Thus, $I \sin 2t$ can never be 2. Hence, stationary points only occur when $\sin t = 0$, implying $t = k\pi$. Thus, $I(0) = \pm 1$. This gives \[I(0) = \frac{3\cos 0}{3C - \sin^3 0} = 1 \implies C = 1,\] whence \[I = \frac{3\cos t}{3 - \sin^3 t}.\]
     
     A limitation of this model is that it does not reflect the fact that the oscillations may gradually get weaker.

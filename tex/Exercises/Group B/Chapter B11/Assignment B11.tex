@@ -50,11 +50,13 @@
     \end{ppart}
     \begin{ppart}
         Observe that \[\bar{x} =  \frac1n \sum_{k = 1}^n x_k \implies \sum_{k = 1}^n x_k = n \bar{x}.\] Consider $ n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2$.
-        \begin{gather*}
-            n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 = n \bp{\sum_{k = 1}^n x_k^2 - n\bar{x}^2} = n \bp{\sum_{k = 1}^n x_k^2 - 2n\bar{x}^2 + n\bar{x}^2} \\
-            = n \bs{\sum_{k = 1}^n x_k^2 - 2n\bar{x} \bp{\frac1n \sum_{k = 1}^n x_k} + \sum_{k = 1}^n \bar{x}^2} = n \bp{\sum_{k = 1}^n x_k^2 - \sum_{k = 1}^n 2x_k\bar{x} + \sum_{k = 1}^n \bar{x}^2} \\
-            = n \sum_{k = 1}^n \bp{x_k^2 -  2x_k\bar{x} + \bar{x}^2} = n \sum_{k = 1}^n \bp{x_k - \bar{x}}^2.
-        \end{gather*}
+        \begin{align*}
+            n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 &= n \bp{\sum_{k = 1}^n x_k^2 - n\bar{x}^2} = n \bp{\sum_{k = 1}^n x_k^2 - 2n\bar{x}^2 + n\bar{x}^2} \\
+            &= n \bs{\sum_{k = 1}^n x_k^2 - 2n\bar{x} \bp{\frac1n \sum_{k = 1}^n x_k} + \sum_{k = 1}^n \bar{x}^2}\\
+            &= n \bp{\sum_{k = 1}^n x_k^2 - \sum_{k = 1}^n 2x_k\bar{x} + \sum_{k = 1}^n \bar{x}^2} \\
+            &= n \sum_{k = 1}^n \bp{x_k^2 -  2x_k\bar{x} + \bar{x}^2}\\
+            &= n \sum_{k = 1}^n \bp{x_k - \bar{x}}^2.
+        \end{align*}
         Given that the RHS is a sum of squares, it must be greater than or equal to 0. We thus have the inequality \[n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 \geq 0.\] However, if $ n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 = 0$, then both $a$ and $b$ would be undefined. Thus, we must have a strict inequality, which gives \[n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 > 0.\]
     \end{ppart}
     \begin{ppart}

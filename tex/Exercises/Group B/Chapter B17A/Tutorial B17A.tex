@@ -318,9 +318,9 @@
     \end{ppart}
     \begin{ppart}
         Note that \[\mat D = \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \mat C = \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \inv{\mat B}.\] Thus, our goal matrix $\inv{\mat D}$ is given by
-        \begin{gather*}
-            \inv{\mat D} = \bs{\begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \mat B^{-1}}^{-1} = \mat B \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}^{-1} \\
-            = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}\begin{pmatrix}1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} = \begin{pmatrix}a-2b & b & c \\ d-2e & e & f \\ g-2h & h & i\end{pmatrix}.
-        \end{gather*}
+        \begin{align*}
+            \inv{\mat D} &= \bs{\begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \mat B^{-1}}^{-1} = \mat B \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}^{-1} = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}\begin{pmatrix}1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}\\
+            &= \begin{pmatrix}a-2b & b & c \\ d-2e & e & f \\ g-2h & h & i\end{pmatrix}.
+        \end{align*}
     \end{ppart}
 \end{solution}

@@ -108,10 +108,14 @@
 \begin{solution}
     \begin{ppart}
         Note that $\der{x}{\t} = 2 + 2\cos 2\t$ while $\der{y}{\t} = -2\sin 2\t$. Hence,
-        \begin{gather*}
-            \der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{-2\sin 2\t}{2 + 2\cos2\t} = -\frac{\sin 2\t}{1 + \cos2\t} \\
-            = -\frac{2\sin\t\cos\t}{1 + (2\cos^2\t - 1)} = -\frac{2\sin\t\cos\t}{2\cos^2\t} = -\frac{\sin\t}{\cos\t} = -\tan\t.
-        \end{gather*}
+        \begin{align*}
+            \der{y}{x} &= \frac{\derx{y}{\t}}{\derx{x}{\t}}\\
+            &= \frac{-2\sin 2\t}{2 + 2\cos2\t}\\
+            &= -\frac{\sin 2\t}{1 + \cos2\t} \\
+            &= -\frac{2\sin\t\cos\t}{1 + (2\cos^2\t - 1)}\\
+            &= -\frac{2\sin\t\cos\t}{2\cos^2\t}\\
+            &= -\tan\t.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Since the tangent at $Q$ is parallel to the $y$-axis, the derivative $\derx{y}{x} = -\tan\t$ must be undefined there. Hence, $\cos \t = 0 \implies \t = \pi/2$. Substituting $\t = \pi/2$ into the given parametric equations, we obtain $x = \pi$ and $y = -1$, whence $Q(\pi, -1)$.

@@ -101,11 +101,7 @@
 \begin{proof}
     Let $P(n)$ be the statement \[\frac1n \sum_{i = 1}^n x_i \geq \prod_{i = 1}^n x_i^{1/n}\] for all $x_1, \dots, x_n > 0$.
 
-    Note that $P(1)$ is trivially true: \[\frac11 \sum{i = 1}^1 x_i = x_1 = \prod_{i = 1}^1 x_i^{1/1}.\] $P(2)$ can also be easily proven:
-    \begin{gather*}
-        \bp{x_1 - x_2}^2 \geq 0 \implies x_1^2 + x_2^2 - 2x_1x_2 \geq 0 \implies \frac{x_1^2 + 2x_1x_2 + x_2^2}{4} \geq x_1 x_2\\
-        \implies \bp{\frac{x_1 + x_2}{2}}^2 \geq x_1 x_2 \implies \frac{x_1 + x_2}{2} \geq \sqrt{x_1 x_2}.
-    \end{gather*}
+    Note that $P(1)$ is trivially true: \[\frac11 \sum{i = 1}^1 x_i = x_1 = \prod_{i = 1}^1 x_i^{1/1}.\] $P(2)$ can also be easily proven: expanding $(x_1 - x_2)^2 \geq 0$, we see that $x_1^2 + x_2^2 - 2x_1x_2 \geq 0$. Rearranging, we obtain \[\bp{\frac{x_1 + x_2}{2}}^2 = \frac{x_1^2 + 2x_1x_2 + x_2^2}{4} \geq x_1 x_2.\] Taking square roots, we have \[\frac{x_1 + x_2}{2} \geq \sqrt{x_1 x_2}\] as desired.
 
     Suppose $P(k)$ is true for some $k \in \NN$. We now show that $P(k) \implies P(2k)$. By our inductive hypothesis, \[\frac1{2n} \sum_{i = 1}^{2n} x_i = \frac12 \bs{\frac1n \sum_{i = 1}^n x_i + \frac1n \sum_{i = n+1}^{2n} x_i} \geq \frac12 \bp{\prod_{i = 1}^n x_i^{1/n} + \prod_{i = n+1}^{2n} x_i^{1/n}}.\] By $P(2)$, we have \[\frac1{2n} \sum_{i = 1}^{2n} x_i \geq \sqrt{\prod_{i = 1}^n x_i^{1/n} \prod_{i = n+1}^{2n} x_i^{1/n}} = \prod_{i = 1}^{2n} x_i^{1/2n}.\] Thus, $P(k) \implies P(2k)$.
 

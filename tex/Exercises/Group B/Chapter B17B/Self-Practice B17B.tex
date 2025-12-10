@@ -101,7 +101,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     The linear transformation $T : \RR^4 \to \RR^4$ is represented by the matrix $\mat A$ where \[\mat A = \begin{pmatrix}1 & -2 & 0 & 4 \\ 3 & 1 & 1 & 0 \\ -1 & -5 & -1 & 8 \\ 3 & 8 & 2 & -12\end{pmatrix}.\]
     
@@ -111,6 +110,7 @@
         \item Find a basis for the null space of $T$. Hence, find the general solution of $\mat A \vec x = \vec b$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         The RREF of $\mat A$ is given by \[\begin{pmatrix}1 & 0 & 2/7 & 4/7 \\ 0 & 1 & 1/7 & -12/7 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, $\mat A$ has rank 2, and a basis for the range space of $T$ is given by \[\bc{\cveciv13{-1}3, \cveciv{-2}1{-5}8}.\]
@@ -125,6 +125,7 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     The linear transformation $L : \RR^4 \to \RR^3$ is represented by the matrix $\mat A$, where \[\mat A = \begin{pmatrix}1 & 2 & 0 & 1 \\ 2 & -1 & 2 & -1 \\ 1 & -3 & 2 & -2\end{pmatrix}.\]
 
@@ -187,7 +188,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Let $L : V \to V$ be a linear transformation on the vector space $V$. A linear transformation is said to be \emph{nilpotent} if there exists $k \in \ZZ^+$ such that $L^k(x) = 0$ for all $x \in V$. A linear transformation $L$ is said to be \emph{invertible} if there exists a transformation $T$ such that $LT(x) = TL(x) = x$ for all $x \in V$. Show that if $L$ is nilpotent, then the transformation $M = I - L$ is invertible by finding an explicit formula for $(I - L)^{-1}$, where $I$ is the identity transformation.
@@ -196,24 +196,29 @@
         \item Hence, find the general solution of the differential equation in (c).
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         A simple series expansion gives \[(I - L)^{-1} = I + L + L^2 + \dots + L^{k-1} + L^k + \dots = I + L + L^2 + \dots + L^{k-1},\] so $M$ is invertible.
     \end{ppart}
     \begin{ppart}
         Let $f, g$ be quadratic polynomials, where $f(x) = a_1 x^2 + b_1x + c_1$ and $g(x) = a_2 x^2 + b_2 x + c_2$. Then
-        \begin{gather*}
-            L(f + g) = L\of{\bp{a_1 + a_2} x^2 + \bp{a_2 + b_2} x + \bp{c_1 + c_2}} = 2\bp{a_1 + a_2}x + \bp{b_1 + b_2}\\
-            = \bp{2a_1x + b_1} + \bp{2a_2x + b_2} = L(f) + L(g).
-        \end{gather*}
+        \begin{align*}
+            L(f + g) &= L\of{\bp{a_1 + a_2} x^2 + \bp{a_2 + b_2} x + \bp{c_1 + c_2}}\\
+            &= 2\bp{a_1 + a_2}x + \bp{b_1 + b_2}\\
+            &= \bp{2a_1x + b_1} + \bp{2a_2x + b_2}\\
+            &= L(f) + L(g).
+        \end{align*}
         Let $k \in \RR$. Then \[L(kf) = L\of{ka_1 x^2 + kb_1 x + kc_1} = 2ka_1 x + kb_1 = k\bp{2a_1 x + b_1} = k L(f).\] Thus, $L$ is a linear transformation on $V$.
     \end{ppart}
     \begin{ppart}
         Rewriting the given differential equation, we see that \[y'_p - y_p = (L-I) y_p = 5x^2 - 3 \implies (I-L) y_p = -5x^2 + 3.\] Since $L^3 = 0$, by (a), we have the particular solution
-        \begin{gather*}
-            y_p = (I-L)^{-1} \bp{-5x^2 + 3} = \bp{I + L + L^2} \bp{-5x^2 + 3}\\
-            = \bp{-5x^2 + 3} + \bp{-10x} + \bp{-10} = -5x^2 -10x - 7.
-        \end{gather*}
+        \begin{align*}
+            y_p &= (I-L)^{-1} \bp{-5x^2 + 3}\\
+            &= \bp{I + L + L^2} \bp{-5x^2 + 3}\\
+            &= \bp{-5x^2 + 3} + \bp{-10x} + \bp{-10}\\
+            &= -5x^2 -10x - 7.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         The associated homogeneous differential equation is $y' = y$, so the complementary solution is $y_c = Ae^x$. Thus, the general solution is given by \[y = y_c + y_p = Ae^x - 5x^2 - 10 x - 7.\] 

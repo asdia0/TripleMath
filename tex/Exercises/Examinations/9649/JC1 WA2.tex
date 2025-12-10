@@ -10,11 +10,15 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\oa{OC} = m\oa{OA} = m \vec a \implies \oa{AC} = \oa{OC} - \oa{OA} = m \vec a - \vec a = (m-1) \vec a.\] By the Ratio Theorem, \[\oa{OB} = \frac{\oa{OD} + 2 \cdot \oa{OA}}{1 + 2}.\] Hence, \[\oa{OD} = 3\oa{OB} - 2\oa{OA} = 3\vec b - 2 \vec a \implies \oa{AD} = \oa{OD} - \oa{OA} = 3\vec b - 3\vec a.\] Thus,
-        \begin{gather*}
-            \area \triangle ADC = \frac12 \abs{\oa{AC} \crossp \oa{AD}} = \frac12 \abs{(m-1)\vec a \crossp (3\vec b - 3\vec a)} = \frac32 \abs{m-1} \abs{\vec a \crossp (\vec b - \vec a)}\\
-            = \frac32 \abs{m-1} \abs{\vec a \crossp \vec b - \vec a \crossp \vec a} = \frac32 \abs{m-1} \abs{\vec a \crossp \vec b}
-        \end{gather*}
+        Note that $\oa{OC} = m\oa{OA} = m \vec a$, so 
+        \[\oa{AC} = \oa{OC} - \oa{OA} = m \vec a - \vec a = (m-1) \vec a.\] By the Ratio Theorem, \[\oa{OB} = \frac{\oa{OD} + 2\oa{OA}}{1 + 2}.\] Hence, $\oa{OD} = 3\oa{OB} - 2\oa{OA} = 3\vec b - 2 \vec a$, so \[\oa{AD} = \oa{OD} - \oa{OA} = 3\vec b - 3\vec a.\] Thus,
+        \begin{align*}
+            \area \triangle ADC &= \frac12 \abs{\oa{AC} \crossp \oa{AD}}\\
+            &= \frac12 \abs{(m-1)\vec a \crossp (3\vec b - 3\vec a)}\\
+            &= \frac32 \abs{m-1} \abs{\vec a \crossp (\vec b - \vec a)}\\
+            &= \frac32 \abs{m-1} \abs{\vec a \crossp \vec b - \vec a \crossp \vec a}\\
+            &= \frac32 \abs{m-1} \abs{\vec a \crossp \vec b},
+        \end{align*}
         whence $k = \frac32 \abs{m-1}$.
     \end{ppart}
     \begin{ppart}
@@ -42,14 +46,16 @@
     \begin{ppart}
         We have \[u_n = 0.93^7 u_{n-1} + 2.3, \quad u_0 = 0.\]
 
-        Let $k$ be the constant such that $u_n + k = 0.93^7 (u_{n-1} + k)$. Then $k = \frac{2.3}{0.93^7 - 1}$. Hence, 
-        \begin{gather*}
-            u_n - \frac{2.3}{1 - 0.93^7} = 0.93^7 \bp{u_{n-1} - \frac{2.3}{1 - 0.93^7}} = 0.93^{7n} \bp{u_0 - \frac{2.3}{1 - 0.93^7}} = - \frac{2.3 \cdot 0.93^{7n}}{1 - 0.93^7}\\
-            \implies u_n = \frac{2.3}{1 - 0.93^7} - \frac{2.3 \cdot 0.93^{7n}}{1 - 0.93^7}.
-        \end{gather*}
+        Let $k$ be the constant such that $u_n + k = 0.93^7 (u_{n-1} + k)$. Then $k = 2.3/(0.93^7 - 1)$. Hence, 
+        \begin{align*}
+            u_n - \frac{2.3}{1 - 0.93^7} &= 0.93^7 \bp{u_{n-1} - \frac{2.3}{1 - 0.93^7}}\\
+            &= 0.93^{7n} \bp{u_0 - \frac{2.3}{1 - 0.93^7}}\\
+            &= - \frac{2.3 \cdot 0.93^{7n}}{1 - 0.93^7}.
+        \end{align*}
+        Thus, we obtain \[u_n = 2.3 \bp{\frac{1 - 0.93^{7n}}{1 - 0.93^7}}.\]
     \end{ppart}
     \begin{ppart}
-        \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} \bp{\frac{2.3}{1 - 0.93^7} - \frac{2.3 \cdot 0.93^{7n}}{1 - 0.93^7}} = \frac{2.3}{1 - 0.93^7} = 5.77 \tosf{3}.\] Since $5.77 < 6$, if the local authority's only concern is marine life, they should allow the factory to go ahead with the discharge.
+        \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} 2.3 \bp{\frac{1 - 0.93^{7n}}{1 - 0.93^7}} = \frac{2.3}{1 - 0.93^7} = 5.77 \tosf{3}.\] Since $5.77 < 6$, if the local authority's only concern is marine life, they should allow the factory to go ahead with the discharge.
     \end{ppart}
 \end{solution}
 
@@ -68,6 +74,7 @@
         \item Given that $l_2$ is the reflection of $l_1$ about the line $l_3$, find the vector equation of the line $l_3$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         Note that $l_1$ has vector equation
@@ -79,10 +86,12 @@
     \end{ppart}
     \begin{ppart}
         Note that $\cveciiix{-6}6{-3}\parallel \cveciiix2{-2}1$. Hence, $l_2$ is parallel to $l_1$. Hence, the shortest distance between $l_1$ and $l_2$ is the perpendicular distance from a point on $l_1$ to $l_2$, which is
-        \begin{gather*}
-            \frac{\abs{\bs{\cveciiix12{-3} - \cveciiix{-1}6{-1}} \crossp \cveciiix2{-2}1}}{\abs{\cveciiix2{-2}1}} = \frac1{\sqrt{9}} \abs{\cveciii2{-4}{-2} \crossp \cveciii{2}{-2}1}\\
-            = \frac23 \abs{\cveciii{-1}21 \crossp \cveciii2{-2}1} = \frac23 \abs{\cveciii43{-2}} = \frac23 \sqrt{29} \units.
-        \end{gather*}
+        \begin{align*}
+            \frac{\abs{\bs{\cveciiix12{-3} - \cveciiix{-1}6{-1}} \crossp \cveciiix2{-2}1}}{\abs{\cveciiix2{-2}1}} &= \frac1{\sqrt{9}} \abs{\cveciii2{-4}{-2} \crossp \cveciii{2}{-2}1}\\
+            &= \frac23 \abs{\cveciii{-1}21 \crossp \cveciii2{-2}1}\\
+            &= \frac23 \abs{\cveciii43{-2}}\\
+            &= \frac23 \sqrt{29} \units.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Observe that $l_3$ passes through the midpoint of $\cveciiix12{-3}$ and $\cveciiix{-1}6{-1}$, which evaluates to \[\frac12 \bs{\cveciii12{-3} + \cveciii{-1}6{-1}} = \cveciii04{-2}.\] $l_3$ is also parallel to both $l_1$ and $l_2$. Hence, \[l_3 : \vec r = \cveciii04{-2} + \n \cveciii2{-2}1, \, \n \in \RR.\]
@@ -93,12 +102,11 @@
     A first order recurrence relation is given as \[u_{n+1} \bs{u_n + \bp{\frac12}^n} + u_n \bs{\bp{\frac12}^{n+1} - 10} = 10\bp{\frac12}^n - \bp{\frac12}^{2n+1} - 16\] where $u_1$ = 1.
 
     \begin{enumerate}
-        \item Using the substitution $u_n = \frac{v_n}{v_{n-1}} - \bp{\frac12}^n$ where $v_{n-1} \neq 0$, show that the recurrence relation can be expressed as a second order recurrence relation of the form $v_{n+1} + av_n + 16v_{n-1} = 0$, where $a$ is a constant to be found.
+        \item Using the substitution $u_n = v_n/v_{n-1} - \bp{\frac12}^n$ where $v_{n-1} \neq 0$, show that the recurrence relation can be expressed as a second order recurrence relation of the form $v_{n+1} + av_n + 16v_{n-1} = 0$, where $a$ is a constant to be found.
         \item By first solving the second order recurrence relation in (a), find an expression for $u_n$ in terms of $n$.
         \item Describe what happens to the value of $u_n$ for large values of $n$.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Substituting in $v_n$ for $u_n$ into the LHS of the recurrence relation, we get
@@ -115,10 +123,13 @@
         Consider $u_1$. \[u_1 = \frac{v_1}{v_0} - \frac12 = 1 \implies  \frac{2A + 8B}{A + B} = \frac32 \implies \frac{4A + 16B}{A + B} = 3 \implies A = -13B.\]
         
         Now observe that
-        \begin{gather*}
-            \frac{v_n}{v_{n-1}} = \frac{A \cdot 2^n + B \cdot 8^n}{A \cdot 2^{n-1} + B \cdot 8^{n-1}} = \frac{-13 \cdot 2^n + 8^n}{-13 \cdot 2^{n-1} + 8^{n-1}} = 8\bp{\frac{-13 \cdot 2^n + 8^n}{-52 \cdot 2^n + 8^n}} \\
-            = 8\bp{1 + \frac{39 \cdot 2^n}{-52 \cdot 2^n +  8^n}} = 8 - \frac{312 \cdot 2^n}{52 \cdot 2^n - 8^n}.
-        \end{gather*}
+        \begin{align*}
+            \frac{v_n}{v_{n-1}} &= \frac{A \cdot 2^n + B \cdot 8^n}{A \cdot 2^{n-1} + B \cdot 8^{n-1}}\\
+            &= \frac{-13 \cdot 2^n + 8^n}{-13 \cdot 2^{n-1} + 8^{n-1}}\\
+            &= 8\bp{\frac{-13 \cdot 2^n + 8^n}{-52 \cdot 2^n + 8^n}} \\
+            &= 8\bp{1 + \frac{39 \cdot 2^n}{-52 \cdot 2^n +  8^n}}\\
+            &= 8 - \frac{312 \cdot 2^n}{52 \cdot 2^n - 8^n}.
+        \end{align*}
         Thus, \[u_n = \frac{v_n}{v_{n-1}} - \bp{\frac12}^n = 8 - \frac{312 \cdot 2^n}{52 \cdot 2^n - 8^n} - \bp{\frac12}^n.\]
     \end{ppart}
     \begin{ppart}

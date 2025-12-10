@@ -7,7 +7,7 @@
         \centering
         \begin{tabular}{|l|l|l|l|}
         \hline
-        & \multicolumn{3}{|c|}{Units Per Gram} \\\hline
+        & \multicolumn{3}{c}{Units Per Gram} \\\hline
         & Food A & Food B & Food C \\\hline
         Calcium & 15 & 20 & 24 \\\hline
         Iron & 0.2 & 0.15 & 0.28 \\\hline
@@ -25,15 +25,7 @@
     By expressing $\frac{3x^2 + 2x - 12}{x-1} - (x+2)$ as a single simplified fraction, solve the inequality \[\frac{3x^2 + 2x - 12}{x-1} \geq x + 2,\] without using a calculator.
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        \frac{3x^2+2x-12}{x-1} - (x+2) = \frac{3x^2 + 2x - 12 - (x+2)(x-1)}{x-1}\\
-        = \frac{3x^2 + 2x - 12 - (x^2 + x - 2)}{x-1} = \frac{2x^2 + x - 10}{x-1} = \frac{(x-2)(2x+5)}{x-1}.
-    \end{gather*}
-    Consider the inequality.
-    \begin{gather*}
-        \frac{3x^2 + 2x - 12}{x-1} \geq x + 2 \implies \frac{3x^2 + 2x - 12}{x-1} - (x+2) \geq 0\\
-        \implies \frac{(x-2)(2x+5)}{x-1} \geq 0 \implies (x-2)(2x+5)(x-1) \geq 0
-    \end{gather*}
+    We have \[\frac{3x^2+2x-12}{x-1} - (x+2) = \frac{(x-2)(2x+5)}{x-1}.\] Rearranging terms, the given inequality becomes \[\frac{(x-2)(2x+5)}{x-1} = \frac{3x^2+2x-12}{x-1} - (x+2) \geq 0,\] which is equivalent to \[(x-2)(2x+5)(x-1) \geq 0.\]
     Hence, $-5/2 \leq x < 1$ or $x \geq 2$.
 \end{solution}
 
@@ -45,14 +37,17 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \begin{gather*}
-            \sum_{r=-n}^n (r+1)(r+3) = \sum_{r=0}^{2n} (r-n+1)(r-n+3) = \sum_{r=0}^{2n} \bs{r^2 + r(4-2n) + (n^2 - 4n + 3)}\\
-            = \frac{(2n)(2n+1)(4n+1)}{6} + (4-2n) \, \frac{(2n)(2n+1)}2 + (n^2 - 4n + 3) (2n+1)\\
-            = (2n+1)\bs{\frac{n(4n+1)}{3} + (4-2n)(n) + (n^2 - 4n + 3)} = \frac{2n+1}{3} \bp{n^2 + n +9}.
-        \end{gather*}
+        \begin{align*}
+            &\sum_{r=-n}^n (r+1)(r+3)\\
+            &\hspace{1em}= \sum_{r=0}^{2n} (r-n+1)(r-n+3)\\
+            &\hspace{1em}= \sum_{r=0}^{2n} \bs{r^2 + r(4-2n) + (n^2 - 4n + 3)}\\
+            &\hspace{1em}= \frac{(2n)(2n+1)(4n+1)}{6} + (4-2n) \, \frac{(2n)(2n+1)}2 + (n^2 - 4n + 3) (2n+1)\\
+            &\hspace{1em}= (2n+1)\bs{\frac{n(4n+1)}{3} + (4-2n)(n) + (n^2 - 4n + 3)}\\
+            &\hspace{1em}= \frac{2n+1}{3} \bp{n^2 + n +9}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
-        \[\sum_{r=1}^\infty \frac{(-1)^{r+1} x^r}{r 2^r} = \sum_{r=1}^\infty \frac{(-1)^{r+1} (x/2)^r}{r} = \ln{1 + \frac{x}2}.\] Range of convergence: $-1 < x/2 \leq 1 \implies -2 < x \leq 2$.
+        \[\sum_{r=1}^\infty \frac{(-1)^{r+1} x^r}{r 2^r} = \sum_{r=1}^\infty \frac{(-1)^{r+1} (x/2)^r}{r} = \ln{1 + \frac{x}2}.\] For convergence, we require $-1 < x/2 \leq 1$, i.e. $-2 < x \leq 2$.
     \end{ppart}
 \end{solution}
 
@@ -112,14 +107,9 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \case{1}[$3x^2 + 5x - 8 = 4-x$]
-        \begin{gather*}
-            3x^2 + 5x - 8 = 4-x \implies 3x^2 + 6x - 12 = 0 \implies x^2 + 2x - 4 = 0.
-        \end{gather*}
-        By the quadratic formula, we get \[x = -1\pm\sqrt5.\]
+        \case{1}[$3x^2 + 5x - 8 = 4-x$] Then $3(x^2 + 2x - 4) = 0$. By the quadratic formula, we get $x = -1\pm\sqrt5$.
 
-        \case{2}[$3x^2 + 5x - 8 = -(4-x)$]
-        \[3x^2 + 5x - 8 = -4 + x \implies 3x^2 + 4x - 4 = (3x-2)(x+2) = 0 \implies x = \frac23 \tor -2.\]
+        \case{2}[$3x^2 + 5x - 8 = -(4-x)$] Then $3x^2 + 4x - 4 = (3x-2)(x+2) = 0$. Thus, $x = 2/3$ or $x = -2$.
 
         Hence, the roots are $x = -1\pm\sqrt5$, $2/3$ and $-2$.
     \end{ppart}
@@ -237,9 +227,8 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            From the graph, we clearly have \[x < -2 \tor 0 < x < 2.\]
+            From the graph, we clearly have $x < -2$ or $0 < x < 2$.
         \end{psubpart}
-        \clearpage
         \begin{psubpart}
             \begin{center}\tikzsetnextfilename{9}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -270,6 +259,7 @@
                 \end{tikzpicture}
             \end{center}
         \end{psubpart}
+        \clearpage
         \begin{psubpart}
             \begin{center}\tikzsetnextfilename{10}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -332,6 +322,7 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     The shaded region $R$ is bounded by the lines $y = 2x$, $y = \frac32$, the $x$-axis and the curve $y = \sqrt{\frac{3x^2 - 1}{x^2}}$.
 
@@ -383,10 +374,12 @@
 \begin{solution}
     \begin{ppart}
         Note that \[x = \frac1{\sqrt3} \sec \t \implies \d x = \frac1{\sqrt3} \sec\t\tan\t \d \t,\] with the bounds of integration going from $\t = 0$ to $\pi/3$.
-        \begin{gather*}
-            \int_{1/\sqrt{3}}^{2/\sqrt3} \sqrt{\frac{3x^2-1}{x^2}} \d x = \int_0^{\pi/3} \sqrt{\frac{\tan^2 \t}{\frac13 \sec^2 \t}} \frac1{\sqrt3} \sec \t \tan \t \d \t = \int_0^{\pi/3} \tan^2 \t \d \t\\
-            = \int_0^{\pi/3} \bp{\sec^2 \t - 1} \d \t = \evalint{\tan \t - t}{0}{\pi/3} = \sqrt3 - \frac\pi3.
-        \end{gather*}
+        \begin{align*}
+            \int_{1/\sqrt{3}}^{2/\sqrt3} \sqrt{\frac{3x^2-1}{x^2}} \d x &= \int_0^{\pi/3} \sqrt{\frac{\tan^2 \t}{\frac13 \sec^2 \t}} \frac1{\sqrt3} \sec \t \tan \t \d \t\\
+            &= \int_0^{\pi/3} \tan^2 \t \d \t\\
+            &= \int_0^{\pi/3} \bp{\sec^2 \t - 1} \d \t\\
+            &= \evalint{\tan \t - \t}{0}{\pi/3} = \sqrt3 - \frac\pi3.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         \[\area R = \underbrace{\frac12 \bs{\frac2{\sqrt3} + \bp{\frac2{\sqrt3} - \frac34}}\frac32}_{\text{area of trapezium}} - \int_{1/\sqrt3}^{2/\sqrt3} \sqrt{\frac{3x^2 - 1}{x^2}} \d x = \frac\pi3 - \frac{9}{16} \units[2].\]
@@ -399,11 +392,12 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     It is given that $y = \arccos{2x} \arcsin{2x}$, where $-0.5 \leq x \leq 0.5$, and $\arccos{2x}$ and $\arcsin{2x}$ denote their principal values.
     \begin{enumerate}
-        \item Show that $\bp{1-4x^2} \der[2]{y}{x} - 4x \bp{\der{y}{x}} + 8 = 0$. Hence, find the MacLaurin series for $y$ up to and including the term in $x^3$, giving the coefficients in exact form.
-        \item Use your expansion from part (a) and integration to find an approximate value for $\int_{0.1}^{0.2} \bp{\frac2x}^3 \arccos{2x}\arcsin{2x} \d x$, correct to 4 decimal places.
+        \item Show that \[\bp{1-4x^2} \der[2]{y}{x} - 4x \bp{\der{y}{x}} + 8 = 0.\] Hence, find the Maclaurin series for $y$ up to and including the term in $x^3$, giving the coefficients in exact form.
+        \item Use your expansion from part (a) and integration to find an approximate value for \[\int_{0.1}^{0.2} \bp{\frac2x}^3 \arccos{2x}\arcsin{2x} \d x,\] correct to 4 decimal places.
         \item A student, Adam, claims that the approximation in part (b) is accurate. Without performing any further calculations, justify whether Adam's claim is valid.
         \item Suggest one way to improve the accuracy of the approximated value obtained in part (b).
     \end{enumerate}
@@ -411,24 +405,27 @@
 \begin{solution}
     \begin{ppart}
         Differentiating $y$ with respect to $x$, \[y' = 2 \bp{\frac{\arccos{2x} - \arcsin{2x}}{\sqrt{1-4x^2}}}.\] Differentiating once more, 
-        \begin{gather*}
-            y'' = \frac{2}{\sqrt{1-4x^2}} \bp{-\frac{4}{\sqrt{1-4x^2}}} + \frac{2\bs{\arccos{2x} - \arcsin{2x}}  (-8x)}{-2 \bp{1-4x^2}^{3/2}} \\
-            = \frac1{1 - 4x^2} \bs{-8 + 4x \cdot \frac{2\bs{\arccos{2x} - \arcsin{2x}}}{\sqrt{1-4x^2}}} = \frac1{1-4x^2} \bp{-8 + 4xy'}.
-        \end{gather*}
-        Hence, \[\bp{1-4x^2} y'' - 4xy' + 8 = 0.\] Differentiating with respect to $x$, we get \[\bp{1-4x^2} y''' - 12xy'' - 4y' = 0.\] Evaluating $y$, $y'$, $y''$ and $y'''$ at $x = 0$, we get \[y(0) = 0, \quad y'(0) = \pi, \quad y''(0) = -8, \quad y'''(0) = 4\pi.\] Hence, \[y = \pi x - 4x^2 + \frac23 \pi x^3 + \cdots.\].
+        \begin{align*}
+            y'' &= \frac{2}{\sqrt{1-4x^2}} \bp{-\frac{4}{\sqrt{1-4x^2}}} + \frac{2\bs{\arccos{2x} - \arcsin{2x}}  (-8x)}{-2 \bp{1-4x^2}^{3/2}} \\
+            &= \frac1{1 - 4x^2} \bs{-8 + 4x \cdot \frac{2\bs{\arccos{2x} - \arcsin{2x}}}{\sqrt{1-4x^2}}}\\
+            &= \frac1{1-4x^2} \bp{-8 + 4xy'}.
+        \end{align*}
+        Hence, \[\bp{1-4x^2} y'' - 4xy' + 8 = 0.\] Differentiating with respect to $x$, we get \[\bp{1-4x^2} y''' - 12xy'' - 4y' = 0.\] Evaluating $y$, $y'$, $y''$ and $y'''$ at $x = 0$, we get \[y(0) = 0, \quad y'(0) = \pi, \quad y''(0) = -8, \quad y'''(0) = 4\pi.\] Hence, \[y = \pi x - 4x^2 + \frac23 \pi x^3 + \cdots.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \int_{0.1}^{0.2} \bp{\frac2x}^3 \arccos{2x}\arcsin{2x} \d x = 8 \int_{0.1}^{0.2} x^{-3} \arccos{2x}\arcsin{2x} \d x\\
-            \approx 8 \int_{0.1}^{0.2} x^{-3} \bs{\pi x - 4x^2 + \frac23 \pi x^3} \d x = 8 \int_{0.1}^{0.2} \bp{\pi x^{-2} - 4x^{-1} + \frac23 \pi x} \d x\\
-            = 8 \evalint{-\frac\pi{x} - 4\ln\abs{x} + \frac23 \pi x}{0.1}{0.2} = 105.1585 \todp{4}.
-        \end{gather*}
+        \begin{align*}
+            \int_{0.1}^{0.2} \bp{\frac2x}^3 \arccos{2x}\arcsin{2x} \d x &= 8 \int_{0.1}^{0.2} x^{-3} \arccos{2x}\arcsin{2x} \d x\\
+            &\approx 8 \int_{0.1}^{0.2} x^{-3} \bs{\pi x - 4x^2 + \frac23 \pi x^3} \d x\\
+            &= 8 \int_{0.1}^{0.2} \bp{\pi x^{-2} - 4x^{-1} + \frac23 \pi x} \d x\\
+            &= 8 \evalint{-\frac\pi{x} - 4\ln\abs{x} + \frac23 \pi x}{0.1}{0.2}\\
+            &= 105.1585 \todp{4}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Adam's claim is valid. Since the approximation for $\arccos{2x}\arcsin{2x}$ is accurate for $x$ near 0, and we are integrating over $(0.1, 0.2)$ (which is close to 0), the integral approximation should also be accurate.
     \end{ppart}
     \begin{ppart}
-        Consider more terms in the MacLaurin series of $y = \arccos{2x}\arcsin{2x}$ and use the improved series in the approximation for the integral.
+        Consider more terms in the Maclaurin series of $y = \arccos{2x}\arcsin{2x}$ and use the improved series in the approximation for the integral.
     \end{ppart}
 \end{solution}
 
@@ -453,13 +450,7 @@
     \begin{ppart}
         For $\inv f$ to exist, $f$ must be one-one. Since $\frac13 \pi$ is the first maximum point of $f$, it is the largest value of $k$. 
 
-        Let $y = f(x)$.
-        \begin{gather*}
-            3\sin{2x - \frac16 \pi} = y \implies \sin{2x - \frac16 \pi} = \frac{y}3\\
-            \implies 2x - \frac16 \pi = \arcsin{\frac{y}3} \implies x = \frac12 \arcsin{\frac{y}3} + \frac1{12} \pi.
-        \end{gather*}
-
-        Hence, \[\inv f(x) = \frac12 \arcsin{\frac{x}3} + \frac1{12} \pi.\]
+        Let $y = f(x)$. Then \[3\sin{2x - \frac16 \pi} = y \implies 2x - \frac16 \pi = \arcsin{\frac{y}3} \implies x = \frac12 \arcsin{\frac{y}3} + \frac1{12} \pi.\] Hence, \[\inv f(x) = \frac12 \arcsin{\frac{x}3} + \frac1{12} \pi.\]
     \end{ppart}
     \clearpage
     \begin{ppart}
@@ -524,10 +515,10 @@
 \begin{problem}
     \begin{enumerate}
         \item \begin{enumerate}
-            \item Express $\frac{2x}{(x+1)(x^2 + 1)} = \frac{A}{x+1} + \frac{Bx + c}{x^2 + 1}$, where $A$, $B$ and $C$ are constants to be found.
-            \item Evaluate $\int_0^1 \frac{\ln{1+x^2}}{(x+1)^2} \d x$, giving your answer in the form $a\pi - \ln b$, where $a$ and $b$ are positive constants to be found.
+            \item Express \[\frac{2x}{(x+1)(x^2 + 1)} = \frac{A}{x+1} + \frac{Bx + c}{x^2 + 1},\] where $A$, $B$ and $C$ are constants to be found.
+            \item Evaluate \[\int_0^1 \frac{\ln{1+x^2}}{(x+1)^2} \d x,\] giving your answer in the form $a\pi - \ln b$, where $a$ and $b$ are positive constants to be found.
         \end{enumerate}
-        \item Find $\int \sin[3]{kx} \d x$, where $k$ is a constant.
+        \item Find \[\int \sin[3]{kx} \d x,\] where $k$ is a constant.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -542,20 +533,22 @@
         \end{psubpart}
         \begin{psubpart}
             Note that \[\frac{x+1}{x^2 + 1} = \frac12 \bp{\frac{2x}{x^2 + 1} + \frac{2}{x^2 + 1}}.\] Hence, 
-            \begin{gather*}
-                \int_0^1 \frac{2x}{(x+1)(x^2 + 1)} \d x = \int_0^1 \bs{-\frac1{x+1} + \frac12 \bp{\frac{2x}{x^2 + 1} + \frac{2}{x^2 + 1}}} \d x \\
-                = \evalint{-\ln \abs{x+1} + \frac12 \bp{\ln{x^2 + 1} + 2\arctan x}}01 = -\frac{\ln 2}{2} + \frac\pi4.
-            \end{gather*}
+            \begin{align*}
+                \int_0^1 \frac{2x}{(x+1)(x^2 + 1)} \d x &= \int_0^1 \bs{-\frac1{x+1} + \frac12 \bp{\frac{2x}{x^2 + 1} + \frac{2}{x^2 + 1}}} \d x \\
+                &= \evalint{-\ln \abs{x+1} + \frac12 \bp{\ln{x^2 + 1} + 2\arctan x}}01\\
+                &= -\frac{\ln 2}{2} + \frac\pi4.
+            \end{align*}
             Thus, 
-            \begin{gather*}
-                \int_0^1 \frac{\ln{1+x^2}}{(x+1)^2} \d x = \evalint{-\frac{\ln{1+x^2}}{x+1}}{0}{1} + \int_0^1 \frac{2x}{(x+1)(x^2 + 1)} \d x\\
-                = -\frac{\ln2}2 + \bp{-\frac{\ln 2}{2} + \frac\pi2.} = -\ln 2 + \frac\pi4.
-            \end{gather*}
+            \begin{align*}
+                \int_0^1 \frac{\ln{1+x^2}}{(x+1)^2} \d x &= \evalint{-\frac{\ln{1+x^2}}{x+1}}{0}{1} + \int_0^1 \frac{2x}{(x+1)(x^2 + 1)} \d x\\
+                &= -\frac{\ln2}2 + \bp{-\frac{\ln 2}{2} + \frac\pi2}\\
+                &= -\ln 2 + \frac\pi4.
+            \end{align*}
             Hence, $a = \frac14$ and $b = 2$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Note that $\sin 3u = 3\sin u - 4\sin^3 u$, whence $\sin^3 u = \frac{3\sin u - \sin 3u}{4}$.
+        Note that $\sin 3u = 3\sin u - 4\sin^3 u$, whence $\sin^3 u = (3\sin u - \sin 3u)/4$.
         \begin{align*}
             \int \sin[3]{kx} \d x = \int \frac{3\sin{kx} - \sin{3kx}}{4} \d x = \frac{-3\cos{kx} + \frac13 \cos{3kx}}{4k} + C.
         \end{align*}

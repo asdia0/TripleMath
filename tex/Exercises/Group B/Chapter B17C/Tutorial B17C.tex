@@ -228,19 +228,19 @@
             Hence, the characteristic polynomial of $\mat A$ is $-\l^3 - 2 \l^2 + \l + 2$. Solving, we have $\l_1 = -2$, $\l_2 = -1$ and $\l_3 = 1$.
 
             Note that \[\mat A - \l_i \mat I = \begin{pmatrix}-\l_i & -1 & 0 \\ -4 & -9 - \l_i & -6 \\ 5 & 11 & 7 - \l_i\end{pmatrix}.\] Hence, we take
-            \begin{gather*}
-                \vec e_1 = \frac16 \cveciii{- (-2)}{-1}{0} \crossp \cveciii{-4}{-9 - (-2)}{-6} = \cveciii12{-3},\\
-                \vec e_2 = \frac16 \cveciii{- (-1)}{-1}{0} \crossp \cveciii{-4}{-9 - (-1)}{-6} = \cveciii11{-2}\\
-                \vec e_3 = \frac16 \cveciii{-1}{-1}0 \crossp \cveciii{-4}{-9 - 1}{-6} = \cveciii1{-1}1.
-            \end{gather*}
+            \begin{align*}
+                \vec e_1 &= \frac16 \cveciii{- (-2)}{-1}{0} \crossp \cveciii{-4}{-9 - (-2)}{-6} = \cveciii12{-3},\\
+                \vec e_2 &= \frac16 \cveciii{- (-1)}{-1}{0} \crossp \cveciii{-4}{-9 - (-1)}{-6} = \cveciii11{-2}\\
+                \vec e_3 &= \frac16 \cveciii{-1}{-1}0 \crossp \cveciii{-4}{-9 - 1}{-6} = \cveciii1{-1}1.
+            \end{align*}
         \end{psubpart}
         \begin{psubpart}
             Note that $\mat A + \mat B = \mat P \mat E \mat P^{-1}$, where \[\mat P = \begin{pmatrix}\vec e_1 & \vec e_2 & \vec e_3 \end{pmatrix} = \begin{pmatrix}1 & 1 & 1 \\ 2 & 1 & -1 \\ -3 & -2 & 1\end{pmatrix}\] and \[\mat E = \begin{pmatrix}\l_1 + \m_1 & 0 & 0 \\ 0 & \l_2 + \m_2 & 0 \\ 0 & 0 & \l_3 + \m_3\end{pmatrix} = \begin{pmatrix}-5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2\end{pmatrix}.\] Hence, $\bp{\mat A + \mat B}^5 = \mat P \mat E^5 \mat P^{-1} = \mat R \mat D \mat S$. We thus take
-            \begin{gather*}
-                \mat R = \mat P = \begin{pmatrix}1 & 1 & 1 \\ 2 & 1 & -1 \\ -3 & -2 & 1\end{pmatrix},\\
-                \mat S = \mat P^{-1} = \begin{pmatrix}1 & 3 & 2 \\ -1 & -4 & -3 \\ 1 & 1 & 1\end{pmatrix},\\
-                \mat D = \mat E^5 = \begin{pmatrix}-3125 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 32\end{pmatrix}.
-            \end{gather*}
+            \begin{align*}
+                \mat R &= \mat P = \begin{pmatrix}1 & 1 & 1 \\ 2 & 1 & -1 \\ -3 & -2 & 1\end{pmatrix},\\
+                \mat S &= \mat P^{-1} = \begin{pmatrix}1 & 3 & 2 \\ -1 & -4 & -3 \\ 1 & 1 & 1\end{pmatrix},\\
+                \mat D &= \mat E^5 = \begin{pmatrix}-3125 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 32\end{pmatrix}.
+            \end{align*}
         \end{psubpart}
     \end{ppart}
 \end{solution}
@@ -264,10 +264,11 @@
 \begin{solution}
     \begin{ppart}
         Observe that
-        \begin{gather*}
-            \bp{\mat A + \mat A^2 + \mat A^3 + \mat A^4} \vec x = \mat A \vec x + \mat A^2 \vec x + \mat A^3 \vec x + \mat A^4 \vec x\\
-            = \l \vec x + \l^2 \vec x + \l^3 \vec x + \l^4 \vec x = \bp{\l + \l^2 + \l^3 + \l^4} \vec x.
-        \end{gather*}
+        \begin{align*}
+            \bp{\mat A + \mat A^2 + \mat A^3 + \mat A^4} \vec x &= \mat A \vec x + \mat A^2 \vec x + \mat A^3 \vec x + \mat A^4 \vec x\\
+            &= \l \vec x + \l^2 \vec x + \l^3 \vec x + \l^4 \vec x\\
+            &= \bp{\l + \l^2 + \l^3 + \l^4} \vec x.
+        \end{align*}
         Hence, $\vec x$ is also an eigenvector of $\mat A + \mat A^2 + \mat A^3 + \mat A^4$ with corresponding eigenvalue $\l + \l^2 + \l^3 + \l^4$.
     \end{ppart}
     \begin{ppart}
@@ -369,10 +370,11 @@
         \end{psubpart}
         \begin{psubpart}
             Note that \[\mat A^{-1} \mat B \vec e_i = \mat A^{-1} \m_i \vec e_i = \frac{\m_i}{\l_i} \vec e_i.\] Thus,
-            \begin{gather*}
-                \mat C \vec e_1 = \bs{\mat I + \mat A^{-1} \mat B + \bp{\mat A^{-1} \mat B}^2 + \dots + \bp{\mat A^{-1} \mat B}^n} \vec e_1\\
-                = \bs{1 + \frac{\m_1}{\l_1} + \bp{\frac{\m_1}{\l_1}}^2 + \dots + \bp{\frac{\m_1}{\l_1}}^n} \vec e = \frac{(\m_1/\l_1)^{n+1} - 1}{\m_1/\l_1 - 1} \vec e_1.
-            \end{gather*}
+            \begin{align*}
+                \mat C \vec e_1 &= \bs{\mat I + \mat A^{-1} \mat B + \bp{\mat A^{-1} \mat B}^2 + \dots + \bp{\mat A^{-1} \mat B}^n} \vec e_1\\
+                &= \bs{1 + \frac{\m_1}{\l_1} + \bp{\frac{\m_1}{\l_1}}^2 + \dots + \bp{\frac{\m_1}{\l_1}}^n} \vec e\\
+                &= \frac{(\m_1/\l_1)^{n+1} - 1}{\m_1/\l_1 - 1} \vec e_1.
+            \end{align*}
             Thus, the eigenvalue corresponding to $\vec e_1$ is $\frac{(\m_1/\l_1)^{n+1} - 1}{\m_1/\l_1 - 1}$.
         \end{psubpart}
     \end{ppart}

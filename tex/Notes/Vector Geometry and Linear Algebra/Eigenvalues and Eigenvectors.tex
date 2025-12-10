@@ -212,10 +212,12 @@ One of the more useful purposes of diagonalization is to compute matrix powers.
 \end{proposition}
 \begin{proof}
     Observe that
-    \begin{gather*}
-        \mat A^k = \bp{\mat Q \mat D \mat Q^{-1}}\bp{\mat Q \mat D \mat Q^{-1}}\dots\bp{\mat Q \mat D \mat Q^{-1}} = \mat Q \mat D \bp{\mat Q^{-1} \mat Q} \mat D \bp{\mat Q^{-1} \mat Q} \dots \mat D \mat Q^{-1}\\
-        = \mat Q \mat D \mat D \dots \mat D \mat Q^{-1} = \mat Q \mat D^{k} \mat Q^{-1}.
-    \end{gather*}
+    \begin{align*}
+        \mat A^k &= \underbrace{\bp{\mat Q \mat D \mat Q^{-1}}\bp{\mat Q \mat D \mat Q^{-1}}\dots\bp{\mat Q \mat D \mat Q^{-1}}}_{\text{$k$ times}}\\
+        &= \mat Q \mat D \bp{\mat Q^{-1} \mat Q} \mat D \bp{\mat Q^{-1} \mat Q} \dots \mat D \mat Q^{-1}\\
+        &= \mat Q \underbrace{\mat D \mat D \dots \mat D}_{\text{$k$ times}} \mat Q^{-1}\\
+        &= \mat Q \mat D^{k} \mat Q^{-1}.
+    \end{align*}
 \end{proof}
 
 \begin{sample}

@@ -40,10 +40,12 @@
     \end{ppart}
     \begin{ppart}
         We have
-        \begin{gather*}
-            \E{X^2} = \int_{-\infty}^\infty x^2 f(x) \d x = \int_0^\infty \l x^2 \e^{-\l x} \d x\\
-            = \evalint{-x^2 \e^{-\l x}}0\infty + \frac2{\l} \int_0^\infty \l x \e^{-\l x} \d x= \frac2\l \E{X} = \frac2{\l^2}.
-        \end{gather*}
+        \begin{align*}
+            \E{X^2} &= \int_{-\infty}^\infty x^2 f(x) \d x\\
+            &= \int_0^\infty \l x^2 \e^{-\l x} \d x\\
+            &= \evalint{-x^2 \e^{-\l x}}0\infty + \frac2{\l} \int_0^\infty \l x \e^{-\l x} \d x\\
+            &= \frac2\l \E{X} = \frac2{\l^2}.
+        \end{align*}
         Thus, \[\Var{X} = \E{X^2} - \E{X}^2 = \frac2{\l^2} - \bp{\frac1\l}^2 = \frac1{\l^2}.\]
     \end{ppart}
     \begin{ppart}
@@ -128,19 +130,22 @@
         x, & 0 \leq x \leq 1,\\
         1, & x > 1,
     \end{cases}\] we have
-    \begin{gather*}
-        F_Y(y) = \P{Y \leq y} = \P{\e^{-X} \leq y} = \P{X \geq -\ln y} = 1 - \P{X \leq -\ln y} \\
-        = \begin{cases}
+    \begin{align*}
+        F_Y(y) &= \P{Y \leq y}\\
+        &= \P{\e^{-X} \leq y}\\
+        &= \P{X \geq -\ln y}\\
+        &= 1 - \P{X \leq -\ln y} \\
+        &= \begin{cases}
             1, & -\ln y < 0,\\
             1 + \ln y, & 0 \leq -\ln y \leq 1,\\
             0, & -\ln y > 1,
-        \end{cases}
-        = \begin{cases}
+        \end{cases}\\
+        &= \begin{cases}
             1, & y > 1,\\
             1 + \ln y, & \e^{-1} \leq y \leq 1,\\
             0, & y < \e^{-1}.
         \end{cases}
-    \end{gather*}
+    \end{align*}
 
     Differentiating, we obtain the pdf of $y$: \[f_Y(y) = \begin{cases}
         \frac1{y}, & \e^{-1} \leq y \leq 1,\\
@@ -177,18 +182,22 @@
         \frac{u}{f} - 2, & 2f \leq u \leq 3f,\\
         1, & u > 3f.
     \end{cases}\] Note also that \[\frac1u + \frac1v = \frac1f \implies v = \frac{uf}{u-f}.\] Thus,
-    \begin{gather*}
-        F_V(v) = \P{V < v} = \P{\frac{uf}{u-f} < v} = \P{u > \frac{vf}{v-f}} = 1 - \P{u < \frac{vf}{v-f}}\\
-        = \begin{cases}
+    \begin{align*}
+        F_V(v) &= \P{V < v}\\
+        &= \P{\frac{uf}{u-f} < v}\\
+        &= \P{u > \frac{vf}{v-f}}\\
+        &= 1 - \P{u < \frac{vf}{v-f}}\\
+        &= \begin{cases}
             1, & \frac{vf}{v-f} < 2f,\\
             3 - \frac{v}{v-f}, & 2f \leq \frac{vf}{v-f} \leq 3f,\\
             0, & \frac{vf}{v-f} > 3f,
-        \end{cases} = \begin{cases}
+        \end{cases}\\
+        &= \begin{cases}
             1, & v > 2f,\\
             3 - \frac{v}{v-f}, & \frac32 f \leq v \leq 2f,\\
             0, & v < \frac32 f.
         \end{cases}
-    \end{gather*}
+    \end{align*}
     Differentiating, we obtain the pdf of $V$: \[f_V(v) = F'_V(v) = \begin{cases}
         \frac{f}{(v-f)^2}, & \frac32 f \leq v \leq 2f,\\
         0, & \ow.
@@ -224,10 +233,13 @@
     \end{cases}\] We are given that $\P{T > 2000} = 0.426$. Thus, \[0.574 = \P{T \leq 2000} = 1 - \e^{-2000/a} \implies a = 2340 \tosf{3}.\]
 
     Note that $\P{T > t} = \e^{-t/a}$. Thus,
-    \begin{gather*}
-        \P{T > t + c}{T > c} = \frac{\P{T > t + c \tand T > c}}{\P{T > c}}\\
-        = \frac{\P{T > t + c}}{\P{T > c}} = \frac{\e^{-(t + c)/a}}{\e^{-c/a}} = \e^{-t/a} = \P{T > t}
-    \end{gather*}
+    \begin{align*}
+        \P{T > t + c}{T > c} &= \frac{\P{T > t + c \tand T > c}}{\P{T > c}}\\
+        &= \frac{\P{T > t + c}}{\P{T > c}}\\
+        &= \frac{\e^{-(t + c)/a}}{\e^{-c/a}}\\
+        &= \e^{-t/a}\\
+        &= \P{T > t}.
+    \end{align*}
 
     \begin{ppart}
         The probability that all three lamps are working is given by \[\bs{\P{T > 480}}^3 = \bp{\e^{-480/2340}}^3 = 0.540 \tosf{3}.\]
@@ -321,7 +333,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     The weights of Sunny brand oranges are normally distributed with mean $\m$ grams and standard deviation $\s$ grams respectively. An inspection of a shipment of Sunny brand oranges shows that 37\% of the oranges have weights exceeding 379 grams and 40\% of the oranges have weights between 366 grams and 379 grams. Find $\m$ and $\s$.
 

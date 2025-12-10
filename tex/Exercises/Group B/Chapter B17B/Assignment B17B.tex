@@ -7,10 +7,12 @@
 \end{problem}
 \begin{solution}
     Let $T : \RR^2 \to \RR^2$ such that \[T\of{\cvecii{x}{y}} = \cvecii{x + my}{y}.\] Let $\a, \b \in \RR$. Observe that
-    \begin{gather*}
-        T\of{\a \cvecii{x_1}{y_1} + \b \cvecii{x_2}{y_2}} = T\of{\cvecii{\a x_1 + \b x_2}{\a y_1 + \b y_2}} = \cvecii{\a x_1 + \b x_2 + m \a y_1 + m \b y_2}{\a y_1 + \b y_2}\\
-        = \a \cvecii{x_1 + m y_1}{y_1} + \b \cvecii{x_2 + m y_2}{y_2} = \a T\of{\cvecii{x_1}{y_1}} + \b T\of{\cvecii{x_2}{y_2}}.
-    \end{gather*}
+    \begin{align*}
+        T\of{\a \cvecii{x_1}{y_1} + \b \cvecii{x_2}{y_2}} &= T\of{\cvecii{\a x_1 + \b x_2}{\a y_1 + \b y_2}}\\
+        &= \cvecii{\a x_1 + \b x_2 + m \a y_1 + m \b y_2}{\a y_1 + \b y_2}\\
+        &= \a \cvecii{x_1 + m y_1}{y_1} + \b \cvecii{x_2 + m y_2}{y_2}\\
+        &= \a T\of{\cvecii{x_1}{y_1}} + \b T\of{\cvecii{x_2}{y_2}}.
+    \end{align*}
     Hence, $T$ preserves both addition and scalar multiplication, whence it is a linear transformation.
 
     Note that \[T\of{\cvecii{x}{y}} = \cvecii{x + my}{y} = x \cvecii10 + y \cvecii{m}{1} = \begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix} \cvecii{x}{y}.\] Thus, \[\begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix}\] is the matrix representation of $T$.

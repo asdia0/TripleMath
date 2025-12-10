@@ -161,10 +161,12 @@
             1, &k = 0 \pmod{4}\\
             -1, &k = 2 \pmod{4}
     \end{cases}\] We hence have
-    \begin{gather*}
-        \cos 7\t = c^7 - 21c^5s^2 + 35c^3s^4 - 7cs^6 = c^7 - 21c^5\bp{1-c^2} + 35c^3\bp{1 - c^2}^2 - 7c\bp{1 - c^2}^3\\
-        = 64c^7 - 112c^5 + 56c^3 - 7c = 64\cos^7\t - 112\cos^5 + 56 \cos^3\t - 7\cos\t.
-    \end{gather*}
+    \begin{align*}
+        \cos 7\t &= c^7 - 21c^5s^2 + 35c^3s^4 - 7cs^6\\
+        &= c^7 - 21c^5\bp{1-c^2} + 35c^3\bp{1 - c^2}^2 - 7c\bp{1 - c^2}^3\\
+        &= 64c^7 - 112c^5 + 56c^3 - 7c\\
+        &= 64\cos^7\t - 112\cos^5 + 56 \cos^3\t - 7\cos\t.
+    \end{align*}
 
     Observe that we can manipulate the given equation into \[128x^7 - 224x^5 + 112x^3 - 14x + 1 = 0 \implies 64x^7 - 112x^5 + 56x^3 - 7x = -\frac12.\] Under the substitution $x = \cos \t$, we see that \[\cos 7\t = -\frac12 \implies 7\t = \frac23 \pi + 2\pi n \implies \t = \frac{2\pi}{21} (3n + 1),\] where $n \in \ZZ$. Taking $0 \leq n < 7$,
     \begin{align*}
@@ -178,10 +180,14 @@
 \end{problem}
 \begin{solution}
     Observe that \[\sum_{n=1}^N \sin(2n-1)\t = \Im \sum_{n=1}^N \bs{\cos(2n-1)\t + \i\sin(2n-1)\t} = \Im \sum_{n=1}^N z^{2n-1}.\] Since
-    \begin{gather*}
-        \sum_{n=1}^N z^{2n-1} = \frac1z \sum_{n=1}^N \bp{z^2}^n = \frac1z \bp{\frac{z^2 \bs{\bp{z^2}^N - 1}}{z^2 - 1}} = \frac{z^{2N} - 1}{z - z^{-1}}\\
-        = z^N \bp{\frac{z^N - z^{-N}}{z - z^{-1}}} = z^N \bp{\frac{2\i \sin N\t}{2\i \sin \t}} = z^N \bp{\frac{\sin N\t}{\sin \t}},
-    \end{gather*}
+    \begin{align*}
+        \sum_{n=1}^N z^{2n-1} &= \frac1z \sum_{n=1}^N \bp{z^2}^n\\
+        &= \frac1z \bp{\frac{z^2 \bs{\bp{z^2}^N - 1}}{z^2 - 1}}\\
+        &= \frac{z^{2N} - 1}{z - z^{-1}}\\
+        &= z^N \bp{\frac{z^N - z^{-N}}{z - z^{-1}}}\\
+        &= z^N \bp{\frac{2\i \sin N\t}{2\i \sin \t}}\\
+        &= z^N \bp{\frac{\sin N\t}{\sin \t}},
+    \end{align*}
     we have \[\sum_{n=1}^N \sin(2n-1)\t = \bp{\frac{\sin N\t}{\sin \t}}\Im{z^N} = \bp{\frac{\sin N\t}{\sin \t}} \sin N\t = \frac{\sin^2 N\t}{\sin \t}.\]
 \end{solution}
 
@@ -203,18 +209,22 @@
 \end{problem}
 \begin{solution}
     Note that
-    \begin{gather*}
-        z^k + \frac1{z^k} = z^k + z^{-k} = \bp{\e^{\i\t}}^k + \bp{\e^{\i \t}}^{-k} = \e^{\i k \t} + \e^{-\i k \t}\\
-        = \bs{\cos{k\t} + \i\sin{k\t}} + \bs{\cos{-k\t} + \i\sin{-k\t}} = 2\cos{k\t}.
-    \end{gather*}
+    \begin{align*}
+        z^k + \frac1{z^k} &= z^k + z^{-k}\\
+        &= \bp{\e^{\i\t}}^k + \bp{\e^{\i \t}}^{-k}\\
+        &= \e^{\i k \t} + \e^{-\i k \t}\\
+        &= \bs{\cos{k\t} + \i\sin{k\t}} + \bs{\cos{-k\t} + \i\sin{-k\t}}\\
+        &= 2\cos{k\t}.
+    \end{align*}
 
     Observe that
-    \begin{gather*}
-        \cos^8 \t = \frac1{256} (2\cos \t)^8 = \frac1{256} (z + z^{-1})^8 = \frac1{256} z^{-8} \bp{z^2 + 1}^8\\
-        = \frac1{256} \bp{z^{-8} + 8z^{-6} + 28z^{-4} + 56z^{-2} + 70 + 56z^2 + 28z^4 + 8z^6 + z^8}\\
-        = \frac1{128} \bs{\bp{\frac{z^8 + z^{-8}}2} + 8\bp{\frac{z^6 + z^{-6}}2} + 28\bp{\frac{z^4 + z^{-4}}2} + 56\bp{\frac{z^2 + z^{-2}}2} + \frac{70}2}\\
-        = \frac1{128} \bp{\cos 8\t + 8\cos 6\t + 28\cos 4\t + 56\cos 2\t + 35}.
-    \end{gather*}
+    \begin{align*}
+        \cos^8 \t &= \frac1{256} (2\cos \t)^8\\
+        &= \frac1{256} (z + z^{-1})^8 = \frac1{256} z^{-8} \bp{z^2 + 1}^8\\
+        &= \frac1{256} \bp{z^{-8} + 8z^{-6} + 28z^{-4} + 56z^{-2} + 70 + 56z^2 + 28z^4 + 8z^6 + z^8}\\
+        &= \frac1{128} \bs{\bp{\frac{z^8 + z^{-8}}2} + 8\bp{\frac{z^6 + z^{-6}}2} + 28\bp{\frac{z^4 + z^{-4}}2} + 56\bp{\frac{z^2 + z^{-2}}2} + \frac{70}2}\\
+        &= \frac1{128} \bp{\cos 8\t + 8\cos 6\t + 28\cos 4\t + 56\cos 2\t + 35}.
+    \end{align*}
 
     Note that we rewrite the equation as \[\cos 8\t + 8\cos6\t + 28\cos4\t + 56\cos2\t + 35 = 128\cos^8\t = 34.\] Thus, \[\cos\t = \sqrt[8]{\frac{34}{128}} \implies \t = 0.560 \tosf{3}.\]
 \end{solution}

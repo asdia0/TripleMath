@@ -84,11 +84,14 @@
 \end{problem}
 \begin{solution}
     Clearly, \[C = \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k \cos k\t, \quad S = \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k  \sin k\t.\] Hence,
-    \begin{gather*}
-        C + \i S = \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k (\cos k\t + \i\sin k\t) = \sum_{k = 0}^{2n} \binom{2n}{k} (-\e^{\i\t})^k = \bp{1 - \e^{\i\t}}^{2n}\\
-        = \bp{\e^{\i\t/2}}^{2n} \bp{\e^{-\i\t/2} - \e^{\i\t/2}}^{2n} = \e^{\i n \t} \bp{2\i \sin \frac\t2}^{2n} = \e^{\i n \t} (-4)^n \sin^{2n} \frac\t2\\
-        = (\cos n\t + \i\sin n\t) (-4)^n \sin^{2n} \frac\t2.
-    \end{gather*}
+    \begin{align*}
+        C + \i S &= \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k (\cos k\t + \i\sin k\t)\\
+        &= \sum_{k = 0}^{2n} \binom{2n}{k} (-\e^{\i\t})^k = \bp{1 - \e^{\i\t}}^{2n}\\
+        &= \bp{\e^{\i\t/2}}^{2n} \bp{\e^{-\i\t/2} - \e^{\i\t/2}}^{2n}\\
+        &= \e^{\i n \t} \bp{2\i \sin \frac\t2}^{2n}\\
+        &= \e^{\i n \t} (-4)^n \sin^{2n} \frac\t2\\
+        &= (\cos n\t + \i\sin n\t) (-4)^n \sin^{2n} \frac\t2.
+    \end{align*}
 
     Comparing real and imaginary parts, we have \[C = (-4)^n \cos{n\t} \sin^{2n} \frac\t2, \quad S = (-4)^n \sin{n\t} \sin^{2n} \frac\t2.\]
 \end{solution}

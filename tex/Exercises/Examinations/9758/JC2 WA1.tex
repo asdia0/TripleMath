@@ -64,10 +64,13 @@
     \end{ppart}
     \begin{ppart}
         Note that \[\oa{OM} = \oa{OA} + \oa{AM} = \oa{OA} + k \oa{AB} = \vec a + k \vec c.\] Also, \[\oa{ON} = \oa{OC} - \oa{NC} = \oa{OC} - s \oa{BC} = \oa{OC} - s \oa{AO} = \vec c + s \vec a.\] Thus, we have \[[\triangle OAM] = \frac12 \abs{\oa{OA} \crossp \oa{OM}} = \frac12 \abs{\vec a \crossp \bp{\vec a + k \vec c}} = \frac12 \abs{\vec a \crossp \vec a + k \vec a \crossp \vec c} = \frac{k}{2} \abs{\vec a \crossp \vec c}.\] Similarly,
-        \begin{gather*}
-            [\triangle OMN] = \frac12 \abs{\oa{OM} \crossp \oa{ON}} = \frac12 \abs{\bp{\vec a + k \vec c} \crossp \bp{\vec c + s \vec a}}\\
-            = \frac12 \abs{\vec a \crossp \vec c + s \vec a \crossp \vec a + k \vec c \crossp \vec c + k s \vec c \crossp \vec a} = \frac12 \abs{\vec a \crossp \vec c - ks \vec a \crossp \vec c} = \abs{\frac{1-ks}{2}} \abs{\vec a \crossp \vec c}.
-        \end{gather*}
-        Because $k, s \in (0, 1)$, it follows that $1-ks \in (0, 1)$ too. We can hence remove the modulus sign, whence we obtain \[\frac{k}{2} \abs{\vec a \crossp \vec c} = \l \bp{\frac{1-ks}{2} \abs{\vec a \crossp \vec c}} \implies \l = \frac{k}{1-ks}.\]
+        \begin{align*}
+            [\triangle OMN] &= \frac12 \abs{\oa{OM} \crossp \oa{ON}}\\
+            &= \frac12 \abs{\bp{\vec a + k \vec c} \crossp \bp{\vec c + s \vec a}}\\
+            &= \frac12 \abs{\vec a \crossp \vec c + s \vec a \crossp \vec a + k \vec c \crossp \vec c + k s \vec c \crossp \vec a}\\
+            &= \frac12 \abs{\vec a \crossp \vec c - ks \vec a \crossp \vec c}\\
+            &= \abs{\frac{1-ks}{2}} \abs{\vec a \crossp \vec c}.
+        \end{align*}
+        Because both $k, s \in (0, 1)$, it follows that $1-ks \in (0, 1)$ too. We can hence remove the modulus sign, whence we obtain \[\frac{k}{2} \abs{\vec a \crossp \vec c} = \l \bp{\frac{1-ks}{2} \abs{\vec a \crossp \vec c}} \implies \l = \frac{k}{1-ks}.\]
     \end{ppart}
 \end{solution}

@@ -72,10 +72,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \begin{align*}
-            &r = \frac1{1 - 2\cos\t} \implies r - 2r\cos\t = 1 \implies r = 2x + 1 \implies r^2 = 4x^2 + 4x + 1 \\
-            &\hspace{5em}\implies x^2 + y^2 = 4x^2 + 4x + 1 \implies y^2 = 3x^2 + 4x + 1.
-        \end{align*}
+        Clearing denominators, we get $r - 2r\cos\t = 1$, so $r = 2x + 1$. Since $r = \sqrt{x^2 + y^2}$, we have \[x^2 + y^2 = (2x+1)^2 \implies y^2 = 3x^2 + 4x + 1.\]
     \end{ppart}
     \begin{ppart}
         \[r = \sin\t \implies r^2 = r\sin\t \implies x^2 + y^2 = y.\]
@@ -451,11 +448,8 @@
     Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \pi/2$.
 \end{problem}
 \begin{solution}
-    \begin{gather*}
-        x^5 + y^5 = 5bx^2y^2 \implies (r\cos\t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2 \\
-        \implies r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t \sin^2\t \implies r = \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}.
-    \end{gather*}
-
+    Substituting $x = r\cos\t$ and $y = r\sin \t$, we have $(r\cos\t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2$. Dividing throughout by $r^4$, we get \[r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t \sin^2\t \implies r = \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}.\]
+    
     \begin{center}\tikzsetnextfilename{136}
         \begin{tikzpicture}[trim axis left, trim axis right]
             \begin{axis}[
@@ -566,10 +560,13 @@
     Observe that $\der{r}{\t} = \frac12a\e^{\frac12 \t} = \frac12r$. Hence, \[\der{y}{x} = \frac{\der{r}{\t} \sin\t + r\cos\t}{\der{r}{\t} \cos\t - r\sin\t} = \frac{\frac12r \sin\t + r\cos\t}{\frac12r \cos\t - r\sin\t} = \frac{\sin\t + 2\cos\t}{\cos\t - 2\sin\t} = \frac{\tan\t + 2}{1 - 2\tan\t}.\]
 
     Let $\vec t = \cvecii{T_1}{T_2}$ represent the direction of the tangent line. Then \[\vec t = \cvecii1{\derx{y}{x}} = \cvecii{1}{\frac{\tan \t + 2}{1 - 2\tan\t}} = \frac1{1 - 2\tan\t} \cvecii{1 - 2\tan\t}{\tan \t + 2}\] and \[\oa{OP} = \cvecii{x}{y} = \cvecii{a\e^{\frac12\t}\cos\t}{a\e^{\frac12\t}\sin\t} = a\e^{\frac12 \t}\cvecii{\cos\t}{\sin\t}.\] By the definition of the dot-product, we have $\vec t \dotp \oa{OP} = \abs{\vec t}\abs{\oa{OP}} \cos \a$, whence
-    \begin{gather*}
-        \cos \a = \frac{\vec t \dotp \oa{OP}}{\abs{\vec t} \abs{\oa{OP}}} = \frac{(1-2\tan\t)\cos \t + (\tan\t + 2)\sin\t}{\sqrt{(1-2\tan\t)^2 + (\tan\t+2)^2} \cdot \sqrt{\cos^2\t + \sin^2\t}}\\
-        = \frac{\cos\t + \tan\t\sin\t}{\sqrt{5\tan^2 \t + 5}} = \frac{\cos^2 \t + \sin^2 \t}{\sqrt{5\sin^2 \t + 5\cos^2 \t}} = \frac1{\sqrt5}.
-    \end{gather*}
+    \begin{align*}
+        \cos \a &= \frac{\vec t \dotp \oa{OP}}{\abs{\vec t} \abs{\oa{OP}}}\\
+        &= \frac{(1-2\tan\t)\cos \t + (\tan\t + 2)\sin\t}{\sqrt{(1-2\tan\t)^2 + (\tan\t+2)^2} \cdot \sqrt{\cos^2\t + \sin^2\t}}\\
+        &= \frac{\cos\t + \tan\t\sin\t}{\sqrt{5\tan^2 \t + 5}}\\
+        &= \frac{\cos^2 \t + \sin^2 \t}{\sqrt{5\sin^2 \t + 5\cos^2 \t}}\\
+        &= \frac1{\sqrt5}.
+    \end{align*}
     Thus, $\a = \arccos \frac1{\sqrt5}$. Since $\tan(\arccos x) = \frac{\sqrt{1-x^2}}{x}$, \[\tan \a = \tan{\arccos \frac1{\sqrt5}} = \frac{\sqrt{1 - \bp{1/\sqrt5}^2}}{1/\sqrt5} = 2.\] Hence, the tangent at $P$ is inclined to $\oa{OP}$ at a constant angle $\a$, where $\tan\a = 2$.
 
     \begin{center}\tikzsetnextfilename{139}

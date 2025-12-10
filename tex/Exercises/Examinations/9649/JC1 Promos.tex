@@ -218,18 +218,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $z' = 2y \cdot y'$. Hence, \[\bp{x^3 + 1} y \der{y}{x} + 3 x^2 y^2 = \bp{x^3 + 1} \frac12 z' + 3x^2 z = 2 \implies z' + \frac{6x^2}{x^3 + 1} z = \frac{4}{x^3 + 1}.\] The integrating factor is hence \[\IF = \exp \int \frac{6x^2}{x^3 + 1} \d x = \exp{2\ln{x^3 + 1}} = \bp{x^3 + 1}^2.\] Multiplying through, we get
-        \begin{gather*}
-            \bp{x^3 + 1}^2 z' +6x^2\bp{x^3 + 1} z = \der{}{x} \bs{\bp{x^3 + 1}^2 z} = 4\bp{x^3 + 1}\\
-            \implies \bp{x^3 + 1}^2 z = \int 4\bp{x^3 + 1} \d x = x^4 + 4x + C \implies y^2 = \frac{x^4 + 4x + C}{\bp{x^3 + 1}^2}.
-        \end{gather*}
-        When $x = 0$, $y = 2$, giving $C = 4$. Hence, \[y = \sqrt{\frac{x^4 + 4x + 4}{\bp{x^3 + 1}^2}}.\] When $x = 1$, $y = \frac32$.
+        Note that $z' = 2y \cdot y'$. Hence, \[\bp{x^3 + 1} y \der{y}{x} + 3 x^2 y^2 = \bp{x^3 + 1} \frac12 z' + 3x^2 z = 2 \implies z' + \frac{6x^2}{x^3 + 1} z = \frac{4}{x^3 + 1}.\] The integrating factor is hence \[\IF = \exp \int \frac{6x^2}{x^3 + 1} \d x = \exp{2\ln{x^3 + 1}} = \bp{x^3 + 1}^2.\] Multiplying through, we get \[\der{}{x} \bs{\bp{x^3 + 1}^2 z} = \bp{x^3 + 1}^2 z' +6x^2\bp{x^3 + 1} z = 4\bp{x^3 + 1}.\] Integrating both sides with respect to $x$, we obtain \[\bp{x^3 + 1}^2 z = \int 4\bp{x^3 + 1} \d x = x^4 + 4x + C,\] thus \[y^2 = \frac{x^4 + 4x + C}{\bp{x^3 + 1}^2}.\] When $x = 0$, $y = 2$, giving $C = 4$. Hence, \[y = \sqrt{\frac{x^4 + 4x + 4}{\bp{x^3 + 1}^2}}.\] Thus, when $x = 1$, we have $y = 3/2$.
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \bp{x^3 + 1} y \der{y}{x} + 3 x^2 y^2 = \bp{1^3 + 1} \bp{\frac32} \der{y}{x} + 3 \bp{1^2} \bp{\frac32}^2 = 2 \\
-            \implies \der{y}{x} = -\frac{19}{12} \implies \der{y}{t} = -\frac{19}{12} \cdot \der{x}{t} = -\frac{19}{12} \e^{\sqrt t}.
-        \end{gather*}
+        Substituting $x = 1$ and $y = 3/2$ into the differential equation, we see that \[\bp{1^3 + 1} \bp{\frac32} \der{y}{x} + 3 \bp{1^2} \bp{\frac32}^2 = 2 \implies \der{y}{x} = -\frac{19}{12}.\] By the chain rule, it follows that \[\der{y}{t} = -\frac{19}{12} \cdot \der{x}{t} = -\frac{19}{12} \e^{\sqrt t}.\]
 
         Let $f(y, t) = -\frac{19}{12} \e^{\sqrt t}$, $t_0 = 0$, $y_0 = 1.5$. Using Euler's method with $h = 0.2$, \[y_{n+1} = y_n + 0.2 f(t_n, y_n)\] Using G.C., \[y_1 = 1.1833, \quad y_2 = 0.68808, \quad y_3 = 0.09204, \quad y_4 = -0.59503, \quad y_5 = -1.36958.\] Hence, when $t = 1$, $y \approx -1.37$.
     \end{ppart}
@@ -269,10 +261,11 @@
             \cos \frac{7\pi}{10} = - \sqrt{\frac{5 - \sqrt5}{8}}, \quad \cos \frac{9\pi}{10} = - \sqrt{\frac{5 + \sqrt5}{8}}.
         \end{gather*}
         Hence, 
-        \begin{gather*}
-            \sin^2 \frac{\pi}{10} + \sin^2 \frac{3\pi}{10} + \sin^2 \frac{7\pi}{10} + \sin^2 \frac{9\pi}{10} = 4 - \bp{\cos^2 \frac{\pi}{10} + \cos^2 \frac{3\pi}{10} + \cos^2 \frac{7\pi}{10} + \cos^2 \frac{9\pi}{10}}\\
-            = 4 - \bp{\frac{5 + \sqrt5}{8} + \frac{5 - \sqrt5}{8} + \frac{5 - \sqrt5}{8} + \frac{5 + \sqrt5}{8}} = 4 - \frac{20}{8} = \frac32.
-        \end{gather*}
+        \begin{align*}
+            \sin^2 \frac{\pi}{10} + \sin^2 \frac{3\pi}{10} + \sin^2 \frac{7\pi}{10} + \sin^2 \frac{9\pi}{10} &= 4 - \bp{\cos^2 \frac{\pi}{10} + \cos^2 \frac{3\pi}{10} + \cos^2 \frac{7\pi}{10} + \cos^2 \frac{9\pi}{10}}\\
+            &= 4 - \bp{\frac{5 + \sqrt5}{8} + \frac{5 - \sqrt5}{8} + \frac{5 - \sqrt5}{8} + \frac{5 + \sqrt5}{8}}\\
+            &= \frac32.
+        \end{align*}
     \end{ppart}
 \end{solution}
 

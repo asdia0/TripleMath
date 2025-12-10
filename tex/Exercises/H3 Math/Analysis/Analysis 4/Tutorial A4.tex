@@ -40,8 +40,11 @@
 \begin{solution}
     Let $z = \e^{\i \t}$, where $\t \in [0, 2\pi)$. Then
     \begin{align*}
-        \abs{z^5 + \bp{z\conj}^3 + 6z} &= \abs{\e^{5 \i \t} + \e^{-3 \i \t} + 6\e^{\i \t}} = \abs{\e^{4\i \t} + \e^{-4\i \t} + 6}\\
-        &= \abs{2\cos{4\t} + 6} = \abs{4\cos[2]{2\t} + 4} = 4\cos[2]{2\t} + 4
+        \abs{z^5 + \bp{z\conj}^3 + 6z} &= \abs{\e^{5 \i \t} + \e^{-3 \i \t} + 6\e^{\i \t}}\\
+        &= \abs{\e^{4\i \t} + \e^{-4\i \t} + 6}\\
+        &= \abs{2\cos{4\t} + 6}\\
+        &= \abs{4\cos[2]{2\t} + 4}\\
+        &= 4\cos[2]{2\t} + 4
     \end{align*}
     and \[\abs{z^4 + 1} = \abs{\e^{4\i \t} + 1} = \abs{\e^{2\i\t} + \e^{-2\i\t}} = \abs{2\cos{2\t}}.\] Thus, the given expression is equal to \[\abs{z^5 + \bp{z\conj}^3 + 6z} - 2\abs{z^4 + 1} = 4\cos[2]{2\t} - 4\abs{\cos{2\t}} + 4.\]
 
@@ -134,10 +137,11 @@
     \end{ppart}
     \begin{ppart}
         We have \[\frac{1}{z} = \frac{z\conj}{\abs{z}^2} = \frac{x - \i y}{x^2 + y^2},\] so
-        \begin{gather*}
-            \tan{\arg{1 - \frac4z}} = \tan{\arg{\frac{x^2 + y^2 - 4x + 4\i y}{x^2 + y^2}}} = \tan \arctan{\frac{4y}{x^2 + y^2 - 4x}}\\
-            = \frac{4y}{x^2 + y^2 - 4x}.
-        \end{gather*}
+        \begin{align*}
+            \tan{\arg{1 - \frac4z}} &= \tan{\arg{\frac{x^2 + y^2 - 4x + 4\i y}{x^2 + y^2}}}\\
+            &= \tan \arctan{\frac{4y}{x^2 + y^2 - 4x}}\\
+            &= \frac{4y}{x^2 + y^2 - 4x}.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
         Note that $P$ and $Q$ are on opposite sides of the real axis (since $\arg{z} = -\arg{4/z}$). Thus, we have \[\arg{1 - \frac4z} = \arg{z-1}.\] From the previous parts, we obtain \[\frac{y}{x - 1} = \frac{4y}{x^2 + y^2 - 4x}.\] Thus, $y = 0$ is clearly a solution. If $y \neq 0$, then further maniupulation yileds \[x^2 + y^2 - 4x = 4x - 4 \implies x^2 - 8x + 16 + y^2 = 12 \implies \bp{x - 4}^2 + y^2 = 12.\]
@@ -562,10 +566,12 @@
     \begin{ppart}
         \begin{psubpart}
             Note that \[\abs{z+1}^2 = \bp{z+1}\bp{z\conj +1} = \abs{z}^2 + z + z\conj + 1,\] and \[\abs{z-1}^2 = \bp{z-1}\bp{z\conj-1} = \abs{z}^2 - z - z\conj + 1.\] Hence,
-            \begin{gather*}
-                \frac{1 - \abs{w}^2}{\abs{1 - w}^2} = \frac{1 - \abs{\frac{z-1}{z+1}}^2}{\abs{1 - \frac{z-1}{z+1}}^2} = \frac{\abs{z+1}^2 - \abs{z-1}^2}{\abs{(z+1)-(z-1)}^2} \\
-                = \frac{\bp{\abs{z}^2 + z + z\conj + 1} - \bp{\abs{z}^2 - z - z\conj + 1}}{4} = \frac{z + z\conj}{2} = \Re z,
-            \end{gather*}
+            \begin{align*}
+                \frac{1 - \abs{w}^2}{\abs{1 - w}^2} &= \frac{1 - \abs{\frac{z-1}{z+1}}^2}{\abs{1 - \frac{z-1}{z+1}}^2} = \frac{\abs{z+1}^2 - \abs{z-1}^2}{\abs{(z+1)-(z-1)}^2} \\
+                &= \frac{\bp{\abs{z}^2 + z + z\conj + 1} - \bp{\abs{z}^2 - z - z\conj + 1}}{4}\\
+                &= \frac{z + z\conj}{2}\\
+                &= \Re z,
+            \end{align*}
             and we immediately get our desired identity upon clearing denominators.
         \end{psubpart}
         \begin{psubpart}
@@ -586,6 +592,7 @@
         \item Prove that \[\min{\arg{z_1}, \arg{z_2}} < \arg{z_1 + z_2} < \max{\arg{z_1}, \arg{z_2}}.\]
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         We have \[\der{}{x} A(x) = \frac{1}{1 + x^2} > 0\] for all $x \in \RR$. Hence, $A(x)$ is increasing on $\RR$.
@@ -607,6 +614,7 @@
 
     Illustrate (a) and (b) on an Argand diagram.
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         Let $z = x + \i y$ where $x, y \in \RR$. The locus of $z$ is a circle centered at $(0, 1/2)$ with radius $1/2$, so \[x^2 + \bp{y - \frac12}^2 = \frac1{2^2} \implies \abs{z}^2 = x^2 + y^2 = y.\] Hence, \[w = \frac{\i z}{\i - z} = \frac{\i z \bp{-\i - z\conj}}{\abs{\i - z}^2} = \frac{z - \abs{z}^2 \i}{\abs{\i - z}^2} = \frac{\bp{x + \i y} - y \i}{\abs{\i - z}^2} = \frac{x}{\abs{\i - z}^2} \in \RR.\]
@@ -663,10 +671,14 @@
     We begin with the forwards direction. Suppose $\abs{\Zc} < n$. Then there exist distinct $t_1, t_2 \in \bc{1, \dots, n}$ such that $z_k^{t_1} = z_k^{t_2}$. Without loss of generality, suppose $t_1 > t_2$. Then \[\exp{2\pi\i\frac{kt_1}{n}} = \exp{2\pi\i\frac{kt_2}{n} + 2\pi m \i}\] for some integer $m$. Taking logarithms, we have \[2\pi \i \frac{kt_1}{n} = 2\pi \i \frac{kt_2}{n} + 2\pi m \i \implies k\bp{t_1 - t_2} = mn.\] Seeking a contradiction, suppose $\gcd{k, n} = 1$. Then we necessarily have \[n \mid t_1 - t_2.\] But this is impossible, since $1 \leq t_1 - t_2 \leq n-1$. Thus, we conclude that $\gcd{k, n} > 1$ as desired.
 
     Now, suppose that $\gcd{k, n} > 1$. Define $d = \gcd{n, k}$. Then $n = dn'$ and $k = dk'$ for some integers $n'$ and $k'$. Note that \[d > 1 \implies n' = \frac{n}{d} < n \implies n' + 1 \leq n.\] Additionally, $n' + 1 > 1$. Hence, we can select $t = n' + 1$, whence we get
-    \begin{gather*}
-        z_k^{n' + 1} = \exp{2\pi \i \frac{k (n' + 1)}{n}} = \exp{2\pi \i \frac{k' (n' + 1)}{n'}} = \exp{2\pi \i k' + 2\pi\i\frac{k'}{n'}}\\
-        = \exp{2\pi \i \frac{k'}{n'}} = \exp{2\pi \i \frac{k}{n}} = z_k^{1}.
-    \end{gather*}
+    \begin{align*}
+        z_k^{n' + 1} &= \exp{2\pi \i \frac{k (n' + 1)}{n}}\\
+        &= \exp{2\pi \i \frac{k' (n' + 1)}{n'}}\\
+        &= \exp{2\pi \i k' + 2\pi\i\frac{k'}{n'}}\\
+        &= \exp{2\pi \i \frac{k'}{n'}}\\
+        &= \exp{2\pi \i \frac{k}{n}}\\
+        &= z_k^{1}.
+    \end{align*}
     But $n' + 1 \neq 1$, so there is a duplicate element in $\Zc$ and we immediately have $\abs{\Zc} < n$.
 \end{solution}
 

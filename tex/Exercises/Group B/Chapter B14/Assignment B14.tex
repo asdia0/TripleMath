@@ -21,11 +21,7 @@
         Hence, $y(0.1) \approx 11.023$.
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \der{y}{x} = \frac12 y (2-x) \implies \frac1y \der{y}{x} = \frac12 (2-x) \implies \int \frac1y \d y =\int \frac12 (2-x) \d x\\
-            \implies \ln y = \frac12 \bs{2x - \frac12 x^2} + C_1 = x - \frac14 x^2 + C_1 \implies y = C\exp{x - \frac14 x^2}.
-        \end{gather*}
-        Since $y(0) = 10$, we have $C = 10$. Thus, \[y = 10\exp{x - \frac14 x^2}.\]
+        The given differential equation rewrites as \[\frac1y \der{y}{x} = \frac12 (2-x).\] Integrating both sides with respect to $x$, we obtain \[\int \frac1y \d y =\int \frac12 (2-x) \d x,\] which evaluates to \[\ln y = x - \frac14 x^2 + C_1,\] whence \[y = C\exp{x - \frac14 x^2}.\] Since $y(0) = 10$, we have $C = 10$. Thus, \[y = 10\exp{x - \frac14 x^2}.\]
     \end{ppart}
     \begin{ppart}
         For small $x$, we have that $\cos \sqrt{x} \approx 1 - \frac12 (\sqrt x)^2 = \frac12 (2 - x)$. Thus, \[y \cos \sqrt x \approx \frac12 y (2-x),\] whence the two differential equations and thus their solutions are approximately equal. Since $x = 0.1$ is small, the solution found in part (c) will give a reasonable estimate for $y(0.1)$ in part (b).

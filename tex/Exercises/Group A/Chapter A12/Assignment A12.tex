@@ -87,10 +87,13 @@
         \[\P{1D \cap 2D'} = \P{1D} - \P{1D \cap 2D} = 0.8 - 0.72 = 0.08.\]
     \end{ppart}
     \begin{ppart}
-        \begin{gather*}
-            \P{2D'}{1D'} = \frac{\P{2D' \cap 1D'}}{\P{1D'}} = \frac{1 - \P{1D \cup 2D}}{1 - \P{1D}} \\
-            = \frac{1 - \bs{\P{1D} + \P{2D} - \P{1D \cap 2D}}}{1 - \P{1D}} = \frac{1 - (0.8 + 0.86 - 0.72)}{1 - 0.8} = 0.3.
-        \end{gather*}
+        \begin{align*}
+            \P{2D'}{1D'} &= \frac{\P{2D' \cap 1D'}}{\P{1D'}}\\
+            &= \frac{1 - \P{1D \cup 2D}}{1 - \P{1D}} \\
+            &= \frac{1 - \bs{\P{1D} + \P{2D} - \P{1D \cap 2D}}}{1 - \P{1D}}\\
+            &= \frac{1 - (0.8 + 0.86 - 0.72)}{1 - 0.8}\\
+            &= 0.3.
+        \end{align*}
     \end{ppart}
 \end{solution}
 
@@ -126,9 +129,11 @@
     \begin{ppart}
         \[\P{\text{all different nationalities}}{\text{all female}} = \frac2{17} \cdot \frac{3}{16} \cdot \frac{3}{15} \cdot \frac2{14} \cdot 4! = \frac{9}{595}\]
         Note that $\P{\text{all different nationalities}}{\text{all male}}$ since there are no males from China, whence
-        \begin{gather*}
-            \P{\text{all different nationalities}}{\text{all same gender}}\\
-            = \frac{\P{\text{all different nationalities $\cap$ all same gender}}}{\P{\text{all same gender}}} = \frac{9/595 + 0}{7/68} = \frac{36}{245}.
-        \end{gather*}
+        \begin{align*}
+            &\P{\text{all different nationalities}}{\text{all same gender}}\\
+            &\hspace{2em}= \frac{\P{\text{all different nationalities $\cap$ all same gender}}}{\P{\text{all same gender}}}\\
+            &\hspace{2em}= \frac{9/595}{7/68}\\
+            &\hspace{2em}= \frac{36}{245}.
+        \end{align*}
     \end{ppart}
 \end{solution}
