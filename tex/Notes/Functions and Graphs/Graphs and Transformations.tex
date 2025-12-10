@@ -47,7 +47,7 @@ A rational function $f$ is a ratio of two polynomials $P(x)$ and $Q(x)$, where $
 
 \subsection{Rectangular Hyperbola}
 
-A rectangular hyperbola is a hyperbola with asymptotes that are perpendicular to each other. The general formula for a rectangular hyperbola is $y = \frac{ax + b}{cx + d}$, where $a$, $b$, $c$ and $d$ are constants. Note that the curve $y = \frac{ax + b}{cx + d}$ has a vertical asymptote $x = -d/c$ and a horizontal asymptote $y = a/c$. The two possible shapes of a rectangular hyperbola are shown below.
+A rectangular hyperbola is a hyperbola with asymptotes that are perpendicular to each other. The general formula for a rectangular hyperbola is $y = (ax + b)/(cx + d)$, where $a$, $b$, $c$ and $d$ are constants. Note that the curve $y = (ax + b)/(cx + d)$ has a vertical asymptote $x = -d/c$ and a horizontal asymptote $y = a/c$. The two possible shapes of a rectangular hyperbola are shown below.
 
 \begin{figure}[H]\tikzsetnextfilename{353}
     \centering
@@ -80,12 +80,12 @@ A rectangular hyperbola is a hyperbola with asymptotes that are perpendicular to
             \node[anchor=south west] at (-10, 1) {$y = a/c$};
         \end{axis}
     \end{tikzpicture}
-    \caption{Hyperbolas of the form $y = \frac{ax + b}{cx + d}$.}
+    \caption{Hyperbolas of the form $y = (ax + b)/(cx + d)$.}
 \end{figure}
 
-\subsection{Hyperbolas of the Form \texorpdfstring{$y = \frac{ax^2 + bx + c}{dx + e}$}{y = (ax2 + bx + c)/(dx + e)}}
+\subsection{Hyperbolas of the Form \texorpdfstring{$y = \bp{ax^2 + bx + c}/\bp{dx + e}$}{y = (ax2 + bx + c)/(dx + e)}}
 
-A hyperbola of the form $y = \frac{ax^2 + bx + c}{dx + e}$, where $a$, $b$, $c$, $d$ and $e$ are constants, has one vertical and one oblique asymptote. The vertical asymptote has equation $x = -e/d$. To deduce the oblique asymptote, we must first convert the equation to the form $y = px + q + \frac{r}{dx + e}$ (via long division or otherwise). These graphs will generally take one of the two forms below, which can be easily deduced by checking the axial intercepts.
+A hyperbola of the form $y = (ax^2 + bx + c)/(dx + e)$, where $a$, $b$, $c$, $d$ and $e$ are constants, has one vertical and one oblique asymptote. The vertical asymptote has equation $x = -e/d$. To deduce the oblique asymptote, we must first convert the equation to the form $y = px + q + r/(dx + e)$ (via long division or otherwise). These graphs will generally take one of the two forms below, which can be easily deduced by checking the axial intercepts.
 
 \begin{figure}[H]\tikzsetnextfilename{354}
     \centering
@@ -118,7 +118,7 @@ A hyperbola of the form $y = \frac{ax^2 + bx + c}{dx + e}$, where $a$, $b$, $c$,
             \node[anchor=west] at (-8, -7) {$y = px + q$};
         \end{axis}
     \end{tikzpicture}
-    \caption{Hyperbolas of the form $y = \frac{ax^2 + bx + c}{dx + e}$.}
+    \caption{Hyperbolas of the form $y = (ax^2 + bx + c)/(dx + e)$.}
 \end{figure}
 
 \section{Graphs of Basic Conics}
@@ -219,7 +219,7 @@ In general,
 
 \subsection{Ellipse}
 
-An ellipse is a circle that has been scaled parallel to the $x$- and/or $y$-axes. The standard form of the equation of an ellipse centred at $(0, 0)$ is $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$, where $a, b > 0$. $a$ and $b$ are known as the \vocab{horizontal} and \vocab{vertical radii} respectively.
+An ellipse is a circle that has been scaled parallel to the $x$- and/or $y$-axes. The standard form of the equation of an ellipse centred at $(0, 0)$ is \[\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1,\] where $a, b > 0$. $a$ and $b$ are known as the \vocab{horizontal} and \vocab{vertical radii} respectively.
 
 \begin{figure}[H]\tikzsetnextfilename{358}
     \centering
@@ -235,20 +235,20 @@ An ellipse is a circle that has been scaled parallel to the $x$- and/or $y$-axes
         \node[anchor=south east] at (0, 2) {$b$};
         \node[anchor=north east] at (0, -2) {$-b$};
     \end{tikzpicture}
-    \caption{Ellipse with equation $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$.}
+    \caption{Ellipse with equation $x^2/a^2 + y^2/b^2 = 1$.}
 \end{figure}
 
 The lines of symmetry for the above ellipse are the $x$- and $y$-axes, while its vertices are $(a,0)$, $(-a, 0)$, $(0, b)$ and $(0, -b)$.
 
 In general,
 \begin{itemize}
-    \item the standard form of the equation of an ellipse with centre at $(h, k)$ and radius $r$ is $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$, where $r > 0$.
+    \item the standard form of the equation of an ellipse with centre at $(h, k)$ and radius $r$ is \[\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1,\] where $r > 0$.
     \item the general form of the equation of an ellipse is $Ax^2 + Bx^2 + Cx + Dy + E = 0$.
 \end{itemize}
 
 \subsection{Hyperbola}
 
-The hyperbola is a conic with two oblique asymptotes. The standard form of a hyperbola centred at the origin $O$ is either $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ or $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$, where $a, b > 0$, depending on the orientation of the hyperbola.
+The hyperbola is a conic with two oblique asymptotes. The standard form of a hyperbola centred at the origin $O$ is either \[\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 \quad \tor \quad \frac{y^2}{b^2} - \frac{x^2}{a^2} = 1,\] where $a, b > 0$, depending on the orientation of the hyperbola.
 
 \begin{figure}[H]\tikzsetnextfilename{359}
     \centering
@@ -272,10 +272,10 @@ The hyperbola is a conic with two oblique asymptotes. The standard form of a hyp
                 }
             ]
             \addplot[plotRed] {sqrt(x^2 - 1)};
-            \addlegendentry{$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$};
+            \addlegendentry{$x^2/a^2 - y^2/b^2 = 1$};
 
             \addplot[plotBlue] {sqrt(x^2 + 1)};
-            \addlegendentry{$\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$};
+            \addlegendentry{$y^2/b^2 - x^2/a^2 = 1$};
 
             \addplot[plotRed] {-sqrt(x^2 - 1)};
             \addplot[plotBlue] {-sqrt(x^2 + 1)};
@@ -295,11 +295,11 @@ The hyperbola is a conic with two oblique asymptotes. The standard form of a hyp
     \caption{}
 \end{figure}
 
-Both hyperbolas have the origin as their centres, the $x$- and $y$-axes as their lines of symmetry, and their two oblique asymptotes are $y = \pm \frac{b}{a} x$. The hyperbola with equation $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ has vertices $(-a, 0)$ and $(a, 0)$, i.e. $a$ is the horizontal distance from the centre to the vertices. Similarly, the hyperbola with equation $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$ has vertices $(0, -b)$ and $(0, b)$, i.e. $b$ is the vertical distance from the centre to the vertices.
+Both hyperbolas have the origin as their centres, the $x$- and $y$-axes as their lines of symmetry, and their two oblique asymptotes are $y = \pm bx/a$. The hyperbola with equation $x^2/a^2 - y^2/b^2 = 1$ has vertices $(-a, 0)$ and $(a, 0)$, i.e. $a$ is the horizontal distance from the centre to the vertices. Similarly, the hyperbola with equation $y^2/b^2 - x^2/a^2 = 1$ has vertices $(0, -b)$ and $(0, b)$, i.e. $b$ is the vertical distance from the centre to the vertices.
 
 In general,
 \begin{itemize}
-    \item the standard form of the equation of a hyperbola with centre at $(h, k)$ and radius $r$ is $\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1$ or $\frac{(y-k)^2}{b^2} - \frac{(x-h)^2}{a^2} = 1$ where $a, b > 0$.
+    \item the standard form of the equation of a hyperbola with centre at $(h, k)$ and radius $r$ is \[\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1 \quad \tor \quad \frac{(y-k)^2}{b^2} - \frac{(x-h)^2}{a^2} = 1,\] where $a, b > 0$.
     \item the general form of the equation of a hyperbola is $Ax^2 - Bx^2 + Cx + Dy + E = 0$.
 \end{itemize}
 

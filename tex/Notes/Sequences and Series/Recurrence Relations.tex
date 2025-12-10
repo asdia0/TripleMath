@@ -15,7 +15,7 @@ There are two main ways to solve the above recurrence relation: by converting th
 \subsection{Converting to Geometrical Progression}
 
 \begin{recipe}[Converting to Geometrical Progression]
-    Let $k$ be the constant such that \[u_n + k = a\bp{u_{n-1} + k}.\] Then we clearly have $k = \frac{b}{a - 1}$. We now define a new sequence $v_n = u_n + k$. This turns our recurrence relation into \[v_n = av_{n-1},\] whence $v_n$ is in geometric progression. Thus, $v_n = v_1 a^{n-1}$. Writing this back in terms of $u_n$, we get \[u_n + k = (u_1 + k) a^{n-1} \implies u_n = (u_1 + k)a^{n-1} - k.\]
+    Let $k$ be the constant such that \[u_n + k = a\bp{u_{n-1} + k}.\] Then we clearly have $k = b/(a-1)$. We now define a new sequence $v_n = u_n + k$. This turns our recurrence relation into \[v_n = av_{n-1},\] whence $v_n$ is in geometric progression. Thus, $v_n = v_1 a^{n-1}$. Writing this back in terms of $u_n$, we get \[u_n + k = \bp{u_1 + k} a^{n-1},\] so \[u_n = \bp{u_1 + \frac{b}{a-1}}a^{n-1} - \frac{b}{a-1}.\]
 \end{recipe}
 
 \begin{example}[Solving by GP]
@@ -38,37 +38,39 @@ There are two main ways to solve the above recurrence relation: by converting th
 \end{fact}
 
 \begin{example}[Solving by Procedure]
-    Consider the recurrence relation \[u_1 = 0, \quad u_n = \frac12 u_{n-1} + 10, \quad n > 1.\] Observe that the associated homogeneous recurrence relation is $u_n = \frac12 u_{n-1}$. Hence, the complementary solution is \[u_n^{(c)} = C\bp{\frac12}^n\] for some arbitrary constant $C$. Let the particular solution be $u_n^{(p)} = k$. Then \[k = \frac12 k + 10 \implies k = 20.\] Hence, the general solution is \[u_n = u_n^{(c)} + u_n^{(p)} = C\bp{\frac12}^n + 20.\] Using the initial condition $u_1 = 0$, we have \[0 = C\bp{\frac12}^1 + 20 \implies C = -40.\] Thus, \[u_n =-40\bp{\frac12}^n + 20.\]
+    Consider the recurrence relation \[u_1 = 0, \quad u_n = \frac12 u_{n-1} + 10, \quad n > 1.\] Observe that the associated homogeneous recurrence relation is $u_n = (1/2)u_{n-1}$. Hence, the complementary solution is \[u_n^{(c)} = C\bp{\frac12}^n\] for some arbitrary constant $C$. Let the particular solution be $u_n^{(p)} = k$. Then $k = (1/2) k + 10$, so $k = 20$. Hence, the general solution is \[u_n = u_n^{(c)} + u_n^{(p)} = C\bp{\frac12}^n + 20.\] Using the initial condition $u_1 = 0$, we have \[0 = C\bp{\frac12}^1 + 20,\] so $C = -40$ and thus \[u_n =-40\bp{\frac12}^n + 20.\]
 \end{example}
 
 \section{Second Order Linear Homogeneous Recurrence Relation with Constant Coefficients}
 
 \begin{definition}
-    A \vocab{second order linear homogeneous recurrence relation with constant coefficients} is a recurrence relation of the form \[u_n = a u_{n-1} + b u_{n-2},\] where $a$ and $b$ are constants.
+    A \vocab{second order linear homogeneous recurrence relation with constant coefficients} is a recurrence relation of the form \[u_n = a u_{n-1} + b u_{n-2},\] where $a$ and $b \neq 0$ are constants.
 \end{definition}
+
+Note that we exclude the case $b = 0$, as that would lead to the first order recurrence relation $u_n = a u_{n-1}$.
 
 \begin{recipe}[Solving by Procedure]
     To solve the recurrence relation \[u_n = a u_{n-1} + b u_{n-2},\]
 
-    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Form the quadratic equation \[x^2 - ax - b = 0.\] This is called the \vocab{characteristic equation}.
         \item Find the roots $\a$ and $\b$ of this characteristic equation.
         \item Then $u_n$ has the \vocab{general solution} 
         \begin{itemize}
             \item $u_n = A\a^n + B\b^n$, if $\a \neq \b$ (distinct roots, may be real or non-real).
-            \item $u_n = (A + Bn) \a^n$, if $\a = \b$ (real and equal roots).
-            \item $u_n = Ar^n \cos n\t + Br^n \sin n\t$, if $\a = r\e^{\i \t}$ and $\b = r\e^{-\i \t}$ (non-real roots).
+            \item $u_n = \bp{A + Bn} \a^n$, if $\a = \b$ (real and equal roots).
+            \item $u_n = r^n\bp{A \cos n\t + B \sin n\t}$, if $\a = r\e^{\i \t}$ and $\b = r\e^{-\i \t}$ (non-real roots).
         \end{itemize}
     \end{enumerate}
     \renewcommand{\theenumi}{(\alph{enumi})}
 \end{recipe}
 \begin{proof}
-    For $u_{n+1} = p u_n + q u_{n-1}$ with given initial conditions $u_1$ and $u_2$, let the constant $k$ be such that \[u_{n+1} - k u_n = (p-k) (u_n - ku_{n-1}). \tag{1}\] Note that this is a GP. Comparing coefficients of $u_{n-1}$, we get \[(p-k)k = -q \implies k^2 - pk - q = 0.\] This is the characteristic equation. Let the roots to the characteristic equation be $k = \a$ and $k = \b$. By Vieta's formulas, \[\a + \b = -\bp{\frac{-p}{1}} = p.\] Now, using the fact that (1) is in GP, we get \[u_{n+1} - ku_n = (p-k)^{n-1} (u_2 - ku_1). \tag{2}\] Substituting $k = \a$ into (2), we obtain \[u_{n+1} - \a u_n = \b^{n-1} \bp{u_2 - \a u_1}. \tag{3a}\] Substituting $k = \b$ into (2), we obtain \[u_{n+1} - \b u_n = \a^{n-1} \bp{u_2 - \b u_1}. \tag{3b}\] We now analyse the case where $\a = \b$ and $\a \neq \b$ separately.
+    For $u_{n+1} = a u_n + b u_{n-1}$ with given initial conditions $u_1$ and $u_2$, let the constant $k$ be such that \[u_{n+1} - k u_n = (a-k) (u_n - ku_{n-1}). \tag{1}\] Note that this is a GP. Comparing coefficients of $u_{n-1}$, we have $(a-k)k = -b$, which expands to give the quadratic \[k^2 - ak - b = 0.\] This is the characteristic equation. Let the roots to the characteristic equation be $k = \a$ and $k = \b$. By Vieta's formula, \[\a + \b = a.\] Now, using the fact that (1) is in GP, we get \[u_{n+1} - ku_n = (a-k)^{n-1} (u_2 - ku_1). \tag{2}\] Substituting $k = \a$ into (2), we obtain \[u_{n+1} - \a u_n = \b^{n-1} \bp{u_2 - \a u_1}. \tag{3a}\] Substituting $k = \b$ into (2), we obtain \[u_{n+1} - \b u_n = \a^{n-1} \bp{u_2 - \b u_1}. \tag{3b}\] We now analyse the case where $\a = \b$ and $\a \neq \b$ separately.
 
-    \case{1}[$\a = \b$] Since the two roots are equal, (3a) and (3b) are equivalent. Taking either, \[u_{n+1} - \a u_n = \a^{n-1} (u_2 - \a u_1) \implies \frac{u_{n+1}}{\a^{n-1}} - \frac{u_n}{\a^{n-2}} = u_2 - \a u_1.\] The sequence $\bc{\frac{u_n}{\a^{n-2}}}$ is hence in AP with common difference $u_2 - \a u_1$. Invoking the closed form for AP, we obtain \[\frac{u_n}{\a^{n-2}} = \frac{u_1}{\a^{-1}} + (n-1)(u_2 - \a u_1) \implies u_n = \a^{n-2} \bp{\frac{u_1}{\a^{-1}} + (n-1)(u_2 - \a u_1)}.\] Simplifying, \[u_n = \bs{\bp{\frac{2u_1}{\a} - \frac{u_2}{\a^2}} + \bp{\frac{u_2}{\a^2} - \frac{u_1}{\a}}n} \a^n = (A + Bn) \a^n.\]
+    \case{1}[$\a = \b$] Since the two roots are equal, (3a) and (3b) are equivalent. Taking either, \[u_{n+1} - \a u_n = \a^{n-1} (u_2 - \a u_1).\] Noting that 0 cannot be a root of the characteristic equation (since $b \neq 0$), we may divide by $\a^{n-1}$ to get \[\frac{u_{n+1}}{\a^{n-1}} - \frac{u_n}{\a^{n-2}} = u_2 - \a u_1.\] The sequence $\bc{u_n/\a^{n-2}}$ is hence in AP with common difference $u_2 - \a u_1$. Invoking the closed form for AP, we obtain \[\frac{u_n}{\a^{n-2}} = \frac{u_1}{\a^{-1}} + (n-1)(u_2 - \a u_1).\] Simplifying, \[u_n = \bs{\bp{\frac{2u_1}{\a} - \frac{u_2}{\a^2}} + \bp{\frac{u_2}{\a^2} - \frac{u_1}{\a}}n} \a^n = \bp{A + Bn} \a^n.\]
 
-    \case{2}[$\a \neq \b$] Observe that $\frac{\text{(3b)} - \text{(3a)}}{\a - \b}$ yields \[u_n = \frac{\a^{n-1} (u_2 - \b u_1) - \b^{n-1} (u_2 - \a u_1)}{\a - \b}.\] Simplifying, we have \[u_n = \bs{\frac{u_2 - \b u_1}{\a (\a - \b)}} \a^n + \bs{\frac{u_2 - \a u_1}{\b (\b - \a)}} \b^n = A\a^n + B\b^n.\]
+    \case{2}[$\a \neq \b$] Observe that $\bp{\a - \b}^{-1} \bs{\text{(3b)} - \text{(3a)}}$ yields \[u_n = \frac{\a^{n-1} (u_2 - \b u_1) - \b^{n-1} (u_2 - \a u_1)}{\a - \b}.\] Simplifying, we have \[u_n = \bs{\frac{u_2 - \b u_1}{\a (\a - \b)}} \a^n + \bs{\frac{u_2 - \a u_1}{\b (\b - \a)}} \b^n = A\a^n + B\b^n.\]
 
-    We now consider the case where $\a$ and $\b$ are non-real. By the conjugate root theorem, we can write $\a = r\e^{\i \t}$ and $\b = r \e^{-\i \t}$. Substituting this into the above result, we have \[u_n = A\bp{r\e^{\i \t}}^n + B\bp{r\e^{-\i \t}}^n = r^n \bp{A \e^{\i n \t} + B \e^{-\i n \t}}.\] By Euler's identity, \[u_n = r^n \bs{(A+B) \cos n\t + \i (A-B) \sin n\t} = C r^n \cos n\t + D r^n \sin n\t.\]
+    We now consider the case where $\a$ and $\b$ are non-real. By the conjugate root theorem, we can write $\a = r\e^{\i \t}$ and $\b = r \e^{-\i \t}$. Substituting this into the above result, we have \[u_n = A\bp{r\e^{\i \t}}^n + B\bp{r\e^{-\i \t}}^n = r^n \bp{A \e^{\i n \t} + B \e^{-\i n \t}}.\] By Euler's identity, \[u_n = r^n \bs{(A+B) \cos n\t + \i (A-B) \sin n\t} = r^n \bp{C \cos n\t + D \sin n\t}.\]
 \end{proof}

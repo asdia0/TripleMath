@@ -49,14 +49,20 @@ Surprisingly, there are no other examples of linear transformations from $\RR^n$
     Let $T : \RR^n \to \RR^m$ be a linear transformation. Let $\vec x \in \RR^n$. Then $T(\vec x) = \mat A \vec x$ for some $m \times n$ matrix $\mat A$.
 \end{proposition}
 \begin{proof}
-    Let $\vec e_i$ be the $i$th standard basis vector. Let $\vec x = (x_1, \dots, x_n)$ be an $n$-dimensional vector. Then \[T(\vec x) = T(x_1 \vec e_1 + \dots + x_n \vec e_n) = x_1 T(\vec e_1) + \dots + x_n T(\vec e_n) = \begin{pmatrix}T(\vec e_1) & \cdots & T(\vec e_n)\end{pmatrix} \vec x = \mat A \vec x.\] Since $T(\vec e_i)$ is an $m$-dimensional vector (by the definition of $T$), it follows that $\mat A$ has $m$ rows and $n$ columns, i.e. $\mat A$ is an $m \times n$ matrix.
+    Let $\vec e_i$ be the $i$th standard basis vector. Let $\vec x = (x_1, \dots, x_n)$ be an $n$-dimensional vector. Then
+    \begin{align*}
+        T(\vec x) &= T(x_1 \vec e_1 + \dots + x_n \vec e_n)\\
+        &= x_1 T(\vec e_1) + \dots + x_n T(\vec e_n)\\
+        &= \underbrace{\begin{pmatrix}T(\vec e_1) & \cdots & T(\vec e_n)\end{pmatrix}}_{\mat A} \vec x\\
+    \end{align*}
+    Since $T(\vec e_i)$ is an $m$-dimensional vector (by the definition of $T$), it follows that $\mat A$ has $m$ rows and $n$ columns, i.e. $\mat A$ is an $m \times n$ matrix.
 \end{proof}
 
 \section{Linear Spaces}
 
 \begin{definition}
     A \vocab{linear space} (or \vocab{vector space}) over $\RR$ is a set $V$ equipped with two operations, addition ($+$) and scalar multiplication ($\cdot$), such that for any vectors $\vec u, \vec v, \vec w \in V$ and for all $c, d \in \RR$, the following ten axioms are satisfied:
-    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Closure under addition: $\vec u + \vec v \in V$.
         \item Addition is commutative: $\vec u + \vec v = \vec v + \vec u$.
@@ -208,14 +214,14 @@ A natural question to ask is ``When is a vector in the span of a set of vectors?
     Determine if $\RR^3$ is spanned by \[S = \bc{\cveciii121, \cveciii102}.\]
 \end{sample}
 \begin{sampans}
-    Let $\vec v = \cveciiix{a}{b}{c} \in \RR^3$. Consider the equation \[x_1 \cveciii121 + x_2 \cveciii102 \implies \begin{pmatrix}1 & 1 \\ 2 & 0 \\ 1 & 2\end{pmatrix} \cvecii{x_1}{x_2} = \cveciii{a}{b}{c}.\] Using row-operations on the resulting augmented matrix, we obtain \[\begin{pmatrix}[cc|c]1 & 0 & b/2 \\ 0 & 1 & c-a \\ 0 & 0 & 2a - b/2 - c\end{pmatrix}.\] The system is only consistent when $2a - b/2 - c = 0$. That is, not all vectors $\vec v \in \RR^3$ can be written as a linear combination of vectors in $S$. Thus, $\RR^3$ is not spanned by $S$.
+    Consider the equation \[x_1 \cveciii121 + x_2 \cveciii102 = \cveciii{a}{b}{c}.\] We may write the LHS as \[\begin{pmatrix}1 & 1 \\ 2 & 0 \\ 1 & 2\end{pmatrix} \cvecii{x_1}{x_2} = \cveciii{a}{b}{c}.\] Using row-operations on the resulting augmented matrix, we obtain \[\begin{pmatrix}[cc|c]1 & 0 & b/2 \\ 0 & 1 & c-a \\ 0 & 0 & 2a - b/2 - c\end{pmatrix}.\] The system is only consistent when $2a - b/2 - c = 0$. That is, not all vectors in $\RR^3$ can be written as a linear combination of vectors in $S$. Thus, $\RR^3$ is not spanned by $S$.
 \end{sampans}
 
 \begin{sample}
     Determine if $\RR^3$ is spanned by \[S = \bc{\cveciii121, \cveciii102, \cveciii110, \cveciii100}.\]
 \end{sample}
 \begin{sampans}
-    Let $\vec v = \cveciiix{a}{b}{c} \in \RR^3$. Consider the equation \[x_1 \cveciii121 + x_2 \cveciii102 + x_3 \cveciii110 + x_4 \cveciii100 \implies \begin{pmatrix}1 & 1 & 1 \\ 2 & 0 & 1 \\ 1 & 2 & 0\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cveciii{a-x_4}{b}{c}.\] Since the matrix on the LHS has non-zero determinant, it is invertible, so there exist $x_1, x_2, x_3, x_4 \in \RR$ such that the above equation is satisfied. That is to say, every vector in $\RR^3$ can be expressed as a linear combination of vectors in $S$. Thus, $\RR^3$ is spanned by $S$.
+    Consider the equation \[x_1 \cveciii121 + x_2 \cveciii102 + x_3 \cveciii110 + x_4 \cveciii100 = \cveciii{a}{b}{c}.\] We may rewrite this as \[\begin{pmatrix}1 & 1 & 1 \\ 2 & 0 & 1 \\ 1 & 2 & 0\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cveciii{a-x_4}{b}{c}.\] Since the matrix on the LHS has non-zero determinant, it is invertible, so there exist $x_1, x_2, x_3, x_4 \in \RR$ satisfying the above equation is satisfied. That is to say, every vector in $\RR^3$ can be expressed as a linear combination of vectors in $S$. Thus, $\RR^3$ is spanned by $S$.
 \end{sampans}
 
 \subsection{Linear Independence}
@@ -232,14 +238,14 @@ Equivalently, the set of vectors are linearly dependent if at least one vector i
     Determine if the following set of vectors is linearly independent: \[S = \bc{\cveciii121, \cveciii102}.\]
 \end{sample}
 \begin{sampans}
-    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 = \cveciii000 \implies \begin{pmatrix}1 & 1 \\ 2 & 0 \\ 1 & 2 \end{pmatrix} \cvecii{c_1}{c_2} = \cveciii000.\] Converting to RREF, we obtain \[\begin{pmatrix}1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix} \cvecii{c_1}{c_2} = \cveciii000.\] Thus, the only solutions are $c_1 = c_2 = 0$, so $S$ is linearly independent.
+    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 = \cveciii000.\] Converting this into a matrix equation, we obtain \[\begin{pmatrix}1 & 1 \\ 2 & 0 \\ 1 & 2 \end{pmatrix} \cvecii{c_1}{c_2} = \cveciii000.\] Reducing to RREF, we obtain \[\begin{pmatrix}1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix} \cvecii{c_1}{c_2} = \cveciii000.\] Thus, the only solutions are $c_1 = c_2 = 0$, so $S$ is linearly independent.
 \end{sampans}
 
 \begin{sample}
     Determine if the following set of vectors is linearly independent: \[S = \bc{\cveciii121, \cveciii102, \cveciii110, \cveciii100}.\]
 \end{sample}
 \begin{sampans}
-    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 + c_3 \cveciii110 + c_4 \cveciii100 = \cveciii000 \implies \begin{pmatrix}1 & 1 & 1 & 1 \\ 2 & 0 & 1 & 0 \\ 1 & 2 & 0 & 0\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciii000.\] Converting to RREF, we obtain \[\begin{pmatrix}1 & 0 & 0 & -2/3 \\ 0 & 1 & 0 & 1/3 \\ 0 & 0 & 1 & 4/3\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciii000.\] By backwards substitution, we obtain \[c_1 = -2\l, \quad c_2 = \l, \quad c_3 = 4\l, \quad c_4 = -\l,\] where $\l \in \RR$. Thus, there exist non-trivial solutions, so $S$ is linearly dependent.
+    Consider the following equation: \[c_1 \cveciii121 + c_2 \cveciii102 + c_3 \cveciii110 + c_4 \cveciii100 = \cveciii000.\] Then \[\begin{pmatrix}1 & 1 & 1 & 1 \\ 2 & 0 & 1 & 0 \\ 1 & 2 & 0 & 0\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciii000.\] Reducing to RREF, we obtain \[\begin{pmatrix}1 & 0 & 0 & -2/3 \\ 0 & 1 & 0 & 1/3 \\ 0 & 0 & 1 & 4/3\end{pmatrix} \cveciv{c_1}{c_2}{c_3}{c_4} = \cveciii000.\] By backwards substitution, we obtain \[c_1 = -2\l, \qquad c_2 = \l, \qquad c_3 = 4\l, \qquad c_4 = -\l,\] where $\l \in \RR$. Thus, there exist non-trivial solutions, so $S$ is linearly dependent.
 \end{sampans}
 
 We now outline a general strategy to test if a set of vectors is linearly independent.
@@ -249,7 +255,7 @@ We now outline a general strategy to test if a set of vectors is linearly indepe
 
     \case{1} If $r > n$, then the $r$ vectors must be linearly dependent.
     
-    \case{2} If $r \leq n$, we find $\vec x = \cveciiix{x_1}{\dots}{x_r}$ such that $\mat A \vec x = \vec 0$ where $\mat A = \begin{pmatrix}v_1 & \dots & v_r\end{pmatrix}$ is an $n \times r$ matrix. Whether the $r$ vectors are linearly dependent becomes a question of whether the equation $\mat A \vec x = \vec 0$ has only the trivial solution $\vec x = \vec 0$. To answer this question we can
+    \case{2} If $r \leq n$, we find $\vec x = \cveciiix{x_1}{\dots}{x_r}$ such that $\mat A \vec x = \vec 0$ where $\mat A = \begin{pmatrix}\vec v_1 & \dots & \vec v_r\end{pmatrix}$ is an $n \times r$ matrix. Whether the $r$ vectors are linearly dependent becomes a question of whether the equation $\mat A \vec x = \vec 0$ has only the trivial solution $\vec x = \vec 0$. To answer this question we can
     \begin{itemize}
         \item in general, use row operations to reduce $\mat A$ to REF. If there are exactly $r$ non-zero rows, then $\mat A \vec x = \vec 0$ has only the trivial solution.
         \item (if $r = n$) compute the determinant of $\mat A$. If $\det \mat A \neq 0$, then $\mat A \vec x = \vec 0$ has only the trivial solution.
@@ -295,16 +301,16 @@ In $\RR^3$, three vectors $\vec u$, $\vec v$ and $\vec w$ are linearly dependent
 \end{definition}
 
 \begin{definition}
-    Let $\vec e_1 = (1, 0, \dots, 0)$, $\vec e_2 = (0, 1, 0, \dots, 0)$, $\dots$, $\vec e_n = (0, \dots, 0, 1)$. The set $\bc{\vec e_1, \vec e_2, \dots, \vec e_n}$ is called the \vocab{standard basis} of $\RR^n$.
+    Let $\vec e_1 = (1, 0, \dots, 0)\trp$, $\vec e_2 = (0, 1, 0, \dots, 0)\trp$, $\dots$, $\vec e_n = (0, \dots, 0, 1)\trp$. The set $\bc{\vec e_1, \vec e_2, \dots, \vec e_n}$ is called the \vocab{standard basis} of $\RR^n$.
 \end{definition}
 
 \begin{sample}
     Show that the set \[S = \bc{\cveciv1010, \cveciv01{-1}2, \cveciv0221, \cveciv1001}\] is a basis for $\RR^4$.
 \end{sample}
 \begin{sampans}
-    We first show that $S$ spans $\RR^4$. Consider $\vec v = \cvecivx{a}{b}{c}{d}$, where $a, b, c, d \in \RR$. Consider \[k_1 \cveciv1010 + k_2 \cveciv01{-1}2 + k_3 \cveciv0221 + k_4 \cveciv1001 = \cveciv{a}{b}{c}{d} \implies \begin{pmatrix}1 & 0 & 0 & 1\\ 0 & 1 & 2 & 0 \\ 1 & -1 & 2 & 0 \\ 0 & 2 & 1 & 1\end{pmatrix}\cveciv{k_1}{k_2}{k_3}{k_4} = \cveciv{a}{b}{c}{d}.\] Since the matrix on the LHS has non-zero determinant, every $\vec v$ can be expressed as a linear combination of the vectors of $S$. Thus, $S$ spans $\RR^4$.
+    We first show that $S$ spans $\RR^4$. Consider $\vec v = \cvecivx{a}{b}{c}{d}$, where $a, b, c, d \in \RR$. Consider \[k_1 \cveciv1010 + k_2 \cveciv01{-1}2 + k_3 \cveciv0221 + k_4 \cveciv1001 = \cveciv{a}{b}{c}{d}.\] Then \[\begin{pmatrix}1 & 0 & 0 & 1\\ 0 & 1 & 2 & 0 \\ 1 & -1 & 2 & 0 \\ 0 & 2 & 1 & 1\end{pmatrix}\cveciv{k_1}{k_2}{k_3}{k_4} = \cveciv{a}{b}{c}{d}.\] Since the matrix on the LHS has non-zero determinant, every $\vec v$ can be expressed as a linear combination of the vectors of $S$. Thus, $S$ spans $\RR^4$.
 
-    We now show that $S$ is linearly independent. Consider \[k_1 \cveciv1010 + k_2 \cveciv01{-1}2 + k_3 \cveciv0221 + k_4 \cveciv1001 = \cveciv0000 \implies \begin{pmatrix}1 & 0 & 0 & 1\\ 0 & 1 & 2 & 0 \\ 1 & -1 & 2 & 0 \\ 0 & 2 & 1 & 1\end{pmatrix}\cveciv{k_1}{k_2}{k_3}{k_4} = \cveciv0000.\] Since the matrix on the LHS has non-zero determinant, the equation has only the trivial solution. Thus, $S$ is linearly independent.
+    We now show that $S$ is linearly independent. Consider the case where $a = b = c = d = 0$. \[\begin{pmatrix}1 & 0 & 0 & 1\\ 0 & 1 & 2 & 0 \\ 1 & -1 & 2 & 0 \\ 0 & 2 & 1 & 1\end{pmatrix}\cveciv{k_1}{k_2}{k_3}{k_4} = \cveciv0000.\] Since the matrix on the LHS has non-zero determinant, the equation has only the trivial solution. Thus, $S$ is linearly independent.
 \end{sampans}
 
 One particularly useful property about bases is that there is only one way to build a vector as a linear combination of given basis vector.
@@ -313,7 +319,7 @@ One particularly useful property about bases is that there is only one way to bu
     If $\bc{\vec v_1, \dots, \vec v_n}$ is a basis for a linear space $V$, then every vector $\vec v \in V$ can be expressed in the form $\vec v = k_1 \vec v_1 + \dots + k_n \vec v_n$ in exactly one way.
 \end{theorem}
 
-While a linear space can have many bases, the number of basis vectors must be the same. This number is called the dimension of $V$.
+While a linear space can have many different bases, the number of basis vectors forming each basis must be the same. This number is called the dimension of $V$.
 
 \begin{definition}
     The \vocab{dimension} of a non-zero linear space $V$ is the number of vectors in a basis for $V$, and is denoted $\Dim V$. By convention, we define the dimension of the zero linear space $\bc{\vec 0}$ to be 0.
@@ -430,7 +436,7 @@ One way of finding a basis for the column space of $\mat A$ would be to find a b
     Row operations do not change the linear dependence on columns.
 \end{proposition}
 \begin{proof}
-    Suppose we have a matrix $\mat A = \begin{pmatrix}\vec c_1 & \dots & \vec c_n\end{pmatrix}$. The linear independence of the column vectors depends on the solution set $\vec x$ to the equation \[x_1 \vec c_1 + \dots x_n \vec c_n = 0 \implies \mat A \vec x = 0.\] Suppose now that we perform row operations on $\mat A$ to obtain a new matrix $\mat A'$. By writing the above equation as an augmented matrix, we see that the row operations do not change the solution set $\vec x$! \[\begin{pmatrix}[c|c]\mat A & \vec 0\end{pmatrix} \rightarrow \begin{pmatrix}[c|c]\mat A' & \vec 0\end{pmatrix} \implies x_1 \vec c_1' + \dots + x_n \vec c_n' = 0.\] Thus, if $\vec c_i$ and $\vec c_j$ were originally linearly independent, the corresponding columns $\vec c_i'$ and $\vec c_j'$ will remain linearly independent. Likewise for columns that were originally linearly dependent. Thus, row operations do not change linear dependence on columns.
+    Suppose we have a matrix $\mat A = \begin{pmatrix}\vec c_1 & \dots & \vec c_n\end{pmatrix}$. The linear independence of the column vectors depends on the solution set $\vec x$ to the equation \[\mat A \vec x = x_1 \vec c_1 + \dots x_n \vec c_n = 0.\] Suppose now that we perform row operations on $\mat A$ to obtain a new matrix $\mat A'$. By writing the above equation as an augmented matrix, we see that the row operations do not change the solution set $\vec x$. \[\begin{pmatrix}[c|c]\mat A & \vec 0\end{pmatrix} \rightarrow \begin{pmatrix}[c|c]\mat A' & \vec 0\end{pmatrix} \implies x_1 \vec c_1' + \dots + x_n \vec c_n' = 0.\] Thus, if $\vec c_i$ and $\vec c_j$ were originally linearly independent, the corresponding columns $\vec c_i'$ and $\vec c_j'$ will remain linearly independent. Likewise for columns that were originally linearly dependent. Thus, row operations do not change linear dependence on columns.
 \end{proof}
 
 Note however, that row operations do not preserve the column space of $\mat A$. For instance, \[\begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix} \quad \tand \quad \begin{pmatrix}0 & 0 \\ 1 & 0\end{pmatrix}\] are row-equivalent, but their column spaces are entirely different.
@@ -459,7 +465,7 @@ In the proof of Proposition~\ref{prop:lin-alg:row-lindep}, we saw how row operat
 \end{recipe}
 
 \begin{example}
-    Let \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\] Its RREF is given by \[\mat B = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] We notice that columns 3 and 4 do not have leading entries. The variables corresponding to these columns can thus be set as free variables. \[\mat B \vec x = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix} \begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix} \implies \systeme{x_1 - x_3 - 2x_4 = 0, x_2 + 2x_3 + 3x_4 = 0, x_5 = 0}.\] Setting $x_3 = s$ and $x_4 = t$, we have \[\begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}s + 2t \\ -2s - 3t \\ s \\ t \\ 0 \end{pmatrix} = s \begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix} + t \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}.\] Thus, the basis of the null space of $\mat A$ is \[\bc{\begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix}, \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}}.\]
+    Let \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\] Its RREF is given by \[\mat B = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] We notice that columns 3 and 4 do not have leading entries. The variables corresponding to these columns can thus be set as free variables. \[\mat B \vec x = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix} \begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix}.\] This gives the system of linear equations \[\systeme{x_1 - x_3 - 2x_4 = 0, x_2 + 2x_3 + 3x_4 = 0, x_5 = 0}.\] Setting $x_3 = s$ and $x_4 = t$, we have \[\begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}s + 2t \\ -2s - 3t \\ s \\ t \\ 0 \end{pmatrix} = s \begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix} + t \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}.\] Thus, the basis of the null space of $\mat A$ is \[\bc{\begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix}, \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}}.\]
 \end{example}
 
 \section{Rank and Nullity for Matrices}
@@ -502,7 +508,7 @@ Let $\mat A$ be an $m \times n$ matrix. Because the row rank is at most $m$, and
 We can slightly extend the above result:
 
 \begin{proposition}
-    If $\mat B$ is an invertible $n \times n$ matrix, then $\Rank{\mat A \mat B} = \Rank{\mat B \mat A} = \Rank \mat A$ for all $n \times n$ matrices $\mat A$.
+    If $\mat B$ is an invertible $n \times n$ matrix, then \[\Rank{\mat A \mat B} = \Rank{\mat B \mat A} = \Rank \mat A\] for all $n \times n$ matrices $\mat A$.
 \end{proposition}
 \begin{proof}
     Observe that \[\Rank \mat A = \Rank{\mat A \mat B \mat B^{-1}} \leq \Rank{\mat A \mat B} \leq \Rank \mat A,\] so $\Rank{\mat A \mat B} = \Rank \mat A$. Similarly, \[\Rank \mat A = \Rank{\mat B^{-1} \mat B \mat A} \leq \Rank{\mat B \mat A} \leq \Rank \mat A.\] so $\Rank{\mat B \mat A} = \Rank \mat A$.

@@ -19,8 +19,8 @@ With our notation, we can write down the notion of integration ``undoing'' diffe
 \begin{fact}[Properties of Indefinite Integrals]
     Let $f(x)$ and $g(x)$ be any two functions, and let $k$ be a constant.
     \begin{itemize}
-        \item (linearity) $\int \bs{f(x) + g(x)} \d x = \int f(x) \d x + \int g(x) \d x$.
-        \item $\int k f(x) \d x = k \int f(x) \d x$.
+        \item (linearity) $\displaystyle\int \bs{f(x) + g(x)} \d x = \int f(x) \d x + \int g(x) \d x$.
+        \item $\displaystyle\int k f(x) \d x = k \int f(x) \d x$.
     \end{itemize}
 \end{fact}
 
@@ -35,13 +35,13 @@ Note that the indefinite integral $\int f(x) \d x$ is a function in $x$, while t
 \begin{fact}[Properties of Definite Integrals]
     Let $f(x)$ and $g(x)$ be any two functions. Let $k$ and $c$ be constants.
     \begin{itemize}
-        \item (linearity) $\int_a^b \bs{f(x) + g(x)} \d x = \int_a^b f(x) \d x + \int g(x) \d x$.
-        \item $\int_a^b k f(x) \d x = k \int_a^b f(x) \d x$.
-        \item $\int_a^b f(x) \d x = \int_a^c f(x) \d x + \int_c^b f(x) \d x$.
+        \item (linearity) $\displaystyle\int_a^b \bs{f(x) + g(x)} \d x = \int_a^b f(x) \d x + \int g(x) \d x$.
+        \item $\displaystyle\int_a^b k f(x) \d x = k \int_a^b f(x) \d x$.
+        \item $\displaystyle\int_a^b f(x) \d x = \int_a^c f(x) \d x + \int_c^b f(x) \d x$.
     \end{itemize}
 \end{fact}
 
-Note that from the last property, we can deduce the following properties: \[\int_a^a f(x) \d x = 0, \qquad \tand \qquad \int_a^b f(x) \d x = -\int_b^a f(x) \d x.\]
+Note that from the last property, we can deduce the following properties: \[\int_a^a f(x) \d x = 0 \quad \tand \quad \int_a^b f(x) \d x = -\int_b^a f(x) \d x.\]
 
 \section{Integration Techniques}
 
@@ -63,7 +63,7 @@ Note that from the last property, we can deduce the following properties: \[\int
     \end{alignat*}
 \end{proposition}
 
-Equivalently, \[\int \sec x \d x = \ln \abs{\sec x + \tan x} \qquad \tand \qquad \int \csc x \d x = -\ln \abs{\csc x + \cot x}.\]
+Equivalently, \[\int \sec x \d x = \ln \abs{\sec x + \tan x} \quad \tand \quad \int \csc x \d x = -\ln \abs{\csc x + \cot x}.\]
 
 Products of trigonometric functions can be easily integrated using the following identities:
 \begin{alignat*}{3}

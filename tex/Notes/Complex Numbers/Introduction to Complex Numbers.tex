@@ -20,7 +20,7 @@
 \begin{fact}[Algebraic Operations on Complex Numbers]
     Let $z_1, z_2, z_3 \in \CC$.
     \begin{itemize}
-        \item Two complex numbers are equal if and only if their corresponding real and imaginary parts are equal. \[z_1 = z_2 \iff \Re z_1 = \Re z_2 \tand \Im z_1 = \Im z_2.\]
+        \item Two complex numbers are equal if and only if their corresponding real and imaginary parts are equal. \[z_1 = z_2 \iff \Re z_1 = \Re z_2 \, \tand \Im z_1 = \Im z_2.\]
         \item Addition of complex numbers is commutative, i.e. \[z_1 + z_2 = z_2 + z_1\] and associative, i.e. \[(z_1 + z_2) + z_3 = z_1 + (z_2 + z_3).\]
         \item Multiplication of complex numbers is commutative, i.e. \[z_1z_2 = z_2z_1,\] associative, i.e. \[z_1(z_2z_3) = (z_1z_2)z_3\] and distributive, i.e. \[z_1(z_2 + z_3) = z_1z_2 + z_1z_3.\]
     \end{itemize}
@@ -243,7 +243,7 @@ Lastly, we observe the effect of multiplication and division on the modulus and 
 We now discuss some of the applications of de Moivre's theorem.
 
 \begin{recipe}[Finding $n$th Roots]
-    Suppose we want to find the $n$th roots of a complex number $w = r \e^{\i \t}$. We begin by setting up the equation \[z^n = w = r \e^{\i \bp{\t + 2k\pi}},\] where $k \in \ZZ$. Next, we take $n$th roots on both sides, which yields \[z = r^{1/n} \e^{\i \bp{\t + 2k\pi} /n}.\] Lastly, we pick values of $k$ such that $\arg z = \frac{\t + 2k\pi}{n}$ lies in the principal interval $(-\pi, \pi]$.
+    Suppose we want to find the $n$th roots of a complex number $w = r \e^{\i \t}$. We begin by setting up the equation \[z^n = w = r \e^{\i \bp{\t + 2k\pi}},\] where $k \in \ZZ$. Next, we take $n$th roots on both sides, which yields \[z = r^{1/n} \e^{\i \bp{\t + 2k\pi} /n}.\] Lastly, we pick values of $k$ such that $\arg z = (\t + 2k\pi)/n$ lies in the principal interval $(-\pi, \pi]$.
 \end{recipe}
 
 \begin{definition}

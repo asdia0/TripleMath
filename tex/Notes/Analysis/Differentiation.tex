@@ -3,10 +3,10 @@
 \section{First Principles}
 
 \begin{definition}
-    A function $f$ is said to be \vocab{differentiable} at some point $a$, if its domain contains an open interval containing $a$, and the limit \[L = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\] exists. If $f$ is differentiable, then $L$ is the \vocab{derivative} of $f$ at $a$, denoted $\der{}{x} f(a)$. If the derivative exists for all points in the domain, we may define a \vocab{derivative function} that maps $x$ to the value of the derivative at $x$, denoted $\der{}{x} f(x)$ or $f'(x)$.
+    A function $f$ is said to be \vocab{differentiable} at some point $a$, if its domain contains an open interval containing $a$, and the limit \[L = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\] exists. If $f$ is differentiable, then $L$ is the \vocab{derivative} of $f$ at $a$, denoted \[\der{}{x} f(a).\] If the derivative exists for all points in the domain, we may define a \vocab{derivative function} that maps $x$ to the value of the derivative at $x$, denoted \[\der{}{x} f(x) \quad \tor \quad f'(x).\]
 \end{definition}
 
-If $y = f(x)$, we write the derivative as $\der{y}{x}$ or $y'$. Note that the symbol $\der{}{x}$ means ``the derivative with respect to $x$ of'' and should be treated as an operation, not a fraction.
+If $y = f(x)$, we write the derivative as \[\der{y}{x} \quad \tor \quad y'.\]
 
 Geometrically, the derivative of $f$ at $a$ can be understood as the instantaneous rate of change of $f$ at $a$. Consider a curve $y = f(x)$. Let $A(a, f(a))$ and $B(a + h, f(a + h))$ be two points on the curve.
 
@@ -23,8 +23,8 @@ Observe that the gradient of the tangent to the curve at $A$ can be approximated
     \begin{itemize}
         \item (Sum/Difference Rule) If $y = u \pm v$ then $y' = u' \pm v'$.
         \item (Product Rule) If $y = uv$, then $y' = u' v + u v'$.
-        \item (Quotient Rule) If $y = \frac{u}{v}$, then $y' = \frac{u' v - u v'}{v^2}$.
-        \item (Chain Rule) If $y = f(x)$ and $x = g(t)$, then $\der{y}{t} = \der{y}{x} \der{x}{t}$.
+        \item (Quotient Rule) If $y = u/v$, then \[y' = \frac{u' v - u v'}{v^2}.\]
+        \item (Chain Rule) If $y = f(x)$ and $x = g(t)$, then \[\der{y}{t} = \der{y}{x} \der{x}{t}.\]
     \end{itemize}
 \end{proposition}
 The sum, product and quotient rules are easy to prove from first principles. We hence only prove the chain rule. To do so, we introduce an equivalent definition of differentiability at a point.
@@ -35,9 +35,9 @@ We now prove the chain rule.
 \begin{proof}[Proof of Chain Rule]    
     Suppose $y = f(x)$ and $x = g(t)$. Suppose also that $f(x)$ is differentiable at $x = g(a)$, and that $g(t)$ is differentiable at $a$.
 
-    Since $f(x)$ is differentiable at $x = g(a)$, by the above definition, there exists a function $q(x)$ such that \[q(x) = \frac{f(x) - f(g(a))}{x - g(a)}.\] Replacing $x$ with $g(t)$, we get \[q(g(t)) = \frac{f(g(t)) - f(g(a))}{g(t) - g(a)} \implies g(t) - g(a) = \frac{f(g(t)) - f(g(a))}{q(g(t))}. \tag{1}\]
+    Since $f(x)$ is differentiable at $x = g(a)$, by the above definition, there exists a function $q(x)$ such that \[q(x) = \frac{f(x) - f(g(a))}{x - g(a)}.\] Replacing $x$ with $g(t)$, and rearranging terms, we get \[g(t) - g(a) = \frac{f(g(t)) - f(g(a))}{q(g(t))}. \tag{1}\]
 
-    Similarly, since $g(t)$ is differentiable at $a$, by the above definition, there must exist a function $r(t)$ continuous at $a$ such that \[r(t) = \frac{g(t) - g(a)}{t - a} \implies g(t) - g(a) = r(t) (t - a). \tag{2}\]
+    Similarly, since $g(t)$ is differentiable at $a$, by the above definition, there must exist a function $r(t)$ continuous at $a$ such that \[r(t) = \frac{g(t) - g(a)}{t - a}.\] This implies that \[g(t) - g(a) = r(t) (t - a). \tag{2}\]
 
     Equating (1) and (2), we have \[\frac{f(g(t)) - f(g(a))}{q(g(t))} = r(t) (t - a).\] Rearranging, \[q(g(t)) r(t) = \frac{f(g(t)) - f(g(a))}{t - a} = \frac{(f \circ g)(t) - (f \circ g)(a)}{t - a}.\] By our assumptions, $q(g(t)) r(t)$ is continuous at $t = a$. Hence, by the above definition, $q(g(t)) r(t)$ is the derivative of $(f \circ g)'(t)$. Since $q(x) = f'(x)$ and $r(t) = g'(t)$, we arrive at \[(f \circ g)'(t) = f'(g(t)) g'(t).\] In Liebniz notation, this reads as \[\der{}{t} f(g(t)) = \bs{\der{}{x} f(g(t))} \bs{\der{}{t} g(t)}.\] Since $x = g(t)$ and $y = f(x) = f(g(t))$, this can be written more compactly as \[\der{y}{t} = \der{y}{x} \der{x}{t}.\]
 \end{proof}
@@ -48,26 +48,28 @@ From the chain rule, we can derive the following property:
     Suppose $\derx{x}{y} \not\equiv 0$. Then \[\der{y}{x} = \frac1{\derx{x}{y}}.\]
 \end{proposition}
 \begin{proof}
-    By the chain rule, \[1 = \der{y}{y} = \der{y}{x} \der{x}{y} \implies \der{y}{x} = \frac1{\derx{x}{y}}.\]
+    By the chain rule, \[1 = \der{y}{y} = \der{y}{x} \der{x}{y}.\] Since $\derx{x}{y} \not\equiv 0$, we may divide by $\derx{x}{y}$ to get \[\der{y}{x} = \frac1{\derx{x}{y}}.\]
 \end{proof}
 
-Note that this property does not generalize to higher derivatives. For instance, $\der[2]{y}{x} \neq \frac1{\derx[2]{x}{y}}$.
+Note that this property does not generalize to higher derivatives. For instance, \[\der[2]{y}{x} \neq \frac1{\derx[2]{x}{y}}.\]
 
 \section{Derivatives of Standard Functions}
 
-Let $n, a \in \RR$.
+Let $a \in \RR$.
 
+{\renewcommand{\arraystretch}{1.2}
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|}
-    \hline
-    $y$ & $y'$ & $y$ & $y'$ & $y$ & $y'$ \\ \hline\hline
-    $x^n$ & $n x^{n-1}$ & $\sin x$ & $\cos x$ & $\cos x$ & $-\sin x$\\ \hline
-    $a^x$ & $a^x \ln a$ & $\sec x$ & $\sec x \tan x$ & $\csc x$ & $-\csc x \cot x$\\ \hline
-    $\log_a x$ & $1/(x\ln a)$ & $\tan x$ & $\sec^2 x$ & $\cot x$ & $-\csc^2 x$\\ \hline
+    \begin{tabular}{|c|c|l|c|c|l|c|c|}
+    \cline{1-2} \cline{4-5} \cline{7-8}
+    $y$ & $y'$ &  & $y$ & $y'$ &  & $y$ & $y'$ \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+    $x^n$ & $n x^{n-1}$ &  & $\sin x$ & $\cos x$ &  & $\cos x$ & $-\sin x$ \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+    $a^x$ & $a^x \ln a$ &  & $\sec x$ & $\sec x \tan x$ &  & $\csc x$ & $-\csc x \cot x$ \\ \cline{1-2} \cline{4-5} \cline{7-8} 
+    $\log_a x$ & $1/(x\ln a)$ &  & $\tan x$ & $\sec^2 x$ &  & $\cot x$ & $-\csc^2 x$ \\ \cline{1-2} \cline{4-5} \cline{7-8} 
     \end{tabular}
-\end{table}
+\end{table}}
 
+{\renewcommand{\arraystretch}{1.2}
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|}
@@ -77,7 +79,7 @@ Let $n, a \in \RR$.
     $\arccos x$ & $-1/\sqrt{1 - x^2}$, $\abs{x} < 1$ \\ \hline
     $\arctan x$ & $1/(1 + x^2)$ \\ \hline
     \end{tabular}
-\end{table}
+\end{table}}
 
 \section{Implicit Differentiation}
 
@@ -92,14 +94,14 @@ Let $n, a \in \RR$.
 Implicit differentiation requires the use of the chain rule: \[\der{}{x} g(y) = \der{}{y} g(y) \cdot \der{y}{x}.\]
 
 \begin{example}[Implicit Differentiation]
-    Consider the implicit function $3y^3 + x^2 y = 2$. Implicitly differentiating each term with respect to $x$, we obtain \[9y^2 y' + \bp{x^2 y' + 2x y} = 0 \implies y' = \frac{-2xy}{9y^2 + x^2}.\]
+    Consider the implicit function $3y^3 + x^2 y = 2$. Implicitly differentiating each term with respect to $x$, we obtain \[9y^2 y' + \bp{x^2 y' + 2x y} = 0.\] Rearranging, we get \[y' = \frac{-2xy}{9y^2 + x^2}.\]
 \end{example}
 
 \begin{proposition}[Derivative of Inverse Functions]
     \[\der{}{x} \inv f(x) = \frac1{{f'\bp{\inv f(x)}}}.\]
 \end{proposition}
 \begin{proof}
-    Let $y = \inv f(x)$. Then $f(y) = x$. Implicitly differentiating, \[f'(y) \, y' = 1 \implies y' = \frac1{f'(y)} = \frac1{{f'\bp{\inv f(x)}}}.\]
+    Let $y = \inv f(x)$. Then $f(y) = x$. Implicitly differentiating, we have $f'(y) \, y' = 1$, so \[y' = \frac1{f'(y)} = \frac1{{f'\bp{\inv f(x)}}}.\]
 \end{proof}
 
 We can use the above result to derive the derivatives of the inverse trigonometric functions and the logarithm.

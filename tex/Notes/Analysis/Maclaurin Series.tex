@@ -60,7 +60,7 @@ Using repeated differentiation, we can derive the following standard Maclaurin s
 We can use these standard series to find the Maclaurin series of their composite functions.
 
 \begin{example}[Standard Maclaurin Series]
-    Suppose we wish to find the first three terms of the Maclaurin series of $\e^x \bp{1 + \sin 2x}$. Using the above standard series, we see that \[\e^x = 1 + x + \frac{x^2}{2} + \cdots, \quad \tand \quad 1 + \sin 2x = 1 + 2x + \cdots.\] Hence,
+    Suppose we wish to find the first three terms of the Maclaurin series of $\e^x \bp{1 + \sin 2x}$. Using the above standard series, we see that \[\e^x = 1 + x + \frac{x^2}{2} + \cdots \quad \tand \quad 1 + \sin 2x = 1 + 2x + \cdots.\] Hence,
     \begin{align*}
         \e^x \bp{1 + \sin 2x} &= \bp{1 + x + \frac{x^2}{2} + \cdots}\bp{1 + 2x + \cdots}\\
         &= \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \cdots\\
@@ -88,7 +88,7 @@ For complicated functions, it is more efficient to repeatedly implicitly differe
 Maclaurin series can be used to approximate a function $f(x)$ near $x = 0$.
 
 \begin{example}[Approximating Integrals]
-    Suppose we wish to approximate \[\int_0^{0.5} \ln{1 + \cos x} \d x.\] Doing so analytically is very hard, so we can approximate it using the Maclaurin series of $\ln{1 + \cos x}$, which we previously found to be $\ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots$. Integrating this expression over the interval $[0, 0.5]$, we get \[\int_0^{0.5} \ln{1 + \cos x} \d x \approx \int_0^{0.5} \bp{\ln 2 - \frac14 x^2 - \frac1{96}x^4} \d x = 0.336092,\] which is close to the actual value of $0.336091$.
+    Suppose we wish to approximate \[\int_0^{0.5} \ln{1 + \cos x} \d x.\] Doing so analytically is very hard, so we can approximate it using the Maclaurin series of $\ln{1 + \cos x}$, which we previously found to be \[\ln{1 + \cos x} = \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots.\] Integrating this expression over the interval $[0, 0.5]$, we get \[\int_0^{0.5} \ln{1 + \cos x} \d x \approx \int_0^{0.5} \bp{\ln 2 - \frac14 x^2 - \frac1{96}x^4} \d x = 0.336092,\] which is close to the actual value of $0.336091$.
 \end{example}
 
 \begin{example}[Approximating Constants]

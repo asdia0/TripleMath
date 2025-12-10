@@ -38,7 +38,7 @@ We also demonstrate how to solve DEs using a given substitution, which is useful
 
 \begin{recipe}[Solving via Separation of Variables]
     \phantom{.}
-    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Separate the variables. \[\der{y}{x} = f(x) g(y) \implies \frac1{g(y)} \der{y}{x} = f(x).\]
         \item Integrate both sides with respect to $x$. \[\int \frac1{g(y)} \der{y}{x} \ d x = \int f(x) \d x \implies \int \frac1{g(y)} \d y = \int f(x) \d x.\]
@@ -66,7 +66,7 @@ Note that we do not need to derive the integrating factor like above every time 
 
 \begin{recipe}[Solving via Integrating Factor]
     \phantom{.}
-    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Multiply the DE through by the $\IF = \e^{\int p(x) \d x}$. \[\e^{\int p(x) \d x} \der{y}{x} + \e^{\int p(x) \d x} p(x) y = \e^{\int p(x) \d x} q(x).\]
         \item Express the LHS as the derivative of a product. \[\der{}{x} \bs{y \e^{\int p(x) \d x}} = \e^{\int p(x) \d x} q(x).\]
@@ -96,8 +96,8 @@ Before looking at the methods to solve second-order DEs, we introduce two import
     Suppose $y_1$ and $y_2$ are solutions to \[a \der[2]{y}{x} + b \der{y}{x} + c y = 0.\] Substituting $y = A y_1 + B y_2$ into the DE, we get
     \begin{align*}
         &a \bp{A y_1'' + By_2''} + b \bp{A y_1' + By_2'} + c\bp{Ay_1 + By_2}\\
-        &\hspace{3em}= A\bp{ay_1'' + by_1' + cy_1} + B\bp{ay_2'' + by_2' + cy_2}\\
-        &\hspace{3em}= 0.
+        &\hspace{2em}= A\bp{ay_1'' + by_1' + cy_1} + B\bp{ay_2'' + by_2' + cy_2}\\
+        &\hspace{2em}= 0.
     \end{align*}
     Hence, $A y_1 + By_2$ satisfies the DE and is hence a solution.
 \end{proof}
@@ -110,7 +110,7 @@ We are now ready to solve second-order DEs.
 
 \subsubsection{Homogeneous Second-Order Linear Differential Equations with Constant Coefficients}
 
-Consider a homogeneous first-order linear differential equation with constant coefficients which has the form \[a \der{y}{x} + by = 0.\] Using the method of integrating factor, we can show that the general solution is of the form \[y = C \e^{-\frac{b}{a} x}.\]
+Consider a homogeneous first-order linear differential equation with constant coefficients which has the form \[a \der{y}{x} + by = 0.\] Using the method of integrating factor, we can show that the general solution is of the form \[y = C \e^{-bx/a}.\]
 
 We can extend this to the second-order case, i.e. \[a \der[2]{y}{x} + b \der{y}{x} + cy = 0\] by looking for solutions of the form $y= \e^{mx}$, where $m$ is a constant to be determined. Substituting $y = \e^{mx}$ into the differential equation, we get \[am^2 \e^{mx} + bm \e^{mx} + c\e^{mx} = 0.\] Dividing by $\e^{mx}$, we get the quadratic \[am^2 + bm + c = 0.\] This is known as the \vocab{characteristic equation} of the DE.
 
@@ -125,7 +125,7 @@ If we can solve for $m$ in the characteristic equation, we can find the solution
 
 \paragraph{Real and Equal Roots} If the two roots are equal, i.e. $m_1 = m_2 = m$, then $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ are no longer linearly independent. Hence, we effectively only get one solution $y_1 = \e^{mx}$. To obtain the general solution, we have to find another solution that is not a constant multiple of $\e^{mx}$. By intelligently guessing a solution, we see that $y_2 = x \e^{mx}$ satisfies the DE. Hence, by the superposition principle, the general solution is \[y = A \e^{mx} + Bx \e^{mx} = (A + Bx) \e^{mx}.\]
 
-\paragraph{Complex Roots} If the two roots are complex, then they are conjugates, and we can write them as \[m_1 = p + \i q, \quad m_2 = p - \i q.\] Hence, \[y_1 = \e^{(p + \i q)x} = \e^{px} \bp{\cos qx + \i \sin qx}\] and \[y_2 = \e^{(p -\i q) x} = \e^{px} \bp{\cos qx - \i \sin qx}.\] By the superposition principle, we get the general solution
+\paragraph{Complex Roots} If the two roots are complex, then they are conjugates, and we can write them as \[m_1 = p + \i q \quad \tand \quad m_2 = p - \i q.\] Hence, \[y_1 = \e^{(p + \i q)x} = \e^{px} \bp{\cos qx + \i \sin qx}\] and \[y_2 = \e^{(p -\i q) x} = \e^{px} \bp{\cos qx - \i \sin qx}.\] By the superposition principle, we get the general solution
 \begin{align*}
     y &= C\e^{px} \bp{\cos qx + \i \sin qx} + D\e^{px} \bp{\cos qx - \i \sin qx}\\
     &= \e^{px} \bp{A \cos qx + B \sin qx},
@@ -135,7 +135,7 @@ where $A = C + D$ and $B = \i (C - D)$ are arbitrary constants.
 In summary,
 \begin{recipe}[Homogeneous Second-Order Linear DE with Constant Coefficients]
     To solve the second-order DE \[a \der[2]{y}{x} + b \der{y}{x} + cy = 0,\]
-    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Form the characteristic equation $am^2 + bm + c = 0$.
         \item Find the roots $m_1$ and $m_2$ of this characteristic equation.
@@ -457,11 +457,11 @@ Extending (1), we get the usual statement of the improved Euler's method:
 
 Recall that solving differential equations analytically required us to integrate. It is thus no surprise that approximating solutions to differential equations is related to approximating the values of definite integrals. As we will see, the Euler method is akin to approximating definite integrals using a Riemann sum, while the improved Euler method is akin to using the trapezium rule.
 
-Consider the differential equation $\der{y}{t} = f(t, y)$. By the fundamental theorem of calculus, the area under the graph of $f(t, y)$ from $t = t_0$ to $t = t_1$ is given by \[\int_{t_0}^{t_1} f(t, y) \d t = \int_{t_0}^{t_1} \der{y}{t} \d t = y(t_1) - y(t_0) \tag{1}.\] Note that we know $y(t_0)$. Hence, the better the approximation of the integral, the better the approximation of $y(t_1)$, which is what we want.
+Consider the differential equation $\derx{y}{t} = f(t, y)$. By the fundamental theorem of calculus, the area under the graph of $f(t, y)$ from $t = t_0$ to $t = t_1$ is given by \[\int_{t_0}^{t_1} f(t, y) \d t = \int_{t_0}^{t_1} \der{y}{t} \d t = y(t_1) - y(t_0) \tag{1}.\] Note that we know $y(t_0)$. Hence, the better the approximation of the integral, the better the approximation of $y(t_1)$, which is what we want.
 
 We can approximate this integral using a Riemann sum with one rectangle. Note that this rectangle has width $\D t$ and height $f(t_0, y_0)$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t f(t_0, y_0).\] Rewriting, we get the statement of the Euler method: \[y(t_1) \approx y(t_0) + \D t f(t_0, y_0).\]
 
-We now approximate the integral in (1) using the trapezium rule with 2 ordinates. Note that the area of this trapezium is given by $\frac12 \D t \bs{f(t_0, y_0) + f(t_1, y_1)}$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\] Rewriting, we (almost) get the statement of the improved Euler method: \[y(t_1) \approx y(t_0) + \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\]
+We now approximate the integral in (1) using the trapezium rule with 2 ordinates. Note that the area of this trapezium is given by $(1/2) \D t \bs{f(t_0, y_0) + f(t_1, y_1)}$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\] Rewriting, we (almost) get the statement of the improved Euler method: \[y(t_1) \approx y(t_0) + \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\]
 
 Recall that generally, the trapezium rule is a much better approximation than a Riemann sum. Correspondingly, it follows that the improved Euler method is a much better approximation than the Euler method.
 

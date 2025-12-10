@@ -127,7 +127,7 @@ Note that a diagonal matrix is both an upper and lower triangular matrix.
 \begin{fact}[Properties of Matrix Multiplication]
     \phantom{.}
     \begin{itemize}
-        \item Matrix multiplication is \emph{not} commutative, i.e. $\mat A \mat B \neq \mat B \mat A$.
+        \item Matrix multiplication is \emph{not} commutative, i.e. $\mat A \mat B \neq \mat B \mat A$ in general.
         \item Matrix multiplication is associative, i.e. $\mat A \bp{\mat B \mat C} = \bp{\mat A \mat B} \mat C$.
         \item Matrix multiplication is distributive over addition, i.e. $\mat A \bp{\mat B + \mat C} = \mat A \mat B + \mat A \mat C$ and $\bp{\mat B + \mat C} \mat A = \mat B \mat A + \mat C \mat A$.
         \item $\mat A \mat B = \mat 0$ does not imply that $\mat A = \mat 0$ or $\mat B = \mat 0$.
@@ -301,7 +301,7 @@ We now state some properties regarding the inverse of a matrix:
     Let $\mat A$ and $\mat B$ be square matrices of the same size. Let $a \in \RR$ be a scalar and let $n$ be a non-negative integer.
     \begin{itemize}
         \item The inverse of a matrix is unique.
-        \item If $a\mat A$ is invertible, then $(a\mat A)^{-1} = \frac1a \mat A^{-1}$.
+        \item If $a\mat A$ is invertible, then $(a\mat A)^{-1} = a^{-1} \mat A^{-1}$.
         \item If $\mat A$ is invertible, then $\bp{\mat A^{-1}}^{-1} = \mat A$.
         \item If $\mat A \trp$ is invertible, then $\bp{\mat A \trp}^{-1} = \bp{\mat A^{-1}}\trp$.
         \item If $\mat A \mat B$ is invertible, then $\bp{\mat A \mat B}^{-1} = \mat B^{-1} \mat A^{-1}$.
@@ -353,7 +353,7 @@ The previous section showed the importance of invertibility and uses elementary 
 
 For $1 \times 1$ matrices, $(a)^{-1} = (1/a)$, so the matrix has an inverse if and only if $a \neq 0$. Thus, $\abs{a} = a$.
 
-For $2 times 2$ matrices, recall that \[\begin{pmatrix}a & b \\ c & d\end{pmatrix}^{-1} = \frac1{ad - bc} \begin{pmatrix}d & -b \\ -c & a\end{pmatrix}.\] The inverse hence does not exist when $ad - bc = 0$. Hence, \[\begin{vmatrix}a & b \\ c& d\end{vmatrix} = ad - bc.\]
+For $2 \times 2$ matrices, recall that \[\begin{pmatrix}a & b \\ c & d\end{pmatrix}^{-1} = \frac1{ad - bc} \begin{pmatrix}d & -b \\ -c & a\end{pmatrix}.\] The inverse hence does not exist when $ad - bc = 0$. Hence, \[\begin{vmatrix}a & b \\ c& d\end{vmatrix} = ad - bc.\]
 
 \subsection{Cofactor Expansion}
 
@@ -386,7 +386,7 @@ We now look at the properties of determinants.
     Let $\mat A$ and $\mat B$ be square matrices of order $n$.
     \begin{itemize}
         \item $\det{\mat A} = \det{\mat A \trp}$.
-        \item $\det{\mat A + \mat B} \neq \det{\mat A} + \det{\mat B}$.
+        \item $\det{\mat A + \mat B} \neq \det{\mat A} + \det{\mat B}$ in general.
         \item $\det{c \mat A} = c^n \det{\mat A}$, where $c$ is a scalar.
         \item $\det{\mat A \mat B} = \det{\mat A} \det{\mat B}$.
         \item If $\mat A$ is a triangular matrix, then $\det{\mat A}$ is the product of the diagonal entries of $\mat A$.

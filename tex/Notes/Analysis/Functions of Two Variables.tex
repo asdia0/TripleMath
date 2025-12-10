@@ -171,14 +171,13 @@ When $a = b = c = r$, we get the equation \[x^2 + y^2 + z^2 = r^2.\] This repres
 
 \section{Partial Derivatives}
 
-Recall that for a function $f$ of one variable $x$, we defined the derivative function as \[f'(x) = \lim_{\D x \to 0} \frac{f(x + \D x) - f(x)}{\D x}.\] The usual notations are $\der{y}{x}$ or $\der{f}{x}$ if $y = f(x)$.
+Recall that for a function $f$ of one variable $x$, we defined the derivative function as \[f'(x) = \lim_{\D x \to 0} \frac{f(x + \D x) - f(x)}{\D x}.\] The usual notations are \[\der{y}{x} \quad \tor \der{f}{x}\] if $y = f(x)$.
 
-The notation $\der{y}{x}$ gives some insight into how derivatives are derived. We can view
+The notation $\derx{y}{x}$ gives some insight into how derivatives are derived. We can view
 \begin{itemize}
     \item ``$\d x$'' as a small change in $x$, and
     \item ``$\d y$'' as the change in $y$ as a result of the small change in $x$.
 \end{itemize}
-Hence, the notation $\der{y}{x}$ actually represents the ``rise over run'', which is a measure of gradient at the point $(x, y)$ on the graph.
 
 We can extend this notion to functions of two variables $z = f(x, y)$. There are now two variables that will affect the change in the value of $f$. We can choose to vary $x$ slightly ($\D x$) or vary $y$ slightly $\D y$ and see how $f$ changes ($\D f$). This gives us some notion of a derivative. However, because we are only varying one independent variable at a time, we are only differentiating the function $f(x,y)$ ``partially''. We hence call these derivatives the partial derivatives of $f$.
 
@@ -188,7 +187,7 @@ We can extend this notion to functions of two variables $z = f(x, y)$. There are
         f_x(x, y) &= \lim_{\D x \to 0} \frac{f(x + \D x, y) - f(x, y)}{\D x},\\
         f_y(x, y) &= \lim_{\D y \to 0} \frac{f(x, y + \D y) - f(x, y)}{\D y}.
     \end{align*}
-    In Liebniz notation, \[f_x(x, y) = \pder{f}{x}, \quad f_y(x, y) = \pder{f}{y}.\]
+    In Liebniz notation, \[f_x(x, y) = \pder{f}{x} \quad \tand \quad f_y(x, y) = \pder{f}{y}.\]
 \end{definition}
 
 \begin{recipe}[Partial Differentiation]
@@ -199,7 +198,7 @@ We can extend this notion to functions of two variables $z = f(x, y)$. There are
     Given $f(x, y) = \cos{xy + y^2}$, find $f_x(x, y)$.
 \end{sample}
 \begin{sampans}
-    To partially differentiate it with respect to $x$, we treat $y$ as a constant. Using the chain rule, \[f_x (x, y) = -\sin{xy + y^2} \, \pder{}{x} \bs{xy + y^2}.\] Since $y$ is a constant, \[\pder{}{x} (xy) = y, \quad \pder{}{x} y^2 = 0.\] Hence, \[f_x (x, y) = -y\sin{xy + y^2}.\]
+    To partially differentiate it with respect to $x$, we treat $y$ as a constant. Using the chain rule, \[f_x (x, y) = -\sin{xy + y^2} \, \pder{}{x} \bs{xy + y^2}.\] Since $y$ is a constant, \[\pder{}{x} (xy) = y \quad \tand \quad \pder{}{x} y^2 = 0.\] Hence, \[f_x (x, y) = -y\sin{xy + y^2}.\]
 \end{sampans}
 
 \subsection{Geometric Interpretation}\label{subsec:Partial-Derivative-Geometric}
@@ -233,7 +232,7 @@ To represent the ``full'' derivative of a function, we simply collect its partia
 
 \subsection{Second Partial Derivatives}
 
-Similar to second-order derivatives for univariate functions, we can also consider the partial derivatives of partial derivatives: \[(f_x)_x, \quad (f_x)_y, \quad (f_y)_x, \quad (f_y)_y.\] If $z = f(x, y)$, we use the following notation for the second partial derivatives:
+Similar to second-order derivatives for univariate functions, we can also consider the partial derivatives of partial derivatives: \[(f_x)_x, \qquad (f_x)_y, \qquad (f_y)_x, \qquad (f_y)_y.\] If $z = f(x, y)$, we use the following notation for the second partial derivatives:
 \[
     \begin{array}{c @{{}={}} >{\displaystyle} c @{{}={}} >{\displaystyle} c}
         (f_x)_x = f_{xx} & \pder[2]{f}{x} & \pder[2]{z}{x},\\[0.5cm]

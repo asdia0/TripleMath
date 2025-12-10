@@ -507,19 +507,19 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\ran g = \RR \setminus \bc{0}$ and $\dom g = \RR$. Hence, $\ran g \subseteq \dom g$. Thus, $fg$ exists. \[fg(x) = f\bp{\frac4x} = 3 - \frac4x.\]  Observe that $\dom{fg} = \dom{g} = \RR\setminus \bc{0}$. Thus, \[fg \colon x \mapsto 3 - \frac4x, \, x \in \RR \setminus \bc{0}.\]
+        Note that $\ran g = \RR^{\ast}$ and $\dom g = \RR$. Hence, $\ran g \subseteq \dom g$. Thus, $fg$ exists. \[fg(x) = f\bp{\frac4x} = 3 - \frac4x.\]  Observe that $\dom{fg} = \dom{g} = \RR^{\ast}$. Thus, \[fg \colon x \mapsto 3 - \frac4x, \, x \in \RR^{\ast}.\]
         
         Since $\frac4x$ can take on any value except 0, then $fg(x) = 3 - \frac4x$ can take on any value except 3. Thus, \[\ran{fg} = \RR \setminus \bc{3}.\]
     \end{ppart}
     \begin{ppart}
-        We have \[g^2(x) = g\bp{\frac4x} = \frac4{4/x} = x.\] Hence, \[g^2 \colon x \mapsto x, \, x \in \RR \setminus \bc{0}.\]
+        We have \[g^2(x) = g\bp{\frac4x} = \frac4{4/x} = x.\] Hence, \[g^2 \colon x \mapsto x, \, x \in \RR^{\ast}.\]
 
-        We have \[g^3(x) = g(g^2(x)) = g(x) = \frac4x.\] Hence, \[g^3 \colon x \mapsto \frac4x, \, x \in \RR \setminus \bc{0}.\]
+        We have \[g^3(x) = g(g^2(x)) = g(x) = \frac4x.\] Hence, \[g^3 \colon x \mapsto \frac4x, \, x \in \RR^{\ast}.\]
 
-        Thus, \[g^{2017} = g^{2016}(g(x)) = \bp{g^2}^{1008} \circ g(x) = g(x) = \frac4x.\] Hence, \[g^{2017} \colon x \mapsto \frac4x, \, x \in \RR \setminus \bc{0}.\]
+        Thus, \[g^{2017} = g^{2016}(g(x)) = \bp{g^2}^{1008} \circ g(x) = g(x) = \frac4x.\] Hence, \[g^{2017} \colon x \mapsto \frac4x, \, x \in \RR^{\ast}.\]
     \end{ppart}
     \begin{ppart}
-        Note that $g(x) = \inv g(x) \implies g^2(x) = x$. From the definition of $g^2(x)$, we know that $g^2(x) = x$ for all $x$ in $\dom{g^2}$. Hence, the solution set is $\RR \setminus \bc{0}$.
+        Note that $g(x) = \inv g(x) \implies g^2(x) = x$. From the definition of $g^2(x)$, we know that $g^2(x) = x$ for all $x$ in $\dom{g^2}$. Hence, the solution set is $\RR^{\ast}$.
     \end{ppart}
 \end{solution}
 

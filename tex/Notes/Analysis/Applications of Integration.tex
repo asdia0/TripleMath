@@ -48,7 +48,7 @@ We can approximate this area by drawing $n$ rectangles of equal width, as shown 
 
 Observe that the $k$th rectangle has width $\D x = (b-a)/n$ and height $f(a + k \D x)$. The total area of the rectangles is hence \[\sum_{k = 1}^n f(a + k \D x) \D x.\] This is known as the \vocab{Riemann sum} of $f$ over $[a, b]$.
 
-As the number of rectangles approaches $\infty$, the width $\D x$ of the rectangles approaches 0, and the total area of rectangles approaches the actual area under the curve. In other words, \[\area = \lim_{\D x \to 0} \sum_{k = 1}^n f(a + k \D x) \D x.\] In the limit, the Riemann sum becomes the \vocab{Riemann integral}, which is conventionally written as the definite integral \[\int_a^b f(x) \d x.\]
+As the number of rectangles increases, the width $\D x$ of the rectangles approaches 0, and the total area of rectangles approaches the actual area under the curve. In other words, \[\area = \lim_{\D x \to 0} \sum_{k = 1}^n f(a + k \D x) \D x.\] In the limit, the Riemann sum becomes the \vocab{Riemann integral}, which is conventionally written as the definite integral \[\int_a^b f(x) \d x.\]
 
 Note that this is where the integral and differential sign comes from: in the limit, $\sum \to \int$ and $\D x \to \d x$.
 
@@ -169,7 +169,7 @@ Taking $t = x$ or $t = y$, we get the following formulas involving $\derx{y}{x}$
     Let $A(r_1, \t_1)$ and $B(r_2, \t_2)$ be points on the polar curve $r = f(\t)$. Then the arc length $AB$ is given by \[\overbow{AB} = \int_{\t_1}^{\t_2} \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t.\]
 \end{proposition}
 \begin{proof}
-    Recall that $x = r\cos \t$ and $y = r\sin \t$. Hence, \[\der{x}{\t} = \cos \t \der{r}{\t} - r \sin \t, \qquad \der{y}{\t} = \sin \t \der{r}{t} + r \cos \t.\] It follows that \[\bp{\der{(r\cos \t)}{\t}}^2 + \bp{\der{(r\sin \t)}{\t}}^2 = \bp{\cos^2 \t + \sin^2 \t} \bs{r^2 + \bp{\der{r}{\t}}^2} = r^2 + \bp{\der{r}{\t}}^2.\] Taking $t = \t$, \[\overbow{AB} = \int_{\t_1}^{\t_2} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = \int_{\t_1}^{\t_2} \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t.\]
+    Recall that $x = r\cos \t$ and $y = r\sin \t$. Hence, \[\der{x}{\t} = \cos \t \der{r}{\t} - r \sin \t \quad \tand \quad \der{y}{\t} = \sin \t \der{r}{t} + r \cos \t.\] It follows that \[\bp{\der{(r\cos \t)}{\t}}^2 + \bp{\der{(r\sin \t)}{\t}}^2 = \bp{\cos^2 \t + \sin^2 \t} \bs{r^2 + \bp{\der{r}{\t}}^2} = r^2 + \bp{\der{r}{\t}}^2.\] Taking $t = \t$, \[\overbow{AB} = \int_{\t_1}^{\t_2} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = \int_{\t_1}^{\t_2} \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t.\]
 \end{proof}
 
 \section{Surface Area of Revolution}

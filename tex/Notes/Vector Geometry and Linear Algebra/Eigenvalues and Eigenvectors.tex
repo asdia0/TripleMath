@@ -82,12 +82,12 @@ If $\mat A$ is a $3 \times 3$ matrix, we can use cross products to easily find e
     Let \[\mat A = \begin{pmatrix}2 & 0 & 1 \\ -1 & 2 & 3 \\ 1 & 0 & 2\end{pmatrix}.\] Find the eigenvector of $\mat A$ corresponding to $\l = 1$.
 \end{sample}
 \begin{sample}
-    Let $\vec x$ be the desired eigenvector. Consider \[\bp{\mat A - \mat I} \vec x = \begin{pmatrix}1 & 0 & 1 \\ -1 & 1 & 3 \\ 1 & 0 & 1\end{pmatrix} \vec x = \cveciii000.\] By multiplying out the LHS, we get the following two equations: \[\vec x \dotp \cveciii101 = 0, \quad \vec x \dotp \cveciii{-1}13 = 0.\] These are precisely the equations of two planes, normal to $\cveciiix101$ and $\cveciiix{-1}13$ respectively, that also pass through the origin. Thus, $\vec x$ lies on the line of intersection between the two planes. The direction vector of this line is given by the cross product of the two normal vectors, so \[\vec x = \cveciii101 \crossp \cveciii{-1}13 = \cveciii{-1}{-4}1.\]
+    Let $\vec x$ be the desired eigenvector. Consider \[\bp{\mat A - \mat I} \vec x = \begin{pmatrix}1 & 0 & 1 \\ -1 & 1 & 3 \\ 1 & 0 & 1\end{pmatrix} \vec x = \cveciii000.\] By multiplying out the LHS, we get the following two equations: \[\vec x \dotp \cveciii101 = 0, \qquad \vec x \dotp \cveciii{-1}13 = 0.\] These are precisely the equations of two planes, normal to $\cveciiix101$ and $\cveciiix{-1}13$ respectively, that also pass through the origin. Thus, $\vec x$ lies on the line of intersection between the two planes. The direction vector of this line is given by the cross product of the two normal vectors, so \[\vec x = \cveciii101 \crossp \cveciii{-1}13 = \cveciii{-1}{-4}1.\]
 \end{sample}
 
 Note that an $n \times n$ matrix may have less than $n$ eigenvalues and eigenvectors. For instance, \[\begin{pmatrix}3 & 1 \\ 0 & 3\end{pmatrix}\] has the sole eigenvalue $\l = 3$ with corresponding eigenvector $\cveciix10$.
 
-Also, one eigenvalue may have multiple corresponding eigenvectors. For instance, \[\begin{pmatrix}0 & 0 & -2 \\ 1 & 2 & 1 \\ 1 & 0 & 3\end{pmatrix}\] has eigenvalue $\l = 2$, which corresponds to two linearly independent eigenvectors: \[\vec x_1 = \cveciii{-1}01, \quad \vec x_2 = \cveciii010.\]
+Also, one eigenvalue may have multiple corresponding eigenvectors. For instance, \[\begin{pmatrix}0 & 0 & -2 \\ 1 & 2 & 1 \\ 1 & 0 & 3\end{pmatrix}\] has eigenvalue $\l = 2$, which corresponds to two linearly independent eigenvectors: \[\vec x_1 = \cveciii{-1}01, \qquad \vec x_2 = \cveciii010.\]
 
 \subsection{Useful Results}
 
@@ -95,7 +95,7 @@ Also, one eigenvalue may have multiple corresponding eigenvectors. For instance,
     Eigenvectors corresponding to distinct eigenvalues must be linearly independent.
 \end{proposition}
 \begin{proof}
-    By way of contradiction, suppose the eigenvectors are linearly dependent. Let $j$ be the maximal $j$ such that $\vec x_1, \dots, \vec x_j$ are linearly independent. Then $\vec x_{j+1}$ can be expressed as a linear combination of $\vec x_1, \dots, \vec x_j$: \[\vec x_{j+1} = a_1 \vec x_1 + \dots + a_j \vec x_j. \tag{1}\] Applying $\mat A$ on both sides, we see that \[\l_{j+1} \vec x_{j+1} = a_1 \l_1 \vec x_1 + \dots + a_j \l_j \vec x_j.\tag{2}\] Since $\vec x_1, \dots, \vec x_j$ are linearly independent, we can compare their coefficients in (1) and (2), which gives \[a_i = a_i \frac{\l_i}{\l_{j+1}} \implies \l_i = \l_{j+1}\] for all $1 \leq i \leq j$. But this clearly contradicts the supposition that the eigenvalues are distinct. Thus, the eigenvectors must be linearly independent.
+    By way of contradiction, suppose the eigenvectors are linearly dependent. Let $j$ be the maximal $j$ such that $\vec x_1, \dots, \vec x_j$ are linearly independent. Then $\vec x_{j+1}$ can be expressed as a linear combination of $\vec x_1, \dots, \vec x_j$: \[\vec x_{j+1} = a_1 \vec x_1 + \dots + a_j \vec x_j. \tag{1}\] Applying $\mat A$ on both sides, we see that \[\l_{j+1} \vec x_{j+1} = a_1 \l_1 \vec x_1 + \dots + a_j \l_j \vec x_j.\tag{2}\] Since $\vec x_1, \dots, \vec x_j$ are linearly independent, we can compare their coefficients in (1) and (2), which gives \[a_i = a_i \frac{\l_i}{\l_{j+1}}.\] It immediately follows that $\l_i = \l_{j+1}$ for all $1 \leq i \leq j$. But this clearly contradicts the supposition that the eigenvalues are distinct. Thus, the eigenvectors must be linearly independent.
 \end{proof}
 
 \begin{proposition}

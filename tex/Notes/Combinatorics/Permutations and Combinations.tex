@@ -59,14 +59,14 @@ Note that both the Addition and Multiplication Principles can be extended to any
     Suppose we make objects of the 1st type distinct. For each arrangement in $A_0$, the $n_1$ objects of the 1st type can be permuted among themselves in $n_1!$ ways. Hence, \[\abs{A_1} = n_1! \abs{A_0}.\] Next, suppose we make objects of the 2nd type distinct. For each arrangement in $A_1$, the $n_2$ objects of the 2nd type can be permuted among themselves in $n_2!$ ways. Hence, \[\abs{A_2} = n_2! \abs{A_1}.\] Continuing on, we see that \[\abs{A_k} = n_k! \abs{A_{k-1}} = n_k! \, n_{k-1}! \abs{A_{k-2}} = \cdots = n_k! \, n_{k-1}! \dots n_1! \, \abs{A_0}.\] However, by definition, $A_k$ is the set of arrangements of $n$ distinct objects, which we know to be $n!$. Thus, \[\abs{A_0} = \frac{\abs{A_k}}{n_1! \, n_2! \dots n_k!} = \frac{n!}{n_1! \, n_2! \dots n_k!}.\]
 \end{proof}
 \begin{remark}
-    $\frac{n!}{n_1! n_2! \dots n_k!}$ is known as a \vocab{multinomial coefficient}, which is a generalization of the binomial coefficient and is related to the expansion of $(x_1 + x_2 + \dots + x_k)^n$.
+    $n!/(n_1! n_2! \dots n_k!)$ is known as a \vocab{multinomial coefficient}, which is a generalization of the binomial coefficient and is related to the expansion of $(x_1 + x_2 + \dots + x_k)^n$.
 \end{remark}
 
 \begin{sample}
     Find the number of different permutations of the letters in the word ``BEEN''.
 \end{sample}
 \begin{sampans}
-    Note that there is 1 `B', 2`E's and 1 `N' in ``BEEN''. Using the above result, the number of different permutations is given by \[\frac{4!}{1! 2! 1!} = 12.\]
+    Note that there is 1 `B', 2`E's and 1 `N' in ``BEEN''. Using the above result, the number of different permutations is given by \[\frac{4!}{1! \, 2! \, 1!} = 12.\]
 \end{sampans}
 
 \begin{proposition}[Circular Permutations]

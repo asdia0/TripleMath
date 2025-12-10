@@ -14,7 +14,7 @@ One procedure for obtaining a simple random sample is the following:
 
 \begin{recipe}[Simple Random Sampling]
     \phantom{.}
-    \renewcommand{\theenumi}{\arabic{enumi}.}%
+    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Make a list of all $N$ members of the population. This is called the \vocab{sampling frame}.
         \item Assign each member of the population a different number.
@@ -92,7 +92,7 @@ In many cases, we are concerned with two population parameters, namely, the popu
 \begin{example}
     Suppose our quantity of interest is the mean height $\m$ of all male adults in Singapore. Suppose we take a random sample of 100 adult mean in Singapore and measure their heights.
     
-    Using this data, we can compute the sample average, $\ol{x}$ of the heights. That is, the sample mean random variable, $\ol{X} = \frac1{100} \bp{X_1 + \dots + X_{100}}$, is an estimator that provides an estimate of our quantity of interest. For instance, if $\ol{x} = 170$ cm, then 170 cm is the estimate of $\m$ provided by the ``sample average'' estimator.
+    Using this data, we can compute the sample average, $\ol{x}$ of the heights. That is, the sample mean random variable, $\ol{X} = \bp{X_1 + \dots + X_{100}}/100$, is an estimator that provides an estimate of our quantity of interest. For instance, if $\ol{x} = 170$ cm, then 170 cm is the estimate of $\m$ provided by the ``sample average'' estimator.
 
     Another strategy could be to use the ``sample median'' of the heights as an estimator. Suppose the sample median is 169 cm. Then 169 cm is the estimate of $\m$ provided by the ``sample median'' estimator.
 \end{example}
