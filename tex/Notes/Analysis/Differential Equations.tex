@@ -6,7 +6,7 @@
     A \vocab{differential equation} (DE) is an equation which involves one or more derivatives of a function $y$ with respect to a variable $x$ (i.e. $y'$, $y''$, etc.). The \vocab{order} of a DE is determined by the highest derivative in the equation. The \vocab{degree} of a DE is the power of the highest derivative in the equation.
 \end{definition}
 
-\begin{example}
+\begin{example}[Order and Degree]
     The differential equation \[x \bp{\der[2]{y}{x}}^3 + x^2 \bp{\der{y}{x}} + y = 0\] has order 2 and degree 3.
 \end{example}
 
@@ -121,11 +121,11 @@ If we can solve for $m$ in the characteristic equation, we can find the solution
     \item The roots are complex conjugates.
 \end{itemize}
 
-\paragraph{Real and Distinct Roots} If $m_1$ and $m_2$ are real and distinct, $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ will both be solutions to the DE. Hence, by the superposition principle, the general solution is \[y = A \e^{m_1 x} + B \e^{m_2 x},\] where $A$ and $B$ are constants.
+\paragraph{Real and Distinct Roots.} If $m_1$ and $m_2$ are real and distinct, $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ will both be solutions to the DE. Hence, by the superposition principle, the general solution is \[y = A \e^{m_1 x} + B \e^{m_2 x},\] where $A$ and $B$ are constants.
 
-\paragraph{Real and Equal Roots} If the two roots are equal, i.e. $m_1 = m_2 = m$, then $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ are no longer linearly independent. Hence, we effectively only get one solution $y_1 = \e^{mx}$. To obtain the general solution, we have to find another solution that is not a constant multiple of $\e^{mx}$. By intelligently guessing a solution, we see that $y_2 = x \e^{mx}$ satisfies the DE. Hence, by the superposition principle, the general solution is \[y = A \e^{mx} + Bx \e^{mx} = (A + Bx) \e^{mx}.\]
+\paragraph{Real and Equal Roots.} If the two roots are equal, i.e. $m_1 = m_2 = m$, then $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ are no longer linearly independent. Hence, we effectively only get one solution $y_1 = \e^{mx}$. To obtain the general solution, we have to find another solution that is not a constant multiple of $\e^{mx}$. By intelligently guessing a solution, we see that $y_2 = x \e^{mx}$ satisfies the DE. Hence, by the superposition principle, the general solution is \[y = A \e^{mx} + Bx \e^{mx} = (A + Bx) \e^{mx}.\]
 
-\paragraph{Complex Roots} If the two roots are complex, then they are conjugates, and we can write them as \[m_1 = p + \i q \quad \tand \quad m_2 = p - \i q.\] Hence, \[y_1 = \e^{(p + \i q)x} = \e^{px} \bp{\cos qx + \i \sin qx}\] and \[y_2 = \e^{(p -\i q) x} = \e^{px} \bp{\cos qx - \i \sin qx}.\] By the superposition principle, we get the general solution
+\paragraph{Complex Roots.} If the two roots are complex, then they are conjugates, and we can write them as \[m_1 = p + \i q \quad \tand \quad m_2 = p - \i q.\] Hence, \[y_1 = \e^{(p + \i q)x} = \e^{px} \bp{\cos qx + \i \sin qx}\] and \[y_2 = \e^{(p -\i q) x} = \e^{px} \bp{\cos qx - \i \sin qx}.\] By the superposition principle, we get the general solution
 \begin{align*}
     y &= C\e^{px} \bp{\cos qx + \i \sin qx} + D\e^{px} \bp{\cos qx - \i \sin qx}\\
     &= \e^{px} \bp{A \cos qx + B \sin qx},
@@ -178,7 +178,7 @@ In our syllabus, we are only required to solve non-homogeneous DEs where $f(x)$ 
     \centering
     \begin{tabular}{|c|c|}
     \hline
-    $f(x)$ & \textbf{``Guess'' for $y_p$} \\ \hline\hline
+    $f(x)$ & \bd{``Guess'' for $y_p$} \\ \hline\hline
     Polynomial of degree $n$ & Polynomial of degree $n$ \\ \hline
     $p\e^{kx}$ & $C \e^{kx}$ \\ \hline
     $p \cos kx + q \sin kx$ & $C \cos kx + D \sin kx$ \\ \hline
@@ -226,7 +226,7 @@ A particular solution of the differential equation is represented graphically by
 
 When sketching a family of curves, we choose values of the arbitrary constant that will result in qualitatively different curves. We also need to sketch sufficient members (usually at least 3) of the family to show all the general features of the family.
 
-\begin{example}
+\begin{example}[Sketch of Family of Solution Curves]
     The following diagram shows three members of the family of solution curves for the general solution $y = A\e^{x^2}$.
 
     \begin{figure}[H]\tikzsetnextfilename{370}
@@ -261,6 +261,8 @@ When sketching a family of curves, we choose values of the arbitrary constant th
         \end{tikzpicture}
         \caption{}
     \end{figure}
+
+    In this example, the shape of the curve depends on the sign of $A$. Thus, to fully represent the family of curves, we must provide sketches of (at least) three members: one where $A > 0$, one where $A = 0$, and one where $A < 0$.
 \end{example}
 
 \section{Approximating Solutions}
@@ -580,7 +582,7 @@ Consider the case where $k > 0$.
             ytick = \empty,
             ymax = 11.5,
             xlabel = {$P$},
-            ylabel = {$\der{P}{t}$},
+            ylabel = {$\derx{P}{t}$},
             legend cell align={left},
             legend pos=outer north east,
             after end axis/.code={
@@ -620,7 +622,7 @@ Now consider the case where $k < 0$.
             ytick = \empty,
             ymin = -11.5,
             xlabel = {$P$},
-            ylabel = {$\der{P}{t}$},
+            ylabel = {$\derx{P}{t}$},
             legend cell align={left},
             legend pos=outer north east,
             after end axis/.code={

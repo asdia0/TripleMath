@@ -9,7 +9,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that $-4-4\sqrt3\i = 8\bp{-\frac12 - \frac{\sqrt3}2\i} = 8\e^{\i\frac43 \pi + 2k\pi \i}$ for all $k \in \ZZ$. Hence, \[z^4 = 8\e^{\i\frac43 \pi + 2k\pi \i} \implies z = 8^{\frac14} \e^{\i\frac13 \pi + \frac12 k\pi \i} = 2^{\frac34} \e^{\i \frac{2 + 3k}{6} \pi}.\] Taking $k = -2, -1, 0, 1$, we see that the roots are \[z_{-2} = 2^{\frac34} \e^{-\i\frac23\pi}, \quad z_{-1} = 2^{\frac34} \e^{-\i\frac16\pi}, \quad z_{0} = 2^{\frac34} \e^{\i\frac13\pi}, \quad z_{1} = 2^{\frac34} \e^{\i\frac56\pi}.\]
+        Observe that $z^4 = -4-4\sqrt3\i = 8\bp{-1/2 - \sqrt{3}\i/2} = 8\e^{\i(4\pi/3) + 2k\pi \i}$ for integers $k$. Taking roots, we get Hence, $z = 8^{1/4} \e^{\i\pi/3 + k\pi \i/2} = 2^{3/4} \e^{\i (2 + 3k)\pi/6}$. Taking $k = -2, -1, 0, 1$, we see that the roots are \[z_{-2} = 2^{3/4} \e^{-2\i\pi/3}, \quad z_{-1} = 2^{3/4} \e^{-\i\pi/6}, \quad z_{0} = 2^{3/4} \e^{\i\pi/3}, \quad z_{1} = 2^{3/4} \e^{5\i \pi/6}.\]
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{72}
@@ -68,22 +68,22 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Observe that $w^{4} = -1 + \sqrt3 \i = \frac14 (-4 + 4\sqrt3 \i) = 2^{-2} (z\conj)^4$. Hence, $w = 2^{-1/2} z\conj$. Thus, the roots are \[w_{-2} = 2^{\frac14} \e^{\i\frac23\pi}, \quad w_{-1} = 2^{\frac14} \e^{\i\frac16\pi}, \quad w_{0} = 2^{\frac14} \e^{-\i\frac13\pi}, \quad w_{1} = 2^{\frac14} \e^{-\i\frac56\pi}.\]
+        Observe that $w^{4} = -1 + \sqrt3 \i = 2^{-2} (-4 + 4\sqrt3 \i) = 2^{-2} (z\conj)^4$. Hence, $w = 2^{-1/2} z\conj$. Thus, the roots are \[w_{-2} = 2^{1/4} \e^{2\i\pi/3}, \quad w_{-1} = 2^{1/4} \e^{\i\pi/6}, \quad w_{0} = 2^{1/4} \e^{-\i\pi/3}, \quad w_{1} = 2^{1/4} \e^{-5\i\pi/6}.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     Let
     \begin{align*}
-        C &= 1 - \binom{2n}{1} \cos \t + \binom{2n}{2} \cos 2\t - \binom{2n}{3} \cos 3\t + \ldots + \cos 2n\t\\
-        S &= - \binom{2n}{1} \sin \t + \binom{2n}{2} \sin 2\t - \binom{2n}{3} \sin 3\t + \ldots + \sin 2n\t
+        C &= 1 - \binom{2n}{1} \cos \t + \binom{2n}{2} \cos 2\t - \binom{2n}{3} \cos 3\t + \ldots + \cos 2n\t,\\
+        S &= - \binom{2n}{1} \sin \t + \binom{2n}{2} \sin 2\t - \binom{2n}{3} \sin 3\t + \ldots + \sin 2n\t,
     \end{align*}
     where $n$ is a positive integer.
 
     Show that $C = (-4)^n \cos{n\t} \sin[2n]{\t/2}$, and find the corresponding expression for $S$.
 \end{problem}
 \begin{solution}
-    Clearly, \[C = \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k \cos k\t, \quad S = \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k  \sin k\t.\] Hence,
+    Clearly, \[C = \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k \cos k\t \quad \tand \quad S = \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k  \sin k\t.\] Hence,
     \begin{align*}
         C + \i S &= \sum_{k = 0}^{2n} \binom{2n}{k} (-1)^k (\cos k\t + \i\sin k\t)\\
         &= \sum_{k = 0}^{2n} \binom{2n}{k} (-\e^{\i\t})^k = \bp{1 - \e^{\i\t}}^{2n}\\
@@ -93,7 +93,7 @@
         &= (\cos n\t + \i\sin n\t) (-4)^n \sin^{2n} \frac\t2.
     \end{align*}
 
-    Comparing real and imaginary parts, we have \[C = (-4)^n \cos{n\t} \sin^{2n} \frac\t2, \quad S = (-4)^n \sin{n\t} \sin^{2n} \frac\t2.\]
+    Comparing real and imaginary parts, we have \[C = (-4)^n \cos{n\t} \sin^{2n} \frac\t2 \quad \tand \quad S = (-4)^n \sin{n\t} \sin^{2n} \frac\t2.\]
 \end{solution}
 
 \begin{problem}
@@ -115,7 +115,8 @@
 
     Observe that
     \begin{align*}
-        \sin^6 \t &= \frac1{(2\i)^6} (2\i \sin \t)^6 = -\frac1{64} (z - z^{-1})^6\\
+        \sin^6 \t &= \frac1{(2\i)^6} (2\i \sin \t)^6\\
+        &= -\frac1{64} (z - z^{-1})^6\\
         &= -\frac1{64} \bp{z^6 - 6 z^4 + 15 z^2 - 20 + 15 z^{-2} - 6 z^{-4} + z^{-6}}\\
         &= -\frac1{32} \bs{-\frac{20}2 + 15\bp{\frac{z^2 + z^{-2}}2} -6\bp{\frac{z^4 + z^{-4}}2} + \bp{\frac{z^6 + z^{-6}}2}}\\
         &= \frac1{32} \bp{10 - 15\cos2\t + 6\cos4\t - \cos6\t}.
@@ -123,7 +124,8 @@
 
     Similarly, 
     \begin{align*}
-        \cos^6 \t &= \frac1{2^6} (2\cos\t)^6 = \frac1{64} (z + z^{-1})^6\\
+        \cos^6 \t &= \frac1{2^6} (2\cos\t)^6\\
+        &= \frac1{64} (z + z^{-1})^6\\
         &= \frac1{64} \bs{z^6 + 6 z^4 + 15 z^2 + 20 + 15 z^{-2} + 6 z^{-4} + z^{-6}}\\
         &= \frac1{32} \bs{\frac{20}2 + 15\bp{\frac{z^2 + z^{-2}}2} + 6\bp{\frac{z^4 + z^{-4}}2} + \bp{\frac{z^6 + z^{-6}}2}}\\
         &= \frac1{32} \bp{10 + 15\cos2\t + 6\cos4\t + \cos6\t}.

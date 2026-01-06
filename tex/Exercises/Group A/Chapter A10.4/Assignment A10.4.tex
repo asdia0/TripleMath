@@ -4,13 +4,13 @@
     On a single Argand diagram, sketch the following loci.
     \begin{enumerate}
         \item $\abs{z - 2\i} = 4$.
-        \item $\arg{\frac{7}{z + 2}} = -\frac\pi4$.
+        \item $\arg{7/(z+2)} = -\pi/4$.
     \end{enumerate}
 
     Hence, or otherwise, find the exact value of $z$ satisfying both equations in part (a) and (b).
 \end{problem}
 \begin{solution}
-    Note that $\arg{\frac{7}{z + 2}} = -\frac\pi4 \implies \arg{z - (-2)} = \frac\pi4$.
+    From $\arg{7/(z+2)} = -\pi/4$, we have $\arg{z - (-2)} = \pi/4$.
     \begin{center}\tikzsetnextfilename{75}
         \begin{tikzpicture}[trim axis left, trim axis right]
             \begin{axis}[
@@ -122,18 +122,18 @@
 \end{solution}
 
 \begin{problem}
-    The point $A$ on an Argand diagram represents the fixed complex number $a$, where $0 < \arg a < \frac\pi2$. The complex numbers $z$ and $w$ are such that $\abs{z - 2\i a} = \abs{a}$ and $\abs{w} = \abs{w + \i a}$.
+    The point $A$ on an Argand diagram represents the fixed complex number $a$, where $0 < \arg a < \pi/2$. The complex numbers $z$ and $w$ are such that $\abs{z - 2\i a} = \abs{a}$ and $\abs{w} = \abs{w + \i a}$.
 
     Sketch, on a single diagram, the loci of the point representing $z$ and $w$.
     
     Find
     \begin{enumerate}
         \item the minimum value of $\abs{z - w}$ in terms of $\abs{a}$,
-        \item the range of values of $\arg \frac1z$ in terms of $\arg a$.
+        \item the range of values of $\arg{1/z}$ in terms of $\arg a$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that $\abs{w} = \abs{w + ia} \implies \abs{w - 0} = \abs{w - (-ia)}$.
+    We are given $\abs{w - 0} = \abs{w - (-ia)}$.
     \begin{center}\tikzsetnextfilename{77}
         \begin{tikzpicture}[trim axis left, trim axis right]
             \begin{axis}[
@@ -212,24 +212,24 @@
     \end{center}
 
     \begin{ppart}
-        Let $B(-\i a)$ and $C(2\i a)$. Note that $W\bp{-\frac12 \i a}$ lies on the locus of $w$ as well as the line passing through $OC$. Since $CW$ is perpendicular to the locus of $w$, it follows that the minimum value of $\abs{z - w}$ is given by \[CW - \abs{a} = \abs{2\i a + \frac12 \i a} - \abs{a} = \frac52 \abs{a} \abs{\i} - \abs{a} = \frac32 \abs{a}.\]
+        Let $B(-\i a)$ and $C(2\i a)$. Note that $W\bp{-\i a/2}$ lies on the locus of $w$ as well as the line passing through $OC$. Since $CW$ is perpendicular to the locus of $w$, it follows that the minimum value of $\abs{z - w}$ is given by \[CW - \abs{a} = \abs{2\i a + \frac12 \i a} - \abs{a} = \frac52 \abs{a} \abs{\i} - \abs{a} = \frac32 \abs{a}.\]
     \end{ppart}
     \begin{ppart}
-        Let $D$ and $E$ be such that $OD$ and $OE$ are tangent to the circle given by the locus of $z$. Let $\angle COD = \t$. Observe that $\sin \t = \frac{CD}{CO} = \frac{\abs{a}}{\abs{2\i a}} = \frac12$, whence $\t = \frac\pi6$. Since $\angle COA = \arg \i = \frac\pi2$, it follows that $\angle DOA = \frac\pi2 - \t = \frac\pi2 - \arcsin \frac12 = \frac\pi3$. Thus, $\min \arg z = \arg a + \angle DOA = \arg a + \frac\pi3$. Meanwhile, $\angle COE = \angle COD = \t$, whence $\max \arg z = \arg a + \frac\pi2 + \t = \arg a + \frac23 \pi$. Since $\arg \frac1z = -\arg z$, we thus have $\arg \frac1z \in \bs{-\bp{\arg a + \frac23 \pi}, -\bp{\arg a + \frac\pi3}}$.
+        Let $D$ and $E$ be such that $OD$ and $OE$ are tangent to the circle given by the locus of $z$. Let $\angle COD = \t$. Observe that $\sin \t = CD/CO = \abs{a}/\abs{2\i a} = 1/2$, whence $\t = \pi/6$. Since $\angle COA = \arg \i = \pi/2$, it follows that $\angle DOA = \pi/2 - \t = \pi/2 - \arcsin{1/2} = \pi/3$. Thus, $\min \arg z = \arg a + \angle DOA = \arg a + \pi/3$. Meanwhile, $\angle COE = \angle COD = \t$, whence $\max \arg z = \arg a + \pi/2 + \t = \arg a + 2\pi/3$. Since $\arg{1/z} = -\arg z$, we thus have $\arg{1/z} \in \bs{-\bp{\arg a + 2\pi/3}, -\bp{\arg a + \pi/3}}$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Solve the equation \[z^7 - (1 + \i) = 0,\] giving the roots in the form $r\e^{\i\a}$, where $r > 0$ and $-\pi < \a \leq \pi$.
+        \item Solve the equation $z^7 - (1 + \i) = 0$, giving the roots in the form $r\e^{\i\a}$, where $r > 0$ and $-\pi < \a \leq \pi$.
         \item Show the roots on an Argand diagram.
-        \item The roots represented by $z_1$ and $z_2$ are such that $0 < \arg z_1 < \arg z_2 < \frac\pi2$. Explain why the locus of all points $z$ such that $\abs{z - z_1} = \abs{z - z_2}$ passes through the origin. Draw this locus on your Argand diagram and find its Cartesian equation.
+        \item The roots represented by $z_1$ and $z_2$ are such that $0 < \arg z_1 < \arg z_2 < \pi/2$. Explain why the locus of all points $z$ such that $\abs{z - z_1} = \abs{z - z_2}$ passes through the origin. Draw this locus on your Argand diagram and find its Cartesian equation.
         \item Describe the transformation that will map the points representing the roots of the equation $z^7 - (1 + \i) = 0$ to the points representing the roots of the equation $(z- 2)^7 - (1 + \i) = 0$ on the Argand diagram.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $1 + \i = 2^\frac12 \e^{\i\pi (\frac14 + 2k)}$, where $k \in \ZZ$. Hence, \[z^7 = 1 + \i = 2^\frac12 \e^{\i\pi (\frac14 + 2k)} \implies z = 2^\frac1{14} \e^{\i\pi (\frac14 + 2k)/7} = 2^\frac1{14} \e^{\i\pi (1 + 8k)/28}.\] Taking $k \in \bc{-3, -2, \ldots, 2, 3}$, we have \[z = 2^\frac1{14} \e^{-\i\pi \frac{23}{28}}, \, 2^\frac1{14} \e^{-\i\pi \frac{15}{28}}, \, 2^\frac1{14} \e^{-\i\pi \frac{7}{28}}, \, 2^\frac1{14} \e^{\i\pi \frac{1}{28}}, \, 2^\frac1{14} \e^{\i\pi \frac{9}{28}}, \, 2^\frac1{14} \e^{\i\pi \frac{17}{28}}, \, 2^\frac1{14} \e^{\i\pi \frac{25}{28}}.\]
+        For integers $k$, we have $z^7 = 1 + \i = 2^{1/2} \e^{\i\pi (1/4 + 2k)}$. Taking roots, we get $z = 2^{1/14} \e^{\i\pi (1 + 8k)/28}$. Taking $k \in \bc{-3, -2, \ldots, 2, 3}$, we obtain the seven roots $z = 2^{1/14} \e^{-\i s \pi/28}$, where $s \in \bc{-23, -15, -7, 1, 9, 17, 25}$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{78}
@@ -299,9 +299,9 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Since $\abs{z_1} = \abs{z_2} = 2^{\frac1{14}}$, the distance between $z_1$ and the origin and the distance between $z_2$ and the origin are equal. Since the locus of $\abs{z - z_1} = \abs{z - z_2}$ represents all points equidistant from $z_1$ and $z_2$, it passes through the origin.
+        Since $\abs{z_1} = \abs{z_2} = 2^{1/14}$, the distance between $z_1$ and the origin and the distance between $z_2$ and the origin are equal. Since the locus of $\abs{z - z_1} = \abs{z - z_2}$ represents all points equidistant from $z_1$ and $z_2$, it passes through the origin.
 
-        Observe that the midpoint of $z_1$ and $z_2$ will have argument $\frac12 \bp{\frac1{28}\pi + \frac{9}{28}\pi} = \frac{5}{28}\pi$. Thus, the Cartesian equation of the locus of $z$ is given by $y = \tan{5\pi/28} x$.
+        Observe that the midpoint of $z_1$ and $z_2$ will have argument \[\frac{\pi/28 + 9\pi/28}{2} = \frac{5\pi}{28}.\] Thus, the Cartesian equation of the locus of $z$ is given by $y = \tan{5\pi/28} x$.
     \end{ppart}
     \begin{ppart}
         Translate the points 2 units in the positive real direction.

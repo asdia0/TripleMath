@@ -1,31 +1,29 @@
 \section{Assignment B13}
 
 \begin{problem}
-    Two biological cultures, $X$ and $Y$, react with each other, and their volumes at time $t$ are $x$ and $y$ respectively, in appropriate units. Their rates of growth are modelled by the simultaneous equations
-    \begin{align*}
-        \der{x}{t} &= (2-x)y,\\
-        \der{y}{t} &= \frac{y^2}{x}
-    \end{align*}
-    When $t = 0$, $x = y = 1$.
+    Two biological cultures, $X$ and $Y$, react with each other, and their volumes at time $t$ are $x$ and $y$ respectively, in appropriate units. Their rates of growth are modelled by the simultaneous equations \[\der{x}{t} = (2-x)y \quad \tand \quad \der{y}{t} = \frac{y^2}{x}.\] When $t = 0$, $x = y = 1$.
     \begin{enumerate}
-        \item Show that $x = \frac{2y^2}{1+y^2}$.
+        \item Show that \[x = \frac{2y^2}{1+y^2}.\]
         \item Find and simplify expressions for $y$ and $x$ in terms of $t$.
-        \item Sketch the graph of $y$ against $x$ for $0 < t < \frac\pi2$.
+        \item Sketch the graph of $y$ against $x$ for $0 < t < \pi/2$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $x, y > 0$ since they represent volume. Also, for $x \in (0, 2)$, we have $\der{x}{t} = (2-x)y > 0$. When $x = 2$, we have $\der{x}{t} = 0$. Hence, $0 < x \leq 2$. Now observe that \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{y^2/x}{(2-x)y} = \frac{y}{x(2-x)} \implies \frac1y \der{y}{x} = \frac1{x(2-x)}.\] Integrating both sides with respect to $x$, we get \[\int \frac1y \d y = \int \frac1{x(2-x)} \d x = \frac12 \int \bp{\frac1x + \frac1{2-x}} \d x.\] Thus, \[\ln y = \frac12 \bs{\ln x - \ln{2-x}} + C_1,\] so $y = C_2 \sqrt{\frac{x}{2-x}}$.
+        Note that $x, y > 0$ since they represent volume. Also, for $x \in (0, 2)$, we have $\derx{x}{t} = (2-x)y > 0$. When $x = 2$, we have $\derx{x}{t} = 0$. Hence, $0 < x \leq 2$. Now observe that \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{y^2/x}{(2-x)y} = \frac{y}{x(2-x)}.\] Rearranging, \[\frac1y \der{y}{x} = \frac1{x(2-x)}.\] Integrating both sides with respect to $x$, we get \[\int \frac1y \d y = \int \frac1{x(2-x)} \d x = \frac12 \int \bp{\frac1x + \frac1{2-x}} \d x.\] Thus, \[\ln y = \frac{\ln x - \ln{2-x}}2 + C_1,\] so \[y = C_2 \sqrt{\frac{x}{2-x}}.\]
 
-        At $t = 0$, $x = y = 1$. Hence, \[1 = C_2 \sqrt{\frac{1}{2-1}} \implies C_2 = 1.\] Thus, \[y = \sqrt{\frac{x}{2-x}} \implies x = \frac{2y^2}{1 + y^2}.\]
+        We are given that $x = y = 1$ when $t = 0$, so $C_2 = 1$. Thus, \[y = \sqrt{\frac{x}{2-x}}.\] Solving for $x$, we get \[x = \frac{2y^2}{1 + y^2}.\]
     \end{ppart}
     \begin{ppart}
-        Observe that \[\der{y}{t} = \frac{y^2}{x} = \frac{y^2}{2y^2/(1+y^2)} = \frac12 (1 + y^2) \implies \frac1{1+y^2} \der{y}{t} = \frac12.\] Integrating both sides with respect to $t$, we get \[\int \frac1{1+y^2} \d y = \int \frac12 \d t \implies \arctan y = \frac{t}2 + C \implies y = \tan{\frac{t}2 + C}.\] At $t = 0$, $y = 1$. Hence, \[1 = \tan C \implies C = \frac\pi4,\] whence \[y = \tan{\frac{t}2 + \frac\pi4} = \frac{1-\cos{t + \pi/2}}{\sin{t+\pi/2}} = \frac{1 + \sin t}{\cos t} = \sec t + \tan t.\]
+        Observe that \[\der{y}{t} = \frac{y^2}{x} = \frac{y^2}{2y^2/(1+y^2)} = \frac12 (1 + y^2).\] Rearranging, \[\frac1{1+y^2} \der{y}{t} = \frac12.\] Integrating both sides with respect to $t$, we get \[\int \frac1{1+y^2} \d y = \int \frac12 \d t.\] Thus, $\arctan y = t/2 + C$, whence $y = \tan{t/2 + C}$. Since $y = 1$ when $t = 0$, we get $C = \pi/4$, whence \[y = \tan{\frac{t}2 + \frac\pi4} = \frac{1-\cos{t + \pi/2}}{\sin{t+\pi/2}} = \frac{1 + \sin t}{\cos t} = \sec t + \tan t.\]
 
-        Observe that \[\der{x}{t} = (2-x)y = (2-x) \sqrt{\frac{x}{2-x}} = \sqrt{x(2-x)} \implies \frac1{\sqrt{x(2-x)}} \der{x}{t} = 1 .\] Integrating both sides with respect to $t$, we get \[\int \frac1{\sqrt{x(2-x)}} \d x = \int 1 \d t \implies 2 \arcsin{\sqrt{\frac{x}{2}}} = t + C_1 \implies x = 2\sin[2]{\frac{t}2 + C_2}.\] At $t = 0$, $x = 1$. Hence, \[1 = 2\sin[2] C_2 \implies C_2 = \frac\pi4.\] Thus, \[x = 2\sin[2]{\frac12 t + \frac\pi4} = 1 - \cos{t + \frac\pi2} = 1 + \sin t.\]
+        Using the result in part (a), we have
+        \begin{align*}
+            x &= \frac{2y^2}{1 + y^2} = \frac{2(\sec t + \tan t)^2}{1 + (\sec t + \tan t)^2} = \frac{2\bp{1 + \sin t}^2}{\cos^2 t + \bp{1 + \sin t}^2} = \frac{2\bp{1 + \sin t}}{2 + 2 \sin t} = 1 + \sin t.
+        \end{align*}
     \end{ppart}
     \begin{ppart}
-        Note that $0 < t < \frac\pi2 \implies 1 < x < 2$.
+        Note that $0 < t < \pi/2$, so $1 < x < 2$.
         \begin{center}\tikzsetnextfilename{216}
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
@@ -66,7 +64,7 @@
 
     Find the particular solution such that $y \to 0$ as $x \to 0$.
 
-    Show, on a single diagram, a sketch of this particular solution and one typical member of the family, $F$ of solution curves for which $\der{y}{x}$ is positive whenever $x$ is positive.
+    Show, on a single diagram, a sketch of this particular solution and one typical member of the family, $F$ of solution curves for which $\derx{y}{x}$ is positive whenever $x$ is positive.
 
     Show that there is a straight line which passes through the maximum point of every member of $F$ and find its equation.
 \end{problem}
@@ -75,7 +73,7 @@
 
     As $x \to 0$, $x^{-4} \to \infty$. Hence, $C$ must be 0, whence the particular solution is $y = 2x$.
 
-    Note that \[\der{y}{x} = 2 - 4Cx^{-5} > 0 \implies C < \frac{x^5}2.\] Since $x > 0$, we hence have the constraint $C \leq 0$ for members of $F$.
+    Note that \[\der{y}{x} = 2 - 4Cx^{-5} > 0,\] so $C < x^5/2$. Since $x > 0$, we hence have the constraint $C \leq 0$ for members of $F$.
 
     \begin{center}\tikzsetnextfilename{217}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -107,8 +105,7 @@
         \end{tikzpicture}
     \end{center}
 
-    Consider the stationary points of members of $F$. For stationary points, $\der{y}{x} = 0$. Hence, \[x\der{y}{x} + 4y - 10x = 0 \implies 4y - 10 x = 0 \implies y = \frac52 x.\] Differentiating the original differential equation with respect to $x$, we obtain \[x\der{y}{x} + 4y - 10x = 0 \implies \bp{x \der[2]{y}{x} + \der{y}{x}} + 4\der{y}{x} - 10 = 0 \implies \der[2]{y}{x} = \frac{10}{x}.\]
-    Note that for members of $F$, we have that $\der{y}{x} > 0$ for $x > 0$. Hence, there are no stationary points when $x > 0$. That is, any stationary point must occur when $x < 0$ (indeed, there is a stationary point when $x = \sqrt[5]{2C} < 0$). Furthermore, when $x < 0$, $\der[2]{y}{x} < 0$. Hence, all stationary points must be a maximum point. Thus, $y = \frac52 x$ passes through the maximum point of every member of $F$.
+    Differentiating the original differential equation with respect to $x$, we obtain \[\bp{x \der[2]{y}{x} + \der{y}{x}} + 4\der{y}{x} - 10 = 0.\] At stationary points, $\derx{y}{x} = 0$, hence \[4y - 10 x = 0 \quad \tand \quad \der[2]{y}{x} = \frac{10}{x}.\] Thus, the stationary points lie on the line $y = 5x/2$. For members of $F$, stationary points can only occur when $x < 0$ since $\derx{y}{x} > 0$ for $x > 0$. Thus, $\derx[2]{y}{x} < 0$, so the stationary points are maximum points. Thus, $y = 5x/2$ passes through the maximum point of every member of $F$.
 \end{solution}
 
 \begin{problem}
@@ -124,14 +121,14 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Note that \[x^2 \der{y}{x} - 2xy + y = 0 \implies \frac1y \der{y}{x} = \frac2{x} - \frac1{x^2}.\] Integrating with respect to $x$ on both sides, we get \[\int \frac1y \d y = \int \bp{\frac2{x} - \frac1{x^2}} \d x \implies \ln \abs{y} = 2 \ln \abs{x} + \frac1x + C_1 \implies y = C_2 x^2 \e^{1/x}.\]
+            Rearranging the given differential equation, we get \[\frac1y \der{y}{x} = \frac2{x} - \frac1{x^2}.\] Integrating with respect to $x$ on both sides, we get \[\int \frac1y \d y = \int \bp{\frac2{x} - \frac1{x^2}} \d x.\] Thus, \[\ln \abs{y} = 2 \ln \abs{x} + \frac1x + C_1.\] Solving for $y$, we have $y = C_2 x^2 \e^{1/x}$.
         \end{psubpart}
         \begin{psubpart}
-            When $x = 1$, $y = -e$. Hence, \[-e = C_2\bp{1^2}\bp{\e^{1}} \implies C_2 = -1 \implies y = -x^2 e^{1/x}.\]
+            Since $y = -\e$ when $x = 1$, we have $C_2 = -1$, so $y = -x^2 e^{1/x}$.
 
-            For stationary points, $\der{y}{x} = 0$. Hence, $y(2x - 1) = 0$, whence $x = \frac12$. Note that we reject $y = 0$ since $e^{1/x} \neq 0$ and $x \neq 0$ due to the presence of a $\frac1x$ term. Hence, $y$ has a stationary point at $(1/2, -\e^2/4)$.
+            For stationary points, $\derx{y}{x} = 0$. From the given differential equation, we see that $y(2x - 1) = 0$, whence $x = 1/2$. Note that we reject $y = 0$ since $\e^{1/x} \neq 0$ and $x \neq 0$ due to the presence of a $1/x$ term. Hence, $y$ has a stationary point at $(1/2, -\e^2/4)$.
 
-            Differentiating the original differential equation with respect to $x$, we obtain \[x^2 \der[2]{y}{x} - 2y = 0 \implies \der[2]{y}{x} = \frac{2y}{x^2}.\] Hence, at $(1/2, -\e^2/4)$, we have \[\der[2]{y}{x} = \frac{-e^2/2}{1/4} < 0,\] whence it is a turning point.
+            Differentiating the original differential equation with respect to $x$, we obtain \[x^2 \der[2]{y}{x} - 2y = 0.\] Hence, at $(1/2, -\e^2/4)$, we have \[\der[2]{y}{x} = \frac{2y}{x^2} = \frac{-e^2/2}{1/4} < 0,\] whence it is a turning point. More precisely, it is a maximum point.
 
             \begin{center}\tikzsetnextfilename{218}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -163,8 +160,8 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Observe that \[\der{y}{x} + xy = \e^x x^2 \implies e^{\frac12 x^2}\der{y}{x} + x\e^{\frac12 x^2}y = \der{}{x} \bp{\e^{\frac12 x^2} y} = \e^{\frac12 x^2 + x} x^2.\] Thus, \[\e^{\frac12 x^2} y = \int \e^{\frac12 x^2 + x} x^2 \d x.\]
+        Multiplying through by the integrating factor of $\exp{\int x \d x} = \e^{x^2/2}$, we get \[e^{x^2/2}\der{y}{x} + x\e^{x^2/2}y = \der{}{x} \bp{\e^{x^2/2} y} = \e^{x + x^2/2} x^2.\] Thus, \[\e^{x^2/2} y = \int \e^{x + x^2/2} x^2 \d x.\]
 
-        Suppose $\int e^{\frac12 x^2 + x} x^2 \d x = P(x) e^{\frac12 x^2 + x} + C$ for some function $P(x)$. Differentiating both sides with respect to $x$, we obtain \[x^2 e^{\frac12 x^2 + x} = e^{\frac12 x^2 + x} \bs{(x+1)P(x) + P'(x)},\] whence \[x^2 = (x+1)P(x) + P'(x).\] Thus, $P(x)$ is a polynomial of degree 1. Let $P(x) = ax + b$. For some constants $a$ and $b$. Then \[x^2 = ax^2 + (a+b)x + (a+b).\] Comparing coefficients of $x^2$, $x$ and constant terms, we have $a = 1$ and $a + b = 0 \implies b = -1$. Thus, \[\int x^2 e^{\frac12 x^2 + x} \d x = (x-1)e^{\frac12 x^2 + x} + C.\] Hence, we have \[y = (x-1)e^x + Ce^{-\frac12 x^2}.\]
+        Completing the square, we see that \[x + \frac{x^2}{2} = \frac{(x+1)^2}{2} - \frac12.\] Since $x^2 = (x+1)^2 - 2(x+1) + 1$, we may rewrite the integral as \[\e^{x^2/2} y = \int \e^{x + x^2/2} x^2 \d x = \int \bp{(x+1)^2 - 2(x+1) + 1}\e^{(x+1)^2/2 - 1/2} \d x.\] Take $u = x + 1$. Then the integral becomes \[\e^{x^2/2} y = \e^{-1/2} \int \bp{u^2 - 2u + 1} \e^{u^2/2} \d u.\] Since \[\int u\e^{u^2/2} \d u = \e^{u^2/2} + C \quad \tand \quad \int u^2 \e^{u^2/2} \d u = u\e^{u^2/2} - \int \e^{u^2/2} \d u,\]  we have that \[\e^{x^2/2} y = \e^{-1/2} \bp{u\e^{u^2/2} - 2\e^{u^2/2}} + C = \bp{x-1} \e^{x + x^2/2} + C.\] Thus, \[y = \bp{x-1} \e^x + C\e^{-x^2/2}.\]
     \end{ppart}
 \end{solution}

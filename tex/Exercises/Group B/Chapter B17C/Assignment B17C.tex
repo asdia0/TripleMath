@@ -24,7 +24,7 @@
             E_2 &= \begin{vmatrix}1 & c \\ 4 & 1 \end{vmatrix} + \begin{vmatrix}1 & 0 \\ 0 & 1\end{vmatrix} + \begin{vmatrix}1 & 3 \\ 3 & 1\end{vmatrix} = -6 - 4c,\\
             E_3 &= \begin{vmatrix}1 & c & 3 \\ 4 & 1 & 0 \\ 3 & 0 & 1\end{vmatrix} = -8-4c.
         \end{align*}
-        Thus, \[\c(\l) = -\l^3 + 3\l^2 + \bp{6 + 4c} \l - \bp{8 + 4c}.\] Since 6 is an eigenvalue, it is a root to the characteristic polynomial. Thus, \[\c(6) = -6^3 + 3 \bp{6^2} + \bp{6 + 4c}6 - \bp{8 + 4c} = 0 \implies c = 4.\] Hence, \[\c(\l) = -\l^3 + 3\l^2 + 22\l - 24 = -\bp{\l-6}\bp{\l-1}\bp{\l+4}.\] The other eigenvalues are thus 1 and $-4$.
+        Thus, $\c(\l) = -\l^3 + 3\l^2 + \bp{6 + 4c} \l - \bp{8 + 4c}$. Since $\c(6) = 0$, we obtain $c = 4$. Hence, $\c(\l) = -\l^3 + 3\l^2 + 22\l - 24 = -\bp{\l-6}\bp{\l-1}\bp{\l+4}$, and the other eigenvalues are 1 and $-4$.
     \end{ppart}
     \begin{ppart}
         Note that \[\mat A - \l \mat I = \begin{pmatrix}1 - \l & 4 & 3 \\ 4 & 1 - \l & 0 \\ 3 & 0 & 1 - \l\end{pmatrix}.\]
@@ -38,10 +38,10 @@
         Thus, \[\mat P = \begin{pmatrix}5 & 0 & -5 \\ 4 & 3 & 4 \\ 3 & -4 & 3\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}6 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -4\end{pmatrix}.\]
     \end{ppart}
     \begin{ppart}
-        Rewriting the given system of equations, we have \[\mat Y' = \mat A \mat Y = \mat P \mat D \mat P^{-1} \mat Y \implies \mat P^{-1} \mat Y' = \mat D \mat P^{-1} \mat Y.\] Since $\mat U = \mat P^{-1} \mat Y$ and $\mat U' = \mat P^{-1} \mat Y'$, we have $\mat U' = \mat D \mat U$ as desired.
+        Since $\mat Y' = \mat A \mat Y = \mat P \mat D \mat P^{-1} \mat Y$, we get $\mat P^{-1} \mat Y' = \mat D \mat P^{-1} \mat Y$. But $\mat U = \mat P^{-1} \mat Y$ and $\mat U' = \mat P^{-1} \mat Y'$, so we obtain $\mat U' = \mat D \mat U$ as desired.
     \end{ppart}
     \begin{ppart}
-        $\mat U' = \mat D \mat U$ expands as \[\vec U' = \cveciii{\derx{u_1}{x}}{\derx{u_2}{x}}{\derx{u_3}{x}} = \begin{pmatrix}6 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -4\end{pmatrix} \cveciii{u_1}{u_2}{u_3}.\] This gives us the system of differential equations \[\der{u_1}{x} = 6 u_1, \quad \der{u_2}{x} = u_2, \quad \der{u_3}{x} = -4 u_3,\] which we can easily solve: \[u_1 = c_1 \e^{6x}, \quad u_2 = c_2 \e^{x}, \quad u_3 = c_3 \e^{-4x}.\] Since $\mat U = \mat P^{-1} \mat Y$, we have \[\mat Y = \mat P \mat U \implies \cveciii{y_1}{y_2}{y_3} = \begin{pmatrix}5 & 0 & -5 \\ 4 & 3 & 4 \\ 3 & -4 & 3\end{pmatrix} \cveciii{c_1 \e^{6x}}{c_2 \e^{x}}{c_3 \e^{-4x}},\] so
+        $\mat U' = \mat D \mat U$ expands as \[\vec U' = \cveciii{\derx{u_1}{x}}{\derx{u_2}{x}}{\derx{u_3}{x}} = \begin{pmatrix}6 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -4\end{pmatrix} \cveciii{u_1}{u_2}{u_3}.\] This gives us the differential equations \[\der{u_1}{x} = 6 u_1, \quad \der{u_2}{x} = u_2, \quad \der{u_3}{x} = -4 u_3,\] which have respective solutions $u_1 = c_1 \e^{6x}$, $u_2 = c_2 \e^{x}$, and $u_3 = c_3 \e^{-4x}$. Since $\mat U = \mat P^{-1} \mat Y$, we have $\mat Y = \mat P \mat U$, so \[\cveciii{y_1}{y_2}{y_3} = \begin{pmatrix}5 & 0 & -5 \\ 4 & 3 & 4 \\ 3 & -4 & 3\end{pmatrix} \cveciii{c_1 \e^{6x}}{c_2 \e^{x}}{c_3 \e^{-4x}},\] whence
         \begin{align*}
             y_1 &= 5c_1 \e^{6x} - 5c_3 \e^{-4x},\\
             y_2 &= 4c_1 \e^{5x} + 3c_2 \e^{x} + 4c_3 \e^{-4x},\\
@@ -50,6 +50,7 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     The $3 \times 3$ non-singular matrix $\mat A$ has eigenvectors $\vec e_1, \vec e_2, \vec e_3$ with corresponding eigenvalues $\a$, $\b$ and $\g$ respectively. The three eigenvectors are linearly independent, and the eigenvalues are all non-zero real numbers. The eigenvectors of the $3 \times 3$ matrix $\mat B$ are also $\vec e_1, \vec e_2, \vec e_3$ and the corresponding eigenvalues are $\a - \b \g$, $\b - \g \a$ and $\g - \a \b$ respectively.
 
@@ -66,7 +67,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[x^3 - x^2 + k x + 4 = (x - \a)(x - \b)(x - \g).\] By Vieta's formula, we see that $\a\b\g = -4$. Thus, $\mat B$ has eigenvalues $\a + 4/\a$, $\b + 4/\b$ and $\g + 4/\g$, so $\mat B = \mat A + 4 \mat A^{-1}$.
+        Note that $x^3 - x^2 + k x + 4 = (x - \a)(x - \b)(x - \g)$. By Vieta's formula, we see that $\a\b\g = -4$. Thus, $\mat B$ has eigenvalues $\a + 4/\a$, $\b + 4/\b$ and $\g + 4/\g$, so $\mat B = \mat A + 4 \mat A^{-1}$.
     \end{ppart}
     \begin{ppart}
         Let $\l$ be an eigenvalue of $\mat A$. The corresponding eigenvalue of $\mat B$ is $\l + 4/\l$, which is non-zero, since \[\l + \frac4\l = \frac1\l \bp{\l^2 + 4}\] has no real roots. Hence, $\mat B$ has full rank, so $\Range{T} = \RR^3$. But because the eigenvectors $\vec e_1, \vec e_2, \vec e_3$ are linearly independent, they span $\RR^3$, so they form a basis for $\Range{T}$.
@@ -95,7 +96,7 @@
             E_2 &= \begin{vmatrix}p & 5 \\ -1 & - 1\end{vmatrix} + \begin{vmatrix}-1 & 1-p \\ 2 & 1\end{vmatrix} + \begin{vmatrix}p & 0 \\ -1 & 1\end{vmatrix} = 2p+2,\\
             E_3 &= \begin{vmatrix}p & 5 & 0 \\ -1 & - 1 & 1 - p \\ -1 & 2 & 1\end{vmatrix} = p\bp{2p+2}.
         \end{align*}
-        Thus, \[\c(\l) = -\l^3 + p\l^2 - \bp{2p+2}\l + p \bp{2p+2} = \bp{-\l + p} \bp{\l^2 + 2p + 2}.\]
+        Thus, $\c(\l) = -\l^3 + p\l^2 - \bp{2p+2}\l + p \bp{2p+2} = \bp{-\l + p} \bp{\l^2 + 2p + 2}$.
 
         \case{1} If $2p + 2 < 0$, i.e. $p < -1$, then $\mat A$ has three real and distinct eigenvalues, namely $p$, $\sqrt{-\bp{2p- 2}}$ and $\sqrt{-\bp{2p-2}}$.
 

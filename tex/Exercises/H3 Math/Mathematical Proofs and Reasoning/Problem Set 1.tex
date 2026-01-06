@@ -12,7 +12,7 @@
 \begin{solution}
     (a) is false (since 3 and 5 are prime but their sum, 8, is not), while (b) is true.
 
-    \begin{proof}[Proof of \emph{(b)}]
+    \begin{proof}[Proof of \textup{(b)}]
         Let $a/b$ and $c/d$ be positive rational numbers, i.e. $a$, $b$, $c$ and $d$ are positive integers. Then \[\frac{a/b}{c/d} = \frac{ad}{bc}.\] Since both $ad$ and $bc$ are positive integers, it follows that $ad/bc$ is a positive rational number. Hence, the set of positive rational numbers is closed under division.
     \end{proof}
 \end{solution}
@@ -26,67 +26,62 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    \begin{proof}[Proof of \emph{(a)}]
-        Since $a$ divides $b$, we have \[b = ka\] for some integer $k$. Multiplying this equation through by $c$, \[bc = k(ac).\] Hence, by the definition of divisibility, $ac$ divides $bc$.
+    \begin{proof}[Proof of \textup{(a)}]
+        Since $a$ divides $b$, we have $b = ka$ for some integer $k$. Multiplying this through by $c$, we get $bc = k(ac)$. Hence, by the definition of divisibility, $ac$ divides $bc$.
     \end{proof}
-    \begin{proof}[Proof of \emph{(b)}]
-        Since $a$ divides $b$, we have \[b = k_1a\] for some integer $k_1$. Similarly, since $b$ divides $a$, we have \[a = k_2 b\] for some integer $k_2$. Substituting this into the first equation, \[b = k_1 k_2 b \implies k_1 k_2 = 1.\] Since $k_1$ and $k_2$ are integers, we either have $k_1 = k_2 = 1$ or $k_1 = k_2 = -1$. Thus, $a = b$ or $a = -b$, i.e. $a = \pm b$.
+    \begin{proof}[Proof of \textup{(b)}]
+        Since $a$ divides $b$, we have $b = k_1a$ for some integer $k_1$. Similarly, since $b$ divides $a$, we have $a = k_2 b$ for some integer $k_2$. Substituting this into the first equation, we have $b = k_1 k_2 b$, which implies that $k_1 k_2 = 1$. Since $k_1$ and $k_2$ are integers, we either have $k_1 = k_2 = 1$ or $k_1 = k_2 = -1$. Thus, $a = b$ or $a = -b$, i.e. $a = \pm b$.
     \end{proof}
 \end{solution}
 
-\clearpage
 \begin{problem}
     Show that 3 divides $n(n+1)(2n+1)$ for any integer $n$.
 
-    \noindent\textbf{Extension.} Let $k \geq 3$. Let $S$ and $P$ be the sum and product of $k-1$ consecutive integers, starting from $n$. Prove that $k \mid PS$ for all $n \in \ZZ$. (The original problem is the $k = 3$ case).
+    \noindent\bd{Extension.} Let $k \geq 3$. Let $S$ and $P$ be the sum and product of $k-1$ consecutive integers, starting from $n$. Prove that $k \mid PS$ for all $n \in \ZZ$. (The original problem is the $k = 3$ case).
 \end{problem}
 \begin{proof}[Proof 1.]
     Observe that \[n(n+1)(2n+1) = 6 \sum_{k = 1}^n k^2 = 3\bp{2\sum_{k = 1}^n k^2}.\] Since $2\sum_{k = 1}^n k^2$ is an integer, $n(n+1)(2n+1)$ is a multiple of 3.
 \end{proof}
 \begin{proof}[Proof 2.]
-    Observe that \[n(n+1)(2n+1) = 2(n-1)(n)(n+1) + 3n(n+1).\] This must be divisible by 3, since $(n-1)(n)(n+1)$ (three consecutive integers) and $3n(n+1)$ are both divisible by 3.
+    Observe that $n(n+1)(2n+1) = 2(n-1)(n)(n+1) + 3n(n+1)$. This must be divisible by 3, since $(n-1)(n)(n+1)$ (three consecutive integers) and $3n(n+1)$ are both divisible by 3.
 \end{proof}
 \begin{proof}[Proof of Extension.]
-    Note that \[P = n(n+1)(n+2)\dots(n+k-2).\] Trivially, $k \mid P$ for all $n \equiv 0, 2, 3, \dots, k-1 \pmod{k}$. We hence consider only $n \equiv 1 \pmod{k}$. Note that \[S = \sum_{i = 0}^{k-1} (n + i) = (k-1)n + \frac{(k-1)(k-2)}{2}.\] Hence,
+    Note that $P = n(n+1)(n+2)\dots(n+k-2)$. Trivially, $k \mid P$ for all $n \equiv 0, 2, 3, \dots, k-1 \pmod{k}$. We hence consider only $n \equiv 1 \pmod{k}$. Note that \[S = \sum_{i = 0}^{k-1} (n + i) = (k-1)n + \frac{(k-1)(k-2)}{2}.\] Hence,
     \begin{align*}
         SP &= n(n+1)\dots(n+k-2) \bs{(k-1)n + \frac{(k-1)(k-2)}{2}}\\
-        &\equiv (1)(2)\dots(k-1) \bs{-1 + \frac{(k-1)(k-2)}{2}} = (k-1)! \bp{\frac{k(k-3)}{2}} \pmod{k}.
+        &\equiv (1)(2)\dots(k-1) \bs{-1 + \frac{(k-1)(k-2)}{2}}\\
+        &= (k-1)! \bp{\frac{k(k-3)}{2}} \pmod{k}.
     \end{align*}
-    For all $k \geq 3$, we have $2 \mid (k-1)!$, whence $\frac12 (k-3) (k-1)!$ is an integer, thus $SP \equiv 0 \pmod{k}$, i.e. $k \mid SP$.
+    For all $k \geq 3$, we have $2 \mid (k-1)!$, whence $(1/2)(k-3)(k-1)!$ is an integer, thus $SP \equiv 0 \pmod{k}$, i.e. $k \mid SP$.
 \end{proof}
 
 \begin{problem}
-    Prove that for all integers $a$, if the remainder is NOT 2 when $a$ is divided by 4, then $4 \mid a^3 + 23 a$.
+    Prove that for all integers $a$, if the remainder is not 2 when $a$ is divided by 4, then $4 \mid a^3 + 23 a$.
 \end{problem}
 \begin{solution}
-    Observe that \[a^3 + 23 a = (a-1)a(a+1) + 24a \equiv (a-1)a(a+1) \pmod{4}.\]
-
-    \case{1} If $a \equiv 0 \pmod{4}$, i.e. $a$ is a multiple of 4, then $a^3 + 23a$ is trivially a multiple of 4.
-
-    \case{2} If $a \equiv 1, 3 \pmod{4}$, i.e. $a$ is odd, then both $a-1$ and $a+1$ are even and contribute at least one factor of 2 each to $(a-1)a(a+1)$. Hence, $a^3 + 23a$ is divisible by $2^2 = 4$.
-    
-    \case{3} If $a \equiv 2 \pmod{4}$, then $a$ contributes only one factor of two. Additionally, both $a-1$ and $a+1$ are odd and do not contribute any factors of two. Thus, $(a-1)a(a+1)$ has only one factor of 2 and is not divisible by 4.
+    We work with the contrapositive. Suppose $a^3 + 23a = (a-1)a(a+1) + 24a$ is not a multiple of 4. Then $(a-1)a(a+1)$ is not a multiple of 4. It is easy to see that $(a-1)a(a+1)$ is a multiple of 4 when $a \equiv 0, 1, 3 \pmod{4}$. This forces $a \equiv 2 \pmod{4}$, and we are done.
 \end{solution}
 
 \begin{problem}
-    For any integer $n > 1$, let the standard factored form of $n$ be given by \[n = p_1^{k_1} p_2^{k_2} \dots p_{r}^{k_r}.\] Prove that $n$ is a perfect square if and only if $k_1, k_2, \dots, k_r$ are all even integers.
+    For any integer $n > 1$, let the standard factored form of $n$ be given by $n = p_1^{k_1} p_2^{k_2} \dots p_{r}^{k_r}$. Prove that $n$ is a perfect square if and only if $k_1, k_2, \dots, k_r$ are all even integers.
 \end{problem}
 \begin{solution}
     \begin{proof}
         We begin by proving the backwards case. Suppose $k_1, k_2, \dots, k_r$ are all even integers. We can write $k_i = 2k_i'$ for all $1 \leq i \leq r$. Then \[n = p_1^{k_1} p_2^{k_2} \dots p_{r}^{k_r} = p_1^{2k_1'} p_2^{2k_2'} \dots p_{r}^{2k_r'} = \bp{p_1^{k_1'} p_2^{k_2'} \dots p_{r}^{k_r'}}^2.\] Since $p_1^{k_1'} p_2^{k_2'} \dots p_{r}^{k_r'}$ is an integer, $n$ is a perfect square.
 
-        We now prove the forwards case. Since $n$ is a perfect square, we have $n = m^2$ for some positive integer $m$. Let the prime factorization of $m$ be given by \[m = q_1^{k_1'} q_2^{k_2'} \dots q_{r}^{k_r'},\] where $q_i$ are primes and $k_1'$ are non-negative integers. Then \[n = \bp{q_1^{k_1'} q_2^{k_2'} \dots q_{r}^{k_r'}}^2 = q_1^{2k_1'} q_2^{2k_2'} \dots q_{r}^{2k_r'}.\] Note that this is exactly the prime factorization of $n$. Also notice that all the exponents are multiples of 2 and are hence even.
+        We now prove the forwards case. Since $n$ is a perfect square, we have $n = m^2$ for some positive integer $m$. Let the prime factorization of $m$ be given by $m = p_1^{k_1'} p_2^{k_2'} \dots p_{r}^{k_r'}$, where $p_i$ are primes and $k_1'$ are non-negative integers. Then \[n = \bp{p_1^{k_1'} p_2^{k_2'} \dots p_{r}^{k_r'}}^2 = p_1^{2k_1'} p_2^{2k_2'} \dots p_{r}^{2k_r'}.\] Note that this is exactly the prime factorization of $n$. Also notice that all the exponents are multiples of 2 and are hence even.
     \end{proof}
 \end{solution}
 
+\clearpage
 \begin{problem}
     For all integers $a$ and $b$, prove that $3 \mid ab$ if and only if $3 \mid a$ or $3 \mid b$.
 \end{problem}
 \begin{solution}
     \begin{proof}
-        The backwards case is trivial. We hence only consider the forwards case. We prove this claim using the contrapositive. Suppose $3 \nmid a$ and $3 \nmid b$. Then \[a \equiv n_1 \pmod{3}, \quad b \equiv n_2 \pmod{3},\] where $n_1$ and $n_2$ are integers with $0 < n_1, n_2 < 2$. Without loss of generality, suppose $n_1 \leq n_2$.
+        The backwards case is trivial. We hence only consider the forwards case. We prove this claim using the contrapositive. Suppose $3 \nmid a$ and $3 \nmid b$. Then $a \equiv n_1 \pmod{3}$ and $b \equiv n_2 \pmod{3}$, where $n_1$ and $n_2$ are integers with $0 < n_1, n_2 < 2$. Without loss of generality, suppose $n_1 \leq n_2$.
         
-        Applying standard properties of modular arithmetic, we obtain \[ab \equiv n_1 n_2 \pmod{3}.\]
+        Applying standard properties of modular arithmetic, we obtain $ab \equiv n_1 n_2 \pmod{3}$.
 
         \case{1} Suppose $n_1 = n_2 = 1$. Then $ab \equiv 1 \not\equiv 0 \pmod{3}$.
         
@@ -102,14 +97,14 @@
     Let $a$, $b$ and $n$ be integers with $n > 1$. Suppose $a \equiv b \pmod{n}$. Prove the following:
     \begin{itemize}
         \item $ka \equiv kb \pmod{kn}$ for any positive integer $k$.
-        \item If $m$ is a common divisor of $a$, $b$ and $n$, and $1 < m < n$, then \[\frac{a}{m} \equiv \frac{b}{m} \pmod{\frac{n}{m}}.\]
+        \item If $m$ is a common divisor of $a$, $b$ and $n$, and $1 < m < n$, then \[\frac{a}{m} \equiv \frac{b}{m} \pmod*{\frac{n}{m}}.\]
     \end{itemize}
 \end{problem}
 \begin{solution}
-    \begin{proof}[Proof of \emph{(a)}]
+    \begin{proof}[Proof of \textup{(a)}]
         Since $a \equiv b \pmod{n}$, we have $a = cn + b$ for some integer $c$. Multiplying this through by $k$, we have $ak = c(nk) + bk$. Hence, $ak \equiv bk \mod{nk}$.
     \end{proof}
-    \begin{proof}[Proof of \emph{(b)}]
-        Since $a \equiv b \pmod{n}$, we have $a = cn + b$ for some integer $c$. Since $m$ is a common divisor of $a$, $b$ and $n$, we have $a = ma'$, $b = mb'$ and $n = mn'$ for integers $a'$, $b'$ and $m'$. Dividing through by $m$, we get \[\frac{a}{m} = \frac{cn}{m} + \frac{b}{n} \implies a' = c n' + b'.\] Hence, $a' \equiv b' \pmod{n'}$, i.e. \[\frac{a}{m} \equiv \frac{b}{m} \pmod{\frac{n}{m}}.\]
+    \begin{proof}[Proof of \textup{(b)}]
+        Since $a \equiv b \pmod{n}$, we have $a = cn + b$ for some integer $c$. Since $m$ is a common divisor of $a$, $b$ and $n$, we have $a = ma'$, $b = mb'$ and $n = mn'$ for integers $a'$, $b'$ and $m'$. Dividing through by $m$, we get \[\frac{a}{m} = \frac{cn}{m} + \frac{b}{n},\] so $a' = c n' + b'$. Hence, $a' \equiv b' \pmod{n'}$, i.e. \[\frac{a}{m} \equiv \frac{b}{m} \pmod*{\frac{n}{m}}.\]
     \end{proof}
 \end{solution}

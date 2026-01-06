@@ -10,8 +10,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\oa{OC} = m\oa{OA} = m \vec a$, so 
-        \[\oa{AC} = \oa{OC} - \oa{OA} = m \vec a - \vec a = (m-1) \vec a.\] By the Ratio Theorem, \[\oa{OB} = \frac{\oa{OD} + 2\oa{OA}}{1 + 2}.\] Hence, $\oa{OD} = 3\oa{OB} - 2\oa{OA} = 3\vec b - 2 \vec a$, so \[\oa{AD} = \oa{OD} - \oa{OA} = 3\vec b - 3\vec a.\] Thus,
+        Note that $\oa{OC} = m\oa{OA} = m \vec a$, so $\oa{AC} = m \vec a - \vec a = (m-1) \vec a$. By the Ratio Theorem, \[\oa{OB} = \frac{\oa{OD} + 2\oa{OA}}{1 + 2}.\] Hence, $\oa{OD} = 3\oa{OB} - 2\oa{OA} = 3\vec b - 2 \vec a$, so $\oa{AD} = 3\vec b - 3\vec a$. Thus,
         \begin{align*}
             \area \triangle ADC &= \frac12 \abs{\oa{AC} \crossp \oa{AD}}\\
             &= \frac12 \abs{(m-1)\vec a \crossp (3\vec b - 3\vec a)}\\
@@ -19,12 +18,12 @@
             &= \frac32 \abs{m-1} \abs{\vec a \crossp \vec b - \vec a \crossp \vec a}\\
             &= \frac32 \abs{m-1} \abs{\vec a \crossp \vec b},
         \end{align*}
-        whence $k = \frac32 \abs{m-1}$.
+        whence $k = 3\abs{m-1}/2$.
     \end{ppart}
     \begin{ppart}
         Since $\oa{AC}$ is parallel to $\vec a$, if $\oa{AC}$ is a unit vector, then $\oa{AC} = \hat{\vec a}$. Hence, $\abs{\vec b \crossp \oa{AC}} = \abs{\vec b \crossp \hat{\vec a}}$ is the shortest distance from $B$ to the line $OA$.
 
-        Since $\oa{AC}$ is a unit vector, we have \[\abs{\oa{AC}} = \abs{(m-1) \vec a} = 1 \implies \abs{m-1} = \frac1{\abs{\vec a}} \implies m = 1 \pm \frac1{\abs{\vec a}}.\]
+        Since $\oa{AC}$ is a unit vector, we have $\abs{(m-1) \vec a} = 1$, so \[m = 1 \pm \frac1{\abs{\vec a}}.\]
     \end{ppart}
 \end{solution}
 
@@ -44,7 +43,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[u_n = 0.93^7 u_{n-1} + 2.3, \quad u_0 = 0.\]
+        We have the recurrence relation $u_n = 0.93^7 u_{n-1} + 2.3$, with initial value $u_0 = 0$.
 
         Let $k$ be the constant such that $u_n + k = 0.93^7 (u_{n-1} + k)$. Then $k = 2.3/(0.93^7 - 1)$. Hence, 
         \begin{align*}
@@ -74,7 +73,6 @@
         \item Given that $l_2$ is the reflection of $l_1$ about the line $l_3$, find the vector equation of the line $l_3$.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Note that $l_1$ has vector equation
@@ -82,7 +80,7 @@
             l_1 : \vec r = \cveciii12{-3} + \l \cveciii{2}{-2}{1}, \, \l \in \RR
         \]
         Let $F$ be the foot of perpendicular from $A$ to $l_1$. Since $F$ is on $l_1$, $\oa{OF} = \cveciiix12{-3} + \l \cveciiix{2}{-2}{1}$ for some $\l \in \RR$.
-        Thus, \[\oa{AF} = \oa{OF} - \oa{OA} = \cveciii12{-3} + \l \cveciii{2}{-2}{1} - \cveciii3{-2}{-6} = \cveciii{-2}43 + \l \cveciii{2}{-2}{1}.\] Note also that $\oa{AF}$ is perpendicular to $l_1$. Hence, \[\bs{\cveciii{-2}43 + \l \cveciii{2}{-2}{1}} \cdot \cveciii2{-2}1 = 0 \implies -9 + 9\l = 0 \implies \l = 1.\] Thus, \[\oa{OF} = \cveciii12{-3} + \cveciii{2}{-2}{1} = \cveciii30{-2}.\]
+        Thus, \[\oa{AF} = \bs{\cveciii12{-3} + \l \cveciii{2}{-2}{1}} - \cveciii3{-2}{-6} = \cveciii{-2}43 + \l \cveciii{2}{-2}{1}.\] Note also that $\oa{AF}$ is perpendicular to $l_1$. Hence, \[\bs{\cveciii{-2}43 + \l \cveciii{2}{-2}{1}} \cdot \cveciii2{-2}1 = -9 + 9\l = 0,\] so $\l = 1$. Thus, \[\oa{OF} = \cveciii12{-3} + \cveciii{2}{-2}{1} = \cveciii30{-2}.\]
     \end{ppart}
     \begin{ppart}
         Note that $\cveciiix{-6}6{-3}\parallel \cveciiix2{-2}1$. Hence, $l_2$ is parallel to $l_1$. Hence, the shortest distance between $l_1$ and $l_2$ is the perpendicular distance from a point on $l_1$ to $l_2$, which is
@@ -94,7 +92,7 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Observe that $l_3$ passes through the midpoint of $\cveciiix12{-3}$ and $\cveciiix{-1}6{-1}$, which evaluates to \[\frac12 \bs{\cveciii12{-3} + \cveciii{-1}6{-1}} = \cveciii04{-2}.\] $l_3$ is also parallel to both $l_1$ and $l_2$. Hence, \[l_3 : \vec r = \cveciii04{-2} + \n \cveciii2{-2}1, \, \n \in \RR.\]
+        Observe that $l_3$ passes through the midpoint of $\cveciiix12{-3}$ and $\cveciiix{-1}6{-1}$, which evaluates to \[\frac12 \bs{\cveciii12{-3} + \cveciii{-1}6{-1}} = \cveciii04{-2}.\] $l_3$ is also parallel to both $l_1$ and $l_2$. Hence, $l_3$ has vector equation \[\vec r = \cveciii04{-2} + \n \cveciii2{-2}1, \quad \n \in \RR.\]
     \end{ppart}
 \end{solution}
 
@@ -102,7 +100,7 @@
     A first order recurrence relation is given as \[u_{n+1} \bs{u_n + \bp{\frac12}^n} + u_n \bs{\bp{\frac12}^{n+1} - 10} = 10\bp{\frac12}^n - \bp{\frac12}^{2n+1} - 16\] where $u_1$ = 1.
 
     \begin{enumerate}
-        \item Using the substitution $u_n = v_n/v_{n-1} - \bp{\frac12}^n$ where $v_{n-1} \neq 0$, show that the recurrence relation can be expressed as a second order recurrence relation of the form $v_{n+1} + av_n + 16v_{n-1} = 0$, where $a$ is a constant to be found.
+        \item Using the substitution \[u_n = \frac{v_n}{v_{n-1}} - \bp{\frac12}^n\] where $v_{n-1} \neq 0$, show that the recurrence relation can be expressed as a second order recurrence relation of the form $v_{n+1} + av_n + 16v_{n-1} = 0$, where $a$ is a constant to be found.
         \item By first solving the second order recurrence relation in (a), find an expression for $u_n$ in terms of $n$.
         \item Describe what happens to the value of $u_n$ for large values of $n$.
     \end{enumerate}
@@ -115,12 +113,12 @@
             &\hspace{2em}= \bs{\frac{v_{n+1}}{v_n} - \bp{\frac12}^{n+1}} \bs{\frac{v_n}{v_{n-1}}} + \bs{\frac{v_n}{v_{n-1}} - \bp{\frac12}^n} \bs{\bp{\frac12}^{n+1} - 10}\\
             &\hspace{2em}= \frac{v_{n+1}}{v_{n-1}} - 10 \bp{\frac{v_n}{v_{n-1}}} - \bp{\frac12}^{2n+1} + 10\bp{\frac12}^n.
         \end{align*}
-        Cancelling terms from the RHS, we get \[\frac{v_{n+1}}{v_{n-1}} -10 \bp{\frac{v_n}{v_{n-1}}} = -16 \implies v_{n+1} - 10v_n + 16v_{n-1} = 0.\] Hence, $a = -10$.
+        Cancelling terms from the RHS, we get \[\frac{v_{n+1}}{v_{n-1}} -10 \bp{\frac{v_n}{v_{n-1}}} = -16,\] giving the recurrence relation $v_{n+1} - 10v_n + 16v_{n-1} = 0$. Hence, $a = -10$.
     \end{ppart}
     \begin{ppart}
         Consider the characteristic equation of $v_n$. \[x^2 - 10x + 16 = (x-2)(x-8) = 0.\] Hence, 2 and 8 are the roots of the characteristic equation. Thus, \[v_n = A \cdot 2^n + B \cdot 8^n.\]
 
-        Consider $u_1$. \[u_1 = \frac{v_1}{v_0} - \frac12 = 1 \implies  \frac{2A + 8B}{A + B} = \frac32 \implies \frac{4A + 16B}{A + B} = 3 \implies A = -13B.\]
+        From $u_1 = 1$, we see that \[\frac32 = u_1 + \frac12 = \frac{v_1}{v_0} = \frac{2A + 8B}{A + B},\] so $A = -13B$.
         
         Now observe that
         \begin{align*}

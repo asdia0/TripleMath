@@ -10,15 +10,15 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $x = y$. Then \[f(0) = f(x)g(x) - f(x)g(x) = 0.\] Let $y = 0$. Then \[f(x) = f(x)g(0) - f(0)g(x) = f(x)g(0) \implies g(0) = 1.\] Let $x = 0$. Then \[f(-y) = f(0)g(y) - f(y)g(0) = -f(y).\] Thus, $f$ is odd.
+        Let $x = y$. Then $f(0) = f(x)g(x) - f(x)g(x) = 0$. Let $y = 0$. Then $f(x) = f(x)g(0) - f(0)g(x) = f(x)g(0)$, so $g(0) = 1$. Let $x = 0$. Then $f(-y) = f(0)g(y) - f(y)g(0) = -f(y)$. Thus, $f$ is odd.
     \end{ppart}
     \begin{ppart}
-        Let $x = 1$ and $y = -1$. Then \[f(2) = f(1)g(-1) - f(-1)g(1).\] Since $f$ is odd, we have $f(-1) = -f(1)$. Further, we are given $f(2) = f(1)$. Hence, \[f(1) = f(1)g(-1) + f(1)g(1) \implies g(-1) + g(1) = 1.\]
+        Let $x = 1$ and $y = -1$. Then $f(2) = f(1)g(-1) - f(-1)g(1)$. Since $f$ is odd, we have $f(-1) = -f(1)$. Further, we are given $f(2) = f(1)$. Hence, $f(1) = f(1)g(-1) + f(1)g(1)$, so $g(-1) + g(1) = 1$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The function $h$ is defined for $x \in \RR$ by \[h(x) = x \cos x, \quad 0 \leq x \leq \frac\pi2\] with the additional properties \[h(-x) = h(x) \quad \tand \quad h(\pi + x) = -h(x).\] Sketch the graph of $h$ for $-2\pi \leq x \leq 2\pi$.
+    The function $h$ is defined for $x \in \RR$ by $h(x) = x \cos x$ for $0 \leq x \leq \pi/2$ with the additional properties $h(-x) = h(x)$ and $h(\pi + x) = -h(x)$. Sketch the graph of $h$ for $-2\pi \leq x \leq 2\pi$.
 \end{problem}
 \begin{solution}
     \begin{figure}[H]\tikzsetnextfilename{439}
@@ -60,7 +60,7 @@
 \end{solution}
 
 \begin{problem}
-    Functions $f$ and $g$ are defined for $x \in \RR$ by \[f(x) = ax + b, \quad g(x) = cx + d,\] where $a$, $b$, $c$ and $d$ are constants with $a \neq 0$. Given that $gf = \inv f g$, show that at least one of the following statements is true:
+    Functions $f$ and $g$ are defined for $x \in \RR$ by $f(x) = ax + b$ and $g(x) = cx + d$, where $a$, $b$, $c$ and $d$ are constants with $a \neq 0$. Given that $gf = \inv f g$, show that at least one of the following statements is true:
     \begin{itemize}
         \item $g$ is a constant function,
         \item $f^2$ is the identity function,
@@ -72,11 +72,11 @@
 
     \case{1}[$c = 0$] Then $g(x) = d$ is a constant function.
 
-    \case{2}[$c \neq 0$] Then $1/a = a \implies a = \pm 1$.
+    \case{2}[$c \neq 0$] Then $1/a = a$, so $a = \pm 1$.
 
     \case{2a}[$a = -1$] Then $f(x) = -x + b$, whence $f^2(x) = -(-x+b)+b = x$ is the identity function.
 
-    \case{2b}[$a = 1$] Then $d - b = bc + d \implies b(c+1) = 0$. If $b = 0$, then $f(x) = x$ is the identity function. If $c = -1$, then $g(x) = -x+d$, whence $g^2(x) = -(-x+d)+d = x$ is the identity function.
+    \case{2b}[$a = 1$] Then $d - b = bc + d$, so $b(c+1) = 0$. If $b = 0$, then $f(x) = x$ is the identity function. If $c = -1$, then $g(x) = -x+d$, whence $g^2(x) = -(-x+d)+d = x$ is the identity function.
 \end{proof}
 
 \begin{problem}
@@ -101,11 +101,11 @@
             $f(1/n) \in \Im f = \ZZ$.
         \end{psubpart}
         \begin{psubpart}
-            Suppose $f(1) \neq 0$. Then there exists a prime $p$ such that $p \nmid f(1)$. Then \[f(1) = f\of{p \cdot \frac1p} = p f\of{\frac1p} \implies f\of{\frac1p} = \frac{f(1)}{p}.\] Since $p \nmid f(1)$, it follows that $f(1/p)$ is not an integer. However, this contradicts (a)(i). Hence, our assumption that $f(1) \neq 0$ is false, i.e. $f(1) = 0$.
+            Suppose $f(1) \neq 0$. Then there exists a prime $p$ such that $p \nmid f(1)$. Then \[f(1) = f\of{p \cdot \frac1p} = p f\of{\frac1p}.\] Rearranging, we get $f(1/p) = f(1)/p$. Since $p \nmid f(1)$, it follows that $f(1/p)$ is not an integer. However, this contradicts (a)(i). Hence, our assumption that $f(1) \neq 0$ is false, i.e. $f(1) = 0$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        From the second property, it follows that for any $r \in \ZZ$, \[f(r) = f(r \cdot 1) = r f(1) = 0.\] Let $a \in \QQ$. Write $a = \a/\b$, where $\a, \b \in \ZZ$ with $\b \neq 0$. Then \[f(a) = \frac1\b \b f(a) = \frac1\b f(\b a) = \frac1\b f(\a) = 0.\]
+        From the second property, it follows that for any $r \in \ZZ$, we have $f(r) = f(r \cdot 1) = r f(1) = 0$. Let $a \in \QQ$. Write $a = \a/\b$, where $\a, \b \in \ZZ$ with $\b \neq 0$. Then \[f(a) = \frac{\b f(a)}\b = \frac{f(\b a)}\b = \frac{f(\a)}\b  = 0.\]
     \end{ppart}
 \end{solution}
 
@@ -127,13 +127,13 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Taking $x = y = 0$, \[f(0) = f(0) + f(0) \implies f(0) = 0.\]
+            Taking $x = y = 0$, we have $f(0) = f(0) + f(0)$, so $f(0) = 0$.
         \end{psubpart}
         \begin{psubpart}
-            For $n \in \NN_0$, we have \[f(nx) = f(\underbrace{x + x + \dots + x}_{\text{$n$ times}}) = \underbrace{f(x) + f(x) + \dots + f(x)}_{\text{$n$ times}} = nf(x).\] Now, observe that \[0 = f(0) = f(nx + (-nx)) = f(nx) + f(-nx) \implies f(-nx) = -f(nx) = -nf(x).\] Thus, $f(nx) = nf(x)$ for all $n \in \ZZ$.
+            For $n \in \NN_0$, we have \[f(nx) = f(\underbrace{x + x + \dots + x}_{\text{$n$ times}}) = \underbrace{f(x) + f(x) + \dots + f(x)}_{\text{$n$ times}} = nf(x).\] Now, observe that $0 = f(0) = f(nx + (-nx)) = f(nx) + f(-nx)$, so $f(-nx) = -f(nx) = -nf(x)$. Thus, $f(nx) = nf(x)$ for all $n \in \ZZ$.
         \end{psubpart}
         \begin{psubpart}
-            Let $b$ be a non-zero integer. Then \[f(x) = f\of{\underbrace{\frac{x}{b} + \dots + \frac{x}{b}}_{\text{$b$ times}}} = \underbrace{f\of{\frac{x}{b}} + \dots + f\of{\frac{x}{b}}}_{\text{$b$ times}} = b f\of{\frac{x}{b}}.\] Thus, \[f\of{\frac{x}{b}} = \frac1b f(x).\] Let $r \in \QQ$. Without loss of generality, write $r = a/b$, where $a, b \in \ZZ$ and $b \geq 1$. Then \[f(rx) = f\of{\frac{ax}{b}} = a f\of{\frac{x}{b}} = \frac{a}{b} f(x) = rf(x).\]
+            Let $b$ be a non-zero integer. Then \[f(x) = f\Big(\underbrace{\frac{x}{b} + \dots + \frac{x}{b}}_{\text{$b$ times}}\Big) = \underbrace{f\of{\frac{x}{b}} + \dots + f\of{\frac{x}{b}}}_{\text{$b$ times}} = b f\of{\frac{x}{b}}.\] Thus, $f(x/b) = f(x)/b$. Let $r \in \QQ$. Without loss of generality, write $r = a/b$, where $a, b \in \ZZ$ and $b \geq 1$. Then \[f(rx) = f\of{\frac{ax}{b}} = a f\of{\frac{x}{b}} = \frac{a}{b} f(x) = rf(x).\]
         \end{psubpart}
         \begin{psubpart}
             Since $\QQ$ is dense in $\RR$, it follows that we have $f(rx) = rf(x)$ for all $r, x \in \RR$.
@@ -143,7 +143,7 @@
         Seeking a contradiction, suppose $f(x) \neq 0$ for some $x \in \RR$. Then $f(kx) = kf(x)$ is unbounded, a contradiction. Thus, $f(x)$ must be identically zero.
     \end{ppart}
     \begin{ppart}
-        For all $x \in \RR$, we have \[a \leq x - kT < a + T\] where $k = \floor{(x-a)/T}$. Since $g$ has period $T$, it follows that \[\abs{g(x)} = \abs{g(x-kT)} \leq N.\]
+        For all $x \in \RR$, we have $a \leq x - kT < a + T$, where $k = \floor{(x-a)/T}$. Since $g$ has period $T$, it follows that $\abs{g(x)} = \abs{g(x-kT)} \leq N$.
     \end{ppart}
     \begin{ppart}
         By part (b), it must be that $g(x) \equiv 0$. Thus, $\a = 0$.

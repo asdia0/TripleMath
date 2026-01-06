@@ -4,7 +4,7 @@
     An \vocab{$m \times n$ matrix} $\mat A$ is an array of numbers with $m$ rows and $n$ columns, with $\mat A = (a_{ij})$, where $a_{ij}$ is the entry in row $i$ and column $j$. \[\mat A = \begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}.\]
 \end{definition}
 
-\begin{example}
+\begin{example}[Matrices and Entries]
     If \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6\end{pmatrix},\] then $\mat A$ is a $2 \times 3$ matrix with $a_{21} = 4$.
 \end{example}
 
@@ -16,17 +16,9 @@ Note that row and column vectors are effectively matrices with one row and one c
     A \vocab{null matrix} is a matrix with all entries equal to 0. We denote the $m \times n$ null matrix by $\mat 0_{m \times n}$, or simply $\mat 0$.
 \end{definition}
 
-\begin{example}
-    Examples of null matrices include \[\begin{pmatrix}0\end{pmatrix}, \quad \begin{pmatrix}0 & 0 \\ 0 & 0\end{pmatrix}, \quad \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix}.\]
-\end{example}
-
 \begin{definition}
     A \vocab{square matrix} of order $n$ is a matrix with $n$ rows and $n$ columns.
 \end{definition}
-
-\begin{example}
-    Examples of square matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}1 & 2 \\ 3 & 0\end{pmatrix}, \quad \begin{pmatrix}1 & 2 & 3 \\ 2 & 5 & 3 \\ 1 & 0 & 8\end{pmatrix}.\]
-\end{example}
 
 \begin{definition}
     Given a square matrix $\mat A = (a_{ij})$, the \vocab{diagonal} of $\mat A$ (also called the main, principal or leading diagonal) is the sequence of entries $a_{11}, a_{22}, \dots, a_{nn}$. The entries $a_{ii}$ are called the \vocab{diagonal entries} while $a_{ij}$, $i \neq j$ are called \vocab{non-diagonal entries}.
@@ -36,7 +28,7 @@ Note that row and column vectors are effectively matrices with one row and one c
     A \vocab{diagonal matrix} is a square matrix whose non-diagonal entries are zero, i.e. $a_{ij} = 0$ whenever $i \neq j$.
 \end{definition}
 
-\begin{example}
+\begin{example}[Diagonal Matrices]
     Examples of diagonal matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}1 & 0 \\ 0 & 2\end{pmatrix}, \quad \begin{pmatrix}2 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 0\end{pmatrix}.\]
 \end{example}
 
@@ -44,15 +36,11 @@ Note that row and column vectors are effectively matrices with one row and one c
     An \vocab{identity matrix} is a diagonal matrix whose diagonal entries are all 1. We denote the identity matrix of order $n$ by $\mat I_n$, or simply as $\mat I$.
 \end{definition}
 
-\begin{example}
-    Examples of identity matrices include \[\mat I_1 = \begin{pmatrix}1\end{pmatrix}, \quad \mat I_2 = \begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}, \quad I_3 = \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}.\]
-\end{example}
-
 \begin{definition}
     A \vocab{symmetric matrix} is a square matrix such that $a_{ij} = a_{ji}$ for all $i, j$.
 \end{definition}
 
-\begin{example}
+\begin{example}[Symmetric Matrices]
     Examples of symmetric matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}0 & 4 \\ 4 & 2\end{pmatrix}, \quad \begin{pmatrix}1 & -1 & 0 \\ -1 & 3 & 2 \\ 0 & 2 & 2\end{pmatrix}.\]
 \end{example}
 
@@ -60,7 +48,7 @@ Note that row and column vectors are effectively matrices with one row and one c
     A square matrix $(a_{ij})$ is \vocab{upper triangular} if $a_{ij} = 0$ whenever $i > j$; and \vocab{lower triangular} if $a_{ij} = 0$ whenever $i < j$.
 \end{definition}
 
-\begin{example}
+\begin{example}[Triangular Matrices]
     Examples of triangular matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}1 & -1 & 0 \\ 0 & 3 & 2 \\ 0 & 0 & 2\end{pmatrix}, \quad \begin{pmatrix}2 & 0 & 0 & 0 \\ 1 & 3 & 0 & 0 \\ 6 & 0 & 0 & 0 \\ -2 & -1 & 0 & 1\end{pmatrix}.\] The second matrix is an upper triangular matrix, while the third matrix is a lower triangular matrix. The first matrix can be considered both an upper and lower triangular matrix.
 \end{example}
 
@@ -80,7 +68,7 @@ Note that a diagonal matrix is both an upper and lower triangular matrix.
     Let $\mat A$ and $\mat B$ be matrices of the same size, and let $\mat C = \mat A + \mat B$ be their sum. Then $(c_{ij}) = (a_{ij} + b_{ij})$. That is, to add two matrices (of the same size), we simply add their corresponding entries.
 \end{definition}
 
-\begin{example}
+\begin{example}[Matrix Addition]
     \[\begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} + \begin{pmatrix}1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9\end{pmatrix} = \begin{pmatrix}2 & 4 & 6 \\ 6 & 9 & 12 \\ 10 & 14 & 18\end{pmatrix}.\]
 \end{example}
 
@@ -100,7 +88,7 @@ Note that a diagonal matrix is both an upper and lower triangular matrix.
     Let $\mat A$ be a matrix and let $\l \in \RR$ be a scalar. Then $\l (a_{ij}) = (\l a_{ij})$. That is, to multiply a matrix by a scalar $\l$, we simply multiply each entry by $\l$.
 \end{definition}
 
-\begin{example}
+\begin{example}[Scalar Multiplication]
     \[2 \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} = \begin{pmatrix}2 & 4 & 6 \\ 8 & 10 & 12 \\ 14 & 16 & 18\end{pmatrix}.\]
 \end{example}
 
@@ -120,7 +108,7 @@ Note that a diagonal matrix is both an upper and lower triangular matrix.
     Let $\mat A$ be an $m \times p$ matrix, and let $\mat B$ be a $p \times n$ matrix. Then the matrix product $\mat C = \mat A \mat B$ is the $m \times n$ matrix with entries determined by \[c_{ij} = \sum_{k = 1}^p a_{ik} b_{kj}\] for $i = 1, \dots, m$ and $j = 1, \dots, n$. Here, $c_{ij}$ can be viewed as the dot product of the $i$th row of $\mat A$ with the $j$th column of $\mat B$.
 \end{definition}
 
-\begin{example}
+\begin{example}[Matrix Multiplication]
     Let \[\mat A = \begin{pmatrix}-1 & 0 \\ 2 & 3\end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix}1 & 2 \\ 3 & 0\end{pmatrix}.\] Then the matrix product $\mat A \mat B$ is given by \[\mat A \mat B = \begin{pmatrix}(-1)(1) + (0)(3) & (-1)(2) + (0)(0) \\ (2)(1) + (3)(3) & (2)(2) + (3)(0)\end{pmatrix} = \begin{pmatrix}-1 & -2 \\ 11 & 4\end{pmatrix}.\] Meanwhile, the matrix product $\mat B \mat A$ is given by \[\mat B \mat A = \begin{pmatrix}(1)(-1) + (2)(2) & (1)(0) + (2)(3) \\ (3)(-1) + (0)(2) & (3)(0) + (0)(3)\end{pmatrix} = \begin{pmatrix}3 & 6 \\ -3 & 0\end{pmatrix}.\]
 \end{example}
 
@@ -150,7 +138,7 @@ Note that in general, $(\mat A \mat B)^n \neq \mat A^n \mat B^n$, where $\mat B$
     The \vocab{transpose} of a matrix $\mat A = (a_{ij})$ is denoted $\mat A \trp$ and is given by $(a_{ji})$, i.e. the rows and columns are switched.
 \end{definition}
 
-\begin{example}
+\begin{example}[Transpose]
     Let \[\mat A = \begin{pmatrix}1 & 2 \\ 3 & 4 \\ 5 & 6\end{pmatrix}.\] Then \[\mat A \trp = \begin{pmatrix}1 & 3 & 5 \\ 2 & 4 & 6\end{pmatrix}.\]
 \end{example}
 
@@ -183,7 +171,7 @@ By translating a system of linear equations into a matrix equation, we can use t
     \end{itemize}
 \end{definition}
 
-\begin{example}
+\begin{example}[Elementary Row Operations]
     The following examples demonstrate the three elementary row operations. Observe how the elementary row operations are written directly to the left of the corresponding rows.
     \begin{align*}
         \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle \\ \scriptstyle R_2 \leftrightarrow R_3 \\ \scriptstyle \end{matrix} \begin{pmatrix}1 & 2 & 3 \\ 7 & 8 & 9 \\ 4 & 5 & 6\end{pmatrix}\\
@@ -206,7 +194,7 @@ Observe the equivalence between performing elementary row operations on this aug
     \centering
     \begin{tabularx}{\columnwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
     \hline
-    \textbf{Operations on Equations} & \textbf{Elementary Row Operations on Augmented Matrix} \\ \hline
+    \bd{Operations on Equations} & \bd{Elementary Row Operations on Augmented Matrix} \\ \hline
     swapping two equations & swapping two rows \\ \hline
     multiplying an equation by a non-zero constant & multiplying a row by a non-zero constant \\ \hline
     adding a multiple of one equation to another equation & adding a multiple of one row to another row \\ \hline
@@ -227,7 +215,7 @@ One such form we aim for is the row-echelon form.
     \end{itemize}
 \end{definition}
 
-\begin{example}
+\begin{example}[Row-Echelon Form]
     Consider the following matrices: \[\mat A = \begin{pmatrix} {\color{ForestGreen}1} & 3 & 4 & 5 \\ 0 & {\color{ForestGreen}4} & 2 & 8 \\ 0 & 0 & 0 & {\color{ForestGreen} 5} \end{pmatrix}, \quad \mat B = \begin{pmatrix}{\color{ForestGreen} 1} & 3 & 4 & 5 \\ {\color{red} 1} & 4 & 2 & 8 \\ 0 & 0 & 0 & 0 \end{pmatrix}.\] $\mat A$ is in REF since all leading terms (coloured green) are to the right of the leading term of the previous row. On the other hand, $\mat B$ is not in REF, since the leading term $b_{21}$ (coloured red) is not to the right of the leading term $b_{11}$.
 \end{example}
 
@@ -235,7 +223,7 @@ Note that a matrix may have multiple row-echelon forms, i.e. REF is not unique.
 
 Once we manipulate our augmented matrix into its REF, we can easily solve for our solutions $x_1, \dots, x_n$ using back-substitution.
 
-\begin{example}
+\begin{example}[Back-Substitution]
     Consider the following augmented matrix, which has been manipulated into its REF via elementary row operations: \[\begin{pmatrix}[ccc|c]1 & 1 & 3 & 2 \\ 0 & -4 & -4 & 4 \\ 0 & 0 & -15 & 9\end{pmatrix} \implies \systeme{x_1 + x_2 + 3x_3 = 2, -4x_2 - 4x_3 = 4, -15x_3 = 9}.\] From the third equation, we easily get $x_3 = -3/5$. Substituting this into the second equation, we get $x_2 = -2/5$. Further substituting this into the first equation, we have $x_1 = 11/5$.
 \end{example}
 
@@ -251,17 +239,13 @@ Another form we typically aim for when performing Gaussian elimination is the re
     \end{itemize}
 \end{definition}
 
-\begin{example}
+\begin{example}[Reduced Row-Echelon Form]
     Consider the following matrices: \[\mat A = \begin{pmatrix}{\color{ForestGreen}1} & 0 & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & 0 & 0\end{pmatrix}, \quad \mat B = \begin{pmatrix}1 & {\color{red}3} & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & {\color{red}4} & 0\end{pmatrix}.\] $\mat A$ is in RREF, since all leading terms (coloured green) are 1 and all other entries in those columns are 0. However, $\mat B$ is not in RREF. This is because $b_{22}$ is a leading term, but there are non-zero entries in that column (coloured red).
 \end{example}
 
 Unlike REF, the RREF of a matrix is unique.
 
-By manipulating our augmented matrix into its RREF, we can easily obtain our solutions $x_1, \dots, x_n$.
-
-\begin{example}
-    Consider the following augmented, which has been manipulated into RREF using elementary row operations: \[\begin{pmatrix}[ccc|c] 1 & 0 & 3 & 4 \\ 0 & 1 & 4 & 8 \\ 0 & 0 & 0 & 0\end{pmatrix} \implies \systeme{x_1 + 3x_3 = 4, x_2 + 4x_3 = 8}.\] Letting $x_3$ be a free parameter $\l \in \RR$, we have \[x_1 = 4 - 3\l, \quad x_2 = 8 - 4\l, \quad x_3 = \l.\]
-\end{example}
+By manipulating our augmented matrix into its RREF, we directly obtain our solutions $x_1, \dots, x_n$. There is no need for back-substitution. Hence, reducing a matrix into its RREF, rather than its REF, is generally preferred.
 
 \subsection{Consistent and Inconsistent Systems}
 
@@ -327,7 +311,7 @@ Though there is a general formula for the inverse of an $n \times n$ matrix, it 
     An $n \times n$ matrix is an \vocab{elementary matrix} if it can be obtained from the $n \times n$ identity matrix $\mat I_n$ by performing a single row operation.
 \end{definition}
 
-\begin{example}
+\begin{example}[Elementary Matrices]
     As an example, consider \[\mat A = \begin{pmatrix}1 & 0 & 2 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix}.\] If we add 3 times the 3rd row to the 1st row, we will obtain \[\begin{pmatrix}1 & 0 & 2 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle R_1 + 3R_3 \\ \scriptstyle \\ \scriptstyle\end{matrix} \begin{pmatrix}4 & 12 & 14 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix}.\]
 
     Now observe that if we pre-multiply $\mat A$ by the elementary matrix \[\mat B = \begin{pmatrix}1 & 0 & 3 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix},\] we get \[\mat B \mat A = \begin{pmatrix}1 & 0 & 3 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix}1 & 0 & 2 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix} = \begin{pmatrix}4 & 12 & 14 & 3 \\ 2 & -1 & 3 & 6 \\ 1 & 4 & 4 & 0\end{pmatrix},\] which is exactly the same result as doing the row operation.
@@ -368,15 +352,11 @@ Beyond the $2 \times 2$ matrix, the closed form of an $n \times n$ determinant b
 
 Note that the term $(-1)^{i+j}$ has value 1 when the sum of $i$ and $j$ is even, and $-1$ when the sum is odd. This may be viewed as a ``signed'' array as follows: \[\begin{pmatrix}+ & - & + & - & \cdots \\ - & + & - & + & \cdots \\ + & - & + & - & \cdots \\ - & + & - & + & \cdots \\ \vdots & \vdots & \vdots & \vdots & \ddots \end{pmatrix}.\]
 
-\begin{example}
+\begin{example}[Cofactor Expansion]
     Using the method of cofactor expansion along the first row, the determinant of a $3 \times 3$ matrix \[\mat A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix}\] is given by \[\det{\mat A} = a_{11} \begin{vmatrix}a_{22} & a_{23} \\ a_{32} & a_{33}\end{vmatrix} - a_{12} \begin{vmatrix}a_{21} & a_{23} \\ a_{31} & a_{33}\end{vmatrix} + a_{13} \begin{vmatrix}a_{21} & a_{22} \\ a_{31} & a_{32}\end{vmatrix}.\]
 \end{example}
 
-The formula given by Proposition~\ref{prop:cofactor} is not unique: we can expand cofactors along any row or column of the matrix to get the determinant. This is particularly useful when a particular row/column contains many zeroes.
-
-\begin{example}
-    Let \[\mat A = \begin{pmatrix}1 & 0 & 3 \\ 2 & 0 & 4 \\ 3 & 2 & 9\end{pmatrix}.\] Expanding along the second column, we see that \[\det{\mat A} = -0 \begin{vmatrix}2 & 4 \\ 3 & 9\end{vmatrix} + 0 \begin{vmatrix}1 & 3 \\ 3 & 9\end{vmatrix} - 2 \begin{vmatrix}1 & 3 \\ 2 & 4\end{vmatrix} = 4.\]
-\end{example}
+The formula given by Proposition~\ref{prop:cofactor} is not unique: we can expand cofactors along any row or column of the matrix to get the determinant. By choosing a convenient row/column (e.g. one that has many zeroes), our computation of the determinant can be greatly simplified.
 
 \subsection{Properties}
 

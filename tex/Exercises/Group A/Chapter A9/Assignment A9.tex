@@ -1,7 +1,7 @@
 \section{Assignment A9}
 
 \begin{problem}
-    The equation of the plane $\Pi_1$ is $y + z = 0$ and the equation of the line $l$ is $\frac{x-5}2 = \frac{y-2}{-1} = \frac{z-2}3$. Find
+    The equation of the plane $\Pi_1$ is $y + z = 0$ and the equation of the line $l$ is \[\frac{x-5}2 = \frac{y-2}{-1} = \frac{z-2}3.\] Find
     \begin{enumerate}
         \item the position vector of the point of intersection of $l$ and $\Pi_1$,
         \item the length of the perpendicular from the origin to $l$,
@@ -10,19 +10,19 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that $\Pi_1$ has equation $\vec r \dotp \cveciiix011 = 0$ and $l$ has equation $\vec r = \cveciiix522 + \l \cveciiix2{-1}3$, $\l \in \RR$.
+    Note that $\Pi_1$ and $l$ have equations \[\vec r \dotp \cveciii011 = 0 \quad \tand \quad \vec r = \cveciii522 + \l \cveciii2{-1}3\] respectively, where $\l \in \RR$.
 
     \begin{ppart}
-        Let $P$ be the point of intersection of $\Pi_1$ and $l$. Then $\oa{OP} = \cveciiix522 + \l \cveciiix2{-1}3$ for some $\l \in \RR$. Also, $\oa{OP} \dotp \cveciiix011 = 0$. Hence, \[\bs{\cveciii522 + \l \cveciii2{-1}3} \dotp \cveciii011 = 0 \implies 4 + 2\l = 0 \implies \l = -2.\] Thus, \[\oa{OP} = \cveciii522 - 2\cveciii2{-1}3 = \cveciii14{-4}.\]
+        Let $P$ be the point of intersection of $\Pi_1$ and $l$. Then we may write \[\oa{OP} = \cveciii522 + \l \cveciii2{-1}3\] for some $\l \in \RR$. Also, $\oa{OP} \dotp \cveciiix011 = 0$. Hence, \[\bs{\cveciii522 + \l \cveciii2{-1}3} \dotp \cveciii011 = 0.\] This gives $4 + 2\l = 0$, whence $\l = -2$. Thus, \[\oa{OP} = \cveciii522 - 2\cveciii2{-1}3 = \cveciii14{-4}.\]
     \end{ppart}
     \begin{ppart}
         The perpendicular distance from the origin to $l$ is \[\frac{\abs{\cveciiix522 \crossp \cveciiix2{-1}3}}{\abs{\cveciiix2{-1}3}} = \frac1{\sqrt{14}} \abs{\cveciii8{-11}{-9}} = \frac{\sqrt{266}}{\sqrt{14}} = \sqrt{19} \units.\]
     \end{ppart}
     \begin{ppart}
-        Observe that $\Pi_2$ is parallel to $\cveciiix522$ and $\cveciiix2{-1}3$. Thus, $\vec n = \cveciiix522 \crossp \cveciiix2{-1}3 = \cveciiix8{-11}{-9}$. Since $\Pi_2$ contains the origin, $d = 0$. Hence, $\Pi_2$ has vector equation $\vec r \dotp \cveciiix8{-11}{-9} = 0$, which translates to $8x - 11y - 9z = 0$.
+        Observe that $\Pi_2$ is parallel to $\cveciiix522$ and $\cveciiix2{-1}3$. Thus, \[\vec n = \cveciii522 \crossp \cveciii2{-1}3 = \cveciii8{-11}{-9}.\] Since $\Pi_2$ contains the origin, $d = 0$, it has vector equation \[\vec r \dotp \cveciii8{-11}{-9} = 0,\] which translates to $8x - 11y - 9z = 0$.
     \end{ppart}
     \begin{ppart}
-        Let the acute angle be $\t$. \[\cos\t = \frac{\abs{\cveciiix011 \dotp \cveciiix8{-11}{-9}}}{\abs{\cveciiix011}\abs{\cveciiix8{-11}{-9}}} = \frac{20}{\sqrt{2}\sqrt{266}} \implies \t = 29.9\deg \todp{1}.\]
+        Let the acute angle between the planes be $\t$. Then \[\cos\t = \frac{\abs{\cveciiix011 \dotp \cveciiix8{-11}{-9}}}{\abs{\cveciiix011}\abs{\cveciiix8{-11}{-9}}} = \frac{20}{\sqrt{2}\sqrt{266}},\] so $\t = 29.9\deg \todp{1}$.
     \end{ppart}
 \end{solution}
 
@@ -47,21 +47,21 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that $\Pi_1 : \vec r \dotp \cveciiix{-1}02 = -4$, $\oa{OA} = \cveciiix400$ and $\oa{OP} = \cveciiix1\a1$.
+    Note that $\Pi_1$ has equation \[\vec r \dotp \cveciii{-1}02 = -4,\] and that $\oa{OA} = \cveciiix400$ and $\oa{OP} = \cveciiix1\a1$.
 
     \begin{ppart}
-        Since $\oa{OA} \dotp \cveciiix{-1}02 = \cveciiix400 \dotp \cveciiix{-1}02 = -4$, $A$ lies on $\Pi_1$. On the other hand, since $\oa{OP} \dotp \cveciiix{-1}02 = \cveciiix1\a1 \dotp \cveciiix{-1}02 = 1 \neq -4$, $P$ does not lie on $\Pi_1$.
+        Since \[\oa{OA} \dotp \cveciii{-1}02 = \cveciii400 \dotp \cveciii{-1}02 = -4,\] it follows that $A$ lies on $\Pi_1$. On the other hand, since \[\oa{OP} \dotp \cveciii{-1}02 = \cveciii1\a1 \dotp \cveciii{-1}02 = 1 \neq -4,\] it follows that $P$ does not lie on $\Pi_1$.
     \end{ppart}
     \begin{ppart}
-        Note that $\oa{NP} = \l \cveciiix{-1}02$ for some $\l \in \RR$, and $\oa{ON} \dotp \cveciiix{-1}02 = -4$. Hence, \[\oa{NP} = \oa{OP} - \oa{ON} = \cveciii1\a1 - \oa{ON} = \l \cveciii{-1}02.\] Thus, \[\bs{\cveciii1\a1 - \oa{ON}} \dotp \cveciii{-1}02 = \l \cveciii{-1}02 \dotp \cveciii{-1}02 \implies 1 - (-4) = 5\l \implies \l = 1.\] Hence, $\oa{NP} = \cveciiix{-1}02$, whence $\oa{ON} = \oa{OP} - \oa{NP} = \cveciiix2\a{-1}$.
+        Note that $\oa{NP} = \l \cveciiix{-1}02$ for some real $\l$, and $\oa{ON} \dotp \cveciiix{-1}02 = -4$. Hence, \[\oa{NP} = \cveciii1\a1 - \oa{ON} = \l \cveciii{-1}02.\] Thus, \[\bs{\cveciii1\a1 - \oa{ON}} \dotp \cveciii{-1}02 = \l \cveciii{-1}02 \dotp \cveciii{-1}02.\] This gives $1 - (-4) = 5\l$, whence $\l = 1$. Hence, $\oa{NP} = \cveciiix{-1}02$, thus \[\oa{ON} = \oa{OP} - \oa{NP} = \cveciii2\a{-1}.\]
     \end{ppart}
     \begin{ppart}
-        Note that $\Pi_2$ is parallel to $\oa{NP} = \cveciiix{-1}02$ and $\oa{AN} = \oa{ON} - \oa{OA} = \cveciiix{-2}\a{-1}$. Since $\cveciiix{-1}02 \crossp \cveciiix{-2}\a{-1} = -\cveciiix{2\a}5\a$, we take $\vec n = \cveciiix{2\a}5\a$, whence $d = \cveciiix400 \dotp \cveciiix{2\a}5\a = 8\a$. Thus, $\Pi_2$ has vector equation $\vec r \dotp \cveciiix{2\a}5{\a} = 8\a$ which translates to $\vec r \dotp (2\a \vec i + 5 \vec j + \a \vec k) = 8\a$.
+        Note that $\Pi_2$ is parallel to $\oa{NP} = \cveciiix{-1}02$ and $\oa{AN} = \cveciiix{-2}\a{-1}$. Since \[\cveciii{-1}02 \crossp \cveciii{-2}\a{-1} = -\cveciii{2\a}5\a,\] we take $\vec n = \cveciiix{2\a}5\a$, whence \[d = \cveciii400 \dotp \vec n = 8\a.\] Thus, $\Pi_2$ has vector equation \[\vec r \dotp \cveciii{2\a}5{\a} = 8\a,\] which translates to $\vec r \dotp (2\a \vec i + 5 \vec j + \a \vec k) = 8\a$.
 
-        Meanwhile, the line of intersection between $\Pi_1$ and $\Pi_2$ has equation \[l : \cveciii400 + \m \cveciii{-2}\a{-1}, \quad \m \in \RR.\]
+        Meanwhile, $l$, the line of intersection between $\Pi_1$ and $\Pi_2$ has equation \[\cveciii400 + \m \cveciii{-2}\a{-1}, \quad \m \in \RR.\]
     \end{ppart}
     \begin{ppart}
-        If the three planes intersect in a line, they must intersect at $l$. Hence, $l$ lies on $\Pi_3$. \[\bs{\cveciii400 + \m \cveciii{-2}\a{-1}} \dotp \cveciii112 = 4 \implies 4 + (\a - 4)\m = 4 \implies  (\a - 4)\m = 0.\] Since $(\a - 4)\m = 0$ must hold for all $\m \in \RR$, we must have $\a = 4$.
+        If the three planes intersect in a line, they must intersect at $l$. Hence, $l$ lies on $\Pi_3$. This gives \[\bs{\cveciii400 + \m \cveciii{-2}\a{-1}} \dotp \cveciii112 = 4,\] so $4 + (\a - 4)\m = 4$, whence $(\a - 4)\m = 0$. Since this must hold for all $\m \in \RR$, we must have $\a = 4$.
     \end{ppart}
 \end{solution}
 
@@ -118,20 +118,20 @@
     Let $\Pi_G$ be the plane representing the surface of the glass object.
 
     \begin{ppart}
-        Note that $\oa{AB} = \oa{OB} - \oa{OA} = \cveciiix002 - \cveciiix122 = -\cveciiix120$. Hence, \[l_{AB} : \vec r = \cveciii002 + \l \cveciii120, \quad \l \in \RR.\]
+        Note that $\oa{AB} = -\cveciiix120$. Hence, the line $AB$ has vector equation \[\vec r = \cveciii002 + \l \cveciii120, \quad \l \in \RR.\]
     \end{ppart}
     \begin{ppart}
-        Observe that $\Pi_G$ has equation $\vec r \dotp \cveciiix101 = 2$. Hence, \[\sin \t = \frac{\abs{\cveciiix101 \dotp \cveciiix120}}{\abs{\cveciiix101} \abs{\cveciiix120}} = \frac1{\sqrt2 \sqrt5} \implies \t = 71.6 \deg \todp{1}.\]
+        Observe that $\Pi_G$ has equation \[\vec r \dotp \cveciii101 = 2.\] Hence, \[\sin \t = \frac{\abs{\cveciiix101 \dotp \cveciiix120}}{\abs{\cveciiix101} \abs{\cveciiix120}} = \frac1{\sqrt2 \sqrt5},\] so $\t = 71.6 \deg \todp{1}$.
     \end{ppart}
     \begin{ppart}
-        Since line $BC$ makes an angle of $45 \deg$ with $\vec n_G$, \[\sin 45\deg = \frac{\abs{\cveciiix101 \dotp \cveciiix{-2/3}{p}{q}}}{\abs{\cveciiix101} \abs{\cveciiix{-2/3}{p}{q}}} \implies \frac1{\sqrt2} = \frac{\abs{q - 2/3}}{\sqrt2 \cdot 1} \implies \abs{q - \frac23} = 1.\] Hence, $q = -1/3$. Note that we reject $q = 5/3$ since $\cveciiix{-2/3}{p}{q}$ is a unit vector, which implies that $\abs{q} \leq 1$.
+        Since line $BC$ makes an angle of $45 \deg$ with $\vec n_G$, we have \[\frac1{\sqrt2} = \sin 45\deg = \frac{\abs{\cveciiix101 \dotp \cveciiix{-2/3}{p}{q}}}{\abs{\cveciiix101} \abs{\cveciiix{-2/3}{p}{q}}} = \frac{\abs{q - 2/3}}{\sqrt2},\] so \[\abs{q - \frac23} = 1.\] Hence, $q = -1/3$. Note that we reject $q = 5/3$ since $\cveciiix{-2/3}{p}{q}$ is a unit vector, which implies that $\abs{q} \leq 1$.
 
-        Let $\Pi_L$ be the plane containing the light ray. Note that $\Pi_L$ is parallel to $\oa{AB}$ and $\oa{BC}$. Hence, $\vec n_L = \cveciiix120 \crossp \cveciiix{-2/3}{p}{q} = \frac13 \cveciiix{6q}{-3q}{3p + 4}$. Since $\Pi_L$ contains $\vec n_G$, we have that $\vec n_L \perp \vec n_G$, whence $\vec n_L \dotp \vec n_G = 0$. This gives us \[\cveciii{6q}{-3q}{3p + 4} \cdot \cveciii101 = 0 \implies 6q + 3p + 4 = 0 \implies 6 \bp{-\frac13} + 3p + 4 = 0 \implies p = -\frac23.\]
+        Let $\Pi_L$ be the plane containing the light ray. Note that $\Pi_L$ is parallel to $\oa{AB}$ and $\oa{BC}$. Hence, \[\vec n_L = \cveciii120 \crossp \cveciii{-2/3}{p}{q} = \frac13 \cveciii{6q}{-3q}{3p + 4}.\] Since $\Pi_L$ contains $\vec n_G$, it follows that $\vec n_L$ is perpendicular to $\vec n_G$, i.e. $\vec n_L \dotp \vec n_G = 0$. Thus, \[\cveciii{6q}{-3q}{3p + 4} \cdot \cveciii101 = 0.\] This gives $6q + 3p + 4 = 0$. Since $q = -1/3$, we have $p = -2/3$.
     \end{ppart}
     \begin{ppart}
         Let $\Pi_G'$ be the plane with equation $3x + 3z = -4$. Observe that $\Pi_G$ is parallel to $\Pi_G'$. Also note that $\bp{-4/3, 0, 0}$ is a point on $\Pi_G'$. Hence, the distance between $\Pi_G$ and $\Pi_G'$ is given by \[\frac{\abs{2 - \cveciiix{-4/3}00 \dotp \cveciiix101}}{\abs{\cveciiix101}} = \frac{10}{3\sqrt2} \text{ cm}.\]
     \end{ppart}
     \begin{ppart}
-        Observe that $\cveciiix{-2/3}{p}{q} = \cveciiix{-2/3}{-2/3}{-1/3} = -\frac13 \cveciiix221$, whence the line $BC$ has equation $\vec r  = \cveciiix002 + \m \cveciiix221$, $\m \in \RR$. Let $P$ be the intersection between line $BC$ and $\Pi_G'$. Also note that $\oa{OP} = \cveciiix002 + \m \cveciiix221$ for some $\m \in \RR$, and $\oa{OP} \dotp \cveciiix303 = -4$. Hence, \[\bs{\cveciii002 + \m \cveciii221} \dotp \cveciii303 = -4 \implies 6 - 9\m = -4 \implies \m = -\frac{10}9.\] Hence, $\oa{OP} = \cveciiix002 - \frac{10}9 \cveciiix221 = \cveciiix{-20/9}{-20/9}{8/9}$. The coordinates of the point are hence $(-20/9, -20/9. 8/9)$.
+        Observe that \[\cveciii{-2/3}{p}{q} = \cveciii{-2/3}{-2/3}{-1/3} = -\frac13 \cveciii221,\] whence the line $BC$ has equation $\vec r  = \cveciiix002 + \m \cveciiix221$, where $\m \in \RR$. Let $P$ be the intersection between line $BC$ and $\Pi_G'$. Note that $\oa{OP} = \cveciiix002 + \m \cveciiix221$ for some $\m \in \RR$, and $\oa{OP} \dotp \cveciiix303 = -4$. Hence, \[\bs{\cveciii002 + \m \cveciii221} \dotp \cveciii303 = -4.\] This gives $6 - 9\m = -4$, so $\m = -10/9$. Hence, \[\oa{OP} = \cveciii002 - \frac{10}9 \cveciii221 = \cveciii{-20/9}{-20/9}{8/9}.\] The coordinates of the point are hence $(-20/9, -20/9, 8/9)$.
     \end{ppart}
 \end{solution}

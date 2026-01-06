@@ -7,7 +7,7 @@
         \centering
         \begin{tabular}{|l|l|l|l|}
         \hline
-        & \multicolumn{3}{c}{Units Per Gram} \\\hline
+        & \multicolumn{3}{c|}{Units Per Gram} \\\hline
         & Food A & Food B & Food C \\\hline
         Calcium & 15 & 20 & 24 \\\hline
         Iron & 0.2 & 0.15 & 0.28 \\\hline
@@ -22,28 +22,28 @@
 \end{solution}
 
 \begin{problem}
-    By expressing $\frac{3x^2 + 2x - 12}{x-1} - (x+2)$ as a single simplified fraction, solve the inequality \[\frac{3x^2 + 2x - 12}{x-1} \geq x + 2,\] without using a calculator.
+    By expressing \[\frac{3x^2 + 2x - 12}{x-1} - (x+2)\] as a single simplified fraction, solve the inequality \[\frac{3x^2 + 2x - 12}{x-1} \geq x + 2,\] without using a calculator.
 \end{problem}
 \begin{solution}
-    We have \[\frac{3x^2+2x-12}{x-1} - (x+2) = \frac{(x-2)(2x+5)}{x-1}.\] Rearranging terms, the given inequality becomes \[\frac{(x-2)(2x+5)}{x-1} = \frac{3x^2+2x-12}{x-1} - (x+2) \geq 0,\] which is equivalent to \[(x-2)(2x+5)(x-1) \geq 0.\]
+    We have \[\frac{3x^2+2x-12}{x-1} - (x+2) = \frac{(x-2)(2x+5)}{x-1}.\] Rearranging terms, the given inequality becomes \[\frac{(x-2)(2x+5)}{x-1} = \frac{3x^2+2x-12}{x-1} - (x+2) \geq 0,\] which is equivalent to $(x-2)(2x+5)(x-1) \geq 0$.
     Hence, $-5/2 \leq x < 1$ or $x \geq 2$.
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Given that $\sum_{r=1}^n r^2 = \frac{n}6 (n+1)(2n+1)$, evaluate $\sum_{r=-n}^n (r+1)(r+3)$ in terms of $n$.
-        \item Using standard series from the List of Formulae (MF27), find the range of values of $x$ for which the series $\sum_{r=1}^\infty \frac{(-1)^{r+1} x^r}{r 2^r}$ converges. State the sum to infinity in terms of $x$.
+        \item Given that \[\sum_{r=1}^n r^2 = \frac{n}6 (n+1)(2n+1),\] evaluate \[\sum_{r=-n}^n (r+1)(r+3)\] in terms of $n$.
+        \item Using standard series from the List of Formulae (MF27), find the range of values of $x$ for which the series \[\sum_{r=1}^\infty \frac{(-1)^{r+1} x^r}{r 2^r}\] converges. State the sum to infinity in terms of $x$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
         \begin{align*}
             &\sum_{r=-n}^n (r+1)(r+3)\\
-            &\hspace{1em}= \sum_{r=0}^{2n} (r-n+1)(r-n+3)\\
-            &\hspace{1em}= \sum_{r=0}^{2n} \bs{r^2 + r(4-2n) + (n^2 - 4n + 3)}\\
-            &\hspace{1em}= \frac{(2n)(2n+1)(4n+1)}{6} + (4-2n) \, \frac{(2n)(2n+1)}2 + (n^2 - 4n + 3) (2n+1)\\
-            &\hspace{1em}= (2n+1)\bs{\frac{n(4n+1)}{3} + (4-2n)(n) + (n^2 - 4n + 3)}\\
-            &\hspace{1em}= \frac{2n+1}{3} \bp{n^2 + n +9}.
+            &\hspace{2em}= \sum_{r=0}^{2n} (r-n+1)(r-n+3)\\
+            &\hspace{2em}= \sum_{r=0}^{2n} \bs{r^2 + r(4-2n) + (n^2 - 4n + 3)}\\
+            &\hspace{2em}= \frac{(2n)(2n+1)(4n+1)}{6} + (4-2n) \, \frac{(2n)(2n+1)}2 + (n^2 - 4n + 3) (2n+1)\\
+            &\hspace{2em}= (2n+1)\bs{\frac{n(4n+1)}{3} + (4-2n)(n) + (n^2 - 4n + 3)}\\
+            &\hspace{2em}= \frac{2n+1}{3} \bp{n^2 + n +9}.
         \end{align*}
     \end{ppart}
     \begin{ppart}
@@ -61,6 +61,8 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
+        Note that $y$ is undefined when $t = -1$. Hence, there is a vertical asymptote $x = 1$. Also, $x$ is undefined when $t = 1$, so there is a horizontal asymptote $y = 2$.
+
         \begin{center}\tikzsetnextfilename{6}
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
@@ -95,7 +97,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Note that $x = -\frac{2}{t - 1} \implies t = -\frac2x + 1$. Hence, \[y = \frac{4}{(-2/x + 1) + 1} = \frac{4x}{-2+2x} = \frac{2x}{x-1}.\] Thus, \[y = \frac{2x}{x-1}, \quad x \neq 1, x > 0.\]
+        Note that $x = -2/(t-1)$, so $t = 1-2/x$. Hence, \[y = \frac{4}{(1-2/x) + 1} = \frac{2x}{x-1}.\] Thus, \[y = \frac{2x}{x-1}, \quad x \neq 1, x > 0.\]
     \end{ppart}
 \end{solution}
 
@@ -153,7 +155,7 @@
             \end{tikzpicture}
         \end{center}
 
-        From the graph, $-1-\sqrt5 < x < -2 \tor \frac23 < x < -1 + \sqrt5$.
+        From the graph, $-1-\sqrt5 < x < -2 \tor 2/3 < x < -1 + \sqrt5$.
     \end{ppart}
 \end{solution}
 
@@ -167,8 +169,8 @@
 
         $C$: A translation of 2 units in the negative $x$-direction.
 
-        A curve undergoes in succession, the transformations $A$, $B$ and $C$, and the equation of the resulting curve is $y = \frac{2x+1}{2x+2}$. Determine the equation of the curve before the transformations, expressing your answer as a single fraction.
-        \item The diagram shows the curve $y = f(x)$. The lines $x = -2$, $x = 2$ and $y = \frac32 x$ are asymptotes to the curve. The curve has turning points at $(-3, -5)$ and $(3, 5)$. It also has a stationary point of inflexion at the origin $O$.
+        A curve undergoes in succession, the transformations $A$, $B$ and $C$, and the equation of the resulting curve is $y = (2x+1)/(2x+2)$. Determine the equation of the curve before the transformations, expressing your answer as a single fraction.
+        \item The diagram shows the curve $y = f(x)$. The lines $x = -2$, $x = 2$ and $y = 3x/2$ are asymptotes to the curve. The curve has turning points at $(-3, -5)$ and $(3, 5)$. It also has a stationary point of inflexion at the origin $O$.
         \begin{center}\tikzsetnextfilename{8}
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
@@ -204,26 +206,25 @@
         \end{center}
         \begin{enumerate}
             \item State the range of values of $x$ for which the graph is concave downwards.
-            \item Sketch the graph of $y = \frac{1}{f(x)}$.
+            \item Sketch the graph of $y = 1/f(x)$.
             \item Sketch the graph of $y = f'(x)$.
         \end{enumerate}
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that
-        \begin{align*}
-            A : y \mapsto -y &\implies \inv A : y \mapsto -y\\
-            B : y \mapsto y-1 &\implies \inv B : y \mapsto y+1\\
-            C : x \mapsto x + 2 &\implies \inv C : x \mapsto x-2
-        \end{align*}
+        We apply the inverse transformations in reverse order to recover the equation of the original curve.
 
-        Hence,
-        \begin{align*}
-            y = \frac{2x+1}{2x+2} \xmapsto{\inv C} y = \frac{2(x-2)+1}{2(x-2)+2} = \frac{2x-3}{2x-2} \xmapsto{\inv B} y + 1 = \frac{2x-3}{2x-2} \xmapsto{\inv A} -y + 1 = \frac{2x-3}{2x-2}
-        \end{align*}
+        \renewcommand{\theenumi}{\arabic{enumi}.}
+        \begin{enumerate}
+            \item[] \[y = \frac{2x+1}{2x+2}.\]
+            \item A translation of two units in the positive $x$-direction \[y = \frac{2x-3}{2x-2}. \tag{$x \mapsto x-2$}\]
+            \item A translation of one unit in the negative $y$-direction. \[y = -\frac1{2x-2}. \tag{$y \mapsto y+1$}\]
+            \item A reflection about the $x$-axis. \[y = \frac1{2x-2}. \tag{$y \mapsto -y$}\]
+        \end{enumerate}
+        \renewcommand{\theenumi}{(\alph{enumi})}
 
-        Thus, \[y = 1 - \frac{2x-3}{2x-2} = \frac1{2x-2}.\]
+        Thus, the original curve has equation $y = 1/(2x-2)$.
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
@@ -259,7 +260,6 @@
                 \end{tikzpicture}
             \end{center}
         \end{psubpart}
-        \clearpage
         \begin{psubpart}
             \begin{center}\tikzsetnextfilename{10}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -299,9 +299,9 @@
 \end{solution}
 
 \begin{problem}
-    A curve has parametric equations \[x = 3u^2, \quad y = 6u.\]
+    A curve has parametric equations $x = 3u^2$, $y = 6u$.
     \begin{enumerate}
-        \item Find the equations of the normal to the curve at the point $P\bp{3p^2, 6p}$, where $p$ is a non-zero constant.
+        \item Find the equations of the normal to the curve at the point $P(3p^2, 6p)$, where $p$ is a non-zero constant.
         \item The normal meets the $x$-axis at $Q$ and the $y$-axis at $R$. Find the coordinates of $Q$ and of $R$.
         \item Find two possible expressions for the area bounded by the normal and the axes in terms of $p$, stating the range of values of $p$ in each case.
         \item Given that $p$ is positive and increasing at a rate of 2 units/s, find the rate of change of the area of the triangle in terms of $p$.
@@ -309,22 +309,21 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[\der{y}{x} = \frac{\derx{y}{u}}{\derx{x}{u}} = \frac{6}{6u} = \frac1u.\] At $u = p$, the gradient of the normal is hence $-\frac1{1/p} = -p$. Thus, the equation of the normal at $P$ is \[y - 6p = -p\bp{x - 3p^2}.\]
+        Note that \[\der{y}{x} = \frac{\derx{y}{u}}{\derx{x}{u}} = \frac{6}{6u} = \frac1u.\] At $u = p$, the gradient of the normal is hence $-1/(1/p) = -p$. Thus, the equation of the normal at $P$ is $y - 6p = -p\bp{x - 3p^2}$.
     \end{ppart}
     \begin{ppart}
         At $Q$, $y = 0$. Hence, $x = 6 + 3p^2$, whence $Q(6 + 3p^2, 0)$. At $R$, $x = 0$. Hence, $y = 6p + 3p^2$, whence $R(0, 6p+3p^2)$.
     \end{ppart}
     \begin{ppart}
-        When $p > 0$, the area of the triangle is $\frac12 (6p + 3p^3)(6 + 3p^2)$ units$^2$. When $p < 0$, the area of the triangle is $-\frac12 (6p + 3p^3)(6 + 3p^2)$ units$^2$.
+        When $p > 0$, the area of the triangle is $(1/2)(6p + 3p^3)(6 + 3p^2)$ units$^2$. When $p < 0$, the area of the triangle is $-(1/2)(6p + 3p^3)(6 + 3p^2)$ units$^2$.
     \end{ppart}
     \begin{ppart}
-        Let the area of the triangle be $A$ unit$^2$. Since $p>0$, we have \[A = \frac12 (6p + 3p^3)(6 + 3p^2).\] Thus, \[\der{A}{p} = \frac12 \bs{(6p + 3p^3)(6p) + (6+3p^2)(6 + 9p^2)} = \frac92 \bp{5p^4 + 12p^2 + 4}.\] Hence, the rate of change of area of the triangle is \[\der{A}{t} = \der{A}{p} \cdot \der{p}{t} = 9\bp{5p^4 + 12p^2 + 4} \units[2]\text{/s}.\]
+        Let the area of the triangle be $A \units[2]$. Since $p>0$, we have \[A = \frac12 (6p + 3p^3)(6 + 3p^2).\] Thus, \[\der{A}{p} = \frac12 \bs{(6p + 3p^3)(6p) + (6+3p^2)(6 + 9p^2)} = \frac92 \bp{5p^4 + 12p^2 + 4}.\] Hence, the rate of change of area of the triangle is \[\der{A}{t} = \der{A}{p} \cdot \der{p}{t} = 9\bp{5p^4 + 12p^2 + 4} \units[2]\text{/s}.\]
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
-    The shaded region $R$ is bounded by the lines $y = 2x$, $y = \frac32$, the $x$-axis and the curve $y = \sqrt{\frac{3x^2 - 1}{x^2}}$.
+    The shaded region $R$ is bounded by the lines $y = 2x$, $y = 3/2$, the $x$-axis and the curve \[y = \sqrt{\frac{3x^2 - 1}{x^2}}.\]
 
     \begin{center}\tikzsetnextfilename{11}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -366,19 +365,20 @@
     \end{center}
 
     \begin{enumerate}
-        \item By using the substitution $x = \frac1{\sqrt3} \sec \t$, find the exact value of $\int_{1/\sqrt{3}}^{2/\sqrt3} \sqrt{\frac{3x^2-1}{x^2}} \d x$.
+        \item By using the substitution $x = \sec{\t}/\sqrt3$, find the exact value of \[\int_{1/\sqrt{3}}^{2/\sqrt3} \sqrt{\frac{3x^2-1}{x^2}} \d x.\]
         \item Hence, find the exact area of the shaded region $R$.
         \item Find the volume of the solid generated when $R$ is rotated through $2\pi$ radians about the $x$-axis, giving your answer in 3 decimal places.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[x = \frac1{\sqrt3} \sec \t \implies \d x = \frac1{\sqrt3} \sec\t\tan\t \d \t,\] with the bounds of integration going from $\t = 0$ to $\pi/3$.
+        Note that $3x^2 - 1 = \tan^2 \t$ and \[\der{x}{\t} = \frac1{\sqrt3} \sec\t\tan\t.\] The bounds of integration now go from $\t = 0$ to $\pi/3$.
         \begin{align*}
-            \int_{1/\sqrt{3}}^{2/\sqrt3} \sqrt{\frac{3x^2-1}{x^2}} \d x &= \int_0^{\pi/3} \sqrt{\frac{\tan^2 \t}{\frac13 \sec^2 \t}} \frac1{\sqrt3} \sec \t \tan \t \d \t\\
+            \int_{1/\sqrt{3}}^{2/\sqrt3} \sqrt{\frac{3x^2-1}{x^2}} \d x &= \int_0^{\pi/3} \sqrt{\frac{\tan^2 \t}{(1/3) \sec^2 \t}} \frac1{\sqrt3} \sec \t \tan \t \d \t\\
             &= \int_0^{\pi/3} \tan^2 \t \d \t\\
             &= \int_0^{\pi/3} \bp{\sec^2 \t - 1} \d \t\\
-            &= \evalint{\tan \t - \t}{0}{\pi/3} = \sqrt3 - \frac\pi3.
+            &= \evalint{\tan \t - \t}{0}{\pi/3}\\
+            &= \sqrt3 - \frac\pi3.
         \end{align*}
     \end{ppart}
     \begin{ppart}
@@ -392,7 +392,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     It is given that $y = \arccos{2x} \arcsin{2x}$, where $-0.5 \leq x \leq 0.5$, and $\arccos{2x}$ and $\arcsin{2x}$ denote their principal values.
     \begin{enumerate}
@@ -410,7 +409,7 @@
             &= \frac1{1 - 4x^2} \bs{-8 + 4x \cdot \frac{2\bs{\arccos{2x} - \arcsin{2x}}}{\sqrt{1-4x^2}}}\\
             &= \frac1{1-4x^2} \bp{-8 + 4xy'}.
         \end{align*}
-        Hence, \[\bp{1-4x^2} y'' - 4xy' + 8 = 0.\] Differentiating with respect to $x$, we get \[\bp{1-4x^2} y''' - 12xy'' - 4y' = 0.\] Evaluating $y$, $y'$, $y''$ and $y'''$ at $x = 0$, we get \[y(0) = 0, \quad y'(0) = \pi, \quad y''(0) = -8, \quad y'''(0) = 4\pi.\] Hence, \[y = \pi x - 4x^2 + \frac23 \pi x^3 + \cdots.\]
+        Hence, $\bp{1-4x^2} y'' - 4xy' + 8 = 0$. Differentiating with respect to $x$, we get $\bp{1-4x^2} y''' - 12xy'' - 4y' = 0$. Evaluating $y$, $y'$, $y''$ and $y'''$ at $x = 0$, we get $y(0) = 0$, $y'(0) = \pi$, $y''(0) = -8$, and $y'''(0) = 4\pi$. Hence, \[y = \pi x - 4x^2 + \frac23 \pi x^3 + \cdots.\]
     \end{ppart}
     \begin{ppart}
         \begin{align*}
@@ -432,13 +431,13 @@
 \begin{problem}
     The function $f$ is defined by \[f : x \mapsto 3\sin{2x - \frac16 \pi}, \quad 0 \leq x \leq k.\]
     \begin{enumerate}
-        \item Show that the largest exact value of $k$ such that $\inv f$ exists is $\frac13 \pi$. Find $\inv f(x)$.
-        \item It is given that $k = \frac13 \pi$. In a single diagram, sketch the graphs of $y = f(x)$ and $y = \inv f(x)$, labelling your graphs clearly.
+        \item Show that the largest exact value of $k$ such that $\inv f$ exists is $\pi/3$. Find $\inv f(x)$.
+        \item It is given that $k = \pi/3$. In a single diagram, sketch the graphs of $y = f(x)$ and $y = \inv f(x)$, labelling your graphs clearly.
     \end{enumerate}
 
-    The function $h$ is defined by $h : x \mapsto 3\sin{2x - \frac16 \pi}$, $0 \leq x \leq \frac13 \pi$, $x = \frac1{12} \pi$.
+    The function $h$ is defined by \[h : x \mapsto 3\sin{2x - \frac16 \pi}, \quad 0 \leq x \leq \pi/3, \; x \neq \frac\pi{12}.\]
 
-    Another function $g$ is defined by $g : x \mapsto \abs{3 - \frac1{x}}$, $-3 \leq x \leq 3$, $x \neq 0$.
+    Another function $g$ is defined by \[g : x \mapsto \abs{3 - \frac1{x}}, \quad 3 \leq x \leq 3, \; x \neq 0.\]
 
     \begin{enumerate}
         \setcounter{enumi}{2}
@@ -448,11 +447,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        For $\inv f$ to exist, $f$ must be one-one. Since $\frac13 \pi$ is the first maximum point of $f$, it is the largest value of $k$. 
+        For $\inv f$ to exist, $f$ must be one-one. Since $\pi/3$ is the first maximum point of $f$, it is the largest value of $k$. 
 
-        Let $y = f(x)$. Then \[3\sin{2x - \frac16 \pi} = y \implies 2x - \frac16 \pi = \arcsin{\frac{y}3} \implies x = \frac12 \arcsin{\frac{y}3} + \frac1{12} \pi.\] Hence, \[\inv f(x) = \frac12 \arcsin{\frac{x}3} + \frac1{12} \pi.\]
+        Let $y = f(x)$. Then \[3\sin{2x - \frac16 \pi} = y.\] Solving for $x$, we get \[x = \frac12 \arcsin{\frac{y}3} + \frac1{12} \pi.\] Hence, \[\inv f(x) = \frac12 \arcsin{\frac{x}3} + \frac1{12} \pi.\]
     \end{ppart}
-    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{12}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -501,17 +499,18 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Since $\ran h = [-\frac32, 0) \cup (0, 3]$ and $\dom g = [-3, 0) \cup (0, 3]$, we have $\ran h \subseteq \dom g$, whence $gh$ exists.
+        Since $\ran h = [-3/2, 0) \cup (0, 3]$ and $\dom g = [-3, 0) \cup (0, 3]$, we have $\ran h \subseteq \dom g$, whence $gh$ exists.
 
-        \[gh(x) = g\bs{3\sin{2x - \frac16\pi}} = \abs{3 - \frac1{3\sin{2x - \frac16\pi}}}.\]
+        \[gh(x) = g\bs{3\sin{2x - \frac16\pi}} = \abs{3 - \frac1{3\sin{2x - \pi/6}}}.\]
 
-        When $h(x) = \frac13$, $gh(x) = 0$. When $x \to \frac1{12} \pi$, $gh(x) \to \infty$. Hence, $\ran {gh} = [0, \infty)$.
+        When $h(x) = 1/3$, $gh(x) = 0$. When $x \to \pi/12$, $gh(x) \to \infty$. Hence, $\ran {gh} = [0, \infty)$.
     \end{ppart}
     \begin{ppart}
-        \[\inv {gh}(x) = 0 \implies x = gh(0) = \abs{3 - \frac1{3\sin{-\frac16 \pi}}} = \frac{11}3.\]
+        From $\inv{gh}(x) = 0$, we have $x = gh(0)$, so \[x = gh(0) = \abs{3 - \frac1{3\sin{-\pi/6}}} = \frac{11}3.\]
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     \begin{enumerate}
         \item \begin{enumerate}
@@ -544,13 +543,13 @@
                 &= -\frac{\ln2}2 + \bp{-\frac{\ln 2}{2} + \frac\pi2}\\
                 &= -\ln 2 + \frac\pi4.
             \end{align*}
-            Hence, $a = \frac14$ and $b = 2$.
+            Hence, $a = 1/4$ and $b = 2$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
         Note that $\sin 3u = 3\sin u - 4\sin^3 u$, whence $\sin^3 u = (3\sin u - \sin 3u)/4$.
         \begin{align*}
-            \int \sin[3]{kx} \d x = \int \frac{3\sin{kx} - \sin{3kx}}{4} \d x = \frac{-3\cos{kx} + \frac13 \cos{3kx}}{4k} + C.
+            \int \sin[3]{kx} \d x = \int \frac{3\sin{kx} - \sin{3kx}}{4} \d x = \frac{-3\cos{kx} + (1/3)\cos{3kx}}{4k} + C.
         \end{align*}
     \end{ppart}
 \end{solution}
@@ -570,7 +569,7 @@
         \item Show that the distance, in metres, Alan will cover in the sixth minute is $0.94q + 300.8$, and hence find the minimum value of $q$, to the nearest metre, such that he can eventually complete 10 km.
     \end{enumerate}
 
-    While training, Alan suffers from inflammation and needs medication. The concentration of the medicine in the bloodstream after administration can be modelled by the recurrence relation \[C_{n+1} = C_n \e^{-\bp{p + \frac{1}{n+100}}},\] where $n$ represents the number of complete hours from which the medicine is first taken and $p$ is the decay constant.
+    While training, Alan suffers from inflammation and needs medication. The concentration of the medicine in the bloodstream after administration can be modelled by the recurrence relation \[C_{n+1} = C_n \exp{-\bp{p + \frac{1}{n+100}}},\] where $n$ represents the number of complete hours from which the medicine is first taken and $p$ is the decay constant.
 
     \begin{enumerate}
         \setcounter{enumi}{3}
@@ -579,14 +578,14 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $R_n$ m be the distance ran in the $n$th week. We have $R_1 = 400$ and $R_{n+1} = \bp{1 + \frac{r}{100}}R_n$, whence \[R_n = 400 \bp{1 + \frac{r}{100}}^{n-1}.\] Since $R_5 = 829.44$, we have \[400 \bp{1 + \frac{r}{100}}^4 = 829.44 \implies \bp{1 + \frac{r}{100}}^4 = 2.0736 \implies 1 + \frac{r}{100} = 1.2 \implies r = 20.\] Hence, \[R_20 = 400 \cdot 1.2^19 = 12779.2 = 13000,\] rounded to the nearest thousand. Hence, Alan will run 13 km in week 20.
+        Let $R_n$ m be the distance ran in the $n$th week. We have $R_1 = 400$ and $R_{n+1} = \bp{1 + r/100}R_n$, whence \[R_n = 400 \bp{1 + \frac{r}{100}}^{n-1}.\] Since $R_5 = 829.44$, we have \[400 \bp{1 + \frac{r}{100}}^4 = 829.44.\] Solving for $r$, we get \[r = 100\bs{\bp{\frac{829.44}{400}}^{1/4} - 1} = 20.\] Hence, $R_20 = 400 \cdot 1.2^19 = 12779.2 = 13000$, rounded to the nearest thousand. Hence, Alan will run 13 km in week 20.
     \end{ppart}
     \begin{ppart}
         Let $S_n$, $C_n$ be the distance swam and cycled in week $n$, respectively, in metres.
 
-        We have $S_1 =400$ and $S_{n+1} = S_n + 50$, whence \[S_n = 400 + (n-1)50.\] Consider $S_n \geq 1500$. Then $n \geq 23$.
+        We have $S_1 =400$ and $S_{n+1} = S_n + 50$, whence $S_n = 400 + (n-1)50$. Consider $S_n \geq 1500$. Then $n \geq 23$.
 
-        We have $C_1 = 1000$ and $C_{n+1} = 1.15 C_n$, whence \[C_n = 1000 \bp{1.15^{n-1}}.\] Consider $C_n \geq 30000$. Then $n \geq \log_{1.15} 30 = 25.3$.
+        We have $C_1 = 1000$ and $C_{n+1} = 1.15 C_n$, whence $C_n = 1000 \bp{1.15^{n-1}}$. Consider $C_n \geq 30000$. Then $n \geq \log_{1.15} 30 = 25.3$.
 
         Consider $R_n \geq 10000$. Then $n \geq 1 + \log_{1.2} 25 = 18.7$.
 
@@ -595,10 +594,10 @@
     \begin{ppart}
         The distance Alan will run in the 6th minute is $(q + 4 \cdot 80) (1 - 0.06) = 0.94q + 300.8$.
 
-        Let $d_n$ be the distance travelled in the $n$th minute, where $n \geq 6$. We have $d_6 = 0.94 q + 300.8$ and $d_{n+1} = (1-0.06)d_n$, whence \[d_n = 0.94^{n-6} d_6.\] The total distance Alan will eventually travel is thus given by  \[5q + 80(4 + 3 + 2 + 1) + \sum_{n=6}^\infty (0.94)^{n-6} d_6 = 5q + 800 + \frac{0.94q + 300.8}{1 - 0.94}.\] Let the above expression be greater than 10000. Then $q \geq 202.581$. Hence, $\min q = 203$.
+        Let $d_n$ be the distance travelled in the $n$th minute, where $n \geq 6$. We have $d_6 = 0.94 q + 300.8$ and $d_{n+1} = (1-0.06)d_n$, whence $d_n = 0.94^{n-6} d_6$. The total distance Alan will eventually travel is thus given by  \[5q + 80(4 + 3 + 2 + 1) + \sum_{n=6}^\infty (0.94)^{n-6} d_6 = 5q + 800 + \frac{0.94q + 300.8}{1 - 0.94}.\] Let the above expression be greater than 10000. Then $q \geq 202.581$. Hence, $\min q = 203$.
     \end{ppart}
     \begin{ppart}
         We have $C_0 = 200$ and $C_1 = 168$. We hence have
-        \[168 = 200 \e^{-(p + \frac1{100})},\] whence $p = 0.16435$. Using G.C., the first time $C_n \leq 60$ occurs when $n = 7$. Thus, after 7 complete hours, Alan will feel significant pain and should take his medicine again.
+        \[168 = 200 \exp{-\bp{p + \frac1{100}}},\] whence $p = 0.16435$. Using G.C., the first time $C_n \leq 60$ occurs when $n = 7$. Thus, after 7 complete hours, Alan will feel significant pain and should take his medicine again.
     \end{ppart}
 \end{solution}

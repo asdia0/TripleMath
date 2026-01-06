@@ -58,13 +58,19 @@
     \end{ppart}
     \begin{ppart}
         We have
-        \begin{alignat*}{4}
-            x_1 &= 2.13401, &\quad x_6 &&= 2.224735,\\
-            x_2 &= 2.193347, &\quad x_7 &&= 2.225030,\\
-            x_3 &= 2.214178, &\quad x_8 &&= 2.225131,\\
-            x_4 &= 2.221392, &\quad x_9 &&= 2.225166,\\
-            x_5 &= 2.223879, &\quad x_{10} &&= 2.225178.
-        \end{alignat*}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|l|c|c|}
+            \cline{1-2} \cline{4-5}
+            $n$ & $x_n$ &  & $n$ & $x_n$ \\ \cline{1-2} \cline{4-5} \cline{1-2} \cline{4-5}
+            1 & 2.13401 &  & 6 & 2.224735 \\ \cline{1-2} \cline{4-5} 
+            2 & 2.193347 &  & 7 & 2.225030 \\ \cline{1-2} \cline{4-5} 
+            3 & 2.214178 &  & 8 & 2.225131 \\ \cline{1-2} \cline{4-5} 
+            4 & 2.221392 &  & 9 & 2.225166 \\ \cline{1-2} \cline{4-5} 
+            5 & 2.223879 &  & 10 & 2.225178 \\ \cline{1-2} \cline{4-5} 
+            \end{tabular}
+        \end{table}
+
         Note that $f(2.22515) f(2.22525) = -2 \times 10^{-7} < 0$. Thus, $\a \in (2.22515, 2.22525)$, whence $\a = 2.2252 \todp{4}$. 
     \end{ppart}
 \end{solution}
@@ -102,7 +108,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        The surface area $S$ is given by \[S = 4xy + 3yz + 2zx.\] Noting that $xyz = 3$, we get \[S = \frac{12}{z} + \frac{9}x + \frac{6}{y}.\] By the AM-GM inequality, we see that \[S \geq 3 \sqrt[3]{\frac{12 \cdot 9 \cdot 6}{zxy}} = 18.\] Observe that \[\frac{12}{z} = \frac{9}{x} = \frac{6}{y} \iff 3 = xyz = x\bp{\frac{6}{9}x}\bp{\frac{12}{9} x} = \frac89 x^3 \iff x = \frac32,\] so the minimum surface area of 18 units$^2$ is achieved when $x = 3/2$ units, $y = 1$ units, and $z = 2$ units.
+        The surface area $S$ is given by $S = 4xy + 3yz + 2zx$. Noting that $xyz = 3$, we get \[S = \frac{12}{z} + \frac{9}x + \frac{6}{y}.\] By the AM-GM inequality, we see that \[S \geq 3 \sqrt[3]{\frac{12 \cdot 9 \cdot 6}{zxy}} = 18.\] Observe that \[\frac{12}{z} = \frac{9}{x} = \frac{6}{y} \iff 3 = xyz = x\bp{\frac{6}{9}x}\bp{\frac{12}{9} x} = \frac89 x^3 \iff x = \frac32,\] so the minimum surface area of 18 units$^2$ is achieved when $x = 3/2$ units, $y = 1$ units, and $z = 2$ units.
     \end{ppart}
     \begin{ppart}
         We have $\derx{x}{t} = 1/2$ and $\derx{y}{t} = -1/3$. We also have \[S = 4xy + \frac9x + \frac6y,\] so
@@ -172,10 +178,10 @@
         Rewriting the given differential equation, we have \[\frac1{(N/2)^2 - (P - N/2)^2} \der{P}{t} = \frac{k}{N}.\] Integrating both sides with respect to $t$, we get \[\int \frac1{(N/2)^2 - (P - N/2)^2} \d P = \frac{k}{N} \int \d t.\] Thus, \[\frac1{N} \ln{\frac{P}{N-P}} = \frac{k}{N} t + C_1,\] where we dropped the modulus since $0 < P < N$ by (a). This simplifies to \[P = \frac{C_2 N}{C_2 + \e^{-kt}},\] where $C_2 = \e^{NC_1}$. When $t = 0$, we have $P = P_0$, thus \[C_2 = \frac{P_0}{N-P_0}.\] Hence, $P$ is given by \[P = \frac{P_0 N}{P_0 + (N - P_0) \e^{-kt}}.\]
     \end{ppart}
     \begin{ppart}
-        When $t = 2$, we have $N = 25P_0$ and $P = 5P_0$. Substituting this into the above expression yields \[5P_0 = \frac{25P_0^2)}{P_0 + 24P_0\e^{-2k}} \implies 5 = \frac{25}{1 + 24\e^{-2k}}.\] This gives $k = \ln{6}/2$.
+        When $t = 2$, we have $N = 25P_0$ and $P = 5P_0$. Substituting this into the above expression yields \[5P_0 = \frac{25P_0^2)}{P_0 + 24P_0\e^{-2k}}.\] Since $P_0 \neq 0$, we may divide both sides by $P_0$ to get \[5 = \frac{25}{1 + 24\e^{-2k}},\] which gives $k = \ln{6}/2$.
     \end{ppart}
     \begin{ppart}
-        Consider the critical points of $P$. Setting $\derx{P}{t} = 0$, we get \[kP\bp{1 - \frac{P}{N}} - HP = 0\] so $P = 0$ or $P = \frac{N}{k} (k-H)$. In order for the critical point at $P = 0$ to be stable (hence eradicating the tumour), we must have $\frac{N}{k} (k-H) < 0$. Since $N$ and $k$ are positive constants, we must have $H > k$.
+        Consider the critical points of $P$. Setting $\derx{P}{t} = 0$, we get \[kP\bp{1 - \frac{P}{N}} - HP = 0\] so $P = 0$ or $P = (N/k) (k-H)$. In order for the critical point at $P = 0$ to be stable (hence eradicating the tumour), we must have $(N/k) (k-H) < 0$. Since $N$ and $k$ are positive constants, we must have $H > k$.
     \end{ppart}
 \end{solution}
 
@@ -201,7 +207,7 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            We are given that \[b_{n+1} - b_n = 2(b_n - b_{n-1}).\] It is clear that the sequence $\bc{b_n - b_{n-1}}$ is in geometric progression with common ratio 2, so \[b_n - b_{n-1} = 2^{n-1} \bp{b_1 - b_0} = 2^{n-1} (9000 - 6000) = 3000 \cdot 2^{n-1}.\] Thus,
+            We are given that $b_{n+1} - b_n = 2(b_n - b_{n-1})$. It is clear that the sequence $\bc{b_n - b_{n-1}}$ is in geometric progression with common ratio 2, so \[b_n - b_{n-1} = 2^{n-1} \bp{b_1 - b_0} = 2^{n-1} (9000 - 6000) = 3000 \cdot 2^{n-1}.\] Thus,
             \begin{align*}
                 b_n &= b_0 + \sum_{i = 1}^{n} \bp{b_i - b_{i-1}}\\
                 &= 6000 + \sum_{i = 1}^n \bp{3000 \cdot 2^{i-1}}\\
@@ -214,11 +220,10 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        From the given recurrence relation, we have \[(1+k) c_n - 3c_{n-1} + 2c_{n-2} = 0.\] The characteristic equation is thus \[(1+k)m^2 - 3m + 2 = 0,\] with roots \[m = \frac{3 \pm \sqrt{1-8k}}{2(1+k)}.\] Since $k > 0.2$, we have $1 - 8k < 0$, so \[m = \frac3{2(1+k)} + \frac{\sqrt{8k-1}}{2(1+k)} \i = \sqrt{\frac2{1+k}} \e^{\pm \i \t},\] where $\t = \arctan{\sqrt{8k-1}/3}$. The general solution is thus \[c_n = \bp{\frac2{1+k}}^{n/2} \bp{A \cos n\t + B \sin n\t}.\] From the initial conditions, we see that $A = c_0 = 6000$ so \[9000 = c_1 = \sqrt{\frac2{1+k}} \bp{6000 \cos \t + B \sin \t}.\] Noting that \[\cos \t = \frac{3}{\sqrt{8(1+k)}} \quad \tand \quad \sin \t = \frac{\sqrt{8k-1}}{\sqrt{8(1+k)}},\] we obtain \[B = \frac{18000k}{\sqrt{8k-1}}.\] Since $c_6 = 0$, we get \[\bp{\frac2{1+k}}^3 \bp{6000\cos 6\t + \frac{18000k}{\sqrt{8k-1}} \sin 6\t} = 0 \implies \tan 6\t = -\frac{\sqrt{8k-1}}{3k}.\] Using G.C., the only root in the interval $(0.2, 1)$ is $k = 0.294$.
+        From the given recurrence relation, we have $(1+k) c_n - 3c_{n-1} + 2c_{n-2} = 0$. The characteristic equation is thus $(1+k)m^2 - 3m + 2 = 0$, with roots \[m = \frac{3 \pm \sqrt{1-8k}}{2(1+k)}.\] Since $k > 0.2$, we have $1 - 8k < 0$, so \[m = \frac3{2(1+k)} + \frac{\sqrt{8k-1}}{2(1+k)} \i = \sqrt{\frac2{1+k}} \e^{\pm \i \t},\] where $\t = \arctan{\sqrt{8k-1}/3}$. The general solution is thus \[c_n = \bp{\frac2{1+k}}^{n/2} \bp{A \cos n\t + B \sin n\t}.\] From the initial conditions, we see that $A = c_0 = 6000$ so \[9000 = c_1 = \sqrt{\frac2{1+k}} \bp{6000 \cos \t + B \sin \t}.\] Noting that \[\cos \t = \frac{3}{\sqrt{8(1+k)}} \quad \tand \quad \sin \t = \frac{\sqrt{8k-1}}{\sqrt{8(1+k)}},\] we obtain \[B = \frac{18000k}{\sqrt{8k-1}}.\] Since $c_6 = 0$, we get \[\bp{\frac2{1+k}}^3 \bp{6000\cos 6\t + \frac{18000k}{\sqrt{8k-1}} \sin 6\t} = 0,\] whence \[\tan 6\t = -\frac{\sqrt{8k-1}}{3k}.\] Using G.C., the only root in the interval $(0.2, 1)$ is $k = 0.294$.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     A particular machine part in a factory is known to fail over time more rapidly due to ageing. Its reliability is measured in the number of hours of use before it needs to be replaced. The manufacturer of the machine part models its reliability by the random variable $R$ (in hours) with cumulative distributive function \[F(r) = \begin{cases}
         1 - \e^{-(r/3200)^{3.2}}, & r \geq 0,\\
@@ -235,7 +240,7 @@
         \centering
         \begin{tabular}{|c|c|}
         \hline
-        \textbf{Reliability, $R$ (hours)} & \textbf{Observed Frequency} \\ \hline\hline
+        \bd{Reliability, $R$ (hours)} & \bd{Observed Frequency} \\ \hline\hline
         $R < 2000$ & 53 \\ \hline
         $2000 \leq R < 2500$ & 41 \\ \hline
         $2500 \leq R < 3000$ & $\b$ \\ \hline
@@ -263,7 +268,7 @@
             \centering
             \begin{tabular}{|c|c|c|}
             \hline
-            \textbf{Reliability, $R$ (hours)} & \textbf{$E_i$} & \textbf{$O_i$} \\ \hline\hline
+            \bd{Reliability, $R$ (hours)} & \bd{$E_i$} & \bd{$O_i$} \\ \hline\hline
             $R < 2000$ & 41.8 & 53 \\ \hline
             $2000 \leq R < 2500$ & 34.8 & 41 \\ \hline
             $2500 \leq R < 3000$ & 40.3 & $\b$ \\ \hline
@@ -278,26 +283,21 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     A language learning app is testing whether its new AI pronunciation coach improves users' pronunciation fluency. Twelve users were scored on a scale of 0 to 100 (with each score given to 1 decimal place) before and after using the app for 2 weeks. A higher score indicates better pronunciation fluency.
 
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|c|}
-        \hline
-        \textbf{User} & \textbf{Before} & \textbf{After} \\ \hline\hline
-        1 & 70.0 & 73.2 \\ \hline
-        2 & 65.5 & 69.0 \\ \hline
-        3 & 75.1 & 72.4 \\ \hline
-        4 & 68.0 & 64.3 \\ \hline
-        5 & 72.2 & 76.0 \\ \hline
-        6 & 69.8 & 72.7 \\ \hline
-        7 & 66.4 & 71.9 \\ \hline
-        8 & 75.0 & 72.0 \\ \hline
-        9 & 67.0 & 66.1 \\ \hline
-        10 & 73.0 & 77.6 \\ \hline
-        11 & 70.1 & 67.8 \\ \hline
-        12 & 64.5 & 70.7 \\ \hline
+        \begin{tabular}{|c|c|c|l|c|c|c|}
+        \cline{1-3} \cline{5-7}
+        \bd{User} & \bd{Before} & \bd{After} &  & \bd{User} & \bd{Before} & \bd{After} \\ \cline{1-3} \cline{5-7} 
+        1 & 70.0 & 73.2 &  & 7 & 66.4 & 71.9 \\ \cline{1-3} \cline{5-7} 
+        2 & 65.5 & 69.0 &  & 8 & 75.0 & 72.0 \\ \cline{1-3} \cline{5-7} 
+        3 & 75.1 & 72.4 &  & 9 & 67.0 & 66.1 \\ \cline{1-3} \cline{5-7} 
+        4 & 68.0 & 64.3 &  & 10 & 73.0 & 77.6 \\ \cline{1-3} \cline{5-7} 
+        5 & 72.2 & 76.0 &  & 11 & 70.1 & 67.8 \\ \cline{1-3} \cline{5-7} 
+        6 & 69.8 & 72.7 &  & 12 & 64.5 & 70.7 \\ \cline{1-3} \cline{5-7} 
         \end{tabular}
     \end{table}
 
@@ -318,7 +318,7 @@
             \centering
             \begin{tabular}{|c|c|c|c|c|}
             \hline
-            \textbf{User} & \textbf{Before} & \textbf{After} & \textbf{Change} & \textbf{Rank} \\ \hline\hline
+            \bd{User} & \bd{Before} & \bd{After} & \bd{Change} & \bd{Rank} \\ \hline\hline
             1 & 70.0 & 73.2 & \phantom{$-$}3.2 & 6\\ \hline
             2 & 65.5 & 69.0 & \phantom{$-$}3.5 & 7\\ \hline
             3 & 75.1 & 72.4 & $-$2.7 & 3\\ \hline
@@ -361,26 +361,27 @@
         Let $X$ and $Y$ be the amount of petrol left (in litres) after Mrs Yeo and her son drives the car, respectively. Then $X \sim \Uni{10}{50}$ and $Y \sim \Uni{0}{20}$. By the last of total probability,
         \begin{align*}
             &\P{\text{less than 15 litres left}}\\
-            &\hspace{1em}= \P{X < 15} \P{\text{Mrs Yeo last drove the car}} + \P{Y < 15} \P{\text{Her son last drove the car}}\\
-            &\hspace{1em}= \frac{5}{40} (0.8) + \frac{15}{20} (0.2)\\
-            &\hspace{1em}= 0.25.
+            &\hspace{2em}= \P{X < 15} \P{\text{Mrs Yeo last drove the car}}\\
+            &\hspace{4em}+ \P{Y < 15} \P{\text{Her son last drove the car}}\\
+            &\hspace{2em}= \frac{5}{40} (0.8) + \frac{15}{20} (0.2)\\
+            &\hspace{2em}= 0.25.
         \end{align*}
     \end{ppart}
     \begin{ppart}
         Note that \[F_X = \begin{cases}
                 0, & x < 10,\\
-                \frac{x-10}{40}, & 10 \leq x \leq 50,\\
+                (x-10)/40, & 10 \leq x \leq 50,\\
                 1, & x > 50,
             \end{cases} \quad \tand \quad F_Y = \begin{cases}
                 0, & y < 0,\\
-                \frac{y}{20}, & 0 \leq y \leq 20,\\
+                y/20, & 0 \leq y \leq 20,\\
                 1, & y > 20.
             \end{cases}\]
         Thus, by the law of total probability \[F_T = \begin{cases}
             0 , & t < 0,\\
-            0 (0.8) + \frac{t}{20} (0.2), & 0 \leq t < 10,\\
-            \frac{t-10}{40} (0.8) + \frac{t}{20} (0.2), & 10 \leq t < 20,\\
-            \frac{t-10}{40} (0.8) + 1 (0.2), & 20 \leq t \leq 50,\\
+            0 (0.8) + (t/20) (0.2), & 0 \leq t < 10,\\
+            (t-10)/40 (0.8) + (t/20) (0.2), & 10 \leq t < 20,\\
+            (t-10)/40 (0.8) + 1 (0.2), & 20 \leq t \leq 50,\\
             1 , & t > 50,
         \end{cases} = \begin{cases}
             0 , & t < 0,\\
@@ -400,8 +401,10 @@
     \begin{ppart}
         We have
         \begin{align*}
-            \P{D > 504} &= \P{650 - \frac{3250}{T + 5} > 504} = \P{T \geq \frac{1260}{73}}\\
-            &= 1 - F_T\!\bp{\frac{1260}{73}} = 1 - \bs{0.03\bp{\frac{1260}{73}} - 0.2}\\
+            \P{D > 504} &= \P{650 - \frac{3250}{T + 5} > 504}\\
+            &= \P{T \geq \frac{1260}{73}}\\
+            &= 1 - F_T\!\bp{\frac{1260}{73}}\\
+            &= 1 - \bs{0.03\bp{\frac{1260}{73}} - 0.2}\\
             &= \frac{249}{365}.
         \end{align*}
     \end{ppart}
@@ -430,7 +433,7 @@
             The required probability is \[\sum_{i = 0}^2 \P{D = i} \P{S = i} = 0.199 \tosf{3}.\]
         \end{psubpart}
         \begin{psubpart}
-            Note that $D + S \sim \Po{3}$. Let $X_n \sim \Po{3n/7}$. Then \[\P{X_n > 0} > 0.8 \implies \P{X_n = 0} < 0.2.\] So $\e^{-3n/7} < 0.2$, whence $n > 3.76$. Since $n$ is an integer, the least value of $n$ is 4.
+            Note that $D + S \sim \Po{3}$. Let $X_n \sim \Po{3n/7}$. We require $\P{X_n > 0} > 0.8$. Using G.C., the least value of $n$ is 4.
         \end{psubpart}
         \begin{psubpart}
             The required probability is \[\P{S < D < 8} = \sum_{i = 0}^6 \P{S < i} \P{i < D < 8} = 0.605 \tosf{3}.\]
@@ -439,9 +442,10 @@
             The required probability is
             \begin{align*}
                 &\P{\abs{D - S} > 3}{D + S = 7}\\
-                &\hspace{1em}= \frac{\P{D + S = 7 \, \tand \, \abs{D - S} > 3}}{\P{D + S = 7}}\\
-                &\hspace{1em}= \frac{\P{D = 0} \P{S = 7} + \P{D = 1}\P{S = 6} + \P{D = 6} \P{S = 1} + \P{D = 7} \P{S = 0}}{\P{D + S = 7}}\\
-                &\hspace{1em}= 0.270 \tosf{3}.
+                &\hspace{2em}= \frac{\P{D + S = 7 \, \tand \, \abs{D - S} > 3}}{\P{D + S = 7}}\\
+                &\hspace{2em}= \frac{1}{\P{D + S = 7}} \Big[\P{D = 0} \P{S = 7} + \P{D = 1}\P{S = 6}\\
+                &\hspace{9em} + \P{D = 6} \P{S = 1} + \P{D = 7} \P{S = 0}\Big]\\
+                &\hspace{2em}= 0.270 \tosf{3}.
             \end{align*}
         \end{psubpart}
     \end{ppart}
@@ -456,8 +460,8 @@
         \centering
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{\#1} & 8.47 & \textbf{\#2} & 11.36 & \textbf{\#3} & 10.26 & \textbf{\#4} & 9.59 & \textbf{\#5} & 7.38 \\ \hline
-        \textbf{\#6} & 7.38 & \textbf{\#7} & 6.89 & \textbf{\#8} & 10.93 & \textbf{\#9} & 9.61 & \textbf{\#10} & 10.14 \\ \hline
+        \bd{\#1} & 8.47 & \bd{\#2} & 11.36 & \bd{\#3} & 10.26 & \bd{\#4} & 9.59 & \bd{\#5} & 7.38 \\ \hline
+        \bd{\#6} & 7.38 & \bd{\#7} & 6.89 & \bd{\#8} & 10.93 & \bd{\#9} & 9.61 & \bd{\#10} & 10.14 \\ \hline
         \end{tabular}
     \end{table}
 
@@ -479,8 +483,8 @@
         \centering
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{\#1} & 8.70 & \textbf{\#2} & 11.30 & \textbf{\#3} & 10.22 & \textbf{\#4} & 9.61 & \textbf{\#5} & 7.70 \\ \hline
-        \textbf{\#6} & 8.10 & \textbf{\#7} & 7.86 & \textbf{\#8} & 10.70 & \textbf{\#9} & 9.90 & \textbf{\#10} & 9.98 \\ \hline
+        \bd{\#1} & 8.70 & \bd{\#2} & 11.30 & \bd{\#3} & 10.22 & \bd{\#4} & 9.61 & \bd{\#5} & 7.70 \\ \hline
+        \bd{\#6} & 8.10 & \bd{\#7} & 7.86 & \bd{\#8} & 10.70 & \bd{\#9} & 9.90 & \bd{\#10} & 9.98 \\ \hline
         \end{tabular}
     \end{table}
 
@@ -496,7 +500,7 @@
         Let $X$ be the battery life of a j-phone (in hours). Then $X \sim \Normal{\m}{\s^2}$. Let $A$ denote the first sample of 10 batteries. Since $n = 10$ is small, \[\frac{\ol{X}_A - \ol{x}_A}{S_A / \sqrt{10}} \sim \StudentT{10-1}.\] From the given data, we have $\ol{x}_A = 9.201$ and $s_A = 1.5804$. Using G.C., a 95\% confidence interval for $\m$ is \[\bp{\ol{x}_A - t_{0.975} \frac{s_A}{\sqrt{10}}, \, \ol{x}_A + t_{0.975} \frac{s_A}{\sqrt{10}}} = (8.070, 10.332).\]
     \end{ppart}
     \begin{ppart}
-        Let $B$ denote the second sample of 8 batteries. Since $n = 8$ is small, \[\frac{\ol{X}_B - \ol{x}_B}{S_B / \sqrt{8}} \sim \StudentT{8-1}.\] Thus, the 95\% confidence interval for the second sample is \[\bp{\ol{x}_B - t_{0.975} \frac{s_B}{\sqrt{8}}, \, \ol{x}_B + t_{0.975} \frac{s_A}{\sqrt{8}}} = (9.015, 9.985).\] This gives the system of equations \[\ol{x}_B - 2.36462 \frac{s_B}{\sqrt{8}} = 9.015, \quad \tand \quad \ol{x}_B + 2.36462 \frac{s_B}{\sqrt{8}} = 9.985.\] Solving, we get $\ol{x}_B = 9.5$ and $s_B = 0.58013$. Thus, \[s_B^2 = \frac1{8-1} \bp{\sum x_B^2 - \frac{9.5(8)^2}{8}} = 0.58013^2 \implies \sum x_B^2 = 724.35585.\] Additionally, \[\ol{x}_{A + B} = \frac{9.201(10) + 9.5(8)}{10 + 8} = 9.33389.\] Hence, \[s^2_{A+B} = \frac1{18-1} \bs{\bp{869.0637 + 724.35585} - \frac{(92.01 + 9.5(8))^2}{18}} = 1.48429.\] Since $n = 18$ is small, \[\frac{\ol{X}_{A+B} - \ol{x}_{A+B}}{S_{A+B} / \sqrt{18}} \sim \StudentT{18-1}.\] A 95\% confidence interval for the two samples combined is thus \[\bp{9.33389 - 2.10982 \sqrt{\frac{1.48429}{18}}, \, 9.33389 + 2.10982 \sqrt{\frac{1.48429}{18}}} = (8.728, 9.940).\]
+        Let $B$ denote the second sample of 8 batteries. Since $n = 8$ is small, \[\frac{\ol{X}_B - \ol{x}_B}{S_B / \sqrt{8}} \sim \StudentT{8-1}.\] Thus, the 95\% confidence interval for the second sample is \[\bp{\ol{x}_B - t_{0.975} \frac{s_B}{\sqrt{8}}, \, \ol{x}_B + t_{0.975} \frac{s_A}{\sqrt{8}}} = (9.015, 9.985).\] This gives the system of equations \[\ol{x}_B - 2.36462 \frac{s_B}{\sqrt{8}} = 9.015 \quad \tand \quad \ol{x}_B + 2.36462 \frac{s_B}{\sqrt{8}} = 9.985.\] Solving, we get $\ol{x}_B = 9.5$ and $s_B = 0.58013$. Thus, \[s_B^2 = \frac1{8-1} \bp{\sum x_B^2 - \frac{9.5(8)^2}{8}} = 0.58013^2,\] so \[\sum x_B^2 = 724.35585.\] Additionally, \[\ol{x}_{A + B} = \frac{9.201(10) + 9.5(8)}{10 + 8} = 9.33389.\] Hence, \[s^2_{A+B} = \frac1{18-1} \bs{\bp{869.0637 + 724.35585} - \frac{(92.01 + 9.5(8))^2}{18}} = 1.48429.\] Since $n = 18$ is small, \[\frac{\ol{X}_{A+B} - \ol{x}_{A+B}}{S_{A+B} / \sqrt{18}} \sim \StudentT{18-1}.\] A 95\% confidence interval for the two samples combined is thus \[\bp{9.33389 - 2.10982 \sqrt{\frac{1.48429}{18}}, \, 9.33389 + 2.10982 \sqrt{\frac{1.48429}{18}}} = (8.728, 9.940).\]
     \end{ppart}
     \begin{ppart}
         Since 10 hours is not within the 95\% confidence interval for the mean, we can conclude that there is sufficient evidence at the 5\% level of significance that the mean is not 10 hours.

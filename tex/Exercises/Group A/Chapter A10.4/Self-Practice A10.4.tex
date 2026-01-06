@@ -52,9 +52,9 @@
     $z$ is a complex number such that $\arg{z - 1} = \pi/3$ and $\arg{z - \i} = \pi/6$. By finding the Cartesian equations of the two half-lines, or otherwise, find the value of $\arg{z}$.
 \end{problem}
 \begin{solution}
-    Let $z = x + \i y$, where $x, y \in \RR$. Then \[\arg{z-1} = \arctan \frac{y}{x-1} = \frac\pi3 \implies \frac{y}{x-1} = \sqrt{3} \implies y = \sqrt{3} x - \sqrt3\] and \[\arg{z-\i} = \arctan \frac{y-1}{x} = \frac{\pi}6 \implies \frac{y-1}{x} = \frac1{\sqrt3} \implies y = 1 + \frac1{\sqrt3} x.\]
+    Let $z = x + \i y$, where $x$ and $y$ are real. Then \[\arg{z-1} = \arctan \frac{y}{x-1} = \frac\pi3,\] so \[\frac{y}{x-1} = \tan \frac\pi3 = \sqrt{3},\] whence $y = \sqrt{3} x - \sqrt3$. Also, \[\arg{z-\i} = \arctan \frac{y-1}{x} = \frac{\pi}6,\] so \[\frac{y-1}{x} = \tan \frac\pi6 = \frac1{\sqrt3},\] whence $y = 1 + x/\sqrt3$.
 
-    Equating the two, we have \[\sqrt{3} x - \sqrt3 = 1 + \frac1{\sqrt3} x \implies x = \frac{1 + \sqrt{3}}{\sqrt3 - 1/\sqrt3} = \frac{\sqrt3 + 3}{2}.\] Thus, \[y = \sqrt{3} \bp{x - 1} = \sqrt{3} \bp{\frac{\sqrt3 + 3}{2} - 1} = \frac{3 + \sqrt3}{2},\] so $x = y$ and \[\arg z = \arctan \frac{y}{x} = \arctan 1 = \frac\pi4.\]
+    Equating the two, we have \[\sqrt{3} x - \sqrt3 = 1 + \frac1{\sqrt3} x.\] Solving, we get \[x = \frac{1 + \sqrt{3}}{\sqrt3 - 1/\sqrt3} = \frac{\sqrt3 + 3}{2}.\] Thus, \[y = \sqrt{3} \bp{x - 1} = \sqrt{3} \bp{\frac{\sqrt3 + 3}{2} - 1} = \frac{3 + \sqrt3}{2},\] so $x = y$ and \[\arg z = \arctan \frac{y}{x} = \arctan 1 = \frac\pi4.\]
 \end{solution}
 
 \begin{problem}
@@ -187,7 +187,7 @@
 
     The locus of $\abs{z - a} = b$ is a circle of radius $b$ centred at the point representing $a$.
 
-    For $b$ to be at a minimum, $PQ$ must be the diameter of the circle. By the Pythagorean Theorem, \[3^2 = \bp{\frac{PQ}{2}}^2 + 1^2 \implies PQ = 32.\] Thus, \[\min b = \frac{PQ}{2} = \frac{\sqrt{32}}{2} = 2\sqrt{2}.\] The point representing $a$ is then the midpoint of $P$ and $Q$, i.e. $a = 1$.
+    For $b$ to be at a minimum, $PQ$ must be the diameter of the circle. By the Pythagorean Theorem, \[3^2 = \bp{\frac{PQ}{2}}^2 + 1^2,\] whence $PQ = 32$. Thus, \[\min b = \frac{PQ}{2} = \frac{\sqrt{32}}{2} = 2\sqrt{2}.\] The point representing $a$ is then the midpoint of $P$ and $Q$, i.e. $a = 1$.
 \end{solution}
 
 \begin{problem}
@@ -196,7 +196,7 @@
     \begin{enumerate}
         \item Given that $x = 2y$, show that $R$ lies on the imaginary axis.
         \item Given that $y = 2x$, show that the point representing $z^2$ is collinear with the origin and the point $R$.
-        \item Given that $\abs{z} \leq 2$ and $\arctan \frac12 \leq \arg z \leq \arctan 2$, calculate the area of the region in which the point $P$ can lie.
+        \item Given that $\abs{z} \leq 2$ and $\arctan{1/2} \leq \arg z \leq \arctan 2$, calculate the area of the region in which the point $P$ can lie.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -248,10 +248,10 @@
     $\angle POQ = \pi/2$, and $OPQR$ forms a rectangle.
 
     \begin{ppart}
-        Given $x = 2y$, we have \[z + 2\i z = z\bp{1 + 2\i} = \bp{2y + \i y}\bp{1 + 2\i} = 5y\i,\] which is purely imaginary. Hence, $R$ lies on the imaginary axis.
+        Given $x = 2y$, we have $z + 2\i z = z\bp{1 + 2\i} = \bp{2y + \i y}\bp{1 + 2\i} = 5y\i$, which is purely imaginary. Hence, $R$ lies on the imaginary axis.
     \end{ppart}
     \begin{ppart}
-        Given $y = 2x$, we have \[z = x + 2\i x = x\bp{1 + 2\i} \implies \arg{z^2} = 2\arg{1 + 2\i}.\] Meanwhile, \[\arg{z + 2\i z} = \arg{z} + \arg{1 + 2\i} = \arg{1 + 2\i} + \arg{1 + 2\i} = 2\arg{1 + 2\i}.\] Since $z^2$ and $z + 2\i z$ have identical arguments, the points representing them must be collinear with the origin.
+        Given $y = 2x$, we have $z = x + 2\i x = x\bp{1 + 2\i}$, so $\arg{z^2} = 2\arg{1 + 2\i}$. Meanwhile, \[\arg{z + 2\i z} = \arg{z} + \arg{1 + 2\i} = \arg{1 + 2\i} + \arg{1 + 2\i} = 2\arg{1 + 2\i}.\] Since $z^2$ and $z + 2\i z$ have identical arguments, the points representing them must be collinear with the origin.
     \end{ppart}
     \clearpage
     \begin{ppart}
@@ -314,7 +314,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[\abs{z - a} = \abs{\frac1w - a} = \abs{\frac{1 - aw}{w}} = a \implies \abs{1 - aw} = \abs{aw} \implies \abs{w} = \abs{\frac{1 - aw}{a}} = \abs{\frac1a - w}.\] Hence, the locus of $P$ is the perpendicular bisector of the origin and $(1/a, 0)$. Equivalently, it is the vertical line passing through $(1/2a, 0)$.
+        We have \[\abs{z - a} = \abs{\frac1w - a} = \abs{\frac{1 - aw}{w}} = a.\] Multiplying through by $\abs{w}$, we get $\abs{1 - aw} = \abs{aw}$, so \[\abs{w} = \abs{\frac{1 - aw}{a}} = \abs{\frac1a - w}.\] Hence, the locus of $P$ is the perpendicular bisector of the origin and $(1/a, 0)$. Equivalently, it is the vertical line passing through $(1/2a, 0)$.
     \end{ppart}
     \clearpage
     \begin{ppart}
@@ -400,7 +400,7 @@
             \end{tikzpicture}
         \end{center}
 
-        From the diagram, \[\sin \t = \frac{1/2}{2 - 1/2} \implies \t = \arcsin \frac13.\] Thus, \[160.5\deg = \pi - \t \leq \arg{z-2} \leq \pi + \t = 199.5\deg.\] As $a \to 0$, $\arg{z-1/a} \to \pi$.
+        From the diagram, \[\sin \t = \frac{1/2}{2 - 1/2},\] so $\t = \arcsin{1/3}$. Thus, \[160.5\deg = \pi - \t \leq \arg{z-2} \leq \pi + \t = 199.5\deg.\] As $a \to 0$, $\arg{z-1/a} \to \pi$.
     \end{ppart}
 \end{solution}
 
@@ -470,7 +470,7 @@
         Clearly, $\arg p = \arctan{3/4}$.
     \end{ppart}
     \begin{ppart}
-        Observe that \[\max \arg \frac{z}{p} = \t = \arcsin \frac25  = 23.58\deg.\]
+        Observe that \[\max \arg \frac{z}{p} = \t = \arcsin \frac25 = 23.58\deg.\]
     \end{ppart}
 \end{solution}
 
@@ -488,7 +488,7 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Note that $\arg z^2 = 2\arg z = 2\a$. Let $z^2 = x + \i y$, where $x, y \in \RR$. Then $\arg{z^2} = \arctan{y/x}$. Equating the two yields \[\arctan \frac{y}{x} = 2\a \implies y = x \tan{2\a}.\] Note that $\arg{z^2} = 2\a \in (\pi/2, \pi)$, so $x = \Re{z^2} < 0$.
+            Note that $\arg z^2 = 2\arg z = 2\a$. Let $z^2 = x + \i y$, where $x$ and $y$ are real. Then $\arg{z^2} = \arctan{y/x}$. Equating the two yields \[\arctan \frac{y}{x} = 2\a,\] which gives $y = x \tan{2\a}$. Note that $\arg{z^2} = 2\a \in (\pi/2, \pi)$, so $x = \Re{z^2} < 0$.
 
             $L_3$ is precisely $L_2$ shifted one unit in the positive real axis. Hence, the equation of $L_3$ is $y = (x-1) \tan{2\a}$.
         \end{psubpart}
@@ -497,6 +497,6 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Observe that \[\abs{\bp{z^2 + 1} - 1} = \abs{z^2} = k^2,\] so $W$ lies on a circle with radius $k^2$ and centre $(1, 0)$. For $E$ and $F$ to lie on $C$, we require \[k = \abs{\frac{1 \pm \sqrt{3} \i}{2}} = 1.\]
+        Observe that $\abs{\bp{z^2 + 1} - 1} = \abs{z^2} = k^2$, so $W$ lies on a circle with radius $k^2$ and centre $(1, 0)$. For $E$ and $F$ to lie on $C$, we require \[k = \abs{\frac{1 \pm \sqrt{3} \i}{2}} = 1.\]
     \end{ppart}
 \end{solution}

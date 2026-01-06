@@ -27,7 +27,7 @@ We now introduce some operations of statements, namely the negation, conjunction
     \end{table}
 \end{definition}
 
-\begin{example}
+\begin{example}[Negation]
     If $P(x)$ is the statement ``$x$ is even'', then $\lnot P(x)$ is the statement ``$x$ is odd''.
 \end{example}
 
@@ -46,7 +46,7 @@ We now introduce some operations of statements, namely the negation, conjunction
     \end{table}
 \end{definition}
 
-\begin{example}
+\begin{example}[Conjunction]
     If $P$ is the statement ``I like cats'', and $Q$ is the statement ``I like dogs'', then $P \land Q$ is the statement ``I like cats and dogs''.
 \end{example}
 
@@ -65,7 +65,7 @@ We now introduce some operations of statements, namely the negation, conjunction
     \end{table}
 \end{definition}
 
-\begin{example}
+\begin{example}[Disjunction]
     If $P$ is the statement ``I like cats'', and $Q$ is the statement ``I like dogs'', then $P \lor Q$ is the statement ``I like cats or dogs or both''.
 \end{example}
 
@@ -92,7 +92,7 @@ We now introduce some operations of statements, namely the negation, conjunction
     Similarly, the truth table of $\lnot \bp{P \lor Q}$ is equivalent to that of $(\lnot P) \land (\lnot Q)$, thus the statements are equivalent.
 \end{proof}
 
-\begin{example}
+\begin{example}[De Morgan's Law]
     Let $P$ be the statement ``I like cats'', and $Q$ be the statement ``I like dogs''. Then $\lnot (P \land Q)$ is ``It is not the case that I like both cats and dogs'', while $(\lnot P) \lor (\lnot Q)$ is ``I do not like cats, or I do not like dogs, or I do not like both''. Clearly, the two statements are equivalent.
 \end{example}
 
@@ -185,7 +185,7 @@ We now introduce two important symbols, namely the universal quantifier ($\foral
     Let $P(x)$ be a statement about $x$, where $x$ is a member of some set $S$ (i.e. $S$ is the \vocab{domain} of $x$). Then the notation \[\forall x \in S, \, P(x)\] means that $P(x)$ is true for every $x$ in the set $S$. The notation \[\exists x \in S, \, P(x)\] means that there exists at least one element of $x$ of $S$ for which $P(x)$ is true.
 \end{definition}
 
-\begin{example}
+\begin{example}[Quantifiers]
     Let $P(x)$ be the statement ``$x$ is even''. Clearly, the statement \[\forall x \in \ZZ, \, P(x)\] is not true; not all integers are even. However, the statement \[\exists x \in \ZZ, \, P(x)\] is true, because we can find an integer that is even (e.g. $x = 8$).
 \end{example}
 
@@ -200,7 +200,7 @@ Note that a statement $P(x)$ does not necessarily have to mention $x$. For insta
     Using a similar argument, one can prove that the negation of an existential statement is a universal statement, i.e. \[\lnot \bp{\exists x \in D, \, P(x)} \quad \iff \quad \forall x \in D, \, \lnot P(x).\]
 \end{proof}
 
-\begin{example}
+\begin{example}[Negation of Quantifiers]
     Let $D$ be the set of all students in a class, and let $P(x)$ be ``$x$ likes durian''. Then the statement $\forall x \in D, \, P(x)$ reads as ``everyone in the class likes durian''. Intuitively, its negation would be ``someone in the class does not like durian'', which we can write as $\exists x \in D, \, \lnot P(x)$.
 \end{example}
 

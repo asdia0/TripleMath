@@ -117,22 +117,22 @@
 
     Is $\ceil{\sqrt{x}} = \ceil{\sqrt{\floor{x}}}$? If so, give a proof. If not, provide a counterexample.
 \end{problem}
-\begin{proof}[Proof of \emph{(a)}]
-    Let $n = \floor{\sqrt{x}}$, where $n \in \ZZ$. By the definition of the floor function, \[n \leq \sqrt{x} < n+1.\] Squaring, we get \[n^2 \leq x < (n+1)^2.\] Taking the floor, we have \[n^2 \leq \floor{x} \leq x < (n+1)^2.\] Rooting, we have \[n \leq \sqrt{\floor{x}} < n+1.\] Once again, by the definition of the floor function, $n = \floor{\sqrt{\floor{x}}}$. Thus, \[\floor{\sqrt{x}} = n = \floor{\sqrt{\floor{x}}}.\]
+\begin{proof}[Proof of \textup{(a)}]
+    Let $n = \floor{\sqrt{x}}$, where $n \in \ZZ$. By the definition of the floor function, $n \leq \sqrt{x} < n+1$. Squaring, we get $n^2 \leq x < (n+1)^2$. Taking the floor, we have $n^2 \leq \floor{x} \leq x < (n+1)^2$. Taking roots, we have $n \leq \sqrt{\floor{x}} < n+1$. Once again, by the definition of the floor function, $n = \floor{\sqrt{\floor{x}}}$. Thus, $\floor{\sqrt{x}} = n = \floor{\sqrt{\floor{x}}}$.
 \end{proof}
-\begin{proof}[Proof of \emph{(b)}]
-    Let $n = \ceil{\sqrt{x}}$, where $n \in \ZZ$. By the definition of the ceiling function, \[n - 1 < \sqrt{x} \leq n.\] Squaring, we get \[(n-1)^2 < x \leq n^2.\] Taking the ceiling, we have \[(n-1)^2 < x \leq \ceil{x} \leq n^2.\] Rooting, we have \[n-1 < \sqrt{\ceil{x}} \leq n.\] Once again, by the definition of the ceiling function, $n = \ceil{\sqrt{\ceil{x}}}$. Thus, \[\ceil{\sqrt{x}} = n = \ceil{\sqrt{\ceil{x}}}.\]
+\begin{proof}[Proof of \textup{(b)}]
+    Let $n = \ceil{\sqrt{x}}$, where $n \in \ZZ$. By the definition of the ceiling function, $n - 1 < \sqrt{x} \leq n$. Squaring, we get $(n-1)^2 < x \leq n^2$. Taking the ceiling, we have $(n-1)^2 < x \leq \ceil{x} \leq n^2$. Taking roots, we have $n-1 < \sqrt{\ceil{x}} \leq n$. Once again, by the definition of the ceiling function, $n = \ceil{\sqrt{\ceil{x}}}$. Thus, $\ceil{\sqrt{x}} = n = \ceil{\sqrt{\ceil{x}}}$.
 \end{proof}
 \setcounter{partnum}{2}
 \begin{ppart}
-    It is not true that $\ceil{\sqrt{x}} = \ceil{\sqrt{\floor{x}}}$. Take $x = 1.21$. Then \[\ceil{\sqrt{x}} = \ceil{\sqrt{1.21}} = \ceil{1.1} = 2,\] but \[\ceil{\sqrt{\floor{x}}} = \ceil{\sqrt{\floor{1.1}}} = \ceil{\sqrt{1}} = \ceil{1} = 1.\]
+    It is not true that $\ceil{\sqrt{x}} = \ceil{\sqrt{\floor{x}}}$. For instance, take $x = 1.21$. Then $\ceil{\sqrt{1.21}} = 2$, but $\ceil{\sqrt{\floor{1.1}}} = 1$.
 \end{ppart}
 
 \begin{problem}
     Given that $f : \RR \to \RR$ such that for all $x, y \in \RR^{\ast}$, $f(xy) = f(x) + f(y)$, find the values of $f(1)$ and $f(-1)$. Hence, show that $f$ is even. Give an example of a function that satisfies the above properties and sketch its graph.
 \end{problem}
 \begin{solution}
-    Taking $x = 1$, we see that \[f(y) = f(1) + f(y) \implies f(1) = 0.\] Taking $x = y = -1$, \[f(1) = f(-1) + f(-1) \implies f(-1) = 0.\] Taking $y = -1$, \[f(-x) = f(x) + f(-1) = f(x).\] Thus, by definition, $f$ is even.
+    Taking $x = 1$, we see that $f(y) = f(1) + f(y)$, so $f(1) = 0$. Taking $x = y = -1$, we see that $f(1) = f(-1) + f(-1)$, so $f(-1) = 0$. Taking $y = -1$, we see that $f(-x) = f(x) + f(-1) = f(x)$, so $f$ is even.
 
     An example of $f$ is $f(x) = \ln \abs{x}$.
     \begin{figure}[H]\tikzsetnextfilename{360}
@@ -173,5 +173,5 @@
     For a triangle $ABC$ with corresponding angles $a$, $b$ and $c$, show that \[\sin a + \sin b + \sin c \leq \frac{3\sqrt3}{2}\] and determine when equality holds.
 \end{problem}
 \begin{proof}
-    Since $y = \sin x$ is concave, by Jensen's inequality, \[\frac{\sqrt3}2 = \sin \frac\pi3 = \sin \frac{a + b + c}{3} \geq \frac{\sin a + \sin b + \sin c}{3}.\] The desired inequality follows immediately.
+    Since $y = \sin x$ is concave, by Jensen's inequality, \[\frac{\sqrt3}2 = \sin{\frac\pi3} = \sin{\frac{a + b + c}{3}} \geq \frac{\sin a + \sin b + \sin c}{3}.\] The desired inequality follows immediately.
 \end{proof}

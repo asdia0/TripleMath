@@ -57,13 +57,13 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item Write down the exact values of the modulus and the argument of the complex number $\frac12 + \frac{\sqrt3}2 \i$.
+        \item Write down the exact values of the modulus and the argument of the complex number $1/2 + \i \sqrt3/2$.
         \item The complex numbers $z$ and $w$ satisfy the equation \[z^2 - zw + w^2 = 0.\] Find $z$ in terms of $w$. In an Argand diagram, the points $O$, $A$ and $B$ represent the complex numbers $0$, $z$ and $w$ respectively. Show that $\triangle OAB$ is an equilateral triangle.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have $r^2 = \bp{\frac12}^2 + \bp{\frac{\sqrt3}2}^2 \implies r = 1$ and $\tan \t = \frac{\sqrt3 /2}{1/2} \implies \t = \frac\pi3$. Hence, $\abs{\frac12 + \frac{\sqrt3}2 \i} = 1$ and $\arg{\frac12 + \frac{\sqrt3}2 \i} = \frac\pi3$.
+        We have $r = \sqrt{\bp{1/2}^2 + \bp{\sqrt{3}/2}^2} = 1$ and $\tan \t = (\sqrt3/2)/(1/2)$, so $\t = \pi/3$. Hence, $\abs{1/2 + \i \sqrt3/2} = 1$ and $\arg{1/2 + \i \sqrt3/2} = \pi/3$.
     \end{ppart}
     \begin{ppart}
         From the quadratic formula, we have \[z = \frac{w \pm \sqrt{w^2 - 4w^2}}{2} = w \bp{\frac12 \pm \frac{\sqrt3}2 \i}.\]
@@ -114,7 +114,7 @@
                 \end{tikzpicture}
             \end{center}
 
-            Since $\abs{\frac12 \pm \frac{\sqrt3}2 \i} = 1$, we have that $OB = OA_1 = OA_2$. Further, since $\arg{\frac12 \pm \frac{\sqrt3}2 \i} = \pm \pi/3$, we know $\angle A_1OB = \angle A_2OB = \pi/3$, whence $\triangle A_1OB$ and $\triangle A_2OB$ are both equilateral.
+            Since $\abs{1/2 \pm \i \sqrt{3}/2} = 1$, we have that $OB = OA_1 = OA_2$. Further, since $\arg{1/2 \pm \i \sqrt{3}/2} = \pm \pi/3$, we know $\angle A_1OB = \angle A_2OB = \pi/3$, whence $\triangle A_1OB$ and $\triangle A_2OB$ are both equilateral.
     \end{ppart}
 \end{solution}
 
@@ -128,26 +128,26 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[z^3 = 1 = \e^{\i 2\pi n} \implies z = \e^{\i 2 \pi n / 3} = \cos \frac{2\pi n}3 + \i \sin \frac{2\pi n}3,\] for $n \in \ZZ$. Evaluating $z$ in the $n = 0, 1, 2$ cases, we see that the roots of $z^3 = 1$ are \[z = 1, \, -\frac12 + \frac{\sqrt3}2 \i, \, -\frac12 - \frac{\sqrt3}2 \i.\]
+        We have $z^3 = 1 = \e^{\i 2\pi n}$, where $n$ is an integer. Taking cube roots, we see that \[z = \e^{\i 2 \pi n / 3} = \cos \frac{2\pi n}3 + \i \sin \frac{2\pi n}3.\] Take $n = 0, 1, 2$. Then the roots are \[z = 1, \quad -\frac12 + \frac{\sqrt3}2 \i, \quad -\frac12 - \frac{\sqrt3}2 \i.\]
     \end{ppart}
     \begin{ppart}
-        Note that $(z-1)^4 = -16 = 16\e^{\i \pi (2n + 1)}$. Hence, \[z = 1 + 2\e^{\i\pi (2n + 1)/4} = 1 + 2\bs{\cos{\frac{2n+1}4 \pi} + \i\sin{\frac{2n+1}4 \pi}},\] where $n \in \ZZ$.
-        Evaluating $z$ in the $n = 0, 1, 2, 3$ cases, we see that the roots of $(z-1)^4 = -16$ are \[z = (1 + \sqrt2) + \i\sqrt2, \, (1 - \sqrt2) + \i\sqrt2, \, (1 - \sqrt2) - \i\sqrt2, \, (1 + \sqrt2) - \i\sqrt2.\]
+        We have $(z-1)^4 = -16 = 16\e^{\i \pi (2n + 1)}$, where $n$ is an integer. Taking fourth roots, we see that \[z = 1 + 2\e^{\i\pi (2n + 1)/4} = 1 + 2\bs{\cos{\frac{2n+1}4 \pi} + \i\sin{\frac{2n+1}4 \pi}}.\] Take $n = 0, 1, 2, 3$. Then the roots are $z = (1 + \sqrt2) + \i\sqrt2$, $(1 - \sqrt2) + \i\sqrt2$, $(1 - \sqrt2) - \i\sqrt2$, $(1 + \sqrt2) - \i\sqrt2$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
         \item Write down the 5 roots of the equation $z^5 - 1 = 0$ in the form $r\e^{\i\t}$, where $r > 0$ and $-\pi < \t \leq \pi$.
-        \item Show that the roots of the equation $(5+z)^5 - (5-z)^5 = 0$ can be written in the form $5\i \tan \frac{k\pi}5$, where $k = 0, \pm 1, \pm 2.$
+        \item Show that the roots of the equation $(5+z)^5 - (5-z)^5 = 0$ can be written in the form $5\i \tan{k\pi/5}$, where $k = 0$, $\pm 1$, $\pm 2$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Note that \[z^5 = 1 = \e^{\i 2\pi n} \implies z = \e^{\i 2\pi n /5}.\] Since $- \pi < \t \leq \pi$, we have \[z = \e^{-\i 4\pi/5}, \, \e^{-\i 2\pi/5}, \, 1, \, \e^{\i 2\pi/5}, \, \e^{\i 4\pi/5}.\]
+        We have $z^5 = 1 = \e^{\i 2\pi n}$, where $n$ is an integer. Taking fifth roots, we have $z = \e^{\i 2\pi n /5}$. Since $-\pi < \t \leq \pi$, we have $z = \e^{-\i 4\pi/5}$, $\e^{-\i 2\pi/5}$, $1$, $\e^{\i 2\pi/5}$, $\e^{\i 4\pi/5}$.
     \end{ppart}
     \begin{ppart}
-        Note that \[(5+z)^5 - (5-z)^5 = 0 \implies \bp{\frac{5+z}{5-z}}^5 - 1 = 0 \implies \frac{5+z}{5-z} = \e^{\i2k\pi/5}.\] Solving for $z$, we get \[z = 5\bp{\frac{\e^{\i2k\pi/5} - 1}{\e^{\i2k\pi/5} + 1}} = 5\bp{\frac{\e^{\i k\pi/5} - \e^{-\i k\pi/5}}{\e^{\i k\pi/5} + \e^{-\i k\pi/5}}} = 5\bs{\frac{2\i \sin{k\pi/5}}{2\cos{k\pi/5}}} = 5\i\tan \frac{k\pi}5.\]
+        From $(5+z)^5 - (5-z)^5 = 0$, we have \[\bp{\frac{5+z}{5-z}}^5 = 1.\] From part (a), we have that \[\frac{5+z}{5-z} = \e^{i 2k \pi/5},\] where $k = 0$, $\pm 1$, $\pm 2$. Solving for $z$, we get \[z = 5\bp{\frac{\e^{\i2k\pi/5} - 1}{\e^{\i2k\pi/5} + 1}} = 5\bp{\frac{\e^{\i k\pi/5} - \e^{-\i k\pi/5}}{\e^{\i k\pi/5} + \e^{-\i k\pi/5}}} = 5\bp{\frac{2\i \sin{k\pi/5}}{2\cos{k\pi/5}}} = 5\i\tan \frac{k\pi}5.\]
     \end{ppart}
 \end{solution}
 
@@ -168,10 +168,10 @@
         &= 64\cos^7\t - 112\cos^5 + 56 \cos^3\t - 7\cos\t.
     \end{align*}
 
-    Observe that we can manipulate the given equation into \[128x^7 - 224x^5 + 112x^3 - 14x + 1 = 0 \implies 64x^7 - 112x^5 + 56x^3 - 7x = -\frac12.\] Under the substitution $x = \cos \t$, we see that \[\cos 7\t = -\frac12 \implies 7\t = \frac23 \pi + 2\pi n \implies \t = \frac{2\pi}{21} (3n + 1),\] where $n \in \ZZ$. Taking $0 \leq n < 7$,
+    Observe that we can manipulate the given equation into \[64x^7 - 112x^5 + 56x^3 - 7x = -\frac12.\] Under the substitution $x = \cos \t$, we see that $\cos 7\t = -1/2$, so \[7\t = \frac23 \pi + 2\pi n,\] where $n$ is an integer. Solving for $\t$, we have \[\t = \frac{2\pi}{21} (3n + 1).\] Taking $0 \leq n < 7$, the roots are
     \begin{align*}
-        x &= \cos \frac{2\pi}{21}, \, \cos \frac{8\pi}{21}, \, \cos \frac{14\pi}{21}, \, \cos \frac{20\pi}{21}, \, \cos \frac{26\pi}{21}, \, \cos \frac{32\pi}{21}, \, \cos \frac{38\pi}{21}\\
-        &= \cos \frac{2\pi}{21}, \, \cos \frac{4\pi}{21}, \, \cos \frac{8\pi}{21}, \, \cos \frac{10\pi}{21}, \, \cos \frac{14\pi}{21}, \, \cos \frac{16\pi}{21}, \, \cos \frac{20\pi}{21}.
+        x &= \cos \frac{2\pi}{21}, \quad \cos \frac{8\pi}{21}, \quad \cos \frac{14\pi}{21}, \quad \cos \frac{20\pi}{21}, \quad \cos \frac{26\pi}{21}, \quad \cos \frac{32\pi}{21}, \quad \cos \frac{38\pi}{21}\\
+        &= \cos \frac{2\pi}{21}, \quad \cos \frac{4\pi}{21}, \quad \cos \frac{8\pi}{21}, \quad \cos \frac{10\pi}{21}, \quad \cos \frac{14\pi}{21}, \quad \cos \frac{16\pi}{21}, \quad \cos \frac{20\pi}{21}.
     \end{align*}
 \end{solution}
 
@@ -197,15 +197,15 @@
 \begin{solution}
     Let $z = \e^{\i\t}$. Then \[\sum_{n = 0}^N \cos 2n\t = \Re \sum_{n = 0}^N \bp{\cos 2n\t + \i\sin 2n\t} = \Re \sum_{n=0}^{N} \e^{\i2n\t} = \Re \sum_{n=0}^{N} \bp{z^2}^n.\] Observe that \[\sum_{n=0}^{N} \bp{z^2}^n = \frac{\bp{z^2}^{N+1} - 1}{z^2 - 1} = \frac{z^{N+1}}{z} \bp{\frac{z^{N+1} - z^{-(N+1)}}{z - z^{-1}}} = z^N \bp{\frac{\sin (N+1)\t}{\sin \t}}.\] Hence, \[\sum_{n = 0}^N \cos 2n\t = \bp{\frac{\sin (N+1)\t}{\sin \t}} \Re{z^N} = \frac{\sin(N+1)\t \cos N\t}{\sin \t}.\]
 
-    Recall that $\cos 2n\t = 1 - 2\sin^2 n\t \implies \sin^2 n\t = \frac12 (1 - 2\cos 2n\t)$. Thus, \[\sum_{n = 0}^N \sin^2 n\t = \frac12 \sum_{n = 0}^N (1 - \cos 2n\t) = \frac{N + 1}2 - \frac{\sin(N+1)\t \cos N\t}{2\sin\t}.\]
+    Recall that $\sin^2 n\t = (1 - 2\cos 2n\t)/2$. Thus, \[\sum_{n = 0}^N \sin^2 n\t = \frac12 \sum_{n = 0}^N (1 - \cos 2n\t) = \frac{N + 1}2 - \frac{\sin(N+1)\t \cos N\t}{2\sin\t}.\]
 \end{solution}
 
 \begin{problem}
     Given that $z = \e^{\i\t}$, show that $z^k + 1/{z^k} = 2\cos k\t$, $k \in \ZZ$.
 
-    Hence, show that $\cos^8 \t = \frac1{128} \bp{\cos 8\t + 8\cos6\t + 28\cos4\t + 56\cos2\t + 35}$.
+    Hence, show that \[\cos^8 \t = \frac1{128} \bp{\cos 8\t + 8\cos6\t + 28\cos4\t + 56\cos2\t + 35}.\]
 
-    Find, correct to three decimal places, the values of $\t$ such that $0 < \t < \frac12 \pi$ and $\cos 8\t + 8\cos6\t + 28\cos4\t + 56\cos2\t + 1 = 0$.
+    Find, correct to three decimal places, the values of $\t$ such that $0 < \t < \pi/2$ and $\cos 8\t + 8\cos6\t + 28\cos4\t + 56\cos2\t + 1 = 0$.
 \end{problem}
 \begin{solution}
     Note that
@@ -217,7 +217,7 @@
         &= 2\cos{k\t}.
     \end{align*}
 
-    Observe that
+    Thus,
     \begin{align*}
         \cos^8 \t &= \frac1{256} (2\cos \t)^8\\
         &= \frac1{256} (z + z^{-1})^8 = \frac1{256} z^{-8} \bp{z^2 + 1}^8\\
@@ -226,5 +226,5 @@
         &= \frac1{128} \bp{\cos 8\t + 8\cos 6\t + 28\cos 4\t + 56\cos 2\t + 35}.
     \end{align*}
 
-    Note that we rewrite the equation as \[\cos 8\t + 8\cos6\t + 28\cos4\t + 56\cos2\t + 35 = 128\cos^8\t = 34.\] Thus, \[\cos\t = \sqrt[8]{\frac{34}{128}} \implies \t = 0.560 \tosf{3}.\]
+    We may rewrite the given equation as \[\cos 8\t + 8\cos6\t + 28\cos4\t + 56\cos2\t + 35 = 128\cos^8\t = 34.\] Thus, \[\cos\t = \sqrt[8]{\frac{34}{128}},\] so $\t = 0.560 \tosf{3}$.
 \end{solution}

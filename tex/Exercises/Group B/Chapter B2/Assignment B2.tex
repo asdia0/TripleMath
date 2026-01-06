@@ -39,7 +39,7 @@
     \begin{enumerate}
         \item $y = f(-x)$
         \item $y = 3 - 2f(x)$
-        \item $y = 3f\of{\frac{x}2 + 1}$
+        \item $y = 3f(x/2 + 1)$
     \end{enumerate}
     showing in each case the coordinates of the points corresponding to $A$, $B$ and $C$.
 \end{problem}
@@ -184,10 +184,10 @@
         \end{tikzpicture}
     \end{center}
 
-    The curve shown is the graph of $y = f(x)$. The $x$-axis is a tangent at the origin and at $(2, 0)$. The curve has two maximum points at $\bp{-\frac34, 3}$ and $(1, 2)$. On two separate diagrams, sketch the graphs of the following equations. Show clearly the shapes of the graphs where they meet the $x$-axis and any asymptotes.
+    The curve shown is the graph of $y = f(x)$. The $x$-axis is a tangent at the origin and at $(2, 0)$. The curve has two maximum points at $\bp{-3/4, 3}$ and $(1, 2)$. On two separate diagrams, sketch the graphs of the following equations. Show clearly the shapes of the graphs where they meet the $x$-axis and any asymptotes.
 
     \begin{enumerate}
-        \item $y = \frac1{f(x)}, \, x \neq -1, 0, 2$
+        \item $y = 1/f(x)$, where $x \neq -1, 0, 2$
         \item $y = f(\abs{x})$
     \end{enumerate}
 \end{problem}
@@ -273,29 +273,21 @@
 
     \begin{itemize}
         \item $A$: a translation of 1 unit in the positive direction of the $x$-axis
-        \item $B$: a scaling parallel to the $x$-axis by a factor $\frac12$
+        \item $B$: a scaling parallel to the $x$-axis by a factor $1/2$
     \end{itemize}
 
     The resulting equation is $y = 4x^2-4x+1$. Find the equation $y = f(x)$.
 \end{problem}
 \begin{solution}
-    Note that
-    \begin{alignat*}{2}
-        &A \colon x \mapsto x-1 &&\implies A^{-1} \colon x \mapsto x+1\\
-        &B \colon x \mapsto 2x &&\implies B^{-1} \colon x \mapsto \frac12 x.
-    \end{alignat*}
+    We apply $B^{-1}$ followed by $A^{-1}$ to the curve given by $y = 4x^2 - 4x + 1$.
 
-    Hence,
-    \begin{center}\tikzsetnextfilename{234}
-        \begin{tikzpicture}
-            \node (F) {$y = 4x^2-4x+1$};
-            \node[below of=F, yshift=-1cm] (B) {$y = 4\bp{\dfrac12 x}^2-4\bp{\dfrac12 x}+1$};
-            \node[below of=B, yshift=-1.5cm] (A) {$y = 4\bs{\dfrac12 (x+1)}^2-4\bs{\dfrac12 (x+1)}+1$};
+    \renewcommand{\theenumi}{\arabic{enumi}.}
+    \begin{enumerate}
+        \item[] \[y = 4x^2 - 4x + 1.\]
+        \item Scale parallel to the $x$-axis by a factor of 2. \[y = x^2 - 2x + 1 = (x-1)^2. \tag{$x \mapsto x/2$}\]
+        \item Translate 1 unit in the negative direction of the $x$-axis. \[y = x^2. \tag{$x \mapsto x+1$}\]
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
 
-            \draw[->] (F) -- node[anchor=west] {$B^{-1}$} (B);
-            \draw[->] (B) -- node[anchor=west] {$A^{-1}$} (A);
-        \end{tikzpicture}
-    \end{center}
-
-    Observe that $y$ simplifies to \[y = 4\bs{\frac12 (x+1)}^2-4\bs{\frac12 (x+1)}+1 = (x+1)^2-2(x+1)+1 = x^2 + 2x + 1 - 2x - 2 + 1 = x^2.\]
+    Thus, $f(x) = x^2$.
 \end{solution}

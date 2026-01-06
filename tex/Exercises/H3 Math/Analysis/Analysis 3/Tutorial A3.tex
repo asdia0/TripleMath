@@ -10,7 +10,7 @@
 \begin{problem}
     \begin{enumerate}
         \item For some positive integer $n$, let $x_1 \leq x_2 \leq \dots \leq x_n$ and $y_1 \leq y_2 \leq \dots \leq y_n$ be real numbers. By considering the sum of all $n^2$ terms of the form $(x_i - x_j)(y_i - y_j)$, prove that \[\sum_{i = 1}^n x_i y_i \geq \frac1n \bp{\sum_{i = 1}^n x_i} \bp{\sum_{i = 1}^n y_i}.\]
-        \item Let a triangle have angles $A$, $B$, $C$ and let the lengths of the opposite sides be $a$, $b$, $c$. By applying the result of (a), prove that $aA + bB + cC \geq \frac13 \pi (a + b + c)$.
+        \item Let a triangle have angles $A$, $B$, $C$ and let the lengths of the opposite sides be $a$, $b$, $c$. By applying the result of (a), prove that \[aA + bB + cC \geq \frac13 \pi (a + b + c).\]
         \item Let $a$, $b$, $c$ be three positive numbers such that $a^2 + b^2 + c^2 = 1$. By applying the result of part (a) with \[\bc{x_i} = \bc{\frac{a+b}{c}, \frac{c+a}{b}, \frac{b+c}{a}},\] find the maximum possible value of \[\frac{\bp{a + b}\bp{a^2 + b^2}}{c} + \frac{\bp{c+a}\bp{c^2 + a^2}}{b} + \frac{\bp{b+c}\bp{b^2 + c^2}}{a}.\]
     \end{enumerate}
 \end{problem}
@@ -34,7 +34,7 @@
         We thus have $a \leq b \leq c$ and $A \leq B \leq C$. Applying (a), we have \[aA + bB + cC \geq \frac13 (a + b + c) (A + B + C) = \frac\pi3 (a + b + c),\] since the sum of angles in a triangle is $A + B + C = \pi$.
     \end{ppart}
     \begin{ppart}
-        Without loss of generality, assume $a \leq b \leq c$. Then \[\frac{a + b}{c} \leq \frac{c + a}{b} \leq \frac{b + c}{a}\] and \[a^2 + b^2 \leq c^2 + a^2 \leq b^2 + c^2.\] Applying (a), we have 
+        Without loss of generality, assume $a \leq b \leq c$. Then \[\frac{a + b}{c} \leq \frac{c + a}{b} \leq \frac{b + c}{a} \quad \tand \quad a^2 + b^2 \leq c^2 + a^2 \leq b^2 + c^2.\] Applying (a), we have 
         \begin{align*}
             &\frac{\bp{a + b}\bp{a^2 + b^2}}{c} + \frac{\bp{c+a}\bp{c^2 + a^2}}{b} + \frac{\bp{b+c}\bp{b^2 + c^2}}{a} \\
             &\hspace{1em}= \frac13 bp{\frac{a + b}{c} + \frac{c + a}{b} + \frac{b + c}{a}}\bs{\bp{a^2 + b^2} + \bp{c^2 + a^2} + \bp{b^2 + c^2}}\\
@@ -79,7 +79,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We begin with the first inequality. Clearly, \[a^2 + b^2 \geq 2ab, \quad b^2 + c^2 \geq 2bc, \quad c^2 + a^2 \geq 2ca.\] Adding these three inequalities and dividing by two yields \[a^2 + b^2 + c^2 \geq ab + bc + ca.\] Now, let \[a = \frac{x}{y}, \quad b = \frac{y}{z}, \quad c = \frac{z}{x}.\] Then \[\bp{\frac{x}{y}}^2 + \bp{\frac{y}{z}}^2 + \bp{\frac{z}{x}}^2 \geq \frac{x}{z} + \frac{y}{x} + \frac{z}{y}\] as desired.
+        We begin with the first inequality. By AM-GM, we have $a^2 + b^2 \geq 2ab$, $b^2 + c^2 \geq 2bc$, and $c^2 + a^2 \geq 2ca$. Adding these three inequalities and dividing by two yields $a^2 + b^2 + c^2 \geq ab + bc + ca$. Now, let $a = x/y$, $b = y/z$, and $c = z/x$. Then \[\bp{\frac{x}{y}}^2 + \bp{\frac{y}{z}}^2 + \bp{\frac{z}{x}}^2 \geq \frac{x}{z} + \frac{y}{x} + \frac{z}{y}\] as desired.
 
         We now prove the second inequality. By AM-GM, \[\frac{x}{z} + \frac{y}{x} + \frac{z}{y} \geq 3\sqrt[3]{\frac{xyz}{zxy}} = 3.\]
 
@@ -87,7 +87,7 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Observe that \[\bp{\vec a \dotp \vec b}^2 = \bp{a_1 b_1 + a_2 b_2 + a_3 b_3}^2 = \bp{\sum_{i = 1}^3 a_i b_i}^2.\] We also have \[\bp{\vec a \dotp \vec b}^2 = \bp{\abs{\vec a} \abs{\vec b} \cos \t}^2,\] where $\t$ is the angle between the two vectors. Since $\cos^2 t \in [0, 1]$, it follows that \[\bp{\sum_{i = 1}^3 a_i b_i}^2 = \bp{\vec a \dotp \vec b}^2 \leq \abs{\vec a}^2 \abs{\vec b}^2 = \bp{a_1^2 + a_2^2 + a_3^2} \bp{b_1^2 + b_2^2 + b_3^2} = \bp{\sum_{i = 1}^3 a_i^2} \bp{\sum_{i = 1}^3 b_i^2}.\] Equality holds when $\cos \t = \pm 1$, i.e. when $\vec a$ is parallel to $\vec b$. Equivalently, $a_i = k b_i$ for all $i = 1, 2, 3$, where $k$ is a constant.
+            Observe that \[\bp{\vec a \dotp \vec b}^2 = \bp{a_1 b_1 + a_2 b_2 + a_3 b_3}^2 = \bp{\sum_{i = 1}^3 a_i b_i}^2.\] We also have $\bp{\vec a \dotp \vec b}^2 = \bp{\abs{\vec a} \abs{\vec b} \cos \t}^2$, where $\t$ is the angle between the two vectors. Since $\cos^2 t \in [0, 1]$, it follows that \[\bp{\sum_{i = 1}^3 a_i b_i}^2 = \bp{\vec a \dotp \vec b}^2 \leq \abs{\vec a}^2 \abs{\vec b}^2 = \bp{a_1^2 + a_2^2 + a_3^2} \bp{b_1^2 + b_2^2 + b_3^2} = \bp{\sum_{i = 1}^3 a_i^2} \bp{\sum_{i = 1}^3 b_i^2}.\] Equality holds when $\cos \t = \pm 1$, i.e. when $\vec a$ is parallel to $\vec b$. Equivalently, $a_i = k b_i$ for all $i = 1, 2, 3$, where $k$ is a constant.
         \end{psubpart}
         \begin{psubpart}
             From part (b)(i), we have \[\bs{\bp{y + z} + \bp{z + x} + \bp{x + y}} \bp{\frac{x^2}{y+z} + \frac{y^2}{z + x} + \frac{z^2}{x + y}} \geq \bp{x + y + z}^2.\] The first term on the LHS is simply $2(x + y + z)$, so dividing both sides by $x + y + z$ yields the desired inequality: \[2\bp{\frac{x^2}{y+z} + \frac{y^2}{z + x} + \frac{z^2}{x + y}} \geq x + y + z.\]
@@ -105,7 +105,7 @@
 
     Suppose $P(k)$ is true for some $k \in \NN$. We now show that $P(k) \implies P(2k)$. By our inductive hypothesis, \[\frac1{2n} \sum_{i = 1}^{2n} x_i = \frac12 \bs{\frac1n \sum_{i = 1}^n x_i + \frac1n \sum_{i = n+1}^{2n} x_i} \geq \frac12 \bp{\prod_{i = 1}^n x_i^{1/n} + \prod_{i = n+1}^{2n} x_i^{1/n}}.\] By $P(2)$, we have \[\frac1{2n} \sum_{i = 1}^{2n} x_i \geq \sqrt{\prod_{i = 1}^n x_i^{1/n} \prod_{i = n+1}^{2n} x_i^{1/n}} = \prod_{i = 1}^{2n} x_i^{1/2n}.\] Thus, $P(k) \implies P(2k)$.
 
-    Suppose now that $P(k+1)$ is true for some $k+1 \in \NN$. We now show that $P(k+1) \implies P(k)$. Taking \[x_{k+1} = \frac{x_1 + \dots + x_k}{k},\] by $P(k+1)$, we have \[\frac{x_1 + \dots + x_k + \frac{x_1 + \dots + x_k}{k}}{k+1} \geq \prod_{i = 1}^{k} x_i^{1/(k+1)} \bp{\frac{x_1 + \dots + x_k}{k}}^{1/(k+1)}.\] The LHS simplifies to \[\frac{x_1 +  \dots + x_k}{k} \geq \prod_{i = 1}^{k} x_i^{1/(k+1)} \bp{\frac{x_1 + \dots + x_k}{k}}^{1/(k+1)},\] so \[\bp{\frac{x_1 + \dots + x_k}{k}}^{k/k+1} \geq \prod_{i = 1}^{k} x_i^{1/(k+1)},\] Raising both sides to the $(k+1)/k$th power, we finally have \[\frac{x_1 + \dots + x_k}{k} \geq \prod_{i = 1}^{k} x_i^k,\] so $P(k+1) \implies P(k)$.
+    Suppose now that $P(k+1)$ is true for some $k+1 \in \NN$. We now show that $P(k+1) \implies P(k)$. Taking $x_{k+1} = (x_1 + \dots + x_k)/k$, by $P(k+1)$, we have \[\frac{x_1 + \dots + x_k + (x_1 + \dots + x_k)/k}{k+1} \geq \prod_{i = 1}^{k} x_i^{1/(k+1)} \bp{\frac{x_1 + \dots + x_k}{k}}^{1/(k+1)}.\] The LHS simplifies to \[\frac{x_1 +  \dots + x_k}{k} \geq \prod_{i = 1}^{k} x_i^{1/(k+1)} \bp{\frac{x_1 + \dots + x_k}{k}}^{1/(k+1)},\] so \[\bp{\frac{x_1 + \dots + x_k}{k}}^{k/k+1} \geq \prod_{i = 1}^{k} x_i^{1/(k+1)},\] Raising both sides to the $(k+1)/k$th power, we finally have \[\frac{x_1 + \dots + x_k}{k} \geq \prod_{i = 1}^{k} x_i^k,\] so $P(k+1) \implies P(k)$.
 
     From the base cases $P(1)$ and $P(2)$, along with the results $P(k) \implies P(2k)$ and $P(k+1)\implies P(k)$, it stands to reason that $P(k)$ is true for all $k \in \NN$.
 \end{proof}
@@ -117,10 +117,10 @@
         \item Cauchy-Schwarz inequality.
     \end{enumerate}
 \end{problem}
-\begin{proof}[Proof of \emph{(a)}]
-    Let \[x = a + b, \quad y = b + c, \quad z = c + a.\] By AM-GM, \[\frac{z + x}{y} + \frac{y + z}{x} + \frac{x + y}{z} \geq 6 \sqrt[6]{\frac{zxyzxy}{yyxxzz}} = 6.\] Substituting $a, b, c$ back in, we see that \[\frac{2a + b + c}{b + c} + \frac{a + 2b + c}{c + a} + \frac{a + b + 2c}{a + b} = 3 + \frac{2a}{b + c} + \frac{2b}{c + a} + \frac{2c}{a + b} \geq 6.\] Our desired inequality follows immediately.
+\begin{proof}[Proof of \textup{(a)}]
+    Let $x = a + b$, $y = b + c$, and $z = c + a$. By AM-GM, \[\frac{z + x}{y} + \frac{y + z}{x} + \frac{x + y}{z} \geq 6 \sqrt[6]{\frac{zxyzxy}{yyxxzz}} = 6.\] Substituting $a, b, c$ back in, we see that \[\frac{2a + b + c}{b + c} + \frac{a + 2b + c}{c + a} + \frac{a + b + 2c}{a + b} = 3 + \frac{2a}{b + c} + \frac{2b}{c + a} + \frac{2c}{a + b} \geq 6.\] Our desired inequality follows immediately.
 \end{proof}
-\begin{proof}[Proof of \emph{(b)}]
+\begin{proof}[Proof of \textup{(b)}]
     By Cauchy-Schwarz, \[\bs{\bp{b+c} + \bp{c + a} + \bp{a + b}}\bp{\frac1{b+c} + \frac1{c+a} + \frac1{a+b}} \geq \bp{1 + 1 + 1}^2 = 9,\] so \[\bp{a + b + c}\bp{\frac1{b+c} + \frac1{c+a} + \frac1{a+b}} \geq \frac92,\] from which it immediately follows that \[\frac{a}{b + c} + \frac{b}{c + a} + \frac{c}{a + b} \geq \frac92 - 3 = \frac32.\]
 \end{proof}
 
@@ -151,15 +151,16 @@
         \item Deduce that for any two real numbers $x, y \in \RR$ satisfying $x < y$, there exists an irrational number $u \notin \QQ$ such that $x < u < y$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Since $x < y$, we have $y - x \neq 0$, so $1/(y-x)$ is real. By the Archimedean property, there exists some $n \in \NN$ such that \[n > \frac1{y-x} \implies n(y-x) > 1 \implies ny > 1 + nx,\] which is what we wanted.
+        Since $x < y$, we have $y - x \neq 0$, so $1/(y-x)$ is real. By the Archimedean property, there exists some $n \in \NN$ such that \[n > \frac1{y-x}.\] Rearranging, we get $ny > 1 + nx$, which is what we wanted.
     \end{ppart}
     \begin{ppart}
         Since $nx > 0$, we clearly have $S \subseteq \ZZ^+$. By the well-ordering principle, there exists a smallest element of $S$. Let $m_0$ be this smallest element. Clearly, $m_0 \in S$ so $m_0 > nx$. Further, $m_0 - 1 \notin S$; if it were, then $m_0 - 1$ would be the smallest element, contradicting the minimality of $m_0$.
     \end{ppart}
     \begin{ppart}
-        From (b), we have $m_0 - 1 \leq nx$. Adding 1 on both sides and invoking (a), \[m_0 \leq nx + 1 < ny \implies \frac{m_0}{n} < y.\] Meanwhile, from (b), we also have \[nx < m_0 \implies x < \frac{m_0}{n}.\] Putting the two inequalities together, we see that \[x < \frac{m_0}{n} < y.\] Taking $r = m_0/n$, which is rational ($m_0, n \in \NN$), we are done.
+        From (b), we have $m_0 - 1 \leq nx$. By (a), we have $m_0 \leq nx + 1 < ny$, so $m_0/n < y$. Meanwhile, from (b), we also have $nx < m_0$, so $x < m_0/n$. Putting the two inequalities together, we see that $x < m_0/n < y$. Taking $r = m_0/n$, which is rational (since $m_0, n \in \NN$), we are done.
     \end{ppart}
     \begin{ppart}
         \case{1} If $1 < x < y$, we are done by (c).
@@ -175,7 +176,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}[\chili]
     \begin{enumerate}
         \item Let $f : [0, \infty) \to \RR$ be a strictly increasing differentiable function such that $f(0) = 0$. With the aid of a diagram, prove Young's inequality for increasing functions: \[ab \leq \int_0^a f(x) \d x + \int_0^b \inv f(x) \d x\] for all $a, b > 0$.
@@ -195,7 +195,6 @@
         \end{enumerate}
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         \begin{figure}[H]\tikzsetnextfilename{444}
@@ -233,13 +232,13 @@
         The sum of the areas represented by the two integrals is bigger than the area of the rectangle, $ab$.
     \end{ppart}
     \begin{ppart}
-        Take $f(x) = x^{p-1}$, which is strictly increasing with $f(0) = 0$. Note that $\inv f(x) = x^{1/(p-1)}$. By (a), for all $a, b > 0$, \[ab \leq \int_0^a x^{p-1} \d x + \int_0^b x^{\frac1{p-1}} \d x = \frac{a^p}{p} + \frac{p-1}{p} b^{\frac{p}{p-1}} = \frac{a^p}{p} + \frac{a^q}{q},\] where $q = p/(p-1)$. Note that we indeed have $1/p + 1/q = 1$: \[q = \frac{p}{p-1} \implies \frac1q + \frac{p-1}p = 1 - \frac1p \implies \frac1p + \frac1q = 1.\]
+        Take $f(x) = x^{p-1}$, which is strictly increasing with $f(0) = 0$. Note that $\inv f(x) = x^{1/(p-1)}$. By (a), for all $a, b > 0$, \[ab \leq \int_0^a x^{p-1} \d x + \int_0^b x^{1/(p-1)} \d x = \frac{a^p}{p} + \frac{p-1}{p} b^{p/(p-1)} = \frac{a^p}{p} + \frac{a^q}{q},\] where $q = p/(p-1)$.
 
         Under the transformations $a \mapsto \abs{a}/c$, $b \mapsto \abs{b}/{d}$, we see that \[\frac{\abs{ab}}{cd} \leq \frac{\abs{a}^p}{c^p p} + \frac{\abs{b}^q}{d^q q}\] for all $a, b \in \RR$ and $c, d > 0$.
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            The triangle inequality states that $\abs{c_i} + \abs{d_i} \geq \abs{c_i + d_i}$. So \[\sum_{i = 1}^m \bs{\bp{\abs{c_i} + \abs{d_i}} \abs{c_i + d_i}^{p-1}} \geq = \sum_{i = 1}^m \abs{c_i + d_i} \abs{c_i + d_i}^{p-1} = \sum_{i = 1}^m \abs{c_i + d_i}^p.\]
+            The triangle inequality states that $\abs{c_i} + \abs{d_i} \geq \abs{c_i + d_i}$. So \[\sum_{i = 1}^m \bs{\bp{\abs{c_i} + \abs{d_i}} \abs{c_i + d_i}^{p-1}} \geq \sum_{i = 1}^m \abs{c_i + d_i} \abs{c_i + d_i}^{p-1} = \sum_{i = 1}^m \abs{c_i + d_i}^p.\]
         \end{psubpart}
         \begin{psubpart}
             Since $q = p/(p-1)$, we trivially have $q(p-1) = p$.
@@ -253,8 +252,8 @@
             Applying H\"{o}lder's inequality on both sums, we see that
             \begin{align*}
                 &\sum_{i = 1}^m \abs{c_i + d_i}^p\\
-                &\hspace{1em}\leq \bp{\sum_{i = 1}^m \abs{c_i}^p}^{1/p} \bp{\sum_{i = 1}^m \abs{c_i + d_i}^{(p-1)q}}^{1/q} + \bp{\sum_{i = 1}^m \abs{d_i}^p}^{1/p} \bp{\sum_{i = 1}^m \abs{c_i + d_i}^{(p-1)q}}^{1/q}\\
-                &\hspace{1em}= \bs{\bp{\sum_{i = 1}^m \abs{c_i}^p}^{1/p} + \bp{\sum_{i = 1}^m \abs{d_i}^p}^{1/p}}\bp{\sum_{i = 1}^m \abs{c_i + d_i}^{p}}^{1/q}
+                &\hspace{2em}\leq \bp{\sum_{i = 1}^m \abs{c_i}^p}^{1/p} \bp{\sum_{i = 1}^m \abs{c_i + d_i}^{(p-1)q}}^{1/q} + \bp{\sum_{i = 1}^m \abs{d_i}^p}^{1/p} \bp{\sum_{i = 1}^m \abs{c_i + d_i}^{(p-1)q}}^{1/q}\\
+                &\hspace{2em}= \bs{\bp{\sum_{i = 1}^m \abs{c_i}^p}^{1/p} + \bp{\sum_{i = 1}^m \abs{d_i}^p}^{1/p}}\bp{\sum_{i = 1}^m \abs{c_i + d_i}^{p}}^{1/q}
             \end{align*}
             Dividing both sides by $\bp{\sum_{i = 1}^m \abs{c_i + d_i}^{p}}^{1/q}$, we have our desired inequality: \[\bp{\sum_{i = 1}^m \abs{c_i + d_i}^p}^{1/p} = \bp{\sum_{i = 1}^m \abs{c_i + d_i}^p}^{1 - 1/q} \leq \bp{\sum_{i = 1}^m \abs{c_i}^p}^{1/p} + \bp{\sum_{i = 1}^m \abs{d_i}^p}^{1/p}.\]
         \end{psubpart}

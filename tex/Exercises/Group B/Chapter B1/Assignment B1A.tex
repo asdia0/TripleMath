@@ -5,7 +5,7 @@
 
     \begin{enumerate}
         \item $y + x^2 = 2x - 4$
-        \item $y = \frac{3x-4}{2x-1}$
+        \item $y = (3x-4)/(2x-1)$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -77,8 +77,8 @@
 \begin{problem}
     On separate diagrams, sketch the graphs of 
     \begin{enumerate}
-        \item $y = \frac{x^2-a^2}{x^2}, \, a > 0$
-        \item $y = \frac{x-1}{2x(x+3)}$
+        \item $\displaystyle y = \frac{x^2-a^2}{x^2}$, where $a > 0$
+        \item $\displaystyle y = \frac{x-1}{2x(x+3)}$
     \end{enumerate}
     Indicate clearly the coordinates of axial intercepts, stationary points and equations of asymptotes, if any.
 \end{problem}
@@ -154,7 +154,7 @@
 \end{solution}
 
 \begin{problem}
-    The curve $C$ has equation $y = \frac{ax^2+bx-2}{x+4}$, where $a$ and $b$ are constants. It is given that $y = 2x-5$ is an asymptote of $C$.
+    The curve $C$ has equation $y = (ax^2+bx-2)/(x+4)$, where $a$ and $b$ are constants. It is given that $y = 2x-5$ is an asymptote of $C$.
 
     \begin{enumerate}
         \item Find the values of $a$ and $b$.
@@ -165,7 +165,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Since $y = 2x-5$ is an asymptote of $C$, $\frac{ax^2 + bx-2}{x+4}$ can be expressed in the form $2x-5 + \frac{k}{x+4}$, where $k$ is a constant. \[\frac{ax^2 + bx-2}{x+4} = 2x-5 + \frac{k}{x+4} \implies ax^2+bx-2 = (2x-5)(x+4) + k = 2x^2+3x-20+k.\] Comparing coefficients of $x^2$, $x$ and constant terms, we have $a = 2$, $b = 3$ and $k = 18$.
+        Since $y = 2x-5$ is an asymptote of $C$, we may write \[\frac{ax^2 + bx-2}{x+4} = 2x-5 + \frac{k}{x+4}\] for some constant $k$. Clearing denominators, we see that $ax^2+bx-2 = (2x-5)(x+4) + k = 2x^2+3x-20+k$ Comparing coefficients of $x^2$, $x$ and constant terms, we have $a = 2$, $b = 3$ and $k = 18$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{156}
@@ -215,21 +215,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        \[y = \frac{2x^2 + 3x - 2}{x+4} \implies (x+4)y = 2x^2 + 3x -2 \implies 2x^2 + (3-y)x - (2+4y) = 0.\] For values that $y$ cannot take on, there exist no solutions to $2x^2 + (3-y)x - (2+4y) = 0$. Hence, $\D < 0$. Hence, \[(3-y)^2 - 4(2)\bp{-(2+4y)} < 0 \implies y^2+26y+25 < 0 \implies (y+25)(y+1) <0.\]
-        \begin{center}\tikzsetnextfilename{157}
-            \begin{tikzpicture}
-                    \draw[-latex] (-10,0) -- (0.0,0) node[right]{$y$};
-                    \foreach \x in {-1.0,-8} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
-                    \draw[shift={(-1,-3pt)}] node[below]  {$-1$};
-                    \draw[shift={(-8,-3pt)}] node[below]  {$-25$};
-
-                    \draw[very thick, o-o, color=red] (-8.12, 0) -- (-0.88, 0);
-                    \node[anchor=south, align=center] at (-9, 0) {$+$};
-                    \node[anchor=south, align=center] at (-4.5, 0) {$-$};
-                    \node[anchor=south, align=center] at (-0.5, 0) {$+$};
-            \end{tikzpicture}
-        \end{center}
-        Thus, the set of values that $y$ cannot take is $\bc{y \in \RR \colon -25 < y < -1}$.
+        We have \[y = \frac{2x^2 + 3x - 2}{x+4}.\] Clearing denominators, we obtain $(x+4)y = 2x^2 + 3x -2$. Rearranging, we obtain the quadratic $2x^2 + (3-y)x - (2+4y) = 0$. For values that $y$ cannot take on, we require the discriminant of the quadratic to be negative, so $(3-y)^2 - 4(2)\bp{-(2+4y)} = (y+25)(y+1) < 0$. Thus, the set of values that $y$ cannot take is $(-25, -1)$.
     \end{ppart}
     \begin{ppart}
         Note that \[\frac{x^3+6x^2+3x-2}{x+4} = \frac{x^3+4x^2}{x+4} + \frac{2x^2 + 3x-2}{x+4} = x^2 + \frac{2x^2 + 3x-2}{x+4} = 0,\] so \[\frac{2x^2 + 3x-2}{x+4} = -x^2.\] Plotting $y=-x^2$ on the same digram, we see that there are 3 intersections between $y=x^2$ and $C$. Hence, there are 3 distinct real roots to $x^3+6x^2+3x-2 = 0$.

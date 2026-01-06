@@ -25,9 +25,9 @@ Informally, the independent variable is the variable we can ``control'' in an ex
     \end{itemize}
 \end{recipe}
 
-Note however, that not all bivariate relationships have an independent and dependent variable. For instance, consider the following example:
+Note however, that not all bivariate relationships have an independent and dependent variable.
 
-\begin{example}
+\begin{example}[No Clear Relationship]
     Six newly-born babies were randomly selected. Their head circumference $x$ cm, and body length, $y$ cm were measured by the paediatrician and tabulated.
 
     \begin{table}[H]
@@ -57,7 +57,7 @@ A scatter diagram is obtained when each pair of data value $(x_i, y_i)$ from a s
     \end{itemize}
 \end{recipe}
 
-\begin{example}
+\begin{sample}
     The number of employees, $y$, who stay back and continue in the office $t$ minutes after 5 pm on a particular day in a company is recorded. The results are shown in the table.
 
     \begin{table}[H]
@@ -69,7 +69,11 @@ A scatter diagram is obtained when each pair of data value $(x_i, y_i)$ from a s
         \end{tabular}
     \end{table}
 
-    Plotting the above points, we get our scatter diagram:
+    Plot the above data in a scatter diagram.
+\end{sample}
+\begin{sampans}
+    From the context of the problem, we see that $t$ is the independent variable and $y$ is the dependent variable, so we plot $y$ against $t$.
+
     \begin{figure}[H]\tikzsetnextfilename{477}
         \centering
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -101,7 +105,7 @@ A scatter diagram is obtained when each pair of data value $(x_i, y_i)$ from a s
         \end{tikzpicture} 
         \caption{}
     \end{figure}
-\end{example}
+\end{sampans}
 
 \subsection{Interpreting Scatter Diagrams}
 
@@ -281,7 +285,7 @@ $r$ can only take on values between $-1$ and 1. A summary of the value(s) of $r$
     \centering
     \begin{tabularx}{\textwidth}{|c|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
         \hline
-        \textbf{Value of $r$} & \textbf{Linear Correlation} & \textbf{Observation on Scatter Diagram} \\ \hline\hline
+        \bd{Value of $r$} & \bd{Linear Correlation} & \bd{Observation on Scatter Diagram} \\ \hline\hline
         $r = 1$ & Perfect positive linear correlation & The points all lie on a straight line with positive gradient \\ \hline
         $r \approx 1$ & Strong positive linear correlation & The points lie close to a straight line with positive gradient \\ \hline
         $0 < r < 1$ & Positive linear correlation & Most points lie in a band with positive gradient \\ \hline
@@ -604,7 +608,7 @@ The relationship between two variables involved, $x$ and $y$, may not always be 
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
-        \textbf{Original Equations} & \textbf{Transformed Equations} & \textbf{Linearly-related Expressions} \\ \hline
+        \bd{Original Equations} & \bd{Transformed Equations} & \bd{Linearly-related Expressions} \\ \hline
         $y = a + bx^2$ & - & $y$ vs $x^2$ \\ \hline
         $y = ab^x$ & $\ln y = \ln a + x \ln b$ & $\ln y$ vs $x$ \\ \hline
         $y = ax^b$ & $\ln y = \ln a + b \ln x$ & $\ln y$ vs $\ln x$ \\ \hline
@@ -623,6 +627,6 @@ It is now natural to define the ``best'' model ($y = a + bx$) as the one that ma
 
 \section{Bonus: $r$ and Vectors}
 
-Suppose we have two sets of data, say $x_1, \dots, x_n$ and $y_1, \dots, y_n$. Let $\ol{x}$ and $\ol{y}$ denote their respective means. Recall that the product moment correlation coefficient $r$ between these two samples is given by \[r = \frac{\sum \bp{x - \ol{x}} \bp{y - \ol{y}}}{\sqrt{\sum \bp{x - \ol{x}}^2 \sum \bp{y - \ol{y}}^2}}.\] Observe that the definition of $r$ resembles the definition of the cosine of an angle between two vectors! Indeed, if we define \[\vec x = \cveciii{x_1 - \ol{x}}{\vdots}{x_n - \ol{x}} \quad \tand \quad \vec y = \cveciii{y_1 - \ol{y}}{\vdots}{y_n - \ol{y}},\] then we can simply express $r$ as \[r = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2 \abs{\vec y}^2} = \cos \t,\] where $\t$ is the angle between the two vectors $\vec x$ and $\vec y$.\footnote{We can think of these two vectors as the ``deviation'' between the sample data and their respectively means. Indeed, it is not too hard to see that the sample variances are given by $s_X^2 = \frac1{n-1} \abs{\vec x}^2$ and $s_Y^2 = \frac1{n-1} \abs{\vec y}^2$. The scaled dot product $\frac1{n-1} \bp{\vec x \dotp \vec y}$ also has a special name, called the ``sample covariance'', typically denoted $s_{XY}^2$, so the product moment correlation coefficient can be expressed more succinctly as \[r = \frac{s_{XY}^2}{s_X s_Y}.\]} Similarly, we can rewrite the regression coefficients $b$ and $d$ vectorially: \[b = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2} \quad \tand \quad d = \frac{\vec x \dotp \vec y}{\abs{\vec y}^2}.\] If we manipulate the above two expressions, we see that \[b = \frac{\vec{\hat x} \dotp \vec y}{\abs{\vec x}} \quad \tand \quad d = \frac{\vec x \dotp \vec{\hat{y}}}{\abs{\vec y}}.\] Now observe that the numerator of $b$ is exactly the length of projection of $\vec y$ onto $\vec x$. Similarly, the numerator of $d$ is exactly the length of projection of $\vec x$ on $\vec y$.
+Suppose we have two sets of data, say $x_1, \dots, x_n$ and $y_1, \dots, y_n$. Let $\ol{x}$ and $\ol{y}$ denote their respective means. Recall that the product moment correlation coefficient $r$ between these two samples is given by \[r = \frac{\sum \bp{x - \ol{x}} \bp{y - \ol{y}}}{\sqrt{\sum \bp{x - \ol{x}}^2 \sum \bp{y - \ol{y}}^2}}.\] Observe that the definition of $r$ resembles the definition of the cosine of an angle between two vectors! Indeed, if we define \[\vec x = \cveciii{x_1 - \ol{x}}{\vdots}{x_n - \ol{x}} \quad \tand \quad \vec y = \cveciii{y_1 - \ol{y}}{\vdots}{y_n - \ol{y}},\] then we can simply express $r$ as \[r = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2 \abs{\vec y}^2} = \cos \t,\] where $\t$ is the angle between the two vectors $\vec x$ and $\vec y$.\footnote{We can think of these two vectors as the ``deviation'' between the sample data and their respectively means. Indeed, it is not too hard to see that the sample variances are given by $s_X^2 = \abs{\vec x}^2/(n-1)$ and $s_Y^2 = \abs{\vec y}^2/(n-1)$. The scaled dot product $\bp{\vec x \dotp \vec y}/(n-1)$ also has a special name, called the ``sample covariance'', typically denoted $s_{XY}^2$, so the product moment correlation coefficient can be expressed more succinctly as \[r = \frac{s_{XY}^2}{s_X s_Y}.\]} Similarly, we can rewrite the regression coefficients $b$ and $d$ vectorially: \[b = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2} \quad \tand \quad d = \frac{\vec x \dotp \vec y}{\abs{\vec y}^2}.\] If we manipulate the above two expressions, we see that \[b = \frac{\vec{\hat x} \dotp \vec y}{\abs{\vec x}} \quad \tand \quad d = \frac{\vec x \dotp \vec{\hat{y}}}{\abs{\vec y}}.\] Now observe that the numerator of $b$ is exactly the length of projection of $\vec y$ onto $\vec x$. Similarly, the numerator of $d$ is exactly the length of projection of $\vec x$ on $\vec y$.
 
 That is to say, $b$ measures the ratio between the vector projection of $\vec y$ onto $\vec x$, and similarly for $d$: \[b = \frac{\text{length of projection of $\vec y$ onto $\vec x$}}{\text{length of $\vec x$}} \quad \tand \quad d = \frac{\text{length of projection of $\vec x$ onto $\vec y$}}{\text{length of $\vec y$}}.\] This aligns with our intuition of $b$ and $d$: If the two samples share a strong linear correlation, we would expect the regression lines of $y$ on $x$ and $x$ on $y$ to be roughly the same. Indeed, $\vec x$ and $\vec y$ are roughly multiples of each other, say $\vec x \approx \l \vec y$ for some $\l$, so \[b \approx \frac{\abs{\l \vec y}}{\abs{\vec y}} = \abs{\l} \quad \tand \quad d \approx \frac{\abs{\vec x}}{\abs{\l \vec x}} = \frac1{\abs{\l}} \implies b \approx \frac1{d}.\] But $b$ and $1/d$ represent the gradients of the regression lines of $y$ on $x$ and of $x$ on $y$ respectively, so the two lines have roughly equivalent gradients, i.e. the two lines are roughly the same.

@@ -7,7 +7,7 @@
             \item Determine whether $A$ and $B$ are mutually exclusive.
             \item Determine whether $A$ and $B$ are independent.
         \end{enumerate}
-        \item In a competition, 2 teams ($A$ and $B$) will play each other in the best of 3 games. That is, the first team to win 2 games will be the winner and the competition will end. In the first game, both teams have equal chances of winning. In subsequent games, the probability of team $A$ winning team $B$ given that team $A$ won in the previous game is $p$ and the probability of team $A$ winning team $B$ given that team $A$ lost in the previous game is $\frac13$.
+        \item In a competition, 2 teams ($A$ and $B$) will play each other in the best of 3 games. That is, the first team to win 2 games will be the winner and the competition will end. In the first game, both teams have equal chances of winning. In subsequent games, the probability of team $A$ winning team $B$ given that team $A$ won in the previous game is $p$ and the probability of team $A$ winning team $B$ given that team $A$ lost in the previous game is $1/3$.
         \begin{enumerate}
             \item Illustrate the information with an appropriate tree diagram.
             \item Find the value of $p$ such that team $A$ has equal chances of winning and losing the competition.
@@ -17,10 +17,10 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Note that \[\P{A \cap B} = \P{A} + \P{B} - \P{A \cup B} = 0.4 + 0.3 - 0.5 = 0.2.\] Since $\P{A \cap B} = 0.2 \neq 0$, $A$ and $B$ are not mutually exclusive.
+            Note that $\P{A \cap B} = \P{A} + \P{B} - \P{A \cup B} = 0.4 + 0.3 - 0.5 = 0.2$. Since $\P{A \cap B} = 0.2 \neq 0$, $A$ and $B$ are not mutually exclusive.
         \end{psubpart}
         \begin{psubpart}
-            Note that \[\P{A}{B} = \frac{\P{A \cap B}}{\P{B}} = \frac{0.2}{0.3} = \frac23.\] Since $\P{A} = 0.4 \neq \frac23 = \P{A}{B}$, $A$ and $B$ are not independent.
+            Note that \[\P{A}{B} = \frac{\P{A \cap B}}{\P{B}} = \frac{0.2}{0.3} = \frac23.\] Since $\P{A} = 0.4 \neq 2/3 = \P{A}{B}$, $A$ and $B$ are not independent.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -64,7 +64,7 @@
             \end{center}
         \end{psubpart}
         \begin{psubpart}
-            Consider \[\P{\text{$A$ wins competition}} = \bs{\frac12 \cdot p} + \bs{\frac12 \cdot (1-p) \cdot \frac13} + \bs{\frac12 \cdot \frac13 \cdot p} = \frac{p}2 + \frac16 = \frac12.\] We hence need $p = \frac23$ for $A$ to have equal chances of winning and losing.
+            Consider \[\P{\text{$A$ wins competition}} = \bs{\frac12 \cdot p} + \bs{\frac12 \cdot (1-p) \cdot \frac13} + \bs{\frac12 \cdot \frac13 \cdot p} = \frac{p}2 + \frac16 = \frac12.\] We hence need $p = 2/3$ for $A$ to have equal chances of winning and losing.
         \end{psubpart}
     \end{ppart}
 \end{solution}
@@ -84,7 +84,7 @@
         \[\P{2D}{1D} = \frac{\P{2D \cap 1D}}{\P{1D}} = \frac{0.72}{0.8} = 0.9.\]
     \end{ppart}
     \begin{ppart}
-        \[\P{1D \cap 2D'} = \P{1D} - \P{1D \cap 2D} = 0.8 - 0.72 = 0.08.\]
+        $\P{1D \cap 2D'} = \P{1D} - \P{1D \cap 2D} = 0.8 - 0.72 = 0.08$.
     \end{ppart}
     \begin{ppart}
         \begin{align*}

@@ -16,7 +16,7 @@ We want to know something about a population, but there is a good chance that we
     A \vocab{sample} is a subset of the population. A \vocab{random sample} is a sample that is representative of the population.
 \end{definition}
 
-\begin{example}
+\begin{example}[Samples and Populations]
     If we were interested in the weight of all 12-year-old kids on Earth, then all the kids who meet the criteria (i.e. 12-year-old kids on Earth) would constitute the population.
 
     However, realistically speaking, there is no way we can accurately weigh all 12-year-old kids on Earth. Instead, we could weigh a sample of 500 12-year-old kids from all around the globe, which would be representative of the population.
@@ -50,17 +50,19 @@ A \vocab{central tendency} can be thought of as the ``typical'' value of a data 
 
 Mathematically, given $n$ observations $x_1$, $x_2$, $x_3$, $\dots$, $x_n$, \[\text{Mean} = \frac{x_1 + x_2 + x_3 + \dots + x_n}{n} = \frac1n \sum_{i = 1}^n x_i.\]
 
-Here, a lower-case `$n$` represents the sample size. We use the uppercase `$N$' to represent the population size. It is essential to make it clear when we are referring to the mean of a sample or when we are referring to the mean of a population. To do so, statisticians use different symbols ($\bar{x}$ and $\m$): \[\text{Sample mean} = \bar{x} = \frac1n \sum x, \quad \text{Population mean} = \m = \frac1N \sum x.\]
+Here, a lower-case `$n$` represents the sample size. We use the uppercase `$N$' to represent the population size. It is essential to make it clear when we are referring to the mean of a sample or when we are referring to the mean of a population. To do so, statisticians use different symbols ($\ol{x}$ and $\m$): \[\text{Sample mean} = \ol{x} = \frac1n \sum x \quad \text{Population mean} = \m = \frac1N \sum x.\]
 
-We can also calculate the mean of a data set from its frequency table: \[\text{Mean} = \frac{\sum xf}{\sum f},\] where $f$ represents the frequency of a value $x$. 
+We can also calculate the mean of a data set from its frequency table: \[\text{Mean} = \frac{\sum xf}{\sum f},\] where $f$ represents the frequency of a value $x$.
 
-\begin{example}
+Since the mean takes into account the entire sample data, it is very sensitive to outliers. Hence, the mean may be insufficient for data sets with outliers. 
+
+\begin{example}[Mean]
     Suppose the test scores of students in a particular class has the following frequency table:
 
     \begin{center}
         \begin{tabular}{|c|c|}
         \hline
-        \textbf{Test score, $x$} & \textbf{Frequency, $f$} \\ \hline\hline
+        \bd{Test score, $x$} & \bd{Frequency, $f$} \\ \hline\hline
         12 & 2 \\ \hline
         13 & 3 \\ \hline
         15 & 6 \\ \hline
@@ -69,13 +71,9 @@ We can also calculate the mean of a data set from its frequency table: \[\text{M
         \end{tabular}
     \end{center}
 
-    Then, the mean test score can be calculated as \[\bar{x} = \frac{\sum xf}{\sum f} = \frac{(12)(2) + (13)(3) + (15)(6) + (16)(5) + (17)(4)}{2 + 3 + 6 + 5 + 4} = 15.05.\]
-\end{example}
+    Then, the mean test score can be calculated as \[\ol{x} = \frac{\sum xf}{\sum f} = \frac{(12)(2) + (13)(3) + (15)(6) + (16)(5) + (17)(4)}{2 + 3 + 6 + 5 + 4} = 15.05.\]
 
-Since the mean takes into account the entire sample data, it is very sensitive to outliers. Hence, the mean may be insufficient for data sets with outliers. 
-
-\begin{example}
-    Suppose now that another student in the class obtained a `1' on the test. The new mean can be calculated as \[\bar{x} = \frac{\sum xf}{\sum f} = \frac{(1)(1) + (12)(2) + (13)(3) + (15)(6) + (16)(5) + (17)(4)}{1 + 2 + 3 + 6 + 5 + 4} = 14.14,\] which is much less than the previous mean of $15.05$. 
+    Suppose now that another student in the class obtained a `1' on the test. The new mean can be calculated as \[\ol{x} = \frac{\sum xf}{\sum f} = \frac{(1)(1) + (12)(2) + (13)(3) + (15)(6) + (16)(5) + (17)(4)}{1 + 2 + 3 + 6 + 5 + 4} = 14.14,\] which is much less than the previous mean of $15.05$. 
 \end{example}
 
 \subsection{Median}
@@ -89,14 +87,12 @@ Generally, for $n$ values $x_1$, $x_2$, $\dots$, $x_n$ arranged in ascending ord
     \frac12 \bp{x_{n/2} + x_{n/2 + 1}}, & \text{$n$ even}
 \end{cases}\]
 
-\begin{example}
-    For the original data of 20 students, the set of data in ascending order is \[12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is hence the average of the two middle values, i.e. $\frac12 (15 + 15) = 15$.
-\end{example}
-
 Unlike the mean, the median is not sensitive to outliers.
 
-\begin{example}
-    For the data of 21 students (original 20 + one outlier), the set of data in ascending order is \[1, 12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is hence the 11th value, $15$.
+\begin{example}[Median]
+    Consider again the example of 20 students. The set of data in ascending order is \[12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is hence the average of the two middle values, i.e. $(15 + 15)/2 = 15$.
+
+    When we add in the outlier, the set of data in ascending order becomes \[1, 12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is now the 11th value, $15$. There is no change to the median.
 \end{example}
 
 \subsection{Mode}
@@ -121,7 +117,7 @@ Recall that we introduced a \emph{central tendency} as the ``typical'' value of 
     Let $p \geq 1$. The \vocab{$L^p$-norm} of a vector $\vec x = (x_1, x_2, \dots, x_n)$, denoted $\norm{\vec x}_p$, is defined as \[\norm{\vec x}_p = \bp{\sum_{i = 1}^n \abs{x_i}^p}^{1/p}.\]
 \end{definition}
 
-\begin{example}
+\begin{example}[Euclidan Norm]
     When $p = 2$, we recover the Euclidean norm: \[\norm{\vec x}_2 = \bp{\sum_{i = 1}^n x_i^2}^{1/2} = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}.\]
 \end{example}
 
@@ -133,7 +129,7 @@ We now show that the mean, median and mode correspond to the cases where $p = 2$
     The mean minimizes $\norm{\vec x - \vec c}_2$.
 \end{proposition}
 \begin{proof}
-    By definition, \[\norm{\vec x - \vec c}_2 = \bp{\sum_{i = 1}^n (x_i - c)^2}^{1/2}.\] Differentiating this with respect to $c$, \[\der{}{c} \norm{\vec x - \vec c}_2 = -\bp{\sum_{i = 1}^n (x_i - c)^2}^{-1/2} \sum_{i = 1}^n (x_i - c).\] For stationary points, we want $\der{}{c} \norm{\vec x - \vec c}_2 = 0$. Hence, \[\sum_{i = 1}^n (x_i - c) = 0 \implies \sum_{i = 1}^n x_i - cn = 0 \implies c = \frac1n \sum_{i = 1}^n x_i,\] which is exactly the definition of the mean. It is an exercise for the reader to show that this stationary point is a minimum.
+    By definition, \[\norm{\vec x - \vec c}_2 = \bp{\sum_{i = 1}^n (x_i - c)^2}^{1/2}.\] Differentiating this with respect to $c$, \[\der{}{c} \norm{\vec x - \vec c}_2 = -\bp{\sum_{i = 1}^n (x_i - c)^2}^{-1/2} \sum_{i = 1}^n (x_i - c).\] For stationary points, we want \[\der{}{c} \norm{\vec x - \vec c}_2 = 0.\]Hence, \[\sum_{i = 1}^n (x_i - c) = 0 \implies \sum_{i = 1}^n x_i - cn = 0 \implies c = \frac1n \sum_{i = 1}^n x_i,\] which is exactly the definition of the mean. It is an exercise for the reader to show that this stationary point is a minimum.
 \end{proof}
 
 \begin{proposition}
@@ -157,7 +153,7 @@ Suppose that the original 20 test scores come from students from a particular cl
 \begin{center}
     \begin{tabular}{|c|c|}
     \hline
-    \textbf{Test score, $x$} & \textbf{Frequency, $f$} \\ \hline\hline
+    \bd{Test score, $x$} & \bd{Frequency, $f$} \\ \hline\hline
     9 & 2 \\ \hline
     10 & 2 \\ \hline
     13 & 4 \\ \hline
@@ -180,7 +176,7 @@ Measures of central tendencies do not give any indication of these differences i
     The \vocab{range} is the difference between the maximum and minimum values in the set of data.
 \end{definition}
 
-\begin{example}
+\begin{example}[Range]
     The first class has a range of $17 - 12 = 5$, while the second class has a range of $21 - 9 = 12$. Hence, the test scores for the second class are more diverse as compared to that for the first class.
 \end{example}
 
@@ -194,7 +190,7 @@ For this reason, we typically consider the interquartile range instead.
 
 Recall that the $n$th percentile of a distribution is the value such that $n$\% of the data is less than or equal to that number. The first and third quartiles are hence the 25th and 75th percentile respectively. Note that the second quartile (50th percentile) is simply the median.
 
-\begin{example}
+\begin{example}[Interquartile Range]
     The first class has interquartile range $16 - 14 = 2$, while the second class has interquartile range $17.5 - 13 = 4.5$.
     
     If we include the outlier in the first class, then the interquartile range becomes $16 - 13 = 3$, which is a much smaller change compared to that of the range.
@@ -206,17 +202,17 @@ Again, the interquartile range may not be a good measure of dispersion as it onl
 
 One of the main reasons for using the interquartile range in preference to the range as a measure of spread is that it takes some account of how the interior values are spread rather than concentrating on the spread of the extreme values. The interquartile range, however, does not take into account of the spread of all the data values and so, in some sense, it is still an inadequate measure. An alternative measure of spread, which takes into account of all the values, can be devised by finding how far each data value is from the mean.
 
-This can be represented mathematically with the formula \[\text{Mean distance} = \frac1n \sum \abs{x - \bar x}.\] Unfortunately, a formula involving the modulus sign is awkward to handle algebraically. This can be avoided by squaring each of the quantities $x - \bar x$, leading to the expression \[\frac1n \sum \bp{x - \bar x}^2\] as a measure of spread. We call this quantity the \vocab{variance} of the distribution.
+This can be represented mathematically with the formula \[\text{Mean distance} = \frac1n \sum \abs{x - \ol x}.\] Unfortunately, a formula involving the modulus sign is awkward to handle algebraically. This can be avoided by squaring each of the quantities $x - \ol x$, leading to the expression \[\frac1n \sum \bp{x - \ol x}^2\] as a measure of spread. We call this quantity the \vocab{variance} of the distribution.
 
-If the data values $x_1$, $\dots$, $x_n$ have units associated with them, then the variance will be measured in units$^2$. This can be avoided by taking the positive square root of the variance. The positive square root of the variance is known as the \vocab{standard deviation}, and it always has the same units as the original data values, i.e. \[\text{Standard deviation} = \sqrt{\frac1n \sum \bp{x - \bar x}^2}.\]
+If the data values $x_1$, $\dots$, $x_n$ have units associated with them, then the variance will be measured in units$^2$. This can be avoided by taking the positive square root of the variance. The positive square root of the variance is known as the \vocab{standard deviation}, and it always has the same units as the original data values, i.e. \[\text{Standard deviation} = \sqrt{\frac1n \sum \bp{x - \ol x}^2}.\]
 
 When referring to the standard deviation of the population, we use the symbol $\s$. Hence, the population variance is denoted by $\s^2$.
 
 In its given form, the variance of a data set is tedious to calculate. Fortunately, an alternative formula is easier to use is available:
 
 \begin{proposition}
-    \[\text{Variance} = \frac1n \sum x^2 - \bar{x}^2.\]
+    \[\text{Variance} = \frac1n \sum x^2 - \ol{x}^2.\]
 \end{proposition}
 \begin{proof}
-    We have \[\text{Variance} = \frac1n \sum \bp{x - \bar x}^2 = \frac1n \sum \bp{x^2 - 2x \bar{x} + \bar{x}^2} = \frac1n \sum x^2 - \frac{2\bar{x} \sum x}{n} + \frac{\bar{x}^2 \sum 1}{n}.\] Observe that $\frac1n \sum x = \bar x$ and $\sum 1 = n$. Thus, \[\text{Variance} = \frac1n \sum x^2 - 2\bar{x}^2 + \bar{x}^2 = \frac1n \sum x^2 - \bar{x}^2.\]
+    We have \[\text{Variance} = \frac1n \sum \bp{x - \ol x}^2 = \frac1n \sum \bp{x^2 - 2x \ol{x} + \ol{x}^2} = \frac1n \sum x^2 - \frac{2\ol{x} \sum x}{n} + \frac{\ol{x}^2 \sum 1}{n}.\] Observe that $\sum x/n = \ol x$ and $\sum 1 = n$. Thus, \[\text{Variance} = \frac1n \sum x^2 - 2\ol{x}^2 + \ol{x}^2 = \frac1n \sum x^2 - \ol{x}^2.\]
 \end{proof}

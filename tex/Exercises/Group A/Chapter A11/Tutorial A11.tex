@@ -50,19 +50,19 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that N, S and E are repeated 3, 2, and 2 times respectively. Thus, the total number of arrangements is given by $\frac{8!}{3! \, 2! \, 2!} = 1680$.
+        Note that N, S and E are repeated 3, 2, and 2 times respectively. Thus, the total number of arrangements is given by $8!/(3! \, 2! \, 2!) = 1680$.
     \end{ppart}
     \begin{ppart}
-        Consider the two E's as one unit. Altogether, there are 7 units. Hence, the required number of arrangements is given by $\frac{7!}{3! \, 2!} = 420$.
+        Consider the two E's as one unit. Altogether, there are 7 units. Hence, the required number of arrangements is given by $7!/(3! \, 2!) = 420$.
     \end{ppart}
     \begin{ppart}
         From part (a) and part (b), the required number of arrangements is given by $1680 - 420 = 1260$.
     \end{ppart}
     \begin{ppart}
-        There are $\frac{5!}{2! \, 2!}$ ways to arrange the non-N letters, and $\comb{6}{3}$ ways to slot in the 3 N's into the 6 gaps in between the non-N letters. Thus, the required number of arrangements is given by $\frac{5!}{2! \, 2!} \cdot \comb{6}{3} = 600$.
+        There are $5!/(2! \, 2!)$ ways to arrange the non-N letters, and $\comb{6}{3}$ ways to slot in the 3 N's into the 6 gaps in between the non-N letters. Thus, the required number of arrangements is given by $5!/(2! \, 2!) \cdot \comb{6}{3} = 600$.
     \end{ppart}
     \begin{ppart}
-        Consider the three N's as one unit. Altogether there are 6 units. Hence, the number of arrangements where all 3 N's are together is given by $\frac{6!}{2! \, 2!} = 180$. Thus, from parts (a) and (d), the required number of arrangements is given by $1680 - 600 - 180 = 900$.
+        Consider the three N's as one unit. Altogether there are 6 units. Hence, the number of arrangements where all 3 N's are together is given by $6!/(2! \, 2!) = 180$. Thus, from parts (a) and (d), the required number of arrangements is given by $1680 - 600 - 180 = 900$.
     \end{ppart}
 \end{solution}
 
@@ -129,13 +129,13 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Note that there are now 2 letters that appear twice, namely A and I. Hence, the total number of possible arrangements is $\frac{9!}{2! \, 2!}$.
+        Note that there are now 2 letters that appear twice, namely A and I. Hence, the total number of possible arrangements is $9!/(2! \, 2!)$.
 
         Consider ``AA'' and ``II'' as one unit each. Altogether, there are 7 units. The number of arrangements with two pairs of adjacent letters that are the same is hence given by $7!$. 
         
         Consider ``AA'' as one unit, and suppose the two I's are not adjacent to each other. Observe that the non-I letters comprise 6 units, hence giving $6!$ ways of arranging them. Also observe that there are $\comb{7}{2}$ ways to slot in the two I's (which guarantee that they are not adjacent to each other). There are hence $6! \cdot \comb{7}{2}$ possible arrangements in this case. A similar argument follows for the case where the two I's are adjacent but the A's are not.
 
-        From the above discussion, it follows that the required number of arrangements is given by $\frac{9!}{2! \, 2!} - 7! - 2 \cdot 6! \cdot \comb{7}{2} = 55440$.
+        From the above discussion, it follows that the required number of arrangements is given by $9!/(2! \, 2!) - 7! - 2 \cdot 6! \cdot \comb{7}{2} = 55440$.
     \end{ppart}
 \end{solution}
 
@@ -156,7 +156,7 @@
 
         \case{1}[All letters distinct] Since there are 4 distinct letters, the number of code-words in this case is $\perm{4}{3} = 24$.
 
-        \case{2}[2 letters the same, 1 different] Note that `P' is the only letter repeated more than once. Reserving two spaces for `P' leaves one space left for three remaining letters. Hence, there are $\comb{1}{1} \cdot \comb{3}{1} = 3$ different combinations that can be formed, with $\frac{3!}{2!} = 3$ ways to arrange each combination. Hence, the number of code-words in this case is $3 \cdot 3 = 9$.
+        \case{2}[2 letters the same, 1 different] Note that `P' is the only letter repeated more than once. Reserving two spaces for `P' leaves one space left for three remaining letters. Hence, there are $\comb{1}{1} \cdot \comb{3}{1} = 3$ different combinations that can be formed, with $3!/2! = 3$ ways to arrange each combination. Hence, the number of code-words in this case is $3 \cdot 3 = 9$.
 
         Thus, the total number of code-words is $24 + 9 = 33$.
     \end{ppart}
@@ -165,7 +165,7 @@
 
         \case{1}[All letters distinct] Since there are only 3 distinct letters, the number of code-words in this case is $\perm{3}{3} = 6$.
 
-        \case{2}[2 letters the same, 1 different] Observe that both `A' and `N' are repeated more than once. Reserving 2 spaces for either letter leaves one space left for the two remaining letters. Hence, there are $\comb{2}{1} \cdot \comb{2}{1} = 4$ different combinations that can be formed, with $\frac{3!}{2!} = 3$ ways to arrange each combination. Hence, the number of code-words in this case is $4 \cdot 3 = 12$.
+        \case{2}[2 letters the same, 1 different] Observe that both `A' and `N' are repeated more than once. Reserving 2 spaces for either letter leaves one space left for the two remaining letters. Hence, there are $\comb{2}{1} \cdot \comb{2}{1} = 4$ different combinations that can be formed, with $3!/2! = 3$ ways to arrange each combination. Hence, the number of code-words in this case is $4 \cdot 3 = 12$.
 
         \case{3}[All letters the same] Observe that `A' is the only letter repeated thrice. Hence, the number of code-words in this case is 1.
 

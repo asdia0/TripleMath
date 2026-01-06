@@ -15,10 +15,10 @@ Note that both the Addition and Multiplication Principles can be extended to any
 \section{Permutations}
 
 \begin{definition}
-    A \vocab{permutation} is an arrangement of a number of objects in which the \textbf{order is important}.
+    A \vocab{permutation} is an arrangement of a number of objects in which the \bd{order is important}.
 \end{definition}
 
-\begin{example}
+\begin{example}[Permutations]
     ABC, BAC and CBA are possible permutations of the letters `A', `B' and `C'.
 \end{example}
 
@@ -32,13 +32,13 @@ Note that both the Addition and Multiplication Principles can be extended to any
 \begin{proof}
     Suppose we have $n$ distinct objects that we want to fill up $r$ ordered slots with. This operation can be done in $r$ stages
     \begin{itemize}
-        \item \textbf{Stage 1.} The number of ways to fill in the first slot is $n$.
-        \item \textbf{Stage 2.} After filling in the first slot, the number of ways to fill in the second slot is $n-1$.
-        \item \textbf{Stage 3.} After filling in the first and second slots, the number of ways to fill in the third slot is $n-2$.
+        \item \bd{Stage 1.} The number of ways to fill in the first slot is $n$.
+        \item \bd{Stage 2.} After filling in the first slot, the number of ways to fill in the second slot is $n-1$.
+        \item \bd{Stage 3.} After filling in the first and second slots, the number of ways to fill in the third slot is $n-2$.
     \end{itemize}
     This continues until we reach the last stage:
     \begin{itemize}
-        \item \textbf{Stage $r$.} After filling all previous $r-1$ slots, the number of ways to fill in the last slot is $n-(r-1) = n-r+1$.
+        \item \bd{Stage $r$.} After filling all previous $r-1$ slots, the number of ways to fill in the last slot is $n-(r-1) = n-r+1$.
     \end{itemize}
     Thus, by the Multiplication Principle, the number of ways to fill up the $r$ slots are \[n(n-1)(n-2)\dots(n-r+1) = \frac{n!}{(n-r)!}.\]
 \end{proof}
@@ -130,8 +130,8 @@ Some problems involving permutations and combinations may involve restrictions. 
 \begin{sampans}
     Consider the consonants `C', `M', `B' and `N' as one unit: \[\boxed{\text{C} \quad \text{M} \quad \text{B} \quad \text{N}} \quad \boxed{\text{O}} \quad \boxed{\text{I}} \quad \boxed{\text{E}}.\]
     \begin{itemize}
-        \item \textbf{Stage 1.} There are $4!$ ways to arrange the 4 units.
-        \item \textbf{Stage 2.} There are $4!$ ways to arrange `C', `M', `B' and `N' within the group.
+        \item \bd{Stage 1.} There are $4!$ ways to arrange the 4 units.
+        \item \bd{Stage 2.} There are $4!$ ways to arrange `C', `M', `B' and `N' within the group.
     \end{itemize}
     Hence, by the Multiplication Principle, the total number of arrangements is \[4! \cdot 4! = 576.\]
 \end{sampans}

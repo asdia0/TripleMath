@@ -26,14 +26,18 @@ When $k = 0$, the second property of linear transformations also implies that $T
     If $f$ passes the above checklist, we then proceed to show that $f(k_1 \vec v_1 + k_2 \vec v_2) = k_1 f(\vec v_1) + k_2 f(\vec v_2)$. This would immediately imply that $f$ satisfies the two properties and is thus a linear transformation.
 \end{recipe}
 
-\begin{example}
-    Let $T: \RR^2 \to \RR^3$ be a function defined by \[T\cvecii{x}{y} = \cveciii{x}{x+y}{x-y}.\] Clearly, $T(\vec 0) = \vec 0$, so $T$ passes the first check. By inspection, $T$ also satisfies the remaining two checks. We are now confident that $T$ is a linear transformation, so we consider $T(k_1 \vec v_1 + k_2 \vec v_2)$, where $\vec v_1 = \cveciix{x_1}{y_1}$ and $\vec v_2 = \cveciix{x_2}{y_2}$. Then
+\begin{sample}
+    Let $T: \RR^2 \to \RR^3$ be a function defined by \[T\cvecii{x}{y} = \cveciii{x}{x+y}{x-y}.\] Determine if $T$ is a linear transformation. 
+\end{sample}
+Clearly, $T(\vec 0) = \vec 0$, so $T$ passes the first check. By inspection, $T$ also satisfies the remaining two checks. We are now confident that $T$ is a linear transformation, so we proceed with a formal proof.
+\begin{sampans}
+    Consider $T(k_1 \vec v_1 + k_2 \vec v_2)$, where $\vec v_1 = \cveciix{x_1}{y_1}$ and $\vec v_2 = \cveciix{x_2}{y_2}$. Then
     \begin{align*}
         T(k_1 \vec v_1 + k_2 \vec v_2) &= T\cvecii{k_1 x_1 + k_2 x_2}{k_1 y_1 + k_2 y_2} = \cveciii{k_1 x_1 + k_2 x_2}{\bp{k_1 x_1 + k_2 x_2} + \bp{k_1 y_1 + k_2 y_2}}{\bp{k_1 x_1 + k_2 x_2} - \bp{k_1 y_1 + k_2 y_2}}\\
         &= k_1\cveciii{x_1}{x_1 + y_1}{x_1 - y_1} + k_2 \cveciii{x_2}{x_2 + y_2}{x_2 - y_2} = k_1 T(\vec v_1) + k_2 T(\vec v_2).
     \end{align*}
     Thus, $T$ is indeed a linear transformation.
-\end{example}
+\end{sampans}
 
 \section{Matrix Representation}
 
@@ -114,14 +118,6 @@ Lastly, there is the trivial vector space:
     Suppose $V$ is a linear space under $(+, \dotp)$, and $W \subseteq V$. If $W$ is also a linear space under $(+, \dotp)$, then $W$ is a \vocab{subspace} of $V$.
 \end{definition}
 
-\begin{example}
-    Consider the set $S = \bc{(a, b, 0) \mid a, b \in \RR}$. One can clearly show that $S$ is a linear space equipped with the usual addition and scalar multiplication. Since $S \subseteq \RR^3$, it follows that $S$ is a subspace of $\RR^3$.
-\end{example}
-
-\begin{example}
-    If $V$ is a linear space, then $V$ and $\bc{\vec 0}$ are both subspaces of $V$.
-\end{example}
-
 Because subspaces inherit addition and multiplication, we do not need to check Axioms 2, 3, 7, 8 and 9. Further, Axiom 5 is guaranteed if Axiom 6 is valid. Thus, we really only need to verify Axioms 1, 4 and 6 when testing for subspaces.
 
 \begin{recipe}[Test for Subspace]
@@ -161,8 +157,8 @@ In Sample Problem~\ref{sample:linear-transformations:planes}, we saw how any pla
     \centering
     \begin{tabular}{|l|l|l|}
     \hline
-    \multicolumn{1}{|c|}{\textbf{Subspaces of $\RR^1$}} & \multicolumn{1}{c|}{\textbf{Subspaces of $\RR^2$}}
-     & \multicolumn{1}{c|}{\textbf{Subspaces of $\RR^3$}} \\ \hline\hline
+    \multicolumn{1}{|c|}{\bd{Subspaces of $\RR^1$}} & \multicolumn{1}{c|}{\bd{Subspaces of $\RR^2$}}
+     & \multicolumn{1}{c|}{\bd{Subspaces of $\RR^3$}} \\ \hline\hline
     \tabitem $\bc{\vec 0}$ & \tabitem $\bc{\vec 0}$ & \tabitem $\bc{\vec 0}$ \\
     \tabitem $\RR^1$ & \tabitem Lines through the origin & \tabitem Lines through the origin \\ 
      & \tabitem $\RR^2$ & \tabitem Planes through the origin \\ 
@@ -177,19 +173,10 @@ In fact, these are the only subspaces of $\RR^1$, $\RR^2$ and $\RR^3$. Note that
 \subsection{Linear Spans}
 
 \begin{definition}
-    Let $S = \bc{\vec v_1, \dots, \vec v_r}$ be a non-empty subset of a linear space $V$. Then the \vocab{span} of $S$, denoted $\Span S$ or $\Span{\vec v_1, \dots, \vec v_r}$, is the set containing all linear combinations of vectors of $S$. That is, \[\Span S = \Span{\vec v_1, \dots, \vec v_r} = \bc{a_1 \vec v_1 + \dots + a_r \vec v_r \mid a_1, \dots, a_r \in \RR}.\]
+    Let $S = \bc{\vec v_1, \dots, \vec v_r}$ be a non-empty subset of a linear space $V$. Then the \vocab{span} of $S$, denoted $\Span S$ or $\Span{\vec v_1, \dots, \vec v_r}$, is the set of all linear combinations of vectors of $S$. That is, \[\Span S = \Span{\vec v_1, \dots, \vec v_r} = \bc{a_1 \vec v_1 + \dots + a_r \vec v_r \mid a_1, \dots, a_r \in \RR}.\]
 \end{definition}
 
 Note that $\Span \varnothing = \bc{\vec 0}$, since the sum of nothing is $\vec 0$.
-
-\begin{example}
-    Let $\vec v_1, \vec v_2 \in \RR^n$. Then $S = \Span{\vec v_1, \vec v_2} = \bc{a \vec v_1 + b \vec v_2 \mid a, b \in \RR}$.
-    \begin{itemize}
-        \item If $\vec v_1$ and $\vec v_2$ are non-parallel, then $S$ represents a plane (parallel to $\vec v_1$ and $\vec v_2$) that passes through the origin in $\RR^n$.
-        \item If $\vec v_1$ and $\vec v_2$ are parallel, then $S$ represents a line (parallel to both $\vec v_1$ and $\vec v_2$) that passes through the origin in $\RR^n$.
-        \item If $\vec v_1$ and $\vec v_2$ are both $\vec 0$, then $S$ is simply the origin.
-    \end{itemize}
-\end{example}
 
 \begin{proposition}
     Let $S$ be a subset of a linear space $V$. Then $\Span S$ is a subspace of $V$.
@@ -424,9 +411,12 @@ This result allows us to easily find the basis of the row space of $\mat A$.
     Let $\mat B$ be the REF/RREF of $\mat A$. Then the non-zero row vectors in $\mat B$ form a basis for the row space of $\mat A$.
 \end{recipe}
 
-\begin{example}
-    Let \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\] Its RREF is given by \[\begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, a row space basis of $\mat A$ is \[\bc{\begin{pmatrix}1 \\ 0 \\ -1 \\ -2 \\ 0\end{pmatrix}, \begin{pmatrix}0 \\ 1 \\ 2 \\ 3 \\ 0\end{pmatrix}, \begin{pmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1\end{pmatrix}}.\]
-\end{example}
+\begin{sample}
+    Find a basis for the row space of \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\]
+\end{sample}
+\begin{sampans}
+    The RREF of $\mat A$ is given by \[\begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, a row space basis of $\mat A$ is \[\bc{\begin{pmatrix}1 \\ 0 \\ -1 \\ -2 \\ 0\end{pmatrix}, \begin{pmatrix}0 \\ 1 \\ 2 \\ 3 \\ 0\end{pmatrix}, \begin{pmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1\end{pmatrix}}.\]    
+\end{sampans}
 
 \subsection{Basis for Column Space}
 
@@ -452,9 +442,12 @@ With this, we have our standard procedure for finding a basis for the column spa
     Let $\mat B$ be the REF/RREF of $\mat A$. Look at the columns of $\mat B$ with a leading entry. Then the corresponding columns of $\mat A$ form a basis of $\Col{\mat A}$.
 \end{recipe}
 
-\begin{example}
-    Let \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\] Its RREF is given by \[\mat B = \begin{pmatrix}\boxed{1} & 0 & -1 & -2 & 0 \\ 0 & \boxed{1} & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & \boxed{1} \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] The first, second and fifth columns of $\mat B$ contain a leading entry. Thus, the first, second and fifth columns of $\mat A$ form a basis of $\Col{\mat A}$: \[\bc{\cveciv16{11}{16}, \cveciv27{12}{17}, \cveciv5{10}{15}{21}}.\]
-\end{example}
+\begin{sample}
+    Find a basis for the column space of \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\]
+\end{sample}
+\begin{sampans}
+    The RREF of $\mat A$ is given by \[\mat B = \begin{pmatrix}\boxed{1} & 0 & -1 & -2 & 0 \\ 0 & \boxed{1} & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & \boxed{1} \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] The first, second and fifth columns of $\mat B$ contain a leading entry. Thus, the first, second and fifth columns of $\mat A$ form a basis of $\Col{\mat A}$: \[\bc{\cveciv16{11}{16}, \cveciv27{12}{17}, \cveciv5{10}{15}{21}}.\]
+\end{sampans}
 
 \subsection{Basis for Null Space}
 
@@ -464,9 +457,12 @@ In the proof of Proposition~\ref{prop:lin-alg:row-lindep}, we saw how row operat
     Let $\mat B$ be the REF/RREF of $\mat A$. Then the null space of $\mat A$ is the solution set $\vec x$ of $\mat B \vec x = \vec 0$.
 \end{recipe}
 
-\begin{example}
-    Let \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\] Its RREF is given by \[\mat B = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] We notice that columns 3 and 4 do not have leading entries. The variables corresponding to these columns can thus be set as free variables. \[\mat B \vec x = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix} \begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix}.\] This gives the system of linear equations \[\systeme{x_1 - x_3 - 2x_4 = 0, x_2 + 2x_3 + 3x_4 = 0, x_5 = 0}.\] Setting $x_3 = s$ and $x_4 = t$, we have \[\begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}s + 2t \\ -2s - 3t \\ s \\ t \\ 0 \end{pmatrix} = s \begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix} + t \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}.\] Thus, the basis of the null space of $\mat A$ is \[\bc{\begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix}, \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}}.\]
-\end{example}
+\begin{sample}
+    Find a basis for the null space of \[\mat A = \begin{pmatrix}1 & 2 & 3 & 4 & 5 \\ 6 & 7 & 8 & 9 & 10 \\ 11 & 12 & 13 & 14 & 15 \\ 16 & 17 & 18 & 19 & 21\end{pmatrix}.\]
+\end{sample}
+\begin{sampans}
+    The RREF of $\mat A$ is given by \[\mat B = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix}.\] We notice that columns 3 and 4 do not have leading entries. The variables corresponding to these columns can thus be set as free variables. \[\mat B \vec x = \begin{pmatrix}1 & 0 & -1 & -2 & 0 \\ 0 & 1 & 2 & 3 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0\end{pmatrix} \begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix}.\] This gives the system of linear equations \[\systeme{x_1 - x_3 - 2x_4 = 0, x_2 + 2x_3 + 3x_4 = 0, x_5 = 0}.\] Setting $x_3 = s$ and $x_4 = t$, we have \[\begin{pmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = \begin{pmatrix}s + 2t \\ -2s - 3t \\ s \\ t \\ 0 \end{pmatrix} = s \begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix} + t \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}.\] Thus, the basis of the null space of $\mat A$ is \[\bc{\begin{pmatrix}1 \\ -2 \\ 1 \\ 0 \\ 0\end{pmatrix}, \begin{pmatrix}2 \\ -3 \\ 0 \\ 1 \\ 0 \end{pmatrix}}.\]
+\end{sampans}
 
 \section{Rank and Nullity for Matrices}
 
@@ -511,7 +507,7 @@ We can slightly extend the above result:
     If $\mat B$ is an invertible $n \times n$ matrix, then \[\Rank{\mat A \mat B} = \Rank{\mat B \mat A} = \Rank \mat A\] for all $n \times n$ matrices $\mat A$.
 \end{proposition}
 \begin{proof}
-    Observe that \[\Rank \mat A = \Rank{\mat A \mat B \mat B^{-1}} \leq \Rank{\mat A \mat B} \leq \Rank \mat A,\] so $\Rank{\mat A \mat B} = \Rank \mat A$. Similarly, \[\Rank \mat A = \Rank{\mat B^{-1} \mat B \mat A} \leq \Rank{\mat B \mat A} \leq \Rank \mat A.\] so $\Rank{\mat B \mat A} = \Rank \mat A$.
+    Observe that \[\Rank \mat A = \Rank{\mat A \mat B \mat B^{-1}} \leq \Rank{\mat A \mat B} \leq \Rank \mat A,\] so $\Rank{\mat A \mat B} = \Rank \mat A$. Similarly, \[\Rank \mat A = \Rank{\mat B^{-1} \mat B \mat A} \leq \Rank{\mat B \mat A} \leq \Rank \mat A,\] so $\Rank{\mat B \mat A} = \Rank \mat A$.
 \end{proof}
 
 \begin{definition}
@@ -528,11 +524,11 @@ We can slightly extend the above result:
 We can determine the number of solutions to a system of linear equations using the rank of its corresponding matrix:
 
 \begin{recipe}[Finding Number of Solutions]
-    Let $\mat A \vec x = \vec b$ be a system of linear equations in $n$ variables. Then
+    Let $\mat A \vec x = \vec b$ be a system of linear equations in $n$ variables.
     \begin{itemize}
-        \item if $\Rank \mat A = \Rank \begin{pmatrix}[c|c] \mat A & \vec b\end{pmatrix} = n$, the system if consistent and has a unique solution.
-        \item if $\Rank \mat A = \Rank \begin{pmatrix}[c|c] \mat A & \vec b\end{pmatrix} < n$, then the system is consistent and has an infinite number of solutions.
-        \item if $\Rank \mat A < \Rank \begin{pmatrix}[c|c] \mat A & \vec b\end{pmatrix}$, then the system is inconsistent and thus has no solution.
+        \item If $\Rank \mat A = \Rank \begin{pmatrix}[c|c] \mat A & \vec b\end{pmatrix} = n$, the system if consistent and has a unique solution.
+        \item If $\Rank \mat A = \Rank \begin{pmatrix}[c|c] \mat A & \vec b\end{pmatrix} < n$, then the system is consistent and has an infinite number of solutions.
+        \item If $\Rank \mat A < \Rank \begin{pmatrix}[c|c] \mat A & \vec b\end{pmatrix}$, then the system is inconsistent and thus has no solution.
     \end{itemize}
 \end{recipe}
 

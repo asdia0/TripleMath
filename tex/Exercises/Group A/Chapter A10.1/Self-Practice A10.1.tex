@@ -4,7 +4,7 @@
     By writing $z = x + \i y$, $x, y \in \RR$, solve the simultaneous equations \[z^2 + zw - 2 = 0 \quad \tand \quad z\conj = \frac{w}{1 + \i},\] where $z\conj$ is the conjugate of $z$.
 \end{problem}
 \begin{solution}
-    From the second equation, we see that $w = (1+\i) z\conj$. Substituting this into the first equation yields \[z^2 + zz\conj (1+\i) - 2 = 0.\] Let $z = x + \i y$, where $x, y \in \RR$. Then \[\bp{x + \i y}^2 + \bp{x^2 + y^2} \bp{1 + \i} - 2 = 0.\] Simplifying, we get \[2\bp{x^2 - 1} + \bp{x + y}^2 \i = 0.\] Comparing real and imaginary parts, we require $x^2 - 1 = 0$ and $x + y = 0$, so $x =  \pm 1$ and $y = -x = \mp 1$, so $z = \pm 1 \mp \i$.
+    From the second equation, we see that $w = (1+\i) z\conj$. Substituting this into the first equation yields \[z^2 + zz\conj (1+\i) - 2 = 0.\] Let $z = x + \i y$, where $x$ and $y$ are real. Then $\bp{x + \i y}^2 + \bp{x^2 + y^2} \bp{1 + \i} - 2 = 0$. Simplifying, we get $2\bp{x^2 - 1} + \bp{x + y}^2 \i = 0$. Comparing real and imaginary parts, we require $x^2 - 1 = 0$ and $x + y = 0$, so $x = \pm 1$ and $y = -x = \mp 1$, so $z = \pm 1 \mp \i$.
 
     When $z = 1 - \i$, we have $w = (1 + \i)^2 = 2\i$. When $z = -1 + \i$, we have $w = (-1 + \i)(1 + \i) = -2$.
 \end{solution}
@@ -13,21 +13,21 @@
     Given that the complex numbers $w$ and $z$ satisfy the equations \[w\conj + 2z = \i \quad \tand \quad w + (1 - 2\i)z = 3 + 3\i,\] find $w$ and $z$ in the form $a + b \i$, where $a$ and $b$ are real.
 \end{problem}
 \begin{solution}
-    From the first equation, we obtain $w = -\i - 2z\conj$. Substituting this into the second equation, we see that \[\bp{-\i - 2z\conj}\bp{1 - 2\i}z = 3 + 3\i.\] Let $z = a + b\i$, where $a, b \in \RR$. Then \[\bs{-\i - 2\bp{a-b\i}} + \bp{1 - 2\i}\bp{a + b\i} = 3 + 3\i,\] which upon simplification yields \[\bp{2b - a} + \i\bp{3b - 2a} = 3 + 4\i.\] Comparing real and imaginary parts, we require $2b - a = 3$ and $3b - 2a = 3$, which gives $a = 1$ and $b = 2$. Thus, $z = 1 + 2\i$ and $w = -\i - 2\bp{1 - 2\i} = -2 + 3\i$.
+    From the first equation, we obtain $w = -\i - 2z\conj$. Substituting this into the second equation, we see that $\bp{-\i - 2z\conj}\bp{1 - 2\i}z = 3 + 3\i$. Let $z = a + b\i$, where $a, b \in \RR$. Then $\bs{-\i - 2\bp{a-b\i}} + \bp{1 - 2\i}\bp{a + b\i} = 3 + 3\i$, which simplifies to $\bp{2b - a} + \i\bp{3b - 2a} = 3 + 4\i$. Comparing real and imaginary parts, we require $2b - a = 3$ and $3b - 2a = 3$, which gives $a = 1$ and $b = 2$. Thus, $z = 1 + 2\i$ and $w = -\i - 2\bp{1 - 2\i} = -2 + 3\i$.
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Determine the complex numbers $u$ and $v$ for which \[z^2 + (6-2\i)z = (z-u)^2 - v, \quad \forall z \in \CC.\]
+        \item Determine the complex numbers $u$ and $v$ for which \[z^2 + (6-2\i)z = (z-u)^2 - v\] for all $z \in \CC$.
         \item Write down the square roots of $7 - 24\i$. Hence, solve the quadratic equation $z^2 + (6-2\i)z = -1 - 18\i$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Completing the square, we see that \[z^2 - \bp{6 - 2\i}z = \bp{z + \bp{3 - \i}}^2 - \bp{3 - \i}^2,\] so $u = -(3-\i) = -3 + \i$ and $v = (3-\i)^2 = 8 - 6\i$.
+        Completing the square, we see that $z^2 - \bp{6 - 2\i}z = \bp{z + \bp{3 - \i}}^2 - \bp{3 - \i}^2$, so $u = -(3-\i) = -3 + \i$ and $v = (3-\i)^2 = 8 - 6\i$.
     \end{ppart}
     \begin{ppart}
-        Using G.C., $\pm \sqrt{7 - 24\i} = \pm \bp{4-3\i}$. From (a), we see that \[\bp{z + (3-\i)}^2 - (8 - 6\i) = z^2 + \bp{6 - 2\i} z = -1 - 18\i,\] thus \[\bp{z + (3-\i)}^2 = -1 - 18\i + 8 - 6\i = 7 - 24\i,\] so \[z + (3 - \i) = \pm \bp{4 - 3\i}.\] Finally, we obtain $z = 1-2\i$ or $z = -7 + 4\i$.
+        Using G.C., $\pm \sqrt{7 - 24\i} = \pm \bp{4-3\i}$. From (a), we see that \[\bp{z + (3-\i)}^2 - (8 - 6\i) = z^2 + \bp{6 - 2\i} z = -1 - 18\i,\] thus $\bp{z + (3-\i)}^2 = 7 - 24\i$. Taking square roots, $z + (3 - \i) = \pm \bp{4 - 3\i}$. Finally, we have $z = 1-2\i$ or $z = -7 + 4\i$.
     \end{ppart}
 \end{solution}
 
@@ -35,9 +35,9 @@
     If $z = i$ is a root of the equation $z^3 + (1-3\i)z^2 - (2+3\i)z - 2 = 0$, determine the other roots. Hence, find the roots of the equation $w^3 + (1 + 3\i)w^2 + (3\i-2)w - 2 = 0$.
 \end{problem}
 \begin{solution}
-    By inspection, \[(-1)^3 + (1-3\i)(-1)^2 - (2+3\i)(-1) - 2 = 0,\] so $z = -1$ is a root. Let $\a$ be the other root. By Vieta's formula, $\i + (-1) + \a = -\bp{1 - 3\i} \implies \a = 2\i$. Thus, the roots are $z = \i$, $z = 2\i$ and $z = -1$.
+    By inspection, \[(-1)^3 + (1-3\i)(-1)^2 - (2+3\i)(-1) - 2 = 0,\] so $z = -1$ is a root. Let $\a$ be the other root. By Vieta's formula, $\i + (-1) + \a = -\bp{1 - 3\i}$, hence $\a = 2\i$. Thus, the roots are $z = \i$, $z = 2\i$ and $z = -1$.
 
-    Conjugating the cubic in $w$, we see that \[\bp{w\conj}^3 + (1 - 3\i)\bp{w\conj}^2 + (-2-3\i)w\conj -2 = 0,\] so \[w\conj = \i, 2\i, -1 \implies w = -\i, -2\i, -1.\]
+    Conjugating the cubic in $w$, we see that \[\bp{w\conj}^3 + (1 - 3\i)\bp{w\conj}^2 + (-2-3\i)w\conj -2 = 0,\] so $w\conj = \i$, $2\i$, $-1$, whence $w = -\i$, $-2\i$, $-1$.
 \end{solution}
 
 \begin{problem}
@@ -49,10 +49,9 @@
     Since the coefficients of the quartic are all real, by the conjugate root theorem, $z = -2\i$ is also a root. Let $P(z)$ be a degree two polynomial such that the quartic factorizes as \[z^4 - 2z^3 + 6z^2 - 8z + 8 = \bp{z - 2\i}\bp{z + 2\i}P(z).\] Then \[P(z) = \frac{z^4 - 2z^3 + 6z^2 - 8z + 8}{z^2 + 4} = z^2 - 2z + 2.\] Solving $P(z) = 0$, we get $z = 1 \pm \i$, so the roots to the quartic are $z = 2\i$, $-2\i$, $1 + \i$, $1 - \i$.
 \end{solution}
 
-\clearpage
 \begin{problem}
     Verify that $-2 + \i$ is a root of the equation $z^4 + 24z + 55 = 0$. Hence, determine the other roots.
 \end{problem}
 \begin{solution}
-    Substituting $z = -2 + \i$, we see that \[\bp{-2 + \i}^4 + 24\bp{-2 + \i} + 55 = 0,\] so it is a root. Since the coefficients of $z^4 + 24 z + 55$ are real, by the conjugate root theorem, $z = -2 - \i$ is also a root. Let $P(z)$ be a degree two polynomial such that the quartic factorizes as \[z^4 + 24z + 55 = \bp{z - (-2+\i)}\bp{z - (-2-\i)}P(z).\] Then \[P(z) = \frac{z^4 + 24z + 55}{z^2 + 4z + 5} = z^2 + 4z + 11.\] Solving $P(z) = 0$, we get $z = 2 \pm \sqrt{7} \i$. Hence, the roots of the quartic are $z = -2 + \i$, $-2-\i$, $2 + \sqrt{7} \i$, $2 - \sqrt{7} \i$.
+    Substituting $z = -2 + \i$, we see that \[\bp{-2 + \i}^4 + 24\bp{-2 + \i} + 55 = 0,\] so it is a root. Since the coefficients of $z^4 + 24 z + 55$ are real, by the conjugate root theorem, $z = -2 - \i$ is also a root. Let $P(z)$ be a degree two polynomial such that the quartic factorizes as \[z^4 + 24z + 55 = \bs{z - (-2+\i)}\bs{z - (-2-\i)}P(z).\] Then \[P(z) = \frac{z^4 + 24z + 55}{z^2 + 4z + 5} = z^2 + 4z + 11.\] Solving $P(z) = 0$, we get $z = 2 \pm \sqrt{7} \i$. Hence, the roots of the quartic are $z = -2 + \i$, $-2-\i$, $2 + \sqrt{7} \i$, $2 - \sqrt{7} \i$.
 \end{solution}

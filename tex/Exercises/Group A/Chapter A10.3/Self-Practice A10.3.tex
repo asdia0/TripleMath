@@ -1,37 +1,39 @@
 \section{Self-Practice A10.3}
 
 \begin{problem}
-    Express $\frac{\cot \t + \i}{\cot \t - \i}$ in the exponential form. Hence, show that one of the roots of the equation \[z^4 = \frac{\sqrt3 + \i}{\sqrt3 - \i}\] is $\e^{\i \pi/12}$, and find three more roots in the exponential form.
+    Express \[\frac{\cot \t + \i}{\cot \t - \i}\] in the exponential form. Hence, show that one of the roots of the equation \[z^4 = \frac{\sqrt3 + \i}{\sqrt3 - \i}\] is $\e^{\i \pi/12}$, and find three more roots in the exponential form.
 \end{problem}
 \begin{solution}
     Note that \[\frac{\cot \t + \i}{\cot \t - \i} = \frac{\cos \t + \i \sin \t}{\cos \t - \i \sin \t} = \frac{\e^{\i\t}}{\e^{-\i\t}} = \e^{2\i \t}.\]
 
-    Note that $\cot \t = \sqrt{3} \implies \t = \pi/6$, so \[z^4 = \frac{\sqrt3 + \i}{\sqrt3 - \i} = \e^{2\i \pi/6} = \e^{\i \pi (1/3 + 2k)},\] where $k \in \ZZ$. Taking fourth roots, \[z = \e^{\i \pi (1/12 + k/2)}.\] Taking $k = 0, 1, 2, 3$, we see that the four roots are \[z = \e^{\i \pi /12}, \, \e^{7\i \pi/12}, \, \e^{13\i \pi/12}, \, \e^{19\i \pi/12}.\]
+    Note that $\cot \t = \sqrt{3}$, so  $\t = \pi/6$, hence \[z^4 = \frac{\sqrt3 + \i}{\sqrt3 - \i} = \e^{2\i \pi/6} = \e^{\i \pi (1/3 + 2k)},\] where $k$ is an integer. Taking fourth roots, $z = \e^{\i \pi (1/12 + k/2)}$. Taking $k = 0, 1, 2, 3$, we see that the four roots are $z = \e^{\i \pi /12}$, $\e^{7\i \pi/12}$, $\e^{13\i \pi/12}$, and $\e^{19\i \pi/12}$.
 \end{solution}
 
 \begin{problem}
     Find the cube roots of the complex number $1 + \i \sqrt3$. Give your answers exactly, in the form $r\e^{\i \t}$. Hence, solve the equation $z^6 - 2z^3 + 4 = 0$. Give your answers exactly, in the form $r\e^{\i \t}$.
 \end{problem}
 \begin{solution}
-    Consider \[z^3 = 1 + \i \sqrt{3} = 2 \e^{\i \pi /3} = 2\e^{\i \pi (1/3 + 2k)},\] where $k \in \ZZ$. Taking roots, \[z = 2^{1/3} \e^{\i \pi (1/9 + 2k/3)}.\] Taking $k = -1, 0, 1$, the cube roots of $1 + \i \sqrt{3}$ are \[z = 2^{1/3} \e^{-8\i \pi /9}, 2^{1/3} \e^{\i \pi / 9}, 2^{1/3} \e^{7\i \pi/9}.\] Consider $z^6 - 2z^3 + 4 = 0$. Then \[z^3 = 1 \pm \sqrt{3}.\] From the positive branch, we get the aforementioned roots. Since the coefficients of the sextic are all real, by the conjugate root theorem, the six roots are \[z = 2^{1/3} \e^{-8 \i \pi / 9}, \, 2^{1/3} \e^{-7\i \pi/9}, \, 2^{1/3} \e^{-\i \pi /9}, \, 2^{1/3} \e^{\i \pi / 9}, \, 2^{1/3} \e^{7\i \pi/9}, \, 2^{1/3} \e^{8\i \pi /9}.\]
+    Consider $z^3 = 1 + \i \sqrt{3} = 2 \e^{\i \pi /3} = 2\e^{\i \pi (1/3 + 2k)}$, where $k$ is an integer. Taking roots, $z = 2^{1/3} \e^{\i \pi (1/9 + 2k/3)}$. Taking $k = -1, 0, 1$, the cube roots of $1 + \i \sqrt{3}$ are $z = 2^{1/3} \e^{-l\i \pi /9}$, where $l \in \bc{-8, 1, 7}$.
+    
+    Consider $z^6 - 2z^3 + 4 = 0$. Then $z^3 = 1 \pm \sqrt{3}$. From the positive branch, we get the aforementioned roots. Since the coefficients of the sextic are all real, by the conjugate root theorem, the six roots are $z = 2^{1/3} \e^{-l \i \pi / 9}$, where $l \in \bc{-8, -7, -1, 1, 7, 8}$.
 \end{solution}
 
 \begin{problem}
     Express $8\bp{\sqrt3 - \i}$ in the form $r\bp{\cos \t + \i \sin \t}$, where $r > 0$ and $-\pi \leq \t \leq \pi$, giving $\t$ in terms of $\pi$. Hence, obtain the roots of the equation $z^4 = 8\bp{\sqrt3 - \i}$ in the same form.
 \end{problem}
 \begin{solution}
-    Note that \[8\bp{\sqrt 3 - \i} = 16 \bp{\frac{\sqrt3}{2} - \frac12 \i} = 16 \bs{\cos{-\frac\pi6} + \i \sin{-\frac\pi6}} = 16 \e^{-\i \pi/6}.\] 
+    Note that \[8\bp{\sqrt 3 - \i} = 16 \bp{\frac{\sqrt3}{2} - \frac12 \i} = 16 \bs{\cos{-\frac\pi6} + \i \sin{-\frac\pi6}} = 16 \e^{-\i \pi/6}.\]
 
-    We are given \[z^4 = 8\bp{\sqrt3 - \i} = 16 \e^{-\i \pi/6} = 16\e^{\i \pi (-1/6 + 2k)},\] for $k \in \ZZ$. Taking roots, \[z = 2 \e^{\i \pi (-1/24 + k/2)}.\] Taking $k = -1, 0, 1, 2$, the roots are \[z = 2\e^{-13\i\pi/24}, \, 2\e^{-\i\pi/24}, \, 2\e^{11\i\pi/24}, \, 2\e^{23\i\pi/24}.\]
+    We are given $z^4 = 8\bp{\sqrt3 - \i} = 16 \e^{-\i \pi/6} = 16\e^{\i \pi (-1/6 + 2k)}$, where $k$ is an integer. Taking roots, $z = 2 \e^{\i \pi (-1/24 + k/2)}$. Taking $k = -1, 0, 1, 2$, the roots are $z = 2\e^{-13\i\pi/24}$, $2\e^{-\i\pi/24}$, $2\e^{11\i\pi/24}$, and $2\e^{23\i\pi/24}$.
 \end{solution}
 
 \begin{problem}
-    Write down, in any form, the five complex numbers which satisfy the equation $z^5 - 1 = 0$. Hence, show that the five complex numbers which satisfy the equation \[\bp{\frac{2w + 1}{w}}^5 = 1\] are \[\frac{-2 + \cos{\frac25 \pi k} - \i \sin{\frac25 \pi k}}{5 - 4 \cos{\frac25 \pi k}},\] where $k = 0, 1, 2, 3, 4$.
+    Write down, in any form, the five complex numbers which satisfy the equation $z^5 - 1 = 0$. Hence, show that the five complex numbers which satisfy the equation \[\bp{\frac{2w + 1}{w}}^5 = 1\] are \[\frac{-2 + \cos{2\pi k/5} - \i \sin{2\pi k/5}}{5 - 4 \cos{2\pi k/5}},\] where $k = 0, 1, 2, 3, 4$.
 \end{problem}
 \begin{solution}
-    The fifth roots of unity are given by \[z = \e^{2k \i \pi /5},\] where $k = 0, 1, 2, 3, 4$.
+    The fifth roots of unity are given by $z = \e^{2k \i \pi /5}$, where $k = 0, 1, 2, 3, 4$.
 
-    We have \[\frac{2w + 1}{w} = \e^{2k \i \pi /5} \implies w = \frac1{\e^{2k \i \pi /5} - 2} = \frac{\e^{-2k \i \pi /5} - 2}{\abs{\e^{2k \i \pi /5} - 2}^2}.\] Note that \[\abs{\e^{2k \i \pi /5} - 2}^2 = \bp{\e^{2k \i \pi /5} - 2}\bp{\e^{-2k \i \pi /5} - 2} = 1 - 2\bp{2\cos \frac{2k\pi}{5}} + 4 = 5 - 4\cos \frac{2k\pi}5.\] Thus, \[w = \frac{-2 + \cos{\frac25 \pi k} - \i \sin{\frac25 \pi k}}{5 - 4 \cos{\frac25 \pi k}}\] for $k = 0, 1, 2, 3, 4$.
+    We have that \[\frac{2w + 1}{w} = \e^{2k \i \pi /5}.\] Solving for $w$, we get \[w = \frac1{\e^{2k \i \pi /5} - 2} = \frac{\e^{-2k \i \pi /5} - 2}{\abs{\e^{2k \i \pi /5} - 2}^2}.\] Note that \[\abs{\e^{2k \i \pi /5} - 2}^2 = \bp{\e^{2k \i \pi /5} - 2}\bp{\e^{-2k \i \pi /5} - 2} = 1 - 2\bp{2\cos \frac{2k\pi}{5}} + 4 = 5 - 4\cos \frac{2k\pi}5.\] Thus, \[w = \frac{-2 + \cos{2\pi k/5} - \i \sin{2\pi k/5}}{5 - 4 \cos{2\pi k/5}}\] for $k = 0, 1, 2, 3, 4$.
 \end{solution}
 
 \begin{problem}
@@ -43,10 +45,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[\bp{z - \e^{\i \a}} \bp{z - \e^{-\i \a}} = z^2 - \bp{\e^{\i \a} + \e^{-\i \a}} z + 1 = z^2 - 2z\cos \a + 1.\]
+        We have $\bp{z - \e^{\i \a}} \bp{z - \e^{-\i \a}} = z^2 - \bp{\e^{\i \a} + \e^{-\i \a}} z + 1 = z^2 - 2z\cos \a + 1$.
     \end{ppart}
     \begin{ppart}
-        The seventh roots of unity are \[z = \e^{2k\i \pi/7}\] where $k = -3, -2, -1, 0, 1, 2, 3$.
+        The seventh roots of unity are $z = \e^{2k\i \pi/7}$, where $k = -3, -2, -1, 0, 1, 2, 3$.
     \end{ppart}
     \begin{ppart}
         Let $P_k = z - \e^{2k\i \pi/7}$. Observe that \[P_{k}P_{-k} = \bp{z - \e^{2k\i \pi/7}}\bp{z - \e^{2k\i \pi/7}} = z^2 - 2z\cos \frac{2k \pi}{7} + 1.\] Hence,
@@ -63,10 +65,10 @@
 \begin{solution}
     Let $c = \cos \t$ and $s = \sin \t$. Then 
     \begin{align*}
-        \cos 6\t &= \Re \e^{6\i \t} = \Re \bp{c + \i s}^6\\
+        \cos 6\t &= \Re \e^{6\i \t}\\
+        &= \Re \bp{c + \i s}^6\\
         &= \binom{6}{0} c^6 - \binom{6}{2} c^4 s^2 + \binom{6}{4} c^2 s^4 - \binom{6}{6} s^6\\
         &= c^6 - 15 c^4 \bp{1-c^2} + 15 c^2 \bp{1-c^2}^2 - \bp{1-c^2}^3\\
-        &= c^6 - 15 c^4 \bp{1 - c^2} + 15 c^2 \bp{1 - 2c^2 + c^4} - \bp{1 - 3c^2 + 3c^4 - c^6}\\
         &= 32c^6 - 48c^4 + 18c^2 - 1\\
         &= 32 \cos^6 \t - 48 \cos^4 \t + 18\cos^2 \t - 1.
     \end{align*}
@@ -82,8 +84,11 @@
 
     We have
     \begin{align*}
-        \sum_{k=1}^7 (-1)^{k-1} \sin k\t &= \sum_{k=1}^7 (-1)^{k-1} \Im z^k = \Im \sum_{k=1}^7 (-1)^{k-1} z^k = \Im \frac{z + z^8}{1 + z}\\
-        &= \Im \frac{z^{9/2} \bp{z^{7/2} + z^{-7/2}}}{z^{1/2} \bp{z^{1/2} + z^{-1/2}}} = \frac{2\cos{\frac72 \t}}{2\cos{\frac12 \t}} \Im z^4 = \frac{\cos{\frac72 \t} \sin 4\t}{\cos \frac12 \t}.
+        \sum_{k=1}^7 (-1)^{k-1} \sin k\t &= \Im \sum_{k=1}^7 (-1)^{k-1} z^k\\
+        &= \Im \frac{z + z^8}{1 + z}\\
+        &= \Im \frac{z^{9/2} \bp{z^{7/2} + z^{-7/2}}}{z^{1/2} \bp{z^{1/2} + z^{-1/2}}}\\
+        &= \frac{2\cos{7\t/2}}{2\cos{\t/2}} \Im z^4\\
+        &= \frac{\cos{7\t/2} \sin 4\t}{\cos{\t/2}}.
     \end{align*}
-    Note that $z = \e^{\i \t} \neq -1 = \e^{\i \pi (2k + 1))}$ for $k \in \ZZ$, so $\t \neq (2k+1)\pi$, i.e. $\t$ cannot be an odd multiple of $\pi$.
+    Note that $z = \e^{\i \t} \neq -1 = \e^{\i \pi (2k + 1))}$ for integers $k$, so $\t \neq (2k+1)\pi$, i.e. $\t$ cannot be an odd multiple of $\pi$.
 \end{solution}

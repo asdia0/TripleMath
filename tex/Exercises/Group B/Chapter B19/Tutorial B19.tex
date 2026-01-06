@@ -6,11 +6,11 @@
 \begin{solution}
     Let $m$ be the population median and let $m_0$ be a fixed value.
 
-    For the left-tail test, \nullhyp: $m = m_0$ and \althyp: $m < m_0$. In this case, \nullhyp{} will be rejected if the observed number of negatives, $k_-$, is too large (i.e. more than some critical value corresponding to the level of significance). \[\P{K_- \geq k_-} \leq \frac{\a}{100}.\]
+    For the left-tail test, \nullhyp: $m = m_0$ and \althyp: $m < m_0$. In this case, \nullhyp{} will be rejected if the observed number of negatives, $k_-$, is too large (i.e. more than some critical value corresponding to the level of significance). The rejection criterion is hence \[\P{K_- \geq k_-} \leq \frac{\a}{100}.\]
 
-    For the right-tail test, \nullhyp: $m = m_0$ and \althyp: $m > m_0$. In this case, \nullhyp{} will be rejected if $k_-$ is too small (i.e. less than some critical value corresponding to the level of significance). \[\P{K_- \leq k_-} \leq \frac{\a}{100}.\]
+    For the right-tail test, \nullhyp: $m = m_0$ and \althyp: $m > m_0$. In this case, \nullhyp{} will be rejected if $k_-$ is too small (i.e. less than some critical value corresponding to the level of significance). The rejection criterion is hence \[\P{K_- \leq k_-} \leq \frac{\a}{100}.\]
 
-    For the two-tail test, \nullhyp: $m = m_0$ and \althyp: $m \neq m_0$. In this case, \nullhyp{} will be rejected if $k_-$ is too small or too large (i.e. less/greater than some critical value corresponding to the level of significance). \[2 \min{\P{K_- \geq k_-}, \P{K_- \leq k_-}} \leq \frac{\a}{100}.\]
+    For the two-tail test, \nullhyp: $m = m_0$ and \althyp: $m \neq m_0$. In this case, \nullhyp{} will be rejected if $k_-$ is too small or too large (i.e. less/greater than some critical value corresponding to the level of significance). The rejection criterion is hence \[2 \min{\P{K_- \geq k_-}, \P{K_- \leq k_-}} \leq \frac{\a}{100}.\]
 \end{solution}
 
 \begin{problem}
@@ -19,20 +19,24 @@
     What is the corresponding value of $n$ in the case where the null hypothesis will never be rejected in favour of a one-sided alternative hypothesis at the 5\% level of significance.
 \end{problem}
 \begin{solution}
-    Let $m$ be the population median, and let $m_0$ be a fixed value. Our hypotheses are \nullhyp: $m = m_0$, \althyp: $m \neq m_0$. Let $K_+$ be the number of observed data greater than $m_0$. Under a sign test, \[K_+ \sim \Binom{5}{\frac12}.\] In the extreme case where all observed data aligns with our alternative hypothesis, say (without loss of generality) $k_+ = 0$, then the $p$-value is $2\P{K_+ \leq 0} = 2/2^5$, which is greater than the 5\% significance level we took. Hence, we will never reject \nullhyp{}. Since there is only one possible outcome, there is no point in carrying out this test when $n = 5$. A similar situation occurs when $n \leq 5$. The corresponding lowest $p$-value is $2/2^n$, which is always greater than 5\% for all $n \leq 5$.
+    Let $m$ be the population median, and let $m_0$ be a fixed value. Our hypotheses are \nullhyp: $m = m_0$, \althyp: $m \neq m_0$. Let $K_+$ be the number of observed data greater than $m_0$. Under a sign test, $K_+ \sim \Binom{5}{1/2}$. In the extreme case where all observed data aligns with our alternative hypothesis, say (without loss of generality) $k_+ = 0$, then the $p$-value is $2\P{K_+ \leq 0} = 2/2^5$, which is greater than the 5\% significance level we took. Hence, we will never reject \nullhyp{}. Since there is only one possible outcome, there is no point in carrying out this test when $n = 5$. A similar situation occurs when $n \leq 5$. The corresponding lowest $p$-value is $2/2^n$, which is always greater than 5\% for all $n \leq 5$.
 
-    For a one-sided \althyp, the lowest $p$-value is now $1/2^n$. For \nullhyp{} to never be rejected, we require \[\frac1{2^n} \geq 0.05 \implies n \leq 4.\]
+    For a one-sided \althyp, the lowest $p$-value is now $1/2^n$. To never reject \nullhyp{}, we require $1/2^n \geq 0.05$, which gives $n \leq 4$.
 \end{solution}
 
 \begin{problem}
-    In the Wilcoxon matched-pair signed rank test, why should $P + Q = \frac12 n (n+1)$?
+    In the Wilcoxon matched-pair signed rank test, why should $P + Q = n (n+1)/2$?
 \end{problem}
 \begin{solution}
     $P$ corresponds to the sum of the positive ranks while $Q$ corresponds to the sum of the negative ranks. Altogether, $P + Q$ corresponds to the sum of all $n$ ranks, so \[P + Q = 1 + 2 + \dots + n = \frac{n(n+1)}{2}.\]
 \end{solution}
 
 \begin{problem}
-    The manufacturers of an electric water heater claim that their heaters will heat 500 litres of water from a temperature of 10$\deg$C to a temperature of 55$\deg$C in, on average, no longer than 12 minutes. In order to test this claim, 14 randomly chosen heaters are bought and the times ($x$ minutes) to heat 500 litres of water from 10$\deg$C to 55$\deg$C are measured. Correct to 1 decimal place, the results are as follows. \[13.2, \, 12.2, \, 11.4, \, 14.5, \, 11.6, \, 12.9, \, 12.4, \, 10.3, \, 12.3, \, 11.8, \, 11.0, \, 13.0, \, 12.1, \, 12.6.\] Stating, in each case, any assumption necessary for validity, test the manufacturer's claim at the 10\% significance level using
+    The manufacturers of an electric water heater claim that their heaters will heat 500 litres of water from a temperature of 10$\deg$C to a temperature of 55$\deg$C in, on average, no longer than 12 minutes. In order to test this claim, 14 randomly chosen heaters are bought and the times ($x$ minutes) to heat 500 litres of water from 10$\deg$C to 55$\deg$C are measured. Correct to 1 decimal place, the results are as follows.
+    \begin{gather*}
+        13.2, \quad 12.2, \quad 11.4, \quad 14.5, \quad 11.6, \quad 12.9, \quad 12.4,\\10.3, \quad 12.3, \quad 11.8, \quad 11.0, \quad 13.0, \quad 12.1, \quad 12.6.
+    \end{gather*}
+    Stating, in each case, any assumption necessary for validity, test the manufacturer's claim at the 10\% significance level using
     \begin{enumerate}
         \item a $t$-test,
         \item a sign test.
@@ -81,12 +85,12 @@
         Let $P$ and $Q$ be the sum of the ranks corresponding to the positive and negative differences respectively. Let $T$ be the smaller of the two. From the above table, we see that $p = 61$ and $q = 17$, so $t = 17$. From the formula list, with $n = 12$, we reject \nullhyp{} if $t \leq 17$. Since $t = 17 \leq 17$, we reject \nullhyp{} and conclude there is sufficient evidence at a 5\% significance level that service $A$ takes a shorter time for its deliveries than service $B$.
     \end{ppart}
     \begin{ppart}
-        We perform a sign test. Let $m'$ be the median time taken by service $A$'s deliveries, in hours. Our hypotheses are \nullhyp: $m' = 25$, \althyp: $m' > 25$. We take a 10\% significance level. Let $K_+$ be the number of values larger than 25. From the sample, the signs are \[+, \, -, \, +, \, -, \, +, \, +, \, +, \, -, \, 0, \, +, \, -, \, +,\] so $k_+ = 7$. We discard the 0 and reduce our sample size to $n = 11$. Under \nullhyp, $K_+ \sim \Binom{11}{1/2}$. Our $p$-value is thus $\P{K_+ \geq 7} = 0.274$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at a 10\% significance level that the median time taken by service $A$ is greater than 25 hours.
+        We perform a sign test. Let $m'$ be the median time taken by service $A$'s deliveries, in hours. Our hypotheses are \nullhyp: $m' = 25$, \althyp: $m' > 25$. We take a 10\% significance level. Let $K_+$ be the number of values larger than 25. From the sample, the signs are \[+, \quad -, \quad +, \quad -, \quad +, \quad +, \quad +, \quad -, \quad 0, \quad +, \quad -, \quad +,\] so $k_+ = 7$. We discard the 0 and reduce our sample size to $n = 11$. Under \nullhyp, $K_+ \sim \Binom{11}{1/2}$. Our $p$-value is thus $\P{K_+ \geq 7} = 0.274$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at a 10\% significance level that the median time taken by service $A$ is greater than 25 hours.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The weights of fish in two populations were compared by analysing the differences in the weights of a sample of pairs of fish (one from each population) matched by length. The weight differences, in g, for 10 pairs of fish were as follows: \[11, \, -13, \, -125, \, -210, \, -73, \, 2, \, 3, \, -147, \, -12, \, -4.\]
+    The weights of fish in two populations were compared by analysing the differences in the weights of a sample of pairs of fish (one from each population) matched by length. The weight differences, in g, for 10 pairs of fish were as follows: \[11, \quad -13, \quad -125, \quad -210, \quad -73, \quad 2, \quad 3, \quad -147, \quad -12, \quad -4.\]
 
     Give a reason why a parametric test is unsuitable in the context of this question.
 
@@ -131,11 +135,14 @@
 
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        Athlete & A & B & C & D & E & F & G & H & I & J & K & L \\ \hline
-        Synthetic & 26.5 & 26.3 & 24.9 & 25.7 & 26.5 & 24.8 & 26.1 & 27.0 & 24.4 & 24.7 & 24.6 & 24.5 \\ \hline
-        Cinder & 27.3 & 26.4 & 26.6 & 25.1 & 26.0 & 27.0 & 26.8 & 27.0 & 25.4 & 26.7 & 25.0 & 24.7 \\ \hline
+        Athlete & A & B & C & D & E & F \\ \hline
+        Synthetic & 26.5 & 26.3 & 24.9 & 25.7 & 26.5 & 24.8 \\ \hline
+        Cinder & 27.3 & 26.4 & 26.6 & 25.1 & 26.0 & 27.0 \\ \hline\hline
+        Athlete & G & H & I & J & K & L \\ \hline
+        Synthetic & 26.1 & 27.0 & 24.4 & 24.7 & 24.6 & 24.5 \\ \hline
+        Cinder & 26.8 & 27.0 & 25.4 & 26.7 & 25.0 & 24.7 \\ \hline
         \end{tabular}
     \end{table}
 
@@ -171,9 +178,9 @@
     \begin{ppart}
         Let $m'$ be the median time taken on a track. We perform two sign tests. Our hypotheses are \nullhyp: $m' = 26$ and \althyp: $m' \neq 26$. We take a 10\% level of significance. Let $K_+$ be the number of values larger than 26.
 
-        \case{1}[Synthetic Track] From the data, the signs are \[+, \, +, \, -, \, -, \, +, \, -, \, +, \, +, \, -, \, -, \, -, \, -,\] so $k_+ = 5$. Under \nullhyp, $K_+ \sim \Binom{12}{1/2}$, so the $p$-value is $2\P{K_+ \leq 5} = 0.774$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that the median time on the synthetic track differs from 26 seconds.
+        \case{1}[Synthetic Track] From the data, the signs are \[+, \quad +, \quad -, \quad -, \quad +, \quad -, \quad +, \quad +, \quad -, \quad -, \quad -, \quad -,\] so $k_+ = 5$. Under \nullhyp, $K_+ \sim \Binom{12}{1/2}$, so the $p$-value is $2\P{K_+ \leq 5} = 0.774$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that the median time on the synthetic track differs from 26 seconds.
 
-        \case{2}[Cinder Track] From the data, the signs are \[+, \, +, \, +, \, -, \, +, \, +, \, +, \, +, \, -, \, +, \, -, \, -,\] so $k_+ = 8$. Under \nullhyp, $K_+ \sim \Binom{12}{1/2}$, so the $p$-value is $2\P{K_+ \geq 8} = 0.388$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that the median time on the cinder track differs from 26 seconds.
+        \case{2}[Cinder Track] From the data, the signs are \[+, \quad +, \quad +, \quad -, \quad +, \quad +, \quad +, \quad +, \quad -, \quad +, \quad -, \quad -,\] so $k_+ = 8$. Under \nullhyp, $K_+ \sim \Binom{12}{1/2}$, so the $p$-value is $2\P{K_+ \geq 8} = 0.388$, which is greater than our 10\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 10\% significance level that the median time on the cinder track differs from 26 seconds.
     \end{ppart}
 \end{solution}
 
@@ -215,7 +222,7 @@
         Consider the difference ``pinfall in 2017'' $-$ ``pinfall in 2016''. Let $m$ be the median of these differences. Our hypotheses are \nullhyp: $m = 0$ and \althyp: $m \neq 0$.
     \end{ppart}
     \begin{ppart}
-        We perform a sign test at the 5\% significance level. Let $K_+$ be the number of positive differences. From the data, the signs are \[-, \, +, \, +, \, +, \, +, \, -, \, +, \, +,\] so $k_+ = 6$. Under \nullhyp, $K_+ \sim \Binom{8}{1/2}$, so the $p$-value is $2\P{K_+ \geq 6} = 0.289$, which is greater than our 5\% significance level. This, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that the average pinfall differs between 2016 and 2017.
+        We perform a sign test at the 5\% significance level. Let $K_+$ be the number of positive differences. From the data, the signs are \[-, \quad +, \quad +, \quad +, \quad +, \quad -, \quad +, \quad +,\] so $k_+ = 6$. Under \nullhyp, $K_+ \sim \Binom{8}{1/2}$, so the $p$-value is $2\P{K_+ \geq 6} = 0.289$, which is greater than our 5\% significance level. This, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that the average pinfall differs between 2016 and 2017.
     \end{ppart}
     \begin{ppart}
         We perform a Wilcoxon matched-pair signed rank test at the 5\% significance level. From the data, the ranks are
@@ -227,7 +234,7 @@
             Rank & 1 & 3 & 7 & 8 & 4 & 2 & 6 & 5 \\ \hline
             \end{tabular}
         \end{table}
-        Let $P$ and $Q$ be the sum of ranks corresponding to the positive and negative differences respectively. Let $T$ be the smaller of the two. From the above table, $p = 33$ and $q = 3$, so $t = 3$. From the formula list, we reject \nullhyp{} if $t \leq 3$. Sicne $t = 3 \leq 3$, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% significance level that the average pinfall differs between 2016 and 2017.
+        Let $P$ and $Q$ be the sum of ranks corresponding to the positive and negative differences respectively. Let $T$ be the smaller of the two. From the above table, $p = 33$ and $q = 3$, so $t = 3$. From the formula list, we reject \nullhyp{} if $t \leq 3$. Since $t = 3 \leq 3$, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% significance level that the average pinfall differs between 2016 and 2017.
     \end{ppart}
     \begin{ppart}
         The Wilcoxon matched-pair signed rank test is more powerful than the sign test as it takes both sign and magnitude into account. Thus, we use the result of the Wilcoxon matched-pair signed rank test, so we reject \nullhyp.
@@ -255,7 +262,7 @@
 \begin{solution}
     Consider the difference ``cost after'' $-$ ``cost before''. Let $m$ be the median difference in cost. Our hypotheses are \nullhyp: $m = 0$, \althyp: $m < 0$. We take a 5\% significance level.
 
-    \case{1}[Sign Test] Let $K_-$ be the number of negative differences. From the data, the signs are \[-, \, -, \, -, \, +, \, -, \, -, \, +, \, -, \, -, \, +, \, -,\] so $k_- = 8$. Under \nullhyp, $K_- \sim \Binom{11}{1/2}$, so the $p$-value is $\P{K_- \geq 8} = 0.113$, which is greater than our 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance that the average cost decreased after fitting the device.
+    \case{1}[Sign Test] Let $K_-$ be the number of negative differences. From the data, the signs are \[-, \quad -, \quad -, \quad +, \quad -, \quad -, \quad +, \quad -, \quad -, \quad +, \quad -,\] so $k_- = 8$. Under \nullhyp, $K_- \sim \Binom{11}{1/2}$, so the $p$-value is $\P{K_- \geq 8} = 0.113$, which is greater than our 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance that the average cost decreased after fitting the device.
 
     \case{2}[Wilcoxon Matched-Pair Signed Rank Test] From the data, the ranks are
     \begin{table}[H]
@@ -270,5 +277,5 @@
 
     If the price of electricity had risen in the year after fitting the device, the difference between the cost before and the cost after will generally decrease throughout. This results in more positive ranks, therefore the value of $t$ associated with the Wilcoxon matched-pair signed rank test will likely increase, so the conclusion may change.
 
-    Let $m$ be the median cost reduction. Our hypotheses are \nullhyp: $m = 35$, \althyp: $m < 35$. We perform a sign test at a 5\% significance level. Let $K_-$ be the number of cost reductions less than \$35. From the data, the signs are \[+, \, +, \, -, \, -, \, -, \, -, \, -, \, -, \, -, \, -, \, +,\] so $k_- = 8$. Under \nullhyp, $K_- \sim \Binom{11}{1/2}$, so the $p$-value is $\P{K_- \geq 8} = 0.113$, which is greater than our 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that the average cost reduction is less than \$35.
+    Let $m$ be the median cost reduction. Our hypotheses are \nullhyp: $m = 35$, \althyp: $m < 35$. We perform a sign test at a 5\% significance level. Let $K_-$ be the number of cost reductions less than \$35. From the data, the signs are \[+, \quad +, \quad -, \quad -, \quad -, \quad -, \quad -, \quad -, \quad -, \quad -, \quad +,\] so $k_- = 8$. Under \nullhyp, $K_- \sim \Binom{11}{1/2}$, so the $p$-value is $\P{K_- \geq 8} = 0.113$, which is greater than our 5\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% significance level that the average cost reduction is less than \$35.
 \end{solution}

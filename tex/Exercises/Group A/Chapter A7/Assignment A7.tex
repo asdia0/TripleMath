@@ -4,14 +4,14 @@
     The points $A$ and $B$ have position vectors relative to the origin $O$, denoted by $\vec a$ and $\vec b$ respectively, where $\vec a$ and $\vec b$ are non-parallel vectors. The point $P$ lies on $AB$ such that $AP : PB = \l : 1$. The point $Q$ lies on $OP$ extended such that $OP = 2PQ$ and $\oa{BQ} = \oa{OA} + \m \oa{OB}$. Find the values of the real constants $\l$ and $\m$.
 \end{problem}
 \begin{solution}
-    By the ratio theorem, \[\oa{OP} = \frac{\vec a + \l \vec b}{1 + \l} \implies \oa{OQ} = \frac32 \oa{OP} = \frac32 \cdot \frac{\vec a + \l \vec b}{1 + \l}.\] However, we also have \[\oa{OQ} = \oa{OB} + \oa{BQ} = \vec a + (1 + \m) \vec b.\] This gives the equality \[\frac32 \cdot \frac{\vec a + \l \vec b}{1 + \l} = \vec a + (1 + \m) \vec b.\] Since $\vec a$ and $\vec b$ are non-parallel, we can compare the $\vec a$- and $\vec b$-components of both vectors separately. This gives us \[\frac32 \cdot \frac1{1 + \l} = 1, \quad \frac32 \cdot \frac\l{1 + \l} = 1 + \m,\] which has the unique solution $\l = 1/2$ and $\m = -1/2$.
+    By the ratio theorem, \[\oa{OP} = \frac{\vec a + \l \vec b}{1 + \l},\] so \[\oa{OQ} = \frac32 \oa{OP} = \frac32 \cdot \frac{\vec a + \l \vec b}{1 + \l}.\] However, we also have \[\oa{OQ} = \oa{OB} + \oa{BQ} = \vec a + (1 + \m) \vec b.\] This gives the equality \[\frac32 \cdot \frac{\vec a + \l \vec b}{1 + \l} = \vec a + (1 + \m) \vec b.\] Since $\vec a$ and $\vec b$ are non-parallel, we can compare the $\vec a$- and $\vec b$-components of both vectors separately. This gives us \[\frac32 \cdot \frac1{1 + \l} = 1 \quad \tand \quad \frac32 \cdot \frac\l{1 + \l} = 1 + \m,\] which has the unique solution $\l = 1/2$ and $\m = -1/2$.
 \end{solution}
 
 \begin{problem}
     Given that $\vec a = \vec i + \vec j$, $\vec b = 4 \vec i - 2 \vec j + 6 \vec k$ and $\vec p = \l \vec a + (1 - \l) \vec b$ where $\l \in \RR$, find the possible value(s) of $\l$ for which the angle between $\vec p$ and $\vec k$ is $45\deg$.
 \end{problem}
 \begin{solution}
-    Observe that \[\vec p = \l \vec a + (1 - \l)\vec b = \l \cveciii110 + (1 - \l)\cveciii4{-2}6 = \cveciii{4 - 3 \l}{-2 + 3\l}{6 - 6\l}.\] Thus, \[\abs{\vec p}^2 = (4 - 3\l)^2 + (-2 + 3\l)^2 + (6 - 6\l)^2 = 54\l^2 - 108\l + 56.\] Since the angle between $\vec p$ and $\vec k$ is $45\deg$, \[\cos 45\deg = \frac{\vec p \dotp \vec k}{\abs{\vec p} \abs{\vec k}} \implies \frac1{\sqrt2} = \frac{6 - 6\l}{\abs{\vec p}} \implies \frac{\abs{\vec p}^2}{2} = (6 - 6\l)^2.\] We thus obtain the quadratic equation \[\frac{54\l^2 - 108\l + 56}2 = 36\l^2 - 72\l + 36 \implies 9\l^2 - 18\l + 8 = 0,\] which has solutions $\l = 2/3$ and $\l = 4/3$. However, we must reject $\l = 4/3$ since $6 - 6\l = \abs{\vec p}/\sqrt{2} > 0 \implies \l < 1$. Thus, $\l = 2/3$.
+    Observe that \[\vec p = \l \vec a + (1 - \l)\vec b = \l \cveciii110 + (1 - \l)\cveciii4{-2}6 = \cveciii{4 - 3 \l}{-2 + 3\l}{6 - 6\l}.\] Thus, \[\abs{\vec p}^2 = (4 - 3\l)^2 + (-2 + 3\l)^2 + (6 - 6\l)^2 = 54\l^2 - 108\l + 56.\] Since the angle between $\vec p$ and $\vec k$ is $45\deg$, \[\frac1{\sqrt2} = \cos 45\deg = \frac{\vec p \dotp \vec k}{\abs{\vec p} \abs{\vec k}} = \frac{6 - 6\l}{\abs{\vec p}},\] which simplifies to give \[\frac{\abs{\vec p}^2}{2} = (6 - 6\l)^2.\] We thus obtain the quadratic equation \[\frac{54\l^2 - 108\l + 56}2 = 36\l^2 - 72\l + 36,\] which is equivalent to $9\l^2 - 18\l + 8 = 0$. We thus find that $\l = 2/3$ and $\l = 4/3$. However, we must reject $\l = 4/3$ since $6 - 6\l = \abs{\vec p}/\sqrt{2} > 0$ implies that $\l < 1$. Hence, $\l = 2/3$.
 \end{solution}
 
 \clearpage
@@ -23,7 +23,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        $\vec a$ and $\vec b$ either have the same or opposite direction. Let $\vec b = \l \vec a$ for some $\l \in \RR$. \[\vec a = (\vec a \dotp \vec b) \vec b = (\vec a \dotp \l \vec a) \l \vec a = \l^2 \abs{\vec a}^2 \vec a \implies \l^2\abs{\vec a}^2 = 1 \implies \abs{\vec b} = \abs{\l\abs{\vec a}} = 1.\]
+        $\vec a$ and $\vec b$ either have the same or opposite direction. Let $\vec b = \l \vec a$ for some $\l \in \RR$. Then \[\vec a = (\vec a \dotp \vec b) \vec b = (\vec a \dotp \l \vec a) \l \vec a = \l^2 \abs{\vec a}^2 \vec a.\] It follows that $\l^2\abs{\vec a}^2 = 1$, so $\abs{\vec b} = \abs{\l\abs{\vec a}} = 1$.
     \end{ppart}
     \begin{ppart}
         Note that $\abs{\vec a \cdot \vec b} = \abs{\vec a}\abs{\vec b} \cos{5\pi/6} = -3/2$. Hence, the length of projection of $\vec a$ on $\vec b$ is $\abs{\vec a \cdot \hat{\vec b}} = 3/2$ units.
@@ -45,7 +45,12 @@
 \begin{solution}
     Note that $\oa{AB} = \cveciiix00{-1}$, $\oa{AC} = \cveciiix20{-2}$ and $\oa{AD} = \cveciiix3{-3}{-4}$.
     \begin{ppart}
-        Note that \[\oa{OP} = \oa{OA} + \oa{AP} = \oa{OA} + 2\oa{AB} = \cveciii121\] and \[\oa{OQ} = \oa{OA} + \frac12 \oa{AC} = \cveciii222.\] Thus, \[\oa{PQ} = \oa{OQ} - \oa{OP} = \cveciii101, \quad \oa{AQ} = \oa{OQ} - \oa{OA} = \cveciii10{-1}.\] Since $\oa{PQ} \dotp \oa{AQ} = 0$, the two vectors are perpendicular, whence $PQ \perp AQ$.
+        We have
+        \begin{align*}
+            \oa{OP} &= \oa{OA} + \oa{AP} = \oa{OA} + 2\oa{AB} = \cveciii121,\\
+            \oa{OQ} &= \oa{OA} + \frac12 \oa{AC} = \cveciii222.
+        \end{align*}
+        Thus, $\oa{PQ} = \cveciiix101$ and $\oa{AQ} = \cveciiix10{-1}$. Since $\oa{PQ} \dotp \oa{AQ} = 0$, the two vectors are perpendicular, whence $PQ \perp AQ$.
     \end{ppart}
     \begin{ppart}
         Note that $\oa{AP} = \cveciiix00{-2}$. Hence, \[[\triangle APQ] = \frac12 \abs{\oa{AP} \crossp \oa{AQ}} = \frac12 \abs{\cveciii00{-2} \crossp \cveciii10{-1}} = 1 \units[2].\]

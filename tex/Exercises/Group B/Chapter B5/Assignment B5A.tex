@@ -3,17 +3,17 @@
 \begin{problem}
     \begin{enumerate}
         \item Show, algebraically, that the derivative of the function \[\ln{1+x} - \frac{2x}{x+2}\] is never negative.
-        \item Hence, show that $\ln{1+x} \geq \frac{2x}{x+2}$ when $x \geq 0$.
+        \item Hence, show that $\ln{1+x} \geq 2x/(x+2)$ when $x \geq 0$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     Let \[f(x) = \ln{1+x} - \frac{2x}{x+2} = \ln{1+x} - 2 + \frac4{x+2}.\]
 
     \begin{ppart}
-        \[f'(x) = \frac1{1+x} - \frac{4}{(x+2)^2} = \frac{x^2}{(1+x)(x+2)^2}.\] Given that $\ln{1+x}$ is defined, it must be that $1 + x > 0$. We also know that $x^2 \geq 0$ and $(x+2)^2 \geq 0$. Hence, $f'(x) \geq 0$ for all $x$ in the domain of $f$ and is thus never negative.
+        \[f'(x) = \frac1{1+x} - \frac{4}{(x+2)^2} = \frac{x^2}{(1+x)(x+2)^2}.\] Since $\ln{1+x}$ is defined, we have $1 + x > 0$. We also know that $x^2 \geq 0$ and $(x+2)^2 \geq 0$. Hence, $f'(x) \geq 0$ for all $x$ in the domain of $f$ and is thus never negative.
     \end{ppart}
     \begin{ppart}
-        Note that $f(0) = 0$. Since $f'(x) \geq 0$ for all $x \geq 0$, \[\ln{1+x} - \frac{2x}{x+2} = f(x) \geq f(0) = 0 \implies \ln{1+x} \geq \frac{2x}{x+2}.\]
+        Note that $f(0) = 0$. Since $f'(x) \geq 0$ for all $x \geq 0$, it follows that for all $x \geq 0$, \[\ln{1+x} - \frac{2x}{x+2} = f(x) \geq f(0) = 0,\] which rearranges to give \[\ln{1+x} \geq \frac{2x}{x+2}.\]
     \end{ppart}
 \end{solution}
 
@@ -28,13 +28,13 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        For stationary points, $\derx{y}{x} = 0$. Hence, \[\der{y}{x} = 2ax - 2b = 0 \implies x = \frac{b}{a} \implies y = a\bp{\frac{b}{a}}^2 - 2b\bp{\frac{b}{a}} + c = -\frac{b^2}{a} + c.\] Since $a > 0$, the graph of $y$ is concave upwards. Thus, there is a maximum point at $\bp{\frac{b}{a}, -\frac{b^2}a + c}$.
+        Note that \[\der{y}{x} = 2ax - 2b.\] For stationary points, $\derx{y}{x} = 0$, so $x = b/a$, whence \[y = a\bp{\frac{b}{a}}^2 - 2b\bp{\frac{b}{a}} + c = -\frac{b^2}{a} + c.\] Since $a > 0$, the graph of $y$ is concave upwards. Thus, there is a maximum point at $\bp{\b/a, -b^2/a + c}$.
     \end{ppart}
     \begin{ppart}
-        Since the turning point $\bp{\frac{b}{a}, -\frac{b^2}a + c}$  lies on the line $y=x$, \[\frac{b}{a} = -\frac{b^2}a + c \implies c = \frac{b + b^2}a = \frac{\bp{b + 1/2}^2 - 1/4}{a}.\] Since $(b + 1/2)^2 \geq 0$, it follows that $c \geq -1/4a$.
+        Since the turning point $\bp{\b/a, -b^2/a + c}$ lies on the line $y=x$, we have \[\frac{b}{a} = -\frac{b^2}a + c,\] so \[c = \frac{b + b^2}a = \frac{\bp{b + 1/2}^2 - 1/4}{a}.\] Since $(b + 1/2)^2 \geq 0$, it follows that $c \geq -1/4a$.
     \end{ppart}
     \begin{ppart}
-        Since the curve passes through $(0, 6)$, it is obvious to see that $c = 6$. Furthermore, since the curve has a turning point at $(2, 2)$, we know that $\frac{b}{a} = 2$ and $-\frac{b^2}a + c = 2$. Hence, \[-\frac{b^2}{a} = 2 - c = -4 \implies b\bp{\frac{b}{a}} = 4 \implies b = 2 \implies a = 1.\] Thus, $a = 1$, $b = 2$, and $c = 6$.
+        Since the curve passes through $(0, 6)$, we clearly have $c = 6$. Furthermore, since the curve has a turning point at $(2, 2)$, we know that $b/a = 2$ and $-b^2/a + c = 2$. Solving the two equations simultaneously, we get $a = 1$ and $b = 2$.
     \end{ppart}
 \end{solution}
 
@@ -115,20 +115,20 @@
 
 \clearpage
 \begin{problem}
-    The curve $C$ has equation \[x - y = (x+y)^2.\] It is given that $C$ has only one turning point.
+    The curve $C$ has equation $x - y = (x+y)^2$. It is given that $C$ has only one turning point.
 
     \begin{enumerate}
-        \item Show that $1 + \der{y}{x} = \frac{2}{2x + 2y + 1}$.
-        \item Hence, or otherwise, show that $\der[2]{y}{x} = -\bp{1 + \der{y}{x}}^2$.
+        \item Show that \[1 + \der{y}{x} = \frac{2}{2x + 2y + 1}.\]
+        \item Hence, or otherwise, show that \[\der[2]{y}{x} = -\bp{1 + \der{y}{x}}^2.\]
         \item Hence, state, with a reason, whether the turning point is a maximum or a minimum.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Implicitly differentiating the given equation, \[1 - \der{y}{x} = 2(x+y)\bp{1 + \der{y}{x}} \implies \der{y}{x} = \frac{1 - (2x + 2y)}{2x + 2y + 1} \implies 1 + \der{y}{x} = \frac{2}{2x+2y+1}.\]
+        Implicitly differentiating the given equation, \[1 - \der{y}{x} = 2(x+y)\bp{1 + \der{y}{x}}.\] Solving for $\derx{y}{x}$, we obtain \[\der{y}{x} = \frac{1 - (2x + 2y)}{2x + 2y + 1}.\] Thus, \[1 + \der{y}{x} = \frac{2}{2x+2y+1}.\]
     \end{ppart}
     \begin{ppart}
-        Implicitly differentiating the above equation, \[\der[2]{y}{x} = -\frac{2\bp{2 + 2 \cdot \der{y}{x}}}{\bp{2x+2y+1}^2} = -\bp{\frac{2}{2x+2y+1}}^2 \bp{1 + \der{y}{x}} = -\bp{1 + \der{y}{x}}^3.\]
+        Implicitly differentiating the above equation, \[\der[2]{y}{x} = -\frac{2\bp{2 + 2 \cdot \derx{y}{x}}}{\bp{2x+2y+1}^2} = -\bp{\frac{2}{2x+2y+1}}^2 \bp{1 + \der{y}{x}} = -\bp{1 + \der{y}{x}}^3.\]
     \end{ppart}
     \begin{ppart}
         For turning points, $\derx{y}{x} = 0$. Hence, $\derx[2]{y}{x} = -1 < 0$. Thus, the turning point is a maximum.

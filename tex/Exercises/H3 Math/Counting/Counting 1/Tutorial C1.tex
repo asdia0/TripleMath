@@ -100,16 +100,16 @@
         By stars-and-bars, there are $\binom{50+4-1}{4-1} = 23426$ solutions.
     \end{ppart}
     \begin{ppart}
-        We can rewrite the equation as \[x_1' + x_2' + x_3 + x_4 = 42,\] where $x_1', x_2', x_3, x_4 \geq 0$. By stars-and-bars, there are $\binom{42+4-1}{4-1} = 14190$ solutions.
+        We can rewrite the equation as $x_1' + x_2' + x_3 + x_4 = 42$, where $x_1', x_2', x_3, x_4 \geq 0$. By stars-and-bars, there are $\binom{42+4-1}{4-1} = 14190$ solutions.
     \end{ppart}
     \begin{ppart}
-        Consider the complement. We have the conditions $x_1 \geq 9$ and $x_2, x_3, x_4 \geq 0$. We can rewrite the equation as \[x_1' + x_2 + x_3 + x_4 = 41,\] where $x_1' \geq 0$. By stars-and-bars, there are $\binom{41+4-1}{4-1} = 13244$ solutions in this case. By part (a), there are 23426 solutions without restriction, so there are $23426 - 13244 = 10182$ solutions to the original problem.
+        Consider the complement. We have the conditions $x_1 \geq 9$ and $x_2, x_3, x_4 \geq 0$. We can rewrite the equation as $x_1' + x_2 + x_3 + x_4 = 41$, where $x_1' \geq 0$. By stars-and-bars, there are $\binom{41+4-1}{4-1} = 13244$ solutions in this case. By part (a), there are 23426 solutions without restriction, so there are $23426 - 13244 = 10182$ solutions to the original problem.
     \end{ppart}
     \begin{ppart}
-        The given conditions are equivalent to \[x_1 + x_2 = 10 \quad \tand \quad x_3 + x_4 = 40\] with $x_i \geq 0$ for $i = 1, \dots, 4$. By stars-and-bars, there are $\binom{10+2-1}{2-1} = 11$ solutions to $x_1 + x_2 = 10$, and $\binom{40+2-1}{2-1} = 41$ solutions to $x_3 + x_4 = 40$. By the multiplicative principle, there are a total of $11 \times 41 = 451$ solutions to the original problem.
+        The given conditions are equivalent to $x_1 + x_2 = 10$ and $x_3 + x_4 = 40$ with $x_i \geq 0$ for $i = 1, \dots, 4$. By stars-and-bars, there are $\binom{10+2-1}{2-1} = 11$ solutions to $x_1 + x_2 = 10$, and $\binom{40+2-1}{2-1} = 41$ solutions to $x_3 + x_4 = 40$. By the multiplicative principle, there are a total of $11 \times 41 = 451$ solutions to the original problem.
     \end{ppart}
     \begin{ppart}
-        Let $x_i = 2y_i + 2$ with $y_i \geq 0$. Our problem is then equivalent to \[y_1 + y_2 + y_3 + y_4 = 21,\] which by stars-and-bars has $\binom{21+4-1}{4-1} = 2024$ solutions.
+        Let $x_i = 2y_i + 2$ with $y_i \geq 0$. Our problem is then equivalent to $y_1 + y_2 + y_3 + y_4 = 21$, which by stars-and-bars has $\binom{21+4-1}{4-1} = 2024$ solutions.
     \end{ppart}
 \end{solution}
 
@@ -133,13 +133,13 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Let $n = p_1^{e_1} \dots p_k^{e_k}$ for primes $p_1, \dots, p_k$ and non-negative integers $e_1, \dots, e_k$. Consider the factorization $n = abc$. It follows that $a$, $b$ and $c$ have prime factorizations \[a = p_1^{a_1} \dots p_k^{a_k}, \quad b = p_1^{b_1} \dots p_k^{a_k}, \quad c = p_1^{c_1} \dots p_k^{c_k},\] where $\bc{a_i}$, $\bc{b_i}$ and $\bc{c_i}$ are all non-negative integers. Since $n = abc$, by the fundamental theorem of arithmetic, we have \[a_i + b_i + c_i = e_i\] for all $1 \leq i \leq k$. By stars-and-bars, there are $\binom{e_i + 3 - 1}{3-1} = \binom{e_i + 2}{2}$ solutions to this equation, for a total of \[\prod_{i = 1}^k \binom{e_i+2}{2}\] total ways to write $n = abc$.
+    Let $n = p_1^{e_1} \dots p_k^{e_k}$ for primes $p_1, \dots, p_k$ and non-negative integers $e_1, \dots, e_k$. Consider the factorization $n = abc$. It follows that $a$, $b$ and $c$ have prime factorizations \[a = \prod_{i = 1}^k p_i^{a_i}, \quad b = \prod_{i = 1}^k p_i^{b_i}, \quad c = \prod_{i = 1}^k p_i^{c_i},\] where $\bc{a_i}$, $\bc{b_i}$ and $\bc{c_i}$ are all non-negative integers. Since $n = abc$, by the fundamental theorem of arithmetic, we have $a_i + b_i + c_i = e_i$ for all $1 \leq i \leq k$. By stars-and-bars, there are $\binom{e_i + 3 - 1}{3-1} = \binom{e_i + 2}{2}$ solutions to this equation, for a total of \[\prod_{i = 1}^k \binom{e_i+2}{2}\] total ways to write $n = abc$.
     
     \begin{ppart}
-        The prime factorization of 2592 is $2^5 \times 3^4$. The desired answer is hence \[\binom{5 + 2}{2} \binom{4+2}{2} = 315.\]
+        The prime factorization of 2592 is $2^5 \times 3^4$. The desired answer is hence $\binom{5 + 2}{2} \binom{4+2}{2} = 315$.
     \end{ppart}
     \begin{ppart}
-        The prime factorization of 27000 is $2^3 \times 3^3 \times 5^3$. The desired answer is hence \[\binom{3+2}{2}\binom{3+2}{2}\binom{3+2}{2} = 1000.\]
+        The prime factorization of 27000 is $2^3 \times 3^3 \times 5^3$. The desired answer is hence $\binom{3+2}{2}\binom{3+2}{2}\binom{3+2}{2} = 1000$.
     \end{ppart}
 \end{solution}
 
@@ -147,7 +147,7 @@
     Find the number of ways of distributing 8 distinct objects into 3 distinct boxes if each box must hold at least 2 objects.
 \end{problem}
 \begin{solution}
-    Let $(x_1, x_2, x_3)$ represent the number of objects placed in boxes 1, 2, 3 respectively. We require \[x_1 + x_2 + x_3 = 8,\] with $x_i \geq 2$. It is easy to see that valid compositions (up to order) are $(2,2,4)$ and $(2, 3, 3)$.
+    Let $(x_1, x_2, x_3)$ represent the number of objects placed in boxes 1, 2, 3 respectively. We require $x_1 + x_2 + x_3 = 8$, with $x_i \geq 2$. It is easy to see that valid compositions (up to order) are $(2,2,4)$ and $(2, 3, 3)$.
 
     \case{1} Consider the composition $(2, 2, 4)$. In this case, the number of ways to distribute the objects is given by \[8! \times \frac1{2! \, 2! \, 4!} \times 3 = 1260,\] where we multiply by 3 to account for the three reorderings of $(2, 2, 4)$.
 
@@ -182,7 +182,7 @@
     There are four types of sandwiches: egg, ham, tuna and chicken. A boy wishes to order 12 sandwiches. How many such orders can he place if the total number of tuna and chicken sandwiches is 8?
 \end{problem}
 \begin{solution}
-    Let $E$, $H$, $T$ and $C$ denote the number of egg, ham, tuna and chicken sandwiches bought. We require \[T + C = 8 \quad \tand \quad E + H = 4,\] where $E$, $H$, $T$, $C$ are non-negative integers. By bars-and-stars, there are $\binom{8+2-1}{2-1} \binom{4+2-1}{2-1} = 45$ possible orders.
+    Let $E$, $H$, $T$ and $C$ denote the number of egg, ham, tuna and chicken sandwiches bought. We require $T + C = 8$ and $E + H = 4$, where $E$, $H$, $T$, $C$ are non-negative integers. By bars-and-stars, there are $\binom{8+2-1}{2-1} \binom{4+2-1}{2-1} = 45$ possible orders.
 \end{solution}
 
 \begin{problem}

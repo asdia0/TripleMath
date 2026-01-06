@@ -11,7 +11,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\abs{2z - 6 - 8\i} = 10 \implies \abs{z - (3 + 4\i)} = 5$.
+        From $\abs{2z - 6 - 8\i} = 10$, we have $\abs{z - (3 + 4\i)} = 5$.
 
         \begin{center}\tikzsetnextfilename{79}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -56,7 +56,7 @@
         The locus of $P$ is a circle with centre $(3, 4)$ and radius $5$. Its Cartesian equation is $(x-3)^2 + (y-4)^2 = 5^2$.
     \end{ppart}
     \begin{ppart}
-        Note that $\abs{z + 2} = \abs{z - \i} \implies \abs{z - (-2)} = \abs{z - \i}$.
+        We are given $\abs{z - (-2)} = \abs{z - \i}$.
 
         \begin{center}\tikzsetnextfilename{80}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -108,7 +108,7 @@
         The locus of $P$ is the perpendicular bisector of the line segment joining $(-2, 0)$ and $(0, 1)$. Its Cartesian equation is $y = -2x - 1.5$.
     \end{ppart}
     \begin{ppart}
-        Note that $\arg{z + 2 - \i} = -\pi/4 \implies \arg{z - (-2 + \i)} = -\pi/4$.
+        We are given $\arg{z - (-2 + \i)} = -\pi/4$.
 
         \begin{center}\tikzsetnextfilename{81}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -162,12 +162,12 @@
     \begin{enumerate}
         \item $\Re{z^2} = 1$
         \item $\abs{6 - \i z} = 2$,
-        \item $\arg{\frac{\i z}{1 - \sqrt3 \i}} = \pi$
+        \item $\displaystyle \arg{\frac{\i z}{1 - \sqrt3 \i}} = \pi$
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $z = r(\cos \t + \i\sin \t)$. Then $\Re{z^2} = 1 \implies r^2 \cos 2\t = 1 \implies r^2 = \sec 2\t$.
+        Let $z = r(\cos \t + \i\sin \t)$. Then $\Re{z^2} = 1$ gives $r^2 \cos 2\t = 1$, so $r^2 = \sec 2\t$.
 
         \begin{center}\tikzsetnextfilename{82}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -198,8 +198,9 @@
             \end{tikzpicture}
         \end{center}
     \end{ppart}
+    \clearpage
     \begin{ppart}
-        Note $\abs{6 - \i z} = 2 \implies \abs{-\i (z + 6i)} = 2 \implies \abs{z + 6\i} = 2 \implies \abs{z - (6\i)} = 2$.
+        From $\abs{6 - \i z} = 2$, we have $\abs{z - (6\i)} = 2$ since $\abs{-\i} = 1$.
 
         \begin{center}\tikzsetnextfilename{83}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -243,7 +244,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Note $\arg{\frac{\i z}{1 - \sqrt3 \i}} = \pi \implies \frac\pi2 + \arg{z} - \bp{-\frac\pi3} \implies \arg{z} = \frac\pi6$.
+        From the given equation, we have \[\arg{\frac{\i z}{1 - \sqrt3 \i}} = \frac\pi2 + \arg{z} - \bp{-\frac\pi3} = \pi,\] so $\arg{z} = \pi/6$.
 
         \begin{center}\tikzsetnextfilename{84}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -291,12 +292,13 @@
     \begin{enumerate}
         \item $2 < \abs{z - 2\i} \leq \abs{3 - 4\i}$
         \item $\abs{z + \i} > \abs{z + 1 - \i}$
-        \item $\frac\pi4 < \arg{\frac1z} \leq \frac\pi2$
+        \item $\pi/4 < \arg{1/z} \leq \pi/2$
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Note $2 < \abs{z - 2\i} \leq \abs{3 - 4\i} \implies 2 < \abs{z - 2\i} \leq 5$.
+        Since $\abs{3 - 4\i} = 5$, we have $2 < \abs{z - 2\i} \leq 5$.
 
         \begin{center}\tikzsetnextfilename{85}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -348,7 +350,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Note $\abs{z + \i} > \abs{z + 1 - \i} \implies \abs{z - (-\i)} > \abs{z - (-1 + \i)}$.
+        We have $\abs{z - (-\i)} > \abs{z - (-1 + \i)}$.
 
         \begin{center}\tikzsetnextfilename{86}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -407,7 +409,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Note $\frac\pi4 < \arg{\frac1z} \leq \frac\pi2 \implies \frac\pi4 < -\arg{z} \leq \frac\pi2 \implies -\frac\pi2 \geq \arg{z} > -\frac\pi4$.
+        We are given $\pi/4 < \arg{1/z} \leq \pi/2$. Since $\arg{1/z} = -\arg{z}$, we can rewrite this as $-\pi/2 \leq \arg{z} < -\pi/4$.
 
         \begin{center}\tikzsetnextfilename{87}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -458,17 +460,18 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     Sketch on separate Argand diagrams for (a) and (b) the set of points representing all complex numbers $z$ satisfying both of the following inequalities.
 
     \begin{enumerate}
         \item $\abs{z - 3 - \i} \leq 3$ and $\abs{z} \geq \abs{z - 3 - \i}$
-        \item $\frac\pi2 < \arg{z + 1} \leq \frac23 \pi$ and $3 \Im{z} > 2$
+        \item $\pi/2 < \arg{z + 1} \leq 2\pi/3$ and $3 \Im{z} > 2$
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note $\abs{z - 3 - \i} \leq 3 \implies \abs{z - (3 + \i)} \leq 3$ and $\abs{z} \geq \abs{z - 3 - \i} \implies \abs{z} \geq \abs{z - (3 + \i)}$.
+        We are given $\abs{z - (3 + \i)} \leq 3$ and $\abs{z} \geq \abs{z - (3 + \i)}$.
 
         \begin{center}\tikzsetnextfilename{88}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -528,7 +531,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Note $\frac\pi2 < \arg{z + 1} < \frac23 \pi \implies \frac\pi2 < \arg{z - (-1)} < \frac23 \pi$ and $3\Im{z} > 2 \implies \Im{z} > \frac23$.
+        We are given $\pi/2 < \arg{z - (-1)} < 2\pi/3$, and $\Im{z} > 2/3$.
 
         \begin{center}\tikzsetnextfilename{89}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -591,7 +594,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $z = r(\cos \t + \i\sin\t)$, $0 \leq \t < 2\pi$. Then $\Re(z^2) < 0 \implies r^2\cos 2\t < 0 \implies \cos 2\t < 0 \implies 2\t \in \bp{\frac12\pi, \frac32\pi} \cup \bp{\frac52 \pi, \frac72 \pi} \implies \t \in \bp{\frac14\pi, \frac34 \pi} \cup \bp{\frac54 \pi, \frac74 \pi}$.
+        Let $z = r(\cos \t + \i\sin\t)$ for $0 \leq \t < 2\pi$. Then $\Re(z^2) < 0$ gives $r^2\cos 2\t < 0$, which implies $\cos 2\t < 0$, so \[\t \in \bp{\frac14\pi, \frac34 \pi} \cup \bp{\frac54 \pi, \frac74 \pi}.\]
 
         \begin{center}\tikzsetnextfilename{90}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -632,9 +635,8 @@
             \end{tikzpicture}
         \end{center}
     \end{ppart}
-    \clearpage
     \begin{ppart}
-        Let $z = r(\cos \t + \i\sin\t)$, $0 \leq \t < 2\pi$. Then $\Im(z^3) > 0 \implies r^3\sin 3\t > 0 \implies \sin 3\t > 0 \implies 3\t \in \bp{0, \pi} \cup \bp{2\pi, 3\pi} \cup \bp{4\pi, 5\pi} \implies \t \in \bp{0, \frac13 \pi} \cup \bp{\frac23 \pi, \pi} \cup \bp{\frac43\pi, \frac53 \pi}$.
+        Let $z = r(\cos \t + \i\sin\t)$ for $0 \leq \t < 2\pi$. Then $\Im(z^3) > 0$ gives $r^3\sin 3\t > 0$, which implies $\sin 3\t > 0$, so \[\t \in \bp{0, \frac13 \pi} \cup \bp{\frac23 \pi, \pi} \cup \bp{\frac43\pi, \frac53 \pi}.\]
 
         \begin{center}\tikzsetnextfilename{91}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -686,9 +688,10 @@
         \item Find the range of values of $\arg{z - \i}$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Note $\abs{z + 4 - 4\i} = 3 \implies \abs{z - (-4 + 4\i)} = 3$.
+        We are given $\abs{z - (-4 + 4\i)} = 3$.
 
         \begin{center}\tikzsetnextfilename{92}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -749,7 +752,7 @@
         Observe that the distance $CI$ is equal to the sum of the radius of the circle and $\min \abs{z - \i}$. Hence, \[\min \abs{z - \i} = \sqrt{(-4 - 0)^2 + (4 - 1)^2} - 3 = 2.\]
     \end{ppart}
     \begin{ppart}
-        Let $A$ and $B$ be points on the circle such that $AI$ and $BI$ are tangent to the circle. Let $\angle CIA = \t$. Then $\tan \t = \frac34 \implies \t = \arctan \frac34$. By symmetry, we also have $\angle CIB = \t$, whence $\angle AIB = 2\t = 2\arctan \frac34$. Hence, $\min \arg{z -\i} = \pi - 2\arctan \frac34$ (at $B$) and $\max \arg{z - \i} = \pi$ (at $A$). Thus, $\pi - 2\arctan \frac34 \leq \arg{z-\i} \leq \pi$.
+        Let $A$ and $B$ be points on the circle such that $AI$ and $BI$ are tangent to the circle. Let $\angle CIA = \t$. Then $\tan \t = 3/4$. By symmetry, we also have $\angle CIB = \t$, whence $\angle AIB = 2\t = 2\arctan{3/4}$. Hence, $\min \arg{z -\i} = \pi - 2\arctan{3/4}$ (at $B$) and $\max \arg{z - \i} = \pi$ (at $A$). Thus, $\pi - 2\arctan{3/4} \leq \arg{z-\i} \leq \pi$.
     \end{ppart}
 \end{solution}
 
@@ -796,7 +799,7 @@
         \end{tikzpicture}
     \end{center}
 
-    Note that $z$ is of the form $4 + k\i$, $k \in \RR^+$. Since $\abs{z - 1} = 4$, we have $\abs{3 + k\i} = 4 \implies 3^2 + k^2 = 4 \implies k = \sqrt7$. Note that we reject $k = -\sqrt7$ since $k > 0$. Thus, $z = 4 + \sqrt7 \i$.
+    Note that $z$ is of the form $4 + k\i$, where $k > 0$. Since $\abs{z - 1} = 4$, we have $\abs{3 + k\i} = 4$. This gives $3^2 + k^2 = 4^2$, so $k = \sqrt7$ and $z = 4 + \sqrt7 \i$. Note that we reject $k = -\sqrt7$ since $k > 0$.
 \end{solution}
 
 \begin{problem}
@@ -805,7 +808,7 @@
     Obtain, in the form $a + \i b$, the complex numbers representing the points of intersection of the loci, giving the exact values of $a$ and $b$.
 \end{problem}
 \begin{solution}
-    Note that $\abs{z - 1} = \abs{z + \i} \implies \abs{z - 1} = \abs{z - (-\i)}$ and $\abs{z - 3 + 3\i} = 2 \implies \abs{z - (3 - 3\i)} = 2$.
+    We are given $\abs{z - 1} = \abs{z - (-\i)}$ and $\abs{z - (3 - 3\i)} = 2$.
     
     The locus given by $\abs{z - 1} = \abs{z + \i}$ is the perpendicular bisector of the line segment joining 1 and $-i$. The locus given by $\abs{z - 3 + 3\i} = 2$ is a circle with centre $3 - 3\i$ and radius 2.
 
@@ -853,11 +856,11 @@
         \end{tikzpicture}
     \end{center}
 
-    Observe that the locus of $\abs{z - 1} = \abs{z + \i}$ has Cartesian equation $y = -x$ and the locus of $\abs{z - 3 + 3\i} = 2$ has Cartesian equation $(x-3)^2 + (y+3)^2 = 2^2$. Solving both equations simultaneously, we have \[(x-3)^2 + (y+3)^2 = (x-3)^2 + (3-x)^2 = 2^2.\] Simplifying, we get the quadratic $x^2 - 6x + 7 = 0$ with roots $x = 3 \pm \sqrt2$, so $y = y = -3 \mp \sqrt2$. Hence, the complex numbers representing the points of intersections of the loci are $(3 + \sqrt2) + (-3 - \sqrt2)\i$ and $(3 - \sqrt2) + (-3 + \sqrt2)\i$.
+    Observe that the locus of $\abs{z - 1} = \abs{z + \i}$ has Cartesian equation $y = -x$ and the locus of $\abs{z - 3 + 3\i} = 2$ has Cartesian equation $(x-3)^2 + (y+3)^2 = 2^2$. Solving both equations simultaneously, we have \[(x-3)^2 + (y+3)^2 = (x-3)^2 + (3-x)^2 = 2^2.\] Simplifying, we get the quadratic $x^2 - 6x + 7 = 0$ with roots $x = 3 \pm \sqrt2$, so $y = -3 \mp \sqrt2$. Hence, the complex numbers representing the points of intersections of the loci are $(3 + \sqrt2) + (-3 - \sqrt2)\i$ and $(3 - \sqrt2) + (-3 + \sqrt2)\i$.
 \end{solution}
 
 \begin{problem}
-    Sketch the locus for $\arg{z - (4\sqrt3 - 2\i)} = \frac56\pi$ in an Argand diagram.
+    Sketch the locus for $\arg{z - (4\sqrt3 - 2\i)} = 5\pi/6$ in an Argand diagram.
 
     \begin{enumerate}
         \item Verify that the points $2\i$ and $2\sqrt3$ lie on it.
@@ -923,18 +926,17 @@
     \end{center}
     
     \begin{ppart}
-        Note that \[\arg{2\i - (4\sqrt3 - 2\i)} = \arg{-\sqrt3 + \i} = \arctan \frac1{-\sqrt3} = \frac56\pi\] and \[\arg{2\sqrt3 - (4\sqrt3 - 2\i)} = \arg{-\sqrt3 + \i} = \arctan \frac1{-\sqrt3} = \frac56\pi.\] Hence, the points $2\i$ and $2\sqrt3$ satisfy the equation $\arg{z - (4\sqrt3 - 2\i)} = \frac56\pi$ and thus lie on its locus.
+        Note that \[\arg{2\i - (4\sqrt3 - 2\i)} = \arg{-\sqrt3 + \i} = \arctan \frac1{-\sqrt3} = \frac56\pi\] and \[\arg{2\sqrt3 - (4\sqrt3 - 2\i)} = \arg{-\sqrt3 + \i} = \arctan \frac1{-\sqrt3} = \frac56\pi.\] Hence, the points $2\i$ and $2\sqrt3$ satisfy the equation $\arg{z - (4\sqrt3 - 2\i)} = 5\pi/6$ and thus lie on its locus.
     \end{ppart}
     \begin{ppart}
-        Let $A(2\i)$ and $B(2\sqrt3)$. Let $C$ be the point on the required locus such that $OC \perp AB$. Observe that $\triangle OAB$, $\triangle COB$ and $\triangle CAO$ are all similar to one another. Hence,\[\frac{OC}{CB} = \frac{AO}{BO} = \frac1{\sqrt3} \implies AC = \frac1{\sqrt3} OC, \quad \frac{OC}{CA} = \frac{BO}{OA} = \frac{\sqrt3}1 \implies BC = \sqrt3 OC.\] Hence, $AB = AC + CB = \bp{\sqrt3 + \frac1{\sqrt3}} OC$, whence \[\min \abs{z} = OC = \frac{AB}{\sqrt3 + 1/\sqrt3} = \frac{\sqrt{2^2 + (2\sqrt3)^2}}{\sqrt3 + 1\sqrt{3}} = \frac{4\sqrt3}{4} = \sqrt3.\] 
+        Let $A(2\i)$ and $B(2\sqrt3)$. Let $C$ be the point on the required locus such that $OC \perp AB$. Observe that $\triangle OAB$, $\triangle COB$ and $\triangle CAO$ are all similar to one another. Hence,\[\frac{OC}{CB} = \frac{AO}{BO} = \frac1{\sqrt3} \quad \tand \quad \frac{OC}{CA} = \frac{BO}{OA} = \frac{\sqrt3}1,\] from which we obtain \[AC = \frac1{\sqrt3} OC \quad \tand \quad BC = \sqrt3 OC.\] Thus, \[AB = AC + CB = \bp{\sqrt3 + \frac1{\sqrt3}} OC,\] whence \[\min \abs{z} = OC = \frac{AB}{\sqrt3 + 1/\sqrt3} = \frac{\sqrt{2^2 + (2\sqrt3)^2}}{\sqrt3 + 1\sqrt{3}} = \frac{4\sqrt3}{4} = \sqrt3.\] 
         
-        Observe that $\max \arg{z} = \frac56 \pi$ and $\min \arg{z} = \min \arg{4\sqrt3 - 2\i} = \arctan \frac{-2}{4\sqrt3} = -\arctan \frac1{2\sqrt3}$. Thus, $-\arctan \frac1{2\sqrt3} < \arg{z} \leq \frac56 \pi$.
+        Observe that $\max \arg{z} = 5\pi/6$ and $\min \arg{z} = \min \arg{4\sqrt3 - 2\i} = \arctan{-2/4\sqrt3} = -\arctan{1/2\sqrt3}$. Thus, $-\arctan{1/2\sqrt3} < \arg{z} \leq 5\pi/6$.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
-    The complex number $z$ satisfies $\abs{z - 3 - 3\i} \geq \abs{z - 1 - \i}$ and $\frac\pi6 < \arg{z} \leq \frac\pi3$.
+    The complex number $z$ satisfies $\abs{z - 3 - 3\i} \geq \abs{z - 1 - \i}$ and $\pi/6 < \arg{z} \leq \pi/3$.
 
         \begin{enumerate}
             \item On an Argand diagram, sketch the region in which the point representing $z$ can lie.
@@ -944,7 +946,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\abs{z - 3 - 3\i} \leq \abs{z - 1 - \i} \implies \abs{z - (3 + 3\i)} \leq \abs{z - (1 + \i)}$.
+        We are given $\abs{z - (3 + 3\i)} \leq \abs{z - (1 + \i)}$.
 
             \begin{center}\tikzsetnextfilename{96}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -1009,22 +1011,17 @@
             \end{center}
     \end{ppart}
     \begin{ppart}
-        Note that the locus of $\abs{z - 3 - 3\i} = \abs{z - 1 - \i}$ has Cartesian equation $y = -x + 4$, while the loci of $\frac\pi6 = \arg{z}$ and $\arg{z} = \frac\pi3$ have Cartesian equations $y = \frac1{\sqrt3} x$ and $y = \sqrt3 x$ respectively. Let $A$ and $B$ be the intersections between $y = -x + 4$ with $y = \sqrt3 x$ and $y = \frac1{\sqrt3}x$ respectively.
+        Note that the locus of $\abs{z - 3 - 3\i} = \abs{z - 1 - \i}$ has Cartesian equation $y = -x + 4$, while the loci of $\pi/6 = \arg{z}$ and $\arg{z} = \pi/3$ have Cartesian equations $y = x/\sqrt3$ and $y = \sqrt3 x$ respectively. Let $A$ and $B$ be the intersections between $y = -x + 4$ with $y = \sqrt3 x$ and $y = x/\sqrt3$ respectively.
 
-        At $A$, we have $y = \sqrt3 x = -x + 4$, whence $A\bp{\frac4{1 + \sqrt3}, \frac{4\sqrt3}{1 + \sqrt3}}$. Thus, \[OA = \sqrt{\bp{\frac{4}{1 + \sqrt3}}^2 + \bp{\frac{4\sqrt3}{1 + \sqrt3}}^2} = \frac{8}{1 + \sqrt3}.\] By symmetry, we also have $OA = OB$. Finally, since $\angle AOB = \frac\pi3 - \frac\pi6 = \frac\pi6$, \[[\triangle AOB] = \frac12 (OA)(OB)\sin \angle AOB = \frac12 \bp{\frac8{1 + \sqrt3}}^2 \frac12 = \frac{16}{\bp{1 + \sqrt3}^2} = 4\bp{1 - \sqrt3}^2.\]
+        At $A$, we have $y = \sqrt3 x = -x + 4$, whence $A\bp{4/(1 + \sqrt3), 4\sqrt3/(1 + \sqrt3)}$. Thus, \[OA = \sqrt{\bp{\frac{4}{1 + \sqrt3}}^2 + \bp{\frac{4\sqrt3}{1 + \sqrt3}}^2} = \frac{8}{1 + \sqrt3}.\] By symmetry, we also have $OA = OB$. Finally, since $\angle AOB = \pi/3 - \pi/6 = \pi/6$, \[[\triangle AOB] = \frac12 (OA)(OB)\sin \angle AOB = \frac12 \bp{\frac8{1 + \sqrt3}}^2 \frac12 = \frac{16}{\bp{1 + \sqrt3}^2} = 4\bp{1 - \sqrt3}^2.\]
     \end{ppart}
     \begin{ppart}
-        Observe that $\min \arg{z - (5 - \i)} = \frac34 \pi$ and $\max \arg{z - (5 -\i)} = \arctan \frac{-1}5 + \pi = \pi -\arctan \frac15 $. Hence, $\frac34 \pi \leq \arg{z - 5 + \i} < \pi-\arctan \frac15$.
+        Observe that $\min \arg{z - (5 - \i)} = 3\pi/4$ and $\max \arg{z - (5 -\i)} = \arctan{-1/5} + \pi = \pi -\arctan{1/5}$. Hence, $3\pi/4 \leq \arg{z - 5 + \i} < \pi-\arctan{1/5}$.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
-    Sketch on an Argand diagram the set of points representing all complex numbers $z$ satisfying both inequalities
-    \[
-        \abs{\i z - 2\i - 2} \leq 2 \qquad \text{and} \qquad \Re{z} > \abs{1 + \sqrt3 \i}
-    \]
-    Find
+    Sketch on an Argand diagram the set of points representing all complex numbers $z$ satisfying both inequalities \[\abs{\i z - 2\i - 2} \leq 2 \quad \tand \quad \Re{z} > \abs{1 + \sqrt3 \i}.\] Find
     \begin{enumerate}
         \item the range of $\arg{z - 2 - 2\i}$,
         \item the complex number $z$ where $\arg{z - 2 - 2\i}$ is a maximum.
@@ -1033,7 +1030,7 @@
     The locus of the complex number $w$ is defined by $\abs{w - 5 + 2\i} = k$, where $k$ is a real and positive constant. Find the range of values of $k$ such that the loci of $w$ and $z$ will intersect.
 \end{problem}
 \begin{solution}
-    Note $\abs{\i z - 2i - 2} \leq 2 \implies \abs{\i (z - 2 + 2i)} \leq 2 \implies \abs{z - (2 - 2\i)} \leq 2$ and $\Re{z} > \abs{1 + \sqrt3 \i} = 2$. 
+    Note that $\i z - 2i - 2 = \i (z - 2 + 2i)$. Thus, the first equation is equivalent to $\abs{z - (2 - 2\i)} \leq 2$. Also, $\abs{1 + \sqrt 3 \i} = 2$, so the second equation becomes $\Re{z} > 2$. 
     
     \begin{center}\tikzsetnextfilename{97}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -1096,11 +1093,11 @@
     \end{center}
 
     \begin{ppart}
-        Note $\abs{z - 2 - 2\i} = \arg{z - (2 + 2\i)}$. Let $A(2 + 2\i)$ and $C(2 - 2\i)$. Let $T$ be the point at which $AT$ is tangent to the circle. Then $\angle ATC = \frac\pi2$, $AC = 4$ and $TC = 2$. Hence, $\angle CAT = \arcsin \frac24 = \frac\pi6$. Thus, $\min \arg{z - 2 - 2\i} = -\frac\pi2$ and $\max \arg{z - 2 - 2\i} = \min \arg{z - 2 - 2\i} + \angle CAT = -\frac\pi2 + \frac\pi6 = -\frac\pi3$. Hence, $-\frac\pi2 < \arg{z - 2 - 2i} \leq -\frac\pi3$.
+        Let $A(2 + 2\i)$ and $C(2 - 2\i)$. Let $T$ be the point at which $AT$ is tangent to the circle. Then $\angle ATC = \pi/2$, $AC = 4$ and $TC = 2$. Hence, $\angle CAT = \arcsin{2/4} = \pi/6$. Thus, $\min \arg{z - 2 - 2\i} = -\pi/2$ and $\max \arg{z - 2 - 2\i} = \min \arg{z - 2 - 2\i} + \angle CAT = -\pi/2 + \pi/6 = -\pi/3$. Hence, $-\pi/2 < \arg{z - 2 - 2i} \leq -\pi/3$.
     \end{ppart}
     \begin{ppart}
-        Relative to $C$, $T$ is given by $2 \bp{\cos \frac\pi6 + \i\sin \frac\pi6} = \sqrt3 + \i$. Thus, $T = (\sqrt 3 + \i) + (2 - 2\i) = 2 + \sqrt3 - \i$.
+        Relative to $C$, $T$ is given by $2 \bp{\cos{\pi/6} + \i\sin{\pi/6}} = \sqrt3 + \i$. Thus, $T = (\sqrt 3 + \i) + (2 - 2\i) = 2 + \sqrt3 - \i$.
     \end{ppart}
 
-    Note $\abs{w - 5 + 2\i} = k \implies \abs{w - (5 - 2\i)} = k$. Let $D(5 - 2\i)$. Observe that $CD$ is given by the sum of the radius of the circle and $\min k$. Hence, $\min k = 3 - 2 = 1$. Let $B(2 - 4\i)$. Then $\max k$ is given by the distance between $B$ and $D$. By the Pythagorean Theorem, we have $\max k = \sqrt{(5-2)^2 + (-2-(-4))^2} = \sqrt{13}$. Thus, $1 \leq k \leq \sqrt{13}$.
+    Note $\abs{w - (5 - 2\i)} = k$. Let $D(5 - 2\i)$. Observe that $CD$ is given by the sum of the radius of the circle and $\min k$. Hence, $\min k = 3 - 2 = 1$. Let $B(2 - 4\i)$. Then $\max k$ is given by the distance between $B$ and $D$. By the Pythagorean Theorem, we have $\max k = \sqrt{(5-2)^2 + (-2-(-4))^2} = \sqrt{13}$. Thus, $1 \leq k \leq \sqrt{13}$.
 \end{solution}

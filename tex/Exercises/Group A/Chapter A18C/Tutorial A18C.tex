@@ -151,7 +151,7 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item The random variable $X$ has a normal distribution with mean 5 and standard deviation 3. The random variable $Y$ is given by $Y = \bp{\frac{X-5}{3}}^2$. State the distribution of $Y$, giving the value of any associated parameter. By considering the distribution of $Y$ and $X$, use two methods to find $\P{Y < 1.35}$.
+        \item The random variable $X$ has a normal distribution with mean 5 and standard deviation 3. The random variable $Y$ is given by \[Y = \bp{\frac{X-5}{3}}^2.\] State the distribution of $Y$, giving the value of any associated parameter. By considering the distribution of $Y$ and $X$, use two methods to find $\P{Y < 1.35}$.
         \item A wine store wished to investigate whether there was an association between the sex of customers and their preference for red or white wine. During one week, 200 of the store's customers were questioned. The results are shown in the table.
         
         \begin{table}[H]
@@ -263,7 +263,7 @@
     We have \[\E{X} = \int_0^\infty xf(x) \d x = \int_0^\infty x \e^{-\l x} \d x = \evalint{-x\e^{-\l x} - \frac1\l \e^{-\l x}}{0}{\infty} = \frac1\l.\]
 
     \begin{ppart}
-        Note that \[\l = \frac1{\ol{x}} = \frac1{25/260} = \frac5{52}.\] Hence, the desired probability is \[\P{X > 20} = \e^{-\frac5{52} (20)} = 0.146.\]
+        Note that \[\l = \frac1{\ol{x}} = \frac1{25/260} = \frac5{52}.\] Hence, the desired probability is \[\P{X > 20} = \e^{-(5/52) (20)} = 0.146.\]
     \end{ppart}
     \begin{ppart}
         Let \nullhyp: data is consistent with $\Exp{5/52}$, and \althyp: data is inconsistent with $\Exp{5/52}$. We take a 5\% level of significance.
@@ -296,7 +296,7 @@
         \end{tabular}
     \end{table}
     
-    Copy and complete the missing entries in the observed frequency table. Construct in similar form, the expected frequency table for a $\ChiSq$ test that the gender of the participant is independent of the type of awards. State your hypotheses clearly. Show that $\ChiSq = \frac1{12} \bp{s^2 - 70s + 1300}$. What is the range of $s$ that leads to the rejection of the hypothesis at 2.5\% of significance?
+    Copy and complete the missing entries in the observed frequency table. Construct in similar form, the expected frequency table for a $\ChiSq$ test that the gender of the participant is independent of the type of awards. State your hypotheses clearly. Show that $\ChiSq = \bp{s^2 - 70s + 1300}/12$. What is the range of $s$ that leads to the rejection of the hypothesis at 2.5\% of significance?
 \end{problem}
 \begin{solution}
     The complete observed frequency table is 
@@ -322,7 +322,7 @@
         Total & 100 & 100 & 100 & 300 \\ \hline
         \end{tabular}
     \end{table}
-    Hence, the test statistic is \[\ChiSq = \sum \frac{\bp{O_i - E_i}^2}{E_i} = \frac{25}{6} + \bp{\frac1{40} + \frac1{60}} \bp{(s-40)^2 + (30-s)^2} = \frac{s^2 - 70s + 1300}{12}.\]
+    Hence, the test statistic is \[\ChiSq = \sum \frac{\bp{O_i - E_i}^2}{E_i} = \frac{25}{6} + \bp{\frac1{40} + \frac1{60}} \bs{(s-40)^2 + (30-s)^2} = \frac{s^2 - 70s + 1300}{12}.\]
 
     To reject \nullhyp{} at a 2.5\% significance level, we require $\ChiSq \geq 7.3778$, so $s \leq 31$ or $s \geq 39$. But both $s$ and $70-s$ must be positive integers, so we ultimately have $0 \leq s \leq 31$ or $39 \leq s \leq 70$.
 \end{solution}

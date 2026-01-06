@@ -1,25 +1,29 @@
 \section{Self-Practice B9}
 
 \begin{problem}
-    The arc of the curve $y^{2}=4ax$, for which $y\geq0$ and $0\leq x\leq a$, is rotated through $2\pi$ radians about the $x$-axis. Prove that the area of the surface so generated is $\frac83 (2\sqrt2 - 1) \pi a^2$.
+    The arc of the curve $y^{2}=4ax$, for which $y\geq0$ and $0\leq x\leq a$, is rotated through $2\pi$ radians about the $x$-axis. Prove that the area of the surface so generated is \[\frac83 (2\sqrt2 - 1) \pi a^2.\]
 \end{problem}
 \begin{solution}
     Note that $y = \sqrt{4ax}$, so $\derx{y}{x} = \sqrt{a/x}$, hence the surface area of the solid generated is given by
     \begin{align*}
-        \area &= 2\pi \int_0^a y \sqrt{1 + \bp{\der{y}{x}}^2} \d x = 2\pi \int_0^a \sqrt{4ax} \sqrt{1 + \frac{a}{x}} \d x = 4\pi \sqrt{a} \int_0^a \sqrt{x + a} \d x\\
-        &= 4\pi \sqrt{a} \evalint{\frac23 (x+a)^{3/2}}{0}{a} = \frac{8}{3} \pi \sqrt{a} \bs{(2a)^{3/2} - a^{3/2}} = \frac{8}{3} \bp{2\sqrt2 - 1}\pi a^2 \units[2].
+        \area &= 2\pi \int_0^a y \sqrt{1 + \bp{\der{y}{x}}^2} \d x\\
+        &= 2\pi \int_0^a \sqrt{4ax} \sqrt{1 + \frac{a}{x}} \d x\\
+        &= 4\pi \sqrt{a} \int_0^a \sqrt{x + a} \d x\\
+        &= 4\pi \sqrt{a} \evalint{\frac23 (x+a)^{3/2}}{0}{a}\\
+        &= \frac{8}{3} \pi \sqrt{a} \bs{(2a)^{3/2} - a^{3/2}}\\
+        &= \frac{8}{3} \bp{2\sqrt2 - 1}\pi a^2 \units[2].
     \end{align*}
 \end{solution}
 
 \begin{problem}
-    The area bounded by the ellipse with parametric equations $x=3\cos\t,y=2\sqrt{2}\sin\t$ and the positive $x$- and $y$-axis is rotated completely about the $y$-axis. Find the curved surface area of the solid.
+    The area bounded by the ellipse with parametric equations $x=3\cos\t$, $y=2\sqrt{2}\sin\t$ and the positive $x$- and $y$-axis is rotated completely about the $y$-axis. Find the curved surface area of the solid.
 \end{problem}
 \begin{solution}
     Note that $\derx{x}{\t} = -3\sin\t$ and $\derx{y}{\t} = 2\sqrt2 \cos \t$, so the surface area of the solid is \[2\pi \int_{0}^{\pi/2} x \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = 2\pi \int_0^{\pi/2} \bp{3\cos \t} \sqrt{9\sin^2 \t + 8 \cos^2 \t} \d \t = 54.4 \units[2].\]
 \end{solution}
 
 \begin{problem}
-    A curve is defined parametrically by $\ x=2\sqrt{2}a\sin\t$, $y=\frac{1}{2}a\sin2\t$.
+    A curve is defined parametrically by \[x=2\sqrt{2}a\sin\t \quad \tand \quad y=\frac{1}{2}a\sin2\t.\]
 
     Show that \[\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2 = a^2 \bp{2 + \cos 2\t}^2.\]
 
@@ -30,18 +34,20 @@
 
     The surface area generated is
     \begin{align*}
-        \area &= 2\pi \int_0^{\pi/3} y \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = 2\pi \int_0^{\pi/3} \frac12 a^2 \sin 2\t \bp{\cos 2\t + 2} \d \t\\
-        &= \pi a^2 \int_0^{\pi/3} \bp{\frac12 \sin 4\t + 2\sin 2\t} \d \t = \pi a^2 \evalint{-\frac18 \cos 4\t - \cos 2\t}0{\pi/3}\\
+        \area &= 2\pi \int_0^{\pi/3} y \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t\\
+        &= 2\pi \int_0^{\pi/3} \frac12 a^2 \sin 2\t \bp{\cos 2\t + 2} \d \t\\
+        &= \pi a^2 \int_0^{\pi/3} \bp{\frac12 \sin 4\t + 2\sin 2\t} \d \t\\
+        &= \pi a^2 \evalint{-\frac18 \cos 4\t - \cos 2\t}0{\pi/3}\\
         &= \frac{27}{16} \pi a^2 \units[2].
     \end{align*}
 \end{solution}
 
 \begin{problem}
-    A curve is defined parametrically by $x=t^{2}-2\ln t$, $y=4(t-1)$, where $t\in\RR$, $t\geq1$.
+    A curve is defined parametrically by $x = t^{2}-2\ln t$, $y = 4(t-1)$, where $t \in \RR$, $t \geq 1$.
 
     \begin{enumerate}
         \item The points $A$ and $B$ on the curve are given by $t=1$ and $t=2$ respectively. Show that the length of the arc $AB$ of the curve is $3+2\ln2$.
-        \item The arc $AB$ is rotated through one revolution about the $x$-axis. Show that the area of the curved surface generated is $\frac83 \pi (11 - 6\ln2)$.
+        \item The arc $AB$ is rotated through one revolution about the $x$-axis. Show that the area of the curved surface generated is \[\frac83 \pi \bp{11 - 6\ln2}.\]
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -51,8 +57,10 @@
     \begin{ppart}
         The surface area of the solid generated is given by
         \begin{align*}
-            \area &= 2\pi \int_1^2 y \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d t = 8\pi \int_1^2 \bp{t-1} \bp{2t + \frac2t} \d t\\
-            &= 16\pi \int_1^2 bp{t^2 - t + 1 - \frac1t} \d t = 16\pi \evalint{\frac13 t^3 - \frac12 t^2 + t - \ln t}12\\
+            \area &= 2\pi \int_1^2 y \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d t\\
+            &= 8\pi \int_1^2 \bp{t-1} \bp{2t + \frac2t} \d t\\
+            &= 16\pi \int_1^2 bp{t^2 - t + 1 - \frac1t} \d t\\
+            &= 16\pi \evalint{\frac13 t^3 - \frac12 t^2 + t - \ln t}12\\
             &= \frac{8\pi}{3} \bp{11 - 6 \ln 2} \units[2].
         \end{align*}
     \end{ppart}
@@ -70,8 +78,12 @@
     \begin{ppart}
         We have \[A = \frac12 \int_{\a}^{\b} r^2 \d \t = \frac12 \int_{\a}^{\b} k^2 \e^{2\t} \d \t = \frac12 k^2 \evalint{\frac12 \e^{2\t}}\a\b = \frac14 k^2 \bp{\e^{2\b} - \e^{2\a}} \units[2].\] Note that $\derx{r}{\t} = k\e^\t = r$, so
         \begin{align*}
-            s &= \int_\a^\b \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t = \int_\a^\b \sqrt{r^2 + r^2} \d \t = \sqrt 2 \int_\a^\b r \d \t\\
-            &= \sqrt 2 \int_\a^\b k \e^\t \d t = \sqrt 2 k \evalint{\e^\t}\a\b = \sqrt2 k \bp{\e^\b - \e^\a} \units.
+            s &= \int_\a^\b \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t\\
+            &= \int_\a^\b \sqrt{r^2 + r^2} \d \t\\
+            &= \sqrt 2 \int_\a^\b r \d \t\\
+            &= \sqrt 2 \int_\a^\b k \e^\t \d t\\
+            &= \sqrt 2 k \evalint{\e^\t}\a\b\\
+            &= \sqrt2 k \bp{\e^\b - \e^\a} \units.
         \end{align*}
     \end{ppart}
     \begin{ppart}

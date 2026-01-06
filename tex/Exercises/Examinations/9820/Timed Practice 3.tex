@@ -14,7 +14,7 @@
 
         \case{2} Suppose the 8-digit password is invalid. We must append a `0' to obtain a valid 9-digit password. Since there are $3^8 - V_8$ invalid 8-digit passwords, we can form $3^8 - V_8$ valid 9-digit passwords in this case.
 
-        Altogether, the number of valid 9-digit passwords is \[V_9 = (2V_8) + (3^8 - V_8) = 3^8 - V_8\] as desired.
+        Altogether, the number of valid 9-digit passwords is $V_9 = (2V_8) + (3^8 - V_8) = 3^8 - V_8$.
     \end{ppart}
     \begin{ppart}
         Let $A_i$, where $i = 0, 1, 2$, be the set of arrangements such that all the `$i$'s are together. By grouping the `$i$'s together, we see that \[\abs{A_i} = \frac{7!}{3! \, 3!} = 140.\] Similarly, the sizes of an arbitrary 2-way and 3-way intersection of $A_i$ are given by \[\abs{A_i \cap A_j} = \frac{5!}{3!} = 20 \quad \tand \quad \abs{A_0 \cap A_1 \cap A_2} = 3! = 6.\] Note that there are $\binom{3}{k}$ ways to form an intersection of $k$ sets, thus by the principle of inclusion and exclusion, the number of passwords with at least 3 same digits consecutively is \[\abs{A_0 \cup A_1 \cup A_2} = \binom{3}{1} (140) - \binom{3}{2} (20) + \binom{3}{3} (6) = 366.\]
@@ -33,7 +33,7 @@
     \centering
         \begin{tabular}{|c|c|}
         \hline
-        $k$ & $653/k$ (to 1 d.p.) \\ \hline
+        $k$ & $653/k$ (to 1 d.p.) \\ \hline\hline
         2 & 326.5 \\ \hline
         3 & 217.7 \\ \hline
         5 & 130.6 \\ \hline

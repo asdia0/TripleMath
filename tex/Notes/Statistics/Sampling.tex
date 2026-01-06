@@ -89,7 +89,7 @@ In many cases, we are concerned with two population parameters, namely, the popu
     An \vocab{estimator} is a method for estimating the quantity of interest. An \vocab{estimate} is a numerical estimate of the quantity of interest that results from the use of a particular estimator.
 \end{definition}
 
-\begin{example}
+\begin{example}[Estimator]
     Suppose our quantity of interest is the mean height $\m$ of all male adults in Singapore. Suppose we take a random sample of 100 adult mean in Singapore and measure their heights.
     
     Using this data, we can compute the sample average, $\ol{x}$ of the heights. That is, the sample mean random variable, $\ol{X} = \bp{X_1 + \dots + X_{100}}/100$, is an estimator that provides an estimate of our quantity of interest. For instance, if $\ol{x} = 170$ cm, then 170 cm is the estimate of $\m$ provided by the ``sample average'' estimator.
@@ -108,7 +108,7 @@ As illustrated by the above example, there are many estimators we can use to est
 \subsubsection{Population Mean}
 
 \begin{proposition}
-    The sample mean $\ol{X} = \frac1n \sum x$ is an unbiased estimator for the population mean $\m$.
+    The sample mean $\ol{X} = \sum x/n$ is an unbiased estimator for the population mean $\m$.
 \end{proposition}
 \begin{proof}
     Previously, we showed that $\E{\ol{X}} = \m$. Hence, by definition, $\ol{X}$ is an unbiased estimator for $\m$.
@@ -153,7 +153,7 @@ This is particularly useful when the sample data is given in summarized form.
     A \vocab{population proportion} $p$ is a parameter that describes the percentage of individuals in a population that exhibit a certain property that we wish to investigate. Mathematically, \[p = \frac{X}{N},\] where $X$ is the number of ``successes'' in the population (individuals who exhibit the property), and $N$ is the population size. The sample proportion $P_S$ is defined similarly: \[P_S = \frac{X_S}{n},\] where $X_S$ is the number of ``successes'' in the sample.
 \end{definition}
 
-\begin{example}
+\begin{example}[Population Proportion]
     Suppose we wish to investigate the number of Singaporean citizens aged 35 years or older. The associated population parameter $P$ is then calculated as \[P = \frac{\text{number of Singaporean citizens aged 35 years or older}}{\text{total number of Singaporean citizens}}.\] If we obtain a sample of 1000 Singapore citizens, of whom 750 are aged 35 years or older, then the observed sample proportion, which we denote $\hat{p}$, is simply $\hat{p} = 750/1000$.
 \end{example}
 

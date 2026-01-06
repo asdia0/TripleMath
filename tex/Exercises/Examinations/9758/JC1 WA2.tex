@@ -8,18 +8,18 @@
 \end{solution}
 
 \begin{problem}
-    It is given that $x$ and $y$ satisfy the equation $xy^2 = \ln{x^2 \e^y} - \frac{2\e}{x}$.
+    It is given that $x$ and $y$ satisfy the equation \[xy^2 = \ln{x^2 \e^y} - \frac{2\e}{x}.\]
     \begin{enumerate}
         \item Verify that $(\e, 0)$ satisfies the equation.
-        \item Hence, show that at $y = 0$, $\der{y}{x} = \frac{k}{\e}$, where $k$ is a constant to be determined.
+        \item Hence, show that at $y = 0$, \[\der{y}{x} = \frac{k}{\e},\] where $k$ is a constant to be determined.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Substituting $x = \e$ and $y = 0$ into the given equation, \[\text{LHS} = \e \cdot 0^2 = 0, \quad \text{RHS} = \ln{\e^2 \cdot e^0} - \frac{2\e}{\e} = 2 - 2 = 0.\] Since the LHS is equal to the RHS, $(\e, 0)$ satisfies the equation.
+        Substituting $x = \e$ and $y = 0$ into the given equation, we see that \[\text{LHS} = \e \cdot 0^2 = 0 \quad \tand \quad \text{RHS} = \ln{\e^2 \cdot e^0} - \frac{2\e}{\e} = 2 - 2 = 0.\] Thus, $(\e, 0)$ satisfies the equation.
     \end{ppart}
     \begin{ppart}
-        From the given equation, we have \[xy^2 = 2\ln x + y - \frac{2\e}{x}.\] Implicitly differentiating yields \[x \bp{2y \, \der{y}{x}} + y^2 = \frac2{x} + \der{y}{x} + \frac{2\e}{x^2}.\] Substituting $x = e$ and $y = 0$ into the above equation gives \[0 = \frac2{\e} + \der{y}{x} + \frac{2\e}{\e^2} \implies \der{y}{x} = \frac{-4}{\e}.\] Thus, $k = -4$.
+        From the given equation, we have \[xy^2 = 2\ln x + y - \frac{2\e}{x}.\] Implicitly differentiating yields \[x \bp{2y \, \der{y}{x}} + y^2 = \frac2{x} + \der{y}{x} + \frac{2\e}{x^2}.\] Substituting $x = \e$ and $y = 0$ into the above equation gives \[0 = \frac2{\e} + \der{y}{x} + \frac{2\e}{\e^2}.\] Solving for $\derx{y}{x}$, we have \[\der{y}{x} = \frac{-4}{\e},\] so $k = -4$.
     \end{ppart}
 \end{solution}
 
@@ -87,27 +87,20 @@
         \end{tikzpicture}
     \end{center}
 
-    Consider the diagram above. Let $C$ be the origin. Note that $l_1$ has gradient $-\frac96 = -\frac32$. Hence, $l_1$ has equation \[l_1: y = 9 - \frac32 x.\] When $x = r$, we have $y = 9 - \frac32 r$. Thus, the height of the cylinder is $\bp{9 - \frac32 r}$ cm. Let the volume of the cylinder be $V_1$ cm$^3$. \[V_1 = \pi r^2 h = \pi r^2 \bp{9 - \frac32 r} = 9\pi r^2 - \frac32 \pi r^3.\] For stationary points, $\der{V_1}{r} = 0$. \[\der{V_1}{r} = 0 \implies 18\pi r - \frac92 \pi r^2 = 0 \implies \frac92 \pi r (4 - r) = 0.\] Hence, $V_1$ has a stationary point when $r = 4$. Note that we reject $r = 0$ since $r > 0$.
-    \[
-    \begin{array}{c c c c}\toprule
-        r & 4^- & 4 & 4^+ \\\cmidrule{1-4}
-        \der{V_1}{r} & +\text{ve} & 0 & -\text{ve}\\\bottomrule
-    \end{array}
-    \]
-    By the first derivative test, $V_1$ attains a maximum when $r = 4$. Hence, \[\min V = \text{Volume of cone} - \max V_1 = \bs{\frac13 \pi \bp{6^2}\bp{9}} - \bs{9\pi \bp{4^2} - \frac32 \pi \bp{4^3}} = 60\pi.\] Thus, the minimum volume of the toy is $60\pi$ cm$^3$.
+    Consider the diagram above. Let $C$ be the origin. Note that $l_1$ has gradient $-3/2$. Hence, $l_1$ has equation \[l_1: y = 9 - \frac32 x.\] When $x = r$, we have $y = 9 - 3r/2$. Thus, the height of the cylinder is $\bp{9 - 3r/2}$ cm. Let the volume of the cylinder be $V_1$ cm$^3$. \[V_1 = \pi r^2 h = \pi r^2 \bp{9 - \frac32 r} = 9\pi r^2 - \frac32 \pi r^3.\] For stationary points, \[\der{V_1}{r} = 18\pi r - \frac92 \pi r^2 = \frac92 \pi r \bp{4 - r} = 0.\] Thus, $r = 4$. Note that we reject $r = 0$ since $r > 0$. Note that \[\der[2]{V_1}{r} = \frac92 \pi \bp{4 - 2r} < 0\] when $r = 4$. By the second derivative test, $V_1$ attains a maximum when $r = 4$. Hence, \[\min V = \text{Volume of cone} - \max V_1 = \bs{\frac13 \pi \bp{6^2}\bp{9}} - \bs{9\pi \bp{4^2} - \frac32 \pi \bp{4^3}} = 60\pi.\] Thus, the minimum volume of the toy is $60\pi$ cm$^3$.
 \end{solution}
 
 \begin{problem}
-    A curve $C$ has parametric equations \[x = 2\t + \sin 2\t, \, y = \cos 2\t, \, 0 \leq \t \leq \pi.\]
+    A curve $C$ has parametric equations $x = 2\t + \sin 2\t$, $y = \cos 2\t$, for $0 \leq \t \leq \pi$.
 
     \begin{enumerate}
-        \item Find $\der{y}{x}$, expressing your answer in terms of only a single trigonometric function.
+        \item Find $\derx{y}{x}$, expressing your answer in terms of only a single trigonometric function.
         \item Hence, find the coordinates of point $Q$, on $C$, whose tangent is parallel to the $y$-axis.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\der{x}{\t} = 2 + 2\cos 2\t$ while $\der{y}{\t} = -2\sin 2\t$. Hence,
+        Note that $\derx{x}{\t} = 2 + 2\cos 2\t$ while $\derx{y}{\t} = -2\sin 2\t$. Hence,
         \begin{align*}
             \der{y}{x} &= \frac{\derx{y}{\t}}{\derx{x}{\t}}\\
             &= \frac{-2\sin 2\t}{2 + 2\cos2\t}\\
@@ -118,7 +111,7 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Since the tangent at $Q$ is parallel to the $y$-axis, the derivative $\derx{y}{x} = -\tan\t$ must be undefined there. Hence, $\cos \t = 0 \implies \t = \pi/2$. Substituting $\t = \pi/2$ into the given parametric equations, we obtain $x = \pi$ and $y = -1$, whence $Q(\pi, -1)$.
+        Since the tangent at $Q$ is parallel to the $y$-axis, the derivative $\derx{y}{x} = -\tan\t$ must be undefined there. Hence, $\cos \t = 0$, so $\t = \pi/2$. Substituting $\t = \pi/2$ into the given parametric equations, we obtain $x = \pi$ and $y = -1$, whence $Q(\pi, -1)$.
     \end{ppart}
 \end{solution}
 
@@ -163,7 +156,7 @@
             \end{tikzpicture}
         \end{center}
 
-        Sketch the graph of $y = \frac1{g(x)}$, indicating clearly the coordinates of any axial intercepts (where applicable) and the equations of any asymptotes.
+        Sketch the graph of $y = 1/g(x)$, indicating clearly the coordinates of any axial intercepts (where applicable) and the equations of any asymptotes.
         \item Given the graphs of $y = \abs{h(x)}$ and $y = h(\abs{x})$ below, sketch the two possible graphs of $y = h(x)$.
         
         \begin{minipage}{0.45\textwidth}

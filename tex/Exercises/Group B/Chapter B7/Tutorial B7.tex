@@ -61,7 +61,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\der{}{x} \tan 3x = 3\sec^2 3x \implies \int \frac{\sec^2 3x}{\tan 3x} \d x = \frac13 \int \frac{3\sec^2 3x}{\tan 3x} \d x = \frac{\ln \tan 3x}3 + C.\]
+        \[\int \frac{\sec^2 3x}{\tan 3x} \d x = \frac13 \int \frac{3\sec^2 3x}{\tan 3x} \d x = \frac{\ln \tan 3x}3 + C.\]
     \end{ppart}
     \begin{ppart}
         \begin{align*}
@@ -69,10 +69,10 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Recall that \[\cos^2\t = \frac{1 + \cos2\t}2 \implies \cos^2 3x = \frac{1 + \cos 6x}2.\] Thus, \[\int \cos^2 3x \d x = \frac12 \int (1 + \cos6x) \d x = \frac12 \bp{x + \frac{\sin6x}6} + C = \frac{x}2 + \frac{\sin6x}{12} + C.\]
+        Recall that $\cos^2\t = (1 + \cos2\t)/2$. Hence, \[\int \cos^2 3x \d x = \frac12 \int (1 + \cos6x) \d x = \frac12 \bp{x + \frac{\sin6x}6} + C = \frac{x}2 + \frac{\sin6x}{12} + C.\]
     \end{ppart}
     \begin{ppart}
-        \[\der{}{x} \e^{1 -2x} = -2\e^{1-2x} \implies \int \e^{1-2x} \d x = -\frac12 \e^{1-2x} + C.\]
+        \[\int \e^{1-2x} \d x = -\frac12 \int 2\e^{1-2x} \d x = -\frac12 \e^{1-2x} + C.\]
     \end{ppart}
 \end{solution}
 
@@ -117,7 +117,7 @@
         \[\int \frac{3x}{x+3} \d x = \int \bp{3 - \frac9{x+3} }\d x = 3x - 9\ln\abs{x+3} + C.\]
     \end{ppart}
     \begin{ppart}
-        Consider the substitution $u = \sin x - \cos x$. \[\int \frac{\sin x + \cos x}{\sin x - \cos x}\d x = \int \frac1{u} \d u = \ln \abs{u} + C = \ln \abs{\sin x - \cos x} + C.\]
+        Observe that the derivative of $\sin x - \cos x$ is $\sin x + \cos x$. Hence, \[\int \frac{\sin x + \cos x}{\sin x - \cos x}\d x = \ln \abs{\sin x - \cos x} + C.\]
     \end{ppart}
 \end{solution}
 
@@ -166,10 +166,10 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Note that \[\int \tan^2 x \d x = \tan x - x + C\] and \[\int \tan^2 x \sec^2 x \d x = \frac{\tan^3 x}3 + C.\] Hence,
+        Note that \[\int \tan^2 x \d x = \int \bp{\sec^2 x - 1} \d x = \tan x - x + C\] and \[\int \tan[2]{x} \sec[2]{x} \d x = \frac{\tan^3 x}3 + C.\] Hence,
         \begin{align*}
             \int \tan^4 x \d x &= \int \tan^2 x \bp{\sec^2 x - 1} \d x\\
-            &= \int \bp{\tan^2 x \sec^2 x - \tan^2} \d x\\
+            &= \int \bp{\tan[2]{x} \sec[2]{x} - \tan^2 x} \d x\\
             &= \frac{\tan^3 x}3 - \tan x + x + C
         \end{align*}
     \end{ppart}
@@ -211,7 +211,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\int_{\frac13 \pi}^{\frac23 \pi} 4\cot\frac{x}2 \csc^2\frac{x}2 \d x = -4\int_{\frac13 \pi}^{\frac23 \pi} \cot\frac{x}2 \bp{-\csc^2 \frac{x}2} \d x = -8\evalint{\frac{\tan[2]{x/2}}2}{\frac13 \pi}{\frac23 \pi} = \frac{32}3.\]
+        \[\int_{\pi/3}^{2\pi/3} 4\cot\frac{x}2 \csc^2\frac{x}2 \d x = -4\int_{\pi/3}^{2\pi/3} \cot\frac{x}2 \bp{-\csc^2 \frac{x}2} \d x = -8\evalint{\frac{\tan[2]{x/2}}2}{\pi/2}{2\pi/3} = \frac{32}3.\]
     \end{ppart}
     \begin{ppart}
         Consider the substitution $u = 2x + 1$.
@@ -246,7 +246,7 @@
         \item $\displaystyle\int \frac{x}{(2x+3)^3} \d x$ \hfill $[u = 2x+3]$
         \item $\displaystyle\int \frac1{\e^x + 4\e^{-x}} \d x$ \hfill $[u = \e^x]$
         \item $\displaystyle\int_0^{\sqrt2} \sqrt{4 - y^2} \d y$ \hfill $[y = 2\sin\t]$
-        \item $\displaystyle\int_0^{\pi/2} \frac1{1 + \sin\t} \d \t$ \hfill $\left[t = \tan \frac\t2\right]$
+        \item $\displaystyle\int_0^{\pi/2} \frac1{1 + \sin\t} \d \t$ \hfill $\bs{t = \tan{\t/2}}$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -280,7 +280,7 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Consider the substitution $t = \tan \frac\t2$. Then \[\t = 2\arctan t \implies \d \t = \frac{2}{1 + t^2} \d t\] and \[\sin \t = \sin (2\arctan t) = 2\sin(\arctan t)\cos(\arctan t) = 2\bp{\frac{t}{\sqrt{1+t^2}}}\bp{\frac{1}{\sqrt{1+t^2}}} = \frac{2t}{1+t^2}.\] Hence, \[\int_0^{\pi/2} \frac1{1 + \sin\t} \d \t = \int_0^1 \frac{2 / (1+t^2)}{1 + 2t/(1+t^2)} \d u = \int_0^1 \frac{2}{(t+1)^2} \d t = 2 \evalint{-\frac1{t+1}}{0}{1} = 1.\]
+        Consider the substitution $t = \tan{\t/2}$. Then $\t = 2\arctan t$, so \[\d \t = \frac{2}{1 + t^2} \d t\] and \[\sin \t = \frac{2 \sin{\t/2} \cos{\t/2}}{\sin[2]{\t/2} + \cos[2]{\t/2}} = \frac{2\tan{\t/2}}{\tan[2]{\t/2} + 1} = \frac{2t}{t^2 + 1}.\] Hence, \[\int_0^{\pi/2} \frac1{1 + \sin\t} \d \t = \int_0^1 \frac{2 / (1+t^2)}{1 + 2t/(1+t^2)} \d u = \int_0^1 \frac{2}{(t+1)^2} \d t = 2 \evalint{-\frac1{t+1}}{0}{1} = 1.\]
     \end{ppart}
 \end{solution}
 
@@ -328,7 +328,7 @@
                 - & -2\e^{-2x} & \sin{2x}/2  \\
                 + & 4\e^{-2x} & -\cos{2x}/4 \\\bottomrule
             \end{array}\]
-        Thus, \[I = \frac{\e^{-2x} \sin 2x}2 - \frac{\e^{-2x} \cos 2x}2 - I \implies I = \frac{\e^{-2x} \bp{\sin 2x - \cos 2x}}4 + C.\]
+        Thus, \[I = \frac{\e^{-2x} \sin 2x}2 - \frac{\e^{-2x} \cos 2x}2 - I.\] Solving for $I$, we get \[I = \frac{\e^{-2x} \bp{\sin 2x - \cos 2x}}4 + C.\]
     \end{ppart}
     \begin{ppart}
         Integrating by parts, we get \[\begin{array}{r c @{\hspace*{1.0cm}} c}\toprule
@@ -421,12 +421,11 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[x^2 + 2x - 3 = (x+1)^2 - 4 < 0 \implies (x+1)^2 < 4 
-        \implies -2 < x+1 < 2 \implies -3 < x < 1.\]
+        Completing the square, we have $x^2 + 2x - 3 = (x+1)^2 - 4 < 0$. Thus, $(x+1)^2 < 4$, so $-3 < x < 1$.
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Let $F(x) = \int \bp{x^2 + 2x - 3}\d x = \frac13 x^3 + x^2 - 3x + C$. Then,
+            Let \[F(x) = \int \bp{x^2 + 2x - 3}\d x = \frac13 x^3 + x^2 - 3x + C.\] Then,
             \begin{align*}
                 &\int_{-4}^4 \abs{x^2 + 2x - 3} \d x\\
                 &\hspace{2em}= \int_{-4}^{-3} \abs{x^2 + 2x - 3} \d x + \int_{-3}^1 \abs{x^2 + 2x - 3} \d x + \int_1^4 \abs{x^2 + 2x - 3} \d x\\
@@ -436,13 +435,13 @@
             \end{align*}
         \end{psubpart}
         \begin{psubpart}
-            Let $F(x) = \int x \bp{x^2 + 2x - 3} \d x = \frac14 x^4 + \frac23 x^3 - \frac32 x^2 + C$. Then,
+            Let \[F(x) = \int x \bp{x^2 + 2x - 3} \d x = \frac14 x^4 + \frac23 x^3 - \frac32 x^2 + C.\] Then,
             \begin{align*}
                 &\int_0^2 x\abs{x^2 + 2x - 3} \d x \\
                 &\hspace{2em}= \int_0^1 x\abs{x^2 + 2x - 3} \d x + \int_1^2 x\abs{x^2 + 2x - 3} \d x\\
                 &\hspace{2em}= -\int_0^1 x(x^2 + 2x - 3) \d x + \int_1^2 x(x^2 + 2x - 3) \d x\\
                 &\hspace{2em}= -\Big[F(1) - F(0)\Big] + \Big[F(2) - F(1)\Big]\\
-                &= \frac92.
+                &\hspace{2em}= \frac92.
             \end{align*}
         \end{psubpart}
     \end{ppart}
@@ -466,7 +465,7 @@
         \[\int \frac{x^2}{x^3 + 1} \d x = \frac13 \frac{3x^2}{x^3 + 1} \d x = \frac{\ln \abs{x^3 + 1}}3 + C.\]
     \end{ppart}
     \begin{ppart}
-        \[x^3 + 1 = (x+1)\bp{x^2 - x + 1}.\]
+        We have the factorization $x^3 + 1 = (x+1)\bp{x^2 - x + 1}$.
         \begin{psubpart}
             \[\int \frac{x^2 - x + 1}{x^3 + 1} \d x = \int \frac{x^2 - x + 1}{(x+1)\bp{x^2 - x + 1}} \d x = \int \frac1{x+1} \d x = \ln \abs{x+1} + C.\]
         \end{psubpart}
@@ -481,7 +480,7 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Observe that $1 = \frac12 \bs{\bp{x^2 - x + 1} - x^2 + (x+1)}$. Hence,
+        Observe that \[1 = \frac{\bp{x^2 - x + 1} - x^2 + (x+1)}2.\] Hence,
 
         \begin{align*}
             \int \frac1{x^3 + 1} \d x &= \frac12\bp{\int\frac{x^2 - x + 1}{x^3 + 1} \d x - \int\frac{x^2}{x^3 + 1} \d x + \int\frac{x+1}{x^3 + 1} \d x}\\

@@ -17,7 +17,7 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item A research firm conducted a survey to determine the mean amount students spent on drinks during a week. A sample of 60 students revealed that \[\sum (x - 18) = 388, \quad \sum (x - 18)^2 = 2550,\] where $x$ is the amount a student spent on drinks during a week.
+        \item A research firm conducted a survey to determine the mean amount students spent on drinks during a week. A sample of 60 students revealed that \[\sum (x - 18) = 388 \quad \tand \quad \sum (x - 18)^2 = 2550,\] where $x$ is the amount a student spent on drinks during a week.
         \begin{enumerate}
             \item Find the unbiased estimates of the population mean and variance, correct to 3 decimal places.
             \item Estimate the sample size if it is intended that the resulting 94\% confidence interval for the population mean should have a width of $0.18$.
@@ -35,7 +35,7 @@
             We have \[\ol{x} = \frac1n \sum x = \frac{1}{n} \sum (x-18) + 18 = 24.467 \todp{3}\] and \[s^2 = \frac1{n-1} \bs{\sum (x - 18)^2 - \frac1n \bp{\sum (x-18)}^2} = 0.694 \todp{3}.\]
         \end{psubpart}
         \begin{psubpart}
-            Since the sample size (60) is large, by the Central Limit Theorem, \[\ol{X} \sim \Normal{\ol{x}}{s^2} = \Normal{24.467}{0.694} \text{approximately}.\] For the width to be 0.18, we must have \[z_{0.97} \sqrt{\frac{s^2}{n}} \leq \frac{0.18}{2} = 0.09.\] Using G.C., we have $n \geq 303.0796$. Thus, the sample size should be approximately 304.
+            Since the sample size (60) is large, by the Central Limit Theorem, $\ol{X} \sim \Normal{24.467}{0.694}$ approximately. For the width to be 0.18, we must have \[z_{0.97} \sqrt{\frac{s^2}{n}} \leq \frac{0.18}{2} = 0.09.\] Using G.C., we have $n \geq 303.0796$. Thus, the sample size should be approximately 304.
         \end{psubpart}
         \begin{psubpart}
             The higher the confidence level, the longer the width. Hence, if the confidence interval has a width greater than 0.18, the confidence level should be larger than 94\%.

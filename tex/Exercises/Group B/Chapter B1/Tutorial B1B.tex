@@ -6,7 +6,7 @@
     \begin{enumerate}
         \item $y^2-4x=12$
         \item $(x+1)^2+y^2=4$
-        \item $\frac{(x-3)^2}{9}+\frac{y^2}{2}=1$
+        \item $\displaystyle \frac{(x-3)^2}{9}+\frac{y^2}{2}=1$
         \item $4x^2+y^2=4$
         \item $8y^2-2x^2=16$
     \end{enumerate}
@@ -185,7 +185,7 @@
 
     \begin{enumerate}
         \item $x = 3t^2, \, y=2t^3$
-        \item $x=\cos^2t, \, y = \sin^3 t, \, 0\leq t \leq \frac{\pi}2$
+        \item $x=\cos^2t, \, y = \sin^3 t$, where $0\leq t \leq \pi/2$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -301,6 +301,7 @@
                     xmax=5,
                     ymax=5,
                     ymin=-1.5,
+                    axis equal image,
                     legend cell align={left},
                     legend pos=outer north east,
                     after end axis/.code={
@@ -419,6 +420,7 @@
                     ymax = 6,
                     xmin = -6,
                     xmax = 6,
+                    axis equal image,
                     legend cell align={left},
                     legend pos=outer north east,
                     after end axis/.code={
@@ -442,10 +444,10 @@
     Sketch the curves defined by the following parametric equations. Find also their respective Cartesian equations.
 
     \begin{enumerate}
-        \item $x=4t+3, \, y=16t^2 -9, \, t \in \RR$
-        \item $x=t^2, \, y=2\ln t, \, t \geq 1$
-        \item $x = 1 + 2\cos \t, \, y = 2\sin\t -1, \, 0 \leq \t \leq \frac{\pi}2$
-        \item $x = t^2, \, y = \frac2t, \, t \neq 0$
+        \item $x=4t+3, \, y=16t^2 -9$, where $t \in \RR$
+        \item $x=t^2, \, y=2\ln t$, where $t \geq 1$
+        \item $x = 1 + 2\cos \t, \, y = 2\sin\t -1$, where $0 \leq \t \leq \pi/2$
+        \item $x = t^2, \, y = 2/t$, where $t \neq 0$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -474,7 +476,7 @@
             \end{tikzpicture}
         \end{center}
 
-        Since $x = 4t+3$, we have $t = \frac14 (x-3)$. Thus, $y = 16 \bp{\frac14 (x-3)}^2 - 9 = (x-3)^2-9$.
+        Since $x = 4t+3$, we have $t = (x-3)/4$. Thus, $y = 16 \bp{(x-3)/4}^2 - 9 = (x-3)^2-9$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{197}
@@ -518,6 +520,7 @@
                     ytick = \empty,
                     xlabel = {$x$},
                     ylabel = {$y$},
+                    axis equal image,
                     legend cell align={left},
                     legend pos=outer north east,
                     after end axis/.code={
@@ -568,12 +571,12 @@
             \end{tikzpicture}
         \end{center}
 
-        Since $x = t^2$, we have $t = \pm \sqrt{x}$. Hence, $y = \pm \frac2{\sqrt{x}}$.
+        Since $x = t^2$, we have $t = \pm \sqrt{x}$. Hence, $y = \pm 2/\sqrt{x}$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The curve $C_1$ has equation $y = \frac{x-2}{x+2}$. The curve $C_2$ has equation $\frac{x^2}6 + \frac{y^2}3 = 1$.
+    The curve $C_1$ has equation $y = (x-2)/(x+2)$. The curve $C_2$ has equation \[\frac{x^2}6 + \frac{y^2}3 = 1.\]
 
     \begin{enumerate}
         \item Sketch $C_1$ and $C_2$ on the same diagram, stating the exact coordinates of any points of intersections with the axes and the equations of any asymptotes.
@@ -581,11 +584,11 @@
         \item Use your calculator to find these $x$-coordinates.
     \end{enumerate}
 
-    Another curve is defined parametrically by \[x = \sqrt6 \cos\t, \, y = \sqrt3 \sin\t, \, -\pi \leq \t \leq \pi.\]
+    Another curve is defined parametrically by $x = \sqrt6 \cos\t$, $y = \sqrt3 \sin\t$, where $-\pi \leq \t \leq \pi$.
 
     \begin{enumerate}
         \setcounter{enumi}{3}
-        \item Find the Cartesian equation of this curve and hence determine the number of roots to the equation $\sqrt3 \sin\t = \frac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}$ for $-\pi \leq \t \leq \pi$.
+        \item Find the Cartesian equation of this curve and hence determine the number of roots to the equation \[\sqrt3 \sin\t = \frac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}\] for $-\pi \leq \t \leq \pi$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -629,16 +632,12 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        From $C_1$, we have $y(x+2) = x-2$. Hence, \[y^2(x+2)^2 = (x-2)^2.\]
-
-        From $C_2$, we have $x^2 + 2y^2 = 6$. Hence, \[y^2 = \frac{6-x^2}2.\]
-
-        Putting both equations together, we have \[(x-2)^2 = \frac{\bp{6-x^2}(x+2)^2}2 \implies 2(x-2)^2 = \bp{6-x^2}(x+2)^2.\]
+        From $C_1$, we have $y(x+2) = x-2$. Hence, $2y^2(x+2)^2 = 2(x-2)^2$. From $C_2$, we have $x^2 + 2y^2 = 6$. Hence, $2y^2 = 6-x^2$. Putting both equations together, we have $2(x-2)^2 = \bp{6-x^2}(x+2)^2$.
     \end{ppart}
     \begin{ppart}
         The $x$-coordinates are $x = -0.515$ or $x = 2.45$.
     \end{ppart}
     \begin{ppart}
-        Since $x = \sqrt 6 \cos\t$ and $y = \sqrt3 \sin\t$, we have $x^2 = 6\cos^2\t$ and $2y^2 = 6 \sin^2\t$. Adding both equations together, we have \[x^2 + 2y^2 = 6\cos^2\t + 6\sin^2\t =6 \implies \frac{x^2}6 + \frac{y^2}3 = 1.\] This is the equation that gives $C_1$. We further observe that the equation $\sqrt3 \sin\t = \frac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}$ simplifies to $y = \frac{x-2}{x+2}$. This is the equation that gives $C_2$. Since there are two intersections between $C_1$ and $C_2$, there are thus two roots to the equation $\sqrt3 \sin\t = \frac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}$.
+        Since $x = \sqrt 6 \cos\t$ and $y = \sqrt3 \sin\t$, we have $x^2 = 6\cos^2\t$ and $2y^2 = 6 \sin^2\t$. Adding both equations together, we have $x^2 + 2y^2 = 6\cos^2\t + 6\sin^2\t = 6$, so \[\frac{x^2}6 + \frac{y^2}3 = 1.\] This is the equation of $C_1$. We further observe that the equation \[\sqrt3 \sin\t = \frac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}\] simplifies to $y = (x-2)/(x+2)$. This is the equation of $C_2$. Since there are two intersections between $C_1$ and $C_2$, there are thus two roots to the equation \[\sqrt3 \sin\t = \frac{\sqrt6 \cos\t -2}{\sqrt6 \cos\t+2}.\]
     \end{ppart}
 \end{solution}

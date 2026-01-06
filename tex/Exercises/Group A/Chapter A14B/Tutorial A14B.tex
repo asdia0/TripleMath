@@ -22,7 +22,7 @@
         \centering
         \begin{tabular}{|l|c|}
         \hline
-        \textbf{Part} & \textbf{Distribution} \\ \hline\hline
+        \bd{Part} & \bd{Distribution} \\ \hline\hline
         (a) & Binomial \\ \hline
         (b) & Poisson \\ \hline
         (c) & Poisson \\ \hline
@@ -76,13 +76,13 @@
         $\P{X = 0} = 0.214$.
     \end{ppart}
     \begin{ppart}
-        $\P{X \geq 2} = 1 - \P{X \leq 1} = 0.429$.
+        $\P{X \geq 2} = 0.429$.
     \end{ppart}
     \begin{ppart}
-        $\P{2 < X < \leq 5} = \P{X = 3} + \P{X = 4} + \P{X = 5} = 0.161$.
+        $\P{2 < X \leq 5} = 0.161$.
     \end{ppart}
     \begin{ppart}
-        $\P{X > 6} = 1 - \P{X \leq 6} = 9.77 \times 10^{-5}$.
+        $\P{X > 6} = 9.77 \times 10^{-5}$.
     \end{ppart}
 
     Since $n = 10$ and $p = 1/7$, the expected value of $X$ is \[\E{X} = np = \frac{10}{7}.\]
@@ -92,9 +92,10 @@
     In a binomial experiment, the mean number of successful trials is 24 and the variance is 20. Find the number of trials conducted and the probability of success for each trial.
 \end{problem}
 \begin{solution}
-    Let $n$ be the number of trials and $p$ be the probability of success of each trial. We have \[\m = np = 24 \quad \tand \quad \s^2 = np(1-p) = 20.\] Thus, \[p = 1 - \frac{20}{np} = \frac16 \implies n = \frac{24}{p} = 144.\]
+    Let $n$ be the number of trials and $p$ be the probability of success of each trial. We have $\m = np = 24$ and $\s^2 = np(1-p) = 20$. Thus, \[p = 1 - \frac{20}{np} = \frac16\] and $n = 24/p = 144$.
 \end{solution}
 
+\clearpage
 \begin{problem}
     If $Y \sim \Po{2.5}$, state the expected value, $\m$, and the standard deviation, $\s$, of $Y$. Use your GC to evaluate the following correct to 3 significant figures.
     \begin{enumerate}
@@ -113,13 +114,13 @@
         $\P{Y = 3} = 0.214$.
     \end{ppart}
     \begin{ppart}
-        $\P{Y > 4.5} = 1- \P{Y \leq 4} = 0.109$.
+        $\P{Y > 4.5} = \P{Y \geq 5} = 0.109$.
     \end{ppart}
     \begin{ppart}
         $\P{Y \leq 5} = 0.958$.
     \end{ppart}
     \begin{ppart}
-        $\P{6 < Y < 10} = \P{Y \leq 9} - \P{Y \leq 6} = 0.0139$.
+        $\P{6 < Y < 10} = 0.0139$.
     \end{ppart}
     \begin{ppart}
         $\P{Y \text{ is 0 or 1}} = \P{Y = 0} + \P{Y = 1} = 0.287$.
@@ -138,10 +139,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $X$ be the number of defective phones in the sample. Then $X \sim \Binom{n}{0.01}$. Consider $\P{X \geq 1} \geq 0.95$: \[\P{X \geq 1} \geq 0.95 \implies \P{X = 0} = 0.99^n \leq 0.05 \implies n \geq 298.1.\] Since $n \in \NN$, the least $n$ is $299$.
+        Let $X$ be the number of defective phones in the sample. Then $X \sim \Binom{n}{0.01}$. Consider $\P{X \geq 1} \geq 0.95$, which is equivalent to $\P{X = 0} = 0.99^n \leq 0.05$. Using G.C., we get $n \geq 298.1$. Since $n \in \NN$, the least $n$ is $299$.
     \end{ppart}
     \begin{ppart}
-        Take $n = 24$. Then \[\P{X \geq 2} = 1- \P{X \leq 1} = 0.0239.\]
+        Take $n = 24$. Then $\P{X \geq 2} = 0.0239$.
     \end{ppart}
 \end{solution}
 
@@ -165,7 +166,7 @@
         $\P{A = 3 \tor 4} = \P{A = 3} + \P{A = 4} = 0.373$.
     \end{ppart}
     \begin{ppart}
-        Note that $k = p(1- p) = \Var{A}$ is a constant. Consider $\P{A = 15}$: \[\P{A = 15} = \binom{30}{15} p^{15} (1-p)^{15} = 0.06864 \implies k = p(1-p) = \sqrt[15]{\frac{0.06864}{\binom{30}{15}}} = 0.23790.\] Expanding $k = p(1-p)$ into a quadratic in $p$, we have \[p^2 - p + 0.23790 = 0 \implies p = 0.390 \tor 0.610.\] Since $p < 0.5$, we take $p = 0.390$.
+        We are given that \[\P{A = 15} = \binom{30}{15} p^{15} (1-p)^{15} = 0.06864.\] From this, we see that \[k = p(1-p) = \sqrt[15]{\frac{0.06864}{\binom{30}{15}}} = 0.23790.\] Expanding $k = p(1-p)$ into a quadratic in $p$, we have $p^2 - p + 0.23790 = 0$, so $p = 0.390$ or $0.610$. Since $p < 0.5$, we take $p = 0.390$.
     \end{ppart}
 \end{solution}
 
@@ -189,10 +190,10 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            The required probability is given by \[\bs{\P{X > 2}}^3 = \bs{1 - \P{X \leq 2}}^3 = 0.0130.\]
+            The required probability is $\bs{\P{X > 2}}^3 = 0.0130$.
         \end{psubpart}
         \begin{psubpart}
-            The required probability is given by \[3! \bs{\P{X = 1} \P{X = 2} \P{X > 2}} = 0.148.\]
+            The required probability is $3! \bs{\P{X = 1} \P{X = 2} \P{X > 2}} = 0.148$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -239,8 +240,6 @@
 \end{solution}
 
 \begin{problem}
-    In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A--I (see diagram below).
-
     \begin{center}\tikzsetnextfilename{43}
         \begin{tikzpicture}
             \def\width{1}
@@ -295,6 +294,8 @@
         \end{tikzpicture}
     \end{center}
 
+    In a computer game, a bug moves from left to right through a network of connected paths. The bug starts at $S$ and, at each junction, randomly takes the left fork with probability $p$ or the right fork with probability $q$, where $q = 1-p$. The forks taken at each junction are independent. The bug finishes its journey at one of the 9 endpoints labelled A--I (see diagram above).
+
     \begin{enumerate}
         \item Show that the probability that the bug finishes its journey at D is $56p^5 q^3$.
         \item Given that the probability that the bug finishes its journey at D is greater than the probability at any one of the other endpoints, find exactly the possible range of values of $p$.
@@ -314,11 +315,11 @@
     \begin{ppart}
         Since $X$ follows a binomial distribution, it suffices to find the range of values of $p$ that satisfy $\P{X = 2} < \P{X = 3} > \P{X = 4}$.
         
-        \case{1}[$\P{X = 2} < \P{X = 3}$] Note that $\P(X = 2) = \binom{8}{2} q^2 (1-q)^{8-2} = 28p^6q^2$. \[\P(X = 2) < \P(X = 3) \implies 28p^6q^2 < 56p^5q^3 \implies 28p < 56(1-p) \implies p < \frac23.\]
+        \case{1}[$\P{X = 2} < \P{X = 3}$] Note that $\P(X = 2) = \binom{8}{2} q^2 (1-q)^{8-2} = 28p^6q^2$. Hence, we require $28p^6q^2 < 56p^5q^3$, which simplifies to $28p < 56(1-p)$, so $p < 2/3$.
 
-        \case{2}[$\P{X = 3} > \P{X = 4}$] Note that $\P{X = 4} = \binom{8}{4} q^4 (1 - q)^{8-4} = 70 p^4 q^4$. \[\P(X = 3) > \P(X = 4) \implies 56p^5q^3 > 70p^4q^4 \implies 56p > 70(1-p) \implies p > \frac59.\]
+        \case{2}[$\P{X = 3} > \P{X = 4}$] Note that $\P{X = 4} = \binom{8}{4} q^4 (1 - q)^{8-4} = 70 p^4 q^4$. Hence, we require $56p^5q^3 > 70p^4q^4$, which simplifies to $56p > 70(1-p)$, so $p > 5/9$.
 
-        Hence, $5/9 < p < 2/3$.
+        Thus, $5/9 < p < 2/3$.
     \end{ppart}
     \begin{ppart}
         Note that the bug most take a total of 8 forks. Since the probability of not getting swallowed by a black hole at each fork is $0.9$, the desired probability is clearly $0.9^8 = 0.430 \tosf{3}$.
@@ -334,15 +335,15 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    We have \[3\e^{-\m} \frac{\m^2}{2!} = 3\P{X = 2} = 16\P{X = 4} = 16\e^{-\m} \frac{\m^4}{4!} \implies \m^2 = \s = 2.25 \implies \m = 1.5.\] Thus, $X \sim \Po{1.5}$.
+    We have \[3\e^{-\m} \frac{\m^2}{2!} = 3\P{X = 2} = 16\P{X = 4} = 16\e^{-\m} \frac{\m^4}{4!},\] so $\m^2 = \s = 2.25$, whence $\m = 1.5$. Thus, $X \sim \Po{1.5}$.
     \begin{ppart}
-        $\P{X \geq 1} = 1 - \P{X = 0} = 0.777$.
+        $\P{X \geq 1} = 0.777$.
     \end{ppart}
     \begin{ppart}
         Let $Y$ be the number of injuries in a month. Then $Y \sim \Po{6}$. Hence, $\P{Y < 4} = \P{Y \leq 3} = 0.151$.
     \end{ppart}
     \begin{ppart}
-        The required probability is given by \[\bs{\P{1 < X < 4}}^2 = \bs{\P{X = 2} + \P{X = 3}}^2 = 0.142.\]
+        The required probability is $\bs{\P{1 < X < 4}}^2 = 0.142$.
     \end{ppart}
 \end{solution}
 
@@ -363,13 +364,13 @@
         $\P{W_{10} = 0} \P{E_{10} = 0} = 0.189$.
     \end{ppart}
     \begin{ppart}
-        $\P{W_{10} \geq 1} \P{E_{10} \geq 1} = \bs{1 - \P{W_{10} = 0}} \bs{1 - \P{E_{10} = 0}} = 0.308$.
+        $\P{W_{10} \geq 1} \P{E_{10} \geq 1} = 0.308$.
     \end{ppart}
     \begin{ppart}
-        $\P{W_{35} \geq 2} = 1 - \P{W_{35} \leq 2} = 0.413$.
+        $\P{W_{35} \geq 2} = 0.413$.
     \end{ppart}
     \begin{ppart}
-        Note that $W_{20} + E_{20} \sim \P{\frac{20}{15} + \frac{20}{10}} = \P{\frac{10}{3}}$. Thus, $\P{W_{20} + E_{20} = 4} = 0.184$.
+        Note that \[W_{20} + E_{20} \sim \P{\frac{20}{15} + \frac{20}{10}} = \P{\frac{10}{3}}.\] Thus, $\P{W_{20} + E_{20} = 4} = 0.184$.
     \end{ppart}
     \begin{ppart}
         The desired probability is given by \[1 - \frac{\P{W_{20} = 4}\P{E_{20} = 0} + \P{W_{20} = 3}\P{E_{20} = 1}}{\P{W_{20} + E_{20} = 4}} = 0.821.\]
@@ -393,10 +394,10 @@
     Let $X$ be the number of cars hired in a given day. Then $X \sim \Po{1.5}$.
     \begin{ppart}
         \begin{psubpart}
-            $\P{X < 3} = \P{X \leq 2} = 0.809 \tosf{3}$.
+            $\P{X < 3} = 0.809 \tosf{3}$.
         \end{psubpart}
         \begin{psubpart}
-            $\P{X \geq 5} = 1 - \P{X \leq 4} = 0.0186$.
+            $\P{X \geq 5} = 0.0186$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -427,17 +428,17 @@
     Let $X_{t,n}$ be the number of cases of a broken nose seen by $n$ doctors in $t$ months. Then $X_{t,n} \sim \Po{tn/12}$.
     \begin{ppart}
         \begin{psubpart}
-            The required probability is \[\P{X_{1,3} = 0} = 0.779 \tosf{3}.\]
+            The required probability is $\P{X_{1,3} = 0} = 0.779 \tosf{3}$.
         \end{psubpart}
         \begin{psubpart}
             Since $X_{t,n}$ follows a Poisson distribution, $\m = \s^2$. Hence, \[\Var{X_{6, 3}} = \frac{(6)(3)}{12} = \frac32.\]
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        The required probability is \[\P{X_{12,3} \geq 3} = 1- \P{X_{12,3} \leq 2} = 0.577 \tosf{3}.\]
+        The required probability is $\P{X_{12,3} \geq 3} = 0.577 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        The required probability is \[\comb{3}{1} \P{X_{12,1} = 3}\P{X_{12,2} = 0} = 0.0249 \tosf{3}.\]
+        The required probability is $\comb{3}{1} \P{X_{12,1} = 3}\P{X_{12,2} = 0} = 0.0249 \tosf{3}$.
     \end{ppart}
 \end{solution}
 
@@ -447,7 +448,7 @@
     Given that no snow has fallen at New York during the whole of November, a teacher decides not to wait any longer to book a skiing holiday. The teacher decides to book for the earliest date for which the probability that snow will have fallen on, or before, that date is at least $0.9$. Find the date of the booking.
 \end{problem}
 \begin{solution}
-    The probability that the first snow of winter will fall on 30 November is given by \[(0.9)^{29} (0.1) = 0.00471 \tosf{3}.\]
+    The probability that the first snow of winter will fall on 30 November is given by $(0.9)^{29} (0.1) = 0.00471 \tosf{3}$.
 
     Let $n$ be the number of days after 30 November. Consider $\P{X \leq n} \geq 0.9$, where $X \sim \Geo{0.1}$. Using G.C., the least $n$ is 22. Hence, the date of the booking is 22 December.
 \end{solution}
@@ -498,9 +499,9 @@
     Given that the probability of at least $n$ serious delays occurring in a period of 6 weeks is greater than $0.795$, find the largest possible integer value of $n$.
 \end{problem}
 \begin{solution}
-    Let the number of serious delays in $k$ weeks be $X_k \sim \Po{k}$. We have \[\P{X_4 \geq 4} = 1 - \P{X_4 \leq 3} = 0.56653 = 0.567 \todp{3}.\]
+    Let the number of serious delays in $k$ weeks be $X_k \sim \Po{k}$. We have $\P{X_4 \geq 4} = 0.56653 = 0.567 \todp{3}$.
     
-    Let $Y$ be the number of 4-week periods during which at least 4 serious delays occur. Note that $Y \sim \Binom{13}{0.56653}$. Hence, \[\P{Y \geq 10} = 1 - \P{Y \leq 9} = 0.115 \tosf{3}.\]
+    Let $Y$ be the number of 4-week periods during which at least 4 serious delays occur. Note that $Y \sim \Binom{13}{0.56653}$. Hence, $\P{Y \geq 10} = 0.115 \tosf{3}$.
     
     Consider $\P{X_6 \geq n} \geq 0.795$. Using G.C., the greatest value of $n$ is 4.
 \end{solution}
@@ -519,13 +520,13 @@
     Let the number of XO pies demanded in $k$ hours be $X_k \sim \Po{0.4k}$.
 
     \begin{ppart}
-        $\P{X_8 \geq 3} = 1 - \P{X_8 \leq 2} = 0.620 \tosf{3}$.
+        $\P{X_8 \geq 3} = 0.620 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Note that $\P{X_8 = 0} = 0.40762$. The required probability is \[\comb{3}{1} \P{X_8 \geq 3} \P{X_8 = 0} = 0.00309.\]
+        The required probability is $\comb{3}{1} \P{X_8 \geq 3} \P{X_8 = 0} = 0.00309 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Let the number of days in a week where there is 0 demand for XO pies be $Y \sim \Binom{5}{0.40762}$. Then $\P{Y \leq 1} = 0.985 \tosf{3}$.
+        The probability that a given working day has zero demand for XO pies is $\P{X_8 = 0} = 0.40762$. Let the number of days in a week where there is 0 demand for XO pies be $Y \sim \Binom{5}{0.40762}$. Then $\P{Y \leq 1} = 0.985 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
         If all three pies for the day were sold within the first hour of business, then no pies were sold in the remaining seven hours. Hence, the required probability is \[\frac{\P{X_1 = 3}\P{X_1 = 0}^7}{\P{X_8 = 3}} = 0.00195.\]
@@ -552,5 +553,5 @@
         $\P{X_2 = 3} = 0.0816 \tosf{3}$.
     \end{ppart}
 
-    Note that $\P{X_1 > 5} = 1 - \P{X_1 \leq 5} = 0.067308$. Let $Y$ be the number of trays with more than 5 rotten strawberries. We can approximate $Y$ using a Poisson distribution since $n = 60$ is large and $p = 0.067308$ is small. We hence have $Y \sim \Po{np} = \Po{4.0385}$. Then $\P{Y \geq 4} = 1 - \P{Y \leq 3} = 0.574 \tosf{3}$.
+    Note that $\P{X_1 > 5} = 0.067308$. Let $Y$ be the number of trays with more than 5 rotten strawberries. We can approximate $Y$ using a Poisson distribution since $n = 60$ is large and $p = 0.067308$ is small. We hence have $Y \sim \Po{np} = \Po{4.0385}$. Then $\P{Y \geq 4} = 0.574 \tosf{3}$.
 \end{solution}

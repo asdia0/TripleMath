@@ -4,7 +4,7 @@
     Let $a$, $b$ and $n > 1$ be integers. Prove that if $m > 1$ is a divisor of $n$ and $a \equiv b \pmod{n}$, then $a \equiv b \pmod{m}$.
 \end{problem}
 \begin{proof}
-    Since $m$ is a divisor of $n$, there exists some integer $k$ such that $n = mk$. Since $a \equiv b \pmod{n}$, there exists some integer $l$ such that \[a - b = ln = (lk)m.\] Since $lm$ is an integer, by definition, $a \equiv b \pmod{m}$.
+    Since $m$ is a divisor of $n$, there exists some integer $k$ such that $n = mk$. Since $a \equiv b \pmod{n}$, there exists some integer $l$ such that $a - b = ln = (lk)m$. Since $lm$ is an integer, by definition, $a \equiv b \pmod{m}$.
 \end{proof}
 
 \begin{problem}
@@ -24,7 +24,7 @@
 \begin{problem}
     For any integers $n$, if 3 divides $1 + n + n^2$, then $n \equiv 1 \pmod{3}$.
 
-    \noindent\textbf{Extension.} If $p$ is a prime and $p \mid 1 + n + n^2 + \dots + n^{p-1}$, then $n \equiv 1 \pmod{p}$.
+    \noindent\bd{Extension.} If $p$ is a prime and $p \mid 1 + n + n^2 + \dots + n^{p-1}$, then $n \equiv 1 \pmod{p}$.
 \end{problem}
 \begin{proof}
     Since $3 \mid 1 + n + n^2$, we have $3 \nmid n$. Hence, by Fermat's Little Theorem, \[0 = 1 + n + n^2 \equiv 2 + n \pmod{3}.\] Thus, $n \equiv 1 \pmod{3}$.
@@ -44,7 +44,7 @@
     A sequence is defined by $a_1 = 2$, $a_2 = 4$, $a_{n+2} = 5a_{n+1} - 6a_n$ for all $n \geq 1$. Prove that $a_2 = 2^n$ for all $n \in \ZZ^+$.
 \end{problem}
 \begin{proof}
-    The characteristic equation of $a_n$ is $m^2 - 5m + 6 = (m-3)(m-2)$. Hence, \[a_n = A \cdot 2^n + B \cdot 3^n\] for some constants $A$ and $B$. From the initial conditions, \[a_1 = 2 = 2A + 3B, \quad a_2 = 4 = 4A + 9B.\] Solving, we get $A = 1$ and $B = 0$. Thus, $a_n = 2^n$.
+    The characteristic equation of $a_n$ is $m^2 - 5m + 6 = (m-3)(m-2)$. Hence, $a_n = A \cdot 2^n + B \cdot 3^n$ for some constants $A$ and $B$. From the initial conditions, we get $a_1 = 2 = 2A + 3B$ and $a_2 = 4 = 4A + 9B$. Solving, we see that $A = 1$ and $B = 0$. Thus, $a_n = 2^n$.
 \end{proof}
 
 \begin{problem}
@@ -67,9 +67,9 @@
     Let $a, b$ be integers, not both zero. If $\gcd{a, b} = 1$, show that the possible values for $\gcd{a+b, a-b}$ can be 1 and 2.
 \end{problem}
 \begin{proof}
-    Let $b = a - k$ for some integer $k$. Then \[1 = \gcd{a, b} = \gcd{a, a-k} = \gcd{a, -k} = \gcd{a, k}.\] Note also that \[\gcd{a+b, a-b} = \gcd{2a, a-b} = \gcd{2a, k}.\]
+    Let $b = a - k$ for some integer $k$. Since $\gcd{a, b} = 1$, we have $\gcd{a, k} = 1$. Note also that $\gcd{a+b, a-b} = \gcd{2a, a-b} = \gcd{2a, k}$.
 
-    If $k$ is odd, then $\gcd{2, k} = 1$ so \[\gcd{2a, k} = \gcd{2, k} \times \gcd{a, k} = 1.\]
+    If $k$ is odd, then $\gcd{2, k} = 1$ so $\gcd{2a, k} = \gcd{2, k} \times \gcd{a, k} = 1$.
 
-    If $k$ is even, then $\gcd{2, k} = 2$ so \[\gcd{2a, k} = \gcd{2, k} \times \gcd{a, k} = 2.\]
+    If $k$ is even, then $\gcd{2, k} = 2$ so $\gcd{2a, k} = \gcd{2, k} \times \gcd{a, k} = 2$.
 \end{proof}

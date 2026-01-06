@@ -21,7 +21,7 @@
 \end{solution}
 
 \begin{problem}
-    Two events $A$ and $B$ are such that $\P{A} = \frac{8}{15}$, $\P{B} = \frac{1}{3}$ and $\P{A}{B} = \frac15$. Calculate the probabilities that
+    Two events $A$ and $B$ are such that $\P{A} = 8/15$, $\P{B} = 1/3$ and $\P{A}{B} = 1/5$. Calculate the probabilities that
     \begin{enumerate}
         \item both events occur,
         \item only one of the two events occurs,
@@ -31,9 +31,11 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
+        We have
         \[\P{A \cap B} = \P{B} \P{A}{B} = \frac13 \cdot \frac15 = \frac1{15}.\]
     \end{ppart}
     \begin{ppart}
+        We have
         \begin{align*}
             \P{\text{only one occurs}} &= \P{A \cup B} - \P{A \cap B}\\
             &= \P{A} + \P{B} - 2\P{A \cap B} \\
@@ -45,12 +47,12 @@
         \[\P{\text{neither occurs}} = 1 - \P{\text{at least one occurs}} = 1 - \bp{\frac1{15} - \frac{11}{15}} = \frac15.\]
     \end{ppart}
 
-    Since $\P{A} = \frac8{15} \neq \frac15 = \P{A}{B}$, it follows that $A$ and $B$ are not independent. Also, since $\P{A \cap B} = \frac1{15} \neq 0$, the two events are also not mutually exclusive.
+    Since $\P{A} = 8/15 \neq 1/15 = \P{A}{B}$, it follows that $A$ and $B$ are not independent. Also, since $\P{A \cap B} = 1/15 \neq 0$, the two events are also not mutually exclusive.
 \end{solution}
 
 \clearpage
 \begin{problem}
-    Two events $A$ and $B$ are such that $\P{A} = \P{B} = p$ and $\P{A \cup B} = \frac59$.
+    Two events $A$ and $B$ are such that $\P{A} = \P{B} = p$ and $\P{A \cup B} = 5/9$.
     \begin{enumerate}
         \item Given that $A$ and $B$ are independent, find a quadratic equation satisfied by $p$.
         \item Hence, find the value of $p$ and the value of $\P{A \cap B}$.
@@ -69,9 +71,9 @@
         Multiplying through by $p$ and rearranging, we get $9p^2 - 18p + 5 = 0$.
     \end{ppart}
     \begin{ppart}
-        Observe that $9p^2 - 18p + 5 = (3p - 1)(3p - 5)$.  Thus, $p = \frac13$. Note that $p \neq \frac53$ since $0 < p \leq 1$.
+        Observe that $9p^2 - 18p + 5 = (3p - 1)(3p - 5) = 0$.  Thus, $p = 1/3$. Note that $p \neq 5/3$ since $0 < p \leq 1$.
 
-        Since $A$ and $B$ are independent, $\P{A \cap B} = \P{A} \P{B} = \frac13 \cdot \frac13 = \frac19$.
+        Since $A$ and $B$ are independent, $\P{A \cap B} = \P{A} \P{B} = (1/3)(1/3) = 1/9$.
     \end{ppart}
 \end{solution}
 
@@ -84,27 +86,30 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
+        We have
         \begin{align*}
             \P{\text{draw}} &= \P{\text{$A$ first}}\P{\text{draw}}{\text{$A$ first}} + \P{\text{$B$ first}}\P{\text{draw}}{\text{$B$ first}}\\
-            &= 0.5 \cdot (1 - 0.4 - 0.2) + 0.5 \cdot (1 - 0.3 - 0.2) = 0.45.
+            &= 0.5 \cdot (1 - 0.4 - 0.2) + 0.5 \cdot (1 - 0.3 - 0.2)\\
+            &= 0.45.
         \end{align*}
     \end{ppart}
     \begin{ppart}
         Observe that 
         \begin{align*}
             \P{\text{$A$ wins}} &= \P{\text{$A$ first}}\P{\text{$A$ wins}}{\text{$A$ first}} + \P{\text{$B$ first}}\P{\text{$A$ wins}}{\text{$B$ first}}\\
-            &= p \cdot 0.4 + (1-p) \cdot 0.2 = 0.2p + 0.2
+            &= p \cdot 0.4 + (1-p) \cdot 0.2\\
+            &= 0.2p + 0.2,
         \end{align*}
         and
         \begin{align*}
             \P{\text{$B$ wins}} &= \P{\text{$A$ first}}\P{\text{$B$ wins}}{\text{$A$ first}} + \P{\text{$B$ first}}\P{\text{$B$ wins}}{\text{$B$ first}}\\
-            &= p \cdot 0.2 + (1-p) \cdot 0.3 = -0.1p + 0.3
+            &= p \cdot 0.2 + (1-p) \cdot 0.3\\
+            &= -0.1p + 0.3
         \end{align*}
-        Consider $\P{\text{$A$ wins}} = \P{\text{$B$ wins}}$. Then $0.2p + 0.2 = -0.1p + 0.3 \implies p = \frac13$.
+        Consider $\P{\text{$A$ wins}} = \P{\text{$B$ wins}}$. Then $0.2p + 0.2 = -0.1p + 0.3$, so $p = 1/3$.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     Two fair dices are thrown, and events $A$, $B$ and $C$ are defined as follows:
     \begin{itemize}
@@ -121,12 +126,12 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let the scores of the first and second die be $p$ and $q$ respectively. Suppose $A$ occurs. Then $p$ and $q$ are of different parities (e.g. $p$ even $\implies$ $q$ odd). Thus, $p$ and $q$ cannot be equal. Hence, $C$ cannot occur, whence $A$ and $C$ are mutually exclusive.
+        Let the scores of the first and second die be $p$ and $q$ respectively. Suppose $A$ occurs. Then $p$ and $q$ are of different parities. Thus, $p$ and $q$ cannot be equal. Hence, $C$ cannot occur, whence $A$ and $C$ are mutually exclusive.
     \end{ppart}
     \begin{ppart}
-        Let the scores of the first and second die be $p$ and $q$ respectively. Observe that $p$ is independent of $q$, and vice versa. Hence, the parity of $q$ is not affected by the parity of $p$. Thus, $\P{A} = \P{\text{$p$ even}}\P{\text{$q$ odd}} + \P{\text{$p$ odd}}\P{\text{$q$ even}} = \frac36 \cdot \frac36 + \frac36 \cdot \frac36 = \frac12$.
+        Let the scores of the first and second die be $p$ and $q$ respectively. Observe that $p$ is independent of $q$, and vice versa. Hence, the parity of $q$ is not affected by the parity of $p$. Thus, \[\P{A} = \P{\text{$p$ even}}\P{\text{$q$ odd}} + \P{\text{$p$ odd}}\P{\text{$q$ even}} = \frac36 \cdot \frac36 + \frac36 \cdot \frac36 = \frac12.\]
 
-        We also have $\P{B} = 1 - \P{\text{neither $p$ nor $q$ is greater than 4}} = 1 - \bp{\frac46}^2 = \frac{20}{36}$.
+        We also have \[\P{B} = 1 - \P{\text{neither $p$ nor $q$ is greater than 4}} = 1 - \bp{\frac46}^2 = \frac{20}{36}.\]
 
         \begin{center}
             \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -140,10 +145,11 @@
               \end{tabular}
         \end{center}
         
-        We now consider $\P(A \cap B)$. From the table of outcomes above, it is clear that $\P(A \cap B) = \frac{10}{36} = \P{A}\P{B}$. Hence, $A$ and $B$ are independent.
+        We now consider $\P(A \cap B)$. From the table of outcomes above, it is clear that $\P(A \cap B) = 10/36 = \P{A}\P{B}$. Hence, $A$ and $B$ are independent.
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     For events $A$ and $B$, it is given that $\P{A} = 0.7$, $\P{B} = 0.6$ and $\P{A}{B'} = 0.8$. Find
     \begin{enumerate}
@@ -155,18 +161,19 @@
     \begin{enumerate}
         \setcounter{enumi}{3}
         \item Find $\P{A' \cap C}$.
-        \item Hence, find an inequality satisfied by $\P{A' \cap B \cap C}$ in the form \[p \leq \P{A' \cap B \cap C} \leq q,\] where $p$ and $q$ are constants to be determined.
+        \item Hence, find an inequality satisfied by $\P{A' \cap B \cap C}$ in the form $p \leq \P{A' \cap B \cap C} \leq q$, where $p$ and $q$ are constants to be determined.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
-        \[\P{A \cap B'} = \P{B'} \P{A}{B'} = (1-0.6) \cdot 0.8 = 0.32.\]
+        $\P{A \cap B'} = \P{B'} \P{A}{B'} = (1-0.6) \cdot 0.8 = 0.32$.
     \end{ppart}
     \begin{ppart}
         \begin{align*}
-            \P{A \cup B} &= \P{A} + \P{B} - \P{A \cap B} = \P{A} + \P{B} - \bs{\P{A} - \P{A \cap B'}}\\
-            &= 0.7 + 0.6 - (0.7 - 0.32) = 0.92.
+            \P{A \cup B} &= \P{A} + \P{B} - \P{A \cap B}\\
+            &= \P{A} + \P{B} - \bs{\P{A} - \P{A \cap B'}}\\
+            &= 0.7 + 0.6 - (0.7 - 0.32)\\
+            &= 0.92.
         \end{align*}
     \end{ppart}
     \begin{ppart}
@@ -208,7 +215,7 @@
             \end{tikzpicture}
         \end{center}
 
-        Note that $\P{A' \cap B \cap C} = g$. Firstly, from part (d), we have $b + g = \P{A' \cap C} = 0.15$. Hence, $g \leq 0.15$. Secondly, from part (b), we have $a + b = 1 - \P{A \cup B} = 1 - 0.92 = 0.08$. Hence, $b \leq 0.08 \implies g \geq 0.07$. Lastly, we know that $\P{A' \cap B} = \P{A \cup B} - \P{A} = 0.92 - 0.7 = 0.22$. Hence, $d + g = 0.22 \implies g \leq 0.22$.
+        Note that $\P{A' \cap B \cap C} = g$. Firstly, from part (d), we have $b + g = \P{A' \cap C} = 0.15$. Hence, $g \leq 0.15$. Secondly, from part (b), we have $a + b = 1 - \P{A \cup B} = 1 - 0.92 = 0.08$. Hence, $b \leq 0.08$, so $g \geq 0.07$. Lastly, we know that $\P{A' \cap B} = \P{A \cup B} - \P{A} = 0.92 - 0.7 = 0.22$. Hence, $d + g = 0.22$, so $g \leq 0.22$.
 
         Thus, $0.07 \leq g \leq 0.15$, whence $0.07 \leq \P{A' \cap B \cap C} \leq 0.15$.
     \end{ppart}
@@ -229,7 +236,7 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            \[\P{\text{faulty}} = \P{A \cup \text{faulty}} + \P{B \cup \text{faulty}} = 0.6 \cdot 0.05 + 0.4 \cdot 0.07 = 0.058.\]
+            $\P{\text{faulty}} = \P{A \cup \text{faulty}} + \P{B \cup \text{faulty}} = 0.6 \cdot 0.05 + 0.4 \cdot 0.07 = 0.058$.
         \end{psubpart}
         \begin{psubpart}
             \[\P{A}{\text{faulty}} = \frac{\P{A \cap \text{faulty}}}{\P{\text{faulty}}} = \frac{0.6 \cdot 0.05}{0.058} = \frac{15}{19}.\]
@@ -239,7 +246,7 @@
         \[\P{\text{both $A$}}{\text{one faulty}} = \frac{\P{\text{both $A$} \cup \text{one faulty}}}{\P{\text{one faulty}}} = \frac{\bs{0.6 \cdot 0.05} \cdot \bs{0.6 \cdot (1 - 0.05)}}{0.058 \cdot (1 - 0.058)} = \frac{1425}{4553}.\]
     \end{ppart}
     \begin{ppart}
-        \[\P{\text{two faulty}} = 0.058^2 (1 - 0.058)^8 \cdot \frac{10!}{2! 8!} = 0.0939 \tosf{3}\]
+        \[\P{\text{two faulty}} = 0.058^2 (1 - 0.058)^8 \cdot \frac{10!}{2! \, 8!} = 0.0939 \tosf{3}\]
     \end{ppart}
 \end{solution}
 
@@ -276,7 +283,6 @@
         \item People for whom the test proves positive are recalled and re-tested. Find the probability that a person has the disease if the second test also proves positive.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
@@ -320,7 +326,8 @@
         \begin{align*}
             \text{Required probability} &= \frac{\P{\text{diseased} \cap \text{both positive}}}{\P{\text{both positive}}}\\
             &= \frac{\P{\text{diseased} \cap \text{both positive}}}{\P{\text{diseased} \cap \text{both positive}} + \P{\text{not diseased} \cap \text{both positive}}}\\
-            &= \frac{1/200 \cdot 0.9^2}{1/200 \cdot 0.9^2 + 199/200 \cdot 0.02^2} = \frac{2025}{2224}.
+            &= \frac{1/200 \cdot 0.9^2}{1/200 \cdot 0.9^2 + 199/200 \cdot 0.02^2}\\
+            &= \frac{2025}{2224}.
         \end{align*}
     \end{ppart}
 \end{solution}
@@ -337,7 +344,7 @@
         \item $W$: A white die is taken from the jar.
         \item $M$: One red ball and one green ball are obtained.
     \end{itemize}
-    Show that $\P{M}{W} = \frac{15}{28}$.
+    Show that $\P{M}{W} = 15/28$.
 
     Find, giving each of your answers as an exact fraction in its lowest terms,
     \begin{enumerate}
@@ -349,7 +356,7 @@
     All the dice and balls are now placed in a single container, and four objects are taken at random, each object being replaced before the next one is taken. Find the probability that one object of each colour is obtained.
 \end{problem}
 \begin{solution}
-    Since $W$ has occurred, both red and green balls must come from the white box. Note that there are two ways for $M$ to occur: first a red then a green, or first a green then a red. Hence, $\P{M}{W} = \frac58 \cdot \frac37 + \frac38 \cdot \frac57 = \frac{15}{28}$ as desired.
+    Since $W$ has occurred, both red and green balls must come from the white box. Note that there are two ways for $M$ to occur: first a red then a green, or first a green then a red. Hence, \[\P{M}{W} = \frac58 \cdot \frac37 + \frac38 \cdot \frac57 = \frac{15}{28}\] as desired.
 
     \begin{ppart}
         \[\P{M \cap W} = \P{W} \P{M}{W} = \frac25 \cdot \frac{15}{28} = \frac{3}{14}.\]
@@ -362,7 +369,7 @@
             &= \frac{3}{14} + \frac35 \bp{\frac47\cdot\frac36 + \frac37\cdot\frac46}\\
             &= \frac{39}{70}.
         \end{align*}
-        Hence, $\P{W}{M} = \frac{\P{W \cap M}}{\P{M}} = \frac{3/14}{39/70} = \frac5{13}$.
+        Hence, \[\P{W}{M} = \frac{\P{W \cap M}}{\P{M}} = \frac{3/14}{39/70} = \frac5{13}.\]
     \end{ppart}
     \begin{ppart}
         \[\P{W \cup M} = \P{W} + \P{M} - \P{W \cap M} = \frac25 + \frac{39}{70} - \frac{3}{14} = \frac{26}{35}.\]
@@ -379,7 +386,6 @@
         \item Find the probability that both the letters to $A$ and $B$ are in incorrect envelopes.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         \[\P{\text{$A$ correct $\cap$ $B$ incorrect}} = \frac15 \times \frac34 = \frac3{20}.\]
@@ -419,10 +425,9 @@
         \[\P{\text{at least 2 green}}{\text{one of each colour}} = \frac{\comb63 \cdot \comb41 + \comb62 \cdot \comb42}{10!/(4! \, 6!) - \comb64 - \comb44}= \frac{85}{97}.\]
     \end{ppart}
 
-    Since $\P{\text{at least 2 green}} = \frac{37}{42} \neq \frac{85}{97} = \P{\text{at least 2 green}}{\text{one of each colour}}$, the two events are not independent.
+    Since \[\P{\text{at least 2 green}} = \frac{37}{42} \neq \frac{85}{97} = \P{\text{at least 2 green}}{\text{one of each colour}},\] the two events are not independent.
 \end{solution}
 
-\clearpage
 \begin{problem}
     A group of fifteen people consists of one pair of sisters, one set of three brothers and ten other people. The fifteen people are arranged randomly in a line.
     \begin{enumerate}
@@ -434,10 +439,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let the two sisters be one unit. There are hence 14 units altogether, giving $14! \cdot 2!$ arrangements with the restriction. Since there are a total of $15!$ arrangements without the restriction, the required probability is $\frac{14! \cdot 2!}{15!} = \frac{2}{15}$.
+        Let the two sisters be one unit. There are hence 14 units altogether, giving $14! \cdot 2!$ arrangements with the restriction. Since there are a total of $15!$ arrangements without the restriction, the required probability is $14! \, 2! / 15! = 2/15$.
     \end{ppart}
     \begin{ppart}
-        Consider the case where all brothers are next to one another. Counting the brothers as one unit gives 13 units altogether. There are hence $13! \cdot 3!$ arrangements with this restriction. Since there are a total of $15!$ arrangements without the restriction, the probability that all three brothers are not together is given by $\frac{13! \cdot 3!}{15!} = \frac{34}{35}$.
+        Consider the case where all brothers are next to one another. Counting the brothers as one unit gives 13 units altogether. There are hence $13! \cdot 3!$ arrangements with this restriction. Since there are a total of $15!$ arrangements without the restriction, the probability that all three brothers are not together is given by $13!\, 3!/15! = 34/35$.
     \end{ppart}
     \begin{ppart}
         Consider the case where both the sisters are adjacent, and all three brothers are next to one another. Counting the sisters as one unit, and counting the brothers as one unit gives 12 units altogether. There are hence $12! \cdot 2! \cdot 3!$ arrangements with this restriction. Since there are a total of $15!$ arrangements without the restriction, we have \[\P{\text{sisters together $\cap$ brothers together}} = \frac{12! \cdot 2! \cdot 3!}{15!} = \frac2{455}.\]

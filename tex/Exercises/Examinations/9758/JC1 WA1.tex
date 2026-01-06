@@ -1,7 +1,7 @@
 \section{9758 JC1 Weighted Assessment 1}
 
 \begin{problem}
-    The curve $C$ has parametric equations \[x = t^2 + t, \, y = 4t - t^2, \, -2 < t < 1.\]
+    The curve $C$ has parametric equations $x = t^2 + t$, $y = 4t - t^2$ for $-2 < t < 1$.
 
     \begin{enumerate}
         \item Sketch $C$, indicating the coordinates of the end-points and the axial intercepts (if any) of this curve.
@@ -44,7 +44,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Substituting $x = t^2 + t$ and $y = 4t - t^2$ into $8y - 12x = 5$ and simplifying, we obtain \[-20t^2 + 20t -5 = 0,\] which has one real root $t = 1/2$. When $t = 1/2$, we have that $x = 3/4$ and $y = 7/4$. Thus, the curve $C$ and the line $8y-12x=5$ intersect at $(3/4, 7/4)$.
+        Substituting $x = t^2 + t$ and $y = 4t - t^2$ into $8y - 12x = 5$ and simplifying, we obtain $-20t^2 + 20t -5 = 0$, which has one real root $t = 1/2$. When $t = 1/2$, we have that $x = 3/4$ and $y = 7/4$. Thus, the curve $C$ and the line $8y-12x=5$ intersect at $(3/4, 7/4)$.
     \end{ppart}
 \end{solution}
 
@@ -57,10 +57,10 @@
 \clearpage
 \begin{solution}
     \begin{ppart}
-        Observe that \[\frac4{3+2x-x^2} - 1 = -\frac{(x-1)^2}{(x-3)(x+1)}.\] Thus, the given inequality can be rewritten as \[\frac{(x-1)^2}{(x-3)(x+1)} \geq 0.\] We thus have that $x = 1$ is a solution. In the case when $x \neq 1$, we see that \[\frac1{(x-3)(x+1)} \iff 0 \implies (x-3)(x+1) \geq 0\] whence $x < 1$ or $x > 3$. Putting everything together, we have \[x < -1 \tor x = 1 \tor x > 3.\]
+        Observe that \[\frac4{3+2x-x^2} - 1 = -\frac{(x-1)^2}{(x-3)(x+1)}.\] Thus, the given inequality can be rewritten as \[\frac{(x-1)^2}{(x-3)(x+1)} \geq 0.\] We thus have that $x = 1$ is a solution. In the case when $x \neq 1$, we may divide by $(x-1)^2$ and reciprocate to obtain $(x-3)(x+1) \geq 0$, whence $x < 1$ or $x > 3$. Putting everything together, we have $x < -1$, $x = 1$ or $x > 3$.
     \end{ppart}
     \begin{ppart}
-        \[\frac4{3+2\abs{x}-x^2} \leq 1 \implies \frac4{3+2\abs{x}-\abs{x}^2} \leq 1.\] From part (a), we have that $\abs{x} < -1$, $\abs{x} = 1$ or $\abs{x} > 3$.
+        The given inequality can be obtained by substituting $x \mapsto \abs{x}$ in part (a)'s inequality. Using the above result, we have that $\abs{x} < -1$, $\abs{x} = 1$ or $\abs{x} > 3$.
 
         \case{1}[$\abs{x} < -1$] Since $\abs{x} \geq 0$ this case yields no solutions.
         
@@ -68,7 +68,7 @@
 
         \case{3}[$\abs{x} > 3$] We have $x > 3$ or $x < -3$.
 
-        Thus, \[x < -3 \tor x = -1 \tor x = 1 \tor x > 3.\]
+        Thus, $x < -3$, $x = -1$, $x = 1$, or $x > 3$.
     \end{ppart}
 \end{solution}
 
@@ -83,13 +83,14 @@
     \begin{enumerate}
         \setcounter{enumi}{1}
         \item By adding an appropriate curve in part (a), state the range of values of $b$, explaining your answer.
-        \item The function $f$ is defined by \[f(x) = \frac{2x^2+2x-2}{x-1}, \, x < 1.\]
+        \item The function $f$ is defined by \[f(x) = \frac{2x^2+2x-2}{x-1}\] for $x < 1$.
         \begin{enumerate}
             \item By using the graph in part (a) or otherwise, explain why the inverse function $\inv f$ does not exist.
             \item The domain of $f$ is restricted to $[c, 1)$ such that $c$ is the least value for which the inverse function $\inv f$ exists. State the value of $c$ and define $\inv f$ clearly.
         \end{enumerate}
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{16}
@@ -158,7 +159,7 @@
             Observe that $f(-1.62) = f(0.618) = 0$. Hence, there exist two different values of $x$ in $\dom f$ that have the same image under $f$. Thus, $f$ is not one-one. Hence, $\inv f$ does not exist.
         \end{psubpart}
         \begin{psubpart}
-            Clearly, $c = 0$. We now find $\inv f$. From $y = \frac{2x^2 + 2x - 2}{x-1}$, we get \[2x^2 + \bp{2- y}x+ \bp{y - 2} = 0.\] By the quadratic formula, this gives \[x = \frac{y - 2 \pm \sqrt{y^2 -12y + 20}}{4}.\] Note that $\dom f = \ran {\inv f} = [0, 1)$. We thus take the positive branch. Also note that $\ran f = \dom {\inv f} = (-\infty, 2]$. Hence, \[\inv f : x \mapsto \frac{x - 2 + \sqrt{x^2 -12x + 20}}{4}, \quad x \in \RR, \, x \leq 2.\]
+            Clearly, $c = 0$. We now find $\inv f$. From \[y = \frac{2x^2 + 2x - 2}{x-1},\] we get $2x^2 + \bp{2- y}x+ \bp{y - 2} = 0$. By the quadratic formula, this gives \[x = \frac{y - 2 \pm \sqrt{y^2 -12y + 20}}{4}.\] Note that $\dom f = \ran {\inv f} = [0, 1)$. We thus take the positive branch. Also note that $\ran f = \dom {\inv f} = (-\infty, 2]$. Hence, \[\inv f : x \mapsto \frac{x - 2 + \sqrt{x^2 -12x + 20}}{4}, \quad x \in \RR, \; x \leq 2.\]
         \end{psubpart}
     \end{ppart}
 \end{solution}

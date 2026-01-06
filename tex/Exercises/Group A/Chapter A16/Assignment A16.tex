@@ -8,13 +8,13 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Let $L$ be the number of ``likes'' received in a week. Then $L \sim \Po{\frac72}$.
+    Let $L$ be the number of ``likes'' received in a week. Then $L \sim \Po{7/2}$.
 
     \begin{ppart}
         Note that $\P{L = 6} = 0.077098 \tosf{5}$. Let $W$ be the number of weeks in a year in which Alice receives 6 ``likes''. Then $W \sim \Binom{52}{0.077098}$. The required probability is hence $\P{W \leq 2} = 0.225 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Let $\ol{L} = \frac1{52} \bp{L_1 + \dots + L_{52}}$. Since the sample size (52) is large, by the Central Limit Theorem, $\ol{L} \sim \Normal{\frac72}{\frac1{52} \frac72}$ approximately. The required probability is hence $\P{\ol{L} \geq 4} = 0.0270 \tosf{3}$.
+        Let $\ol{L} = \bp{L_1 + \dots + L_{52}}/52$. Since the sample size (52) is large, by the Central Limit Theorem, $\ol{L} \sim \Normal{7/2}{(7/2)/52}$ approximately. The required probability is hence $\P{\ol{L} \geq 4} = 0.0270 \tosf{3}$.
     \end{ppart}
 \end{solution}
 
@@ -30,7 +30,7 @@
     Let $M$ g be the mass of a doughnut.
 
     \begin{ppart}
-        Let $\ol{M}_{k} = \frac1{200} \bp{M_1 + \dots + M_{k}}$. Since the sample size (200) is large, by the Central Limit Theorem, $\ol{M}_{200} \sim \Normal{150}{60^2/200}$ approximately. Hence, the required probability is \[\P{145 < \ol{M}_{200} < 160} = 0.871 \tosf{3}.\]
+        Let $\ol{M}_{k} = \bp{M_1 + \dots + M_{k}}/k$. Since the sample size (200) is large, by the Central Limit Theorem, $\ol{M}_{200} \sim \Normal{150}{60^2/200}$ approximately. Hence, the required probability is $\P{145 < \ol{M}_{200} < 160} = 0.871 \tosf{3}$.
 
         The Central Limit Theorem applies to any distribution, so long as $n$ is large. Hence, $M$ need not be normally distributed.
     \end{ppart}
@@ -53,6 +53,6 @@
         Assign each patient a unique positive integer. Using a random number generator, obtain 50 distinct positive integers. The patients assigned to these numbers are then sampled.
     \end{ppart}
     \begin{ppart}
-        Note that \[\sum \bp{x - 5} = 120 \implies \sum x = 120 + 50(5) = 370\] and \[\sum \bp{x - 5}^2 = \sum \bp{x^2 - 10x + 25} = 2500 \implies \sum x^2 = 4950.\] Hence, \[\ol{x} = \frac1n \sum x = 7.4 \quad \tand \quad s^2 = \frac1{n-1} \bs{\sum x^2 - \frac1n \bp{\sum x}^2} = 45.152 \tosf{5}.\] Let $\ol{W}$ kg be the mean weight loss by 50 randomly chosen patients. Since the sample size (50) is large, by the Central Limit Theorem, $\ol{W} \sim \Normal{7.4}{45.152}$. Hence, the required probability is $\P{\ol{W} \geq 7} = 0.524 \tosf{3}$.
+        Note that $\sum x = 120 + 50(5) = 370$ and \[\sum \bp{x - 5}^2 = \sum \bp{x^2 - 10x + 25} = 2500,\] so $\sum x^2 = 4950$. Hence, \[\ol{x} = \frac1n \sum x = 7.4 \quad \tand \quad s^2 = \frac1{n-1} \bs{\sum x^2 - \frac1n \bp{\sum x}^2} = 45.152 \tosf{5}.\] Let $\ol{W}$ kg be the mean weight loss by 50 randomly chosen patients. Since the sample size (50) is large, by the Central Limit Theorem, $\ol{W} \sim \Normal{7.4}{45.152}$. Hence, the required probability is $\P{\ol{W} \geq 7} = 0.524 \tosf{3}$.
     \end{ppart}
 \end{solution}

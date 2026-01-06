@@ -3,11 +3,11 @@
 \begin{problem}
     Find
     \begin{enumerate}
-        \item $\int \tan{\frac\pi6 - 3x} \d x$,
+        \item $\int \tan{\pi/6 - 3x} \d x$,
         \item $\int \tan x \sec^4 x \d x$,
-        \item $\int \frac1{x^2 + 3x + 2} \d x$,
-        \item $\int \cos \frac{3x}{2} \cos \frac{5x}{2} \d x$,
-        \item $\int \frac2{x \ln x^2} \d x$,
+        \item $\int 1/(x^2 + 3x + 2) \d x$,
+        \item $\int \cos{3x/2} \cos{5x/2} \d x$,
+        \item $\int 2/(x \ln x^2) \d x$,
         \item $\int x \e^{-x^2} \d x$.
     \end{enumerate}
 \end{problem}
@@ -19,7 +19,7 @@
         \[\int \tan x \sec^4 x \d x = \int (\sec x \tan x) \sec^3 x \d x = \frac{\sec^4 x}{4} + C.\]
     \end{ppart}
     \begin{ppart}
-        \[\int \frac1{x^2 + 3x + 2} \d x = \int \bp{\frac1{x+1} - \frac1{x+2}} \d x = \ln \abs{x + 1} - \ln \abs{x + 2} + C = \ln \abs{\frac{x+1}{x+2}} + C.\]
+        \[\int \frac1{x^2 + 3x + 2} \d x = \int \bp{\frac1{x+1} - \frac1{x+2}} \d x = \ln \abs{x + 1} - \ln \abs{x + 2} + C.\]
     \end{ppart}
     \begin{ppart}
         \[\int \cos \frac{3x}{2} \cos \frac{5x}{2} \d x = \int \bp{\cos 4x + \cos x} \d x = \frac{\sin 4x}{8} + \frac{\sin x}{2} + C.\]
@@ -33,7 +33,7 @@
 \end{solution}
 
 \begin{problem}
-    Using the substitution $x = \tan \t$, find the exact value of $\int_0^1 \frac{1 - x^2}{(1 + x^2)^2} \d x$.
+    Using the substitution $x = \tan \t$, find the exact value of \[\int_0^1 \frac{1 - x^2}{(1 + x^2)^2} \d x.\]
 \end{problem}
 \begin{solution}
     Note that $1 + x^2 = 1 + \tan^2 \t = \sec^2 \t$. Hence, \[\int_0^1 \frac{1 - x^2}{(1 + x^2)^2} \d x = \int_0^{\pi/4} \frac{1 - \tan^2 \t}{\sec^4 \t} \bp{\sec^2 \t \d \t} = \int_0^{\pi/4} \frac{1 - \tan^2 \t}{\sec^2 \t} \d \t.\] Using trigonometric identities to simplify the integrand, we get \[\int_0^{\pi/4} \frac{1 - \tan^2 \t}{\sec^2 \t} \d \t = \int_0^{\pi/4} \cos 2\t \d t = \evalint{\frac12 \sin 2\t}{0}{\pi/4} = \frac12.\]
@@ -41,7 +41,7 @@
 
 \clearpage
 \begin{problem}
-    State the derivative of $\sin x^2$. Hence, find $\int x^3 \cos x^2 \d x$.
+    State the derivative of $\sin x^2$. Hence, find \[\int x^3 \cos x^2 \d x.\]
 \end{problem}
 \begin{solution}
     We have \[\der{}{x} \sin x^2 = 2x \cos x^2.\]
@@ -50,17 +50,16 @@
 \end{solution}
 
 \begin{problem}
-    Find the exact value of $p$ such that $\int_0^1 \frac1{4 - x^2} \d x = \int_0^{1/2p} \frac1{\sqrt{1 - p^2 x^2}} \d x$.
+    Find the exact value of $p$ such that \[\int_0^1 \frac1{4 - x^2} \d x = \int_0^{1/2p} \frac1{\sqrt{1 - p^2 x^2}} \d x.\]
 \end{problem}
 \begin{solution}
-    Using standard integration results, the LHS evaluates to \[\int_0^1 \frac1{4 - x^2} \d x = \evalint{\frac1{4} \ln \frac{2 + x}{2 - x}}01 = \frac14 \ln 3.\] Meanwhile, under the substitution $u = px$, the RHS evaluates as \[\int_0^{1/2p} \frac1{\sqrt{1 - p^2 x^2}} \d x = \frac1p \int_0^{1/2} \frac1{\sqrt{1 - u^2}} \d u = \frac1p \evalint{\arcsin u}0{1/2} = \frac{\pi}{6p}.\] Equating the two, we get \[\frac14 \ln 3 = \frac{\pi}{6p} \implies p = \frac{2\pi}{3\ln3}.\]
+    Using standard integration results, the LHS evaluates to \[\int_0^1 \frac1{4 - x^2} \d x = \evalint{\frac1{4} \ln \frac{2 + x}{2 - x}}01 = \frac14 \ln 3.\] Meanwhile, under the substitution $u = px$, the RHS evaluates as \[\int_0^{1/2p} \frac1{\sqrt{1 - p^2 x^2}} \d x = \frac1p \int_0^{1/2} \frac1{\sqrt{1 - u^2}} \d u = \frac1p \evalint{\arcsin u}0{1/2} = \frac{\pi}{6p}.\] Equating the two, we get \[\frac14 \ln 3 = \frac{\pi}{6p},\] so $p = 2\pi/3\ln3$.
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
-        \item Find $\int \frac{x + 3}{\sqrt{4x - x^2}} \d x$.
-        \item If $x = 4\cos^2 \t + 7\sin^2\t$, show that $7-x = 3\cos^2$, and find a similar expression for $x - 4$. By using the substitution $x = 4\cos^2 \t + 7\sin^2 \t$, evaluate $\int_4^7 \frac1{\sqrt{(x-4)(7-x)}} \d x$.
+        \item Find \[\int \frac{x + 3}{\sqrt{4x - x^2}} \d x.\]
+        \item If $x = 4\cos^2 \t + 7\sin^2\t$, show that $7-x = 3\cos^2$, and find a similar expression for $x - 4$. By using the substitution $x = 4\cos^2 \t + 7\sin^2 \t$, evaluate \[\int_4^7 \frac1{\sqrt{(x-4)(7-x)}} \d x.\]
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -75,10 +74,10 @@
 \end{solution}
 
 \begin{problem}
-    Express $\frac{x^2 + x + 28}{(1-x)(x^2 + 9)}$ in partial fractions. Hence, show that $\int_0^3 \frac{x^2 + x + 28}{(1 - x)(x^2 + 9)} \d x = \frac\pi{12} - 2 \ln 2$.
+    Express \[\frac{x^2 + x + 28}{(1-x)(x^2 + 9)}\] in partial fractions. Hence, show that \[\int_0^3 \frac{x^2 + x + 28}{(1 - x)(x^2 + 9)} \d x = \frac\pi{12} - 2 \ln 2.\]
 \end{problem}
 \begin{solution}
-    Let \[\frac{x^2 + x + 28}{(1-x)(x^2 + 9)} = \frac{A}{1-x} + \frac{Bx + C}{x^2 + 9},\] where $A$, $B$ and $C$ are constants to be determined. By the cover-up rule, we immediately get \[A = \frac{1 + 1 + 28}{1^2 + 9} = 3.\] Clearing denominators, we get \[x^2 + x + 28 = 3\bp{x^2 + 9} + \bp{Bx + C}\bp{1 - x} = \bp{3 - B} x^2 + \bp{B - C} x + \bp{27 + C}.\] Comparing coefficients, we get $B = 2$ and $C = 1$, whence \[\frac{x^2 + x + 28}{(1-x)(x^2 + 9)} = \frac{3}{1-x} + \frac{2x + 1}{x^2 + 9}.\]
+    Let \[\frac{x^2 + x + 28}{(1-x)(x^2 + 9)} = \frac{A}{1-x} + \frac{Bx + C}{x^2 + 9},\] where $A$, $B$ and $C$ are constants to be determined. By the cover-up rule, we immediately get $A = 3$. Clearing denominators, we get \[x^2 + x + 28 = 3\bp{x^2 + 9} + \bp{Bx + C}\bp{1 - x} = \bp{3 - B} x^2 + \bp{B - C} x + \bp{27 + C}.\] Comparing coefficients, we get $B = 2$ and $C = 1$, whence \[\frac{x^2 + x + 28}{(1-x)(x^2 + 9)} = \frac{3}{1-x} + \frac{2x + 1}{x^2 + 9}.\]
 
     Using the above result on the integral, we have
     \begin{align*}
@@ -89,7 +88,7 @@
 \end{solution}
 
 \begin{problem}
-    Find the derivative of $\arcsin x + x\sqrt{1 - x^2}$, expressing your answer in its simplest form. Hence, evaluate the exact value of $\int_0^{1/2} \sqrt{1 - x^2} \d x$.
+    Find the derivative of $\arcsin x + x\sqrt{1 - x^2}$, expressing your answer in its simplest form. Hence, evaluate the exact value of \[\int_0^{1/2} \sqrt{1 - x^2} \d x.\]
 \end{problem}
 \begin{solution}
     We have \[\der{}{x} \bs{\arcsin x + x\sqrt{1 - x^2}} = \frac1{\sqrt{1 - x^2}} + \bp{\sqrt{1 - x^2} - \frac{x^2}{\sqrt{1 - x^2}}} = 2\sqrt{1 - x^2}.\] Hence, \[\int_0^{1/2} \sqrt{1 - x^2} \d x = \frac12 \int_0^{1/2} 2\sqrt{1 - x^2} \d x = \frac12 \evalint{\arcsin x + x\sqrt{1 - x^2}}0{1/2} = \frac{\pi}{12} + \frac{\sqrt{3}}8.\]

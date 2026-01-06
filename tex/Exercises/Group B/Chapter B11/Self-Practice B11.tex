@@ -18,29 +18,29 @@
     Given that $f(x, y) = x^2 \e^y$, find the maximum value of a directional derivative at $(-2, 0)$ and give a unit vector in the direction in which the maximum value occurs.
 \end{problem}
 \begin{solution}
-    At $(-2, 0)$, we have \[\nabla f = \cvecii{2x \e^y}{x^2 \e^y} = \cvecii{-4}{4}.\] Note that \[D_{\vec u} f(x, y) = \nabla f \dotp \vec u = \abs{\nabla f} \cos \t,\] where $\t$ is the angle between $\nabla f$ and $\vec u$. Hence, the maximum value of the directional derivative is \[\abs{\cvecii{-4}{4}} = \sqrt{(-4)^2 + 4^2} = 4\sqrt{2}.\] This occurs when $\t = 0$, i.e. when $\vec u$ is the same direction as $\nabla f$. Hence, \[\vec u = \frac1{4\sqrt{2}} \cvecii{-4}{4} = \frac1{\sqrt2} \cvecii{-1}{1}.\]
+    At $(-2, 0)$, we have \[\nabla f = \cvecii{2x \e^y}{x^2 \e^y} = \cvecii{-4}{4}.\] Note that $D_{\vec u} f(x, y) = \nabla f \dotp \vec u = \abs{\nabla f} \cos \t$, where $\t$ is the angle between $\nabla f$ and $\vec u$. Hence, the maximum value of the directional derivative is \[\abs{\cvecii{-4}{4}} = \sqrt{(-4)^2 + 4^2} = 4\sqrt{2}.\] This occurs when $\t = 0$, i.e. when $\vec u$ is the same direction as $\nabla f$. Hence, \[\vec u = \frac1{4\sqrt{2}} \cvecii{-4}{4} = \frac1{\sqrt2} \cvecii{-1}{1}.\]
 \end{solution}
 
 \begin{problem}
     If the electric potential at a point $(x, y)$ in the $xy$-plane is $V(x, y)$, where $V(x, y) = \e^{-2x} \cos 2y$, find the direction where $V$ decreases most rapidly at $(0, \pi/6)$.
 \end{problem}
 \begin{solution}
-    At $(0, \pi/6)$, we have \[\nabla V = \cvecii{-2\e^{-2x} \cos 2y}{-2\e^{-2x}\sin 2y} = -\cvecii{1}{\sqrt3}.\] Note that \[D_{\vec u} V(x, y) = \nabla V \dotp \vec u = \abs{\nabla V} \cos \t,\] where $\t$ is the angle between $\nabla V$ and $\vec u$. Hence, $V$ decreases the most when $\t = \pi$, i.e. when $\vec u$ is in the opposite direction as $\nabla V$. Thus, the desired direction is $\cvecii{1}{\sqrt3}$.
+    At $(0, \pi/6)$, we have \[\nabla V = \cvecii{-2\e^{-2x} \cos 2y}{-2\e^{-2x}\sin 2y} = -\cvecii{1}{\sqrt3}.\] Note that $D_{\vec u} V(x, y) = \nabla V \dotp \vec u = \abs{\nabla V} \cos \t$, where $\t$ is the angle between $\nabla V$ and $\vec u$. Hence, $V$ decreases the most when $\t = \pi$, i.e. when $\vec u$ is in the opposite direction as $\nabla V$. Thus, the desired direction is $\cveciix{1}{\sqrt3}$.
 \end{solution}
 
 \begin{problem}
     Find all local extrema and saddle points of $f(x, y) = 4xy - x^4 - y^4$.
 \end{problem}
 \begin{solution}
-    Note that \[\nabla f = \cvecii{4y - 4x^3}{4x - 4y^3}.\] Setting this equal to the zero vector, we have the system \[\systeme{4y - 4x^3 = 0,4x - 4y^3 = 0}.\] From the first equation, we get $y = x^3$. Substituting this into the second equation yields \[x - x^9 = x\bp{1 - x^8} = 0.\] Note that $x^8 - 1$ factors as $\bp{x^4 + 1}\bp{x^2 + 1}\bp{x + 1}\bp{x - 1}$. We thus have $x = -1, 0, 1$, which correspond to the points $(-1, -1)$, $(0, 0)$ and $(1, 1)$.
+    Note that \[\nabla f = \cvecii{4y - 4x^3}{4x - 4y^3}.\] Setting this equal to the zero vector, we have the system \[\systeme{4y - 4x^3 = 0,4x - 4y^3 = 0}.\] From the first equation, we get $y = x^3$. Substituting this into the second equation yields $x - x^9 = x\bp{1 - x^8} = 0$. Note that $x^8 - 1$ factors as $\bp{x^4 + 1}\bp{x^2 + 1}\bp{x + 1}\bp{x - 1}$. We thus have $x = -1, 0, 1$, which correspond to the points $(-1, -1)$, $(0, 0)$ and $(1, 1)$.
 
     Let \[D = f_{xx}f_{yy} - f_{xy}^2 = \bp{-12x^2}\bp{-12y^2} - \bp{4}^2 = 144x^2y^2 - 16.\]
 
-    \case{1} At $(-1, -1)$, we have \[D = 144(-1)^2(-1)^2 - 16 = 128 > 0.\] Since $f_{xx} = -12(-1)^2 = -12 < 0$, by the second partial derivative test, $(-1, -1)$ is a maximum point.
+    \case{1} At $(-1, -1)$, we have $D = 128 > 0$. Since $f_{xx} = -12(-1)^2 = -12 < 0$, by the second partial derivative test, $(-1, -1)$ is a maximum point.
 
-    \case{2} At $(0, 0)$, we have \[D = 144(0)^2(0)^2 - 16 = -16 < 0.\] By the second partial derivative test, $(0, 0)$ is a saddle point.
+    \case{2} At $(0, 0)$, we have $D = -16 < 0$. By the second partial derivative test, $(0, 0)$ is a saddle point.
 
-    \case{3} At $(1, 1)$, we have \[D = 144(1)^2(1)^2 - 16 = 128 > 0.\] Since $f_{xx} = -12(1)^2 = -12 < 0$, by the second partial derivative test, $(1, 1)$ is a maximum point.
+    \case{3} At $(1, 1)$, we have $D = 128 > 0$. Since $f_{xx} = -12(1)^2 = -12 < 0$, by the second partial derivative test, $(1, 1)$ is a maximum point.
 \end{solution}
 
 \begin{problem}
@@ -77,14 +77,14 @@
     Take the mirror image of the figure and place it on top of the original image. We get a hexagon with perimeter 54, and we are tasked with maximizing its area. It is a well-known result that for $n$-sided polygons with fixed perimeters, the regular $n$-gon encloses the largest area. Hence, we have $x = 54/6 = 9$ and $\t = 2\pi/6 = \pi/3$.
 \end{solution}
 \begin{solution}[2]
-    Observe that the longer side of the trapezium is given by $(27 - 2x) + 2(x\cos \t)$, while the height of the trapezium is given by $x \sin \t$. The area $A$ of the trapezium is thus given by \[A = \frac{\bp{27-2x} + \bp{27-2x+2x\cos\t}}{2} \bp{x \sin \t} = 27x\sin \t + x^2 \sin \t \bp{\cos \t - 2}.\] Observe that \[\nabla A = \cvecii{A_x}{A_{\t}} = \cvecii{27\sin \t + 2x \sin \t \bp{\cos \t -2}}{27x \cos \t + x^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t}}.\] Setting this equal to the zero vector, we get the following system: \[\begin{cases}
-            27\sin \t + 2x \sin \t \bp{\cos \t -2} &= 0,\\
-            27x \cos \t + x^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t} &= 0.
-        \end{cases}\]
-    From the first equation, we get \[x = \frac{-27}{2\bp{\cos \t - 2}}.\] Substituting this into the second equation, \[27\bp{\frac{-27}{2\bp{\cos \t - 2}}}\cos \t + \bp{\frac{-27}{2\bp{\cos \t - 2}}}^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t} = 0.\] Clearing denominators and simplifying, we get \[-2\cos\t \bp{\cos \t - 2} + \bp{\cos^2\t - \sin^2 \t -2\cos\t} = 0.\] Expanding, we have \[-\cos^2 \t + 2\cos \t - \sin^2 \t = 0,\] from which we immediately get $\cos \t = 1/2$, whence $\t = \pi/3$ and $x = 9$.
+    Observe that the longer side of the trapezium is given by $(27 - 2x) + 2(x\cos \t)$, while the height of the trapezium is given by $x \sin \t$. The area $A$ of the trapezium is thus given by \[A = \frac{\bp{27-2x} + \bp{27-2x+2x\cos\t}}{2} \bp{x \sin \t} = 27x\sin \t + x^2 \sin \t \bp{\cos \t - 2}.\] Observe that \[\nabla A = \cvecii{A_x}{A_{\t}} = \cvecii{27\sin \t + 2x \sin \t \bp{\cos \t -2}}{27x \cos \t + x^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t}}.\] Setting this equal to the zero vector, we get \[27\sin \t + 2x \sin \t \bp{\cos \t -2} = 0 \quad \tand \quad 27x \cos \t + x^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t} = 0.\] From the first equation, we get \[x = -\frac{27}{2\bp{\cos \t - 2}}.\] Substituting this into the second equation, \[27\bp{\frac{-27}{2\bp{\cos \t - 2}}}\cos \t + \bp{\frac{-27}{2\bp{\cos \t - 2}}}^2\bp{\cos^2 \t - \sin^2 \t - 2\cos \t} = 0.\] Clearing denominators and simplifying, we get $-\cos^2 \t + 2\cos \t - \sin^2 \t = 0$, so $\cos \t = 1/2$, whence $\t = \pi/3$ and $x = 9$.
 
-    We now calculate the second partial derivatives of $A$ at $\t = \pi/3$ and $x = 9$. First, we have \[A_{xx} = 2\sin\t \bp{\cos \t - 2} = -2.5981 \tosf{5}.\] Secondly, we have \[A_{\t\t} = -27x\sin\t + x^2\bp{-2\cos\t\sin\t -2\sin\t\cos\t+2\sin\t} = -210.44 \tosf{5}.\] Lastly, we have \[A_{\t x} = 27\cos \t + 2x\bp{\cos^2 \t - \sin^2 \t -2\cos \t} = -13.5.\]
-
+    We now calculate the second partial derivatives of $A$ at $\t = \pi/3$ and $x = 9$. We have
+    \begin{align*}
+        A_{xx} &= 2\sin\t \bp{\cos \t - 2} = -2.5981 \tosf{5},\\
+        A_{\t\t} &= -27x\sin\t + x^2\bp{-2\cos\t\sin\t -2\sin\t\cos\t+2\sin\t} = -210.44 \tosf{5},\\
+        A_{\t x} &= 27\cos \t + 2x\bp{\cos^2 \t - \sin^2 \t -2\cos \t} = -13.5.
+    \end{align*}
     Since \[D = A_{xx} A_{\t\t} - A_{\t x}^2 = (-2.5981)(-210.44) - (-13.5)^2 = 364.5 > 0\] and $A_{xx} = -2.5981 < 0$, by the second partial derivative test, $A$ attains a maximum when $x = 9$ and $\t = \pi/3$.
 \end{solution}
 
@@ -101,11 +101,7 @@
 \begin{solution}
     We use linear programming to solve this problem.
 
-    Let $n$ and $m$ be the amount of product $A$ and $B$ produced by the company. Let $\Pi$ be the total revenue earned, i.e. \[\Pi = 10n + 15 m.\] Due to resource constraints, we have the inequalities \[\begin{cases}
-        2n + m &\leq 100,\\
-        n + 3m &\leq 90.
-    \end{cases}\]
-    Additionally, we have $n, m \geq 0$.
+    Let $n$ and $m$ be the amount of product $A$ and $B$ produced by the company. Let $\Pi = 10n + 15m$ be the total revenue earned. Due to resource constraints, we have the inequalities \[2n + m \leq 100 \quad \tand \quad n + 3m \leq 90.\] Additionally, we have $n, m \geq 0$.
 
     We can visualize these inequalities graphically:
     \begin{figure}[H]\tikzsetnextfilename{35}

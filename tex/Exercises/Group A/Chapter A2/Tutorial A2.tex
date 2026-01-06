@@ -6,7 +6,7 @@
     This root is denoted by $\a$ and is to be found using two different iterative methods, starting with the same initial approximation in each case.
 
     \begin{enumerate}
-        \item Show that $\a$ is a root of the equation $x = \sqrt{\frac2{x+2}}$, and use the iterative formula $x_{n+1} = \sqrt{\frac2{x_n + 2}}$, with $x_1 = 1$, to find $\a$ correct to 2 significant figures.
+        \item Show that $\a$ is a root of the equation $x = \sqrt{2/(x+2)}$, and use the iterative formula $x_{n+1} = \sqrt{2/(x_n + 2)}$, with $x_1 = 1$, to find $\a$ correct to 2 significant figures.
         \item Use the Newton-Raphson method, with $x_1=1$, to find $\a$ correct to 3 significant figures.
     \end{enumerate}
 \end{problem}
@@ -14,12 +14,12 @@
     Let $f(x) = x^3 + 2x^2 - 2$. Observe that for all $x > 0$, we have $f'(x) = 3x^2 + 4x > 0$. Hence, $f(x)$ is strictly increasing on $(0, \infty)$. Since $f(0)f(1) = (-2)(1) < 0$, it follows that $f(x)$ has exactly one positive root.
 
     \begin{ppart}
-        We know $f(\a) = 0$. Hence, \[\a^3 + 2\a^2 - 2 = 0 \implies \a^2 (\a + 2) = 2 \implies \a^2 = \frac2{\a + 2} \implies \a = \sqrt{\frac2{\a + 2}}.\] Note that we reject the negative branch since $\a > 0$. We hence see that $\a$ is a root of the equation $x = \sqrt{\frac2{x+2}}$. Using the iterative formula $x_{n+1} = \sqrt{\frac2{x_n + 2}}$ with $x_1 = 1$, we have
+        We know $f(\a) = 0$. Hence, \[\a^3 + 2\a^2 - 2 = 0 \implies \a^2 (\a + 2) = 2 \implies \a^2 = \frac2{\a + 2} \implies \a = \sqrt{\frac2{\a + 2}}.\] Note that we reject the negative branch since $\a > 0$. We hence see that $\a$ is a root of the equation $x = \sqrt{2/(x+2)}$. Using the iterative formula $x_{n+1} = \sqrt{2/(x_n + 2)}$ with $x_1 = 1$, we have
         \begin{table}[H]
             \centering
             \begin{tabular}{|c|c|}
             \hline
-            $n$ & $x_n$ \\ \hline
+            $n$ & $x_n$ \\ \hline\hline
             1 & 1 \\ \hline
             2 & 0.81650 \\ \hline
             3 & 0.84268 \\ \hline
@@ -29,12 +29,12 @@
         Hence, $\a = 0.84 \tosf2$.
     \end{ppart}
     \begin{ppart}
-        Using the Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$) with $x_1 = 1$, we have
+        Using the Newton-Raphson method ($x_{n+1} = x_n - f(x_n)/f'(x_n)$) with $x_1 = 1$, we have
         \begin{table}[H]
             \centering
             \begin{tabular}{|c|c|}
             \hline
-            $n$ & $x_n$ \\ \hline
+            $n$ & $x_n$ \\ \hline\hline
             1 & 1 \\ \hline
             2 & 0.857143 \\ \hline
             3 & 0.839545 \\ \hline
@@ -46,7 +46,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Show that the tangent at the point $(\e, 1)$ to the graph $y=\ln x$ passes through the origin, and deduce that the line $y=mx$ cuts the graph $y=\ln x$ in two points provided that $0 < m < 1/\e$.
@@ -96,12 +95,12 @@
         Let $x_1$ be the first approximation to $\a$.
         Using linear interpolation, we have \[x_1 = \frac{f(2) - 2f(1)}{f(2) - f(1)} = 1.9 \todp{1}\]
 
-        Note that $f'(x) = 1/3 - 1/x$. Using the Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$), we have
+        Note that $f'(x) = 1/3 - 1/x$. Using the Newton-Raphson method ($x_{n+1} = x_n - f(x_n)/f'(x_n)$), we have
         \begin{table}[H]
             \centering
             \begin{tabular}{|c|c|}
             \hline
-            $n$ & $x_n$ \\ \hline
+            $n$ & $x_n$ \\ \hline\hline
             1 & 1.9 \\ \hline
             2 & 1.85585 \\ \hline
             3 & 1.85718 \\ \hline
@@ -115,7 +114,7 @@
     Find the exact coordinates of the turning points on the graph of $y = f(x)$ where $f(x) = x^3-x^2-x-1$. Deduce that the equation $f(x) = 0$ has only one real root $\a$, and prove that $\a$ lies between 1 and 2. Use the Newton-Raphson method applied to the equation $f(x) = 0$ to find a second approximation $x_2$ to $\a$, taking $x_1$, the first approximation, to be 2. With reference to a graph of $y=f(x)$, explain why all further approximations to $\a$ by this process are always larger than $\a$.
 \end{problem}
 \begin{solution}
-    For turning points, $f'(x) = 0$. \[f'(x) = 0 \implies 3x^2-2x-1 = 0 \implies (3x+1)(x-1) = 0.\] Hence, $x = -1/3$ or $x = 1$. When $x = -1/3$, we have $y = -0.815$, giving the coordinate $\bp{-1/3, -0.815}$. When $x = 1$, we have $y = -2$, giving the coordinate $(1, -2)$.
+    For turning points, $f'(x) = 0$. Since $f'(x) = 3x^2-2x-1 = 0 = (3x+1)(x-1)$, there are stationary points when $x = -1/3$ or $x = 1$, giving the coordinates $(-1/3, -0.815)$ and $(1, -2)$.
 
     Observe that $f(x)$ is strictly increasing for all $x > 1$. Further, since both turning points have a negative $y$-coordinate, it follows that $y < 0$ for all $x \leq 1$. Since $f(1)f(2) = (-2)(1) < 0$, the equation $f(x) = 0$ has only one real root.
 
@@ -142,7 +141,7 @@
                     }
                 ]
 
-                \draw[thick,black!70,TwoMarks=0.1] (1.5,0) -- (1.8,0);
+                \draw[black!70,TwoMarks=0.1] (1.5,0) -- (1.8,0);
 
                 \addplot[plotRed] {x^3-x^2-x-1};
 
@@ -165,18 +164,15 @@
 
     Let $f(x) = x^5 + 50x$. Since $\min \derx{f}{x} = 50 > 0$, it follows that $f(x)$ is strictly increasing. Hence, $f(x)$ will intersect only once with the line $y = 10^5$, whence the equation $x^5 + 50x = 10^5$ has exactly one real root.
 
-    Observe that $f(9)f(10) = (-40901)(50) < 0$. Thus, there must be a root in the interval $(9, 10)$. We now use the Newton-Raphson method ($x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$) with $x_1 = 9$ as the first approximation.
+    Observe that $f(9)f(10) = (-40901)(50) < 0$. Thus, there must be a root in the interval $(9, 10)$. We now use the Newton-Raphson method ($x_{n+1} = x_n - f(x_n)/f'(x_n)$) with $x_1 = 9$ as the first approximation.
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|}
-        \hline
-        $n$ & $x_n$ \\ \hline
-        1 & 9 \\ \hline
-        2 & 10.2178921 \\ \hline
-        3 & 10.0017491 \\ \hline
-        4 & 9.9901221 \\ \hline
-        5 & 9.9899912 \\ \hline
-        6 & 9.9899900 \\ \hline
+        \begin{tabular}{|c|c|l|c|c|}
+        \cline{1-2} \cline{4-5}
+        $n$ & $x_n$ &  & $n$ & $x_n$ \\ \cline{1-2} \cline{4-5} \cline{1-2} \cline{4-5} 
+        1 & 9 &  & 4 & 9.9901221 \\ \cline{1-2} \cline{4-5} 
+        2 & 10.2178921 &  & 5 & 9.9899912 \\ \cline{1-2} \cline{4-5} 
+        3 & 10.0017491 &  & 6 & 9.9899900 \\ \cline{1-2} \cline{4-5} 
         \end{tabular}
     \end{table}
     Thus, the root is $9.9900 \todp{4}$.
@@ -236,6 +232,7 @@
 
         Since $\tan x$ has a vertical asymptote at $x = 3\pi/2$, it is not continuous on $[4, 5]$. Thus, linear interpolation diverges when applied to the equation $\tan x = 0$.
     \end{ppart}
+    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{117}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -274,9 +271,9 @@
             \end{tikzpicture}
         \end{center}
 
-        Since there is only one intersection between the graphs $y = \ln{x-1}$ and $y = -2x$, there is only one real root to the equation $\ln{x-1} = -2x$. Furthermore, since $y=-2x$ is negative for all $x > 0$ and $y = \ln{x-1}$ is negative only when $1 < x < 2$, it follows that the root must lie between 1 and 2.
+        From the graph, there is at least one real root to the equation $\ln{x-1} = -2x$. Since $y = \ln{x-1}$ is strictly increasing and $y = -2x$ is strictly decreasing, this root is unique. Furthermore, since $y=-2x$ is negative for all $x > 0$ and $y = \ln{x-1}$ is negative only when $1 < x < 2$, it follows that the root must lie between 1 and 2.
 
-        Let $f(x) = \ln{x-1} + 2x$. Then $f'(x) = \frac1{x-1} + 2$. Note that the Newton-Raphson method is given by $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$.
+        Let $f(x) = \ln{x-1} + 2x$. Then $f'(x) = 1/(x-1) + 2$. Note that the Newton-Raphson method is given by $x_{n+1} = x_n - f(x_n)/f'(x_n)$.
 
         Since $f'(1)$ is undefined, an initial approximation of $x_1 = 1$ cannot be used for the Newton-Raphson method, which requires a division by $f'(1)$.
 
@@ -287,7 +284,7 @@
             \centering
             \begin{tabular}{|c|c|}
             \hline
-            $n$ & $x_n$ \\ \hline
+            $n$ & $x_n$ \\ \hline\hline
             1 & 1 \\ \hline
             2 & 1.106507 \\ \hline
             3 & 1.108857 \\ \hline
@@ -304,26 +301,26 @@
     Using the iterative formula $x_{n+1} = F(x_n)$, we have
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|c|c|}
-        \hline
-        $n$ & $x_n$ & $n$ & $x_n$\\ \hline
-        0 & 4.5 & 5 & 4.53175 \\ \hline
-        1 & 4.51223 & 6 & 4.53333 \\ \hline
-        2 & 4.52038 & 7 & 4.53437 \\ \hline
-        3 & 4.52579 & 8 & 4.53506 \\ \hline
-        4 & 4.52937 & 9 & 4.53551 \\ \hline
+        \begin{tabular}{|c|c|l|c|c|}
+        \cline{1-2} \cline{4-5}
+        $n$ & $x_n$ &  & $n$ & $x_n$ \\ \cline{1-2} \cline{4-5} \cline{1-2} \cline{4-5}
+        0 & 4.5 &  & 5 & 4.53175 \\ \cline{1-2} \cline{4-5} 
+        1 & 4.51223 &  & 6 & 4.53333 \\ \cline{1-2} \cline{4-5} 
+        2 & 4.52038 &  & 7 & 4.53437 \\ \cline{1-2} \cline{4-5} 
+        3 & 4.52579 &  & 8 & 4.53506 \\ \cline{1-2} \cline{4-5} 
+        4 & 4.52937 &  & 9 & 4.53551 \\ \cline{1-2} \cline{4-5} 
         \end{tabular}
     \end{table}
     Hence, $\b = 4.54 \tosf{3}$.
 
-    Note that $x = 3\ln x \implies x = \e^{x/3}$. Observe that $\derx{(\e^{x/3})}{x} = \frac13 \e^{x/3}$, which is between $-1$ and 1 for all $1 < x < 2$. Thus, the iterative formula $x_{n+1} = F(x_n)$ will converge, whence $F(x) = \e^{x/3}$ is suitable for computing $\a$.
+    Note that $x = 3\ln x$, so $x = \e^{x/3}$. Observe also that \[\der{}{x} \e^{x/3} = \frac13 \e^{x/3} \in (-1, 1)\] for all $1 < x < 2$. Thus, the iterative formula $x_{n+1} = F(x_n)$ will converge, whence $F(x) = \e^{x/3}$ is suitable for computing $\a$.
 \end{solution}
 
 \begin{problem}
     Show that the cubic equation $x^3 + 3x - 15 = 0$ has only one real root. This root is near $x=2$. The cubic equation can be written in any one of the forms below:
     \begin{enumerate}
-        \item $x = \frac13 (15-x^3)$
-        \item $x = \frac{15}{x^2 + 3}$
+        \item $x = (15-x^3)/3$
+        \item $x = 15/(x^2 + 3)$
         \item $x = (15-3x)^{1/3}$
     \end{enumerate}
 
@@ -335,11 +332,11 @@
     Let $f(x) = x^3 + 3x - 15$. Then $f'(x) = 3x^2 + 3 > 0$ for all real $x$. Hence, $f$ is strictly increasing. Since $f$ is continuous, $f(x) = 0$ has only one real root.
 
     \begin{ppart}
-        Let $g_1(x) = \frac13 (15-x^3)$. Then $g'_1(x) = -x^2$. For values of $x$ near 2, $\abs{g'_1(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_1(x_n)$ will diverge and $g_1(x)$ is unsuitable.
+        Let $g_1(x) = (15-x^3)/3$. Then $g'_1(x) = -x^2$. For values of $x$ near 2, $\abs{g'_1(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_1(x_n)$ will diverge and $g_1(x)$ is unsuitable.
     \end{ppart}
 
     \begin{ppart}
-        Let $g_2(x) = \frac{15}{x^2 + 3}$. Then $g'_2(x) = \frac{-30x}{\bp{x^2 + 3}^2}$. For values of $x$ near 2, $\abs{g'_2(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_2(x_n)$ will diverge and $g_2(x)$ is unsuitable.
+        Let $g_2(x) = 15/(x^2 + 3)$. Then $g'_2(x) = -30x/(x^2 + 3)^2$. For values of $x$ near 2, $\abs{g'_2(x)} > 1$. Hence, the iterative formula $x_{n+1} = g_2(x_n)$ will diverge and $g_2(x)$ is unsuitable.
     \end{ppart}
     
     \begin{ppart}
@@ -350,7 +347,7 @@
             \centering
             \begin{tabular}{|c|c|}
             \hline
-            $r$ & $x_r$ \\ \hline
+            $r$ & $x_r$ \\ \hline\hline
             1 & 2 \\ \hline
             2 & 2.080084 \\ \hline
             3 & 2.061408 \\ \hline
@@ -370,7 +367,7 @@
     Use one application of the Newton-Raphson method to obtain a better estimate of $\a$, giving your answer to 2 decimal places.
 \end{problem}
 \begin{solution}
-    Using the point-slope formula, the equation of the line that passes through both $(a, f(a))$ and $(b, f(b))$ is \[y - f(a) = \frac{f(a) - f(b)}{a - b} (x - a).\] Note that $(\a, 0)$ is approximately the solution to the above equation. Thus, \[0-f(a) \approx \frac{f(a) - f(b)}{a-b} (\a - a) \implies \a \approx \frac{bf(a) - af(b)}{f(a) - f(b)}.\]
+    Using the point-slope formula, the equation of the line that passes through both $(a, f(a))$ and $(b, f(b))$ is \[y - f(a) = \frac{f(a) - f(b)}{a - b} (x - a).\] The $x$-intercept of this line lies near $(\a, 0)$. Thus, \[0-f(a) \approx \frac{f(a) - f(b)}{a-b} (\a - a).\] Rearranging, we get \[\a \approx \frac{bf(a) - af(b)}{f(a) - f(b)}.\]
 
     Since $f(x)$ is continuous, and $f(1)f(2) = (0.10)(-1.6) < 0$, there exists a root $\a \in (1, 2)$.
 
@@ -451,20 +448,22 @@
         \end{tikzpicture}
     \end{center}
 
-    The diagram shows a sketch of the graph $y = x/3 - \ln{x+2}$. Find the $x$-coordinate of the minimum point $M$ on the graph, and verify that $y$ is positive when $x = 20$.
+    The diagram shows a sketch of the graph $y = x/5 - \ln{x+2}$. Find the $x$-coordinate of the minimum point $M$ on the graph, and verify that $y$ is positive when $x = 20$.
 
-    Show that the gradient of the curve is always less than $1/5$. Hence, by considering the line through $M$ having gradient $1/5$, show that the positive root of the equation $x/3 - \ln{x+2} = 0$ is greater than 8.
+    Show that the gradient of the curve is always less than $1/5$. Hence, by considering the line through $M$ having gradient $1/5$, show that the positive root of the equation $x/5 - \ln{x+2} = 0$ is greater than 8.
 
     Use linear interpolation, once only, on the interval $[8, 20]$, to find an approximate value $a$ for this positive root, giving your answer to 1 decimal place.
 
     Using $a$ as an initial value, carry out one application of the Newton-Raphson method to obtain another approximation to the positive root, giving your answer to 2 decimal places.
 \end{problem}
 \begin{solution}
-    For stationary points, $y' = 0$. \[y' = 0 \implies \frac15 - \frac1{x+2} \implies x = 3.\] By the second derivative test, we see that $y''(x) = \frac1{(x+2)^2} > 0$. Hence, the $x$-coordinate of $M$ is 3. Substituting $x = 20$ into the equation of the curve gives $y = 4 - \ln 22 = 0.909 > 0$.
+    For stationary points, $y' = 1/5 - 1/(x+2) = 0$, so $x = 3$. By the second derivative test, we see that $y'' = 1/(x+2)^2 > 0$, so $x = 3$ corresponds to the minimum point $M$.
+    
+    Substituting $x = 20$ into the equation of the curve gives $y = 4 - \ln 22 = 0.909 > 0$.
 
     We know that $y' = 1/5 - 1/(x+2)$, hence $y' < 1/5$ for all $x > -2$. Since the domain of the curve is $x > -2$, $y'$ is always less than $1/5$.
 
-    Let $(\a, 0)$ be the coordinates of the root of the line through $M$ having gradient $\frac15$. We know that the coordinates of $M$ are $(3, 3/5 - \ln5)$. Taking the gradient of the line segment joining $M$ and $(\a, 0)$, we get \[\frac{(3/5 - \ln5) - 0}{3 - \a} = \frac15 \implies \a = 5\ln 5 = 8.05 > 8.\] Since the gradient of the curve is always less than $1/5$, $\a$ represents the lowest possible value of the positive root of the curve. Hence, the positive root of the equation $x/5 - \ln{x+2} = 0$ is greater than 8.
+    Let $(\a, 0)$ be the coordinates of the root of the line through $M$ having gradient $1/5$. We know that the coordinates of $M$ are $(3, 3/5 - \ln5)$. Taking the gradient of the line segment joining $M$ and $(\a, 0)$, we get \[\frac{(3/5 - \ln5) - 0}{3 - \a} = \frac15,\] so $\a = 5\ln 5 = 8.05 > 8$. Since the gradient of the curve is always less than $1/5$, which is the gradient of the line, it stands to reason that $\a$ represents the lowest possible value of the positive root of the curve. Hence, the positive root of the equation $x/5 - \ln{x+2} = 0$ is greater than 8.
 
     Let $f(x) = x/5 - \ln{x+2}$. Using linear interpolation on the interval $[8, 20]$, we have \[\a = \frac{8f(20) - 20f(8)}{f(20) - f(8)} = 13.2 \todp{1}.\]
 
@@ -474,7 +473,7 @@
 \begin{problem}
     \begin{enumerate}
         \item The function $f$ is such that $f(a)f(b) < 0$, where $a < b$. A student concludes that the equation $f(x) = 0$ has exactly one root in the interval $(a,b)$. Draw sketches to illustrate two distinct ways in which the student could be wrong.
-        \item The equation $\sec^2x - \e^2 = 0$ has a root $\a$ in the interval $[1.5, 2.5]$. A student uses linear interpolation once on this interval to find an approximation to $\a$. Find the approximation to $\a$ given by this method and comment on the suitability of the method in this case.
+        \item The equation $\sec^2x - \e^x = 0$ has a root $\a$ in the interval $[1.5, 2.5]$. A student uses linear interpolation once on this interval to find an approximation to $\a$. Find the approximation to $\a$ given by this method and comment on the suitability of the method in this case.
         \item The equation $\sec^2x - \e^x = 0$ also has a root $\b$ in the interval $(0.1, 0.9)$. Use the Newton-Raphson method, with $f(x) = \sec^2x-\e^x$ and initial approximation $0.5$, to find a sequence of approximations $\bc{x_1, x_2, x_3, \ldots}$ to $\b$. Describe what is happening to $x_n$ for large $n$, and use a graph of the function to explain why the sequence is not converging to $\b$.
     \end{enumerate}
 \end{problem}
@@ -551,14 +550,14 @@
             \centering
             \begin{tabular}{|c|c|}
             \hline
-            $r$ & $x_r$ \\ \hline
+            $r$ & $x_r$ \\ \hline\hline
             1 & 0.5 \\ \hline
-            2 & -1.02272 \\ \hline
-            3 & -0.75526 \\ \hline
-            4 & -0.40306 \\ \hline
-            5 & -0.09667 \\ \hline
-            6 & -0.00466 \\ \hline
-            7 & -0.00000 \\ \hline
+            2 & $-1.02272$ \\ \hline
+            3 & $-0.75526$ \\ \hline
+            4 & $-0.40306$ \\ \hline
+            5 & $-0.09667$ \\ \hline
+            6 & $-0.00466$ \\ \hline
+            7 & $-0.00000$ \\ \hline
             \end{tabular}
         \end{table}
         As $n \to \infty$, $x_n \to 0^-$. 
@@ -603,7 +602,7 @@
 \begin{problem}
     The function $f$ is given by $f(x) = \sqrt{1 - x^2} + \cos x - 1$ for $0 \leq x \leq 1$. It is known, from graphical work, that the equation $f(x) = 0$ has a single root $x = \a$.
     \begin{enumerate}
-        \item Express g(x) in terms of $x$, where $g(x) = x - \frac{f(x)}{f'(x)}$.
+        \item Express g(x) in terms of $x$, where $g(x) = x - f(x)/f'(x)$.
     \end{enumerate}
 
         A student attempts to use the Newton-Raphson method, based on the form $x_{n+1} = g(x_n)$, to calculate the value of $\a$ correct to 3 decimal places.
@@ -620,7 +619,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We know $f'(x) = \frac{-x}{\sqrt{1-x^2}} - \sin x$. Hence, \[g(x) = x - \frac{\sqrt{1 - x^2} + \cos x - 1}{\frac{-x}{\sqrt{1-x^2}} - \sin x}.\]
+        We know \[f'(x) = -\frac{x}{\sqrt{1-x^2}} - \sin x.\] Hence, \[g(x) = x - \frac{\sqrt{1 - x^2} + \cos x - 1}{-x/\sqrt{1-x^2} - \sin x}.\]
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
@@ -638,7 +637,7 @@
                 \centering
                 \begin{tabular}{|c|c|}
                 \hline
-                $r$ & $x_r$ \\ \hline
+                $r$ & $x_r$ \\ \hline\hline
                 1 & 0.9 \\ \hline
                 2 & 0.92019 \\ \hline
                 3 & 0.91928 \\ \hline

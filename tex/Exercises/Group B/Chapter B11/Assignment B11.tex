@@ -8,61 +8,69 @@
 \end{solution}
 
 \begin{problem}
-    Find the quadratic approximation of $f(x, y) = \e^{x^2 + y^2}$ around the point $\bp{\frac12, 0}$.
+    Find the quadratic approximation of $f(x, y) = \e^{x^2 + y^2}$ around the point $\bp{1/2, 0}$.
 \end{problem}
 \begin{solution}
-    Observe that we have
-    \begin{gather*}
-        f_x(x, y) = 2x\e^{x^2 + y^2}, \quad f_y(x, y) = 2y\e^{x^2 + y^2}\\
-        f_{xx}(x, y) = 2\e^{x^2 + y^2}(2x^2 + 1), \quad f_{xy}(x, y) = 4xy\e^{x^2 + y^2}, \quad f_{yy}(x, y) = 2\e^{x^2 + y^2}(2y^2 + 1).
-    \end{gather*}
-    Evaluating $f(x, y)$ and the above partial derivatives at $\bp{\frac12, 0}$, we obtain
-    \begin{gather*}
-        f(x, y) = \e^{1/4}, \quad f_x(x, y) = \e^{1/4}, \quad f_y(x, y) = 0\\
-        f_{xx}(x, y) = 3\e^{1/4}, \quad f_{xy}(x, y) = 0, \quad f_{yy}(x, y) = 2\e^{1/4}.
-    \end{gather*}
-    The quadratic approximation $Q(x, y)$ to $f(x, y)$ at $\bp{\frac12, 0}$ is hence \[Q(x, y) = \e^{1/4} + \e^{1/4}\bp{x - \frac12} + 3\e^{1/4} \bp{x - \frac12}^2 + \e^{1/4} y^2.\]
+    At $(1/2, 0)$, we have
+    \begin{align*}
+        f(x, y) &= \e^{x^2 + y^2} = \e^{1/4},
+        f_x(x, y) &= 2x\e^{x^2 + y^2} = \e^{1/4},\\
+        f_y(x, y) &= 2y\e^{x^2 + y^2} = 0,\\
+        f_{xx}(x, y) &= 2\e^{x^2 + y^2}(2x^2 + 1) = 3\e^{1/4},\\
+        f_{xy}(x, y) &= 4xy\e^{x^2 + y^2} = 0,\\
+        f_{yy}(x, y) &= 2\e^{x^2 + y^2}(2y^2 + 1) = 2\e^{1/4}.
+    \end{align*}
+    The quadratic approximation $Q(x, y)$ to $f(x, y)$ at $\bp{1/2, 0}$ is hence \[Q(x, y) = \e^{1/4} + \e^{1/4}\bp{x - \frac12} + 3\e^{1/4} \bp{x - \frac12}^2 + \e^{1/4} y^2.\]
 \end{solution}
 
 \begin{problem}
-    A common problem in experimental work is to obtain a mathematical relationship between two variables $x$ and $y$ by ``fitting'' a curve to points in the plane corresponding to various experimentally determines values of $x$ and $y$, say \[(x_1, y_1), (x_2, y_2), (x_3, y_3), \ldots, (x_n, y_n).\] Based on theoretical considerations, or simply on the pattern of the points, one decides on the general form of the curve to be fitted. Often, the ``curve'' to be fitted is a straight line, $y = ax + b$. One criterion for selecting a line of ``best fit'' is to choose $a$ and $b$ to minimize the function \[f(a, b) = \sum_{k = 1}^n (ax_k + b - y_k)^2.\] Geometrically, $\abs{ax_k + b - y_k}$ is the vertical distance between the data point $(x_k, y_k)$ and the line $y = ax + b$, so in effect, minimizing $f(a, b)$ minimizes the sum of the squares of the vertical distances. This procedure is called the method of least squares.
+    A common problem in experimental work is to obtain a mathematical relationship between two variables $x$ and $y$ by ``fitting'' a curve to points in the plane corresponding to various experimentally determines values of $x$ and $y$, say \[(x_1, y_1), \quad (x_2, y_2), \quad (x_3, y_3), \quad \ldots, \quad (x_n, y_n).\] Based on theoretical considerations, or simply on the pattern of the points, one decides on the general form of the curve to be fitted. Often, the ``curve'' to be fitted is a straight line, $y = ax + b$. One criterion for selecting a line of ``best fit'' is to choose $a$ and $b$ to minimize the function \[f(a, b) = \sum (ax_k + b - y_k)^2.\] Geometrically, $\abs{ax_k + b - y_k}$ is the vertical distance between the data point $(x_k, y_k)$ and the line $y = ax + b$, so in effect, minimizing $f(a, b)$ minimizes the sum of the squares of the vertical distances. This procedure is called the method of least squares.
 
     \begin{enumerate}
         \item Show that the conditions $\pderx{f}{a} = 0$ and $\pderx{f}{b} = 0$ result in the equations
         \begin{align*}
-            \bp{\sum_{k = 1}^n x_k^2} a + \bp{\sum_{k = 1}^n x_k} b &= \sum_{k = 1}^n (x_k y_k)\\
-            \bp{\sum_{k = 1}^n x_k} a + nb &= \sum_{k = 1}^n y_k
+            \bp{\sum x_k^2} a + \bp{\sum x_k} b &= \sum (x_k y_k)\\
+            \bp{\sum x_k} a + nb &= \sum y_k
         \end{align*}
-        \item Solve the equations for $a$ and $b$ to show that \[a = \frac{n\sum_{k = 1}^n (x_k y_k) - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n y_k}}{n\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}\] and \[b = \frac{\bp{\sum_{k = 1}^n x_k^2}\bp{\sum_{k = 1}^n y_k} - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n (x_k y_k)}}{n\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}.\]
-        \item Given that $\bar{x} =  \frac1n \sum_{k = 1}^n x_k$, show that $ n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 > 0$.
+        \item Solve the equations for $a$ and $b$ to show that \[a = \frac{n\sum (x_k y_k) - \bp{\sum x_k}\bp{\sum y_k}}{n\sum x_k^2 - \bp{\sum x_k}^2}\] and \[b = \frac{\bp{\sum x_k^2}\bp{\sum y_k} - \bp{\sum x_k}\bp{\sum (x_k y_k)}}{n\sum x_k^2 - \bp{\sum x_k}^2}.\]
+        \item Given that $\ol{x} =  \sum x_k/n$, show that $ n \sum x_k^2 - \bp{\sum x_k}^2 > 0$.
         \item Find $f_{aa}(a, b)$, $f_{bb}(a, b)$ and $f_{ab}(a, b)$.
         \item Show that $f$ has a relative minimum at the critical point found in (b).
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that \[\pder{f}{a} = \pder{}{a} \sum_{k = 1}^n (ax_k + b - y_k)^2 = \sum_{k = 1}^n 2x_k(ax_k + b - y_k) = 2\sum_{k = 1}^n (ax_k^2 + bx_k - x_ky_k).\] Hence, \[\pder{f}{a} = 2\sum_{k = 1}^n (ax_k^2 + bx_k - x_ky_k) = 0 \implies a \sum_{k = 1}^n x_k^2 + b \sum_{k = 1}^n x_k = \sum_{k = 1}^n x_ky_k.\]
-
-        Observe that \[\pder{f}{b} = \pder{}{b} \sum_{k = 1}^n (ax_k + b - y_k)^2 = \sum_{k = 1}^n 2(ax_k + b - y_k) = 2\bs{\sum_{k = 1}^n (ax_k - y_k) + bn}.\] Hence, \[\pder{f}{b} = 2\bs{\sum_{k = 1}^n (ax_k - y_k) + bn} = 0 \implies a \sum_{k = 1}^n x_k + bn = \sum_{k = 1}^n y_k.\]
-    \end{ppart}
-    \begin{ppart}
-        Let \[A = \sum_{k = 1}^n x_k^2, \quad B = \sum_{k = 1}^n x_k, \quad C = \sum_{k = 1}^n (x_k y_k), \quad D = n, \quad E = \sum_{k = 1}^n y_k.\] The above equations transform into \[\systeme{Aa + Bb = C, Ba + Db = E}.\] One can easily solve the system for $a$ and $b$, yielding \[a = \frac{CD - BE}{AD - B^2}, \quad b = \frac{AE - BC}{AD - B^2}.\] Thus, \[a = \frac{n\sum_{k = 1}^n (x_k y_k) - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n y_k}}{n\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}\] and \[b = \frac{\bp{\sum_{k = 1}^n x_k^2}\bp{\sum_{k = 1}^n y_k} - \bp{\sum_{k = 1}^n x_k}\bp{\sum_{k = 1}^n (x_k y_k)}}{n\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2}.\]
-    \end{ppart}
-    \begin{ppart}
-        Observe that \[\bar{x} =  \frac1n \sum_{k = 1}^n x_k \implies \sum_{k = 1}^n x_k = n \bar{x}.\] Consider $ n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2$.
+        Observe that 
         \begin{align*}
-            n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 &= n \bp{\sum_{k = 1}^n x_k^2 - n\bar{x}^2} = n \bp{\sum_{k = 1}^n x_k^2 - 2n\bar{x}^2 + n\bar{x}^2} \\
-            &= n \bs{\sum_{k = 1}^n x_k^2 - 2n\bar{x} \bp{\frac1n \sum_{k = 1}^n x_k} + \sum_{k = 1}^n \bar{x}^2}\\
-            &= n \bp{\sum_{k = 1}^n x_k^2 - \sum_{k = 1}^n 2x_k\bar{x} + \sum_{k = 1}^n \bar{x}^2} \\
-            &= n \sum_{k = 1}^n \bp{x_k^2 -  2x_k\bar{x} + \bar{x}^2}\\
-            &= n \sum_{k = 1}^n \bp{x_k - \bar{x}}^2.
+            \pder{f}{a} &= \pder{}{a} \sum (ax_k + b - y_k)^2 = \sum 2x_k(ax_k + b - y_k) = 2\sum (ax_k^2 + bx_k - x_ky_k),\\
+            \pder{f}{b} &= \pder{}{b} \sum (ax_k + b - y_k)^2 = \sum 2(ax_k + b - y_k) = 2\bs{\sum (ax_k - y_k) + bn}.
         \end{align*}
-        Given that the RHS is a sum of squares, it must be greater than or equal to 0. We thus have the inequality \[n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 \geq 0.\] However, if $ n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 = 0$, then both $a$ and $b$ would be undefined. Thus, we must have a strict inequality, which gives \[n \sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2 > 0.\]
+        Since $\pderx{f}{a} = 0$ and $\pderx{f}{b} = 0$, we have \[a \sum x_k^2 + b \sum x_k = \sum x_ky_k \quad \tand \quad a \sum x_k + bn = \sum y_k.\]
     \end{ppart}
     \begin{ppart}
-        From (a), we have \[f_a(a, b) = 2a \sum_{k = 1}^n x_k^2 + 2b \sum_{k = 1}^n x_k - 2\sum_{k = 1}^n x_k y_k\] and \[f_b(a, b) = 2a\sum_{k = 1}^n x_k + 2nb - 2\sum_{k = 1}^n y_k.\] Thus, \[f_{aa}(a, b) = 2 \sum_{k = 1}^n x_k^2, \qquad f_{ab}(a, b) = 2 \sum_{k = 1}^n x_k, \qquad f_{bb}(a, b) = 2n.\]
+        Let \[A = \sum x_k^2, \quad B = \sum x_k, \quad C = \sum (x_k y_k), \quad D = n, \quad E = \sum y_k.\] The above equations transform into \[\systeme{Aa + Bb = C, Ba + Db = E}.\] Solving for $a$ and $b$, we get \[a = \frac{CD - BE}{AD - B^2} \quad \tand \quad b = \frac{AE - BC}{AD - B^2}.\] Thus, \[a = \frac{n\sum (x_k y_k) - \bp{\sum x_k}\bp{\sum y_k}}{n\sum x_k^2 - \bp{\sum x_k}^2}\] and \[b = \frac{\bp{\sum x_k^2}\bp{\sum y_k} - \bp{\sum x_k}\bp{\sum (x_k y_k)}}{n\sum x_k^2 - \bp{\sum x_k}^2}.\]
     \end{ppart}
     \begin{ppart}
-        Let $D = f_{aa}(a, b) f_{bb}(a, b) - \bs{f_{ab}(a, b)}^2$. From part (d), we have \[D = 4\bs{n\sum_{k = 1}^n x_k^2 - \bp{\sum_{k = 1}^n x_k}^2},\] which is clearly positive from part (c). Furthermore, $f_{aa}(a, b) =  2 \sum_{k = 1}^n x_k^2$ is clearly positive (note that we reject the equality for the reason stated in part (c)). Thus, by the second partial derivative test, the critical point found in part (b) must be a minimum point.
+        Note that $\sum x_k = n \ol{x}$. Consider $ n \sum x_k^2 - \bp{\sum x_k}^2$.
+        \begin{align*}
+            n \sum x_k^2 - \bp{\sum x_k}^2 &= n \bp{\sum x_k^2 - n\ol{x}^2}\\
+            &= n \bp{\sum x_k^2 - 2n\ol{x}^2 + n\ol{x}^2} \\
+            &= n \bs{\sum x_k^2 - 2n\ol{x} \bp{\frac1n \sum x_k} + \sum \ol{x}^2}\\
+            &= n \bp{\sum x_k^2 - \sum 2x_k\ol{x} + \sum \ol{x}^2} \\
+            &= n \sum \bp{x_k^2 -  2x_k\ol{x} + \ol{x}^2}\\
+            &= n \sum \bp{x_k - \ol{x}}^2.
+        \end{align*}
+        Given that the RHS is a sum of squares, it must be greater than or equal to 0. We thus have the inequality \[n \sum x_k^2 - \bp{\sum x_k}^2 \geq 0.\] However, if $ n \sum x_k^2 - \bp{\sum x_k}^2 = 0$, then both $a$ and $b$ would be undefined. Thus, we must have a strict inequality, i.e. \[n \sum x_k^2 - \bp{\sum x_k}^2 > 0.\]
+    \end{ppart}
+    \begin{ppart}
+        Differentiating the results in (a), we have
+        \begin{align*}
+            f_{aa}(a, b) &= 2 \sum x_k^2,\\
+            f_{ab}(a, b) &= 2 \sum x_k,\\
+            f_{bb}(a, b) &= 2n.
+        \end{align*}
+    \end{ppart}
+    \begin{ppart}
+        Let $D = f_{aa}(a, b) f_{bb}(a, b) - \bs{f_{ab}(a, b)}^2$. From part (d), we have \[D = 4\bs{n\sum x_k^2 - \bp{\sum x_k}^2},\] which is positive from part (c). Furthermore, $f_{aa}(a, b) =  2 \sum x_k^2$ is positive (note that we reject the equality for the reason stated in part (c)). Thus, by the second partial derivative test, the critical point found in part (b) must be a minimum point.
     \end{ppart}
 \end{solution}

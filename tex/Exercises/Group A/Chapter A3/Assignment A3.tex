@@ -11,13 +11,13 @@
         What is the minimum number of complete years for which he has to work in order to achieve his goal?
 \end{problem}
 \begin{solution}
-    Let \$$u_n$ be his annual salary in the $n$th year after 2019, with $n \in \NN$. Then $u_{n+1} = 1.05\cdot u_n$, with $u_0 = 40800$. Hence, $u_n = 40800 \cdot 1.05^n$. Let \$$v_n$ be the amount saved in the $n$th year after 2019. Then $v_n = 0.40 \cdot u_n = 16320 \cdot 1.05^n$.
+    Let \$$u_n$ be his annual salary in the $n$th year after 2019, with $n \in \NN$. Then $u_{n+1} = 1.05 u_n$, with $u_0 = 40800$. Hence, $u_n = 40800 \cdot 1.05^n$. Let \$$v_n$ be the amount saved in the $n$th year after 2019. Then $v_n = 0.40 u_n = 16320 \cdot 1.05^n$.
 
     \begin{ppart}
         In 2027, $n = 8$. Hence, his annual savings in 2027, in dollars, is given by \[v_8 = 16320 \cdot 1.05^8 = 24112 \text{ (to the nearest integer)}.\]
     \end{ppart}
     \begin{ppart}
-        His total savings at the end of $n$ years, in dollars, is given by \[16320\bp{1.05^0 + 1.05^1 + \cdots + 1.05^n} = 16320 \bp{\frac{1 - 1.05^n}{1-1.05}} = 326400 \bp{1.05^n - 1}.\]
+        His total savings at the end of $n$ years, in dollars, is given by \[16320\bp{1.05^0 + 1.05^1 + \dots + 1.05^n} = 16320 \bp{\frac{1 - 1.05^n}{1-1.05}} = 326400 \bp{1.05^n - 1}.\]
     \end{ppart}
 
     Consider $326400 \bp{1.05^n - 1} \geq 1 000 000$. Using G.C., we see that $n \geq 28.7$. Thus, he needs to work for a minimum of 29 complete years to reach his goal.
@@ -36,9 +36,9 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let the sequence $r_n$ be the radius of the $n$th smallest circle, in centimetres. Hence, $r_n = \frac14 + r_{n-1}$. Since the smallest circle has area $\pi$ cm$^2$, $r_1 = 1$. Thus, $r_n = 1 + \frac14 (n - 1)$.
+        Let the sequence $r_n$ be the radius of the $n$th smallest circle, in centimetres. Hence, $r_n = 1/4 + r_{n-1}$. Since the smallest circle has area $\pi$ cm$^2$, we have $r_1 = 1$. Thus, $r_n = 1 + (n - 1)/4$.
 
-        Consider the $n$th partial sum of the circumferences: \[2\pi r_1 + 2\pi r_2 + \cdots + 2\pi r_n = 2\pi \cdot n \bp{\frac{1 + \bs{1 + \frac14 (n - 1)}}{2}} = \frac{\pi(n^2 + 7n)}{4}.\] Since the rope has length $200\pi$ cm, we have the inequality \[\frac{\pi(n^2 + 7n)}{4} \leq 200 \pi \implies n^2 - 7n - 800 \leq 0 \implies (n+32)(n-25) \leq 0.\] Hence, $n \leq 25$. Since the rope is cut to form as many circles as possible, $n = 25$. Thus, the largest circle has area $\pi \cdot r_{25}^2 = 49\pi$ cm$^2$.
+        Consider the $n$th partial sum of the circumferences: \[2\pi r_1 + 2\pi r_2 + \cdots + 2\pi r_n = 2\pi \cdot n \bp{\frac{1 + \bs{1 + (n - 1)/4}}{2}} = \frac{\pi(n^2 + 7n)}{4}.\] Since the rope has length $200\pi$ cm, we have the inequality \[\frac{\pi(n^2 + 7n)}{4} \leq 200 \pi.\] Simplifying, we get the inequality $n^2 - 7n - 800 = (n+32)(n-25) \leq 0$. Hence, $n \leq 25$. Since the rope is cut to form as many circles as possible, $n = 25$. Thus, the largest circle has area $\pi r_{25}^2 = 49\pi$ cm$^2$.
     \end{ppart}
     \begin{ppart}
         Let the sequence being summed by $u_1, u_2, \ldots$. Observe that \[u_n = S_n - S_{n-1} = \bp{\a^{-n} - 1} - \bp{\a^{-(n-1)} - 1} = \a^{-n} (1 - \a).\]
@@ -47,7 +47,7 @@
             Observe that \[\frac{u_{n+1}}{u_n} = \frac{\a^{-(n+1)} (1 - \a)}{\a^{-n} (1 - \a)} = \a^{-1},\] which is a constant. Thus, $u_n$ is in GP with common ratio $\a^{-1}$.
         \end{psubpart}
         \begin{psubpart}
-            Consider $S_\infty = \lim_{n \to \infty} S_n = \lim_{n \to \infty} (\a^{-n} - 1)$. For $S_\infty$ to exist, we need $\lim_{n \to \infty} \a^{-n}$ to exist. Hence, $\abs{\a^{-1}} < 1$, whence $\abs{\a} > 1$. Thus, $\a < -1$ or $\a > 1$. The solution set of $\a$ is thus $\bc{ x \in \RR : x < -1 \tor x > 1}$.
+            Consider $S_\infty = \lim_{n \to \infty} S_n = \lim_{n \to \infty} (\a^{-n} - 1)$. For $S_\infty$ to exist, we need $\lim_{n \to \infty} \a^{-n}$ to exist. Hence, $\abs{\a^{-1}} < 1$, so $\a < -1$ or $\a > 1$. The solution set of $\a$ is thus $\bc{ x \in \RR : x < -1 \tor x > 1}$.
         \end{psubpart}
         \begin{psubpart}
             Since $\abs{\a^{-1}} < 1$, we know $\lim_{n \to \infty} \a^{-n} = 0$. Hence, $S_\infty = -1$.
@@ -62,7 +62,7 @@
         \item Given that $u_1 = 5$ and $u_2 = 15$, find $A$ and $u_3$.
     \end{enumerate}
 
-    It is known that the $n$th term of this sequence is given by \[u_n = a(2^n) + bn +c,\] where $a$, $b$ and $c$ are constants.
+    It is known that the $n$th term of this sequence is given by \[u_n = a2^n + bn +c,\] where $a$, $b$ and $c$ are constants.
 
     \begin{enumerate}
         \setcounter{enumi}{1}
@@ -74,17 +74,17 @@
         Substituting $n = 1$ into the recurrence relation yields $u_2 = 2u_1 + A$. Thus, $A = u_2 - 2u_1 = 5$. Substituting $n = 2$ into the recurrence relation yields $u_3 = 2u_2 + 2A = 40$.
     \end{ppart}
     \begin{ppart}
-        Since $u_1=5$, $u_2 = 15$ and $u_3 = 40$, we have the following system \[\systeme{2a + b + c = 5,4a + 2b + c = 15,8a + 3b + c = 40}\] which has the unique solution $a = \frac{15}2$, $b=-5$ and $c=-5$
+        Since $u_1=5$, $u_2 = 15$ and $u_3 = 40$, we have the following system \[\systeme{2a + b + c = 5,4a + 2b + c = 15,8a + 3b + c = 40}\] which has the unique solution $a = 15/2$, $b=-5$ and $c=-5$
     \end{ppart}
 \end{solution}
 
 \clearpage
 \begin{problem}
-    The graphs of $y = 2^x / 3$ and $y=x$ intersect at $x = \a$ and $x=\b$ where $\a < \b$. A sequence of real numbers $x_1, x_2, x_3, \ldots$ satisfies the recurrence relation \[x_{n+1} = \frac13 \cdot 2^{x_n}, \qquad n \geq 1.\]
+    The graphs of $y = 2^x / 3$ and $y=x$ intersect at $x = \a$ and $x=\b$ where $\a < \b$. A sequence of real numbers $x_1, x_2, x_3, \ldots$ satisfies the recurrence relation \[x_{n+1} = \frac{2^{x_n}}{3}, \quad n \geq 1.\]
 
     \begin{enumerate}
         \item Prove algebraically that, if the sequence converges, then it converges to either $\a$ or $\b$.
-        \item By using the graphs of $y=\frac13 \cdot 2^x$ and $y=x$, prove that
+        \item By using the graphs of $y=2^x/3$ and $y=x$, prove that
         \begin{itemize}
             \item if $\a < x_n < \b$, then $\a < x_{n+1} < x_n$
             \item if $x_n < \a$, then $x_n < x_{n+1} < \a$
@@ -96,7 +96,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $L = \lim\limits_{n \to \infty} x_n$. Then $L = \frac13 \cdot 2^L$. Since $y=x$ and $y=\frac13 \cdot 2^x$ intersect only at $x=\a$ and $x = \b$, then $\a$ and $\b$ are the only roots of $x = \frac13 \cdot 2^x$. Since $L$ is also a root of $x = \frac13 \cdot 2^x$, $L$ must be either $\a$ or $\b$.
+        Let $L = \lim_{n \to \infty} x_n$. Then $L = 2^L/3$. Since $y=x$ and $y=2^x/3$ intersect only at $x=\a$ and $x = \b$, then $\a$ and $\b$ are the only roots of $x = 2^x/3$. Since $L$ is also a root of $x = 2^x/3$, $L$ must be either $\a$ or $\b$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{123}

@@ -7,7 +7,7 @@
         \centering
         \begin{tabularx}{\textwidth}{|>{\centering}X|c|c|c|c|}
         \hline
-        \textbf{Performing Arts Group} & \textbf{Choir} & \textbf{Chinese Orchestra} & \textbf{Concert Band} & \textbf{Dance} \\ \hline
+        \bd{Performing Arts Group} & \bd{Choir} & \bd{Chinese Orchestra} & \bd{Concert Band} & \bd{Dance} \\ \hline
         Membership Fee (per student per month) & \$15 & \$20 & \$20 & \$18 \\ \hline
         Instructor Fee (per student per month) & \$50 & \$60 & \$75 & \$40 \\ \hline
         Costume Fee (one-time payment per student) & \$45 & ? & \$40 & \$60 \\ \hline
@@ -20,18 +20,18 @@
     Hence, find the costume fee paid by each student from Chinese Orchestra if a vendor charges a total of \$9,440 for all the costumes for the four performing arts groups.
 \end{problem}
 \begin{solution}
-    Let $a$, $b$, $c$, $d$ be the number of students in Choir, Chinese Orchestra, Concert Band and Dance respectively. From the given information, we have the following equations: \[\systeme{a+b+c+d=200,15a + 20b + 20c + 18d = 3721,50a+60b+75c+40d=11830,-5a+6b+8c-7d=431}\] Using G.C., we obtain the unique solution \[a = 43, \quad b = 65, \quad c = 60, \quad d = 32.\] Let the Chinese Orchestra's custom fee (per student) be $x$. From the given information, we have the following equation: \[45a + xb + 40c + 60d = 9440.\] Hence, \[x = \frac{9440 - 45a - 40c - 60d}{b} = 49.\] Thus, the costume fee paid by each student from Chinese Orchestra is \$49.
+    Let $a$, $b$, $c$, $d$ be the number of students in Choir, Chinese Orchestra, Concert Band and Dance respectively. From the given information, we have the following equations: \[\systeme{a+b+c+d=200,15a + 20b + 20c + 18d = 3721,50a+60b+75c+40d=11830,-5a+6b+8c-7d=431}\] Using G.C., we obtain the unique solution $a = 43$, $b = 65$, $c = 60$ and $d = 32$. Let the Chinese Orchestra's custom fee (per student) be $x$. From the given information, we have the following equation: \[45a + xb + 40c + 60d = 9440.\] Hence, \[x = \frac{9440 - 45a - 40c - 60d}{b} = 49.\] Thus, the costume fee paid by each student from Chinese Orchestra is \$49.
 \end{solution}
 
 \begin{problem}
     Solve the inequality $(x + 2)^2 \bp{x^2 + 2x - 8} \geq 0$.
 \end{problem}
 \begin{solution}
-    Since $(x+2)^2 \geq 0$, we can remove it from the inequality, keeping in mind that $x = -2$ is a solution. We are hence left with \[x^2 + 2x - 8 = (x+4)(x-2) \geq 0.\] Since this quadratic is concave up, we clearly have $x \leq -4$ or $x \geq 2$. Altogether, we have \[x \leq -4 \tor x = -2 \tor x \geq 2.\]
+    Since $(x+2)^2 \geq 0$, we can remove it from the inequality, keeping in mind that $x = -2$ is a solution. We are hence left with \[x^2 + 2x - 8 = (x+4)(x-2) \geq 0.\] Since this quadratic is concave up, we clearly have $x \leq -4$ or $x \geq 2$. Altogether, we have $x \leq -4$ or $x = -2$ or $x \geq 2$.
 \end{solution}
 
 \begin{problem}
-    By using a graphical method, solve the inequality $\abs{x^2 - x - 2} \geq \frac{x-1}{x+2}$.
+    By using a graphical method, solve the inequality \[\abs{x^2 - x - 2} \geq \frac{x-1}{x+2}.\]
 \end{problem}
 \begin{solution}
     \begin{figure}[H]\tikzsetnextfilename{29}
@@ -63,44 +63,43 @@
     \end{tikzpicture}
     \end{figure}
 
-    From the graph, the $x$-coordinates of the intersection points are $-2.51$, $1.92$ and $2.09$. Hence, \[x \leq -2.51 \quad \tand \quad -2 \leq x \leq 1.92 \quad \tand \quad x \geq 2.09.\]
+    From the graph, the $x$-coordinates of the intersection points are $-2.51$, $1.92$ and $2.09$. Hence, $x \leq -2.51$ or $-2 \leq x \leq 1.92$ or $x \geq 2.09$.
 \end{solution}
 
 \begin{problem}
-    Show that $x^2 + 2x + 3$ is always positive for all real values of $x$. Hence, solve the inequality $\frac{x^2 + 2x + 3}{3 + 2x - x^2} \leq 0$. Deduce the solution set of the inequality $\frac{x^2 + 2\abs{x} + 3}{3 + 2\abs{x} - x^2} \leq 0$.
+    Show that $x^2 + 2x + 3$ is always positive for all real values of $x$. Hence, solve the inequality \[\frac{x^2 + 2x + 3}{3 + 2x - x^2} \leq 0.\] Deduce the solution set of the inequality \[\frac{x^2 + 2\abs{x} + 3}{3 + 2\abs{x} - x^2} \leq 0.\]
 \end{problem}
 \begin{solution}
-    Note that the discriminant of $x^2 + 2x + 3 = 0$ is $\D = 2^2 - 4(1)(3) = -8 < 0$. Since the $y$-intercept is positive ($3 > 0$), it follows that $x^2 + 2x + 3$ is always positive for real $x$.
+    Note that the discriminant of $x^2 + 2x + 3 = 0$ is $\D = 2^2 - 4(1)(3) = -8 < 0$. Since the $y$-intercept is positive, it follows that $x^2 + 2x + 3$ is always positive for real $x$.
 
-    Consider the inequality $\frac{x^2 + 2x + 3}{3 + 2x - x^2} \leq 0$. Since $x^2 + 2x + 3$ is always positive, it suffices to solve $3 + 2x - x^2 \leq 0$. Observe that the roots of $3 + 2x - x^2 = 0$ are $x = 3$ and $x = -1$. Since $3 + 2x - x^2$ is concave down, we have \[x \leq -1 \quad \tor \quad x \geq 3.\]
+    Consider the inequality \[\frac{x^2 + 2x + 3}{3 + 2x - x^2} \leq 0.\] Since $x^2 + 2x + 3$ is always positive, it suffices to solve $3 + 2x - x^2 \leq 0$. Observe that the roots of $3 + 2x - x^2 = 0$ are $x = 3$ and $x = -1$. Since $3 + 2x - x^2$ is concave down, we have $x \leq -1$ or $x \geq 3$.
 
-    Replacing $x$ with $\abs{x}$, we get $\abs{x} \leq -1$ (no solutions) and $\abs{x} \geq 3$, whence $x \leq -3$ or $x \geq 3$. The solution set is thus \[\bc{x \in \RR : x \leq -3 \tor x \geq 3}.\]
+    Replacing $x$ with $\abs{x}$, we get $\abs{x} \leq -1$ (no solutions) or $\abs{x} \geq 3$, whence $x \leq -3$ or $x \geq 3$. The solution set is thus $\bc{x \in \RR : x \leq -3 \tor x \geq 3}$.
 \end{solution}
 
-\clearpage
 \begin{problem}
-    Without use of a graphing calculator, solve the inequality $\frac{2x^2 - 7x + 6}{x^2 - x - 2} \geq 1$. Deduce the range of values of $x$ such that
+    Without use of a graphing calculator, solve the inequality \[\frac{2x^2 - 7x + 6}{x^2 - x - 2} \geq 1.\] Deduce the range of values of $x$ such that
     \begin{enumerate}
-        \item $\frac{2(\ln x)^2 - 7\ln x + 6}{(\ln x)^2 - \ln x - 2} > 1$
-        \item $\frac{2 - 7x + 6x^2}{1 - x - 2x^2} \geq 1$
+        \item $\displaystyle\frac{2(\ln x)^2 - 7\ln x + 6}{(\ln x)^2 - \ln x - 2} > 1$
+        \item $\displaystyle\frac{2 - 7x + 6x^2}{1 - x - 2x^2} \geq 1$
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Moving all terms to one side, we get \[\frac{2x^2 - 7x + 6}{x^2 - x - 2} \geq 1 \implies \frac{x^2 - 6x + 8}{x^2 - x - 2} \geq 0.\] Note that $x^2 - 6x + 8$ factors as $(x-2)(x-4)$ while $x^2 - x - 2$ factors as $(x-2)(x+1)$. Hence, \[\frac{x-4}{x+1} \geq 0 \implies (x-4)(x+1) \geq 0.\] Thus, we clearly have \[x < -1 \quad \tor \quad x \geq 4.\] Note that $x \neq -1$ since $x^2 - x - 2 \neq 0$.
+    Moving all terms to one side, we get \[\frac{2x^2 - 7x + 6}{x^2 - x - 2} -1 = \frac{x^2 - 6x + 8}{x^2 - x - 2} \geq 0.\] Note that $x^2 - 6x + 8$ factors as $(x-2)(x-4)$ while $x^2 - x - 2$ factors as $(x-2)(x+1)$. Hence, \[\frac{x-4}{x+1} \geq 0,\] which implies that $(x-4)(x+1) \geq 0$, so $x < -1$ or $x \geq 4$. Note that $x \neq -1$ since $x^2 - x - 2 \neq 0$.
 
     \begin{ppart}
-        Replacing $x$ with $\ln x$, we get \[\ln x < -1 \quad \tor \quad \ln x \geq 4,\] whence \[0 \leq x < \e^{-1} \quad \tor \quad x \geq \e^4.\]
+        Replacing $x$ with $\ln x$, we get \[\ln x < -1 \quad \tor \quad \ln x \geq 4,\] whence $0 \leq x < \e^{-1}$ or $x \geq \e^4$.
     \end{ppart}
     \begin{ppart}
-        Replacing $x$ with $1/x$, we get \[\frac1x < -1 \quad \tor \quad \frac1x \geq 4.\] Hence, \[-1 < x < 0 \quad \tor \quad 0 < x \leq \frac14.\] Note that $x = 0$ also satisfies the inequality ($2 \geq 1$). Hence, \[-1 < x \leq \frac14.\]
+        Replacing $x$ with $1/x$, we get \[\frac1x < -1 \quad \tor \quad \frac1x \geq 4.\] Hence, $-1 < x < 0$ or $0 < x \leq 1/4$. However, $x = 0$ also satisfies the inequality, so the solution is $-1 < x \leq 1/4$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    It is given that $y = \frac{x^2 + x + 1}{x - 1}$, $x \in \RR$, $x \neq 1$. Without using a calculator, find the set of values that $y$ can take.
+    It is given that \[y = \frac{x^2 + x + 1}{x - 1},\] where $x \in \RR$, $x \neq 1$. Without using a calculator, find the set of values that $y$ can take.
 \end{problem}
 \begin{solution}
-    Clearing denominators, we have \[y(x-1) = x^2 + x + 1 \implies x^2 + (1-y)x + (1+y) = 0.\] Since we are interested in the set of values that $y$ can take, we want this quadratic to have roots. Hence, the discriminant $\D$ should be non-negative: \[\D = (1-y)^2 - 4(1 + y) = y^2 - 6y - 3 \geq 0.\] Completing the square, \[(y-3)^2 \geq 12 \implies \abs{y - 3} \geq \sqrt{12} = 2\sqrt3.\] Hence, \[y \leq 3 - 2\sqrt3 \tor y \geq 3 + 2\sqrt3,\] whence the solution set is \[\bc{y \in \RR: y \leq 3 - 2\sqrt3 \tor y \geq 3 + 2\sqrt3}.\]
+    Clearing denominators and rearranging, we obtain the following quadratic in $x$: \[x^2 + (1-y)x + (1+y) = 0.\] Since we are interested in the set of values that $y$ can take, this quadratic must have real roots, so the discriminant $\D$ should be non-negative: \[\D = (1-y)^2 - 4(1 + y) = y^2 - 6y - 3 \geq 0.\] The roots to $y^2 - 6y - 3 = 0$ are $y = 3 \pm 2\sqrt3$, whence the solution set is \[\bc{y \in \RR: y \leq 3 - 2\sqrt3 \tor y \geq 3 + 2\sqrt3}.\]
 \end{solution}
 
 \begin{problem}[\chili]
@@ -118,10 +117,7 @@
     Find constants $a$, $b$, $c$ and $d$ such that $1 + 2^3 + 3^3 + \dots + n^3 = an^4 + bn^3 + cn^2 + dn$.
 \end{problem}
 \begin{solution}[1]
-    Substituting $n = 1, 2, 3, 4$ into the equation, we get the system \[\systeme{a + b + c + d = 1, 16a + 8b + 4c + 2d = 9, 81a + 27b + 9c + 3d = 36, 256a + 64b + 16c + 4d = 100}.\] Solving, we have \[a = \frac14, \quad b = \frac12, \quad c = \frac14, \quad d = 0.\]
-\end{solution}
-\begin{solution}[2]
-    Recall that \[\sum_{k = 1}^n k = \frac{n(n+1)}{2}.\] Now observe that \[(k+1)^3 - 1 = \sum_{k = 1}^n \bs{(k+1)^3 - k^3} = \sum_{k = 1}^n \bp{3k^2 + 3k + 1}.\] Rearranging, we obtain \[\sum_{k = 1}^n k^2 = \frac{n(n+1)(2n+1)}6.\] Similarly, we have \[(k+1)^4 - 1 = \sum_{k = 1}^n \bs{(k+1)^4 - k^4} = \sum_{k = 1}^n \bp{4k^3 + 6k^2 + 4k + 1},\] whence we obtain, upon rearranging, \[\sum_{k = 1}^n k^3 = \frac{n^4 + 2n^3 + n^2}{4}.\] Comparing coefficients, we have \[a = \frac14, \quad b = \frac12, \quad c = \frac14, \quad d = 0.\]
+    Substituting $n = 1, 2, 3, 4$ into the equation, we get the system \[\systeme{a + b + c + d = 1, 16a + 8b + 4c + 2d = 9, 81a + 27b + 9c + 3d = 36, 256a + 64b + 16c + 4d = 100}.\] Solving, we have $a = 1/4$, $b = 1/2$, $c = 1/4$ and $d = 0$.
 \end{solution}
 
 \begin{problem}[\chili]
@@ -136,16 +132,21 @@
             \centering
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
-                    domain = -7:3,
+                    domain = -5:5,
                     samples = 101,
                     axis y line=middle,
                     axis x line=middle,
                     xtick = {-2},
                     ytick = {4},
+                    xmax = 5,
+                    xmin = -5,
+                    ymax = 5,
+                    ymin = -5,
                     xlabel = {$x$},
                     ylabel = {$y$},
                     legend cell align={left},
                     legend pos=outer north east,
+                    axis equal image,
                     after end axis/.code={
                         \path (axis cs:0,0) 
                         node [anchor=north east] {$O$};
@@ -161,25 +162,30 @@
         Consider the figure above. Clearly, for 2 distinct roots (i.e. 2 distinct intersection points), we need $-1 < a < 1$.
     \end{ppart}
     \begin{ppart}
-        Note that the $x$-coordinate of the point of intersection between $y = ax + 4$ and $y = x + 2$ is: \[x + 2 = ax + 4 \implies x = \frac{-2}{a-1}.\] Similarly, the $x$-coordinate of the point of intersection between $y = ax + 4$ and $y = -(x+2)$ is: \[x + 2 = ax + 4 \implies x = \frac{-6}{a+1}.\]
+        Note that the $x$-coordinate of the point of intersection between $y = ax + 4$ and $y = x + 2$ is $x = -2/(a-1)$, while the $x$-coordinate of the point of intersection between $y = ax + 4$ and $y = -(x+2)$ is $x = -6/(a+1)$.
 
         Now consider the inequality $\abs{x + 2} < ax + 4$.
 
-        \case{1}[$a > 2$] $y = ax + 4$ only intersects the line $y = x + 2$. Hence, \[x > \frac{-2}{a - 1}.\]
+        \case{1}[$a > 2$] $y = ax + 4$ only intersects the line $y = x + 2$. Hence, $x > -2/(a-1)$.
         \begin{figure}[H]\tikzsetnextfilename{31}
             \centering
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
-                    domain = -7:3,
+                    domain = -5:5,
                     samples = 101,
                     axis y line=middle,
                     axis x line=middle,
                     xtick = {-2},
                     ytick = {4},
+                    xmax = 5,
+                    xmin = -5,
+                    ymax = 5,
+                    ymin = -5,
                     xlabel = {$x$},
                     ylabel = {$y$},
                     legend cell align={left},
                     legend pos=outer north east,
+                    axis equal image,
                     after end axis/.code={
                         \path (axis cs:0,0) 
                         node [anchor=north east] {$O$};
@@ -193,12 +199,12 @@
             \end{tikzpicture}
         \end{figure}
 
-        \case{2}[$1 \leq a \leq 2$] $y = ax + 4$ only intersects the line $y = -(x + 2)$. Hence, \[x \geq \frac{-6}{a-1}.\]
+        \case{2}[$1 \leq a \leq 2$] $y = ax + 4$ only intersects the line $y = -(x + 2)$. Hence, $x \geq -6/(a+1)$.
         \begin{figure}[H]\tikzsetnextfilename{32}
             \centering
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
-                    domain = -7:3,
+                    domain = -5:5,
                     samples = 101,
                     axis y line=middle,
                     axis x line=middle,
@@ -206,8 +212,13 @@
                     ytick = {4},
                     xlabel = {$x$},
                     ylabel = {$y$},
+                    xmax = 5,
+                    xmin = -5,
+                    ymax = 5,
+                    ymin = -5,
                     legend cell align={left},
                     legend pos=outer north east,
+                    axis equal image,
                     after end axis/.code={
                         \path (axis cs:0,0) 
                         node [anchor=north east] {$O$};
@@ -222,12 +233,12 @@
             \end{tikzpicture}
         \end{figure}
 
-        \case{3}[$-1 < a < 1$] $y = ax + 4$ intersects both $y = x + 2$ and $y = -(x+2)$. Hence, \[\frac{-6}{a-1} < x < \frac{-2}{a-1}.\]
+        \case{3}[$-1 < a < 1$] $y = ax + 4$ intersects both $y = x + 2$ and $y = -(x+2)$. Hence, $-6/(a+1) < x < -2/(a-1)$.
         \begin{figure}[H]\tikzsetnextfilename{33}
             \centering
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
-                    domain = -7:3,
+                    domain = -5:5,
                     samples = 101,
                     axis y line=middle,
                     axis x line=middle,
@@ -235,8 +246,13 @@
                     ytick = {4},
                     xlabel = {$x$},
                     ylabel = {$y$},
+                    xmax = 5,
+                    xmin = -5,
+                    ymax = 5,
+                    ymin = -5,
                     legend cell align={left},
                     legend pos=outer north east,
+                    axis equal image,
                     after end axis/.code={
                         \path (axis cs:0,0) 
                         node [anchor=north east] {$O$};
@@ -251,12 +267,12 @@
             \end{tikzpicture}
         \end{figure}
 
-        \case{4}[$a \leq -1$] $y = ax + 4$ only intersects the line $y = x + 2$. Hence, \[x \leq \frac{-2}{a - 1}.\]
+        \case{4}[$a \leq -1$] $y = ax + 4$ only intersects the line $y = x + 2$. Hence, $x \leq -2/(a-1)$.
         \begin{figure}[H]\tikzsetnextfilename{34}
             \centering
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \begin{axis}[
-                    domain = -7:3,
+                    domain = -5:5,
                     samples = 101,
                     axis y line=middle,
                     axis x line=middle,
@@ -264,8 +280,13 @@
                     ytick = {4},
                     xlabel = {$x$},
                     ylabel = {$y$},
+                    xmax = 5,
+                    xmin = -5,
+                    ymax = 5,
+                    ymin = -5,
                     legend cell align={left},
                     legend pos=outer north east,
+                    axis equal image,
                     after end axis/.code={
                         \path (axis cs:0,0) 
                         node [anchor=north east] {$O$};

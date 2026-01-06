@@ -4,9 +4,9 @@
     Evaluate the following limits.
 
     \begin{enumerate}
-        \item $\lim\limits_{x \to 5} (6x + 7)$
-        \item $\lim\limits_{x \to 1} \frac{x^3-1}{1-x}$
-        \item $\lim\limits_{x \to \infty} \frac{3x}{2x^2-5}$
+        \item $\lim\limits_{x \to 5} (6x + 7)$;
+        \item $\displaystyle\lim\limits_{x \to 1} \frac{x^3-1}{1-x}$;
+        \item $\displaystyle\lim\limits_{x \to \infty} \frac{3x}{2x^2-5}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -17,7 +17,7 @@
         \[\lim_{x \to 1} \frac{x^3-1}{1-x} = \lim_{x \to 1} \frac{(x-1)\bp{x^2 + x + 1}}{1-x} = \lim_{x \to 1} -\bp{x^2 + x + 1} = -(1^2 + 1 + 1) = -3.\]
     \end{ppart}
     \begin{ppart}
-        \[\lim_{x \to \infty} \frac{3x}{2x^2-5} = \lim_{x \to \infty} \frac{3}{2x-5/x}.\] Note that as $x \to \infty$, $2x - \frac5{x} \to \infty$. Hence, $\lim\limits_{x \to \infty} \frac{1}{2x-5/x} = 0$.
+        \[\lim_{x \to \infty} \frac{3x}{2x^2-5} = \lim_{x \to \infty} \frac{3}{2x-5/x}.\] Note that $2x - 5/x \to \infty$ as $x \to \infty$. Hence, \[\lim_{x \to \infty} \frac{1}{2x-5/x} = 0.\]
     \end{ppart}
 \end{solution}
 
@@ -25,8 +25,8 @@
     Differentiate the following with respect to $x$ from first principles.
         
     \begin{enumerate}
-        \item $3x+4$
-        \item $x^3$
+        \item $3x+4$;
+        \item $x^3$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -43,10 +43,10 @@
     Differentiate each of the following with respect to $x$, simplifying your answer.
 
     \begin{enumerate}
-        \item $\bp{x^2 + 4}^2\bp{2x^3 -1}$
-        \item $\frac{x^2}{\sqrt{4-x^2}}$
-        \item $\sqrt{1+\sqrt x}$
-        \item $\bp{\frac{x^3-1}{2x^3+1}}^4$
+        \item $\bp{x^2 + 4}^2\bp{2x^3 -1}$;
+        \item $\displaystyle \frac{x^2}{\sqrt{4-x^2}}$;
+        \item $\sqrt{1+\sqrt x}$;
+        \item $\displaystyle \bp{\frac{x^3-1}{2x^3+1}}^4$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -69,7 +69,7 @@
 \end{solution}
 
 \begin{problem}
-    Using a graphing calculator, find the derivative of $\frac{\e^{2x}}{x^2+1}$ when $x = 1.5$.
+    Using a graphing calculator, find the derivative of \[\frac{\e^{2x}}{x^2+1}\] when $x = 1.5$.
 \end{problem}
 \begin{solution}
     \[\evalder{\der{}{x} \bp{\frac{\e^{2x}}{x^2+1}}}{x = 1.5} = 6.66.\]
@@ -80,10 +80,10 @@
     Find the derivative with respect to $x$ of
         
     \begin{enumerate}
-        \item $\cos x\deg$
-        \item $\cot{1-2x^2}$
-        \item $\tan^3 (5x)$
-        \item $\frac{\sec x}{1 + \tan x}$
+        \item $\cos x\deg$;
+        \item $\cot{1-2x^2}$;
+        \item $\tan^3 (5x)$;
+        \item $\displaystyle\frac{\sec x}{1 + \tan x}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -105,14 +105,14 @@
     Find the derivative with respect to $x$ of
 
     \begin{enumerate}
-        \item $y = \e^{1 + \sin 3x}$
-        \item $y = x^2 \e^\frac1{x}$
-        \item $y = \ln{\frac{1-x}{\sqrt{1+x^2}}}$
-        \item $y = \frac{\ln{2x}}x$
-        \item $y = \log_2 (3x^4 - \e^x)$
-        \item $y = 3^{\ln \sin x}$
-        \item $y = a^{2\log_a x}$
-        \item $y = \sqrt[3]{\frac{\e^x (x+1)}{x^2 +1}}, \, x > 0$
+        \item $y = \e^{1 + \sin 3x}$;
+        \item $y = x^2 \e^{1/x}$;
+        \item $\displaystyle y = \ln{\frac{1-x}{\sqrt{1+x^2}}}$;
+        \item $y = \ln{2x}/x$;
+        \item $y = \log_2 (3x^4 - \e^x)$;
+        \item $y = 3^{\ln \sin x}$;
+        \item $y = a^{2\log_a x}$;
+        \item $\displaystyle y = \sqrt[3]{\frac{\e^x (x+1)}{x^2 +1}}$, where $x > 0$.
     \end{enumerate}
 \end{problem}
 \clearpage
@@ -130,16 +130,16 @@
         \[\der{y}{x} = \der{}{x} \frac{\ln{2x}}x = \frac{x \bp{\frac1x} - \ln{2x}(1)}{x^2} = \frac{1 - \ln{2x}}{x^2}.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[y = {\log_2} {\bp{3x^4 - \e^x}} \implies 2^y = 3x^4 - \e^x.\] Implicitly differentiating with respect to $x$, \[2^y \ln 2 \cdot \der{y}{x} = 12x^3 - \e^x \implies \der{y}{x} = \frac{12x^3 - \e^x}{2^y \ln 2} =  \frac{12x^3 - \e^x}{\bp{3x^4 - \e^x}\ln 2}.\]
+        We have $2^y = 3x^4 - \e^x$. Implicitly differentiating with respect to $x$, \[2^y \ln 2 \cdot \der{y}{x} = 12x^3 - \e^x.\] Solving for $\derx{y}{x}$, we get \[\der{y}{x} = \frac{12x^3 - \e^x}{2^y \ln 2} =  \frac{12x^3 - \e^x}{\bp{3x^4 - \e^x}\ln 2}.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[y = 3^{\ln \sin x} \implies \log_3 y = \frac{\ln y}{\ln 3} = \ln \sin x \implies \ln y = \ln 3 \ln \sin x.\] Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \ln 3 \bp{\frac{\cos x}{\sin x}} = \ln 3 \cdot \cot x \implies \der{y}{x} = \ln 3 \cdot y \cot x = \ln 3 \cdot \cot{x} \cdot 3^{\ln \sin x}.\]
+        We have $\ln y = \ln 3 \ln \sin x$. Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \ln 3 \bp{\frac{\cos x}{\sin x}} = \ln 3 \cdot \cot x.\] Solving for $\derx{y}{x}$, we get \[\der{y}{x} = \ln 3 \cdot y \cot x = \ln 3 \cdot \cot{x} \cdot 3^{\ln \sin x}.\]
     \end{ppart}
     \begin{ppart}
-        Observe that \[y = a^{2\log_a x} = a^{\log_a x^2} = x^2 \implies \der{y}{x} = \der{}{x} x^2 = 2x.\]
+        Observe that $y = a^{2\log_a x} = a^{\log_a x^2} = x^2$, so \[\der{y}{x} = \der{}{x} x^2 = 2x.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[y = \sqrt[3]{\frac{\e^x (x+1)}{x^2 +1}} \implies \bp{x^2 + 1} y^3 = \e^x (x + 1).\] Implicitly differentiating with respect to $x$, \[\bp{x^2 + 1}\bp{3y^2 \cdot \der{y}{x}} + y^3 \bp{2x} = \e^x + (x+1)\e^x \implies \der{y}{x} = \frac{\e^x (x+2) - 2xy^3}{3\bp{x^2 + 1}y^2}.\] Now observe that \[\frac{\e^x (x+2)}{3\bp{x^2 + 1}y^2} = \frac{\e^x (x+1)(x+2)}{3\bp{x^2 + 1}(x+1)y^2} = \frac{y^3 (x+2)}{3(x+1)y^2} = y\bp{\frac{x+2}{3(x+1)}}.\] Thus, \[\der{y}{x} = y\bp{\frac{x+2}{3(x+1)}} - y\bp{\frac{2x}{3\bp{x^2 + 1}}} = \frac13 \sqrt[3]{\frac{\e^x (x+1)}{x^2 +1}} \bp{\frac{x+2}{x+1} - \frac{2x}{x^2 + 1}}.\]
+        We have $\bp{x^2 + 1} y^3 = \e^x (x + 1)$. Implicitly differentiating with respect to $x$, \[\bp{x^2 + 1}\bp{3y^2 \cdot \der{y}{x}} + y^3 \bp{2x} = \e^x + (x+1)\e^x.\] Solving for $\derx{y}{x}$, we get \[\der{y}{x} = \frac{\e^x (x+2) - 2xy^3}{3\bp{x^2 + 1}y^2}.\] Now observe that \[\frac{\e^x (x+2)}{3\bp{x^2 + 1}y^2} = \frac{\e^x (x+1)(x+2)}{3\bp{x^2 + 1}(x+1)y^2} = \frac{y^3 (x+2)}{3(x+1)y^2} = y\bp{\frac{x+2}{3(x+1)}}.\] Thus, \[\der{y}{x} = y\bp{\frac{x+2}{3(x+1)}} - y\bp{\frac{2x}{3\bp{x^2 + 1}}} = \frac13 \sqrt[3]{\frac{\e^x (x+1)}{x^2 +1}} \bp{\frac{x+2}{x+1} - \frac{2x}{x^2 + 1}}.\]
     \end{ppart}
 \end{solution}
 
@@ -148,17 +148,17 @@
     Find the derivative with respect to $x$ of
 
     \begin{enumerate}
-        \item $\arccos{\frac{x}{10}}$
-        \item $\arctan{\frac1{1-x}}$
-        \item $\arcsin{\tan x}$
+        \item $\arccos{x/10}$;
+        \item $\arctan{1/(1-x)}$;
+        \item $\arcsin{\tan x}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\der{}{x} \arccos \frac{x}{10} = -\frac1{10\sqrt{1-\bp{\frac{x}{10}}^2}} = -\frac{1}{\sqrt{100 - x^2}}.\]
+        \[\der{}{x} \arccos \frac{x}{10} = -\frac1{10\sqrt{1-\bp{x/10}^2}} = -\frac{1}{\sqrt{100 - x^2}}.\]
     \end{ppart}
     \begin{ppart}
-        \[\der{}{x} \arctan{\frac1{1-x}} = \frac{1}{1 + \bp{\frac1{1-x}}^2} \bp{\frac1{(1-x)^2}} = \frac1{(1-x)^2+1}.\]
+        \[\der{}{x} \arctan{\frac1{1-x}} = \frac{1}{1 + \bp{1/(1-x)}^2} \bp{\frac1{(1-x)^2}} = \frac1{(1-x)^2+1}.\]
     \end{ppart}
     \begin{ppart}
         \[\der{}{x} \arcsin (\tan x) = \frac{\sec^2x}{1-\tan^2 x}.\]
@@ -172,21 +172,21 @@
         \item $(y-x)^2 = 2a(y+x)$, where $a$ is a constant
         \item $y^2 = \e^{2x}y + x\e^x$
         \item $y = x^y$
-        \item $\sin x \cos y = \frac12$
+        \item $\sin x \cos y = 1/2$
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Implicitly differentiating with respect to $x$, \[(y-x)\bp{\der{y}{x} - 1} = a\bp{\der{y}{x} + 1} \implies \der{y}{x} = \frac{a + y - x}{y - x - a}.\]
+        Implicitly differentiating with respect to $x$, \[(y-x)\bp{\der{y}{x} - 1} = a\bp{\der{y}{x} + 1},\] so \[\der{y}{x} = \frac{a + y - x}{y - x - a}.\]
     \end{ppart}
     \begin{ppart}
-        Implicitly differential with respect to $x$, \[2y \cdot \der{y}{x} = \bp{\e^{2x} \der{y}{x} + 2ye^{2x}} + \bp{x\e^x + \e^x} \implies \der{y}{x} = \frac{\e^x \bp{2y\e^x + x + 1}}{2y - \e^{2x}}.\]
+        Implicitly differential with respect to $x$, \[2y \cdot \der{y}{x} = \bp{\e^{2x} \der{y}{x} + 2ye^{2x}} + \bp{x\e^x + \e^x},\] so \[\der{y}{x} = \frac{\e^x \bp{2y\e^x + x + 1}}{2y - \e^{2x}}.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[y = x^y \implies \ln y = y \ln x.\] Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \frac{y}{x} + \ln x \cdot \der{y}{x} \implies \der{y}{x} = \frac{y/x}{1/y - \ln x} = \frac{y^2}{x - xy \ln x}.\]
+        Taking logarithms, we have $\ln y = y \ln x$. Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \frac{y}{x} + \ln x \cdot \der{y}{x},\] so \[\der{y}{x} = \frac{y/x}{1/y - \ln x} = \frac{y^2}{x - xy \ln x}.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[\sin x \cos y  = \frac12 \implies \cos y = \frac12 \csc x.\] Implicitly differentiating with respect to $x$, \[-\sin y \cdot \der{y}{x} = -\frac12 \csc x \cot x \implies \der{y}{x} = \frac{\csc x \cot x}{2\sin y}.\]
+        We have $\cos y = (1/2) \csc x$. Implicitly differentiating with respect to $x$, \[-\sin y \cdot \der{y}{x} = -\frac12 \csc x \cot x,\] so \[\der{y}{x} = \frac{\csc x \cot x}{2\sin y}.\]
     \end{ppart}
 \end{solution}
 
@@ -195,19 +195,19 @@
 
     \begin{enumerate}
         \item Find the exact value of $y$ when $x = 1$.
-        \item Express $\der{}{x} \arctan{xy}$ in terms of $x$, $y$ and $y'$.
-        \item Show that, when $x = 1$, $y' = -\frac13 - \frac1{2\sqrt3}$.
+        \item Express \[\der{}{x} \arctan{xy}\] in terms of $x$, $y$ and $y'$.
+        \item Show that, when $x = 1$, $y' = -1/3 - 1/2\sqrt3$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Substituting $x = 1$ into the given equation, \[\frac14 \pi + 2\arctan y = \frac{7\pi}{12} \implies \arctan y = \frac\pi6 \implies y = \frac1{\sqrt3}.\]
+        Substituting $x = 1$ into the given equation, we have \[\frac14 \pi + 2\arctan y = \frac{7\pi}{12},\] so $\arctan y = \pi/6$, whence $y = 1/\sqrt3$.
     \end{ppart}
     \begin{ppart}
         \[\der{}{x} \arctan{xy} = \frac{xy' + y}{1+(xy)^2}.\]
     \end{ppart}
     \begin{ppart}
-        Differentiating the given equation with respect to $x$, \[\frac{1}{1+x^2} + \frac{y'}{1+y^2} + \frac{xy' + y}{1+(xy)^2} = 0.\] Substituting $x=1$, \[\frac12 + \frac{3y'}4 + \frac34\bp{y' + \frac1{\sqrt3}} = 0 \implies y' = \frac23 \bp{-\frac3{4\sqrt3} - \frac12} = -\frac1{2\sqrt3} - \frac13.\]
+        Differentiating the given equation with respect to $x$, \[\frac{1}{1+x^2} + \frac{y'}{1+y^2} + \frac{xy' + y}{1+(xy)^2} = 0.\] Substituting $x=1$, \[\frac12 + \frac{3y'}4 + \frac34\bp{y' + \frac1{\sqrt3}} = 0.\] Solving for $y'$, we get \[y' = \frac23 \bp{-\frac3{4\sqrt3} - \frac12} = -\frac1{2\sqrt3} - \frac13.\]
     \end{ppart}
 \end{solution}
 
@@ -215,10 +215,10 @@
     Find $\derx{y}{x}$ for
 
     \begin{enumerate}
-        \item $x = \frac1{1+t^2}, \, y = \frac{t}{1+t^2}$
-        \item $x = \frac12 (\e^t - \e^{-t}), \, y = \frac12 (\e^t + \e^{-t})$
-        \item $x = a\sec\t, \, y = a\tan\t$
-        \item $x = \e^{3\t}\cos{3\t}, \, y = \e^{3\t}\sin{3\t}$
+        \item $\displaystyle x = \frac1{1+t^2}$, $\displaystyle y = \frac{t}{1+t^2}$;
+        \item $\displaystyle x = \frac12 (\e^t - \e^{-t})$, $\displaystyle y = \frac12 (\e^t + \e^{-t})$;
+        \item $x = a\sec\t$, $y = a\tan\t$;
+        \item $x = \e^{3\t}\cos{3\t}$, $y = \e^{3\t}\sin{3\t}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -226,7 +226,7 @@
         Observe that $y = xt$. Hence, \[\der{y}{x} = x\bp{\der{t}{x}} + t = x \bp{\der{x}{t}}^{-1} + t = \frac1{1 + t^2} \bp{-\frac{2t}{\bp{1 + t^2}^2}}^{-1} + t = \frac{t^2-1}{2t}.\]
     \end{ppart}
     \begin{ppart}
-        \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{\frac12 \bp{\e^t - \e^{-t}}}{\frac12 \bp{\e^t + \e^{-t}}} = \frac{\e^t - \e^{-t}}{\e^t + \e^{-t}}.\]
+        \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{\bp{\e^t - \e^{-t}/2}}{\bp{\e^t + \e^{-t}}/2} = \frac{\e^t - \e^{-t}}{\e^t + \e^{-t}}.\]
     \end{ppart}
     \begin{ppart}
         Recall that $\tan^2 \t + 1 = \sec^2 \t$. Hence, $y^2 + a^2 = x^2$. Implicitly differentiating with respect to $x$, we have \[2y\cdot\der{y}{x} = 2x \implies \der{y}{x} = \frac{x}{y} = \frac{a\sec \t}{a \tan \t} = \csc \t.\]
@@ -237,34 +237,33 @@
 \end{solution}
 
 \begin{problem}
-    A curve is defined by the parametric equation \[x = 120t - 4t^2, \, y = 60t - 6t^2.\] Find the value of $\derx{y}{x}$ at each of the points where the curve cross the $x$-axis.
+    A curve is defined by the parametric equation $x = 120t - 4t^2$, $y = 60t - 6t^2$. Find the value of $\derx{y}{x}$ at each of the points where the curve cross the $x$-axis.
 \end{problem}
 \begin{solution}
-    The curve crosses the $x$-axis when $y=0$: \[y = 60t-6t^2 = 6t(10 - t) = 0.\] Hence, $t = 0$ or $t = 10$. Now, consider the derivative with respect to $x$ of the curve. \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{60 - 12t}{120 - 8t}.\]
+    The curve crosses the $x$-axis when $y = 60t-6t^2 = 6t(10 - t) = 0$. Hence, $t = 0$ or $t = 10$. Now, consider the derivative with respect to $x$ of the curve. \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{60 - 12t}{120 - 8t}.\]
 
-    \case{1}[$t =0$] \[\evalder{\der{y}{x}}{t = 0} = \frac{60 - 12(0)}{120 - 8(0)} = \frac12.\]
+    When $t = 0$, we have \[\evalder{\der{y}{x}}{t = 0} = \frac{60 - 12(0)}{120 - 8(0)} = \frac12.\]
 
-    \case{2}[$t=10$] \[\evalder{\der{y}{x}}{t = 10} = \frac{60 - 12(10)}{120 - 8(10)} = -\frac32.\]
+    When $t = 10$, we have \[\evalder{\der{y}{x}}{t = 10} = \frac{60 - 12(10)}{120 - 8(10)} = -\frac32.\]
 \end{solution}
 
 \begin{problem}
-    A curve has parametric equations $x = 2t-\ln{2t}, \, y = t^2 - \ln t^2$, where $t > 0$. Find the value of $t$ at the point on the curve at which the gradient is 2.
+    A curve has parametric equations $x = 2t-\ln{2t}$, $y = t^2 - \ln{t^2}$, where $t > 0$. Find the value of $t$ at the point on the curve at which the gradient is 2.
 \end{problem}
 \begin{solution}
-    \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{2t - 2/t}{2 - 1/t} = \frac{2t^2 - 2}{2t - 1}.\] Consider $\derx{y}{x} = 2$. \[\der{y}{x} = \frac{2t^2 - 2}{2t - 1} = 2 \implies \frac{t^2 - 1}{2t - 1} = 1 \implies t^2 - 1 = 2t - 1 \implies t^2 - 2t = t(t - 2) = 0.\] Hence, $t = 0$ or $t = 2$. Since $t > 0$, we reject $t = 0$. Thus, $t = 2$.
-\end{solution}
-
-\clearpage
-\begin{problem}
-    If $y = \ln{\sin^3 2x}$, find $\der{y}{x}$ and prove that $3\der[2]{y}{x} + \bp{\der{y}{x}}^2 + 36 = 0$.
-\end{problem}
-\begin{solution}
-    \[\der{y}{x} = \frac{6\sin^2 2x \cos 2x}{\sin^3 2x} = 6\cot 2x.\] Hence, \[\der[2]{y}{x} = -12\csc^2 2x = -12 \bp{1 + \cot^2 2x} = -12 - \frac13 \bp{\der{y}{x}}^2.\] Thus, we clearly have \[3\der[2]{y}{x} + \bp{\der{y}{x}}^2 + 36 = 0.\]
+    \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{2t - 2/t}{2 - 1/t} = \frac{2t^2 - 2}{2t - 1}.\] Consider $\derx{y}{x} = 2$. Then \[\frac{2t^2 - 2}{2t - 1} = 2.\] Clearing denominators and simplifying, we get $t^2 - 2t = t(t - 2) = 0$, so $t = 2$. Note that we reject $t = 0$ since $t > 0$.
 \end{solution}
 
 \begin{problem}
-    Given that $y = \e^{\arcsin{2x}}$, show that $\bp{1-4x^2}\der[2]{y}{x} - 4x\der{y}{x} = 4y$. Differentiate this result further to obtain a differential equation for $\der[3]{y}{x}$.
+    If $y = \ln{\sin[3]{2x}}$, find $\derx{y}{x}$ and prove that \[3\der[2]{y}{x} + \bp{\der{y}{x}}^2 + 36 = 0.\]
 \end{problem}
 \begin{solution}
-    Note that \[y = \e^{\arcsin{2x}} \implies \ln y = \arcsin{2x}.\] Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \frac2{\sqrt{1 - 4x^2}} \implies \der{y}{x} = \frac{2y}{\sqrt{1 - 4x^2}}.\] Implicitly differentiating with respect to $x$ once again, \[\der[2]{y}{x} = \frac{\sqrt{1 - 4x^2} \bp{2 \cdot \der{y}{x}} - 2y \bp{\frac{-4x}{\sqrt{1 - 4x^2}}}}{1 - 4x^2}.\] Now observe that \[2\sqrt{1 - 4x^2} \cdot \der{y}{x} + 4x \bp{\frac{2y}{\sqrt{1 - 4x^2}}} = 4y + 4x \cdot \der{y}{x}.\] Hence, \[\bp{1 - 4x^2}\der[2]{y}{x} = 4y + 4x\cdot\der{y}{x} \implies \bp{1-4x^2}\der[2]{y}{x} - 4x \cdot \der{y}{x} = 4y.\] Implicitly differentiating with respect to $x$ once again, \[\bp{1 - 4x^2} \der[3]{y}{x} -8x \cdot \der[2]{y}{x} -4 \bp{x \cdot \der[2]{y}{x} + \der{y}{x}} = 4\cdot \der{y}{x}.\] Rearranging, \[\bp{1 - 4x^2} \der[3]{y}{x} -12x \cdot \der[2]{y}{x} - 8 \cdot\der{y}{x} = 0.\]
+    \[\der{y}{x} = \frac{6\sin[2]{2x}\cos{2x}}{\sin[3]{2x}} = 6\cot{2x}.\] Hence, \[\der[2]{y}{x} = -12\csc[2]{2x} = -12 \bp{1 + \cot[2]{2x}} = -12 - \frac13 \bp{\der{y}{x}}^2.\] Thus, we clearly have \[3\der[2]{y}{x} + \bp{\der{y}{x}}^2 + 36 = 0.\]
+\end{solution}
+
+\begin{problem}
+    Given that $y = \exp{\arcsin{2x}}$, show that \[\bp{1-4x^2}\der[2]{y}{x} - 4x\der{y}{x} = 4y.\] Differentiate this result further to obtain a differential equation for $\derx[3]{y}{x}$.
+\end{problem}
+\begin{solution}
+    Taking logarithms, we have $\ln y = \arcsin{2x}$. Implicitly differentiating with respect to $x$, \[\frac1y \der{y}{x} = \frac2{\sqrt{1 - 4x^2}},\] so \[\der{y}{x} = \frac{2y}{\sqrt{1 - 4x^2}}.\] Implicitly differentiating with respect to $x$ once again, \[\der[2]{y}{x} = \frac{\sqrt{1 - 4x^2} \bp{2\cdot\derx{y}{x}} - 2y \bp{-4x/\sqrt{1 - 4x^2}}}{1 - 4x^2}.\] Now observe that \[2\sqrt{1 - 4x^2} \der{y}{x} + 4x \bp{\frac{2y}{\sqrt{1 - 4x^2}}} = 4y + 4x \der{y}{x}.\] Hence, \[\bp{1 - 4x^2}\der[2]{y}{x} = 4y + 4x\der{y}{x},\] so \[\bp{1-4x^2}\der[2]{y}{x} - 4x \der{y}{x} = 4y.\] Implicitly differentiating with respect to $x$ once again, \[\bp{1 - 4x^2} \der[3]{y}{x} -8x \der[2]{y}{x} -4 \bp{x \der[2]{y}{x} + \der{y}{x}} = 4 \der{y}{x}.\] Rearranging, \[\bp{1 - 4x^2} \der[3]{y}{x} -12x \der[2]{y}{x} - 8\der{y}{x} = 0.\]
 \end{solution}

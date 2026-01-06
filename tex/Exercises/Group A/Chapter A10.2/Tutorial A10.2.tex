@@ -65,7 +65,7 @@
             \end{tikzpicture}
         \end{center}
 
-        We have $r^2 = 2^2 + (-2)^2 \implies r = 2\sqrt2$ and $\tan \t = -2/2 \implies \t = -\pi/4$. Hence, $2 - 2\i = 2\sqrt2 \bs{\cos{-\frac\pi4} + \i\sin{-\frac\pi4}}$.
+        We have $r = \sqrt{2^2 + (-2)^2} = 2\sqrt2$ and $\t = \arctan{-2/2} = -\pi/4$. Hence, $2 - 2\i = 2\sqrt2 \bs{\cos{-\pi/4} + \i\sin{-\pi/4}}$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{64}
@@ -104,7 +104,7 @@
             \end{tikzpicture}
         \end{center}
 
-        We have $r^2 = (-1)^2 + (\sqrt3)^2 \implies r = 2$ and $\tan t = \sqrt{3}/(-1) \implies \t = 2\pi/3$. Hence, $-1 + \sqrt3 \i = 2 \bs{\cos{\frac{2\pi}3} + \i\sin{\frac{2\pi}3}}$.
+        We have $r = \sqrt{(-1)^2 + (\sqrt3)^2} = 2$ and $\t = \arctan{\sqrt{3}/(-1)} = 2\pi/3$. Hence, $-1 + \sqrt3 \i = 2 \bs{\cos{2\pi/3} + \i\sin{2\pi/3}}$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{65}
@@ -143,7 +143,7 @@
             \end{tikzpicture}
         \end{center}
 
-        We have $r = 5$ and $\t = -\pi/2$. Hence, $-5\i = 5\bs{\cos{-\frac\pi2} + \i\sin{-\frac\pi2}}$.
+        We have $r = 5$ and $\t = -\pi/2$. Hence, $-5\i = 5\bs{\cos{-\pi/2} + \i\sin{-\pi/2}}$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{66}
@@ -183,7 +183,7 @@
             \end{tikzpicture}
         \end{center}
 
-        We have $r^2 = (-2\sqrt3)^2 + (-2)^2 \implies r = 4$ and $\tan t = -2/(-2\sqrt3) \implies \t = -5\pi/6$. Hence, $-2\sqrt3 - 2\i = 4\bs{\cos{-\frac{5\pi}6} + \i\sin{-\frac{5\pi}6}}$.
+        We have $r = \sqrt{(-2\sqrt3)^2 + (-2)^2} = 4$ and $\t = \arctan{-2/(-2\sqrt3)} = -5\pi/6$. Hence, $-2\sqrt3 - 2\i = 4\bs{\cos{-5\pi/6} + \i\sin{-5\pi/6}}$.
     \end{ppart}
 \end{solution}
 
@@ -191,7 +191,7 @@
     Express the following complex numbers $z$ in exponential form $r\e^{\i\t}$.
 
     \begin{enumerate}
-        \item $z = -1 + \frac2{13}\i$
+        \item $z = -1 + 2\i/13$
         \item $z = \cos 50\deg - \i\sin 50\deg$
     \end{enumerate}
 \end{problem}
@@ -233,10 +233,10 @@
             \end{tikzpicture}
         \end{center}
 
-        We have $r^2 = (-1)^2 + \bp{\frac2{13}}^2 \implies r = 1.01 \tosf{3}$ and $\tan t = \frac{2/13}{-1} \implies \t = 2.99 \tosf{3}$. Hence, $-1 + \frac2{13}\i = 1.01\e^{2.99\i}$.
+        We have $r = \sqrt{(-1)^2 + \bp{2/13}^2} = 1.01 \tosf{3}$ and $\t = \arctan{-2/13} = 2.99 \tosf{3}$. Hence, $-1 + 2\i/13 = 1.01\e^{2.99\i}$.
     \end{ppart}
     \begin{ppart}
-        We have $r = 1$ and $\t = -50\deg = -\frac5{18}\pi$. Hence, $\cos 50 \deg + i \sin 50 \deg = \e^{-\i\frac5{18}\pi}$.
+        We have $r = 1$ and $\t = -50\deg = -5\pi/18$. Hence, $\cos 50 \deg + i \sin 50 \deg = \e^{-\i(5\pi/18)}$.
     \end{ppart}
 \end{solution}
 
@@ -245,7 +245,7 @@
 
     \begin{enumerate}
         \item $z = 7\e^{1 - 5\i}$
-        \item $z = 6\bp{\cos \frac\pi8 - \i\sin\frac\pi8}$
+        \item $z = 6\bp{\cos{\pi/8} - \i\sin{\pi/8}}$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -299,7 +299,7 @@
         \end{tikzpicture}
     \end{center}
 
-    We have $r^2 = (\sqrt3)^2 + (-1)^2 \implies r = 2$ and $\tan \t = -1/\sqrt3 \implies \t = -\pi/6$. Hence, $\abs{z} = 2$ and $\arg z = -\pi/6$.
+    We have $r = \sqrt{(\sqrt3)^2 + (-1)^2} = 2$ and $\t = \arctan{-1/\sqrt3} = -\pi/6$. Hence, $\abs{z} = 2$ and $\arg z = -\pi/6$.
 
     Note that $\abs{1/z^2} = \abs{z}^{-2} = 1/4$. Also, $\arg{1/z^2} = -2 \arg z = \pi/3$.
 
@@ -310,7 +310,7 @@
     If $\arg{z - 1/2} = \pi/5$, determine $\arg{2z - 1}$.
 \end{problem}
 \begin{solution}
-    \[\arg{2z - 1} = \arg{\frac12 \bs{z - \frac12}} = \arg{z - \frac12} = \frac\pi5.\]
+    \[\arg{2z - 1} = \arg{2 \bs{z - \frac12}} = \arg{z - \frac12} = \frac\pi5.\]
 \end{solution}
 
 \begin{problem}
@@ -425,14 +425,14 @@
         \end{tikzpicture}
     \end{center}
 
-    Let $A(x + \i y)$. Since $AB \perp AD$, we have $b - a = \i(d - a)$. Thus, \[(1 + 5\i) - (x + \i y) = i\bs{(5 + 3\i) - (x + \i y)},\] which simplifies to \[(x + y) + (y - x)\i = 4.\] Comparing real and imaginary parts, we obtain $x = y = 2$. Hence, $A(2 + 2\i)$.
+    Let $A(x + \i y)$. Since $AB \perp AD$, we have $b - a = \i(d - a)$. Thus, \[(1 + 5\i) - (x + \i y) = i\bs{(5 + 3\i) - (x + \i y)},\] which simplifies to $(x + y) + (y - x)\i = 4$. Comparing real and imaginary parts, we obtain $x = y = 2$. Hence, $A(2 + 2\i)$.
 
-    Let $C(u + \i v)$. Since $CB \perp CD$, we have $d - c = \i(b - c)$. Thus, \[(5 + 3\i) - (u + \i v) = \i\bs{(1 + 5\i) - (u + \i v)},\] which simplifies to \[(u + v) + (v - u)\i = 10 + 2\i.\] Comparing real and imaginary parts, we obtain $u = 4$ and $v = 6$. Hence, $C(4 + 6\i)$.
+    Let $C(u + \i v)$. Since $CB \perp CD$, we have $d - c = \i(b - c)$. Thus, \[(5 + 3\i) - (u + \i v) = \i\bs{(1 + 5\i) - (u + \i v)},\] which simplifies to $(u + v) + (v - u)\i = 10 + 2\i$. Comparing real and imaginary parts, we obtain $u = 4$ and $v = 6$. Hence, $C(4 + 6\i)$.
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Given that $u = 2\bp{\cos\frac\pi6 + \i\sin\frac\pi6}$ and $w = 4\bp{\cos\frac\pi3 - \i\sin\frac\pi3}$, find the modulus and argument of $u\conj/w^3$ in exact form.
+        \item Given that $u = 2\bp{\cos{\pi/6} + \i\sin{\pi/6}}$ and $w = 4\bp{\cos{\pi/3} - \i\sin{\pi/3}}$, find the modulus and argument of $u\conj/w^3$ in exact form.
         \item Let $z$ be the complex number $-1 + \i\sqrt3$. Find the value of the real number $a$ such that $\arg{z^2 + az} = -\pi/2$.
     \end{enumerate}
 \end{problem}
@@ -441,7 +441,7 @@
         Note that $\abs{u} = 2$, $\arg u = \pi/6$, $\abs{w} = 4$ and $\arg w = -\pi/3$. Hence, \[\abs{\frac{u\conj}{w^3}} = \frac{\abs{u\conj}}{\abs{w^3}} = \frac{\abs{u}}{\abs{w}^3} = \frac{2}{4^3} = \frac1{32}\] and \[\arg \frac{u\conj}{w^3} = \arg u\conj - \arg w^3 = -\arg u - 3\arg w = -\frac\pi6 - 3 \bp{-\frac\pi3} = \frac56 \pi.\]
     \end{ppart}
     \begin{ppart}
-        Since $\arg{z^2 + az} = -\pi/2$, we have that $z^2 + az$ is purely imaginary, with a negative imaginary part. Since \[z^2 + az = \bp{-1 + \i\sqrt3}^2 + a\bp{-1 + \i \sqrt3} = \bp{-2 -2\sqrt3 \i} + a\bp{-1 + \i\sqrt3}.\] Hence, \[\Re{z^2 + az} = 0 \implies -2 -a = 0 \implies a = -2.\]
+        Since $\arg{z^2 + az} = -\pi/2$, we have that $z^2 + az$ is purely imaginary, with a negative imaginary part. Since \[z^2 + az = \bp{-1 + \i\sqrt3}^2 + a\bp{-1 + \i \sqrt3} = -\bp{2+a} + \i \sqrt3 \bp{-2+a},\] it follows that $2+a = 0$, so $a = -2$.
     \end{ppart}
 \end{solution}
 
@@ -451,7 +451,7 @@
 \begin{solution}
     Clearly, $\abs{p} = 1$ and $\arg p = 2\t$.
 
-    Since $p^5$ is real and positive, we have $\arg p^5 = 2\pi n$, where $n \in \ZZ$. Thus, $\arg p = 2\pi n/5 = 2\t \implies \t =\pi n/5$. Since $0 < \t < \pi/2$, the possible values of $\t$ are $\pi/5$ and $2\pi/5$.
+    Since $p^5$ is real and positive, we have $\arg p^5 = 2\pi n$, where $n$ is an integer. Thus, $\arg p = 2\pi n/5 = 2\t$, hence $\t =\pi n/5$. Since $0 < \t < \pi/2$, the possible values of $\t$ are $\pi/5$ and $2\pi/5$.
 \end{solution}
 
 \begin{problem}
@@ -459,22 +459,22 @@
 
     By first expressing $w$ and $z$ in the form $x + \i y$, find the exact real and imaginary parts of $wz$.
 
-    Hence, show that $\sin \frac\pi{12} = \frac{\sqrt3 - 1}{2\sqrt2}$.
+    Hence, show that $\sin{\pi/12} = (\sqrt3 - 1)/2\sqrt2$.
 \end{problem}
 \begin{solution}
     Note that \[\abs{wz} = \abs{w} \abs{z} = 2\sqrt2\] and \[\arg{wz} = \arg w + \arg z = - \frac34 \pi - \frac13 \pi = -\frac{13}{12}\pi \equiv \frac{11}{12} \pi.\]
 
     Also, \[w = \sqrt2 \bs{\cos{-\frac34 \pi} + \i\sin{-\frac34 \pi}} = \sqrt2 \bp{-\frac1{\sqrt2} - \frac1{\sqrt2} \i} = -1-\i\] and \[z = 2\bs{\cos{-\frac\pi3} + \i\sin{-\frac\pi3}} = 2\bp{\frac12 - \frac{\sqrt3}{2} \i} = 1 - \sqrt3 \i.\] Hence, \[wz = (-1 - \i)(1 - \sqrt3 \i) = (-1 + \sqrt3 -\i - \sqrt3) = (-1 - \sqrt3) + (\sqrt3 - 1)\i,\] whence $\Re{wz} = -1 - \sqrt3$ and $\Im{wz} = \sqrt3 - 1$.
 
-    From the first part, we have that $wz = 2\sqrt2 \bs{\cos{\frac{11}{12} \pi} + \i\sin{\frac{11}{12} \pi}}$. Thus, $\Im{wz} = 2\sqrt{2} \sin{\frac{11}{12} \pi} = 2\sqrt2 \sin \frac\pi{12}$. Equating the result for $\Im{wz}$ found in the second part, we have \[2\sqrt2 \sin \frac\pi{12} = \sqrt3 - 1 \implies \sin \frac{\pi}{12} = \frac{\sqrt3 - 1}{2\sqrt2}.\]
+    From the first part, we have that $wz = 2\sqrt2 \bs{\cos{11\pi/12} + \i\sin{11\pi/12}}$. Thus, $\Im{wz} = 2\sqrt{2} \sin{11\pi/12} = 2\sqrt2 \sin{\pi/12}$. Equating the result for $\Im{wz}$ found in the second part, we have \[2\sqrt2 \sin \frac\pi{12} = \sqrt3 - 1,\] so \[\sin \frac{\pi}{12} = \frac{\sqrt3 - 1}{2\sqrt2}.\]
 \end{solution}
 
 \clearpage
 \begin{problem}
-    Given that $\frac{5 + z}{5 - z} = \e^{\i\t}$, show that $z$ can be written as $5\i\tan\frac\t2$.
+    Given that $(5+z)/(5-z) = \e^{\i\t}$, show that $z$ can be written as $5\i\tan{\t/2}$.
 \end{problem}
 \begin{solution}
-    Note that \[\frac{5 + z}{5 - z} = \e^{\i\t} \implies 5 + z = \e^{\i\t} (5-z) \implies z + \e^{\i\t}z = 5\e^{\i\t} - 5 \implies z = 5 \bp{\frac{\e^{\i\t} - 1}{\e^{\i\t} + 1}}.\] Hence, \[z = 5\bp{\frac{\e^{\i\t} - 1}{\e^{\i\t} + 1}} = 5\bp{\frac{\e^{\i\t/2} - \e^{-\i\t/2}}{\e^{\i\t/2} + \e^{-\i\t/2}}} = 5\bp{\frac{2\i \sin{\t/2}}{2\cos{\t/2}}} = 5\i\tan \frac\t2.\]
+    Clearing denominators, we get $5 + z = \e^{\i\t} (5-z)$. Expanding and solving for $z$, we see that \[z = 5\bp{\frac{\e^{\i\t} - 1}{\e^{\i\t} + 1}} = 5\bp{\frac{\e^{\i\t/2} - \e^{-\i\t/2}}{\e^{\i\t/2} + \e^{-\i\t/2}}} = 5\bp{\frac{2\i \sin{\t/2}}{2\cos{\t/2}}} = 5\i\tan \frac\t2.\]
 \end{solution}
 
 \begin{problem}
@@ -482,7 +482,7 @@
 
     \begin{enumerate}
         \item Write down a second root in terms of $r$ and $\t$, and hence show that a quadratic factor of $P(z)$ is $z^2 - 2rz\cos\t + r^2$.
-        \item Given that 3 roots of the equation $z^6 = -64$ are $2\e^{\i \frac\pi6}$, $2\e^{\i\frac\pi2}$ and $2\e^{-\i\frac{5\pi}6}$, express $z^6 + 64$ as a product of three quadratic factors with real coefficients, giving each factor in non-trigonometric form.
+        \item Given that 3 roots of the equation $z^6 = -64$ are $2\e^{\i \pi/6}$, $2\e^{\i\pi/2}$ and $2\e^{-\i(5\pi/6)}$, express $z^6 + 64$ as a product of three quadratic factors with real coefficients, giving each factor in non-trigonometric form.
         \item Represent all roots of $z^6 = -64$ on an Argand diagram and interpret the geometrical shape formed by joining the roots.
     \end{enumerate}
 \end{problem}

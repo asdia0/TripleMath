@@ -104,9 +104,9 @@
     Sketch the following curves. Indicate using exact values, the equations of any asymptotes and the coordinates of any intersection with the axes.
 
     \begin{enumerate}
-        \item $y = \frac1{2x+1}$
-        \item $y = \frac{3x}{x-2}$
-        \item $y = \frac{x^2+x-6}{2x-2}$
+        \item $\displaystyle y = \frac1{2x+1}$
+        \item $\displaystyle y = \frac{3x}{x-2}$
+        \item $\displaystyle y = \frac{x^2+x-6}{2x-2}$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -216,7 +216,7 @@
         \item $x^2 + 2x + 2y + 4 = 0$
         \item $y^2 = x - 9$
         \item $y^2 = (x-2)^4 + 5$
-        \item $y = \tan{\frac12 x}, \, -2\pi \leq x \leq 2\pi$
+        \item $y = \tan{x/2}$ where $-2\pi \leq x \leq 2\pi$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -351,13 +351,14 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     Sketch the following curves. Indicate using exact values, the equations of any asymptotes and the coordinates of any intersection with the axes.
 
     \begin{enumerate}
-        \item $y = \frac{1-3x}{2x-1}$
-        \item $y = \frac{ax}{x-a}, \, a < 0$
-        \item $y = -\frac{b(x+3a)}{x+a}, \, a,b > 0$
+        \item $\displaystyle y = \frac{1-3x}{2x-1}$
+        \item $\displaystyle y = \frac{ax}{x-a}, \, a < 0$
+        \item $\displaystyle y = -\frac{b(x+3a)}{x+a}, \, a,b > 0$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -467,8 +468,8 @@
     Sketch the following curves and find the coordinates of any turning points on the curves.
 
     \begin{enumerate}
-        \item $y = x + 2\sin x, \, 0 \leq x \leq 2\pi$
-        \item $y = \frac{x}{\ln x}, \, x > 0, \, x \neq 1$
+        \item $y = x + 2\sin x$, where $0 \leq x \leq 2\pi$
+        \item $y = x/\ln x$, where $x > 0$ and $x \neq 1$
         \item $y = x\e^{-x}$
         \item $y = x\e^{-x^2}$
     \end{enumerate}
@@ -600,7 +601,7 @@
 \end{solution}
 
 \begin{problem}
-    The equation of a curve $C$ is $y = 1 + \frac6{x-3} - \frac{24}{x+3}$.
+    The equation of a curve $C$ is $y = 1 + 6/(x-3) - 24/(x+3)$.
 
     \begin{enumerate}
         \item Explain why $y=1$ and $x=3$ are asymptotes to the curve.
@@ -650,7 +651,7 @@
 \end{solution}
 
 \begin{problem}
-    The curve $C$ has equation $y = \frac{ax^2+bx}{x+2}$, where $x \neq -2$. It is given that $C$ has an asymptote $y = 1-2x$.
+    The curve $C$ has equation $y = (ax^2+bx)/(x+2)$, where $x \neq -2$. It is given that $C$ has an asymptote $y = 1-2x$.
 
     \begin{enumerate}
         \item Show (do not verify) that $a = -2$ and $b = -3$.
@@ -664,22 +665,7 @@
         \[y = \frac{ax^2+bx}{x+2} = \frac{(ax + b-2a)(x+2) - 2(b-2a)}{x+2} = ax+b-2a - \frac{2(b-2a)}{x+2}.\] Since $C$ has an asymptote $y = 1-2x$, we have $a = -2$ and $b-2a = 1$, whence $b = -3$.
     \end{ppart}
     \begin{ppart}
-        \[y = \frac{-2x^2+-3x}{x+2} \implies y(x+2) = -2x^2 -3 x \implies 2x^2 + (3+y)x + 2y = 0.\] For all values that $y$ can take on, there exists a solution to $2x^2 + (3+y)x + 2y = 0$. Hence, $\D \geq 0$. \[(3+y)^2 -4(2)(2y) \geq 0 \implies y^2-10y +9 \geq 0 \implies (y-1)(y-9) \geq 0.\]
-
-        \begin{center}\tikzsetnextfilename{180}
-            \begin{tikzpicture}
-                    \draw[-latex] (0.0,0) -- (10.0,0) node[right]{$y$};
-                    \foreach \x in {9,1} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
-                    \foreach \x in {9,1} \draw[shift={(\x,-3pt)}] node[below]  {$\x$};
-                    \draw[thick, -*, color=red] (0.0, 0) -- (1.12, 0);
-                    \draw[thick, *-, color=red] (8.88, 0) -- (9.9, 0);
-                    \node[anchor=south, align=center] at (0.5, 0) {$+$};
-                    \node[anchor=south, align=center] at (5.0, 0) {$-$};
-                    \node[anchor=south, align=center] at (9.5, 0) {$+$};
-            \end{tikzpicture}
-        \end{center}
-
-        Thus, $\bc{y \in \RR \colon y \leq 1 \tor y \geq 9}$.
+        Clearing denominators in $y = (-2x^2-3x)/(x+2)$, we get $y(x+2) = -2x^2 - 3x$. Rearranging, we get $2x^2 + (3+y)x + 2y = 0$. For solutions, we require the discriminant $\D = (3+y)^2 - 4(2)(2y)$ to be non-negative. Hence, $y^2-10y +9 = (y-1)(y-9) \geq 0$, so the set of values that $y$ can take is $(-\infty, 1] \cup [9, \infty)$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{181}
@@ -717,7 +703,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Observe that \[x^4 + 2x^3 + 2x^2 + 3x = 0 \implies x^3(x+2) = -2x^2 - 3x \implies x^3 = \frac{-2x^2-3x}{x+2}.\] This motivates us to plot $y = x^3$ and $y = \frac{-2x^2-3x}{x+2}$ on the same graph.
+        We may manipulate $x^4 + 2x^3 + 2x^2 + 3x = 0$ to get \[x^3 = \frac{-2x^2-3x}{x+2}.\] This motivates us to plot $y = x^3$ and $y = (-2x^2-3x)/(x+2)$ on the same graph.
 
         \begin{center}\tikzsetnextfilename{182}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -761,17 +747,17 @@
             \end{tikzpicture}
         \end{center}
 
-        We thus see that $y = x^3$ intersects $y = \frac{-2x^2-3x}{x+2}$ twice, with one intersection point being the origin. Thus, there is only one real non-zero root to $x^4 + 2x^3 + 2x^2 + 3x =0$.
+        From the above graph, we see that $y = x^3$ intersects $y = (-2x^2-3x)/(x+2)$ twice, with one intersection point being the origin. Thus, there is only one real non-zero root to $x^4 + 2x^3 + 2x^2 + 3x = 0$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The curve $C$ is defined by the equation $y = \frac{x}{x^2-5x+4}$.
+    The curve $C$ is defined by the equation $y = x/(x^2-5x+4)$.
 
     \begin{enumerate}
         \item Write down the equations of the asymptotes.
         \item Sketch $C$, indicating clearly the axial intercept(s), asymptote(s) and turning point(s).
-        \item Find the positive value $k$ such that the equation $\frac{x}{x^2-5x+4} = kx$ has exactly 2 distinct real roots.
+        \item Find the positive value $k$ such that the equation $x/(x^2-5x+4) = kx$ has exactly 2 distinct real roots.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -813,9 +799,9 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Note that $x = 0$ is always a root of $\frac{x}{x^2-5x+4} = kx$. We thus aim to find the value of $k$ such that $\frac{x}{x^2-5x+4} = kx$ has only one non-zero root. 
+        Note that $x = 0$ is always a root of $x/(x^2-5x+4) = kx$. We thus aim to find the value of $k$ such that $x/(x^2-5x+4) = kx$ has only one non-zero root. 
 
-            We observe that if $k > 0$, $y=kx$ will intersect with $y = \frac{x}{x^2-5x+4}$ at least twice: before $x=1$ and after $x=4$. In order to have only one non-zero root, we must force the intersection point that comes before $x=1$ to be at the origin $(0, 0)$. Hence, $k$ is tangential to $C$ at $(0, 0)$, thus giving $k = \evalder{\derx{C}{x}}{x=0}$.
+            We observe that if $k > 0$, $y=kx$ will intersect with $y = x/(x^2-5x+4)$ at least twice: before $x=1$ and after $x=4$. In order to have only one non-zero root, we must force the intersection point that comes before $x=1$ to be at the origin $(0, 0)$. Hence, $k$ is tangential to $C$ at $(0, 0)$, thus giving $k = \evalder{\derx{C}{x}}{x=0}$.
 
             \[k = \evalder{\der{C}{x}}{x=0} = \evalder{\der{}{x} \bp{\frac{x}{x^2-5x+4}}}{x=0} = \evalder{\frac{3x^2-10x+4}{(x^2-5x+4)^2}}{x=0} = \frac14.\]
     \end{ppart}

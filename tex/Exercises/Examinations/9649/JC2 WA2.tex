@@ -21,7 +21,7 @@
 \begin{problem}
     \begin{enumerate}
         \item A square matrix $\mat A$ of order $n$ is said to be skew symmetric if $\mat A \trp = - \mat A$. Prove that a skew symmetric matrix is not invertible if $n$ is odd.
-        \item Let $T$ be the linear transformation such that \[T : \RR^3 \to \RR^3 \quad \tand \quad T(\vec x) = \mat A \vec x,\] where \[\mat A = \begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & b & 0\end{pmatrix},\] where $a$ and $b$ are real numbers. It is given that the nullity of $T$ is 1.
+        \item Let $T$ be the linear transformation such that $T : \RR^3 \to \RR^3$ and $T(\vec x) = \mat A \vec x$, where \[\mat A = \begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & b & 0\end{pmatrix},\] where $a$ and $b$ are real numbers. It is given that the nullity of $T$ is 1.
         \begin{enumerate}
             \item Show that $\mat A$ must be a skew symmetric matrix.
             \item Find the kernel of $T$ in terms of $a$.
@@ -31,14 +31,14 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[\det \mat A = \det \mat A \trp = \det{-A} = (-1)^n \det \mat A.\] For odd $n$, $\det \mat A = -\det \mat A$ so $\det \mat A = 0$, whence $\mat A$ is not invertible.
+        Note that $\det \mat A = \det \mat A \trp = \det{-A} = (-1)^n \det \mat A$. For odd $n$, $\det \mat A = -\det \mat A$ so $\det \mat A = 0$, whence $\mat A$ is not invertible.
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
             Since the nullity of $T$, is 1, the rows of $\mat A$ must be linearly dependent. That is, there exist $\l, \m \in \RR$ such that \[\l \cveciii0{-1}{-5} + \m \cveciii10a = \cveciii5b0.\] From the first and second rows, we immediately have $\l = -b$ and $\m = 5$. Substituting this into the third row, we get $a = -b$. Thus, \[\mat A = \begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & -a & 0\end{pmatrix}\] and is skew symmetric.
         \end{psubpart}
         \begin{psubpart}
-            Consider $\mat A \vec v = \vec 0$, where $\vec v = (x, y, z)\trp \in \RR^3$. Then \[\begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & -a & 0\end{pmatrix} \cveciii{x}{y}{z} = \cveciii000 \implies \left\{\begin{aligned}y + 5z = 0 \\ x + az = 0 \\ 5x-ay = 0\end{aligned}\right..\] Let $z = \l \in \RR$. From the first two equations, we see that $y = -5\l$ and $x = -a\l$. Thus, $\vec v$ is of the form $\l (-a, -5, 1)\trp$, whence the kernel of $T$ is given by \[\Ker T = \bc{\vec v \in \RR^3 : \vec v = \l \cveciii{-a}{-5}{1}, \, \l \in \RR}.\]
+            Consider $\mat A \vec v = \vec 0$, where $\vec v = (x, y, z)\trp \in \RR^3$. Then \[\begin{pmatrix}0 & -1 & -5 \\ 1 & 0 & a \\ 5 & -a & 0\end{pmatrix} \cveciii{x}{y}{z} = \cveciii000,\] giving the system of equations \[\left\{\begin{aligned}y + 5z = 0 \\ x + az = 0 \\ 5x-ay = 0\end{aligned}\right..\] Let $z = \l \in \RR$. From the first two equations, we see that $y = -5\l$ and $x = -a\l$. Thus, $\vec v$ is of the form $\l (-a, -5, 1)\trp$, whence the kernel of $T$ is given by \[\Ker T = \bc{\vec v \in \RR^3 : \vec v = \l \cveciii{-a}{-5}{1}, \, \l \in \RR}.\]
         \end{psubpart}
         \begin{psubpart}
             A basis is \[\bc{\cveciii015, \cveciii{-5}{a}{0}}.\] Note that the range and null spaces of $T$ are orthogonal. Thus, the range space of $T$ is the plane normal to $\cveciiix{-a}{-5}{1}$ that passes through the origin.
@@ -90,7 +90,7 @@
             a_1 &= \frac1{6^2} \bp{\begin{vmatrix}4 & -2 \\ 3 & -1\end{vmatrix} + \begin{vmatrix}-1 & -3 \\ -5 & 1\end{vmatrix} + \begin{vmatrix}4 & 2 \\ 5 & 1\end{vmatrix}} = \frac{-5}{9},\\
             a_2 &= \frac16 \bp{\abs{4} + \abs{-1} + \abs{1}} = \frac23.
         \end{align*}
-        Thus, $\c(\l) = \l^3 - \frac23 \l^2 - \frac59 \l + \frac29$, which has roots $\l = 1$, $\l = -2/3$ and $\l = 1/3$.
+        Thus, \[\c(\l) = \l^3 - \frac23 \l^2 - \frac59 \l + \frac29,\] which has roots $\l = 1$, $\l = -2/3$ and $\l = 1/3$.
 
         Let $\vec x$ be a non-zero eigenvector of $\mat A$.
 
@@ -111,7 +111,8 @@
     \begin{ppart}
         Note that $\mat B = \mat Q (3\mat D) \mat Q^{-1}$. Thus, 
         \begin{align*}
-            \vec P_n &= A^n \vec P_0 = \mat Q (3\mat D)^n \mat Q^{-1} \vec P_0 \\
+            \vec P_n &= \mat A^n \vec P_0\\
+            &= \mat Q (3\mat D)^n \mat Q^{-1} \vec P_0 \\
             &= \begin{pmatrix}1 & 0 & 1 \\ 0 & 1 & 1 \\ 1 & 1 & 0\end{pmatrix} \begin{pmatrix}3^n & 0 & 0 \\ 0 & (-2)^n & 0 \\ 0 & 0 & 1\end{pmatrix} \frac12 \begin{pmatrix}1 & -1 & 1 \\ -1 & 1 & 1 \\ 1 & 1 & -1\end{pmatrix} 200 \cveciii111\\
             &= 200 \cveciii{3^n + 1}{(-2)^n + 1}{3^n + (-2)^n}.
         \end{align*}

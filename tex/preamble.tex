@@ -6,6 +6,8 @@
 \usepackage{import}
 \usepackage{needspace}
 
+\usepackage{mlmodern}
+
 \usetikzlibrary{external}
 \tikzexternalize[prefix=figures/]
 
@@ -227,7 +229,8 @@ headpunct={.},
 \usepackage{needspace}
 \pretocmd{\section}{\needspace{10\baselineskip}}{}{}
 
-\newcommand{\vocab}[1]{\textbf{\color{ForestGreen!90!black}\sffamily #1}}
+\newcommand{\bd}[1]{\textbf{\sffamily #1}}
+\newcommand{\vocab}[1]{{\color{ForestGreen!90!black}\bd{#1}}}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \pgfmathdeclarefunction{gauss}{2}{\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}}
@@ -240,3 +243,15 @@ headpunct={.},
 % Do not reset footnote count
 \usepackage{chngcntr}
 \counterwithout*{footnote}{chapter}
+
+\DeclareEmphSequence{\itshape\sffamily}
+
+% Make parentheses in \pmod auto expand with \pmod*{}
+\makeatletter
+\DeclarePairedDelimiterX{\pmodx}[1]{(}{)}{{\operator@font mod}\mkern6mu#1}
+\renewcommand{\pmod}{%
+  \allowbreak
+  \if@display\mkern18mu\else\mkern8mu\fi
+  \pmodx
+}
+\makeatother

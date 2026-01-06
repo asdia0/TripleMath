@@ -13,7 +13,7 @@
         $u_n = 2^n \cdot u_0 = 3 \cdot 2^n$.
     \end{ppart}
     \begin{ppart}
-        Let $k$ be a constant such that $u_n + k = 3(u_{n-1} + k)$. Then $k = \frac72$. Hence, \[u_n + \frac72 = 3\bp{u_{n-1} + \frac72} \implies u_n + \frac72 = 3^n \bp{u_0 + \frac72} \implies u_n = \frac{17}2 \cdot3^n  - \frac72.\]
+        The complementary solution is $u_n^{(c)} = C \cdot 3^n$. For the particular solution, try the constant $k$. Then $k = 3k + 7$, so $k = -7/2$. Thus, the general solution is $u_n = C \cdot 3^n - 7/2$. With the initial condition $u_0 = 5$, we see that $C = 17/2$, so we have $u_n = (17 \cdot 3^{n} - 7)/2$.
     \end{ppart}
 \end{solution}
 
@@ -30,48 +30,43 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that the characteristic equation of $u_n$, $x^2 - 5x + 6 = 0$, has roots 2 and 3. Thus, \[u_n = A\cdot2^n + B\cdot3^n.\] From $u_0 = 1$ and $u_1 = 0$, we have the equations $A + B = 1$ and $2A + 3B = 0$. Solving, we see that $A = 3$ and $B = 2$, whence \[u_n = 3 \cdot 2^n + 2 \cdot 3^n.\]
+        Note that the characteristic equation of $u_n$, $x^2 - 5x + 6 = 0$, has roots 2 and 3. Thus, $u_n = A\cdot2^n + B\cdot3^n$. From $u_0 = 1$ and $u_1 = 0$, we have the equations $A + B = 1$ and $2A + 3B = 0$. Solving, we see that $A = 3$ and $B = 2$, whence $u_n = 3 \cdot 2^n + 2 \cdot 3^n$.
     \end{ppart}
     \begin{ppart}
-        Note that the characteristic equation of $u_n$, $x^2 - 4 = 0$, has roots $-2$ and 2. Thus, \[u_n = A(-2)^n + B\cdot2^n.\] From $u_0 = 0$ and $u_1 = 4$, we get $A + B = 0$ and $-2A + 2B = 4$. Solving, we see that $A = -1$ and $B = 1$, whence \[u_n = -(-2)^n + 2^n.\]
+        Note that the characteristic equation of $u_n$, $x^2 - 4 = 0$, has roots $-2$ and 2. Thus, $u_n = A(-2)^n + B\cdot2^n$. From $u_0 = 0$ and $u_1 = 4$, we get $A + B = 0$ and $-2A + 2B = 4$. Solving, we see that $A = -1$ and $B = 1$, whence $u_n = -(-2)^n + 2^n$.
     \end{ppart}
     \begin{ppart}
-        Note that the characteristic equation of $u_n$, $x^2 - 4x + 4 = 0$, has only one root, 2. Thus, \[u_n = (A + Bn)2^n.\] From $u_0 = 6$ and $u_1 = 8$, we obtain $A = 6$ and $A + B = 4$, whence $B = -2$. Thus, \[u_n = (6 - 2n)2^n.\]
+        Note that the characteristic equation of $u_n$, $x^2 - 4x + 4 = 0$, has only one root, 2. Thus, $u_n = \bp{A + Bn}2^n$. From $u_0 = 6$ and $u_1 = 8$, we obtain $A = 6$ and $A + B = 4$, whence $B = -2$. Thus, $u_n = \bp{6 - 2n}2^n$.
     \end{ppart}
     \begin{ppart}
-        Note that the characteristic equation of $u_n$, $x^2 + 6x + 9 = 0$, has only one root, $-3$. Thus, \[u_n = (A + Bn)(-3)^n.\] From $u_0 = 3$ and $u_1 = -3$, we get $A = 3$ and $A + B = 1$, whence $B = -2$. Thus, \[u_n = (3 - 2n)2^n.\]
+        Note that the characteristic equation of $u_n$, $x^2 + 6x + 9 = 0$, has only one root, $-3$. Thus, $u_n = \bp{A + Bn}(-3)^n$. From $u_0 = 3$ and $u_1 = -3$, we get $A = 3$ and $A + B = 1$, whence $B = -2$. Thus, $u_n = \bp{3 - 2n}2^n$.
     \end{ppart}
     \begin{ppart}
-        Consider the characteristic equation of $u_n$, $x^2 - 2x + 2 = 0$. By the quadratic formula, this has roots $x = 1 \pm i = \sqrt{2} \exp{\pm \frac{\i\pi}4}$. Hence, \[u_n = A \cdot 2^{\frac12 n} \cos{\frac{n\pi}4 n } + B \cdot 2^{\frac12 n} \sin{\frac{n\pi}4}.\] From $u_0 = 2$, we obtain $A = 2$. From $u_0 = 6$, we obtain $A + B = 6$, whence $B = 4$. Thus, \[u_n = 2^{\frac12 n + 1} \cos{\frac{n\pi}4} + 2^{\frac12 n + 2} \sin{\frac{n\pi}4}.\]
+        Consider the characteristic equation of $u_n$, $x^2 - 2x + 2 = 0$. By the quadratic formula, this has roots $x = 1 \pm i = \sqrt{2} \exp{\pm \i\pi/4}$. Hence, \[u_n = 2^{n/2} \bs{A \cos{\frac{n\pi}4} + B \sin{\frac{n\pi}4}}.\] From $u_0 = 2$, we obtain $A = 2$. From $u_0 = 6$, we obtain $A + B = 6$, whence $B = 4$. Thus, \[u_n = 2^{n/2 + 1} \bs{\cos{\frac{n\pi}4} + 2 \sin{\frac{n\pi}4}}.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item A sequence is defined by the formula $b_n = \frac{n!n!}{(2n)!}\cdot2^n$, where $n \in \ZZ^+$. Show that the sequence satisfies the recurrence relation $b_{n+1} = \frac{n+1}{2n+1} b_n$.
-        \item A sequence is defined recursively by the formula
-        \[
-            u_{n+1} = 2u_n + 3, \qquad n \in \ZZ_0^+, \, u_0 = a
-        \]
-        Show that $u_n = 2^na+3\bp{2^n - 1}$.
+        \item A sequence is defined by the formula \[b_n = \frac{n!\,n!}{(2n)!}\cdot2^n,\] where $n \in \ZZ^+$. Show that the sequence satisfies the recurrence relation \[b_{n+1} = \frac{n+1}{2n+1} b_n.\]
+        \item A sequence is defined recursively by the formula $u_{n+1} = 2u_n + 3$, where $n \in \ZZ_0^+$ and $u_0 = a$. Show that $u_n = 2^na+3\bp{2^n - 1}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[b_{n+1} = \frac{(n+1)! (n+1)!}{(2n+2)!}\cdot2^{n+1} = \frac{2(n+1)^2}{(2n+1)(2n+2)} \bs{\frac{n!n!}{(2n)!} \cdot 2^{n}} = \frac{n+1}{2n+1}b_n.\]
+        \[b_{n+1} = \frac{(n+1)! \, (n+1)!}{(2n+2)!}\cdot2^{n+1} = \frac{2(n+1)^2}{(2n+1)(2n+2)} \bs{\frac{n! \, n!}{(2n)!} \cdot 2^{n}} = \frac{n+1}{2n+1}b_n.\]
     \end{ppart}
     \begin{ppart}
-        Let $k$ be a constant such that $u_{n+1} + k = 2(u_n + k)$. Then $k = 3$. Hence, \[u_{n+1} + 3 = 2(u_n + 3) \implies u_n +3 = 2^n(u_0 + 3) \implies u_n = 2^n (a + 3) - 3 = 2^n a + 3\bp{2^n - 1}.\]
+        The complementary solution is $u_n^{(c)} = C \cdot 2^n$. For the particular solution, try the constant $k$. Then $k = 2k + 3$, so $k = -3$. Thus, the general solution is $u_n = C \cdot 2^n - 3$. From the initial condition $u_0 = a$, we see that $C = a + 3$, so $u_n = \bp{a + 3} 2^n - 3 = 2^n a + 3\bp{2^n - 1}$.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     The volume of water, in litres, in a storage tank decreases by 10\% by the end of each day. However, 90 litres of water is also pumped into the tank at the end of each day. The volume of water in the tank at the end of $n$ days is denoted by $x_n$ and $x_0$ is the initial volume of water in the tank.
 
     \begin{enumerate}
         \item Write down a recurrence relation to represent the above situation.
-        \item Show that $x_n = 0.9^n (x_0 - 900) + 900$.
+        \item Show that $x_n = 0.9^n \bp{x_0 - 900} + 900$.
         \item Deduce the amount of water in the tank when $n$ becomes very large.
     \end{enumerate}
 \end{problem}
@@ -80,7 +75,7 @@
         $x_{n+1} = 0.9x_n + 90$, $n \in \NN$
     \end{ppart}
     \begin{ppart}
-        Let $k$ be a constant such that $x_{n+1} + k = 0.9(x_n + k)$. Then $k = -900$. Hence, \[x_{n+1} - 900 = 0.9(x_n - 900) \implies x_n - 900 = 0.9^n (x_0 - 900) \implies x_n = 0.9^n (x_0 - 900) + 900.\]
+        The complementary solution is $x_n^{(c)} = C \cdot 0.9^n$. For the particular solution, try the constant $k$. Then $k = 0.9 k + 90$, so $k = 900$. Hence, the general solution is $x_n = C \cdot 0.9^n + 900$. When $n = 0$, we see that $C = x_0 - 900$, so $x_n = 0.9^n \bp{x_0 - 900} + 900$.
     \end{ppart}
     \begin{ppart}
         As $n \to \infty$, $0.9^n \to 0$. Hence, the amount of water in the tank will converge to 900 litres.
@@ -97,14 +92,13 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[P_{n+2} = P_{n+1} + 0.2 P_{n+1} + 0.45P_n = 1.2 P_{n+1} + 0.45 P_n.\]
+        $P_{n+2} = P_{n+1} + 0.2 P_{n+1} + 0.45P_n = 1.2 P_{n+1} + 0.45 P_n$.
     \end{ppart}
     \begin{ppart}
-        Note that the characteristic equation of $P_n$, $x^2 - 1.2x - 0.45 = 0$, has roots $-\frac3{10}$ and $\frac32$. Thus, \[P_n = A  \bp{-\frac3{10}}^n + B \bp{\frac32}^n.\] From $P_0 = 0$ and $P_1 = 100000$, we have $A+B = 0$ and $-\frac3{10}A + \frac32B = 100000$. Solving, we have $A = -\frac{500000}{9}$ and $B = \frac{500000}{9}$. Thus, \[P_n = \frac{500000}9 \bs{\bp{\frac32}^n - \bp{-\frac3{10}}^n}.\] Hence, there will be \$$\bc{\frac{500000}9 \bs{\bp{\frac32}^n - \bp{-\frac3{10}}^n}}$ in the account after $n$ years if no money is ever withdrawn
+        Note that the characteristic equation of $P_n$, $x^2 - 1.2x - 0.45 = 0$, has roots $-3/10$ and $3/2$. Thus, \[P_n = A  \bp{-\frac3{10}}^n + B \bp{\frac32}^n.\] From $P_0 = 0$ and $P_1 = 100000$, we have $A+B = 0$ and $-3A/10 + 3B/2 = 100000$. Solving, we have \[A = -\frac{500000}{9} \quad \tand \quad B = \frac{500000}{9}.\] Thus, there will be \[P_n = \frac{500000}9 \bs{\bp{\frac32}^n - \bp{-\frac3{10}}^n}\] dollars in the account after $n$ years if no money is ever withdrawn.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     A pair of rabbits does not breed until they are two months old. After they are two months old, each pair of rabbit produces another pair each month.
 
@@ -118,38 +112,31 @@
         $f_{n+2} = f_{n+1} + f_n$, $n \geq 2$, $f_0 = 0, f_1 = 1$
     \end{ppart}
     \begin{ppart}
-        Consider the characteristic equation of $f_n$, $x^2 - x - 1 = 0$. By the quadratic formula, the roots of the characteristic equation are $\frac{1 + \sqrt5}{2}$ and $\frac{1 - \sqrt5}{2}$. Hence, \[f_n = A \bp{\frac{1 + \sqrt5}{2}}^n + B \bp{\frac{1 - \sqrt5}{2}}^n.\] From $f_0 = 0$, we get $A + B = 0$. From $f_1 = 1$, we get $A \bp{\frac{1 + \sqrt5}2} + B \bp{\frac{1 - \sqrt5}2} = 1$. Solving, we get $A = \frac1{\sqrt5}$ and $B = -\frac1{\sqrt5}$. Hence, \[f_n = \frac1{\sqrt5} \bp{\frac{1 + \sqrt5}{2}}^n - \frac1{\sqrt5} \bp{\frac{1 - \sqrt5}{2}}^n.\]
+        Consider the characteristic equation of $f_n$, $x^2 - x - 1 = 0$. By the quadratic formula, the roots of the characteristic equation are $(1 + \sqrt5)/2$ and $(1 - \sqrt5)/2$. Hence, \[f_n = A \bp{\frac{1 + \sqrt5}{2}}^n + B \bp{\frac{1 - \sqrt5}{2}}^n.\] From $f_0 = 0$, we get $A + B = 0$. From $f_1 = 1$, we get $A (1 + \sqrt5)/2 + B (1 - \sqrt5)/2 = 1$. Solving, we get $A = 1/\sqrt5$ and $B = -1/\sqrt5$. Hence, \[f_n = \frac1{\sqrt5} \bp{\frac{1 + \sqrt5}{2}}^n - \frac1{\sqrt5} \bp{\frac{1 - \sqrt5}{2}}^n.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    For $n \in \bc{2^j \colon j \in \ZZ, j \geq 1}$, it is given that $T_n = 3T_{n/2} + 17$, where $T_1 = 4$. By considering the substitution $n = 2^i$ and another suitable substitution, show that the recurrence relation can be expressed in the form
-    \[
-        t_i = 3t_{i-1} + 17, \qquad i \in \ZZ^+
-    \]
-    
-    Hence, find an expression for $T_n$ in terms of $n$.
+    For $n \in \bc{2^j \colon j \in \ZZ, j \geq 1}$, it is given that $T_n = 3T_{n/2} + 17$, where $T_1 = 4$. By considering the substitution $n = 2^i$ and another suitable substitution, show that the recurrence relation can be expressed in the form \[t_i = 3t_{i-1} + 17, \qquad i \in \ZZ^+.\] Hence, find an expression for $T_n$ in terms of $n$.
 \end{problem}
 \begin{solution}
-        Let $n = 2^i \iff i = \log_2{n}$. The given recurrence relation transforms to \[T_{2^i} = 3T_{2^{i-1}} + 17, T_{2^0} = 4.\] Let $t_i = T_{2i}$. Then \[t_i = 3t_{i-1} + 17, t_0 = 4.\] Let $k$ be a constant such that $t_i + k = 3(t_{i-1} + k)$. Then $k = \frac{17}2$. We thus obtain a formula for $t_i$: \[t_i + \frac{17}2 = 3\bp{t_{i-1} + \frac{17}2} \implies t_i + \frac{17}{2} = 3^i \bp{t_0 + \frac{17}{2}} \implies t_i = \frac{25}{2} \cdot 3^i - \frac{17}{2}.\] Thus, \[T_{2i} = \frac{25}{2} \cdot 3^i - \frac{17}{2} \implies T_n = \frac{25}{2} \cdot 3^{\log_2 n} - \frac{17}2.\]
+        Let $n = 2^i$, so $i = \log_2{n}$. The given recurrence relation transforms to $T_{2^i} = 3T_{2^{i-1}} + 17$. Let $t_i = T_{2^i}$. Then $t_i = 3t_{i-1} + 17$, with initial condition $t_0 = T_1 = 4$. The complementary solution is $t_i^{(c)} = C \cdot 3^i$. For the particular solution, try the constant $k$. Then $k = 3k + 17$, so $k = -17/2$. Thus, the general solution is $t_i = C \cdot 3^i - 17/2$. When $i = 0$, we see that $C = 25/2$, so \[T_{2^i} = t_i = \frac{25 \cdot 3^i - 17}{2}.\] Thus, \[T_n = \frac{25 \cdot 3^{\log_2 n} - 17}{2}.\]
 \end{solution}
 
-\clearpage
 \begin{problem}
     Consider the sequence $\bc{a_n}$ given by the recurrence relation \[a_{n+1} = 2a_n + 5^n, \qquad n \geq 1.\]
 
     \begin{enumerate}
-        \item Given that $a_n = k\bp{5^n}$ satisfies the recurrent relation, find the value of the constant $k$.
+        \item Given that $a_n = k\bp{5^n}$ satisfies the recurrence relation, find the value of the constant $k$.
         \item Hence, by considering the sequence $\bc{b_n}$ where $b_n = a_n - k(5^n)$, find the particular solution to the recurrence relation for which $a_1 = 2$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[a_{n+1} = 2a_n + 5^n \implies k\bp{5^{n+1}} = 2\cdot k\bp{5^n} + 5^n \implies 5k = 2k + 1 \implies k = \frac13.\]
+        Putting $a_n = k \bp{5^n}$ into the recurrence relation, we obtain $k\bp{5^{n+1}} = 2k\bp{5^n} + 5^n$, so $5k = 2k + 1$ and $k = 1/3$.
     \end{ppart}
     \begin{ppart}
-        \[b_n = a_n - \frac{5^n}3 = \bp{2a_{n-1} - 5^{n-1}} - \frac{5^n}3 = 2a_{n-1} - \frac23 \cdot 5^{n-1} = 2\bp{a_{n-1} - \frac{5^{n-1}}3} = 2b_{n-1}.\] Hence, $b_n = b_1 \cdot 2^{n-1}$. Note that $b_1 = a_1 - \frac53 = \frac13$. Thus, $b_n = \frac{2^{n-1}}3$, which gives 
-        \[b_n = a_n - \frac{5^n}{3} = \frac{2^{n-1}}3 \implies a_n = \frac{2^n + 2 \cdot 5^n}6.\]
+        Notice that \[b_n = a_n - \frac{5^n}3 = \bp{2a_{n-1} - 5^{n-1}} - \frac{5^n}3 = 2\bp{a_{n-1} - \frac{5^{n-1}}3} = 2b_{n-1}.\] Hence, $\bc{b_n}$ is in geometric progression with common ratio 2. Since $b_1 = a_1 - 5/3 = 1/3$, it follows that $b_n = b_1\bp{2^{n-1}} = 2^{n-1}/3$. Thus, \[a_n = b_n + \frac{5^n}{3} = \frac{2^n + 2\bp{5^n}}6.\]
     \end{ppart}
 \end{solution}
 
@@ -157,15 +144,14 @@
     The sequence $\bc{X_n}$ is given by \[\sqrt{X_{n+2}} = \frac{X_{n+1}}{X_n^2}, \qquad n \geq 1.\] By applying the natural logarithm to the recurrence relation, use a suitable substitution to find the general solution of the sequence, expressing your answer in trigonometric form.
 \end{problem}
 \begin{solution}
-    Taking the natural logarithm of the recurrence relation and simplifying, we get \[\ln X_{n+2} = 2\ln X_{n+1} - 4\ln X_n.\] Let $L_n = \ln X_n \iff X_n = \exp{L_n}$. Then, \[L_{n+2} = 2L_{n+1} - 4L_n.\] Consider the characteristic equation of $L_n$, $x^2 - 2x + 4 = 0$. By the quadratic formula, this has roots $1 \pm \sqrt3 \i = 2\exp{\pm \frac{i\pi}3}$. Thus, we can express $L_n$ as \[L_n = A \cdot 2^n \cos \frac{n\pi}3 + B \cdot 2^n \sin\frac{n\pi}3 = 2^n \bp{A \cos \frac{n\pi}3 + B \sin \frac{n\pi}3}.\] Thus, $X_n$ has the general solution \[X_n = \exp{2^n \bp{A \cos\frac{n\pi}3 + B \sin \frac{n\pi}3}}.\]
+    Taking the natural logarithm of the recurrence relation and simplifying, we get $\ln X_{n+2} = 2\ln X_{n+1} - 4\ln X_n$. Let $L_n = \ln X_n$, so $X_n = \exp{L_n}$. Then $L_{n+2} = 2L_{n+1} - 4L_n$. The characteristic equation of this recurrence relation, $x^2 - 2x + 4 = 0$, has roots $1 \pm \sqrt3 \i = 2\exp{\pm \i \pi/3}$. Thus, we can write $L_n$ as \[L_n = 2^n \bp{A \cos \frac{n\pi}3 + B \sin \frac{n\pi}3}.\] Thus, $X_n$ has the general solution \[X_n = \exp{2^n \bp{A \cos\frac{n\pi}3 + B \sin \frac{n\pi}3}}.\]
 \end{solution}
 
-\clearpage
 \begin{problem}
     The sequence $\bc{X_n}$ is given by $X_1 = 2$, $X_2 = 15$ and \[X_{n+2} = 5\bp{1 + \frac1{n+2}}X_{n+1} - 6\bp{1 + \frac2{n+1}}X_n, \qquad n \geq 1.\] By dividing the recurrence relation throughout by $n+3$, use a suitable substitution to determine $X_n$ as a function of $n$.
 \end{problem}
 \begin{solution}
-    Dividing the recurrence relation by $n+3$, we obtain \[\frac{X_{n+2}}{n+3} = 5\bp{\frac1{n+3} + \frac1{(n+2)(n+3)}}X_{n+1} - 6\bp{\frac1{n+3} + \frac2{(n+1)(n+3)}}X_n.\] Note that $\frac1{(n+2)(n+3)} = \frac1{n+2} - \frac1{n+3}$ and $\frac{2}{(n+1)(n+3)} = \frac1{n+1} - \frac1{n+3}$. Thus, \[\frac{X_{n+2}}{n+3} = 5\bp{\frac{X_{n+1}}{n+2}} - 6\bp{\frac{X_n}{n+1}}.\] Let $Y_n = \frac{n + 1}{X_n} \iff X_n = (n+1)Y_n$. Then, \[Y_{n+2} = 5 Y_{n+1} - 6Y_n.\] Note that the characteristic equation of $Y_n$, $x^2 - 5x + 6 = 0$, has roots 2 and 3. Hence, \[Y_n = A \cdot 2^n + B \cdot 3^n \implies X_n = (n+1) \bp{A \cdot 2^n + B \cdot 3^n}.\] From $X_1 = 2$ and $X_2 = 15$, we have $2A + 3B = 1$ and $4A + 9B = 5$. Solving, we obtain $A = -1$ and $B = 1$. Thus, \[X_n = (n+1)\bp{3^n - 2^n}.\]
+    Dividing the recurrence relation by $n+3$, we obtain \[\frac{X_{n+2}}{n+3} = 5\bp{\frac1{n+3} + \frac1{(n+2)(n+3)}}X_{n+1} - 6\bp{\frac1{n+3} + \frac2{(n+1)(n+3)}}X_n.\] Note that \[\frac1{(n+2)(n+3)} = \frac1{n+2} - \frac1{n+3} \quad \tand \quad \frac{2}{(n+1)(n+3)} = \frac1{n+1} - \frac1{n+3}.\] Thus, \[\frac{X_{n+2}}{n+3} = 5\bp{\frac{X_{n+1}}{n+2}} - 6\bp{\frac{X_n}{n+1}}.\] Let $Y_n = X_n/(n+1)$, so $X_n = (n+1)Y_n$. Then, $Y_{n+2} = 5 Y_{n+1} - 6Y_n$. Note that the characteristic equation of $Y_n$, $x^2 - 5x + 6 = 0$, has roots 2 and 3. Hence, $X_n = (n+1) Y_n = (n+1) \bp{A \cdot 2^n + B \cdot 3^n}$. From $X_1 = 2$ and $X_2 = 15$, we have $2A + 3B = 1$ and $4A + 9B = 5$. Solving, we obtain $A = -1$ and $B = 1$. Thus, $X_n = (n+1)\bp{3^n - 2^n}$.
 \end{solution}
 
 \begin{problem}
@@ -200,20 +186,22 @@
         $T_{n+1} = 0.9T_n + k$
     \end{ppart}
     \begin{ppart}
-        Let $m$ be a constant such that $T_{n+1} + m = 0.9\bp{T_n + m}$. Then $m = -10k$. Hence, \[T_{n+1} - 10k = 0.9\bp{T_n - 10k} \implies T_{n} - 10k = 0.9^{n-1} \bp{T_0 - 10k}.\] Since $T_0 = 250$, we get \[T_n = 0.9^{n-1} \bp{250 - 10k} + 10k.\]
+        The complementary solution is $T_n^{(c)} = C \cdot 0.9^n$. For the particular solution, try the constant $m$. Then $m = 0.9m + k$, so $m = 10k$. Thus, the general solution is $T_n = C \cdot 0.9^n + 10k$. When $n = 1$, we see that $0.9 C = 250 - 10k$, so $T_n = 0.9^{n-1} \bp{250 - 10k} + 10k$.
     \end{ppart}
     \begin{ppart}
-        Consider $T_{12} \geq 350$. \[T_{12} \geq 350 \implies 0.9^{12-1} \bp{250 - 10k} + 10k \geq 350.\] Using G.C., $k \geq 39.6$. Hence, the company needs to attract at least 40 subscribers in each subsequent month.
+        Consider $T_{12} = 0.9^{12-1} \bp{250 - 10k} + 10 k \geq 350$. Using G.C., $k \geq 39.6$. Hence, the company needs to attract at least 39 subscribers in each subsequent month.
     \end{ppart}
     \begin{ppart}
-        Since $k = 50$, $T_n = -250 \cdot 0.9^{n-1} + 500$. Let \$$S_m$ be the total revenue for the first $m$ months.
+        Since $k = 50$, we have $T_n = -250 \cdot 0.9^{n-1} + 500$. Let \$$S_m$ be the total revenue for the first $m$ months.
         \begin{align*}
-            S_m &= 10 \sum_{n=1}^m T_n = 10 \sum_{n=1}^m \bp{-250 \cdot 0.9^{n-1} + 500}\\
-            &= 10\bs{-250 \bp{\frac{1 - 0.9^{m}}{1 - 0.9}} + 500m} = 25000 \bp{0.9^m - 1} + 5000m.
+            S_m &= 10 \sum_{n=1}^m T_n\\
+            &= 10 \sum_{n=1}^m \bp{-250 \cdot 0.9^{n-1} + 500}\\
+            &= 10\bs{-250 \bp{\frac{1 - 0.9^{m}}{1 - 0.9}} + 500m}\\
+            &= 25000 \bp{0.9^m - 1} + 5000m.
         \end{align*}
-        Note that the total cost for the first $m$ months is \$$4000m$. Hence, the total profit for the first $m$ months is given by \$$(S_m - 4000m)$. Hence, we consider $S_m - 4000m \geq 0$: \[S_m - 4000m \geq 0 \implies 25000\bp{0.9^m - 1} + 1000m \geq 0.\] Using G.C., we obtain $m \geq 22.7$, whence the least value of $m$ is 23.
+        Note that the total cost for the first $m$ months is \$$4000m$. Hence, the total profit for the first $m$ months is given by \$$(S_m - 4000m)$. Since the company is able to cover its costs, this quantity must be positive, so $25000\bp{0.9^m - 1} + 5000m - 4000m \geq 0$. Using G.C., $m \geq 22.7$, whence the least value of $m$ is 23.
     \end{ppart}
     \begin{ppart}
-        As $n \to \infty$, $0.9^{n-1} \to 0$. Hence, $T_n \to 500$. Hence, as $n$ becomes very large, the profit per month approaches $500 \cdot 10 - 4000 = 1000$ dollars. Thus, this behaviour is appropriate as the business will remain profitable in the long run.
+        As $n \to \infty$, $0.9^{n-1} \to 0$. Hence, $T_n \to 500$. Thus, as $n$ becomes very large, the profit per month approaches $500 \cdot 10 - 4000 = 1000$ dollars. This behaviour is appropriate as the business will remain profitable in the long run.
     \end{ppart}
 \end{solution}

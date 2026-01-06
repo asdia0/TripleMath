@@ -3,7 +3,7 @@
 \begin{problem}
     The position vectors of the vertices of $A$, $B$ and $C$ of a triangle are $\vec a$, $\vec b$ and $\vec c$ respectively.
 
-    If $O$ is the origin, show that the area of triangle $OAB$ is $\frac12 \abs{\vec a \crossp \vec b}$ and deduce an expression for the area of the triangle $ABC$.
+    If $O$ is the origin, show that the area of triangle $OAB$ is $\abs{\vec a \crossp \vec b}/2$ and deduce an expression for the area of the triangle $ABC$.
 
     Hence, or otherwise, show that the perpendicular distance from $B$ to $AC$ is \[\frac{\abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}}{\abs{\vec c - \vec a}}.\]
 \end{problem}
@@ -12,12 +12,14 @@
 
     Similarly, let $\vf$ be the angle between $AB$ and $AC$. Then
     \begin{align*}
-        [\triangle ABC] &= \frac12 (AB) (AC) \sin \vf = \frac12 \abs{\oa{AB} \crossp \oa{AC}} = \frac12 \abs{\bp{\vec b - \vec a} \crossp \bp{\vec c - \vec a}}\\
+        [\triangle ABC] &= \frac12 (AB) (AC) \sin \vf\\
+        &= \frac12 \abs{\oa{AB} \crossp \oa{AC}}\\
+        &= \frac12 \abs{\bp{\vec b - \vec a} \crossp \bp{\vec c - \vec a}}\\
         &= \frac12 \abs{\vec b \crossp \vec c - \vec a \crossp \vec c - \vec b \crossp \vec a + \vec a \crossp \vec a} = \frac12 \abs{\vec b \crossp \vec c - \vec a \crossp \vec c - \vec b \crossp \vec a}\\
         &= \frac12 \abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}.
     \end{align*}
 
-    Let $h$ be the perpendicular distance from $B$ to $AC$. Then \[[\triangle ABC] = \frac12 (AC)(h) \implies h = \frac{2[\triangle ABC]}{\abs{\oa{AC}}} = \frac{\abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}}{\abs{\vec c - \vec a}}.\]
+    Let $h$ be the perpendicular distance from $B$ to $AC$. Then \[[\triangle ABC] = \frac12 (AC)(h),\] so \[h = \frac{2[\triangle ABC]}{\abs{\oa{AC}}} = \frac{\abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}}{\abs{\vec c - \vec a}}.\]
 \end{solution}
 
 \begin{problem}
@@ -31,27 +33,28 @@
 
     Also, find the position vector of the point of intersection of this plane and the line $AC$. Find the acute angle between the plane $OBC$ and the plane through $D$ normal to $OD$.
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Since $OA$ and $OB$ are perpendicular, we have \[\oa{OA} \dotp \oa{OB} = \cveciii12{-1} \dotp \cveciii{-1}2c = 3 - c = 0 \implies c = 3.\]
+        Since $OA$ and $OB$ are perpendicular, we have \[\oa{OA} \dotp \oa{OB} = \cveciii12{-1} \dotp \cveciii{-1}2c = 0.\] This gives $3 - c = 0$, so $c = 3$.
     \end{ppart}
     \begin{ppart}
         The normal vector of the plane $OBC$ is given by \[\oa{OB} \crossp \oa{OC} = \cveciii{-1}23 \crossp \cveciii214 = 5\cveciii1{2}{-1} = 5\oa{OA},\] hence $\oa{OA}$ is normal to the plane $OBC$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\oa{OD} \dotp \cveciii12{-1} = \cveciii111 \dotp \cveciii12{-1} = 2.\] Thus, the equation of the plane through $D$ and parallel to $OBC$ is given by \[\Pi: \quad \vec r \dotp \cveciii12{-1} = 2.\]
+        Note that \[\oa{OD} \dotp \cveciii12{-1} = \cveciii111 \dotp \cveciii12{-1} = 2.\] Thus, the equation of the plane through $D$ and parallel to $OBC$ is given by \[\vec r \dotp \cveciii12{-1} = 2.\]
     \end{ppart}
 
-    Note that the line $AC$ has vector equation \[\vec r = \oa{OA} + \l \oa{AC} = \cveciii12{-1} + \l \bs{\cveciii214 - \cveciii12{-1}} = \cveciii12{-1} + \l \cveciii1{-1}5, \quad \l \in \RR.\] When this line intersects $\Pi$, we have \[\bs{\cveciii12{-1} + \l \cveciii1{-1}5} \dotp \cveciii1{2}{-1} = 6 - 6\l = 2 \implies \l = \frac23.\] Thus, the point of intersection has position vector \[\cveciii12{-1} + \frac23 \cveciii1{-1}5 = \frac13 \cveciii547.\]
+    Note that the line $AC$ has vector equation \[\vec r = \oa{OA} + \l \oa{AC} = \cveciii12{-1} + \l \bs{\cveciii214 - \cveciii12{-1}} = \cveciii12{-1} + \l \cveciii1{-1}5, \quad \l \in \RR.\] When this line intersects $\Pi$, we have \[\bs{\cveciii12{-1} + \l \cveciii1{-1}5} \dotp \cveciii1{2}{-1} = 2.\] This gives $6 - 6\l = 2$, so $\l = 2/3$. Thus, the point of intersection has position vector \[\cveciii12{-1} + \frac23 \cveciii1{-1}5 = \frac13 \cveciii547.\]
     
-    Let $\t$ be the acute angle between the plane $OBC$ and the plane through $D$ normal to $OD$. Then \[\cos \t = \frac{\abs{\cveciiix111 \dotp \cveciiix12{-1}}}{\abs{\cveciiix111} \abs{\cveciiix12{-1}}} = \frac2{\sqrt{3} \sqrt{6}} \implies \t = 61.9 \deg \todp{1}.\]
+    Let $\t$ be the acute angle between the plane $OBC$ and the plane through $D$ normal to $OD$. Then \[\cos \t = \frac{\abs{\cveciiix111 \dotp \cveciiix12{-1}}}{\abs{\cveciiix111} \abs{\cveciiix12{-1}}} = \frac2{\sqrt{3} \sqrt{6}},\] so $\t = 61.9 \deg \todp{1}$.
 \end{solution}
 
 \begin{problem}
     The equations of the line $l_1$ and the plane $\Pi_1$ are as follows:
     \begin{align*}
-        l_1 &: \vec r = \cveciii5{-1}4 + \l \cveciii1{-1}0, \quad \l \in \RR, \\
-        \Pi_1 &: xa + z = 5a + 4, \quad a \in \RR^+.
+        l_1 &: \quad \vec r = \cveciii5{-1}4 + \l \cveciii1{-1}0, \quad \l \in \RR, \\
+        \Pi_1 &: \quad xa + z = 5a + 4, \quad a \in \RR^+.
     \end{align*}
 
     \begin{enumerate}
@@ -69,22 +72,22 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that $\Pi_1$ has vector equation \[\Pi_1: \quad \vec r \dotp \cveciii{a}01 = 5a + 4.\]
+    Note that $\Pi_1$ has vector equation \[\vec r \dotp \cveciii{a}01 = 5a + 4.\]
 
     \begin{ppart}
-        Since the angle between $l_1$ and $\Pi_1$ is $\pi/6$, we have \[\frac12 = \sin \frac\pi6 = \frac{\abs{\cveciiix1{-1}0 \dotp \cveciiix{a}01}}{\abs{\cveciiix1{-1}0} \dotp \abs{\cveciiix{a}01}} = \frac{a}{\sqrt{2} \sqrt{a^2 + 1}},\] which yields $a = 1$.
+        Since the angle between $l_1$ and $\Pi_1$ is $\pi/6$, we have \[\frac12 = \sin \frac\pi6 = \frac{\abs{\cveciiix1{-1}0 \dotp \cveciiix{a}01}}{\abs{\cveciiix1{-1}0} \dotp \abs{\cveciiix{a}01}} = \frac{a}{\sqrt{2} \sqrt{a^2 + 1}},\] which gives $a = 1$.
     \end{ppart}
     \begin{ppart}
         $(5, -1, 4)$ is clearly on $l_1$. Since \[\cveciii5{-1}4 \dotp \cveciii101 = 9 = 5(1) + 4,\] it follows that $(5, -1, 4)$ is also on $\Pi_1$. Thus, $l_1$ and $\Pi_1$ intersect at $(5, -1, 4)$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\oa{AC} = \oa{OC} - \oa{OA} = \cveciii7{-3}4 - \cveciii5{-1}4 = \cveciii2{-2}0.\] The length of projection of $\oa{AC}$ on $\Pi_1$ is hence given by \[\frac{\abs{\cveciiix2{-2}0 \crossp \cveciiix101}}{\abs{\cveciiix101}} = \frac{\abs{\cveciiix{-2}{-2}2}}{\abs{\cveciiix101}} = \sqrt{6}.\]
+        Note that \[\oa{AC} = \cveciii7{-3}4 - \cveciii5{-1}4 = \cveciii2{-2}0.\] The length of projection of $\oa{AC}$ on $\Pi_1$ is hence given by \[\frac{\abs{\cveciiix2{-2}0 \crossp \cveciiix101}}{\abs{\cveciiix101}} = \frac{\abs{\cveciiix{-2}{-2}2}}{\abs{\cveciiix101}} = \sqrt{6} \units.\]
     \end{ppart}
     \begin{ppart}
-        Observe that $\oa{CN}$ is parallel to the normal vector of $\Pi_1$, so \[\oa{ON} = \oa{OC} + \oa{CN} = \cveciii7{-3}4 + \m \cveciii101\] for some $\m \in \RR$. Since $N$ lies on $\Pi_1$, we have \[\bs{\cveciii7{-3}4 + \m \cveciii101} \dotp \cveciii101 = 11 + 2\m = 9 \implies \m= = -1.\] Thus, the position vector of $N$ is \[\oa{ON} = \cveciii7{-3}4 - \cveciii101 = \cveciii6{-3}{-3}.\]
+        Observe that $\oa{CN}$ is parallel to the normal vector of $\Pi_1$, so \[\oa{ON} = \oa{OC} + \oa{CN} = \cveciii7{-3}4 + \m \cveciii101\] for some $\m \in \RR$. Since $N$ lies on $\Pi_1$, we have \[\bs{\cveciii7{-3}4 + \m \cveciii101} \dotp \cveciii101 = 9.\] This gives $11 + 2\m = 9$, so $\m = -1$. Thus, the position vector of $N$ is \[\oa{ON} = \cveciii7{-3}4 - \cveciii101 = \cveciii6{-3}{-3}.\]
     \end{ppart}
     \begin{ppart}
-        By the midpoint theorem, \[\oa{ON} = \frac{\oa{OC} + \oa{OC'}}{2} \implies \oa{OC'} = 2\oa{ON} - \oa{OC} = 2\cveciii6{-3}{3} = \cveciii7{-3}4 = \cveciii5{-3}2.\] Thus, \[\oa{AC'} = \oa{OC'} - \oa{OA} = \cveciii5{-3}{2} - \cveciii5{-1}4 = -2\cveciii011,\] hence the vector equation of the line $AC'$ is given by \[\vec r = \cveciii5{-1}4 + \n \cveciii011, \quad \n \in \RR.\]
+        By the midpoint theorem, \[\oa{ON} = \frac{\oa{OC} + \oa{OC'}}{2},\] so \[\oa{OC'} = 2\oa{ON} - \oa{OC} = 2\cveciii6{-3}{3} = \cveciii7{-3}4 = \cveciii5{-3}2.\] Thus, \[\oa{AC'} = \cveciii5{-3}{2} - \cveciii5{-1}4 = -2\cveciii011,\] hence the vector equation of the line $AC'$ is given by \[\vec r = \cveciii5{-1}4 + \n \cveciii011, \quad \n \in \RR.\]
     \end{ppart}
 \end{solution}
 
@@ -93,21 +96,21 @@
 
     \begin{enumerate}
         \item Find the vector equation of the line $l_1$, which lies in both the plane $\Pi_1$ and the $yz$ plane.
-        \item Another plane $\Pi_2$ contains the line $l_2$ with equation $x = 1$, $\frac{y+1}{2} = z$ and is perpendicular to $\Pi_1$. Find the equation of the plane $\Pi_2$ in scalar product form. Determine whether $l_1$ lies on $\Pi_2$.
+        \item Another plane $\Pi_2$ contains the line $l_2$ with equation $x = 1$, $(y+1)/2 = z$ and is perpendicular to $\Pi_1$. Find the equation of the plane $\Pi_2$ in scalar product form. Determine whether $l_1$ lies on $\Pi_2$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     Note that the vector equations of $\Pi_1$ and the $yz$ plane are \[\Pi_1: \, \, \vec r \dotp \cveciii11{-2} = 3 \quad \tand \quad \vec r \dotp \cveciii100 = 0\] respectively.
 
     \begin{ppart}
-        Note that \[\cveciii11{-2} \crossp \cveciii100 = \cveciii0{-2}{-1} = -\cveciii021.\] Since $(0, 1, -1)$ lies on both $\Pi_1$ and the $yz$ plane, it follows that the vector equation of $l_1$ is \[l_1: \quad \vec r = \cveciii01{-1} + \l \cveciii021, \quad \l \in \RR.\]
+        Note that \[\cveciii11{-2} \crossp \cveciii100 = \cveciii0{-2}{-1} = -\cveciii021.\] Since $(0, 1, -1)$ lies on both $\Pi_1$ and the $yz$ plane, it follows that the vector equation of $l_1$ is \[\vec r = \cveciii01{-1} + \l \cveciii021, \quad \l \in \RR.\]
     \end{ppart}
     \begin{ppart}
-        Let the normal vector of $\Pi_2$ be $\cveciiix{x}{y}{z}$, so it has vector equation \[\Pi_2: \quad \vec r \dotp \cveciii{x}{y}{z} = d\] for some constant $d$.
+        Let the normal vector of $\Pi_2$ be $\cveciiix{x}{y}{z}$, so it has vector equation \[\vec r \dotp \cveciii{x}{y}{z} = d\] for some constant $d$.
 
-        The vector equation of $l_2$ is \[l_2: \quad \vec r = \cveciii1{-1}0 + \m \cveciii021, \quad \m \in \RR.\] Since $l_2$ lies on $\Pi_2$, for all $\m \in \RR$, we must have \[\bs{\cveciii1{-1}0 + \m \cveciii021} \dotp \cveciii{x}{y}{z} = d.\] This simplifies to \[\bp{x-y} + \m \bp{2y + z} = d,\] whence we conclude that $2y + z = 0$ and $x - y = d$. The vector equation of $\Pi_2$ hence updates as \[\Pi_2: \quad \vec r \dotp \cveciii{x}{y}{-2y} = x - y.\]
+        The vector equation of $l_2$ is \[\vec r = \cveciii1{-1}0 + \m \cveciii021, \quad \m \in \RR.\] Since $l_2$ lies on $\Pi_2$, for all $\m \in \RR$, we must have \[\bs{\cveciii1{-1}0 + \m \cveciii021} \dotp \cveciii{x}{y}{z} = d.\] This simplifies to \[\bp{x-y} + \m \bp{2y + z} = d,\] whence we conclude that $2y + z = 0$ and $x - y = d$. The vector equation of $\Pi_2$ hence becomes \[\vec r \dotp \cveciii{x}{y}{-2y} = x - y.\]
 
-        Since $\Pi_1$ and $\Pi_2$, we have that \[0 = \cos \frac\pi2 = \frac{\abs{\cveciiix11{-2} \dotp \cveciiix{x}{y}{-2y}}}{\abs{\cveciiix11{-1}} \abs{\cveciiix{x}{y}{-2y}}} \implies x + 5y = 0.\] Thus, the normal vector is \[\cveciii{x}{y}{-2y} = \cveciii{-5y}{y}{-2y} = y\cveciii{-5}{1}{-2}.\] Taking $y = 1$, we get $x = -5$, so $d = x-y = -6$. Thus, the vector equation of $\Pi_2$ is \[\Pi_2: \quad \vec r \dotp \cveciii{-5}1{-2} = -6.\]
+        Since $\Pi_1$ and $\Pi_2$, we have that \[0 = \cos \frac\pi2 = \frac{\abs{\cveciiix11{-2} \dotp \cveciiix{x}{y}{-2y}}}{\abs{\cveciiix11{-1}} \abs{\cveciiix{x}{y}{-2y}}}.\] This gives $x + 5y = 0$. Thus, the normal vector is \[\cveciii{x}{y}{-2y} = \cveciii{-5y}{y}{-2y} = y\cveciii{-5}{1}{-2}.\] Taking $y = 1$, we get $x = -5$, so $d = x-y = -6$. Thus, the vector equation of $\Pi_2$ is \[\Pi_2: \quad \vec r \dotp \cveciii{-5}1{-2} = -6.\]
 
         Note that $l_1$ is parallel to $l_2$. Since $l_2$ lies on $\Pi_2$, this implies that $l_1$ is parallel to $\Pi_2$. Since \[\cveciii01{-1} \dotp \cveciii{-5}{1}{-2} = 3 \neq -6,\] it follows that $(0, 1, -1)$ does not lie on $\Pi_2$, thus $l_1$ does not lie on $\Pi_2$.
     \end{ppart}
@@ -133,35 +136,31 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Rewriting, we see that the equations of $l_1$ and $l_2$ are
-    \begin{align*}
-        l_1: \quad \vec r &= \cveciii1{5}{12} + \l \cveciii32{-2}, \quad \l \in \RR,\\
-        l_2: \quad \vec r &= \cveciii15{12} + \m \cveciii8{11}6, \quad \m \in \RR.
-    \end{align*}
+    Rewriting, we see that the equations of $l_1$ and $l_2$ are \[\vec r = \cveciii1{5}{12} + \l \cveciii32{-2} \quad \tand \quad \vec r = \cveciii15{12} + \m \cveciii8{11}6\] respectively, where $\l, \m \in \RR$.
 
     \begin{ppart}
-        Note that \[\cveciii32{-2} \crossp \cveciii8{11}6 = \cveciii{34}{-34}{17} = 17\cveciii2{-2}1.\] Thus, the equation of $\Pi_1$ is \[\Pi_1: \quad \vec r \dotp \cveciii2{-2}1 = \cveciii15{12} \dotp \cveciii2{-2}1 = 4.\]
+        Note that \[\cveciii32{-2} \crossp \cveciii8{11}6 = \cveciii{34}{-34}{17} = 17\cveciii2{-2}1.\] Thus, the equation of $\Pi_1$ is \[\vec r \dotp \cveciii2{-2}1 = \cveciii15{12} \dotp \cveciii2{-2}1 = 4.\]
     \end{ppart}
     \begin{ppart}
-        Note that $\Pi_3$ has vector equation \[\Pi_3: \quad \vec r \dotp \cveciii1{-3}{-1} = 7.\] By inspection, we see that $(-1/2, -3/2, 0)$ lies on both $\Pi_1$ and $\Pi_3$. Since \[\cveciii2{-2}1 \crossp \cveciii1{-3}{-1} = \cveciii5{3}{-4},\] the vector equation of the line of intersection $l$ is \[\vec r = -\frac12 \cveciii130 + \n \cveciii53{-4}, \quad \n \in \RR.\]
+        Note that $\Pi_3$ has vector equation \[\vec r \dotp \cveciii1{-3}{-1} = 7.\] By inspection, we see that $(-1/2, -3/2, 0)$ lies on both $\Pi_1$ and $\Pi_3$. Since \[\cveciii2{-2}1 \crossp \cveciii1{-3}{-1} = \cveciii5{3}{-4},\] the vector equation of the line of intersection $l$ is \[\vec r = -\frac12 \cveciii130 + \n \cveciii53{-4}, \quad \n \in \RR.\]
     \end{ppart}
     \begin{ppart}
-        Note that $\Pi_2$ has vector equation \[\Pi_2: \quad \vec r \dotp \cveciii20a = b.\]
+        Note that $\Pi_2$ has vector equation \[\vec r \dotp \cveciii20a = b.\]
 
         \begin{psubpart}
             If the three planes intersect at a common point, it must be that $l$ intersects $\Pi_2$ at a single point. Consider now the intersection between $l$ and $\Pi_2$: \[\bs{-\frac12 \cveciii130 + \n \cveciii53{-4}} \dotp \cveciii20a = -1 + \n\bp{10 - 4a} = b.\] In order for this equation to have a unique solution, we must be able to write \[\n = \frac{b+1}{10-4a},\] i.e. $10 - 4a \neq 0$. Thus, so long as $a \neq 5/2$, the three planes will intersect at a unique point.
         \end{psubpart}
         \begin{psubpart}
-            If the planes intersect at a common line, then $l$ must lie on $\Pi_2$. Thus, \[-1 + \n \bp{10-4a} = b\] must hold true for all $\n \in \RR$. This can only happen when $10 - 4a = 0$ and $b = -1$. Hence, the three planes meet in a line when $a = 5/2$ and $b = -1$.
+            If the planes intersect at a common line, then $l$ must lie on $\Pi_2$. Thus, $-1 + \n \bp{10-4a} = b$ must hold true for all $\n \in \RR$. This can only happen when $10 - 4a = 0$ and $b = -1$. Hence, the three planes meet in a line when $a = 5/2$ and $b = -1$.
         \end{psubpart}
         \begin{psubpart}
-            The complement of $(a \neq 5/2) \tor (a = 5/2 \tand b = -1)$ is $(a = 5/2 \tand b \neq -1)$, which corresponds to the case where the three planes neither meet in a point nor in a line, i.e. they have no common point.
+            The negation of $(a \neq 5/2) \tor (a = 5/2 \tand b = -1)$ is $(a = 5/2 \tand b \neq -1)$, which corresponds to the case where the three planes neither meet in a point nor in a line, i.e. they have no common point.
         \end{psubpart}
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The point $A$ and $B$ have position vectors $3\vec i + \vec j$ and $3\vec i + 3\vec j$ respectively. The line $l_1$ and the planes $\Pi_1$ and $\Pi_2$ have equations as follows: \[l_1: \vec r = \oa{OA} + \a \cveciii21{-1}, \quad \Pi_1 : x + 2z = 3, \quad \Pi_2 : \vec r = \l \cveciii110 + \m \cveciii011,\] where $\a$, $\l$ and $\m \in \RR$.
+    The point $A$ and $B$ have position vectors $3\vec i + \vec j$ and $3\vec i + 3\vec j$ respectively. The respective equations of line $l_1$ and the planes $\Pi_1$ and $\Pi_2$ are \[\vec r = \oa{OA} + \a \cveciii21{-1}, \quad x + 2z = 3, \quad \vec r = \l \cveciii110 + \m \cveciii011,\] where $\a$, $\l$ and $\m \in \RR$.
 
     It is given that the planes $\Pi_1$ and $\Pi_2$ intersect in the line $l_2$ and $B$ lies on $l_2$.
     
@@ -171,15 +170,15 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that \[\cveciii110 \crossp \cveciii011 = \cveciii1{-1}{1},\] hence $\Pi_2$ has vector equation \[\Pi_2: \quad \vec r \dotp \cveciii1{-1}1 = 0.\]
+    Note that \[\cveciii110 \crossp \cveciii011 = \cveciii1{-1}{1},\] hence $\Pi_2$ has vector equation \[\vec r \dotp \cveciii1{-1}1 = 0.\]
 
     \begin{ppart}
-        Note that \[\cveciii102 \crossp \cveciii1{-1}1 = \cveciii21{-1}.\] Thus, the equation of $l_2$ is \[l_2: \quad \vec r = \cveciii330 + t \cveciii21{-1}, \quad t \in \RR.\] Since $l_1$ and $l_2$ have the same direction vector, they are parallel. The shortest distance between them is \[\frac{\abs{\oa{AB} \crossp \cveciiix21{-1}}}{\abs{\cveciiix21{-1}}} = \frac{\abs{\cveciiix020 \crossp \cveciiix21{-1}}}{\abs{\cveciiix21{-1}}} = \frac{\abs{\cveciiix{-2}0{-4}}}{\abs{\cveciiix21{-1}}} = \frac{\sqrt{20}}{\sqrt{6}} = \sqrt{\frac{10}3} \units.\]
+        Note that \[\cveciii102 \crossp \cveciii1{-1}1 = \cveciii21{-1}.\] Thus, the equation of $l_2$ is \[\vec r = \cveciii330 + t \cveciii21{-1}, \quad t \in \RR.\] Since $l_1$ and $l_2$ have the same direction vector, they are parallel. The shortest distance between them is \[\frac{\abs{\oa{AB} \crossp \cveciiix21{-1}}}{\abs{\cveciiix21{-1}}} = \frac{\abs{\cveciiix020 \crossp \cveciiix21{-1}}}{\abs{\cveciiix21{-1}}} = \frac{\abs{\cveciiix{-2}0{-4}}}{\abs{\cveciiix21{-1}}} = \frac{\sqrt{20}}{\sqrt{6}} = \sqrt{\frac{10}3} \units.\]
     \end{ppart}
     \begin{ppart}
-        Let $A'$ be the reflection of $A$ in $\Pi_3$. Let $M$ be foot of perpendicular from $A$ to $\Pi_3$, so that it is the midpoint of $AA'$. By the midpoint theorem, \[\oa{OM} = \frac{\oa{OA} + \oa{OA'}}{2}.\] Since $\Pi_3$ is parallel to $\Pi_2$, it is normal to $\cveciiix1{-1}1$. Thus, its vector equation is \[\Pi_3: \quad \vec r \dotp \cveciii1{-1}1 = \oa{OM} \dotp \cveciii1{-1}1 = \frac12 \bs{\oa{OA} \dotp \cveciii1{-1}1 + \oa{OA'} \dotp \cveciii1{-1}1} = \frac12 \bp{2 + 0} = 1,\] where we used the fact that $A'$ lies on $\Pi_2$ and $M$ lies on $\Pi_3$.
+        Let $A'$ be the reflection of $A$ in $\Pi_3$. Let $M$ be foot of perpendicular from $A$ to $\Pi_3$, so that it is the midpoint of $AA'$. By the midpoint theorem, \[\oa{OM} = \frac{\oa{OA} + \oa{OA'}}{2}.\] Since $\Pi_3$ is parallel to $\Pi_2$, it is normal to $\cveciiix1{-1}1$. Thus, its vector equation is \[\vec r \dotp \cveciii1{-1}1 = \oa{OM} \dotp \cveciii1{-1}1 = \frac12 \bs{\oa{OA} \dotp \cveciii1{-1}1 + \oa{OA'} \dotp \cveciii1{-1}1} = \frac12 \bp{2 + 0} = 1,\] where we used the fact that $A'$ lies on $\Pi_2$ and $M$ lies on $\Pi_3$.
 
-        Note that $\oa{AM}$ is parallel to the normal vector $\cveciiix1{-1}1$, so \[\oa{OM} = \oa{OA} + \oa{AM} = \cveciii310 + s \cveciii1{-1}1\] for some $s \in \RR$. Since $M$ lies on $\Pi_3$, we must have \[\bs{\cveciii310 + s \cveciii1{-1}1} \dotp \cveciii1{-1}1 = 2 + 3s = 1 \implies s =  -\frac13.\] Thus, \[\oa{OM} = \cveciii310 - \frac13 \cveciii1{-1}1 = \frac13 \cveciii84{-1}.\]
+        Note that $\oa{AM}$ is parallel to the normal vector $\cveciiix1{-1}1$, so \[\oa{OM} = \oa{OA} + \oa{AM} = \cveciii310 + s \cveciii1{-1}1\] for some $s \in \RR$. Since $M$ lies on $\Pi_3$, we must have \[\bs{\cveciii310 + s \cveciii1{-1}1} \dotp \cveciii1{-1}1 = 1.\] This gives $2 + 3s = 1$, so $s =  -1/3$. Thus, \[\oa{OM} = \cveciii310 - \frac13 \cveciii1{-1}1 = \frac13 \cveciii84{-1}.\]
     \end{ppart}
 \end{solution}
 
@@ -193,15 +192,15 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that $p_1$, $p_2$ and $p_3$ have vector equations \[p_1: \quad \vec r \dotp \cveciii100 = 1, \quad\quad p_2: \quad \vec r \dotp \cveciii21a = 5, \quad \quad p_3: \quad \vec r \dotp \cveciii121 = b.\]
+    Note that $p_1$, $p_2$ and $p_3$ have respective vector equations \[\vec r \dotp \cveciii100 = 1, \quad \vec r \dotp \cveciii21a = 5, \quad \vec r \dotp \cveciii121 = b.\]
 
-    Consider the intersection of $p_1$ and $p_2$. Substituting $x = 1$ into the equation for $p_2$, we get $y = 3 - az$. Thus, \[l: \quad \vec r = \cveciii{1}{y}{z} = \cveciii1{3-az}{z} = \cveciii130 + z \cveciii0{-a}{1} = \cveciii130 + \l \cveciii0{-a}1,\] where $\l = z$ is a real parameter.
+    Consider the intersection of $p_1$ and $p_2$. Substituting $x = 1$ into the equation for $p_2$, we get $y = 3 - az$, so the line $l$ has equation \[\vec r = \cveciii{1}{y}{z} = \cveciii1{3-az}{z} = \cveciii130 + z \cveciii0{-a}{1} = \cveciii130 + \l \cveciii0{-a}1,\] where $\l = z$ is a real parameter.
 
     \begin{ppart}
-        We have \[\frac{\sqrt3}{2} = \frac{\abs{\cveciiix0{-a}1 \dotp \cveciiix121}}{\abs{\cveciiix0{-a}1} \abs{\cveciiix121}} = \frac{\abs{1 - 2a}}{\sqrt{a^2 + 1} \sqrt{6}}.\] This yields \[\abs{1 - 2a} = \frac3{\sqrt2} \sqrt{a^2 + 1} \implies \bp{1 - 2a}^2 = \frac{9}{2} \bp{a^2 + 1},\] which simplifies to \[a^2 + 8a + 7 = (a+7)(a+1) = 0.\] Thus, the possible values of $a$ are $a = -1$ or $a = -7$.
+        We have \[\frac{\sqrt3}{2} = \frac{\abs{\cveciiix0{-a}1 \dotp \cveciiix121}}{\abs{\cveciiix0{-a}1} \abs{\cveciiix121}} = \frac{\abs{1 - 2a}}{\sqrt{a^2 + 1} \sqrt{6}}.\] This gives \[\abs{1 - 2a} = \frac3{\sqrt2} \sqrt{a^2 + 1},\] hence \[\bp{1 - 2a}^2 = \frac{9}{2} \bp{a^2 + 1},\] which simplifies to $a^2 + 8a + 7 = (a+7)(a+1) = 0$. Thus, the possible values of $a$ are $a = -1$ or $a = -7$.
     \end{ppart}
     \begin{ppart}
-        Let $N$ be the foot of perpendicular from the origin to $p_3$. Then $\abs{ON} = s \cveciiix121$ for some $s \in \RR$. The given condition implies \[\frac{\sqrt6}{3} = \abs{\oa{ON}} = \abs{s \cveciii121} = \abs{s} \sqrt{6} \implies \abs{s} = \frac13,\] so $s = \pm 1/3$, thus \[\oa{ON} = \frac13 \cveciii121 \quad \tor \quad \oa{ON} = -\frac13 \cveciii121.\]
+        Let $N$ be the foot of perpendicular from the origin to $p_3$. Then $\abs{ON} = s \cveciiix121$ for some $s \in \RR$. The given condition implies \[\frac{\sqrt6}{3} = \abs{\oa{ON}} = \abs{s \cveciii121} = \abs{s} \sqrt{6}.\] This gives $\abs{s} = 1/3$, so $s = \pm 1/3$, thus \[\oa{ON} = \frac13 \cveciii121 \quad \tor \quad \oa{ON} = -\frac13 \cveciii121.\]
     \end{ppart}
     \begin{ppart}
         If the three planes do not have any points in common, it must be that $l$ does not intersect $p_3$. Thus, \[\bs{\cveciii130 + \l \cveciii0{-a}1} \dotp \cveciii121 = 7 + \l \bp{1-2a} \neq b\] for all $\l \in \RR$. This implies that $1-2a = 0$ so $a = 1/2$, and $b \neq 7$.
@@ -240,10 +239,10 @@
             \end{tikzpicture}
         \end{center}
 
-        Consider the above diagram. Observe that $\triangle ACB$ is similar to $\triangle ADC$, so \[\frac{AD}{AC} = \frac{AC}{AB} \implies AD = \frac{AC^2}{AB}.\] But $AC$ is the perpendicular distance from $A$ to $\pi$, so $AC = p$ and $AD = p^2 / AB$ as desired.
+        Consider the above diagram. Observe that $\triangle ACB$ is similar to $\triangle ADC$, so \[\frac{AD}{AC} = \frac{AC}{AB}.\] But $AC$ is the perpendicular distance from $A$ to $\pi$, so $AC = p$ and $AD = AC^2/AB = p^2 / AB$ as desired.
 
-        Note that \[\frac{AD}{AB} = \frac{p^2}{AB^2},\] thus \[\frac{AD}{DB} = \frac{AD}{AB - AD} = \frac{1}{AB/AD - 1} = \frac{1}{\frac{AB^2}{p^2} - 1} = \frac{p^2}{AB^2 - p^2}.\] Thus, by the Ratio Theorem, \[\oa{OD} = \frac{p^2 \vec b + \bp{AB^2 - p^2} \vec a}{p^2 + \bp{AB^2 - p^2}} = \frac{AB^2}{AB^2} \vec a + \bp{\frac{p}{AB}}^2 \bp{\vec b - \vec a} = \vec a + \bp{\frac{p}{\abs{\vec b - \vec a}}}^2 (\vec b - \vec a).\]
+        Note that \[\frac{AD}{AB} = \frac{p^2}{AB^2},\] thus \[\frac{AD}{DB} = \frac{AD}{AB - AD} = \frac{1}{AB/AD - 1} = \frac{1}{AB^2/p^2 - 1} = \frac{p^2}{AB^2 - p^2}.\] Thus, by the Ratio Theorem, \[\oa{OD} = \frac{p^2 \vec b + \bp{AB^2 - p^2} \vec a}{p^2 + \bp{AB^2 - p^2}} = \frac{AB^2}{AB^2} \vec a + \bp{\frac{p}{AB}}^2 \bp{\vec b - \vec a} = \vec a + \bp{\frac{p}{\abs{\vec b - \vec a}}}^2 (\vec b - \vec a).\]
     \end{ppart}
 
-    We have \[\vec u \crossp \vec v = \cveciii1{-2}2 \crossp \cveciii322 = 4\cveciii{-2}12 \quad \tand \quad \oa{AB} = \cveciii275 - \cveciii{-1}78 = 3\cveciii10{-1},\] thus \[p = \frac{12\abs{\cveciiix{-2}12 \crossp \cveciiix10{-1}}}{4 \abs{\cveciiix{-2}12}} = 4 \quad \tand \quad AB = \abs{\oa{AB}} = 3\sqrt{2}.\] This gives \[\frac{AD}{DB} = \frac{p^2}{AB^2 - p^2} = {4^2}{\bp{3\sqrt2}^2 - 16} = \frac{16}{2} = \frac{8}{1}.\] By the Ratio Theorem, \[\oa{CD} = \frac{8\oa{CB} + \oa{CA}}{9} = \frac{8}{9} \bp{CB} \vec x + \frac19 \bp{CA} \vec y.\] Note that $CA = p = 4$. Meanwhile, using the Pythagorean theorem, we see that \[AB^2 = BC^2 + CA^2 \implies CB^2 = AB^2 - CA^2 = \bp{3\sqrt2}^2 - 4^2 = 2,\] so \[\oa{CD} = \frac{8\sqrt2}{9} \vec x + \frac49 \vec y.\]
+    We have \[\vec u \crossp \vec v = \cveciii1{-2}2 \crossp \cveciii322 = 4\cveciii{-2}12 \quad \tand \quad \oa{AB} = \cveciii275 - \cveciii{-1}78 = 3\cveciii10{-1},\] thus \[p = \frac{12\abs{\cveciiix{-2}12 \crossp \cveciiix10{-1}}}{4 \abs{\cveciiix{-2}12}} = 4 \quad \tand \quad AB = \abs{\oa{AB}} = 3\sqrt{2}.\] This gives \[\frac{AD}{DB} = \frac{p^2}{AB^2 - p^2} = {4^2}{\bp{3\sqrt2}^2 - 16}  = \frac{8}{1}.\] By the Ratio Theorem, \[\oa{CD} = \frac{8\oa{CB} + \oa{CA}}{9} = \frac{8}{9} \bp{CB} \vec x + \frac19 \bp{CA} \vec y.\] Note that $CA = p = 4$. Meanwhile, by the Pythagorean theorem, we see that \[CB^2 = AB^2 - CA^2 = \bp{3\sqrt2}^2 - 4^2 = 2,\] so \[\oa{CD} = \frac{8\sqrt2}{9} \vec x + \frac49 \vec y.\]
 \end{solution}

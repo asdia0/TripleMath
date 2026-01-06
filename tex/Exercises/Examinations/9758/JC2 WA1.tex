@@ -11,25 +11,25 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[\evalder{\der{x}{t}}{x = 1.5} = k(1.5)(4-1.5) = 0.75 \implies k = \frac{0.75}{1.5(4-1.5)} = 0.2.\]
+        When $x = 1.5$, we have \[k = \frac{\derx{x}{t}}{x(4-x)} = \frac{0.75}{(1.5)(4-1.5)} = 0.2.\]
     \end{ppart}
     \begin{ppart}
-        Rearranging the given DE, we have \[\frac{x}{4-x} \der{x}{t} = 0.2.\] Integrating both sides with respect to $t$, \[\int \frac{1}{x(4-x)} \d x = \int 0.2 \d t = 0.2 t + C_1.\] Splitting the LHS using partial fractions yields \[\int \frac1{x(4-x)} \d x = \frac14 \int \bp{\frac1x + \frac1{4-x}} \d x = \frac14 \bp{\ln x - \ln{4-x}} + C_2 = \frac14 \ln \frac{x}{4-x} + C_2.\] Note that $x$ has an unstable equilibrium at $x = 0$ and a stable equilibrium at $x = 4$. Since $x(0) = 1 \in (0, 4)$, it follows that $x(t) \in (0, 4)$ for all $t \geq 0$. Thus, $x > 0$ and $4-x > 0$. Hence, \[\frac14 \ln\frac{x}{4-x} + C_2 = 0.2 t + C_1 \implies \ln \frac{x}{4-x} = \frac45 t + C_3 \implies \frac{x}{4-x} = C_4 \e^{4t/5}.\] Since $x(0) = 1$, we have $C_4 = 1/3$. Simple algebraic manipulation yields the final expression \[x = \frac{4\e^{4t/5}}{3 + \e^{4t/5}}.\]
+        Rearranging the given DE, we have \[\frac{x}{4-x} \der{x}{t} = 0.2.\] Integrating both sides with respect to $t$ gives \[\int \frac{1}{x(4-x)} \d x = \int 0.2 \d t.\] The RHS evaluates to $0.2 t + C_1$. The LHS can be evaluated after performing partial fraction decomposition: \[\int \frac1{x(4-x)} \d x = \frac14 \int \bp{\frac1x + \frac1{4-x}} \d x = \frac14 \bp{\ln \abs{x} - \ln \abs{4-x}} + C_2 = \frac14 \ln \abs{\frac{x}{4-x}} + C_2.\] Note that $x$ has an unstable equilibrium at $x = 0$ and a stable equilibrium at $x = 4$. Since $x(0) = 1 \in (0, 4)$, it follows that $x(t) \in (0, 4)$ for all $t \geq 0$. Thus, $x > 0$ and $4-x > 0$, so we may remove the modulus from the argument of the logarithm. Hence, \[\frac14 \ln{\frac{x}{4-x}} + C_2 = 0.2 t + C_1.\]  Solving for $x$, we obtain \[x = \frac{4}{C_3 \e^{-4t/5} + 1}.\] Since $x = 1$ when $t = 0$, we get $C_3 = 3$, whence \[x = \frac{4}{3\e^{-4t/5} + 1}.\]
     \end{ppart}
     \begin{ppart}
-        Observe that \[\lim_{t \to \infty} x = \lim_{t \to \infty} \frac{4\e^{4t/5}}{3 + \e^{4t/5}} = \lim_{t \to \infty} \frac{4}{3\e^{-4t/5} + 1} = \frac41 = 4.\] Thus, in the long run, the ant population will approach 4 thousand.
+        Observe that \[\lim_{t \to \infty} x = \lim_{t \to \infty} \frac{4}{3\e^{-4t/5} + 1} = \frac4{0 + 1} = 4.\] Thus, in the long run, the ant population will approach 4 thousand.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The equations of the lines $l_1$ and $l_2$ are \[\vec r = \cveciii513 + s\cveciii{-2}1{-4}, \, s \in \RR \quad \tand \quad \vec r = \cveciii{-3}06 + t\cveciii{c}{d}2, \, t \in \RR\] respectively, where $c$ and $d$ are real constants.
+    The equations of the lines $l_1$ and $l_2$ are \[\vec r = \cveciii513 + s\cveciii{-2}1{-4}, \quad \tand \quad \vec r = \cveciii{-3}06 + t\cveciii{c}{d}2,\] respectively, where $c$ and $d$ are real constants, and $s, t \in \RR$ are parameters.
 
     \begin{enumerate}
         \item Find $c$ and $d$ if the lines $l_1$ and $l_2$ are parallel.
-        \item For $c = 0$ and $d = 2$,
+        \item Take $c = 0$ and $d = 2$.
         \begin{enumerate}
-            \item determine if lines $l_1$ and $l_2$ intersect. Find the acute angle between them.
-            \item find the shortest distance of the point $(-3, 0, 6)$ from $l_1$.
+            \item Determine if lines $l_1$ and $l_2$ intersect. Find the acute angle between them.
+            \item Find the shortest distance of the point $(-3, 0, 6)$ from $l_1$.
         \end{enumerate}
     \end{enumerate}
 \end{problem}
@@ -39,12 +39,12 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Equating the two, we have \[\cveciii513 + s\cveciii{-2}{1}{-4} = \cveciii{-3}06 + t \cveciii022 \implies \cveciii{-2}{1}{-4} + t\cveciii{0}{-2}{-2} = \cveciii{-8}{-1}{3}.\] This gives the system \[\systeme{-2s = -8, s - 2t = -1, -4s - 2t = 3}.\] Using G.C., we see that this system has no solutions. Thus, $l_1$ and $l_2$ do not have a common point, whence they do not intersect.            
+            Equating the equations of the lines, we have \[\cveciii513 + s\cveciii{-2}{1}{-4} = \cveciii{-3}06 + t \cveciii022.\] This gives the system \[\systeme{-2s = -8, s - 2t = -1, -4s - 2t = 3}.\] Using G.C., we see that this system has no solutions. Thus, $l_1$ and $l_2$ do not have a common point, whence they do not intersect.            
             
             Let $\t$ be the acute angle between $l_1$ and $l_2$. Then \[\cos \t = \frac{\abs{\cveciiix{-2}{1}{-4} \dotp \cveciiix022}}{\abs{\cveciiix{-2}{1}{-4}} \abs{\cveciiix022}} = \frac{6}{\sqrt{21} \sqrt{8}}.\] Thus, $\t = 62.4\deg \todp{1}$.
         \end{psubpart}
         \begin{psubpart}
-            Let $\oa{OA} = \cveciiix513$ and $\oa{OB} = \cveciiix{-3}06$. Then \[\oa{AB} = \oa{OB} - \oa{OA} = \cveciii{-3}06 - \cveciii513 = \cveciii{-8}{-1}{3}.\] Let $N$ be the foot of perpendicular from $B$ to $l_1$. The shortest distance is thus given by \[BN = \abs{\oa{AB} \crossp \frac{\cveciiix{-2}1{-4}}{\abs{\cveciiix{-2}1{-4}}}} = \frac1{\sqrt{21}} \abs{\cveciii1{-38}{-10}} = \frac{\sqrt{1545}}{\sqrt{21}} = 8.58 \units \tosf{3}.\]
+            Let $\oa{OA} = \cveciiix513$ and $\oa{OB} = \cveciiix{-3}06$. Then $\oa{AB} = \cveciiix{-8}{-1}{3}$. Let $N$ be the foot of perpendicular from $B$ to $l_1$. The shortest distance is thus given by \[BN = \abs{\oa{AB} \crossp \frac{\cveciiix{-2}1{-4}}{\abs{\cveciiix{-2}1{-4}}}} = \frac1{\sqrt{21}} \abs{\cveciii1{-38}{-10}} = \frac{\sqrt{1545}}{\sqrt{21}} = 8.58 \units \tosf{3}.\]
         \end{psubpart}
     \end{ppart}
 \end{solution}
@@ -60,10 +60,23 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[\oa{OB} = \oa{OA} + \oa{AB} = \oa{OA} + \oa{OC} = \vec a + \vec c.\] Further, \[\oa{AC} = \oa{OC} - \oa{OA} = \vec c - \vec a.\] Thus, \[\oa{OB} \dotp \oa{AC} = \bp{\vec a + \vec c} \dotp \bp{\vec c - \vec a} = \vec a \dotp \vec a - \vec a \dotp \vec a + \vec c \dotp \vec c - \vec c \dotp \vec a = \vec c \dotp \vec c - \vec a \dotp \vec a = \abs{\vec c}^2 - \abs{\vec a}^2 = 0,\] where in the last step we used the fact that $\abs{\vec a} = \abs{\vec c}$ since $OABC$ is a rhombus.
+        Note that $\oa{OB} = \oa{OA} + \oa{AB} = \oa{OA} + \oa{OC} = \vec a + \vec c$ and $\oa{AC} = \vec c - \vec a$. Thus,
+        \begin{align*}
+            \oa{OB} \dotp \oa{AC} &= \bp{\vec a + \vec c} \dotp \bp{\vec c - \vec a}\\
+            &= \vec a \dotp \vec c - \vec a \dotp \vec a + \vec c \dotp \vec c - \vec c \dotp \vec a\\
+            &= \vec c \dotp \vec c - \vec a \dotp \vec a\\
+            &= \abs{\vec c}^2 - \abs{\vec a}^2\\
+            &= 0,
+        \end{align*}
+        where in the last step we used the fact that $\abs{\vec a} = \abs{\vec c}$ since $OABC$ is a rhombus.
     \end{ppart}
     \begin{ppart}
-        Note that \[\oa{OM} = \oa{OA} + \oa{AM} = \oa{OA} + k \oa{AB} = \vec a + k \vec c.\] Also, \[\oa{ON} = \oa{OC} - \oa{NC} = \oa{OC} - s \oa{BC} = \oa{OC} - s \oa{AO} = \vec c + s \vec a.\] Thus, we have \[[\triangle OAM] = \frac12 \abs{\oa{OA} \crossp \oa{OM}} = \frac12 \abs{\vec a \crossp \bp{\vec a + k \vec c}} = \frac12 \abs{\vec a \crossp \vec a + k \vec a \crossp \vec c} = \frac{k}{2} \abs{\vec a \crossp \vec c}.\] Similarly,
+        Note that
+        \begin{align*}
+            \oa{OM} &= \oa{OA} + \oa{AM} = \oa{OA} + k \oa{AB} = \vec a + k \vec c,\\
+            \oa{ON} &= \oa{OC} - \oa{NC} = \oa{OC} - s \oa{BC} = \vec c + s \vec a.
+        \end{align*}
+        Thus, we have \[[\triangle OAM] = \frac12 \abs{\oa{OA} \crossp \oa{OM}} = \frac12 \abs{\vec a \crossp \bp{\vec a + k \vec c}} = \frac12 \abs{\vec a \crossp \vec a + k \vec a \crossp \vec c} = \frac{k}{2} \abs{\vec a \crossp \vec c}.\] Similarly,
         \begin{align*}
             [\triangle OMN] &= \frac12 \abs{\oa{OM} \crossp \oa{ON}}\\
             &= \frac12 \abs{\bp{\vec a + k \vec c} \crossp \bp{\vec c + s \vec a}}\\
@@ -71,6 +84,6 @@
             &= \frac12 \abs{\vec a \crossp \vec c - ks \vec a \crossp \vec c}\\
             &= \abs{\frac{1-ks}{2}} \abs{\vec a \crossp \vec c}.
         \end{align*}
-        Because both $k, s \in (0, 1)$, it follows that $1-ks \in (0, 1)$ too. We can hence remove the modulus sign, whence we obtain \[\frac{k}{2} \abs{\vec a \crossp \vec c} = \l \bp{\frac{1-ks}{2} \abs{\vec a \crossp \vec c}} \implies \l = \frac{k}{1-ks}.\]
+        Because $k, s \in (0, 1)$, it follows that $1-ks \in (0, 1)$ too. We can hence remove the modulus sign, whence we obtain \[\frac{k}{2} \abs{\vec a \crossp \vec c} = \l \bp{\frac{1-ks}{2} \abs{\vec a \crossp \vec c}},\] whence \[\l = \frac{k}{1-ks}.\]
     \end{ppart}
 \end{solution}

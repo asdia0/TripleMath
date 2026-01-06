@@ -16,7 +16,7 @@
             \centering
             \begin{tabular}{|c|c|c|}
             \hline
-            $k$ & Boxes of 5 & Boxes of 11 \\ \hline\hline
+            $k$ & \bd{Boxes of 5} & \bd{Boxes of 11} \\ \hline\hline
             40 & 8 & 0 \\ \hline
             41 & 6 & 1 \\ \hline
             42 & 4 & 2 \\ \hline
@@ -26,13 +26,13 @@
         \end{table}
     \end{ppart}
     \begin{ppart}
-        Let $P(5n + r)$ be the statement ``it is possible to buy exactly $5n+r$ chicken nuggets'', where $n \in \ZZ$ and $r \in \bc{0, 1, 2, 3, 4}$. From part (a), the statement holds for $n = 8$ and $r \in \bc{0, 1, 2, 3, 4}$. We now induct on $n$. Suppose $P(5k+r)$ is true for some $k \in \ZZ$. Then there exist positive integers $x$ and $y$ such that \[5x + 11y = 5k+r.\] It follows that \[5\bp{k+1} + r = 5\bp{x + 1} + 11y.\] Hence, taking $(x+1)$ boxes of 5 chicken nuggets and $y$ boxes of chicken nuggets, we obtain exactly $5(k+1) + r$ chicken nuggets. Hence, $P(5k+r) \implies P(5(k+1) + r)$. This closes the induction. We thus conclude that we can get exactly $m$ chicken nuggets for all $m \geq 8 \cdot 5 = 40$.
+        Let $P(5n + r)$ be the statement ``it is possible to buy exactly $5n+r$ chicken nuggets'', where $n \in \ZZ$ and $r \in \bc{0, 1, 2, 3, 4}$. From part (a), the statement holds for $n = 8$ and $r \in \bc{0, 1, 2, 3, 4}$. We now induct on $n$. Suppose $P(5k+r)$ is true for some $k \in \ZZ$. Then there exist positive integers $x$ and $y$ such that $5x + 11y = 5k+r$. It follows that $5\bp{k+1} + r = 5\bp{x + 1} + 11y$. Hence, taking $(x+1)$ boxes of 5 chicken nuggets and $y$ boxes of chicken nuggets, we obtain exactly $5(k+1) + r$ chicken nuggets. Hence, $P(5k+r) \implies P(5(k+1) + r)$. This closes the induction. We thus conclude that we can get exactly $m$ chicken nuggets for all $m \geq 8 \cdot 5 = 40$.
     \end{ppart}
     \begin{ppart}
-        By way of contradiction, suppose we can buy exactly 39 chicken nuggets. Then there exist positive integers $x$ and $y$ such that \[5x + 11y = 39.\] Reducing modulo 5, we see that \[y \equiv 4 \pmod{5},\] so $\min y = 4$. Thus, \[\min \bp{5x + 11y} \geq 11 \min y = 44 > 39.\] Thus, such a $y$ cannot exist. Therefore, we cannot buy exactly 39 nuggets.
+        By way of contradiction, suppose we can buy exactly 39 chicken nuggets. Then there exist positive integers $x$ and $y$ such that $5x + 11y = 39$. Reducing modulo 5, we see that $y \equiv 4 \pmod{5}$, so $\min y = 4$. Thus, $\min \bp{5x + 11y} \geq 11 \min y = 44 > 39$. Thus, such a $y$ cannot exist. Therefore, we cannot buy exactly 39 nuggets.
     \end{ppart}
     \begin{ppart}
-        By way of contradiction, suppose we can buy exactly $p_1p_2 - p_1 - p_2$ nuggets. Then there exist positive integers $x$ and $y$ such that \[p_1 x + p_2 y = p_1 p_2 - p_1 - p_2.\] Reducing modulo $p_1$, we see that \[p_2 y \equiv -p_2 \pmod{p_1} \implies p_2 \bp{y + 1} \equiv 0 \pmod{p_1}.\] Because $p_1$ and $p_2$ are distinct, they must be coprime, so \[y + 1 \equiv 0 \pmod{p_1}.\] It follows that $\min y = p_1 - 1$. Thus, \[\min \bp{p_1 x + p_2 y} \geq p_2 \min y = p_2 \bp{p_1 - 1} = p_1 p_2 - p_2 > p_1 p_2 - p_1 - p_2.\] Thus, such a $y$ cannot exist. Therefore, we cannot buy exactly $p_1 p_2 - p_1 - p_2$ nuggets.
+        By way of contradiction, suppose we can buy exactly $p_1p_2 - p_1 - p_2$ nuggets. Then there exist positive integers $x$ and $y$ such that $p_1 x + p_2 y = p_1 p_2 - p_1 - p_2$. Reducing modulo $p_1$, we see that $p_2 y \equiv -p_2 \pmod{p_1}$, so $p_2 \bp{y + 1} \equiv 0 \pmod{p_1}$. Because $p_1$ and $p_2$ are distinct, they must be coprime, so $y + 1 \equiv 0 \pmod{p_1}$. It follows that $\min y = p_1 - 1$. Thus, \[\min \bp{p_1 x + p_2 y} \geq p_2 \min y = p_2 \bp{p_1 - 1} = p_1 p_2 - p_2 > p_1 p_2 - p_1 - p_2.\] Thus, such a $y$ cannot exist. Therefore, we cannot buy exactly $p_1 p_2 - p_1 - p_2$ nuggets.
     \end{ppart}
 \end{solution}
 
@@ -42,7 +42,7 @@
     \begin{enumerate}
         \item \begin{enumerate}
             \item By writing \[g(x) = x^n \bp{\frac{a_0}{x^n} + \frac{a_1}{x^{n-1}} + \frac{a_2}{x^{n-1}} + \dots + \frac{a_{n-1}}{x} + a_n},\] explain why as $x \to \infty$, either $g(x) \to \infty$ or $g(x) \to -\infty$.
-            \item Let \[P = \bc{p : \text{$p$ is a prime and $\exists \, k \in \ZZ$ such that $p \mid g(k)$}}.\] Show that $P$ contains infinitely many elements.
+            \item Let $P = \bc{p : \text{$p$ is a prime and $\exists \, k \in \ZZ$ such that $p \mid g(k)$}}$. Show that $P$ contains infinitely many elements.
         \end{enumerate}
         \item Show that there exists an integer $m > 2025$ such that $\abs{g(m)}$ is not prime.
     \end{enumerate}
@@ -50,10 +50,10 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Note that for all $k \in \RR$ and $r \in \NN$, we have \[\lim_{x \to \infty} \frac{k}{x^r} = 0.\] Thus, \[\lim_{x \to \infty} g(x) = \lim_{x \to \infty} x^n \bp{\frac{a_0}{x^n} + \frac{a_1}{x^{n-1}} + \frac{a_2}{x^{n-1}} + \dots + \frac{a_{n-1}}{x} + a_n} = \lim_{x \to \infty} a_n x^n,\] which approaches $\infty$ if $a_n > 0$, or $-\infty$ if $a_n < 0$.
+            Note that for all $k \in \RR$ and $r \in \NN$, we have $\lim_{x \to \infty} k/x^r = 0$. Thus, \[\lim_{x \to \infty} g(x) = \lim_{x \to \infty} x^n \bp{\frac{a_0}{x^n} + \frac{a_1}{x^{n-1}} + \frac{a_2}{x^{n-1}} + \dots + \frac{a_{n-1}}{x} + a_n} = \lim_{x \to \infty} a_n x^n,\] which approaches $\infty$ if $a_n > 0$, or $-\infty$ if $a_n < 0$.
         \end{psubpart}
         \begin{psubpart}
-            By way of contradiction, suppose $P$ is finite, say $P = \bc{p_1, \dots, p_k}$. Then for all $m \in \ZZ$, either $g(m) = 0$ or, by the Fundamental Theorem of Arithmetic, \[g(m) = \pm p_1^{a_1} p_2^{a_2} \dots p_k^{a_k},\] where $a_i \in \ZZ_0^+$. By part (a)(i), there exists some $M \in \NN$ such that $g(m) \geq 0$ for all $m \geq M$. Define \[S = \sum_{m = M}^\infty \frac1{g(m)^{1/n}}.\] Since $g$ is a polynomial of degree $n$, it can take on a given value at most $n$ times. Thus, for a given set of integers $a_1, a_2, \dots, a_k$, \[g(m)^{1/n} = p_1^{a_1/n} p_2^{a_2/n} \dots p_k^{a_k/n}\] for at most $n$ values of $m$. We thus obtain the following estimate: \[S \leq \sum_{a_1, \dots, a_k = 0}^\infty \frac{n}{p_1^{a_1/n} \dots p_k^{a_k/n}} = n \prod_{r = 1}^k \sum_{a_r = 0}^\infty p_r^{-a_r/n} = n \prod_{r = 1}^k \frac{1}{1 - p_r^{-1/n}},\] which is finite. But this is a clear contradiction, since \[\frac1{g(m)^{1/n}} \sim \frac1{a_n^{1/n} x},\] so $S$ diverges like the harmonic series. Thus, $P$ must be infinite.
+            By way of contradiction, suppose $P$ is finite, say $P = \bc{p_1, \dots, p_k}$. Then for all $m \in \ZZ$, either $g(m) = 0$ or, by the Fundamental Theorem of Arithmetic, \[g(m) = \pm \prod_{i = 1}^k p_i^{a_i},\] where each $a_i$ is a non-negative integer. By part (a)(i), there exists some $M \in \NN$ such that $g(m) \geq 0$ for all $m \geq M$. Define \[S = \sum_{m = M}^\infty \frac1{g(m)^{1/n}}.\] Since $g$ is a polynomial of degree $n$, it can take on a given value at most $n$ times. Thus, for a given set of integers $a_1, a_2, \dots, a_k$, \[g(m)^{1/n} = \prod_{i = 1}^k p_i^{a_i/n}\] for at most $n$ values of $m$. We thus obtain the following estimate: \[S \leq \sum_{a_1, \dots, a_k = 0}^\infty n \prod_{i = 1}^k p_i^{-a_i/n} = n \prod_{i = 1}^k \sum_{a_i = 0}^\infty p_i^{-a_i/n} = n \prod_{i = 1}^k \frac{1}{1 - p_i^{-1/n}},\] which is finite. But this is a clear contradiction, since \[\frac1{g(m)^{1/n}} \sim \frac1{a_n^{1/n} x},\] so $S$ diverges like the harmonic series. Thus, $P$ must be infinite.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}

@@ -8,7 +8,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        By the Cauchy-Schwarz inequality, \[\bp{\sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1}}^2 \leq \bp{\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z}}\bp{x + y + z}.\] From the given condition, we see that \[\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z} = \bp{1 - \frac1x} + \bp{1 - \frac1y} + \bp{1 - \frac1z} = 3 - 2 = 1.\] Thus, \[\sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1} \leq \sqrt{1} \sqrt{x + y + z} = \sqrt{x + y + z}\] as desired.
+        By the Cauchy-Schwarz inequality, \[\bp{\sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1}}^2 \leq \bp{\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z}}\bp{x + y + z}.\] From the given condition, we see that \[\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z} = \bp{1 - \frac1x} + \bp{1 - \frac1y} + \bp{1 - \frac1z} = 3 - 2 = 1.\] Thus, $\sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1} \leq \sqrt{1} \sqrt{x + y + z} = \sqrt{x + y + z}$ as desired.
     \end{ppart}
     \begin{ppart}
         By the AM-GM inequality, $w + x + y \geq 3 \sqrt[3]{wxy}$. Thus, \[\frac{wxyz}{\prod_{\text{cyc}} \bp{w + x + y}} \leq \frac{wxyz}{\prod_{\text{cyc}} 3\sqrt[3]{wxy}} = \frac{wxyz}{3^4 \sqrt[3]{w^3 x^3 y^3 z^3}} = \frac1{3^4}.\] Thus, the maximum is $3^{-4}$, which occurs when $w = x = y = z$.
@@ -21,10 +21,11 @@
 \begin{solution}
     Observe that
     \begin{align*}
-        \frac{r+1}{r} \bp{\frac{\comb{n+r}{r+1}}{\comb{n+r-1}{r}} - \frac{\comb{n+r}{r+1}}{\comb{n+r}{r}}} &= \frac{r+1}{r} \bp{\frac{\frac{(n+1)!}{(r+1)!(n-1)!}}{\frac{(n+r-1)!}{r!(n-1)!}} - \frac{\frac{(n+r)!}{(r+1)!(n-1)!}}{\frac{(n+r)!}{r!n!}}}\\
-        &= \frac{r+1}{r} \bp{\frac{n+r}{r+1} - \frac{n}{r+1}} \\
-        &= \frac{n+r}{r} - \frac{n}{r}\\
-        &= 1.
+        &\frac{r+1}{r} \bp{\frac{\comb{n+r}{r+1}}{\comb{n+r-1}{r}} - \frac{\comb{n+r}{r+1}}{\comb{n+r}{r}}}\\
+        &\hspace{2em}= \frac{r+1}{r} \bp{\frac{(n+r)! \, / \, (r+1)! \, (n-1)!}{(n+r-1)! \, / \, r! \, (n-1)!} - \frac{(n+r)! \, / \, (r+1)! \, (n-1)!}{(n+r)! \, / \, r! \, n!}}\\
+        &\hspace{2em}= \frac{r+1}{r} \bp{\frac{n+r}{r+1} - \frac{n}{r+1}} \\
+        &\hspace{2em}= \frac{n+r}{r} - \frac{n}{r}\\
+        &\hspace{2em}= 1.
     \end{align*}
     Dividing through by $\comb{n+r}{r+1}$, we get \[\frac{1}{\comb{n+r}{r+1}} = \frac{r+1}{r} \bp{\frac1{\comb{n+r-1}{r}} - \frac1{\comb{n+r}{r}}}.\] Hence, the required sum telescopes to
     \begin{align*}
@@ -40,11 +41,10 @@
     \begin{enumerate}
         \item By using a suitable substitution or otherwise, find \[\int \frac1{\e^x + 1} \d x,\] expressing your answer as a single logarithm.
         \item By considering the geometric series $1 - t + t^2 - t^3 + \dots$, show that for $\abs{t} < 1$, \[\ln{1 + t} = \sum_{k = 1}^\infty \frac{(-1)^{k+1} t^k}{k}.\]
-        \item Explain why for all $n \in \ZZ^+$, \[\lim_{x \to \infty} x\e^{n x} = 0.\]
+        \item Explain why for all $n \in \ZZ^+$, $\lim_{x \to \infty} x\e^{n x} = 0$.
         \item Prove that \[\int_0^\infty \frac{x}{\e^x + 1} \d x = \sum_{k = 1}^\infty \frac{(-1)^{k+1}}{k^2},\] showing clearly at which step of your working you have used part (c). You may interchange the summation and integral without justification.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Dividing the integrand by $\e^x$, we see that \[\int \frac1{\e^x + 1} \d x = \int \frac{\e^{-x}}{1 + \e^{-x}} \d x = -\ln{1 + \e^{-x}} + C = \ln{\frac1{1 + \e^{-x}}} + C.\]

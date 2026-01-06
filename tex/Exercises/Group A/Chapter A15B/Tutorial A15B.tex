@@ -1,17 +1,17 @@
 \section{Tutorial A15B}
 
 \begin{problem}
-    A continuous random variable $X$ has a uniform distribution over the interval $[0, n]$. Write down $\E{X}$ and show that $\Var{X} = \frac1{12} n^2$. Denoting the expectation and standard deviation by $\m$ and $\s$ respectively, evaluate $\P{\abs{X - \m} < \s}$.
+    A continuous random variable $X$ has a uniform distribution over the interval $[0, n]$. Write down $\E{X}$ and show that $\Var{X} = n^2/12$. Denoting the expectation and standard deviation by $\m$ and $\s$ respectively, evaluate $\P{\abs{X - \m} < \s}$.
 \end{problem}
 \begin{solution}
     We have $X \sim \Uni{0}{n}$. Hence, $\E{X} = n/2$. Note that $X$ has pdf \[f(x) = \begin{cases}
-        \frac1n, & 0 \leq x \leq n,\\
+        1/n, & 0 \leq x \leq n,\\
         0, & \ow.
     \end{cases}\] Thus, \[\E{X^2} = \int_{-\infty}^\infty x^2 f(x) \d x = \int_0^\infty \frac{x^2}{n} \d x = \evalint{\frac{x^3}{3n}}{0}{n} = \frac{n^2}{3},\] whence \[\Var{X} = \E{X^2} - \E{X}^2 = \frac{n^2}{3} - \bp{\frac{n}{2}}^2 = \frac{n^2}{12}.\] Thus, \[\s = \sqrt{\Var{X}} = \frac{n}{2\sqrt3}.\]
 
     Note that $X$ has cdf \[F(x) = \begin{cases}
         0, & x < 0,\\
-        \frac{x}n, & 0 \leq x \leq n,\\
+        x/n, & 0 \leq x \leq n,\\
         1, & x > n.
     \end{cases}\] Thus, \[\P{\abs{X - \m} < \s} = \P{\m - \s < X < \m + \s} = \frac{\m + \s}{n} - \frac{\m - \s}{n} = \frac{2\s}{n} = \frac1{\sqrt3}.\]
 \end{solution}
@@ -33,7 +33,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(x) \d x = \int_0^\infty k\e^{-\l x} \d x = \evalint{\frac{-k\e^{-\l x}}{\l}}0\infty = \frac{k}{\l} \implies k = \l.\]
+        Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(x) \d x = \int_0^\infty k\e^{-\l x} \d x = \evalint{\frac{-k\e^{-\l x}}{\l}}0\infty = \frac{k}{\l},\] so $k = \l$.
     \end{ppart}
     \begin{ppart}
         We have \[\E{X} = \int_{-\infty}^\infty x f(x) \d x = \int_0^\infty \l x \e^{-\l x} \d x = \evalint{-x\e^{-\l x} - \frac1\l \e^{-\l x}}0\infty = \frac1\l.\]
@@ -49,7 +49,7 @@
         Thus, \[\Var{X} = \E{X^2} - \E{X}^2 = \frac2{\l^2} - \bp{\frac1\l}^2 = \frac1{\l^2}.\]
     \end{ppart}
     \begin{ppart}
-        Let $F$ be the cdf of $X$. For $x \geq 0$, \[F(x) = \int_0^x f(t) \d t = \int_0^x \l \e^{-\l t} \d t = \evalint{-\e^{-\l t}}0x = 1 - \e^{-\l x}.\] Let $m$ be the median. Then \[\frac12 = F(m) = 1 - \e^{-\l m} \implies m = \frac{\ln 2}{\l}.\]
+        Let $F$ be the cdf of $X$. For $x \geq 0$, \[F(x) = \int_0^x f(t) \d t = \int_0^x \l \e^{-\l t} \d t = \evalint{-\e^{-\l t}}0x = 1 - \e^{-\l x}.\] Let $m$ be the median. Then \[\frac12 = F(m) = 1 - \e^{-\l m},\] so $m = \ln{2}/\l$.
     \end{ppart}
 \end{solution}
 
@@ -71,7 +71,7 @@
         $\P{X < 21.5} = 0.5$.
     \end{ppart}
     \begin{ppart}
-        $\P{X \geq 23} = 1 - \P{X < 23} = 0.285 \tosf{3}$.
+        $\P{X \geq 23} = 0.285 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
         $\P{\abs{X - 21.5} < 6} = \P{15.5 < X < 27.5} = 0.977 \tosf{3}$.
@@ -100,22 +100,22 @@
 \begin{solution}
     Using G.C.,
     \begin{ppart}
-        $\P{X < a} = 0.14 \implies a = 29.6$.
+        $a = 29.6$.
     \end{ppart}
     \begin{ppart}
-        $\P{X > a} = 0.5 \implies a = 33$.
+        $a = 33$.
     \end{ppart}
     \begin{ppart}
-        $\P{X \geq a} > 0.2 \implies a < 35.7$.
+        $a < 35.7$.
     \end{ppart}
     \begin{ppart}
-        $\P{Z < c} = 0.86 \implies c = 1.08$.
+        $c = 1.08$.
     \end{ppart}
     \begin{ppart}
-        $\P{\abs{Z} > c} = 0.05 \implies \P{Z > c} = 0.025 \implies c = 1.96$.
+        We have $\P{Z > c} = 0.025$, so $c = 1.96$.
     \end{ppart}
     \begin{ppart}
-        $\P{\abs{Z} \leq c} < 0.7 \implies \P{0 \leq Z \leq c} < 0.35 \implies \P{Z \leq c} < 0.85 \implies c < 1.04$.
+        We have $\P{0 \leq Z \leq c} < 0.35$, so $\P{Z \leq c} < 0.85$ and thus $c < 1.04$.
     \end{ppart}
 \end{solution}
 
@@ -123,7 +123,7 @@
     The continuous random variable $X$ has a uniform distribution over the interval $0\leq x \leq1$. Write down $\E{X}$ and $\Var{X}$. The random variable $Y$ is defined by $Y=\e^{-X}$. By considering $\P{Y\leq y}$, obtain the cumulative density function of $Y$. Hence, find $\E{Y}$ and $\Var{Y}$, leaving your answers correct to 2 decimal places.
 \end{problem}
 \begin{solution}
-    Since $X \Uni{0}{1}$, we clearly have $\E{X} = 0.5$ and $\Var{X} = \frac1{12}$.
+    Since $X \Uni{0}{1}$, we clearly have $\E{X} = 0.5$ and $\Var{X} = 1/12$.
 
     Since \[F_X(x) = \begin{cases}
         0, & x < 0,\\
@@ -148,7 +148,7 @@
     \end{align*}
 
     Differentiating, we obtain the pdf of $y$: \[f_Y(y) = \begin{cases}
-        \frac1{y}, & \e^{-1} \leq y \leq 1,\\
+        1/y, & \e^{-1} \leq y \leq 1,\\
         0, & \ow.
     \end{cases}\] Thus, \[\E{Y} = \int_{-\infty}^\infty y f_Y(y) \d y = \int_{\e^{-1}}^1 1 \d y = 0.63212 = 0.63 \todp{2}.\] Also, we have \[\E{Y^2} = \int_{-\infty}^\infty y^2 f_Y(y) \d y = \int_{\e^{-1}}^1 y \d y = 0.43233.\] Thus, \[\Var{Y} = \E{Y^2} - \E{Y}^2 = 0.63212 - 0.43233^2 = 0.03 \todp{2}.\]
 \end{solution}
@@ -164,7 +164,7 @@
 \begin{solution}
     \begin{ppart}
         Note that $\t$ has pdf \[f(\t) = \begin{cases}
-            \frac1\pi, & 0 \leq \t \leq \pi,\\
+            1/\pi, & 0 \leq \t \leq \pi,\\
             0, & \ow.
         \end{cases}\] Since $QN = a\sin \t$, we have \[\E{QN} = \int_0^\pi \bp{a \sin \t} \bp{\frac1\pi} \d \t = \frac{a}{\pi} \evalint{-\cos \t}0{\pi} = \frac{2a}{\pi}.\] Further, \[\E{QN^2} = \int_0^\pi \bp{a \sin \t}^2 \bp{\frac1\pi} \d \t = \frac{a^2}{\pi} \int_0^\pi \frac{1 - \cos 2\t}{2} \d t = \frac{a^2}{2\pi} \evalint{\t - \frac{\sin 2\t}{2}}0{\pi} = \frac{a^2}{2}.\] Thus, \[\Var{QN} = \E{QN^2} - \E{QN}^2 = \frac{a^2}{2} - \bp{\frac{2a}{\pi}}^2 = \frac{a^2}{\pi^2} \frac{\pi^2 - 8}{2}.\] The standard deviation $\s$ of $QN$ is thus \[\s = \sqrt{\Var{QN}} = \frac{a}{\pi} \sqrt{\frac{\pi^2 - 8}{2}}.\]
     \end{ppart}
@@ -179,38 +179,38 @@
 \begin{solution}
     Since $U \sim \Uni{2f}{3f}$, we have $u-f>0$ and \[F_U(u) = \begin{cases}
         0, & u < 2f,\\
-        \frac{u}{f} - 2, & 2f \leq u \leq 3f,\\
+        u/f - 2, & 2f \leq u \leq 3f,\\
         1, & u > 3f.
-    \end{cases}\] Note also that \[\frac1u + \frac1v = \frac1f \implies v = \frac{uf}{u-f}.\] Thus,
+    \end{cases}\] Note also that \[v = \frac{uf}{u-f}.\] Thus,
     \begin{align*}
         F_V(v) &= \P{V < v}\\
         &= \P{\frac{uf}{u-f} < v}\\
         &= \P{u > \frac{vf}{v-f}}\\
         &= 1 - \P{u < \frac{vf}{v-f}}\\
         &= \begin{cases}
-            1, & \frac{vf}{v-f} < 2f,\\
-            3 - \frac{v}{v-f}, & 2f \leq \frac{vf}{v-f} \leq 3f,\\
-            0, & \frac{vf}{v-f} > 3f,
+            1, & vf/(v-f) < 2f,\\
+            3 - v/(v-f), & 2f \leq vf/(v-f) \leq 3f,\\
+            0, & vf/(v-f) > 3f,
         \end{cases}\\
         &= \begin{cases}
             1, & v > 2f,\\
-            3 - \frac{v}{v-f}, & \frac32 f \leq v \leq 2f,\\
-            0, & v < \frac32 f.
+            3 - v/(v-f), & 3f/2 \leq v \leq 2f,\\
+            0, & v < 3f/2.
         \end{cases}
     \end{align*}
     Differentiating, we obtain the pdf of $V$: \[f_V(v) = F'_V(v) = \begin{cases}
-        \frac{f}{(v-f)^2}, & \frac32 f \leq v \leq 2f,\\
+        f/(v-f)^2, & 3f/2 \leq v \leq 2f,\\
         0, & \ow.
-    \end{cases}\] The range of $V$ is hence $[\frac32f, 2f]$.
+    \end{cases}\] The range of $V$ is hence $[3f/2, 2f]$.
 
     We have \[\E{V} = \int_{-\infty}^\infty v f_V(v) \d v = \int_{3f/2}^{2f} \frac{vf}{(v-f)^2} \d v.\] Consider the substitution $w = v - f$. The integral transforms as \[\E{V} = \int_{f/2}^f \frac{(w+f)f}{w^2} \d w = \int_{f/2}^f \bp{\frac{f}{w} + \frac{f^2}{w^2}} \d w = \evalint{f \ln w - \frac{f^2}{w}}{f/2}{f} = f + f \ln 2.\]
 
-    Let $m$ be the median. We have \[\frac12 = F_V(m) = 3 - \frac{m}{m-f} \implies m = \frac{5f}{3}.\]
+    Let $m$ be the median. We have \[\frac12 = F_V(m) = 3 - \frac{m}{m-f},\] so $m = 5f/3$.
 \end{solution}
 
 \begin{problem}
     The lifetime, $T$ hours, of a certain kind of lamp has probability density function \[f(t) = \begin{cases}
-        \frac1a \e^{-t/b}, & t \geq 0,\\
+        (1/a)\e^{-t/b}, & t \geq 0,\\
         0, & \ow,
     \end{cases}\] where $a$ and $b$ are positive constants. Show that $a = b$.
     
@@ -225,12 +225,12 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(t) \d t = \int_0^\infty \frac1a \e^{-t/b} \d t = \evalint{-\frac{b}{a} \e^{-t/b}}0\infty = \frac{b}{a} \implies a = b.\]
+    Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(t) \d t = \int_0^\infty \frac1a \e^{-t/b} \d t = \evalint{-\frac{b}{a} \e^{-t/b}}0\infty = \frac{b}{a},\] so $a = b$.
 
     Note that the cdf of $T$ is given by \[F(t) = \begin{cases}
         0, & t < 0,\\
         1 - \e^{-t/a}, & t \geq 0.
-    \end{cases}\] We are given that $\P{T > 2000} = 0.426$. Thus, \[0.574 = \P{T \leq 2000} = 1 - \e^{-2000/a} \implies a = 2340 \tosf{3}.\]
+    \end{cases}\] We are given that $\P{T > 2000} = 0.426$. Thus, \[0.574 = \P{T \leq 2000} = 1 - \e^{-2000/a},\] so $a = 2340 \tosf{3}$.
 
     Note that $\P{T > t} = \e^{-t/a}$. Thus,
     \begin{align*}
@@ -264,7 +264,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[20 = \E{T} = \int_{-\infty}^\infty t f(t) \d t = \int_0^\infty \m t \e^{-\m t} \d t = \evalint{-t\e^{-\m t} - \frac1\m \e^{-\m t}}0\infty = \frac1\m \implies \m = 0.05.\]
+        We have \[20 = \E{T} = \int_{-\infty}^\infty t f(t) \d t = \int_0^\infty \m t \e^{-\m t} \d t = \evalint{-t\e^{-\m t} - \frac1\m \e^{-\m t}}0\infty = \frac1\m,\] so $\m = 0.05$.
     \end{ppart}
     \begin{ppart}
         Note that the cdf of $T$ is given by \[F(t) = \begin{cases}
@@ -273,14 +273,14 @@
         \end{cases}\] Thus, the probability that the drill fails during the six-hour shift is \[\P{T < 6} = 1 - \e^{-6/20} = 0.259 \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
-        Let $t$ be the required time. Then \[\P{T \geq t} = 0.8 \implies \P{T < t} = 0.2 \implies 1 - \e^{-t/20} = 0.2 \implies t = 4.46.\] Thus, the shift should be $4.46$ hours long.
+        Let $t$ be the required time (in hours). We have $\P{T \geq t} = 0.8$, so $\P{T < t} = 1 - \e^{-t/20} = 0.2$. Solving, we get $t = 4.46$. Thus, the shift should be $4.46$ hours long.
     \end{ppart}
     \begin{ppart}
         Let $W_1$ be the time wasted (measured in hours) in the first 5 hours of the shift, and let $W_2$ be the time wasted (measured in hours) in the last hour of the shift.
 
         We have \[\E{W_1} = \frac12 \P{T < 5} = \frac12 \bp{1 - \e^{-5/20}} = 0.11059961 \todp{8}.\]
 
-        Now consider $W_2$. Let $t \in [5, 6]$ be the total number of hours elapsed. If the drill fails at time $t$, then the rest of the day is wasted, i.e. $6-t$ hours are wasted. This gives \[\E{W_2} = \int_5^6 (6-t) \P{T < t} \d t = \int_5^6 (6-t) \frac{\e^{-t/20}}{20} \d t = 0.01914954 \todp{8}.\] Thus, the total expected time wasted is \[\E{W_1} + \E{W_2} = 0.11059961 + 0.01914954 = 0.129749 \tosf{6}.\] The expected cost due to wasted time is hence $10000 \cdot 0.129749 = \$ 1297.49$.
+        Now consider $W_2$. Let $t \in [5, 6]$ be the total number of hours elapsed. If the drill fails at time $t$, then the rest of the day is wasted, i.e. $6-t$ hours are wasted. This gives \[\E{W_2} = \int_5^6 (6-t) \P{T < t} \d t = \int_5^6 (6-t) \frac{\e^{-t/20}}{20} \d t = 0.01914954 \todp{8}.\] Thus, the total expected time wasted is $\E{W_1} + \E{W_2} = 0.129749 \tosf{6}$, and the expected cost due to wasted time is $10000 \cdot 0.129749 = \$ 1297.49$.
     \end{ppart}
 \end{solution}
 
@@ -298,7 +298,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(t) \d t = \int_0^\infty a t \e^{-bt} \d t = a \frac{1!}{b^{1+1}} = \frac{a}{b^2} \implies a = b^2. \tag{1}\] Since the mean of $T$ is $1.5$, \[1.5 = \int_{-\infty}^\infty t f(t) \d t = \int_0^\infty a t^2 \e^{-bt} \d t = a \frac{2!}{b^{2+1}} = \frac{2a}{b^3} \implies a = \frac34 b^3. \tag{2}\] Solving (1) and (2) simultaneously, we get $a = 16/9$ and $b = 4/3$.
+        Since probabilities sum to 1, \[1 = \int_{-\infty}^\infty f(t) \d t = \int_0^\infty a t \e^{-bt} \d t = a \frac{1!}{b^{1+1}} = \frac{a}{b^2},\] so $a = b^2$. Since the mean of $T$ is $1.5$, \[1.5 = \int_{-\infty}^\infty t f(t) \d t = \int_0^\infty a t^2 \e^{-bt} \d t = a \frac{2!}{b^{2+1}} = \frac{2a}{b^3},\] so $a = 3b^3/4$. Solving the two equations simultaneously, we get $a = 16/9$ and $b = 4/3$.
     \end{ppart}
     \begin{ppart}
         Note that \[\E{T^2} = \int_{-\infty}^\infty t^2 f(t) \d t = \int_0^\infty a t^3 \e^{-bt} \d t = a \frac{3!}{b^{3+1}} = \frac{6a}{b^4} = \frac{6(16/9)}{(4/3)^4} = \frac{27}{8}.\] Thus, \[\Var{T} = \E{T^2} -\E{T}^2 = \frac{27}{8} - 1.5^2 = \frac98.\]
@@ -323,13 +323,13 @@
         $\P{Y \leq 10} = 0.252 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Note that $Y - X \sim \Normal{12-10}{4+9} = \Normal{10}{13}$. Thus, \[\P{Y < X} = \P{Y - X < 0} = 0.290 \tosf{3}.\]
+        Note that $Y - X \sim \Normal{12-10}{4+9} = \Normal{10}{13}$, so $\P{Y < X} = \P{Y - X < 0} = 0.290 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Note that $4X + 5Y \sim \Normal{4(10) + 5(12)}{4^2 (4) + 5^2 (9)} = \Normal{100}{289}$. Thus, \[\P{4X + 5Y > 90} = 0.722 \tosf{3}.\]
+        Note that $4X + 5Y \sim \Normal{4(10) + 5(12)}{4^2 (4) + 5^2 (9)} = \Normal{100}{289}$. Thus, $\P{4X + 5Y > 90} = 0.722 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Note that $X_1 + X_2 \sim \Normal{2(10)}{2(4)} = \Normal{20}{8}$. Thus, \[\P{X_1 + X_2 > a} = \frac14 \implies a = 21.9 \tosf{3}.\]
+        Note that $X_1 + X_2 \sim \Normal{2(10)}{2(4)} = \Normal{20}{8}$. Hence, from $\P{X_1 + X_2 > a} = 1/4$, we have $a = 21.9 \tosf{3}$.
     \end{ppart}
 \end{solution}
 
@@ -339,9 +339,9 @@
     Three oranges are selected at random. Find the probability that one orange has weight exceeding 379 grams and two oranges have weights between 366 grams and 379 grams.
 \end{problem}
 \begin{solution}
-    Let $W$ g be the weight of a Sunny brand orange. We are given \[\P{W > 379} = 0.37 \implies \P{W \leq 379} = 1 - 0.37 = 0.63.\] Normalizing this, we get \[z = \frac{x - \m}{\s} \implies 0.33185 = \frac{379 - \m}{\s} \implies \m + 0.33185 \s = 379. \tag{1}\] We are also given \[\P{366 < W < 379} = 0.40 \implies \P{W \leq 366} = 1 - \P{W > 366} = 1 - (0.40 + 0.37) = 0.23.\] Normalizing this, we get \[z = \frac{x - \m}{\s} \implies -0.73885 = \frac{366 - \m}{\s} \implies \m - 0.73885 \s = 366 \tag{2}.\] Solving (1) and (2) simultaneously, we get $\m = 375 \tosf{3}$ and $\s = 12.1 \tosf{3}$.
+    Let $W$ g be the weight of a Sunny brand orange. We are given $\P{W > 379} = 0.37$, which is equivalent to $\P{W \leq 379} = 0.63$. Normalizing this, we get \[0.33185 = z = \frac{x - \m}{\s} = \frac{379 - \m}{\s}.\] We are also given $\P{366 < W < 379} = 0.40$, so $\P{W \leq 366} = 1 - \P{W > 366} = 1 - (0.40 + 0.37) = 0.23$. Normalizing this, we get \[-0.73885 = z = \frac{x - \m}{\s} = \frac{366 - \m}{\s}.\] Solving the two equations simultaneously, we get $\m = 375 \tosf{3}$ and $\s = 12.1 \tosf{3}$.
 
-    The required probability is given by \[\comb{3}{1} \P{W > 379} \bs{\P{366 < W < 379}}^2 = 3 (0.37) (0.40)^2 = 0.178 \tosf{3}.\]
+    The required probability is given by $\comb{3}{1} \P{W > 379} \bs{\P{366 < W < 379}}^2 = 0.178 \tosf{3}$.
 \end{solution}
 
 \begin{problem}
@@ -368,7 +368,7 @@
     \begin{ppart}
         Let the random variables $P$ kg and $O$ kg be the mass of potatoes and onions respectively. We have $P \sim \Normal{3}{0.2^2}$ and $O \sim \Normal{1}{0.05^2}$.
 
-        Let the random variable $T = 0.50 P + 1.20 O$ be the total cost of the vegetables. Then \[T \sim \Normal{0.50(3) + 1.20(1)}{0.50^2 \bp{0.20^2} + 1.20^2 \bp{0.05^2}} = \Normal{2.7}{0.0136}.\] Thus, the mean of the total cost of the vegetables is \$$2.7$ and the standard deviation is $\sqrt{0.0136} = \$0.117$.
+        Let the random variable $T = 0.50 P + 1.20 O$ be the total cost of the vegetables. Then $T \sim \Normal{0.50(3) + 1.20(1)}{0.50^2 \bp{0.20^2} + 1.20^2 \bp{0.05^2}} = \Normal{2.7}{0.0136}$. Thus, the mean of the total cost of the vegetables is \$$2.7$ and the standard deviation is $\sqrt{0.0136} = \$0.117$.
     \end{ppart}
     \begin{ppart}
         $\P{2.50 < T < 2.80} = 0.761 \tosf{3}$.
@@ -383,7 +383,7 @@
 \begin{solution}
     Clearly, $\m = 5$. Using G.C., $\s = 6.96 \tosf{3}$.
 
-    The required probability is \[\comb{3}{1} \bs{\P{X > 7}}^2 \P{3 \leq X \leq 5} = 0.0508 \tosf{3}.\]
+    The required probability is $\comb{3}{1} \bs{\P{X > 7}}^2 \P{3 \leq X \leq 5} = 0.0508 \tosf{3}$.
 \end{solution}
 
 \begin{problem}
@@ -404,13 +404,23 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[\ol{M} = \frac{M_1 + M_2 + \dots + M_n}{n} \sim \Normal{2.5}{\frac{0.1^2}{n}}.\] Using G.C., \[\P{\ol{M} > 2.53} = 0.0668 \implies n = 25.\]
+        Note that \[\ol{M} = \frac{M_1 + M_2 + \dots + M_n}{n} \sim \Normal{2.5}{\frac{0.1^2}{n}}.\] Using G.C., from $\P{\ol{M} > 2.53} = 0.0668$, we have $n = 25$.
     \end{ppart}
     \begin{ppart}
-        Let the random variable $T$ cm be the total length of 21 mechanics and 24 statistics textbooks. Then \[T \sim \Normal{21(2.5) + 24(2.0)}{21\bp{0.1^2} + 24\bp{0.08^2}} = \Normal{100.5}{0.3636}.\] Thus, the probability that the textbooks will fit on the shelf is \[\P{T < 100} = 0.203 \tosf{3}.\]
+        Let the random variable $T$ cm be the total length of 21 mechanics and 24 statistics textbooks. Then
+        \begin{align*}
+            T &= M_1 + \dots + M_{21} + S_1 + \dots + S_{24}\\
+            &\sim \Normal{21(2.5) + 24(2.0)}{21\bp{0.1^2} + 24\bp{0.08^2}} = \Normal{100.5}{0.3636}.
+        \end{align*}
+        Thus, the probability that the textbooks will fit on the shelf is $\P{T < 100} = 0.203 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Let the random variable $D$ cm be the difference between the total thickness of 4 statistics textbooks and 3 times the thickness of 1 mechanics textbook. Then \[D = S_1 + \dots + S_4 - 3 M = \Normal{4(2.0) - 3(2.5)}{4\bp{0.08^2} + 3^2\bp{0.1^2}} = \Normal{0.5}{0.1156}.\] The required probability is thus \[\P{D < 0} = 0.0707 \tosf{3}.\]
+        Let the random variable $D$ cm be the difference between the total thickness of 4 statistics textbooks and 3 times the thickness of 1 mechanics textbook. Then
+        \begin{align*}
+            D &= S_1 + \dots + S_4 - 3 M\\
+            &\sim \Normal{4(2.0) - 3(2.5)}{4\bp{0.08^2} + 3^2\bp{0.1^2}} = \Normal{0.5}{0.1156}.
+        \end{align*}
+        The required probability is thus $\P{D < 0} = 0.0707 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
         The thickness of the mechanics and statistics textbooks are independent of each other.
@@ -431,10 +441,10 @@
         Let the random variable $L$ be the length of a metal rod. Then $L \sim \Normal{1.3}{0.7}$. Hence, if $\P{L < l} < 0.3$, then $l < 0.861$, whence the largest possible $l$ is $0.861$ m.
     \end{ppart}
     \begin{ppart}
-        Let the number of rods longer than $1.4$ m be $X$. Note that $\P{L > 1.4} = 0.45243$. Thus, $X \sim \Binom{8}{0.45243}$, and \[\P{X \geq 3} = 1 - \P{X \leq 2} = 0.784 \tosf{3}.\]
+        Let the number of rods longer than $1.4$ m be $X$. Note that $\P{L > 1.4} = 0.45243$. Thus, $X \sim \Binom{8}{0.45243}$, and $\P{X \geq 3} = 0.784 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Let the number of rods whose lengths are between 1.2 m and 1.6 m be $Y$. Note that $\P{1.2 < L < 1.6} = 0.18761$. Thus, $Y \sim \Binom{100}{0.18761}$, whence \[\E{Y} = (100)(0.18761) = 18.8 \tosf{3}.\]
+        Let the number of rods whose lengths are between 1.2 m and 1.6 m be $Y$. Note that $\P{1.2 < L < 1.6} = 0.18761$. Thus, $Y \sim \Binom{100}{0.18761}$, whence $\E{Y} = (100)(0.18761) = 18.8 \tosf{3}$.
     \end{ppart}
 \end{solution}
 
@@ -468,10 +478,15 @@
     We have $X \sim \Normal{200}{30^2}$ and $Y \sim \Normal{350}{60^2}$.
 
     \begin{ppart}
-        Note that a price of \$5 corresponds to a mass of 250 g, while a price of \$4 corresponds to a mass of 200 g. The required probability is thus \[\comb{4}{1} \P{X > 250} \bp{\P{X < 200}}^3 = 0.0239 \tosf{3}.\]
+        Note that \$5 and \$4 correspond to 250 g and 200 g of ice cream respectively. We wish to find the probability that exactly one boy gets more than 250 g of ice cream, while the rest get less than 200 g of ice cream each, which is given by $\comb{4}{1} \P{X > 250} \bp{\P{X < 200}}^3 = 0.0239 \tosf{3}$.
     \end{ppart}
     \begin{ppart}
-        Note that the difference in cost $D$ has distribution \[D = X_1 + \dots + X_4 - 2Y \sim \Normal{4(200) - 2(350)}{4\bp{30^2} + 2^2 \bp{60^2}} = \Normal{100}{18000}.\] Thus, the required probability is \[\P{D > 0} = 0.772 \tosf{3}.\]
+        Note that the difference in cost $D$ has distribution
+        \begin{align*}
+            D &= X_1 + \dots + X_4 - 2Y\\
+            &\sim \Normal{4(200) - 2(350)}{4\bp{30^2} + 2^2 \bp{60^2}} = \Normal{100}{18000}.
+        \end{align*}
+        Thus, the required probability is $\P{D > 0} = 0.772 \tosf{3}$.
     \end{ppart}
 
     The variance of the total mass is the sum of the variance of the mass of ice-cream and the variance of the mass of the empty cup. Thus, the variance of the mass of ice-cream is $30^2 - 5^2 = 875$ g.

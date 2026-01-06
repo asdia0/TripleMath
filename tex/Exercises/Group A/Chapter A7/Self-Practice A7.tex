@@ -6,16 +6,16 @@
         \item the value of $k$,
         \item the ratio of $OP:PQ$.
     \end{enumerate}
-    The position vector of a point $R$ is $\frac73 \vec a$. Show that $PR$ is parallel to $BC$.
+    The position vector of a point $R$ is $(7/3) \vec a$. Show that $PR$ is parallel to $BC$.
 \end{problem}
 \begin{solution}
     By the ratio theorem, \[\oa{OP} = \frac{\vec a + 2 \vec b}{1 + 2} = \frac13 \vec a + \frac23 \vec b\] and \[\oa{OQ} = \frac{k \vec a + 6 \vec b}{6 + 1} = \frac{k}{7} \vec a + \frac67 \vec b.\]
 
     \begin{ppart}
-        Since $OPQ$ is a straight line, there exists some $\l \in \RR$ such that \[\oa{OQ} = \l \oa{OP} \implies \frac{k}{7} \vec a + \frac67 \vec b = \frac\l3 \vec a + \frac{2\l}3 \vec b.\] Comparing coefficients of $\vec b$ terms, we have $\l = 9/7$, whence \[\frac{k}{7} = \frac{9/7}{3} \implies k = 3.\]
+        Since $OPQ$ is a straight line, there exists some $\l \in \RR$ such that $\oa{OQ} = \l \oa{OP}$, so \[\frac{k}{7} \vec a + \frac67 \vec b = \frac\l3 \vec a + \frac{2\l}3 \vec b.\] Comparing coefficients of $\vec b$ terms, we have $\l = 9/7$, giving $k = 3$.
     \end{ppart}
     \begin{ppart}
-        Note that $\oa{OQ} = \frac97 \oa{OP}$. Hence, $OP:PQ = 2:7$.
+        Note that $\oa{OQ} = (9/7) \oa{OP}$. Hence, $OP:PQ = 2:7$.
     \end{ppart}
 
     Note that \[\oa{PR} = \frac73 \vec a - \bp{\frac13 \vec a + \frac23 \vec b} = 2\vec a - \frac23 \vec b.\] Hence, \[\oa{BC} = 3\vec a - \vec b = \frac32 \bp{2\vec a - \frac23 \vec b} = \frac32 \oa{PR}.\] Hence, $PR \parallel BC$.
@@ -37,13 +37,13 @@
     By the midpoint theorem, \[\oa{OT} = \frac{\oa{OQ} + \oa{OS}}{2} = \vec p + \vec r.\]
 
     \begin{ppart}
-        \[\oa{PR} = \vec r - \vec p.\]
+        $\oa{PR} = \vec r - \vec p$.
     \end{ppart}
     \begin{ppart}
-        \[\oa{QT} = \bp{\vec p + \vec r} - (2 \vec p) = \vec r - \vec p.\]
+        $\oa{QT} = \bp{\vec p + \vec r} - (2 \vec p) = \vec r - \vec p$.
     \end{ppart}
     \begin{ppart}
-        \[\oa{TR} = \vec r - \bp{\vec r + \vec p} = -\vec p.\]
+        $\oa{TR} = \vec r - \bp{\vec r + \vec p} = -\vec p$.
     \end{ppart}
 
     Consider the following diagram:
@@ -117,10 +117,10 @@
         \end{alignat*}
     \end{ppart}
     \begin{ppart}
-        Note that $\oa{ZY} = \cveciiix04{-3}$. Hence, \[\cos \angle OZY = \frac{\oa{OZ} \dotp \oa{ZY}}{\abs{\oa{OZ}} \abs{\oa{ZY}}} = \frac{9}{\sqrt{45} \sqrt{25}} \implies \angle OZY = 74.4\deg \todp{1}.\]
+        Note that $\oa{ZY} = \cveciiix04{-3}$. Hence, \[\cos \angle OZY = \frac{\oa{OZ} \dotp \oa{ZY}}{\abs{\oa{OZ}} \abs{\oa{ZY}}} = \frac{9}{\sqrt{45} \sqrt{25}}.\] Thus, $\angle OZY = 74.4\deg \todp{1}$.
     \end{ppart}
     \begin{ppart}
-        By the ratio theorem, \[\oa{OP} = \frac{\oa{OC} + \l \oa{OZ}}{1 + \l} = \frac1{1 + \l} \bs{3\l\cveciii201 + \cveciii140}.\] Note that $\oa{CZ} = \cveciiix5{-4}{3}$. Since $\oa{OP} \perp \oa{CZ}$, we have \[\oa{OP} \dotp \oa{CZ} = 0.\] Hence, \[3\l\cveciii201 \dotp \cveciii5{-4}{3} + \cveciii140 \dotp \cveciii5{-4}{3} = 39 \l - 11= 0,\] whence $\l = 11/39$.
+        By the ratio theorem, \[\oa{OP} = \frac{\oa{OC} + \l \oa{OZ}}{1 + \l} = \frac1{1 + \l} \bs{3\l\cveciii201 + \cveciii140}.\] Note that $\oa{CZ} = \cveciiix5{-4}{3}$. Since $\oa{OP} \perp \oa{CZ}$, we have $\oa{OP} \dotp \oa{CZ} = 0$, so \[3\l\cveciii201 \dotp \cveciii5{-4}{3} + \cveciii140 \dotp \cveciii5{-4}{3} = 39 \l - 11= 0,\] whence $\l = 11/39$.
     \end{ppart}
 \end{solution}
 
@@ -133,20 +133,37 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that \[\abs{\vec a - \vec b}^2 = \bp{\vec a - \vec b} \dotp \bp{\vec a - \vec b} = \vec a \dotp \vec a - \vec a \dotp \vec b - \vec b \dotp \vec a + \vec b \dotp \vec b.\] Since  $\vec a \dotp \vec b = 0$, we get \[\abs{\vec a - \vec b}^2 = \vec a \dotp \vec a + \vec b \dotp \vec b = \abs{\vec a}^2 + \abs{\vec b}^2 = 1^1 + 2^2 = 5.\] Thus, $\abs{\vec a - \vec b} = \sqrt5$.
+        Since  $\vec a \dotp \vec b = 0$,
+        \begin{align*}
+            \abs{\vec a - \vec b}^2 &= \bp{\vec a - \vec b} \dotp \bp{\vec a - \vec b}\\
+            &= \vec a \dotp \vec a - \vec a \dotp \vec b - \vec b \dotp \vec a + \vec b \dotp \vec b\\
+            &= \vec a \dotp \vec a + \vec b \dotp \vec b\\
+            &= \abs{\vec a}^2 + \abs{\vec b}^2\\
+            &= 1^1 + 2^2\\
+            &= 5,
+        \end{align*}
+        so $\abs{\vec a - \vec b} = \sqrt5$.
     \end{ppart}
     \begin{ppart}
-        Observe that \[\abs{\vec a- \vec b - \vec c}^2 = \bp{\vec a - \vec b - \vec c}\dotp \bp{\vec a - \vec b - \vec c} = \bp{\vec a - \vec b} \dotp \bp{\vec a - \vec b} - 2\vec c \dotp \bp{\vec a - \vec b} + \vec c \dotp \vec c.\] Since $\vec a \dotp \vec c = 2$ and $\vec b \dotp \vec c = 0$, we have \[\abs{\vec a- \vec b - \vec c}^2 = \abs{\vec a - \vec b}^2 -2(2) + \abs{\vec c}^2 = 5 - 2(2) + 3^2 = 10.\] Thus, $\abs{\vec a - \vec b - \vec c} = \sqrt{10}$.
+        Since $\vec a \dotp \vec c = 2$ and $\vec b \dotp \vec c = 0$,
+        \begin{align*}
+            \abs{\vec a- \vec b - \vec c}^2 &= \bp{\vec a - \vec b - \vec c}\dotp \bp{\vec a - \vec b - \vec c}\\
+            &= \bp{\vec a - \vec b} \dotp \bp{\vec a - \vec b} - 2\vec c \dotp \bp{\vec a - \vec b} + \vec c \dotp \vec c\\
+            &= \abs{\vec a - \vec b}^2 -2(2) + \abs{\vec c}^2\\
+            &= 5 - 2(2) + 3^2\\
+            &= 10,
+        \end{align*}
+        so $\abs{\vec a - \vec b - \vec c} = \sqrt{10}$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The position vectors of the points $M$ and $N$ are given by \[\oa{OM} = \l \vec i + (2\l - 1) \vec j + \vec k, \qquad \oa{ON} = (1-\l) \vec i + 3\l \vec j - 2 \vec k,\] where $\l$ is a scalar. Find the values of $\l$ for which $\oa{OM}$ and $\oa{ON}$ are perpendicular. When $\l = 1$, find the size of $\angle MNO$ to the nearest degree.
+    The position vectors of the points $M$ and $N$ are given by \[\oa{OM} = \l \vec i + (2\l - 1) \vec j + \vec k \quad \tand \quad \oa{ON} = (1-\l) \vec i + 3\l \vec j - 2 \vec k,\] where $\l$ is a scalar. Find the values of $\l$ for which $\oa{OM}$ and $\oa{ON}$ are perpendicular. When $\l = 1$, find the size of $\angle MNO$ to the nearest degree.
 \end{problem}
 \begin{solution}
     Since $\oa{OM} \perp \oa{ON}$, we have \[\oa{OM} \dotp \oa{ON} = \cveciii{\l}{2\l - 1}{1} \dotp \cveciii{1-\l}{3\l}{-2} = 5\l^2 - 2\l -2 = 0.\] Solving the quadratic, we get \[\l = \frac{1 \pm \sqrt{11}}{5}.\]
 
-    When $\l = 1$, we have \[\oa{OM} = \cveciii111, \quad \oa{ON} = \cveciii03{-2}, \quad \oa{MN} = \cveciii{-1}2{-3}.\] Hence, \[\cos \angle MNO = \frac{\oa{ON} \dotp \oa{MN}}{\abs{\oa{ON}} \abs{\oa{MN}}} = \frac{12}{\sqrt{13} \sqrt{14}} \implies \angle MNO = 27\deg.\]
+    When $\l = 1$, we have \[\oa{OM} = \cveciii111, \quad \oa{ON} = \cveciii03{-2}, \quad \oa{MN} = \cveciii{-1}2{-3}.\] Hence, \[\cos \angle MNO = \frac{\oa{ON} \dotp \oa{MN}}{\abs{\oa{ON}} \abs{\oa{MN}}} = \frac{12}{\sqrt{13} \sqrt{14}},\] so $\angle MNO = 27\deg$.
 \end{solution}
 
 \begin{problem}
@@ -163,20 +180,20 @@
 
     Since $PQ$ is perpendicular to $CD$, we have \[\oa{PQ} \dotp \oa{CD} = \bs{3\cveciii31{-1} + 3\m \cveciii{-4}11 - 5\l \cveciii01{01}} \dotp \bs{3\cveciii{-4}11} = 3(-36 + 54\m) = 0.\] Thus, $\m = 2/3$.
 
-    Hence, \[\oa{PQ} = 3\cveciii31{-1} + 3\bp{\frac23} \cveciii{-4}11 - 5\bp{\frac35} \cveciii01{-1} = \cveciii122.\]
+    Finally, \[\oa{PQ} = 3\cveciii31{-1} + 3\bp{\frac23} \cveciii{-4}11 - 5\bp{\frac35} \cveciii01{-1} = \cveciii122.\]
 \end{solution}
 
 \begin{problem}
-    The position vectors of the vertices $A$, $B$ and $C$ of a triangle are $\vec a$, $\vec b$ and $\vec c$ respectively. If $O$ is the origin and not within the triangle, show that the area of triangle $OAB$ is $\frac12 \abs{\vec a \crossp \vec b}$, and deduce and expression for the area of the triangle $ABC$.
+    The position vectors of the vertices $A$, $B$ and $C$ of a triangle are $\vec a$, $\vec b$ and $\vec c$ respectively. If $O$ is the origin and not within the triangle, show that the area of triangle $OAB$ is $\abs{\vec a \crossp \vec b}/2$, and deduce and expression for the area of the triangle $ABC$.
 
     Hence, or otherwise, show that the perpendicular distance from $B$ to $AC$ is \[\frac{\abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}}{\abs{\vec c - \vec a}}.\]
 \end{problem}
 \begin{solution}
     Let $\t = \angle AOB$ be the angle between $\vec a$ and $\vec b$. Clearly, \[[\triangle OAB] = \frac12 (OA) (OB) \sin \t = \frac12 \abs{\vec a \crossp \vec b}.\]
 
-    Note that $AB = \abs{\vec b - \vec a}$ and $AC = \abs{\vec c - \vec a}$. Hence, \[[\triangle ABC] = \frac12 \abs{(\vec b - \vec a) \crossp \vec (\vec c - \vec a)}.\] Expanding, we get \[[\triangle ABC] = \frac12 \abs{\vec b \crossp \vec c - \vec b \crossp \vec a - \vec a \crossp \vec c} = \frac12 \abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}.\]
+    Note that $AB = \abs{\vec b - \vec a}$ and $AC = \abs{\vec c - \vec a}$, so \[[\triangle ABC] = \frac12 \abs{(\vec b - \vec a) \crossp \vec (\vec c - \vec a)}.\] Expanding, we get \[[\triangle ABC] = \frac12 \abs{\vec b \crossp \vec c - \vec b \crossp \vec a - \vec a \crossp \vec c} = \frac12 \abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}.\]
 
-    Let the perpendicular distance from $B$ to $AC$ be $h$. Then \[[\triangle ABC] = \frac12 h (AC) = \frac12 h \abs{\vec c - \vec a}.\] Hence, \[h = \frac{2 [\triangle ABC]}{\abs{\vec c- \vec a}} = \frac{\abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}}{\abs{\vec c - \vec a}}.\]
+    Let the perpendicular distance from $B$ to $AC$ be $h$. Then \[[\triangle ABC] = \frac12 h (AC) = \frac12 h \abs{\vec c - \vec a}.\] Thus, \[h = \frac{2 [\triangle ABC]}{\abs{\vec c- \vec a}} = \frac{\abs{\vec a \crossp \vec b + \vec b \crossp \vec c + \vec c \crossp \vec a}}{\abs{\vec c - \vec a}}.\]
 \end{solution}
 
 \begin{problem}[\chili]
@@ -189,11 +206,9 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Since $A$, $B$ and $C$ lie on the same circle, $\abs{\vec a} = \abs{\vec b} = \abs{\vec c}$. Since $AC$ is the diameter of the circle, $\vec c$ is in the opposite direction as $\vec a$. Hence, $\vec c = -\vec a$. Thus, \[\oa{BC} = \oa{OC} - \oa{OB} = -\vec a- \vec b.\] Also note that \[\oa{AB} = \oa{OB} - \oa{OA} = \vec b - \vec a.\] Consider $\oa{AB} \dotp \oa{BC}$: \[\oa{AB} \dotp \oa{BC} = \bp{\vec b - \vec a} \dotp -\bp{\vec a + \vec b} = -\bp{\vec b \dotp \vec b - \vec a \dotp \vec a} = -\bp{\abs{\vec b}^2 - \abs{\vec a}^2} = 0.\] Thus, $AB$ is perpendicular to $BC$.
+        Since $A$, $B$ and $C$ lie on the same circle, $\abs{\vec a} = \abs{\vec b} = \abs{\vec c}$. Since $AC$ is the diameter of the circle, $\vec c$ is in the opposite direction as $\vec a$. Hence, $\vec c = -\vec a$. Thus, $\oa{BC} = \oa{OC} - \oa{OB} = -\vec a- \vec b$. Additionally, $\oa{AB} = \vec b - \vec a$. Consider $\oa{AB} \dotp \oa{BC}$: \[\oa{AB} \dotp \oa{BC} = \bp{\vec b - \vec a} \dotp -\bp{\vec a + \vec b} = \vec a \dotp \vec a - \vec b \dotp \vec b = \abs{\vec a}^2 - \abs{\vec b}^2 = 0.\] Thus, $AB$ is perpendicular to $BC$.
     \end{ppart}
     \begin{ppart}
-        Observe that \[\frac{\sqrt3}{2} = \cos \angle AOB = \frac{OF}{OB} = \frac{\abs{\oa{OF}}}{\abs{\vec a}} \implies \abs{\oa{OF}} = \frac{\sqrt{3}}{2} \abs{\vec a}.\] Since $\oa{OF}$ is in the same direction as $\oa{OA}$, we have \[\oa{OF} = \frac{\sqrt3}{2} \vec a.\]
-
-        Note that \[\oa{BF} = \frac{\sqrt3}2 \vec a - \vec b.\] By the midpoint theorem, \[\oa{OF} = \frac{\oa{OB} + \oa{OB'}}{2} \implies \oa{OB'} = 2\oa{OF} - \oa{OB} = \sqrt{3} \vec a - \vec b.\]
+        Observe that \[\frac{\sqrt3}{2} = \cos \angle AOB = \frac{OF}{OB} = \frac{\abs{\oa{OF}}}{\abs{\vec a}},\] so $\abs{\oa{OF}} = (\sqrt3/2) \abs{\vec a}$. Since $\oa{OF}$ is in the same direction as $\oa{OA}$, we have $\oa{OF} = (\sqrt3/2) \vec a$, thus \[\oa{BF} = \oa{OF} - \oa{OB} = \frac{\sqrt3}2 \vec a - \vec b.\] By the midpoint theorem, \[\oa{OF} = \frac{\oa{OB} + \oa{OB'}}{2},\] so $\oa{OB'} = 2\oa{OF} - \oa{OB} = 2\oa{BF} + \oa{OB} = \sqrt{3} \vec a - \vec b$.
     \end{ppart}
 \end{solution}

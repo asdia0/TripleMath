@@ -2,8 +2,8 @@
 
 \begin{problem}
     Without the use of G.C., find the following matrix products:
-    \begin{enumerate}
-        \item $\begin{pmatrix}
+    \begin{tasks}(2)
+        \task $\begin{pmatrix}
             -1 & 4 & 2
         \end{pmatrix}
         \begin{pmatrix}
@@ -11,7 +11,7 @@
             1\\
             3
         \end{pmatrix}$
-        \item $\begin{pmatrix}
+        \task $\begin{pmatrix}
             3\\
             9\\
             2
@@ -19,7 +19,7 @@
         \begin{pmatrix}
             1 & -6 & 3
         \end{pmatrix}$
-        \item $\begin{pmatrix}
+        \task $\begin{pmatrix}
             4 & -1 & 1\\2&3&0
         \end{pmatrix}
         \begin{pmatrix}
@@ -27,13 +27,13 @@
             5 & 4\\
             1 & 2
         \end{pmatrix}$
-        \item $\begin{pmatrix}
+        \task $\begin{pmatrix}
             2 & 2 & 1\\1 & 0 & 2\\2 & 1 & 2
         \end{pmatrix}
         \begin{pmatrix}
             -2 & -3 & 4\\2 & 2 & -3\\1 & 2 & -2
         \end{pmatrix}$
-    \end{enumerate}
+    \end{tasks}
 \end{problem}
 \begin{solution}
     \begin{ppart}
@@ -98,14 +98,13 @@
         \item $\mat A + \mat B$ is orthogonal.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         The statement is true. Since $\mat A$ and $\mat B$ are both orthogonal, \[\bp{\mat A \mat B}\trp \bp{\mat A \mat B} = \mat B\trp \bp{\mat A \trp \mat A} \mat B = \mat B \trp \mat B = \mat I,\] and \[\bp{\mat A \mat B} \bp{\mat A \mat B}\trp = \mat A \bp{\mat B \mat B \trp} \mat A \trp = \mat A \mat A \trp = \mat I,\] thus $\mat A \mat B$ is orthogonal.
-
-        \noindent\textit{Geometric Approach.} A real matrix is orthogonal if and only if it is norm-preserving. Since $\mat A$ and $\mat B$ are both orthogonal, \[\norm{\vec v} = \norm{\mat B \vec v} = \norm{\mat A \mat B \vec v},\] thus $\mat A \mat B$ is also orthogonal.
     \end{ppart}
     \begin{ppart}
-        The statement is false. Let $\mat M$ be orthogonal. Then $-\mat M$ is also orthogonal (reflection preserves norm). However, their sum, $\mat 0$, is clearly not orthogonal.
+        The statement is false. Let $\mat M$ be orthogonal. Then $-\mat M$ is also orthogonal (since $(-\mat M)\trp = -\mat M \trp$). However, their sum, $\mat 0$, is clearly not orthogonal.
     \end{ppart}
 \end{solution}
 
@@ -145,20 +144,21 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that the given system of linear equations has matrix representation \[\begin{pmatrix}[rrr|r]1 & 1 & 1 & 8\\ -1 & -2 & 3 & 1 \\ 3 & -7 & 4 & 10\end{pmatrix}.\] Performing row operations on this matrix, we get \[\begin{pmatrix}[rrr|r]1 & 1 & 1 & 8\\ -1 & -2 & 3 & 1 \\ 3 & -7 & 4 & 10\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle 2R_1 + R_2 \\ \scriptstyle -R_2 - R_1 \\ \scriptstyle -\frac1{39}(R_3 - 13R_1 - 10 R_2)\end{matrix}\begin{pmatrix}[rrr|r]1 & 0 & 5 & 17\\ 0 & 1 & -4 & -9 \\ 0 & 0 & 1 & \frac83\end{pmatrix}.\] We thus recover the system of linear equations \[\systeme{x_1 + 4x_3 = 17, x_2 - 4x_3 = -9, x_3 = \frac83},\] whence we have $x_1 = \frac{11}3$, $x_2 = \frac53$ and $x_3 = \frac83$.
+        Note that the given system of linear equations has matrix representation \[\begin{pmatrix}[rrr|r]1 & 1 & 1 & 8\\ -1 & -2 & 3 & 1 \\ 3 & -7 & 4 & 10\end{pmatrix}.\] Performing row operations on this matrix, we get \[\begin{pmatrix}[rrr|r]1 & 1 & 1 & 8\\ -1 & -2 & 3 & 1 \\ 3 & -7 & 4 & 10\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle 2R_1 + R_2 \\ \scriptstyle -R_2 - R_1 \\ \scriptstyle -(1/39)(R_3 - 13R_1 - 10 R_2)\end{matrix}\begin{pmatrix}[rrr|r]1 & 0 & 5 & 17\\ 0 & 1 & -4 & -9 \\ 0 & 0 & 1 & 8/3\end{pmatrix}.\] We thus recover the system of linear equations \[\systeme{x_1 + 4x_3 = 17, x_2 - 4x_3 = -9, x_3 = 8/3},\] whence we have $x_1 = 11/3$, $x_2 = 5/3$ and $x_3 = 8/3$.
     \end{ppart}
     \begin{ppart}
-        Note that the given system of linear equations has matrix representation \[\begin{pmatrix}[rrr]1 & 1 & 1 \\ -2 & 5 & 2 \\ -7 & 7 & 1\end{pmatrix}.\] Performing row operations on this matrix, we get \[\begin{pmatrix}[rrr]1 & 1 & 1 \\ -2 & 5 & 2 \\ -7 & 7 & 1\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle \frac17(5R_1 - R_2) \\ \scriptstyle \frac17(R_2 + 2R_1) \\ \scriptstyle R_3 + 3R_1 - 2R_2 \end{matrix}\begin{pmatrix}[rrr]1 & 0 & \frac37 \\ 0 & 1 & \frac47 \\ 0 & 0 & 0\end{pmatrix}.\] Since the last row is full of zeroes, we have a free variable. Let $x_3 = t$, where $t \in \RR$. Then we recover the system of linear equations \[\systeme{x_1 + \frac37 x_3 = 0, x_2 + \frac47 x_3 = 0, x_3 = t},\] whence $x_1 = -\frac37 t$, $x_2 = -\frac47 t$ and $x_3 = t$.
+        Note that the given system of linear equations has matrix representation \[\begin{pmatrix}[rrr]1 & 1 & 1 \\ -2 & 5 & 2 \\ -7 & 7 & 1\end{pmatrix}.\] Performing row operations on this matrix, we get \[\begin{pmatrix}[rrr]1 & 1 & 1 \\ -2 & 5 & 2 \\ -7 & 7 & 1\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle (1/7)(5R_1 - R_2) \\ \scriptstyle (1/7)(R_2 + 2R_1) \\ \scriptstyle R_3 + 3R_1 - 2R_2 \end{matrix}\begin{pmatrix}[rrr]1 & 0 & 3/7 \\ 0 & 1 & 4/7 \\ 0 & 0 & 0\end{pmatrix}.\] Since the last row is full of zeroes, we have a free variable. Let $x_3 = t$, where $t \in \RR$. Then we recover the system of linear equations \[\systeme{x_1 + (3/7) x_3 = 0, x_2 + (4/7) x_3 = 0, x_3 = t},\] whence $x_1 = -3t/7$, $x_2 = -4t/7$ and $x_3 = t$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     What conditions must the $b$'s satisfy in order for the following system of linear equations to be consistent?
-    \begin{enumerate}
-        \item $\systeme{x_1-x_2+3x_3=b_1,3x_1-3x_2+4x_3=b_2,-2x_1+2x_2-6x_3=b_3}$
-        \item $\systeme{2x_1+3x_2-x_3+x_4=b_1,x_1+5x_2+x_3-2x_4=b_2,-x_1+2x_2+2x_3-3x_4=b_3,3x_1+x_2-3x_3+4x_4=b_4}$
-    \end{enumerate}
+    \begin{tasks}(2)
+        \task $\systeme{x_1-x_2+3x_3=b_1,3x_1-3x_2+4x_3=b_2,-2x_1+2x_2-6x_3=b_3}$
+        \task $\systeme{2x_1+3x_2-x_3+x_4=b_1,x_1+5x_2+x_3-2x_4=b_2,-x_1+2x_2+2x_3-3x_4=b_3,3x_1+x_2-3x_3+4x_4=b_4}$
+    \end{tasks}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         We can represent the given system of linear equations with the matrix \[\begin{pmatrix}[rrr|r]1 & -1 & 3 & b_1 \\ 3 & -3 & 4 & b_2 \\ -2 & 2 & -6 & -b_3\end{pmatrix}.\] Performing row operations, we see that \[\begin{pmatrix}[rrr|r]1 & -1 & 3 & b_1 \\ 3 & -3 & 4 & b_2 \\ -2 & 2 & -6 & -b_3\end{pmatrix} \rightarrow \begin{matrix}[r] \\ \scriptstyle R_2 - 3R_1 \\ \scriptstyle R_3 + 2R_1\end{matrix} \begin{pmatrix}[rrr|r]1 & -1 & 3 & b_1 \\ 0 & 0 & -5 & b_2 - 3b_1 \\ 0 & 0 & 0 & b_3 + 2b_1\end{pmatrix}.\] For the system to be consistent, we require $b_3 + 2b_1 = 0$.
@@ -170,21 +170,21 @@
 
 \begin{problem}
     Without the use of a graphing calculator, find $\inv{\mat A}$ for each of the following cases of $\mat A$.
-    \begin{enumerate}
-        \item $\begin{pmatrix}
+    \begin{tasks}(3)
+        \task $\begin{pmatrix}
             2 & 3 & 1\\3 & 1 & 2\\1 & 2 & 3
         \end{pmatrix}$
-        \item $\begin{pmatrix}[rr]
+        \task $\begin{pmatrix}[rr]
             \cos \a & \sin \a \\ -\sin \a & \cos \a
         \end{pmatrix}$
-        \item $\begin{pmatrix}[rrr]
+        \task $\begin{pmatrix}[rrr]
             1 & 0 & 0\\0 & \cos \a & -\sin \a\\0 & \sin \a & \cos \a
         \end{pmatrix}$
-    \end{enumerate}
+    \end{tasks}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Performing row operations on $\begin{pmatrix}[c|c]\mat A & \mat I\end{pmatrix}$, we have \[\begin{pmatrix}[rrr|rrr]2 & 3 & 1 & 1 & 0 & 0 \\ 3 & 1 & 2 & 0 & 1 & 0 \\ 1 & 2 & 3 & 0 & 0 & 1\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle \frac1{18} (R_1 + 7R_2 - 5R_3) \\[0.4em] \scriptstyle \frac1{18} (7R_1 - 5R_2 + R_3) \\[0.4em] \scriptstyle \frac1{18} (-5R_1 + R_2 + 7R_3)\end{matrix} \begin{pmatrix}[rrr|rrr] 1 & 0 & 0 & \frac1{18} & \frac{7}{18} & -\frac{5}{18} \\[0.4em] 0 & 1 & 0 & \frac7{18} & -\frac5{18} & \frac1{18} \\[0.4em] 0 & 0 & 1 & -\frac5{18} & \frac1{18} & \frac7{18}\end{pmatrix}.\] Thus, \[\inv{\mat A} = \frac1{18} \begin{pmatrix}[rrr]1 & 7 & -5 \\ 7 & -5 & 1 \\ -5 & 1 & 7\end{pmatrix}.\]
+        Performing row operations on $\begin{pmatrix}[c|c]\mat A & \mat I\end{pmatrix}$, we have \[\begin{pmatrix}[rrr|rrr]2 & 3 & 1 & 1 & 0 & 0 \\ 3 & 1 & 2 & 0 & 1 & 0 \\ 1 & 2 & 3 & 0 & 0 & 1\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle (1/18) (R_1 + 7R_2 - 5R_3) \\[0.4em] \scriptstyle (1/18) (7R_1 - 5R_2 + R_3) \\[0.4em] \scriptstyle (1/18) (-5R_1 + R_2 + 7R_3)\end{matrix} \begin{pmatrix}[rrr|rrr] 1 & 0 & 0 & 1/18 & 7/18 & -5/18 \\[0.4em] 0 & 1 & 0 & 7/18 & -5/18 & 1/18 \\[0.4em] 0 & 0 & 1 & -5/18 & 1/18 & 7/18\end{pmatrix}.\] Thus, \[\inv{\mat A} = \frac1{18} \begin{pmatrix}[rrr]1 & 7 & -5 \\ 7 & -5 & 1 \\ -5 & 1 & 7\end{pmatrix}.\]
     \end{ppart}
     \begin{ppart}
         By the formula for the inverse of a $2 \times 2$ matrix, \[\inv{\mat A} = \begin{pmatrix}[rr]\cos \a & -\sin \a \\ \sin \a & \cos \a\end{pmatrix}.\]
@@ -196,24 +196,24 @@
 
 \begin{problem}
     Without the use of a graphing calculator, find the determinants of the following matrices:
-    \begin{enumerate}
-        \item $\mat A = \begin{pmatrix}
+    \begin{tasks}(2)
+        \task $\mat A = \begin{pmatrix}
             0 & 4 \\ -1 & 2
         \end{pmatrix}$
-        \item $\mat B = \begin{pmatrix}
+        \task $\mat B = \begin{pmatrix}
             2 & -1 & 4 \\ 4 & -3 & 1 \\ 1 & 2 & 1
         \end{pmatrix}$
-        \item $\mat C = \begin{pmatrix}
+        \task $\mat C = \begin{pmatrix}
             2 & 0 & 0 \\ 4 & -3 & 0 \\ 1 & 2 & 1
         \end{pmatrix}$
-        \item $\mat D = \begin{pmatrix}
+        \task $\mat D = \begin{pmatrix}
             2 & -1 & 4 \\ 4 & -3 & 1 \\ 3 & 6 & 3
         \end{pmatrix}$
-    \end{enumerate}
+    \end{tasks}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\det \mat A = (0)(2) - (-1)(4) = 4.\]
+        $\det \mat A = (0)(2) - (-1)(4) = 4$.
     \end{ppart}
     \begin{ppart}
         \[\det \mat B = 2 \begin{vmatrix}[rr]-3 & 1 \\ 2 & 1\end{vmatrix} - (-1) \begin{vmatrix}[rr]4 & 1 \\ 1 & 1\end{vmatrix} + 4 \begin{vmatrix}[rr]4 & -3 \\ 1 & 2\end{vmatrix} = 2(-5) - (-1)(3) + 4(11) = 37.\]
@@ -222,12 +222,12 @@
         \[\det \mat C = \det \begin{vmatrix}[rr]2 & 0 \\ 4 & -3\end{vmatrix} = -6.\]
     \end{ppart}
     \begin{ppart}
-        Note that $\mat D$ is simply $\mat B$ where the third row has been multiplied by 3. Thus, \[\det \mat D = 3 \det \mat B = 111.\]
+        Note that $\mat D$ is simply $\mat B$ where the third row has been multiplied by 3. Thus, $\det \mat D = 3 \det \mat B = 111$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    For the case where $\mat A = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix}$ and $\mat B = \begin{pmatrix} 1 & 0 & 2 \\ 2 & 1 & 0 \\ -1 & 1 & -1 \end{pmatrix}$, verify the results
+    For the case where \[\mat A = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix} 1 & 0 & 2 \\ 2 & 1 & 0 \\ -1 & 1 & -1 \end{pmatrix},\] verify the results
     \begin{enumerate}
         \item $\det{\mat A \mat B} = \det{\mat A} \det{\mat B}$,
         \item $\det{\inv{\mat A}} = 1/\det{\mat A}$.
@@ -242,21 +242,21 @@
 \begin{solution}
     Note that $\det A = -3$ and $\det B = 5$.
     \begin{ppart}
-        Using G.C., \[\mat A \mat B = \begin{pmatrix}[rrr]2 & 1 & 0 \\ 6 & 1 & 3 \\ -1 & 4 & -3\end{pmatrix}.\] Hence, \[\det{\mat A \mat B} = -15 = (-3)(5) = \det{\mat A} \det{\mat B}.\]
+        Using G.C., \[\mat A \mat B = \begin{pmatrix}[rrr]2 & 1 & 0 \\ 6 & 1 & 3 \\ -1 & 4 & -3\end{pmatrix}.\] Hence, $\det{\mat A \mat B} = -15 = (-3)(5) = \det{\mat A} \det{\mat B}$.
     \end{ppart}
     \begin{ppart}
-        Using G.C., \[\inv{\mat A} = \frac13 \begin{pmatrix}[rrr]-7 & 3 & 1 \\ 3 & 0 & 0 \\ -1 & 0 & 1\end{pmatrix}.\] Hence, \[\det{\inv{\mat A}} = -\frac13 = \frac1{-3} = \frac1{\det \mat A}.\]
+        Using G.C., \[\inv{\mat A} = \frac13 \begin{pmatrix}[rrr]-7 & 3 & 1 \\ 3 & 0 & 0 \\ -1 & 0 & 1\end{pmatrix}.\] Hence, $\det{\inv{\mat A}} = -1/3 = 1/(-3) = 1/\det \mat A$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\mat A + \mat B = \begin{pmatrix}[rrr]1 & 1 & 2 \\ 3 & 3 & -1 \\ -1 & 2 & 2\end{pmatrix}.\] Hence, \[\det{\mat A + \mat B} = 21 \neq -3 + 5 = \det \mat A + \det \mat B.\]
+        Note that \[\mat A + \mat B = \begin{pmatrix}[rrr]1 & 1 & 2 \\ 3 & 3 & -1 \\ -1 & 2 & 2\end{pmatrix}.\] Hence, $\det{\mat A + \mat B} = 21 \neq -3 + 5 = \det \mat A + \det \mat B$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\mat A \trp = \begin{pmatrix}[rrr] 0 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & -1 & 3\end{pmatrix}.\] Hence, \[\det \mat A\trp = -3 = \det \mat A.\]
+        Note that \[\mat A \trp = \begin{pmatrix}[rrr] 0 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & -1 & 3\end{pmatrix}.\] Hence, $\det \mat A\trp = -3 = \det \mat A$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    It is given that matrices $\mat A = \begin{pmatrix}2 & 1 & 3  \\ -1 & 0 & 4 \\ 3 & 1 & 0\end{pmatrix}$, $\mat B = \begin{pmatrix} 2 & 1 & 3 \\ -1 & 1 & 12 \\ 3 & 1 & 0 \end{pmatrix}$. Without the use of the G.C., find the inverse of $\mat A$ and $\mat B$ if it exists. For each of (a) and (b) below, solve, if possible, the equation, giving your answers in terms of $a$ (where applicable).
+    It is given that \[\mat A = \begin{pmatrix}2 & 1 & 3  \\ -1 & 0 & 4 \\ 3 & 1 & 0\end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix} 2 & 1 & 3 \\ -1 & 1 & 12 \\ 3 & 1 & 0 \end{pmatrix}.\] Without the use of the G.C., find the inverse of $\mat A$ and $\mat B$ if it exists. For each of (a) and (b) below, solve, if possible, the equation, giving your answers in terms of $a$ (where applicable).
 
     \begin{enumerate}
         \item $\mat A \vec x = \cveciiix41a$,
@@ -274,10 +274,10 @@
         Since $\mat A$ is invertible, we can pre-multiply $\inv{\mat A}$ on both sides of the equation $\mat A \vec x = \cveciiix41a$, yielding \[\vec x = \begin{pmatrix}[rrr]-4 & 3 & 4 \\ 12 & -9 & -11 \\ -1 & 1 & 1\end{pmatrix} \cveciii41a = \begin{pmatrix}-13 + 4a \\ 39 - 11 a \\ -3 + a\end{pmatrix}.\]
     \end{ppart}
     \begin{ppart}
-        Note that the equation $\mat B \vec x = \cveciiix41a$ has matrix representation \[\begin{pmatrix}[rrr|r]2 & 1 & 3 & 4 \\ -1 & 1 & 12 & 1 \\ 3 & 1 & 0 & a\end{pmatrix}.\] Performing Gaussian elimination yields \[\begin{pmatrix}[rrr|r]2 & 1 & 3 & 4 \\ -1 & 1 & 12 & 1 \\ 3 & 1 & 0 & a\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle\frac13 R_1 + \frac23 R_2 \\ \scriptstyle\frac13 R_1 - \frac13 R_2 \\ \scriptstyle-\frac43 R_1 + \frac13 R_2 + R_3\end{matrix} \begin{pmatrix}[rrr|c]0 & 1 & 9 & 2 \\ 1 & 0 & -3 & 1 \\ 0 & 0 & 0 & a-5\end{pmatrix}.\] If $a \neq 5$, the system is inconsistent and there is no solution. If $a = 5$, the system is consistent with one free variable. Let $\vec x = \cveciiix{x_1}{x_2}{x_3}$, with $x_3 = t$, where $t \in \RR$. We have \[\systeme{x_2 + 9x_3 = 2, x_1 - 3x_3 = 1},\] whence $x_1 = 1 + 3t$, $x_2 = 2-9t$ and $x_3 = t$. Thus, \[\vec x = \cveciii120 + t \cveciii3{-9}1, \quad t \in \RR.\]
+        Note that the equation $\mat B \vec x = \cveciiix41a$ has matrix representation \[\begin{pmatrix}[rrr|r]2 & 1 & 3 & 4 \\ -1 & 1 & 12 & 1 \\ 3 & 1 & 0 & a\end{pmatrix}.\] Performing Gaussian elimination yields \[\begin{pmatrix}[rrr|r]2 & 1 & 3 & 4 \\ -1 & 1 & 12 & 1 \\ 3 & 1 & 0 & a\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle(1/3) R_1 + (2/3) R_2 \\ \scriptstyle(1/3) R_1 - (1/3) R_2 \\ \scriptstyle-(4/3) R_1 + (1/3) R_2 + R_3\end{matrix} \begin{pmatrix}[rrr|c]0 & 1 & 9 & 2 \\ 1 & 0 & -3 & 1 \\ 0 & 0 & 0 & a-5\end{pmatrix}.\] If $a \neq 5$, the system is inconsistent and there is no solution. If $a = 5$, the system is consistent with one free variable. Let $\vec x = \cveciiix{x_1}{x_2}{x_3}$, with $x_3 = t$, where $t \in \RR$. We have \[\systeme{x_2 + 9x_3 = 2, x_1 - 3x_3 = 1},\] whence $x_1 = 1 + 3t$, $x_2 = 2-9t$ and $x_3 = t$. Thus, \[\vec x = \cveciii120 + t \cveciii3{-9}1, \quad t \in \RR.\]
     \end{ppart}
 
-    Since $\mat A$ is invertible, \[\mat A \mat B \vec x = \cveciii41a \implies \mat B \vec x = \inv{\mat A}\cveciii41a.\] However, because $\mat B$ is not invertible, there cannot be a unique solution $\vec x$ to the above equation (if such a solution exists).
+    Since $\mat A$ is invertible, the equation $\mat \mat B \vec x = \cveciiix41a$ is equivalent to $\mat B \vec x = \inv{\mat A} \cveciiix41a$. However, because $\mat B$ is not invertible, there cannot be a unique solution $\vec x$ to the above equation (if such a solution exists).
 \end{solution}
 
 \begin{problem}
@@ -287,6 +287,7 @@
     Since $\mat A \vec x = \vec 0$ has only the trivial solution, $\det{\mat A} \neq 0$. Thus, $\det{\mat A^k} = \det{\mat A}^k \neq 0$, whence $\mat A^k \vec x = \vec 0$ has a unique solution, which must clearly be the trivial solution.
 \end{solution}
 
+\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Let $\mat A$ be a non-zero square matrix such that $\mat A^2 = \mat A$. Determine all possible values of $\det{\mat A}$. Determine if the following statements are true. Justify your answer.
@@ -294,33 +295,23 @@
             \item $\mat I - \mat A$ is always invertible.
             \item $\mat I + \mat A$ is always invertible.
         \end{enumerate}
-        \item Let $\mat B = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}$. Given that $\mat B$ is the inverse of a matrix $\mat C$, and $\mat D$ is the matrix obtained from $\mat C$ by adding to the second row of $\mat C$ twice the first row of $\mat C$, find $\inv{\mat D}$ in a similar form to $\mat B$.
+        \item Let \[\mat B = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}.\] Given that $\mat B$ is the inverse of a matrix $\mat C$, and $\mat D$ is the matrix obtained from $\mat C$ by adding to the second row of $\mat C$ twice the first row of $\mat C$, find $\inv{\mat D}$ in a similar form to $\mat B$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Taking determinants on both sides of the given equation, we have \[\det{\mat A^2} = \det{\mat A} \implies \det{\mat A}^2 = \det{\mat A}.\] Thus, the possible values of $\det{\mat A}$ are 0 and 1. An example of $\mat A$ with determinant 0 is \[\mat A = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\] while an example of $\mat A$ with determinant 1 is simply $\mat I$.
+        Taking determinants on both sides of the given equation, we have $\det{\mat A^2} = \det \mat A$. Since $\det{\mat A^2} = \bp{\det \mat A}^2$, we see that the only possible values of $\det \mat A $ are 0 and 1. An example of $\mat A$ with determinant 0 is \[\mat A = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\] while an example of $\mat A$ with determinant 1 is simply $\mat I$.
 
-        In fact, $\mat I$ is the only such matrix that has determinant 1: if $\mat A$ is invertible, we can pre-multiply its inverse to the equation $\mat A^2 = \mat A$ to get \[\inv{\mat A} \mat A^2 = \inv{\mat A} \mat A \implies \mat A = \mat I.\]
+        In fact, $\mat I$ is the only such matrix that has determinant 1; if $\mat A$ is invertible, we can pre-multiply its inverse to the equation $\mat A^2 = \mat A$ to get $\inv{\mat A} \mat A^2 = \inv{\mat A} \mat A$, which simplifies to give $\mat A = \mat I$.
         
-        \noindent\textit{Geometric Approach.} Let $\mat A$ represent a linear transformation of $\RR^n$. $\mat A$ is idempotent if and only if all vectors $\vec v \in \Col A$ are invariant under $\mat A$. If $\mat A$ has non-zero determinant, then its image is $\RR^n$, i.e. $\mat A \vec v = \vec v$ for all $\vec v \in \RR^n$, which is only possible if $\mat A = \mat I$.
-
         \begin{psubpart}
-            The statement is false. Observe that if $\mat A$ is idempotent, then $\mat I - \mat A$ is also idempotent: \[\bp{\mat I - \mat A}^2 = \mat I^2 - \mat I \mat A - \mat A \mat I + \mat A^2 = \mat I - \mat A - \mat A + \mat A = \mat I - \mat A.\] Seeking a contradiction, suppose $\mat I - \mat A$ is invertible. From the above result, it follows that \[\mat I - \mat A = \mat I \implies \mat A = \mat 0,\] which contradicts our assumption that $\mat A$ is non-zero. Hence, $\mat I - \mat A$ is not invertible.
-
-            \noindent\textit{Alternative Approach.} Let $\vec v \in \Col \mat A$. Then \[(\mat I - \mat A) \vec v = \vec v - \mat A \vec v = \vec v - \vec v = \vec 0 \implies \Col{\mat A} \subseteq \Ker \bp{\mat I - \mat A}.\] If $\mat I - \mat A$ is invertible, then its kernel must be trivial. This means that \[\Col{\mat A} = \Ker \bp{\mat I - \mat A} = \bc{\vec 0} \implies \mat A = \mat 0,\] contradicting our assumption that $\mat A$ is non-zero. Hence, $\mat I - \mat A$ is not invertible.
+            The statement is false. Take $\mat A = \mat I$. Then $\mat I - \mat A = \mat 0$, which is not invertible.
         \end{psubpart}
         \begin{psubpart}
-            The statement is true. Let $\mat B = \mat I + \mat A$. Since $\mat A^2 = \mat A$, \[\mat 0 = \mat A^2 - \mat A = \bp{\mat B - \mat I}^2 - \bp{\mat B - \mat I} = \mat B^2 - 3\mat B + 2 \mat I.\] Rearranging, \[\mat I = \frac32 \mat B - \frac12 \mat B^2 = \mat B \bp{\frac32 \mat I - \frac12 \mat B} = \bp{\mat I + \mat A} \bp{\mat I - \frac12 \mat A}.\] Thus, the inverse of $\mat I + \mat A$ exists and is given by $\mat I - \frac12 \mat A$.
-            
-            \noindent\textit{Alternative Approach.} Let $\vec v \in \Ker \bp{\mat I + \mat A}$. Then \[\bp{\mat I + \mat A} \vec v = \vec v + \mat A \vec v = \vec 0 \implies \mat A \vec v = -\vec v. \tag{1}\] Pre-multiplying both sides by $\mat A$, \[\mat A^2 \vec v = -\mat A \vec v \implies \mat A \vec v = - \mat A \vec v \implies \mat A \vec v = \vec 0.\] Substituting this into (1), we have $\vec v = \vec 0$. Hence, the kernel of $\mat I + \mat A$ is trivial, thus $\mat I + \mat A$ is invertible.
+            The statement is true. Let $\mat B = \mat I + \mat A$. Since $\mat A^2 = \mat A$, \[\mat 0 = \mat A^2 - \mat A = \bp{\mat B - \mat I}^2 - \bp{\mat B - \mat I} = \mat B^2 - 3\mat B + 2 \mat I.\] Rearranging, \[\mat I = \frac32 \mat B - \frac12 \mat B^2 = \mat B \bp{\frac32 \mat I - \frac12 \mat B} = \bp{\mat I + \mat A} \bp{\mat I - \frac12 \mat A}.\] Thus, the inverse of $\mat I + \mat A$ exists and is given by $\mat I - (1/2) \mat A$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Note that \[\mat D = \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \mat C = \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \inv{\mat B}.\] Thus, our goal matrix $\inv{\mat D}$ is given by
-        \begin{align*}
-            \inv{\mat D} &= \bs{\begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \mat B^{-1}}^{-1} = \mat B \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}^{-1} = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}\begin{pmatrix}1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}\\
-            &= \begin{pmatrix}a-2b & b & c \\ d-2e & e & f \\ g-2h & h & i\end{pmatrix}.
-        \end{align*}
+        Note that \[\mat D = \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \mat C = \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} \inv{\mat B}.\] Thus, our goal matrix $\inv{\mat D}$ is given by \[\inv{\mat D} = \mat B \begin{pmatrix}1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}^{-1} = \begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix}\begin{pmatrix}1 & 0 & 0 \\ -2 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} = \begin{pmatrix}a-2b & b & c \\ d-2e & e & f \\ g-2h & h & i\end{pmatrix}.\]
     \end{ppart}
 \end{solution}

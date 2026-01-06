@@ -47,7 +47,7 @@ To quantify this ``closeness'', we can look at the \vocab{probability value} (al
 
 Note that whenever we use the test-statistic or $p$-value in this example, both are associated with the left tail of the distribution. This is because we began with the suspicion that $\m$ was \emph{lower} than claimed. This type of test is called a 1-tail (left tail) test.
 
-To determine if the $p$-value is small enough, we introduce a cut-off point, $c$, known as the \vocab{critical value}, which indicates the boundary of the region where values of $\ol{x}$ would be considered \emph{too far away} from 500 ml and therefore would be unlikely to occur. This region is known as the \vocab{critical/rejection region}. The probability corresponding to this critical region will then become the upper probability limit of what we will consider to imply that an unlikely or rare event has occurred. This probability, $\a$, is called the \vocab{significance level} of the test. In general for a left tail test at the $\a$ level, the critical value $c$ is fixed so that $\P{\ol{X} \leq c} = \a$ and the critical region is $\ol{x} \leq c$. In practice, to avoid being influenced by sample readings, it is important that $\a$ is decided before any samples values are taken.
+To determine if the $p$-value is small enough, we introduce a cut-off point, $c$, known as the \vocab{critical value}, which indicates the boundary of the region where values of $\ol{x}$ would be considered \emph{too far away} from 500 ml and therefore would be unlikely to occur. This region is known as the \vocab{critical/rejection region}. The probability corresponding to this critical region defines the upper threshold for classifying an event as unlikely or rare. This probability, $\a$, is called the \vocab{significance level} of the test. In general for a left tail test at the $\a$ level, the critical value $c$ is fixed so that $\P{\ol{X} \leq c} = \a$ and the critical region is $\ol{x} \leq c$. In practice, to avoid being influenced by sample readings, it is important that $\a$ is decided before any samples values are taken.
 
 \begin{figure}[H]\tikzsetnextfilename{488}
     \centering
@@ -77,13 +77,13 @@ To determine if the $p$-value is small enough, we introduce a cut-off point, $c$
     \caption{The critical region for $\a = 0.25$.}
 \end{figure}
 
-The hypothesis test then involves finding whether the sample value $\ol{x}$ lies in the critical region, or whether the $p$-value is smaller than the significance level $\a$. If $\ol{x}$ lies in the critical region or if the $p$-value $\leq \a$, then a decision is taken that $\ol{x}$ is too far away from the mean associated with \nullhyp{} to have come from a distribution with this mean, hence we reject \nullhyp{} in favour of \althyp. Else, if $\ol{x}$ lies outside the critical region or if the $p$-value $> \a$, we do not reject \nullhyp. For a significance level of $\a$, if the null hypotheses \nullhyp is rejected, then the result is said to be \vocab{significant at the $\a$ level}.
+The hypothesis test then involves finding whether the sample value $\ol{x}$ lies in the critical region, or whether the $p$-value is smaller than the significance level $\a$. If $\ol{x}$ lies in the critical region or if the $p$-value $\leq \a$, then a decision is taken that $\ol{x}$ is too far away from the mean associated with \nullhyp{} to have come from a distribution with this mean, hence we reject \nullhyp{} in favour of \althyp. Else, if $\ol{x}$ lies outside the critical region or if the $p$-value $> \a$, we do not reject \nullhyp. For a significance level of $\a$, if the null hypothesis \nullhyp is rejected, then the result is said to be \vocab{significant at the $\a$ level}.
 
 To complete our example, suppose that a significance level of 1\% is chosen. Since $\ol{X} \sim \Normal{500}{25/30}$, we can work out the critical value or the $p$-value.
 
-\paragraph{Critical Value Approach} Using G.C., \[\P{\ol{X} \leq c} = 0.01 \implies c = 497.88\] Since $\ol{x} = 498$ lies outside the critical region ($\ol{x} = 498 > 497.88 = c$), we do not reject \nullhyp{} and conclude there is insufficient evidence at the 1\% significance level than the mean volume of beverage in each bottle is lesser than 500 ml.
+\paragraph{Critical Value Approach.} Using G.C., \[\P{\ol{X} \leq c} = 0.01 \implies c = 497.88\] Since $\ol{x} = 498$ lies outside the critical region ($\ol{x} = 498 > 497.88 = c$), we do not reject \nullhyp{} and conclude there is insufficient evidence at the 1\% significance level than the mean volume of beverage in each bottle is lesser than 500 ml.
 
-\paragraph{$p$-Value Approach} The $p$-value of our sample is \[\P{\ol{X} \leq 498} = 0.14230.\] Since the $p$-value is greater than our significance level ($0.14230 > 0.01 = \a$), we do not reject \nullhyp{} and conclude there is insufficient evidence at the 1\% significance level than the mean volume of beverage in each bottle is lesser than 500 ml.
+\paragraph{$p$-Value Approach.} The $p$-value of our sample is \[\P{\ol{X} \leq 498} = 0.14230.\] Since the $p$-value is greater than our significance level ($0.14230 > 0.01 = \a$), we do not reject \nullhyp{} and conclude there is insufficient evidence at the 1\% significance level than the mean volume of beverage in each bottle is lesser than 500 ml.
 
 \section{Terminology}
 
@@ -213,9 +213,9 @@ Below is a general framework for performing a hypothesis test.
         \item State the null hypothesis, \nullhyp, and the alternative hypothesis, \althyp.
         \item State the level of significance, $\a$.
         \item Consider the distribution of the test statistic, assuming that \nullhyp{} is true.
-        \item {\sffamily \textbf{Critical Value Approach.}} Calculate the critical value based on $\a$, and the test statistic value based on the sample data. Reject \nullhyp{} if the value of the test statistic falls in the critical region. Otherwise, do not reject \nullhyp.
+        \item \bd{Critical Value Approach.} Calculate the critical value based on $\a$, and the test statistic value based on the sample data. Reject \nullhyp{} if the value of the test statistic falls in the critical region. Otherwise, do not reject \nullhyp.
 
-        {\sffamily \textbf{$p$-Value Approach.}} Calculate the $p$-value based on the sample data. Reject \nullhyp{} if the $p$-value $\leq \a$. Otherwise, do not reject \nullhyp.
+        \bd{$p$-Value Approach.} Calculate the $p$-value based on the sample data. Reject \nullhyp{} if the $p$-value $\leq \a$. Otherwise, do not reject \nullhyp.
         \item Write down the conclusion in the context of the question.
     \end{enumerate}
 \end{recipe}
@@ -270,7 +270,7 @@ In this section, we explore the distributions of the differences of population m
     If the data occurs in pairs, we say they are \vocab{paired}. Else, we say they are \vocab{unpaired}.
 \end{definition}
 
-\begin{example}
+\begin{example}[Paired and Unpaired Data]
     Suppose we measure the blood pressure of a number of hospital patients before and after some treatment aimed at reducing blood pressure. Two values will be recorded from each patient, hence the data is paired.
 
     However, if we measure the blood pressure of two groups of patients, one receiving treatment in Hospital A and the other in Hospital B, the data is unpaired.
@@ -327,7 +327,7 @@ With these assumptions, it can be shown that the test statistic $T$ given by \[T
     The heights (measured to the nearest cm) of a random sample of six policemen from country A were found to be \[176, \quad 180, \quad 179, \quad 181, \quad 183, \quad 179.\] The heights (measured to the nearest cm) of a random sample of eleven policemen from country B have the following data: \[\sum y = 1991, \quad \sum \bp{y - \ol{y}}^2 = 54.\] Test, at the 5\% level, the hypothesis that policemen from country A are shorter than policemen from country B. State any assumptions that are needed for this test.
 \end{sample}
 \begin{sampans}
-    Let $X_A$ and $X_B$ be the height in cm of a policeman from country A and B, with population mean $\m_A$ and $\m_B$ respectively. We assume that $X_A$ and $X_B$ have independent, normal distributions, and they share a common variance. Our hypotheses are \nullhyp: $\m_A - \m_B = 0$ and \althyp: $\m_A - \m_B < 0$. Under \nullhyp, our test statistic is \[T = \frac{\ol{X_A} - \ol{X_B}}{S_p \sqrt{\frac16 + \frac1{11}}} \sim \StudentT{15}.\] From the sample, \[\ol{x_A} = 179.67 \quad \tand \quad \ol{x_B} = \frac{1991}{11} = 81.\] The unbiased estimates of each sample variance is \[s_A^2 = 5.4667 \quad \tand \quad s_B^2 = \frac1{10} \sum \bp{y - \ol{y}}^2 = 5.4.\] Thus, the pooled variance is \[s_p^2 = \frac{(6-1)(5.4667) + (11-1)(5.4)}{\bp{6-1} + \bp{11-1}} = 5.4222.\] Using G.C., the $p$-value is 0.139, which is greater than our significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence to claim that policemen from country A are shorter than policemen from country B.
+    Let $X_A$ and $X_B$ be the height in cm of a policeman from country A and B, with population mean $\m_A$ and $\m_B$ respectively. We assume that $X_A$ and $X_B$ have independent, normal distributions, and they share a common variance. Our hypotheses are \nullhyp: $\m_A - \m_B = 0$ and \althyp: $\m_A - \m_B < 0$. Under \nullhyp, our test statistic is \[T = \frac{\ol{X_A} - \ol{X_B}}{S_p \sqrt{\frac16 + \frac1{11}}} \sim \StudentT{15}.\] From the sample, \[\ol{x_A} = 179.67 \quad \tand \quad \ol{x_B} = \frac{1991}{11} = 81.\] The unbiased estimates of each sample variance are \[s_A^2 = 5.4667 \quad \tand \quad s_B^2 = \frac1{10} \sum \bp{y - \ol{y}}^2 = 5.4.\] Thus, the pooled variance is \[s_p^2 = \frac{(6-1)(5.4667) + (11-1)(5.4)}{\bp{6-1} + \bp{11-1}} = 5.4222.\] Using G.C., the $p$-value is 0.139, which is greater than our significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence to claim that policemen from country A are shorter than policemen from country B.
 \end{sampans}
 
 \subsection{Paired Samples}
@@ -448,24 +448,22 @@ Observe that if $\c^2 = 0$, there is exact agreement between $O_i$ and $E_i$, so
 
 For the test, we define \nullhyp{} as our sample having the expected probabilities of the various categories. The alternative hypothesis \althyp{} will be that \nullhyp{} is incorrect, i.e. the sample does not have the expected probabilities of the various categories. We use the $\c^2$ test statistic, which generally follows a $\ChiSq{m-1-k}$ distribution, where $m$ is the number of categories being compared, and $k$ is the number of parameters estimated from the data.
 
-\begin{example}
+\begin{example}[Degrees of Freedom]
     Suppose we wish to test if a given set of data fits a Poisson model. If we are not given the mean rate $\l$, we can estimate it using $\ol{x} \approx \l$. In doing so, we lose one degree of freedom, so the resulting $\c^2$ test statistic will follow a $\ChiSq{m-2}$ distribution.
 \end{example}
 
-\begin{example}
-    To formalize our motivating example, we define \nullhyp: the die is fair, and \althyp: the die is not fair. We take a 2.5\% level of significance. Our test statistic is \[\c^2 = \sum \frac{(O_i - E_i)^2}{E_i} \sim \ChiSq{6-1} = \ChiSq{5}.\] From the sample, the individual contributions are given by
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{|r|c|c|c|c|c|c|}
-        \hline
-        Outcome & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
-        $O_i$ & 4 & 7 & 16 & 8 & 8 & 17 \\ \hline
-        $E_i$ & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
-        $(O_i-E_i)^2/E_i$ & 3.6 & 0.9 & 3.6 & 0.4 & 0.4 & 4.9 \\ \hline
-        \end{tabular}
-    \end{table}
-    The test statistic value is thus \[3.6 + 0.9 + 3.6 + 0.4 + 0.4 + 0.9 = 13.8.\] Using G.C., the $p$-value is \[\P{\c^2 \geq 13.8} = 0.016931.\] Since the $p$-value is less than our significance level of 2.5\%, we reject \nullhyp{} and conclude there is sufficient evidence at the 2.5\% significance level that the die is not fair.
-\end{example}
+We now present our motivating example formally. Define \nullhyp: the die is fair, and \althyp: the die is not fair. We take a 2.5\% level of significance. Our test statistic is \[\c^2 = \sum \frac{(O_i - E_i)^2}{E_i} \sim \ChiSq{6-1} = \ChiSq{5}.\] From the sample, the individual contributions are given by
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|r|c|c|c|c|c|c|}
+    \hline
+    Outcome & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+    $O_i$ & 4 & 7 & 16 & 8 & 8 & 17 \\ \hline
+    $E_i$ & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
+    $(O_i-E_i)^2/E_i$ & 3.6 & 0.9 & 3.6 & 0.4 & 0.4 & 4.9 \\ \hline
+    \end{tabular}
+\end{table}
+The test statistic value is thus \[3.6 + 0.9 + 3.6 + 0.4 + 0.4 + 0.9 = 13.8.\] Using G.C., the $p$-value is \[\P{\c^2 \geq 13.8} = 0.016931.\] Since the $p$-value is less than our significance level of 2.5\%, we reject \nullhyp{} and conclude there is sufficient evidence at the 2.5\% significance level that the die is not fair.
 
 \subsubsection{Small Expected Frequencies}
 
@@ -534,10 +532,10 @@ Suppose we record data concerning two categorical variables for a sample of indi
     \centering
     \begin{tabular}{|c|c|c|c|c|}
     \hline
-     & \textbf{Party A} & \textbf{Party B} & \textbf{Party C} & \textbf{Total} \\ \hline
-    \textbf{Male} & 313 & 124 & 391 & 828 \\ \hline
-    \textbf{Female} & 344 & 158 & 388 & 890 \\ \hline
-    \textbf{Total} &  657 & 282 & 779 & 1718 \\ \hline
+     & \bd{Party A} & \bd{Party B} & \bd{Party C} & \bd{Total} \\ \hline
+    \bd{Male} & 313 & 124 & 391 & 828 \\ \hline
+    \bd{Female} & 344 & 158 & 388 & 890 \\ \hline
+    \bd{Total} &  657 & 282 & 779 & 1718 \\ \hline
     \end{tabular}
 \end{table}
 
@@ -553,10 +551,10 @@ Doing this for all combination of party and gender, we get the following table o
     \centering
     \begin{tabular}{c|ccc|}
     \cline{2-4}
-    & \multicolumn{3}{c|}{\textbf{Expected Frequencies}} \\ \cline{2-4} 
-    & \multicolumn{1}{c|}{\textbf{Party A}} & \multicolumn{1}{c|}{\textbf{Party B}} & \textbf{Party C} \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Male}} & \multicolumn{1}{c|}{316.64} & \multicolumn{1}{c|}{135.91} & 375.44 \\ \hline
-    \multicolumn{1}{|c|}{\textbf{Female}} & \multicolumn{1}{c|}{340.36} & \multicolumn{1}{c|}{146.09} & 403.56 \\ \hline
+    & \multicolumn{3}{c|}{\bd{Expected Frequencies}} \\ \cline{2-4} 
+    & \multicolumn{1}{c|}{\bd{Party A}} & \multicolumn{1}{c|}{\bd{Party B}} & \bd{Party C} \\ \hline
+    \multicolumn{1}{|c|}{\bd{Male}} & \multicolumn{1}{c|}{316.64} & \multicolumn{1}{c|}{135.91} & 375.44 \\ \hline
+    \multicolumn{1}{|c|}{\bd{Female}} & \multicolumn{1}{c|}{340.36} & \multicolumn{1}{c|}{146.09} & 403.56 \\ \hline
     \end{tabular}
 \end{table}
 

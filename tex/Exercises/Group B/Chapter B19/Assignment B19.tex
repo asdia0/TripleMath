@@ -44,7 +44,7 @@
     \begin{ppart}
         Let $m'$ be the median of completion times for Method A. We perform a sign test at a 5\% significance level. Our hypothesis are \nullhyp: $m' = 8.3$, \althyp: $m' \neq 8.3$. Let $K_+$ be the number of completion times for Method A that takes longer than 8.3 minutes.
 
-        From the data, the signs are \[+, \, +, \, -, \, +, \, +, \, +, \, +, \, +, \, +, \, +, \, +, \, 0,\] so $k_+ = 10$. We discard the 0 and reduce our sample size to $n = 11$. Under \nullhyp, $K_+ \sim \Binom{11}{1/2}$, so the $p$-value is $2\P{K_+ \geq 10} = 0.0117$, which is less than our 5\% significance level. Thus, we reject \nullhyp{} and conclude there is sufficient evidence to claim at a 5\% significance level that the median time for Method A differs from 8.3 minutes.
+        From the data, the signs are \[+, \quad +, \quad -, \quad +, \quad +, \quad +, \quad +, \quad +, \quad +, \quad +, \quad +, \quad 0,\] so $k_+ = 10$. We discard the 0 and reduce our sample size to $n = 11$. Under \nullhyp, $K_+ \sim \Binom{11}{1/2}$, so the $p$-value is $2\P{K_+ \geq 10} = 0.0117$, which is less than our 5\% significance level. Thus, we reject \nullhyp{} and conclude there is sufficient evidence to claim at a 5\% significance level that the median time for Method A differs from 8.3 minutes.
     \end{ppart}
 \end{solution}
 
@@ -68,5 +68,5 @@
 \begin{solution}
     Consider the difference ``Dominant'' $-$ 3$\times$``Non-dominant'', and let $m$ be its median. Our hypotheses are \nullhyp: $m = 0$ and \althyp: $m < 0$. We perform a sign test at a 1\% significance level. Let $K_+$ be the number of positive differences.
 
-    From the data, the signs of the differences are \[-, \, -, \, 0, \, -, \, -, \, -, \, +, \, -, \, -, \, -, \, -, \, +, \, +, \, -,\] so $k_+ = 3$. We also discard the 0 and reduce our sample size to $n = 13$. Under \nullhyp, $K_+ \sim \Binom{13}{1/2}$, so the $p$-value is $\P{K_+ \leq 3} = 0.0461$, which is greater than our 1\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence to claim at the 1\% significance level that the students are able to write, on vaerage, at least 3 times as fast using their dominant hand as compared to their non-dominant hand.
+    From the data, the signs of the differences are \[-, \quad -, \quad 0, \quad -, \quad -, \quad -, \quad +, \quad -, \quad -, \quad -, \quad -, \quad +, \quad +, \quad -,\] so $k_+ = 3$. We also discard the 0 and reduce our sample size to $n = 13$. Under \nullhyp, $K_+ \sim \Binom{13}{1/2}$, so the $p$-value is $\P{K_+ \leq 3} = 0.0461$, which is greater than our 1\% significance level. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence to claim at the 1\% significance level that the students are able to write, on vaerage, at least 3 times as fast using their dominant hand as compared to their non-dominant hand.
 \end{solution}

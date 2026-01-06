@@ -250,7 +250,7 @@ Thus, the notation $f_{xy}$ means that we first partially differentiate with res
 Notice in the above example that $f_{xy} = f_{yx}$. This symmetry of second partial derivatives is known as Clairaut's theorem.
 
 \begin{theorem}[Clairaut's Theorem]
-    If $f_{xy}$ and $f_{yx}$ are both continuous, then $f_{xy} = f_{yx}$
+    If $f_{xy}$ and $f_{yx}$ are both continuous, then $f_{xy} = f_{yx}$.
 \end{theorem}
 
 \subsection{Multivariate Chain Rule}\label{subsec:Multivariate-Chain-Rule}
@@ -335,7 +335,7 @@ We say that $\nabla f(a,b)$ is the \vocab{direction of steepest ascent} at $(a, 
 
 Consider the unit circle, which has equation \[x^2 + y^2 = r^2.\] Previously, we learnt that to find $\derx{y}{x}$, we can simply differentiate term by term, treating $y$ as a function of $x$ and using the chain rule \[\der{}{x} g(y) = \der{}{y} g(y) \cdot \der{y}{x}.\] Using our example of the unit circle, we get \[2x + 2y \der{y}{x} = 0 \implies \der{y}{x} = -\frac{y}{x}.\] While morally true, this approach to implicit differentiate is not entirely rigorous. For a more formal justification, we turn to partial derivatives.
 
-Going back to our example of the unit circle, if we move all terms to one side of the equation, we get \[x^2 + y^2 - r^2 = 0.\] Now, observe that the LHS is simply a function of $x$ and $y$, i.e. \[f(x, y) = x^2 + y^2 - r^2.\] Hence, we can define $y$ implicitly as a function of $x$ that satisfies \[f(x, y) = 0.\] If we differentiate the above equation with respect to $x$, by the multivariate chain rule, we get \[\der{f}{x} = \pder{f}{x} \der{x}{x} + \pder{f}{y} \der{y}{x} = 0.\] Clearly, $\derx{x}{x} = 1$. Rearranging, we get \[\der{y}{x} = -\frac{f_x(x, y)}{f_y(x, y)}.\] Since \[f_x(x, y) = 2x, \quad \tand \quad f_y(x, y) = 2y,\] we get \[\der{y}{x} = -\frac{2x}{2y} = -\frac{x}{y}\] as expected. 
+Going back to our example of the unit circle, if we move all terms to one side of the equation, we get \[x^2 + y^2 - r^2 = 0.\] Now, observe that the LHS is simply a function of $x$ and $y$, i.e. \[f(x, y) = x^2 + y^2 - r^2.\] Hence, we can define $y$ implicitly as a function of $x$ that satisfies \[f(x, y) = 0.\] If we differentiate the above equation with respect to $x$, by the multivariate chain rule, we get \[\der{f}{x} = \pder{f}{x} \der{x}{x} + \pder{f}{y} \der{y}{x} = 0.\] Clearly, $\derx{x}{x} = 1$. Rearranging, we get \[\der{y}{x} = -\frac{f_x(x, y)}{f_y(x, y)}.\] Since \[f_x(x, y) = 2x \quad \tand \quad f_y(x, y) = 2y,\] we get \[\der{y}{x} = -\frac{2x}{2y} = -\frac{x}{y}\] as expected. 
 
 More generally,
 \begin{proposition}[Implicit Differentiation for Univariate Functions]

@@ -62,6 +62,7 @@
                 \end{axis}
             \end{tikzpicture}
         \end{center}
+        \clearpage
         \item \begin{center}\tikzsetnextfilename{307}
             \begin{tikzpicture}[trim axis left, trim axis right]
                 \pgfdeclarelayer{pre main}
@@ -262,10 +263,10 @@
         \[\area = -\int_{-1}^1 \bp{x^3 + 2x^2 - x - 2} \d x = 2.67 \units[2] \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
-        Note that $y = x^2 \implies x = \sqrt{y}$. \[\area = \int_0^4 \sqrt{y} \d y = 5.33 \units[2] \tosf{3}.\]
+        Since $x \geq 0$, we have $x = \sqrt{y}$. \[\area = \int_0^4 \sqrt{y} \d y = 5.33 \units[2] \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
-        Note that $y = \e^{2x} \implies x = \frac12 \ln y$. Also, when $x = 0$, we have $y = 1$. Further, when $x = 2$, we have $y = \e^4$. Thus, \[\area = \int_0^{\e^4} \frac12 \ln y \d y = 82.4 \units[2] \tosf{3}.\]
+        Since $y = \e^{2x}$, we have $x = \ln{y}/2$. Also, when $x = 0$, we have $y = 1$. Further, when $x = 2$, we have $y = \e^4$. Thus, \[\area = \int_0^{\e^4} \frac12 \ln y \d y = 82.4 \units[2] \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
         Note that when $x = \pi/2$, we have $y = 2$. Thus, \[\area = 2 \int_0^2 \arcsin \frac{y}2 \d y = 2.28 \units[2] \tosf{3}.\]
@@ -318,7 +319,6 @@
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Write down the integral for the volume of the solid generated when the shaded region is rotated about the $x$-axis through $2\pi$ for questions 1(e), (f) and (h) using the shell method and use the GC to evaluate it.
@@ -328,13 +328,13 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Note that $y = x^2 \implies x = \sqrt{y}$ and $y = 8 - x^2 \implies x = \sqrt{8 - y}$ for $x > 0$. Thus, \[\volume = 2\bp{2\pi \int_0^4 \sqrt{y}\cdot y \d y + 2\pi \int_4^8 \sqrt{8-y}\cdot y \d y} = 536 \units[3] \tosf{3}.\]
+            Since $x \geq 0$, we obtain $x = \sqrt{y}$ from $y = x^2$ and $x = \sqrt{8 - y}$ from $y = 8 - x^2$. Thus, \[\volume = 2\bp{2\pi \int_0^4 \sqrt{y}\cdot y \d y + 2\pi \int_4^8 \sqrt{8-y}\cdot y \d y} = 536 \units[3] \tosf{3}.\]
         \end{psubpart}
         \begin{psubpart}
-            Note that $y = 3x \implies x = y/3$ and $y = 4 - x^2 \implies x = \sqrt{4-y}$ for $x > 0$. Thus, \[\volume = 2\pi\int_0^3 \frac13 y \cdot y \d y + 2\pi\int_3^4 \sqrt{4-y}\cdot y \d y = 33.1 \units[3] \tosf{3}.\]
+            Since $x \geq 0$, we obtain $x = \sqrt{4-y}$ from $y = 4 - x^2$ and $x = y/3$ from $y = 3x$. Thus, \[\volume = 2\pi\int_0^3 \frac13 y \cdot y \d y + 2\pi\int_3^4 \sqrt{4-y}\cdot y \d y = 33.1 \units[3] \tosf{3}.\]
         \end{psubpart}
         \begin{psubpart}
-            Note that $y = \sqrt{x} \implies x = y^2$ and $y = x^2 \implies x = \sqrt{y}$ for $x > 0$. Thus, \[\volume = 2\pi\int_0^1 \bp{\sqrt{y} - y^2}y \d y = 0.942 \units[3] \tosf{3}.\]
+            Since $x \geq 0$, we obtain $x = \sqrt{y}$ from $y = x^2$ and $x = y^2$ from $y = \sqrt{x}$. Thus, \[\volume = 2\pi\int_0^1 \bp{\sqrt{y} - y^2}y \d y = 0.942 \units[3] \tosf{3}.\]
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -354,7 +354,7 @@
     Calculate the area enclosed by the petals of the curve $r = \sin2\t$ where $r \geq 0$.
 \end{problem}
 \begin{solution}
-    We have $\sin2\t \geq 0 \implies r \in \left[0, \frac\pi2\right] \cup \left[\pi, \frac{3\pi}2\right]$. Thus, \[\area = 2 \cdot \frac12 \int_0^{\pi/2} \sin^2 2\t \d \t = \int_0^{\pi/2} \frac{1 - \cos 4\t}{2} \d \t = \frac12 \evalint{\t - \frac{\sin 4\t}{4}}0{\pi/2}= \frac{\pi}4 \units[2].\]
+    For $\sin2\t \geq 0$, we have $\t \in \bs{0, \pi/2} \cup \bs{\pi, 3\pi/2}$. By symmetry, the area enclosed by the curve when $0 \leq \t \leq \pi/2$ is the same as that when $\pi \leq \t \leq 3\pi/2$. Thus, \[\area = 2 \cdot \frac12 \int_0^{\pi/2} \sin^2 2\t \d \t = \int_0^{\pi/2} \frac{1 - \cos 4\t}{2} \d \t = \frac12 \evalint{\t - \frac{\sin 4\t}{4}}0{\pi/2}= \frac{\pi}4 \units[2].\]
 \end{solution}
 
 \begin{problem}
@@ -406,20 +406,19 @@
     \end{center}
 
     \begin{ppart}
-        Consider the intersections between $y = x^2$ and $x^2 + y^2 = 12$. We have \[x^2 + \bp{x^2}^2 = 12,\] so \[(x^2 - 3)(x^2 + 4) = 0.\] Hence, the two curves intersect at $x = -\sqrt3$ and $x = \sqrt3$. Also note that $x^2 + y^2 = 12 \implies y = \sqrt{12 - x^2}$ for $y > 0$. Thus, \[\area = 2\int_0^{\sqrt3} \bp{\sqrt{12-x^2} - x^2} \d x = 8.02 \units[2] \tosf{3}.\]
+        Consider the intersections between $y = x^2$ and $x^2 + y^2 = 12$. We have $x^2 + \bp{x^2}^2 = 12$, so $(x^2 - 3)(x^2 + 4) = 0$. Hence, the two curves intersect at $x = -\sqrt3$ and $x = \sqrt3$. Also note that from $x^2 + y^2 = 12$, we have $y = \sqrt{12 - x^2}$ since $y \geq 0$. Thus, \[\area = 2\int_0^{\sqrt3} \bp{\sqrt{12-x^2} - x^2} \d x = 8.02 \units[2] \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
-        Note that $x^2 + y^2 = 12 \implies y^2 = 12 - x^2$.
+        We have $y^2 = 12 - x^2$.
         \begin{align*}
             \volume &= 2\pi\int_0^{\sqrt3} \bs{\bp{12 - x^2} - \bp{x^2}^2} \d x = 2\pi \evalint{12x - \frac{x^3}3- \frac{x^5}5}{0}{\sqrt3} = \frac{92\sqrt{3}\pi}5 \units[3].
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Note that when the curves intersect at $x = \sqrt{3}$, we have $y = 3$. Furthermore, when $x = 0$, we have $y = \sqrt{12}$. Also note that $x^2 + y^2 = 12 \implies x^2 = 12 - y^2$. \[\volume = \pi\int_0^{3} y \d y + \pi \int_{3}^{\sqrt{12}} \bp{12 - y^2} \d y = \pi\bp{16\sqrt{3} - \frac{45}2} \units[3].\]
+        Note that when the curves intersect at $x = \sqrt{3}$, we have $y = 3$. Furthermore, when $x = 0$, we have $y = \sqrt{12}$. Also, $x^2 = 12 - y^2$. \[\volume = \pi\int_0^{3} y \d y + \pi \int_{3}^{\sqrt{12}} \bp{12 - y^2} \d y = \pi\bp{16\sqrt{3} - \frac{45}2} \units[3].\]
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{center}\tikzsetnextfilename{314}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -468,7 +467,7 @@
     \end{center}
 
     \begin{enumerate}
-        \item The graph of $y = 2^x$, for $0 \leq x \leq 1$ is shown in the diagram. Rectangles, each of width $\frac1n$, are drawn under the curve. Given that $\sum\limits_{k = 0}^n x^k = \frac{1-x^{n+1}}{1-x}$, show that the total area $A$ of all $n$ rectangles is given by $\frac1n \bp{\frac1{2^{\frac1n} - 1}}$.
+        \item The graph of $y = 2^x$, for $0 \leq x \leq 1$ is shown in the diagram. Rectangles, each of width $1/n$, are drawn under the curve. Given that \[\sum\limits_{k = 0}^n x^k = \frac{1-x^{n+1}}{1-x},\] show that the total area $A$ of all $n$ rectangles is given by \[\frac1n \bp{\frac1{2^{1/n} - 1}}.\]
         \item Find the limit of $A$ in exact form as $n \to \infty$.
     \end{enumerate}
 
@@ -514,9 +513,10 @@
     \begin{enumerate}
         \item Calculate the area of the region $R$ enclosed by the arc $OA$, the $x$-axis and the line $x = \pi/3$, giving your answer in an exact form.
         \item The region $S$ is enclosed by the arc $OA$, the $y$-axis and the line $y = \sqrt3$. Find the volume of the solid of revolution formed when $S$ is rotated through 360$\deg$ about the $x$-axis, giving your answer in an exact form.
-        \item Find $\int_0^{\sqrt3} \arctan y \d y$ in exact form.
+        \item Find \[\int_0^{\sqrt3} \arctan y \d y\] in exact form.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{center}\tikzsetnextfilename{315}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -570,7 +570,7 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Observe that $\int_0^{\sqrt3} \arctan y \d y = [S] = [R \cup S] - [R] = (\pi/3) \cdot \sqrt{3} - \ln 2$.
+        Observe that \[\int_0^{\sqrt3} \arctan y \d y = [S] = [R \cup S] - [R] = (\pi/3) \cdot \sqrt{3} - \ln 2.\]
     \end{ppart}
 \end{solution}
 
@@ -578,13 +578,13 @@
     A portion of the curve $ay = x^2$, where $a$ is a positive constant, is rotated about the vertical axis $Oy$ to form the curved surface of an open bowl. The bowl has a horizontal circular base of radius $r$ and a horizontal circular rim of radius $3r$.
 
     \begin{enumerate}
-        \item Prove that the depth of the bowl is $\frac{8r^2}a$.
+        \item Prove that the depth of the bowl is $8r^2/a$.
         \item Find the volume of the bowl in terms of $r$ and $a$.
-        \item Given that the volume of the bowl is $\frac{\pi a^3}{10}$, find the depth of the bowl in terms of $a$ only.
+        \item Given that the volume of the bowl is $\pi a^3/10$, find the depth of the bowl in terms of $a$ only.
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that $ay = x^2 \implies y = \frac{x^2}a$.
+    Since $ay = x^2$, we have $y = x^2/a$.
     \begin{center}\tikzsetnextfilename{316}
         \begin{tikzpicture}[trim axis left, trim axis right]
             \begin{axis}[
@@ -627,7 +627,7 @@
         \[\volume = \pi\int_{r^2/a}^{9r^2/a} ay \d y = \pi \evalint{\frac{a}2 y^2}{r^2/a}{9r^2/a} = \frac{a\pi}2 \cdot \frac{80r^4}{a^2} = \frac{40\pi r^4}{a} \units[3].\]
     \end{ppart}
     \begin{ppart}
-        \[\frac{40\pi r^4}{a} = \frac{\pi a^3}{10} \implies 400r^4 = a^4 \implies 20r^2 = a^2 \implies r^2 = \frac1{20} a^2.\] Hence, the depth of the bowl is \[\frac{8}{a} \bp{\frac1{20} a^2} = \frac25 a \units.\]
+        We are given that \[\frac{40\pi r^4}{a} = \frac{\pi a^3}{10},\] so $r^2 = a^2/20$. Hence, the depth of the bowl is \[\frac{8}{a} \bp{\frac1{20} a^2} = \frac25 a \units.\]
     \end{ppart}
 \end{solution}
 
@@ -673,7 +673,7 @@
 \begin{solution}
     Clearly, $C: y = 1-x^2$.
 
-    Note that $3 - x^2 = 2 \implies x = \pm 1$, whence $x = 1$ since $x > 0$.
+    When $y = 2$, we have $3 - x^2 = 2$, so $x = 1$ (since $x > 0$).
     \begin{align*}
         \volume &= \pi\int_0^1 \bp{1 - x^2}^2 \d x\\
         &= \pi\int_0^1 \bp{1 - 2x^2 + x^4} \d x\\
@@ -727,29 +727,29 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Consider the intersections between $(y+5)^2 = x-3$ and $y = x-10$. \[(y+5)^2 = (x-5)^2 = x-3 \implies  x^2 - 11x + 28 = (x-4)(x-7) = 0.\] Hence, $x = 4$ and $x = 7$, whence $y = -6$ and $y = -3$. Thus, the two curves intersect at $(4, -6)$ and $(7, -3)$.
+        Consider the intersections between $(y+5)^2 = x-3$ and $y = x-10$. We have $(x-5)^2 = x-3$, so $x^2 - 11x + 28 = (x-4)(x-7) = 0$. Hence, $x = 4$ and $x = 7$, which correspond to $y = -6$ and $y = -3$ respectively. Thus, the two curves intersect at $(4, -6)$ and $(7, -3)$.
 
-        Note that $(y+5)^2 = x - 3 \implies x = 3 + (y+5)^2$ and $y = x - 10 \implies x = y + 10$. \[\volume = \pi \int_{-6}^{-3} \bs{\bp{y+10}^2 - \bp{3 + (y+5)^2}^2} \d y = 130 \units[3] \tosf{3}.\]
+        From $(y+5)^2 = x - 3$, we have $x = 3 + (y+5)^2$. From $y = x - 10$, we have $x = y + 10$. \[\volume = \pi \int_{-6}^{-3} \bs{\bp{y+10}^2 - \bp{3 + (y+5)^2}^2} \d y = 130 \units[3] \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
-        Note that
-        \[(y+5)^2 = x - 3 \implies \begin{cases}
-                y = -5+\sqrt{x-3},\qquad y \geq -5\\
-                y = -5-\sqrt{x-3}, \qquad y < -5
+        From $(y+5)^2 = x - 3$, we have
+        \[y = \begin{cases}
+                -5+\sqrt{x-3},\qquad y \geq -5,\\
+                -5-\sqrt{x-3}, \qquad y < -5.
         \end{cases}\] Thus,
         \begin{align*}
             \volume &= \pi\int_3^4 \bs{\bp{-5-\sqrt{x-3}}^2 - \bp{-5+\sqrt{x+3}}^2} \d x\\
-            &\quad + \pi\int_4^7 \bs{\bp{x-10}^2 - \bp{-5+\sqrt{x-3}}^2} \d x = 127 \units[3] \tosf{3}.
+            &\hspace{2em} + \pi\int_4^7 \bs{\bp{x-10}^2 - \bp{-5+\sqrt{x-3}}^2} \d x\\
+            &= 127 \units[3] \tosf{3}.
         \end{align*}
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The curve $C$ is defined by the following pair of parametric equations. \[x = t - \frac1{t^2}, \, y = 2 - t^2,\qquad t > 0.\]
+    The curve $C$ is defined by the following pair of parametric equations. \[x = t - \frac1{t^2}, \quad y = 2 - t^2, \qquad t > 0.\]
 
     Find the area of the finite region $R$ enclosed by the curve $C$ and the axes as well as the volume of solid obtained when $R$ is rotated about the $x$-axis through 4 right-angles.
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{center}\tikzsetnextfilename{319}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -803,7 +803,7 @@
     Find the area enclosed by the ellipse $x = a \cos t, \, y = b \sin t$, where $a$ and $b$ are positive constants. Find also the volume of solid obtained when the region enclosed by the ellipse is rotated through $\pi$ radians about the $x$-axis.
 \end{problem}
 \begin{solution}
-    By symmetry, we only need to consider the area of the ellipse in the first quadrant. Note that $x = 0 \implies t = \pi/2$ and $x = a \implies t = 0$. Hence,
+    By symmetry, we only need to consider the area of the ellipse in the first quadrant. When $x = 0$, we have $t = \pi/2$, and when $x = a$, we have $t = 0$. Hence,
     
     \begin{align*}
         \area &= 4\int_0^a y \d x\\
@@ -828,10 +828,10 @@
 \end{solution}
 
 \begin{problem}
-    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \frac\pi2$. Show, using polar coordinates, that the area $A$ of the region enclosed by this part of the curve is given by \[A = \frac{25b^2}2 \int_0^{\frac\pi2} \frac{\sin^4\t\cos^4\t}{(\cos^5\t + \sin^5\t)^2} \d \t.\] By differentiating $\frac1{1 + \tan^5\t}$ with respect to $\t$, or otherwise, find the exact value of $A$ in terms of $b$.
+    Find the polar equation of the curve $C$ with equation $x^5 + y^5 = 5bx^2y^2$, where $b$ is a positive constant. Sketch the part of the curve $C$ where $0 \leq \t \leq \pi/2$. Show, using polar coordinates, that the area $A$ of the region enclosed by this part of the curve is given by \[A = \frac{25b^2}2 \int_0^{\frac\pi2} \frac{\sin^4\t\cos^4\t}{(\cos^5\t + \sin^5\t)^2} \d \t.\] By differentiating $1/\bp{1 + \tan^5\t}$ with respect to $\t$, or otherwise, find the exact value of $A$ in terms of $b$.
 \end{problem}
 \begin{solution}
-    Substituting $x = r\cos\t$ and $y = r\sin \t$, we have $(r\cos\t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2$. Dividing throughout by $r^4$, we get \[r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t \sin^2\t \implies r = \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}.\]
+    Substituting $x = r\cos\t$ and $y = r\sin \t$, we have $(r\cos\t)^5 + (r\sin\t)^5 = 5b(r\cos\t)^2(r\sin\t)^2$. Dividing throughout by $r^4$, we get $r\bp{\cos^5\t + \sin^5\t} = 5b\cos^2\t \sin^2\t$, so \[r = \frac{5b\cos^2\t \sin^2\t}{\cos^5\t + \sin^5\t}.\]
 
     \begin{center}\tikzsetnextfilename{320}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -872,7 +872,7 @@
 \begin{solution}
     We have $x = \e^\t \cos \t$ and $y = \e^\t \sin \t$. Thus, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{e^\t \cos\t + e^\t\sin\t}{-e^\t \sin\t + e^\t \cos\t} = \frac{\cos\t + \sin\t}{\cos\t - \sin\t}.\] Hence, \[\evalder{\der{y}{x}}{\t = \pi/2} = \frac{\cos(\pi/2) + \sin(\pi/2) }{\cos(\pi/2) - \sin(\pi/2) } = -1.\]
 
-    When $\t = \pi/2$, we have $x = 0$ and $y = \e^{\pi/2}$. Hence, the tangent is given by \[y - e^{\pi/2} = -(x - 0) \implies y = -x + e^{\pi/2}.\] Thus, \[[R] = \frac12 \bp{\e^{\pi/2}}\bp{\e^{\pi/2}} - \frac12 \int_0^{\pi/2} \bp{e^\t}^2 \d \t = \frac{\e^\pi}2 - \frac12 \evalint{\frac{\e^{2\t}}2}0{\pi/2} = \frac{e^\pi + 1}4 \units[2].\]
+    When $\t = \pi/2$, we have $x = 0$ and $y = \e^{\pi/2}$. Hence, the tangent is given by $y - e^{\pi/2} = -(x - 0)$, which simplifies to $y = -x + e^{\pi/2}$. Thus, \[[R] = \frac12 \bp{\e^{\pi/2}}\bp{\e^{\pi/2}} - \frac12 \int_0^{\pi/2} \bp{e^\t}^2 \d \t = \frac{\e^\pi}2 - \frac12 \evalint{\frac{\e^{2\t}}2}0{\pi/2} = \frac{e^\pi + 1}4 \units[2].\]
 \end{solution}
 
 \begin{problem}

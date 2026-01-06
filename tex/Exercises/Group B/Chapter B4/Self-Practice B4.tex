@@ -3,14 +3,14 @@
 \begin{problem}
     Differentiate each of the following with respect to $x$, simplifying your answer.
     \begin{enumerate}
-        \item $\frac{x^2 - 2x}{(x+2)^2}$,
+        \item $\displaystyle \frac{x^2 - 2x}{(x+2)^2}$,
         \item $x\bp{x^3 + 1}^{1/3}$,
         \item $\cot x \csc x$,
         \item $\bp{\sin^3 x} (\sin 3x)$,
         \item $\arctan \sqrt x$,
         \item $\arcsin \sqrt{1 - x^2}$,
-        \item $y = \frac{\e^{2x}}{1 + \e^x}$,
-        \item $y = \ln \frac4{x^2}$,
+        \item $\displaystyle y = \frac{\e^{2x}}{1 + \e^x}$,
+        \item $y = \ln{4/x^2}$,
         \item $y = 3^x$.
     \end{enumerate}
 \end{problem}
@@ -50,12 +50,12 @@
         Note that $y = \ln{4/x^2} = \ln 4 - 2\ln x$. Hence, \[\der{y}{x} = -\frac{2}{x}.\]
     \end{ppart}
     \begin{ppart}
-        Taking logarithms, we get $\ln y = x \ln 3$. Implicitly differentiating with respect to $x$, we obtain \[\frac1y \der{y}{x} = \ln 3 \implies \der{y}{x} = y \ln 3 = 3^x \ln 3.\]
+        Note that $y = \exp{x \ln 3}$. Thus, \[\der{y}{x} = \e^{x \ln 3} \ln 3 = 3^x \ln 3.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    Find an expression for $\der{y}{x}$ in terms of $x$ and $y$.
+    Find an expression for $\derx{y}{x}$ in terms of $x$ and $y$.
     \begin{enumerate}
         \item $x^3 + y^3 + 3xy -1 = 0$,
         \item $y^x = x$.
@@ -63,20 +63,21 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Implicitly differentiating with respect to $x$, we obtain \[3x^2 + 3y^2 \der{y}{x} + 3x \der{y}{x} + 3y = 0 \implies \der{y}{x} = -\frac{x^2 + y}{x + y^2}.\]
+        Implicitly differentiating with respect to $x$, we obtain \[3x^2 + 3y^2 \der{y}{x} + 3x \der{y}{x} + 3y = 0,\] so \[\der{y}{x} = -\frac{x^2 + y}{x + y^2}.\]
     \end{ppart}
     \begin{ppart}
-        Taking logarithms, we have $x \ln y = \ln x$. Implicitly differentiating with respect to $x$, \[x \bp{\frac1y \der{y}{x}} + \ln y = \frac1x \implies \der{y}{x} = \bp{\frac1x - \ln y} \frac{y}{x} = \frac{y \bp{1 - \ln x}}{x^2}.\]
+        Taking logarithms, we have $x \ln y = \ln x$. Implicitly differentiating with respect to $x$, \[x \bp{\frac1y \der{y}{x}} + \ln y = \frac1x,\] so \[\der{y}{x} = \bp{\frac1x - \ln y} \frac{y}{x} = \frac{y \bp{1 - \ln x}}{x^2}.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    It is given that, at any point on the graph of $y = f(x)$, $\der{y}{x} = \sqrt{1 + y^3}$.
+    It is given that, at any point on the graph of $y = f(x)$, \[\der{y}{x} = \sqrt{1 + y^3}.\]
     \begin{enumerate}
-        \item Show that $\der[2]{y}{x} = \frac32 y^2$.
-        \item Find the expressions for $\der[3]{y}{x}$ and $\der[4]{y}{x}$ in terms of $y$ and $\der{y}{x}$.
+        \item Show that \[\der[2]{y}{x} = \frac32 y^2.\]
+        \item Find the expressions for $\derx[3]{y}{x}$ and $\derx[4]{y}{x}$ in terms of $y$ and $\derx{y}{x}$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         Differentiating with respect to $x$, \[\der[2]{y}{x} = \frac{3y^2}{2\sqrt{1 + y^3}} \der{y}{x} = \frac{3y^2}{2\sqrt{1 + y^3}} \bp{\sqrt{1 + y^3}} = \frac{3y^2}{2}.\]
@@ -85,7 +86,6 @@
         Differentiating once more with respect to $x$, we see that \[\der[3]{y}{x} = \frac{3}{2} \bp{2y} \der{y}{x} = 3y \der{y}{x}.\] Differentiating again, we have \[\der[4]{y}{x} = 3y \der[2]{y}{x} + 3\bp{\der{y}{x}}^2 = 3y\bp{\frac32 y^2} + 3\bp{\der{y}{x}}^2 = \frac{9y^3}{2} + 3\bp{\der{y}{x}}^2.\]
     \end{ppart}
 \end{solution}
-\clearpage
 
 \begin{problem}
     Given that $y = \e^{\sqrt{1 + x}}$, show that \[4(1 + x) \der[2]{y}{x} + 2\der{y}{x} = y.\]
@@ -105,18 +105,17 @@
         Note that \[\der{x}{t} = \frac{\bp{1 + t} - t}{\bp{1 + t}^2} = \frac1{(1 + t)^2} \quad \tand \quad \der{y}{t} = -\frac{\sin t}{\cos t} = -\tan t.\] Thus, \[\der{y}{x} = \frac{\derx{y}{t}}{\derx{x}{t}} = \frac{-\tan t}{(1+t)^{-2}} = -\bp{1 + t}^2 \tan t.\]
     \end{ppart}
     \begin{ppart}
-        Implicitly differentiating with respect to $x$, \[\frac{y'}{\sqrt{1 - y^2}} + x \e^y y' + \e^y = 3 \implies \der{y}{x} = \frac{3 - \e^y}{(1 - y^2)^{-1/2} + x\e^y} = \frac{\bp{3 - \e^y} \sqrt{1 - y^2}}{1 + x\e^y \sqrt{1 - y^2}}.\]
+        Implicitly differentiating with respect to $x$, \[\frac{y'}{\sqrt{1 - y^2}} + x \e^y y' + \e^y = 3.\] Solving for $\derx{y}{x}$, we have \[\der{y}{x} = \frac{3 - \e^y}{(1 - y^2)^{-1/2} + x\e^y} = \frac{\bp{3 - \e^y} \sqrt{1 - y^2}}{1 + x\e^y \sqrt{1 - y^2}}.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Differentiate $\frac{x - 2x^3}{\ln x}$ with respect to $x$.
-        \item Given that $0 < x < \frac\pi2$, show that $\der{}{x} \arcsin{\cos x} = k$, where $k$ is a real constant to be determined.
-        \item Given that $\e^{xy} = \bp{1 + y^2}^2$, find $\der{y}{x}$ in terms of $x$ and $y$, simplifying your answer.
+        \item Differentiate \[\frac{x - 2x^3}{\ln x}\] with respect to $x$.
+        \item Given that $0 < x < \pi/2$, show that \[\der{}{x} \arcsin{\cos x} = k,\] where $k$ is a real constant to be determined.
+        \item Given that $\e^{xy} = \bp{1 + y^2}^2$, find $\derx{y}{x}$ in terms of $x$ and $y$, simplifying your answer.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         We have \[\der{}{x} \frac{x - 2x^3}{\ln x} = \frac{\ln x \bp{1 - 6x^2} - \bp{1/x} \bp{x - 2x^3}}{\ln^2 x} = \frac{\bp{1 - 6x^2}\ln x- 1 + 2x^2}{\ln^2 x}.\]
@@ -125,12 +124,12 @@
         We have \[\der{}{x} \arcsin \cos x = -\frac{\sin x}{\sqrt{1 - \cos^2 x}} = -\frac{\sin x}{\sin x} = -1.\]
     \end{ppart}
     \begin{ppart}
-        Taking logarithms, we have \[xy = 2 \ln{1 + y^2}.\] Implicitly differentiating with respect to $x$, \[xy' + y = 2\bp{\frac{2y \cdot y'}{1 + y^2}} \implies \der{y}{x} = \frac{y}{\frac{4y}{1+y^2} - x} = \frac{y\bp{1 + y^2}}{4y - x\bp{1 + y^2}}.\]
+        Taking logarithms, we have \[xy = 2 \ln{1 + y^2}.\] Implicitly differentiating with respect to $x$, \[xy' + y = 2\bp{\frac{2y \cdot y'}{1 + y^2}},\] so \[\der{y}{x} = \frac{y}{4y/(1+y^2) - x} = \frac{y\bp{1 + y^2}}{4y - x\bp{1 + y^2}}.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    It is given that $y = \ln \sin{\frac\pi4 + x}$. Show that \[\der[2]{y}{x} + \bp{\der{y}{x}}^2 + 1 = 0.\]
+    It is given that $y = \ln \sin{\pi/4 + x}$. Show that \[\der[2]{y}{x} + \bp{\der{y}{x}}^2 + 1 = 0.\]
 \end{problem}
 \begin{solution}
     It suffices to show that \[\der[2]{y}{u} + \bp{\der{y}{u}}^2 + 1 = 0,\] where $u = \pi/4 + x$. Indeed, we have $y = \ln \sin u$, so \[\der{y}{u} = \frac{\cos u}{\sin u} = \cot u \quad \tand \quad \der[2]{y}{u} = -\csc^2 u,\] so \[\der[2]{y}{u} + \bp{\der{y}{u}}^2 + 1 = -\csc^2 u + \cot^2 u + 1 = -\csc^2 u + \csc^2 u = 0.\]
@@ -140,22 +139,22 @@
     \begin{enumerate}
         \item Differentiate the following with respect to $x$, giving your answers as single fractions.
         \begin{enumerate}
-            \item $\ln \frac{x}{\sqrt{1 - 2x}}$,
-            \item $\frac1{\arccos{x^2}}$.
+            \item $\displaystyle \ln \frac{x}{\sqrt{1 - 2x}}$,
+            \item $\displaystyle \frac1{\arccos{x^2}}$.
         \end{enumerate}
-        \item The variables $x$ and $y$ are related by \[\e^{xy^2} = y \bp{x^2 + 2\e^x}.\] Find the value of $\der{y}{x}$ when $x = 0$ and $y = \frac12$.
+        \item The variables $x$ and $y$ are related by $\e^{xy^2} = y \bp{x^2 + 2\e^x}$. Find the value of $\derx{y}{x}$ when $x = 0$ and $y = 1/2$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            We have \[\der{}{x} \ln \frac{x}{\sqrt{1 - 2x}} = \frac{\sqrt{1-2x}}{x} \cdot \frac{\sqrt{1-2x} - x\bp{-\frac{2}{2\sqrt{1-2x}}}}{1 - 2x} = \frac{1-x}{x\bp{1 - 2x}}.\]
+            We have \[\der{}{x} \ln \frac{x}{\sqrt{1 - 2x}} = \frac{\sqrt{1-2x}}{x} \cdot \frac{\sqrt{1-2x} - x\bp{-1/\sqrt{1-2x}}}{1 - 2x} = \frac{1-x}{x\bp{1 - 2x}}.\]
         \end{psubpart}
         \begin{psubpart}
             We have \[\der{}{x} \frac1{\arccos{x^2}} = \bp{-\frac{1}{\bs{\arccos{x^2}}^2}} \bp{-\frac1{\sqrt{1 - (x^2)^2}}}\bp{2x} = \frac{2x}{\sqrt{1 - x^4} \bs{\arccos{x^2}}^2}.\]
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Implicitly differentiating with respect to $x$, we get \[\e^{xy^2} \bp{y^2 + 2xy\cdot y'} = y' \bp{x^2 + 2\e^x} + y\bp{2x + 2\e^x}.\] At $(0, 1/2)$, we have \[\frac14 = 2y' + 1 \implies y' = -\frac38.\]
+        Implicitly differentiating with respect to $x$, we get \[\e^{xy^2} \bp{y^2 + 2xy\cdot y'} = y' \bp{x^2 + 2\e^x} + y\bp{2x + 2\e^x}.\] At $(0, 1/2)$, we have $1/4 = 2y' + 1$, so $y'= -3/8$.
     \end{ppart}
 \end{solution}

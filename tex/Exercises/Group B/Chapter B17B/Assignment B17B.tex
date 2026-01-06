@@ -1,21 +1,21 @@
 \section{Assignment B17B}
 
 \begin{problem}
-    In $\RR^2$, a horizontal shear is a mapping that takes a generic point with position vector $\cveciix{x}{y}$ to the point with position vector $\cveciix{x + my}{y}$, where $m$ is a fixed parameter called the \emph{shear factor}.
+    In $\RR^2$, a horizontal shear is a mapping that takes a generic point with position vector $\cveciix{x}{y}$ to the point with position vector $\cveciix{x + my}{y}$, where $m$ is a fixed parameter called the \bd{shear factor}.
 
     Show that every horizontal shear mapping in $\RR^2$ is a linear transformation. State the matrix that represents the horizontal shear with shear factor $m$.
 \end{problem}
 \begin{solution}
-    Let $T : \RR^2 \to \RR^2$ such that \[T\of{\cvecii{x}{y}} = \cvecii{x + my}{y}.\] Let $\a, \b \in \RR$. Observe that
+    Let $T : \RR^2 \to \RR^2$ such that \[T\cvecii{x}{y} = \cvecii{x + my}{y}.\] Let $\a, \b \in \RR$. Observe that
     \begin{align*}
-        T\of{\a \cvecii{x_1}{y_1} + \b \cvecii{x_2}{y_2}} &= T\of{\cvecii{\a x_1 + \b x_2}{\a y_1 + \b y_2}}\\
+        T\of{\a \cvecii{x_1}{y_1} + \b \cvecii{x_2}{y_2}} &= T\cvecii{\a x_1 + \b x_2}{\a y_1 + \b y_2}\\
         &= \cvecii{\a x_1 + \b x_2 + m \a y_1 + m \b y_2}{\a y_1 + \b y_2}\\
         &= \a \cvecii{x_1 + m y_1}{y_1} + \b \cvecii{x_2 + m y_2}{y_2}\\
-        &= \a T\of{\cvecii{x_1}{y_1}} + \b T\of{\cvecii{x_2}{y_2}}.
+        &= \a T\cvecii{x_1}{y_1} + \b T\cvecii{x_2}{y_2}.
     \end{align*}
     Hence, $T$ preserves both addition and scalar multiplication, whence it is a linear transformation.
 
-    Note that \[T\of{\cvecii{x}{y}} = \cvecii{x + my}{y} = x \cvecii10 + y \cvecii{m}{1} = \begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix} \cvecii{x}{y}.\] Thus, \[\begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix}\] is the matrix representation of $T$.
+    Note that \[T\cvecii{x}{y} = \cvecii{x + my}{y} = x \cvecii10 + y \cvecii{m}{1} = \begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix} \cvecii{x}{y}.\] Thus, \[\begin{pmatrix}1 & m \\ 0 & 1\end{pmatrix}\] is the matrix representation of $T$.
 \end{solution}
 
 \begin{problem}
@@ -38,7 +38,7 @@
         Note that \[W = \bc{\vec u \in \RR^n \mid \mat A \vec u = \vec u} = \bc{\vec u \in \RR^n \mid (\mat A - \mat I) \vec u = \vec 0},\] which is a null space in $\RR^n$. Hence, $W$ is a subspace of $\RR^n$.
     \end{ppart}
     \begin{ppart}
-        Consider the solutions to $(\mat A - \mat I) \vec u = \vec 0$: \[(\mat A - \mat I) \vec u = \vec 0 \implies \begin{pmatrix}0 & 0 & -1 \\ 0 & 0 & 0 \\ 0 & 0 & -2 \end{pmatrix} \cveciii{x}{y}{z} = \cveciii{0}{0}{0}.\] We immediately see that $x, y \in \RR$ and $z = 0$. Letting $x = \l$ and $y = \m$, where $\l, \m \in \RR$, we have \[\vec u = \cveciii{x}{y}{z} = \cveciii{\l}{\m}{0} = \l \cveciii100 + \m \cveciii010.\] Thus, a basis of $W$ is \[\bc{\cveciii100, \cveciii010}.\]
+        Consider the solutions to $(\mat A - \mat I) \vec u = \vec 0$, which can be written as \[\begin{pmatrix}0 & 0 & -1 \\ 0 & 0 & 0 \\ 0 & 0 & -2 \end{pmatrix} \cveciii{x}{y}{z} = \cveciii{0}{0}{0}.\] We see that $x, y \in \RR$ and $z = 0$. Letting $x = \l$ and $y = \m$, where $\l, \m \in \RR$, we have \[\vec u = \cveciii{x}{y}{z} = \cveciii{\l}{\m}{0} = \l \cveciii100 + \m \cveciii010.\] Thus, a basis of $W$ is \[\bc{\cveciii100, \cveciii010}.\]
     \end{ppart}
 \end{solution}
 
@@ -67,7 +67,7 @@
 \end{solution}
 
 \begin{problem}
-    The matrix $\mat A$ and the vectors $\vec x_1$, $\vec x_2$, $\vec x_3$, $\vec x_4$ are defined as follows: \[\mat A = \begin{pmatrix}1 & 1 & 1 & 1 \\ -3 & 4 & 11 & -10 \\ 4 & 5 & 6 & 3 \\ 6 & -2 & -10 & 14\end{pmatrix}, \, \vec x_1 = \cveciv1000, \, \vec x_2 = \cveciv1100, \, \vec x_3 = \cveciv1110, \, \vec x_4 = \cveciv1111.\]
+    The matrix $\mat A$ and the vectors $\vec x_1$, $\vec x_2$, $\vec x_3$, $\vec x_4$ are defined as follows: \[\mat A = \begin{pmatrix}1 & 1 & 1 & 1 \\ -3 & 4 & 11 & -10 \\ 4 & 5 & 6 & 3 \\ 6 & -2 & -10 & 14\end{pmatrix}, \quad \vec x_1 = \cveciv1000, \quad \vec x_2 = \cveciv1100, \quad \vec x_3 = \cveciv1110, \quad \vec x_4 = \cveciv1111.\]
 
     The vector space $V$ is the set of all vectors of the form $\l_1 \mat A \vec x_1 + \l_2 \mat A \vec x_2 + \l_3 \mat A \vec x_3 + \l_4 \mat A \vec x_4$, where $\l_1, \l_2, \l_3, \l_4 \in \RR$.
 

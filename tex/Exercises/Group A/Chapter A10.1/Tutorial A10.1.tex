@@ -53,16 +53,16 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item Find the complex number $z$ such that $\frac{z-2}{z} = 1 + \i$.
-        \item Given that $u = 2 + \i$ and $v = -2 + 4\i$, find in the form $a + b\i$, where $a, b \in \RR$, the complex number $z$ such that $\frac1z = \frac1u + \frac1v$.
+        \item Find the complex number $z$ such that $(z-2)/z = 1 + \i$.
+        \item Given that $u = 2 + \i$ and $v = -2 + 4\i$, find in the form $a + b\i$, where $a, b \in \RR$, the complex number $z$ such that $1/z = 1/u + 1/v$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\frac{z-2}{z} = 1 + \i \implies z-2 = z + \i z \implies \i z = -2 \implies z = -\frac{2}{\i} = 2\i.\]
+        Multiplying through by $z$ and simplifying, we get $\i z = -2$. Thus, $z = -2/\i = 2\i$.
     \end{ppart}
     \begin{ppart}
-        \[\frac1z = \frac1u + \frac1v \implies z = \frac1{1/u + 1/v} = \frac{uv}{u + v} = \frac{(2+\i)(-2+4\i)}{(2+\i) + (-2+4\i)} = \frac{-8 + 6\i}{5\i} = \frac65 + \frac85 \i.\]
+        Reciprocating the given equation, we obtain \[z = \frac1{1/u + 1/v} = \frac{uv}{u + v}.\] Substituting in the given values of $u$ and $v$, we see that \[z = \frac{(2+\i)(-2+4\i)}{(2+\i) + (-2+4\i)} = \frac{-8 + 6\i}{5\i} = \frac65 + \frac85 \i.\]
     \end{ppart}
 \end{solution}
 
@@ -70,29 +70,28 @@
     The complex numbers $z$ and $w$ are $1 + a\i$ and $b - 2\i$ respectively, where $a$ and $b$ are real and $a$ is negative. Given that $zw\conj = 8i$, find the exact values of $a$ and $b$.
 \end{problem}
 \begin{solution}
-    Note that \[zw\conj = (1+a\i)(b+2\i) = (b - 2a) + (2+ab)\i.\] Comparing real and imaginary parts, we have $b-2a = 0 \implies b = 2a$ and $2+ab = 8$. Hence, $2a^2 = 6$, giving $a = -\sqrt3$ and $b = -2\sqrt3$.
+    Note that \[zw\conj = (1+a\i)(b+2\i) = (b - 2a) + (2+ab)\i.\] Comparing real and imaginary parts, we have $b-2a = 0$ and $2+ab = 8$. Substituting $b = 2a$ into $2 + ab = 8$, we get $2a^2 = 6$, giving $a = -\sqrt3$ and $b = -2\sqrt3$.
 \end{solution}
 
 \begin{problem}
-    Find, in the form $x + \i y$, the two complex numbers $z$ satisfying both of the equations \[\frac{z}{z\conj} = \frac35 + \frac45 \i \quad \text{and} \quad zz\conj = 5.\]
+    Find, in the form $x + \i y$, the two complex numbers $z$ satisfying both of the equations \[\frac{z}{z\conj} = \frac35 + \frac45 \i \quad \tand \quad zz\conj = 5.\]
 \end{problem}
 \begin{solution}
-    Multiplying both equations together, we have $z^2 = 3 + 4\i$. Let $z = x + \i y$, with $x, y \in \RR$. We thus have $z^2 = x^2 - y^2 + 2xy \i = 3 + 4\i$. Comparing real and imaginary parts, we obtain the following system: \[x^2 - y^2 = 3, \quad 2xy = 4.\] Squaring the second equation yields $x^2y^2 = 4$. From the first equation, we have $x^2 = 3 + y^2$. Thus, $y^2(3 + y^2) = 4 \implies y^2 = 1 \implies y = \pm 1 \implies x = \pm 2$. Hence, $z = 2 + \i$ or $z = -2-\i$.
+    Multiplying both equations together, we have $z^2 = 3 + 4\i$. Let $z = x + \i y$, where $x$ and $y$ are real. We then have $z^2 = x^2 - y^2 + 2xy \i = 3 + 4\i$. Comparing real and imaginary parts, we see that \[x^2 - y^2 = 3 \quad \tand \quad 2xy = 4.\] Squaring the second equation yields $x^2y^2 = 4$. Substituting this into the first equation and simplifying, we get $y^4 + 3y^2 - 4 = (y^2+4)(y^2 - 1) = 0$. Since $y^2$ is non-negative, we reject $y^2 = -4$ and accept $y^2 = 1$, so $y = \pm 1$. Finally, $x = \pm 2$, whence the two possible complex numbers are $z = 2 + \i$ or $z = -2-\i$.
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Given that $\i w + 3z = 2 + 4\i$ and $w + (1 - \i)z = 2 - \i$, find $z$ and $w$ in the form of $x + \i y$, where $x$ and $y$ are real numbers.
-        \item Determine the value of $k$ such that $z = \frac{1-k\i}{\sqrt3 + \i}$ is purely imaginary, where $k \in \RR$.
+        \item Determine the value of $k$ such that \[z = \frac{1-k\i}{\sqrt3 + \i}\] is purely imaginary, where $k \in \RR$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $w = a + b\i$ and $z = c + d\i$. Then \[\i w + 3z = \i (a + b \i) + 3(c + d\i) = (-b + 3c) + (a + 3d) \i = 2 + 4\i\] and \[w + (1 - \i) z = (a + b\i) + (1-\i)(c + d\i) = (a + c + d) + (b - c + d)\i = 2 - \i.\] Comparing the real and imaginary parts of both equations yields the following system: \[\systeme{-b+3c=2,a+3d=4,a+c+d=2,b-c+d=-1}\] which has the unique solution $a = 1$, $b = -2$, $c = 0$ and $d = 1$. Hence, $w = 1 - 2\i$ and $z = \i$.
+        Let $w = a + b\i$ and $z = c + d\i$, where $a$, $b$, $c$ and $d$ are real. Then \[\i w + 3z = \i (a + b \i) + 3(c + d\i) = (-b + 3c) + (a + 3d) \i = 2 + 4\i\] and \[w + (1 - \i) z = (a + b\i) + (1-\i)(c + d\i) = (a + c + d) + (b - c + d)\i = 2 - \i.\] Comparing the real and imaginary parts of both equations yields the following system: \[\systeme{-b+3c=2,a+3d=4,a+c+d=2,b-c+d=-1}\] which has the unique solution $a = 1$, $b = -2$, $c = 0$ and $d = 1$. Hence, $w = 1 - 2\i$ and $z = \i$.
     \end{ppart}
     \begin{ppart}
-        \[z = \frac{1 - k\i}{\sqrt3 + \i} = \frac{(1-k\i)(\sqrt3 - \i)}{{\sqrt3}^2 + 1^2} = \frac14(\sqrt3 - \i - k\sqrt3 \i - k) = \frac14 \bs{(\sqrt3 - k) - (1 + k\sqrt3)\i}.\] Since $z$ is purely imaginary, $\Re{z} = 0$. Hence, $\frac14(\sqrt3 - k) = 0 \implies k = \sqrt3$.
+        Note that \[z = \frac{1 - k\i}{\sqrt3 + \i} = \frac{(1-k\i)(\sqrt3 - \i)}{{\sqrt3}^2 + 1^2} = \frac{\sqrt3 - \i - k\sqrt3 \i - k}4 = \frac{(\sqrt3 - k) - (1 + k\sqrt3)\i}4.\] Since $z$ is purely imaginary, $\Re{z} = 0$. Hence, $(\sqrt3 - k)/4 = 0$, whence $k = \sqrt3$.
     \end{ppart}
 \end{solution}
 
@@ -104,14 +103,13 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $(x+\i y)^2 = x^2 - y^2 + 2xy\i = \i$. Comparing real and imaginary parts, we have \[x^2 - y^2 = 0, \quad 2xy = 1.\] Note that the second equation implies that both $x$ and $y$ have the same sign. Hence, from the first equation, we have $x = y$. Thus, $x^2 = y^2 = 1/2 \implies x = y = \pm 1/\sqrt2$.
+        Note that $(x+\i y)^2 = x^2 - y^2 + 2xy\i = \i$. Comparing real and imaginary parts, we have \[x^2 - y^2 = 0 \quad \tand \quad 2xy = 1.\] Note that the second equation implies that both $x$ and $y$ have the same sign. Hence, from the first equation, we have $x = y$. Thus, $x^2 = y^2 = 1/2$, whence $x = y = \pm 1/\sqrt2$.
     \end{ppart}
     \begin{ppart}
-        \[w^2 = -\i \implies (w\conj)^2 = \i \implies w\conj = \pm\frac1{\sqrt2} \pm \frac1{\sqrt2}\i \implies w = \pm\frac1{\sqrt2} \mp \frac1{\sqrt2}\i.\]
+        Taking conjugates, we see that $(w\conj)^2 = \i$. Using part (a), we see that \[w\conj = \pm\frac1{\sqrt2} \pm \frac1{\sqrt2}\i.\] Taking conjugates again, we have \[w = \pm\frac1{\sqrt2} \mp \frac1{\sqrt2}\i.\]
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
         \item The roots of the equation $z^2 = -8\i$ are $z_1$ and $z_2$. Find $z_1$ and $z_2$ in Cartesian form $x + \i y$, showing your working.
@@ -120,10 +118,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $z = x + \i y$ where $x, y \in \RR$. Then $(x+\i y)^2 = x^2 - y^2 + 2xy\i = -8\i$. Comparing real and imaginary parts, we have the following system: \[x^2 - y^2 = 0, \quad 2xy = 8.\] From the second equation, we know that $x$ and $y$ have opposite signs. Hence, from the first equation, we have that $x = -y$. Thus, $x^2 = 4 \implies x = \pm 2 \implies y = \mp 2$. Thus, $z = \pm2 (1-\i)$, whence $z_1 = 2 - 2\i$ and $z_2 = -2 + 2\i$.
+        Let $z = x + \i y$ where $x$ and $y$ are real. Then $(x+\i y)^2 = x^2 - y^2 + 2xy\i = -8\i$. Comparing real and imaginary parts, we have \[x^2 - y^2 = 0 \quad \tand \quad 2xy = -8.\] From the second equation, we know that $x$ and $y$ have opposite signs. Hence, from the first equation, we have that $x = -y$. Thus, $x^2 = 4$, so $x = \pm 2$, whence $y = \mp 2$. Hence, without loss of generality, $z_1 = 2 - 2\i$ and $z_2 = -2 + 2\i$.
     \end{ppart}
     \begin{ppart}
-        From $w^2 + 4w + (4 + 2\i) = 0$, we see that $(w + 2)^2 = -2\i$, so $(2w + 4)^2 = -8\i$. Taking roots, we have by part (a) that $2w + 4 = \pm2 (1 - \i)$, whence $w = 2 \pm (1 - \i)$.
+        From $w^2 + 4w + (4 + 2\i) = 0$, we see that $(w + 2)^2 = -2\i$, so $(2w + 4)^2 = -8\i$. Taking roots, we have from part (a) that $2w + 4 = \pm 2 (1 - \i)$, so $w = 2 \pm (1 - \i)$.
     \end{ppart}
 \end{solution}
 
@@ -131,15 +129,14 @@
     One of the roots of the equations $2x^3 - 9x^2 + 2x + 30 = 0$ is $3 + \i$. Find the other roots of the equation.
 \end{problem}
 \begin{solution}
-    Let $P(x) = 2x^3 - 9x^2 + 2x + 30$. Since $P(x)$ is a polynomial with real coefficients, by the conjugate root theorem, we have that $(3+\i)\conj = 3 - \i$ is also a root of $P(x)$. Let $\a$ be the third root of $P(x)$. Then
-    \[P(x) = 2x^3 - 9x^2 + 2x + 30 = 2(x - \a)\bs{x - (3+i)}\bs{x - (3-i)}.\] Comparing constants, \[2(-\a)(-3-\i)(-3+\i) = 30 \implies \a = -\frac{15}{(-3-\i)(-3+\i)} = -\frac32.\] Hence, the other roots of the equation are $3-\i$ and $-3/2$.
+    Let $P(x) = 2x^3 - 9x^2 + 2x + 30$. Since $P(x)$ is a polynomial with real coefficients, by the conjugate root theorem, $(3+\i)\conj = 3 - \i$ is also a root of $P(x)$. Let $\a$ be the third root of $P(x)$. Then \[P(x) = 2x^3 - 9x^2 + 2x + 30 = 2(x - \a)\bs{x - (3+i)}\bs{x - (3-i)}.\] Comparing constants, we get $2(-\a)(-3-\i)(-3+\i) = 30$, so \[\a = -\frac{15}{(-3-\i)(-3+\i)} = -\frac{15}{(-3)^2 + 1^2} = -\frac32.\] Hence, the other roots of the equation are $3-\i$ and $-3/2$.
 \end{solution}
 
 \begin{problem}
-    Obtain a cubic equation having 2 and $\frac54 - \frac{\sqrt7}4 \i$ as two of its roots, in the form $az^3 + bz^2 + cz + d = 0$, where $a$, $b$, $c$ and $d$ are real integral coefficients to be determined.
+    Obtain a cubic equation having 2 and $5/4 - \sqrt{7}\i/4$ as two of its roots, in the form $az^3 + bz^2 + cz + d = 0$, where $a$, $b$, $c$ and $d$ are real integral coefficients to be determined.
 \end{problem}
 \begin{solution}
-    Let $P(z) = az^3 + bz^2 + cz + d$. Since $P(z)$ is a polynomial with real coefficients, by the conjugate root theorem, we have that $\bp{\frac54 - \frac{\sqrt7}4 \i}\conj = \frac54 + \frac{\sqrt7}4 \i$ is also a root of $P(z)$. We can thus write $P(z)$ as
+    Let $P(z) = az^3 + bz^2 + cz + d$. Since $P(z)$ is a polynomial with real coefficients, by the conjugate root theorem, $\bp{5/4 - \sqrt{7}\i/4}\conj = 5/4 + \sqrt{7}\i/4$ is also a root of $P(z)$. We can thus write $P(z)$ as
     \begin{align*}
         P(z) &= k(z-2)\bs{z - \bp{\frac54 - \frac{\sqrt7}4 \i}}\bs{z - \bp{\frac54 + \frac{ \sqrt7}4 \i}} \\
         &= k(z-2)\bs{\bp{z - \frac54}^2 + \bp{\frac{\sqrt7}4}^2}\\
@@ -157,7 +154,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $P(w) = w^2 + (-1-8\i)w + (-17+7\i)$. Consider $P(-1 + 5\i)$. 
+        Let $P(w) = w^2 + (-1-8\i)w + (-17+7\i)$. Then
         \begin{align*}
             P(-1+5\i) &= (-1+5\i)^2 + (-1-8\i)(-1+5\i) + (-17+7\i)\\
             &= (1 - 10\i - 25) + (1 - 5\i + 8\i + 40) + (-17 + 7\i)\\
@@ -165,7 +162,7 @@
         \end{align*}
         Hence, $-1+5\i$ is a root of $w^2 + (-1-8\i)w + (-17+7\i) = 0$.
 
-        Let $\a$ be the other root of the equation. By Vieta's formula, we have \[\a + (-1 + 5\i) = -\bp{\frac{-1 - 8\i}{1}} = 1 + 8\i \implies \a = 2 + 3\i.\]
+        Let $\a$ be the other root of the equation. By Vieta's formula, we have \[\a + (-1 + 5\i) = -\bp{\frac{-1 - 8\i}{1}} = 1 + 8\i,\] so $\a = 2 + 3\i$.
     \end{ppart}
     \begin{ppart}
         Let $P(z) = z^3 - 5z^2 + 16z + k$. Then $P(1 + a\i) = 0$. Note that
@@ -174,6 +171,6 @@
             &= \bs{1 + 3a\i - 3a^2 - a^3 \i} - 5(1 + 2a\i - a^2) + (16 + 16a\i) + k\\
             &= (12 + k + 2a^2) + (9-a^2)a\i.
         \end{align*}
-        Comparing real and imaginary parts, we have $a(9-a^2) = 0 \implies a = 3$ (since $a > 0$) and $12 + k + 2a^2 = 0 \implies k = -30$.
+        Comparing real and imaginary parts, we have $a(9-a^2) = 0$ and $12 + k + 2a^2 = 0$. From this, we deduce that $a = 3$ (since $a > 0$) and $k = -30$.
     \end{ppart}
 \end{solution}

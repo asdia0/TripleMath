@@ -4,23 +4,22 @@
     The curve $y = f(x)$ passes through the origin and has gradient given by \[\der{y}{x} = \frac{3x^2-4x+1}{2y-5}.\]
     \begin{enumerate}
         \item Find $f(x)$.
-        \item By considering $\der{y}{x}$, deduce the coordinates of the point on the curve where it is tangent to the $x$-axis.
+        \item By considering $\derx{y}{x}$, deduce the coordinates of the point on the curve where it is tangent to the $x$-axis.
         \item Determine the interval of validity for the solution.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[(2y-5)\der{y}{x} = 3x^2 - 4x + 1.\] Integrating both sides with respect to $x$, \[\int (2y-5) \d y = \int \bp{3x^2 - 4x + 1} \d x.\] This evaluates to \[y^2 - 5y = x^3 - 2x^2 + x + C_1.\] Note that $x^3 - 2x^2 + x = x(x-1)^2$. Hence, \[y^2 - 5y - x(x-1)^2 + C_2 = 0 \implies y = \frac{5 \pm \sqrt{4x(x-1)^2 + C_3}}{2}.\] Since the curve passes through the origin $(0, 0)$, we have \[0 = \frac{5 - \sqrt{C_3}}{2} \implies C_3 = 25.\] Thus, \[f(x) = \frac{5-\sqrt{4x(x-1)^2 + 25}}{2}.\] Note that we reject the positive branch since $f(x) > 0$ in that case.
+        We have \[(2y-5)\der{y}{x} = 3x^2 - 4x + 1.\] Integrating both sides with respect to $x$, \[\int (2y-5) \d y = \int \bp{3x^2 - 4x + 1} \d x.\] This evaluates to $y^2 - 5y = x^3 - 2x^2 + x + C_1$. By the quadratic equation, this gives \[y = \frac{5 \pm \sqrt{4(x^3 - 2x^2 + x) + C_3}}{2} = \frac{5 \pm \sqrt{4x(x-1)^2 + C_3}}{2}.\] Since the curve passes through the origin, we take the negative branch with $C_3 = 25$, so \[f(x) = \frac{5-\sqrt{4x(x-1)^2 + 25}}{2}.\]
     \end{ppart}
     \begin{ppart}
-        When the curve is tangent to the $x$-axis, we have $\der{y}{x} = 0$ and $y = 0$. Note that \[\der{y}{x} = 0 \implies 3x^2 - 4x + 1 = 0 \implies x = \frac13 \tor 1.\] Also note that \[y = 0 \implies 4x(x-1)^2 = 0 \implies x = 0 \tor 1.\] Hence, the required point is $(1, 0)$.
+        When the curve is tangent to the $x$-axis, we have $\derx{y}{x} = 0$ and $y = 0$. When $\derx{y}{x} = 0$, we have from the differential equation that $3x^2 - 4x + 1 = 0$, so $x = 1/3$ or $x = 1$. When $y = 0$, we have $4x(x-1)^2 = 0$, so $x = 0$ or $x = 1$. Putting both conditions together, we must have $x = 1$, whence the required point is $(1, 0)$.
     \end{ppart}
     \begin{ppart}
-        Since the square root function is defined only on the non-negative reals, we require \[4x(x-1)^2 + 25 \geq 0 \implies x \geq -1.24.\] Thus, the interval of validity is $[-1.24, \infty)$.
+        Since the square root function is defined only on the non-negative reals, we require $4x(x-1)^2 + 25 \geq 0$, so the interval of validity is $[-1.24, \infty)$.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
     \begin{enumerate}
         \item Using the substitution $y = ux$, find the general solution of the differential equation \[\der{y}{x} = \frac{x+y}{x},\] where $x > 0$.
@@ -28,12 +27,13 @@
         \item Without sketching the curve of the solution in (b), determine the number of stationary points the solution curve has.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Note that \[y = ux \implies \der{y}{x} = \der{u}{x} x + u.\] Substituting this into the given differential equation, we get \[\der{u}{x} x + u = \frac{x + ux}{x},\] so \[\der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$, we get $u = \ln{x} + C$, so $y = x \ln x + C x$.
+        Since $y = ux$, we have \[\der{y}{x} = \der{u}{x} x + u.\] Substituting this into the given differential equation, we get \[\der{u}{x} x + u = \frac{x + ux}{x},\] which simplifies to \[\der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$, we get $u = \ln{x} + C$, so $y = x \ln x + C x$.
     \end{ppart}
     \begin{ppart}
-        Evaluating the solution at $x = 1$ and $y = -1$, we get \[-1 = 1 \ln 1 + C (1) \implies C = -1.\] Thus, $y = x \ln x - x$.
+        Evaluating the solution at $x = 1$ and $y = -1$, we get $C = -1$. Thus, $y = x \ln x - x$.
     \end{ppart}
     \begin{ppart}
         Note that \[\der{y}{x} = \frac{x+y}{x} = \frac{x + x\ln x - x}{x} = \ln x.\] Since $\ln x$ only has one root (at $x = 1$), the solution curve has only 1 stationary point.
@@ -49,18 +49,18 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\der{h}{t} \geq 0 \implies h \leq 32$. Thus, the maximum height of the tree is 32 m.
+        Since $\derx{h}{t} \geq 0$, we have $h \leq 32$. Thus, the maximum height of the tree is 32 m.
     \end{ppart}
     \begin{ppart}
-        We have \[10 \bp{16 - \frac12 h}^{-1/2} \der{h}{t} = 1.\] Integrating with respect to $t$, we get \[10 \int \bp{16 - \frac12 h}^{-1/2} \d h = \int \d t,\] thus \[-10 \sqrt{16 - \frac12 h} + C = t.\] Since $h = 0$ when $t = 0$, we have \[-10\sqrt{16} + C = 0 \implies C = 40.\] Thus, \[t = 40-10\sqrt{16 - \frac12 h}.\]
+        We have \[10 \bp{16 - \frac12 h}^{-1/2} \der{h}{t} = 1.\] Integrating with respect to $t$, we get \[10 \int \bp{16 - \frac12 h}^{-1/2} \d h = \int \d t,\] thus \[-10 \sqrt{16 - \frac12 h} + C = t.\] Since $h = 0$ when $t = 0$, we have $C = 40$, so \[t = 40-10\sqrt{16 - \frac12 h}.\]
 
-        When $h = \frac{32}2 = 16$, we have \[t = 40 - 10\sqrt{16 - \frac12(16)} = 11.7 \tosf{3}.\] Thus, it takes 11.7 years for the tree to reach half its maximum height.
+        When $h = 32/2 = 16$, we have \[t = 40 - 10\sqrt{16 - \frac12(16)} = 11.7 \tosf{3}.\] Thus, it takes 11.7 years for the tree to reach half its maximum height.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Find $\int\frac1{x(1000-x)} \d x$.
+        \item Find \[\int\frac1{x(1000-x)} \d x.\]
         \item A communicable disease is spreading within a small community with a population of 1000 people. A scientist found out that the rate at which the disease spreads is proportional to the product of the number of people who are infected with the disease and the number of people who are not infected with the disease. It is known that one person in this community is infected initially and five days later, 12\% of the population is infected.
 
         Given that the infected population is $x$ at time $t$ days after the start of the spread of the disease, show that it takes less than 8 days for half the population to contract the disease.
@@ -76,11 +76,11 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Note that \[\der{x}{t} \propto x(1000-x) \implies \der{x}{t} = kx(1000-x)\] for some $k \in \mathbb{R}^+$. Hence, \[\frac1{x(1000-x)} \der{x}{t} = k.\] Integrating with respect to $t$, we obtain \[\int \frac1{x(1000-x)} \d x = \int k \d t,\] which evaluates to \[\frac1{1000} \ln{\frac{x}{1000-x}} + C = kt.\]
+        We have that \[\der{x}{t} = kx(1000-x)\] for some $k > 0$. Rearranging, we get \[\frac1{x(1000-x)} \der{x}{t} = k.\] Integrating with respect to $t$, we obtain \[\int \frac1{x(1000-x)} \d x = \int k \d t,\] which evaluates to \[\frac1{1000} \ln{\frac{x}{1000-x}} + C = kt.\]
 
-        Note that when $t = 0$, we have $x = 1$. Thus, \[\frac1{1000} \ln{\frac{1}{999}} + C = 0 \implies C = \frac{\ln 999}{1000}.\]
+        Note that when $t = 0$, we have $x = 1$. Thus, $C = \ln(999)/1000$.
         
-        When $t = 5$, $x = 120$. Hence, \[\frac1{1000} \ln{\frac{120}{880}} + \frac{\ln 999}{1000} = 5k \implies k = \frac1{5000} \bp{\ln \frac3{22} + \ln 999}.\] Thus, 
+        When $t = 5$ we have $x = 120$. Hence, \[k = \frac1{5000} \bp{\ln \frac3{22} + \ln 999}.\] Thus, 
         \begin{align*}
             t &= \bs{\frac1{5000} \bp{\ln \frac3{22} + \ln 999}}^{-1} \bs{\frac1{1000} \ln{\frac{x}{1000-x}} + \frac{\ln 999}{1000}} \\
             &= \frac{5}{\ln{3/22} + \ln 999} \bs{\ln{\frac{x}{1000-x}} + \ln 999}

@@ -32,7 +32,7 @@ A probability distribution of a discrete random variable can be given in the for
 
 Note that the particular values of a random variable are denoted by lower-case letters. For instance, the particular values of a random variable $X$ are denoted by $x$.
 
-\begin{example}
+\begin{example}[Probability Distribution]
     A single fair 6-sided die is thrown. Let $X$ be the random variable representing the number of dots showing on the die. Note that the possible values of $X$ are $x = 1, 2, 3, 4, 5, 6$.
 
     The probability distribution associated with $X$ can be given in table form:
@@ -78,8 +78,8 @@ Recall that in descriptive statistics, the mean of a sample can be calculated as
     The \vocab{expectation}, or \vocab{expected value}, of $X$, denoted as $\E{X}$ or $\m$, is given by \[\E{X} = \sum_{x} x \P{X = x}.\]
 \end{definition}
 
-\begin{example}
-    A single fair 6-sided die is thrown. Let $X$ be the random variable representing the number of dots showing on the die. Note that the possible values of $X$ are $x = 1, 2, 3, 4, 5, 6$. Since $\P{X = x} = \frac16$ for all possible values of $x$, the expectation of $X$ is given by \[\E{X} = \sum_{x = 1}^6 x\P{X = x} = \frac16 \sum_{x= 1}^6 x = 3.5.\]
+\begin{example}[Expectation]
+    A single fair 6-sided die is thrown. Let $X$ be the random variable representing the number of dots showing on the die. Note that the possible values of $X$ are $x = 1, 2, 3, 4, 5, 6$. Since $\P{X = x} = 1/6$ for all possible values of $x$, the expectation of $X$ is given by \[\E{X} = \sum_{x = 1}^6 x\P{X = x} = \frac16 \sum_{x= 1}^6 x = 3.5.\]
 \end{example}
 
 Note that the phrase ``expected value of $X$'' refers to the long-term weighted average value of a random variable $X$ and is not a typical value that $X$ can take. In fact, a random variable might never be equal to its ``expected value''. For instance, in the above example, a 6-sided dice will clearly never roll a value of $3.5$.
@@ -110,7 +110,7 @@ In fact, the last property is a direct consequence of the linearity of the expec
 
 \subsection{Variance}\label{ssec:DRV-Var}
 
-Recall that in descriptive statistics, the variance of a sample can be calculated as \[\text{Variance} = \frac1n \sum f\bp{x - \bar x}^2,\] where $f$ is the frequency of a data value $x$ and $\bar x$ is the mean of the sample. In the context of discrete random variables, $\P{X = x}$ corresponds to $f/n$, while $\m$ corresponds to $\bar x$. Thus, \[\text{Variance} = \sum \bp{x - \m}^2 \P{X = x} = \E{(x- \m)^2}.\]
+Recall that in descriptive statistics, the variance of a sample can be calculated as \[\text{Variance} = \frac1n \sum f\bp{x - \ol x}^2,\] where $f$ is the frequency of a data value $x$ and $\ol x$ is the mean of the sample. In the context of discrete random variables, $\P{X = x}$ corresponds to $f/n$, while $\m$ corresponds to $\ol x$. Thus, \[\text{Variance} = \sum \bp{x - \m}^2 \P{X = x} = \E{(x- \m)^2}.\]
 
 \begin{definition}
     The \vocab{variance} of a random variable $X$, denoted by $\Var{X}$ or $\s^2$, is defined as the expectation of the squared deviation of $X$ from the mean $\m$. Mathematically, \[\Var{X} = \E{\bp{X - \m}^2}.\]
@@ -189,8 +189,8 @@ Examples of such experiments are:
     Let the random variable $X$ be the number of trials, out of $n$ trials, that are successful. If the above conditions are met, then $X$ is said to follow a \vocab{binomial distribution} with $n$ number of trials and probability of success $p$, written as \[X \sim \Binom{n}{p}.\]
 \end{definition}
 
-\begin{example}
-    Recall the example of tossing a fair coin 6 times. This experiment clearly fits a binomial model:
+\begin{example}[Binomial Model]
+    Recall the example of tossing a fair coin 6 times. This experiment fits a binomial model:
     \begin{itemize}
         \item There are 6 tosses -- i.e. a finite number of trials.
         \item Given that the tosses likely take place one after another, the outcome of one toss will not affect the outcome of another toss -- i.e. the trials are independent.

@@ -1,7 +1,7 @@
 \section{Assignment A2}
 
 \begin{problem}
-    By considering the graphs of $y = \cos x$ and $y = -\frac14 x$, or otherwise, show that the equation $x + 4\cos x = 0$ has one negative root and two positive roots.
+    By considering the graphs of $y = \cos x$ and $y = -x/4$, or otherwise, show that the equation $x + 4\cos x = 0$ has one negative root and two positive roots.
 
     Use linear interpolation, once only, on the interval $[-1.5, 1]$ to find an approximation to the negative root of the equation $x + 4\cos x = 0$ correct to 2 decimal places.
 
@@ -64,7 +64,7 @@
 
                 \addplot[plotBlue, name path=f1] {-0.25 * x};
     
-                \addlegendentry{$y = -\tfrac14 x$};
+                \addlegendentry{$y = -x/4$};
     
                 \fill [name intersections={of=f1 and f2,by={E1, E2, E3}}] (E1) circle[radius=2.5pt];
 
@@ -75,19 +75,19 @@
         \end{tikzpicture}
     \end{center}
 
-    Note that $x + 4\cos x = 0 \implies \cos x = -\frac14 x$. Plotting the graphs of $y = \cos x$ and $y = -\frac14 x$, we see that there is one negative root and two positive roots. Hence, the equation $x + 4\cos x = 0$ has one negative root and two positive roots.
+    Note that $x + 4\cos x = 0 \implies \cos x = -x/4$. Plotting the graphs of $y = \cos x$ and $y = -x/4$, we see that there is one negative root and two positive roots. Hence, the equation $x + 4\cos x = 0$ has one negative root and two positive roots.
 
     Let $f(x) = x+4\cos x$. Let $\b$ be the negative root of the equation $f(x) = 0$. Using linear interpolation on the interval $[-1.5. -1]$, \[\b = \frac{-1.5f(-1) - (-1)f(-1.5)}{f(-1)-f(1.5)} = -1.24 \todp{2}.\]
 
     There is a minimum at $x = m$ such that $m$ is between the two positive roots. Hence, when using the Newton-Raphson method, an initial approximation which is smaller than $m$ would result in subsequent approximations being further away from the desired root $\a$. Hence, an initial approximation that is smaller than $\a$ may not be satisfactory.
 
-    We know from the above graph that $\a \in (\pi, 3\pi/2)$. We hence pick $3\pi/2$ as our initial approximation. Using the Newton-Raphson method $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ with $x_1 = 3\pi/2$, we have
+    We know from the above graph that $\a \in (\pi, 3\pi/2)$. We hence pick $3\pi/2$ as our initial approximation. Using the Newton-Raphson method $x_{n+1} = x_n - f(x_n)/f'(x_n)$ with $x_1 = 3\pi/2$, we have
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|}
         \hline
-        $r$ & $x_r$ \\ \hline
-        1 & $\frac32 \pi$ \\ \hline
+        $n$ & $x_n$ \\ \hline\hline
+        1 & $3\pi/2$ \\ \hline
         2 & 3.7699 \\ \hline
         3 & 3.6106 \\ \hline
         4 & 3.5955 \\ \hline
@@ -110,7 +110,7 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    For stationary points, $y' = 0$. \[y' = 0 \implies 3x^2 + 2x = 0 \implies x(3x+2) = 0.\] Hence, $x = 0$ or $x = -2.3$. When $x = 0$, $y = 0$. When $x = -2/3$, $y = 4/{27}$. Thus, the coordinates of the stationary points of $y = x^3 + x^2$ are $(0, 0)$ and $(-2/3, 4/27)$.
+    For stationary points, $y' = 3x^2 + 2x = x(3x+2) = 0$, so $x = 0$ or $x = -2.3$. Thus, the coordinates of the stationary points of $y = x^3 + x^2$ are $(0, 0)$ and $(-2/3, 4/27)$.
 
     \begin{center}\tikzsetnextfilename{108}
         \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -144,7 +144,6 @@
     \begin{ppart}
         Let $f(x) = x^2 + x^2 - 0.1$. Using linear interpolation on the interval $[0, 1]$, \[\a = \frac{-f(0)}{f(1)-f(0)} = \frac1{20}.\]
     \end{ppart}
-    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{109}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -189,15 +188,15 @@
 
     \begin{enumerate}
         \item $x = 2\cos x$
-        \item $x = \cos x + \frac12 x$
-        \item $x = \frac23 (\cos x + x)$
+        \item $x = \cos x + x/2$
+        \item $x = (2/3)(\cos x + x)$
     \end{enumerate}
 
         Determine which iteration will converge to $\a$ and illustrate your answer by a `staircase' or `cobweb' diagram. Use the most appropriate iteration with $x_1 = 1$, to find $\a$ to 4 significant figures. You should demonstrate that your answer has the required accuracy.
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Consider $f(x) = 2\cos x$. Then $f'(x) = -2\sin x$. Observe that $\sin x$ is increasing on $[1, 1.2]$. Since $\sin 1 > \frac12$, $\abs{f'(x)} > 1$ for all $x \in [1, 1.2]$. Thus, fixed-point iteration fails and will not converge to $\a$.
+        Consider $f(x) = 2\cos x$. Then $f'(x) = -2\sin x$. Observe that $\sin x$ is increasing on $[1, 1.2]$. Since $\sin 1 > 1/2$, $\abs{f'(x)} > 1$ for all $x \in [1, 1.2]$. Thus, fixed-point iteration fails and will not converge to $\a$.
 
         \begin{center}\tikzsetnextfilename{110}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -247,7 +246,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Consider $f(x) = \cos x + \frac12 x$. Then $f'(x) = -\sin x + \frac12 -\bp{\sin x - \frac12}$. Since $0 \leq \sin x \leq 1$ for $x \in \bs{0, \frac{\pi}2}$, and $[1, 1.2] \subset \bs{0, \frac{\pi}2}$, we know $-\frac12 \leq \sin x - \frac12 \leq \frac12$ for $x \in [1, 1.2]$. Thus, $0 \leq \abs{\sin x - \frac12} \leq \frac12$ for $x \in [1, 1.2]$. Hence, fixed-point iteration will work and converge to $\a$.
+        Consider $f(x) = \cos x + x/2$. Then $f'(x) = -\bp{\sin x - 1/2}$. Since $0 \leq \sin x \leq 1$ for $x \in \bs{0, \pi/2}$, and $[1, 1.2] \subset \bs{0, \frac{\pi}2}$, we know $-1/2 \leq \sin x - 1/2 \leq 1/2$ for $x \in [1, 1.2]$. Thus, $0 \leq \abs{\sin x - 1/2} \leq 1/2$ for $x \in [1, 1.2]$. Hence, fixed-point iteration will work and converge to $\a$.
 
         \begin{center}\tikzsetnextfilename{111}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -272,7 +271,7 @@
                     ]
                     \addplot[plotRed] {cos(\x r) + 0.5 * x};
 
-                    \addlegendentry{$y=\cos x + \tfrac12 x$};
+                    \addlegendentry{$y=\cos x + x/2$};
 
                     \addplot[plotBlue] {x};
 
@@ -298,7 +297,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Consider $f(x) = \frac23 (\cos x + x)$. Then $f'(x) = \frac23(-\sin x + 1)$. For fixed-point iteration to converge to $\a$, we need $\abs{f'(x)} < 1$ for $x$ near $\a$. It thus suffices to show that $\abs{-\sin x + 1} < \frac32$ for all $x \in [1, 1.2]$. Observe that $1 - \sin x$ is strictly decreasing and positive for $x \in \bs{0, \frac{\pi}2}$. Since $1 - \sin 1 < \frac32$, and $[1, 1.2] \subset \bs{0, \frac{\pi}2}$, we have that $\abs{-\sin x + 1} < \frac32$ for all $x \in [1, 1.2]$. Thus, $\abs{f'(x)} < 1$ for $x$ near $\a$. Hence, fixed-point iteration will work and converge to $\a$.
+        Consider $f(x) = 2(\cos x + x)/3$. Then $f'(x) = 2(-\sin x + 1)/3$. For fixed-point iteration to converge to $\a$, we need $\abs{f'(x)} < 1$ for $x$ near $\a$. It thus suffices to show that $\abs{-\sin x + 1} < 3/2$ for all $x \in [1, 1.2]$. Observe that $1 - \sin x$ is strictly decreasing and positive for $x \in \bs{0, \pi/2}$. Since $1 - \sin 1 < 3/2$, and $[1, 1.2] \subset \bs{0, \pi/2}$, we have that $\abs{-\sin x + 1} < 3/2$ for all $x \in [1, 1.2]$. Thus, $\abs{f'(x)} < 1$ for $x$ near $\a$. Hence, fixed-point iteration will work and converge to $\a$.
 
         \begin{center}\tikzsetnextfilename{112}
             \begin{tikzpicture}[trim axis left, trim axis right, scale=0.86]
@@ -322,7 +321,7 @@
                     ]
                     \addplot[plotRed] {2/3 * (cos(\x r) + x)};
 
-                    \addlegendentry{$y=\tfrac23 (\cos x + x)$};
+                    \addlegendentry{$y=2(\cos x + x)/3$};
 
                     \addplot[plotBlue] {x};
 
@@ -345,12 +344,12 @@
             \end{tikzpicture}
         \end{center}
 
-        For $x \in [1, 1.2]$, $\abs{\frac23 (-\sin x + 1)} < \abs{-\sin x + \frac12} < 1$. Thus, $x_{n+1} = \frac23 (\cos x_n + x_n)$ is the most suitable iteration as it will converge to $\a$ the quickest. Using $F(x_{n+1}) = \frac23 (\cos x_n + x_n)$ with $x_1 = 1$,
+        For $x \in [1, 1.2]$, $\abs{2(-\sin x + 1)/3} < \abs{-\sin x + 1/2} < 1$. Thus, $x_{n+1} = 2(\cos x_n + x_n)/3$ is the most suitable iteration as it will converge to $\a$ the quickest. Using $F(x_{n+1}) = 2(\cos x_n + x_n)/3$ with $x_1 = 1$,
         \begin{table}[H]
             \centering
             \begin{tabular}{|c|c|}
             \hline
-            $r$ & $x_r$ \\ \hline
+            $n$ & $x_n$ \\ \hline\hline
             1 & 1 \\ \hline
             2 & 1.02687 \\ \hline
             3 & 1.02958 \\ \hline

@@ -18,11 +18,11 @@
         $u_{n+1} = 1.5u_n - 10$.
     \end{ppart}
     \begin{ppart}
-        Let $k$ be the constant such that $u_{n+1} + k = 1.5(u_n + k)$. Then $k = -20$. Hence, $u_{n+1} - 20 = 1.5(u_n - 20)$. \[u_{n+1} - 20 = 1.5(u_n - 20) \implies u_n - 20 = 1.5^{n-1}(u_1 - 20) \implies u_n = 1.5^{n-1}(u_1 - 20) + 20.\]
+        The complementary solution is $u_n^{(c)} = C \cdot 1.5^n$. For the particular solution, try the constant $k$. Then $k = 1.5k - 10$, so $k = 20$. Hence, the general solution is $u_n = C \cdot 1.5^n + 20$. When $n = 1$, we see that $1.5 C = u_1 - 20$, thus $u_n = 1.5^{n-1} \bp{u_1 - 20} + 20$.
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Let $m$ be the least integer such that $u_m \geq 1234567$. Consider $u_m \geq 1234567$: \[u_m \geq 1234567 \implies 1.5^{m-1}(111 - 20) + 20 \geq 1234567.\] Using G.C., $m \geq 24.5$. Hence, it takes at least 25 bids to meet this amount.
+            Let $m$ be the least integer such that $u_m \geq 1234567$. Consider $u_m = 1.5^{m-1}(111 - 20) + 20 \geq 1234567$. Using G.C., $m \geq 24.5$. Hence, it takes at least 25 bids to meet this amount.
         \end{psubpart}
         \begin{psubpart}
             Since $u_{25} = 1.5^{25-1}(111 - 20) = 1532000$ (to the nearest thousand), the winning bid is \$1 532 000.
@@ -40,12 +40,12 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that the characteristic equation of $u_n$, $x^2 - 2x + 1 = 0$, has only one root, namely $x = 1$. Thus, \[u_n = (A + Bn) \cdot 1^n = A + Bn.\] Thus, $u_n$ is in AP. Since $u_0 = 5$ and $u_1 = -1$, it follows that \[u_n = 5 - 6n.\]
+        We may rewrite the recurrence relation as $u_{n+2} - u_{n+1} = u_{n+1} - u_n$. Thus, the sequence is in AP. Since $u_0 = 5$ and $u_1 = -1$, it follows that \[u_n = 5 - 6n.\]
     \end{ppart}
     \begin{ppart}
-        Rewriting the given recurrence relation, we have $u_n = u_{n-1} + \frac14 u_{n-2}$. Thus, the characteristic equation is $x^2 - x - \frac14 = 0$, which has roots $\frac12 (1 \pm \sqrt2)$. Thus, \[u_n = A \bp{\frac{1 + \sqrt2}{2}}^n + B\bp{\frac{1 - \sqrt2}{2}}^n.\]
+        Rewriting the given recurrence relation, we have $u_n = u_{n-1} + u_{n-2}/4$. Thus, the characteristic equation is $x^2 - x - 1/4 = 0$, which has roots $(1 \pm \sqrt2)/2$. Thus, \[u_n = A \bp{\frac{1 + \sqrt2}{2}}^n + B\bp{\frac{1 - \sqrt2}{2}}^n.\]
 
-        Since $u_0 = a$, we obviously have $A + B = a$. Since $u_1 = b$, we get $A\bp{\frac{1 + \sqrt2}{2}} + B\bp{\frac{1 - \sqrt2}{2}} = b$. Solving, we get \[A = \frac{\sqrt2 - 1}{2\sqrt2}a + \frac{1}{\sqrt{2}}b, \quad B = \frac{\sqrt2 + 1}{2\sqrt2}a - \frac{1}{\sqrt{2}}b.\] Thus, \[u_n = \bp{\frac{\sqrt2 - 1}{2\sqrt2}a + \frac{1}{\sqrt{2}}b}\bp{\frac{1 + \sqrt2}{2}}^n + \bp{\frac{\sqrt2 + 1}{2\sqrt2}a - \frac{1}{\sqrt{2}}b}\bp{\frac{1 - \sqrt2}{2}}^n.\]
+        Since $u_0 = a$, we have $A + B = a$. Since $u_1 = b$, we get \[A\bp{\frac{1 + \sqrt2}{2}} + B\bp{\frac{1 - \sqrt2}{2}} = b.\] Solving, we get \[A = \frac{\sqrt2 - 1}{2\sqrt2}a + \frac{1}{\sqrt{2}}b \quad \tand \quad B = \frac{\sqrt2 + 1}{2\sqrt2}a - \frac{1}{\sqrt{2}}b.\] Thus, \[u_n = \bp{\frac{\sqrt2 - 1}{2\sqrt2}a + \frac{1}{\sqrt{2}}b}\bp{\frac{1 + \sqrt2}{2}}^n + \bp{\frac{\sqrt2 + 1}{2\sqrt2}a - \frac{1}{\sqrt{2}}b}\bp{\frac{1 - \sqrt2}{2}}^n.\]
     \end{ppart}
 \end{solution}
 
@@ -54,11 +54,7 @@
 
     \begin{enumerate}
         \item State the values of $a_1$ and $a_2$.
-        \item By considering the relationship between $a_n$ and $b_n$, show that
-        \[
-            a_n = xa_{n-1} + y^{n-1}, \qquad n \geq 2
-        \]
-        where $x$ and $y$ are constants to be determined.
+        \item By considering the relationship between $a_n$ and $b_n$, show that for $n \geq 2$, \[a_n = xa_{n-1} + y^{n-1},\] where $x$ and $y$ are constants to be determined.
         \item Using the substitution $c_n = za_n + y^n$, where $z$ is a constant to be determined, find a first order linear recurrence relation for $c_n$. Hence, find the general term formula for $a_n$.
     \end{enumerate}
 \end{problem}
@@ -77,9 +73,11 @@
     \begin{ppart}
         Observe that
         \begin{align*}
-            c_n &= za_n + 5^n = z\bp{3a_{n-1} + 5^{n-1}} + 5^n = 3\bp{za_{n-1} + 5^{n-1}} + (2 + z) 5^{n-1}\\
+            c_n &= za_n + 5^n\\
+            &= z\bp{3a_{n-1} + 5^{n-1}} + 5^n\\
+            &= 3\bp{za_{n-1} + 5^{n-1}} + (2 + z) 5^{n-1}\\
             &= 3c_{n-1} + (2 + z) 5^{n-1}.
         \end{align*}
-        Let $z = -2$. Then, \[c_n = 3c_{n-1} = 3^{n-1} c_1 = 3^{n-1} \bp{-2a_1 + 5} = -3^n.\] Note that $a_n = \frac1z \bp{c_n - y^n}$. Thus, \[a_n = \frac{-3^n - 5^n}{-2} = \frac{3^n + 5^n}2.\]
+        Let $z = -2$. Then, $c_n = 3c_{n-1}$ is in geometric progression, so \[c_n = 3^{n-1} c_1 = 3^{n-1} \bp{-2a_1 + 5} = -3^n.\] Since $a_n = \bp{c_n - y^n}/z$, we get \[a_n = \frac{-3^n - 5^n}{-2} = \frac{3^n + 5^n}2.\]
     \end{ppart}
 \end{solution}

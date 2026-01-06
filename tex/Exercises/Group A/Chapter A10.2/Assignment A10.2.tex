@@ -1,7 +1,7 @@
 \section{Assignment A10.2}
 
 \begin{problem}
-    On an Argand diagram, mark and label clearly the points $P$ and $Q$ representing the complex numbers $p$ and $q$ respectively, where \[p = \cos\frac\pi4 + \i\sin\frac\pi4, \qquad q = 2\cos\frac\pi4 + 2\i\sin\frac\pi4.\]
+    On an Argand diagram, mark and label clearly the points $P$ and $Q$ representing the complex numbers $p$ and $q$ respectively, where \[p = \cos\frac\pi4 + \i\sin\frac\pi4 \quad \tand \quad q = 2\cos\frac\pi4 + 2\i\sin\frac\pi4.\]
 
     Find the moduli and arguments of the complex numbers $a$, $b$, $c$, $d$ and $e$, where $a = p^4$, $b = q^2$, $c = -ip$, $d = 1/q$, $e = p + p\conj$.
 
@@ -73,7 +73,7 @@
         \end{tikzpicture}
     \end{center}
 
-    Note that $p = \e^{\i\pi/4}$ and $q = 2\e^{\i\pi/4}$.
+    Note that $p = \e^{\i\pi/4}$ and $q = 2\e^{\i\pi/4}$, so
     \begin{align*}
         a &= p^4 = \bp{\e^{\i\pi/4}}^4 = \e^{\i\pi},\\
         b &= q^2 = \bp{2\e^{\i\pi/4}}^2 = 4\e^{\i\pi/2},\\
@@ -95,23 +95,23 @@
 
     Since $\angle COQ = \pi/2$, we have $[\triangle COQ] = \frac12(2)(1) = 1$ units$^2$.
 
-    We have \[p^{\frac{13}3}q^{\frac{45}2} = \bp{\e^{\i\frac{\pi}4}}^{\frac{13}3} \bp{2\e^{\i\frac{\pi}4}}^{\frac{45}2} = 2^{\frac{45}2} \e^{\i \frac{161\pi}{24}} = 2^{\frac{45}{2}} \e^{\i \frac{17\pi}{24}}.\] Hence, $\abs{p^{13/3}q^{45/2}} = \e^{45/2}$ and $\arg{p^{13/3}q^{45/2}} = \frac{17}{24}\pi$.
+    We have \[p^{13/3}q^{45/2} = \bp{\e^{\i\pi/4}}^{13/3} \bp{2\e^{\i\pi/4}}^{45/2} = 2^{45/2} \e^{\i (161\pi/24)} = 2^{45/2} \e^{\i (17\pi/24)}.\] Hence, $\abs{p^{13/3}q^{45/2}} = \e^{45/2}$ and $\arg{p^{13/3}q^{45/2}} = 17\pi/24$.
 \end{solution}
 
 \begin{problem}
-    The complex number $q$ is given by $q = \frac{\e^{\i2\t}}{1 - \e^{\i2\t}}$, where $0 < \t < 2\pi$. In either order,
+    The complex number $q$ is given by \[q = \frac{\e^{\i2\t}}{1 - \e^{\i2\t}},\] where $0 < \t < 2\pi$. In either order,
     \begin{enumerate}
         \item find the real part of $q$,
-        \item show that the imaginary part of $q$ is $\frac12 \cot\t$.
+        \item show that the imaginary part of $q$ is $\cot{\t}/2$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     We have \[q = \frac{\e^{\i2\t}}{1 - \e^{\i2\t}} = \frac{\e^{\i\t}}{\e^{-\i\t} - \e^{\i\t}} = \frac{\cos \t + \i \sin \t}{-2\i \sin\t} = -\frac12 - \frac1{2\i} \cot \t
-    = -\frac12 + \frac\i2 \cot \t.\] Hence, $\Re q = -\frac12$ and $\Im q = \frac12 \cot \t$.
+    = -\frac12 + \frac\i2 \cot \t.\] Hence, $\Re q = -1/2$ and $\Im q = \cot{\t}/2$.
 \end{solution}
 
 \begin{problem}
-    The complex numbers $z$ and $w$ are such that $z = 4\bp{\cos \frac34\pi + \i\sin \frac34 \pi}$ and $w = 1 - \i\sqrt3$. $z\conj$ denotes the conjugate of $z$.
+    The complex numbers $z$ and $w$ are such that $z = 4\bp{\cos{3\pi/4} + \i\sin{3\pi/4}}$ and $w = 1 - \i\sqrt3$. $z\conj$ denotes the conjugate of $z$.
 
     \begin{enumerate}
         \item Find the modulus $r$ and the argument $\t$ of $w^2 / z\conj$, where $r > 0$ and $-\pi < \t < \pi$.
@@ -120,10 +120,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $z = 4\e^{\i3\pi/4}$ and $w = 2\bp{\frac12 - \i\frac{\sqrt3}2} = 2\e^{-\i\pi/3}$. Hence, \[\frac{w^2}{z\conj} = \frac{\bp{2\e^{-\i\frac{\pi}3}}^2}{4\e^{-\i\frac{3\pi}4}} = \frac{4\e^{-\i\frac{2\pi}3}}{4\e^{-\i\frac{3\pi}4}} = \e^{\i\frac{\pi}{12}}.\] Thus, $r = 1$ and $\t = \pi/12$.
+        Note that $z = 4\e^{\i3\pi/4}$ and $w = 2\bp{1/2 - \i\sqrt{3}/2} = 2\e^{-\i\pi/3}$. Hence, \[\frac{w^2}{z\conj} = \frac{\bp{2\e^{-\i(\pi/3)}}^2}{4\e^{-\i(3\pi/4)}} = \frac{4\e^{-\i(2\pi/3)}}{4\e^{-\i(3\pi/4)}} = \e^{\i\pi/12}.\] Thus, $r = 1$ and $\t = \pi/12$.
     \end{ppart}
     \begin{ppart}
-        Note that $\bp{w^2 / z\conj}^n = \bp{\e^{\i\pi/12}}^n = \e^{\i n\pi/12}$. Since $\bp{w^2 / z\conj}^n$ is purely imaginary, we have $\arg \bp{w^2 / z\conj}^n = \pi/2+ \pi k$, where $k \in \ZZ$. Thus, $n\pi/12 = \pi/2 + \pi k$, whence $n =  6 + 12k$. Hence, $\bc{n \in \ZZ: n = 6 + 12k, \, k \in Z}$.
+        Note that $\bp{w^2 / z\conj}^n = \bp{\e^{\i\pi/12}}^n = \e^{\i n\pi/12}$. Since $\bp{w^2 / z\conj}^n$ is purely imaginary, we have $\arg \bp{w^2 / z\conj}^n = \pi/2+ \pi k$, where $k$ is an integer. Thus, $n\pi/12 = \pi/2 + \pi k$, whence $n =  6 + 12k$. Hence, the set of values that $n$ can take is $\bc{6 + 12k : k \in \ZZ}$.
     \end{ppart}
 \end{solution}
 
@@ -133,10 +133,9 @@
     \begin{enumerate}
         \item By first expressing $w$ and $z$ in the form $x + \i y$, find the exact real and imaginary parts of $w + z$.
         \item On the same Argand diagram, sketch the points $P$, $Q$, $R$ representing the complex numbers $z$, $w$, and $z + w$ respectively. State the geometrical shape of the quadrilateral $OPRQ$.
-        \item Referring the Argand diagram in part (b), find $\arg{w + z}$ and show that $\tan \frac{11}{24}\pi = \frac{a + \sqrt2}{\sqrt6 + b}$, where $a$ and $b$ are constants to be determined.
+        \item Referring the Argand diagram in part (b), find $\arg{w + z}$ and show that \[\tan \frac{11}{24}\pi = \frac{a + \sqrt2}{\sqrt6 + b},\] where $a$ and $b$ are constants to be determined.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Note that \[w = \sqrt2 \e^{\i\pi/4} = \sqrt2 \bp{\cos \frac\pi4 + \i\sin\frac\pi4} = \sqrt2 \bp{\frac1{\sqrt2} + \i \frac1{\sqrt2}} = 1 + \i\] and \[z = \sqrt2 \e^{\i5\pi/6} = \sqrt2 \bp{\cos \frac56 \pi + \i\sin \frac56\pi} = \sqrt2\bp{-\frac{\sqrt3}2 + \i\frac12} = -\frac{\sqrt3}{\sqrt2} + \i\frac1{\sqrt2}.\] Hence, \[w + z = (1 + \i) + \bp{-\frac{\sqrt3}{\sqrt2} + \i\frac1{\sqrt2}} = \bp{1 - \frac{\sqrt3}{\sqrt2}} + \i\bp{1 + \frac1{\sqrt2}}.\]
@@ -193,18 +192,18 @@
         $OPRQ$ is a rhombus.
     \end{ppart}
     \begin{ppart}
-        Note that $\angle POQ = \pi - \frac\pi6 - \frac\pi4 = \frac7{12} \pi$. Since $\abs{z} = \abs{w}$, we have $OP = OQ$, whence $\angle ROQ = \frac12 \cdot \frac7{12}\pi = \frac7{24}\pi$. Hence, $\arg{w + z} = \frac\pi4 + \frac7{24}\pi = \frac{13}{24}\pi$. Thus, \[\tan{\frac{13}{24}\pi} = \frac{1 + 1/\sqrt2}{1 - \sqrt3/\sqrt2} = \frac{\sqrt2 + 1}{\sqrt2 - \sqrt3} = \frac{2 + \sqrt2}{2 - \sqrt6}\]
-        However, $\tan{\frac{13}{24}\pi} = -\tan{\pi - \frac{13}{24}} = -\tan{\frac{11}{24}\pi}$. Hence, \[\tan{\frac{11}{24}\pi} = -\frac{2 + \sqrt2}{2 - \sqrt6} = \frac{2 + \sqrt2}{\sqrt6 - 2},\] whence $a = 2$ and $b = -2$.
+        Note that $\angle POQ = \pi - \pi/6 - \pi/4 = 7\pi/12$. Since $\abs{z} = \abs{w}$, we have $OP = OQ$, whence $\angle ROQ = (1/2)(7\pi/12) = 7\pi/24$. Hence, $\arg{w + z} = \pi/4 + 7\pi/24 = 13\pi/24$. Thus, \[\tan{\frac{13}{24}\pi} = \frac{1 + 1/\sqrt2}{1 - \sqrt3/\sqrt2} = \frac{\sqrt2 + 1}{\sqrt2 - \sqrt3} = \frac{2 + \sqrt2}{2 - \sqrt6}.\] However, \[\tan{\frac{13}{24}\pi} = -\tan{\pi - \frac{13}{24}} = -\tan{\frac{11}{24}\pi}.\] Hence, \[\tan{\frac{11}{24}\pi} = -\frac{2 + \sqrt2}{2 - \sqrt6} = \frac{2 + \sqrt2}{\sqrt6 - 2},\] whence $a = 2$ and $b = -2$.
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
-    The complex number $z$ is given by $z = 2\bp{\cos\b + \i\sin\b}$ where $0 < \b < \frac\pi2$.
+    The complex number $z$ is given by $z = 2\bp{\cos\b + \i\sin\b}$ where $0 < \b < \pi/2$.
 
     \begin{enumerate}
-        \item Show that $\frac{z}{4 - z^2} = (k\csc\b)\i$, where $k$ is positive real constant to be determined.
-        \item State the argument of $\frac{z}{4 - z^2}$, giving your reasons clearly.
-        \item Given the complex number $w = -\sqrt3 + \i$, find the three smallest positive integer values of $n$ such that $\bp{\frac{z}{4 - z^2}}(w\conj)^n$ is a real number.
+        \item Show that \[\frac{z}{4 - z^2} = (k\csc\b)\i,\] where $k$ is positive real constant to be determined.
+        \item State the argument of $z/(4 - z^2)$, giving your reasons clearly.
+        \item Given the complex number $w = -\sqrt3 + \i$, find the three smallest positive integer values of $n$ such that $\bp{z/(4 - z^2)}(w\conj)^n$ is a real number.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -212,10 +211,11 @@
         Observe that $z = 2\bp{\cos\b + \i\sin\b} = 2\e^{\i\b}$. Hence, \[\frac{z}{4 - z^2} = \frac{2\e^{\i\b}}{4 - 4\e^{\i2\b}} = \frac12\bp{\frac{1}{\e^{-\i\b} - \e^{\i\b}}} = \frac12\bp{\frac1{-2\i\sin\b}} = \bp{\frac14 \csc \b} \i,\] thus $k = 1/4$.
     \end{ppart}
     \begin{ppart}
-        Since $0 < \b < \pi/2$, we know that $\csc \b > 0$. Hence, $\Im{\frac{z}{4 - z^2}} > 0$. Furthermore, $\Re{\frac{z}{4 - z^2}} = 0$. Thus, $\arg{\frac{z}{4 - z^2}} = \pi/2$.
+        Since $0 < \b < \pi/2$, we know that $\csc \b > 0$. Hence, $\Im{z/(4 - z^2)} > 0$. Furthermore, $\Re{z/(4 - z^2)} = 0$. Thus, $\arg{z/(4 - z^2)} = \pi/2$.
     \end{ppart}
     \begin{ppart}
-        Note that $w = -\sqrt3 + \i = 2\bp{-\frac{\sqrt3}2 + \frac12 \i} = 2\e^{-\i5\pi/6}$. Hence, \[            \arg{\bp{\frac{z}{4 - z^2}}(w\conj)^n} = \frac\pi2 + n\bp{-\frac{5\pi}6} = \pi\bp{\frac12 - \frac{5n}{6}}.\]
-        For $\bp{\frac{z}{4 - z^2}}(w\conj)^n$ to be a real number, we require $\arg{\bp{\frac{z}{4 - z^2}}(w\conj)^n} = \pi k$, where $k \in \ZZ$. Hence, \[\pi\bp{\frac12 - \frac56 n} = \pi k \implies  \frac12 - \frac56 n = k \implies 3 - 5n = 6k \implies n \equiv 3 \pmod{6}.\] Hence, the three smallest possible values of $n$ are $3$, $9$ and $15$.
+        Note that $w = -\sqrt{3} + \i = 2\bp{-\sqrt{3}/2 + \i/2} = 2\e^{-\i5\pi/6}$. Hence, \[\arg{\bp{\frac{z}{4 - z^2}}(w\conj)^n} = \frac\pi2 + n\bp{-\frac{5\pi}6} = \pi\bp{\frac12 - \frac{5n}{6}}.\]
+
+        For $\bp{z/(4 - z^2)}(w\conj)^n$ to be a real number, we require $\arg{(z/(4 - z^2))(w\conj)^n} = \pi k$ for some integer $k$. Hence, \[\pi\bp{\frac12 - \frac56 n} = \pi k.\] Simplifying, we see that $3 - 5n = 6k$. Reducing modulo 6, we see that $n \equiv 3$. Hence, the three smallest possible values of $n$ are $3$, $9$ and $15$.
     \end{ppart}
 \end{solution}

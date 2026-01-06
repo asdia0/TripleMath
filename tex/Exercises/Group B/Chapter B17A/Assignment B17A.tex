@@ -25,34 +25,34 @@
 \end{solution}
 
 \begin{problem}
-    An $n \times n$ matrix $\mat A$ is said to be an \emph{involutory matrix} if $\mat A^2 = \mat I$, where $\mat I$ is the identity matrix. It is an \emph{idempotent matrix} if $\mat A^2 = \mat A$.
+    An $n \times n$ matrix $\mat A$ is said to be an \bd{involutory matrix} if $\mat A^2 = \mat I$, where $\mat I$ is the identity matrix. It is an \bd{idempotent matrix} if $\mat A^2 = \mat A$.
 
     \begin{enumerate}
         \item Find the possible values of the determinant of an involutory matrix.
         \item State the expression of $\mat A^{2n+1}$ where $n \in \ZZ^+$, where $\mat A$ is an involutory matrix.
-        \item Prove that $\mat A$ is an involutory matrix if and only if $\frac12 \bp{\mat A + \mat I}$ is idempotent.
+        \item Prove that $\mat A$ is an involutory matrix if and only if $(1/2)\bp{\mat A + \mat I}$ is idempotent.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Taking determinants on both sides, \[\det \mat A^2 = \det \mat I \implies \bp{\det \mat A}^2 = 1 \implies \det \mat A = \pm 1.\]
+        Taking determinants on both sides, we have $\det \mat A^2 = \det \mat I$. Since $\det \mat A^2 = \bp{\det \mat A}^2$ and $\det \mat I = 1$, we have $\det \mat A = \pm 1$.
     \end{ppart}
     \begin{ppart}
-        Clearly, \[\mat A^{2n+1} = \mat A \bs{\bp{\mat A}^{2}}^{n} = \mat A \mat I^n = \mat A.\]
+        We have $\mat A^{2n+1} = \mat A \bs{\bp{\mat A}^{2}}^{n} = \mat A \mat I^n = \mat A$.
     \end{ppart}
     \begin{ppart}
-        Suppose $\mat A$ is involutory. Then $\mat A^2 = \mat I$. Consider $\bs{\frac12 \bp{\mat A + \mat I}}^2$:
+        Suppose $\mat A$ is involutory, i.e. $\mat A^2 = \mat I$. Consider $\bs{(1/2)\bp{\mat A + \mat I}}^2$:
         \begin{align*}
             \bs{\frac12 \bp{\mat A + \mat I}} &= \frac14 \bp{\mat A^2 + \mat A \mat I + \mat I \mat A + \mat I^2}\\
             &= \frac14 \bp{\mat A^2 + 2\mat A + \mat I}\\
             &= \frac14 \bp{\mat I + 2\mat A + \mat I}\\
             &= \frac12 \bp{\mat A + \mat I}.    
         \end{align*}
-        Thus, $\frac12\bp{\mat A + \mat I}$ is idempotent.
+        Thus, $(1/2)\bp{\mat A + \mat I}$ is idempotent.
 
-        Suppose that $\frac12 \bp{\mat A + \mat I}$ is idempotent. Then \[\bs{\frac12 \bp{\mat A + \mat I}}^2 = \frac12 \bp{\mat A + \mat I}.\] Expanding, we get \[\mat A^2 + 2\mat A + \mat I = 2\bp{\mat A + \mat I},\] from which we see that $\mat A^2 = \mat I$, hence $\mat A$ is involutory.
+        Suppose that $(1/2)\bp{\mat A + \mat I}$ is idempotent. Then \[\bs{\frac12 \bp{\mat A + \mat I}}^2 = \frac12 \bp{\mat A + \mat I}.\] Expanding, we get \[\frac14 \mat A^2 + \frac12 \mat A + \frac 14 \mat I = \frac12 \mat A + \frac12 \mat I,\] from which we see that $\mat A^2 = \mat I$, hence $\mat A$ is involutory.
 
-        Thus, $\mat A$ is involutory if and only if $\frac12\bp{\mat A + \mat I}$ is idempotent.
+        Thus, $\mat A$ is involutory if and only if $(1/2)\bp{\mat A + \mat I}$ is idempotent.
     \end{ppart}
 \end{solution}
 
@@ -73,6 +73,6 @@
         Using G.C., we have $\mat x = \begin{pmatrix}-7 & 6 & 12\end{pmatrix}$.
     \end{ppart}
     \begin{ppart}
-        Post-multiplying the given equation with $\mat A^{-1}$, we have \[\begin{pmatrix}x & y & z & t\end{pmatrix} \begin{pmatrix}[rrr]-1 & 2 & 3 \\ & \mat A & \end{pmatrix} \mat A^{-1} = \begin{pmatrix}2 & -2 & 1\end{pmatrix} \mat A^{-1}.\] Block-multiplying the LHS yields \[\begin{pmatrix}x & y & z & t\end{pmatrix}  \begin{pmatrix}-7 & 6 & 12 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix}-10 & 4 & 11\end{pmatrix}.\] This gives the system of linear equations \[\systeme[xyzt]{-7x + y = -10, 6x + z = 4, 12x + t = 11}.\] Let $x = \l$, where $\l \in \RR$. Then \[x = \l, \quad y = -10 + 7\l, \quad z = 4 - 6\l, \quad t = 11 - 12\l.\]
+        Post-multiplying the given equation with $\mat A^{-1}$, we have \[\begin{pmatrix}x & y & z & t\end{pmatrix} \begin{pmatrix}[rrr]-1 & 2 & 3 \\ & \mat A & \end{pmatrix} \mat A^{-1} = \begin{pmatrix}2 & -2 & 1\end{pmatrix} \mat A^{-1}.\] Block-multiplying the LHS yields \[\begin{pmatrix}x & y & z & t\end{pmatrix}  \begin{pmatrix}-7 & 6 & 12 \\ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix}-10 & 4 & 11\end{pmatrix}.\] This gives the system of linear equations \[\systeme[xyzt]{-7x + y = -10, 6x + z = 4, 12x + t = 11}.\] Let $x = \l$, where $\l \in \RR$. Then $x = \l$, $y = -10 + 7\l$, $z = 4 - 6\l$, and $t = 11 - 12\l$.
     \end{ppart}
 \end{solution}

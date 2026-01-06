@@ -43,7 +43,7 @@
         \item $y=f(2x)$
         \item $y=f(x+3)$
         \item $y = 1 - f(x)$
-        \item $y = 3f\bp{\frac{x}2 - 1}$
+        \item $y = 3f\bp{x/2 - 1}$
     \end{enumerate}
     stating, in each case, the coordinates of the points corresponding to $A$, $B$, $C$ and $D$.
 \end{problem}
@@ -307,7 +307,7 @@
     
     \begin{enumerate}
         \item $y = f(x+1)$
-        \item $y = f\bp{\frac{x}2}$
+        \item $y = f(x/2)$
         \item $y = 2f(x) - 2$
     \end{enumerate}
 
@@ -447,56 +447,37 @@
 
 \clearpage
 \begin{problem}
-    The curve with equation $y=x^2$ is transformed by a translation of 2 units in the positive $x$-direction, followed by a stretch with scale factor $\frac12$ parallel to the $y$-axis, followed by a translation of 6 units in the negative $y$-direction. Find the equation of the new curve in the form $y = f(x)$ and the exact coordinates of the points where this curve crosses the $x$- and $y$-axes.
+    The curve with equation $y=x^3$ is transformed by a translation of 2 units in the positive $x$-direction, followed by a stretch with scale factor $1/2$ parallel to the $y$-axis, followed by a translation of 6 units in the negative $y$-direction. Find the equation of the new curve in the form $y = f(x)$ and the exact coordinates of the points where this curve crosses the $x$- and $y$-axes.
 \end{problem}
 \begin{solution}
-    \begin{center}\tikzsetnextfilename{245}
-        \begin{tikzpicture}
-            \node (F) {$y = x^3$};
-            \node[right of=F, xshift=4cm] (A) {$y = (x-2)^3$};
-            \node[below of=A, yshift=-1cm] (B) {$2y = (x-2)^3$};
-            \node[left of=B, xshift=-5cm] (C) {$2(y+6) = (x-2)^3$};
+    \begin{align*}
+        y &= x^3\\
+        y &= (x-2)^3 \tag{$x \mapsto x-2$}\\
+        2y &= (x-2)^3 \tag{$y \mapsto 2y$}\\
+        2(y+6) &= (x-2)^3 \tag{$y \mapsto y+6$}
+    \end{align*}
 
-            \draw[->] (F) -- node[anchor=south] {$x \mapsto x-2$} (A);
-            \draw[->] (A) -- node[anchor=west] {$y \mapsto 2y$} (B);
-            \draw[->] (B) -- node[anchor=south] {$y \mapsto y+6$} (C);
-        \end{tikzpicture}
-    \end{center}
-
-    Hence, $y = \frac12 (x-2)^3 - 6$
+    Hence, \[y = \frac{(x-2)^3}{2} - 6.\]
 
     When $x=0$, $y = -10$. When $y = 0$, $x = 2 + \sqrt[3]{12}$. Thus, the curve crosses the $x$-axis at $(2 + \sqrt[3]{12}, 0)$ and the $y$-axis at $(0, -10)$.
 \end{solution}
 
 \begin{problem}
-    Find the values of the constants $A$ and $B$ such that $\frac{x^2-4x}{(x-2)^2} = A + \frac{B}{(x-2)^2}$ for all values of $x$ except $x=2$.
+    Find the values of the constants $A$ and $B$ such that \[\frac{x^2-4x}{(x-2)^2} = A + \frac{B}{(x-2)^2}\] for all values of $x$ except $x=2$.
 
-    Hence, state a sequence of transformations by which the graph of $y = \frac{x^2-4x}{(x-2)^2}$ may be obtained from the graph of $y = \frac1{x^2}$.
+    Hence, state a sequence of transformations by which the graph of \[y = \frac{x^2-4x}{(x-2)^2}\] may be obtained from the graph of $y = 1/x^2$.
 \end{problem}
 \begin{solution}
-    \[\frac{x^2-4x}{(x-2)^2} = \frac{(x-2)^2 - 4}{(x-2)^2} = 1 + \frac{- 4}{(x-2)^2}.\] Thus, $A = 1$ and $B = -4$.
+    \[\frac{x^2-4x}{(x-2)^2} = \frac{(x-2)^2 - 4}{(x-2)^2} = 1 + \frac{-4}{(x-2)^2}.\] Thus, $A = 1$ and $B = -4$.
 
-    \begin{center}\tikzsetnextfilename{246}
-        \begin{tikzpicture}
-            \node (F) {$y = \dfrac1{x^2}$};
-            \node[right of=F, xshift=3.5cm] (A) {$y = \dfrac1{(x-2)^2}$};
-            \node[right of=A, xshift=3.5cm] (B) {$y = \dfrac{4}{(x-2)^2}$};
-            \node[below of=B, yshift=-1cm] (C) {$y = \dfrac{-4}{(x-2)^2}$};
-            \node[left of=C, xshift=-4cm] (D) {$y = 1 + \dfrac{-4}{(x-2)^2}$};
-
-            \draw[->] (F) -- node[anchor=south] {$x \mapsto x-2$} (A);
-            \draw[->] (A) -- node[anchor=south] {$y \mapsto \frac14 y$} (B);
-            \draw[->] (B) -- node[anchor=west] {$y \mapsto -y$} (C);
-            \draw[->] (C) -- node[anchor=south] {$y \mapsto y-1$} (D);
-        \end{tikzpicture}
-    \end{center}
-
+    Consider the following sequence of transformations:
     \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
-        \item Translate the curve 2 units in the positive $x$-direction.
-        \item Stretch the curve with a scale factor of 4 parallel to the $y$-axis.
-        \item Reflect the curve about the $x$-axis.
-        \item Translate the curve 1 unit in the positive $y$-direction.
+        \item[] \[y = \frac1{x^2}.\]
+        \item Translate the curve 2 units in the positive $x$-direction. \[y = \frac1{(x-2)^2}. \tag{$x \mapsto x-2$}\]
+        \item Stretch the curve with a scale factor of 4 parallel to the $y$-axis. \[y = \frac{4}{(x-2)^2}. \tag{$y \mapsto y/4$}\]
+        \item Reflect the curve about the $x$-axis. \[y = -\frac{4}{(x-2)^2}. \tag{$y \mapsto -y$}\]
+        \item Translate the curve 1 unit in the positive $y$-direction. \[y = 1 - \frac{4}{(x-2)^2}. \tag{$y \mapsto y-1$}\]
     \end{enumerate}
     \renewcommand{\theenumi}{(\alph{enumi})}
 \end{solution}
@@ -514,31 +495,22 @@
     A curve undergoes the transformations $A$, $B$, $C$ and $D$ in succession, and the equation of the resulting curve is $y = 3\sqrt{2-x} + 1$. Determine the equation of the curve before the transformations were effected.
 \end{problem}
 \begin{solution}
-    \begin{alignat*}{2}
-        &A \colon x \mapsto -x &&\implies A^{-1} \colon x \mapsto -x\\
-        &B \colon x \mapsto x-2 &&\implies B^{-1} \colon x \mapsto x+2\\
-        &C \colon y \mapsto \frac13 y &&\implies C^{-1} \colon y \mapsto 3y\\
-        &D \colon y \mapsto y-1 &&\implies D^{-1} \colon y \mapsto y+1
-    \end{alignat*}
+    We apply the inverse transformations in reverse order to recover the equation of the original curve.
 
-    \begin{center}\tikzsetnextfilename{247}
-        \begin{tikzpicture}
-            \node (F) {$y = 3\sqrt{2-x} + 1$};
-            \node[below of=F, yshift=-1cm] (D) {$y + 1 = 3\sqrt{2-x} + 1$};
-            \node[below of=D, yshift=-1cm] (C) {$3y + 1 = 3\sqrt{2-x} + 1$};
-            \node[below of=C, yshift=-1cm] (B) {$3y + 1 = 3\sqrt{2-(x+2)} + 1$};
-            \node[below of=B, yshift=-1cm] (A) {$3y + 1 = 3\sqrt{2-(-x+2)} + 1$};
-
-            \draw[->] (F) -- node[anchor=west] {$D^{-1}$} (D);
-            \draw[->] (D) -- node[anchor=west] {$C^{-1}$} (C);
-            \draw[->] (C) -- node[anchor=west] {$B^{-1}$} (B);
-            \draw[->] (B) -- node[anchor=west] {$A^{-1}$} (A);
-        \end{tikzpicture}
-    \end{center}
+    \renewcommand{\theenumi}{\arabic{enumi}.}
+    \begin{enumerate}
+        \item[] \[y = 3\sqrt{2-x} + 1.\]
+        \item Translate the curve 1 unit in the negative $y$-direction. \[y = 3\sqrt{2-x}. \tag{$y \mapsto y+1$}\]
+        \item Scale the curve parallel to the $y$-axis by a factor of $1/3$. \[y = \sqrt{2-x}. \tag{$y \mapsto 3y$}\]
+        \item Translate the curve 2 units in the negative $x$-direction. \[y = \sqrt{-x}. \tag{$x \mapsto x+2$}\]
+        \item Reflect the curve about the $y$-axis. \[y = \sqrt{x}. \tag{$x \mapsto -x$}\]
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
 
     Thus, the original curve has equation $y = \sqrt{x}$.
 \end{solution}
 
+\clearpage
 \begin{problem}
     \begin{center}\tikzsetnextfilename{248}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -589,7 +561,7 @@
         \item $y = f(\abs{x})$
         \item $y = f(\abs{x-1})$
         \item $y = \abs{f(x)}$
-        \item $y = \frac{1}{f(x)}$
+        \item $y = 1/f(x)$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -630,6 +602,7 @@
             \end{tikzpicture}
         \end{center}
     \end{ppart}
+    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{250}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -755,6 +728,7 @@
             \end{tikzpicture}
         \end{center}
     \end{ppart}
+    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{253}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -837,9 +811,10 @@
     \begin{enumerate}
         \item $y = f(x)$
         \item $y = f(\abs{x})$
-        \item $y = \frac{1}{f(x)}$
+        \item $y = 1/f(x)$
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{255}
@@ -1013,9 +988,9 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Scale by a factor of $\frac12$ parallel to the $y$-axis.
+        Scale by a factor of $1/2$ parallel to the $y$-axis.
     \end{ppart}
     \begin{ppart}
-        \[y^2 = (2(t+1))^2 = 4(t^2 + 2t + 1) = 4(t(t+1) + 1) = 4(x + 1).\]
+        $y^2 = (2(t+1))^2 = 4(t^2 + 2t + 1) = 4(t(t+1) + 1) = 4(x + 1)$.
     \end{ppart}
 \end{solution}

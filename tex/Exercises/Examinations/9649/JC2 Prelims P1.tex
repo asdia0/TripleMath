@@ -10,7 +10,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        The complementary solution is \[u_n^{(c)} = C \bp{\frac12}^n.\] Let $k$ be a particular solution. Then $k =  \frac12 k + 3$, so $k = 6$. Thus, the general solution is \[u_n = u_{n}^{(c)} + k = C \bp{\frac12}^n + 6.\] Since $u_0 = 1$, we have that $C = -5$, so \[u_n = -\frac{5}{2^n} + 6.\]
+        The complementary solution is \[u_n^{(c)} = C \bp{\frac12}^n.\] Let $k$ be a particular solution. Then $k = k/2 + 3$, so $k = 6$. Thus, the general solution is \[u_n = u_{n}^{(c)} + k = C \bp{\frac12}^n + 6.\] Since $u_0 = 1$, we have that $C = -5$, so \[u_n = -\frac{5}{2^n} + 6.\]
     \end{ppart}
     \begin{ppart}
         $u_n$ is increasing and converges to 6.
@@ -36,14 +36,14 @@
         \end{itemize}
     \end{ppart}
     \begin{ppart}
-        We prove independence. Let $c_1, c_2, c_3 \in \RR$ be scalars such that \[c_1 \mat N \vec v_1 + c_2 \mat N \vec v_2 + c_3 \mat N \vec v_3 = \vec 0.\] Since $\mat N$ is invertible, its inverse $\mat N^{-1}$ exists, so we may left-multiply both sides by $\mat N^{-1}$ to get \[c_1 \vec v_1 + c_2 \vec v_2 + c_3 \vec v_3 = \mat 0.\] But $\bc{\vec v_1, \vec v_2, \vec v_3}$ is a basis of $\RR^3$ and are thus independent, thus $c_1 = c_2 = c_3 = 0$. Hence, $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ are also independent.
+        We prove independence. Let $c_1, c_2, c_3 \in \RR$ be scalars such that $c_1 \mat N \vec v_1 + c_2 \mat N \vec v_2 + c_3 \mat N \vec v_3 = \vec 0$. Since $\mat N$ is invertible, its inverse $\mat N^{-1}$ exists, so we may left-multiply both sides by $\mat N^{-1}$ to get $c_1 \vec v_1 + c_2 \vec v_2 + c_3 \vec v_3 = \mat 0$. But $\bc{\vec v_1, \vec v_2, \vec v_3}$ is a basis of $\RR^3$ and are thus independent, thus $c_1 = c_2 = c_3 = 0$. Hence, $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ are also independent.
 
-        Since $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ are independent, and \[\Dim \RR^3 = 3 = \abs{\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}},\] it must be a basis for $\RR^3$.
+        Since $\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}$ are independent, and $\Dim \RR^3 = 3 = \abs{\bc{\mat N \vec v_1, \mat N \vec v_2, \mat N \vec v_3}}$, it must be a basis for $\RR^3$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The complex number $z$ satisfies $\abs{\i z + 6 + \i} < \abs{z - 5 - 6\i}$ and $\abs{\frac12 z - 3 + 4\i} \leq 5$.
+    The complex number $z$ satisfies $\abs{\i z + 6 + \i} < \abs{z - 5 - 6\i}$ and $\abs{z/2 - 3 + 4\i} \leq 5$.
 
     \begin{enumerate}
         \item Sketch the locus of $z$.
@@ -52,7 +52,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that the given conditions are equivalent to \[\abs{z - (-1 + 6\i)} < \abs{z - (5 + 6\i)} \quad \tand \quad \abs{z - (6 - 8\i)} \leq 10.\]
+        Note that the given conditions are equivalent to $\abs{z - (-1 + 6\i)} < \abs{z - (5 + 6\i)}$ and $\abs{z - (6 - 8\i)} \leq 10$.
 
         \begin{center}\tikzsetnextfilename{526}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -108,9 +108,9 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Let $A(x, y)$ be the point of intersection between the circle and the line $x = 2$, with $y > 0$. The equation of the circle is \[(x-6)^2 + (y+8)^2 = 10^2.\] Substituting $x = 2$ and solving gives $A(2, 2\sqrt{21} - 8)$. Thus, \[\sup \arg{z - 4\i} = \arg{\bs{2 + (2\sqrt{21} - 8)\i} - 4\i} = \arctan \frac{2\sqrt{21} -8 -4}{2} = -0.956 \tosf{3}.\]
+        Let $A(x, y)$ be the point of intersection between the circle and the line $x = 2$, with $y > 0$. The equation of the circle is $(x-6)^2 + (y+8)^2 = 10^2$. Substituting $x = 2$ and solving gives $A(2, 2\sqrt{21} - 8)$. Thus, \[\sup \arg{z - 4\i} = \arg{\bs{2 + (2\sqrt{21} - 8)\i} - 4\i} = \arctan \frac{2\sqrt{21} -8 -4}{2} = -0.956 \tosf{3}.\]
 
-        Set $F(0, 4)$. Let $B$ lie on the circumference of the circle such that $BF$ is tangent to the circle, with negative $y$-coordinate. Let $C(6, -8)$ be the centre of the circle. Note that \[FB = \sqrt{6^2 + (4+8)^2} = 6\sqrt{5}.\] Thus, \[\sin \angle CFB = \frac{CB}{BF} = \frac{10}{6\sqrt{5}} \implies \angle CFB = 0.84107 \tosf{5}.\] Next, we note that $C$ is at an angle \[\arg{6-8\i - 4\i} = \arctan \frac{-12}{6} = -1.10715 \tosf{5}\] relative to $F$. Thus, \[\min \arg{z-4\i} = -1.10715 - 0.84107 = -1.95 \tosf{3}.\]
+        Set $F(0, 4)$. Let $B$ lie on the circumference of the circle such that $BF$ is tangent to the circle, with negative $y$-coordinate. Let $C(6, -8)$ be the centre of the circle. Note that $FB = \sqrt{6^2 + (4+8)^2} = 6\sqrt{5}$, so \[\sin \angle CFB = \frac{CB}{BF} = \frac{10}{6\sqrt{5}},\] whence $\angle CFB = 0.84107 \tosf{5}$. Next, we note that $C$ is at an angle \[\arg{6-8\i - 4\i} = \arctan \frac{-12}{6} = -1.10715 \tosf{5}\] relative to $F$. Thus, $\min \arg{z-4\i} = -1.10715 - 0.84107 = -1.95 \tosf{3}$.
 
         Hence, $-1.95 \leq \arg{z-4\i} < -0.856$.
     \end{ppart}
@@ -120,7 +120,7 @@
     The tangent plant to the point $(a, b, c)$ on the surface with equation $(x-3)^2 + (y-5)^2 + z^2 = 4$ is a subspace of $\RR^3$. Find the range of values of $a$.
 \end{problem}
 \begin{solution}
-    Note that the tangent plane must pass through the origin, since it is a subspace of $\RR^3$. Observe also that the equation $(x-3)^2 + (y-5)^2 + z^2 = 4$ describes a sphere with radius 2 and centre $(3, 5, 0)$. Since the sphere is symmetric about the $xy$-plane, the extremal points of $c$ occur on the $xy$-plane. Thus, it suffices to look at the projection of the sphere and the tangent plane on the $xy$-plane. There, the sphere becomes the circle with equation \[(x-3)^2 + (y-5)^2 = 4,\] while the tangent plane becomes the line $y = kx$ passing through the origin. Solving both simultaneously, we get the quadratic \[\bp{1 + k^2} x^2 - (6 + 10k)x + 30 = 0.\] Since $y = kx$ is tangent to the circle, the discriminant of this quadratic must be 0. Hence, \[(6 + 10k)^2 - 4\bp{1 + k^2}(30) = 0 \implies k = \frac{15 \pm 2\sqrt{30}}{5}.\] By the quadratic formula, the $x$-coordinates of the point of tangency are thus \[x = \frac{6+10k}{2\bp{1 + k^2}} = 1.04, \, 4.26.\] Hence, $1.04 \leq c \leq 4.26$, $c \neq 3$.
+    Note that the tangent plane must pass through the origin, since it is a subspace of $\RR^3$. Observe also that the equation $(x-3)^2 + (y-5)^2 + z^2 = 4$ describes a sphere with radius 2 and centre $(3, 5, 0)$. Since the sphere is symmetric about the $xy$-plane, the extremal points of $c$ occur on the $xy$-plane. Thus, it suffices to look at the projection of the sphere and the tangent plane on the $xy$-plane. There, the sphere becomes the circle with equation $(x-3)^2 + (y-5)^2 = 4$, while the tangent plane becomes the line $y = kx$ passing through the origin. Solving both simultaneously, we get the quadratic $\bp{1 + k^2} x^2 - (6 + 10k)x + 30 = 0$. Since $y = kx$ is tangent to the circle, the discriminant of this quadratic must be 0. Hence, $(6 + 10k)^2 - 4\bp{1 + k^2}(30) = 0$, so \[k = \frac{15 \pm 2\sqrt{30}}{5}.\] By the quadratic formula, the $x$-coordinates of the point of tangency are thus \[x = \frac{6+10k}{2\bp{1 + k^2}} = 1.04 \; \tor \; 4.26.\] Hence, $1.04 \leq c \leq 4.26$, $c \neq 3$.
 \end{solution}
 
 \clearpage
@@ -163,7 +163,7 @@
         Using Simpson's rule, we have the estimate \[\int_1^2 2\pi g(x) \d x \approx 2\pi \cdot \frac{0.5}{6} \bs{g(1) + 4g(1.25) + 2g(1.5) + 4g(1.75) + g(2)} = 6.7267 \todp{4}.\]
     \end{ppart}
     \begin{ppart}
-        The percentage error in the estimate is \[\frac{\abs{6.7267 - \frac{2\pi}{9} \bp{24 \ln 2 - 7}}}{\frac{2\pi}{9} \bp{24 \ln 2 - 7}} = 0.00254\%.\]
+        The percentage error in the estimate is \[\frac{\abs{6.7267 - (2\pi/9) \bp{24 \ln 2 - 7}}}{(2\pi/9) \bp{24 \ln 2 - 7}} = 0.00254\%.\]
     \end{ppart}
     \begin{ppart}
         Since $y = x^2 \ln x$ is concave upwards on $(1, 2)$, the trapezium rule will give an overestimate.
@@ -171,7 +171,7 @@
 \end{solution}
 
 \begin{problem}
-    A differential equation is given by \[\cos x \der{y}{x} - y \sin x = 2 \cos x,\] where $-\pi/2 < x < \pi/2$.
+    A differential equation is given by \[\der{y}{x} \cos x - y \sin x = 2 \cos x,\] where $-\pi/2 < x < \pi/2$.
 
     \begin{enumerate}
         \item Show that the general solution of the differential equation is $y = 2 \tan x + C \sec x$, where $C$ is the arbitrary constant.
@@ -184,7 +184,7 @@
         We have \[\der{}{x} \bp{y \cos x} = 2\cos x.\] Integrating with respect to $x$, we get \[y \cos x = \int 2 \cos x \d x = 2\sin x + C.\] Thus, $y = 2 \tan x + C \sec x$.
     \end{ppart}
     \begin{ppart}
-        Differentiating $y$, we get \[\der{y}{x} = 2\sec^2 x + C \sec x \tan x.\] For turning points, $\derx{y}{x} = 0$, thus \[2 + C \sin x = 0 \implies \sin x = -\frac{2}{C}.\] But $\sin x$ has range $[-1, 1]$, thus $C < -2$ or $C > 2$, i.e. $k = 2$.
+        Differentiating $y$, we get \[\der{y}{x} = 2\sec^2 x + C \sec x \tan x.\] For turning points, $\derx{y}{x} = 0$, which occurs when \[\sin x = -\frac{2}{C}.\] But $\sin x$ has range $[-1, 1]$, thus $C < -2$ or $C > 2$, i.e. $k = 2$.
     \end{ppart}
     \begin{ppart}
         \begin{figure}[H]\tikzsetnextfilename{527}
@@ -226,19 +226,20 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item Let $z = \cos \t + \i \sin \t$. By considering $z^5$, show that \[\sin 5\t = 16\sin^5 \t - 20 \sin^3 \t + 5 \sin \t.\]
+        \item Let $z = \cos \t + \i \sin \t$. By considering $z^5$, show that $\sin 5\t = 16\sin^5 \t - 20 \sin^3 \t + 5 \sin \t$.
         \item Using your result in part (a),
         \begin{enumerate}
-            \item find the distinct real roots to the equation \[16x^5 - 20x^3 +5x + 1 = 0,\] giving your answer, where appropriate, in exact trigonometric form; and
+            \item find the distinct real roots to the equation $16x^5 - 20x^3 +5x + 1 = 0$, giving your answer, where appropriate, in exact trigonometric form; and
             \item find the exact value of $\tan[2]{\pi/5}$.
         \end{enumerate}
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $z = \e^{\i \t}$, so
+        By De Moivre's theorem, $z^5 = \cos 5\t + \i \sin 5\t$, so
         \begin{align*}
-            \sin 5\t &= \Im \e^{\i 5 \t} = \Im z^5 = \Im \bp{\cos \t + \i \sin \t}^5\\
+            \sin 5\t &= \Im z^5\\
+            &= \Im \bp{\cos \t + \i \sin \t}^5\\
             &= \Im \big(\cos^5 \t + 5 \i \cos^4 \t \sin \t - 10 \cos^3 \t \sin^2 \t - 10 \i \cos^2 \t \sin^3 \t\\
             &\hspace{3em}+ 5 \cos \t \sin^4 \t + \i \sin^5 \t\big)\\
             &= 5 \cos^4 \t \sin \t - 10 \cos^2 \t \sin^3 \t + \sin^5 \t\\
@@ -248,17 +249,16 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Let $x = \e^{\i \t}$. By part (a), the given equation becomes $\sin 5\t = -1$. Within the range $0 \leq \t < 2\pi$, the only solutions are \[\t = \frac3{10}\pi, \quad \frac7{10}\pi, \quad \frac{11}{10}\pi, \quad \frac{15}{10}\pi, \quad \frac{19}{10}\pi.\] Since $\sin\frac3{10} \pi = \sin\frac7{10} \pi$ and $\sin\frac{11}{10} \pi = \sin\frac{19}{10} \pi$, the distinct real roots to the original equation are \[x = \sin\frac3{10}\pi, \quad \sin \frac{11}{10} \pi, \quad -1.\]
+            Let $x = \e^{\i \t}$. By part (a), the given equation becomes $\sin 5\t = -1$. Within the range $0 \leq \t < 2\pi$, the only solutions are \[\t = \frac3{10}\pi, \quad \frac7{10}\pi, \quad \frac{11}{10}\pi, \quad \frac{15}{10}\pi, \quad \frac{19}{10}\pi.\] Since $\sin{3\pi/10} = \sin{7\pi/10}$ and $\sin{11\pi/10} = \sin{19\pi/10}$, the distinct real roots to the original equation are \[x = \sin\frac3{10}\pi, \quad \sin \frac{11}{10} \pi, \quad -1.\]
         \end{psubpart}
         \begin{psubpart}
-            Let $s = \sin{\pi/5}$ and $c = \cos{\pi/5}$. From part (a), we see that \[16s^5 - 20s^3 + 5s = \sin \pi = 0.\] Since $s \neq 0$, we may divide both sides by $s$ to get a quadratic in $s^2$: \[16\bp{s^2}^2 - 20s^2 + 5 = 0.\] By the quadratic formula, this gives \[s^2 = \frac{5 - \sqrt{5}}{8}\] where we reject the positive branch since \[s^2 < \sin^2 \frac\pi4 = \frac12 < \frac{5 + \sqrt{5}}{8}.\] Then \[c^2 = 1 - s^2 = \frac{3 + \sqrt5}{8}.\] Hence, \[\tan^2 \frac\pi5 = \frac{s^2}{c^2} = \frac{\frac{5-\sqrt5}{8}}{\frac{3 + \sqrt5}{8}} = 5 - 2\sqrt5.\]
+            Let $s = \sin{\pi/5}$ and $c = \cos{\pi/5}$. From part (a), we see that $16s^5 - 20s^3 + 5s = \sin \pi = 0$. Since $s \neq 0$, we may divide both sides by $s$ to get $16\bp{s^2}^2 - 20s^2 + 5 = 0$. By the quadratic formula, this gives \[s^2 = \frac{5 - \sqrt{5}}{8}\] where we reject the positive branch since \[s^2 < \sin^2 \frac\pi4 = \frac12 < \frac{5 + \sqrt{5}}{8}.\] Hence, \[\tan^2 \frac\pi5 = \frac{s^2}{c^2} = \frac{(5-\sqrt5)/8}{1 - (5-\sqrt5)/8} = 5 - 2\sqrt5.\]
         \end{psubpart}
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     The polar curves $C_1$ and $C_2$ are given by the following equations in the respective intervals.
-
     \begin{alignat*}{2}
         C_1: r &= 2 + 2\sin \t, &\quad 0 \leq \t \leq 2\pi,\\
         C_2: r &= -2\sin\t, &\quad \pi < \t < 2\pi.
@@ -275,7 +275,6 @@
         \item Show that the perimeter of the region $R$ can be expressed as \[4 \int_p^q \sqrt{2 + 2 \sin \t} \d \t + \frac{2\pi}3,\] where $p$ and $q$ are exact real numbers to be determined. Evaluate this integral in exact form. You may use the identity \[1 + \sin \t = 2\sin[2]{\frac\t2 + \frac\pi4}\] without proof.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{528}
@@ -313,7 +312,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Consider first the intersection of $C_1$ and $C_2$. Note that $2 + 2\sin \t = -2\sin \t$ is equivalent to $\sin \t = -1/2$, so $C_1$ and $C_2$ intersect when $\t = \frac76 \pi, \frac{11}6\pi$. From the graph in (a), we see that $C_1$ contributes to the perimeter of $R$ when $\frac32 \pi \leq \t \leq \frac{11}{6} \pi$, while $C_2$ contributes to the perimeter of $R$ when $\frac{11}{6} \pi \leq \t \leq 2\pi$.
+        Consider first the intersection of $C_1$ and $C_2$. Note that $2 + 2\sin \t = -2\sin \t$ is equivalent to $\sin \t = -1/2$, so $C_1$ and $C_2$ intersect when $\t = 7\pi/6$ or $\t = 11\pi/6$. From the graph in (a), we see that $C_1$ contributes to the perimeter of $R$ when $3\pi/2 \leq \t \leq 11\pi/6$, while $C_2$ contributes to the perimeter of $R$ when $11\pi/6 \leq \t \leq 2\pi$.
 
         Next, for $C_1$, we see that \[r^2 + \bp{\der{r}{\t}}^2 = \bp{2 + 2\sin \t}^2 + \bp{2 \cos \t}^2 = 8\bp{1 + \sin \t}.\] Similarly, for $C_2$, we have \[r^2 + \bp{\der{r}{\t}}^2 = \bp{-2\sin\t}^2 + \bp{-2 \cos \t}^2 = 4.\]
 
@@ -339,7 +338,7 @@
 
     Suppose a farmer has a large population of plants consisting of some distribution of all three possible genotypes $AA$, $Aa$ and $aa$. He starts a breeding programme where each plant in the population is always bred with a plant with genotype $Aa$ to produce the next generation of plants.
 
-    Let the vector $\cveciii{p_i}{q_i}{r_i}$ represent the proportion of plants with genotype $AA$, $Aa$ and $aa$ respectively in generation $i$, and $T : \RR^3 \to \RR^3$ be the transformation that maps $\cveciii{p_i}{q_i}{r_i}$ to $\cveciii{p_{i+1}}{q_{i+1}}{r_{i+1}}$.
+    Let the vector $\cveciiix{p_i}{q_i}{r_i}$ represent the proportion of plants with genotype $AA$, $Aa$ and $aa$ respectively in generation $i$, and $T : \RR^3 \to \RR^3$ be the transformation that maps $\cveciiix{p_i}{q_i}{r_i}$ to $\cveciiix{p_{i+1}}{q_{i+1}}{r_{i+1}}$.
 
     \begin{enumerate}
         \item Show that \[T: \cveciii{p_i}{q_i}{r_i} \mapsto \begin{pmatrix}2\b & \b & 0 \\ 2\b & 2\b & 2\b \\ 0 & \b & 2\b\end{pmatrix} \cveciii{p_i}{q_i}{r_i},\] where $\b$ is a non-zero constant to be determined. Find the nullity of $T$.
@@ -364,9 +363,9 @@
 
         \case{1}[$\l = 0$] From (a), the RREF of $\mat M$ is \[\begin{pmatrix}1 & 0 & -1 \\ 0 & 1 & 2 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciiix1{-2}1$.
 
-        \case{2}[$\l = 1/2$] The RREF of $\mat M - \frac12 \mat I$ is \[\begin{pmatrix}1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciiix10{-1}$.
+        \case{2}[$\l = 1/2$] The RREF of $\mat M - (1/2)\mat I$ is \[\begin{pmatrix}1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciiix10{-1}$.
 
-        \case{3}[$\l = 1$] The RREF of $\mat M - \mat I$ is \[\begin{pmatrix}1 & 0 & - 1 \\ 0 & 1 & -2 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciii121$.
+        \case{3}[$\l = 1$] The RREF of $\mat M - \mat I$ is \[\begin{pmatrix}1 & 0 & - 1 \\ 0 & 1 & -2 \\ 0 & 0 & 0\end{pmatrix}.\] Thus, the associated eigenvector is $\cveciiix121$.
     \end{ppart}
     \begin{ppart}
         We have $\mat M = \mat P \mat D \mat P^{-1}$, where \[\mat P = \begin{pmatrix}1 & 1 & 1 \\ -2 & 0 & 2 \\ 1 & -1 & 1\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}0 & 0 & 0 \\ 0 & 1/2 & 0 \\ 0 & 0 & 1\end{pmatrix}.\] Note also that \[\lim_{n \to \infty} \mat D^n = \lim_{n \to \infty} \begin{pmatrix}0 & 0 & 0 \\ 0 & 1/2^n & 0 \\ 0 & 0 & 1^n\end{pmatrix} = \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1\end{pmatrix}.\] Hence,
@@ -375,13 +374,7 @@
             &= \begin{pmatrix}1 & 1 & 1 \\ -2 & 0 & 2 \\ 1 & -1 & 1\end{pmatrix} \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix}4 & -4 & 4 \\ 8 & 0 & -8 \\ 4 & 4 & 4\end{pmatrix}\\
             &= \frac14 \begin{pmatrix}1 & 1 & 1 \\ 2 & 2 & 2 \\ 1 & 1 & 1\end{pmatrix}.
         \end{align*}
-        Let the initial population be $P = p_0 + q_0 + r_0$. It follows that
-        \begin{align*}
-            \cveciii{p_\infty}{q_\infty}{r_\infty} &= \lim_{n \to \infty} \mat M^n \cveciii{p_0}{q_0}{r_0}\\
-            &= \frac14 \begin{pmatrix}1 & 1 & 1 \\ 2 & 2 & 2 \\ 1 & 1 & 1\end{pmatrix} \cveciii{p_0}{q_0}{r_0}\\
-            &= \cveciii{P/4}{P/2}{P/4}.
-        \end{align*}
-        Thus, in the long run, a quarter of all plants will have $AA$ genotype, half will have $Aa$ genotype, and the remaining quarter will have $aa$ genotype.
+        Let the initial population be $P = p_0 + q_0 + r_0$. It follows that \[\cveciii{p_\infty}{q_\infty}{r_\infty} = \lim_{n \to \infty} \mat M^n \cveciii{p_0}{q_0}{r_0} = \frac14 \begin{pmatrix}1 & 1 & 1 \\ 2 & 2 & 2 \\ 1 & 1 & 1\end{pmatrix} \cveciii{p_0}{q_0}{r_0} = \cveciii{P/4}{P/2}{P/4}.\] Thus, in the long run, a quarter of all plants will have $AA$ genotype, half will have $Aa$ genotype, and the remaining quarter will have $aa$ genotype.
     \end{ppart}
 \end{solution}
 
@@ -428,9 +421,9 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        The characteristic equation $m^2 + \frac7{100} m + \frac3{5000} = 0$ has roots $m = -\frac1{100}, -\frac3{50}$. Thus, the complementary solution is \[y_{(c)} = A\e^{-t/100} + B\e^{-3t/50}.\] For the particular solution, we guess $y_{(p)} = C$. Then \[\frac3{5000} C = \frac1{25}\] so $C = 200/3$. The general solution is thus \[y = y_{(c)} + y_{(p)} = A\e^{-t/100} + B\e^{-3t/50} + \frac{200}{3}.\]
+        The characteristic equation \[m^2 + \frac7{100} m + \frac3{5000} = 0\] has roots $m = -1/100$ and $-3/50$. Thus, the complementary solution is $y_{(c)} = A\e^{-t/100} + B\e^{-3t/50}$. For the particular solution, we guess $y_{(p)} = C$. Then \[\frac3{5000} C = \frac1{25}\] so $C = 200/3$. The general solution is thus \[y = y_{(c)} + y_{(p)} = A\e^{-t/100} + B\e^{-3t/50} + \frac{200}{3}.\]
     \end{ppart}
     \begin{ppart}
-        Since $y$ converges as $t \to \infty$, we must have $\derx{y}{t} \to 0$. Thus, the desired ratio in the long run is \[\frac{x}{y} = \frac{50\bp{\der{y}{t} + \frac1{20} y}}{y} \to \frac52.\]
+        Since $y$ converges as $t \to \infty$, we must have $\derx{y}{t} \to 0$. Thus, the desired ratio in the long run is \[\frac{x}{y} = \frac{50\bp{\derx{y}{t} + y/20}}{y} \to \frac52.\]
     \end{ppart}
 \end{solution}

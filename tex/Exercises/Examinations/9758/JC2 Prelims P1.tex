@@ -4,7 +4,7 @@
     It is given that \[2xy \der{y}{x} = x^2 - y^2\] where $x > 0$, $y < 0$. Using the substitution $u = y/x$, show that the differential equation can be transformed to \[\frac{2u}{1 - 3u^2} \der{u}{x} = \frac1x.\] Hence, find the general solution of $y$ in terms of $x$.
 \end{problem}
 \begin{solution}
-    Note that $y = ux$, so \[\der{y}{x} = x \der{u}{x} + u.\] Substituting this into the given differential equation, we get \[2ux^2 \bp{x \der{u}{x} + u} = x^2 - u^2 x^2.\] Since $x \neq 0$, we may divide both sides by $x^2$ to get \[2u\bp{x \der{u}{x} + u} = 1 - u^2,\] which rearranges to \[\frac{2u}{1 - 3u^2} \der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$, we get \[\int \frac{2u}{1 - 3u^2} \d u = \int \frac1x \d x.\] Since $x > 0$, we see that \[-\frac13 \ln \abs{1 - 3u^2} = \ln{x} + C_1.\] Exponentiating both sides, we obtain \[C_2 x = \bp{1 - 3u^2}{-1/3},\] where $C_2 = \pm \e^{C_1}$. Cubing both sides and simplifying, we see that \[C_3 x^3 = \frac1{1-3u^2} = \frac{x^2}{x^2 - 3y^2} \implies y^2 = \frac{C_3 x^3 - 1}{3C_3 x},\] where $C_3 = C_2^3$. Since $y < 0$, we finally have \[y = -\sqrt{\frac{C x^3 - 1}{3C x}},\] where $C \neq 0$ is an arbitrary constant.
+    Note that $y = ux$, so \[\der{y}{x} = x \der{u}{x} + u.\] Substituting this into the given differential equation, we get \[2ux^2 \bp{x \der{u}{x} + u} = x^2 - u^2 x^2.\] Since $x \neq 0$, we may divide both sides by $x^2$ to get \[2u\bp{x \der{u}{x} + u} = 1 - u^2,\] which rearranges to \[\frac{2u}{1 - 3u^2} \der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$, we get \[\int \frac{2u}{1 - 3u^2} \d u = \int \frac1x \d x.\] Since $x > 0$, the integrals evaluate to \[-\frac13 \ln \abs{1 - 3u^2} = \ln{x} + C_1.\] Exponentiating both sides, we obtain \[C_2 x = \bp{1 - 3u^2}{-1/3},\] where $C_2 = \pm \e^{C_1}$. Cubing both sides and simplifying, we see that \[C_3 x^3 = \frac1{1-3u^2} = \frac{x^2}{x^2 - 3y^2}.\] Solving for $y$, we obtain \[y^2 = \frac{C_3 x^3 - 1}{3C_3 x},\] where $C_3 = C_2^3$. Since $y < 0$, we finally have \[y = -\sqrt{\frac{C x^3 - 1}{3C x}},\] where $C \neq 0$ is an arbitrary constant.
 \end{solution}
 
 \clearpage
@@ -55,7 +55,7 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Note that \[ax(1 + bx)^c = ax\bp{1 + cbx + \frac{c(c-1)}{2} b^2 x^2 + \dots} = ax + abcx^2 + \frac{ab^2c(c-1)}{2} x^3 + \dots.\] Comparing coefficients with (a), we have \[a = -1, \quad abc = -1, \quad ab^2c(c-1)/2 = -1/3.\] Solving, we get $a = -1$, $b = 1/3$ and $c = 3$. Thus, the coefficient of $x^4$ in the expansion of $ax(1 + bx)^c$ is \[\frac{ab^3 c(c-1)(c-2)}{3!} = -\frac1{27}.\]
+        Note that \[ax(1 + bx)^c = ax\bp{1 + cbx + \frac{c(c-1)}{2} b^2 x^2 + \dots} = ax + abcx^2 + \frac{ab^2c(c-1)}{2} x^3 + \dots.\] Comparing coefficients with (a), we have \[a = -1, \quad abc = -1, \quad \frac{ab^2c(c-1)}2 = -\frac13.\] Solving, we get $a = -1$, $b = 1/3$ and $c = 3$. Thus, the coefficient of $x^4$ in the expansion of $ax(1 + bx)^c$ is \[\frac{ab^3 c(c-1)(c-2)}{3!} = -\frac1{27}.\]
     \end{ppart}
 \end{solution}
 
@@ -292,7 +292,7 @@
 \end{solution}
 
 \begin{problem}
-    A curve $C$ is defined parametrically by \[x = a \tan t, \quad y = a \sec^2 t \sin t, \quad -\frac\pi4 < t < \frac\pi4,\] where $a$ is a positive constant.
+    A curve $C$ is defined parametrically by $x = a \tan t$, $y = a \sec^2 t \sin t$ for $-\pi/4 < t < \pi/4$, where $a$ is a positive constant.
 
     \begin{enumerate}
         \item Show that \[\frac{\tan t}{\sqrt{1 + \tan^2 t}} = \sin t.\]
@@ -301,7 +301,6 @@
         \item Find the exact area of the region bounded by $C$, the $x$-axis and the lines $x = -A$ and $x = A$, leaving your answer in terms of $A$ and $a$.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         Note that $\sec t > 0$ on the interval $-\pi/4 < t < \pi/4$. Thus, \[\frac{\tan t}{\sqrt{1 + \tan^2 t}} = \frac{\tan t}{\sqrt{\sec^2 t}} = \frac{\tan t}{\sec t} = \frac{\sin t / \cos t}{1/\cos t} = \sin t.\]
@@ -360,7 +359,7 @@
             \area &= 2 \int_0^A f(x) \d x\\
             &= 2\int_0^A \frac{x \sqrt{x^2 + a^2}}{a} \d x\\
             &= \frac1a \evalint{\frac23 \bp{x^2 + a^2}^{3/2}}{0}{A}\\
-            &= \frac{2}{3a} \bp{A^2 + a^2}^{3/2} - \frac{2a^2}{3} \units[2].
+            &= \bs{\frac{2}{3a} \bp{A^2 + a^2}^{3/2} - \frac{2a^2}{3}} \units[2].
         \end{align*}
     \end{ppart}
 \end{solution}
@@ -383,7 +382,7 @@
         \item Without finding $\inv f$,
         \begin{enumerate}
             \item sketch, on the same diagram, the graphs of $f$, $\inv f$ and $f \inv f$, showing clearly the relationships between the graphs, and
-            \item find the gradient of the tangent of the graph of $y = \inv f(x)$ at $x = \e + \frac14$.
+            \item find the gradient of the tangent of the graph of $y = \inv f(x)$ at $x = \e + 1/4$.
         \end{enumerate}
     \end{enumerate}
 \end{problem}
@@ -447,13 +446,13 @@
             \end{center}
         \end{psubpart}
         \begin{psubpart}
-            Observe that $f(1) = \e + 1/4$. Note also that \[f'(1) = \evalder{\e^x - \frac{2}{(2x + 2)^2}}{x = 1} = \e - \frac{1}{8}.\] Since the graph of $y = \inv f$ is the reflection of $y = f(x)$ about the line $y = x$, it follows that the derivative of $\inv f$ at $x = \e + 1/4$ is \[\frac1{f'(1)} = \frac{1}{\e - 1/8} = \frac{8}{8\e - 1}.\]
+            Observe that $f(1) = \e + 1/4$. Note also that \[f'(1) = \evalder{\bp{\e^x - \frac{2}{(2x + 2)^2}}}{x = 1} = \e - \frac{1}{8}.\] Since the graph of $y = \inv f$ is the reflection of $y = f(x)$ about the line $y = x$, it follows that the derivative of $\inv f$ at $x = \e + 1/4$ is \[\frac1{f'(1)} = \frac{1}{\e - 1/8} = \frac{8}{8\e - 1}.\]
         \end{psubpart}
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    A complex number $z$ varies with $t$ such that \[z = 2\cos t + \i (3 \sin t),\] where $0 \leq t < 2 \pi$.
+    A complex number $z$ varies with $t$ such that $z = 2\cos t + \i (3 \sin t)$, where $0 \leq t < 2 \pi$.
 
     \begin{enumerate}
         \item By taking $x = \Re{z}$ and $y = \Im{z}$, sketch on an Argand diagram the curve that shows that positions of the points representing the complex number $z$. Find the Cartesian equation of this curve.
@@ -808,10 +807,10 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        For stationary points, $\derx{V}{r} = 0$. Thus, \[\der{V}{r} = \frac{k}{20} - 10 \pi r^2 = 0.\] Solving, we get $r^2 = k/200\pi$. Additionally, \[\der[2]{V}{r} = -20 \pi r < 0\] for all $r > 0$, hence $V$ attains a maximum when $r^2 = k/200\pi$. The desired cost is hence \[30\bp{2\pi r^2} = 30 \bs{2\pi \bp{\frac{k}{200\pi}}} = \$\frac{3}{10} k.\]
+        For stationary points, $\derx{V}{r} = 0$. Thus, \[\der{V}{r} = \frac{k}{20} - 10 \pi r^2 = 0.\] Solving, we get $r^2 = k/200\pi$. Additionally, \[\der[2]{V}{r} = -20 \pi r < 0\] for all $r > 0$, hence $V$ attains a maximum when $r^2 = k/200\pi$. The desired cost is hence \[30\bp{2\pi r^2} = 30 \bs{2\pi \bp{\frac{k}{200\pi}}} = \$\bp{\frac{3}{10} k}.\]
     \end{ppart}
     \begin{ppart}
-        By Pythagoras' Theorem, $x^2 + (15-h)^2 = 15^2$. Expanding and rearranging, we get $x^2 = 30 h - h^2$. Substituting this into the given formula for $W$, we have \[W = \frac{\pi h \bp{3x^2 + h^2}}{6} = \frac{\pi \bp{45h^2 - h^3}}{3}.\] At $h = 3$, we are given that $\derx{W}{t} = -20$, where $t$ is the time elapsed (in minutes). By the chain rule, we thus have \[\der{h}{t} = \der{h}{W} \der{W}{t} = \frac{-20}{\evalder{\frac\pi{3} \bp{90 h - 3h^2}}{h = 3}} = -\frac{20}{81 \pi}.\] Thus, the depth of the water is decreasing at a rate of $20/81\pi$ cm per minute at $h = 3$.
+        By Pythagoras' Theorem, $x^2 + (15-h)^2 = 15^2$. Expanding and rearranging, we get $x^2 = 30 h - h^2$. Substituting this into the given formula for $W$, we have \[W = \frac{\pi h \bp{3x^2 + h^2}}{6} = \frac{\pi \bp{45h^2 - h^3}}{3}.\] At $h = 3$, we are given that $\derx{W}{t} = -20$, where $t$ is the time elapsed (in minutes). By the chain rule, we thus have \[\der{h}{t} = \der{h}{W} \der{W}{t} = \frac{-20}{\evalder{(\pi/3) \bp{90 h - 3h^2}}{h = 3}} = -\frac{20}{81 \pi}.\] Thus, the depth of the water is decreasing at a rate of $20/81\pi$ cm per minute at $h = 3$.
     \end{ppart}
     \begin{ppart}
         Note that $x = \sqrt{30h - h^2}$ since $x > 0$. By the chain rule, we hence have \[\der{x}{t} = \der{x}{h} \der{h}{t} = \evalder{\frac{15 - h}{\sqrt{30h-h^2}}}{h=3} \bp{-\frac{20}{81\pi}} = -\frac{80}{243\pi}.\] Thus, the radius of the water surface is decreasing at a rate of $80/243\pi$ cm per minute at $h = 3$.

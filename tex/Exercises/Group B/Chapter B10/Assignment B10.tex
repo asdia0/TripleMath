@@ -1,20 +1,26 @@
 \section{Assignment B10}
 
 \begin{problem}
-    Given that $y = \e^{-x}\cos x$, show that $\der[2]{y}{x} = -2\bp{y + \der{y}{x}}$. By further differentiation, find the series expansion of $y$, in ascending powers of $x$, up to and including the term in $x^3$. Use the series to obtain an approximate value for $\int_0^{0.2} \frac{\cos x^2}{\e^{x^2}} \d x$, giving your answer correct to 4 decimal places.
+    Given that $y = \e^{-x}\cos x$, show that \[\der[2]{y}{x} = -2\bp{y + \der{y}{x}}.\] By further differentiation, find the series expansion of $y$, in ascending powers of $x$, up to and including the term in $x^3$. Use the series to obtain an approximate value for \[\int_0^{0.2} \frac{\cos x^2}{\e^{x^2}} \d x,\] giving your answer correct to 4 decimal places.
 
-    Using the trapezium rule with 4 trapezia of equal width, find another approximation for $\int_0^{0.2}\frac{\cos x^2}{\e^{x^2}} \d x$, giving your answer correct to 4 decimal places.
+    Using the trapezium rule with 4 trapezia of equal width, find another approximation for \[\int_0^{0.2}\frac{\cos x^2}{\e^{x^2}} \d x,\] giving your answer correct to 4 decimal places.
 \end{problem}
 \begin{solution}
-    Differentiating with respect to $x$, we get \[y' = -\e^{-x}\sin x - \e^{-x} \cos x \implies y' = -\e^{-x} \sin x - y.\] Differentiating once more, \[y'' = -\e^{-x} \cos x + \e^{-x} \sin x - y' = -y + \bp{-y' - y} - y' = -2\bp{y + y'}.\] Further differentiating, we obtain $y''' = -2(y' + y'')$. Evaluating $y$ and its derivatives at $x = 0$, we get \[y(0) = 1, \quad y'(0) = -1, \quad y''(0) = 0, \quad y'''(0) = 2.\] Thus, \[\e^{-x}\cos x = 1 - x + \frac{x^3}3 + \cdots.\]
+    Differentiating with respect to $x$, we get $y' = -\e^{-x}\sin x - \e^{-x} \cos x = -\e^{-x} \sin x - y$. Repeatedly differentiating this result, we obtain
+    \begin{align*}
+        y'' &= -\e^{-x} \cos x + \e^{-x} \sin x - y'\\
+        &= -2\bp{y + y'},\\
+        y''' &= -2(y' + y'').
+    \end{align*}
+    At $x = 0$, we get $y(0) = 1$, $y'(0) = -1$, $y''(0) = 0$, and $y'''(0) = 2$. Thus, \[\e^{-x}\cos x = 1 - x + \frac{x^3}3 + \cdots.\]
 
-    Hence, \[\int_0^{0.2} \frac{\cos x^2}{\e^{x^2}} \d x = \int_0^{0.2} \e^{-{x^2}}\cos x^2 \d x \approx \int_0^{0.2} \bp{1 - \bp{x^2} + \frac{\bp{x^2}^3}3} \d x = 0.1973 \todp{4}.\]
+    Hence, \[\int_0^{0.2} \frac{\cos x^2}{\e^{x^2}} \d x \approx \int_0^{0.2} \bp{1 - \bp{x^2} + \frac{\bp{x^2}^3}3} \d x = 0.1973 \todp{4}.\]
 
-    Let $g(x) = \frac{\cos x^2}{\e^{x^2}}$. By the trapezium rule, we have \[\int_0^{0.2} \frac{\cos x^2}{\e^{x^2}} \d x \approx \frac12 \cdot \frac{0.2}{4} \Big[g(0) + 2\big[g(0.05) + g(0.1) + g(0.15)\big] + g(0.2)\Big] = 0.1973 \todp{4}.\]
+    Let $g(x) = \cos{x^2}/\e^{x^2}$. By the trapezium rule, we have \[\int_0^{0.2} \frac{\cos x^2}{\e^{x^2}} \d x \approx \frac12 \cdot \frac{0.2}{4} \Big[g(0) + 2\big[g(0.05) + g(0.1) + g(0.15)\big] + g(0.2)\Big] = 0.1973 \todp{4}.\]
 \end{solution}
 
 \begin{problem}
-    The curve $C$ has equation $y^2 = \frac{x}{\sqrt{1 + x^2}}$, $y \geq 0$.
+    The curve $C$ has equation \[y^2 = \frac{x}{\sqrt{1 + x^2}},\] with $y \geq 0$.
 
     The finite region $R$ is bounded by $C$, the $x$-axis and the lines $x = 0$ and $x = 2$. $R$ is rotated through $2\pi$ radians about the $x$-axis.
 
@@ -31,13 +37,12 @@
         Explain, with the help of a sketch, why the estimate given by the trapezium rule is less than the actual value.
     \end{enumerate}
 \end{problem}
-\clearpage
 \begin{solution}
     \begin{ppart}
         \[\volume = \pi \int_0^2 y^2 \d x = \pi \int_0^2 \frac{2x}{2\sqrt{1 + x^2}} \d x = \pi \evalint{\sqrt{1 + x^2}}02 = \pi(\sqrt5 - 1) \units[3].\]
     \end{ppart}
     \begin{ppart}
-        Let $f(x) = \frac{x}{\sqrt{1 + x^2}}$. By the trapezium rule, \[\volume = \pi \int_0^2 f(x) \d x \approx \pi \cdot \frac12 \cdot \frac{2-0}{6} \sum_{n=0}^5 \bs{f\of{\frac{n}3} + f\of{\frac{n+1}3}} = 3.8566 \tosf{5}.\] Hence, the percentage error is \[\abs{\frac{\pi(\sqrt5 - 1) - 3.8566}{\pi(\sqrt5 - 1)}} = 0.686\% \todp{3}.\]
+        Let $f(x) = x/\sqrt{1 + x^2}$. By the trapezium rule, \[\volume = \pi \int_0^2 f(x) \d x \approx \pi \cdot \frac12 \cdot \frac{2-0}{6} \sum_{n=0}^5 \bs{f\of{\frac{n}3} + f\of{\frac{n+1}3}} = 3.8566 \tosf{5}.\] Hence, the percentage error is \[\abs{\frac{\pi(\sqrt5 - 1) - 3.8566}{\pi(\sqrt5 - 1)}} = 0.686\% \todp{3}.\]
 
         Consider the following graph of $y = f(x)$.
 
@@ -77,7 +82,7 @@
 \end{solution}
 
 \begin{problem}
-    Prove that $\int_{-h}^h f(x) \d x = \frac13 h (y_{-1} + 4y_0 + y_1)$, where $y = f(x)$ is the quadratic curve passing through the points $(-h, y_{-1})$, $(0, y_0)$ and $(h, y_1)$.
+    Prove that \[\int_{-h}^h f(x) \d x = \frac13 h (y_{-1} + 4y_0 + y_1),\] where $y = f(x)$ is the quadratic curve passing through the points $(-h, y_{-1})$, $(0, y_0)$ and $(h, y_1)$.
 
     Use Simpson's rule with 5 ordinates to find an approximation to \[\int_{-3}^1 \bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x\] Find another approximation to the same integral using the trapezium rule with 5 ordinates.
 
@@ -94,17 +99,20 @@
         &= \frac13 h \bp{2h^2 + 2c + 4c}\\
         &= \frac13 h \bp{y_{-1} + y_1 + 4y_0}\\
     \end{align*}
+    as desired.
 
     Let $f(x) = \bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3}$. By Simpson's rule,
     \begin{align*}
         \int_{-3}^1 &\bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x\\
-        &\hspace{0.5em}\approx \frac13 \cdot \frac{1-(-3)}{4} \Big[f(-3) + 4f(-2) + 2f(-1) + 4f(0) + f(1)\Big] = 11.977 \tosf{5}
+        &\hspace{2em}\approx \frac13 \cdot \frac{1-(-3)}{4} \Big[f(-3) + 4f(-2) + 2f(-1) + 4f(0) + f(1)\Big]\\
+        &\hspace{2em}= 11.977 \tosf{5}.
     \end{align*}
 
     By the trapezium rule,
     \begin{align*}
         \int_{-3}^1 &\bp{x^4 - 7x^3 + 3x^2 + 6x + 4}^{1/3} \d x\\
-        &\hspace{0.5em}\approx \frac12 \cdot \frac{1-(-3)}{4} \Big[f(-3) + 2f(-2) + 2f(-1) + 2f(0) + f(1)\Big] = 12.142 \tosf{5}
+        &\hspace{2em}\approx \frac12 \cdot \frac{1-(-3)}{4} \Big[f(-3) + 2f(-2) + 2f(-1) + 2f(0) + f(1)\Big]\\
+        &\hspace{2em}= 12.142 \tosf{5}.
     \end{align*}
 
     The approximation given by Simpson's rule should be more accurate as Simpson's rule accounts for the concavity of the curve $y = f(x)$.
@@ -112,10 +120,10 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item Find the exact value of $\int_0^1 \frac1{1 + x^2} \d x$.
-        \item The graph of $y = \frac1{1 + x^2}$ is shown in the diagram below. Rectangles, each of width $\frac1n$, are drawn under the curve.
+        \item Find the exact value of \[\int_0^1 \frac1{1 + x^2} \d x.\]
+        \item The graph of $y = 1/(1 + x^2)$ is shown in the diagram below. Rectangles, each of width $1/n$, are drawn under the curve.
         
-        Show that the total area $A$ of all $n$ rectangles is given by \[A = \frac1n \bs{\frac1{1 + \bp{\frac1n}^2} + \frac1{1 + \bp{\frac2n}^2} + \frac1{1 + \bp{\frac3n}^2} + \ldots + \frac12}\] State the limit of $A$ as $n \to \infty$.
+        Show that the total area $A$ of all $n$ rectangles is given by \[A = \frac1n \bs{\frac1{1 + \bp{1/n}^2} + \frac1{1 + \bp{2/n}^2} + \frac1{1 + \bp{3/n}^2} + \ldots + \frac12}\] State the limit of $A$ as $n \to \infty$.
     \end{enumerate}
 
     \begin{center}\tikzsetnextfilename{202}
@@ -169,7 +177,7 @@
 
     \begin{enumerate}
         \setcounter{enumi}{2}
-        \item It is given that \[B = \frac1n \bs{\frac1{1 + \bp{\frac1n}^4} + \frac1{1 + \bp{\frac2n}^4} + \frac1{1 + \bp{\frac3n}^4} + \ldots + \frac12}\] Find an approximation for the limit of $B$ as $n \to \infty$ by considering an appropriate graph and using the trapezium rule with 5 intervals. Given your answer correct to 2 decimal places.
+        \item It is given that \[B = \frac1n \bs{\frac1{1 + \bp{1/n}^4} + \frac1{1 + \bp{2/n}^4} + \frac1{1 + \bp{3/n}^4} + \ldots + \frac12}\] Find an approximation for the limit of $B$ as $n \to \infty$ by considering an appropriate graph and using the trapezium rule with 5 intervals. Given your answer correct to 2 decimal places.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -177,17 +185,18 @@
         \[\int_0^1 \frac1{1 + x^2} \d x = \evalint{\arctan x}{0}{1} = \frac\pi4.\]
     \end{ppart}
     \begin{ppart}
-        Observe that the $k$th rectangle has height $\frac1{1 + (k/n)^2}$ and width $1/n$. Hence,
+        Observe that the $k$th rectangle has height $1/(1 + (k/n)^2)$ and width $1/n$. Hence,
         \begin{align*}
-            A &= \sum_{k=1}^n \frac1n \cdot \frac1{1 + (k/n)^2} = \frac1n \sum_{k=1}^n \frac1{1 + (k/n)^2}\\
-            &= \frac1n \bs{\frac1{1 + \bp{\frac1n}^2} + \frac1{1 + \bp{\frac2n}^2} + \frac1{1 + \bp{\frac3n}^2} + \ldots + \frac1{1 + \bp{\frac{n}{n}}^2}}\\
-            &= \frac1n \bs{\frac1{1 + \bp{\frac1n}^2} + \frac1{1 + \bp{\frac2n}^2} + \frac1{1 + \bp{\frac3n}^2} + \ldots + \frac1{2}}
+            A &= \sum_{k=1}^n \frac1n \cdot \frac1{1 + (k/n)^2}\\
+            &= \frac1n \sum_{k=1}^n \frac1{1 + (k/n)^2}\\
+            &= \frac1n \bs{\frac1{1 + \bp{1/n}^2} + \frac1{1 + \bp{2/n}^2} + \frac1{1 + \bp{3/n}^2} + \ldots + \frac1{1 + \bp{\frac{n}{n}}^2}}\\
+            &= \frac1n \bs{\frac1{1 + \bp{1/n}^2} + \frac1{1 + \bp{2/n}^2} + \frac1{1 + \bp{3/n}^2} + \ldots + \frac1{2}}
         \end{align*}
         Thus, \[\lim_{n \to \infty} A = \int_0^1 \frac1{1 + x^2} = \frac\pi4.\]
     \end{ppart}
     \clearpage
     \begin{ppart}
-        Consider the following graph of $y = \frac1{1 + x^4}$.
+        Consider the following graph of $y = 1/(1 + x^4)$.
 
         \begin{center}\tikzsetnextfilename{203}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -238,8 +247,8 @@
             \end{tikzpicture}
         \end{center}
 
-        Using a similar line of logic presented in part (b), we have that $B$ is the total area of the rectangles above. Hence, \[\lim_{n \to \infty} B = \int_{0}^1 \frac1{1 + x^4} \d x.\]
+        Using a similar argument as in part (b), we have that $B$ is the total area of the rectangles above. Hence, \[\lim_{n \to \infty} B = \int_{0}^1 \frac1{1 + x^4} \d x.\]
         
-        Let $f(x) = \frac1{1 + x^4}$. Using the trapezium rule, \[\lim_{n \to \infty} B \approx \frac12 \cdot \frac{1}{5} \Big[f(0) + 2\big[f(0.2) + f(0.4) + f(0.6) + f(0.8)\big] + f(1)\Big] = 0.86 \todp{2}.\]
+        Let $f(x) = 1/(1 + x^4)$. Using the trapezium rule, \[\lim_{n \to \infty} B \approx \frac12 \cdot \frac{1}{5} \Big[f(0) + 2\big[f(0.2) + f(0.4) + f(0.6) + f(0.8)\big] + f(1)\Big] = 0.86 \todp{2}.\]
     \end{ppart}
 \end{solution}

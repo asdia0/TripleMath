@@ -13,7 +13,12 @@
     I have two alternative routes to work. The times taken on the 8 randomly chosen occasions that I use route 1 are summarized by $\sum x=182$ and $\sum x^{2}=4202$, while the times taken on the 12 randomly chosen occasions that I take route 2 are summarized by $\sum y=238$ and $\sum y^{2}=5108$, with time being measured in minutes. Determine whether there is significant evidence, at the 5\% level, of a difference in the mean times taken on the two routes. State any assumptions needed.
 \end{problem}
 \begin{solution}
-    Let \nullhyp: $\m_X - \m_Y = 0$ and \althyp: $\m_X - \m_Y \neq 0$. We perform a two-tail two-sample $t$-test at 5\% significance level. Assuming that $X$ and $Y$ are normally distributed and have a common variance, under \nullhyp, \[\frac{\ol{X} - \ol{Y}}{s_p \sqrt{1/8 + 1/12}} \sim \StudentT{8 + 12 - 2} = \StudentT{18}.\] From the sample, \[\ol{x} = \frac18 \bp{182} = 22.75, \quad \ol{y} = \frac1{12} \bp{238} = 19.833.\] Also, \[s_X^2 = \frac1{8-1}\bs{4202 - \frac18 \bp{182}^2} = 8.7857, \quad s_Y^2 = \frac1{12-1} \bs{5108 - \frac1{12} \bp{238}^2} = 35.242.\] Thus, the pooled variance is \[s_p^2 = \frac{\bp{8-1} \bp{8.7857} + \bp{12 - 1} \bp{35.242}}{8 + 12 - 2} = 24.953.\] Using G.C., the $p$-value is $0.217$, which is greater than the 5\% significance level. Thus, we do not reject \nullhyp{} and conclude that there is insufficient evidence at the 5\% significance level that there is a difference in the mean times taken on the two routes.
+    Let \nullhyp: $\m_X - \m_Y = 0$ and \althyp: $\m_X - \m_Y \neq 0$. We perform a two-tail two-sample $t$-test at 5\% significance level. Assuming that $X$ and $Y$ are normally distributed and have a common variance, under \nullhyp, \[\frac{\ol{X} - \ol{Y}}{s_p \sqrt{1/8 + 1/12}} \sim \StudentT{8 + 12 - 2} = \StudentT{18}.\] From the sample, \[\ol{x} = \frac18 \bp{182} = 22.75 \quad \tand \quad \ol{y} = \frac1{12} \bp{238} = 19.833.\] Also,
+    \begin{align*}
+        s_X^2 &= \frac1{8-1}\bs{4202 - \frac18 \bp{182}^2} = 8.7857,\\
+        s_Y^2 &= \frac1{12-1} \bs{5108 - \frac1{12} \bp{238}^2} = 35.242.
+    \end{align*}
+    Thus, the pooled variance is \[s_p^2 = \frac{\bp{8-1} \bp{8.7857} + \bp{12 - 1} \bp{35.242}}{8 + 12 - 2} = 24.953.\] Using G.C., the $p$-value is $0.217$, which is greater than the 5\% significance level. Thus, we do not reject \nullhyp{} and conclude that there is insufficient evidence at the 5\% significance level that there is a difference in the mean times taken on the two routes.
 \end{solution}
 
 \begin{problem}
@@ -57,7 +62,7 @@
         Let $D = \text{experiment score} - \text{control score}$. Let \nullhyp: $\m_D = 0$ and \althyp: $\m_D \neq 0$. We perform a two-tail paired-sample $t$-test. Assuming that $D$ is normally distributed, under \nullhyp, our test statistic is \[\frac{\ol{D}}{S_D / \sqrt{10}} \sim \StudentT{9}.\] From the sample, $\ol{d} = 7$ and $s_D = 9.5568$. Using G.C., the $p$-value is $0.0457$. Thus, the largest value of $\a$ to not reject \nullhyp{} is $0.0457$.
     \end{ppart}
     \begin{ppart}
-        Let \nullhyp: $\m_D = k$ and \althyp: $\m_D > k$. We perform a one-tail paired-sample $t$-test at the 10\% significance level. Assuming that $D$ is normally distributed, under \nullhyp, our test statistic is \[\frac{\ol{D} - k}{S_D / \sqrt{10}} \sim \StudentT{9}.\] The observed test statistic is thus \[\frac{7-k}{9.5568/\sqrt{10}} = 2.3163 - 0.33089 k.\] For \nullhyp{} to be rejected, we require \[2.3163 - 0.33089 k > t_{0.9} \implies k < \frac{2.3163 - t_{0.9}}{0.33089} = 2.82.\]
+        Let \nullhyp: $\m_D = k$ and \althyp: $\m_D > k$. We perform a one-tail paired-sample $t$-test at the 10\% significance level. Assuming that $D$ is normally distributed, under \nullhyp, our test statistic is \[\frac{\ol{D} - k}{S_D / \sqrt{10}} \sim \StudentT{9}.\] The observed test statistic is thus \[\frac{7-k}{9.5568/\sqrt{10}} = 2.3163 - 0.33089 k.\] For \nullhyp{} to be rejected, we require \[2.3163 - 0.33089 k > t_{0.9},\] so \[k < \frac{2.3163 - t_{0.9}}{0.33089} = 2.82.\]
     \end{ppart}
 \end{solution}
 

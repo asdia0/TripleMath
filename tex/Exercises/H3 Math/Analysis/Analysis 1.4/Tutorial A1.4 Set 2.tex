@@ -4,15 +4,15 @@
     Reduce the differential equation \[\frac{x}{y} \der{y}{x} + \ln \frac{x^2}{y} = 2, \quad y > 0,\] to a differential equation in $x$ and $u$, where $u = y/x^2$. Hence, express $y$ in terms of $x$ and an arbitrary constant. Find the equation of the solution curve that passes through the point $(x, y) = (1, \e)$.
 \end{problem}
 \begin{solution}
-    Note that $u = y/x^2 \implies y = ux^2$. Differentiating with respect to $x$, \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the given DE, we have \[\frac{x}{ux^2} \bp{2ux + x^2 \der{u}{x}} + \ln{\frac{x^2}{ux^2}} = 2,\] which simplifies to \[\frac1{u \ln u} \der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$ yields \[\ln \abs{\ln u} = \ln \abs{x} + A \implies \ln u = Bx \implies u = \e^{Bx} \implies y = ux^2 = x^2 \e^{Bx}.\] At $(x, y) = (1, \e)$, we have $\e = \e^B$, whence $B = 1$. Thus, $y = x^2 \e^x$.
+    Note that $y = ux^2$. Differentiating with respect to $x$, we have \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the given DE, we have \[\frac{x}{ux^2} \bp{2ux + x^2 \der{u}{x}} + \ln{\frac{x^2}{ux^2}} = 2,\] which simplifies to \[\frac1{u \ln u} \der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$ yields $\ln \abs{\ln u} = \ln \abs{x} + A$, so $u = \e^{Bx}$ and thus $y = x^2 \e^{Bx}$. At $(x, y) = (1, \e)$, we have $\e = \e^B$, whence $B = 1$. Thus, $y = x^2 \e^x$.
 \end{solution}
 
 \begin{problem}
-    $T_n(x)$ is a polynomial of degree $n$ in $x$ defined by \[T_n(x) = \cos{n \arccos x},\] so that $T_n(\cos \t) = \cos{n \t}$.
+    $T_n(x)$ is a polynomial of degree $n$ in $x$ defined by $T_n(x) = \cos{n \arccos x}$ so that $T_n(\cos \t) = \cos{n \t}$.
 
     \begin{enumerate}
-        \item Show that \[T_2(x) = 2x^2 - 1, \quad T_3(x) = 4x^3 - 3x.\]
-        \item Show that \[T_{n+1} (x) = 2x T_n (x) - T_{n-1} (x).\]
+        \item Show that $T_2(x) = 2x^2 - 1$ and $T_3(x) = 4x^3 - 3x$.
+        \item Show that $T_{n+1} (x) = 2x T_n (x) - T_{n-1} (x)$.
         \item Use the results in (a) and (b) to find $T_4(x)$.
     \end{enumerate}
 
@@ -25,9 +25,10 @@
         \item Deduce that $y = T_n(x)$ satisfies the differential equation \[\bp{1 - x^2} \der[2]{y}{x} - x\der{y}{x} + n^2 y = 0.\]
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Since \[T_2(\cos \t) = \cos 2\t = 2\cos^2 - 1,\] it follows that $T_2(x) = 2x^2 - 1$. Similarly, since \[T_3(\cos \t) = \cos 3\t = 4\cos^3 x - 3\cos x,\] it follows that $T_3(x) = 4x^3 - 3x$.
+        Since $T_2(\cos \t) = \cos 2\t = 2\cos^2 - 1$, it follows that $T_2(x) = 2x^2 - 1$. Similarly, since $T_3(\cos \t) = \cos 3\t = 4\cos^3 x - 3\cos x$, it follows that $T_3(x) = 4x^3 - 3x$.
     \end{ppart}
     \begin{ppart}
         Observe that
@@ -60,6 +61,6 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Note that $y = T_n(x)$ implies $y' = n U_{n-1}(x)$. Differentiating once more yields \[y'' = n \bp{\frac{xU_{n-1}(x)-nT_n(x)}{1 - x^2}} = \frac{nxU_{n-1}(x)-n^2T_n(x)}{1 - x^2} = \frac{x y' - n^2 y}{1 - x^2}.\] Rearranging, we obtain \[\bp{1 - x^2} y'' - x y' + n^2 y = 0.\]
+        Note that $y = T_n(x)$ implies $y' = n U_{n-1}(x)$. Differentiating once more yields \[y'' = n \bp{\frac{xU_{n-1}(x)-nT_n(x)}{1 - x^2}} = \frac{nxU_{n-1}(x)-n^2T_n(x)}{1 - x^2} = \frac{x y' - n^2 y}{1 - x^2}.\] Rearranging, we obtain $\bp{1 - x^2} y'' - x y' + n^2 y = 0$.
     \end{ppart}
 \end{solution}

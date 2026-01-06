@@ -14,18 +14,18 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Consider $\det{\mat A - \l \mat I} = 0$: \[0 = \det{\mat A - \l \mat I} = \begin{vmatrix}-\l & -1 \\ -2 & -\l\end{vmatrix} = \l^2 - 2 \implies \l = \pm \sqrt2.\]
+        We have \[\det{\mat A - \l \mat I} = \begin{vmatrix}-\l & -1 \\ -2 & -\l\end{vmatrix} = \l^2 - 2,\] so $\det{\mat A - \l \mat I} = 0$ has roots $\l = \pm \sqrt2$.
 
         Let $\vec x = \cveciix{x}{y} \neq \vec 0$ be an eigenvector.
 
-        \case{1}[$\l = \sqrt2$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}-\sqrt2 & -1 \\ -2 & -\sqrt2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x + \frac1{\sqrt2} y = 0$. Taking $y = -\sqrt2$, we have $\vec x = \cveciix{1}{-\sqrt2}$.
+        \case{1}[$\l = \sqrt2$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}-\sqrt2 & -1 \\ -2 & -\sqrt2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x + y/\sqrt{2} = 0$. Taking $y = -\sqrt2$, we have $\vec x = \cveciix{1}{-\sqrt2}$.
 
-        \case{2}[$\l = -\sqrt2$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}\sqrt2 & -1 \\ -2 & \sqrt2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x - \frac1{\sqrt2} y = 0$. Taking $y = \sqrt2$, we have $\vec x = \cveciix1{\sqrt2}$.
+        \case{2}[$\l = -\sqrt2$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}\sqrt2 & -1 \\ -2 & \sqrt2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x - y/\sqrt{2} = 0$. Taking $y = \sqrt2$, we have $\vec x = \cveciix1{\sqrt2}$.
 
         Thus, \[\mat Q = \begin{pmatrix}1 & 1 \\ -\sqrt2 & \sqrt2 \end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}\sqrt2 & 0 \\ 0 & -\sqrt2 \end{pmatrix}.\]
     \end{ppart}
     \begin{ppart}
-        Consider $\det{\mat A - \l \mat I} = 0$: \[0 = \det{\mat A - \l \mat I} = \begin{vmatrix}2-\l & 0 \\ -3 & 2-\l\end{vmatrix} = (2-\l)^2 \implies \l = 2.\] Let $\vec x = \cveciix{x}{y} \neq \vec 0$ be an eigenvector. Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}0 & 0 \\ -3 & 0 \end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x = 0$ and $y \in \RR$. Taking $y = 1$, we have $\cveciix01$.
+        We have \[\det{\mat A - \l \mat I} = \begin{vmatrix}2-\l & 0 \\ -3 & 2-\l\end{vmatrix} = (2-\l)^2,\] so $\det{\mat A - \l \mat I} = 0$ has the repeated root $\l = 2$. Let $\vec x = \cveciix{x}{y} \neq \vec 0$ be an eigenvector. Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}0 & 0 \\ -3 & 0 \end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x = 0$ and $y \in \RR$. Taking $y = 1$, we have $\cveciix01$.
 
         Since there are fewer eigenvectors (1) than dimensions (2), $\mat A$ is not diagonalizable.
     \end{ppart}
@@ -53,11 +53,11 @@
         Note that the characteristic polynomial of $\mat A$ is simply $(5-\l)^3$. Hence, the only eigenvalue of $\mat A$ is $\l = 5$. Let $\vec x = \cveciiix{x}{y}{z} \neq \vec 0$ be an eigenvector. Then \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 1 & 0\end{pmatrix} \cveciii{x}{y}{z} = \cveciii000.\] Hence, $x = y = 0$ and $z = t \in \RR$. Thus, the only eigenvector is $\cveciiix001$. Since there are fewer eigenvectors (1) than dimensions (3), $\mat A$ is not diagonalizable.
     \end{ppart}
     \begin{ppart}
-        Consider $\det{\mat A - \l \mat I} = 0$: \[0 = \det{\mat A - \l \mat I} = \begin{vmatrix}-\l & 0 & 0 \\ 0 & -\l & 0 \\ 3 & 0 & 1 - \l\end{vmatrix} = \l^2 (1-\l) \implies \l = 0, 1.\]
+        Note that \[\det{\mat A - \l \mat I} = \begin{vmatrix}-\l & 0 & 0 \\ 0 & -\l & 0 \\ 3 & 0 & 1 - \l\end{vmatrix} = \l^2 (1-\l),\] so $\det{\mat A - \l \mat I} = 0$ has roots $\l = 0, 1$.
 
         Let $\vec x = \cveciiix{x}{y}{z} \neq \vec 0$ be an eigenvector.
 
-        \case{1}[$\l = 0$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 3 & 0 & 1\end{pmatrix}\cveciii{x}{y}{z} = \cveciii000.\] Let $y = s \in \RR$ and $z = t \in \RR$. Then $x = -1/3 t$, so \[\vec x = \cveciii{-t/3}{s}{t} = s \cveciii010 + \frac13 t \cveciii{-1}03.\] Thus, the corresponding eigenvectors are $\cveciiix010$ and $\cveciiix{-1}03$.
+        \case{1}[$\l = 0$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 3 & 0 & 1\end{pmatrix}\cveciii{x}{y}{z} = \cveciii000.\] Let $y = s \in \RR$ and $z = t \in \RR$. Then $x = -t/3$, so \[\vec x = \cveciii{-t/3}{s}{t} = s \cveciii010 + \frac{t}3 \cveciii{-1}03.\] Thus, the corresponding eigenvectors are $\cveciiix010$ and $\cveciiix{-1}03$.
 
         \case{2}[$\l = 1$] Consider $\bp{\mat A - \l \mat I} \vec x = \vec 0$: \[\bp{\mat A - \l \mat I} \vec x = \begin{pmatrix}-1 & 0 & 0 \\ 0 & -1 & 0 \\ 3 & 0 & 0\end{pmatrix}\cveciii{x}{y}{z} = \cveciii000.\] Thus, $x = y = 0$ while $z = t \in \RR$. Hence, the corresponding eigenvector is $\cveciiix001$.
 
@@ -71,16 +71,16 @@
 \begin{solution}
     Note that
     \begin{align*}
-        \l_1 + \l_2 + \l_3 &= \abs{-3} + \abs{6} + \abs{-3} = 0\\
-        \l_1 \l_2 + \l_2 \l_3 + \l_3 \l_1 &= \begin{vmatrix}-3 & 5 \\ -4 & 6\end{vmatrix} + \begin{vmatrix}6 & 5 \\ -4 & -3\end{vmatrix} + \begin{vmatrix}-3 & 5 \\ 4 & -3\end{vmatrix} = -7 \\
+        \l_1 + \l_2 + \l_3 &= \abs{-3} + \abs{6} + \abs{-3} = 0,\\
+        \l_1 \l_2 + \l_2 \l_3 + \l_3 \l_1 &= \begin{vmatrix}-3 & 5 \\ -4 & 6\end{vmatrix} + \begin{vmatrix}6 & 5 \\ -4 & -3\end{vmatrix} + \begin{vmatrix}-3 & 5 \\ 4 & -3\end{vmatrix} = -7, \\
         \l_1 \l_2 \l_3 &= \begin{vmatrix}-3 & 5 & 5 \\ -4 & 6 & 5 \\ 4 & -4 & -3\end{vmatrix} = -6.
     \end{align*}
     Hence, the characteristic polynomial of $\mat A$ is $-\l^3 + 7\l -6$, whence the roots are $\l = -3, 1, 2$.
     
     Note that \[\mat A - \l \mat I = \begin{pmatrix}-3-\l & 5 & 5 \\ -4 & 6-\l & 5 \\ 4 & -4 & -3-\l\end{pmatrix}.\] The eigenvectors are thus
     \begin{align*}
-        \vec e_1 &= \frac1{20} \cveciii{-3-(-3)}55 \crossp \cveciii4{-4}{-3-(-3)} = \cveciii11{-1}\\
-        \vec e_2 &= \frac1{4} \cveciii{-3-1}55 \crossp \cveciii4{-4}{-3-1} = \cveciii01{-1}\\
+        \vec e_1 &= \frac1{20} \cveciii{-3-(-3)}55 \crossp \cveciii4{-4}{-3-(-3)} = \cveciii11{-1},\\
+        \vec e_2 &= \frac1{4} \cveciii{-3-1}55 \crossp \cveciii4{-4}{-3-1} = \cveciii01{-1},\\
         \vec e_3 &= -\frac1{5} \cveciii{-3-2}55 \crossp \cveciii4{-4}{-3-2} = \cveciii110.
     \end{align*}
     Thus, \[\mat P = \begin{pmatrix}1 & 0 & 1 \\ 1 & 1 & 1 \\ -1 & -1 & 0\end{pmatrix}^{-1} = \begin{pmatrix}1 & -1 & -1 \\ -1 & 1 & 0 \\ 0 & 1 & 1\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}-3 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2\end{pmatrix}.\]
@@ -98,8 +98,8 @@
 \begin{solution}
     Note that
     \begin{align*}
-        \l_1 + \l_2 + \l_3 &= \abs{2} + \abs{-1} + \abs{1} = 2\\
-        \l_1 \l_2 + \l_2 \l_3 + \l_3 \l_1 &= \begin{vmatrix}2 & -3 \\ 1 & -2\end{vmatrix} + \begin{vmatrix}-1 & 1 \\ 3 & 1\end{vmatrix} + \begin{vmatrix}2 & 0 \\ -1 & 1\end{vmatrix} = -1 \\
+        \l_1 + \l_2 + \l_3 &= \abs{2} + \abs{-1} + \abs{1} = 2,\\
+        \l_1 \l_2 + \l_2 \l_3 + \l_3 \l_1 &= \begin{vmatrix}2 & -3 \\ 1 & -2\end{vmatrix} + \begin{vmatrix}-1 & 1 \\ 3 & 1\end{vmatrix} + \begin{vmatrix}2 & 0 \\ -1 & 1\end{vmatrix} = -1, \\
         \l_1 \l_2 \l_3 &= \begin{vmatrix}2 & -3 & 0 \\ 1 & - 1 & 1 \\ - 1 & 3 & 1\end{vmatrix} = -2.
     \end{align*}
     Hence, the characteristic equation of $\mat A$ is $-\l^3 + 2 \l^2 + \l - 2$, whence its roots are $\l = -1, 1, 2$.
@@ -112,7 +112,7 @@
     \end{align*}
 
     \begin{ppart}
-        Note that \[\bp{\mat A + 10\mat I} \vec e = \mat A \vec e + 10 \vec e = \l \vec e + 10 \vec e = (\l + 10) \vec e.\] Hence, the eigenvalues of $\mat A + 10\mat I$ are 9, 11 and 12. Their corresponding eigenvectors are $\cveciiix11{-1}$, $\cveciiix31{-1}$ and $\cveciiix{-1}01$.
+        Note that $\bp{\mat A + 10\mat I} \vec e = \mat A \vec e + 10 \vec e = \l \vec e + 10 \vec e = (\l + 10) \vec e$. Hence, the eigenvalues of $\mat A + 10\mat I$ are 9, 11 and 12. Their corresponding eigenvectors are $\cveciiix11{-1}$, $\cveciiix31{-1}$ and $\cveciiix{-1}01$.
     \end{ppart}
     \begin{ppart}
         Note that $\mat A = \mat Q \mat D \mat Q^{-1}$, where \[\mat Q = \begin{pmatrix}1 & 3 & -1 \\ 1 & 1 & 0 \\ -1 & -1 & 1\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}-1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2\end{pmatrix}.\] Rearranging, we have $\mat Q^{-1} \mat A \mat Q = \mat D$. Hence, \[\mat P = \mat Q^{-1} = \frac12 \begin{pmatrix}-1 & 2 & -1 \\ 1 & 0 & 1 \\ 0 & 2 & 2\end{pmatrix}.\]
@@ -162,10 +162,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[\begin{pmatrix}-1 & 5 & 0 \\ 2 & 3 & b \\ 0 & a & -1\end{pmatrix} \cveciii562 = 5\cveciii562 \implies \cveciii{25}{28+2b}{6a-2} = \cveciii{25}{30}{10}.\] Thus, $a = 2$ and $b = 1$.
+        We have \[\begin{pmatrix}-1 & 5 & 0 \\ 2 & 3 & b \\ 0 & a & -1\end{pmatrix} \cveciii562 = 5\cveciii562.\] Multiplying out both sides, we get \[\cveciii{25}{28+2b}{6a-2} = \cveciii{25}{30}{10}.\] Thus, $a = 2$ and $b = 1$.
     \end{ppart}
     \begin{ppart}
-        Note that \[5 + \l_2 + \l_3 = \abs{-1} + \abs{3} + \abs{-1} = 1 \quad \tand \quad 5\l_2\l_3 = \begin{vmatrix}-1 & 5 & 0 \\ 2 & 3 & 1 \\ 0 & 2 & -1\end{vmatrix} = 15.\] By inspection, we have $\l_2 = -3$ and $\l_3 = -1$.
+        Note that $5 + \l_2 + \l_3 = \abs{-1} + \abs{3} + \abs{-1} = 1$ and \[5\l_2\l_3 = \begin{vmatrix}-1 & 5 & 0 \\ 2 & 3 & 1 \\ 0 & 2 & -1\end{vmatrix} = 15.\] By inspection, we have $\l_2 = -3$ and $\l_3 = -1$.
 
         Note that \[\mat A - \l \mat I = \begin{pmatrix}-1 - \l & 5 & 0 \\ 2 & 3-\l & 1 \\ 0 & 2 & -1-\l\end{pmatrix}.\] The eigenvectors are thus
         \begin{align*}
@@ -215,7 +215,7 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Since \[\bp{\mat A + \mat B} \vec e_i = \mat A \vec e_i + \mat B \vec e_i = \l_i \vec e_i + \m_i \vec e_i = (\l_i + \m_i) \vec e_i,\] it follows that $\mat A + \mat B$ has eigenvalues $\l_i + \m_i$ with corresponding eigenvectors $\vec e_i$ for $i = 1, 2, 3$.
+            Since$[\bp{\mat A + \mat B} \vec e_i = \mat A \vec e_i + \mat B \vec e_i = \l_i \vec e_i + \m_i \vec e_i = (\l_i + \m_i) \vec e_i$, it follows that $\mat A + \mat B$ has eigenvalues $\l_i + \m_i$ with corresponding eigenvectors $\vec e_i$ for $i = 1, 2, 3$.
         \end{psubpart}
         \begin{psubpart}
             We have the system of equations
@@ -303,7 +303,12 @@
         Let $\vec x_i$ be the $i$th standard basis vector, where $1 \leq i \leq n$. Note that $\vec x_i$ is an eigenvector of a diagonal matrix $\mat D$ with corresponding eigenvalue $d_{ii}$. Hence, \[\mat A \mat B \vec x_i = \mat A \bp{b_{ii} \vec x_i} = a_{ii} b_{ii} \vec x_i \quad \tand \quad \mat B \mat A \vec x_i = \mat B \bp{a_{ii} \vec x_i} = b_{ii} a_{ii} \vec x_i.\] Hence, $\vec x_i$ has the same image under $\mat A \mat B$ and $\mat B \mat A$, whence $\mat A \mat B = \mat B \mat A$.
     \end{ppart}
     \begin{ppart}
-        Since $\mat A$ and $\mat B$ have the same eigenvectors, we can write $\mat A = \mat P \mat D \mat P^{-1}$ and $\mat B = \mat P \mat E \mat P^{-1}$, where $\mat D$ and $\mat E$ are diagonal matrices. Then \[\mat A \mat B = \bp{\mat P \mat D \mat P^{-1}}\bp{\mat P \mat E \mat P^{-1}} = \mat P \mat D \mat E \mat P^{-1}\] and \[\mat B \mat A = \bp{\mat P \mat E \mat P^{-1}}\bp{\mat P \mat D \mat P^{-1}} = \mat P \mat E \mat D \mat P^{-1}.\] Since $\mat D$ and $\mat E$ are diagonal, by part (a), they commute, so $\mat D \mat E = \mat E \mat D$. Consequently, $\mat A \mat B = \mat B \mat A$, so $\mat A$ and $\mat B$ also commute.
+        Since $\mat A$ and $\mat B$ have the same eigenvectors, we can write $\mat A = \mat P \mat D \mat P^{-1}$ and $\mat B = \mat P \mat E \mat P^{-1}$, where $\mat D$ and $\mat E$ are diagonal matrices. Then we have
+        \begin{align*}
+            \mat A \mat B &= \bp{\mat P \mat D \mat P^{-1}}\bp{\mat P \mat E \mat P^{-1}} = \mat P \mat D \mat E \mat P^{-1},\\
+            \mat B \mat A &= \bp{\mat P \mat E \mat P^{-1}}\bp{\mat P \mat D \mat P^{-1}} = \mat P \mat E \mat D \mat P^{-1}.
+        \end{align*}
+        Since $\mat D$ and $\mat E$ are diagonal, by part (a), they commute, so $\mat D \mat E = \mat E \mat D$. Consequently, $\mat A \mat B = \mat B \mat A$, so $\mat A$ and $\mat B$ also commute.
     \end{ppart}
     \begin{ppart}
         We have the system of equations
@@ -366,7 +371,7 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            We have $\mat A \vec e_i = \l_i \vec e_i$. Pre-multiplying by $\frac1{\l_i} \mat A^{-1}$ yields $\frac1{\l_i} \vec e_i = \mat A^{-1} \vec e_i$. Hence, $\mat A^{-1}$ has the same eigenvectors $\vec e_i$ with corresponding eigenvalues $1/\l_i$.
+            We have $\mat A \vec e_i = \l_i \vec e_i$. Pre-multiplying by $(1/\l_i) \mat A^{-1}$ yields $(1/\l_i) \vec e_i = \mat A^{-1} \vec e_i$. Hence, $\mat A^{-1}$ has the same eigenvectors $\vec e_i$ with corresponding eigenvalues $1/\l_i$.
         \end{psubpart}
         \begin{psubpart}
             Note that \[\mat A^{-1} \mat B \vec e_i = \mat A^{-1} \m_i \vec e_i = \frac{\m_i}{\l_i} \vec e_i.\] Thus,
@@ -375,7 +380,7 @@
                 &= \bs{1 + \frac{\m_1}{\l_1} + \bp{\frac{\m_1}{\l_1}}^2 + \dots + \bp{\frac{\m_1}{\l_1}}^n} \vec e\\
                 &= \frac{(\m_1/\l_1)^{n+1} - 1}{\m_1/\l_1 - 1} \vec e_1.
             \end{align*}
-            Thus, the eigenvalue corresponding to $\vec e_1$ is $\frac{(\m_1/\l_1)^{n+1} - 1}{\m_1/\l_1 - 1}$.
+            Thus, the eigenvalue corresponding to $\vec e_1$ is \[\frac{(\m_1/\l_1)^{n+1} - 1}{\m_1/\l_1 - 1}.\]
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -385,7 +390,7 @@
         \begin{psubpart}
             For $\mat E$ to be singular, we require $b = 0$. In this case, the characteristic polynomial of $\mat E$ is $\l^2 - a\l$. Its roots are $\l = 0, a$. Let $\vec x = \cveciix{x}{y} \neq 0$ be an eigenvector.
 
-            \case{1}[$\l = 0$] Consider $\bp{\mat E - \l \mat I} \vec x = \vec 0$: \[\begin{pmatrix}a & 0 \\ -1 & 0 \end{pmatrix}\cvecii{x}{y} = \cvecii00.\] Hence, $x = 0$, while $y$ is free. Hence, $\vec x = \cvecii01$.
+            \case{1}[$\l = 0$] Consider $\bp{\mat E - \l \mat I} \vec x = \vec 0$: \[\begin{pmatrix}a & 0 \\ -1 & 0 \end{pmatrix}\cvecii{x}{y} = \cvecii00.\] Hence, $x = 0$, while $y$ is free. Hence, $\vec x = \cveciix01$.
 
             \case{2}[$\l = a$] Consider $\bp{\mat E - \l \mat I} \vec x = \vec 0$: \[\begin{pmatrix}0 & 0 \\ -1 & -a\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] We get the equation $x + ay = 0$. Taking $y = 1$, we have $\vec x = \cveciix{-a}{1}$.
 
@@ -411,6 +416,7 @@
         \item Comment on one possible drawback of the model.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         Microorganism $C$ will likely have a large population. Further, $q_{13} = 1.16$ means that a high population of $C$ will result in a large population of $A$, while $q_{23} = -1.2$ means that a large population of $C$ will result in a small population of $C$.

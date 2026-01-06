@@ -69,10 +69,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        The sum of probabilities must be 1. Hence, \[1k + 2k + 3k + 4k = 1 \implies k = \frac1{10}.\]
+        The sum of probabilities must be 1. Hence, $1k + 2k + 3k + 4k = 1$, so $k = 1/10$.
     \end{ppart}
     \begin{ppart}
-        We have \[\E{X} = 1\bp{\frac1{10}} + 2\bp{\frac2{10}} + 3\bp{\frac3{10}} + 4\bp{\frac4{10}} = 3.\] Also, \[\E{X^2} = 1^2\bp{\frac1{10}} + 2^2\bp{\frac2{10}} + 3^2\bp{\frac3{10}} + 4^2\bp{\frac4{10}} = 10.\] Thus, \[\Var{X} = \E{X^2} - \bp{\E{X}}^2 = 10 - 3^2 = 1.\]
+        We have \[\E{X} = 1\bp{\frac1{10}} + 2\bp{\frac2{10}} + 3\bp{\frac3{10}} + 4\bp{\frac4{10}} = 3.\] Also, \[\E{X^2} = 1^2\bp{\frac1{10}} + 2^2\bp{\frac2{10}} + 3^2\bp{\frac3{10}} + 4^2\bp{\frac4{10}} = 10.\] Thus, $\Var{X} = \E{X^2} - \bp{\E{X}}^2 = 10 - 3^2 = 1$.
     \end{ppart}
     \begin{ppart}
         Consider $\P{Y = 1}{X = 2}$. Since the rod of length 2 has already been chosen, we are left with the rods of length 1, 3, and 4. Thus, \[\P{Y = 1}{X = 2} = \frac1{1 + 3 + 4} = \frac18.\]
@@ -82,10 +82,16 @@
         Thus, \[16\P{Y = 1}{X = 2} = 16\bp{\frac{1}{8}} = 2 = 9\bp{\frac29} = 9\P{Y = 2}{X = 1}.\]
     \end{ppart}
     \begin{ppart}
-        For $X + Y = 3$, either $X = 1$, $Y = 2$ or $X = 2$, $Y = 1$. Thus, \[\P{X + Y = 3} = \P{X = 1, Y=2} + \P{X = 2, Y=1} = \bp{\frac1{10}}\bp{\frac29} + \bp{\frac2{10}} \bp{\frac18} = \frac{17}{360}.\]
+        For $X + Y = 3$, either $X = 1$, $Y = 2$ or $X = 2$, $Y = 1$. Thus,
+        \begin{align*}
+            \P{X + Y = 3} &= \P{X = 1, Y=2} + \P{X = 2, Y=1}\\
+            &= \bp{\frac1{10}}\bp{\frac29} + \bp{\frac2{10}} \bp{\frac18}\\
+            &= \frac{17}{360}.
+        \end{align*}
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     The random variable has the following probability distribution:
 
@@ -124,7 +130,7 @@
         We have \[\E{S} = \E{X_1 + X_2 + \dots + X_n} = n \E{X} = n\bp{3 - 4\t}.\] Also, \[\Var{S} = \Var{X_1 + X_2 + \dots + X_n} = n\Var{X} = n\bp{6\t - 16\t^2}.\]
     \end{ppart}
     \begin{ppart}
-        We have \[\E{T} = \E{a + bS} = a + b\E{S} = a + bn\bp{3 - 4\t} = \bp{a + 3bn} - \bp{4bn} \t.\] Since $\E{T} = \t$, we have the system \[a = 3bn = 0, \qquad 4bn = 1,\] whence $b = -1/4n$. Substituting this into the first equation yields \[a + 3\bp{-\frac1{4n}}n = 0 \implies a = \frac34.\]
+        We have \[\E{T} = \E{a + bS} = a + b\E{S} = a + bn\bp{3 - 4\t} = \bp{a + 3bn} - \bp{4bn} \t.\] Since $\E{T} = \t$, we have the equations \[a = 3bn = 0 \quad \tand \quad 4bn = 1,\] so $b = -1/4n$. Substituting this into the first equation, we get \[a + 3\bp{-\frac1{4n}}n = 0,\] so $a = 3/4$
     \end{ppart}
     \begin{ppart}
         We have \[\Var{T} = \Var{a + bS} = \Var{bS} = b^2 \Var{S} = \bp{-\frac1{4n}}^2 \bs{n \bp{6\t - 16\t^2}} = \frac{\t (3 - 8\t)}{8n}.\]

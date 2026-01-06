@@ -72,7 +72,7 @@
 \end{solution}
 
 \begin{problem}
-    `Brilliant' fireworks are intended to burn for 40 seconds. A random sample of 50 `Brilliant' fireworks is taken. Each firework in the sample is ignited and the burning time, $x$ seconds, is measured. The results are summarized by \[\sum(x-40)=-27, \quad \sum(x-40)^{2}=167.\]
+    `Brilliant' fireworks are intended to burn for 40 seconds. A random sample of 50 `Brilliant' fireworks is taken. Each firework in the sample is ignited and the burning time, $x$ seconds, is measured. The results are summarized by \[\sum(x-40)=-27 \quad \tand \quad \sum(x-40)^{2}=167.\]
 
     \begin{enumerate}
         \item Test, at the 5\% level of significance, whether the mean burning time of `Brilliant' fireworks differs from 40 seconds.
@@ -189,7 +189,7 @@
 \end{solution}
 
 \begin{problem}
-    A motoring magazine editor believes that the figures quoted by car manufacturers for distances travelled per litre of fuel are too high. He carries out a survey into this by asking for information by readers. For a certain model of car, 8 readers reply with the following data, measured in km per litre. \[14.0 \quad 12.5 \quad 11.0 \quad 11.0 \quad 12.5 \quad12.6 \quad 15.6 \quad 13.2.\]
+    A motoring magazine editor believes that the figures quoted by car manufacturers for distances travelled per litre of fuel are too high. He carries out a survey into this by asking for information by readers. For a certain model of car, 8 readers reply with the following data, measured in km per litre. \[14.0, \quad 12.5, \quad 11.0, \quad 11.0, \quad 12.5, \quad 12.6, \quad 15.6, \quad 13.2.\]
 
     \begin{enumerate}
         \item Calculate unbiased estimates of the population mean and variance.
@@ -232,7 +232,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        We have \[\ol{x} = \frac19 \sum x = 9.6\] and \[s^2 = \frac18 \bs{\sum x^2 - \frac19 \bp{\sum x}^2} = 0.81.\]
+        We have \[\ol{x} = \frac19 \sum x = 9.6 \quad \tand \quad s^2 = \frac18 \bs{\sum x^2 - \frac19 \bp{\sum x}^2} = 0.81.\]
     \end{ppart}
     \begin{ppart}
         Assume that $X$ is normally distributed. Let \nullhyp: $\m = 10$ and \althyp: $\m < 10$. We perform a 1-tail test at 5\% significance level. Under \nullhyp{}, \[\frac{\ol{X} - 10}{\sqrt{0.81/9}} \sim \StudentT{8}.\] Using G.C., the $p$-value is 0.110, which is greater than the significance level of 5\%. Thus, we do not reject \nullhyp{} and conclude there is insufficient evidence at 5\% significance level that the mean mass of sugar per packet is less than 10g.
@@ -258,9 +258,9 @@
         Let $T$ be the number of minutes that the bus is late. Let $\m = \E{T}$. The hypotheses are \nullhyp: $\m = 4.3$, \althyp: $\m < 4.3$.
     \end{ppart}
     \begin{ppart}
-        We perform a 1-tail test at 10\% significance level. Note that the unbiased estimator for the sample variance, $s^2$, is given by \[s^2 = \frac{n}{n-1} k^2 \implies \frac{s^2}{n} = \bp{\frac{k}{3}}^2.\] Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/3} \sim \StudentT{9}.\] To not reject \nullhyp, we require \[\frac{\ol{t} - 4.3}{k/3} > t_{0.10}.\] Solving, we get $\ol{t} > 3.48$. Thus, the set of values that $\ol{t}$ can take on is \[\bc{\ol{t} \in \RR: \ol{t} > 3.48}.\]
+        We perform a 1-tail test at 10\% significance level. Note that the unbiased estimator for the sample variance, $s^2$, is given by \[s^2 = \frac{n}{n-1} k^2,\] so \[\frac{s^2}{n} = \bp{\frac{k}{3}}^2.\] Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/3} \sim \StudentT{9}.\] To not reject \nullhyp, we require \[\frac{\ol{t} - 4.3}{k/3} > t_{0.10}.\] Solving, we get $\ol{t} > 3.48$. Thus, the set of values that $\ol{t}$ can take on is $(3.48, \infty)$.
     \end{ppart}
     \begin{ppart}
-        We perform a 1-tail test at 10\% significance level. Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/3} \sim \StudentT{9}.\] To reject \nullhyp, we require \[\frac{4.0 - 4.3}{k/3} \leq t_{0.10}.\] Solving, we get $0 \leq k \leq 0.651$. Thus, the set of values that $k^2$ can take on is \[\bc{k^2 \in \RR : 0 < k^2 \leq 0.423}.\]
+        We perform a 1-tail test at 10\% significance level. Under \nullhyp, \[\frac{\ol{T} - 4.3}{k/3} \sim \StudentT{9}.\] To reject \nullhyp, we require \[\frac{4.0 - 4.3}{k/3} \leq t_{0.10}.\] Solving, we get $0 \leq k \leq 0.651$. Thus, the set of values that $k^2$ can take on is $(0, 0.423]$.
     \end{ppart}
 \end{solution}

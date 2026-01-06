@@ -29,7 +29,7 @@
         We have \[\sum_{i = 1}^n w_i = \sum_{i = 1} \bp{v_i - v_{i+1}}.\] Quite clearly, this sum telescopes, giving \[\sum_{i = 1}^n w_i = v_1 - v_{n+1} = u_1^2 \bp{1 - r^{2n}} = u_1 \bp{1 - r} \bp{u_1 \frac{1 - r^{2n}}{1 - r}} = u_1 \bp{1-r} \sum_{i = 1}^{2n} u_i.\]
     \end{ppart}
     \begin{ppart}
-        From part (a), we have \[S_V = \frac{u_1}{1 + r} S_U \implies \frac{S_U}{S_V} = \frac{1 + r}{u_1}.\] Note also that \[S_U = \sum_{i = 1}^\infty u_i = \sum_{i = 1}^\infty r^{i-1} u_1 = \frac{u_1}{1 - r}.\] Thus, \[\frac{S_U}{S_V} + \frac1{S_U} = \frac{1 + r}{u_1} + \frac{1 - r}{u_1} = \frac{2}{u_1}.\]
+        From part (a), we have \[S_V = \frac{u_1}{1 + r} S_U,\] so \[\frac{S_U}{S_V} = \frac{1 + r}{u_1}.\] Note also that \[S_U = \sum_{i = 1}^\infty u_i = \sum_{i = 1}^\infty r^{i-1} u_1 = \frac{u_1}{1 - r}.\] Thus, \[\frac{S_U}{S_V} + \frac1{S_U} = \frac{1 + r}{u_1} + \frac{1 - r}{u_1} = \frac{2}{u_1}.\]
     \end{ppart}
     \begin{ppart}
         From part (b), we have \[S_W = u_1 \bp{1 - r} S_U = u_1 \bp{1 - r} \frac{u_1}{1 - r} = u_1^2.\]
@@ -40,9 +40,9 @@
     For each of the following sequences, determine if it converges or diverges. Take $n = 1, 2, 3, \dots$.
 
     \begin{tasks}(2)
-        \task $u_n = \sin{n\pi/2}$,
-        \task $u_n = n^3/3^n$,
-        \task $u_n = n^n / n!$,
+        \task $u_n = \sin{n\pi/2}$;
+        \task $u_n = n^3/3^n$;
+        \task $u_n = n^n / n!$;
         \task $u_n = (\sin n)/n$.
     \end{tasks}
 \end{problem}
@@ -58,7 +58,7 @@
         Invoking L'H\^{o}pital's rule repeatedly, \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} \frac{n^3}{3^n} = \frac{3}{\ln 3} \lim_{n \to \infty} \frac{n^2}{3^n} = \frac{6}{\bp{\ln 3}^2} \lim_{n \to \infty} \frac{n}{3^n} = \frac{6}{\bp{\ln 3}^3} \lim_{n \to \infty} \frac1{3^n} = 0.\]
     \end{ppart}
     \begin{ppart}
-        Let the limit be $L$. Then \[\ln L = \lim_{n \to \infty} \bp{n \ln n - \ln n!}.\] By Stirling's approximation, $\ln n! = n\ln n - n + \bigO{\ln n}$. Thus, \[\ln L = \lim_{n \to \infty} \bp{n - \bigO{\ln n}} = \lim_{n \to \infty} \bigO{n},\] which diverges to $\infty$. Hence, $L$ diverges to $\infty$.
+        Observe that \[\frac{n^n}{n!} = \frac{n}{n} \frac{n}{n-1} \frac{n}{n-2} \dots \frac{n}{1} > n.\] Thus, the limit diverges to $\infty$.
     \end{ppart}
     \begin{ppart}
         Note that \[\abs{\lim_{n \to \infty} u_n} = \lim_{n \to \infty} \abs{u_n} \leq \lim_{n \to \infty} \frac{1}{n} = 0.\] Thus, the limit converges to 0.
@@ -66,10 +66,10 @@
 \end{solution}
 
 \begin{problem}
-    Show that the following series is divergent: \[5 + \sqrt5 + \sqrt[3]{5} + \sqrt[4]{5} + \dots.\]
+    Show that $5 + \sqrt5 + \sqrt[3]{5} + \sqrt[4]{5} + \dots$ is divergent.
 \end{problem}
 \begin{solution}
-    We have \[\sum_{i = 1}^\infty 5^{1/i} \geq \sum_{i = 1}^\infty 1^{1/i} = \sum_{i = 1}^\infty 1,\] which clearly diverges to $\infty$.
+    We have \[\sum_{i = 1}^\infty 5^{1/i} \geq \sum_{i = 1}^\infty 1^{1/i} = \sum_{i = 1}^\infty 1,\] which diverges to $\infty$.
 \end{solution}
 
 \begin{problem}
@@ -95,7 +95,7 @@
     Prove that the following sum of series is less than $3/2$ using the formula for the sum of an infinite geometric series: \[1 + \frac13 + \frac1{4^2} + \frac1{5^3} + \frac1{6^4} + \dots.\]
 \end{problem}
 \begin{ppart}
-    Clearly, \[1 + \frac13 + \frac1{4^2} + \frac1{5^3} + \frac1{6^4} + \dots < 1 + \frac13 + \frac1{3^2} + \frac1{3^3} + \frac1{3^4} + \dots = \frac1{1 - 1/3} = \frac32.\]
+    We have \[1 + \frac13 + \frac1{4^2} + \frac1{5^3} + \frac1{6^4} + \dots < 1 + \frac13 + \frac1{3^2} + \frac1{3^3} + \frac1{3^4} + \dots = \frac1{1 - 1/3} = \frac32.\]
 \end{ppart}
 
 \begin{problem}
@@ -260,7 +260,7 @@
         \setcounter{enumi}{1}
         \item Use your answer to part (a) to show that \[S_{2n} = -\ln 2 + 2\ln \bp{1 + \frac1{2n-1}}.\] Hence, state the value of the sum to infinity.
         \item Find the smallest value of $n$ for which $S_{2n}$ is within $10^{-2}$ of the sum to infinity.
-        \item By considering the graph of $y = 1/x$ for $x > 0$, show, with the aid of a sketch, that \[\frac1{2n} < u_{2n-1} < \frac1{2n-1}, \quad n \in \ZZ^+.\]
+        \item By considering the graph of $y = 1/x$ for $x > 0$, show, with the aid of a sketch, that \[\frac1{2n} < u_{2n-1} < \frac1{2n-1}\] for all positive integers $n$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -277,7 +277,7 @@
         Using (a), we have \[S_{2n} = 2\ln{\frac{2n}{2n-1}} - \ln 2 = -\ln 2 + 2\ln{1 + \frac1{2n-1}}.\] As $n \to \infty$, $\ln{1 + 1/(2n-1)} \to \ln 1 = 0$. Thus, the sum to infinity is $-\ln 2$.
     \end{ppart}
     \begin{ppart}
-        Consider \[\abs{S_{2n} - (-\ln 2)} \leq 10^{-2} \implies 2\ln{1 + \frac1{2n-1}} \leq 10^{-2}.\] Using G.C., $n \geq 100.25$, so the least $n$ is 101.
+        Consider $\abs{S_{2n} - (-\ln 2)} \leq 10^{-2}$. Then \[2\ln{1 + \frac1{2n-1}} \leq 10^{-2}.\] Using G.C., $n \geq 100.25$, so the least $n$ is 101.
     \end{ppart}
     \begin{ppart}
         Observe that \[u_{2n-1} = f(2n-1) = \ln{\frac{2n}{2n-1}} = \ln{2n} - \ln{2n-1} = \int_{2n-1}^{2n} \frac1x \d x,\] which is the area under $y = 1/x$ over $[2n-1, 2n]$. Consider the following diagram:
@@ -325,17 +325,17 @@
         \end{enumerate}
         \item Deduce that \[\e = \sum_{j = 0}^\infty \frac1{j!}.\]
         \item Let \[s_n = \sum_{j = 0}^n \frac1{j!}.\] Show that for any $m, n \in \NN$ such that $m > n$, we have \[s_m - s_n < \frac1{n\bp{n!}}.\] Hence, prove that \[\e - \sum_{j = 0}^n \frac1{j!} \leq \frac1{n\bp{n!}}.\]
-        \item Use (c) to explain why $2 < e < 3$.
+        \item Use (c) to explain why $2 < \e < 3$.
         \item Conclude that $\e$ is irrational.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            By the Binomial Theorem, \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \binom{n}{j} \frac1{n^j} = \sum_{j = 0}^n \frac{n!}{(n-j)! j! n^j}.\] Now observe that \[\frac{n!}{(n-j)! \, n^j} = \frac{n(n-1)(n-2)\dots(n-j+1)}{n^j} = \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.\] A trivial upper bound is \[\frac{n!}{(n-j)! n^j} \leq 1 \cdot 1 \dots 1 = 1.\] Thus, \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \frac{n!}{(n-j)! j! n^j} \leq \sum_{j = 0}^n \frac{1}{j!}.\]
+            By the Binomial Theorem, \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \binom{n}{j} \frac1{n^j} = \sum_{j = 0}^n \frac{n!}{(n-j)! \,  j! \, n^j}.\] Now observe that \[\frac{n!}{(n-j)! \, n^j} = \frac{n(n-1)(n-2)\dots(n-j+1)}{n^j} = \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.\] A trivial upper bound is \[\frac{n!}{(n-j)! \, n^j} \leq 1 \cdot 1 \dots 1 = 1.\] Thus, \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \frac{n!}{(n-j)! \, j! \, n^j} \leq \sum_{j = 0}^n \frac{1}{j!}.\]
         \end{psubpart}
         \begin{psubpart}
-            Substituting the expression for $\frac{n!}{(n-j)! n^j}$ we found into the sum, we obtain \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.\] Now observe that all the summands are strictly positive. Thus, the sequence of partial sums is increasing. That is, for all positive integers $k < n$, we have
+            Substituting the expression for $n!/((n-j)! n^j)$ we found into the sum, we obtain \[\bp{1 + \frac1n}^n = \sum_{j = 0}^n \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.\] Now observe that all the summands are strictly positive. Thus, the sequence of partial sums is increasing. That is, for all positive integers $k < n$, we have
             \begin{align*}
                 \bp{1 + \frac1n}^n &= \sum_{j = 0}^n \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}\\
                 &\geq \sum_{j = 0}^k \frac1{j!} \bp{1 - \frac1n}\bp{1 - \frac2n}\dots\bp{1 - \frac{j-1}{n}}.
@@ -356,7 +356,7 @@
         Note also that $1/j! > 0$ for all natural $j$, so $s_m > s_n$. This gives the inequality \[0 < s_m - s_n < \frac{1}{n\bp{n!}}.\] As $m \to \infty$, we have \[0 < \e - \sum_{j = 0}^n \frac1{j!} < \frac1{n\bp{n!}}\] for all $n \in \NN$.
     \end{ppart}
     \begin{ppart}
-        Taking $n = 1$, the above inequality becomes \[0 < \e - \bp{\frac1{0!} + \frac1{1!}} < \frac1{1 \bp{1!}} \implies 0 < \e - 2 < 1 \implies 2 < \e < 3.\]
+        Taking $n = 1$, the above inequality becomes \[0 < \e - \bp{\frac1{0!} + \frac1{1!}} < \frac1{1 \bp{1!}},\] hence $2 < \e < 3$.
     \end{ppart}
     \begin{ppart}
         Seeking a contradiction, suppose $\e$ is rational. Write $\e = a/b$, where $a, b \in \ZZ$ with $b \neq 0$. From part (d), $\e$ is not an integer, so $b \neq 1$. Define \[x = b! \bp{\e - \sum_{j = 0}^b \frac1{j!}}.\] Note that $x > 0$. 
@@ -383,7 +383,7 @@
             &\hspace{1em}= x\bs{1 + \frac12\bp{\frac2{x^2}} + \frac{(1/2)(-1/2)}{2}\bp{\frac2{x^2}}^2 + \frac{(1/2)(-1/2)(-3/2)}6 \bp{\frac2{x^2}}^3 + \bigO{x^{-8}}}\\
             &\hspace{1em}= x + x^{-1} - \frac12 x^{-3} + \frac12 x^{-5} + \bigO{x^{-7}}.
         \end{align*}
-        The radius of convergence is given by \[\abs{\frac2{x^2}} = \frac2{x^2} < 1 \implies x > \sqrt{2}.\] Note that we reject $x < -\sqrt{2}$ since $x > 0$.
+        The radius of convergence is given by \[\abs{\frac2{x^2}} = \frac2{x^2} < 1,\] which gives $x > \sqrt{2}$. Note that we reject $x < -\sqrt{2}$ since $x > 0$.
     \end{ppart}
     \begin{ppart}
         Note that \[f(x) = a + bx + cx^2 - x\bp{2 + x^2}^{1/2} = (a-1) + bx + \bp{c-1}x^2 + \bigO{x^{-2}}.\] For $f(x) \to 0$ as $x \to \infty$, we must have $a-1 = b = c-1 = 0$, whence $a = 1$, $b = 0$ and $c = 1$.
@@ -420,7 +420,7 @@
     \end{cases}\] where $m$ is a non-negative integer.
 \end{problem}
 \begin{solution}
-    Note that \[\frac{x^2 + 2}{x^3 + 1} = \frac{x^2 + 2}{(x+1)\bp{x^2 - x + 1}} = \frac{A}{x+1} + \frac{Bx + C}{x^2 - x + 1}.\] By the cover-up rule, we immediately have $A = 1$. Multiplying through by $x^3 + 1$, we get \[x^2 + 2 = \bp{x^2 - x + 1} + (x+1)\bp{Bx + C}.\] Comparing constant terms, we get $2 = 1 + C \implies C = 1$. Comparing $x^2$ terms, we have $1 = 1 + B \implies B = 0$. Thus, \[\frac{x^2 + 2}{x^3 + 1} = \frac{1}{x + 1} + \frac{1}{x^2 - x + 1}.\] Now observe that \[\frac1{x + 1} = \sum_{n = 0}^\infty (-x)^n = \sum_{n = 0}^\infty (-1)^n x^n\] and
+    Note that \[\frac{x^2 + 2}{x^3 + 1} = \frac{x^2 + 2}{(x+1)\bp{x^2 - x + 1}} = \frac{A}{x+1} + \frac{Bx + C}{x^2 - x + 1}.\] By the cover-up rule, we immediately have $A = 1$. Multiplying through by $x^3 + 1$, we get \[x^2 + 2 = \bp{x^2 - x + 1} + (x+1)\bp{Bx + C}.\] Comparing constant terms, we get $2 = 1 + C$, so $C = 1$. Comparing $x^2$ terms, we have $1 = 1 + B$, so $B = 0$. Thus, \[\frac{x^2 + 2}{x^3 + 1} = \frac{1}{x + 1} + \frac{1}{x^2 - x + 1}.\] Now observe that \[\frac1{x + 1} = \sum_{n = 0}^\infty (-x)^n = \sum_{n = 0}^\infty (-1)^n x^n\] and
     \begin{align*}
         \frac{x^2 + 2}{x^3 + 1} &= \bp{x^2 + 2} \sum_{m = 0}^\infty \bp{-x^3}^m = \bp{x^2 + 2} \sum_{m = 0}^\infty (-1)^m x^{3m}\\
         &= \sum_{m = 0}^\infty (-1)^m x^{3m + 2} + \sum_{m = 0}^\infty 2(-1)^m x^{3m}.    

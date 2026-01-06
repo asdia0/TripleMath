@@ -42,10 +42,15 @@
         For his weekly commission to be exactly \$3000, he must either sell only 3 new cars, or only 5 used cards. The required probability is thus \[\P{N = 3}{U = 0} + \P{N = 0}\P{U = 5} = 0.0321 \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
-        Let his weekly commission be $C$. Then $C = 1000 N + 600 U$. The mean is \[\E{C} = 1000\E{N} + 600\E{U} = 1000(3) + 600(2) = 4200.\] However, the variance is \[\Var{C} = 1000^2\Var{N} + 600^2\Var{U} = 1000^2 (3) + 600^2 (2) = 3720000.\] Since $\E{C} \neq \Var{C}$, it follows that $C$ does not follow a Poisson distribution.
+        Let his weekly commission be $C$. Then $C = 1000 N + 600 U$. The mean and variances can thus be calculated as
+        \begin{align*}
+            \E{C} &= 1000\E{N} + 600\E{U} = 4200,\\
+            \Var{C} &= 1000^2\Var{N} + 600^2\Var{U} = 3720000.
+        \end{align*}
+        Since $\E{C} \neq \Var{C}$, it follows that $C$ does not follow a Poisson distribution.
     \end{ppart}
     \begin{ppart}
-        Let $X$ be the number of cars sold in the first week. Then $X \sim \Binom{16}{1/4}$. The required probability is thus \[\P{X < 8} = 0.973 \tosf{3}.\]
+        Let $X$ be the number of cars sold in the first week. Then $X \sim \Binom{16}{1/4}$. The required probability is thus $\P{X < 8} = 0.973 \tosf{3}$.
     \end{ppart}
 \end{solution}
 
@@ -67,14 +72,19 @@
         Differentiating (1) with respect to $x$, \[\der[2]{y}{x} - 2\der{y}{x} + \der{z}{x} = 8\cos{2x}.\] Taking (2) - 2(1) and rearranging, we have \[\der{z}{x} = 4y + 2\der{y}{x} + 2\cos{2x} - 8\sin{2x}.\] Substituting this into (3) yields \[\der[2]{y}{x} - 2\der{y}{x} + \bp{4y + 2\der{y}{x} + 2\cos{2x} - 8\sin{2x}} = 8\cos{2x}.\] Rearranging, we get \[\der[2]{y}{x} + 4y = 6\cos{2x} + 8\sin{2x}.\]
     \end{ppart}
     \begin{ppart}
-        The characteristic equation of the DE is $m^2 + 4 = 0$, whence its roots are $m \pm 2\i$. The complementary solution is thus \[y_c = A\sin{2x} + B\cos{2x}.\] For the particular solution, we try $y_p = x\bs{C\sin{2x} + D\cos{2x}}$. Differentiating, we get \[\der{y_p}{x} = 2x\bs{C\cos{2x} - D\sin{2x}} + \bs{C\sin{2x} + D\cos{2x}}.\] Differentiating once more, we get \[\der[2]{y_p}{x} = -4x\bs{C\sin{2x} + D\cos{2x}} + 4\bs{C\cos{2x} - D\sin{2x}}.\] Substituting this into the DE, we obtain
+        The characteristic equation of the DE is $m^2 + 4 = 0$, whence its roots are $m \pm 2\i$. The complementary solution is thus $y_c = A\sin{2x} + B\cos{2x}$. For the particular solution, we try $y_p = x\bs{C\sin{2x} + D\cos{2x}}$. Differentiating, we get
+        \begin{align*}
+            \der{y_p}{x} &= 2x\bs{C\cos{2x} - D\sin{2x}} + \bs{C\sin{2x} + D\cos{2x}},\\
+            \der[2]{y_p}{x} &= -4x\bs{C\sin{2x} + D\cos{2x}} + 4\bs{C\cos{2x} - D\sin{2x}}.
+        \end{align*}
+        Substituting this into the DE, we obtain
         \begin{align*}
             &-4x\bs{C\sin{2x} + D\cos{2x}} + 4\bs{C\cos{2x} - D\sin{2x}}\\
             &\hspace{6em}+4x\bs{C\sin{2x} + D\cos{2x}} = 6\cos{2x} + 8\sin{2x}.
         \end{align*}
-        Simplifying, \[C\cos{2x} - D\sin{2x} = \frac32 \cos{2x} + 2\sin{2x}.\] Comparing coefficients, we see that $C = 3/2$ and $D = -2$. Thus, the general solution for $y$ is \[y = y_c + y_p = A\sin{2x} + B\cos{2x} + \frac32 x \sin{2x} -2 x \cos{2x}.\] When $x = 0$, $y = 0$. Thus, $B = 0$. 
+        Comparing coefficients of $\cos{2x}$ and $\sin{2x}$ terms, we see that $C = 3/2$ and $D = -2$. Thus, the general solution for $y$ is \[y = y_c + y_p = A\sin{2x} + B\cos{2x} + \frac32 x \sin{2x} -2 x \cos{2x}.\] When $x = 0$, $y = 0$. Thus, $B = 0$. 
         
-        Differentiating $y$, we get \[\der{y}{x} = 2A\cos{2x} + 3x\cos{2x} + \frac32 \sin{2x} + 4x\sin{2x} - 2\cos{2x}.\] Substituting the initial conditions into (1), we see that $\derx{y}{x} = 0$ when $x = 0$. Thus, $2A - 2 = 0$, whence $A = 1$. Thus, \[y = \sin{2x} + \frac32 x \sin{2x} -2 x \cos{2x}.\]
+        Differentiating $y$, we get \[\der{y}{x} = 2A\cos{2x} + 3x\cos{2x} + \frac32 \sin{2x} + 4x\sin{2x} - 2\cos{2x}.\] Substituting the initial conditions into (1), we see that $\derx{y}{x} = 0$ when $x = 0$. Thus, $2A - 2 = 0$, whence $A = 1$, and \[y = \sin{2x} + \frac32 x \sin{2x} -2 x \cos{2x}.\]
 
         Substituting our expressions for $y$ and $\derx{y}{x}$ into (1) and simplifying, we see that \[z = \frac92 \sin{2x} - 7x\cos{2x} - x\sin{2x}.\]
     \end{ppart}

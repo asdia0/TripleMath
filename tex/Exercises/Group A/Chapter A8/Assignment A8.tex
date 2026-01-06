@@ -4,7 +4,7 @@
     Find the position vector of the foot of the perpendicular from the point with position vector $\vec c$ to the line with equation $\vec r = \vec a + \l \vec b$, $\l \in \RR$. Leave your answers in terms of $\vec a$, $\vec b$ and $\vec c$.
 \end{problem}
 \begin{solution}
-    Let the foot of the perpendicular be $F$. We have that $\oa{OF} = \vec a + \l \vec b$ for some real $\l$, and $\oa{CF} \dotp \vec b = 0$. Note that $\oa{CF} = \oa{OF} - \oa{OC} = \vec a + \l \vec b - \vec c$. Thus, \[\oa{CF} \dotp \vec b = 0 \implies \bp{\vec a + \l \vec b - \vec c} \dotp \vec b = 0 \implies \l \abs{\vec b}^2 + (\vec a - \vec c) \dotp \vec b = 0 \implies \l = \frac{(\vec c - \vec a) \dotp \vec b}{\abs{\vec b}^2}.\] Thus, \[\oa{OF} = \vec a + \bp{\frac{(\vec c - \vec a) \dotp \vec b}{\abs{\vec b}^2}} \vec b.\]
+    Let the foot of the perpendicular be $F$. We have that $\oa{OF} = \vec a + \l \vec b$ for some real $\l$, and $\oa{CF} \dotp \vec b = 0$. Note that $\oa{CF} = \oa{OF} - \oa{OC} = \vec a + \l \vec b - \vec c$. Thus, \[\oa{CF} \dotp \vec b = \bp{\vec a + \l \vec b - \vec c} \dotp \vec b = \l \abs{\vec b}^2 + (\vec a - \vec c) \dotp \vec b = 0,\] from which we obtain \[\l = \frac{(\vec c - \vec a) \dotp \vec b}{\abs{\vec b}^2}.\] Thus, \[\oa{OF} = \vec a + \bp{\frac{(\vec c - \vec a) \dotp \vec b}{\abs{\vec b}^2}} \vec b.\]
 \end{solution}
 
 \begin{problem}
@@ -21,25 +21,23 @@
     We have that $\oa{OA} = \cveciiix600$, $\oa{OB} = \cveciiix030$ and $\oa{OC} = \cveciiix004$.
 
     \begin{ppart}
-        By the ratio theorem, \[\oa{OP} = \frac{2\,\oa{OB} + \oa{OA}}{1 + 2} = \frac13 \bs{2\cveciii030 + \cveciii600} = \cveciii220 \implies \oa{CP} = \oa{OP} - \oa{OC} = \cveciii22{-4}.\] Hence, $\oa{CP} = 2\vec i + 2\vec j - 4\vec k$.
+        By the ratio theorem, \[\oa{OP} = \frac{2\,\oa{OB} + \oa{OA}}{1 + 2} = \frac13 \bs{2\cveciii030 + \cveciii600} = \cveciii220,\] so $\oa{CP} = \cveciiix22{-4} = 2\vec i + 2\vec j - 4\vec k$.
     \end{ppart}
     \begin{ppart}
-        Note that $\oa{BQ} = \oa{OQ} - \oa{OB} = \cveciiix{q}{-3}0$. Thus, $BQ$ is given by \[ \vec r = \cveciii030 + t\cveciii{q}{-3}0, \, t \in \RR \iff \vec r = 3\vec j + t(q\vec i - 3\vec j), \, t \in \RR.\]
+        Note that $\oa{BQ} = \oa{OQ} - \oa{OB} = \cveciiix{q}{-3}0$. Thus, $BQ$ is given by \[ \vec r = \cveciii030 + t\cveciii{q}{-3}0, \quad t \in \RR.\]
         
-        Note that $\oa{CP} = \cveciiix22{-4} = 2\cveciiix11{-2}$. Hence, $CP$ is given by \[\vec r = \cveciii004 + u\cveciii11{-2}, \, u \in \RR \iff \vec r = 4\vec k + u(\vec i + \vec j - 2\vec k), \, u \in \RR.\]
+        Note that $\oa{CP} = \cveciiix22{-4} = 2\cveciiix11{-2}$. Hence, $CP$ is given by \[\vec r = \cveciii004 + u\cveciii11{-2}, \quad u \in \RR.\]
     \end{ppart}
     \begin{ppart}
-        Since $CP$ is perpendicular to $BQ$, we have $\oa{CP} \dotp \oa{BQ} = 0$. Thus, \[\oa{CP} \dotp \oa{BQ} = 0 \implies 2\cveciii11{-2} \dotp \cveciii{q}{-3}0 = 0 \implies q - 3 + 0 = 0 \implies q = 3.\]
+        Since $CP$ is perpendicular to $BQ$, we have $\oa{CP} \dotp \oa{BQ} = 0$. Thus, \[2\cveciii11{-2} \dotp \cveciii{q}{-3}0 = q - 3 + 0 = 0,\] so $q = 3$.
     \end{ppart}
     \begin{ppart}
-        Let $\t$ be the acute angle between $CP$ and $BQ$. 
-        
-        \[\sin\t = \frac{\abs{\cveciiix11{-2} \crossp \cveciiix{q}{-3}0}}{\abs{\cveciiix11{-2}} \abs{\cveciiix{q}{-3}0}} = \frac{\abs{\cveciiix{-6}{2q}{3-q}}}{\sqrt6 \sqrt{q^2 + 9}} = \sqrt{\frac{5q^2 - 6q + 45}{6q^2 + 54}}.\]
+        Let $\t$ be the acute angle between $CP$ and $BQ$. Then \[\sin\t = \frac{\abs{\cveciiix11{-2} \crossp \cveciiix{q}{-3}0}}{\abs{\cveciiix11{-2}} \abs{\cveciiix{q}{-3}0}} = \frac{\abs{\cveciiix{-6}{2q}{3-q}}}{\sqrt6 \sqrt{q^2 + 9}} = \sqrt{\frac{5q^2 - 6q + 45}{6q^2 + 54}}.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    Line $l_1$ passes through the point $A$ with position vector $3\vec i - 2\vec k$ and is parallel to $-2\vec i + 4\vec j - \vec j$. Line $l_2$ has Cartesian equation given by $\frac{x-1}2 = y = z + 3$.
+    Line $l_1$ passes through the point $A$ with position vector $3\vec i - 2\vec k$ and is parallel to $-2\vec i + 4\vec j - \vec j$. Line $l_2$ has Cartesian equation given by $(x-1)/2 = y = z + 3$.
 
     \begin{enumerate}
         \item Show that the two lines intersect and find the coordinates of their point of intersection.
@@ -48,21 +46,21 @@
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    We have \[l_1 : \vec r = \cveciii30{-2} + \l\cveciii{-2}4{-1}, \, \l \in \RR, \quad l_2 : \vec r = \cveciii10{-3} + \m\cveciii211, \, \m \in \RR.\]
+    We have \[l_1 : \vec r = \cveciii30{-2} + \l\cveciii{-2}4{-1} \quad \tand \quad l_2 : \vec r = \cveciii10{-3} + \m\cveciii211,\] where $\l, \m \in \RR$.
 
     \begin{ppart}
-        Consider $l_1 = l_2$. \[l_1 = l_2 \implies \cveciii30{-2} + \l\cveciii{-2}4{-1} = \cveciii10{-3} + \m\cveciii211 \implies \m\cveciii211 - \l\cveciii{-2}4{-1} = \cveciii201.\] This gives the following system: \[\systeme[\l\m]{2\l+2\m=2,{-4\l}+{\m}=0,{\l}+{\m}=1}\] which has the unique solution $\m = 4/5$ and $\l = 1/5$. Thus, the intersection point $P$ has position vector $\cveciiix30{-2} + \frac15\cveciiix{-2}4{-1} = \frac15\cveciiix{13}{4}{-11}$ and thus has coordinates $\bp{13/5, 4/5, -11/5}$.
+        Consider the intersection of $l_1$ and $l_2$: \[\cveciii30{-2} + \l\cveciii{-2}4{-1} = \cveciii10{-3} + \m\cveciii211.\] This gives the system \[\systeme[\l\m]{2\l+2\m=2,{-4\l}+{\m}=0,{\l}+{\m}=1}\] which has the unique solution $\m = 4/5$ and $\l = 1/5$. Thus, the intersection point $P$ has position vector \[\cveciii30{-2} + \frac15\cveciii{-2}4{-1} = \frac15\cveciii{13}{4}{-11}\] and thus has coordinates $\bp{13/5, 4/5, -11/5}$.
     \end{ppart}
     \begin{ppart}
-        Let $\t$ be the acute angle between $l_1$ and $l_2$. \[\cos\t = \frac{\abs{\cveciiix{-2}4{-1} \dotp \cveciiix211}}{\abs{\cveciiix{-2}4{-1}} \abs{\cveciiix211}} = \frac1{\sqrt{126}} \implies \t = 84.9\deg \todp{1}.\]
+        Let $\t$ be the acute angle between $l_1$ and $l_2$. Then \[\cos\t = \frac{\abs{\cveciiix{-2}4{-1} \dotp \cveciiix211}}{\abs{\cveciiix{-2}4{-1}} \abs{\cveciiix211}} = \frac1{\sqrt{126}},\] so $\t = 84.9\deg \todp{1}$.
 
         Note that \[AP = \sqrt{\bp{\frac{17}5 - 3}^2 + \bp{-\frac45 - 0}^2 + \bp{-\frac95 - (-2)}^2} = \sqrt{\frac{21}{25}} = \frac{\sqrt{21}}5.\]
 
-        Since $\sin\t = \frac{AN}{AP}$, we have that $AN = AP\sin\t$. Note that \[\sin\t = \sin \arccos \frac1{\sqrt{126}} = \frac{\sqrt{\bp{\sqrt{126}}^2 - 1}}{\sqrt{126}} = \frac{\sqrt{125}}{\sqrt{126}} = \frac{5\sqrt5}{\sqrt6 \sqrt{21}}.\] Thus, \[AN = \frac{\sqrt{21}}5 \cdot \frac{5\sqrt5}{\sqrt6 \sqrt{21}} = \sqrt{\frac56}.\] The shortest distance between $A$ and $l_2$ is hence $\sqrt{\frac56}$ units.
+        Since $\sin\t = AN/AP$, we have that $AN = AP\sin\t$. Note that \[\sin\t = \sin \arccos \frac1{\sqrt{126}} = \frac{\sqrt{\bp{\sqrt{126}}^2 - 1}}{\sqrt{126}} = \frac{\sqrt{125}}{\sqrt{126}} = \frac{5\sqrt5}{\sqrt6 \sqrt{21}}.\] Thus, \[AN = \frac{\sqrt{21}}5 \cdot \frac{5\sqrt5}{\sqrt6 \sqrt{21}} = \sqrt{\frac56}.\] The shortest distance between $A$ and $l_2$ is hence $\sqrt{5/6}$ units.
     \end{ppart}
     \begin{ppart}
-        Since $N$ is on $l_2$, we have that $\oa{ON}= \cveciiix10{-3} + \m\cveciiix211$ for some real $\m$. Additionally, since $\oa{AN} \perp l_2$, we have $\oa{AN} \dotp \cveciiix211 = 0$. Note that \[\oa{AN} = \oa{ON} - \oa{OA} = \cveciii10{-3} + \m\cveciii211 - \cveciii30{-2} = \cveciii{-2+2\m}{\m}{-1+\m}.\] Thus,  \[\oa{AN} \dotp \cveciii211 = 0 \implies \cveciii{-2+2\m}{\m}{-1+\m} \dotp \cveciii211 = 0 \implies -5 + 6\m = 0 \implies \m = \frac56.\] Hence, \[\oa{ON} = \cveciii10{-3} + \frac56 \cveciii211 = \frac16 \cveciii{16}5{-13}.\]
+        Since $N$ is on $l_2$, we have that \[\oa{ON}= \cveciii10{-3} + \m\cveciii211\] for some real $\m$. Additionally, since $\oa{AN} \perp l_2$, we have $\oa{AN} \dotp \cveciiix211 = 0$. Since \[\oa{AN} = \bs{\cveciii10{-3} + \m\cveciii211} - \cveciii30{-2} = \cveciii{-2+2\m}{\m}{-1+\m},\] we have  \[\cveciii{-2+2\m}{\m}{-1+\m} \dotp \cveciii211 = -5 + 6\m = 0,\] so $\m = 5/6$. Hence, \[\oa{ON} = \cveciii10{-3} + \frac56 \cveciii211 = \frac16 \cveciii{16}5{-13}.\]
 
-        Note that $\oa{ON} = \frac{\oa{OA} + \oa{OB}}2$. Hence, \[\oa{OB} = 2\oa{ON} - \oa{OA} = \frac26\cveciii{16}5{-13} - \cveciii30{-2} = \frac13\cveciii75{-7}.\]
+        Note that $\oa{ON} = (\oa{OA} + \oa{OB})/2$. Hence, \[\oa{OB} = 2\oa{ON} - \oa{OA} = \frac26\cveciii{16}5{-13} - \cveciii30{-2} = \frac13\cveciii75{-7}.\]
     \end{ppart}
 \end{solution}

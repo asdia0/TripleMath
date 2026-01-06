@@ -17,12 +17,14 @@
         By Cauchy-Schwarz, \[\bp{\frac{4a^2}{b+3c} + \frac{b^2}{3c+2a} + \frac{9c^2}{2a+b}}\bs{(b+3c) + (3c+2a) + (2a+b)} \geq \bp{2a+b+3c}^2.\] Thus, 
         \begin{align*}
             \frac{4a^2}{b+3c} + \frac{b^2}{3c+2a} + \frac{9c^2}{2a+b} &\geq \frac{\bp{2a+b+3c}^2}{(b+3c) + (3c+2a) + (2a+b)}\\ 
-            &= \frac{2a+b+3c}{2} \geq \frac{18}{2} = 9.
+            &= \frac{2a+b+3c}{2}\\
+            &\geq \frac{18}{2}\\
+            &= 9.
         \end{align*}
         Equality holds when \[\frac{2a}{b+3c} = \frac{b}{3c + 2a} = \frac{3c}{2a + b} \quad \tand \quad 2a = b = 3c,\] i.e. $a = 3$, $b = 6$ and $c = 2$.
     \end{ppart}
     \begin{ppart}
-        Take $a = 1/p$, $b = 1/q$ and $c = 1/r$. Note that $abc = 1/pqr = 36$. Using (b), we see that \[\frac{\frac4{p^2}}{\frac1q + \frac3r} + \frac{\frac1{q^2}}{\frac3r + \frac2p} + \frac{\frac9{r^2}}{\frac2p + \frac1q} \geq 9.\] This simplifies to \[\frac{4pqr}{p^3 (r+3q)} + \frac{pqr}{q^3(3p+2r)} + \frac{9pqr}{r^3(2q+p)} \geq 9.\] Recalling that $pqr = 1/36$, we have \[\frac1{9p^3 (r + 3q)} + \frac1{36q^3(3p+2r)} + \frac1{4r^3(2q+p)} \geq 9\] as desired.
+        Take $a = 1/p$, $b = 1/q$ and $c = 1/r$. Note that $abc = 1/pqr = 36$. Using (b), we see that \[\frac{4/p^2}{1/q + 3/r} + \frac{1/q^2}{3/r + 2/p} + \frac{9/r^2}{2/p + 1/q} \geq 9.\] This simplifies to \[\frac{4pqr}{p^3 (r+3q)} + \frac{pqr}{q^3(3p+2r)} + \frac{9pqr}{r^3(2q+p)} \geq 9.\] Recalling that $pqr = 1/36$, we have \[\frac1{9p^3 (r + 3q)} + \frac1{36q^3(3p+2r)} + \frac1{4r^3(2q+p)} \geq 9\] as desired.
     \end{ppart}
 \end{solution}
 
@@ -35,10 +37,10 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[\der{y}{x} = \der{u}{x} x + u.\] Substituting this into the given differential equation, we have \[\der{u}{x} x + u = \frac{2x(ux)}{x^2 - 2(ux)^2}.\] This simplifies to \[\frac{1-2u^2}{u(1+2u^2)} \der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$ gives \[\int \frac{1-2u^2}{u(1+2u^2)} \d u = \int \frac1x \d x.\] The LHS sorts out to \[\int \frac{1-2u^2}{u(1+2u^2)} \d u  = \int \frac1u - \frac{4u}{1 + 2\u^2} \d u = \ln u - \frac{1 + 2u^2} + C_1,\] while the RHS is $\ln x + C_2$. Hence, we have \[\ln \frac{u}{1 + 2u^2} = \ln x + C \implies \frac{u}{1 + 2u^2} = A x.\] Substituting back $u = y/x$, we see that the general solution is \[y = A\bp{x^2 + 2y^2}.\]
+        Note that \[\der{y}{x} = \der{u}{x} x + u.\] Substituting this into the given differential equation, we have \[\der{u}{x} x + u = \frac{2x(ux)}{x^2 - 2(ux)^2}.\] This simplifies to \[\frac{1-2u^2}{u(1+2u^2)} \der{u}{x} = \frac1x.\] Integrating both sides with respect to $x$ gives \[\int \frac{1-2u^2}{u(1+2u^2)} \d u = \int \frac1x \d x.\] The LHS sorts out to \[\int \frac{1-2u^2}{u(1+2u^2)} \d u  = \int \frac1u - \frac{4u}{1 + 2\u^2} \d u = \ln u - \frac{1 + 2u^2} + C_1,\] while the RHS is $\ln x + C_2$. Hence, we have \[\ln \frac{u}{1 + 2u^2} = \ln x + C.\] Exponentiating, we get \[\frac{u}{1 + 2u^2} = A x.\] Substituting back $u = y/x$, we see that the general solution is $y = A(x^2 + 2y^2)$.
     \end{ppart}
     \begin{ppart}
-        In the case where $A = 0$, the solution is the horizontal line $y = 0$. Consider then the case where $A \neq 0$. Dividing by $A$ and completing the square, we obtain \[x^2 + 2\bp{y - \frac1{4A}}^2 = \frac1{8A^2}.\] Equivalently, \[\frac{x^2}{\bp{\frac1{\sqrt8 A}}^2} + \frac{\bp{y - \frac1{4A}}^2}{\bp{\frac1{4A}}^2} = 1.\] Thus, the set of points that satisfy the general solution in this case forms the punctured ellipse with centre $(0, 1/4A)$, horizontal radius $1/\sqrt{8} A$ and vertical radius $1/4A$, where $x \neq \sqrt{2}y$.
+        In the case where $A = 0$, the solution is the horizontal line $y = 0$. Consider then the case where $A \neq 0$. Dividing by $A$ and completing the square, we obtain \[x^2 + 2\bp{y - \frac1{4A}}^2 = \frac1{8A^2}.\] Equivalently, \[\frac{x^2}{\bp{1/\sqrt8 A}^2} + \frac{\bp{y - 1/4A}^2}{\bp{1/4A}^2} = 1.\] Thus, the set of points that satisfy the general solution in this case forms the punctured ellipse with centre $(0, 1/4A)$, horizontal radius $1/\sqrt{8} A$ and vertical radius $1/4A$, where $x \neq \sqrt{2}y$.
     \end{ppart}
 \end{solution}
 
@@ -146,7 +148,7 @@
                 \end{tikzpicture}
             \end{center}
             
-            Thus, \[\abs{A_1 \cap A_2} = \abs{A_2 \cap A_3} = \abs{A_3 \cap A_4} = \abs{A_4 \cap A_1} = 2^4.\]
+            Thus, $\abs{A_1 \cap A_2} = \abs{A_2 \cap A_3} = \abs{A_3 \cap A_4} = \abs{A_4 \cap A_1} = 2^4$.
 
             Secondly, if the two shaded 3x3 squares are not adjacent to each other (i.e. diagonally across each other), then there are 2 available unit squares to shade:
 
@@ -174,15 +176,11 @@
                 \end{tikzpicture}
             \end{center}
             
-            Thus, \[\abs{A_1 \cap A_4} = \abs{A_2 \cap A_3} = 2^2.\]
+            Thus, $\abs{A_1 \cap A_4} = \abs{A_2 \cap A_3} = 2^2$.
 
             In the case of three intersecting sets, there will always only be one available unit square to shade, so $\abs{A_i \cap A_j \cap A_k} = 2^1$ for distinct $1 \leq i, j, k \leq 3$. Lastly, there is only one way to shade all four 3x3 squares, hence $\abs{A_1 \cap A_2 \cap A_3 \cap A_4} = 1$.
 
-            Finally, by the Principle of Inclusion-Exclusion, the number of 4-by-4 unit square grids that contain at least one entirely shaded 3-by-3 square is given by
-            \begin{align*}
-                \abs{A_1 \cup A_2 \cup A_3 \cup A_4} &= \binom{4}{1} \cdot 2^7 - \bp{4 \cdot 2^4 + 2 \cdot 2^2} + \binom43 \cdot 2^1 - 1\\
-                &= 447.
-            \end{align*}
+            Finally, by the Principle of Inclusion-Exclusion, the number of 4-by-4 unit square grids that contain at least one entirely shaded 3-by-3 square is given by \[\abs{A_1 \cup A_2 \cup A_3 \cup A_4} = \binom{4}{1} \cdot 2^7 - \bp{4 \cdot 2^4 + 2 \cdot 2^2} + \binom43 \cdot 2^1 - 1 = 447.\]
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -209,12 +207,13 @@
 
         We now show that 13 shaded squares is minimal. Consider distributing 13 shaded squares to four 2x2 squares, each in one corner. By the pigeonhole principle, at least one 2x2 square will receive $\ceil{13/4} = 4$ shaded squares. This means that we have a completely shaded 2x2 square, so we are done.
     \end{ppart}
+    \clearpage
     \begin{ppart}
         \begin{psubpart}
             We have the equation $c_1 + c_2 + c_3 + c_4 = 4$, where $c_i \in \NN_0$ for $1 \leq i \leq 4$. By stars-and-bars, there are $\binom{4+3}{3} = 35$ solutions.
         \end{psubpart}
         \begin{psubpart}
-            It suffices to count the number of grids that have at most 4 white unit-squares. Let $d_i$ be the number of white squares in the $i$ column from the left. Then we have $d_1 + d_2 + d_3 + d_4 \leq 4$. Introduce the dummy variable $d_5 \geq 0$ to convert the inequality into an equality: \[d_1 + d_2 + d_3 + d_4 + d_5 = 4.\] By stars-and-bars, there are $\binom{4+4}{4} = 70$ solutions.
+            It suffices to count the number of grids that have at most 4 white unit-squares. Let $d_i$ be the number of white squares in the $i$ column from the left. Then we have $d_1 + d_2 + d_3 + d_4 \leq 4$. Introducing the dummy variable $d_5 \geq 0$ to convert the inequality into an equality, we have $d_1 + d_2 + d_3 + d_4 + d_5 = 4$. By stars-and-bars, there are $\binom{4+4}{4} = 70$ solutions.
         \end{psubpart}
     \end{ppart}
 \end{solution}
@@ -265,7 +264,7 @@
             Each of the $n-k$ elements not in $A_1$ have two choices: to be or not to be in $A_2$. By the multiplication principle, there are $2^{n-k}$ subsets disjoint to $A_1$. Thus, \[\P{A-1 \cap A_2 = \varnothing}{\abs{A_1} = k} = \frac{2^{n-k}}{2^n}.\]
         \end{psubpart}
         \begin{psubpart}
-            Observe that there are $\binom{n}{k}$ ways to construct a subset of size $k$, so \[\P{\abs{A_1} = k} = \frac{\binom{n}{k}}{2^n}.\] The given sum can hence be written as \[\sum_{k = 0}^n \binom{n}{k} \frac1{2^{n+k}} = \sum_{k = 0}^n 2^{-k} \cdot \frac{\binom{n}{k}}{2^n} = \sum_{k = 0}^n \P{A_1 \cap A_2 = \varnothing}{\abs{A_1} = k} \P{\abs{A_1} = k}.\] By the law of total probability, this is simply \[\P{A_1 \cap A_2 = \varnothing} = \bp{\frac34}^n.\]            
+            Observe that there are $\binom{n}{k}$ ways to construct a subset of size $k$, so $\P{\abs{A_1} = k} = \binom{n}{k} / 2^n$. The given sum can hence be written as \[\sum_{k = 0}^n \binom{n}{k} \frac1{2^{n+k}} = \sum_{k = 0}^n 2^{-k} \cdot \frac{\binom{n}{k}}{2^n} = \sum_{k = 0}^n \P{A_1 \cap A_2 = \varnothing}{\abs{A_1} = k} \P{\abs{A_1} = k}.\] By the law of total probability, this is simply $\P{A_1 \cap A_2 = \varnothing} = (3/4)^n$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -282,36 +281,37 @@
     \begin{enumerate}
         \item Let $f(x)$ be a polynomial with integer coefficients.
         \begin{enumerate}
-            \item For integers $\a$ and $\b$, show that $f(x) - f(\a)$ has a factor of $x - \a$. Hence, or otherwise, show that \[f(\b) - f(\a) \equiv 0 \pmod{\b-\a}.\]
+            \item For integers $\a$ and $\b$, show that $f(x) - f(\a)$ has a factor of $x - \a$. Hence, or otherwise, show that $f(\b) - f(\a) \equiv 0 \pmod{\b-\a}$.
             \item Deduce that there does not exist a polynomial $f$ with integer coefficients such that $f(1) = 2$ and $f(3) = 5$.
             \item Explain why there does not exist a polynomial $f$ with integer coefficients such that $f(1) = 0$, $0 < f(2025) < 2024$.
         \end{enumerate}
         \item A monic degree $n$ polynomial where the coefficient of $x^n$ is 1. Let $p$ be an odd prime. Let $h(x)$ be a monic degree $n$ polynomial with integer coefficients. We call an integer $\g$ a root modulo $p$ of $h(x)$ if $h(\g) \equiv 0 \pmod{p}$. Moreover, if $\a$ and $\b$ are roots modulo $p$ of $h(x)$ such that $\a \not\equiv \b \pmod{p}$, we call the integers $\a$ and $\b$ incongruent.
         \begin{enumerate}
             \item Find two incongruent roots modulo 7 for $x^2 + x + 1$.
-            \item For $n \geq 1$, show that if $\g$ is a root modulo $p$ of $h(x)$, then there exists a monic degree $n-1$ polynomial $h_0(x)$ with integer coefficients such that \[h(x) \equiv (x-\g) h_0(x) \pmod{p}.\]
+            \item For $n \geq 1$, show that if $\g$ is a root modulo $p$ of $h(x)$, then there exists a monic degree $n-1$ polynomial $h_0(x)$ with integer coefficients such that $h(x) \equiv (x-\g) h_0(x) \pmod{p}$.
             \item Prove, by induction, that any monic degree $n$ polynomial $h(x)$ has at most $n$ incongruent roots modulo $p$ for $n \geq 0$.
         \end{enumerate}
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            Since $f(\a) - f(\a) = 0$, by the Factor Theorem, it follows that $x - \a$ is a factor of $f(x) - f(\a)$. Hence, we may write \[f(x) - f(\a) = (x-\a) Q(x)\] for some polynomial $Q(x)$ with integer coefficients. Taking $x = \b$, we have \[f(\b) - f(\a) = (\b - \a) Q(\b) \equiv 0 \pmod{\b - \a}.\]
+            Since $f(\a) - f(\a) = 0$, by the Factor Theorem, it follows that $x - \a$ is a factor of $f(x) - f(\a)$. Hence, we may write $f(x) - f(\a) = (x-\a) Q(x)$ for some polynomial $Q(x)$ with integer coefficients. Taking $x = \b$, we have $f(\b) - f(\a) = (\b - \a) Q(\b) \equiv 0 \pmod{\b - \a}$.
         \end{psubpart}
         \begin{psubpart}
-            Suppose for a contradiction that there exists such a polynomial $f$. Then \[f(3) - f(1) = 5 -2 = 3 \equiv 1 \pmod{3-1}.\] But $1 \not\equiv 0 \pmod{2}$, contradicting the result in (a)(i). Thus, such an $f$ cannot exist.
+            Suppose for a contradiction that there exists such a polynomial $f$. Then $f(3) - f(1) = 5 - 2 \equiv 1 \pmod{3-1}$. But $1 \not\equiv 0 \pmod{2}$, contradicting the result in (a)(i). Thus, such an $f$ cannot exist.
         \end{psubpart}
         \begin{psubpart}
-            Suppose for a contradiction that there exists such a polynomial $f$. By (a)(i), \[f(2024) = f(2025) - f(1) \equiv 0 \pmod{2024}.\] But $0 < f(2024) < 2024$, so $f(2024)$ cannot be a multiple of 2024, a contradiction. Thus, such an $f$ cannot exist.
+            Suppose for a contradiction that there exists such a polynomial $f$. By (a)(i), $f(2024) = f(2025) - f(1) \equiv 0 \pmod{2024}$. But $0 < f(2024) < 2024$, so $f(2024)$ cannot be a multiple of 2024, a contradiction. Thus, such an $f$ cannot exist.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Note that \[2^2 + 2 + 1 = 4^2 + 4 + 1 \equiv 0 \pmod{7}.\] Since $2 \not\equiv 4$ modulo 7, by definition, 2 and 4 are incongruent roots modulo 7 for $x^2 + x + 1$.
+            Note that $2^2 + 2 + 1 \equiv 0 \pmod{7}$ and $4^2 + 4 + 1 \equiv 0 \pmod{7}$. Since $2 \not\equiv 4$ modulo 7, by definition, 2 and 4 are incongruent roots modulo 7 for $x^2 + x + 1$.
         \end{psubpart}
         \begin{psubpart}
-            We have $h(\g) \equiv 0 \pmod{p}$, so $h(\g) = kp$ for some integer $k$. By the remainder theorem, there exists some polynomial $Q(x)$ with integer coefficients such that $h(x) = (x-\g) Q(x) + kp$. Reducing modulo $p$, \[h(x) \equiv (x-\g) Q(x) \pmod{p}.\]
+            We have $h(\g) \equiv 0 \pmod{p}$, so $h(\g) = kp$ for some integer $k$. By the remainder theorem, there exists some polynomial $Q(x)$ with integer coefficients such that $h(x) = (x-\g) Q(x) + kp$. Reducing modulo $p$, we obtain $h(x) \equiv (x-\g) Q(x) \pmod{p}$.
 
             We now check that $Q(x)$ satisfies the postulated properties. Since $\Deg h(x) = n$, it follows that $\Deg Q(x) = n-1$. Further, on comparing coefficients of $x^n$, we see that $Q(x)$ must be monic. Thus, $h_0(x) = Q(x)$.
         \end{psubpart}
@@ -320,7 +320,7 @@
 
             Consider the base case $n = 0$. The only monic degree 0 polynomial is $h(x) = 1$, which has no roots modulo any prime $p$. Thus, $P(0)$ is true.
 
-            Suppose $P(k-1)$ is true for some positive integer $k$. Let $h(x)$ be a monic degree $k$ polynomial with integer coefficients. If $h(x)$ has no roots modulo $p$, we see that $P(k)$ holds, and we are done. Consider then the case where $h(x)$ has a root modulo $p$. Let this root be $\ep$. From (b)(ii), there exists a monic degree $k-1$ degree polynomial $h_0(x)$ with integer coefficients such that \[h(x) \equiv (x-\ep) h_0(x).\] By our inductive hypothesis, $h_0(x)$ has at most $k-1$ incongruent roots modulo $p$. Say there are $j \leq k-1$ incongruent roots. Label these roots $\ep_i$, where $1 \leq i \leq j$.
+            Suppose $P(k-1)$ is true for some positive integer $k$. Let $h(x)$ be a monic degree $k$ polynomial with integer coefficients. If $h(x)$ has no roots modulo $p$, we see that $P(k)$ holds, and we are done. Consider then the case where $h(x)$ has a root modulo $p$. Let this root be $\ep$. From (b)(ii), there exists a monic degree $k-1$ degree polynomial $h_0(x)$ with integer coefficients such that $h(x) \equiv (x-\ep) h_0(x)$. By our inductive hypothesis, $h_0(x)$ has at most $k-1$ incongruent roots modulo $p$. Say there are $j \leq k-1$ incongruent roots. Label these roots $\ep_i$, where $1 \leq i \leq j$.
 
             If $\ep = \ep_i$ for some $1 \leq i \leq j$, then the only incongruent roots of $h(x)$ are $\ep_i$ for $1 \leq i \leq j$. Since there are $j \leq k-1 \leq k$ such roots, it follows that $P(k)$ is true.
 
@@ -335,7 +335,7 @@
 
 \begin{problem}
     \begin{center}
-        \textbf{\underline{On the Irrationality of $\pi$}}
+        \bd{\underline{On the Irrationality of $\pi$}}
     \end{center}
     We denote $f^{(k)}(x)$ to be the $k$th derivative of $f(x)$ with respect to $x$ and $f^{(0)}(x) = f(x)$.
 
@@ -393,7 +393,7 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        From the definition \[f(x) = \frac{b^n \bs{x(\pi-x)}^n}{n!},\] it is clear that $f(\pi-x) = f(x)$. Differentiating this $k$ times with respect to $x$, we obtain \[(-1)^k f^{(k)}(\pi-x) = f^{(k)}(x),\] so $f^{(k)}(\pi-x)(0) = (-1)^k f^{(k)}(0)$. By (a)(ii), we see that the RHS is an integer for $0 \leq k \leq 2n$, hence the LHS, $f^{(k)}(\pi-x)(0)$, must also be an integer.
+        From the definition \[f(x) = \frac{b^n \bs{x(\pi-x)}^n}{n!},\] it is clear that $f(\pi-x) = f(x)$. Differentiating this $k$ times with respect to $x$, we obtain $(-1)^k f^{(k)}(\pi-x) = f^{(k)}(x)$, so $f^{(k)}(\pi-x)(0) = (-1)^k f^{(k)}(0)$. By (a)(ii), we see that the RHS is an integer for $0 \leq k \leq 2n$, hence the LHS, $f^{(k)}(\pi-x)(0)$, must also be an integer.
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}

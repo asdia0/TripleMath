@@ -114,16 +114,16 @@ Also, one eigenvalue may have multiple corresponding eigenvectors. For instance,
         \item If $\vec x$ is also an eigenvector of an $n \times n$ matrix $\vec B$ with corresponding eigenvalue $\m$, then $\vec x$ is an eigenvector of the sum $\mat A + \mat B$, with corresponding eigenvalue $\l + \m$.
     \end{enumerate}
 \end{proposition}
-\begin{proof}[Proof of \emph{(a)}]
+\begin{proof}[Proof of \textup{(a)}]
     Since $\mat A = \l \vec x$, we have $\bp{k \mat A} \vec x = \bp{k \l} \vec x$.
 \end{proof}
-\begin{proof}[Proof of \emph{(b)}]
+\begin{proof}[Proof of \textup{(b)}]
     We use induction. Let the statement $P(m)$ be such that \[P(m) \iff \text{$\vec x$ is an eigenvector of the matrix $\mat A^m$ with corresponding eigenvalue $\l^m$}.\] The base case $m = 1$ is trivial. Suppose $P(k)$ is true for some $k \in \NN$. Then \[\mat A^{k+1} \vec x = \mat A \bp{\mat A^k \vec x} = \mat A \bp{\l^k \vec x} = \l^k \bp{\mat A \vec x} = \l^k \bp{\l \vec x} = \l^{k+1} \vec x.\] Thus, $P(k) \implies P(k+1)$. This closes the induction.
 \end{proof}
-\begin{proof}[Proof of \emph{(c)}]
+\begin{proof}[Proof of \textup{(c)}]
     Since $\mat A = \l \vec x$, we have \[\vec x = \mat A^{-1} \mat A \vec x = \mat A^{-1} \l \vec x = \l \bp{\mat A^{-1} \vec x} \implies \mat A^{-1} \vec x = \l^{-1} \vec x.\]
 \end{proof}
-\begin{proof}[Proof of \emph{(d)}]
+\begin{proof}[Proof of \textup{(d)}]
     Since $\mat A = \l \vec x$ and $\mat B = \m \vec x$, we have \[\bp{\mat A + \mat B} \vec x = \mat A \vec x + \mat B \vec x = \l \vec x + \m \vec x = \bp{\l + \m} \vec x.\]
 \end{proof}
 
@@ -132,12 +132,24 @@ Also, one eigenvalue may have multiple corresponding eigenvectors. For instance,
 \end{corollary}
 Note that we are taking $a_0$ to mean $a_0 \mat I$ on the RHS.
 
+\begin{theorem}[Cayley-Hamilton Theorem]
+    Let $\c(\l)$ be the characteristic polynomial of an $n \times n$ matrix $\mat A$. Then $\c(\mat A) = \mat 0$.
+\end{theorem}
+
+\begin{example}[Cayley-Hamilton Theorem]
+    Let \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 10\end{pmatrix}.\] One can verify that the characteristic polynomial of $\mat A$ is $\c(\l) = -\l^3 + 16 \l^2 + 12 \l - 3$. The Cayley-Hamilton theorem tells us that $-\mat A^3 + 16 \mat A^2 + 12 \mat A - 3 \mat I = \mat 0$.
+\end{example}
+
+If the eigenvectors of $\mat A$ form a basis of $\RR^n$, the proof of the Cayley-Hamilton theorem follows from the above corollary; both $\c(\mat A)$ and $\mat 0$ annihilate each eigenvector $\vec x_i$ (that is, $\c(\mat A) \vec x_i = \mat 0 \vec x_i = \vec 0$), hence they must be the same matrix. In full generality, however, matrices need not admit a basis of eigenvectors. In this setting, proving the Cayley-Hamilton theorem requires more advanced tools from linear algebra that lies beyond the scope of this book.
+
+We now introduce an alternative approach to finding the characteristic polynomial of a matrix.
+
 \begin{definition}
-    A \emph{submatrix} of $\mat A$ is a matrix obtained from $\mat A$ by deleting a collection of rows and/or columns. A \emph{principal submatrix} of $\mat A$ is a submatrix whereby the indices of the deleted rows are the same as the indices of the deleted columns. A \emph{principal minor} of order $k$ is the determinant of a $k \times k$ principal submatrix.
+    A \vocab{submatrix} of $\mat A$ is a matrix obtained from $\mat A$ by deleting a collection of rows and/or columns. A \vocab{principal submatrix} of $\mat A$ is a submatrix whereby the indices of the deleted rows are the same as the indices of the deleted columns. A \vocab{principal minor} of order $k$ is the determinant of a $k \times k$ principal submatrix.
 \end{definition}
 
-\begin{example}
-    Given \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix},\] the following three matrices are submatrices of $\mat A$: \[\mat B_1 = \begin{pmatrix}1 & 2 \\ 4 & 5\end{pmatrix}, \quad \mat B_2 = \begin{pmatrix}4 & 6 \\ 7 & 9\end{pmatrix}.\] To obtain $\mat B_1$, we deleted the third row and third column. To obtain $\mat B_2$, we deleted the first row and second column. Note that $\mat B_1$ is also a principal submatrix.
+\begin{example}[Submatrices]
+    Let \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix}.\] Then \[\mat B_1 = \begin{pmatrix}1 & 2 \\ 4 & 5\end{pmatrix} \quad \tand \quad \mat B_2 = \begin{pmatrix}4 & 6 \\ 7 & 9\end{pmatrix}\] are submatrices of $\mat A$. To obtain $\mat B_1$, we deleted the third row and third column of $\mat A$. To obtain $\mat B_2$, we deleted the first row and second column of $\mat A$. Note that $\mat B_1$ is also a principal submatrix.
 \end{example}
 
 \begin{proposition}
@@ -146,15 +158,18 @@ Note that we are taking $a_0$ to mean $a_0 \mat I$ on the RHS.
 
 For a proof, see this \href{https://boonsuan.github.io/misc/cauchy_binet.pdf}{wonderful note} by Ho Boon Suan.
 
-\begin{example}
-    Consider \[\mat A = \begin{pmatrix}2 & 0 & 1 \\ -1 & 2 & 3 \\ 1 & 0 & 2\end{pmatrix}.\] Then
+\begin{sample}
+    Find the characteristic polynomial of \[\mat A = \begin{pmatrix}2 & 0 & 1 \\ -1 & 2 & 3 \\ 1 & 0 & 2\end{pmatrix}.\]
+\end{sample}
+\begin{sampans}
+    Let $E_k$ be the sum of the determinants of all principal minors of order $k$. Computing, we get
     \begin{align*}
         E_1 &= \abs{2} + \abs{2} + \abs{2} = 6,\\
         E_2 &= \begin{vmatrix}2 & 0 \\ -1 & 2\end{vmatrix} + \begin{vmatrix}2 & 3 \\ 0 & 2\end{vmatrix} + \begin{vmatrix}2 & 1 \\ 1 & 2\end{vmatrix} = 11,\\
         E_3 &= \begin{vmatrix}2 & 0 & 1 \\ -1 & 2 & 3 \\ 1 & 0 & 2\end{vmatrix} = 6.
     \end{align*}
-    Invoking the above result, we see that \[\c(\l) = -\l^3 + E_1 \l^2 - E_2 \l + E_3 = -\l^3 + 6 \l^2 - 11 \l + 6.\]
-\end{example}
+    Thus, $\mat A$ has characteristic polynomial \[\c(\l) = -\l^3 + E_1 \l^2 - E_2 \l + E_3 = -\l^3 + 6 \l^2 - 11 \l + 6.\]
+\end{sampans}
 
 \begin{corollary}
     If $\mat A$ is an $n \times n$ matrix,

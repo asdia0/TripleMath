@@ -3,8 +3,8 @@
 \begin{problem}
     Functions $f$ and $g$ are defined as follows:
     \begin{alignat*}{2}
-        f & \colon x \mapsto (x-3)^2 + 6, &&\qquad x \in \RR, \, x \leq 2\\
-        g & \colon x \mapsto \ln{x-2}, &&\qquad x \in \RR, \, x > 3
+        f & \colon x \mapsto (x-3)^2 + 6, &&\qquad x \in \RR, \, x \leq 2,\\
+        g & \colon x \mapsto \ln{x-2}, &&\qquad x \in \RR, \, x > 3.
     \end{alignat*}
 
     \begin{enumerate}
@@ -17,7 +17,7 @@
     \begin{ppart}
         Note that $f' = 2(x-3) < 0$ for all $x \leq 2$. Thus, $f$ is strictly decreasing. Since $f$ is also continuous, $f$ is one-one. Thus, $\inv f$ exists.
 
-        Let $y = f(x) \implies x = \inv f(y)$. \[y = f(x) = (x-3)^2 + 6 \implies x = 3 \pm \sqrt{y-6}.\] Since $x < 3$, we reject $x = 3 + \sqrt{y-6}$. Lastly, observe that $\dom{\inv f} = \ran f = [f(2), \infty) = [7, \infty)$. Thus, \[\inv f \colon x \mapsto 3 - \sqrt{x-6}, \, x \in \RR, \, x \geq 7.\]
+        Let $y = f(x) = (x-3)^2 + 6$. Then $x = 3 \pm \sqrt{y-6}$. Since $x < 3$, we reject $x = 3 + \sqrt{y-6}$. Lastly, observe that $\dom{\inv f} = \ran f = [7, \infty)$. Thus, $\inv f \colon x \mapsto 3 - \sqrt{x-6}$, for $x \in \RR$, $x \geq 7$.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{259}
@@ -71,18 +71,18 @@
 \end{solution}
 
 \begin{problem}
-    The function $f$ is defined as follows: \[f \colon x \mapsto \frac1{x^2 - 1}, \qquad x \in \RR, \, x \neq -1, \, x \neq 1.\]
+    The function $f$ is defined as follows: \[f \colon x \mapsto \frac1{x^2 - 1}, \qquad x \in \RR \setminus \bc{-1, 1}.\]
 
     \begin{enumerate}
         \item Sketch the graph of $y = f(x)$.
         \item If the domain of $f$ is further restricted to $x \geq k$, state with a reason the least value of $k$ for which the function $\inv f$ exists.
     \end{enumerate}
 
-     \textbf{In the rest of the question, the domain of $f$ is $x \in \RR, \, x \neq -1, \, x \neq 1$, as originally defined.}
+     \bd{In the rest of the question, the domain of $f$ is $x \in \RR \setminus \bc{-1, 1}$, as originally defined.}
 
     \smallskip
 
-    The function $g$ is defined as follows: \[g \colon x \mapsto \frac1{x-3}, \qquad x \in \RR, \, x \neq 2, \, x \neq 3, x \neq 4.\]
+    The function $g$ is defined as follows: \[g \colon x \mapsto \frac1{x-3}, \qquad x \in \RR \setminus \bc{2, 3, 4}.\]
 
     \begin{enumerate}
         \setcounter{enumi}{2}
@@ -126,26 +126,26 @@
         If the domain of $f$ is further restricted to $x \geq 0$, $f$ would pass the horizontal line test, whence $\inv f$ would exist. Hence, $\min k = 0$.
     \end{ppart}
     \begin{ppart}
-        Observe that $\ran g = \RR \setminus \bc{g(2), g(4)} = \RR \setminus \bc{-1, 1}$. Hence, $\ran {fg} = \ran{f} = \RR \setminus (-1, 0\,]$.
+        Observe that $\ran g = \RR \setminus \bc{g(2), g(4)} = \RR \setminus \bc{-1, 1}$. Hence, $\ran {fg} = \ran{f} = \RR \setminus (-1, 0]$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    The function $f$ is defined by \[f \colon x \mapsto \frac{x}{x^2 - 1}, \qquad x \in \RR, \, x \neq -1, \, x \neq 1.\]
+    The function $f$ is defined by \[f \colon x \mapsto \frac{x}{x^2 - 1}, \qquad x \in \RR \setminus \bc{-1, 1}.\]
 
     \begin{enumerate}
         \item Explain why $f$ does not have an inverse.
         \item The function $f$ has an inverse if the domain is restricted to $x \leq k$. State the largest value of $k$.
     \end{enumerate}
 
-    The function $g$ is defined by \[g \colon x \mapsto \ln x - 1, \qquad x \in \RR, \, 0 < x < 1.\]
+    The function $g$ is defined by $g \colon x \mapsto \ln x - 1$ for $x \in \RR$, $0 < x < 1$.
 
     \begin{enumerate}
         \setcounter{enumi}{2}
         \item Find an expression for $h(x)$ for each of the following cases:
         \begin{enumerate}
-            \item $gh(x) = x$
-            \item $hg(x) = x^2+1$
+            \item $gh(x) = x$;
+            \item $hg(x) = x^2+1$.
         \end{enumerate}
     \end{enumerate}
 \end{problem}
@@ -158,10 +158,10 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Note that $gh(x) = x \implies h(x) = \inv g(x)$. Hence, consider $y = g(x) \implies x = h(y)$. \[y = g(x) = \ln x - 1 \implies \ln x = y+1 \implies x = \e^{y+1}.\] Hence, $h(x) = \e^{x+1}$.
+            Note that $gh(x) = x$, so $h(x) = \inv g(x)$. Let $y = g(x) = \ln x - 1$. Then $x = \e^{y+1}$. Hence, $h(x) = \e^{x+1}$.
         \end{psubpart}
         \begin{psubpart}
-            Let $h = h_2 \circ h_1$ such that $h_1g(x) = x \implies h_1(x) = \inv g(x) \implies h_1(x) = \e^{x+1}$. Then \[hg(x) = x^2+1 \implies h_2h_1g(x) = x^2+1 \implies h_2(x) = x^2+1.\] Hence, $h(x) = h_2h_1(x) = h_2(\e^{x+1}) = \bp{\e^{x+1}}^2 + 1 = \e^{2x+2} + 1$.
+            Let $h = h_2 \circ h_1$ such that $h_1g(x) = x$. Then $h_1(x) = \inv g(x)$, so $h_1(x) = \e^{x+1}$ by the previous subpart. We are given $hg(x) = h_2h_1g(x) = x^2+1$, so $h_2(x) = x^2+1$. Hence, $h(x) = h_2h_1(x) = h_2(\e^{x+1}) = \e^{2x+2} + 1$.
         \end{psubpart}
     \end{ppart}
 \end{solution}

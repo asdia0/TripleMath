@@ -4,10 +4,10 @@
     True or False? Explain your answers briefly.
 
     \begin{enumerate}
-        \item $\sum_{r=1}^n (2r + 3) = \sum_{k=1}^n (2k + 3)$
-        \item $\sum_{r = 1}^n \bp{\frac1r + 5} = \sum_{r=1}^n \frac1r + 5$
-        \item $\sum_{r=1}^n \frac1r = 1 / {\sum_{r=1}^n r}$
-        \item $\sum_{r=1}^n c = \sum_{r=0}^{n-1} (c+1)$
+        \item $\displaystyle\sum_{r=1}^n (2r + 3) = \sum_{k=1}^n (2k + 3)$
+        \item $\displaystyle\sum_{r = 1}^n \bp{\frac1r + 5} = \sum_{r=1}^n \frac1r + 5$
+        \item $\displaystyle\sum_{r=1}^n \frac1r = \bp{\sum_{r=1}^n r}^{-1}$
+        \item $\displaystyle\sum_{r=1}^n c = \sum_{r=0}^{n-1} (c+1)$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -18,7 +18,7 @@
         False: In general, $\sum_{r = 1}^n 5$ is not equal to $5$.
     \end{ppart}
     \begin{ppart}
-        False: In general, $\sum \frac{a}{b} \neq {\sum a} / {\sum b}$.
+        False: In general, $\sum (a/b) \neq {\sum a} / {\sum b}$.
     \end{ppart}
     \begin{ppart}
         False: Since $c$ is a constant, $\sum_{r=1}^n c = nc \neq n(c+1) = \sum_{r=0}^{n-1} (c+1)$.
@@ -31,9 +31,9 @@
     \begin{enumerate}
         \item $-2 + 1 + 4 + \ldots + 40$
         \item $a^2 + a^4 + a^6 + \ldots + a^{50}$
-        \item $\frac13 + \frac15 + \frac17 + \ldots + n$th term
-        \item $1 - \frac12 + \frac14 - \frac18 + \ldots$ to $n$ terms
-        \item $\frac1{2\cdot4} + \frac1{3\cdot5} + \frac1{4 \cdot 6} + \ldots + \frac1{28 \cdot 30}$
+        \item $\displaystyle \frac13 + \frac15 + \frac17 + \ldots + n$th term
+        \item $\displaystyle 1 - \frac12 + \frac14 - \frac18 + \ldots$, to $n$ terms
+        \item $\displaystyle \frac1{2\cdot4} + \frac1{3\cdot5} + \frac1{4 \cdot 6} + \ldots + \frac1{28 \cdot 30}$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -44,10 +44,10 @@
         \[a^2 + a^4 + a^6 + \ldots + a^{50} = \sum_{r=1}^{25} a^{2r} = \sum_{r=0}^{24} a^{2r + 2}.\]
     \end{ppart}
     \begin{ppart}
-        \[\frac13 + \frac15 + \frac17 + \ldots + n\text{th term} = \sum_{r=1}^n \frac1{2r+1} = \sum_{r=0}^{n-1} \frac1{2r+3}.\]
+        \[\frac13 + \frac15 + \frac17 + \ldots + \text{$n$th term} = \sum_{r=1}^n \frac1{2r+1} = \sum_{r=0}^{n-1} \frac1{2r+3}.\]
     \end{ppart}
     \begin{ppart}
-        \[1 - \frac12 + \frac14 - \frac18 + \ldots \text{ to $n$ terms} = \sum_{r = 1}^n \bp{ -\frac12}^{r-1} = \sum_{r = 0}^{n-1} \bp{ -\frac12}^{r}.\]
+        \[1 - \frac12 + \frac14 - \frac18 + \ldots + \text{$n$th term} = \sum_{r = 1}^n \bp{ -\frac12}^{r-1} = \sum_{r = 0}^{n-1} \bp{ -\frac12}^{r}.\]
     \end{ppart}
     \begin{ppart}
         \[\frac1{2\cdot4} + \frac1{3\cdot5} + \frac1{4 \cdot 6} + \ldots + \frac1{28 \cdot 30} = \sum_{r=1}^{27} \frac1{(r+1)(r+3)} = \sum_{r=0}^{26} \frac1{(r+2)(r+4)}.\]
@@ -58,10 +58,10 @@
     Without using the G.C., evaluate the following sums.
 
     \begin{enumerate}
-        \item $\sum_{r=1}^{50} (2r-7)$
-        \item $\sum_{r=1}^a (1-a-r)$
-        \item $\sum_{r=2}^n \bp{\ln r + 3^r}$
-        \item $\sum_{r=1}^\infty \bp{\frac{2^r-1}{3^r}}$
+        \item $\displaystyle \sum_{r=1}^{50} \bp{2r-7}$
+        \item $\displaystyle \sum_{r=1}^a \bp{1-a-r}$
+        \item $\displaystyle \sum_{r=2}^n \bp{\ln r + 3^r}$
+        \item $\displaystyle \sum_{r=1}^\infty \frac{2^r-1}{3^r}$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -79,6 +79,7 @@
     \end{ppart}
 \end{solution}
 
+\clearpage
 \begin{problem}
     The $n$th term of a series is $2^{n-2} + 3n$. Find the sum of the first $N$ terms.
 \end{problem}
@@ -91,33 +92,34 @@
 \end{solution}
 
 \begin{problem}
-    The $r$th term, $u_r$, of a series is given by $u_r = \bp{\frac13}^{3r-2} + \bp{\frac13}^{3r-1}$. Express $\sum_{r=1}^n u_r$ in the form $A\bp{1 - \frac{B}{27^n}}$, where $A$ and $B$ are constants. Deduce the sum to infinity of the series.
+    The $r$th term, $u_r$, of a series is given by \[u_r = \bp{\frac13}^{3r-2} + \bp{\frac13}^{3r-1}.\] Express $\sum_{r=1}^n u_r$ in the form $A\bp{1 - B/27^n}$, where $A$ and $B$ are constants. Deduce the sum to infinity of the series.
 \end{problem}
 \begin{solution}
-    Observe that \[u_r = \bp{\frac13}^{3r-2} + \bp{\frac13}^{3r-1} = 12 \bp{\frac13}^{3r} = 12 \bp{\frac1{27}}^r.\] Hence, \[\sum_{r = 1}^n = 12 \cdot \frac1{27}\bp{\frac{1 - 1/27^n}{1 - 1/27}} = \frac{6}{13} \bp{1 - \frac1{27^n}},\] whence $A = \frac6{13}$ and $B = 1$. In the limit as $n \to \infty$, $\frac1{27^n} \to 0$. Hence, the sum to infinity is $\frac{6}{13}$.
+    Observe that \[u_r = \bp{\frac13}^{3r-2} + \bp{\frac13}^{3r-1} = 12 \bp{\frac13}^{3r} = 12 \bp{\frac1{27}}^r.\] Hence, \[\sum_{r = 1}^n = 12 \cdot \frac1{27}\bp{\frac{1 - 1/27^n}{1 - 1/27}} = \frac{6}{13} \bp{1 - \frac1{27^n}},\] whence $A = 6/13$ and $B = 1$. In the limit as $n \to \infty$, $1/27^n \to 0$. Hence, the sum to infinity is $6/13$.
 \end{solution}
 
 \begin{problem}
-    The $r$th term, $u_r$, of a series is given by $u_r = \ln \frac{r}{r+1}$. Find $\sum_{r=1}^n u_r$ in terms of $n$. Comment on whether the series converges.
+    The $r$th term, $u_r$, of a series is given by $u_r = \ln{r/(r+1)}$. Find $\sum_{r=1}^n u_r$ in terms of $n$. Comment on whether the series converges.
 \end{problem}
 \begin{solution}
-    Observe that $u_r = \ln \frac{r}{r+1} = \ln r - \ln{r+1}$. Hence,
+    Observe that $u_r = \ln{r/(r+1)} = \ln r - \ln{r+1}$. Hence,
     \begin{align*}
         \sum_{r=1}^n u_r &= \sum_{r=1}^n (\ln r - \ln{r+1})\\
-        &= \bs{\ln 1 - \ln 2} + \bs{\ln 2 - \ln 3} + \cdots + \bs{\ln n - \ln{n+1}}\\
-        &= \ln 1 - \ln{n+1} = \ln \frac1{n+1}.
+        &= \bp{\ln 1 - \ln 2} + \bp{\ln 2 - \ln 3} + \cdots + \bp{\ln n - \ln{n+1}}\\
+        &= \ln 1 - \ln{n+1}\\
+        &= -\ln{n+1}.
     \end{align*}
 
-    As $n \to \infty$, $\ln \frac1{n+1} \to \ln 0$. Hence, the series diverges to negative infinity.
+    As $n \to \infty$, $-\ln{n+1} \to -\infty$. Hence, the series diverges.
 \end{solution}
 
 \begin{problem}
-    Given that $\sum_{r=1}^n r^2 = \frac{n}6 (n+1)(2n+1)$, without using the G.C., find the following sums.
+    Given that \[\sum_{r=1}^n r^2 = \frac{n}6 (n+1)(2n+1),\] without using the G.C., find the following sums.
 
     \begin{enumerate}
-        \item $\sum_{r=0}^n [r(r+4) + n]$
-        \item $\sum_{r=n+1}^{2n} (2r-1)^2$
-        \item $\sum_{r=-15}^{20} r(r-2)$
+        \item $\displaystyle\sum_{r=0}^n [r(r+4) + n]$
+        \item $\displaystyle\sum_{r=n+1}^{2n} (2r-1)^2$
+        \item $\displaystyle\sum_{r=-15}^{20} r(r-2)$
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -130,54 +132,55 @@
     \end{ppart}
     \begin{ppart}
         \begin{align*}
-            \sum_{r=n+1}^{2n} (2r-1)^2 &= \sum_{r=1}^{n} (2(r+n)-1)^2 = \sum_{r=1}^{n} \bp{4r^2 + 4(2n-1)r + (2n-1)^2}\\
+            \sum_{r=n+1}^{2n} (2r-1)^2 &= \sum_{r=1}^{n} (2(r+n)-1)^2\\
+            &= \sum_{r=1}^{n} \bp{4r^2 + 4(2n-1)r + (2n-1)^2}\\
             &= 4\bs{\frac{n}6 (n+1)(2n+1)} + 4(2n-1)\bs{\frac{n(n+1)}2} + (2n-1)^2 n \\
-            &= \frac13 n \bp{28n^2 -1 }
+            &= \frac13 n \bp{28n^2 -1}.
         \end{align*}
     \end{ppart}
     \begin{ppart}
         \begin{align*}
-            \sum_{r=-15}^{20} r(r-2) &= \sum_{r=1}^{36} (r-16)[(r-16)-2] = \sum_{r=1}^{36} \bp{r^2 - 34r + 288}\\
+            \sum_{r=-15}^{20} r(r-2) &= \sum_{r=1}^{36} (r-16)[(r-16)-2]\\
+            &= \sum_{r=1}^{36} \bp{r^2 - 34r + 288}\\
             &= \frac{36}6 \bs{(36+1)(2\cdot36 + 1)} - 34 \bs{\frac{36 \cdot 37}2} + 288(36)\\
-            &= 3930
+            &= 3930.
         \end{align*}
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    Let $S = \sum_{r=0}^\infty \frac{(x-2)^r}{3^r}$ where $x \neq 2$. Find the range of values of $x$ such that the series $S$ converges. Given that $x=1$, find
+    Let \[S = \sum_{r=0}^\infty \frac{(x-2)^r}{3^r}\] where $x \neq 2$. Find the range of values of $x$ such that the series $S$ converges. Given that $x=1$, find
 
     \begin{enumerate}
-        \item the value of $S$
-        \item $S_n$, in terms of $n$, where $S_n = \sum_{r=0}^{n-1} \frac{(x-2)^r}{3^r}$
+        \item the value of $S$,
+        \item $S_n$, in terms of $n$, where \[S_n = \sum_{r=0}^{n-1} \frac{(x-2)^r}{3^r},\]
         \item the least value of $n$ for which $\abs{S_n - S}$ is less than 0.001\% of $S$
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that \[S = \sum_{r=0}^\infty \frac{(x-2)^r}{3^r} = \sum_{r=0}^\infty \bp{\frac{x-2}3 }^r.\] Hence, for $S$ to converge, we must have $\abs{\frac{x-2}{3}} < 1$, which gives $-1 < x < 5$, $x \neq 2$.
+    Note that \[S = \sum_{r=0}^\infty \frac{(x-2)^r}{3^r} = \sum_{r=0}^\infty \bp{\frac{x-2}3 }^r.\] Hence, for $S$ to converge, we must have $\abs{(x-2)/3} < 1$, which gives $-1 < x < 5$, $x \neq 2$.
 
     \begin{ppart}
-        When $x = 1$, we get \[S = \sum_{r=0}^\infty \bp{-\frac13 }^r = \frac1{1-(-\frac13)} = \frac34.\]
+        When $x = 1$, we get \[S = \sum_{r=0}^\infty \bp{-\frac13 }^r = \frac1{1-(-1/3)} = \frac34.\]
     \end{ppart}
     \begin{ppart}
         We have
-        \[S_n = \sum_{r=0}^{n-1} \bp{-\frac13 }^r = \frac{1 - (-\frac13)^n}{1 - (-\frac13)} = \frac34 \bs{1 - \bp{-\frac13}^n}.\]
+        \[S_n = \sum_{r=0}^{n-1} \bp{-\frac13}^r = \frac{1 - (-1/3)^n}{1 - (-1/3)} = \frac34 \bs{1 - \bp{-\frac13}^n}.\]
     \end{ppart}
     \begin{ppart}
-        Observe that \[\abs{S_n - S} < 0.001\% S \implies \abs{\frac{S_n - S}S} < \frac{1}{100000} \implies \abs{\frac{\frac34(1 - (-\frac13)^n)}{\frac34} - 1} < \frac1{100000}.\] Using G.C., the least value of $n$ that satisfies the above inequality is 11.
+        From $\abs{S_n - S} < 0.001\% S$, we have \[\abs{\frac34 \bs{1 - \bp{-\frac13}^n} - \frac34} < \frac1{100000} \bp{\frac34}.\] Using G.C., the least value of $n$ that satisfies the above inequality is 11.
     \end{ppart}
 \end{solution}
 
-\clearpage
 \begin{problem}
-    Given that $\sum_{r=1}^n r^2 = \frac{n}6 (n+1)(2n+1)$,
+    Given that \[\sum_{r=1}^n r^2 = \frac{n}6 (n+1)(2n+1),\]
 
     \begin{enumerate}
         \item write down $\sum_{r=1}^{2k} r^2$ in terms of $k$
         \item find $2^2 + 4^2 + 6^2 + \ldots + (2k)^2$.
     \end{enumerate}
 
-    Hence, show that $\sum_{r=1}^k (2r-1)^2 = \frac{k}3(2k+1)(2k-1)$.
+    Hence, show that \[\sum_{r=1}^k (2r-1)^2 = \frac{k}3(2k+1)(2k-1).\]
 \end{problem}
 \begin{solution}
     \begin{ppart}
@@ -187,48 +190,58 @@
         \[2^2 + 4^2 + 6^2 + \ldots + (2k)^2 = \sum_{r=1}^k (2r)^2 = \sum_{r=1}^k 4r^2 = \frac{2k}3 (k+1)(2k+1).\]
     \end{ppart}
 
-    From parts (a) and (b), we clearly have
+    From parts (a) and (b), we have
     \[\sum_{r=1}^k (2r-1)^2 = \sum_{r=1}^{2k} r^2 - \sum_{r=1}^k (2r)^2 = \frac{k}3 (2k+1)(4k+1) - \frac{2k}3 (k+1)(2k+1) = \frac{k}3 (2k+1) (2k-1).\]
 \end{solution}
 
 \begin{problem}
-    Given that $u_n = e^{nx} - e^{(n+1)x}$, find $\sum_{n=1}^N u_n$ in terms of $N$ and $x$. Hence, determine the set of values of $x$ for which the infinite series $u_1 + u_2 + u_3 + \ldots$ is convergent and give the sum to infinity for cases where this exists.
+    Given that $u_n = \e^{nx} - \e^{(n+1)x}$, find $\sum_{n=1}^N u_n$ in terms of $N$ and $x$. Hence, determine the set of values of $x$ for which the infinite series $u_1 + u_2 + u_3 + \ldots$ is convergent and give the sum to infinity for cases where this exists.
 \end{problem}
 \begin{solution}
-    \[\sum_{n=1}^N u_n = \bp{e^x - e^{2x}} + \bp{e^{2x} - e^{3x}} + \cdots + \bp{e^{Nx} + e^{(N+1)x}} = e^x - e^{(N+1)x}.\] For the infinite series to converge, we require $\abs{e^x} < 1$. Hence, $x \in \RR^-_0$.
+    \[\sum_{n=1}^N u_n = \bp{\e^x - \e^{2x}} + \bp{\e^{2x} - \e^{3x}} + \cdots + \bp{\e^{Nx} + \e^{(N+1)x}} = \e^x - \e^{(N+1)x}.\] For the infinite series to converge, we require $\abs{\e^x} < 1$. Hence, $x \in \RR^-_0$.
 
     We now consider the sum to infinity.
     
-    \case{1} Suppose $x = 0$. Then $e^x = 1$, whence the sum to infinity is clearly 0.
+    \case{1} Suppose $x = 0$. Then $\e^x = 1$, whence the sum to infinity is clearly 0.
 
-    \case{2} Suppose $x < 0$. Then $\lim_{N \to \infty} e^{(N+1)x} \to 0$. Thus, the sum to infinity is $e^x$.
+    \case{2} Suppose $x < 0$. Then $\lim_{N \to \infty} \e^{(N+1)x} \to 0$. Thus, the sum to infinity is $\e^x$.
 \end{solution}
 
 \begin{problem}
-    Given that $r$ is a positive integer and $f(r) = \frac1{r^2}$, express $f(r) - f(r+1)$ as a single fraction. Hence, prove that $\sum_{r=1}^{4n} \bp{\frac{2r+1}{r^2(r+1)^2}} = 1 - \frac1{(4n+1)^2}$. Give a reason why the series is convergent and state the sum to infinity. Find $\sum_{r=2}^{4n} \bp{\frac{2r-1}{r^2(r-1)^2}}$.
+    Given that $r$ is a positive integer and $f(r) = 1/r^2$, express $f(r) - f(r+1)$ as a single fraction. Hence, prove that \[\sum_{r=1}^{4n} \bp{\frac{2r+1}{r^2(r+1)^2}} = 1 - \frac1{(4n+1)^2}.\] Give a reason why the series is convergent and state the sum to infinity. Find \[\sum_{r=2}^{4n} \bp{\frac{2r-1}{r^2(r-1)^2}}.\]
 \end{problem}
 \begin{solution}
-    \[f(r) - f(r+1) = \frac1{r^2} - \frac1{(r+1)^2} = \frac{(r+1)^2 - r^2}{r^2(r+1)^2} = \frac{2r+1}{r^2(r+1)^2}.\]
+    We have
+    \begin{align*}
+        f(r) - f(r+1) &= \frac1{r^2} - \frac1{(r+1)^2}\\
+        &= \frac{(r+1)^2 - r^2}{r^2(r+1)^2}\\
+        &= \frac{2r+1}{r^2(r+1)^2}.
+    \end{align*}
 
+    Using the above identity, we get
     \begin{align*}
         \sum_{r=1}^{4n} \bp{\frac{2r+1}{r^2(r+1)^2}} &= \sum_{r=1}^{4n} [f(r) - f(r+1)]\\
         &= \bs{f(1) - f(2)} + \bs{f(2) - f(3)} + \cdots + \bs{f(4n) - f(4n-1)}\\
-        &= f(1) - f(4n+1) = 1 - \frac{1}{(4n+1)^2}
+        &= f(1) - f(4n+1)\\
+        &= 1 - \frac{1}{(4n+1)^2}.
     \end{align*}
-    As $n \to \infty$, $\frac{1}{(4n+1)^2} \to 0$. Hence, the series converges to 1.
+    As $n \to \infty$, $1/(4n+1)^2 \to 0$. Hence, the series converges to 1.
 
+    Using the above identity once more, we obtain
     \begin{align*}
-        \sum_{r=2}^{4n} \bp{\frac{2r-1}{r^2(r-1)^2}} &= \sum_{r=1}^{4n-1} \bp{\frac{2r+1}{r^2(r+1)^2}} = \sum_{r=1}^{4n-1} [f(r) - f(r+1)]\\
+        \sum_{r=2}^{4n} \bp{\frac{2r-1}{r^2(r-1)^2}} &= \sum_{r=1}^{4n-1} \bp{\frac{2r+1}{r^2(r+1)^2}}\\
+        &= \sum_{r=1}^{4n-1} [f(r) - f(r+1)]\\
         &= \bs{f(1) - f(2)} + \bs{f(2) - f(3)} + \cdots + \bs{f(4n-1) - f(4n)}\\
-        &= 1 - f(4n) = 1 - \frac1{16n^2}
+        &= 1 - f(4n)\\
+        &= 1 - \frac1{16n^2}.
     \end{align*}
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Express $\frac1{(2x+1)(2x+3)(2x+5)}$ in partial fractions.
-        \item Hence, show that $\sum_{r=1}^n \frac1{(2r+1)(2r+3)(2r+5)} = \frac1{60} - \frac1{4(2n+3)(2n+5)}$.
-        \item Deduce the sum of $\frac1{1\cdot 3\cdot5} + \frac1{3 \cdot 5 \cdot 7} + \frac1{3 \cdot 5 \cdot 7 \cdot 9} + \ldots + \frac1{41 \cdot 43 \cdot 45}$.
+        \item Express \[\frac1{(2x+1)(2x+3)(2x+5)}\] in partial fractions.
+        \item Hence, show that \[\sum_{r=1}^n \frac1{(2r+1)(2r+3)(2r+5)} = \frac1{60} - \frac1{4(2n+3)(2n+5)}.\]
+        \item Deduce the sum of \[\frac1{1\cdot 3\cdot5} + \frac1{3 \cdot 5 \cdot 7} + \frac1{3 \cdot 5 \cdot 7 \cdot 9} + \ldots + \frac1{41 \cdot 43 \cdot 45}.\]
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -237,13 +250,15 @@
     \end{ppart}
     \begin{ppart}
         \begin{align*}
-            \sum_{r=1}^n &\frac1{(2r+1)(2r+3)(2r+5)} = \sum_{r=1}^n \bp{\frac{1}{8(2r+1)} - \frac{1}{4(2r+3)} + \frac{1}{8(2r+5)}}\\
-            &= \frac18 \bs{\bp{\sum_{r=1}^n \frac{1}{2r+1} -\sum_{r=1}^n\frac{1}{2r+3}} - \bp{\sum_{r=1}^n\frac{1}{2r+3} - \sum_{r=1}^n\frac{1}{2r+5}}}
+            &\sum_{r=1}^n \frac1{(2r+1)(2r+3)(2r+5)}\\
+            &\hspace{2em}= \sum_{r=1}^n \bp{\frac{1}{8(2r+1)} - \frac{1}{4(2r+3)} + \frac{1}{8(2r+5)}}\\
+            &\hspace{2em}= \frac18 \bs{\bp{\sum_{r=1}^n \frac{1}{2r+1} -\sum_{r=1}^n\frac{1}{2r+3}} - \bp{\sum_{r=1}^n\frac{1}{2r+3} - \sum_{r=1}^n\frac{1}{2r+5}}}.
         \end{align*}
 
-        Observe that the two terms in brackets clearly telescope, leaving us with \[\sum_{r=1}^n \frac1{(2r+1)(2r+3)(2r+5)} = \frac18 \bs{\bp{\frac13 - \frac1{2n+3}} - \bp{\frac15 - \frac1{2n+5}}},\] which simplifies to \[\sum_{r=1}^n \frac1{(2r+1)(2r+3)(2r+5)} = \frac1{60} - \frac1{4(2n+3)(2n+5)}\] as desired.
+        Observe that the two terms in brackets telescope, leaving us with \[\sum_{r=1}^n \frac1{(2r+1)(2r+3)(2r+5)} = \frac18 \bs{\bp{\frac13 - \frac1{2n+3}} - \bp{\frac15 - \frac1{2n+5}}},\] which simplifies to \[\sum_{r=1}^n \frac1{(2r+1)(2r+3)(2r+5)} = \frac1{60} - \frac1{4(2n+3)(2n+5)}\] as desired.
     \end{ppart}
     \begin{ppart}
+        Taking $n = 20$,
         \begin{align*}
             & \frac1{1\cdot 3\cdot5} + \frac1{3 \cdot 5 \cdot 7} + \frac1{3 \cdot 5 \cdot 7 \cdot 9} + \ldots + \frac1{41 \cdot 43 \cdot 45} \\
             &\hspace{2em}= \frac1{1 \cdot 3 \cdot 5} + \sum_{r = 1}^{20} \frac1{(2r+1)(2r+3)(2r+5)}\\

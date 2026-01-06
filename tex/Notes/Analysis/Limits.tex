@@ -102,7 +102,7 @@ In the definition of a limit, we consider the behaviour of $f(x)$ as $x$ approac
     Similarly, suppose the domain of $f$ contains the open interval $(c, a)$. We say $f(x)$ has a \vocab{left-sided limit} $L$ at $a$, written $\displaystyle\lim_{x \to a^-} f(x) = L$, if for every $\ve > 0$ there exists a $\de > 0$ such that \[a - \de < x < a \implies \abs{f(x) - L} < \ve.\]
 \end{definition}
 
-\begin{example}
+\begin{example}[One-Sided Limits]
     Consider the following function: \[f(x) = \begin{cases}x^2, & x \geq 0,\\ x^2 + 2, & x < 0.\end{cases}\] The right-sided limit of $f(x)$ at $x = 0$ is 0, while the left-sided limit is 2.
 \end{example}
 
@@ -222,6 +222,4 @@ Note that the continuity of a function depends on its domain. For instance, $f :
     \end{itemize}
 \end{definition}
 
-\begin{example}
-    The growth rates of common functions are given by \[\ln x \ll x^p \ll \e^x \ll x^x.\]
-\end{example}
+Between common functions, we have the ordering \[\ln x \ll x^p \ll \e^x \ll x^x,\] where $p$ is a positive constant.

@@ -8,7 +8,7 @@
     Given that $L = 0.5$ henries, $R = 10$ ohms, $C = 0.02$ farads and $V(t) = 50\e^{-10t}$, solve for the charge $Q$ at time $t$ and sketch your solution curve.
 \end{problem}
 \begin{solution}
-    Substituting the given values of $L$, $R$, $C$ and $V(t)$, the differential equation becomes \[0.5 \der[2]{Q}{t} + 10 \der{Q}{t} + \frac{Q}{0.02} = 50 \e^{-10t},\] which simplifies as \[\der[2]{Q}{t} + 20 \der{Q}{t} + 100 Q = 100 \e^{-10t}.\] The characteristic equation $r^2 + 20r + 100 = (r+10)^2 = 0$ has the single root $r = -10$. Thus, \[Q_c = \bp{A + Bt} \e^{-10t}.\] For the particular solution, we try \[Q_p = Ct^2 \e^{-10t} \implies \der{Q_p}{t} = C\e^{-10t} \bp{2t - 10t^2} \implies \der[2]{Q_p}{t} = C\e^{-10t} \bp{2 - 40t + 100t^2}.\] Substituting this into the differential equation, we get \[C\e^{-10t} \bp{2 - 40t + 100t^2} + 20C\e^{-10t} \bp{2t - 10t^2} + 100Ct^2 \e^{-10t} = 100\e^{-10t},\] whence $C = 50$ upon simplification. Thus, \[Q = Q_c + Q_p = \bp{A + Bt} \e^{-10t} + 50 t^2 \e^{-10t}.\] Note that \[\der{Q}{t} = \e^{-10t} \bp{B - 10 A - 10B t + 100 t - 500t^2}.\] Since $Q = 0$ and $\derx{Q}{t} = 0$ at $t = 0$, we get $A = 0$ and $B = 10A = 0$. Hence, \[Q = 50 t^2 \e^{-10t}.\]
+    Substituting the given values of $L$, $R$, $C$ and $V(t)$, the differential equation becomes \[0.5 \der[2]{Q}{t} + 10 \der{Q}{t} + \frac{Q}{0.02} = 50 \e^{-10t},\] which simplifies as \[\der[2]{Q}{t} + 20 \der{Q}{t} + 100 Q = 100 \e^{-10t}.\] The characteristic equation $r^2 + 20r + 100 = 0$ has the repeated root $r = -10$. Thus, $Q_c = \bp{A + Bt} \e^{-10t}$. For the particular solution, we try $Q_p = Ct^2 \e^{-10t}$. Differentiating, we have \[\der{Q_p}{t} = C\e^{-10t} \bp{2t - 10t^2} \quad \tand \quad \der[2]{Q_p}{t} = C\e^{-10t} \bp{2 - 40t + 100t^2}.\] Substituting this into the differential equation, we get \[C\e^{-10t} \bp{2 - 40t + 100t^2} + 20C\e^{-10t} \bp{2t - 10t^2} + 100Ct^2 \e^{-10t} = 100\e^{-10t},\] whence $C = 50$. Thus, $Q = Q_c + Q_p = \bp{A + Bt} \e^{-10t} + 50 t^2 \e^{-10t}$. Note that \[\der{Q}{t} = \e^{-10t} \bp{B - 10 A - 10B t + 100 t - 500t^2}.\] Since $Q = 0$ and $\derx{Q}{t} = 0$ at $t = 0$, we get $A = 0$ and $B = 10A = 0$. Hence, $Q = 50 t^2 \e^{-10t}$.
 
     \begin{figure}[H]\tikzsetnextfilename{411}
     \centering
@@ -46,7 +46,7 @@
 \begin{solution}
     Note that \[\der{x}{\t} = \sec^2 \t = \tan^2 \t + 1 = x^2 + 1.\] Thus, \[\der{y}{\t} = \der{y}{x} \der{x}{\t} = \bp{1 + x^2} \der{y}{x}.\] Differentiating once more with respect to $\t$, \[\der[2]{y}{\t} = \bp{1 + x^2} \der[2]{y}{x} \der{x}{\t} + 2x \der{x}{\t} \der{y}{x} = \bp{1 + x^2}^2 \der[2]{y}{x} + 2x \der{y}{\t}.\] Dividing the given DE by $1 + x^2$, we have \[\bp{1 + x^2}^2 \der[2]{y}{x} + 2\bp{1 + x^2} \bp{1 + x} \der{y}{x} - 3 y = \frac{x^2 + 6x - 1}{1 + x^2}.\] We can rewrite this as \[\bp{1 + x^2}^2 \der[2]{y}{x} + 2x\der{y}{\t} + 2\der{y}{\t} - 3 y = \frac{x^2 + 6x - 1}{1 + x^2},\] which quickly simplifies as \[\der[2]{y}{\t} + 2 \der{y}{\t} - 3y =  \frac{x^2 + 6x - 1}{1 + x^2}.\] Now, observe that \[\frac{x^2 + 6x - 1}{1 + x^2} = \frac{\tan^2 \t + 6\tan \t - 1}{\sec^2 \t} = \sin^2 \t + 6\sin\t\cos\t - \cos^2\t = 3\sin2\t - \cos2\t.\] Thus, \[\der[2]{y}{\t} + 2 \der{y}{\t} - 3y = 3\sin2\t - \cos2\t,\] whence $a = 2$, $b = -3$, $c = 3$ and $d = -1$.
 	
-	Note that the characteristic equation $r^2 + 2r - 3 = (r+3)(r-1) = 0$ has roots $r = 1$ and $r = -3$. Thus, \[y_c = A\e^{\t} + B\e^{-3\t}.\] For the particular solution, we try \[y_p = C\sin 2\t + D \cos 2\t.\] Note that \[y_p' = 2C \cos 2\t - 2D \sin 2\t \quad \tand \quad y_p'' = -4C \sin 2\t - 4D \cos 2\t.\] Substituting this into the DE, we get
+	Note that the characteristic equation $r^2 + 2r - 3 = 0$ has roots $r = 1$ and $r = -3$. Thus, $y_c = A\e^{\t} + B\e^{-3\t}$. For the particular solution, we try $y_p = C\sin 2\t + D \cos 2\t$. Note that \[y_p' = 2C \cos 2\t - 2D \sin 2\t \quad \tand \quad y_p'' = -4C \sin 2\t - 4D \cos 2\t.\] Substituting this into the DE, we get
     \begin{align*}
         &\bp{-4C \sin 2\t - 4D \cos 2\t} + 2\bp{2C \cos 2\t - 2D \sin 2\t} - 3\bp{C\sin 2\t + D \cos 2\t}\\
         &\hspace{2em}= 3\sin 2\t - \cos 2\t.
@@ -101,7 +101,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that the characteristic equation of the DE is given by \[r^2 + \frac{c}{m} r + \frac{k}{m} = 0 \implies m r^2 + cr + k = 0.\] For $y$ to oscillate (i.e. composed of sine and cosine terms), the roots of the characteristic equation must be non-real. We hence obtain the constraint \[\D = c^2 - 4mk < 0.\]
+        Note that the characteristic equation of the DE is given by \[r^2 + \frac{c}{m} r + \frac{k}{m} = 0,\] which simplifies to $m r^2 + cr + k = 0$. For $y$ to oscillate (i.e. composed of sine and cosine terms), the roots of the characteristic equation must be non-real. We hence obtain the constraint $\D = c^2 - 4mk < 0$.
     \end{ppart}
     \begin{ppart}
         Note that the given graph represents the complementary solution.
@@ -135,7 +135,6 @@
                 \end{tikzpicture}
             \end{figure}
         \end{psubpart}
-        \clearpage
         \begin{psubpart}
             Since $F(t) = b\e^{-t}$, the particular solution is of the form $C\e^{-t}$. The resulting graph hence oscillates around $C\e^{-t}$:
 
@@ -168,11 +167,16 @@
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
-        Note that the characteristic equation is $r^2 + r^2 = 0$, whence $r = \pm \i w$. Thus, \[y_c = A\cos wt + B\sin wt.\] For the particular solution, we try \[y_p = Ct\sin wt + Dt \cos wt.\] Note that \[y_p' = wt \bp{C\cos wt - D \sin wt} + C\sin wt + D \cos wt\] and \[y_p'' = w^2 t \bp{-C\sin wt - D \cos wt} + 2w \bp{C \cos wt - D \sin wt}.\] Substituting this into the DE, we get
+        Note that the characteristic equation is $r^2 + w^2 = 0$, whence $r = \pm \i w$. Thus, $y_c = A\cos wt + B\sin wt$. For the particular solution, we try $y_p = Ct\sin wt + Dt \cos wt$. Differentiating, we have
+        \begin{align*}
+            y_p' &= wt \bp{C\cos wt - D \sin wt} + C\sin wt + D \cos wt,\\
+            y_p'' &= w^2 t \bp{-C\sin wt - D \cos wt} + 2w \bp{C \cos wt - D \sin wt}.
+        \end{align*}
+        Substituting this into the DE, we get
         \begin{align*}
             &w^2 t \bp{-C\sin wt - D \cos wt} + 2w \bp{C \cos wt - D \sin wt} + w^2 \bp{Ct\sin wt + Dt \cos wt}\\
             &\hspace{2em}= \sin wt.
         \end{align*}
-        Comparing coefficients, we obtain $C = 0$ and $D = -1/2w$. Thus, \[y = y_c + y_p = A\cos wt + B \sin wt - \frac{t}{2w} \cos wt.\] Note that \[y' = -Aw \sin wt + Bw \cos wt - \frac1{2w} \bp{\cos wt - tw\sin wt}.\] Since $y(0) = y'(0) = 0$, we have $A = 0$ and \[Bw - \frac1{2w} = 0 \implies B = \frac1{2w^2}.\] Thus, \[y = \frac1{2w^2} \sin wt - \frac{t}{2w} \cos wt.\]
+        Comparing coefficients, we obtain $C = 0$ and $D = -1/2w$. Thus, \[y = y_c + y_p = A\cos wt + B \sin wt - \frac{t}{2w} \cos wt.\] Note that \[y' = -Aw \sin wt + Bw \cos wt - \frac1{2w} \bp{\cos wt - tw\sin wt}.\] Since $y(0) = y'(0) = 0$, we have $A = 0$ and $B = 1/2w^2$. Thus, \[y = \frac1{2w^2} \sin wt - \frac{t}{2w} \cos wt.\]
     \end{ppart}
 \end{solution}

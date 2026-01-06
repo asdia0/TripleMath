@@ -4,28 +4,30 @@
     Given that $z = f(x, y)$ is a differentiable function and $f(x, y) = k$ is the level curve of $f$ that passes through the point $P$, show that the gradient vector $\nabla f$ is perpendicular to the tangent of the level curve at $P$.
 \end{problem}
 \begin{solution}
-    Let $x$ and $y$ be parametrized $t$. Implicitly differentiating $f(x, y) = k$ with respect to $t$, we obtain \[\pder{f}{x} \der{x}{t} + \pder{f}{y} \der{y}{t} = 0 \implies \cvecii{\pderx{f}{x}}{\pderx{f}{y}} \dotp \cvecii{\derx{x}{t}}{\derx{y}{t}} = 0.\] Observe that $\cveciix{\pderx{f}{x}}{\pderx{f}{y}}$ is exactly $\nabla f$. Taking $t = x$, we also have $\cveciix{\derx{x}{t}}{\derx{y}{t}} = \cveciix{1}{\derx{y}{x}}$, which is the tangent vector of the level curve at $P$. Since the dot product of the two vectors is 0, they must be perpendicular.
+    Let $x$ and $y$ be parametrized $t$. Implicitly differentiating $f(x, y) = k$ with respect to $t$, we obtain \[\pder{f}{x} \der{x}{t} + \pder{f}{y} \der{y}{t} = 0,\] which we can rewrite as \[\cvecii{\pderx{f}{x}}{\pderx{f}{y}} \dotp \cvecii{\derx{x}{t}}{\derx{y}{t}} = 0.\] Observe that $\cveciix{\pderx{f}{x}}{\pderx{f}{y}}$ is exactly $\nabla f$. Taking $t = x$, we also have $\cveciix{\derx{x}{t}}{\derx{y}{t}} = \cveciix{1}{\derx{y}{x}}$, which is the tangent vector of the level curve at $P$. Since the dot product of the two vectors is 0, they must be perpendicular.
 \end{solution}
 
 \begin{problem}
-    A harvesting model is given by $\der{P}{t} = (20-P)\bp{P^2 - 30 P + h}$ where $P$ is the population of the resource at time $t$ and $h$ is the constant harvest rate. It is given that at $t = 0$, $P = 50$. Find the range of values of $h$ such that $P=20$ in the long run.
+    A harvesting model is given by $\derx{P}{t} = (20-P)\bp{P^2 - 30 P + h}$ where $P$ is the population of the resource at time $t$ and $h$ is the constant harvest rate. It is given that at $t = 0$, $P = 50$. Find the range of values of $h$ such that $P=20$ in the long run.
 \end{problem}
 \begin{solution}
-    Let $f(P) = (20-P)\bp{P^2 - 30 P + h}$. For $P = 20$ in the long run, we need $f(P) < 0$ for all $P \in (20, 50]$. Observe that $20 -P < 0$ for all $P \in (20, 50]$. We hence need $P^2 - 30 P + h > 0$ for all $P \in (20, 50]$. However, observe that $P^2 - 30P + h$ is strictly increasing after $P > 15$. Thus, we only require the quadratic to be non-negative at $P = 20$, whence $20^2 - 30(20) + h \geq 0$, giving $h \geq 200$.
+    Let $f(P) = (20-P)\bp{P^2 - 30 P + h}$. For $P = 20$ in the long run, we need $f(P) < 0$ for all $P \in (20, 50]$. Observe that $20 -P < 0$ for all $P \in (20, 50]$. We hence need $P^2 - 30 P + h > 0$ for all $P \in (20, 50]$. Since $P^2 - 30P + h$ is strictly increasing after $P > 15$, we only require the quadratic to be non-negative at $P = 20$, i.e. $20^2 - 30(20) + h \geq 0$, giving $h \geq 200$.
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
         \item Describe the locus given by $\abs{2\i + 1 + \i z} = \abs{4\i - 5 - z}$.
-
-        $S$ is the set of complex numbers $z$ for which \[\abs{2\i + 1 + \i z} \geq \abs{4\i - 5 - z} \tand \abs{z + 2 - 3\i} \leq \sqrt{13}.\]
+    \end{enumerate}
+    $S$ is the set of complex numbers $z$ for which $\abs{2\i + 1 + \i z} \geq \abs{4\i - 5 - z}$ and $\abs{z + 2 - 3\i} \leq \sqrt{13}$.
+    \begin{enumerate}
+        \setcounter{enumi}{1}
         \item On a single Argand diagram, shade the region corresponding to $S$.
         \item Find the set of values of $\arg{z - 8\i}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\abs{2\i + 1 + \i z} = \abs{2 - \i + z} = \abs{z - (-2 + \i)}$. We hence have \[\abs{z - (-2 + \i)} = \abs{z - (-5 + 4\i)},\] which describes the perpendicular bisector of the line segment joining $(-2, 1)$ and $(-5, 4)$.
+        Note that $\abs{2\i + 1 + \i z} = \abs{2 - \i + z} = \abs{z - (-2 + \i)}$. The given equation hence becomes $\abs{z - (-2 + \i)} = \abs{z - (-5 + 4\i)}$, whose locus is the perpendicular bisector of the line segment joining $(-2, 1)$ and $(-5, 4)$.
     \end{ppart}
     \clearpage
     \begin{ppart}
@@ -78,7 +80,7 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-    Clearly, $\min \arg(z- 8\i) = -\frac\pi2$ (where $z = 6\i$). Let $A(-2, 3)$ and $B(0, 8)$. Let $C$ be the point on the circle such that $BC$ is tangent to the circle. We have $\angle ABO = \arctan \frac{2}{5}$. Since $AB = \sqrt{5^2 + 2^2} = \sqrt{29}$, we also have $\angle CBA = \arcsin \frac{\sqrt{13}}{\sqrt{29}}$. Thus, \[\max \arg{z - 8\i} = -\frac\pi2 - \arctan \frac{2}{5} - \arcsin \frac{\sqrt{13}}{\sqrt{29}} = -2.68,\] whence \[-2.68 \leq \arg{z-8\i} \leq -\frac\pi2.\]
+    Clearly, $\max \arg(z- 8\i) = -\pi/2$ (where $z = 6\i$). Let $A(-2, 3)$ and $B(0, 8)$. Let $C$ be the point on the circle such that $BC$ is tangent to the circle. We have $\angle ABO = \arctan{2/5}$. Since $AB = \sqrt{5^2 + 2^2} = \sqrt{29}$, we also have $\angle CBA = \arcsin{\sqrt{13}/\sqrt{29}}$. Thus, \[\min \arg{z - 8\i} = -\frac\pi2 - \arctan \frac{2}{5} - \arcsin \frac{\sqrt{13}}{\sqrt{29}} = -2.68,\] whence $-2.68 \leq \arg{z-8\i} \leq -\pi/2$.
     \end{ppart}
 \end{solution}
 
@@ -100,13 +102,13 @@
         Hence, $a_n = 2a_{n-1} + 2a_{n-2} = 2(a_{n-1} + a_{n-2})$.
     \end{ppart}
     \begin{ppart}
-        Consider the characteristic polynomial of the second-order recurrence relation: \[x^2 - 2x - 2 = 0 \implies x = 1 \pm \sqrt3.\] Hence, \[a_n = A\bp{1 + \sqrt3}^n + B\bp{1 - \sqrt3}^n\] for some constants $A$ and $B$.
+        The characteristic polynomial of the recurrence relation is $x^2 - 2x - 2 = 0$, which has roots $x = 1 \pm \sqrt3$. Hence, the general solution is $a_n = A(1 + \sqrt3)^n + B(1 - \sqrt3)^n$ for some constants $A$ and $B$.
 
         Observe that $a_0 = 1$ (since there is only one way to do nothing). This gives $A + B = 1$.
 
         Also observe that $a_1 = 3$. Hence, $(A + B) + \sqrt3 (A-B) = 3$.
 
-        Solving, we get $A = \frac12 + \frac1{\sqrt3}$ and $B = \frac12 - \frac1{\sqrt3}$. Thus, \[\a_n = \bp{\frac12 + \frac1{\sqrt3}}\bp{1 + \sqrt3}^n + \bp{\frac12 - \frac1{\sqrt3}}\bp{1 - \sqrt3}^n.\]
+        Solving, we get $A = 1/2 + 1/\sqrt3$ and $B = 1/2 - 1/\sqrt3$. Thus, \[\a_n = \bp{\frac12 + \frac1{\sqrt3}}\bp{1 + \sqrt3}^n + \bp{\frac12 - \frac1{\sqrt3}}\bp{1 - \sqrt3}^n.\]
     \end{ppart}
     \begin{ppart}
         Since the first day ran Challenging, there are only two options for the second day (Basic and Intermediate). Likewise, since the tenth day ran Challenging, there are only two options for the ninth day. The remaining six days are free. This gives a total of $2 \cdot 2 \cdot a_6 = 1792$ possibilities.
@@ -114,7 +116,7 @@
 \end{solution}
 
 \begin{problem}
-    The curve $C_1$ has equation \[\bp{x^2 + y^2}^{3/2} = 2x^2.\]
+    The curve $C_1$ has equation $(x^2 + y^2)^{3/2} = 2x^2$.
 
     \begin{enumerate}
         \item Show that the polar equation of $C_1$ is $r = 1 + 2\cos 2\t$.
@@ -168,21 +170,22 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \[\bp{x^2 + y^2}^{3/2} = 2x^2 \implies \bp{r^2}^{3/2} = 2(r\cos \t)^2 \implies r = 2 \cos^2 \t = 1 + 2\cos2\t.\]
+        Recall that $x^2 + y^2 = r^2$ and $x = r\cos \t$. Substituting this into the given equation, we get $(r^2)^{3/2} = 2(r\cos \t)^2$, so $r = 2 \cos^2 \t = 1 + 2\cos2\t$.
     \end{ppart}
     \begin{ppart}
-        Observe that $t = -\frac\pi2$ is tangent to the pole to both $C_1$ and $C_2$. Now consider the intersections of $C_1$ and $C_2$. \[2\cos^2 \t = 2 - 2\sin^2 \t = 1 + \sin \t \implies 2\sin^2 \t + \sin \t -1 = (2\sin\t -1)(\sin \t + 1) = 0.\] We hence have $\sin\t = \frac12$ or $\sin \t = -1$, whence $\t = \frac16 \pi, \frac56 \pi, -\frac12 \pi$.
+        Observe that $t = -\pi/2$ is tangent to the pole to both $C_1$ and $C_2$. Now consider the intersections of $C_1$ and $C_2$. Equating $r = 2\cos^2 \t = 2 - 2\sin^2 \t$ and $r = 1 + \sin \t$, we obtain $2\sin^2 \t + \sin \t -1 = (2\sin\t -1)(\sin \t + 1) = 0$, so $\sin\t = 1/2$ or $\sin \t = -1$, whence $\t = \pi/6$, $5\pi/6$, $-\pi/2$.
 
         \begin{align*}
             \area R &= 2 \bp{\frac12 \int_{-\pi/2}^{\pi/6} \bs{(1 + \cos 2\t)^2 - (1 + \sin \t)^2} \d \t} \\
             &= \int_{-\pi/2}^{\pi/6} \bp{1 + 2\cos2\t + \cos^2 2\t - 1 - 2\sin\t - \sin^2 \t} \d \t\\
             &= \int_{-\pi/2}^{\pi/6} \bp{2\cos 2\t + \frac{1 + \cos 4\t}{2} - 2\sin\t - \frac{1-\cos2\t}{2}} \d \t\\
             &= \int_{-\pi/2}^{\pi/6} \bp{\frac52 \cos 2\t + \frac12 \cos 4\t - 2\sin\t} \d \t\\
-            &= \evalint{\frac54 \sin 2\t + \frac18 \sin 4\t + 2\cos\t}{-\pi/2}{\pi/6} = \frac{27}{16} \sqrt3 \units[2].
+            &= \evalint{\frac54 \sin 2\t + \frac18 \sin 4\t + 2\cos\t}{-\pi/2}{\pi/6}\\
+            &= \frac{27}{16} \sqrt3 \units[2].
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Observe that for $C_1$, $\der{r}{\t} = -2\sin 2\t$, while for $C_2$, $\der{r}{\t} = \cos \t$. Hence, the perimeter of $R$ is \[2 \int_{-\pi/2}^{\pi/6} \bp{\sqrt{(1 + \cos2\t)^2 + (-2\sin2\t)^2} + \sqrt{(1 + \sin\t)^2 + \cos^2 \t}} \d \t = 11.7 \units.\]
+        Observe that for $C_1$, $\derx{r}{\t} = -2\sin 2\t$, while for $C_2$, $\derx{r}{\t} = \cos \t$. Hence, the perimeter of $R$ is \[2 \int_{-\pi/2}^{\pi/6} \bp{\sqrt{(1 + \cos2\t)^2 + (-2\sin2\t)^2} + \sqrt{(1 + \sin\t)^2 + \cos^2 \t}} \d \t = 11.7 \units.\]
     \end{ppart}
 \end{solution}
 
@@ -191,39 +194,40 @@
 
     \begin{enumerate}
         \item To create the actual water feature, the region $R$ is rotated by $\pi$ radians about the $y$-axis forming a symmetrical, bowl-shaped structure. Find the exact volume of the water feature.
-        \item Water is poured into the bowl of the water feature at a rate of 2 units$^3$ per second. Given that the bowl is initially empty, find the rate of change of the depth of the water when the depth is at $\frac{\sqrt3}{2}$ units.
+        \item Water is poured into the bowl of the water feature at a rate of 2 units$^3$ per second. Given that the bowl is initially empty, find the rate of change of the depth of the water when the depth is at $\sqrt{3}/2$ units.
         \item The engineer also needs to know the total length of the curved surface of the profile of the water feature. Estimate, to 4 decimal places, the arc length of the profile curve from $x = 0$ to $x = 1.25$ using Simpson's rule with 4 strips.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
+        By the shell method,
         \[\volume = 2\pi \int_0^{\sqrt\pi} x \sin{x^2} \d x = \pi \evalint{-\cos{x^2}}{0}{\sqrt\pi} = 2\pi \units[3].\]
     \end{ppart}
     \begin{ppart}
-        Let the depth of the water be $h$. We have $V = \pi \int_0^h \arcsin{y} \d y$, whence $\der{V}{h} = \pi \arcsin{h}$. Hence, \[\der{h}{t} = \frac{\derx{V}{t}}{\derx{V}{h}} = \frac2{\pi \arcsin{h}}.\] When $h = \frac{\sqrt3}2$, we have $\der{h}{t} = \frac2{\pi \cdot \pi/3}$. Thus, the rate of change of the depth of water is $\frac6{\pi^2}$ units/s.
+        Let the depth of the water be $h$. We have $V = \pi \int_0^h \arcsin{y} \d y$, whence $\derx{V}{h} = \pi \arcsin{h}$. Hence, \[\der{h}{t} = \frac{\derx{V}{t}}{\derx{V}{h}} = \frac2{\pi \arcsin{h}}.\] When $h = \sqrt3/2$, we have $\derx{h}{t} = 2/(\pi \cdot \pi/3)$. Thus, the rate of change of the depth of water is $6/\pi^2$ units/s.
     \end{ppart}
     \begin{ppart}
-        Note that $\der{y}{x} = 2x\cos{x^2}$. Hence, the arc length is given by \[\int_0^{1.25} \sqrt{1 + (2x\cos{x^2})^2} \d x.\] Let $f(x) = \sqrt{1 + (2x\cos{x^2})^2}$. By Simpson's rule, the arc length is approximately \[\frac{1.25 - 0}{3 \cdot 4} \bs{f(0) + f\bp{\frac5{16}} + 2f\bp{\frac{10}{16}} + 4f\bp{\frac{15}{16}} + f(1.25)} = 1.6671 \units \todp{4}.\]
+        Note that $\derx{y}{x} = 2x\cos{x^2}$. Hence, the arc length is given by \[\int_0^{1.25} \sqrt{1 + (2x\cos{x^2})^2} \d x.\] Let $f(x) = \sqrt{1 + (2x\cos{x^2})^2}$. By Simpson's rule, the arc length is approximately \[\frac{1.25 - 0}{3 \cdot 4} \bs{f(0) + f\bp{\frac5{16}} + 2f\bp{\frac{10}{16}} + 4f\bp{\frac{15}{16}} + f(1.25)} = 1.6671 \units \todp{4}.\]
     \end{ppart}
 \end{solution}
 
 \begin{problem}
-    It is given that $y = f(x)$ satisfies the following differential equation: \[\bp{x^3 + 1} y \der{y}{x} + 3 x^2 y^2 = 2, \quad \text{where $y = 2$ when $x = 0$}.\]
+    It is given that $y = f(x)$ satisfies the following differential equation: \[\bp{x^3 + 1} y \der{y}{x} + 3 x^2 y^2 = 2,\] where $y = 2$ when $x = 0$.
 
     \begin{enumerate}
         \item By using the substitution $z = y^2$, solve the differential equation and find the value of $y$ when $x = 1$.
-        \item A point on the graph, initially at $x = 1$, varies such that $x$ is increasing at a rate of $\e^{\sqrt t}$ units/s, where $t$ represents time in seconds. Show that $\der{y}{t} = -\frac{19}{12} \e^{\sqrt t}$ at that instance and use the Euler's method with step length 0.2 to find an approximation of the value of $y$ when $t = 1$.
+        \item A point on the graph, initially at $x = 1$, varies such that $x$ is increasing at a rate of $\e^{\sqrt t}$ units/s, where $t$ represents time in seconds. Show that \[\der{y}{t} = -\frac{19}{12} \e^{\sqrt t}\] at that instance and use the Euler's method with step length 0.2 to find an approximation of the value of $y$ when $t = 1$.
         \item Explain whether the approximation in part (b) is an underestimation or an overestimation of the true value.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $z' = 2y \cdot y'$. Hence, \[\bp{x^3 + 1} y \der{y}{x} + 3 x^2 y^2 = \bp{x^3 + 1} \frac12 z' + 3x^2 z = 2 \implies z' + \frac{6x^2}{x^3 + 1} z = \frac{4}{x^3 + 1}.\] The integrating factor is hence \[\IF = \exp \int \frac{6x^2}{x^3 + 1} \d x = \exp{2\ln{x^3 + 1}} = \bp{x^3 + 1}^2.\] Multiplying through, we get \[\der{}{x} \bs{\bp{x^3 + 1}^2 z} = \bp{x^3 + 1}^2 z' +6x^2\bp{x^3 + 1} z = 4\bp{x^3 + 1}.\] Integrating both sides with respect to $x$, we obtain \[\bp{x^3 + 1}^2 z = \int 4\bp{x^3 + 1} \d x = x^4 + 4x + C,\] thus \[y^2 = \frac{x^4 + 4x + C}{\bp{x^3 + 1}^2}.\] When $x = 0$, $y = 2$, giving $C = 4$. Hence, \[y = \sqrt{\frac{x^4 + 4x + 4}{\bp{x^3 + 1}^2}}.\] Thus, when $x = 1$, we have $y = 3/2$.
+        Note that $z' = 2y \cdot y'$. Substituting this into the differential equation, we get \[\bp{x^3 + 1} \frac12 z' + 3x^2 z = 2,\] so \[z' + \frac{6x^2}{x^3 + 1} z = \frac{4}{x^3 + 1}.\] The integrating factor is hence \[\IF = \exp \int \frac{6x^2}{x^3 + 1} \d x = \exp{2\ln{x^3 + 1}} = \bp{x^3 + 1}^2.\] Multiplying the integrating factor through, we get \[\der{}{x} \bs{\bp{x^3 + 1}^2 z} = \bp{x^3 + 1}^2 z' +6x^2\bp{x^3 + 1} z = 4\bp{x^3 + 1}.\] Integrating both sides with respect to $x$, we obtain \[\bp{x^3 + 1}^2 z = \int 4\bp{x^3 + 1} \d x = x^4 + 4x + C,\] thus \[y^2 = \frac{x^4 + 4x + C}{\bp{x^3 + 1}^2}.\] Since $y = 2$ when $x = 0$, we get $C = 4$. Hence, \[y = \sqrt{\frac{x^4 + 4x + 4}{\bp{x^3 + 1}^2}}.\] Thus, when $x = 1$, we have $y = 3/2$.
     \end{ppart}
     \begin{ppart}
-        Substituting $x = 1$ and $y = 3/2$ into the differential equation, we see that \[\bp{1^3 + 1} \bp{\frac32} \der{y}{x} + 3 \bp{1^2} \bp{\frac32}^2 = 2 \implies \der{y}{x} = -\frac{19}{12}.\] By the chain rule, it follows that \[\der{y}{t} = -\frac{19}{12} \cdot \der{x}{t} = -\frac{19}{12} \e^{\sqrt t}.\]
+        When $x = 1$ and $y = 3/2$, we have \[\bp{1^3 + 1} \bp{\frac32} \der{y}{x} + 3 \bp{1^2} \bp{\frac32}^2 = 2,\] so $\derx{y}{x} = -19/12$. By the chain rule, it follows that \[\der{y}{t} = -\frac{19}{12} \cdot \der{x}{t} = -\frac{19}{12} \e^{\sqrt t}.\]
 
-        Let $f(y, t) = -\frac{19}{12} \e^{\sqrt t}$, $t_0 = 0$, $y_0 = 1.5$. Using Euler's method with $h = 0.2$, \[y_{n+1} = y_n + 0.2 f(t_n, y_n)\] Using G.C., \[y_1 = 1.1833, \quad y_2 = 0.68808, \quad y_3 = 0.09204, \quad y_4 = -0.59503, \quad y_5 = -1.36958.\] Hence, when $t = 1$, $y \approx -1.37$.
+        Let \[f(y, t) = -\frac{19}{12} \e^{\sqrt t},\] $t_0 = 0$, $y_0 = 1.5$. Using Euler's method with $h = 0.2$, i.e. $y_{n+1} = y_n + 0.2 f(t_n, y_n)$, we get \[y_1 = 1.1833, \quad y_2 = 0.68808, \quad y_3 = 0.09204, \quad y_4 = -0.59503, \quad y_5 = -1.36958.\] Hence, when $t = 1$, $y \approx -1.37$.
     \end{ppart}
     \begin{ppart}
         Observe that $\sqrt t > 0$ and $\e^{\sqrt t} > 0$ for all $t \in \RR$. Thus, \[\der[2]{y}{t} = -\frac{19}{12} \frac{1}{2\sqrt t}\e^{\sqrt t} < 0,\] whence $y$ is concave downwards, making the approximation an overestimate.
@@ -240,6 +244,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
+        By De Moivre's theorem,
         \begin{align*}
             \cos 5\t &= \Re \bp{\cos \t + \i \sin \t}^5\\
             &= \cos^5 \t - 10\cos^3 \t \sin^2 \t + 5\cos \t \sin^4 \t\\
@@ -249,13 +254,14 @@
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        \[\t = \frac{\pi}{10}, \frac{3\pi}{10}, \frac{5\pi}{10}, \frac{7\pi}{10}, \frac{9\pi}{10}.\]
+        Within the range $0 \leq 5\t \leq 5\pi$, the roots to $\cos 5\t = 0$ are
+        \[\t = \frac{\pi}{10}, \quad \frac{3\pi}{10}, \quad \frac{5\pi}{10}, \quad \frac{7\pi}{10}, \quad \frac{9\pi}{10}.\]
     \end{ppart}
     \begin{ppart}
-        \[16z^4 - 20z^2 + 5 = 0 \implies 16z^5 - 20z^3 + 5z = 0, \quad z \neq 0.\] Let $z = \cos \t$. Then $\cos 5\t = 0$, whence $\t = \frac{\pi}{10}, \frac{3\pi}{10}, \frac{5\pi}{10}, \frac{7\pi}{10}, \frac{9\pi}{10}$. Hence, \[z = \cos \frac{\pi}{10}, \cos \frac{3\pi}{10}, \cos \frac{7\pi}{10}, \cos \frac{9\pi}{10}.\] Note that we reject $z = \cos \frac{5\pi}{10}$ since $z \neq 0$.
+        Multiplying through by $z$, we have $16z^5 - 20z^3 + 5z = 0$. Let $z = \cos \t$. Then $\cos 5\t = 0$, whence $\t = \pi/10$, $3\pi/10$, $5\pi/10$, $7\pi/10$, $9\pi/10$. Hence, the roots to the quartic are \[z = \cos \frac{\pi}{10}, \quad \cos \frac{3\pi}{10}, \quad \cos \frac{7\pi}{10}, \quad \cos \frac{9\pi}{10}.\] Note that we reject $z = \cos{5\pi/10}$ since $z \neq 0$.
     \end{ppart}
     \begin{ppart}
-        By the quadratic formula, \[z^2 = \frac{5 \pm \sqrt5}{8} \implies z = \pm \sqrt{\frac{5 \pm \sqrt5}{8}}.\] The corresponding trigonometric forms are
+        By the quadratic formula, $z^2 = (5 \pm \sqrt5)/8$, so \[z = \pm \sqrt{\frac{5 \pm \sqrt5}{8}}.\] The corresponding trigonometric forms are
         \begin{gather*}
             \cos \frac{\pi}{10} = \sqrt{\frac{5 + \sqrt5}{8}}, \quad \cos \frac{3\pi}{10} = \sqrt{\frac{5 - \sqrt5}{8}}\\
             \cos \frac{7\pi}{10} = - \sqrt{\frac{5 - \sqrt5}{8}}, \quad \cos \frac{9\pi}{10} = - \sqrt{\frac{5 + \sqrt5}{8}}.
@@ -274,18 +280,18 @@
     \begin{enumerate}
         \item \begin{enumerate}
             \item Express all the roots of this equation in the form $w^n$, $n \in \ZZ$, $0 \leq n \leq 8$, where $w$ is a complex number to be determined.
-            \item Show that $\sum_{r=0}^8 w^r = 0$.
-            \item Show that $w^2 + w^7 = 2\cos \frac{4\pi}9$.
-            \item Using the results above, deduce that $16\cos\frac{2\pi}9 \cos\frac{4\pi}9 \cos\frac{6\pi}9 \cos\frac{8\pi}9 = 1$.
+            \item Show that \[\sum_{r=0}^8 w^r = 0.\]
+            \item Show that $w^2 + w^7 = 2\cos{4\pi/9}$.
+            \item Using the results above, deduce that \[16\cos\frac{2\pi}9 \cos\frac{4\pi}9 \cos\frac{6\pi}9 \cos\frac{8\pi}9 = 1.\]
         \end{enumerate}
     \end{enumerate}
 
-    Let point $O$ be the origin, and points $A$, $B$ and $C$ represent the complex numbers $w^2$, $2\i w^2$ and $\frac{w}{u \conj}$ respectively, where $u = \frac13 \bp{\cos \frac{5\pi}{18} - \i \sin{5\pi}{18}}$.
+    Let point $O$ be the origin, and points $A$, $B$ and $C$ represent the complex numbers $w^2$, $2\i w^2$ and $w/u\conj$ respectively, where \[u = \frac13 \bp{\cos \frac{5\pi}{18} - \i \sin \frac{5\pi}{18}}.\]
 
     \begin{enumerate}
         \setcounter{enumi}{1}
         \item \begin{enumerate}
-            \item Find the modulus and arguments of the complex numbers $\frac{w}{u\conj}$ and $2iw^2$, and illustrate the points $A$, $B$ and $C$ on a clearly labelled Argand diagram.
+            \item Find the modulus and arguments of the complex numbers $w/u\conj$ and $2iw^2$, and illustrate the points $A$, $B$ and $C$ on a clearly labelled Argand diagram.
             \item Find the area of triangle $ABC$.
         \end{enumerate}
     \end{enumerate}
@@ -293,31 +299,35 @@
 \begin{solution}
     \begin{ppart}
         \begin{psubpart}
-            \[z^9 - 1 = 0 \implies z^9 = \e^{2\pi n \i} \implies z = \e^{2\pi n \i/9}.\] Hence, the roots are $w^n$, where $w = \e^{2\pi \i/9}$.
+            For integers $n$, we have $z^9 = \e^{2\pi n \i}$, so $z = \e^{2\pi n \i/9}$. Hence, the roots are $w^n$, where $w = \e^{2\pi \i/9}$.
         \end{psubpart}
         \begin{psubpart}
-            \[\sum_{r=0}^8 w^r = \frac{w^9 - 1}{w -1} = \frac{1 - 1}{w - 1} = 0\]
+            Recognizing the sum as a geometric series, we see that
+            \[\sum_{r=0}^8 w^r = \frac{w^9 - 1}{w -1} = \frac{1 - 1}{w - 1} = 0.\]
         \end{psubpart}
         \begin{psubpart}
-            \[w^2 + w^7 = w^2 + w^{-2} = 2\cos{2 \cdot \frac{2\pi}9} = 2\cos \frac{4\pi}9\]
+            Since $w^7 = w^{-2}$,
+            \[w^2 + w^7 = w^2 + w^{-2} = 2\cos{2 \cdot \frac{2\pi}9} = 2\cos \frac{4\pi}9.\]
         \end{psubpart}
         \begin{psubpart}
+            We have
             \begin{align*}
                 &16\cos\frac{2\pi}9 \cos\frac{4\pi}9 \cos\frac{6\pi}9 \cos\frac{8\pi}9\\
-                &= \bp{w+w^8}\bp{w^2+w^7}\bp{w^3+w^6}\bp{w^4+w^5}\\
-                &= \bp{w^5 + w^6 + w^{12} + w^{13}}\bp{w^5 + w^8 + w^{10} + w^{13}}\\
-                &= \bp{w^{10} + w^{13} + w^{15} + w^{18}} + \bp{w^{11} + w^{14} + w^{16} + w^{19}}\\
-                &\hspace{1em}+ \bp{w^{17} + w^{20} + w^{22} + w^{25}} + \bp{w^{18} + w^{21} + w^{23} + w^{26}}\\
-                &= \bp{w + w^4 + w^6 + 1} + \bp{w^2 + w^5 + w^7 + w} \\
-                &\hspace{1em}+ \bp{w^8 + w^2 + w^4 + w^7} + \bp{1 + w^3 + w^5 + w^8}\\
-                &= 2\bp{1 + w + w^2 + w^3 + w^4 + w^5 + w^6 + w^7 + w^8} - \bp{w^3 + w^6}\\
-                &= -2\cos \frac{6\pi}{9} = 1.
+                &\hspace{2em}= \bp{w+w^8}\bp{w^2+w^7}\bp{w^3+w^6}\bp{w^4+w^5}\\
+                &\hspace{2em}= \bp{w^5 + w^6 + w^{12} + w^{13}}\bp{w^5 + w^8 + w^{10} + w^{13}}\\
+                &\hspace{2em}= \bp{w^{10} + w^{13} + w^{15} + w^{18}} + \bp{w^{11} + w^{14} + w^{16} + w^{19}}\\
+                &\hspace{4em}+ \bp{w^{17} + w^{20} + w^{22} + w^{25}} + \bp{w^{18} + w^{21} + w^{23} + w^{26}}\\
+                &\hspace{2em}= \bp{w + w^4 + w^6 + 1} + \bp{w^2 + w^5 + w^7 + w} \\
+                &\hspace{4em}+ \bp{w^8 + w^2 + w^4 + w^7} + \bp{1 + w^3 + w^5 + w^8}\\
+                &\hspace{2em}= 2\bp{1 + w + w^2 + w^3 + w^4 + w^5 + w^6 + w^7 + w^8} - \bp{w^3 + w^6}\\
+                &\hspace{2em}= -2\cos \frac{6\pi}{9}\\
+                &\hspace{2em}= 1.
             \end{align*}
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Note that $w^2 = e^{4\pi \i/9}$. Hence, $\abs{w^2} = 1$ and $\arg w^2 = \frac{4\pi}9$. Likewise, $\abs{2\i w^2} = 2$ and $\arg{2\i w^2} = \frac{4\pi}9 + \frac\pi2 = \frac{17}{18}\pi$. Lastly, note that \[\frac{w}{u\conj} = \frac{uw}{uu\conj} = \frac{1/3 \cdot \e^{-5\pi \i/18} \cdot \e^{2\pi \i/9}}{1/9} = 3\e^{-\i\pi/18},\] whence $\abs{\frac{w}{u\conj}} = 3$ and $\arg{\frac{w}{u\conj}} = -\frac{\pi}{18}$.
+            Note that $w^2 = e^{4\pi \i/9}$. Hence, $\abs{w^2} = 1$ and $\arg w^2 = 4\pi/9$. Likewise, $\abs{2\i w^2} = 2$ and $\arg{2\i w^2} = 4\pi/9 + \pi/2 = 17\pi/18$. Lastly, note that \[\frac{w}{u\conj} = \frac{uw}{uu\conj} = \frac{\bp{1/3} \e^{-5\pi \i/18} \cdot \e^{2\pi \i/9}}{1/9} = 3\e^{-\i\pi/18},\] whence $\abs{w/u\conj} = 3$ and $\arg{w/u\conj} = -\pi/18$.
 
             \begin{center}\tikzsetnextfilename{3}
                 \begin{tikzpicture}[trim axis left, trim axis right]
@@ -420,13 +430,13 @@
     \begin{ppart}
         Observe that $\oa{AC} = k\cveciiix001$ for some $k \in \RR$. Hence, $\oa{OC} = \cveciiix{20}{1}{20-k}$. Since $C$ lies on the deck, we have \[\cveciii{20}{1}{20-k} \dotp \cveciii{-1}{0}{20} = 0,\] whence $k = 19$ and $\oa{OC} = \cveciiix{20}{1}{1}$.
 
-        Let $F$ be the foot of perpendicular of $A$ to the deck. Note that $\oa{OF} \dotp \cveciiix{-1}{0}{20} = 0$ and $\oa{AF} = \l \cveciiix{-1}{0}{20}$ for some $\l \in \RR$. Thus, \[\bs{\cveciii{20}{1}{20} + \l\cveciii{-1}{0}{20}} \dotp \cveciii{-1}{0}{20} = 0, \implies \l = -\frac{380}{401} \implies \oa{OF} = \frac1{401} \cveciii{8400}{401}{420}.\] Hence, \[\oa{FC} = \cveciii{20}{1}{1} - \frac1{401} \cveciii{8400}{401}{420} \implies \abs{\oa{FC}} = \sqrt{0.948^2 + 0^2 + (-0.0474)^2} = 0.949 < 1.\] The bridge is thus stable.
+        Let $F$ be the foot of perpendicular of $A$ to the deck. Note that $\oa{OF} \dotp \cveciiix{-1}{0}{20} = 0$ and $\oa{AF} = \l \cveciiix{-1}{0}{20}$ for some $\l \in \RR$. Thus, \[\bs{\cveciii{20}{1}{20} + \l\cveciii{-1}{0}{20}} \dotp \cveciii{-1}{0}{20} = 0,\] giving $\l = -380/401$, so \[\oa{OF} = \frac1{401} \cveciii{8400}{401}{420}.\] Hence, \[\oa{FC} = \cveciii{20}{1}{1} - \frac1{401} \cveciii{8400}{401}{420}\] and \[\abs{\oa{FC}} = \sqrt{0.948^2 + 0^2 + (-0.0474)^2} = 0.949 < 1.\] The bridge is thus stable.
     \end{ppart}
     \begin{ppart}
         We have $\abs{\oa{AR}} = \abs{\oa{OA}} = \sqrt{20^2 + 1^2 + 20^1} = \sqrt{801}$. Since $O$, $C$ and $R$ are collinear, we also have $\oa{OR} = \m \cveciiix{20}{1}{1}$ for some $\m \in \RR$. Thus, \[\abs{\oa{AR}} = \abs{\m \cveciii{20}{1}{1} - \cveciii{20}{1}{20}} = \sqrt{(20\m-20)^2 + (\m - 1)^2 + (\m - 20)^2} = \sqrt{801}.\] Using G.C., $\m = 2.09$, whence $R(41.9, 2.09, 2.09)$.
     \end{ppart}
     \begin{ppart}
-        Let $\t$ be the acute angle between the deck and the horizontal. Note that the horizontal plane has normal vector $\cveciiix001$. Thus, \[\cos \t = \frac{\abs{\cveciiix001 - \cveciiix{-1}0{20}}}{\abs{\cveciiix001}\abs{\cveciiix{-1}0{20}}} = \frac{20}{\sqrt{401}} \implies \t = 2.9\deg \todp{2}.\]
+        Let $\t$ be the acute angle between the deck and the horizontal. Note that the horizontal plane has normal vector $\cveciiix001$. Thus, \[\cos \t = \frac{\abs{\cveciiix001 - \cveciiix{-1}0{20}}}{\abs{\cveciiix001}\abs{\cveciiix{-1}0{20}}} = \frac{20}{\sqrt{401}},\] so $\t = 2.9\deg \todp{1}$.
     \end{ppart}
 \end{solution}
 
@@ -471,7 +481,7 @@
         \end{tikzpicture}
     \end{center}
 
-    The equation of the hyperbolic curve is given as $\frac{g^2}{40^2} - \frac{(z-80)^2}{50^2} = 1$ where $g$ is the axis that represents the ground and $z$ is the axis that represents the height of the reactor. The curve surface area of the tower is formed by rotating the region bounded by the hyperbolic curve, the line $z = 130$ and the $g$ axis about the $z$-axis by $\pi$ radians. The external curved surface area of the tower is to be painted with weather resistant paint.
+    The equation of the hyperbolic curve is given as \[\frac{g^2}{40^2} - \frac{(z-80)^2}{50^2} = 1\] where $g$ is the axis that represents the ground and $z$ is the axis that represents the height of the reactor. The curve surface area of the tower is formed by rotating the region bounded by the hyperbolic curve, the line $z = 130$ and the $g$ axis about the $z$-axis by $\pi$ radians. The external curved surface area of the tower is to be painted with weather resistant paint.
 
     \begin{enumerate}
         \item Find the external curved surface area of the tower. Leave your answer to the nearest m$^2$.
@@ -500,15 +510,15 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $g = \sqrt{40^2 \bs{\frac{(z-80)^2}{50^2} + 1}}$. Using G.C., \[\area = 2\pi \int_0^{130} g \sqrt{1 + \bp{\der{g}{z}}^2} \d z \approx 45552 \units[2].\]
+        Note that \[g = \sqrt{40^2 \bs{\frac{(z-80)^2}{50^2} + 1}}.\] Using G.C., \[\area = 2\pi \int_0^{130} g \sqrt{1 + \bp{\der{g}{z}}^2} \d z \approx 45552 \units[2].\]
     \end{ppart}
     \begin{ppart}
         For every constant value of $z$, we will have the value of $g$ such that $x^2 + y^2 = g^2$. Hence, \[\frac{x^2+y^2}{40^2} - \frac{(z-80)^2}{50^2} = 1.\]
     \end{ppart}
     \begin{ppart}
-        Implicitly differentiating the above expressing with respect to $x$ and $y$, we have \[\pder{z}{x} = \bp{\frac54}^2 \frac{x}{z-80}, \quad \pder{z}{y} = \bp{\frac54}^2 \frac{y}{z-80}.\] Evaluating at $(40, 40, 30)$, we have that $\nabla z = -\frac54 \cveciix11$. Hence, \[\nabla z \cdot \frac1{\sqrt{3^2 + 5^2}} \cvecii3{-4} = \frac14 > 0.\] Thus, the robot is ascending.
+        Implicitly differentiating the above expressing with respect to $x$ and $y$, we have \[\pder{z}{x} = \bp{\frac54}^2 \frac{x}{z-80} \quad \tand \quad \pder{z}{y} = \bp{\frac54}^2 \frac{y}{z-80}.\] Evaluating at $(40, 40, 30)$, we have that $\nabla z = -(5/4)\cveciix11$. Hence, \[\nabla z \cdot \frac1{\sqrt{3^2 + 5^2}} \cvecii3{-4} = \frac14 > 0.\] Thus, the robot is ascending.
     \end{ppart}
     \begin{ppart}
-        At $(40, 40, 130)$, we have $\nabla z = \cveciix{5/4}{5/4}$. The equation of the tangent plane at that point is hence \[z = 130 + \frac54(x - 40) + \frac54(y - 40),\] which has vector equation \[\vec r \cdot \cveciii55{-4} = -120.\] The line of the signal is hence given by \[\vec r = \cveciii{40}{40}{130} + \l \cveciii55{-4}, \quad \l \in \RR.\] Setting $z = 0$, we have $\l = 130/4$, whence $x = y = 405/2$. The required coordinates are thus $\bp{\frac{405}2, \frac{405}2, 0}$.
+        At $(40, 40, 130)$, we have $\nabla z = \cveciix{5/4}{5/4}$. The equation of the tangent plane at that point is hence \[z = 130 + \frac54(x - 40) + \frac54(y - 40),\] which has vector equation \[\vec r \cdot \cveciii55{-4} = -120.\] The line of the signal is hence given by \[\vec r = \cveciii{40}{40}{130} + \l \cveciii55{-4}, \quad \l \in \RR.\] Setting $z = 0$, we have $\l = 130/4$, whence $x = y = 405/2$. The required coordinates are thus $\bp{405/2, 405/2, 0}$.
     \end{ppart}
 \end{solution}

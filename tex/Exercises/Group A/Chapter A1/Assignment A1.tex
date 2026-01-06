@@ -6,7 +6,7 @@
         \centering
         \begin{tabular}{|c|c|c|c|}
         \hline
-        \textbf{Country} & \textbf{Housing} & \textbf{Food} & \textbf{Incidental Expenses}  \\\hline
+        \bd{Country} & \bd{Housing} & \bd{Food} & \bd{Incidental Expenses}  \\\hline
         Germany & 28      & 30   & 14                   \\\hline
         France  & 23      & 25   & 8                    \\\hline
         Spain   & 19      & 22   & 12 \\\hline                  
@@ -25,17 +25,18 @@
 \begin{problem}
     \begin{enumerate}
         \item Solve algebraically $x^2 - 9 \geq (x+3)\bp{x^2 - 3x + 1}$.
-        \item Solve algebraically $\frac{7-2x}{3-x^2} \leq 1$.
+        \item Solve algebraically \[\frac{7-2x}{3-x^2} \leq 1.\]
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        \begin{alignat*}{2}
-            &&x^2-9 &\geq (x+3)\bp{x^2 - 3x + 1} \\
-            \implies &&(x+3)(x-3) &\geq (x+3)\bp{x^2 - 3x + 1} \\
-            \implies &&(x+3)\bp{x^2 - 4x + 4} &\leq 0 \\
-            \implies &&(x+3)(x-2)^2 &\leq 0
-        \end{alignat*}
+        Note that $x^2 - 9 = (x+3)(x-3)$. Thus, we may rewrite the inequality as
+        \begin{align*}
+            0 &\geq (x+3)\bp{x^2 - 3x + 1} - \bp{x^2 - 9}\\
+            &= (x+3)\bp{x^2 - 3x + 1} - (x+3)(x-3)\\
+            &= (x+3)\bp{x^2 -4x + 4}\\
+            &= (x+3)(x-2)^2.
+        \end{align*}
         \begin{center}\tikzsetnextfilename{25}
             \begin{tikzpicture}
                     \draw[-latex] (-4.0,0) -- (3,0) node[right]{$x$};
@@ -51,49 +52,20 @@
         Thus, $x \leq -3$ or $x = 2$.
     \end{ppart}
     \begin{ppart}
-        Note that $3-x^2 \neq 0 \implies x \neq \pm \sqrt{3}$.
-        \begin{alignat*}{2}
-            &&\frac{7-2x}{3-x^2} &\leq 1\\
-            \implies &&\frac{7-2x}{3-x^2} - \frac{3-x^2}{3-x^2} &\leq 0\\
-            \implies&& \frac{x^2-2x+4}{3-x^2} &\leq 0
-        \end{alignat*}
-        Observe that $x^2 - 2x + 4 = (x-1)^2 + 3 > 0$. Dividing through by $x^2 - 2x + 4$, we obtain
-        \begin{alignat*}{2}
-            &&\frac1{3-x^2} &\leq 0\\
-            \implies&&3-x^2 &\leq 0
-        \end{alignat*}
-        \begin{center}\tikzsetnextfilename{26}
-            \begin{tikzpicture}
-                    \draw[-latex] (-2.732,0) -- (2.732,0) node[right]{$x$};
-                    \foreach \x in {1.732,-1.732} \draw[shift={(\x,0)}] (0pt,3pt) -- (0pt,-3pt);
-                    \draw[shift={(1.732,-3pt)}] node[below]  {$\sqrt3$};
-                    \draw[shift={(-1.732,-3pt)}] node[below]  {$-\sqrt3$};
-                    \draw[very thick, -*, color=red] (-2.732, 0) -- (-1.612, 0);
-                    \draw[very thick, *-, color=red] (1.612, 0) -- (2.632, 0);
-                    \node[anchor=south, align=center] at (-2.232, 0) {$-$};
-                    \node[anchor=south, align=center] at (0.0, 0) {$+$};
-                    \node[anchor=south, align=center] at (2.232, 0) {$-$};
-            \end{tikzpicture}
-        \end{center}
-        Thus, $x < -\sqrt3$ or $x > \sqrt3$.
+        Note that $3-x^2 \neq 0$, so $x \neq \pm \sqrt{3}$. Putting all terms on one side, the given inequality becomes \[\frac{x^2-2x+4}{3-x^2} = \frac{7-2x}{3-x^2} - 1 \leq 0.\] Completing the square, we see that $x^2 - 2x + 4 = (x-1)^2 + 3 > 0$. Thus, it suffices to solve $3-x^2 \leq 0$, which gives $x < -\sqrt3$ or $x > \sqrt3$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
-        \item Without using a calculator, solve the inequality $\frac{3x+4}{x^2+3x+2} \geq \frac{1}{x+2}$.
-        \item Hence, deduce the set of values of $x$ that satisfies $\frac{3\abs{x}+4}{x^2+3\abs{x}+2} \geq \frac{1}{\abs{x}+2}$.
+        \item Without using a calculator, solve the inequality \[\frac{3x+4}{x^2+3x+2} \geq \frac{1}{x+2}.\]
+        \item Hence, deduce the set of values of $x$ that satisfies \[\frac{3\abs{x}+4}{x^2+3\abs{x}+2} \geq \frac{1}{\abs{x}+2}.\]
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $x^2 + 3x + 2 \neq 0$ and $x + 2 \neq 0$, whence $x \neq -1, -2$.
-        \begin{alignat*}{2}
-            &&\frac{3x+4}{x^2+3x+2} &\geq \frac{1}{x+2}\\
-            \implies&& \frac{3x+4}{(x+2)(x+1)} &\geq \frac{1}{x+2}\\
-            \implies&& (3x+4)(x+2)(x+1) &\geq (x+2)(x+1)^2 \\
-            \implies&& (x+2)(x+1)(2x+3) &\geq 0
-        \end{alignat*}
+        Note that $x^2 + 3x + 2 = (x+1)(x+2) \neq 0$ and $x + 2 \neq 0$, whence $x \neq -1, -2$. Multiplying the given inequality through by $(x+1)^2(x+2)^2$, we get $(3x+4)(x+2)(x+1) \geq (x+2)(x+1)^2$, which simplifies to $(x+2)(x+1)(2x+3) \geq 0$.
+
         \begin{center}\tikzsetnextfilename{27}
             \begin{tikzpicture}
                     \draw[-latex] (-6,0) -- (0,0) node[right]{$x$};
@@ -107,14 +79,13 @@
                     \node[anchor=south, align=center] at (-1, 0) {$+$};
             \end{tikzpicture}
         \end{center}
-        Thus, $-2 < x \leq -\frac32$ or $x > -1$.
+        Thus, $-2 < x \leq -3/2$ or $x > -1$.
     \end{ppart}
     \begin{ppart}
-        Observe that $\abs{x}^2 = x^2$. Hence, with the map $x \mapsto \abs{x}$, we obtain \[-2 < \abs{x} \leq -\frac32 \tor \abs{x} > -1.\] Since $\abs{x} \geq 0$, we have that $\abs{x} > -1$ is satisfied for all real $x$. Hence, the solution set is $\RR$.
+        Observe that $\abs{x}^2 = x^2$. Hence, with the map $x \mapsto \abs{x}$, we obtain $-2 < \abs{x} \leq -3/2$ or $\abs{x} > -1$. The second condition is satisfied for all real $x$. Hence, the solution set is $\RR$.
     \end{ppart}
 \end{solution}    
 
-\clearpage
 \begin{problem}
     On the same diagram, sketch the graphs of $y = 4\abs{x}$ and $y = x^2 - 2x + 3$. Hence or otherwise, solve the inequality $4\abs{x} \geq x^2 - 2x + 3$.
 \end{problem}

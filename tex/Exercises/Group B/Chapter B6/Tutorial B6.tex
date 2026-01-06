@@ -2,16 +2,28 @@
 
 \begin{problem}
     \begin{enumerate}
-        \item Given that $f(x) = \exp{\cos x}$, find $f(0)$, $f'(0)$ and $f''(0)$. Hence, write down the first two non-zero terms in the Maclaurin series for $f(x)$. Give the coefficients in terms of $e$.
-        \item Given that $g(x) = \tan{2x + \frac14 \pi }$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence, find the first three terms in the Maclaurin series of $g(x)$.
+        \item Given that $f(x) = \exp{\cos x}$, find $f(0)$, $f'(0)$ and $f''(0)$. Hence, write down the first two non-zero terms in the Maclaurin series for $f(x)$. Give the coefficients in terms of $\e$.
+        \item Given that $g(x) = \tan{2x + \pi/4}$, find $g(0)$, $g'(0)$ and $g''(0)$. Hence, find the first three terms in the Maclaurin series of $g(x)$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that \[f'(x) = -\exp{\cos x} \sin x  = -f(x) \sin x \implies f''(x) = -f(x) \cos x  -f'(x) \sin x .\] Evaluating $f(x)$, $f'(x)$ and $f''(x)$ at 0, \[f(0) = \e, \quad f'(0) = 0, \quad f''(0) = -\e.\] Hence, \[f(x) = \frac{\e}{0!} + \frac{0}{1!} x + \frac{-\e}{2!} x^2 = \e - \frac{\e}{2}x^2 + \cdots.\]
+        Repeatedly differentiating $f(x)$, we see that
+        \begin{align*}
+            f'(x) &= -\exp{\cos x} \sin x \\
+            &= -f(x) \sin x,\\
+            f''(x) &= -f(x) \cos x  -f'(x) \sin x.
+        \end{align*}
+        At $x = 0$, we obtain $f(0) = \e$, $f'(0) = 0$ and $f''(0) = -\e$. Hence, \[f(x) = \frac{\e}{0!} + \frac{0}{1!} x + \frac{-\e}{2!} x^2 + \dots = \e - \frac{\e}{2}x^2 + \dots.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[g'(x) = 2\sec[2]{2x + \frac\pi4} = 2\bp{1 + \tan[2]{2x + \frac\pi4}} = 2 + 2g^2(x),\] so \[g''(x) = 4g(x)g'(x).\] Evaluating $g(x)$, $g'(x)$ and $g''(x)$ at 0, \[g(x) = 1, \quad g'(x) = 4, \quad g''(x) = 16.\] Hence, \[g(x) = \frac{1}{0!} + \frac{4}{1!} x + \frac{16}{2!} x^2 + \cdots = 1 + 4x + 8x^2 + \cdots.\]
+        Repeatedly differentiating $g(x)$, we see that
+        \begin{align*}
+            g'(x) &= 2\sec[2]{2x + \frac\pi4} = 2\bp{1 + \tan[2]{2x + \frac\pi4}}\\
+            &= 2 + 2g^2(x),\\
+            g''(x) &= 4g(x)g'(x).
+        \end{align*}
+        At $x = 0$, we obtain $g(0) = 1$, $g'(0) = 4$ and $g''(0) = 16$. Hence, \[g(x) = \frac{1}{0!} + \frac{4}{1!} x + \frac{16}{2!} x^2 + \dots = 1 + 4x + 8x^2 + \dots.\]
     \end{ppart}
 \end{solution}
 
@@ -19,33 +31,34 @@
     Find the first three non-zero terms of the Maclaurin series for the following in ascending powers of $x$. In each case, find the range of values of $x$ for which the series is valid.
 
     \begin{enumerate}
-        \item $\displaystyle\frac{(1+3x)^4}{\sqrt{1+2x}}$
-        \item $\displaystyle\frac{\sin 2x}{2 + 3x}$
+        \item $\displaystyle\frac{(1+3x)^4}{\sqrt{1+2x}}$;
+        \item $\displaystyle\frac{\sin 2x}{2 + 3x}$.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Observe that \[(1 + 3x)^4 = 1 + 4(3x) + 6(3x)^2 + \cdots = 1 + 12x + 54x^2 + \cdots\] and \[(1 + 2x)^{-\frac12} = 1 + \bp{-\frac{1}{2}}(2x) + \frac{\bp{-\frac{1}{2}}\bp{-\frac{3}{2}}}{2!} (2x)^2 + \cdots = 1 - x + \frac32 x^2 + \cdots.\] Thus,
+        Observe that \[(1 + 3x)^4 = 1 + \binom{4}{1}(3x) + \binom{4}{2}(3x)^2 + \dots = 1 + 12x + 54x^2 + \dots\] and \[(1 + 2x)^{-1/2} = 1 + \frac{-\frac{1}{2}}{1!}(2x) + \frac{(-1/2)(-3/2)}{2!} (2x)^2 + \dots = 1 - x + \frac32 x^2 + \dots.\] Thus,
         \begin{align*}
             y &= \frac{(1+3x)^4}{\sqrt{1 + 2x}}\\
-            &= \bp{1 + 12x + 54x^2 + \cdots}\bp{1 - x + \frac32 x^2 + \cdots}\\
-            &= \bp{1 - x + \frac32 x^2} + \bp{12x - 12x^2} + \bp{54x^2} + \cdots\\
-            &= 1 + 11x + \frac{87}{2} x^2 + \cdots.
+            &= \bp{1 + 12x + 54x^2 + \dots}\bp{1 - x + \frac32 x^2 + \dots}\\
+            &= \bp{1 - x + \frac32 x^2} + \bp{12x - 12x^2} + \bp{54x^2} + \dots\\
+            &= 1 + 11x + \frac{87}{2} x^2 + \dots.
         \end{align*}
 
         Note that the series is valid only when $\abs{2x} < 1$, i.e. $-1/2 < x < 1/2$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\sin 2x = 2x - \frac{(2x)^3}{3!} + \cdots = 2x - \frac43 x^3 + \cdots\] and \begin{align*}
+        Note that \[\sin 2x = 2x - \frac{(2x)^3}{3!} + \dots = 2x - \frac43 x^3 + \dots\] and \begin{align*}
             \frac{1}{2 + 3x} &= \frac12 \bp{1 + \frac{3x}{2}}^{-1}\\
-            &= \frac12 \bs{1 - \frac{3x}{2} +  \bp{\frac{3x}{2}}^2 - \bp{\frac{3x}{2}}^3 + \cdots}\\
-            &= \frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \cdots.
+            &= \frac12 \bs{1 - \frac{3x}{2} +  \bp{\frac{3x}{2}}^2 - \bp{\frac{3x}{2}}^3 + \dots}\\
+            &= \frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \dots.
         \end{align*}
         Thus, 
         \begin{align*}
-            \frac{\sin 2x}{2 + 3x} &= \bp{2x - \frac43 x^3 + \cdots}\bp{\frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \cdots}\\
-            &= \bp{x - \frac32 x^2 + \frac94 x^3} + \bp{-\frac23 x^3} + \cdots\\
-            &= x - \frac32 x^2 + \frac{19}{12} x^3 + \cdots.
+            \frac{\sin 2x}{2 + 3x} &= \bp{2x - \frac43 x^3 + \dots}\bp{\frac12 - \frac34 x + \frac98 x^2 - \frac{27}{16} x^3 + \dots}\\
+            &= \bp{x - \frac32 x^2 + \frac94 x^3} + \bp{-\frac23 x^3} + \dots\\
+            &= x - \frac32 x^2 + \frac{19}{12} x^3 + \dots.
         \end{align*}
 
         The series is only valid when $\abs{3x/2} < 1$, i.e. when $-2/3 < x < 2/3$.
@@ -56,41 +69,41 @@
     Find the Maclaurin series of $\ln{1 + \cos x}$, up to and including the term in $x^4$.
 \end{problem}
 \begin{solution}
-    Let $y = \ln{1 + \cos x}$. Then \[y = \ln{1 + \cos x} \implies \e^y = 1 + \cos x.\] Implicitly differentiating repeatedly with respect to $x$,
+    Let $y = \ln{1 + \cos x}$. Then $\e^y = 1 + \cos x$. Implicitly differentiating repeatedly with respect to $x$,
     \begin{align*}
-        \e^y y' &= -\sin x\\
-        \e^y \bs{\bp{y'}^2 + y''} &= -\cos x\\
-        \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} &= \sin x \\
+        \e^y y' &= -\sin x,\\
+        \e^y \bs{\bp{y'}^2 + y''} &= -\cos x,\\
+        \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} &= \sin x,\\
         \e^y \bs{\bp{y'}^4 + 3\bp{y''}^2 + 6\bp{y'}^2 y'' + 4y'y''' + y^{(4)}} &= \cos x.
     \end{align*}
-    Evaluating the above at $x = 0$, we get \[y(0) = \ln 2, \quad y'(0) = 0, \quad y''(0) = -\frac12, \quad y'''(0) = 0, \quad y^{(4)}(0) = -\frac14.\] Thus, \[\ln{1 + \cos x} = \ln 2 + \frac{-1/2}{2!} x^2 + \frac{-1/4}{4!} x^4 + \cdots = \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots.\]
+    Evaluating the above at $x = 0$, we get \[y(0) = \ln 2, \quad y'(0) = 0, \quad y''(0) = -\frac12, \quad y'''(0) = 0, \quad y^{(4)}(0) = -\frac14.\] Thus, \[\ln{1 + \cos x} = \ln 2 + \frac{-1/2}{2!} x^2 + \frac{-1/4}{4!} x^4 + \dots = \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \dots.\]
 \end{solution}
 
 \begin{problem}
     \begin{enumerate}
         \item Find the first three terms of the Maclaurin series for $\e^x (1 + \sin 2x)$.
-        \item It is given that the first two terms of this series are equal to the first two terms in the series expansion, in ascending powers of $x$, of $\bp{1 + \frac43 x}^n$. Find $n$ and show that the third terms in each of these series are equal.
+        \item It is given that the first two terms of this series are equal to the first two terms in the series expansion, in ascending powers of $x$, of $\bp{1 + 4x/3}^n$. Find $n$ and show that the third terms in each of these series are equal.
     \end{enumerate}
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that \[\e^x = 1 + x + \frac{x^2}{2} + \cdots\] and \[1 + \sin 2x = 1 + 2x + \cdots.\] Hence,
+        Observe that $\e^x = 1 + x + x^2/2 + \dots$ and $1 + \sin 2x = 1 + 2x + \dots$. Hence,
         \begin{align*}
-            \e^x \bp{1 + \sin 2x} &= \bp{1 + x + \frac{x^2}{2} + \cdots}\bp{1 + 2x + \cdots}\\
-            &= \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \cdots\\
-            &= 1 + 3x + \frac52 x^2 + \cdots.
+            \e^x \bp{1 + \sin 2x} &= \bp{1 + x + \frac{x^2}{2} + \dots}\bp{1 + 2x + \dots}\\
+            &= \bp{1 + 2x} + \bp{x + 2x^2} + \bp{\frac{x^2}{2}} + \dots\\
+            &= 1 + 3x + \frac52 x^2 + \dots.
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Note that \[\bp{1 + \frac43 x}^n = 1 + n\bp{\frac43 x} + \frac{n(n-1)}{2} \bp{\frac43 x}^2 + \cdots = 1 + \frac{4n}3 x + \frac{8n(n-1)}{9} x^2 \cdots.\] Comparing the second terms of both series, we get \[\frac{4n}{3} = 3 \implies n = \frac94.\] Thus, the third term of $(1 + \frac43 x)^n$ is \[\frac{8(\frac94)(\frac94 - 1)}{9} x^2 = \frac52 x^2.\] Hence, the third terms in each of these series are equal.
+        Note that \[\bp{1 + \frac43 x}^n = 1 + n\bp{\frac43 x} + \frac{n(n-1)}{2} \bp{\frac43 x}^2 + \dots = 1 + \frac{4n}3 x + \frac{8n(n-1)}{9} x^2 \dots.\] Comparing the second terms of both series, we get $4n/3 = 3$, so $n = 9/4$. Thus, the third term of $(1 + 4x/3)^n$ is \[\frac{8(9/4)(9/4 - 1)}{9} x^2 = \frac52 x^2.\] Hence, the third terms in each of these series are equal.
     \end{ppart}
 \end{solution}
 
 \clearpage
 \begin{problem}
     \begin{enumerate}
-        \item Show that the first three non-zero terms in the expansion of $\bp{\frac8{x^3} - 1}^{1/3}$ in ascending powers of $x$ are in the form $\frac{a}x + bx^2 + cx^5$, where $a$, $b$ and $c$ are constants to be determined.
-        \item By putting $x = \frac23$ in your result, obtain an approximation for $\sqrt[3]{26}$ in the form of a fraction in its lowest terms.
+        \item Show that the first three non-zero terms in the expansion of $\bp{8/x^3 - 1}^{1/3}$ in ascending powers of $x$ are in the form $a/x + bx^2 + cx^5$, where $a$, $b$ and $c$ are constants to be determined.
+        \item By putting $x = 2/3$ in your result, obtain an approximation for $\sqrt[3]{26}$ in the form of a fraction in its lowest terms.
 
         A student put $x = 6$ into the expansion to obtain an approximation of $\sqrt[3]{26}$. Comment on the suitability of this choice of $x$ for the approximation of $\sqrt[3]{26}$.
     \end{enumerate}
@@ -99,16 +112,16 @@
     \begin{ppart}
         We have
         \begin{align*}
-            \bp{\frac8{x^3} - 1}^{\frac13} &= \frac2x \bp{1 - \frac{x^3}8}^{\frac13}\\
-            &= \frac2x \bs{1 + \frac13 \bp{-\frac{x^3}8} + \frac{\bp{\frac13}\bp{\frac13 - 1}}{2} \bp{-\frac{x^3}8}^2 + \cdots} \\
-            &= \frac2x \bp{1 - \frac{x^3}{24} - \frac{x^6}{576} + \cdots}\\
-            &= \frac2x - \frac{x^2}{12} - \frac{x^5}{288} + \cdots.
+            \bp{\frac8{x^3} - 1}^{1/3} &= \frac2x \bp{1 - \frac{x^3}8}^{1/3}\\
+            &= \frac2x \bs{1 + \frac{1/3}{1!} \bp{-\frac{x^3}8} + \frac{\bp{1/3}\bp{1/3 - 1}}{2!} \bp{-\frac{x^3}8}^2 + \dots} \\
+            &= \frac2x \bp{1 - \frac{x^3}{24} - \frac{x^6}{576} + \dots}\\
+            &= \frac2x - \frac{x^2}{12} - \frac{x^5}{288} + \dots.
         \end{align*}
     \end{ppart}
     \begin{ppart}
-        Evaluating the above equation at $x = 2/3$, \[\sqrt[3]{26} \approx \bp{\frac8{\bp{2/3}^3} - 1}^{1/3} = \frac2{2/3} - \frac{\bp{2/3}^2}{12} - \frac{\bp{2/3}^5}{288} = \frac{6479}{2187}.\]
+        Evaluating the above equation at $x = 2/3$, \[\sqrt[3]{26} = \bp{\frac8{\bp{2/3}^3} - 1}^{1/3} \approx \frac2{2/3} - \frac{\bp{2/3}^2}{12} - \frac{\bp{2/3}^5}{288} = \frac{6479}{2187}.\]
 
-        Observe that the validity range for the series is \[\abs{-\frac{x^3}8} < 1 \implies -2 < x < 2.\] Since 6 is outside this range, it is not an appropriate choice.
+        Observe that the validity range for the series is $\abs{-x^3/8} < 1$, i.e. $-2 < x < 2$. Since 6 is outside this range, it is not an appropriate choice.
     \end{ppart}
 \end{solution}
 
@@ -157,11 +170,11 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Observe that \[\e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}6 + \cdots\] and \[\sin x = x - \frac{x^3}{6} + \cdots.\] Thus,
+        Observe that \[\e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}6 + \dots\] and \[\sin x = x - \frac{x^3}{6} + \dots.\] Thus,
         \begin{align*}
-            \e^x \sin x &= \bp{1 + x + \frac{x^2}2 + \frac{x^3}6 + \cdots}\bp{x - \frac{x^3}6 + \cdots}\\
-            &= \bp{x - \frac{x^3}6} + \bp{x^2} + \bp{\frac{x^3}2} + \cdots\\
-            &= x + x^2 + \frac{x^3}3 + \cdots.
+            \e^x \sin x &= \bp{1 + x + \frac{x^2}2 + \frac{x^3}6 + \dots}\bp{x - \frac{x^3}6 + \dots}\\
+            &= \bp{x - \frac{x^3}6} + \bp{x^2} + \bp{\frac{x^3}2} + \dots\\
+            &= x + x^2 + \frac{x^3}3 + \dots.
         \end{align*}
     \end{ppart}
     \begin{ppart}
@@ -195,31 +208,37 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Using G.C., $\bc{x \in \RR : -1.96 \leq x \leq 1.56}$.
+        Using G.C., the set of values is $[-1.96, 1.56]$.
     \end{ppart}
 \end{solution}
 
 \clearpage
 \begin{problem}
-    It is given that $y = 1/(1 + \sin 2x)$. Show that, when $x = 0$, $\derx[2]{y}{x} = 8$. Find the first three terms of the Maclaurin series for $y$.
+    It is given that $y = 1/(1 + \sin 2x)$. Show that $\derx[2]{y}{x} = 8$ when $x = 0$. Find the first three terms of the Maclaurin series for $y$.
 
     \begin{enumerate}
-        \item Use the series to obtain an approximate value for \[\int_{-0.1}^{0.1} y \d x,\] leaving your answer as a fraction in its lowest terms.
+        \item Use the series to obtain an approximate value for $\int_{-0.1}^{0.1} y \d x$, leaving your answer as a fraction in its lowest terms.
         \item Find the first two terms of the Maclaurin series for $\derx{y}{x}$.
         \item Write down the equation of the tangent at the point where $x = 0$ on the curve $y = 1/(1 + \sin 2x)$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Differentiating with respect to $x$, we get \[y' = -\frac{2\cos2x}{(1 + \sin 2x)^2} = -2y^2 \cos 2x.\] Differentiating once more, we get \[y'' = -2\bp{-2y^2\sin 2x + 2y \cdot y'\cos 2x }.\] Evaluating the above at $x = 0$, we obtain \[y(0) = 1, \quad y'(0) = -2, \quad y''(0) = 8.\] Hence, \[\frac1{1 + \sin 2x} = \frac{1}{0!} + \frac{-2}{1!}x + \frac{8}{2!}x^2 + \cdots = 1 - 2x + 4x^2 + \cdots.\]
+    Repeatedly differentiating with respect to $x$, we have
+    \begin{align*}
+        y' &= -\frac{2\cos2x}{(1 + \sin 2x)^2}\\
+        &= -2y^2 \cos 2x,\\
+        y'' &= -2\bp{-2y^2\sin 2x + 2y \cdot y'\cos 2x}.
+    \end{align*}
+    At $x = 0$, we obtain $y(0) = 1$, $y'(0) = -2$ and $y''(0) = 8$. Hence, \[\frac1{1 + \sin 2x} = \frac{1}{0!} + \frac{-2}{1!}x + \frac{8}{2!}x^2 + \dots = 1 - 2x + 4x^2 + \dots.\]
 
     \begin{ppart}
         \[\int_{-0.1}^{0.1} y \d x \approx \int_{-0.1}^{0.1} \bp{1 - 2x + 4x^2 } \d x = \evalint{x - x^2 + \frac43 x^3}{-0.1}{0.1} = \frac{76}{275}.\]
     \end{ppart}
     \begin{ppart}
-        \[y' = \der{}{x} \bp{1 - 2x + 4x^2 + \cdots} = -2 + 8x + \cdots.\]
+        \[y' = \der{}{x} \bp{1 - 2x + 4x^2 + \dots} = -2 + 8x + \dots.\]
     \end{ppart}
     \begin{ppart}
-        Using the point-slope formula, \[y-1=-2(x-0) \implies y = -2x + 1.\]
+        Using the point-slope formula, $y-1=-2(x-0)$, so the equation of the tangent line is $y = -2x + 1$.
     \end{ppart}
 \end{solution}
 
@@ -235,13 +254,13 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Note that $\ln y = \arcsin{2x}$. Implicitly differentiating with respect to $x$, \[\frac1y \cdot \der{y}{x} = \frac2{\sqrt{1 - 4x^2}} \implies \der{y}{x} = \frac{2y}{\sqrt{1 - 4x^2}}.\] Implicitly differentiating with respect to $x$ once again, \[\der[2]{y}{x} = \frac{\sqrt{1 - 4x^2} \bp{2 \cdot \der{y}{x}} - 2y \bp{\frac{-4x}{\sqrt{1 - 4x^2}}}}{1 - 4x^2}.\] Now observe that \[2\sqrt{1 - 4x^2} \cdot \der{y}{x} + 4x \bp{\frac{2y}{\sqrt{1 - 4x^2}}} = 4y + 4x \cdot \der{y}{x}.\] Hence, \[\bp{1 - 4x^2}\der[2]{y}{x} = 4y + 4x\cdot\der{y}{x} \implies \bp{1-4x^2}\der[2]{y}{x} - 4x \cdot \der{y}{x} = 4y.\]
+        Note that $\ln y = \arcsin{2x}$. Implicitly differentiating with respect to $x$, \[\frac1y \der{y}{x} = \frac2{\sqrt{1 - 4x^2}},\] so \[\der{y}{x} = \frac{2y}{\sqrt{1 - 4x^2}}.\] Implicitly differentiating with respect to $x$ once again, \[\der[2]{y}{x} = \frac{\sqrt{1 - 4x^2} \bp{2 \cdot \derx{y}{x}} - 2y \bp{-4x/\sqrt{1 - 4x^2}}}{1 - 4x^2}.\] Now observe that the numerator simplifies to \[2\sqrt{1 - 4x^2} \der{y}{x} + 4x \bp{\frac{2y}{\sqrt{1 - 4x^2}}} = 4y + 4x \der{y}{x}.\] Hence, \[\bp{1 - 4x^2}\der[2]{y}{x} = 4y + 4x\der{y}{x},\] so \[\bp{1-4x^2}\der[2]{y}{x} - 4x \der{y}{x} = 4y.\]
     \end{ppart}
     \begin{ppart}
-        Implicitly differentiating with respect to $x$ once again, \[\bp{1 - 4x^2} \der[3]{y}{x} -8x \cdot \der[2]{y}{x} -4 \bp{x \cdot \der[2]{y}{x} + \der{y}{x}} = 4\cdot \der{y}{x}.\] Rearranging, \[\bp{1 - 4x^2} \der[3]{y}{x} -12x \cdot \der[2]{y}{x} - 8 \cdot\der{y}{x} = 0.\] Evaluating the above equations at $x = 0$, we get \[y(0) = 1, \quad y'(0) = 2, \quad y''(0) = 4, \quad y'''(0) = 16.\] Hence, \[y = \frac{1}{0!} + \frac{2}{1!}x + \frac{4}{2!}x^2 + \frac{16}{3!}x^3 + \cdots = 1 + 2x + 2x^2 + \frac83 x^3 + \cdots.\]
+        Implicitly differentiating with respect to $x$ once again, \[\bp{1 - 4x^2} \der[3]{y}{x} -8x \der[2]{y}{x} -4 \bp{x \der[2]{y}{x} + \der{y}{x}} = 4\der{y}{x}.\] At $x = 0$, we get $y(0) = 1$, $y'(0) = 2$, $y''(0) = 4$ and $y'''(0) = 16$. Hence, \[y = \frac{1}{0!} + \frac{2}{1!}x + \frac{4}{2!}x^2 + \frac{16}{3!}x^3 + \dots = 1 + 2x + 2x^2 + \frac83 x^3 + \dots.\]
     \end{ppart}
     \begin{ppart}
-        Consider $y = \e^{\pi/2}$. \[y = \exp{\arcsin 2x} = \e^{\pi/2} \implies x = \frac12 \sin \frac\pi2 = \frac12.\] Substituting $x = 1/2$ into the Maclaurin series for $y$, \[\e^{\pi/2} \approx 1 + 2\bp{\frac12} + 2\bp{\frac12}^2 + \frac83 \bp{\frac12}^3 = \frac{17}6.\]
+        Notice that when $x = 1/2$, we have $y = \exp{\arcsin 1} = \exp{\pi/2}$. Substituting $x = 1/2$ into the Maclaurin series for $y$, \[\e^{\pi/2} \approx 1 + 2\bp{\frac12} + 2\bp{\frac12}^2 + \frac83 \bp{\frac12}^3 = \frac{17}6.\]
     \end{ppart}
     \begin{ppart}
         More terms of the Maclaurin series of $y$ could be considered.
@@ -257,12 +276,18 @@
         \item Using the two power series you have found, show to this degree of approximation, that $f(x)$ can be expressed as $a(\tan 2x - \sec 2x) + b$, where $a$ and $b$ are constants to be determined.
     \end{enumerate}
 \end{problem}
+\clearpage
 \begin{solution}
     \begin{ppart}
-        Note that \[y' = \frac{6-2y}{\cos 2x} \implies y' \cos 2x = 6-2y.\] Implicitly differentiating with respect to $x$, \[-2y'\sin 2x + y'' \cos 2x = -2 y'.\] Implicitly differentiating once more, \[-2\bp{y'' \sin 2x + 2 y' \cos 2x} + \bp{y''' \cos 2x -2 y'' \sin 2x} = -2y''\] Hence, \[y(0) = 1, \quad y'(0) = 4, \quad y''(0) = -8, \quad y'''(0) = 32,\] whence \[f(x) = \frac{1}{0!} x + \frac{4}{1!} x + \frac{-8}{2!} x^2 + \frac{32}{3!} x^3 + \cdots = 1 + 4x -4x^2 + \frac{16}3 x^3 + \cdots.\]
+        Repeatedly differentiating $y' \cos 2x = 6-2y$, we get
+        \begin{align*}
+            -2y'\sin 2x + y'' \cos 2x &= -2 y',\\
+            -2\bp{y'' \sin 2x + 2 y' \cos 2x} + \bp{y''' \cos 2x -2 y'' \sin 2x} &= -2y''.
+        \end{align*}
+        At $x = 0$, we obtain $y(0) = 1$, $y'(0) = 4$, $y''(0) = -8$, and $y'''(0) = 32$. Thus, \[f(x) = \frac{1}{0!} x + \frac{4}{1!} x + \frac{-8}{2!} x^2 + \frac{32}{3!} x^3 + \dots = 1 + 4x -4x^2 + \frac{16}3 x^3 + \dots.\]
     \end{ppart}
     \begin{ppart}
-        Note that \[\frac1{\cos x} \approx \bp{1 - \frac{x^2}{2}}^{-1} \approx 1 + \frac{x^2}{2}.\] Hence, \[\frac{1-\sin x}{\cos x} \approx \bp{1 - x + \frac{x^3}6}\bp{1 + \frac{x^2}{2}} = 1 - x + \frac{x^2}2 - \frac{x^3}3 + \cdots.\]
+        Note that \[\frac1{\cos x} \approx \bp{1 - \frac{x^2}{2}}^{-1} \approx 1 + \frac{x^2}{2}.\] Hence, \[\frac{1-\sin x}{\cos x} \approx \bp{1 - x + \frac{x^3}6}\bp{1 + \frac{x^2}{2}} = 1 - x + \frac{x^2}2 - \frac{x^3}3 + \dots.\]
     \end{ppart}
     \begin{ppart}
         Note that \[\frac{1 - \sin x}{\cos x} = \sec x - \tan x.\] Hence,
@@ -272,7 +297,7 @@
             &= a \bp{-\frac32 + \frac{f(x)}2} + b\\
             &= -\frac32 a + b + \frac{a}2 f(x).
         \end{align*}
-        Thus, \[\frac{a}2 f(x) - \frac32 a + b \approx a(\tan 2x - \sec 2x) + b.\] In order to obtain an approximation for $f(x)$, we need $\frac{a}2 = 1$ and $-\frac32 a + b = 0$, whence $a = 2$ and $b = 3$.
+        Thus, \[\frac{a}2 f(x) - \frac32 a + b \approx a(\tan 2x - \sec 2x) + b.\] In order to obtain an approximation for $f(x)$, we need $a/2 = 1$ and $-3a/2 + b = 0$, whence $a = 2$ and $b = 3$.
     \end{ppart}
 \end{solution}
 
@@ -280,26 +305,28 @@
     Given that $x$ is sufficiently small for $x^3$ and higher powers of $x$ to be neglected, and that $13 - 59\sin x = 10(2 - \cos 2x)$, find a quadratic equation for $x$ and hence solve for $x$.
 \end{problem}
 \begin{solution}
-    Note that \[13-59\sin x = 10\bp{2 - \cos 2x} = 10\bs{2 - \bp{1-2\sin^2 x}} = 10 + 20\sin^2 x.\] Thus, \[20\sin^2 x + 59 \sin x - 3 = (20 \sin x - 1)(\sin x + 3) = 0,\] whence $\sin x = 1/20$. Note that we reject $\sin x = -3$ since $\abs{\sin x} \leq 1$. Since $x$ is sufficiently small for $x^3$ and higher powers of $x$ to be neglected, $\sin x \approx x$. Thus, $x \approx 1/20$.
+    Note that $10\bp{2 - \cos 2x} = 10\bs{2 - \bp{1-2\sin^2 x}} = 10 + 20\sin^2 x$. Thus, from the given equation, we obtain the quadratic $13 - 59\sin x = 10 + 20 \sin^2 x$, which rearranges to give $20\sin^2 x + 59 \sin x - 3 = (20 \sin x - 1)(\sin x + 3) = 0$, whence $\sin x = 1/20$. Note that we reject $\sin x = -3$ since $\abs{\sin x} \leq 1$. Since $x$ is sufficiently small for $x^3$ and higher powers of $x$ to be neglected, $\sin x \approx x$. Thus, $x \approx 1/20$.
 \end{solution}
 
 \begin{problem}
     In triangle $ABC$, angle $A = \pi/3$ radians, angle $B = (\pi/3 + x)$ radians and angle $C = (\pi/3 - x)$ radians, where $x$ is small. The lengths of the sides $BC$, $CA$ and $AB$ are denoted by $a$, $b$ and $c$ respectively. Show that $b-c \approx 2ax/\sqrt3$.
 \end{problem}
 \begin{solution}
-    By the sine rule, \[\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}.\] Hence, \[b = a\bp{\frac{\sin B}{\sin A}} = \frac{2a}{\sqrt3}\sin B, \quad c = a \bp{\frac{\sin C}{\sin A}} = \frac{2a}{\sqrt3}\sin C.\] Thus,
+    By the sine rule, \[\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}.\] Hence, \[b = a\bp{\frac{\sin B}{\sin A}} = \frac{2a}{\sqrt3}\sin B \quad \tand \quad c = a \bp{\frac{\sin C}{\sin A}} = \frac{2a}{\sqrt3}\sin C.\] Thus,
     \begin{align*}
         b - c &= \frac{2a}{\sqrt 3} \bp{\sin B - \sin C}\\
         &= \frac{2a}{\sqrt3} \bs{\sin{\frac\pi3 + x} - \sin{\frac\pi3 - x}}\\
         &= \frac{2a}{\sqrt3} \bs{2\sin x \cos \frac\pi3}\\
         &= \frac{2a}{\sqrt3} \sin x.
     \end{align*}
-    Since $x$ is small, $\sin x \approx x$. Hence, \[b - c \approx \frac{2ax}{\sqrt3}.\]
+    Since $x$ is small, $\sin x \approx x$, so $b - c \approx 2ax/\sqrt3$.
 \end{solution}
 
 \begin{problem}
-    D'Alembert's ratio test states that a series of the form $\sum_{r = 0}^\infty a_r$ converges when $\lim_{n \to \infty} \abs{\frac{a_{n+1}}{a_n}} < 1$, and diverges when $\lim_{n \to \infty} \abs{\frac{a_{n+1}}{a_n}} > 1$. When $\lim_{n \to \infty} \abs{\frac{a_{n+1}}{a_n}} = 1$, the test is inconclusive. Using the test, explain why the series $\sum_{r=0}^\infty \frac{x^r}{r!}$ converges for all real values of $x$ and state the sum to infinity of this series, in terms of $x$.
+    For a sequence $\bc{a_0, a_1, \dots}$, let \[L = \lim_{n \to \infty} \abs{\frac{a_{n+1}}{a_n}}.\] D'Alembert's ratio test states that a series of the form $\sum_{r = 0}^\infty a_r$ converges when $L<1$ and diverges when $L>1$. When $L = 1$, the test is inconclusive.
+    
+    Using the test, explain why the series \[\sum_{r=0}^\infty \frac{x^r}{r!}\] converges for all real values of $x$ and state the sum to infinity of this series, in terms of $x$.
 \end{problem}
 \begin{solution}
-    Let $a_n = \frac{x^n}{n!}$ and consider $\lim_{n \to \infty} \abs{\frac{a_{n+1}}{n}}$. \[\lim_{n \to \infty} \abs{\frac{a_{n+1}}{n}} = \lim_{n \to \infty} \abs{\frac{x^{n+1}}{(n+1)!} \Big/ \frac{x^n}{n!}} = \lim_{n \to \infty} \abs{\frac{x^{n+1}}{x^n} \cdot \frac{n!}{(n+1)!}} = \lim_{n \to \infty} \abs{\frac{x}{n+1}} = 0.\] Since $\lim_{n \to \infty} \abs{\frac{a_{n+1}}{n}} < 1$ for all $x \in \RR$, it follows by D'Alembert's ratio test that $\sum_{r=0}^\infty \frac{x^r}{r!}$ converges for all real values of $x$. The sum to infinity of the series in question is $\e^x$.
+    Let $a_n = x^n/n!$ and consider $L$: \[L = \lim_{n \to \infty} \abs{\frac{a_{n+1}}{n}} = \lim_{n \to \infty} \abs{\frac{x^{n+1}}{(n+1)!} \Big/ \frac{x^n}{n!}} = \lim_{n \to \infty} \abs{\frac{x}{n+1}} = 0.\] Since $L < 1$ for all $x \in \RR$, it follows by D'Alembert's ratio test that the series in question converges for all real values of $x$. The sum to infinity of the series in question is $\e^x$.
 \end{solution}

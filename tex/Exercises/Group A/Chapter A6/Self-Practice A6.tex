@@ -1,10 +1,10 @@
 \section{Self-Practice A6}
 
 \begin{problem}
-    A curve $C$ has equation, in polar coordinates, $r = a\sqrt{\bp{4 + \sin^2 \t} \cos \t}$, $-\frac12 \pi \leq \t \leq \frac12 \pi$, where $a$ is a positive constant.
+    A curve $C$ has equation, in polar coordinates, $r = a\sqrt{\bp{4 + \sin^2 \t} \cos \t}$, $-\pi/2 \leq \t \leq \pi/2$, where $a$ is a positive constant.
 
     \begin{enumerate}
-        \item Show that $\der{}{\t} \bs{\bp{4 + \sin^2 \t}\cos\t} = -\bp{2 + 3\sin^2 \t} \sin \t$. Hence, state, with a reason, whether $r$ increases or decreases as $\t$ increases, for $0 < \t \leq \frac12 \pi$.
+        \item Show that $\derx{}{\t} \bs{\bp{4 + \sin^2 \t}\cos\t} = -\bp{2 + 3\sin^2 \t} \sin \t$. Hence, state, with a reason, whether $r$ increases or decreases as $\t$ increases, for $0 < \t \leq \pi/2$.
         \item Sketch the curve $C$.
         \item Find the Cartesian equation of $C$ in the form $\bp{x^2 + y^2}^m = a^2 x \bp{bx^2 + cy^2}$, giving the numerical values of $m$, $b$ and $c$.
     \end{enumerate}
@@ -51,13 +51,13 @@
         \end{center}
     \end{ppart}
     \begin{ppart}
-        Squaring, we have \[r^2 = a^2 \bp{4 + \sin^2 \t} \cos \t.\] Recall that $x = r\cos \t$ and $y = r\sin \t$, so \[r^2 = a^2 \bs{4 + \bp{\frac{y}{r}}^2} \bp{\frac{x}{r}} \implies r^5 = a^2 x \bp{4r^2 + y^2}.\] Since $x^2 + y^2 = r^2$, we get \[\bp{x^2 + y^2}^{5/2} = a^2 x \bp{4x^2 + 5y^2},\] whence $m = 5/2$, $b = 4$ and $c = 5$.
+        Squaring, we have $r^2 = a^2 \bp{4 + \sin^2 \t} \cos \t$. Recall that $x = r\cos \t$ and $y = r\sin \t$, so \[r^2 = a^2 \bs{4 + \bp{\frac{y}{r}}^2} \bp{\frac{x}{r}},\] whence $r^5 = a^2 x \bp{4r^2 + y^2}$. Since $x^2 + y^2 = r^2$, we get $\bp{x^2 + y^2}^{5/2} = a^2 x \bp{4x^2 + 5y^2}$, so $m = 5/2$, $b = 4$ and $c = 5$.
     \end{ppart}
 \end{solution}
 
 \clearpage
 \begin{problem}
-    The diagram shows a sketch of the curve $C$ with polar equation $r = a\cos^2 \t$, where $a$ is a positive constant and $-\frac12 \pi \leq \t \leq \frac12 \pi$.
+    The diagram shows a sketch of the curve $C$ with polar equation $r = a\cos^2 \t$, where $a$ is a positive constant and $-\pi/2 \leq \t \leq \pi/2$.
 
     \begin{center}\tikzsetnextfilename{334}
         \begin{tikzpicture}[trim axis left, trim axis right]
@@ -95,12 +95,12 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Observe that \[a\cos^2 \t = a\cos[2]{-\t}.\] Hence, $C$ is invariant under the transformation $\t \mapsto -\t$, whence it is symmetrical about the line $\t = 0$.
+        Observe that $a\cos^2 \t = a\cos[2]{-\t}$, so $C$ is invariant under the transformation $\t \mapsto -\t$, whence it is symmetrical about the line $\t = 0$.
 
         For tangents to the pole, we have $r = 0$. Since $a > 0$, we require $\cos \t = 0$, whence $\t = \pm \pi/2$, which are clearly perpendicular to the line $\t = 0$.
     \end{ppart}
     \begin{ppart}
-        We have \[r = a\cos^2 \t = a \bp{\frac{x}{r}}^2 \implies r^3 = ax^2.\] Hence, \[x^2 + y^2 = r^2 = \bp{ax^2}^{2/3} \implies y^2 = a^{2/3} x^{4/3} - x^2.\]
+        We have \[r = a\cos^2 \t = a \bp{\frac{x}{r}}^2,\] so $r^3 = ax^2$. Hence, $x^2 + y^2 = r^2 = \bp{ax^2}^{2/3}$, giving $y^2 = a^{2/3} x^{4/3} - x^2$.
     \end{ppart}
 \end{solution}
 
@@ -116,7 +116,7 @@
 \clearpage
 \begin{solution}
     \begin{ppart}
-        Observe that \[1 + \sin 2\t = 1 + \sin{2\t + 2\pi} = 1 + \sin{2(\t + \pi)}.\] Hence, $C$ is invariant under the transformation $\t \mapsto \t + \pi$, whence $C$ is symmetric about the pole.
+        Observe that $1 + \sin 2\t = 1 + \sin{2\t + 2\pi} = 1 + \sin{2(\t + \pi)}$. Hence, $C$ is invariant under the transformation $\t \mapsto \t + \pi$, whence $C$ is symmetric about the pole.
     \end{ppart}
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{39}
@@ -157,7 +157,7 @@
         Consider the top-right loop. $r$ attains a maximum of 2 when $\t = \pi/4$. Suppose the loop is a circle (with radius 1). Then the centre should be $(1, \pi/4)$, which is $(1/\sqrt2, 1\sqrt2)$ in Cartesian coordinates. The distance between $(1/\sqrt2, 1/\sqrt2)$ and $(1, 0)$ is given by \[\sqrt{\bp{\frac1{\sqrt2} - 1}^2 + \bp{\frac1{\sqrt2} - 0}^2} = \sqrt{2 - \sqrt{2}} \neq 1.\] Hence, the loop is not a circle.
     \end{ppart}
     \begin{ppart}
-        We have \[r = 1 + \sin 2\t = 1 + 2\cos \t \sin \t = 1 + 2\bp{\frac{x}{r}} \bp{\frac{y}{r}}.\] Thus, \[r^3 = r^2 + 2xy \implies \bp{x^2 + y^2}^{3/2} = x^2 + y^2 + 2xy = (x + y)^2.\] Squaring both sides yields the desired equation: \[\bp{x^2 + y^2}^3 = \bp{x + y}^4.\]
+        We have \[r = 1 + \sin 2\t = 1 + 2\cos \t \sin \t = 1 + 2\bp{\frac{x}{r}} \bp{\frac{y}{r}}.\] Thus, $r^3 = r^2 + 2xy$, so $\bp{x^2 + y^2}^{3/2} = x^2 + y^2 + 2xy = (x + y)^2$. Squaring both sides yields the desired equation.
     \end{ppart}
 \end{solution}
 
@@ -165,15 +165,9 @@
     Prove that at all points of intersection of the polar curves with equations $r = a(1 + \cos \t)$ and $r = b(1 - \cos\t)$, the tangent lines are perpendicular.
 \end{problem}
 \begin{solution}
-    Consider the gradient of $C_1$. Firstly, we have \[\der{x}{\t} = \der{r}{\t} \cos \t - r\sin \t = -a\sin\t - 2a\sin\t\cos\t = -a\bp{\sin\t + \sin2\t}.\] Next, we have \[\der{y}{\t} = \der{r}{t} \sin \t + r \cos \t = a\cos \t - a \cos^2 \t + a \sin^2 \t = a\bp{\cos \t - \cos 2\t}.\] Thus, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = -\bp{\frac{\cos \t - \cos 2\t}{\sin\t + \sin2\t}}.\]
+    Consider the gradient of $C_1$. We have \[\der{x}{\t} = \der{r}{\t} \cos \t - r\sin \t = -a\sin\t - 2a\sin\t\cos\t = -a\bp{\sin\t + \sin2\t}\] and \[\der{y}{\t} = \der{r}{t} \sin \t + r \cos \t = a\cos \t - a \cos^2 \t + a \sin^2 \t = a\bp{\cos \t - \cos 2\t},\] so \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = -\bp{\frac{\cos \t - \cos 2\t}{\sin\t + \sin2\t}}.\]
 
-    Consider the gradient of $C_2$. Firstly, we have \[\der{x}{\t} = \der{r}{\t} \cos \t - r\sin \t = -b \sin\t + 2b\cos \t \sin \t = b\bp{\sin 2\t - \sin \t}.\] Next, we have \[\der{y}{\t} = \der{r}{t} \sin \t + r \cos \t = b\cos \t - b \cos^2 \t + b \sin^2 \t = b\bp{\cos \t - \cos 2\t}.\] Thus, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{\cos \t - \cos 2\t}{\sin 2\t - \sin \t}.\]
+    Consider the gradient of $C_2$. We have \[\der{x}{\t} = \der{r}{\t} \cos \t - r\sin \t = -b \sin\t + 2b\cos \t \sin \t = b\bp{\sin 2\t - \sin \t}\] and \[\der{y}{\t} = \der{r}{t} \sin \t + r \cos \t = b\cos \t - b \cos^2 \t + b \sin^2 \t = b\bp{\cos \t - \cos 2\t},\] so \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{\cos \t - \cos 2\t}{\sin 2\t - \sin \t}.\]
 
-    Consider the product of the gradients: \[-\bp{\frac{\cos \t - \cos 2\t}{\sin\t + \sin2\t}}\bp{\frac{\cos \t - \cos 2t}{\sin 2\t - \sin \t}} = -\frac{\cos^2 \t - \cos^2 2\t}{\sin^2 2\t - \sin^2 \t}.\] Observe that \[\cos^2 \t - \cos^2 2\t = \cos^2 \t - \bp{2\cos^2 \t - 1}^2 = -4\cos^4 \t + 5\cos^2 \t - 1.\] Also observe that
-    \begin{align*}
-        \sin^2 2\t - \sin^2 \t &= 4\sin^2 \t \cos^2 \t - \sin^2 \t\\
-        &= 4\bp{1 - \cos^2 \t} \cos^2 \t - \bp{1 - \cos^2 \t}\\
-        &= -4\cos^4 \t + 5\cos^2 \t - 1.
-    \end{align*}
-    Hence, the product of the gradients is \[-\frac{\cos^2 \t - \cos^2 2\t}{\sin^2 2\t - \sin^2 \t} = -\frac{-4\cos^4 \t + 5\cos^2 \t - 1}{-4\cos^4 \t + 5\cos^2 \t - 1} = -1.\] Thus, for any given $\t$, the tangents of $C_1$ and $C_2$ are perpendicular. This immediately implies that the tangent lines at all intersection points of $C_1$ and $C_2$ are perpendicular.
+    Consider the product of the gradients: \[-\bp{\frac{\cos \t - \cos 2\t}{\sin\t + \sin2\t}}\bp{\frac{\cos \t - \cos 2t}{\sin 2\t - \sin \t}} = -\frac{\cos^2 \t - \cos^2 2\t}{\sin^2 2\t - \sin^2 \t}.\] But $\cos^2 \t - \cos^2 2\t = \bp{1 - \sin^2 \t} - \bp{1 - \sin^2 2\t} = \sin^2 2\t - \sin^2 \t$, so the product of the gradients is simply $-1$. Thus, for any given $\t$, the tangents of $C_1$ and $C_2$ are perpendicular. This immediately implies that the tangent lines at all intersection points of $C_1$ and $C_2$ are perpendicular.
 \end{solution}

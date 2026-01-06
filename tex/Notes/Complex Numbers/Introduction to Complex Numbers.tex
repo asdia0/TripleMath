@@ -272,22 +272,34 @@ De Moivre's theorem can also be used to derive trigonometric identities. The tri
     Let $z = \cos \t + \i \sin \t = \e^{\i \t}$. Then \[z^n + z^{-n} = 2\cos n\t, \qquad z^n - z^{-n} = 2\i \sin n\t.\]
 \end{proposition}
 \begin{proof}
-    Use de Moivre's theorem
+    By de Moivre's theorem,
+    \begin{align*}
+        z^n &= \cos{n\t} + \i \sin{n\t},\\
+        z^{-n} &= \cos{-n\t} + \i \sin{-n\t}\\
+        &= \cos{n\t} - \i \sin{n \t}.
+    \end{align*}
+    Adding and subtracting the above equations yields the desired claim.
 \end{proof}
 
 \begin{recipe}[Multiple Angles to Powers]
     Suppose we want to express $\cos n\t$ and $\sin n\t$ in terms of powers of $\sin \t$ and $\cos \t$. We begin by invoking de Moivre's theorem: \[\cos n\t + \i \sin n\t = \bp{\cos \t + \i \sin \t}^n.\] Next, using the binomial theorem, \[\cos n\t + \i \sin n\t = \sum_{k = 0}^n \binom{n}{k} \cos^k \t \sin^{n-k} \t.\] We then take the real and imaginary parts of both sides to isolate $\cos n\t$ and $\sin n\t$: \[\cos n\t = \Re \sum_{k = 0}^n \binom{n}{k} \cos^k \t \sin^{n-k} \t, \qquad \sin n\t = \Im \sum_{k = 0}^n \binom{n}{k} \cos^k \t \sin^{n-k} \t.\]
 \end{recipe}
 
-\begin{example}
-    Suppose we want to write $\sin 2\t$ in terms of $\sin \t$ and $\cos \t$. Using de Moivre's theorem, \[\cos 2\t + \i \sin 2\t = \bp{\cos \t + \i \sin \t}^2 = \cos^2 \t + 2\i \cos \t \sin \t - \sin^2 \t.\] Comparing imaginary parts, we obtain $\sin 2\t = 2\cos\t\sin\t$ as expected.
-\end{example}
+\begin{sample}
+    Prove that $\sin 2\t = 2 \sin \t \cos \t$.
+\end{sample}
+\begin{sampans}
+    Using de Moivre's theorem, \[\cos 2\t + \i \sin 2\t = \bp{\cos \t + \i \sin \t}^2 = \cos^2 \t + 2\i \cos \t \sin \t - \sin^2 \t.\] Comparing imaginary parts, we obtain $\sin 2\t = 2\cos\t\sin\t$ as desired.
+\end{sampans}
 
 Another way to derive new trigonometric identities is to differentiate known identities.
 
-\begin{example}
-    Using the ``power to multiple angle'' formula above, one can show that \[\cos^6 \t = \frac1{32} \bp{\cos 6\t + 6\cos4\t + 15\cos2\t + 10}.\] Differentiating, we obtain a new trigonometric identity: \[\sin \t \cos^5 \t = \frac1{32} \bp{\sin 6\t + 4\sin 4\t + 5\sin 2\t}.\]
-\end{example}
+\begin{sample}
+    Prove that \[\sin \t \cos^5 \t = \frac1{32} \bp{\sin 6\t + 4\sin 4\t + 5\sin 2\t}.\]
+\end{sample}
+\begin{sampans}
+    Using the ``power to multiple angle'' formula above, one can show that \[\cos^6 \t = \frac1{32} \bp{\cos 6\t + 6\cos4\t + 15\cos2\t + 10}.\] Differentiating yields the desired identity.
+\end{sampans}
 
 \section{Solving Polynomial Equations over \texorpdfstring{$\CC$}{Complex Numbers}}
 

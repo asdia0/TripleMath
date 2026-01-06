@@ -234,9 +234,12 @@ Many real-life situations require that some quantity be minimized (e.g. cost of 
     Suppose we have a dependent variable $y$ that we wish to maximize. We first express $y$ in terms of a single independent variable, say $x$. We then differentiate $y$ with respect to $x$ and solve for stationary points. Lastly, we determine the nature of the stationary points to obtain the maximum point.
 \end{recipe}
 
-\begin{example}
-    Suppose we wish to enclose the largest rectangular area with only 20 metres of fence. Let $x$ m and $y$ m be the length and width of the rectangular area. The perimeter of the rectangular area is $2(x + y) = 20$, so \[y = 10 - x.\] We can hence express the area of the rectangular area $A$ solely in terms of $x$: \[A = xy = x(10 - x) = -x^2 + 10x.\] Differentiating $A$ with respect to $x$, we see that \[\der{A}{x} = -2x + 10.\] There is hence a stationary point at $x = 5$. By the second derivative test, this is a maximum point. Thus, $x = y = 5$ gives the largest rectangular area.
-\end{example}
+\begin{sample}
+    Find the largest rectangular area enclosable with 20 metres of fence.
+\end{sample}
+\begin{sampans}
+    Let $x$ m and $y$ m be the length and width of the rectangular area. The perimeter of the rectangular area is $2(x + y) = 20$. Solving for $y$, we get $y = 10 - x$. We can hence express the area of the rectangular area $A$ solely in terms of $x$: \[A = xy = x(10 - x) = -x^2 + 10x.\] Differentiating $A$ with respect to $x$, we see that \[\der{A}{x} = -2x + 10.\] There is hence a stationary point at $x = 5$. By the second derivative test, this is a maximum point. Thus, $x = y = 5$ gives the largest rectangular area of $5 \times 5 = 25$ metres$^2$.
+\end{sampans}
 
 \section{Connected Rates of Change}
 

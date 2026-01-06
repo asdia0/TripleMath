@@ -1,13 +1,13 @@
 \section{Tutorial A1.3 Set 2}
 
 \begin{problem}
-    Let $I = \int_0^{2\pi} \frac{1}{2 - \cos x} \d x$. Explain the error in the following argument:
+    Let \[I = \int_0^{2\pi} \frac{1}{2 - \cos x} \d x.\] Explain the error in the following argument:
 
     \begin{quote}\itshape
-        Since $\abs{\cos x} \leq 1$, it follows that $1/(2-\cos x) > 0$, and, interpreting the integral as an area, it follows that $I$ is positive. However, putting $t = \tan{x/2}$, \[I = \int_{\tan 0}^{\tan \pi} \frac{\frac{2}{1+t^2}}{2 - \frac{1-t^2}{1 + t^2}} \d t = 2\int_0^0 \frac{1}{1 + 3t^2} \d t = 0.\] Thus, the positive number $I$ is equal to 0.
+        Since $\abs{\cos x} \leq 1$, it follows that $1/(2-\cos x) > 0$, and, interpreting the integral as an area, it follows that $I$ is positive. However, putting $t = \tan{x/2}$, \[I = \int_{\tan 0}^{\tan \pi} \frac{2/(1+t^2)}{2 - (1-t^2)/(1 + t^2)} \d t = 2\int_0^0 \frac{1}{1 + 3t^2} \d t = 0.\] Thus, the positive number $I$ is equal to 0.
     \end{quote}
 
-    Prove that $I = \int_0^\pi \frac1{2 - \cos x} \d x$, and deduce that $I = \frac{2\pi\sqrt3}{3}$.
+    Prove that \[I = \int_0^\pi \frac1{2 - \cos x} \d x,\] and deduce that \[I = \frac{2\pi\sqrt3}{3}.\]
 \end{problem}
 \begin{solution}
     $t = \tan{x/2}$ is discontinuous at $x = \pi$. Hence, direct substitution is not allowed.
@@ -22,7 +22,7 @@
     Using the substitution $t = \tan{x/2}$, we have
     \begin{align*}
         I &= 2\int_0^{\pi} \frac1{2 - \cos x} \d x\\
-        &= 2\int_0^{\infty} \frac{\frac{2}{1+t^2}}{2 - \frac{1-t^2}{1 + t^2}} \d t\\
+        &= 2\int_0^{\infty} \frac{2/(1+t^2)}{2 - (1-t^2)/(1 + t^2)} \d t\\
         &= 4\int_0^\infty \frac1{1 + 3t^2} \d t\\
         &= 4 \evalint{\frac1{\sqrt3} \arctan{\sqrt3 x}}{0}{\infty}\\
         &= \frac{4}{\sqrt3} \cdot \frac\pi2\\
@@ -32,8 +32,8 @@
 
 \begin{problem}
     Without using G.C., evaluate
-    \begin{tasks}
-        \task $\displaystyle\int_0^{\pi/2} \sin x \cos 2x \sin 3x \d x,$
+    \begin{tasks}(2)
+        \task $\displaystyle\int_0^{\pi/2} \sin x \cos 2x \sin 3x \d x$;
         \task $\displaystyle\int_1^2 \frac1{x + \sqrt{x}} \d x$.
     \end{tasks}
 \end{problem}
@@ -72,10 +72,10 @@
         By the Fundamental Theorem of Calculus, \[G'(x) = \der{}{x} \int_0^x f(t) \d t = f(x).\]
     \end{ppart}
     \begin{ppart}
-        Note that $F(x) = G(x) - x f(1)$. Notice further that \[F(0) = \int_0^0 \bs{f(t) - f(1)} \d t = 0 \quad \tand \quad F(1) = \int_0^1 f(t) \d t - f(1) = f(1) - f(1) = 0.\] Since \[F'(x) = G'(x) - f(1) = f(x) - f(1),\] by Rolle's Theorem, there exists some $c \in (0, 1)$ such that \[F'(c) = 0 \implies f(c) - f(1) = 0 \implies f(c) = f(1).\]
+        Note that $F(x) = G(x) - x f(1)$. Notice further that \[F(0) = \int_0^0 \bs{f(t) - f(1)} \d t = 0 \quad \tand \quad F(1) = \int_0^1 f(t) \d t - f(1) = f(1) - f(1) = 0.\] Since $F'(x) = G'(x) - f(1) = f(x) - f(1)$, by Rolle's Theorem, there exists some $c \in (0, 1)$ such that $F'(c) = 0$. That is, $f(c) - f(1) = 0$, so $f(c) = f(1)$.
     \end{ppart}
     \begin{ppart}
-        By the Mean Value Theorem, there exists some $c_1 \in (0, 1)$ such that \[f'(c_1) = \frac{f(1) - f(0)}{1 - 0} = 0.\] Likewise, there exists some $c_2 \in (0, 1)$ such that \[f'(c_2) = \frac{f(1) - f(c)}{1 - c} = 0.\] Invoking Rolle's Theorem on $f'(x)$, it follows that there exists some $d \in (c_1, c_2) \subseteq (0, 1)$ such that \[f''(d) = 0.\]
+        By the Mean Value Theorem, there exists some $c_1 \in (0, 1)$ such that \[f'(c_1) = \frac{f(1) - f(0)}{1 - 0} = 0.\] Likewise, there exists some $c_2 \in (0, 1)$ such that \[f'(c_2) = \frac{f(1) - f(c)}{1 - c} = 0.\] Invoking Rolle's Theorem on $f'(x)$, it follows that there exists some $d \in (c_1, c_2) \subseteq (0, 1)$ such that $f''(d) = 0$.
     \end{ppart}
 \end{solution}
 
@@ -84,9 +84,9 @@
         \item Let \[I_n = \int \frac1{x^n \bp{ax^2 + bx + c}} \d x\] for $x > 0$. Show that \[aI_{n-2} + bI_{n-1} + cI_n = \frac1{\bp{1-n} x^{n-1}} + k\] for $n \geq 2$, where $k$ is an arbitrary constant.
         \item Hence, find \[\int \frac{x^3 + 2}{x^2 \bp{x^2 + 2}} \d x.\]
         \item Let $f(x)$, $g(x)$ and $h(x)$ be functions of $x$ such that $f'(x) = x^2 g'(x)$ and $h'(x) = \bp{1 + x^4} g'(x) g(x)$. Use integration by parts to find the following:
-        \begin{tasks}
-            \task $\displaystyle\int xg(x) \d x,$
-            \task $\displaystyle\int xf(x)g(x) \d x.$
+        \begin{tasks}[label=(\roman*)](2)
+            \task $\displaystyle\int xg(x) \d x$;
+            \task $\displaystyle\int xf(x)g(x) \d x$.
         \end{tasks}
     \end{enumerate}
 \end{problem}
@@ -158,16 +158,16 @@
     \begin{ppart}
         We have \[fg(x) = f\begin{cases}2014 \e^x, & x< 0 \\ x-1 , & 0 \leq  x \leq 1 \\ x-1, & x > 1,\end{cases} = \begin{cases}-\bp{2014\e^x}^2 , & x < 0, \\ -(x-1), & 0 \leq x \leq 1, \\ -(x-1)^2, & x > 1.\end{cases}\] Similarly, we have \[gf(x) = \begin{cases}-x, & x \leq 0, \\ -x^2, & x > 0,\end{cases} = \begin{cases}-x - 1, & x \leq 0, \\ 2014 \e^{-x^2}, & x > 0.\end{cases}\] To solve the inequality $fg(x) > gf(x)$, we consider the following cases:
 
-        \case{1}[$x < 0$] The inequality simplifies down to \[-\bp{2014\e^x}^2 > -x -1 \implies 2014^2 \e^{2x} < x + 1,\] which is never satisfied for all $x < 0$.
+        \case{1}[$x < 0$] The inequality simplifies down to $-\bp{2014\e^x}^2 > -x -1$, i.e. $2014^2 \e^{2x} < x + 1$, which is never satisfied for all $x < 0$.
 
-        \case{2}[$0 \leq x \leq 1$] The inequality simplifies down to \[-(x-1) > 2014\e^{-x^2},\] which is clearly never satisfied since $-(x-1) < 0$ for all $x \in [0, 1]$, but $2014 \e^{-x^2} > 0$.
+        \case{2}[$0 \leq x \leq 1$] The inequality simplifies down to $-(x-1) > 2014\e^{-x^2}$, which is never satisfied since $-(x-1) < 0$ for all $x \in [0, 1]$, but $2014 \e^{-x^2} > 0$.
 
-        \case{3}[$x > 1$] The inequality simplifies down to \[-(x-1)^2 > 2014\e^{-x^2}.\] For identical reasons (the LHS is non-positive but the RHS is positive), this is never satisfied.
+        \case{3}[$x > 1$] The inequality simplifies down to $-(x-1)^2 > 2014\e^{-x^2}$. Since the LHS is non-positive but the RHS is positive, this is never satisfied.
 
         Thus, we conclude that $fg(x) > gf(x)$ has no solutions.
     \end{ppart}
     \begin{ppart}
-        We have \[\int_{-\infty}^n hg(x) \d x = \int_{-\infty}^0 hg(x) \d x + \int_{0}^n hg(x) \d x = \underbrace{\int_{-\infty}^0 \floor{2014 \e^x} \d x}_{I_1} + \underbrace{\int_0^n \floor{x-1} \d x}_{I_2}.\] We first consider $I_2$. Observe that \[\floor{x-1} = k-1, \quad \text{$k \leq x < k-1$}.\] Thus, \[I_2 = \sum_{k = 0}^{n-1} (k-1) = \frac{n(n-1)}{2} - n = \frac{n(n-3)}{2}.\] We now consider $I_1$. Under the transformation $x \mapsto -x$, we obtain \[I_1 = \int_0^\infty \floor{2014\e^{-x}}\d x.\] Observe that \[\floor{2014\e^{-x}} = k, \quad \text{$\ln \frac{2014}{k+1} \leq x < \ln \frac{2014}{k}$}.\] Thus, \[I_1 = \sum_{k=1}^{2013} \int_{\ln{2014/k+1}}^{\ln{2014/k}} k \d x = \sum_{k=1}^{2013} k \bp{\ln \frac{2014}{k} - \ln \frac{2014}{k+1}} = \sum_{k=1}^{2013} k \bs{\ln{k+1} - \ln k}.\] Expanding this sum, we quickly see that it telescopes:
+        We have \[\int_{-\infty}^n hg(x) \d x = \int_{-\infty}^0 hg(x) \d x + \int_{0}^n hg(x) \d x = \underbrace{\int_{-\infty}^0 \floor{2014 \e^x} \d x}_{I_1} + \underbrace{\int_0^n \floor{x-1} \d x}_{I_2}.\] We first consider $I_2$. Observe that $\floor{x-1} = k-1$ when $k \leq x < k-1$. Thus, \[I_2 = \sum_{k = 0}^{n-1} (k-1) = \frac{n(n-1)}{2} - n = \frac{n(n-3)}{2}.\] We now consider $I_1$. Under the transformation $x \mapsto -x$, we obtain \[I_1 = \int_0^\infty \floor{2014\e^{-x}}\d x.\] Observe that $\floor{2014\e^{-x}} = k$ when \[\ln \frac{2014}{k+1} \leq x < \ln \frac{2014}{k}.\] Thus, \[I_1 = \sum_{k=1}^{2013} \int_{\ln(2014/k+1)}^{\ln(2014/k)} k \d x = \sum_{k=1}^{2013} k \bp{\ln \frac{2014}{k} - \ln \frac{2014}{k+1}} = \sum_{k=1}^{2013} k \bs{\ln{k+1} - \ln k}.\] Expanding this sum, we quickly see that it telescopes:
         \begin{align*}
             I_1 &= \bp{\ln 2 - \ln 1} + 2\bp{\ln 3 - \ln 2} + 3 \bp{\ln 4 - \ln 3} + \dots + 2013 \bp{\ln 2014 - \ln 2013}\\
             &= 2013 \ln 2014 -\bp{\ln 1 + \ln 2 + \ln 3 + \dots + \ln 2013}\\

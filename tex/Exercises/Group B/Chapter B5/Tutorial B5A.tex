@@ -4,21 +4,21 @@
     The equation of a curve is $y=2x^3+3x^2+6x+4$. Find $\derx{y}{x}$ and hence show that $y$ is increasing for all real values of $x$.
 \end{problem}
 \begin{solution}
-    \[\der{y}{x} = 6x^2+6x+6 = 6\bp{x + \frac12}^2 + \frac{18}4.\] For all $x \in \RR$, we have $\bp{x + \frac12}^2 \geq 0$. Hence, $\derx{y}{x} > 0$. Thus, $y$ is increasing for all real values of $x$.
+    \[\der{y}{x} = 6x^2+6x+6 = 6\bp{x + \frac12}^2 + \frac{18}4.\] For all $x \in \RR$, we have $\bp{x + 1/2}^2 \geq 0$. Hence, $\derx{y}{x} > 0$. Thus, $y$ is increasing for all real values of $x$.
 \end{solution}
 
 \begin{problem}
-    Find, by differentiation, the $x$-coordinates of all the stationary points on the curve $y = \frac{x^3}{(x+1)^2}$ stating, with reasons, the nature of each point.
+    Find, by differentiation, the $x$-coordinates of all the stationary points on the curve $y = x^3/(x+1)^2$ stating, with reasons, the nature of each point.
 \end{problem}
 \begin{solution}
-    \[y = \frac{x^3}{(x+1)^2} \implies (x+1)^2y =x^3 \implies y'(x+1)^2 + 2y(x+1) = 3x^2.\] For stationary points, $y' = 0$. Thus, \[2y(x+1) = \frac{2x^3}{x+1} = 3x^2 \implies 2x^3 - 3x^2 (x+1) = x^2\bp{-x - 3} = 0.\] Hence, $x = 0$ or $x = -3$.
+    Note that \[y' = \frac{(x+1)^2\bp{3x^2} - x^3 \bs{2(x+1)}}{(x+1)^4} = \frac{x^2\bp{x+3}}{(x+1)^3}.\] For stationary points, $y' = 0$. Thus, $x = 0$ or $x = -3$.
 
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|c|}
-        \hline
-        $x$          & $0^-$ & 0 & $0^+$ & \hspace{-1em} & $(-3)^-$ & $-3$ & $(-3)^+$ \\\hline
-        $\derx{y}{x}$ & +ve   & 0 & +ve  & \hspace{-1em} & +ve   & 0 & -ve \\\hline
+        \begin{tabular}{|c|l|c|c|c|l|c|c|c|}
+        \cline{1-1} \cline{3-5} \cline{7-9}
+        $x$ &  & $0^-$ & 0 & $0^+$ &  & $(-3)^-$ & $-3$ & $(-3)^+$ \\ \cline{1-1} \cline{3-5} \cline{7-9} 
+        $\derx{y}{x}$ &  & +ve & 0 & +ve &  & +ve & 0 & $-$ve \\ \cline{1-1} \cline{3-5} \cline{7-9} 
         \end{tabular}
     \end{table}
 
@@ -31,9 +31,9 @@
 \begin{solution}
     \[f'(x) = 4\cos \frac{x}2 - \cos x - 4 = 4\cos \frac{x}2 - \bp{2\cos^2 \frac{x}2 - 1} - 4 = -2\bp{\cos\frac{x}2 - 1}^2 - 1.\]
 
-    Observe that for all $x \in \RR$, $\bp{\cos\frac{x}2 - 1}^2 \geq 0$. Hence, $f'(x) < 0$ for all real values of $x$. Thus, $f(x)$ is strictly decreasing on $\RR$.
+    Observe that for all $x \in \RR$, $\bp{\cos{x/2} - 1}^2 \geq 0$. Hence, $f'(x) < 0$ for all real values of $x$. Thus, $f(x)$ is strictly decreasing on $\RR$.
 
-    Note that $f(0) = 0$. Since $f(x)$ is strictly decreasing, for all $x > 0$, $f(x) < f(0) = 0$.
+    Since $f(x)$ is strictly decreasing, we have $f(x) < f(0) = 0$ for all $x > 0$.
 \end{solution}
 
 \begin{problem}
@@ -311,22 +311,21 @@
     \begin{ppart}
         \[\der{y}{x} = a \bp{\frac{x}{2\sqrt{x+2}} + \frac{2(x+2)}{2\sqrt{x+2}}} = \frac{a(3x+4)}{2\sqrt{x+2}}.\]
 
-        Consider the stationary points of $y=ax\sqrt{x+2}$. For stationary points, $\derx{y}{x} =0$. \[\der{y}{x} = \frac{a(3x+4)}{2\sqrt{x+2}} = 0 \implies a(3x+4) = 0.\] Since $a > 0$, we have $3x+4=0$, whence $x = -4/3$.
+        Consider the stationary points of $y=ax\sqrt{x+2}$. For stationary points, $\derx{y}{x} =0$. Since $a > 0$, we have $3x+4 = 0$, so $x = -4/3$.
 
         \begin{table}[H]
             \centering
             \begin{tabular}{|c|c|c|c|}
             \hline
             $x$ & $(-4/3)^-$ & $-4/3$ & $(-4/3)^+$ \\\hline
-            $\derx{y}{x}$ & -ve & 0 & +ve \\\hline
+            $\derx{y}{x}$ & $-$ve & 0 & +ve \\\hline
             \end{tabular}
         \end{table}
 
-        Hence, by the first derivative test, there is a turning point (minimum point) at $x = -4/3$. Thus, $y = ax\sqrt{x+2}$ has only one turning point.
+        By the first derivative test, there is a turning point (minimum point) at $x = -4/3$. Thus, $y = ax\sqrt{x+2}$ has only one turning point.
 
-        Substituting $x = -4/3$ into $y = ax\sqrt{x+2}$, we see that the coordinate of the turning point is $(-\frac43, -\frac{4a}3 \sqrt{\frac23})$.
+        Substituting $x = -4/3$ into $y = ax\sqrt{x+2}$, we see that the coordinate of the turning point is $(-4/3, -4a/3 \sqrt{2/3})$.
     \end{ppart}
-    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{286}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -406,7 +405,6 @@
     \begin{ppart}
         From $t = 0$ to $t = 11$, $P$ speeds up and reaches a top speed of 5 ms$^{-1}$. From $t=11$ to $t=15$, $P$ slows down. At $t=15$, $P$ is instantaneously at rest. From $t=15$ to $t=21$, $P$ speeds up and moves in the opposite direction, reaching a top speed of 4 ms$^{-1}$. From $t=21$ to $t=25$, $P$ slows down. At $t=25$, $P$ is instantaneously at rest.
     \end{ppart}
-    \clearpage
     \begin{ppart}
         \begin{center}\tikzsetnextfilename{288}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -444,8 +442,8 @@
 \end{solution}
 
 \begin{problem}
-    The function $f$ defined by $f(x) = \ln x - 2\bp{x-1/2}$, where $x \in \RR, x > 0$. Find $f'(x)$ and show that the function is decreasing for $x > 1/2$. Hence, show that for $x > 1/2$, $2\bp{x - 1/2} - \ln x > \ln 2$.
+    The function $f$ defined by $f(x) = \ln x - 2\bp{x-1/2}$, where $x > 0$. Find $f'(x)$ and show that the function is decreasing for $x > 1/2$. Hence, show that $2\bp{x - 1/2} - \ln x > \ln 2$ for $x > 1/2$.
 \end{problem}
 \begin{solution}
-    Observe that $f'(x) = 1/x - 2 < 0$ for $x > 1/2$. Thus, $f(x)$ is decreasing for all $x > 1/2$. Since $f(1/2) = -\ln 2$, it follows that \[\bp{\forall x > \frac12}: \quad -\ln 2 = f(1/2) > f(x) = \ln x - 2\bp{x - \frac12} \implies 2\bp{x - \frac12} - \ln x > \ln 2.\]
+    Observe that $f'(x) = 1/x - 2 < 0$ for $x > 1/2$. Thus, $f(x)$ is decreasing for all $x > 1/2$. Since $f(1/2) = -\ln 2$, it follows that for all $x > 1/2$, \[-\ln 2 = f\of{\frac12} > f(x) = \ln x - 2\bp{x - \frac12}.\] Multiplying through by $-1$, we get \[2\bp{x - \frac12} - \ln x > \ln 2.\]
 \end{solution}
