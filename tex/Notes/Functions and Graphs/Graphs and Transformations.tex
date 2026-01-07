@@ -14,16 +14,18 @@ When sketching a graph, the shape and any symmetry must be clearly seen.
 \section{Asymptotes}
 
 \begin{definition}
-    An \vocab{asymptote} is a straight line such that the distance between the curve and the line approaches zero at the extreme end(s) of a graph, i.e. the curve approaches the line but never touches it at these ends.
+    An \vocab{asymptote} is a straight line such that the distance between the curve and the line approaches zero at the extreme end(s) of a graph.
 \end{definition}
 
+Graphically, as $x \to \infty$ or $x \to -\infty$, the curve approaches an asymptote without ever touching it in the limit. However, this does not preclude the asymptote from intersecting the curve at finite values of $x$. For instance, $f(x) = \sin{x}/x$ has $y = 0$ as an asymptote despite intersecting it infinitely many times (namely when $x = 2\pi k$ for integers $k$).
+
 \begin{definition}
-    Let $a$ and $b$ be constants.
+    Let $a$, $b$ and $c$ be constants.
 
     \begin{itemize}
-        \item If $x \to \pm \infty$, $y \to a$, then the line $y = a$ is a \vocab{horizontal asymptote}.
-        \item If $x \to a$, $y \to \pm \infty$, then the line $x = a$ is a \vocab{vertical asymptote}.
-        \item If $x \to \pm \infty$, $y - (ax + b) \to 0$, then the line $y = ax + b$ is an \vocab{oblique asymptote}.
+        \item If $y \to a$ as $x \to \infty$ or $x \to -\infty$, then the line $y = a$ is a \vocab{horizontal asymptote}.
+        \item If $x \to a$ as $y \to \infty$ or $y \to -\infty$, then the line $x = a$ is a \vocab{vertical asymptote}.
+        \item If $ax + by + c \to 0$ as $x \to \infty$ or $x \to \infty$, then the line $ax + by + c = 0$ is an \vocab{oblique asymptote}.
     \end{itemize}
 \end{definition}
 
@@ -47,11 +49,11 @@ A rational function $f$ is a ratio of two polynomials $P(x)$ and $Q(x)$, where $
 
 \subsection{Rectangular Hyperbola}
 
-A rectangular hyperbola is a hyperbola with asymptotes that are perpendicular to each other. The general formula for a rectangular hyperbola is $y = (ax + b)/(cx + d)$, where $a$, $b$, $c$ and $d$ are constants. Note that the curve $y = (ax + b)/(cx + d)$ has a vertical asymptote $x = -d/c$ and a horizontal asymptote $y = a/c$. The two possible shapes of a rectangular hyperbola are shown below.
+A rectangular hyperbola is a hyperbola with asymptotes that are perpendicular to each other. The general formula for a rectangular hyperbola is $y = (ax + b)/(cx + d)$, where $a$, $b$, $c$ and $d$ are constants. The line $x = -d/c$ is a vertical asymptote, while the line $y = a/c$ is a horizontal asymptote. The two possible shapes of a rectangular hyperbola are shown below.
 
 \begin{figure}[H]\tikzsetnextfilename{353}
     \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
+    \begin{tikzpicture}
         \begin{axis}[
             domain = -10:6,
             ymax = 8,
@@ -63,20 +65,18 @@ A rectangular hyperbola is a hyperbola with asymptotes that are perpendicular to
             ytick = \empty,
             xlabel = {$x$},
             ylabel = {$y$},
-            legend cell align={left},
-            legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed, unbounded coords = jump] {-(x+1)/(x+2) + 2};
-            \addplot[plotBlue, unbounded coords = jump] {(x+1)/(x+2)};
+            \addplot[plotRed, thick, unbounded coords = jump] {-(x+1)/(x+2) + 2};
+            \addplot[plotBlue, thick, unbounded coords = jump] {(x+1)/(x+2)};
 
             \addplot[dashed] {1};
             \draw[dashed] (-2, -6) -- (-2, 8);
 
-            \node[anchor=south east] at (-2, -6) {$x = -d/c$};
+            \node[anchor=south east] at (-2.2, -6) {$x = -d/c$};
             \node[anchor=south west] at (-10, 1) {$y = a/c$};
         \end{axis}
     \end{tikzpicture}
@@ -89,7 +89,7 @@ A hyperbola of the form $y = (ax^2 + bx + c)/(dx + e)$, where $a$, $b$, $c$, $d$
 
 \begin{figure}[H]\tikzsetnextfilename{354}
     \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
+    \begin{tikzpicture}
         \begin{axis}[
             domain = -9:7,
             ymax = 8,
@@ -101,21 +101,19 @@ A hyperbola of the form $y = (ax^2 + bx + c)/(dx + e)$, where $a$, $b$, $c$, $d$
             ytick = \empty,
             xlabel = {$x$},
             ylabel = {$y$},
-            legend cell align={left},
-            legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
+                    node [anchor=north west] {$O$};
                 }
             ]
-            \addplot[plotRed, unbounded coords = jump] {x + 1 + 1/(x+1)};
-            \addplot[plotBlue, unbounded coords = jump] {x + 1 - 1/(x+1)};
+            \addplot[plotRed, thick, unbounded coords = jump] {x + 1 + 1/(x+1)};
+            \addplot[plotBlue, thick, unbounded coords = jump] {x + 1 - 1/(x+1)};
 
             \addplot[dashed] {x+1};
             \draw[dashed] (-2, -8) -- (-2, 8);
 
             \node[anchor=south east] at (-2, 6) {$x = -e/d$};
-            \node[anchor=west] at (-8, -7) {$y = px + q$};
+            \node[anchor=west] at (-7.8, -7) {$y = px + q$};
         \end{axis}
     \end{tikzpicture}
     \caption{Hyperbolas of the form $y = (ax^2 + bx + c)/(dx + e)$.}
@@ -148,10 +146,10 @@ Parabolas are curves with equations $y = ax^2$ or $x = by^2$, where $a$ and $b$ 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed] {x^2};
+            \addplot[plotRed, thick] {x^2};
             \addlegendentry{$a > 0$};
 
-            \addplot[plotBlue] {-x^2};
+            \addplot[plotBlue, thick] {-x^2};
             \addlegendentry{$a < 0$};
         \end{axis}
     \end{tikzpicture}
@@ -179,10 +177,10 @@ Parabolas with equation $y = ax^2$ have a line of symmetry $x = 0$ and a vertex 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed] ({x^2}, {x});
+            \addplot[plotRed, thick] ({x^2}, {x});
             \addlegendentry{$b > 0$};
 
-            \addplot[plotBlue] ({-x^2}, {x});
+            \addplot[plotBlue, thick] ({-x^2}, {x});
             \addlegendentry{$b < 0$};
         \end{axis}
     \end{tikzpicture}
@@ -198,12 +196,12 @@ A circle is a set of all points in a plane which are the same distance (radius $
 \begin{figure}[H]\tikzsetnextfilename{357}
     \centering
     \begin{tikzpicture}[scale=0.7]
-        \draw[->] (0,-5) -- (0,5) node[anchor=north west] {$y$};
-        \draw[->] (-5,0) -- (5,0) node[anchor=south east] {$x$};
+        \draw[->] (0,-4) -- (0,4) node[anchor=north west] {$y$};
+        \draw[->] (-4,0) -- (4,0) node[anchor=south east] {$x$};
 
-        \draw[plotRed] (0, 0) circle[radius=4];
-        \draw[dashed] (0, 0) -- (2.83, 2.83);
-        \node[anchor=south east] at (1.41, 1.41) {$r$};
+        \draw[thick] (0, 0) circle[radius=3];
+        \draw[dashed] (0, 0) -- (2.12, 2.12);
+        \node[anchor=south east] at (1.06, 1.06) {$r$};
         \node[anchor=north east] at (0, 0) {$O$};
     \end{tikzpicture}
     \caption{Circle with equation $x^2 + y^2 = r^2$.}
@@ -224,10 +222,10 @@ An ellipse is a circle that has been scaled parallel to the $x$- and/or $y$-axes
 \begin{figure}[H]\tikzsetnextfilename{358}
     \centering
     \begin{tikzpicture}[scale=0.7]
-        \draw[->] (0,-5) -- (0,5) node[anchor=north west] {$y$};
-        \draw[->] (-5,0) -- (5,0) node[anchor=south east] {$x$};
+        \draw[->] (0,-3) -- (0,3) node[anchor=north west] {$y$};
+        \draw[->] (-4.5,0) -- (4.5,0) node[anchor=south east] {$x$};
 
-        \draw[plotRed] (0, 0) ellipse[x radius=3, y radius=2];
+        \draw[thick] (0, 0) ellipse[x radius=3, y radius=2];
         \node[anchor=north east] at (0, 0) {$O$};
 
         \node[anchor=south west] at (3, 0) {$a$};
@@ -252,7 +250,7 @@ The hyperbola is a conic with two oblique asymptotes. The standard form of a hyp
 
 \begin{figure}[H]\tikzsetnextfilename{359}
     \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
+    \begin{tikzpicture}
         \begin{axis}[
             domain = -5:5,
             ymin = -5,
@@ -264,21 +262,13 @@ The hyperbola is a conic with two oblique asymptotes. The standard form of a hyp
             ytick = \empty,
             xlabel = {$x$},
             ylabel = {$y$},
-            legend cell align={left},
-            legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed] {sqrt(x^2 - 1)};
-            \addlegendentry{$x^2/a^2 - y^2/b^2 = 1$};
-
-            \addplot[plotBlue] {sqrt(x^2 + 1)};
-            \addlegendentry{$y^2/b^2 - x^2/a^2 = 1$};
-
-            \addplot[plotRed] {-sqrt(x^2 - 1)};
-            \addplot[plotBlue] {-sqrt(x^2 + 1)};
+            \addplot[thick] {sqrt(x^2 - 1)};
+            \addplot[thick] {-sqrt(x^2 - 1)};
 
             \addplot[dashed] {x};
             \addplot[dashed] {-x};
@@ -288,11 +278,48 @@ The hyperbola is a conic with two oblique asymptotes. The standard form of a hyp
             \node[anchor=south east] at (0, 1) {$b$};
             \node[anchor=north east] at (0, -1) {$-b$};
 
-            \node at (1.5, 3) {$y = bx/a$};
-            \node at (1.5, -3) {$y = -bx/a$};
+            \node at (1.5, 3.2) {$y = bx/a$};
+            \node at (1.5, -3.2) {$y = -bx/a$};
         \end{axis}
     \end{tikzpicture}
-    \caption{}
+    \caption{Hyperbolas of the form $x^2/a^2 - y^2/b^2 = 1$.}
+\end{figure}
+
+\begin{figure}[H]\tikzsetnextfilename{544}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            domain = -5:5,
+            ymin = -5,
+            ymax = 5,
+            samples = 201,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north east] {$O$};
+                }
+            ]
+            \addplot[thick] {sqrt(x^2 + 1)};
+            \addplot[thick] {-sqrt(x^2 + 1)};
+
+            \addplot[dashed] {x};
+            \addplot[dashed] {-x};
+
+            \node[anchor=south west] at (1, 0) {$a$};
+            \node[anchor=south east] at (-1, 0) {$-a$};
+            \node[anchor=south east] at (0, 1) {$b$};
+            \node[anchor=north east] at (0, -1) {$-b$};
+
+            \node at (1.5, 3.2) {$y = bx/a$};
+            \node at (1.5, -3.2) {$y = -bx/a$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Hyperbolas of the form $y^2/b^2 - x^2/a^2 = 1$.}
 \end{figure}
 
 Both hyperbolas have the origin as their centres, the $x$- and $y$-axes as their lines of symmetry, and their two oblique asymptotes are $y = \pm bx/a$. The hyperbola with equation $x^2/a^2 - y^2/b^2 = 1$ has vertices $(-a, 0)$ and $(a, 0)$, i.e. $a$ is the horizontal distance from the centre to the vertices. Similarly, the hyperbola with equation $y^2/b^2 - x^2/a^2 = 1$ has vertices $(0, -b)$ and $(0, b)$, i.e. $b$ is the vertical distance from the centre to the vertices.
@@ -373,7 +400,7 @@ For $a > 0$,
 
 \subsection{Graph of \texorpdfstring{$y = \abs{f(x)}$}{y = |f(x)|}}
 
-Note that \[y = \abs{f(x)} = \begin{cases}
+Recall that \[y = \abs{f(x)} = \begin{cases}
     f(x) & f(x) \geq 0,\\
     f(-x) & f(x) < 0.
 \end{cases}\]
@@ -390,13 +417,13 @@ Note that \[y = \abs{f(x)} = \begin{cases}
     Consider the following graph of $y = f(x)$.
     \begin{figure}[H]
         \centering
-        \hspace{7em}\includegraphics{figures/248.pdf}
+        \includegraphics{figures/248.pdf}
         \caption{\label{fig:248}}
     \end{figure}
     Reflecting the portion of the curve below the $x$-axis, we get the following graph of $y = \abs{f(x)}$.
     \begin{figure}[H]
         \centering
-        \hspace{7em}\includegraphics{figures/252.pdf}
+        \includegraphics{figures/252.pdf}
         \caption{}
     \end{figure}
 \end{example}
@@ -421,7 +448,7 @@ Note that \[y = f(\abs{x}) = \begin{cases}
     Let the graph of $y = f(x)$ be as in Fig.~\ref{fig:248}. Following the above steps, we see that the graph of $y = f(\abs{x})$ is
     \begin{figure}[H]
         \centering
-        \hspace{7em}\includegraphics{figures/250.pdf}
+        \includegraphics{figures/250.pdf}
         \caption{}
     \end{figure}
 \end{example}
@@ -441,7 +468,7 @@ There are several key features and behaviours that we must note when drawing the
     Let the graph of $y = f(x)$ be as in Fig.~\ref{fig:248}. Following the above pointers, we see that the graph of $y = 1/f(x)$ is
     \begin{figure}[H]
         \centering
-        \hspace{7em}\includegraphics{figures/253.pdf}
+        \includegraphics{figures/253.pdf}
         \caption{}
     \end{figure}
 \end{example}

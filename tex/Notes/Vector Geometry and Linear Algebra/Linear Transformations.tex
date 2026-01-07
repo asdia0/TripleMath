@@ -534,11 +534,14 @@ We can determine the number of solutions to a system of linear equations using t
 
 In the case where the system is consistent, we can apply the following result to find all possible solutions to the system:
 
-\begin{proposition}
-    If $\vec x_p$ is a particular solution of a consistent non-homogeneous system $\mat A \vec x = \vec b$, then every solution of the system can be written in the form $\vec x = \vec x_p + \vec x_h$, where $\vec x_h$ is a solution to the corresponding homogeneous system $\mat A \vec x = \vec 0$.
+\begin{proposition}\label{prop:lin-alg-solution-space}
+    Let $\vec x_p$ be a particular solution of $\mat A \vec x = \vec b$, and let $K = \bc{\vec x_h \mid \mat A \vec x_h = \vec 0}$ be the null space of $\mat A$. Then the set of solutions to $\mat A \vec x = \vec b$ is $S = \bc{\vec x_p + \vec x_h \mid \vec x_h \in K}$.
 \end{proposition}
+We will prove the equivalent statement $\mat A \vec x = \vec b \iff \vec x \in S$.
 \begin{proof}
-    Let $\vec x_p$ be a fixed solution of $\mat A \vec x = \vec b$, and let $\vec x$ be an arbitrary solution. Then \[\mat A \vec x = \vec b \quad \tand \quad \mat A \vec x_p = \vec b.\] Subtracting these equations yields \[\mat A \bp{\vec x - \vec x_p} = \vec 0,\] so $\vec x - \vec x_p$ is a solution of the homogeneous system $\mat A \vec x = \vec 0$. Let $\bc{\vec v_1, \dots, \vec v_k}$ form a basis for the null space of $\mat A$. Then there exist $c_1, \dots, c_k \in \RR$ such that \[\vec x - \vec x_p = c_1 \vec v_1 + \dots + c_k \vec v_k.\] Letting $\vec x_h = c_1 \vec v_1 + \dots + c_k \vec v_k$, we see that \[\vec x = \vec x_p + \vec x_h\] as desired.
+    ($\implies$) Suppose $\mat A \vec x = \vec b$. Since $\vec x_p$ is a particular solution, we know that $\mat A \vec x_p = \vec b$. Thus, \[\mat A \bp{\vec x - \vec x_p} = \mat A \vec x - \mat A \vec x_p = \vec b - \vec b = \vec 0,\] so $\vec x - \vec x_p$ is in the null space $K$. Taking $\vec x_h = \vec x - \vec x_p$, we immediately see that $\vec x \in S$.
+
+    ($\impliedby$) Suppose $\vec x \in S$. That is, there exists some $\vec x_h \in K$ such that $\vec x = \vec x_p + \vec x_h$. Applying $\mat A$ on both sides of the equation, we get \[\mat A \vec x = \mat A \bp{\vec x_p + \vec x_h} = \mat A \vec x_p + \mat A \vec x_h = \vec b + \vec 0 = \vec b.\]
 \end{proof}
 
 \section{Rank and Nullity for Linear Transformations}

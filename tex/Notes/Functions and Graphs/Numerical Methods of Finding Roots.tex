@@ -5,10 +5,10 @@
 The following theorem forms the basis for finding roots numerically.
 
 \begin{theorem}[Bolzano's Theorem]
-    Let $f(x)$ be a continuous function on the interval $[a, b]$. If $f(a)$ and $f(b)$ have opposite signs, i.e. $f(a) f(b) < 0$, then there exists at least one real root in $[a, b]$.
+    Let $f(x)$ be a continuous function on the interval $(a, b)$. If $f(a)$ and $f(b)$ have opposite signs, i.e. $f(a) f(b) < 0$, then there exists at least one real root in $(a, b)$.
 \end{theorem}
 
-Additionally, if $f(x)$ is strictly monotonic on $[a, b]$, then there is exactly one real root in $[a, b]$.
+Additionally, if $f(x)$ is strictly monotonic on $(a, b)$, then there is exactly one real root in $(a, b)$.
 
 \section{Numerical Methods for Finding Roots}
 
@@ -30,26 +30,33 @@ In this chapter, we will look at three numerical methods for finding roots, name
 
 Linear interpolation is a numerical method based on approximating the curve $y = f(x)$ to a straight line in the vicinity of the root. The approximate root of the equation $f(x) = 0$ is the intersection of this straight line with the $x$-axis.
 
+\begin{recipe}[Linear Interpolation]
+    Suppose $f(x) = 0$ has a unique root $\a$ in the interval $(a, b)$, where $f(a)$ and $f(b)$ have opposing signs. Then \[\a \approx \frac{af(b) - bf(a)}{f(b)-f(a)}.\]
+\end{recipe}
+
+Linear interpolation can be repeatedly applied by replacing either the lower or upper bound of the interval with the previously found approximation.
+
 \subsection{Derivation}
 
 \begin{figure}[H]\tikzsetnextfilename{113}
     \centering
     \begin{tikzpicture}
         \begin{axis}[
-                domain = -4.8:-0.5,
+                domain = -0.2:4.5,
                 samples = 101,
-                axis y line=none,
+                axis y line=middle,
                 axis x line=middle,
-                xtick = {-3.68, -2.90},
+                xtick = {1.32, 2.1},
                 xticklabels = {$\a$, $c$},
                 ytick = \empty,
                 xlabel = {$x$},
                 ylabel = {$y$},
+                ymax = 2.7,
             ]
-        \addplot[color=red!50] {0.04 * x^3 + 2};
+        \addplot[thick] {0.04 * (x-5)^3 + 2} node [pos=0.7, above left] {$y=f(x)$};
         
-        \coordinate[label=left:$A$] (A) at (-4.5, -1.645);
-        \coordinate[label=above:$B$] (B) at (-1, 1.96);
+        \coordinate[label=below right:$\bp{a, f(a)}$] (A) at (0.5, -1.645);
+        \coordinate[label=above:$\bp{b, f(b)}$] (B) at (4, 1.96);
         \draw[dashed] (A) -- (B);
         \fill (A) circle[radius=2.5pt];
         \fill (B) circle[radius=2.5pt];
@@ -58,25 +65,32 @@ Linear interpolation is a numerical method based on approximating the curve $y =
     \caption{}
 \end{figure}
 
-Suppose $f(x) = 0$ has exactly one root $\a$ in the interval $[a, b]$, where $f(a)$ and $f(b)$ have opposite signs. By the point-slope formula, the line connecting the points $(a, f(a))$ and $(b, f(b))$ is given by \[y - f(a) = \frac{f(b) - f(a)}{b - a} (x - a).\] At the point $(c, 0)$, \[0 - f(a) = \frac{f(b)-f(a)}{b-a} (c -a) \implies c = \frac{af(b) - bf(a)}{f(b)-f(a)}.\]
-
-Linear interpolation can be repeatedly applied by replacing either the lower or upper bound of the interval with the previously found approximation.
+Suppose $f(x) = 0$ has a unique root $\a$ in the interval $(a, b)$, where $f(a)$ and $f(b)$ have opposing signs. By the point-slope formula, the line connecting the points $(a, f(a))$ and $(b, f(b))$ has equation \[y - f(a) = \frac{f(b) - f(a)}{b - a} \bp{x - a}.\] Let $c$ be the $x$-coordinate of the horizontal intercept of this line. Substituting in $x = c$ and $y = 0$ into the above equation and rearranging, we have \[c = \frac{af(b) - bf(a)}{f(b)-f(a)},\] which is our approximation to the root $\a$.
 
 \subsection{Convergence}
 
-Convergence of the approximations is guaranteed for linear interpolation. However, how good the estimation is depends on how "straight" the graph of $y = f(x)$ is in $[a, b]$, i.e. the rate at which $f'(x)$ is changing in $[a, b]$. This rate also affects the rate of convergence: if $f'(x)$ changes considerably, the rate of convergence is slow; if $f'(x)$ does not change much, the rate of convergence is fast.
+Convergence of the approximations is guaranteed for linear interpolation. However, how good the estimation is depends on how "straight" the graph of $y = f(x)$ is in $(a, b)$, i.e. the rate at which $f'(x)$ is changing in $(a, b)$. This rate also affects the rate of convergence: if $f'(x)$ changes considerably, the rate of convergence is slow; if $f'(x)$ does not change much, the rate of convergence is fast.
 
 \section{Fixed Point Iteration}
 
-Fixed point iteration is used to find a root of an equation $f(x) = 0$ which can be written in the form $x = F(x)$. The roots of the equation are the abscissae of the points of intersection of the line $y = x$ and $y = F(x)$.
+Fixed point iteration is used to find a root of an equation $f(x) = 0$ which can be rewritten in the form $x = F(x)$.
+
+\begin{recipe}[Fixed Point Iteration]
+    To approximate a root $\a$ of the equation $f(x) = 0$,
+    \renewcommand{\theenumi}{\arabic{enumi}.}
+    \begin{enumerate}
+        \item Rewrite $f(x) = 0$ into the form $x = F(x)$.
+        \item Choose an initial approximation $x_1$ for the root $\a$.
+        \item Generate successive approximations using the recurrence relation $x_{n+1} = F(x_n)$.
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
 
 \subsection{Derivation}
 
-Let $\a$ be a root to $f(x) = 0$. Since $f(x) = 0$ can be written in the form $x = F(x)$, we clearly have $\a = F(\a)$. Now observe that we can replace the argument $\a$ with $F(\a)$: \[\a = F(\a) = F \circ F(\a) = F \circ F \circ F(\a) = \dots.\] Assuming certain conditions on $F$ which we will see below, the repeated composition of $F(x)$ converges to the root $\a$: \[\a = F \circ F \circ F \circ \dots \circ F(x).\]
+Consider the recurrence relation $x_{n+1} = F(x_n)$. Suppose the sequence $\bc{x_n}$ converges, say to $L$. Then $L = F(L)$, so $L$ is a solution to $x = F(x)$ and hence also to $f(x) = 0$, so $L$ is a root to the equation $f(x) = 0$. If the initial value $x_1$ is sufficiently close to $\a$, then $L = \a$.
 
 \subsection{Geometrical Interpretation}
-
-Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the initial approximation point $(x_1, F(x_1))$ about the line $y = x$, while keeping the resultant point on the curve $y = F(x)$.
 
 \begin{figure}[H]\tikzsetnextfilename{331}
     \centering
@@ -98,15 +112,15 @@ Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[red!50] {cos(\x r) + 0.5 * x};
-            \addplot[blue!50] {x};
-            \draw[dotted, thick] (1.7, 0) -- (1.7, 0.721);
+            \addplot[thick] {cos(\x r) + 0.5 * x} node [pos=0.25, above] {$y=F(x)$};
+            \addplot[thick] {x} node [pos=0.65, below right] {$y=x$};
             \draw[dotted, thick] (0.721, 0.721) -- (0.721, 0);
             \draw[dotted, thick] (1.112, 0.999) -- (1.112, 0);
             \begin{scope}[decoration={
                 markings,
                 mark=at position 0.5 with {\arrow{>}}}
                 ]
+                \draw[postaction={decorate}, thick] (1.7, 0) -- (1.7, 0.721);
                 \draw[postaction={decorate}, thick] (1.7, 0.721) -- (0.721, 0.721);
                 \draw[postaction={decorate}, thick] (0.721, 0.721) -- (0.721, 1.112);
                 \draw[postaction={decorate}, thick] (0.721, 1.112) -- (1.112, 1.112);
@@ -117,9 +131,9 @@ Geometrically, fixed-point iteration can be seen as repeatedly "reflecting" the 
     \caption{}
 \end{figure}
 
-\subsection{Convergence}
+Fixed point iteration can be visualized on the graph of $y = F(x)$. Starting from our initial guess $(x_1, 0)$, we move vertically to meet the curve $y = F(x)$ at $(x_1, F(x_1)) = (x_1, x_2)$. We then move horizontally to meet the line $y = x$ at $(x_2, x_2)$. Repeating this process, we get a staircase pattern which converges to $(\a, \a)$ if certain conditions are met.
 
-Convergence is not guaranteed. The rate at which the approximations converge to $\a$ depends on the value of $\abs{F'(x)}$ near $\a$. The smaller $\abs{F'(x)}$ is, the faster the convergence. It should be noted that fixed-point iteration fails if $\abs{F'(x)} > 1$ near $\a$.\footnote{More rigorously, by the Banach fixed-point theorem, fixed-point iteration converges to $\a$ if and only if $F$ acts as a contraction mapping around $\a$, i.e. $\abs{F'(x)} < 1$ near $x = \a$.}
+\subsection{Convergence}
 
 \begin{figure}[H]\tikzsetnextfilename{332}
     \centering
@@ -142,15 +156,15 @@ Convergence is not guaranteed. The rate at which the approximations converge to 
                 }
             ]
     
-            \addplot[red!50] {2 *cos(\x r)};
-            \addplot[blue!50] {x};
-            \draw[dotted, thick] (1.2, 0) -- (1.2, 0.725);
+            \addplot[thick] {2 *cos(\x r)} node [pos=0.2, above right] {$y=F(x)$};
+            \addplot[thick] {x} node [pos=0.33, above left] {$y=x$};
             \draw[dotted, thick] (0.725, 0.725) -- (0.725, 0);
             \draw[dotted, thick] (1.497, 0.147) -- (1.497, 0);
             \begin{scope}[decoration={
                 markings,
                 mark=at position 0.5 with {\arrow{>}}}
                 ]
+                \draw[postaction={decorate}, thick] (1.2, 0) -- (1.2, 0.725);
                 \draw[postaction={decorate}, thick] (1.2, 0.725) -- (0.725, 0.725);
                 \draw[postaction={decorate}, thick] (0.725, 0.725) -- (0.725, 1.497);
                 \draw[postaction={decorate}, thick] (0.725, 1.497) -- (1.497, 1.497);
@@ -161,39 +175,49 @@ Convergence is not guaranteed. The rate at which the approximations converge to 
     \caption{Divergence occurs when $\abs{F'(x)} > 1$ near $\a$.}
 \end{figure}
 
+Convergence is not guaranteed. The rate at which the approximations converge to $\a$ depends on the value of $\abs{F'(x)}$ near $\a$. The smaller $\abs{F'(x)}$ is, the faster the convergence. It should be noted that fixed-point iteration fails if $\abs{F'(x)} > 1$ near $\a$.\footnote{More rigorously, by the Banach fixed-point theorem, fixed-point iteration converges to $\a$ if and only if $F$ acts as a contraction mapping around $\a$, i.e. $\abs{F'(x)} < 1$ near $x = \a$.}
+
 \section{Newton-Raphson Method}
 
 The Newton-Raphson method is a numerical method that improves on linear interpolation by considering the tangent line at the initial approximation to the root.
+
+\begin{recipe}[Newton-Raphson Method]
+    To approximate a root $\a$ of the equation $f(x) = 0$,
+    \renewcommand{\theenumi}{\arabic{enumi}.}
+    \begin{enumerate}
+        \item Choose an initial approximation $x_1$ for the root $\a$.
+        \item Generate successive approximations using the recurrence relation \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.\]
+    \end{enumerate}
+    \renewcommand{\theenumi}{(\alph{enumi})}
+\end{recipe}
 
 \subsection{Derivation}
 
 \begin{figure}[H]\tikzsetnextfilename{329}
     \centering
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}
         \begin{axis}[
             domain = 1.5:2.5,
             samples = 50,
             axis y line=middle,
             axis x line=middle,
             xtick = {1.8393, 1.994, 2.4},
-            xticklabels = {$\alpha$, $x_2$, $x_1$},
+            xticklabels = {$\a$, $x_2$, $x_1$},
             ytick = \empty,
             xlabel = {$x$},
             ylabel = {$y$},
             ymin = -2,
-            legend cell align={left},
-            legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:1.5,0) 
                     node [anchor=east] {$O$};
                 }
             ]
     
-            \addplot[red!50] {x^3-x^2-x-1};
+            \addplot[thick] {x^3-x^2-x-1} node [pos=0.55, above left] {$y=f(x)$};
     
             \draw[dotted, thick] (2.4, 0) -- (2.4, 4.644);
     
-            \addplot[blue!50] {11.48 * (x-2.4) + 4.644};
+            \addplot[dashed] {11.48 * (x-2.4) + 4.644};
         \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -203,42 +227,41 @@ Let $\a$ be a root to $f(x) = 0$. Consider the tangent to $y = f(x)$ at the poin
 
 \subsection{Convergence}
 
-The rate of convergence when using the Newton-Raphson method depends on the first approximation used and the shape of the curve in the neighbourhood of the root. In extreme cases, these factors may lead to failure (divergence). The three main cases are:
-\begin{itemize}
-    \item $\abs{f'(x_1)}$ is too small (extreme case when $f'(x_1) = 0$),
-    \item $f'(x)$ increases/decreases too rapidly ($\abs{f''(x)}$ is too large),
-    \item $x_1$ is too far away from $\a$.
-\end{itemize}
-
 \begin{figure}[H]\tikzsetnextfilename{330}
     \centering
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}
         \begin{axis}[
             domain = -1.3:1.3,
-            samples = 201,
+            samples = 101,
             axis y line=middle,
             axis x line=middle,
             xlabel = {$x$},
             ylabel = {$y$},
-            xtick={0.864, 0.5, -1.022},
-            xticklabels={$\alpha$, $x_1$, $x_2$},
+            xtick={0.5, -1.022},
+            xticklabels={$x_1$, $x_2$},
             ytick=\empty,
             ymin=-0.5,
             ymax=1,
-            legend cell align={left},
-            legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
                     node [anchor=north east] {$O$};
                 }
             ]
             
-            \addplot[red!50] {sec(\x r)^2 - e^x};
+            \addplot[thick] {sec(\x r)^2 - e^x} node [pos=0.62, below left] {$y=f(x)$};
     
             \draw[dotted] (0.5, 0) -- (0.5, -0.35);
     
-            \addplot[blue!50] {-0.23 * (x - 0.5) - 0.35};
+            \addplot[dashed] {-0.23 * (x - 0.5) - 0.35};
+            \node[anchor=south east] at (0.864, 0) {$\a$};
         \end{axis} 
     \end{tikzpicture}
     \caption{Divergence occurs when $x_1$ is too far away from $\a$.}
 \end{figure}
+
+The rate of convergence when using the Newton-Raphson method depends on the first approximation used and the shape of the curve in the neighbourhood of the root. In extreme cases, these factors may lead to failure (divergence). The three main cases are:
+\begin{itemize}
+    \item $\abs{f'(x_1)}$ is too small (extreme case when $f'(x_1) = 0$),
+    \item $f'(x)$ increases/decreases too rapidly ($\abs{f''(x)}$ is too large),
+    \item $x_1$ is too far away from $\a$.
+\end{itemize}

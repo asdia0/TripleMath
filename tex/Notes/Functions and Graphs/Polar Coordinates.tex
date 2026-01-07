@@ -20,7 +20,7 @@
                 ymin=-2,
                 ymax=8,
                 xlabel = {$\t=0$},
-                ylabel = {$\t = \frac\pi2$},
+                ylabel = {$\t = \pi/2$},
                 legend cell align={left},
                 legend pos=outer north east,
                 after end axis/.code={
@@ -52,13 +52,11 @@ There are some conventions regarding the pole and the initial line.
     \item If $P = 0$, then $r = 0$, and we may use $(0, \t)$ to represent the pole for any value of $\t$.
 \end{itemize}
 
-Recall that in the Cartesian coordinate system, each point has a unique representation. This is not the case in the polar coordinate system. For example, the point $(1, 5\pi/4)$ could also be written as $(1, 13\pi/4)$ or as $(-1, \pi/4)$. In general, because a complete anti-clockwise rotation is given by the angle $2\pi$, the point $(r, \t)$ can also be represented by $(r, \t + 2n\pi)$ and $(-r, (2n + 1)\pi)$, where $n$ is any integer.
-
-To avoid this ambiguity, it is common to restrict to $0 \leq \t < 2\pi$ or $-\pi < \t \leq \pi$ and to take $r \geq 0$.
+Recall that in the Cartesian coordinate system, each point has a unique representation. This is not the case in the polar coordinate system. For example, the point $(1, 5\pi/4)$ could also be written as $(1, 13\pi/4)$ or as $(-1, \pi/4)$. To avoid this ambiguity, it is common to restrict to $0 \leq \t < 2\pi$ or $-\pi < \t \leq \pi$ and to take $r \geq 0$.
 
 \section{Relationship between the Polar and Cartesian Coordinate Systems}
 
-Suppose the point $P$ has Cartesian coordinates $(x, y)$ and polar coordinates $(r, \t)$. From Figure~\ref{fig:333}, we have \[\cos \t = \frac{x}{r} \quad \tand \quad \sin \t = \frac{y}{r}.\] Thus, \[x = r\cos \t \quad \tand \quad y = r\sin\t.\] Note that while the above were deduced from the case where $r > 0$ and $0 < \t < \pi/2$, these equations are valid for all values of $r$ and $\t$.
+Suppose the point $P$ has Cartesian coordinates $(x, y)$ and polar coordinates $(r, \t)$. From Figure~\ref{fig:333}, we have $\cos \t = x/r$ and $\sin \t = y/r$. Thus, \[x = r\cos \t \quad \tand \quad y = r\sin\t.\] Note that while the above were deduced from the case where $r > 0$ and $0 < \t < \pi/2$, these equations are valid for all values of $r$ and $\t$.
 
 We also have \[r^2 = x^2 + y^2 \quad \tand \quad \tan \t = \frac{y}{x},\] which allows us to find $r$ and $\t$ when $x$ and $y$ are known.
 
@@ -84,7 +82,7 @@ We also have \[r^2 = x^2 + y^2 \quad \tand \quad \tan \t = \frac{y}{x},\] which 
     The gradient of the tangent to a polar curve $r = f(\t)$ at any point is \[\der{y}{x} = \frac{r' \sin \t + r \cos \t}{r' \cos \t - r \sin \t}.\]
 \end{proposition}
 \begin{proof}
-    Recall that \[x = r\cos \t \quad \tand \quad y = r\sin\t.\] Differentiating both equations with respect to $\t$, we see that \[\der{x}{\t} = r' \cos \t - r\sin\t \quad \tand \quad \der{y}{\t} = r' \sin \t + r\cos\t.\] Thus, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{r' \sin \t + r \cos \t}{r' \cos \t - r \sin \t}.\]
+    Recall that $x = r\cos \t$ and $y = r\sin\t$. Differentiating both equations with respect to $\t$, we see that \[\der{x}{\t} = r' \cos \t - r\sin\t \quad \tand \quad \der{y}{\t} = r' \sin \t + r\cos\t.\] Thus, \[\der{y}{x} = \frac{\derx{y}{\t}}{\derx{x}{\t}} = \frac{r' \sin \t + r \cos \t}{r' \cos \t - r \sin \t}.\]
 \end{proof}
 \begin{remark}
     To find horizontal tangents (i.e. $\derx{y}{x} = 0$), we can solve $\derx{y}{\t} = 0$ (provided $\derx{x}{\t} \neq 0$). Likewise, to find vertical tangents (i.e. $\derx{y}{x}$ undefined), we can solve $\derx{x}{\t} = 0$ (provided $\derx{y}{\t} \neq 0$). Lastly, if we are looking for tangent lines at the pole, where $r = 0$, the equation simplifies to \[\der{y}{x} = \tan \t,\] provided $\derx{r}{\t} \neq 0$.
