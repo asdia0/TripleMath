@@ -8,7 +8,7 @@
     If \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6\end{pmatrix},\] then $\mat A$ is a $2 \times 3$ matrix with $a_{21} = 4$.
 \end{example}
 
-Note that row and column vectors are effectively matrices with one row and one column respectively.
+Row and column vectors are effectively matrices with one row and one column respectively.
 
 \section{Special Matrices}
 
@@ -52,14 +52,14 @@ Note that row and column vectors are effectively matrices with one row and one c
     Examples of triangular matrices include \[\begin{pmatrix}4\end{pmatrix}, \quad \begin{pmatrix}1 & -1 & 0 \\ 0 & 3 & 2 \\ 0 & 0 & 2\end{pmatrix}, \quad \begin{pmatrix}2 & 0 & 0 & 0 \\ 1 & 3 & 0 & 0 \\ 6 & 0 & 0 & 0 \\ -2 & -1 & 0 & 1\end{pmatrix}.\] The second matrix is an upper triangular matrix, while the third matrix is a lower triangular matrix. The first matrix can be considered both an upper and lower triangular matrix.
 \end{example}
 
-Note that a diagonal matrix is both an upper and lower triangular matrix.
+A diagonal matrix is both an upper and lower triangular matrix.
 
 \section{Matrix Operations}
 
 \subsection{Equality}
 
 \begin{definition}
-    Two matrices $\mat A$ and $\mat B$ are equal if and only if they have the same size and their entries are identical.
+    Two matrices $\mat A$ and $\mat B$ are equal if and only if they have the same size and their entries are identical. We write $\mat A = \mat B$.
 \end{definition}
 
 \subsection{Addition}
@@ -105,8 +105,10 @@ Note that a diagonal matrix is both an upper and lower triangular matrix.
 \subsection{Matrix Multiplication}
 
 \begin{definition}
-    Let $\mat A$ be an $m \times p$ matrix, and let $\mat B$ be a $p \times n$ matrix. Then the matrix product $\mat C = \mat A \mat B$ is the $m \times n$ matrix with entries determined by \[c_{ij} = \sum_{k = 1}^p a_{ik} b_{kj}\] for $i = 1, \dots, m$ and $j = 1, \dots, n$. Here, $c_{ij}$ can be viewed as the dot product of the $i$th row of $\mat A$ with the $j$th column of $\mat B$.
+    Let $\mat A$ be an $m \times p$ matrix, and let $\mat B$ be a $p \times n$ matrix. Then the matrix product $\mat C = \mat A \mat B$ is the $m \times n$ matrix with entries determined by \[c_{ij} = \sum_{k = 1}^p a_{ik} b_{kj}\] for $i = 1, \dots, m$ and $j = 1, \dots, n$.
 \end{definition}
+
+We can view $c_{ij}$ as the dot product of the $i$th row of $\mat A$ with the $j$th column of $\mat B$.
 
 \begin{example}[Matrix Multiplication]
     Let \[\mat A = \begin{pmatrix}-1 & 0 \\ 2 & 3\end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix}1 & 2 \\ 3 & 0\end{pmatrix}.\] Then the matrix product $\mat A \mat B$ is given by \[\mat A \mat B = \begin{pmatrix}(-1)(1) + (0)(3) & (-1)(2) + (0)(0) \\ (2)(1) + (3)(3) & (2)(2) + (3)(0)\end{pmatrix} = \begin{pmatrix}-1 & -2 \\ 11 & 4\end{pmatrix}.\] Meanwhile, the matrix product $\mat B \mat A$ is given by \[\mat B \mat A = \begin{pmatrix}(1)(-1) + (2)(2) & (1)(0) + (2)(3) \\ (3)(-1) + (0)(2) & (3)(0) + (0)(3)\end{pmatrix} = \begin{pmatrix}3 & 6 \\ -3 & 0\end{pmatrix}.\]
@@ -130,7 +132,7 @@ Note that a diagonal matrix is both an upper and lower triangular matrix.
     \end{cases}\] Here, $\mat I$ is the identity matrix of the same size as $\mat A$.
 \end{definition}
 
-Note that in general, $(\mat A \mat B)^n \neq \mat A^n \mat B^n$, where $\mat B$ is also a square matrix of suitable size.
+Note that in general, $(\mat A \mat B)^n \neq \mat A^n \mat B^n$, where $\mat B$ is a square matrix of suitable size.
 
 \subsection{Transpose}
 
@@ -156,9 +158,9 @@ Note also that $\mat A = \mat A \trp$ if and only if $\mat A$ is a symmetric mat
 
 \section{Solving Systems of Linear Equations}
 
-One use of matrix multiplication is to express a system of linear equations. For example, \[\systeme{3x_1 + 4x_2 + 5x_3 = 6, x_1 + 5x_2 - 6x_3 = 5} \implies \begin{pmatrix}3 & 4 & 5 \\ 1 & 5 & -6\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cvecii65.\] The system of equations on the left can be expressed as a matrix equation on the right. What is great about a matrix equation is that we can express a large system of linear equations in a very compact form $\mat A \vec x = \vec b$, where $\vec x$ and $\vec b$ are column vectors. In general, \[\left\{ \begin{matrix}a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\ a_{21} x_1 + \dots + a_{2n} x_n = b_2 \\ \vdots \\ a_{m1} x_1 + \dots + a_{mn} x_n = b_m \end{matrix} \right. \implies \underbrace{\begin{pmatrix}a_{11} & \cdots & a_{1n} \\ a_{21} & \cdots & a_{2n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{pmatrix}}_{\mat A} \underbrace{\cveciv{x_1}{x_2}{\vdots}{x_n}}_{\vec x} = \underbrace{\cveciv{b_1}{b_2}{\vdots}{b_m}}_{\vec b}.\]
+One use of matrix multiplication is to express a system of linear equations. For example, the system \[\systeme{3x_1 + 4x_2 + 5x_3 = 6, x_1 + 5x_2 - 6x_3 = 5}\] can be written as \[\begin{pmatrix}3 & 4 & 5 \\ 1 & 5 & -6\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \cvecii65.\] With matrix equations, we can express a large system of linear equations in a very compact form $\mat A \vec x = \vec b$, where $\vec x$ and $\vec b$ are column vectors. In general, the system \[\left\{ \begin{matrix}a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\ a_{21} x_1 + \dots + a_{2n} x_n = b_2 \\ \vdots \\ a_{m1} x_1 + \dots + a_{mn} x_n = b_m \end{matrix}\right.\] can be represented by the matrix equation \[\underbrace{\begin{pmatrix}a_{11} & \cdots & a_{1n} \\ a_{21} & \cdots & a_{2n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{pmatrix}}_{\mat A} \underbrace{\cveciv{x_1}{x_2}{\vdots}{x_n}}_{\vec x} = \underbrace{\cveciv{b_1}{b_2}{\vdots}{b_m}}_{\vec b}.\]
 
-By translating a system of linear equations into a matrix equation, we can use the power of linear algebra to systematically solve for $\vec x$, which in turn will yield solutions $(x_1, x_2, \dots, x_n)$ to our original system of linear equations. We now look at how to systematically solve such matrix equations of the form $\mat A \vec x = \vec b$ using Gaussian elimination.
+By writing a system of linear equations as a matrix equation, we can use the power of linear algebra to systematically solve for $\vec x$, which in turn will yield solutions $(x_1, x_2, \dots, x_n)$ to our original system of linear equations. We now look at how to systematically solve such matrix equations of the form $\mat A \vec x = \vec b$ using Gaussian elimination.
 
 \subsection{Elementary Row Operations}
 
@@ -174,9 +176,9 @@ By translating a system of linear equations into a matrix equation, we can use t
 \begin{example}[Elementary Row Operations]
     The following examples demonstrate the three elementary row operations. Observe how the elementary row operations are written directly to the left of the corresponding rows.
     \begin{align*}
-        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle \\ \scriptstyle R_2 \leftrightarrow R_3 \\ \scriptstyle \end{matrix} \begin{pmatrix}1 & 2 & 3 \\ 7 & 8 & 9 \\ 4 & 5 & 6\end{pmatrix}\\
-        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle 10R_1\\ \scriptstyle \\ \scriptstyle \end{matrix} \begin{pmatrix}10 & 20 & 30 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix}\\
-        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle \\ \scriptstyle \\ \scriptstyle R_3 - 7R_1\end{matrix}\begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 0 & -6 & -12\end{pmatrix}
+        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle \\ \scriptstyle R_2 \leftrightarrow R_3 \\ \scriptstyle \end{matrix} \begin{pmatrix}1 & 2 & 3 \\ 7 & 8 & 9 \\ 4 & 5 & 6\end{pmatrix},\\
+        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle 10R_1\\ \scriptstyle \\ \scriptstyle \end{matrix} \begin{pmatrix}10 & 20 & 30 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix},\\
+        \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow& \begin{matrix}[r] \scriptstyle \\ \scriptstyle \\ \scriptstyle R_3 - 7R_1\end{matrix}\begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 0 & -6 & -12\end{pmatrix}.
     \end{align*}
     Multiple elementary row operations can also be combined in a single step:
     \[\begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \rightarrow \begin{matrix}[r] \scriptstyle 2R_1 \\ \scriptstyle R_2 - R_1 \\ \scriptstyle 2R_3\end{matrix} \begin{pmatrix}2 & 4 & 6 \\ 3 & 3 & 3 \\ 14 & 16 & 18\end{pmatrix}.\]
@@ -186,7 +188,7 @@ By translating a system of linear equations into a matrix equation, we can use t
 
 Gaussian elimination (also known as Gauss-Jordan elimination, or row reduction) is a systematic algorithm used to convert a system of equations into an \emph{equivalent} system of equations using elementary row operations. That is, the new system of equations has the same solution as the origin system of equations.
 
-Firstly, we rewrite our system of equations as an \vocab{augmented matrix} $\begin{pmatrix}[c|c]\mat A & \vec b\end{pmatrix}$: \[\left\{ \begin{matrix}a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\ a_{21} x_1 + \dots + a_{2n} x_n = b_2 \\ \vdots \\ a_{m1} x_1 + \dots + a_{mn} x_n = b_m \end{matrix} \right. \implies \begin{pmatrix}[c|c]\mat A & \vec b\end{pmatrix} = \begin{pmatrix}[ccc|c] a_{11} & \cdots & a_{1n} & b_1 \\ a_{21} & \cdots & a_{2n} & b_2 \\ \vdots & \ddots & \vdots & \vdots \\ a_{m1} & \cdots & a_{mn} & b_m \end{pmatrix}.\] The augmented part is the right-most column, separated by a vertical line to help remind us that these numbers come from the constants in the linear equations ($\vec b$).
+Consider the system of equations \[\left\{ \begin{matrix}a_{11} x_1 + \dots + a_{1n} x_n = b_1 \\ a_{21} x_1 + \dots + a_{2n} x_n = b_2 \\ \vdots \\ a_{m1} x_1 + \dots + a_{mn} x_n = b_m \end{matrix} \right.\] We can rewrite this as an \vocab{augmented matrix} $\begin{pmatrix}[c|c]\mat A & \vec b\end{pmatrix}$: \[\begin{pmatrix}[ccc|c] a_{11} & \cdots & a_{1n} & b_1 \\ a_{21} & \cdots & a_{2n} & b_2 \\ \vdots & \ddots & \vdots & \vdots \\ a_{m1} & \cdots & a_{mn} & b_m \end{pmatrix}.\] The augmented part is the right-most column, separated by a vertical line to help remind us that these numbers come from the constants in the linear equations ($\vec b$).
 
 Observe the equivalence between performing elementary row operations on this augmented matrix versus what we might do algebraically to solve the system: 
 
@@ -216,7 +218,7 @@ One such form we aim for is the row-echelon form.
 \end{definition}
 
 \begin{example}[Row-Echelon Form]
-    Consider the following matrices: \[\mat A = \begin{pmatrix} {\color{ForestGreen}1} & 3 & 4 & 5 \\ 0 & {\color{ForestGreen}4} & 2 & 8 \\ 0 & 0 & 0 & {\color{ForestGreen} 5} \end{pmatrix}, \quad \mat B = \begin{pmatrix}{\color{ForestGreen} 1} & 3 & 4 & 5 \\ {\color{red} 1} & 4 & 2 & 8 \\ 0 & 0 & 0 & 0 \end{pmatrix}.\] $\mat A$ is in REF since all leading terms (coloured green) are to the right of the leading term of the previous row. On the other hand, $\mat B$ is not in REF, since the leading term $b_{21}$ (coloured red) is not to the right of the leading term $b_{11}$.
+    Consider the matrices \[\mat A = \begin{pmatrix} {\color{ForestGreen}1} & 3 & 4 & 5 \\ 0 & {\color{ForestGreen}4} & 2 & 8 \\ 0 & 0 & 0 & {\color{ForestGreen} 5} \end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix}{\color{ForestGreen} 1} & 3 & 4 & 5 \\ {\color{red} 1} & 4 & 2 & 8 \\ 0 & 0 & 0 & 0 \end{pmatrix}.\] $\mat A$ is in REF since all leading terms (coloured green) are to the right of the leading term of the previous row. On the other hand, $\mat B$ is not in REF, since the leading term $b_{21}$ (coloured red) is not to the right of the leading term $b_{11}$.
 \end{example}
 
 Note that a matrix may have multiple row-echelon forms, i.e. REF is not unique.
@@ -224,7 +226,7 @@ Note that a matrix may have multiple row-echelon forms, i.e. REF is not unique.
 Once we manipulate our augmented matrix into its REF, we can easily solve for our solutions $x_1, \dots, x_n$ using back-substitution.
 
 \begin{example}[Back-Substitution]
-    Consider the following augmented matrix, which has been manipulated into its REF via elementary row operations: \[\begin{pmatrix}[ccc|c]1 & 1 & 3 & 2 \\ 0 & -4 & -4 & 4 \\ 0 & 0 & -15 & 9\end{pmatrix} \implies \systeme{x_1 + x_2 + 3x_3 = 2, -4x_2 - 4x_3 = 4, -15x_3 = 9}.\] From the third equation, we easily get $x_3 = -3/5$. Substituting this into the second equation, we get $x_2 = -2/5$. Further substituting this into the first equation, we have $x_1 = 11/5$.
+    Consider the following augmented matrix, which has been manipulated into its REF via elementary row operations: \[\begin{pmatrix}[ccc|c]1 & 1 & 3 & 2 \\ 0 & -4 & -4 & 4 \\ 0 & 0 & -15 & 9\end{pmatrix}.\] Rewriting this as a system of equations, we have \[\systeme{x_1 + x_2 + 3x_3 = 2, -4x_2 - 4x_3 = 4, -15x_3 = 9}.\] We now solve for $x_1$, $x_2$ and $x_3$ by back-substitution. From the third equation, we easily get $x_3 = -3/5$. Substituting this into the second equation, we get $x_2 = -2/5$. Further substituting this into the first equation, we have $x_1 = 11/5$.
 \end{example}
 
 \subsubsection{Reduced Row-Echelon Form}
@@ -240,7 +242,7 @@ Another form we typically aim for when performing Gaussian elimination is the re
 \end{definition}
 
 \begin{example}[Reduced Row-Echelon Form]
-    Consider the following matrices: \[\mat A = \begin{pmatrix}{\color{ForestGreen}1} & 0 & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & 0 & 0\end{pmatrix}, \quad \mat B = \begin{pmatrix}1 & {\color{red}3} & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & {\color{red}4} & 0\end{pmatrix}.\] $\mat A$ is in RREF, since all leading terms (coloured green) are 1 and all other entries in those columns are 0. However, $\mat B$ is not in RREF. This is because $b_{22}$ is a leading term, but there are non-zero entries in that column (coloured red).
+    Consider the matrices \[\mat A = \begin{pmatrix}{\color{ForestGreen}1} & 0 & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & 0 & 0\end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix}1 & {\color{red}3} & 3 \\ 0 & {\color{ForestGreen}1} & 4 \\ 0 & {\color{red}4} & 0\end{pmatrix}.\] $\mat A$ is in RREF, since all leading terms (coloured green) are 1 and all other entries in those columns are 0. However, $\mat B$ is not in RREF. This is because $b_{22}$ is a leading term, but there are non-zero entries in that column (coloured red).
 \end{example}
 
 Unlike REF, the RREF of a matrix is unique.
@@ -260,24 +262,21 @@ Back in \SS\ref{chap:Equations-and-Inequalities}, we termed a system of linear e
     \end{itemize}
 \end{proposition}
 
-The first statement is trivially true, since $\mat I \vec x = \vec b' \implies \vec x = \vec b'$. To see why the second and third statements are true, consider the following matrices: \[\mat B = \begin{pmatrix}[ccc|c] 1 & 0 & 3 & 1 \\ 0 & 1 & 1 & 2 \\ 0 & 0 & 0 & 0\end{pmatrix}, \quad \mat C = \begin{pmatrix}[ccc|c] 1 & 0 & 3 & 1 \\ 0 & 1 & 1 & 2 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] $\mat B$ represents the system \[\systeme{x_1 + 3x_3 = 1, x_2 + x_3 = 2}.\] In this case, we have more unknowns than equations, so we will obtain infinitely many solutions (e.g. by taking $x_3 = \l$, where $\l \in \RR$ is a free parameter). On the other hand, the third row of $\mat C$ represents the equation \[0x_1 + 0x_2 + 0x_3 = 1,\] which is clearly impossible. Thus, there will be no solutions to the system.
+The first statement is trivially true, since $\mat I \vec x = \vec b'$ if and only if $\vec x = \vec b'$. To see why the second and third statements are true, consider the matrices \[\mat B = \begin{pmatrix}[ccc|c] 1 & 0 & 3 & 1 \\ 0 & 1 & 1 & 2 \\ 0 & 0 & 0 & 0\end{pmatrix} \quad \tand \quad \mat C = \begin{pmatrix}[ccc|c] 1 & 0 & 3 & 1 \\ 0 & 1 & 1 & 2 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] The third row of $\mat B$ is a tautology ($0 = 0$), hence we are effectively left with 2 equations in 3 unknowns. Since we have more unknowns than equations, we will obtain infinitely many solutions (for instance, by taking $x_3$ to be a free parameter). On the other hand, the third row of $\mat C$ represents the equation $0x_1 + 0x_2 + 0x_3 = 1$, which is clearly impossible. Thus, there will be no solutions to the system.
 
 \subsection{Homogeneous Systems of Linear Equations}
 
-Recall that a system of linear equations is said to be \emph{homogeneous} if all the constant terms are zero. The corresponding matrix equation is thus $\mat A \vec x = \vec 0$. Clearly, every homogeneous system has $\vec x = \vec 0$ as a solution. This solution is called the \vocab{trivial solution}. If there are other solutions, they are called non-trivial solutions.
+Recall that a system of linear equations is said to be \emph{homogeneous} if all the constant terms are zero. The corresponding matrix equation is thus $\mat A \vec x = \vec 0$. Every homogeneous system has the \vocab{trivial solution} $\vec x = \vec 0$. All other solutions are known as non-trivial solutions.
 
 \section{Invertible Matrices}
 
-While Gaussian elimination remains a good way of solving a system of linear equations, looking at them as a matrix equation can also be useful.
-
-The left side of $\mat A \vec x = \vec b$ may be viewed as a matrix $\mat A$ acting on a vector $\vec x$ and sending it to the vector $\vec b$. Solving the matrix equation hence amounts to finding the pre-image of $\vec b$ under $\mat A$. This motivates us to find a multiplicative inverse to $\mat A$.
+Yet another way of solving a system of linear equations is to consider the corresponding matrix equation $\mat A \vec x = \vec b$. Here, we may view the matrix $\mat A$ as acting on a vector $\vec x$ by sending it to the vector $\vec b$. Solving the matrix equation hence amounts to finding the pre-image of $\vec b$ under $\mat A$. This motivates us to find an inverse to $\mat A$, so we can ``undo'' the action of $\mat A$.
 
 \begin{definition}
-    The \vocab{multiplicative inverse} of a square matrix $\mat A$, denoted $\mat A^{-1}$, has the property \[\mat A^{-1} \mat A = \mat A \mat A^{-1} = \mat I.\] If such a matrix $\mat A^{-1}$ exists, then $\mat A$ is said to be \vocab{invertible}, or \vocab{non-singular}.
+    The \vocab{multiplicative inverse} of a square matrix $\mat A$, denoted $\mat A^{-1}$, has the property $\mat A^{-1} \mat A = \mat A \mat A^{-1} = \mat I$. If such a matrix $\mat A^{-1}$ exists, then $\mat A$ is said to be \vocab{invertible}, or \vocab{non-singular}.
 \end{definition}
 
-If $\mat A^{-1}$ exists, the solution for the equation $\mat A \vec x = \vec b$ will simply be $\vec x = \mat A^{-1} \vec b$. Further, this solution will be unique for each $\vec b$ (since $\mat A^{-1}$ will not map $\vec b$ to multiple vectors).
-
+If $\mat A^{-1}$ exists, the solution for the equation $\mat A \vec x = \vec b$ will simply be $\vec x = \mat A^{-1} \vec b$. Further, this solution will be unique for each $\vec b$.
 
 We now state some properties regarding the inverse of a matrix:
 
@@ -320,10 +319,10 @@ Though there is a general formula for the inverse of an $n \times n$ matrix, it 
 The correspondence between elementary row operations and elementary matrices allows us to construct the following algorithm to find the inverse of an invertible matrix $\mat A$.
 
 \begin{recipe}[Finding Matrix Inverse]
-    If $\mat A$ is invertible, then $\mat A^{-1} \mat A = \mat I$. If we can find a sequence of elementary row operations, corresponding to successive matrix left-multiplications of the elementary matrices $\mat E_1, \mat E_2, \dots, \mat E_k$, such that \[\mat E_k \dots \mat E_2 \mat E_1 \mat A = \mat I,\] then we have $\mat E_k \dots \mat E_2 \mat E_1 = \mat A^{-1}$.
+    If $\mat A$ is invertible, then $\mat A^{-1} \mat A = \mat I$. If we can find a sequence of elementary row operations, corresponding to successive matrix left-multiplications by the elementary matrices $\mat E_1, \dots, \mat E_k$, such that $\mat E_k \dots \mat E_1 \mat A = \mat I$, then we have $\mat E_k \dots \mat E_2 \mat E_1 = \mat A^{-1}$.
 \end{recipe}
 
-In practice, however, we will perform the left-multiplications on an augmented matrix of the form $\begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix}$: \[\mat E_k \dots \mat E_2 \mat E_1 \begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix} = \begin{pmatrix}[c|c] \mat E_k \dots \mat E_2 \mat E_1 \mat A & \mat E_k \dots \mat E_2 \mat E_1\end{pmatrix} = \begin{pmatrix}[c|c]\mat I & \mat A^{-1}\end{pmatrix}.\]
+In practice, however, we will perform the left-multiplications on an augmented matrix of the form $\begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix}$: \[\mat E_k \dots \mat E_1 \begin{pmatrix}[c|c] \mat A & \mat I\end{pmatrix} = \begin{pmatrix}[c|c] \mat E_k \dots \mat E_1 \mat A & \mat E_k \dots \mat E_1\end{pmatrix} = \begin{pmatrix}[c|c]\mat I & \mat A^{-1}\end{pmatrix}.\]
 
 \section{Determinant of a Matrix}
 
@@ -350,7 +349,7 @@ Beyond the $2 \times 2$ matrix, the closed form of an $n \times n$ determinant b
     \end{cases},\] where $A_{ij} = (-1)^{i+j} \det{\mat M_{ij}}$ is the \vocab{cofactor} of entry $a_{ij}$.
 \end{proposition}
 
-Note that the term $(-1)^{i+j}$ has value 1 when the sum of $i$ and $j$ is even, and $-1$ when the sum is odd. This may be viewed as a ``signed'' array as follows: \[\begin{pmatrix}+ & - & + & - & \cdots \\ - & + & - & + & \cdots \\ + & - & + & - & \cdots \\ - & + & - & + & \cdots \\ \vdots & \vdots & \vdots & \vdots & \ddots \end{pmatrix}.\]
+Note that the term $(-1)^{i+j}$ has value 1 when the sum of $i$ and $j$ is even, and $-1$ when the sum is odd. This may be viewed as a ``signed'' array as follows: \[\begin{pmatrix}+ & - & + & \cdots \\ - & + & - & \cdots \\ + & - & + & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}.\]
 
 \begin{example}[Cofactor Expansion]
     Using the method of cofactor expansion along the first row, the determinant of a $3 \times 3$ matrix \[\mat A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix}\] is given by \[\det{\mat A} = a_{11} \begin{vmatrix}a_{22} & a_{23} \\ a_{32} & a_{33}\end{vmatrix} - a_{12} \begin{vmatrix}a_{21} & a_{23} \\ a_{31} & a_{33}\end{vmatrix} + a_{13} \begin{vmatrix}a_{21} & a_{22} \\ a_{31} & a_{32}\end{vmatrix}.\]
@@ -376,6 +375,8 @@ We now look at the properties of determinants.
     \end{itemize}
 \end{fact}
 
+Using the fact that $\det{\mat E \mat A} = \det{\mat E}\det{\mat A}$, where $\mat E$ is an elementary matrix, we obtain the following results.
+
 \begin{fact}[Effects of Elementary Row/Column Operations on Determinant]
     \phantom{.}
     \begin{itemize}
@@ -384,5 +385,3 @@ We now look at the properties of determinants.
         \item If $\mat B$ is the matrix that results when a multiple of one row/column of $\mat A$ is added to another row/column, then $\det{\mat B} = \det{\mat A}$.
     \end{itemize}
 \end{fact}
-
-The above results are a result of the fact that $\det{\mat E \mat A} = \det{\mat E}\det{\mat A}$, where $\mat E$ is an elementary matrix.

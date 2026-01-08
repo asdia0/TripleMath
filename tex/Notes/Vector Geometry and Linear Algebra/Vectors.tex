@@ -3,36 +3,49 @@
 \section{Basic Definitions and Notations}
 
 \begin{definition}
-    A \vocab{vector} is an object that has both magnitude and direction. Geometrically, we can represent a vector by a \bd{directed} line segment $\oa{PQ}$, where the length of the line segment represents the magnitude of the vector, and the direction of the line segment represents the direction of the vector. Vectors are typically denoted by bold print (e.g. $\vec a$) or by $\oa{PQ}$.
+    A \vocab{vector} is an object that has both magnitude and direction.
 \end{definition}
 
-\begin{definition}
-    The \vocab{magnitude} of a vector $\vec a$ is the length of the line representing $\vec a$, and is denoted by $\abs{\vec a}$.
-\end{definition}
+To visualize a vector, we often represent it graphically by an arrow. An arrow from a point $P$ to a point $Q$ represents a vector, which we write as $\oa{PQ}$. The \vocab{magnitude} of the vector, denoted $\abs{\oa{PQ}}$, is the length of the arrow.
+
+When working abstractly, vectors are usually denoted by bold print (e.g. $\vec a$).
 
 \begin{definition}
-    Two vectors $\vec a$ and $\vec b$ are said to be \vocab{equal vectors} if they both have the same magnitude and direction. $\vec a$ and $\vec b$ are said to be \vocab{negative vectors} if they have the same magnitude but opposite directions.
+    Two vectors $\vec a$ and $\vec b$ are said to be \vocab{equal vectors} if they both have the same magnitude and direction, and we write $\vec a = \vec b$. If instead they have the same magnitude but opposite directions, they are said to be \vocab{negative vectors}, and we write $\vec a = -\vec b$.
 \end{definition}
 
 \begin{definition}[Multiplication of a Vector by a Scalar]
     Let $\l$ be a scalar. If $\l > 0$, then $\l \vec a$ is a vector of magnitude $\l \abs{\vec a}$ and has the same direction as $\vec a$. If $\l < 0$, then $\l \vec a$ is a vector of magnitude $-\l \abs{\vec a}$ and is in the opposite direction of $\vec a$.
 \end{definition}
 
+ \begin{figure}[H]\tikzsetnextfilename{545}
+    \centering
+    \begin{tikzpicture}
+        \draw[->] (0, 0) -- (2, 1) node[anchor=south west] {$\vec a$};
+        \draw[->] (2.5, 0) -- (6.5, 2) node[anchor=south west] {$2\vec a$};
+        \draw[->] (9, 1) -- (7, 0) node[anchor=north east] {$-\vec a$};
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
 \begin{definition}
     The \vocab{zero vector} is the vector with a magnitude of 0 and is denoted $\vec 0$.
 \end{definition}
 
 \begin{definition}
-    Let $\vec a$ and $\vec b$ be non-zero vectors. Then $\vec a$ and $\vec b$ are said to be \vocab{parallel} if and only if $\vec b$ can be expressed as a non-zero scalar multiple of $\vec a$. Mathematically, \[\vec a \parallel \vec b \iff (\exists \l \in \RR^{\ast}): \quad \vec b = \l \vec a.\]
+    Let $\vec a$ and $\vec b$ be non-zero vectors. Then $\vec a$ and $\vec b$ are said to be \vocab{parallel} if $\vec b$ can be expressed as a non-zero scalar multiple of $\vec a$, That is, $\vec b = \l \vec a$ for some $\l \neq 0$.
 \end{definition}
 
 \begin{definition}
-    A \vocab{unit vector} is a vector with a magnitude of 1. Unit vectors are typically denoted with a hat (e.g. $\hat{\vec a}$).
+    A \vocab{unit vector} is a vector with a magnitude of 1.
 \end{definition}
-Observe that for any non-zero vector $\vec a$, the unit vector parallel to $\vec a$ is given by \[\hat{\vec a} = \frac{\vec a}{\abs{\vec a}}.\]
+
+Unit vectors are typically denoted with a hat (e.g. $\hat{\vec a}$).
+
+For any non-zero vector $\vec a$, the unit vector parallel to $\vec a$ is given by \[\hat{\vec a} = \frac{\vec a}{\abs{\vec a}}.\]
 
 \begin{definition}
-    The \vocab{Triangle Law of Vector Addition} states that \[\oa{AB} + \oa{BC} = \oa{AC}.\] Geometrically, we add two vectors $\vec a$ and $\vec b$ by placing them head to tail, taking the resultant vector as their sum.
+    The \vocab{Triangle Law of Vector Addition} states that $\oa{AB} + \oa{BC} = \oa{AC}$. Geometrically, we add two vectors $\vec a$ and $\vec b$ by placing them head to tail, taking the resultant vector as their sum.
 
     \begin{figure}[H]\tikzsetnextfilename{335}
         \centering
@@ -51,16 +64,16 @@ Observe that for any non-zero vector $\vec a$, the unit vector parallel to $\vec
         \end{tikzpicture}
         \caption{}
     \end{figure}
-
-    We subtract vectors by adding $\vec a + -(\vec b)$.
 \end{definition}
+
+To subtract vectors, we add $\vec a$ and $-\vec b$ using the same principle.
 
 \begin{definition}
     The \vocab{angle between two vectors} refers to the angle between their directions when the arrows representing them both converge or both diverge.
 \end{definition}
 
 \begin{definition}
-    A \vocab{free vector} is a vector that has no specific location in space. The \vocab{position vector} of some point $A$ relative to the origin $O$ is unique and is denoted $\oa{OA}$. A \vocab{displacement vector} is a vector that joins its initial position to its final position. For instance, $\oa{OA}$ is the displacement vector from $O$ to $A$.
+    The \vocab{position vector} of some point $A$ relative to the origin $O$ is unique and is denoted $\oa{OA}$.
 \end{definition}
 
 \begin{definition}
@@ -68,7 +81,7 @@ Observe that for any non-zero vector $\vec a$, the unit vector parallel to $\vec
 \end{definition}
 
 \begin{fact}
-    Any vector $\vec c$ that is coplanar with $\vec a$ and $\vec b$ can be expressed as a \bd{unique linear combination} of $\vec a$ and $\vec b$, i.e. \[(\exists! \, \l, \m \in \RR): \quad \vec c = \l \vec a + \m \vec b.\]
+    Any vector $\vec c$ that is coplanar with $\vec a$ and $\vec b$ can be expressed as a \bd{unique linear combination} of $\vec a$ and $\vec b$. That is, there exist unique scalars $\l$ and $\m$ such that $\vec c = \l \vec a + \m \vec b$.
 \end{fact}
 
 \begin{theorem}[Ratio Theorem]
@@ -119,26 +132,26 @@ Thus, if $P$ is the point with coordinates $(a, b)$, then we can express $\oa{OP
 \section{Scalar Product}
 
 \begin{definition}
-    The \vocab{scalar product} (or dot product) of two vectors $\vec a$ and $\vec b$ is defined by \[\vec a \dotp \vec b = \abs{\vec a} \abs{\vec b} \cos \t,\] where $\t$ is the angle between the two vectors (note that $0 \leq \t \leq \pi$).
+    The \vocab{scalar product} (or dot product) of two vectors $\vec a$ and $\vec b$ is defined as $\vec a \dotp \vec b = \abs{\vec a} \abs{\vec b} \cos{\t}$, where $\t$ is the angle between the two vectors (note that $0 \leq \t \leq \pi$).
 \end{definition}
 \begin{remark}
     $\vec a \dotp \vec b$ is called the scalar product as the result is a real number (a scalar). It is also called the dot product because of the notation.
 \end{remark}
 
 \begin{fact}[Algebraic Properties of Scalar Product]
-    Let $\vec a$, $\vec b$ and $\vec c$ be vectors and let $\l \in \RR$. Then
+    Let $\vec a$, $\vec b$ and $\vec c$ be vectors and let $\l$ be a scalar. Then
     \begin{itemize}
-        \item (commutative) $\vec a \dotp \vec b = \vec b \dotp \vec a$.
-        \item (distributive over addition) $\vec a \dotp (\vec b + \vec c) = \vec a \dotp \vec b + \vec a \dotp \vec c$.
+        \item (commutativity) $\vec a \dotp \vec b = \vec b \dotp \vec a$.
+        \item (distributivity over addition) $\vec a \dotp (\vec b + \vec c) = \vec a \dotp \vec b + \vec a \dotp \vec c$.
         \item $\vec a \dotp \vec a = \abs{\vec a}^2$.
-        \item $(\l \vec a) \dotp \vec b = \vec a \dotp (\l \vec b) = \l (\vec a \dotp \vec b)$.
+        \item $(\l \vec a) \dotp \vec b = \vec a \dotp (\l \vec b) = \l \bp{\vec a \dotp \vec b}$.
     \end{itemize}
 \end{fact}
 
 \begin{proposition}[Geometric Properties of Scalar Product]
     Let $\vec a$ and $\vec b$ be non-zero vectors, and let $\t$ be the angle between them.
     \begin{itemize}
-        \item $\vec a \dotp \vec b = 0$ if and only if $\t = \pi/2$, i.e. $\vec a \perp \vec b$.
+        \item $\vec a \dotp \vec b = 0$ if and only if $\t = \pi/2$, i.e. $\vec a$ is perpendicular to $\vec b$.
         \item $\vec a \dotp \vec b > 0$ if and only if $\t$ is acute.
         \item $\vec a \dotp \vec b < 0$ if and only if $\t$ is obtuse.
     \end{itemize}
@@ -151,7 +164,11 @@ Thus, if $P$ is the point with coordinates $(a, b)$, then we can express $\oa{OP
     \[\cveciii{x_1}{y_1}{z_1} \dotp \cveciii{x_2}{y_2}{z_2} = x_1 x_2 + y_1 y_2 + z_1 z_2.\]
 \end{proposition}
 \begin{proof}
-    Since $\vec i$, $\vec j$ and $\vec k$ are pairwise perpendicular, their pairwise scalar products are 0. That is, \[\vec i \dotp \vec j = \vec j \dotp \vec k = \vec k \dotp \vec i = 0.\] Hence, by the distributive property of the scalar product, \[(x_1 \vec i + y_1 \vec j + z_1 \vec k) \dotp (x_2 \vec i + y_2 \vec j + z_2 \vec k) = x_1 x_2 \vec i \dotp \vec i + y_1 y_2 \vec j \dotp \vec j + z_1 z_2 \vec k \dotp \vec k.\] Lastly, since $\vec i$, $\vec j$ and $\vec k$ are all unit vectors, \[\vec i \dotp \vec i = \vec j \dotp \vec j = \vec k \dotp \vec k = 1.\] Thus, \[\cveciii{x_1}{y_1}{z_1} \dotp \cveciii{x_2}{y_2}{z_2} = x_1 x_2 + y_1 y_2 + z_1 z_2.\]
+    Since $\vec i$, $\vec j$ and $\vec k$ are pairwise perpendicular, their pairwise scalar products are 0. That is, $\vec i \dotp \vec j = \vec j \dotp \vec k = \vec k \dotp \vec i = 0$. Also, because $\vec i$, $\vec j$ and $\vec k$ are all unit vectors, $\vec i \dotp \vec i = \vec j \dotp \vec j = \vec k \dotp \vec k = 1$. Thus, by the distributive property of the scalar product,
+    \begin{align*}
+        (x_1 \vec i + y_1 \vec j + z_1 \vec k) \dotp (x_2 \vec i + y_2 \vec j + z_2 \vec k) &= x_1 x_2 \vec i \dotp \vec i + y_1 y_2 \vec j \dotp \vec j + z_1 z_2 \vec k \dotp \vec k\\
+        &= x_1 x_2 + y_1 y_2 + z_1 z_2.
+    \end{align*}
 \end{proof}
 
 \subsection{Applications of Scalar Product}
@@ -199,19 +216,14 @@ Thus, if $P$ is the point with coordinates $(a, b)$, then we can express $\oa{OP
     From the diagram, \[ON = OA \cos \t = \abs{\vec a} \frac{\vec a \dotp \vec b}{\abs{\vec a} \abs{\vec b}} = \frac{\vec a \dotp \vec b}{\abs{\vec b}} = \vec a \dotp \hat{\vec b}.\] A similar argument shows that when $\t$ is obtuse, $ON = -\vec a \dotp \hat{\vec b}$. Hence, in any case, $ON = \abs{\vec a \dotp \hat{\vec b}}$.
 \end{proof}
 
-\begin{proposition}[Vector Projection]
-    The vector projection of $\vec a$ onto $\vec b$ is $(\vec a \dotp \hat{\vec b}) \hat{\vec b}$.
-\end{proposition}
-\begin{proof}
-    \case{1}[$\t$ is acute] Then $\oa{ON}$ is in the same direction as $\vec b$. Hence, \[\oa{ON} = \abs{ON} \hat{\vec b} = (\vec a \dotp \hat{\vec b}) \hat{\vec b}.\]
-
-    \case{2}[$\t$ is obtuse] Then $\oa{ON}$ is in the opposite direction as $\vec b$. Hence, \[\oa{ON} = \abs{ON} \bp{-\hat{\vec b}} = -(\vec a \dotp \hat{\vec b}) (-\hat{\vec b}) = (\vec a \dotp \hat{\vec b}) \hat{\vec b}.\]
-\end{proof}
+\begin{corollary}[Vector Projection]
+    The vector projection of $\vec a$ onto $\vec b$ is $\bp{\vec a \dotp \hat{\vec b}} \hat{\vec b}$.
+\end{corollary}
 
 \section{Vector Product}
 
 \begin{definition}
-    The \vocab{vector product} (or cross product) of two vectors $\vec a$ and $\vec b$ is denoted by $\vec a \crossp \vec b$ and is defined by \[\vec a \crossp \vec b = \abs{\vec a}\abs{\vec b} \sin \t \hat{\vec n},\] where $\t$ is the angle between $\vec a$ and $\vec b$ and $\hat{\vec n}$ is the unit vector perpendicular to both $\vec a$ and $\vec b$, in the direction determined by the right-hand grip rule.
+    The \vocab{vector product} (or cross product) of two vectors $\vec a$ and $\vec b$ is denoted by $\vec a \crossp \vec b$ and is defined as $\vec a \crossp \vec b = \abs{\vec a}\abs{\vec b} \sin{\t} \hat{\vec n}$, where $\t$ is the angle between $\vec a$ and $\vec b$ and $\hat{\vec n}$ is the unit vector perpendicular to both $\vec a$ and $\vec b$, in the direction determined by the right-hand grip rule.
 \end{definition}
 \begin{remark}
     $\vec a \crossp \vec b$ is called the vector product as the result is a vector. It is also called the cross product due to its notation.
@@ -220,29 +232,28 @@ Thus, if $P$ is the point with coordinates $(a, b)$, then we can express $\oa{OP
 \begin{fact}[Algebraic Properties of Vector Product]
     Let $\vec a$, $\vec b$ and $\vec c$ be three vectors, and $\t$ be the angle between $\vec a$ and $\vec b$.
     \begin{itemize}
-        \item (anti-commutative) $\vec a \crossp \vec b = -\vec b \crossp \vec a$.
-        \item (distributive over addition) $\vec a \crossp (\vec b + \vec c) = (\vec a \crossp \vec b) + (\vec a \crossp \vec c)$.
-        \item $\abs{\vec a \crossp \vec b} = \abs{a} \abs{b} \sin \t$.
-        \item $(\l \vec a) \crossp \vec b = \vec a \crossp (\l \vec b) = \l (\vec a \crossp \vec b)$, where $\l \in \RR$.
+        \item (anti-commutativity) $\vec a \crossp \vec b = -\vec b \crossp \vec a$.
+        \item (distributivity over addition) $\vec a \crossp (\vec b + \vec c) = (\vec a \crossp \vec b) + (\vec a \crossp \vec c)$.
+        \item $(\l \vec a) \crossp \vec b = \vec a \crossp (\l \vec b) = \l \bp{\vec a \crossp \vec b}$, where $\l$ is a scalar.
     \end{itemize}
 \end{fact}
 
 \begin{proposition}[Geometric Properties of Vector Product]
     Let $\vec a$ and $\vec b$ be non-zero vectors and $\t$ be the angle between them.
     \begin{itemize}
-        \item $\abs{\vec a \crossp \vec b} = 0$ if and only if $\vec a \parallel \vec b$.
-        \item $\abs{\vec a \crossp \vec b} = \abs{\vec a} \abs{\vec b}$ if and only if $\vec a \perp \vec b$.
+        \item $\abs{\vec a \crossp \vec b} = 0$ if and only if $\vec a$ is parallel to $\vec b$.
+        \item $\abs{\vec a \crossp \vec b} = \abs{\vec a} \abs{\vec b}$ if and only if $\vec a$ is perpendicular to $\vec b$.
     \end{itemize}
 \end{proposition}
 \begin{proof}
-    Follows from the definition of the vector product (consider $\t = 0, \pi/2, \pi$).
+    Since $\hat{\vec n}$ is a unit vector, $\abs{\vec a \crossp \vec b} = \abs{\vec a} \abs{\vec b} \sin \t$. The claim follows upon considering $\t = 0$, $\pi/2$, and $\pi$.
 \end{proof}
 
 \begin{proposition}[Vector Product in Cartesian Unit Vector Form]
     \[\cveciii{x_1}{y_1}{z_1} \dotp \cveciii{x_2}{y_2}{z_2} = \cveciii{y_1 z_2 - z_1 y_2}{z_1 x_2 - x_1 z_2}{x_1 y_2 - y_1 x_2}.\]
 \end{proposition}
 \begin{proof}
-    From the geometric properties of the vector product, we have \[\vec i \crossp \vec i = \vec j \crossp \vec j = \vec k \crossp \vec k = \vec 0.\] Furthermore, since $\vec i$, $\vec j$ and $\vec k$ are pairwise perpendicular, by the right-hand grip rule, one has \[\vec i \crossp \vec j = \vec k, \quad \vec j \crossp \vec k = \vec i, \quad \vec k \crossp \vec i = \vec j.\] Hence, by the distributive property of the vector product,
+    From the geometric properties of the vector product, we have $\vec i \crossp \vec i = \vec j \crossp \vec j = \vec k \crossp \vec k = \vec 0$. Furthermore, since $\vec i$, $\vec j$ and $\vec k$ are pairwise perpendicular, by the right-hand grip rule, one has $\vec i \crossp \vec j = \vec k$, $\vec j \crossp \vec k = \vec i$, and $\vec k \crossp \vec i = \vec j$. Hence, by the distributive property of the vector product,
     \begin{align*}
         &(x_1 \vec i + y_1 \vec j + z_1 \vec k) \crossp (x_2 \vec i + y_2 \vec j + z_2 \vec k) \\
         &\hspace{2em}= x_1 y_2 \vec k + x_1 z_2 (-\vec j) + y_1 x_2 (-\vec k) + y_1 z_2 \vec i + z_1 x_2 \vec j + z_1 y_2 (-\vec i) \\
@@ -253,15 +264,15 @@ Thus, if $P$ is the point with coordinates $(a, b)$, then we can express $\oa{OP
 \subsection{Applications of Vector Product}
 
 \begin{proposition}[Length of Side of Right-Angled Triangle]
-    Let $\vec a$ and $\vec b$ denote the position vectors of $A$ and $B$ respectively, relative to the origin $O$. Let $\t$ be the angle between $\vec a$ and $\vec b$, and let $N$ be the foot of the perpendicular from $A$ to $OB$. Then \[AN = \abs{\vec a \crossp \hat{\vec b}}.\]
+    Let $\vec a$ and $\vec b$ denote the position vectors of $A$ and $B$ respectively, relative to the origin $O$. Let $\t$ be the angle between $\vec a$ and $\vec b$, and let $N$ be the foot of the perpendicular from $A$ to $OB$. Then $AN = \abs{\vec a \crossp \hat{\vec b}}$.
 \end{proposition}
 \begin{proof}
     With reference to Fig.~\ref{fig:336}, we have \[AN = OA \sin \t = \abs{\vec a} \frac{\abs{\vec a \crossp \vec b}}{\abs{\vec a}\abs{\vec b}} = \frac{\abs{\vec a \crossp \vec b}}{\vec b} = \abs{\vec a \crossp \hat{\vec b}}.\]
 \end{proof}
 
 \begin{proposition}[Area of Triangles and Parallelogram]
-    Let $ABCD$ be a parallelogram, let $\vec a = \oa{AB}$ and $\vec b = \oa{AC}$, and let $\t$ be the angle between $\vec a$ and $\vec b$. Then \[[\triangle ABC] = \frac12 \abs{\vec a \crossp \vec b}\] and \[[ABCD] = \abs{\vec a \crossp \vec b}.\]
+    Let $ABCD$ be a parallelogram, let $\vec a = \oa{AB}$ and $\vec b = \oa{AC}$, and let $\t$ be the angle between $\vec a$ and $\vec b$. Then \[[\triangle ABC] = \frac12 \abs{\vec a \crossp \vec b} \quad \tand \quad [ABCD] = \abs{\vec a \crossp \vec b}.\]
 \end{proposition}
 \begin{proof}
-    Recall that the formula for the area of a triangle is \[[\triangle ABC] = \frac12 (AB)(AC) \sin \t = \frac12 \abs{\vec a} \abs{\vec b} \sin \t = \frac12 \abs{\vec a \crossp \vec b}.\] Since the area of parallelogram $ABCD$ is twice that of $\triangle ABC$, we immediately have \[[ABCD] = \abs{\vec a \crossp \vec b}.\]
+    Recall that the formula for the area of a triangle is \[[\triangle ABC] = \frac12 (AB)(AC) \sin \t = \frac12 \abs{\vec a} \abs{\vec b} \sin \t = \frac12 \abs{\vec a \crossp \vec b}.\] Since the area of parallelogram $ABCD$ is twice that of $\triangle ABC$, we immediately have $[ABCD] = \abs{\vec a \crossp \vec b}$.
 \end{proof}

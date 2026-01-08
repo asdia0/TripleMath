@@ -3,7 +3,7 @@
 \section{Eigenvalues and Eigenvectors}
 
 \begin{definition}
-    Let $\mat A$ be an $n \times n$ matrix. Let the non-zero vector $\vec x \in \RR^n$ be such that $\mat A \vec x$ is a scalar multiple of $\vec x$. That is, $\vec x$ satisfies the equation \[\mat A \vec x = \l \vec x\] for some scalar $\l$. The scalar $\l$ is an \vocab{eigenvector} of $\mat A$, and $\vec x$ is the \vocab{eigenvector} of $\mat A$ corresponding to $\l$.
+    We call a non-zero vector $\vec x$ an \vocab{eigenvector} of $\mat A$ if there exists a scalar $\l$ such that $\mat A \vec x = \l \vec x$. We call $\l$ an \vocab{eigenvalue} of $\mat A$ corresponding to $\vec x$.
 \end{definition}
 
 \subsection{Geometrical Interpretation}
@@ -15,8 +15,10 @@ Let $\vec x$ be an eigenvector of $\mat A$ with eigenvalue $\l$. Geometrically, 
     \centering
     \begin{tikzpicture}
         \draw[black, thick, ->] (0, 0) -- (1, 1) node[anchor=north west] {$\vec x$};
-        \draw[black, thin, ->] (0, 0) -- (2, 2) node[anchor=south east] {$\l \vec x = \mat A \vec x$};
-        \node[anchor=east] (0, 0) {$O$};
+        \draw[black, thick, ->] (0, 0) -- (2, 2);
+        \node[anchor=north east] at (1.65, 2.1) {$\l \vec x = \mat A \vec x$};
+        \node[anchor=south east] (0, 0) {$O$};
+        \fill (0, 0) circle[radius=2.5pt];
     \end{tikzpicture}
     \caption{$\l > 1$}
     \end{figure}
@@ -26,8 +28,9 @@ Let $\vec x$ be an eigenvector of $\mat A$ with eigenvalue $\l$. Geometrically, 
     \centering
     \begin{tikzpicture}
         \draw[black, thick, ->] (0, 0) -- (2, 2) node[anchor=north west] {$\vec x$};
-        \draw[black, thin, ->] (0, 0) -- (1, 1) node[anchor=south east] {$\l \vec x = \mat A \vec x$};
-        \node[anchor=east] (0, 0) {$O$};
+        \draw[black, thick, ->] (0, 0) -- (1, 1) node[anchor=south east] {$\l \vec x = \mat A \vec x$};
+        \node[anchor=south east] (0, 0) {$O$};
+        \fill (0, 0) circle[radius=2.5pt];
     \end{tikzpicture}
     \caption{$0 \leq \l \leq 1$}
     \end{figure}
@@ -37,8 +40,10 @@ Let $\vec x$ be an eigenvector of $\mat A$ with eigenvalue $\l$. Geometrically, 
     \centering
     \begin{tikzpicture}
         \draw[black, thick, ->] (0, 0) -- (1, 1) node[anchor=north west] {$\vec x$};
-        \draw[black, thin, ->] (0, 0) -- (-1, -1) node[anchor=west] {$\mat A \vec x = \l \vec x$};
-        \node[anchor=west] (0, 0) {$O$};
+        \draw[black, thick, ->] (0, 0) -- (-1, -1);
+        \node[anchor=south west] at (-0.6, -1) {$\mat A \vec x = \l \vec x$};
+        \node[anchor=south east] (0, 0) {$O$};
+        \fill (0, 0) circle[radius=2.5pt];
     \end{tikzpicture}
     \caption{$\l < 0$}
     \end{figure}
@@ -47,17 +52,17 @@ Let $\vec x$ be an eigenvector of $\mat A$ with eigenvalue $\l$. Geometrically, 
 \subsection{Finding Eigenvalues and Eigenvectors}
 
 \begin{definition}
-    The \vocab{characteristic polynomial} $\c(\l)$ of an $n \times n$ matrix $\mat A$ is the $n$ degree polynomial in $\l$ given by \[\c(\l) = \det{\mat A - \l \mat I}.\] The \vocab{characteristic equation} of $\mat A$ is \[\c(\l) = 0.\]
+    The \vocab{characteristic polynomial} $\c(\l)$ of an $n \times n$ matrix $\mat A$ is the $n$ degree polynomial in $\l$ given by $\c(\l) = \det{\mat A - \l \mat I}$. The \vocab{characteristic equation} of $\mat A$ is $\c(\l) = 0$.
 \end{definition}
 
 \begin{proposition}
     $\l$ is an eigenvalue of $\mat A$ if and only if it satisfies the characteristic equation of $\mat A$.
 \end{proposition}
 \begin{proof}
-    To find eigenvalues and eigenvectors, we must solve the equation $\mat A \vec x = \l \vec x$. Manipulating this equation, we see that \[\mat A \vec x - \l \vec x = \bp{\mat A - \l \mat I} \vec x = 0.\] Since $\vec x$ is non-zero, the null space of $\mat A - \l \mat I$ must be non-trivial. Thus, $\mat A - \l \mat I$ must be singular, so \[\c(\l) = \det{\mat A - \l \mat I} = 0.\] Thus, $\l$ satisfies the characteristic equation of $\mat A$.
+    Since $\l$ is an eigenvalue of $\mat A$, we have $\mat A \vec x = \l \vec x$ for some non-zero vector $\vec x$. Manipulating this equation, we see that $\bp{\mat A - \l \mat I} \vec x = 0$. Since $\vec x$ is non-zero, the null space of $\mat A - \l \mat I$ is non-trivial. Thus, $\mat A - \l \mat I$ is singular, so $\c(\l) = \det{\mat A - \l \mat I} = 0$.  That is, $\l$ satisfies the characteristic equation of $\mat A$.
 \end{proof}
 
-Since the characteristic equation can be easily solved, we now have a straightforward way of finding eigenvalues and eigenvectors.
+Since the characteristic equation can be easily solved, we have a straightforward way of finding eigenvalues and eigenvectors.
 
 \begin{recipe}[Finding Eigenvalues and Eigenvectors]
     We solve the characteristic equation $\c(\l) = \det{\mat A - \l \mat I} = 0$ to find possible eigenvalues $\l$. For each $\l$ found, we find its associated eigenvector(s) by finding the basis of the null space of $\mat A - \l \mat I$.
@@ -71,9 +76,9 @@ Since the characteristic equation can be easily solved, we now have a straightfo
 
     Let $\vec x = \cveciix{x}{y}$ be a non-zero vector with $\mat A \vec x = \l \vec x.$
 
-    \case{1}[$\l = 6$] We have \[\mat A - \l \mat I = \begin{pmatrix}-5 & 2 \\ 5 & -2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $5x - 2y = 0$. Taking $x = 2$ and $y = 5$, the corresponding eigenvector is \[\vec x = \cvecii{2}{5}.\]
+    \case{1}[$\l = 6$] We have \[\mat A - \l \mat I = \begin{pmatrix}-5 & 2 \\ 5 & -2\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $5x - 2y = 0$. Taking $x = 2$ and $y = 5$, the corresponding eigenvector is $\vec x = \cveciix{2}{5}$.
 
-    \case{2}[$\l = -1$] We have \[\mat A- \l \mat I = \begin{pmatrix}2 & 2 \\ 5 & 5\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x + y = 0$. Taking $x = 1$ and $y = -1$, the corresponding eigenvector is \[\vec x = \cvecii1{-1}.\]
+    \case{2}[$\l = -1$] We have \[\mat A- \l \mat I = \begin{pmatrix}2 & 2 \\ 5 & 5\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Solving, we get $x + y = 0$. Taking $x = 1$ and $y = -1$, the corresponding eigenvector is $\vec x = \cveciix1{-1}$.
 \end{sample}
 
 If $\mat A$ is a $3 \times 3$ matrix, we can use cross products to easily find eigenvectors.
@@ -82,12 +87,12 @@ If $\mat A$ is a $3 \times 3$ matrix, we can use cross products to easily find e
     Let \[\mat A = \begin{pmatrix}2 & 0 & 1 \\ -1 & 2 & 3 \\ 1 & 0 & 2\end{pmatrix}.\] Find the eigenvector of $\mat A$ corresponding to $\l = 1$.
 \end{sample}
 \begin{sample}
-    Let $\vec x$ be the desired eigenvector. Consider \[\bp{\mat A - \mat I} \vec x = \begin{pmatrix}1 & 0 & 1 \\ -1 & 1 & 3 \\ 1 & 0 & 1\end{pmatrix} \vec x = \cveciii000.\] By multiplying out the LHS, we get the following two equations: \[\vec x \dotp \cveciii101 = 0, \qquad \vec x \dotp \cveciii{-1}13 = 0.\] These are precisely the equations of two planes, normal to $\cveciiix101$ and $\cveciiix{-1}13$ respectively, that also pass through the origin. Thus, $\vec x$ lies on the line of intersection between the two planes. The direction vector of this line is given by the cross product of the two normal vectors, so \[\vec x = \cveciii101 \crossp \cveciii{-1}13 = \cveciii{-1}{-4}1.\]
+    Let $\vec x$ be the desired eigenvector. Consider \[\bp{\mat A - \mat I} \vec x = \begin{pmatrix}1 & 0 & 1 \\ -1 & 1 & 3 \\ 1 & 0 & 1\end{pmatrix} \vec x = \cveciii000.\] By multiplying out the LHS, we get the equations \[\vec x \dotp \cveciii101 = 0 \quad \tand \quad \vec x \dotp \cveciii{-1}13 = 0.\] These are precisely the equations of two planes, normal to $\cveciiix101$ and $\cveciiix{-1}13$ respectively, that also pass through the origin. Thus, $\vec x$ lies on the line of intersection between the two planes. The direction vector of this line is given by the cross product of the two normal vectors, so \[\vec x = \cveciii101 \crossp \cveciii{-1}13 = \cveciii{-1}{-4}1.\]
 \end{sample}
 
 Note that an $n \times n$ matrix may have less than $n$ eigenvalues and eigenvectors. For instance, \[\begin{pmatrix}3 & 1 \\ 0 & 3\end{pmatrix}\] has the sole eigenvalue $\l = 3$ with corresponding eigenvector $\cveciix10$.
 
-Also, one eigenvalue may have multiple corresponding eigenvectors. For instance, \[\begin{pmatrix}0 & 0 & -2 \\ 1 & 2 & 1 \\ 1 & 0 & 3\end{pmatrix}\] has eigenvalue $\l = 2$, which corresponds to two linearly independent eigenvectors: \[\vec x_1 = \cveciii{-1}01, \qquad \vec x_2 = \cveciii010.\]
+Also, one eigenvalue may have multiple corresponding eigenvectors. For instance, \[\begin{pmatrix}0 & 0 & -2 \\ 1 & 2 & 1 \\ 1 & 0 & 3\end{pmatrix}\] has eigenvalue $\l = 2$, which corresponds to the two linearly independent eigenvectors $\vec x_1 = \cveciiix{-1}01$ and $\vec x_2 = \cveciiix010$.
 
 \subsection{Useful Results}
 
@@ -95,7 +100,7 @@ Also, one eigenvalue may have multiple corresponding eigenvectors. For instance,
     Eigenvectors corresponding to distinct eigenvalues must be linearly independent.
 \end{proposition}
 \begin{proof}
-    By way of contradiction, suppose the eigenvectors are linearly dependent. Let $j$ be the maximal $j$ such that $\vec x_1, \dots, \vec x_j$ are linearly independent. Then $\vec x_{j+1}$ can be expressed as a linear combination of $\vec x_1, \dots, \vec x_j$: \[\vec x_{j+1} = a_1 \vec x_1 + \dots + a_j \vec x_j. \tag{1}\] Applying $\mat A$ on both sides, we see that \[\l_{j+1} \vec x_{j+1} = a_1 \l_1 \vec x_1 + \dots + a_j \l_j \vec x_j.\tag{2}\] Since $\vec x_1, \dots, \vec x_j$ are linearly independent, we can compare their coefficients in (1) and (2), which gives \[a_i = a_i \frac{\l_i}{\l_{j+1}}.\] It immediately follows that $\l_i = \l_{j+1}$ for all $1 \leq i \leq j$. But this clearly contradicts the supposition that the eigenvalues are distinct. Thus, the eigenvectors must be linearly independent.
+    By way of contradiction, suppose the eigenvectors are linearly dependent. Let $j$ be the maximal $j$ such that $\vec x_1, \dots, \vec x_j$ are linearly independent. Then $\vec x_{j+1}$ can be expressed as a linear combination of $\vec x_1, \dots, \vec x_j$: \[\vec x_{j+1} = a_1 \vec x_1 + \dots + a_j \vec x_j. \tag{1}\] Pre-multiplying by $\mat A$ on both sides, we see that \[\l_{j+1} \vec x_{j+1} = a_1 \l_1 \vec x_1 + \dots + a_j \l_j \vec x_j.\tag{2}\] Since $\vec x_1, \dots, \vec x_j$ are linearly independent, we can compare their coefficients in (1) and (2), which gives \[a_i = a_i \frac{\l_i}{\l_{j+1}}.\] Since $\vec x_{j+1}$ is non-zero, without loss of generality, we may assume that $a_1$ is non-zero. Then $\l_1 = \l_{j+1}$, contradicting our hypothesis that the eigenvalues are distinct. Thus, the eigenvectors must be linearly independent.
 \end{proof}
 
 \begin{proposition}
@@ -118,19 +123,19 @@ Also, one eigenvalue may have multiple corresponding eigenvectors. For instance,
     Since $\mat A = \l \vec x$, we have $\bp{k \mat A} \vec x = \bp{k \l} \vec x$.
 \end{proof}
 \begin{proof}[Proof of \textup{(b)}]
-    We use induction. Let the statement $P(m)$ be such that \[P(m) \iff \text{$\vec x$ is an eigenvector of the matrix $\mat A^m$ with corresponding eigenvalue $\l^m$}.\] The base case $m = 1$ is trivial. Suppose $P(k)$ is true for some $k \in \NN$. Then \[\mat A^{k+1} \vec x = \mat A \bp{\mat A^k \vec x} = \mat A \bp{\l^k \vec x} = \l^k \bp{\mat A \vec x} = \l^k \bp{\l \vec x} = \l^{k+1} \vec x.\] Thus, $P(k) \implies P(k+1)$. This closes the induction.
+    Induct on $m$.
 \end{proof}
 \begin{proof}[Proof of \textup{(c)}]
-    Since $\mat A = \l \vec x$, we have \[\vec x = \mat A^{-1} \mat A \vec x = \mat A^{-1} \l \vec x = \l \bp{\mat A^{-1} \vec x} \implies \mat A^{-1} \vec x = \l^{-1} \vec x.\]
+    Since $\mat A = \l \vec x$, we have \[\vec x = \mat A^{-1} \mat A \vec x = \mat A^{-1} \l \vec x = \l \bp{\mat A^{-1} \vec x}.\] Since $\l \neq 0$, we may divide both sides by $\l$ to obtain $\mat A^{-1} \vec x = \l^{-1} \vec x$.
 \end{proof}
 \begin{proof}[Proof of \textup{(d)}]
     Since $\mat A = \l \vec x$ and $\mat B = \m \vec x$, we have \[\bp{\mat A + \mat B} \vec x = \mat A \vec x + \mat B \vec x = \l \vec x + \m \vec x = \bp{\l + \m} \vec x.\]
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{cor:cayley-hamilton}
     Let $\vec x$ be an eigenvector of $\mat A$ with corresponding eigenvalue $\l$. Define a polynomial $p(X) = a_0 + a_1 X + a_2 X^2 + \dots + a_n X^n$. Then $p(\l) \vec x = p(\mat A) \vec x$.
 \end{corollary}
-Note that we are taking $a_0$ to mean $a_0 \mat I$ on the RHS.
+Note that we take $a_0$ to mean $a_0 \mat I$ on the RHS.
 
 \begin{theorem}[Cayley-Hamilton Theorem]
     Let $\c(\l)$ be the characteristic polynomial of an $n \times n$ matrix $\mat A$. Then $\c(\mat A) = \mat 0$.
@@ -140,7 +145,7 @@ Note that we are taking $a_0$ to mean $a_0 \mat I$ on the RHS.
     Let \[\mat A = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 10\end{pmatrix}.\] One can verify that the characteristic polynomial of $\mat A$ is $\c(\l) = -\l^3 + 16 \l^2 + 12 \l - 3$. The Cayley-Hamilton theorem tells us that $-\mat A^3 + 16 \mat A^2 + 12 \mat A - 3 \mat I = \mat 0$.
 \end{example}
 
-If the eigenvectors of $\mat A$ form a basis of $\RR^n$, the proof of the Cayley-Hamilton theorem follows from the above corollary; both $\c(\mat A)$ and $\mat 0$ annihilate each eigenvector $\vec x_i$ (that is, $\c(\mat A) \vec x_i = \mat 0 \vec x_i = \vec 0$), hence they must be the same matrix. In full generality, however, matrices need not admit a basis of eigenvectors. In this setting, proving the Cayley-Hamilton theorem requires more advanced tools from linear algebra that lies beyond the scope of this book.
+A full proof of the Cayley-Hamilton theorem lies beyond the scope of this book. However, Corollary~\ref{cor:cayley-hamilton} can be used to prove the theorem if we assume that the eigenvectors of $\mat A$ form a basis of $\RR^n$: for each eigenvector $\vec x_i$, we have $\c(\mat A) \vec x_i = \mat 0 \vec x_i = \vec 0$, hence $\c(\mat A)$ and $\mat 0$ must be the same matrix.
 
 We now introduce an alternative approach to finding the characteristic polynomial of a matrix.
 
@@ -156,7 +161,7 @@ We now introduce an alternative approach to finding the characteristic polynomia
     Let $\mat A$ be an $n \times n$ matrix. Let $E_k$ be the sum of the determinants of all principal minors of order $k$. We define $E_0 = 1$. Then the characteristic polynomial $\c(\l)$ of $\mat A$ is given by \[\c(\l) = \sum_{i = 0}^n (-1)^i E_{n-i} \l^i.\]
 \end{proposition}
 
-For a proof, see this \href{https://boonsuan.github.io/misc/cauchy_binet.pdf}{wonderful note} by Ho Boon Suan.
+For a proof, see this \href{https://boonsuan.github.io/misc/cauchy_binet.pdf}{note} by Ho Boon Suan.
 
 \begin{sample}
     Find the characteristic polynomial of \[\mat A = \begin{pmatrix}2 & 0 & 1 \\ -1 & 2 & 3 \\ 1 & 0 & 2\end{pmatrix}.\]
@@ -204,7 +209,14 @@ The useful properties of diagonal matrices motivates us to find a way to write a
     If $\mat A$ is diagonalizable, then the columns of $\mat Q$ are the linearly independent eigenvectors of $\mat A$, and the diagonal matrix $\mat D$ contains the corresponding eigenvalues.
 \end{proposition}
 \begin{proof}
-    Let $\mat A$ be an $n \times n$ matrix with eigenvectors $\vec x_1, \dots, \vec x_n$ corresponding to the real eigenvalues $\l_1, \dots, \l_n$. Let $\mat Q$ be the matrix with $\vec x_1, \dots, \vec x_n$ as its columns and let $\mat D$ be a diagonal matrix with its diagonal entries as $\l_1, \dots, \l_n$: \[\mat Q = \begin{pmatrix}\vec x_1 & \dots & \vec x_n\end{pmatrix}, \quad \mat D = \begin{pmatrix}\l_1 & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \l_n\end{pmatrix}.\] Then \[\mat A \mat Q = \begin{pmatrix}\mat A \vec x_1 & \dots & \mat A \vec x_n\end{pmatrix} = \begin{pmatrix}\l_1 \vec x_1 & \dots & \l_n \vec x_n\end{pmatrix} = \begin{pmatrix}\vec x_1 & \dots & \vec x_n\end{pmatrix} \begin{pmatrix}\l_1 & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \l_n\end{pmatrix} = \mat Q \mat D.\] Post-multiplying both sides by $\mat Q^{-1}$, which exists since the columns of $\mat Q$ are linearly independent, we have $\mat A = \mat Q \mat D \mat Q^{-1}$.
+    Let $\mat A$ be an $n \times n$ matrix with eigenvectors $\vec x_1, \dots, \vec x_n$ corresponding to the real eigenvalues $\l_1, \dots, \l_n$. Let $\mat Q$ be the matrix with $\vec x_1, \dots, \vec x_n$ as its columns and let $\mat D$ be a diagonal matrix with its diagonal entries as $\l_1, \dots, \l_n$. That is, \[\mat Q = \begin{pmatrix}\vec x_1 & \dots & \vec x_n\end{pmatrix} \quad \tand \quad \mat D = \begin{pmatrix}\l_1 & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \l_n\end{pmatrix}.\] Then
+    \begin{align*}
+        \mat A \mat Q &= \begin{pmatrix}\mat A \vec x_1 & \dots & \mat A \vec x_n\end{pmatrix}\\
+        &= \begin{pmatrix}\l_1 \vec x_1 & \dots & \l_n \vec x_n\end{pmatrix}\\
+        &= \begin{pmatrix}\vec x_1 & \dots & \vec x_n\end{pmatrix} \begin{pmatrix}\l_1 & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \l_n\end{pmatrix}\\
+        &= \mat Q \mat D.
+    \end{align*}
+    Post-multiplying both sides by $\mat Q^{-1}$, which exists since the columns of $\mat Q$ are linearly independent, we have $\mat A = \mat Q \mat D \mat Q^{-1}$.
 \end{proof}
 
 Note that if $\mat A$ has $n$ real and distinct eigenvalues, it will have $n$ linearly independent eigenvectors, so it will be diagonalizable. However, if it has repeated eigenvalues, it may not be diagonalizable.
@@ -223,16 +235,10 @@ Note that $\mat Q$ and $\mat D$ are not unique. Using the above sample problem, 
 One of the more useful purposes of diagonalization is to compute matrix powers.
 
 \begin{proposition}
-    Suppose $\mat A = \mat Q \mat D \mat Q^{-1}$ is diagonalizable. Then \[\mat A^k = \mat Q \mat D^k \mat Q^{-1}.\]
+    Suppose $\mat A = \mat Q \mat D \mat Q^{-1}$ is diagonalizable. Then $\mat A^k = \mat Q \mat D^k \mat Q^{-1}$ for non-negative integers $k$.
 \end{proposition}
 \begin{proof}
-    Observe that
-    \begin{align*}
-        \mat A^k &= \underbrace{\bp{\mat Q \mat D \mat Q^{-1}}\bp{\mat Q \mat D \mat Q^{-1}}\dots\bp{\mat Q \mat D \mat Q^{-1}}}_{\text{$k$ times}}\\
-        &= \mat Q \mat D \bp{\mat Q^{-1} \mat Q} \mat D \bp{\mat Q^{-1} \mat Q} \dots \mat D \mat Q^{-1}\\
-        &= \mat Q \underbrace{\mat D \mat D \dots \mat D}_{\text{$k$ times}} \mat Q^{-1}\\
-        &= \mat Q \mat D^{k} \mat Q^{-1}.
-    \end{align*}
+    Induct on $k$.
 \end{proof}
 
 \begin{sample}
