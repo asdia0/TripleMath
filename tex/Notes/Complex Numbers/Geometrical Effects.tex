@@ -36,8 +36,11 @@ The following diagram shows the geometrical effect of addition on complex number
             \draw[->-=0.5, very thick] (O) -- (Z);
             \draw[->-=0.5, very thick] (O) -- (W);
             \draw[->-=0.5, very thick] (O) -- (P);
-            \draw[dotted, ->-=0.5] (Z) -- (P);
-            \draw[dotted, ->-=0.5] (W) -- (P);
+            \draw[dashed, ->-=0.5] (Z) -- (P);
+            \draw[dashed, ->-=0.5] (W) -- (P);
+            \fill (P) circle[radius=2.5pt];
+            \fill (W) circle[radius=2.5pt];
+            \fill (Z) circle[radius=2.5pt];
         \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -199,13 +202,13 @@ Geometrically, the point $R(z_1 z_2)$ is obtained by
 
                 \fill (C) circle[radius=2.5pt];
 
-                \draw[<->] (O) -- (C);
+                \draw[<->, dashed] (O) -- (C);
 
                 \node[anchor=west] at (1.7, 2) {$r$};
 
-                \draw[plotRed] (C) circle[radius=5];
+                \draw[thick] (C) circle[radius=5];
                 
-                \addlegendimage{no markers, plotRed}
+                \addlegendimage{no markers, thick}
                 \addlegendentry{locus of $P$};
             \end{axis}
         \end{tikzpicture}
@@ -247,9 +250,9 @@ Geometrically, the point $R(z_1 z_2)$ is obtained by
                 \coordinate (Z2) at (0, 1);
                 \coordinate (O) at (0, 0);
 
-                \draw[dotted] (Z1) -- (Z2);
+                \draw[dashed] (Z1) -- (Z2);
 
-                \addplot[plotRed] {-2*x - 1.5};
+                \addplot[thick] {-2*x - 1.5};
         
                 \fill (Z1) circle[radius=2.5pt];
                 \fill (Z2) circle[radius=2.5pt];
@@ -302,9 +305,9 @@ Geometrically, the point $R(z_1 z_2)$ is obtained by
                 \coordinate (Z2) at (0, 1);
                 \coordinate (O) at (0, 0);
 
-                \draw[dotted] (Z1) -- (Z2);
+                \draw[dashed] (Z1) -- (Z2);
 
-                \addplot[plotRed] {-x - 1};
+                \addplot[thick] {-x - 1};
         
                 \draw (Z1) circle[radius=2.5pt];
 
@@ -330,7 +333,7 @@ When sketching non-standard loci, one useful technique is to write $z$ in either
 
     \begin{figure}[H]
         \centering
-        \hspace{9em}\includegraphics{figures/90.pdf}
+        \hspace{9.5em}\includegraphics{figures/90.pdf}
         \caption{}
     \end{figure}
 \end{sampans}
@@ -375,9 +378,9 @@ We begin by considering the equality case. As we have seen above, $\abs{z - (3 +
 
             \node[anchor=west] at (1.7, 2) {$r$};
 
-            \draw[dashed] (C) circle[radius=5];
+            \draw[dashed, thick] (C) circle[radius=5];
             
-            \addlegendimage{no markers, black}
+            \addlegendimage{no markers, black, dashed, thick}
             \addlegendentry{boundary};
         \end{axis}
     \end{tikzpicture}
