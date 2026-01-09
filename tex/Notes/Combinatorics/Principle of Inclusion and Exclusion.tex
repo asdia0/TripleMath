@@ -4,13 +4,15 @@
     Let $A_1$, $A_2$, $\dots$, $A_n$ be finite sets. Then \[\abs{\bigcup_{k = 1}^n A_k} = \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I} + 1} \abs{\bigcap_{i \in I} A_i}.\]
 \end{theorem}
 \begin{proof}
-    Let $A = \bigcup_{k = 1}^n A_k$ be the union of all $n$ sets. Define the indicator function of a set $A_i$ to be $\mathbf{1}_{i} : A \to \bc{0, 1}$ such that \[\mathbf{1}_{i}(x) = \begin{cases} 1, & x \in A_i, \\ 0, & x \notin A_i.\end{cases}\] Consider now the function \[F(x) = \prod_{i = 1}^n \bs{1 - \mathbf{1}_i(x)}.\] Observe that for all $x \in A$, we must have $x \in A_i$ for some $1 \leq i \leq n$, thus $F(x)$ is identically zero. We now expand $F(x)$: \[F(x) = 1 + \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I}} \prod_{i \in I} \mathbf{1}_i(x).\] It is not too hard to see that $\prod_{i \in I} \mathbf{1}_i(x)$ is the indicator function of $\bigcap_{i \in I} A_i$. Summing over all $x \in A$, we hence obtain
+    Let $A = \bigcup_{k = 1}^n A_k$ be the union of all $n$ sets. Define the indicator function of a set $A_i$ to be $\mathbf{1}_{i} : A \to \bc{0, 1}$ such that \[\mathbf{1}_{i}(x) = \begin{cases} 1, & x \in A_i, \\ 0, & x \notin A_i.\end{cases}\] Consider now the function \[F(x) = \prod_{i = 1}^n \bs{1 - \mathbf{1}_i(x)}.\] Expanding $F(x)$, we get \[F(x) = 1 + \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I}} \prod_{i \in I} \mathbf{1}_i(x).\] Summing over all $x \in A$, we have
     \begin{align*}
         \sum_{x \in A} F(x) &= \sum_{x \in A} \bs{1 + \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I}} \prod_{i \in I} \mathbf{1}_i(x)}\\
         &= \abs{A} + \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I}} \bp{\sum_{x \in A} \prod_{i \in I} \mathbf{1}_i(x)}\\
-        &= \abs{\bigcup_{k = 1}^n A_k} + \sum_{I \subseteq [n]} (-1)^{\abs{I}} \abs{\bigcap_{i \in I} A_i}.
+        &= \abs{\bigcup_{k = 1}^n A_k} + \sum_{I \subseteq [n]} (-1)^{\abs{I}} \abs{\bigcap_{i \in I} A_i},
     \end{align*}
-    Since $F(x)$ is identically zero, we immediately obtain the desired result: \[\abs{\bigcup_{k = 1}^n A_k} = \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I} + 1} \abs{\bigcap_{i \in I} A_i}.\]
+    where we used the fact that $\prod_{i \in I} \mathbf{1}_i(x)$ is the indicator function of $\bigcap_{i \in I} A_i$.
+
+    However, observe that $F$ is identically zero; for each $x \in A$, we must have $x \in A_i$ for some $1 \leq i \leq n$. Thus, $\sum_{x \in A} F(x) = 0$, so \[\abs{\bigcup_{k = 1}^n A_k} = \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I} + 1} \abs{\bigcap_{i \in I} A_i}.\]
 \end{proof}
 
 A classic application of the Principle of Inclusion and Exclusion is counting the number of surjections between two finite sets.
@@ -24,7 +26,7 @@ A classic application of the Principle of Inclusion and Exclusion is counting th
         \abs{\bigcup_{k = 1}^n A_k} &= \sum_{\substack{I \subseteq [n]\\I \neq \varnothing}} (-1)^{\abs{I} + 1} \abs{\bigcap_{i \in I} A_i}.\\
         &= \sum_{k = 1}^{n} (-1)^{k+1} \binom{n}{k} (n-k)^m.
     \end{align*}
-    This counts the number of mappings that are not surjective. For the number of mappings that are surjective, we simply take
+    This counts the number of mappings that are not surjective. For the number of mappings that are surjective, we take the complement to get
     \begin{align*}
         \abs{S} - \abs{\bigcup_{k = 1}^n A_k} &= n^m - \sum_{k = 1}^{n} (-1)^{k+1} \binom{n}{k} (n-k)^m\\
         &= \sum_{k = 0}^{n-1} (-1)^k \binom{n}{k} (n-k)^m.

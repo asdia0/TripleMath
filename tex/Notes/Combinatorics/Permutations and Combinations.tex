@@ -23,22 +23,24 @@ Note that both the Addition and Multiplication Principles can be extended to any
 \end{example}
 
 \begin{definition}[Factorial]
-    The \vocab{factorial} of a non-negative integer $n$ is given by the recurrence relation \[n! = n(n-1)!, \quad 0! = 1.\] Equivalently, \[n! = n(n-1)(n-2)\dots(3)(2)(1), \quad 0! = 1.\]
+    The \vocab{factorial} of a non-negative integer $n$ is defined by the recurrence relation $n! = n(n-1)!$ with initial condition $0! = 1$.
 \end{definition}
 
+That is, $n! = n(n-1)(n-2)\dots(3)(2)(1)$.
+
 \begin{proposition}[Permutations of Objects Taken from Sets of Distinct Objects]
-    The number of permutations of $n$ distinct objects, taken $r$ at a time without replacement, is given by \[\perm{n}{r} = \underbrace{n(n-1)(n-2)\dots(n-r+1)}_{\text{$r$ consecutive integers}} = \frac{n!}{(n-r)!},\] where $0 \leq r \leq n$.
+    The number of permutations of $n$ distinct objects, taken $r$ at a time without replacement, is denoted $\perm{n}{r}$ and is given by \[\perm{n}{r} = \underbrace{n(n-1)(n-2)\dots(n-r+1)}_{\text{$r$ consecutive integers}} = \frac{n!}{(n-r)!},\] where $0 \leq r \leq n$.
 \end{proposition}
 \begin{proof}
-    Suppose we have $n$ distinct objects that we want to fill up $r$ ordered slots with. This operation can be done in $r$ stages
+    Suppose we have $n$ distinct objects that we want to fill up $r$ ordered slots with. This operation can be done in $r$ stages:
     \begin{itemize}
-        \item \bd{Stage 1.} The number of ways to fill in the first slot is $n$.
-        \item \bd{Stage 2.} After filling in the first slot, the number of ways to fill in the second slot is $n-1$.
-        \item \bd{Stage 3.} After filling in the first and second slots, the number of ways to fill in the third slot is $n-2$.
+        \item \bd{Stage 1.} We have $n$ objects, so there are $n$ ways to fill in the first slot.
+        \item \bd{Stage 2.} We are left with $n-1$ objects, so there are $n-1$ ways to fill in the second slot.
+        \item \bd{Stage 3.} We are left with $n-2$ objects, so there are $n-2$ ways to fill in the third slot.
     \end{itemize}
     This continues until we reach the last stage:
     \begin{itemize}
-        \item \bd{Stage $r$.} After filling all previous $r-1$ slots, the number of ways to fill in the last slot is $n-(r-1) = n-r+1$.
+        \item \bd{Stage $r$.} After filling all previous $r-1$ slots, we have $n-(r-1)$ objects remaining, so there are $n-r+1$ ways to fill in the last slot.
     \end{itemize}
     Thus, by the Multiplication Principle, the number of ways to fill up the $r$ slots are \[n(n-1)(n-2)\dots(n-r+1) = \frac{n!}{(n-r)!}.\]
 \end{proof}
@@ -46,17 +48,16 @@ Note that both the Addition and Multiplication Principles can be extended to any
 \begin{corollary}[Permutations of Distinct Objects in a Row]
     The number of ways to arrange $n$ distinct objects in a row, taken all at a time without replacement, is given by $n!$.
 \end{corollary}
-\begin{proof}
-    Take $r = n$.
-\end{proof}
 
-\begin{proposition}[Permutations of Non-Distinct Objects in a Row]
+\begin{proposition}[Permutations of Non-Distinct Objects in a Row]\label{prop:comb-non-dist}
     The number of permutations of $n$ objects in a row, taken all at a time without replacement, of which $n_1$ are of the 1st type, $n_2$ are of the 2nd type, $\dots$, $n_k$ are of the $k$th type, where $n = n_1 + n_2 + \dots + n_k$, is given by \[\frac{n!}{n_1! \, n_2! \dots n_k!}.\]
 \end{proposition}
 \begin{proof}
-    Let $A_i$ be the set of arrangements where objects in the first $i$ groups are now distinguishable, while objects in the remaining groups remain indistinguishable. For instance, $A_1$ is the set of arrangements of $n$ objects in a row, of which $n_2$ are of the 2nd type, $n_3$ are of the 3rd type, $\dots$, $n_k$ are of the $k$th type, while the objects previously of the 1st type are now distinct. We prove the above result by expressing $\abs{A_0}$ in terms of $\abs{A_k}$.
+    Let $A_i$ be the set of arrangements of $n$ objects in a row in which the objects of type $1, \dots, i$ are distinguishable, while the objects of type $i+1, \dots, k$ remain indistinguishable. We wish to find $\abs{A_0}$. 
 
-    Suppose we make objects of the 1st type distinct. For each arrangement in $A_0$, the $n_1$ objects of the 1st type can be permuted among themselves in $n_1!$ ways. Hence, \[\abs{A_1} = n_1! \abs{A_0}.\] Next, suppose we make objects of the 2nd type distinct. For each arrangement in $A_1$, the $n_2$ objects of the 2nd type can be permuted among themselves in $n_2!$ ways. Hence, \[\abs{A_2} = n_2! \abs{A_1}.\] Continuing on, we see that \[\abs{A_k} = n_k! \abs{A_{k-1}} = n_k! \, n_{k-1}! \abs{A_{k-2}} = \cdots = n_k! \, n_{k-1}! \dots n_1! \, \abs{A_0}.\] However, by definition, $A_k$ is the set of arrangements of $n$ distinct objects, which we know to be $n!$. Thus, \[\abs{A_0} = \frac{\abs{A_k}}{n_1! \, n_2! \dots n_k!} = \frac{n!}{n_1! \, n_2! \dots n_k!}.\]
+    We do so by proving a recurrence relation between $\abs{A_{i-1}}$ and $\abs{A_{i}}$. For each arrangement in $A_{i-1}$, consider the $n_i$ positions occupied by the objects of type $i$. Since these objects are indistinguishable in $A_{i-1}$, permuting them among these positions produces the same arrangement in $A_{i-1}$. However, once these objects are regarded as distinct, each permutation produces a distinct arrangement in $A_i$. There are $n_i!$ such permutations, so each arrangement in $A_{i-1}$ gives rise to exactly $n_i!$ distinct arrangements in $A_i$. Since different arrangements in $A_{i-1}$ give rise to disjoint sets of arrangements in $A_i$, we have $\abs{A_i} = n_i! \abs{A_{i-1}}$.
+
+    Applying this recurrence successively for $i = 1, \dots, k$, we see that \[\abs{A_k} = n_k! \abs{A_{k-1}} = n_k! \, n_{k-1}! \abs{A_{k-2}} = \cdots = n_k! \, n_{k-1}! \dots n_1! \, \abs{A_0}.\] Since $A_k$ is the set of arrangements of $n$ distinct objects, which we know to be $n!$, we finally obtain \[\abs{A_0} = \frac{\abs{A_k}}{n_1! \, n_2! \dots n_k!} = \frac{n!}{n_1! \, n_2! \dots n_k!}.\]
 \end{proof}
 \begin{remark}
     $n!/(n_1! n_2! \dots n_k!)$ is known as a \vocab{multinomial coefficient}, which is a generalization of the binomial coefficient and is related to the expansion of $(x_1 + x_2 + \dots + x_k)^n$.
@@ -79,6 +80,9 @@ Note that both the Addition and Multiplication Principles can be extended to any
 \begin{proposition}[Permutations of Objects Taken from Sets of Distinct Objects with Replacement]
     The number of permutations of $n$ distinct objects, taken $r$ at a time with replacement, is given by $n^r$, where $0 \leq r \leq n$.
 \end{proposition}
+\begin{proof}
+    Every time we take an object, we have $n$ choices. Since we take $r$ total objects, by the Multiplication Principle, there are $n^r$ total permutations.
+\end{proof}
 
 \section{Combinations}
 
@@ -87,23 +91,19 @@ Note that both the Addition and Multiplication Principles can be extended to any
 \end{definition}
 
 \begin{proposition}[Combinations of Objects Taken from Sets of Distinct Objects]
-    The number of combinations of $n$ distinct objects, taken $r$ at a time without replacement, is given by \[\comb{n}{r} = \binom{n}{r} = \frac{n!}{r! (n-r)!},\] where $0 \leq r \leq n$.
+    The number of combinations of $n$ distinct objects, taken $r$ at a time without replacement, is denoted $\comb{n}{r}$ and is given by \[\comb{n}{r} = \binom{n}{r} = \frac{n!}{r! (n-r)!},\] where $0 \leq r \leq n$.
 \end{proposition}
 \begin{proof}
-    Observe the number of ways to choose $r$ objects from $n$ distinct objects is equivalent to the number of permutations of $n$ objects, where $r$ objects are of the first type (chosen) while $n-r$ objects are of the second type (not chosen). Using the formula derived above, we have \[\comb{n}{r} = \frac{n!}{r! (n-r)!}.\]
+    Observe the number of ways to choose $r$ objects from $n$ distinct objects is equivalent to the number of permutations of $n$ objects, where $r$ objects are of the first type (chosen) while $n-r$ objects are of the second type (not chosen). By Proposition~\ref{prop:comb-non-dist}, we obtain \[\comb{n}{r} = \frac{n!}{r! (n-r)!}.\]
 \end{proof}
+
 \begin{corollary}
-    For integers $r$ and $n$, where $0 \leq r \leq n$, \[\perm{n}{r} = \comb{n}{r} \cdot r!.\]
+    For integers $0 \leq r \leq n$, we have $\perm{n}{r} = \comb{n}{r} \cdot r!$.
 \end{corollary}
-\begin{proof}
-    Rearrange the above result.
-\end{proof}
+
 \begin{corollary}
-    For integers $r$ and $n$, where $0 \leq r \leq n$, \[\comb{n}{r} = \comb{n}{n-r}.\]
+    For integers $0 \leq r \leq n$, we have $\comb{n}{r} = \comb{n}{n-r}$.
 \end{corollary}
-\begin{proof}
-    Observe that \[\frac{n!}{r! (n-r)!}\] is invariant under $r \mapsto n - r$.
-\end{proof}
 
 \section{Methods for Solving Combinatorics Problems}
 
@@ -117,7 +117,7 @@ Some problems involving permutations and combinations may involve restrictions. 
     How many ways are there to arrange the letters of the word ``SOCIETY'' if the arrangements start and end with a vowel?
 \end{sample}
 \begin{sampans}
-    We first address the restriction by placing the vowels at the start and end of the arrangement. Since there are 3 vowels in ``SOCIETY'', there are $3 \cdot 2 = 6$ ways to do so. Next, observe there are $5!$ ways to arrange the remaining 5 letters. Thus, by the Multiplication Principle, there are \[6 \cdot 5! = 720\] arrangements that satisfy the given restriction.
+    We first address the restriction by placing the vowels at the start and end of the arrangement. Since there are 3 vowels in ``SOCIETY'', there are $3 \cdot 2 = 6$ ways to do so. Next, observe there are $5!$ ways to arrange the remaining 5 letters. Thus, by the Multiplication Principle, there are $6 \cdot 5! = 720$ arrangements that satisfy the given restriction.
 \end{sampans}
 
 \begin{recipe}[Grouping Method]
@@ -133,7 +133,7 @@ Some problems involving permutations and combinations may involve restrictions. 
         \item \bd{Stage 1.} There are $4!$ ways to arrange the 4 units.
         \item \bd{Stage 2.} There are $4!$ ways to arrange `C', `M', `B' and `N' within the group.
     \end{itemize}
-    Hence, by the Multiplication Principle, the total number of arrangements is \[4! \cdot 4! = 576.\]
+    Hence, by the Multiplication Principle, the total number of arrangements is $4! \cdot 4! = 576$.
 \end{sampans}
 
 \begin{recipe}[Slotting Method]
@@ -144,7 +144,7 @@ Some problems involving permutations and combinations may involve restrictions. 
     Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
 \end{sample}
 \begin{sampans}
-    We begin by arranging the vowels, of which there are $3!$ ways to do so. \[\uparrow \quad \boxed{\text{O}} \quad \uparrow \quad \boxed{\text{I}} \quad \uparrow \quad \boxed{\text{E}} \quad \uparrow.\] Next, we slot the 4 consonants into the 4 gaps in between the vowels (i.e. where the arrows are). There are $4!$ ways to do so. Thus, by the Multiplication Principle, the total number of arrangements is \[3! \cdot 4! = 144.\]
+    We begin by arranging the vowels, of which there are $3!$ ways to do so. \[\uparrow \quad \boxed{\text{O}} \quad \uparrow \quad \boxed{\text{I}} \quad \uparrow \quad \boxed{\text{E}} \quad \uparrow.\] Next, we slot the 4 consonants into the 4 gaps in between the vowels (i.e. where the arrows are). There are $4!$ ways to do so. Thus, by the Multiplication Principle, the total number of arrangements is $3! \cdot 4! = 144$.
 \end{sampans}
 
 \begin{recipe}[Complementary Method]
@@ -155,5 +155,5 @@ Some problems involving permutations and combinations may involve restrictions. 
     Find the number of ways the letters of the word ``COMBINE'' can be arranged if all the consonants are to be separated.
 \end{sample}
 \begin{sampans}
-    Note that, without restrictions, there are a total of $7!$ ways to arrange the letters in ``COMBINE''. From the previous example, we saw that the number of arrangements where all consonants are together is $576$. Thus, by the complementary method, the number of arrangement where all consonants are separated is \[\text{total} - \text{complementary} = 7! - 576 = 144,\] which matches the answer given in the above example.
+    Note that, without restrictions, there are a total of $7!$ ways to arrange the letters in ``COMBINE''. From the previous example, we saw that the number of arrangements where all consonants are together is $576$. Thus, by the complementary method, the number of arrangement where all consonants are separated is $7! - 576 = 144$, which matches the answer given in the above example.
 \end{sampans}
