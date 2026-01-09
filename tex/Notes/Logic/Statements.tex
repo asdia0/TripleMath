@@ -1,0 +1,239 @@
+\chapter{Statements}
+
+\section{Preliminary Definitions}
+
+\begin{definition}
+    A \vocab{statement} is a declarative sentence that is either true or false.
+\end{definition}
+
+An important axiom that statements obey is the law of the excluded middle.
+
+\begin{axiom}[Law of the Excluded Middle]
+    A statement cannot be both true and false, nor can it be neither true nor false.
+\end{axiom}
+
+We typically denote a statement with capital letters such as $P$ and $Q$. If a statement $P$ involves a variable $x$, we may acknowledge this dependency by writing $P(x)$.
+
+\begin{example}
+    Let $P(x)$ be the statement ``$x$ is even''. Then $P(42)$, which refers to the statement ``42 is even'', is true. However, $P(5)$, which refers to the statement ``5 is even'', is false.
+\end{example}
+
+Most of the statements we will encounter can be grouped into three classes, namely axioms, definitions and theorems.
+
+\begin{definition}[Types of Statements]
+    \phantom{.}
+    \begin{itemize}
+        \item An \vocab{axiom} is a mathematical statement that does not require proof.
+        \item A \vocab{definition} is a true mathematical statement that gives the precise meaning of a word or phrase that represents some object, property or other concepts.
+        \item A \vocab{theorem} is a true mathematical statement that can be proven logically.
+    \end{itemize}
+\end{definition}
+
+We now introduce some operations of statements, namely the negation, conjunction and disjunction operations.
+
+\begin{definition}
+    The \vocab{negation} of a statement $P$, denoted $\lnot P$, is false when $P$ is true, and true when $P$ is false. In a truth table,
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        $P$ & $\lnot P$ \\ \hline\hline
+        T & F \\ \hline
+        F & T \\ \hline
+        \end{tabular}
+    \end{table}
+\end{definition}
+
+\begin{example}[Negation]
+    If $P(x)$ is the statement ``$x$ is even'', then $\lnot P(x)$ is the statement ``$x$ is odd''.
+\end{example}
+
+\begin{definition}
+    The \vocab{conjunction} of two statements $P$ and $Q$, denoted $P \land Q$, has truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \land Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & F \\ \hline
+        F & T & F \\ \hline
+        F & F & F \\ \hline
+        \end{tabular}
+    \end{table}
+\end{definition}
+
+\begin{example}[Conjunction]
+    If $P$ is the statement ``I like cats'', and $Q$ is the statement ``I like dogs'', then $P \land Q$ is the statement ``I like both cats and dogs''.
+\end{example}
+
+\begin{definition}
+    The \vocab{disjunction} of two statements $P$ and $Q$, denoted $P \lor Q$, has truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \lor Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & T \\ \hline
+        F & T & T \\ \hline
+        F & F & F \\ \hline
+        \end{tabular}
+    \end{table}
+\end{definition}
+
+\begin{example}[Disjunction]
+    If $P$ is the statement ``I like cats'', and $Q$ is the statement ``I like dogs'', then $P \lor Q$ is the statement ``I like cats or dogs or both''.
+\end{example}
+
+\section{Conditional and Biconditional Statements}
+
+In this section, we examine how statements are linked together to form more complicated statements. The first type of statement we will examine is the conditional statement.
+
+\begin{definition}
+    A \vocab{conditional statement} has the form ``if $P$ then $Q$''. Here, $P$ is the \vocab{hypothesis} and $Q$ is the \vocab{conclusion}, denoted by $P \implies Q$. This statement is defined to have the truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \implies Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & F \\ \hline
+        F & T & T \\ \hline
+        F & F & T \\ \hline
+        \end{tabular}
+    \end{table}
+    In words, the statement $P \implies Q$ also reads:
+    \begin{itemize}
+        \item $P$ \vocab{implies} $Q$.
+        \item $P$ is a \vocab{sufficient condition} for $Q$.
+        \item $Q$ is a \vocab{necessary condition} for $P$.
+        \item $P$ \vocab{only if} $Q$.
+    \end{itemize}
+\end{definition}
+
+To justify the truth table of $P \implies Q$, consider the following example:
+\begin{example}[Conditional Statement]
+    Let $P$ be the statement ``it is raining'' and $Q$ the statement ``the floor is wet''. Suppose I make the statement ``$P \implies Q$''. That is, ``if it is raining, then the floor is wet''.
+
+    \begin{itemize}
+        \item Suppose both $P$ and $Q$ are true, i.e. it is raining, and the floor is wet. In this case, I am telling the truth, so $P \implies Q$ is true.
+        \item Suppose $P$ is true but $Q$ is false, i.e. it is raining, and the floor is not wet. Here, I am not telling the truth; the floor would be wet if I was. Hence, $P \implies Q$ is false.
+        \item Suppose $P$ is false, i.e. it is not raining. Notice that the hypothesis of my claim is not fulfilled; I did not say anything about the floor when it is not raining. Hence, I am not lying, so $P \implies Q$ is true whenever $P$ is false.
+    \end{itemize}
+\end{example}
+
+We now look at biconditional statements. As the name suggests, a biconditional statement comprises two conditional statements: $P \implies Q$ and $Q \implies P$. The conditional statement is much stronger than the conditional statement.
+
+\begin{definition}
+    A \vocab{biconditional statement} has the form ``$P$ if and only if'', denoted $P \iff Q$. This statement is defined to have the truth table
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \iff Q$ \\ \hline\hline
+        T & T & T \\ \hline
+        T & F & F \\ \hline
+        F & T & F \\ \hline
+        F & F & T \\ \hline
+        \end{tabular}
+    \end{table}
+
+    When $P \iff Q$ is true, we say that $P$ and $Q$ are \vocab{equivalent}.
+\end{definition}
+
+An equivalent definition of $P \iff Q$ is the statement ``$(P \implies Q)$ and $(Q \implies P)$''. This allows us to easily justify the truth table of $P \iff Q$:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $P$ & $Q$ & $P \implies Q$ & $Q \implies P$ & $P \iff Q$ \\ \hline\hline
+    T & T & T & T & T \\ \hline
+    T & F & F & T & F \\ \hline
+    F & T & T & F & F \\ \hline
+    F & F & T & T & T \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{example}[Biconditional Statements]
+    Examples of biconditional statements in mathematics include
+    \begin{itemize}
+        \item An integer $n$ is even if and only if $n^2$ is even.
+        \item $ax^2 + bx + c = 0$ has only one root if and only if $b^2 - 4ac = 0$.
+    \end{itemize}
+\end{example}
+
+\section{Quantifiers}
+
+We now introduce two important symbols, namely the universal quantifier ($\forall$) and the existential quantifier ($\exists$)
+
+\begin{definition}
+    Let $P(x)$ be a statement, where $x$ has domain $S$.
+    \begin{itemize}
+        \item The statement ``$P(x)$ is true for all $x \in S$'' is denoted by ``$\forall x \in S, \, P(x)$''.
+        \item The statement ``$P(x)$ is true for some $x \in S$'' is denoted by ``$\exists x \in S, \, P(x)$''.
+    \end{itemize}
+\end{definition}
+
+When the domain $S$ is clear from context, we can simply write $\forall x, \, P(x)$.
+
+\begin{example}[Quantifiers]
+    Let $P(x)$ be the statement ``$x$ is even''. Since not all integers are even, the statement $\forall x \in \ZZ, \, P(x)$ is not true. However, the statement $\exists x \in \ZZ, \, P(x)$ is true, because we can find an integer that is even (e.g. $x = 0$).
+\end{example}
+
+\section{De Morgan's Laws}
+
+\begin{proposition}[De Morgan's Laws]
+    For statements $P$ and $Q$, we have
+    \begin{itemize}
+        \item $\lnot \bp{P \land Q} \iff (\lnot P) \lor (\lnot Q)$; and
+        \item $\lnot \bp{P \lor Q} \iff (\lnot P) \land (\lnot Q)$.
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    The equivalence between $\lnot \bp{P \land Q}$ and $(\lnot P) \lor (\lnot Q)$ can be seen from the following truth table:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|l|c|c|c|c|c|c|}
+        \cline{1-2} \cline{4-5} \cline{7-9}
+        $P$ & $Q$ &  & $P \land Q$ & $\lnot (P \land Q)$ &  & $\lnot P$ & $\lnot Q$ & $(\lnot P) \lor (\lnot Q)$ \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        T & T &  & T & F &  & F & F & F \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        T & F &  & F & T &  & F & T & T \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        F & T &  & F & T &  & T & F & T \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        F & F &  & F & T &  & T & T & T \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        \end{tabular}
+    \end{table}
+
+    Similarly, the equivalence between $\lnot \bp{P \lor Q}$ and $(\lnot P) \land (\lnot Q)$ can be seen from the following truth table:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|l|c|c|l|c|c|c|}
+        \cline{1-2} \cline{4-5} \cline{7-9}
+        $P$ & $Q$ &  & $P \lor Q$ & $\lnot (P \lor Q)$ &  & $\lnot P$ & $\lnot Q$ & $(\lnot P) \land (\lnot Q)$ \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        T & T &  & T & F &  & F & F & F \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        T & F &  & T & F &  & F & T & F \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        F & T &  & T & F &  & T & F & F \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        F & F &  & F & T &  & T & T & T \\ \cline{1-2} \cline{4-5} \cline{7-9} 
+        \end{tabular}
+    \end{table}
+\end{proof}
+
+\begin{example}[De Morgan's Law]
+    Let $P$ be the statement ``I like cats'', and $Q$ be the statement ``I like dogs''. Then $\lnot (P \land Q)$ is ``It is not the case that I like both cats and dogs'', while $(\lnot P) \lor (\lnot Q)$ is ``I do not like cats, or I do not like dogs, or I do not like both''. Clearly, the two statements are equivalent.
+\end{example}
+
+There exist analogous laws for quantifiers.
+
+\begin{proposition}
+    The negation of a universal statement is an existential statement, and vice versa. That is,
+    \begin{itemize}
+        \item $\lnot \bp{\forall x \in S, \, P(x)} \iff \exists x \in S, \, \lnot P(x)$; and
+        \item $\lnot \bp{\exists x \in S, \, P(x)} \iff \forall x \in S, \, \lnot P(x)$.
+    \end{itemize}
+\end{proposition}
+
+\begin{example}[Negation of Quantifiers]
+    Let $S$ be the set of all students in a class, and let $P(x)$ be ``$x$ likes durian''. Then the statement $\forall x \in S, \, P(x)$ reads as ``everyone in the class likes durian''. Intuitively, its negation would be ``someone in the class does not like durian'', which we can write as $\exists x \in S, \, \lnot P(x)$.
+\end{example}

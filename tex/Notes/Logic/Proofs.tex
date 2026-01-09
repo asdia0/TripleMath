@@ -1,0 +1,161 @@
+\chapter{Proofs}
+
+Mathematical proofs are arguments expressed in mathematical language. A proof consists of a sequence of statements leading logically to the conclusion, where each statement is either an accepted truth, an assumption, or a statement derived from previous statements. Occasionally, there will be the clarifying remark, but this is just for the reader and has no logical bearing on the structure of the proof.
+
+\begin{definition}
+    A \vocab{proof} is a deductive argument for a mathematical statement, showing that the stated assumptions logically guarantee the conclusion.
+\end{definition}
+
+There are three main types of proofs: direct proof, proof by contrapositive and proof by contradiction.
+
+\section{Direct Proof}
+
+A \vocab{direct proof} is an approach to prove a conditional statement $P \implies Q$. It is a series of valid arguments that starts with the hypothesis $P$, and ends with the conclusion $Q$.
+
+As an example, we will prove the following statement with a direct proof.
+
+\begin{statement}
+    If an integer $n$ is even, then $n^2$ is even.
+\end{statement}
+\begin{proof}
+    Suppose $n$ is even. By definition, there exists some integer $k$ such that $n = 2k$. Then \[n^2 = (2k)^2 = 4k^2 = 2\bp{2k^2}.\] Since $2k^2$ is an integer, it follows from our definition that $n^2$ is even.
+\end{proof}
+
+\section{Proof by Contrapositive}
+
+Suppose we wish to prove $P \implies Q$. Occasionally, the hypothesis $P$ is more complicated than the conclusion $Q$, making a direct proof undesirable. In such a scenario, we can choose to prove the statement via the \vocab{contrapositive}, which involves proving $\lnot Q \implies \lnot P$. This typically simplifies the proof, since our hypothesis $\lnot Q$ is now simpler.
+
+We now show the equivalence between $P \implies Q$ and $\lnot Q \implies \lnot P$.
+
+\begin{proposition}
+    Let $P$ and $Q$ be statements. Then $P \implies Q$ is equivalent to $\lnot Q \implies \lnot P$.
+\end{proposition}
+\begin{proof}
+    The result is immediate from the following truth table:
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|l|c|c|c|}
+        \cline{1-3} \cline{5-7}
+        $P$ & $Q$ & $P \implies Q$ &  & $\lnot Q$ & $\lnot P$ & $\lnot Q \implies \lnot P$ \\ \cline{1-3} \cline{5-7} 
+        T & T & T &  & F & F & T \\ \cline{1-3} \cline{5-7} 
+        T & F & F &  & T & F & F \\ \cline{1-3} \cline{5-7} 
+        F & T & T &  & F & T & T \\ \cline{1-3} \cline{5-7} 
+        F & F & T &  & T & T & T \\ \cline{1-3} \cline{5-7} 
+        \end{tabular}
+    \end{table}
+\end{proof}
+
+As an example, we will prove the following statement using the contrapositive.
+
+\begin{statement}
+    For any real numbers $x$ and $y$, if $x^2 y + x y^2 < 30$, then $x < 2$ or $y < 3$.
+\end{statement}
+\begin{proof}
+    Suppose $x > 2$ and $y > 3$ (this is the negation of $x < 2$ or $y < 3$). Then $x^2 y > (2)^2 (3) = 12$ and $xy^2 > (2)(3)^2 = 18$. Thus, $x^2 y + xy^2 > 12 + 18 = 30$, which is the negation of $x^2y + xy^2 < 30$. Thus, by the contrapositive, the statement is true.
+\end{proof}
+
+\section{Proof by Contradiction}
+
+A \vocab{proof by contradiction} is a proving technique where we want to prove the truth of a statement by assuming that it is false, and arriving at a contradiction. That is, to prove a statement $P$, we can
+\renewcommand{\theenumi}{\arabic{enumi}.}
+\begin{enumerate}
+    \item assume $\lnot P$,
+    \item derive a contradiction, and
+    \item conclude that $\lnot P$ is false, which implies $P$ is true.
+\end{enumerate}
+\renewcommand{\theenumi}{(\alph{enumi})}
+
+A classic example of a proof by contradiction is the irrationality of $\sqrt 2$.
+
+\begin{statement}
+    $\sqrt2$ is irrational.
+\end{statement}
+\begin{proof}
+    Seeking a contradiction, suppose $\sqrt2$ is rational. Write $\sqrt2 = a/b$, where $a$ and $b$ are coprime integers with $b \neq 0$. Then $a = \sqrt{2}b$. Squaring, we get $a^2 = 2b^2$, so $a^2$ is even, which implies $a$ is even. Write $a = 2k$ for some integer $k$. Substituting this into the equation $a^2 = 2b^2$ and simplifying, we get $b^2 = 2k^2$, whence $b^2$ is even, which implies $b$ is also even. Thus, both $a$ and $b$ have a factor of 2, contradicting our assumption that $a$ and $b$ are coprime. Hence, our assumption that $\sqrt2$ is rational is false, so $\sqrt2$ is irrational.
+\end{proof}
+
+\section{Induction}
+
+Induction is typically used to prove statements of the form ``$P(n)$ is true for all non-negative integers $n$''. There are several variants of induction.
+
+\subsection{Principle of Mathematical Induction}
+
+The basic form of mathematical induction requires us to
+\begin{itemize}
+    \item show that the base case $P(0)$ is true, and
+    \item prove that $P(k) \implies P(k+1)$ for some non-negative integer $k$.
+\end{itemize}
+
+From the second statement, we have \[P(0) \implies P(1) \implies P(2) \implies P(3) \implies \dots.\] The truth of the base case $P(0)$ then guarantees that $P(n)$ is true for all non-negative integers $n$.
+
+Of course, the base case need not always be $n = 0$. If we wish to prove that $P(n)$ holds for all integers $n \geq m$, where $m$ is an integer, our base case becomes $n = m$, so we have to verify that $P(m)$ holds.
+
+Intuitively, we can think of induction as a ladder. The base case acts as the first rung, while the statement $P(k) \implies P(k+1)$ enables us to climb the ladder rung by rung.
+
+A classic example of an inductive proof is to verify that the first $n$ natural numbers sum to $n(n+1)/2$.
+
+\begin{statement}
+    For $n$ a natural number, $1 + 2 + \dots + n = n(n+1)/2$.
+\end{statement}
+\begin{proof}
+    Let $P(n)$ be the statement $1 + 2 + \dots + n = n(n+1)/2$. We induct on $n$.
+
+    The base case $P(1)$ is trivial, since $1 = (1)(2)/2$. 
+    
+    Suppose then that $P(k)$ holds for some natural number $k$. Consider the sum of the first $k+1$ natural numbers. By our \vocab{induction hypothesis}, we see that \[1 + 2 + \dots + k + (k+1) = \frac{k(k+1)}{2} + (k + 1) = \frac{(k+1)((k+1) + 1)}{2},\] so $P(k+1)$ also holds.
+    
+    Since $P(1)$ is true and $P(k) \implies P(k+1)$ for some natural number $k$, it follows by the principle of mathematical induction that $P(n)$ holds for all natural numbers $n$.
+\end{proof}
+
+\subsection{Principle of Strong Induction}
+
+Another common variant of induction is \emph{strong} induction. Like before, it involves
+\begin{itemize}
+    \item showing that $P(0)$ is true, and
+    \item proving that if $P(i)$ is true for integers $i = 0, \dots, k$, then so is $P(k+1)$.
+\end{itemize}
+
+Here, the inductive step is replaced with a \emph{stronger} hypothesis that requires all the terms before $P(k+1)$ to be true, as demonstrated in the following example:
+
+\begin{statement}
+    All integers greater than 2 are either a prime or a product of primes.
+\end{statement}
+\begin{proof}
+    Let $P(n)$ be the statement ``$n$ is either a prime or a product of primes''. We induct on $n$.
+    
+    The base case $n = 2$ is trivial (2 itself is a prime).
+    
+    Now fix some integer $k \geq 2$ and assume that $P(i)$ is true for integers $i = 2, \dots, k$. If $k+1$ is prime, then $P(k+1)$ is trivially true. Else, $k+1$ must be composite, so we can write $k+1 = ab$, for some $2 \leq a, b \leq k$. But by our induction hypothesis, both $a$ and $b$ are either primes or a product of primes, hence $ab$ itself is a product of primes, so $P(k+1)$ is true. 
+    
+    Since $P(1)$ is true and $P(k) \implies P(k+1)$ for some integer $k \geq 2$, it follows by the principle of strong induction that $P(n)$ holds for all integers $n \geq 2$.
+\end{proof}
+
+\subsection{All Horses are the Same Colour}
+
+Caution must be exercised when proving a statement inductively. Consider now the following ``proof'' that purports to show that all horses share the same colour.
+
+\begin{statement}
+    All horses are the same colour.
+\end{statement}
+\begin{proof}
+    Let $P(n)$ be the statement ``A group of $n$ horses have the same colour''. We induct on $n$. The base case $P(1)$ is trivial. Suppose that $P(k)$ is true for some integer $k \geq 1$. Consider now a group of $k+1$ horses.
+    \begin{itemize}
+        \item First, exclude horse $k+1$. Horses 1 to $k$ are a group of $k$ horses, so by our induction hypothesis, they must all be of the same colour.
+        \item Next, exclude horse 1. Horses 2 to $k+1$ form another group of $k$ horses, so they must also all be of the same colour.
+    \end{itemize}
+    Hence, horse $k+1$ must have been the same colour as the non-excluded horses, i.e. all $k+1$ horses share the same colour, so $P(k+1)$ holds. Thus, by the principle of mathematical induction, $P(n)$ is true for all integers $n \geq 1$, so all horses are the same colour.
+\end{proof}
+
+Of course, we know that the claim is wrong, so we must have made an error somewhere in the proof. Indeed, the mistake occurs in the inductive step, which implicitly assumes that the two groups of $k$ horses are not disjoint. This assumption is not met when $k = 1$, hence the inductive step $P(1) \implies P(2)$ cannot be established and the induction fails.
+
+\section{Counter-Example}
+
+In the case where we wish to prove a statement false, it suffices to find a counter-example. The counter-example must fulfil the hypothesis, but not the conclusion. Mathematically, to show that $P \implies Q$ is false, we must show that $P$ is true but $Q$ is false.
+
+\begin{sample}
+    For positive integers $a$, $b$ and $c$, prove or disprove that if $c \mid ab$, then $c \mid a$ or $c \mid b$.
+\end{sample}
+\begin{sampans}
+    Take $a = 4$, $b = 6$, and $c = 8$. Then $8 = c \mid ab = 24$, but $8 = c \nmid a = 4$ and $8 = c \nmid b = 6$. This disproves the statement.
+\end{sampans}
