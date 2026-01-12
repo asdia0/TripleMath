@@ -6,74 +6,72 @@ In the previous chapter, we saw how a discrete random variable assumes countable
     A \vocab{continuous random variable} is a random variable that can take on any value in a given interval.
 \end{definition}
 
-Since the value of a continuous random variable is uncountable, it can only take on an interval of values, not a specific value.
+Since a continuous random variable $X$ can take values from an uncountable set, the probability that $X$ is equal to any specific value is zero. Probabilities are therefore assigned only to intervals of values.
 
-An example of continuous random variables is the volume of beverage (in ml) in a 500 ml bottle ($100 \leq X \leq 200$, $200 \leq X \leq 300$, etc.)
+An example of continuous random variables is the volume of beverage (in ml) in a 500 ml bottle.
 
 \section{Discrete to Continuous}
 
-In the previous chapter, we saw how we could represent the probability distribution of a discrete random variable using a table. For instance, the probability distribution of the outcome of a single throw of a 6-sided dice is given by the following table:
-
-\begin{center}
-    \begin{tabular}{|r|c|c|c|c|c|c|}
-        \hline
-        $x$ & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
-        $\P{X = x}$ & $\frac16$ & $\frac16$ & $\frac16$ & $\frac16$ & $\frac16$ & $\frac16$ \\ \hline
-    \end{tabular}
-\end{center}
-
-We can try to specify the distribution of a continuous random variable in the same way. Consider the lengths, in millimetres, of 50 leaves that have fallen from a particular tree. We can illustrate the distribution of the lengths using a histogram:
+Consider the lengths, in millimetres, of leaves that have fallen from a particular tree. We can illustrate the distribution of the lengths using a histogram:
 
 \begin{figure}[H]
     \centering
     \tikzsetnextfilename{421}
     \begin{tikzpicture}[
-        declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);}
+        declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);},
+        trim axis left, trim axis right,
     ]
     \begin{axis}[
-        samples at={0,...,17},
+        xmin=-0.5,
+        xmax=15.5,
+        ymin=0,
+        samples at={0,...,15},
         yticklabel style={
             /pgf/number format/fixed,
             /pgf/number format/fixed zerofill,
             /pgf/number format/precision=2
         },
-        legend style={at={(0.5, -0.15)},anchor=north},
-        ybar=0pt, bar width=1
-    ]
-    \addplot [fill=cyan, fill opacity=0.5] {binom(x,17,0.4)};
+        ybar=0pt,
+        bar width=1,
+        bar shift=0pt,
+        xlabel = {length (in mm)},
+        ylabel = {frequency density}
+        ]
+    \addplot[pattern=north east lines] {binom(x,20,0.375)};
     \end{axis}
     \end{tikzpicture}
-    \caption{A histogram of the lengths of leaves.}
+    \caption{}
 \end{figure}
 
-Here, the vertical axis represents the frequency density of lengths in a particular interval, hence the total area of the histogram is 1. This property also allows us to find the probability that a length is in a given interval: simply sum up the area of the rectangles in the given interval. 
+Because the vertical axis represents the frequency density of lengths in a particular interval, the probability that a length is in a given interval can be found by summing the area of the rectangles within the interval.
 
-Notice that if we want the probability of a certain length, e.g. $L = 6.3$ cm, the answer would be zero. Though it is theoretically possible for $L$ to be $6.3$ cm exactly (i.e. $6.30000\dots$), the probability is actually zero. This means that \[\P{6 < L < 7} = \P{6 \leq L < 7} = \P{6 < L \leq 7} = \P{6 \leq L \leq 7}.\] That is, whether we include the bounds of the interval does not affect the probability that $L$ falls within the interval.
-
-The probabilities calculated from the histogram could be used to model the length of a tree leaf. However, the model is crude, because of the limited amount of data, and the small number of classes in which the leaves are grouped into, resulting in the ``steps'' in the histogram.
-
-The model could be further refined by repeating the process of collecting more data and reducing the class width. If this process were to be continued indefinitely, then the outline of the histogram would become a smooth curve:
+The probabilities calculated from the histogram can be used to model the length of a tree leaf. However, this model is crude; due to the limited amount of data and the small number of classes in which the leaves are grouped into, there are discrete ``steps'' that are visible in the histogram. This can be remedied by collecting more data and reducing the width of each class. If we refine our model infinitely, then the outline of the histogram would become a smooth curve:
 
 \begin{figure}[H]\tikzsetnextfilename{425}
     \centering
     \begin{tikzpicture}[trim axis left, trim axis right]
         \begin{axis}[
             domain = 0:15,
-            ymin = -0.1,
-            ymax = 0.5,
+            xmin=-0.5,
+            xmax=15.5,
+            ymin = 0,
+            ymax = 0.2,
             samples = 101,
-            axis x line=middle,
-            axis y line=none,
-            xtick = {6, 9},
-            xticklabels = {$a$, $b$},
-            xlabel = {$L$},
-            legend cell align={left},
-            legend pos=outer north east,
+            xtick = {0, 2, 4, 6, 8, 10, 12, 14},
+            xlabel = {length (in mm)},
+            ylabel = {probability density function},
+            yticklabel style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=2
+            }
             ]
-            \addplot[black, very thick] {1/sqrt(2*pi) * e^(-0.5 * (x-7)^2};
+            \addplot[black, very thick, name path=A] {1/(2.165 * sqrt(2*pi)) * e^(-0.5 * (x-7.5)^2 / 4.6875};
+            \addplot[draw=none,name path=B] {0};
+            \addplot[pattern=north east lines] fill between[of=A and B,soft clip={domain=0:15}];
         \end{axis}
     \end{tikzpicture}
-    \caption{Smooth curve after repeating process infinitely.}
+    \caption{}
 \end{figure}
 
 The probability of the length of a leaf lying between $a$ and $b$ is given by the area under the curve between $a$ and $b$.
@@ -96,8 +94,6 @@ The probability density function $f(x)$ of a continuous random $X$ has the follo
         \item $f(x)$ is non-negative (since we cannot have negative probabilities).
         \item The total area under the graph is 1 (since the probability must sum to 1): \[\int_{-\infty}^{\infty} f(x) = 1.\]
         \item The boundary of an interval does not affect probability: \[\P{a < X < b} = \P{a \leq X < b} = \P{a < X \leq b} = \P{a \leq X \leq b}.\]
-        \item If $f$ has a maximum when $x = M$, then $M$ is the mode.
-        \item If \[\P{X \leq m} = \int_{-\infty}^m f(x) \d x = 1/2,\] then $m$ is the median. If $f$ is symmetric about the line $x = x_0$, then $m = x_0$.
     \end{itemize}
 \end{fact}
 
@@ -106,6 +102,12 @@ Note that $f(x)$ need not be continuous; it only needs to be non-negative and ha
     2-x, & 1 < x \leq 2,\\
     0, & \ow
 \end{cases}\] is a valid probability density function.
+
+\begin{definition}[Mode of a Continuous Random Variable]
+    For a continuous random variable $X$ with probability density function $f$, a mode is any value $x$ such that $f(x)$ is a (global) maximum.
+\end{definition}
+
+This builds on our intuition that a mode is the value that a discrete random variable $X$ is most likely to take on.
 
 \subsection{Cumulative Distribution Function}
 
@@ -133,17 +135,20 @@ The cdf of a continuous random variable $X$ has the following properties:
     \begin{itemize}
         \item By the fundamental theorem of calculus, we have \[\der{}{x} F(x) = f(x).\]
         \item The lower and upper limits of $F(x)$ are 0 and 1 respectively: \[\lim_{x \to -\infty} F(x) = 0 \quad \tand \quad \lim_{x \to \infty} F(x) = 1.\]
-        \item $F$ is a non-decreasing function, i.e. $a \leq b$ implies $F(a) \leq F(b)$.
-        \item $F$ is a continuous function, even if $f$ is discontinuous.
-        \item $\P{a < X < b} = F(b) - F(a)$.
-        \item The median $m$ satisfies $F(m) = 1/2$.
+        \item $F$ is non-decreasing.
+        \item $F$ is continuous, even if $f$ is discontinuous.
+        \item For all real numbers $a < b$, we have $\P{a < X < b} = F(b) - F(a)$.
     \end{itemize}
 \end{fact}
+
+\begin{definition}
+    For a continuous random variable $X$ with cumulative distribution function $F(x)$, a median is any value $x$ such that $F(x) = 1/2$.
+\end{definition}
 
 \subsection{Expectation and Variance}
 
 \begin{definition}
-    For a continuous random variable $X$ with pdf $f$, the \vocab{expectation} of $X$ is given by \[\m = \E{X} = \int_{-\infty}^{\infty} x f(x) \d x.\]
+    For a continuous random variable $X$ with pdf $f$, the \vocab{expectation} of $X$, denoted $\m$, is given by \[\m = \E{X} = \int_{-\infty}^{\infty} x f(x) \d x.\]
 
     For a general function $g$, we calculate $\E{g(X)}$ as \[\E{g(X)} = \int_{-\infty}^{\infty} g(x) f(x) \d x.\]
 \end{definition}
@@ -156,12 +161,12 @@ Using the above definitions, we can easily calculate the variance of $X$:
     The \vocab{variance} of X, denoted $\Var{X}$, is given by \[\Var{X} = \E{(X-\m)^2} = \int_{-\infty}^\infty (x-\m)^2 f(x) \d x.\]
 \end{definition}
 
-However, it is usually easier to calculate $\Var{X}$ using \[\Var{X} = \E{X^2} - \E{X}^2.\]
+However, it is usually easier to calculate $\Var{X}$ using $\Var{X} = \E{X^2} - \E{X}^2$.
 
 Note that all results of expectation and variance algebra (see \SS\ref{ssec:DRV-Exp} and \SS\ref{ssec:DRV-Var}) continue to hold:
 
 \begin{fact}[Properties of Expectation and Variance]
-    For a continuous random variable $X$ and constants $a$ and $b$, \[\E{X + Y} = \E{X} + \E{Y},\] where $Y$ is any continuous random variable. If $Y$ is also independent with $X$, then \[\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y}.\]
+    For a continuous random variable $X$ and constants $a$ and $b$, $\E{X + Y} = \E{X} + \E{Y}$, where $Y$ is any continuous random variable. If $Y$ is also independent with $X$, then $\Var{aX + bY} = a^2 \Var{X} + b^2 \Var{Y}$.
 \end{fact}
 
 The proofs of the two facts are similar to the discrete case.
@@ -171,35 +176,35 @@ The proofs of the two facts are similar to the discrete case.
 Suppose we have a continuous random variable $Y$ that is given as a function of another continuous random variable $X$, i.e. $Y = g(X)$. If we know that cdf of $X$, we can easily find the pdf and cdf of $Y$ using the following method:
 
 \begin{recipe}[Finding pdf and cdf of $Y$]
-    Let $X$ be a continuous random variable with pdf $f_X$. If $Y = g(X)$ (i.e. $Y$ depends on $X$), then \[F_Y(y) = \P{Y \leq y} = \P{g(X) \leq y}.\] Then, to obtain the pdf of $Y$, we differentiate $F_Y(y)$ with respect to $y$.
+    Let $X$ be a continuous random variable with pdf $f_X$. If $Y = g(X)$, we can obtain the pdf of $Y$ by differentiating $F_Y(y) = \P{Y \leq y} = \P{g(X) \leq y}$ with respect to $y$.
 \end{recipe}
 
 \begin{sample}
     Let $X$ have pdf \[f_X(x) = \begin{cases}
-        \frac2\pi, & 0 \leq x \leq \frac\pi2,\\
+        2/\pi, & 0 \leq x \leq \pi/2,\\
         0, & \ow.
     \end{cases}\] Find the pdf of $Y$, where $Y = \sin X$.
 \end{sample}
 \begin{sampans}
     Integrating $f_X$, we obtain the cdf of $X$: \[F_X(x) = \begin{cases}
         0, & x < 0,\\
-        \frac2\pi x, & 0 \leq x \leq \frac\pi2,\\
-        1, & x > \frac\pi2.
+        \bp{2/\pi} x, & 0 \leq x \leq \pi/2,\\
+        1, & x > \pi/2.
     \end{cases}\] Now consider $F_Y(y)$:
     \begin{align*}
         F_Y(y) &= \P{Y \leq y} = \P{\sin X \leq y} = \P{X \leq \arcsin y} \\
         &= \begin{cases}
             0, & \arcsin y < 0,\\
-            \frac2\pi \arcsin y, & 0 \leq \arcsin y \leq \frac\pi2,\\
-            1, & \arcsin y > \frac\pi2
+            2/\pi \arcsin y, & 0 \leq \arcsin y \leq \pi/2,\\
+            1, & \arcsin y > \pi/2
         \end{cases} = \begin{cases}
             0, & y < 0,\\
-            \frac2\pi \arcsin y, & 0 \leq y \leq 1,\\
+            2/\pi \arcsin y, & 0 \leq y \leq 1,\\
             1, & y > 1.
         \end{cases}
     \end{align*}
-    Differentiating, we obtain the pdf of $Y$: \[f_Y(y) = \begin{cases}
-        \frac2{\pi\sqrt{1 - y^2}}, & 0 \leq y < 1,\\
+    Differentiating piecewise with respect to $y$, we obtain the pdf of $Y$: \[f_Y(y) = \begin{cases}
+        2/\pi\sqrt{1 - y^2}, & 0 \leq y < 1,\\
         0, & \ow.
     \end{cases}\]
 \end{sampans}
@@ -212,9 +217,76 @@ Suppose we have a continuous random variable $Y$ that is given as a function of 
 
 \subsection{Density and Distribution Functions}
 
+\begin{minipage}{0.49\textwidth}
+    \begin{figure}[H]\tikzsetnextfilename{426}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right, scale=0.8]
+            \begin{axis}[
+                domain = -0.5:10,
+                ymin = -0.0333,
+                ymax = 0.4,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {3, 7},
+                xticklabels = {$a$, $b$},
+                ytick = {0.25},
+                yticklabels = {$1/(b-a)$},
+                xlabel = {$x$},
+                ylabel = {$f(x)$},
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[black, very thick, domain=3:7] {0.25};
+                \addplot[black, very thick, domain=-0.5:3] {0};
+                \addplot[black, very thick, domain=7:10] {0};
+                \draw (3, 0) circle[radius=2.5pt];
+                \draw (7, 0) circle[radius=2.5pt];
+                \fill (3, 0.25) circle[radius=2.5pt];
+                \fill (7, 0.25) circle[radius=2.5pt];
+                \draw[dashed] (3, 0) -- (3, 0.25);
+                \draw[dashed] (7, 0) -- (7, 0.25);
+            \end{axis}
+        \end{tikzpicture}
+    \caption{The pdf of $X \sim \Uni{a}{b}$.}
+    \end{figure}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+    \begin{figure}[H]\tikzsetnextfilename{427}
+        \centering
+        \begin{tikzpicture}[trim axis left, trim axis right, scale=0.8]
+            \begin{axis}[
+                domain = -0.5:10,
+                ymin = -0.1,
+                ymax = 1.2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = {3, 7},
+                xticklabels = {$a$, $b$},
+                ytick = {1},
+                xlabel = {$x$},
+                ylabel = {$F(x)$},
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[black, very thick, domain=3:7] {(x-3)/4};
+                \addplot[black, very thick, domain=-0.5:3] {0};
+                \addplot[black, very thick, domain=7:10] {1};
+                \draw[dashed] (7, 1) -- (7, 0);
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The cdf of $X \sim \Uni{a}{b}$.}
+    \end{figure}
+\end{minipage}
+
 \begin{proposition}
     The probability density function of $X \sim \Uni{a}{b}$ is \[f(x) = \begin{cases}
-        \frac1{b-a}, & a \leq x \leq b,\\
+        1/(b-a), & a \leq x \leq b,\\
         0, & \ow.
     \end{cases}\]
 \end{proposition}
@@ -222,45 +294,8 @@ Suppose we have a continuous random variable $Y$ that is given as a function of 
     Since $X$ is equally likely to lie anywhere in the interval $[a, b]$, we know its pdf has the form \[f(x) = \begin{cases}
         c, & a \leq x \leq b,\\
         0, & \ow,
-    \end{cases}\] where $c$ is a constant. Since the sum of probabilities is 1, \[1 = \int_{-\infty}^\infty f(x) \d x = \int_a^b c \d x = c(b-a).\] Thus, $c = 1/(b-a)$, as desired.
+    \end{cases}\] where $c$ is a constant. Since the sum of probabilities is 1, \[1 = \int_{-\infty}^\infty f(x) \d x = \int_a^b c \d x = c\bp{b-a}.\] Thus, $c = 1/(b-a)$, as desired.
 \end{proof}
-
-\begin{figure}[H]\tikzsetnextfilename{426}
-    \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
-        \begin{axis}[
-            domain = -0.5:10,
-            ymin = -0.1,
-            ymax = 0.4,
-            samples = 101,
-            axis y line=middle,
-            axis x line=middle,
-            xtick = {3, 7},
-            xticklabels = {$a$, $b$},
-            ytick = {0.25},
-            yticklabels = {$\frac1{b-a}$},
-            xlabel = {$x$},
-            ylabel = {$f(x)$},
-            legend cell align={left},
-            legend pos=outer north east,
-            after end axis/.code={
-                \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
-                }
-            ]
-            \addplot[black, very thick, domain=3:7] {0.25};
-            \addplot[black, very thick, domain=-0.5:3] {0};
-            \addplot[black, very thick, domain=7:10] {0};
-            \draw (3, 0) circle[radius=2.5pt];
-            \draw (7, 0) circle[radius=2.5pt];
-            \fill (3, 0.25) circle[radius=2.5pt];
-            \fill (7, 0.25) circle[radius=2.5pt];
-            \draw[dashed] (3, 0) -- (3, 0.25);
-            \draw[dashed] (7, 0) -- (7, 0.25);
-        \end{axis}
-    \end{tikzpicture}
-    \caption{The probability density function $f(x)$.}
-\end{figure}
 
 \begin{proposition}
     The cumulative density function of $X \sim \Uni{a}{b}$ is \[F(x) = \begin{cases}
@@ -277,43 +312,13 @@ Suppose we have a continuous random variable $Y$ that is given as a function of 
     \end{cases}\]
 \end{proof}
 
-\begin{figure}[H]\tikzsetnextfilename{427}
-    \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
-        \begin{axis}[
-            domain = -0.5:10,
-            ymin = -0.1,
-            ymax = 1.2,
-            samples = 101,
-            axis y line=middle,
-            axis x line=middle,
-            xtick = {3, 7},
-            xticklabels = {$a$, $b$},
-            ytick = {1},
-            xlabel = {$x$},
-            ylabel = {$F(x)$},
-            legend cell align={left},
-            legend pos=outer north east,
-            after end axis/.code={
-                \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
-                }
-            ]
-            \addplot[black, very thick, domain=3:7] {(x-3)/4};
-            \addplot[black, very thick, domain=-0.5:3] {0};
-            \addplot[black, very thick, domain=7:10] {1};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{The cumulative distribution function $F(x)$.}
-\end{figure}
-
 \subsection{Expectation and Variance}
 
 \begin{proposition}
     If $X \sim \Uni{a}{b}$, then $\E{X} = (a+b)/2$.
 \end{proposition}
 \begin{proof}
-    The pdf of $X$ is symmetric about $x = (a+b)/2$. Thus, $(a+b)/2$ is the mean.
+    The pdf of $X$ is symmetric about $x = (a+b)/2$.
 \end{proof}
 
 \begin{proposition}
@@ -338,63 +343,97 @@ As its definition suggests, the exponential distribution is often used to model 
 
 \subsection{Density and Distribution Functions}
 
+\begin{minipage}{0.49\textwidth}
+    \begin{figure}[H]\tikzsetnextfilename{428}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \begin{axis}[
+                domain = -1:10,
+                ymin = -0.0333,
+                ymax = 0.4,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = {0.3},
+                yticklabels = {$\l$},
+                xlabel = {$x$},
+                ylabel = {$f(x)$},
+                xlabel style={
+                    at={(rel axis cs:1,0.082)},
+                    anchor=north east
+                    },
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[black, very thick, domain=0:10] {0.3 * e^(-0.3 * x)};
+                \addplot[black, very thick, domain=-1:0] {0};
+                \draw (0, 0) circle[radius=2.5pt];
+                \fill (0, 0.3) circle[radius=2.5pt];
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The pdf of $X \sim \Exp{\l}$.}
+    \end{figure}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+    \begin{figure}[H]\tikzsetnextfilename{527}
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \begin{axis}[
+                domain = -1:10,
+                ymin = -0.1,
+                ymax = 1.2,
+                samples = 101,
+                axis y line=middle,
+                axis x line=middle,
+                xtick = \empty,
+                ytick = {1},
+                xlabel = {$x$},
+                ylabel = {$F(x)$},
+                after end axis/.code={
+                    \path (axis cs:0,0) 
+                        node [anchor=north east] {$O$};
+                    }
+                ]
+                \addplot[black, very thick, domain=0:10] {1 - e^(-0.3 * x)};
+                \addplot[black, very thick, domain=-1:0] {0};
+                \addplot[dashed, domain=0:10] {1};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The cdf of $X \sim \Exp{\l}$.}
+    \end{figure}
+\end{minipage}
+
 \begin{proposition}
-    The probability density function of $X \sim \Exp{\l}$ is given by \[f(x) = \begin{cases}
+    The probability density function and cumulative distribution function of $X \sim \Exp{\l}$ are respectively given by \[f(x) = \begin{cases}
         \l \e^{-\l x}, & x \geq 0,\\
         0, & \ow,
-    \end{cases}\] and the cumulative distribution function of $X$ is given by \[F(x) = \begin{cases}
+    \end{cases} \quad \tand \quad F(x) = \begin{cases}
         0, & x < 0,\\
         1 - \e^{-\l x}, & x \geq 0.
     \end{cases}\]
 \end{proposition}
 \begin{proof}
-    Consider a Poisson process with mean rate $\l$. Let $Y$ be the number of events occurring in a time interval of length $x$, i.e. $Y \sim \Po{\l x}$. Let $X$ be the random variable denoting the ``waiting time'' between successive such random events.
+    Consider a Poisson process with mean rate $\l$. Let $Y$ be the number of events occurring in a time interval of length $x$, so $Y \sim \Po{\l x}$. Then $X$ is the ``waiting time'' between successive events.
 
-    Since $X$ is the amount of time until the next event occurs, the event $X > x$ is equivalent to no events happening in a time interval of $x$. In other words, $X > x$ is equivalent to $Y = 0$. Hence, \[\P{X > x} = \P{Y = 0} = \frac{(\l x)^0}{0!} \e^{-\l x} = \e^{-\l x}\] Hence, for $x \geq 0$, the cdf of $X$ is given by \[F(x) = \P{X \leq x} = 1 - \P{X > x} = 1 - \e^{-\l x}.\] Also, since the ``waiting time'' cannot be negative, we have \[F(x) = \begin{cases}
+    Since $X$ is the amount of time until the next event occurs, the event $X > x$ is equivalent to no events happening in a time interval of $x$. Hence, \[\P{X > x} = \P{Y = 0} = \frac{(\l x)^0}{0!} \e^{-\l x} = \e^{-\l x}\] Hence, for $x \geq 0$, the cdf of $X$ is given by $F(x) = \P{X \leq x} = 1 - \e^{-\l x}$. Also, since the ``waiting time'' cannot be negative, we have \[F(x) = \begin{cases}
         0, & x < 0,\\
         1 - \e^{-\l x}, & x \geq 0.
-    \end{cases}\] Differentiating, we obtain the pdf of $X$: \[f(x) = \begin{cases}
+    \end{cases}\] Differentiating piecewise, we obtain the pdf of $X$: \[f(x) = \begin{cases}
         \l \e^{-\l x}, & x \geq 0,\\
         0, & \ow,
     \end{cases}\]
 \end{proof}
 
-\begin{figure}[H]\tikzsetnextfilename{428}
-    \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
-        \begin{axis}[
-            domain = -1:10,
-            ymin = -0.1,
-            ymax = 0.4,
-            samples = 101,
-            axis y line=middle,
-            axis x line=middle,
-            xtick = \empty,
-            ytick = {0.3},
-            yticklabels = {$\l$},
-            xlabel = {$x$},
-            ylabel = {$f(x)$},
-            legend cell align={left},
-            legend pos=outer north east,
-            after end axis/.code={
-                \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
-                }
-            ]
-            \addplot[black, very thick, domain=0:10] {0.3 * e^(-0.3 * x)};
-            \addplot[black, very thick, domain=-1:0] {0};
-            \draw (0, 0) circle[radius=2.5pt];
-            \fill (0, 0.3) circle[radius=2.5pt];
-        \end{axis}
-    \end{tikzpicture}
-    \caption{The probability density function $f(x)$.}
-\end{figure}
+Like the geometric distribution, the exponential distribution is memoryless.
 
 \begin{proposition}
     The exponential distribution is memoryless.
 \end{proposition}
 \begin{proof}
-    Let $X \sim \Exp{\l}$. We have
+    Let $X \sim \Exp{\l}$. Then
     \begin{align*}
         \P{X > a + b}{X > a} &= \frac{\P{X > a + b \tand X > a}}{\P{X > a}}\\
         &= \frac{\P{X > a + b}}{\P{X > a}} \\
@@ -402,8 +441,9 @@ As its definition suggests, the exponential distribution is often used to model 
         &= \e^{-\l b}\\
         &= \P{X > b}.
     \end{align*}
-    Thus, the probability that one has to ``wait'' another $b$ units of time does not depend on the time already spent ``waiting'', i.e. $X$ is memoryless.
 \end{proof}
+
+This aligns with our intuition; the additional amount of time that one has to ``wait'' does not depend on the time already spent ``waiting''.
 
 \subsection{Expectation, Variance and Median}
 
@@ -422,10 +462,10 @@ As its definition suggests, the exponential distribution is often used to model 
 \end{proof}
 
 \begin{proposition}
-    The median of $X \sim \Exp{\l}$ is $\ln 2 / \l$.
+    The median of $X \sim \Exp{\l}$ is $\ln{2}/\l$.
 \end{proposition}
 \begin{proof}
-    Let $m$ be the median. Then $F(m) = 1/2$. Hence, \[\frac12 = F(m) = 1 - \e^{-\l m} \implies \e^{\l m} = 2 \implies m = \frac{\ln 2}{\l}.\]
+    Let $m$ be the median. By definition, we have \[\frac12 = F(m) = 1 - \e^{-\l m}.\] Solving for $m$ gives $m = \ln{2}/\l$ as desired.
 \end{proof}
 
 \section{Normal Distribution}
@@ -461,9 +501,10 @@ The normal distribution arises in many different situations. For instance, the n
                 }
             ]
             \addplot[black, very thick] {1/(sqrt(2 * pi)) * e^(-0.5 * (x-3)^2)};
+            \draw[dashed] (3, 0) -- (3, 0.399);
         \end{axis}
     \end{tikzpicture}
-    \caption{The pdf of a normal distribution.}
+    \caption{The pdf of $X \sim \Normal{\m}{\s}$.}
 \end{figure}
 
 As exemplified by the figure above, a normal curve has the following properties:
@@ -494,9 +535,11 @@ Note also that the shape of the normal curve is completely determined by two par
                 ]
                 \addplot[black, very thick] {1/(sqrt(2 * pi)) * e^(-0.5 * (x-1)^2)};
                 \addplot[black, very thick] {1/(sqrt(2 * pi)) * e^(-0.5 * (x-5)^2)};
+                \draw[dashed] (1, 0) -- (1, 0.399);
+                \draw[dashed] (5, 0) -- (5, 0.399);
             \end{axis}
         \end{tikzpicture}
-        \caption{Varying $\m$.}
+        \caption{Effect of varying $\m$ on $f(x)$.}
     \end{figure}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
@@ -517,10 +560,11 @@ Note also that the shape of the normal curve is completely determined by two par
                 legend pos=outer north east,
                 ]
                 \addplot[black, very thick] {1/(sqrt(2 * pi)) * e^(-0.5 * (x-3)^2)};
-                \addplot[black, very thick] {1/(3 * sqrt(2 * pi)) * e^(-0.5 * ((x-3)/3)^2)};
+                \addplot[black, very thick] {1/(2 * sqrt(2 * pi)) * e^(-0.5 * ((x-3)/2)^2)};
+                \draw[dashed] (3, 0) -- (3, 0.399);
             \end{axis}
         \end{tikzpicture}
-        \caption{Varying $\s$.}
+        \caption{Effect of varying $\s$ on $f(x)$.}
     \end{figure}
 \end{minipage}
 
@@ -532,9 +576,9 @@ In a normal distribution, about 68.3\%, 95.4\% and 99.7\% of the values of $x$ a
 
 Perhaps the most important property of the normal distribution is that the sum or difference of normal distributions is also a normal distribution.
 
-\begin{proposition}
-    If $X$ and $Y$ are two \emph{independent} random variables such that $X \sim \Normal{\m_1}{\s_1^2}$ and $Y \sim \Normal{\m_2}{\s_2^2}$, then their sum and differences also follow a normal distribution: \[aX + bY \sim \Normal{a \m_1 \pm b \m_2}{a^2 \s_1^2 + b^2 \s_2^2}.\]
-\end{proposition}
+\begin{fact}
+    If $X$ and $Y$ are two \emph{independent} random variables such that $X \sim \Normal{\m_1}{\s_1^2}$ and $Y \sim \Normal{\m_2}{\s_2^2}$, then their sum and differences follow the normal distribution $aX + bY \sim \Normal{a \m_1 \pm b \m_2}{a^2 \s_1^2 + b^2 \s_2^2}$.
+\end{fact}
 
 \subsection{Standard Normal Distribution}
 
@@ -559,78 +603,81 @@ As the definition suggests, the higher the $z$-score, the better $x$ is relative
     Normalizing the student's Chemistry score, we get a $z$-score of \[z_1 = \frac{X - \m}{\s} = \frac{70 - 60}{10} = 1.\] Normalizing the student's Mathematics score, we get a $z$-score of \[z_2 = \frac{X - \m}{\s} = \frac{65 - 57}{4} = 2.\] We see that the student has a higher $z$-score for Mathematics than for Chemistry. Thus, even though the student obtained a higher score for Chemistry, he did better in Mathematics when compared against his peers.
 \end{sampans}
 
-The standard normal distribution is also used for various scoring systems, such as PSLE T-scores, IQ scores and SAT scores.
-
 \subsection{Normal Distribution as an Approximation}
 
-Previously, we saw how the binomial distribution, under certain conditions, could be approximated to the Poisson distribution. Similarly, the normal distribution can be used to approximate both the binomial and Poisson distributions when certain conditions are satisfied.\footnote{This is a consequence of the Central Limit Theorem, which we introduced earlier in the section.}
+Previously, we saw how the binomial distribution, under certain conditions, could be approximated by the Poisson distribution. Similarly, the normal distribution can be used to approximate both the binomial and Poisson distributions when certain conditions are satisfied.\footnote{This is a consequence of the Central Limit Theorem.}
 
-However, unlike the case of binomial to Poisson, which is a discrete-to-discrete approximation, approximately either the binomial or Poisson distribution to the normal distribution is a discrete-to-continuous change. We hence introduce the idea of a ``continuity correction''. Intuitively, what this means is that $\P{X = k}$ (in the discrete case) is taken to be $\P{k-0.5 < X < k + 0.5}$ (in the continuous case). For instance, $\P{X = 16} = \P{15.5 < X < 16.5}$, and $\P{2 < X \leq 20} = \P{2.5 < X < 20.5}$.
+However, unlike the case of binomial to Poisson, which is a discrete-to-discrete approximation, approximating a binomial/Poisson distribution to the normal distribution is a discrete-to-continuous change. We hence introduce the idea of a ``continuity correction''. Intuitively, what this means is that $\P{X = k}$ in the discrete case is taken to be $\P{k-0.5 < X < k + 0.5}$ in the continuous case.
 
 \subsubsection{Approximating the Binomial Distribution}
 
 \begin{proposition}
-    If $X \sim \Binom{n}{p}$ and $n$ is sufficiently large such that $\m = np > 5$ and $n(1-p) > 5$, then $X$ can be approximated by $\Normal{np}{np(1-p)}$, taking into account the continuity correction.
+    The binomial distribution $\Binom{n}{p}$ is approximated by $\Normal{np}{np(1-p)}$, taking into account the continuity correction.
 \end{proposition}
 
-If $p$ is close to $0.5$, the binomial distribution is almost symmetrical. Thus, the approximation by a normal distribution (which is symmetrical) gets better as $p$ gets closer to $0.5$.
+For practical usage, this approximation is good when $np > 5$ and $n(1-p) > 5$.
 
-Consider the following figure, where $X \sim \Binom{15}{0.5}$. We can approximate the distribution $X$ with a normal distribution with mean $np = 7.5$ and variance $np(1-p) = 3.75$.
+If $p$ is close to $0.5$, the binomial distribution is almost symmetrical. Thus, the approximation is better the closer $p$ is to $0.5$.
+
+As an example, consider $X \sim \Binom{50}{0.4}$. We can approximate the distribution $X$ with a normal distribution with mean $np = 20$ and variance $np(1-p) = 12$. The probability distributions of $\Binom{50}{0.4}$ and $\Normal{20}{12}$ are plotted below.
 
 \begin{figure}[H]\tikzsetnextfilename{432}
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    domain=-1:15,
-    samples = 101,
-    axis y line=middle,
-    axis x line=middle,
-    xtick = \empty,
-    ytick = \empty,
-    xlabel = {$x$},
-    ylabel = {$f(x)$},
-    legend cell align={left},
-    legend pos=outer north east,
-    ]
-
-\addplot [black, very thick] {1/(1.94 * sqrt(2 * pi)) * e^(-0.5 * ((x-7.5)/1.94)^2)};
-\addlegendentry{$\Normal{7.5}{3.75}$};
-
-\addplot+[ycomb, domain=1:15, samples at={0,...,15}, cyan, fill opacity=0.5, mark options={cyan}]{15! / (x! * (15-x)!) * (0.5)^(15)};
-\addlegendentry{$\Binom{50}{0.5}$};
-\end{axis}
-\end{tikzpicture}
-\caption{Approximating the binomial distribution.}
+    \centering
+    \begin{tikzpicture}[
+        declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);},
+        trim axis left, trim axis right,
+        ]
+        \begin{axis}[
+            xmin=-0.5,
+            xmax=40.5,
+            ymin=0,
+            yticklabel style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=2
+            },
+            xlabel = {$x$},
+            ylabel = {probability distributions}
+            ]
+        \addplot[black, very thick, domain=-0.5:40.5, samples=130] {1/(3.46 * sqrt(2 * pi)) * e^(-0.5 * ((x-20)/3.46)^2)};
+        \addplot[ybar=0pt,bar width=1,bar shift=0pt,samples at={0,...,40},] {binom(x,50,0.4)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Approximating the binomial distribution with a normal distribution.}
 \end{figure}
 
 \subsubsection{Approximating the Poisson Distribution}
 
 \begin{proposition}
-    If $X \sim \Po{\l}$ such that $\l > 10$, then $X$ can be approximated by $\Normal{\l}{\l}$, taking into account the continuity correction.
+    The Poisson distribution $\Po{\l}$ is approximated by $\Normal{\l}{\l}$, taking into account the continuity correction.
 \end{proposition}
+
+For practical usage, this approximation is good when $\l > 10$.
+
+As an example, consider $X \sim \Po{20}$. We can approximate the distribution $X$ with a normal distribution with mean $\l = 20$ and variance $\l = 20$. The probability distributions of $\Po{20}$ and $\Normal{20}{20}$ are plotted below.
 
 \begin{figure}[H]\tikzsetnextfilename{433}
     \centering
-    \begin{tikzpicture}
-    \begin{axis}[
-        domain=-1:30,
-        samples = 101,
-        axis y line=middle,
-        axis x line=middle,
-        xtick = \empty,
-        ytick = \empty,
-        xlabel = {$x$},
-        ylabel = {$f(x)$},
-        legend cell align={left},
-        legend pos=outer north east,
+    \begin{tikzpicture}[
+        declare function={poisson(\k,\l)=e^(-\l) * \l^(\k) / (\k)!;},
+        trim axis left, trim axis right,
         ]
-    
-    \addplot [black, very thick] {1/(3.87 * sqrt(2 * pi)) * e^(-0.5 * ((x-15)/3.87)^2)};
-    \addlegendentry{$\Normal{15}{15}$};
-    
-    \addplot+[ycomb, domain=1:30, samples at={0,...,30}, cyan, fill opacity=0.5, mark options={cyan}]{(15)^x / x! * e^(-15)};
-    \addlegendentry{$\Po{15}$};
-    \end{axis}
+        \begin{axis}[
+            xmin=-0.5,
+            xmax=40.5,
+            ymin=0,
+            yticklabel style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=2
+            },
+            scaled y ticks = false,
+            xlabel = {$x$},
+            ylabel = {probability distributions}
+            ]
+        \addplot[black, very thick, domain=-0.5:40.5, samples=130] {1/(4.47 * sqrt(2 * pi)) * e^(-0.5 * ((x-20)/4.47)^2)};
+        \addplot[ybar=0pt,bar width=1,bar shift=0pt,samples at={0,...,40},] {poisson(x,20)};
+        \end{axis}
     \end{tikzpicture}
-    \caption{Approximating the Poisson distribution.}
+    \caption{Approximating the Poisson distribution with a normal distribution.}
 \end{figure}

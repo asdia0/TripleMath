@@ -6,77 +6,86 @@ Previously, we examined tests that require certain assumptions about the underly
 
 \subsection{Single Sample}
 
-Consider a random sample of size $n$ from a population which has a continuous distribution with median $m$. We are interested in whether the median $m$ takes on a particular value $m_0$. That is, we are interested in testing the null hypothesis \[\nullhyp: \, m = m_0\] against any of the possible alternative hypotheses: \[\althyp: \, m > m_0 \quad \althyp: \, m < m_0 \quad \althyp: \, m \neq m_0.\]
+Consider a random sample of size $n$ from a population which has a continuous distribution with median $m$. We are interested in whether the median $m$ takes on a particular value $m_0$. That is, we are testing the null hypothesis $\nullhyp: m = m_0$ against the appropriate one-sided or two-sided alternative hypothesis.
 
-Define $K_+$ to be the number of data values greater than $m_0$, and $K_-$ to be the number of data values smaller than $m_0$. Under \nullhyp, we expect about the same number of data values that are greater than $m_0$ and less than $m_0$.
+In what follows, we assume that we do not observe the purported median $m_0$. If there are any such observations, we discard them and reduce the sample size accordingly.
 
-\begin{center}\tikzsetnextfilename{493}
+Under \nullhyp, we expect the same number of data values that are greater than $m_0$ and less than $m_0$.
+
+\begin{figure}[H]\tikzsetnextfilename{493}
+    \centering
     \begin{tikzpicture}
         \draw (-5, 0) -- (5, 0);
         \draw (0, 0.1) -- (0, -0.1) node[anchor=north] {$m = m_0$};
-        \draw (-4.7, 0) node[red]{$\times$};
-        \draw (-3.4, 0) node[red]{$\times$};
-        \draw (-2.7, 0) node[red]{$\times$};
-        \draw (-1.2, 0) node[red]{$\times$};
-        \draw (-0.3, 0) node[red]{$\times$};
-        \draw (0.5, 0) node[blue]{$\times$};
-        \draw (1.4, 0) node[blue]{$\times$};
-        \draw (2.4, 0) node[blue]{$\times$};
-        \draw (3.6, 0) node[blue]{$\times$};
-        \draw (4.5, 0) node[blue]{$\times$};
+        \draw (-4.7, 0) node[red]{\large$\times$};
+        \draw (-3.4, 0) node[red]{\large$\times$};
+        \draw (-2.7, 0) node[red]{\large$\times$};
+        \draw (-1.2, 0) node[red]{\large$\times$};
+        \draw (-0.3, 0) node[red]{\large$\times$};
+        \draw (0.5, 0) node[blue]{\large$\times$};
+        \draw (1.4, 0) node[blue]{\large$\times$};
+        \draw (2.4, 0) node[blue]{\large$\times$};
+        \draw (3.6, 0) node[blue]{\large$\times$};
+        \draw (4.5, 0) node[blue]{\large$\times$};
     \end{tikzpicture}
-\end{center}
+    \caption{}
+\end{figure}
 
-Hence, our test statistic is either \[K_+ \sim \Binom{n}{\frac12} \quad \tor \quad K_- \sim \Binom{n}{\frac12},\] depending on which is more convenient. For now, we take $K_+$ to be our test statistic.
+We define the test statistics $K_+$ and $K_-$ to be the number of observations greater than and smaller than $m_0$, respectively. Since each observation has a $1/2$ chance of being greater than $m_0$, we have $K_+ \sim \Binom{n}{1/2}$. Likewise, $K_- \sim \Binom{n}{1/2}$, since each observation has a $1/2$ chance of being smaller than $m_0$.
 
-If we test \nullhyp{} against \althyp: $m > m_0$, then we reject \nullhyp{} if the observed number of data values greater than $m_0$ is too large, i.e. $k_+ \geq c_+$ for some critical value $c_+$. Alternatively, we can consider the $p$-value, which is given by $\P{K_+ \geq k_+}$. If this $p$-value is smaller than our significance level $\a$, we reject \nullhyp.
+We now look at the rejection criteria for each possible alternative hypothesis.
 
-\begin{center}\tikzsetnextfilename{494}
+\paragraph{$\bm{\althyp: m > m_0}$.} We reject \nullhyp{} if $k_+$ is too big, or if $k_-$ is too small. That is, $k_+ \geq c_+$ or $k_- \leq c_-$ for critical values $c_+$ and $c_-$. Alternatively, if the $p$-value $\P{K_+ \geq k_+} = \P{K_- \leq k_-}$ is smaller than our significance level $\a$, we reject \nullhyp.
+
+\begin{figure}[H]\tikzsetnextfilename{494}
+    \centering
     \begin{tikzpicture}
         \draw (-5, 0) -- (5, 0);
         \draw (0, 0.1) -- (0, -0.1) node[anchor=north] {$m$};
         \draw (-3, 0.1) -- (-3, -0.1) node[anchor=north] {$m_0$};
 
-        \draw (-4.7, 0) node[red]{$\times$};
-        \draw (-3.4, 0) node[red]{$\times$};
-        \draw (-2.7, 0) node[blue]{$\times$};
-        \draw (-1.2, 0) node[blue]{$\times$};
-        \draw (-0.3, 0) node[blue]{$\times$};
-        \draw (0.5, 0) node[blue]{$\times$};
-        \draw (1.4, 0) node[blue]{$\times$};
-        \draw (2.4, 0) node[blue]{$\times$};
-        \draw (3.6, 0) node[blue]{$\times$};
-        \draw (4.5, 0) node[blue]{$\times$};
+        \draw (-4.7, 0) node[red]{\large$\times$};
+        \draw (-3.4, 0) node[red]{\large$\times$};
+        \draw (-2.7, 0) node[blue]{\large$\times$};
+        \draw (-1.2, 0) node[blue]{\large$\times$};
+        \draw (-0.3, 0) node[blue]{\large$\times$};
+        \draw (0.5, 0) node[blue]{\large$\times$};
+        \draw (1.4, 0) node[blue]{\large$\times$};
+        \draw (2.4, 0) node[blue]{\large$\times$};
+        \draw (3.6, 0) node[blue]{\large$\times$};
+        \draw (4.5, 0) node[blue]{\large$\times$};
     \end{tikzpicture}
-\end{center}
+    \caption{}
+\end{figure}
 
-If we test \nullhyp{} against \althyp: $m < m_0$, then we reject \nullhyp{} if the observed $k_+$ is too small. Alternatively, if the $p$-value $\P{K_+ \leq k_+}$ is smaller than our significance level $\a$, we reject \nullhyp.
+\paragraph{$\bm{\althyp: m < m_0}$.} We reject \nullhyp{} if $k_+$ is too small, or if $k_-$ is too big. Alternatively, if the $p$-value $\P{K_+ \leq k_+} = \P{K_- \geq k_-}$ is smaller than $\a$, we reject \nullhyp.
 
-\begin{center}\tikzsetnextfilename{495}
+\begin{figure}[H]\tikzsetnextfilename{495}
+    \centering
     \begin{tikzpicture}
         \draw (-5, 0) -- (5, 0);
         \draw (0, 0.1) -- (0, -0.1) node[anchor=north] {$m$};
         \draw (3, 0.1) -- (3, -0.1) node[anchor=north] {$m_0$};
 
-        \draw (-4.7, 0) node[red]{$\times$};
-        \draw (-3.4, 0) node[red]{$\times$};
-        \draw (-2.7, 0) node[red]{$\times$};
-        \draw (-1.2, 0) node[red]{$\times$};
-        \draw (-0.3, 0) node[red]{$\times$};
-        \draw (0.5, 0) node[red]{$\times$};
-        \draw (1.4, 0) node[red]{$\times$};
-        \draw (2.4, 0) node[red]{$\times$};
-        \draw (3.6, 0) node[blue]{$\times$};
-        \draw (4.5, 0) node[blue]{$\times$};
+        \draw (-4.7, 0) node[red]{\large$\times$};
+        \draw (-3.4, 0) node[red]{\large$\times$};
+        \draw (-2.7, 0) node[red]{\large$\times$};
+        \draw (-1.2, 0) node[red]{\large$\times$};
+        \draw (-0.3, 0) node[red]{\large$\times$};
+        \draw (0.5, 0) node[red]{\large$\times$};
+        \draw (1.4, 0) node[red]{\large$\times$};
+        \draw (2.4, 0) node[red]{\large$\times$};
+        \draw (3.6, 0) node[blue]{\large$\times$};
+        \draw (4.5, 0) node[blue]{\large$\times$};
     \end{tikzpicture}
-\end{center}
+    \caption{}
+\end{figure}
 
-Lastly, if we test \nullhyp{} against \althyp: $m \neq m_0$, then we reject \nullhyp{} if the observed $k_+$ is too small or too large. In this case, the $p$-value is given by \[2 \min{\P{K_+ \geq k_+}, \P{K_+ \leq k_+}}.\] Note that we choose the shorter tail since we want the more ``extreme'' end.
+\paragraph{$\bm{\althyp: m \neq m_0}$.} We reject \nullhyp{} if the observed $k_+$ is too small or too large. Alternatively, if the $p$-value $2 \min{\P{K_+ \geq k_+}, \P{K_+ \leq k_+}} = 2 \min{\P{K_- \geq k_-}, \P{K_- \leq k_-}}$ is smaller than $\a$, we reject \nullhyp. We choose the shorter tail since we want the most ``extreme'' end, as that would give the most evidence against \nullhyp.
 
 To summarize, 
-
 \begin{table}[H]
-\centering
+    \centering
     \begin{tabular}{|c|ccc|}
         \hline
         \bd{\nullhyp} & \multicolumn{3}{c|}{$m = m_0$} \\ \hline
@@ -84,20 +93,19 @@ To summarize,
         \bd{$p$-value ($K_+$)} & \multicolumn{1}{c|}{$\P{K_+ \geq k_+}$} & \multicolumn{1}{c|}{$\P{K_+ \leq k_+}$} & $2\min{\P{K_+ \geq k_+}, \P{K_+ \leq k_+}}$ \\ \hline
         \bd{$p$-value ($K_-$)} & \multicolumn{1}{c|}{$\P{K_- \leq k_-}$} & \multicolumn{1}{c|}{$\P{K_- \geq k_-}$} & $2\min{\P{K_- \geq k_-}, \P{K_- \leq k_-}}$ \\ \hline
     \end{tabular}
+    \caption{}
 \end{table}
-
-In the case where there are zeroes, we discard them and reduce the sample size accordingly.
 
 \begin{sample}
     The lifetimes of a random sample of candles, measured in minutes are \[354, \quad 358, \quad 348, \quad 342, \quad 352, \quad 335, \quad 364, \quad 345, \quad 360, \quad 341.\] The manufacturer claims that the median lifetime is at least 360 minutes. Use a sign test, at the 5\% significance level, to test whether the manufacturer's claim is justified.
 \end{sample}
 \begin{sampans}
-    Let $m$ be the population median. Our hypotheses are \nullhyp: $m = 360$ and \althyp: $m < 360$. We take a 5\% level of significance. Subtracting the observed data values by the postulated median $m = 360$ and writing down the signs, we obtain \[-, \quad -, \quad -, \quad -, \quad -, \quad -, \quad +, \quad -, \quad 0, \quad -.\] Let $K_+$ be the number of data values greater than 360. Discarding the zero, we have, under \nullhyp, $K_+ \sim \Binom{9}{1/2}$. From the sample, $k_+ = 1$. The $p$-value is hence $\P{K_+ \leq 1} = 0.0195$. Since the $p$-value is smaller than our 5\% significance level, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% level that the manufacturer's claim is not justified.
+    Let $m$ be the population median. Our hypotheses are \nullhyp: $m = 360$ and \althyp: $m < 360$. We take a 5\% level of significance. Subtracting the observed data values by the postulated median $m = 360$ and writing down the signs, we obtain \[-, \quad -, \quad -, \quad -, \quad -, \quad -, \quad +, \quad -, \quad 0, \quad -.\] Let $K_+$ be the number of data values greater than 360. Discarding the zero, we have, under \nullhyp, that $K_+ \sim \Binom{9}{1/2}$. From the sample, $k_+ = 1$. The $p$-value is hence $\P{K_+ \leq 1} = 0.0195$. Since the $p$-value is smaller than our 5\% significance level, we reject \nullhyp{} and conclude there is sufficient evidence at the 5\% level that the manufacturer's claim is not justified.
 \end{sampans}
 
 \subsection{Paired Sample}
 
-By considering the difference in population medians, the sign test can be used for paired samples, as demonstrated in the example below.
+By considering the difference in population medians, the sign test can be used for paired samples.
 
 \begin{sample}
     Students in a school take a mock examination before taking the actual A-level examination. The marks for a particular subject, in both the mock and actual examinations, by a random sample of 13 students are shown below.
@@ -110,6 +118,7 @@ By considering the difference in population medians, the sign test can be used f
             \bd{Mock Exam Mark} & 40 & 65 & 53 & 79 & 87 & 42 & 80 & 63 & 51 & 82 & 27 & 71 & 29 \\ \hline
             \bd{Actual Exam Mark} & 45 & 68 & 47 & 75 & 88 & 60 & 77 & 69 & 60 & 88 & 30 & 73 & 35 \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 
     Test, at the 5\% level, whether the candidates did better in the actual A-level than in the mock examination for this subject.
@@ -120,7 +129,7 @@ By considering the difference in population medians, the sign test can be used f
 
 \subsection{Large Sample}
 
-Let $X \sim \Binom{n}{1/2}$. For large $n$ ($n \geq 30$), we can approximate $X$ with a normal distribution via the Central Limit Theorem: \[X \sim \Normal{\frac{n}{2}}{\frac{n}{4}} \text{ approximately}.\] This is useful when conducting a sign test with a large sample.
+Let $K \sim \Binom{n}{1/2}$. For large $n$ ($n \geq 30$), we can approximate $K$ with a normal distribution via the Central Limit Theorem: \[K \sim \Normal{\frac{n}{2}}{\frac{n}{4}} \text{ approximately}.\] This is useful when conducting a sign test with a large sample.
 
 \section{Wilcoxon Matched-Pair Signed Rank Test}
 
@@ -133,6 +142,7 @@ When testing paired samples, one drawback of using the sign test is that it only
         Magnitude of Difference & 7 & 2 & 6 & 4 & 22 & 15 & 5 & 1 & 12 & 16 \\ \hline
         Sign of Difference & + & $-$ & + & + & + & + & + & $-$ & + & + \\ \hline
     \end{tabular}
+    \caption{}
 \end{table}
 
 We see that negative differences are very small (e.g. $-1$, $-2$) as compared to some of the positive differences (e.g. 22, 16).
@@ -147,16 +157,17 @@ The Wilcoxon matched-pair signed rank test improves on the sign test by consider
         Sign of Difference & + & $-$ & + & + & + & + & + & $-$ & + & + \\ \hline
         Rank & 6 & 2 & 5 & 3 & 10 & 8 & 4 & 1 & 7 & 9 \\ \hline
     \end{tabular}
+    \caption{}
 \end{table}
 
-Let $P$ be the sum of the ranks corresponding to the positive differences and let $Q$ be the sum of the ranks corresponding to the negative differences. Let $m$ be the population median. Our null hypothesis is \nullhyp: $m = 0$. From here, the main idea is
+Let $P$ be the sum of the ranks corresponding to the positive differences and let $Q$ be the sum of the ranks corresponding to the negative differences. Let $m$ be the population median. Our null hypothesis is \nullhyp: $m = 0$, which is rejected subject to the following criteria:
 \begin{itemize}
     \item If we test \althyp: $m > 0$, we reject \nullhyp{} if $Q$ is too small, i.e. $q \leq c_-$ for some critical value $c_-$.
     \item If we test \althyp: $m < 0$, we reject \nullhyp{} if $P$ is too small, i.e. $p \leq c_+$ for some critical value $c_+$.
     \item If we test \althyp: $m \neq 0$, we reject \nullhyp{} when either $P$ or $Q$ is too small.
 \end{itemize}
 
-In all cases above, we can either choose our test statistic $T$ to be either $P$ or $Q$. Typically, we take $T$ to be the smaller of two, as demonstrated above.
+In all cases above, we can either choose our test statistic $T$ to be either $P$ or $Q$. Typically, we take $T$ to be the smaller of two.
 
 For small $n$, the critical value can be found in the provided formula list.
 
@@ -170,6 +181,7 @@ For small $n$, the critical value can be found in the provided formula list.
             Non-Rusted & 9.4 & 8.1 & 6.6 & 9.9 & 8.7 & 8.3 & 7.0 & 7.5 \\ \hline
             Rusted & 7.2 & 5.4 & 7.1 & 8.1 & 7.0 & 7.9 & 8.5 & 6.2 \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 
     Carry out a Wilcoxon matched-pair signed rank test at the 5\% level of significance to determine whether, on average, the rusted wires have lower breaking points.
@@ -178,14 +190,15 @@ For small $n$, the critical value can be found in the provided formula list.
     Let $m$ be the population median difference of (Non-Rusted $-$ Rusted). Our hypotheses are \nullhyp: $m = 0$ and \althyp: $m > 0$. We take a 5\% significance level.
 
     \begin{table}[H]
-    \centering
-    \begin{tabular}{|r|c|c|c|c|c|c|c|c|}
-        \hline
-        Non-Rusted & 9.4 & 8.1 & 6.6 & 9.9 & 8.7 & 8.3 & 7.0 & 7.5 \\ \hline
-        Rusted & 7.2 & 5.4 & 7.1 & 8.1 & 7.0 & 7.9 & 8.5 & 6.2 \\ \hline
-        NR $-$ R & 2.2 & 2.7 & $-0.5$ & 1.8 & 1.7 & 0.4 & $-1.5$ & 1.3 \\ \hline
-        Rank & 8 & 7 & 2 & 6 & 5 & 1 & 4 & 3 \\ \hline
-    \end{tabular}
+        \centering
+        \begin{tabular}{|r|c|c|c|c|c|c|c|c|}
+            \hline
+            Non-Rusted & 9.4 & 8.1 & 6.6 & 9.9 & 8.7 & 8.3 & 7.0 & 7.5 \\ \hline
+            Rusted & 7.2 & 5.4 & 7.1 & 8.1 & 7.0 & 7.9 & 8.5 & 6.2 \\ \hline
+            NR $-$ R & 2.2 & 2.7 & $-0.5$ & 1.8 & 1.7 & 0.4 & $-1.5$ & 1.3 \\ \hline
+            Rank & 8 & 7 & 2 & 6 & 5 & 1 & 4 & 3 \\ \hline
+        \end{tabular}
+        \caption{}
     \end{table}
 
     Let $P$ be the sum of ranks corresponding to positive differences, and let $Q$ be the sum of ranks corresponding to negative differences. Let $T$ be the smaller of the two. From the above table, we see that $p = 6$ and $q = 30$, so $t = 6$. From the formula list, we reject \nullhyp{} if $t \leq 5$. Since $t = 6 > 5$, we do not reject \nullhyp{} and conclude there is insufficient evidence at the 5\% level that the rusted wires have lower breaking points.
@@ -193,7 +206,7 @@ For small $n$, the critical value can be found in the provided formula list.
 
 \subsection{Large Sample}
 
-For large $n$ ($n > 20$), the test statistic $T$ can be approximated with a normal distribution via the Central Limit Theorem: \[T \sim \Normal{\frac{n(n+1)}4}{\frac{n(n+1)(2n+1)}{24}} \text{ approximately}.\] With this approximation, we can calculate the appropriate $p$-value. Note that $T$ can either be $P$ or $Q$.
+For large $n$ ($n > 20$), the test statistic $T$ can be approximated with a normal distribution via the Central Limit Theorem: \[T \sim \Normal{\frac{n(n+1)}4}{\frac{n(n+1)(2n+1)}{24}} \text{ approximately}.\] With this approximation, we can calculate the appropriate $p$-value.
 
 \section{Comparison of the Tests}
 

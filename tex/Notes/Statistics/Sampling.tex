@@ -44,14 +44,16 @@ Note that the sample mean $\ol{X}$ is also a random variable since it varies dep
         \E{\ol{X}} &= \E{\frac{X_1 + X_2 + \dots + X_n}{n}}\\
         &= \frac{\E{X_1 + X_2 + \dots + X_n}}n\\
         &= \frac{\E{X_1} + \E{X_2} + \dots + \E{X_n}}n\\
-        &= \frac{n \E{X}}n = \E{X} = \m
+        &= \frac{n \E{X}}n\\
+        &= \m,
     \end{align*}
     and
     \begin{align*}
         \Var{\ol{X}} &= \Var{\frac{X_1 + X_2 + \dots + X_n}{n}}\\
-        &= \frac1{n^2} \Var{X_1 + X_2 + \dots + X_n} \\
+        &= \frac{\Var{X_1 + X_2 + \dots + X_n}}{n^2} \\
         &= \frac{\Var{X_1} + \Var{X_2} + \dots + \Var{X_n}}{n^2}\\
-        &= \frac{n \Var{X}}{n^2} = \frac{\s^2}{n}.
+        &= \frac{n \Var{X}}{n^2}\\
+        &= \frac{\s^2}{n}.
     \end{align*}
 \end{proof}
 
@@ -72,12 +74,12 @@ If sampling is done from a normal population, then the sample mean will also fol
 However, if the population does not follow a normal distribution, then the sample mean also does not follow a normal distribution. However, if the sample size is large, then the distribution of the sample mean will be approximately normal. This result is known as the Central Limit Theorem.
 
 \begin{theorem}[Central Limit Theorem]
-    If $X$ does not follow a normal distribution, with $\E{X} = \m$ and $\Var{X} = \s^2$, and $n$ is large (typically $n \geq 30$), then \[\ol{X} \sim \Normal{\m}{\frac{\s^2}{n}} \text{ approximately}.\]
+    If $X$ does not follow a normal distribution, with $\E{X} = \m$ and $\Var{X} = \s^2$, and $n$ is large, then \[\ol{X} \sim \Normal{\m}{\frac{\s^2}{n}} \text{ approximately}.\]
 \end{theorem}
 
 Here, we are assuming that the samples $X_1, X_2, \dots, X_n$ are independent and identically distributed. Further, the variance $\s^2$ must be finite.
 
-Note that the condition $n \geq 30$ is only a guideline. Depending on the context, the distribution of the sample mean can still be approximated using a normal distribution with a smaller sample size.
+Typically, we consider $n \geq 30$ to be large. However, this is just a guideline. Depending on the context, the distribution of the sample mean can still be approximated using a normal distribution with a smaller sample size.
 
 \section{Estimation}
 
@@ -90,16 +92,12 @@ In many cases, we are concerned with two population parameters, namely, the popu
 \end{definition}
 
 \begin{example}[Estimator]
-    Suppose our quantity of interest is the mean height $\m$ of all male adults in Singapore. Suppose we take a random sample of 100 adult mean in Singapore and measure their heights.
-    
-    Using this data, we can compute the sample average, $\ol{x}$ of the heights. That is, the sample mean random variable, $\ol{X} = \bp{X_1 + \dots + X_{100}}/100$, is an estimator that provides an estimate of our quantity of interest. For instance, if $\ol{x} = 170$ cm, then 170 cm is the estimate of $\m$ provided by the ``sample average'' estimator.
-
-    Another strategy could be to use the ``sample median'' of the heights as an estimator. Suppose the sample median is 169 cm. Then 169 cm is the estimate of $\m$ provided by the ``sample median'' estimator.
+    Suppose we take a random sample of 10 adult men in Singapore and measure their heights (in metres): \[1.58, \quad 1.61, \quad 1.62, \quad 1.62, \quad 1.65, \quad 1.67, \quad 1.67, \quad 1.74, \quad 1.78, \quad 1.83.\] Suppose our quantity of interest is the mean height of all men in Singapore, $\m$. Using our sample data, we can estimate $\m$. For instance, a natural estimate is the sample mean $\ol{x}$, which we can compute to be $1.677$ m. We say that $1.677$ m is the estimate of $\m$ provided by the ``sample mean'' estimator. Another way of estimating $\m$ would be to use the sample median, giving an estimate of $1.66$ m. We could even estimate $\m$ with the average of the sample mean and sample median, which would give an estimate of $(1.677 + 1.66)/2 = 1.6685$ m.
 \end{example}
 
 \subsection{Unbiased Estimators}
 
-As illustrated by the above example, there are many estimators we can use to estimate $\m$. However, we would want to choose the estimator that performs the best. Logically, a good estimator should be \emph{unbiased}. That is, the expected value of the estimator should be equal to the true value of the quantity it estimates. 
+As illustrated by the above example, there are many estimators we can use to estimate a parameter. We therefore need a principled way to assess the quality or usefulness of different estimators. One commonly used criterion is unbiasedness: the expected value of the estimator should equal the true value of the parameter being estimated.
 
 \begin{definition}
     If a population has an unknown parameter $\t$ and $T$ is a statistic derived from a random sample taken from the population, then $T$ is an \vocab{unbiased estimator} for $\t$ if and only if $\E{T} = \t$.
@@ -129,7 +127,7 @@ As illustrated by the above example, there are many estimators we can use to est
     \end{align*}
     Dividing throughout by $n-1$ gives us the desired equality. In fact, we can go one step further and write $s^2$ as \[s^2 = \frac1{n-1} \bp{\sum x^2 - n \ol{x}^2}.\] This is the form of $\s^2$ we will work with.
 
-    Before we process, we note that \[\Var{X} = \E{X^2} - \E{X}^2 \implies \E{X^2} = \m^2 + \s^2.\] Similarly, \[\Var{\ol{X}} = \E{\ol{X}^2} - \E{\ol{X}}^2 \implies \E{\ol{X}^2} = \m^2 + \frac{\s^2}{n}.\] Now consider $\E{S^2}$:
+   Noting that $\E{X^2} = \E{X}^2 + \Var{X} = \m^2 + \s^2$ and  $\E{\ol{X}^2} = \E{\ol{X}}^2 + \Var{\ol{x}} = \m^2 +\s^2/n$, we see that
     \begin{align*}
         \E{S^2} &= \E{\frac1{n-1} \bp{\sum X^2 - n \ol{X}^2}}\\
         &= \frac1{n-1} \bp{\sum \E{X^2} - n \E{\ol{X}^2}}\\
@@ -150,18 +148,27 @@ This is particularly useful when the sample data is given in summarized form.
 \subsubsection{Population Proportion}
 
 \begin{definition}
-    A \vocab{population proportion} $p$ is a parameter that describes the percentage of individuals in a population that exhibit a certain property that we wish to investigate. Mathematically, \[p = \frac{X}{N},\] where $X$ is the number of ``successes'' in the population (individuals who exhibit the property), and $N$ is the population size. The sample proportion $P_S$ is defined similarly: \[P_S = \frac{X_S}{n},\] where $X_S$ is the number of ``successes'' in the sample.
+    A \vocab{population proportion} $p$ is a parameter that describes the percentage of individuals in a population that exhibit a certain property that we wish to investigate. Mathematically, $p = X/N$, where $X$ is the number of ``successes'' in the population (individuals who exhibit the property), and $N$ is the population size. The \vocab{sample proportion} $P_S = X_S/N$ is defined similarly, where $X_S$ is the number of ``successes'' in the sample.
 \end{definition}
 
 \begin{example}[Population Proportion]
-    Suppose we wish to investigate the number of Singaporean citizens aged 35 years or older. The associated population parameter $P$ is then calculated as \[P = \frac{\text{number of Singaporean citizens aged 35 years or older}}{\text{total number of Singaporean citizens}}.\] If we obtain a sample of 1000 Singapore citizens, of whom 750 are aged 35 years or older, then the observed sample proportion, which we denote $\hat{p}$, is simply $\hat{p} = 750/1000$.
+    Suppose we take a random sample of 10 adult men in Singapore and measure their heights (in metres): \[1.58, \quad 1.61, \quad 1.62, \quad 1.62, \quad 1.65, \quad 1.67, \quad 1.67, \quad 1.74, \quad 1.78, \quad 1.83.\] Suppose we now wish to find the population proportion $p$ of adult men in Singapore taller than 1.70 m. The observed sample proportion, which we denote $\hat{p}$, can be calculated from the data as $\hat{p} = 3/10$.
 \end{example}
 
 \begin{proposition}
     The sample proportion $P_S$ is an unbiased estimator for the population proportion $p$.
 \end{proposition}
 \begin{proof}
-    Consider a population in which the proportion of ``success'' is $p$. If a random variable of size $n$ is taken from this population, and $X_S$ is the random variable denoting the number of ``successes'' in this sample, then \[X_S \sim \Binom{n}{p}.\] The expected value of $P_S$ is thus \[\E{P_S} = \E{\frac{X_S}{n}} = \frac{\E{X_S}}{n} = \frac{np}{n} = p.\] Thus, $P_S$ is an unbiased estimator for $p$.
+    Consider a population in which the proportion of ``success'' is $p$. If a random variable of size $n$ is taken from this population, and $X_S$ is the random variable denoting the number of ``successes'' in this sample, then $X_S \sim \Binom{n}{p}$. The expected value of $P_S$ is thus \[\E{P_S} = \E{\frac{X_S}{n}} = \frac{\E{X_S}}{n} = \frac{np}{n} = p,\] so $P_S$ is an unbiased estimator for $p$.
 \end{proof}
 
-We can use the same idea to calculate $\Var{P_S}$: \[\Var{P_S} = \Var{\frac{X_S}{n}} = \frac{\Var{X_S}}{n^2} = \frac{np(1-p)}{n^2} = \frac{p(1-p)}{n}.\] Hence, for large $n$, by the Central Limit Theorem, we have the following approximation: \[P_S \sim \Normal{p}{\frac{p(1-p)}{n}} \text{ approximately}.\] The distribution of $P_S$ is known as the \vocab{sampling distribution of the sample proportion} and its standard deviation, $\sqrt{p(1-p)/n}$, is known as the \vocab{standard error of proportion}.
+\begin{proposition}
+    For large $n$, \[P_S \sim \Normal{p}{\frac{p(1-p)}{n}} \text{ approximately}.\]
+\end{proposition}
+\begin{proof}
+    Again, write $P_S = X_S/n$, where $X_S \sim \Binom{n}{p}$. Then \[\Var{P_S} = \Var{\frac{X_S}{n}} = \frac{\Var{X_S}}{n^2} = \frac{np(1-p)}{n^2} = \frac{p(1-p)}{n}.\] Applying the Central Limit Theorem gives the desired result.
+\end{proof}
+
+\begin{definition}
+    The distribution of $P_S$ is known as the \vocab{sampling distribution of the sample proportion} and its standard deviation, $\sqrt{p(1-p)/n}$, is known as the \vocab{standard error of proportion}.
+\end{definition}

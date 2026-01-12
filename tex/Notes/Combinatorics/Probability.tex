@@ -93,6 +93,13 @@ An equivalent criterion for mutual exclusivity is $\P{A \cup B} = \P{A} + \P{B}$
     Since $\P{A \cap B} + \P{A' \cap B} = 1$, we have \[\P{A}{B} + \P{A'}{B} = \frac{\P{A \cap B}}{\P{B}} + \frac{\P{A' \cap B}}{\P{B}} = \frac{\P{B}}{\P{B}} = 1.\]
 \end{proof}
 
+\begin{theorem}[Baye's Theorem]
+    Let $A$ and $B$ be any two events, with $\P{B} \neq 0$. Then \[\P{A}{B} = \frac{\P{B}{A} \P{A}}{\P{B}}.\]
+\end{theorem}
+\begin{proof}
+    If $\P{A} = 0$, we are done. Else, the RHS reduces to \[\frac{\P{B}{A} \P{A}}{\P{B}} = \frac{\P{B \cap A}}{\P{A}} \frac{\P{A}}{\P{B}} = \frac{\P{A \cap B}}{\P{B}} = \P{A}{B}\] as desired.
+\end{proof}
+
 \begin{definition}[Independent Events]
     Let $A$ and $B$ be any two events. If either of the two occur without being affected by the other, then $A$ and $B$ are said to be \vocab{independent}. Mathematically, $\P{A}{B} = \P{A}$ or $\P{B}{A} = \P{B}$.
 \end{definition}
@@ -101,7 +108,7 @@ An equivalent criterion for mutual exclusivity is $\P{A \cup B} = \P{A} + \P{B}$
     $A$ and $B$ are independent events if and only if $\P{A \cap B} = \P{A}\P{B}$.
 \end{proposition}
 \begin{proof}
-    Since $A$ and $B$ are independent, we have \[\P{A} = \P{A \mid B} = \frac{\P{A \cap B}}{\P{B}}.\] Multiplying through by $\P{B}$ gives the desired claim.
+    Since $A$ and $B$ are independent, we have $\P{A} = \P{A \mid B} = \P{A \cap B}/\P{B}$. Multiplying through by $\P{B}$ gives the desired claim.
 \end{proof}
 
 \begin{proposition}

@@ -50,7 +50,7 @@ A \vocab{central tendency} can be thought of as the ``typical'' value of a data 
 
 Mathematically, given $n$ observations $x_1$, $x_2$, $x_3$, $\dots$, $x_n$, \[\text{Mean} = \frac{x_1 + x_2 + x_3 + \dots + x_n}{n} = \frac1n \sum_{i = 1}^n x_i.\]
 
-Here, a lower-case `$n$` represents the sample size. We use the uppercase `$N$' to represent the population size. It is essential to make it clear when we are referring to the mean of a sample or when we are referring to the mean of a population. To do so, statisticians use different symbols ($\ol{x}$ and $\m$): \[\text{Sample mean} = \ol{x} = \frac1n \sum x \quad \text{Population mean} = \m = \frac1N \sum x.\]
+Here, a lower-case `$n$` represents the sample size. We use the uppercase `$N$' to represent the population size. It is essential to make it clear when we are referring to the mean of a sample or when we are referring to the mean of a population. To do so, statisticians use different symbols ($\ol{x}$ and $\m$): \[\text{Sample mean} = \ol{x} = \frac1n \sum x, \quad \text{Population mean} = \m = \frac1N \sum x.\]
 
 We can also calculate the mean of a data set from its frequency table: \[\text{Mean} = \frac{\sum xf}{\sum f},\] where $f$ represents the frequency of a value $x$.
 
@@ -84,15 +84,15 @@ Since the mean takes into account the entire sample data, it is very sensitive t
 
 Generally, for $n$ values $x_1$, $x_2$, $\dots$, $x_n$ arranged in ascending order, \[\text{Median} = \begin{cases}
     x_{(n+1)/2}, & \text{$n$ odd},\\
-    \frac12 \bp{x_{n/2} + x_{n/2 + 1}}, & \text{$n$ even}
+    (1/2) \bp{x_{n/2} + x_{n/2 + 1}}, & \text{$n$ even}
 \end{cases}\]
 
 Unlike the mean, the median is not sensitive to outliers.
 
 \begin{example}[Median]
-    Consider again the example of 20 students. The set of data in ascending order is \[12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is hence the average of the two middle values, i.e. $(15 + 15)/2 = 15$.
+    Consider again the example of 20 students. The set of data in ascending order is \[12, \; 12, \; 13, \; 13, \; 13, \; 15, \; 15, \; 15, \; 15, \; 15, \; 15, \; 16, \; 16, \; 16, \; 16, \; 16, \; 17, \; 17, \; 17, \; 17.\] The median is hence the average of the two middle values, i.e. $(15 + 15)/2 = 15$.
 
-    When we add in the outlier, the set of data in ascending order becomes \[1, 12, 12, 13, 13, 13, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 17, 17, 17, 17.\] The median is now the 11th value, $15$. There is no change to the median.
+    When we add in the outlier, the set of data in ascending order becomes \[1, \; 12, \; 12, \; 13, \; 13, \; 13, \; 15, \; 15, \; 15, \; 15, \; 15, \; 15, \; 16, \; 16, \; 16, \; 16, \; 16, \; 17, \; 17, \; 17, \; 17.\] The median is now the 11th value, $15$. There is no change to the median.
 \end{example}
 
 \subsection{Mode}
@@ -129,7 +129,7 @@ We now show that the mean, median and mode correspond to the cases where $p = 2$
     The mean minimizes $\norm{\vec x - \vec c}_2$.
 \end{proposition}
 \begin{proof}
-    By definition, \[\norm{\vec x - \vec c}_2 = \bp{\sum_{i = 1}^n (x_i - c)^2}^{1/2}.\] Differentiating this with respect to $c$, \[\der{}{c} \norm{\vec x - \vec c}_2 = -\bp{\sum_{i = 1}^n (x_i - c)^2}^{-1/2} \sum_{i = 1}^n (x_i - c).\] For stationary points, we want \[\der{}{c} \norm{\vec x - \vec c}_2 = 0.\]Hence, \[\sum_{i = 1}^n (x_i - c) = 0 \implies \sum_{i = 1}^n x_i - cn = 0 \implies c = \frac1n \sum_{i = 1}^n x_i,\] which is exactly the definition of the mean. It is an exercise for the reader to show that this stationary point is a minimum.
+    By definition, \[\norm{\vec x - \vec c}_2 = \bp{\sum_{i = 1}^n (x_i - c)^2}^{1/2}.\] Differentiating this with respect to $c$, \[\der{}{c} \norm{\vec x - \vec c}_2 = -\bp{\sum_{i = 1}^n (x_i - c)^2}^{-1/2} \sum_{i = 1}^n (x_i - c).\] For stationary points, $(\derx{}{c}) \norm{\vec x - \vec c}_2 = 0$, so $\sum_{i = 1}^n (x_i - c) = 0$. This implies that \[c = \frac1n \sum_{i = 1}^n x_i,\] which is exactly the definition of the mean. It is an exercise for the reader to show that this stationary point is a minimum.
 \end{proof}
 
 \begin{proposition}

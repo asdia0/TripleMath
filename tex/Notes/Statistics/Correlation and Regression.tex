@@ -2,9 +2,9 @@
 
 Correlation and regression are statistical methods that examine the relationship between two quantitative variables.
 
-Correlation is concerned with quantifying the (linear) \emph{relationship} between two variables. Informally, it allows us to tell how strongly two variables move with each other. For instance, suppose we measure the heights and weights of a group of people. Intuitively, we would expect taller people to be heavier, hence there is a positive correlation between height and weight.
+Correlation is concerned with quantifying the (linear) \emph{relationship} between two variables. Informally, it allows us to tell how strongly two variables move with each other. For instance, suppose we measure the heights and weights of a group of people. Intuitively, we would expect taller people to be heavier; there is a positive correlation between height and weight.
 
-Regression, on the other hand, is concerned with quantifying how a change in one variable will affect the other variable. That is, regression predicts the value of a variable based on the value of the other variable. Reusing our previous example, regression allows us to predict the height of a person that weighs 70 kg.
+Regression, on the other hand, is concerned with quantifying how a change in one variable will affect the other variable. That is, regression predicts the value of a variable based on the value of the other variable. For example, if a person weighs 70 kg, a regression model may predict this person to be 1.60 m tall.
 
 \section{Independent and Dependent Variables}
 
@@ -37,6 +37,7 @@ Note however, that not all bivariate relationships have an independent and depen
         $x$ & 31 & 32 & 33.5 & 34 & 35.5 & 36 \\ \hline
         $y$ & 45 & 49 & 47 & 50 & 53 & 51 \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 
     All three heuristics for determining the independent/dependent relationship between $x$ and $y$ are not applicable. Hence, we say there is no clear independent and dependent variables, and we assume that no such relationship exists between the two variables.
@@ -67,6 +68,7 @@ A scatter diagram is obtained when each pair of data value $(x_i, y_i)$ from a s
         $t$ & 15 & 30 & 45 & 60 & 75 & 90 & 105 \\ \hline
         $y$ & 30 & 19 & 15 & 13 & 12 & 11 & 10 \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 
     Plot the above data in a scatter diagram.
@@ -111,10 +113,10 @@ A scatter diagram is obtained when each pair of data value $(x_i, y_i)$ from a s
 
 There are four main relationships we can observe on a scatter diagram:
 \begin{itemize}
-    \item Positive linear relationship -- As $x$ increases, $y$ increases.
-    \item Negative linear relationship -- As $x$ increases, $y$ decreases.
-    \item Curvilinear relationship -- The points seem to lie on a curve.
-    \item No clear relationship -- The points seem to be randomly scattered.
+    \item \bd{Positive linear relationship.} As $x$ increases, $y$ increases.
+    \item \bd{Negative linear relationship.} As $x$ increases, $y$ decreases.
+    \item \bd{Curvilinear relationship.} The points seem to lie on a curve.
+    \item \bd{No clear relationship.} The points seem to be randomly scattered.
 \end{itemize}
 
 \begin{minipage}{0.5 \textwidth}
@@ -275,11 +277,11 @@ As mentioned in the introduction, correlation refers to the relationship between
     The \vocab{product moment correlation coefficient}, denoted $r$, for a sample of bivariate data, is given by \[r = \frac{\sum \bp{x - \ol{x}} \bp{y - \ol{y}}}{\sqrt{\sum \bp{x - \ol{x}}^2} \sqrt{\sum \bp{y - \ol{y}}^2}}.\]
 \end{definition}
 
-We can manipulate $r$ to get rid of $\ol{x}$ and $\ol{y}$: \[r = \frac{\sum xy - \frac1n \sum x \sum y}{\sqrt{\sum x^2 - \frac1n \bp{\sum x}^2} \sqrt{\sum y^2 - \frac1n \bp{\sum y}^2}},\] where $n$ is the number of ordered pairs in the sample.
+We can manipulate $r$ to get rid of $\ol{x}$ and $\ol{y}$: \[r = \frac{\sum xy - (1/n) \sum x \sum y}{\sqrt{\sum x^2 - (1/n) \bp{\sum x}^2} \sqrt{\sum y^2 - (1/n) \bp{\sum y}^2}},\] where $n$ is the number of ordered pairs in the sample.
 
 \subsection{Characteristic of $r$}
 
-$r$ can only take on values between $-1$ and 1. A summary of the value(s) of $r$ and the associated linear correlation is given below.
+The product moment correlation coefficient $r$ can only take on values between $-1$ and 1. A summary of the value(s) of $r$ and the associated linear correlation is given below.
 
 \begin{table}[H]
     \centering
@@ -296,7 +298,7 @@ $r$ can only take on values between $-1$ and 1. A summary of the value(s) of $r$
     \end{tabularx}
 \end{table}
 
-To understand why this is the case, consider the sign of $r$. Looking at the definition of $r$, it is clear that \[r > 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}} > 0.\] Likewise, \[r < 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}} < 0.\] Consider now the following figure:
+To understand why this is the case, consider the sign of $r$. Looking at the definition of $r$, we see that \[r > 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}} > 0 \quad \tand \quad r < 0 \iff \sum \bp{x - \ol{x}}\bp{y - \ol{y}} < 0.\] Consider then the following figure:
 
 \begin{figure}[H]\tikzsetnextfilename{482}
 \centering
@@ -317,17 +319,20 @@ To understand why this is the case, consider the sign of $r$. Looking at the def
 \caption{}
 \end{figure}
 
-Consider quadrant $A$. Any data point $(x, y)$ within this quadrant will satisfy $x > \ol{x}$ and $y > \ol{y}$, so $\bp{x - \ol{x}}\bp{y - \ol{y}} > 0$. Similar analysis reveals that \[\bp{x - \ol{x}}\bp{y - \ol{y}} = \begin{cases}>0 & \text{ for quadrants $A$ and $C$},\\<0 & \text{ for quadrants $B$ and $D$}.\end{cases}\] Thus, if the overall sum is positive, the points must have been largely scattered within quadrants $A$ and $C$, which we visually interpret as a ``positive gradient''. Likewise, if the overall sum is negative, the points must have been largely scattered within quadrants $B$ and $D$, which we interpret as a ``negative gradient''. Lastly, if the overall sum is near 0, the points must have been scattered randomly throughout all four quadrants, so there is no linear relationship between the variables.
+By considering the signs of $x - \ol{x}$ and $y - \ol{y}$, we see that $\bp{x - \ol{x}}\bp{y - \ol{y}}$ is positive when $(x, y)$ lies in quadrants $A$ or $C$, and negative when $(x, y)$ lies in quadrants $B$ or $D$.
+
+Thus, if the overall sum is positive, the points must have been largely scattered within quadrants $A$ and $C$, which we visually interpret as a ``positive gradient''. Likewise, if the overall sum is negative, the points must have been largely scattered within quadrants $B$ and $D$, which we interpret as a ``negative gradient''. Lastly, if the overall sum is near 0, the points must have been scattered randomly throughout all four quadrants, so there is no linear relationship between the variables.
 
 \subsection{Importance of Scatter Diagram}
 
-The value of $r$ should always be interpreted together with a scatter diagram where possible. The value of $r$ can be affected by outliers and can give a misleading conclusion on the linear correlation of two variables. For instance, the following two sets of bivariate data differ only by one data point, yet they have drastically different product moment correlation coefficients:
+A scatter diagram should always be used in the interpretation of correlation, as it not only shows the pattern trend between the variables, but it also reveals the existence of any outliers which may have affected the value of $r$. For instance, the following two sets of bivariate data differ only by one data point, yet they have drastically different product moment correlation coefficients:
 
 \begin{minipage}{0.5 \textwidth}
     \begin{figure}[H]\tikzsetnextfilename{483}
     \centering
-    \begin{tikzpicture}[trim axis left, scale=0.8]
+    \begin{tikzpicture}[trim axis left, scale=0.7]
         \begin{axis}[
+            every axis/.append style={font=\Large},
             xlabel = {$x$},
             ylabel = {$y$},
             xtick = {1, 10},
@@ -362,8 +367,9 @@ The value of $r$ should always be interpreted together with a scatter diagram wh
 \begin{minipage}{0.5 \textwidth}
     \begin{figure}[H]\tikzsetnextfilename{484}
     \centering
-    \begin{tikzpicture}[trim axis left, scale=0.8]
+    \begin{tikzpicture}[trim axis left, scale=0.7]
         \begin{axis}[
+            every axis/.append style={font=\Large},
             xlabel = {$x$},
             ylabel = {$y$},
             xtick = {1, 10},
@@ -396,28 +402,20 @@ The value of $r$ should always be interpreted together with a scatter diagram wh
     \end{figure}
 \end{minipage}
 
-\medskip
-
-Thus, the scatter diagram should always be used in the interpretation of correlation, as it not only shows the pattern trend between the variables, but it also reveals the existence of any outliers which may have affected the value of $r$.
-
 \subsection{Correlation and Causation}
 
 A strong or perfect linear correlation between two variables does not necessarily imply one directly causes the other; correlation does not imply causation.
 
 \section{Predicting or Estimating Using Regression Line}
 
-In statistical studies, when it is observed that a significant linear correlation exists between two variables of study, best-fit lines or regression lines are often obtained in order to make predictions or estimations relating to $x$ and/or $y$. For bivariate data, there are two possible regression lines that we can draw:
-\begin{itemize}
-    \item regression line of $y$ on $x$, or
-    \item regression line of $x$ on $y$.
-\end{itemize}
+In statistical studies, when it is observed that a significant linear correlation exists between two variables of study, best-fit lines or regression lines are often obtained in order to make predictions or estimations relating to $x$ and/or $y$. For bivariate data, we can draw either the regression line of $y$ on $x$, or that of $x$ on $y$.
 
 \subsection{Regression Line of $y$ on $x$}
 
 Let $(x_i, y_i)$ for $i = 1, \dots, n$ be a set of $n$ observed data points.
 
 \begin{definition}
-    The \vocab{vertical residual}, denoted $v_i$, is the deviation between the actual and predicted $y$-values. \[v_i = y_i - \bp{a + bx_i}\] for some constants $a$ and $b$.
+    The \vocab{vertical residual}, denoted $v_i$, is the deviation between the actual and predicted $y$-values. Mathematically, $v_i = y_i - \bp{a + bx_i}$ for some constants $a$ and $b$.
 \end{definition}
 
 We can think of a vertical residual as the (signed) \emph{vertical} distance between an observed data point $(x_i, y_i)$ and the line $y = a + bx$.
@@ -431,11 +429,11 @@ We can think of a vertical residual as the (signed) \emph{vertical} distance bet
             xtick = \empty,
             ytick = \empty,
             ylabel style={rotate=-90},
-            xmin = 0.5,
+            xmin = -0.1125,
             xmax = 4.5,
-            ymin = 0,
+            ymin = -0.2,
             ymax = 8,
-            domain = 0:4.5,
+            domain = -0.1125:4.5,
             samples = 101,
             axis y line=middle,
             axis x line=middle,
@@ -443,8 +441,7 @@ We can think of a vertical residual as the (signed) \emph{vertical} distance bet
             legend pos=outer north east,
         ]
 
-        \addplot[very thick] {1.4 * x};
-        \addlegendentry{$y = a + bx$};
+        \addplot[very thick] {1.4 * x} node[pos=0.65, above left] {$y = ax+b$};        
 
         \addplot [
             scatter,
@@ -499,7 +496,7 @@ Observe that the regression line of $y$ on $x$ passes through the \vocab{mean po
 The regression line of $x$ on $y$ is similar. In this case, however, we are concerned with \emph{horizontal} deviations instead.
 
 \begin{definition}
-    The \vocab{horizontal residual}, denoted $h_i$, is the deviation between the actual and predicted $x$-values. \[h_i = y_i - \bp{c + d x_i}\] for some constants $c$ and $d$.
+    The \vocab{horizontal residual}, denoted $h_i$, is the deviation between the actual and predicted $x$-values. Mathematically, $h_i = y_i - \bp{c + d x_i}$ for some constants $c$ and $d$.
 \end{definition}
 
 Analogous to $v_i$, we can think of a horizontal residual as the (signed) \emph{horizontal} distance between an observed data point $(x_i, y_i)$ and the line $x = c + dy$.
@@ -513,9 +510,9 @@ Analogous to $v_i$, we can think of a horizontal residual as the (signed) \emph{
             xtick = \empty,
             ytick = \empty,
             ylabel style={rotate=-90},
-            xmin = 0.5,
+            xmin = -0.1375,
             xmax = 5.5,
-            ymin = 0,
+            ymin = -0.2,
             ymax = 8,
             domain = 0:5.5,
             samples = 101,
@@ -525,8 +522,7 @@ Analogous to $v_i$, we can think of a horizontal residual as the (signed) \emph{
             legend pos=outer north east,
         ]
 
-        \addplot[very thick] {x * 2.714 - 3.2857};
-        \addlegendentry{$x = c + dy$};
+        \addplot[very thick] {x * 2.714 - 3.2857} node[pos=0.55, above left] {$x = c + dy$};
 
         \addplot [
             scatter,
@@ -569,9 +565,9 @@ Analogous to $v_i$, we can think of a horizontal residual as the (signed) \emph{
     The \vocab{least-squares regression line of $x$ on $y$} is obtained by finding the values of $c$ and $d$ in $x = c + dy$ that minimizes the sum of the squares of the horizontal residuals, $S$: \[S = \sum_{i = 1}^n h_i^2 = \sum_{i = 1}^n \bs{x_i - \bp{c + d y_i}}^2.\]
 \end{definition}
 
-\begin{problem}
+\begin{proposition}
     The regression line of $x$ on $y$ is given by $x - \ol{x} = d\bp{y - \ol{y}}$, where \[d = \frac{\sum \bp{x - \ol{x}} \bp{y - \ol{y}}}{\sum \bp{y - \ol{y}}^2} = \frac{\sum xy - n \bp{\ol{x}}\bp{\ol{y}}}{\sum y^2 - n \bp{\ol{y}}^2}.\]
-\end{problem}
+\end{proposition}
 
 As in the $y$ on $x$ case, we call $d$ the regression coefficient. Note that $1/d$, and not $d$, is the gradient of the regression line. Observe that the regression line of $x$ on $y$ also passes through the mean point $\bp{\ol{x}, \ol{y}}$.
 
@@ -593,9 +589,9 @@ Extrapolation of the sample should be used with caution as the relationship betw
 
 There are three criteria we typically use when commenting on the reliability of an estimate:
 \begin{itemize}
-    \item Appropriateness of the regression line used -- The correct regression line should be used for the estimate to be reliable.
-    \item Strength of linear correlation -- $\abs{r}$ should be close to 1 for the estimate to be reliable.
-    \item Interpolation or extrapolation -- Interpolation is likely to give a more reliable estimate than extrapolation.
+    \item \bd{Appropriateness of the regression line used.} The correct regression line should be used for the estimate to be reliable.
+    \item \bd{Strength of linear correlation.} $\abs{r}$ should be close to 1 for the estimate to be reliable.
+    \item \bd{Interpolation or extrapolation.} Interpolation is likely to give a more reliable estimate than extrapolation.
 \end{itemize}
 
 For an estimate to be reliable, all three criteria should be satisfied. If at least one of the criteria is not satisfied, we deem the estimate to be unreliable.
@@ -613,20 +609,21 @@ The relationship between two variables involved, $x$ and $y$, may not always be 
         $y = ab^x$ & $\ln y = \ln a + x \ln b$ & $\ln y$ vs $x$ \\ \hline
         $y = ax^b$ & $\ln y = \ln a + b \ln x$ & $\ln y$ vs $\ln x$ \\ \hline
     \end{tabular}
+    \caption{}
 \end{table}
 
 Sometimes, we are given a scatter diagram and are tasked with comparing two or more proposed models and determine which model is a better fit. In such a scenario, we simply state which equation fits the shape of the scatter plot better. If there is more than one possibility, we can compute the product moment correlation coefficient for each model and ``break the tie'' by choosing the model with $\abs{r}$ closest to 1.
 
 \section{Bonus: A Probabilistic Approach to Linear Regression}
 
-In an ideal world, our variables will be exactly related by the model $y = a + bx$. However, in the real world, whenever we observe a data point, our readings will contain some error $\ep$, so our observations are actually modelled by $y = a + bx + \ep$. In real life, these errors are caused by thousands of different factors. We can hence think of $\ep$ as the sum of many independent random variables. But by the Central Limit Theorem, it follows that $\ep$ is distributed normally, so \[\ep \sim \Normal{0}{\s^2}.\]
+In an ideal world, our variables will be exactly related by the model $y = a + bx$. However, in the real world, whenever we observe a data point, our readings will contain some error $\ve$, so our observations are actually modelled by $y = a + bx + \ve$. In real life, these errors are caused by thousands of different factors. We can hence think of $\ve$ as the sum of many independent random variables. By the Central Limit Theorem, it follows that $\ve$ is distributed normally, so we may write $\ve \sim \Normal{0}{\s^2}$ for some variance $\s^2$.
 
-Suppose now that we obtain an observation, $\bp{x_i, y_i}$. Since $\ep_i = y_i - \bp{a + bx_i}$, the probability of observing this data point is given by \[\P{(x_i, y_i)} = \P{\ep = \ep_i} = \P{\ep = y_i - \bp{a + bx_i}} = \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\] If we make $n$ \emph{independent} observations, then the overall probability of observing all $n$ data points is simply the product of each individual probability: \[\P{\text{data}} = \prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\]
+Suppose now that we obtain an observation, $\bp{x_i, y_i}$. Since $\ve_i = y_i - \bp{a + bx_i}$, the probability of observing this data point is given by \[\P{\ve = y_i - \bp{a + bx_i}} = \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\] If we make $n$ \emph{independent} observations, then the overall probability of observing all $n$ data points is simply the product of each individual probability.
 
-It is now natural to define the ``best'' model ($y = a + bx$) as the one that maximizes the probability of observing our data. That is, we wish to find $a$ and $b$ that maximizes \[\prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\] Since the logarithm is monotonic, we can convert our objective function from a product into a sum: \[\argmax_{a, b} \ln \prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}} = \argmax_{a, b} \sum_{i = 1}^n \bp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}},\] where we ignored the constant terms contributed by $1/\sqrt{2\pi} \s$ since they do not affect the location of the maxima. We can further ignore the $1/\s^2$ term since it is a constant factor. Lastly, flipping the sign changes our objective into a minimization problem, so we get \[\argmin_{a, b} \sum_{i = 1}^n \bp{y_i - \bp{a + b x_i}}^2.\] But this is exactly the objective of the least-squares regression line of $x$ on $y$ we introduced earlier!
+It is now natural to define the ``best'' model ($y = a + bx$) as the one that maximizes the probability of observing our data. That is, we wish to find $a$ and $b$ that maximizes \[\prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}}.\] Since the logarithm is monotonic, we can convert our objective function from a product into a sum: \[\argmax_{a, b} \ln \prod_{i = 1}^n \frac1{\sqrt{2\pi} \s} \exp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}} = \argmax_{a, b} \sum_{i = 1}^n \bp{-\frac{\bp{y_i - \bp{a + bx_i}}^2}{2\s^2}},\] where we ignored the constant terms contributed by $1/\sqrt{2\pi} \s$ since they do not affect the location of the maxima. We can further ignore the $1/\s^2$ term since it is a constant factor. Lastly, multiplying by $-1$ changes our objective into a minimization problem, so we get \[\argmin_{a, b} \sum_{i = 1}^n \bp{y_i - \bp{a + b x_i}}^2.\] But this is exactly the objective of the least-squares regression line of $x$ on $y$ we introduced earlier!
 
 \section{Bonus: $r$ and Vectors}
 
-Suppose we have two sets of data, say $x_1, \dots, x_n$ and $y_1, \dots, y_n$. Let $\ol{x}$ and $\ol{y}$ denote their respective means. Recall that the product moment correlation coefficient $r$ between these two samples is given by \[r = \frac{\sum \bp{x - \ol{x}} \bp{y - \ol{y}}}{\sqrt{\sum \bp{x - \ol{x}}^2 \sum \bp{y - \ol{y}}^2}}.\] Observe that the definition of $r$ resembles the definition of the cosine of an angle between two vectors! Indeed, if we define \[\vec x = \cveciii{x_1 - \ol{x}}{\vdots}{x_n - \ol{x}} \quad \tand \quad \vec y = \cveciii{y_1 - \ol{y}}{\vdots}{y_n - \ol{y}},\] then we can simply express $r$ as \[r = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2 \abs{\vec y}^2} = \cos \t,\] where $\t$ is the angle between the two vectors $\vec x$ and $\vec y$.\footnote{We can think of these two vectors as the ``deviation'' between the sample data and their respectively means. Indeed, it is not too hard to see that the sample variances are given by $s_X^2 = \abs{\vec x}^2/(n-1)$ and $s_Y^2 = \abs{\vec y}^2/(n-1)$. The scaled dot product $\bp{\vec x \dotp \vec y}/(n-1)$ also has a special name, called the ``sample covariance'', typically denoted $s_{XY}^2$, so the product moment correlation coefficient can be expressed more succinctly as \[r = \frac{s_{XY}^2}{s_X s_Y}.\]} Similarly, we can rewrite the regression coefficients $b$ and $d$ vectorially: \[b = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2} \quad \tand \quad d = \frac{\vec x \dotp \vec y}{\abs{\vec y}^2}.\] If we manipulate the above two expressions, we see that \[b = \frac{\vec{\hat x} \dotp \vec y}{\abs{\vec x}} \quad \tand \quad d = \frac{\vec x \dotp \vec{\hat{y}}}{\abs{\vec y}}.\] Now observe that the numerator of $b$ is exactly the length of projection of $\vec y$ onto $\vec x$. Similarly, the numerator of $d$ is exactly the length of projection of $\vec x$ on $\vec y$.
+Suppose we have two sets of data, say $x_1, \dots, x_n$ and $y_1, \dots, y_n$. Let $\ol{x}$ and $\ol{y}$ denote their respective means. Recall that the product moment correlation coefficient $r$ between these two samples is given by \[r = \frac{\sum \bp{x - \ol{x}} \bp{y - \ol{y}}}{\sqrt{\sum \bp{x - \ol{x}}^2 \sum \bp{y - \ol{y}}^2}}.\] Observe that the definition of $r$ resembles the definition of the cosine of an angle between two vectors! Indeed, if we define \[\vec x = \cveciii{x_1 - \ol{x}}{\vdots}{x_n - \ol{x}} \quad \tand \quad \vec y = \cveciii{y_1 - \ol{y}}{\vdots}{y_n - \ol{y}},\] then we can simply express $r$ as \[r = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2 \abs{\vec y}^2} = \cos \t,\] where $\t$ is the angle between the two vectors $\vec x$ and $\vec y$.\footnote{We can think of these two vectors as the ``deviation'' between the sample data and their respective means. Indeed, it is not too hard to see that the sample variances are given by $s_X^2 = \abs{\vec x}^2/(n-1)$ and $s_Y^2 = \abs{\vec y}^2/(n-1)$.} This explains why the value of $r$ is between $-1$ and 1.
 
-That is to say, $b$ measures the ratio between the vector projection of $\vec y$ onto $\vec x$, and similarly for $d$: \[b = \frac{\text{length of projection of $\vec y$ onto $\vec x$}}{\text{length of $\vec x$}} \quad \tand \quad d = \frac{\text{length of projection of $\vec x$ onto $\vec y$}}{\text{length of $\vec y$}}.\] This aligns with our intuition of $b$ and $d$: If the two samples share a strong linear correlation, we would expect the regression lines of $y$ on $x$ and $x$ on $y$ to be roughly the same. Indeed, $\vec x$ and $\vec y$ are roughly multiples of each other, say $\vec x \approx \l \vec y$ for some $\l$, so \[b \approx \frac{\abs{\l \vec y}}{\abs{\vec y}} = \abs{\l} \quad \tand \quad d \approx \frac{\abs{\vec x}}{\abs{\l \vec x}} = \frac1{\abs{\l}} \implies b \approx \frac1{d}.\] But $b$ and $1/d$ represent the gradients of the regression lines of $y$ on $x$ and of $x$ on $y$ respectively, so the two lines have roughly equivalent gradients, i.e. the two lines are roughly the same.
+Similarly, we can rewrite the regression coefficients $b$ and $d$ vectorially: \[b = \frac{\vec x \dotp \vec y}{\abs{\vec x}^2} = \frac{\vec{\hat x} \dotp \vec y}{\abs{\vec x}} \quad \tand \quad d = \frac{\vec x \dotp \vec y}{\abs{\vec y}^2} = \frac{\vec x \dotp \vec{\hat{y}}}{\abs{\vec y}}.\] Geometrically, we can interpret the numerator of $b$ as exactly the length of projection of $\vec y$ onto $\vec x$. Similarly, the numerator of $d$ is exactly the length of projection of $\vec x$ on $\vec y$, so \[b = \frac{\text{length of projection of $\vec y$ onto $\vec x$}}{\text{length of $\vec x$}} \quad \tand \quad d = \frac{\text{length of projection of $\vec x$ onto $\vec y$}}{\text{length of $\vec y$}}.\] %This aligns with our intuition of $b$ and $d$: if the two samples share a strong linear correlation, we would expect the regression lines of $y$ on $x$ and $x$ on $y$ to be roughly the same. Indeed, $\vec x$ and $\vec y$ are roughly multiples of each other, say $\vec x \approx \l \vec y$ for some $\l$, so \[b \approx \frac{\abs{\l \vec y}}{\abs{\vec y}} = \abs{\l} \quad \tand \quad d \approx \frac{\abs{\vec x}}{\abs{\l \vec x}} = \frac1{\abs{\l}},\] whence $b \approx 1/d$. But $b$ and $1/d$ represent the gradients of the regression lines of $y$ on $x$ and of $x$ on $y$ respectively, so the two lines have roughly equivalent gradients, i.e. the two lines are roughly the same.
