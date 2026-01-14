@@ -83,7 +83,6 @@ Surprisingly, there are no other examples of linear transformations from $\RR^n$
 
 \begin{definition}
     A \vocab{linear space} (or \vocab{vector space}) over $\RR$ is a set $V$ equipped with two operations, addition ($+$) and scalar multiplication ($\cdot$), such that for any vectors $\vec u, \vec v, \vec w \in V$ and for all $c, d \in \RR$, the following ten axioms are satisfied:
-    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Closure under addition: $\vec u + \vec v \in V$.
         \item Addition is commutative: $\vec u + \vec v = \vec v + \vec u$.
@@ -96,7 +95,6 @@ Surprisingly, there are no other examples of linear transformations from $\RR^n$
         \item Scalar multiplication is associative: $c(d \vec u) = (cd) \vec u$.
         \item Existence of scalar multiplicative identity: There exists a scalar, 1, such that $1 \vec u = \vec u$.
     \end{enumerate}
-    \renewcommand{\theenumi}{(\alph{enumi})}
 \end{definition}
 
 One can think of a linear space as an Abelian group (under addition, Axioms 1-5) with the added structure of ``scalar multiplication'' (Axioms 6-10).
@@ -181,6 +179,7 @@ In Sample Problem~\ref{sample:linear-transformations:planes}, we saw how any pla
      & \tabitem $\RR^2$ & \tabitem Planes through the origin \\ 
      &  & \tabitem $\RR^3$ \\ \hline
     \end{tabular}
+    \caption{}
 \end{table}
 
 In fact, these are the only subspaces of $\RR^1$, $\RR^2$ and $\RR^3$. Note that this pattern holds for all $\RR^n$.

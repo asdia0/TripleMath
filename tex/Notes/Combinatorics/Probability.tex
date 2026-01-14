@@ -104,7 +104,7 @@ An equivalent criterion for mutual exclusivity is $\P{A \cup B} = \P{A} + \P{B}$
     Let $A$ and $B$ be any two events. If either of the two occur without being affected by the other, then $A$ and $B$ are said to be \vocab{independent}. Mathematically, $\P{A}{B} = \P{A}$ or $\P{B}{A} = \P{B}$.
 \end{definition}
 
-\begin{proposition}[Multiplication Law]
+\begin{proposition}
     $A$ and $B$ are independent events if and only if $\P{A \cap B} = \P{A}\P{B}$.
 \end{proposition}
 \begin{proof}
@@ -142,7 +142,8 @@ We only prove that $A'$ and $B$ are independent. The proofs for the other pairs 
 \end{sample}
 \begin{sampans}
     Consider the following table of outcomes.
-    \begin{center}
+    \begin{table}[H]
+        \centering
         \begin{tabular}{|c|c|c|c|c|c|c|}
             \hline  & 1 & 2 & 3 & 4 & 5 & 6\\\hline
             1 & 2 & 3 & 4 & 5 & 6 & \cellcolor{ForestGreen!20}7 \\ \hline
@@ -151,8 +152,9 @@ We only prove that $A'$ and $B$ are independent. The proofs for the other pairs 
             4 & 5 & 6 & 7 & 8 & \cellcolor{ForestGreen!20}9 & 10 \\ \hline
             5 & 6 & \cellcolor{ForestGreen!20}7 & 8 & \cellcolor{ForestGreen!20}9 & 10 & \cellcolor{ForestGreen!20}11 \\ \hline
             6 & \cellcolor{ForestGreen!20}7 & 8 & \cellcolor{ForestGreen!20}9 & 10 & \cellcolor{ForestGreen!20}11 & 12 \\ \hline
-          \end{tabular}
-    \end{center}
+        \end{tabular}
+        \caption{}
+    \end{table}
     From the table of outcomes, the required probability is clearly $10/36$.
 \end{sampans}
 

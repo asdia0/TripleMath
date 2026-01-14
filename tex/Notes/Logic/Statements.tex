@@ -41,6 +41,7 @@ We now introduce some operations of statements, namely the negation, conjunction
         T & F \\ \hline
         F & T \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 \end{definition}
 
@@ -60,6 +61,7 @@ We now introduce some operations of statements, namely the negation, conjunction
         F & T & F \\ \hline
         F & F & F \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 \end{definition}
 
@@ -79,6 +81,7 @@ We now introduce some operations of statements, namely the negation, conjunction
         F & T & T \\ \hline
         F & F & F \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 \end{definition}
 
@@ -102,6 +105,7 @@ In this section, we examine how statements are linked together to form more comp
         F & T & T \\ \hline
         F & F & T \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
     In words, the statement $P \implies Q$ also reads:
     \begin{itemize}
@@ -137,6 +141,7 @@ We now look at biconditional statements. As the name suggests, a biconditional s
         F & T & F \\ \hline
         F & F & T \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
 
     When $P \iff Q$ is true, we say that $P$ and $Q$ are \vocab{equivalent}.
@@ -153,6 +158,7 @@ An equivalent definition of $P \iff Q$ is the statement ``$(P \implies Q)$ and $
     F & T & T & F & F \\ \hline
     F & F & T & T & T \\ \hline
     \end{tabular}
+    \caption{}
 \end{table}
 
 \begin{example}[Biconditional Statements]
@@ -165,8 +171,6 @@ An equivalent definition of $P \iff Q$ is the statement ``$(P \implies Q)$ and $
 
 \section{Quantifiers}
 
-We now introduce two important symbols, namely the universal quantifier ($\forall$) and the existential quantifier ($\exists$)
-
 \begin{definition}
     Let $P(x)$ be a statement, where $x$ has domain $S$.
     \begin{itemize}
@@ -175,7 +179,9 @@ We now introduce two important symbols, namely the universal quantifier ($\foral
     \end{itemize}
 \end{definition}
 
-When the domain $S$ is clear from context, we can simply write $\forall x, \, P(x)$.
+We call $\forall$ the \vocab{universal quantifier}, and $\exists$ the \vocab{existential quantifier}.
+
+When the domain $S$ is clear from context, we can simply write $\forall x, \, P(x)$, or $\exists x, \, P(x)$.
 
 \begin{example}[Quantifiers]
     Let $P(x)$ be the statement ``$x$ is even''. Since not all integers are even, the statement $\forall x \in \ZZ, \, P(x)$ is not true. However, the statement $\exists x \in \ZZ, \, P(x)$ is true, because we can find an integer that is even (e.g. $x = 0$).
@@ -203,6 +209,7 @@ When the domain $S$ is clear from context, we can simply write $\forall x, \, P(
         F & T &  & F & T &  & T & F & T \\ \cline{1-2} \cline{4-5} \cline{7-9} 
         F & F &  & F & T &  & T & T & T \\ \cline{1-2} \cline{4-5} \cline{7-9} 
         \end{tabular}
+        \caption{}
     \end{table}
 
     Similarly, the equivalence between $\lnot \bp{P \lor Q}$ and $(\lnot P) \land (\lnot Q)$ can be seen from the following truth table:
@@ -217,6 +224,7 @@ When the domain $S$ is clear from context, we can simply write $\forall x, \, P(
         F & T &  & T & F &  & T & F & F \\ \cline{1-2} \cline{4-5} \cline{7-9} 
         F & F &  & F & T &  & T & T & T \\ \cline{1-2} \cline{4-5} \cline{7-9} 
         \end{tabular}
+        \caption{}
     \end{table}
 \end{proof}
 

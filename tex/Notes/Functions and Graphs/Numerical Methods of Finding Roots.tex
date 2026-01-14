@@ -13,7 +13,6 @@ Additionally, if $f(x)$ is strictly monotonic on $(a, b)$, then there is exactly
 \section{Numerical Methods for Finding Roots}
 
 A numerical method for finding roots typically consists of two stages:
-\renewcommand{\theenumi}{\arabic{enumi}.}
 \begin{enumerate}
     \item \bd{Estimate the location of the root}
     
@@ -22,7 +21,6 @@ A numerical method for finding roots typically consists of two stages:
 
     An iterative process is a repetitive procedure designed to produce a sequence of approximations $\bc{x_n}$ so that the sequence converges to a root. The process is continued until the required accuracy is reached.
 \end{enumerate}
-\renewcommand{\theenumi}{(\alph{enumi})}
 
 In this chapter, we will look at three numerical methods for finding roots, namely linear interpolation, fixed point iteration and the Newton-Raphson method.
 
@@ -77,13 +75,11 @@ Fixed point iteration is used to find a root of an equation $f(x) = 0$ which can
 
 \begin{recipe}[Fixed Point Iteration]
     To approximate a root $\a$ of the equation $f(x) = 0$,
-    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Rewrite $f(x) = 0$ into the form $x = F(x)$.
         \item Choose an initial approximation $x_1$ for the root $\a$.
         \item Generate successive approximations using the recurrence relation $x_{n+1} = F(x_n)$.
     \end{enumerate}
-    \renewcommand{\theenumi}{(\alph{enumi})}
 \end{recipe}
 
 \subsection{Derivation}
@@ -183,12 +179,10 @@ The Newton-Raphson method is a numerical method that improves on linear interpol
 
 \begin{recipe}[Newton-Raphson Method]
     To approximate a root $\a$ of the equation $f(x) = 0$,
-    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Choose an initial approximation $x_1$ for the root $\a$.
         \item Generate successive approximations using the recurrence relation \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.\]
     \end{enumerate}
-    \renewcommand{\theenumi}{(\alph{enumi})}
 \end{recipe}
 
 \subsection{Derivation}
@@ -223,7 +217,7 @@ The Newton-Raphson method is a numerical method that improves on linear interpol
     \caption{}
 \end{figure}
 
-Let $\a$ be a root to $f(x) = 0$. Consider the tangent to $y = f(x)$ at the point where $x = x_1$. In most circumstances, the point $(x_2, 0)$ where this tangent cuts the $x$-axis will be nearer to the point $(\a, 0)$ than $(x_1, 0)$ was. By the point-slope formula, the equation of the tangent to the curve at $x = x_1$ is \[y - f(x_1) = f'(x_1)(x-x_1).\] Since $(x_2, 0)$ lies on the tangent line, we have \[x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}.\] By repeating the Newton-Raphson process, we are able to get better approximations to $\a$. In general, \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.\]
+Let $\a$ be a root to $f(x) = 0$. Consider the tangent to $y = f(x)$ at the point where $x = x_1$. In most circumstances, the point $(x_2, 0)$ where this tangent cuts the $x$-axis will be nearer to the point $(\a, 0)$ than $(x_1, 0)$ was. By the point-slope formula, the equation of the tangent to the curve at $x = x_1$ is $y - f(x_1) = f'(x_1)(x-x_1)$. Since $(x_2, 0)$ lies on the tangent line, we have \[x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}.\] By repeating the Newton-Raphson process, we are able to get better approximations to $\a$. In general, \[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.\]
 
 \subsection{Convergence}
 

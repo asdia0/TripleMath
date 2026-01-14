@@ -35,6 +35,18 @@
   tocnumwidth=2.2em
 ]{part}
 
+\RedeclareSectionCommand[
+  tocnumwidth=2.2em
+]{chapter}
+
+\RedeclareSectionCommand[
+  tocindent=2.2em,
+]{section}
+
+\RedeclareSectionCommand[
+  tocindent=4.5em,
+]{subsection}
+
 \raggedbottom
 
 % Problem and Solution Environments
@@ -58,7 +70,7 @@
 \newcommand*{\ppart}{\stepcounter{partnum}\smallbreak\noindent{\sffamily\bfseries{Part (\thepartnum).}}}
 \newcommand*{\psubpart}{\stepcounter{subpartnum}\smallbreak\noindent{\sffamily\bfseries\small{Part (\thepartnum)(\thesubpartnum).}}}
 
-\renewcommand{\theenumi}{(\alph{enumi})}
+\renewcommand{\theenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumii}{(\roman{enumii}}
 

@@ -59,7 +59,8 @@ Since the mean takes into account the entire sample data, it is very sensitive t
 \begin{example}[Mean]
     Suppose the test scores of students in a particular class has the following frequency table:
 
-    \begin{center}
+    \begin{table}[H]
+        \centering
         \begin{tabular}{|c|c|}
         \hline
         \bd{Test score, $x$} & \bd{Frequency, $f$} \\ \hline\hline
@@ -69,7 +70,8 @@ Since the mean takes into account the entire sample data, it is very sensitive t
         16 & 5 \\ \hline
         17 & 4 \\ \hline
         \end{tabular}
-    \end{center}
+        \caption{}
+    \end{table}
 
     Then, the mean test score can be calculated as \[\ol{x} = \frac{\sum xf}{\sum f} = \frac{(12)(2) + (13)(3) + (15)(6) + (16)(5) + (17)(4)}{2 + 3 + 6 + 5 + 4} = 15.05.\]
 
@@ -107,7 +109,7 @@ A distribution containing the values 2, 3, 6, 1, 3, 7 and 7 would be referred to
 
 The mode, unlike the mean, is not affected by outliers. It is easy to state as it does not require any calculation. However, it is a crude measure of central tendency as it ignores a substantial part of the data and is thus usually not very representative and useful.
 
-\subsection{Bonus: Relationship with \texorpdfstring{$L^p$}{Lp}-norms}
+\subsection{Bonus: Minimizers of \texorpdfstring{$L^p$}{Lp}-norms}
 
 So far, we have motivated the introduction and use of the mean, median and mode to counter the shortcomings of the other measures. While this is sufficient for understanding why (and when) we should care about certain measures of central tendency, there is a more fundamental property that these three measures have in common.
 
@@ -150,7 +152,8 @@ We now show that the mean, median and mode correspond to the cases where $p = 2$
 
 Suppose that the original 20 test scores come from students from a particular class, and that there is another class of 20 whose test score has the following frequency distribution table:
 
-\begin{center}
+\begin{table}
+    \centering
     \begin{tabular}{|c|c|}
     \hline
     \bd{Test score, $x$} & \bd{Frequency, $f$} \\ \hline\hline
@@ -164,7 +167,8 @@ Suppose that the original 20 test scores come from students from a particular cl
     20 & 1 \\ \hline
     21 & 2 \\ \hline
     \end{tabular}
-\end{center}
+    \caption{}
+\end{table}
 
 The mean test score of both classes are the same (15.05). However, the second class clearly has a wider spread of test scores.
 

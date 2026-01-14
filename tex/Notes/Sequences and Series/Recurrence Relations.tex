@@ -46,8 +46,6 @@ Note that we exclude the case $b = 0$, as that would lead to the first order rec
 
 \begin{recipe}[Solving by Procedure]
     To solve the recurrence relation $u_n = a u_{n-1} + b u_{n-2}$,
-
-    \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
         \item Form the \vocab{characteristic equation} $x^2 - ax - b = 0$.
         \item Find the roots $\a$ and $\b$ of this characteristic equation.
@@ -58,7 +56,6 @@ Note that we exclude the case $b = 0$, as that would lead to the first order rec
             \item $u_n = r^n\bp{A \cos n\t + B \sin n\t}$, if $\a = r\e^{\i \t}$ and $\b = r\e^{-\i \t}$ (non-real roots).
         \end{itemize}
     \end{enumerate}
-    \renewcommand{\theenumi}{(\alph{enumi})}
 \end{recipe}
 \begin{proof}
     For $u_{n+1} = a u_n + b u_{n-1}$ with given initial conditions $u_1$ and $u_2$, let the constant $k$ be such that \[u_{n+1} - k u_n = (a-k) (u_n - ku_{n-1}). \tag{1}\] Note that this is a GP. Comparing coefficients of $u_{n-1}$, we have $(a-k)k = -b$, which expands to give the characteristic equation $k^2 - ak - b = 0$. Let the roots to the characteristic equation be $k = \a$ and $k = \b$. By Vieta's formula, $\a + \b = a$. Now, using the fact that (1) is in GP, we get \[u_{n+1} - ku_n = (a-k)^{n-1} (u_2 - ku_1). \tag{2}\] Substituting $k = \a$ into (2), we obtain \[u_{n+1} - \a u_n = \b^{n-1} \bp{u_2 - \a u_1}. \tag{3a}\] Substituting $k = \b$ into (2), we obtain \[u_{n+1} - \b u_n = \a^{n-1} \bp{u_2 - \b u_1}. \tag{3b}\] We now analyse the case where $\a = \b$ and $\a \neq \b$ separately.

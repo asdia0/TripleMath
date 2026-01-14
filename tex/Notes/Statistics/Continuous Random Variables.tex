@@ -222,6 +222,7 @@ Suppose we have a continuous random variable $Y$ that is given as a function of 
         \centering
         \begin{tikzpicture}[trim axis left, trim axis right, scale=0.8]
             \begin{axis}[
+                every axis/.append style={font=\Large},
                 domain = -0.5:10,
                 ymin = -0.0333,
                 ymax = 0.4,
@@ -258,6 +259,7 @@ Suppose we have a continuous random variable $Y$ that is given as a function of 
         \centering
         \begin{tikzpicture}[trim axis left, trim axis right, scale=0.8]
             \begin{axis}[
+                every axis/.append style={font=\Large},
                 domain = -0.5:10,
                 ymin = -0.1,
                 ymax = 1.2,
@@ -348,6 +350,7 @@ As its definition suggests, the exponential distribution is often used to model 
         \centering
         \begin{tikzpicture}[scale=0.8]
             \begin{axis}[
+                every axis/.append style={font=\Large},
                 domain = -1:10,
                 ymin = -0.0333,
                 ymax = 0.4,
@@ -382,6 +385,7 @@ As its definition suggests, the exponential distribution is often used to model 
         \centering
         \begin{tikzpicture}[scale=0.8]
             \begin{axis}[
+                every axis/.append style={font=\Large},
                 domain = -1:10,
                 ymin = -0.1,
                 ymax = 1.2,
@@ -605,7 +609,7 @@ As the definition suggests, the higher the $z$-score, the better $x$ is relative
 
 \subsection{Normal Distribution as an Approximation}
 
-Previously, we saw how the binomial distribution, under certain conditions, could be approximated by the Poisson distribution. Similarly, the normal distribution can be used to approximate both the binomial and Poisson distributions when certain conditions are satisfied.\footnote{This is a consequence of the Central Limit Theorem.}
+Previously, we saw how the binomial distribution, under certain conditions, could be approximated by the Poisson distribution. Similarly, the normal distribution can be used to approximate both the binomial and Poisson distributions when certain conditions are satisfied.
 
 However, unlike the case of binomial to Poisson, which is a discrete-to-discrete approximation, approximating a binomial/Poisson distribution to the normal distribution is a discrete-to-continuous change. We hence introduce the idea of a ``continuity correction''. Intuitively, what this means is that $\P{X = k}$ in the discrete case is taken to be $\P{k-0.5 < X < k + 0.5}$ in the continuous case.
 
