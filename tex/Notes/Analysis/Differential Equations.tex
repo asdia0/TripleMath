@@ -10,13 +10,13 @@
     The differential equation \[x \bp{\der[2]{y}{x}}^3 + x^2 \bp{\der{y}{x}} + y = 0\] has order 2 and degree 3.
 \end{example}
 
-Observe that the equations $y = x^2 - 2$, $y = x^2$ and $y = x^2 + 10$ all satisfy the property $y' = 2x$ and are hence solutions of that DE. There are obviously many other possible solutions are we see that any equations of the form $y = x^2 + C$, where $C$ is an arbitrary constant, will be a solution to the DE $y' = 2x$.
-
 \begin{definition}
-    A \vocab{general solution} to a DE contains arbitrary constants, while a \vocab{particular solution} does not.
+    The \vocab{general solution} represents the full family of solutions to a differential equation. A \vocab{particular solution} is a specific member of the family of solutions.
 \end{definition}
 
-Hence, $y = x^2 + C$ is the general solution to the DE $y' = 2x$, while $y = x^2 - 2$, $y = x^2$ and $y = x^2 + 10$ are the particular solutions.
+\begin{example}
+    The differential equation $y' = 2x$ has general solution $y = x^2 + C$, where $C$ is an arbitrary constant. Any member of this family, such as $y = x^2$, $y = x^2 + 2$ or $y = x^2 - 10$, are particular solutions to $y' = 2x$.  
+\end{example}
 
 In general, the general solution of an $n$th order DE has $n$ arbitrary constants.
 
@@ -40,29 +40,38 @@ We also demonstrate how to solve DEs using a given substitution, which is useful
     \phantom{.}
     \renewcommand{\theenumi}{\arabic{enumi}.}
     \begin{enumerate}
-        \item Separate the variables. \[\der{y}{x} = f(x) g(y) \implies \frac1{g(y)} \der{y}{x} = f(x).\]
-        \item Integrate both sides with respect to $x$. \[\int \frac1{g(y)} \der{y}{x} \ d x = \int f(x) \d x \implies \int \frac1{g(y)} \d y = \int f(x) \d x.\]
+        \item Separate the variables. \[\frac1{g(y)} \der{y}{x} = f(x).\]
+        \item Integrate both sides with respect to $x$. \[\int \frac1{g(y)} \der{y}{x} \d x = \int f(x) \d x.\]
+        \item Simplify the LHS. \[\int \frac1{g(y)} \d y = \int f(x) \d x.\]
+        \item Evaluate both integrals.
     \end{enumerate}
     \renewcommand{\theenumi}{(\alph{enumi})}
 \end{recipe}
 
-\begin{example}[Solving via Separation of Variables]
-    Consider the separable DE \[2x \der{y}{x} = y^2 + 1.\] Separating variables, \[\frac2{y^2 + 1} \der{y}{x} = \frac1{x}.\] Integrating both sides with respect to $x$, we get \[\int \frac2{y^2 + 1} \der{y}{x} \d x = \int \frac1{x} \d x.\] Using the chain rule, we can rewrite the LHS as \[\int \frac2{y^2 + 1} \d y = \int \frac1{x} \d x.\] Thus, \[2\arctan y = \ln \abs{x} + C.\] This is the general solution to the given DE.
-\end{example}
+\begin{sample}
+    Find the general solution to \[2x \der{y}{x} = y^2 + 1.\]
+\end{sample}
+\begin{sampans}
+    Separating variables, \[\frac2{y^2 + 1} \der{y}{x} = \frac1{x}.\] Integrating both sides with respect to $x$, we get \[\int \frac2{y^2 + 1} \der{y}{x} \d x = \int \frac1{x} \d x.\] The LHS simplifies to \[\int \frac2{y^2 + 1} \d y = \int \frac1{x} \d x.\] Evaluating the two integrals, we have $2\arctan y = \ln \abs{x} + C$. This is the general solution to the given DE.
+\end{sampans}
 
 \subsection{First-Order Linear Differential Equation}
 
 \begin{definition}
-    A \vocab{first-order linear differential equation} is a DE that can be written in the form \[\der{y}{x} + p(x) y = q(x).\]
+    A \vocab{first-order linear differential equation} is a DE that can be written in the form \[\der{y}{x} + p(x) \, y = q(x).\]
 \end{definition}
 
-To solve a linear first-order DE, we first observe that the LHS looks like the product rule has been applied. This motivates us to multiply through by a new function $f(x)$ such that the LHS can be written as the derivative of a product: \[f(x) \der{y}{x} + f(x) p(x) y = f(x) q(x). \tag{1}\] Recall that \[\der{}{x} \bs{f(x) y} = f(x) \der{y}{x} + f'(x) y.\] Comparing this with (1), we want $f(x)$ to satisfy \[f(x) p(x) = f'(x) \implies \frac{f'(x)}{f(x)} = p(x).\] Observe that the LHS is simply the derivative of $\ln f(x)$. Integrating both sides, we get \[\ln f(x) = \int p(x) \d x \implies f(x) = \exp \int p(x) \d x.\] Going back to (1), we get \[\der{}{x} \bs{y \e^{\int p(x) \d x}} = q(x) \e^{\int p(x) \d x}.\] Once again, we get a separable DE, which we can solve easily: \[y \e^{\int p(x) \d x} = \int q(x) \e^{\int p(x) \d x} \d x.\] This is the general solution to the DE.
+To solve a linear first-order DE, we first observe that the LHS looks like the product rule has been applied. This motivates us to multiply through by a new function $f(x)$ such that the LHS can be written as the derivative of a product: \[f(x) \der{y}{x} + f(x) \, p(x) \, y = f(x) \, q(x). \tag{$\ast$}\] Comparing \[\der{}{x} \bs{f(x) \, y} = f(x) \der{y}{x} + f'(x) \, y,\] with the LHS of ($\ast$), we require $f(x) \, p(x) = f'(x)$.
+
+We now solve for $f(x)$. Since \[\frac{f'(x)}{f(x)} = p(x),\] we may integrate both sides with respect to $x$ to get \[\ln f(x) = \int p(x) \d x,\] so $f(x) = \e^{\int p(x) \d x}$.
+
+Substituting this back in ($\ast$), we have \[\der{}{x} \bs{y \e^{\int p(x) \d x}} = q(x) \e^{\int p(x) \d x}.\] Integrating both sides with respect to $x$, we find that \[y \e^{\int p(x) \d x} = \int q(x) \e^{\int p(x) \d x} \d x.\] This is the general solution to the DE.
 
 \begin{definition}
-    The function $f(x) = \e^{\int p(x) \d x}$ is called the \vocab{integrating factor}, sometimes denoted $\IF$.
+    The function $f(x) = \e^{\int p(x) \d x}$ is called the \vocab{integrating factor}, sometimes denoted ``$\IF$''.
 \end{definition}
 
-Note that we do not need to derive the integrating factor like above every time we solve a linear first-order DE. We can simply quote the result $\IF = \e^{\int p(x) \d x}$. The following list is a summary of the steps we need to solve a linear first-order DE.
+When finding the integrating factor, we do not need to include the arbitrary constant or consider absolute values, as they will simplify to the same result anyway.
 
 \begin{recipe}[Solving via Integrating Factor]
     \phantom{.}
@@ -70,16 +79,17 @@ Note that we do not need to derive the integrating factor like above every time 
     \begin{enumerate}
         \item Multiply the DE through by the $\IF = \e^{\int p(x) \d x}$. \[\e^{\int p(x) \d x} \der{y}{x} + \e^{\int p(x) \d x} p(x) y = \e^{\int p(x) \d x} q(x).\]
         \item Express the LHS as the derivative of a product. \[\der{}{x} \bs{y \e^{\int p(x) \d x}} = \e^{\int p(x) \d x} q(x).\]
-        \item Integrating both sides with respect to $x$. \[y \e^{\int p(x) \d x} = \int \e^{\int p(x) \d x} q(x) \d x.\]
+        \item Integrate both sides with respect to $x$. \[y \e^{\int p(x) \d x} = \int \e^{\int p(x) \d x} q(x) \d x.\]
     \end{enumerate}
     \renewcommand{\theenumi}{(\alph{enumi})}
 \end{recipe}
 
-Note that when finding the integrating factor, there is no need to include the arbitrary constant or consider $\abs{x}$ when integrating $1/x$ with respect to $x$, as it does not contribute to the solution process in any way; the constants will cancel each other out.
-
-\begin{example}[Solving via Integrating Factor]
-    Consider the DE equation \[x \der{y}{x} + 3y = 5x^2.\] Writing this in standard form, \[\der{y}{x} + \bp{\frac3x}y = 5x.\] The integrating factor is hence \[\IF = \e^{\int 3/x \d x} = \e^{3\ln x} = x^3.\] Multiplying the integrating factor through the DE, \[x^3 \der{y}{x} + 3x^2 y = \der{}{x} \bp{x^3 y} = 5x^4.\] Integrating both sides with respect to $x$, we get the general solution \[x^3 y = \int 5x^4 \d x = x^5 + C.\]
-\end{example}
+\begin{sample}
+    Find the general solution to \[x \der{y}{x} + 3y = 5x^2.\]
+\end{sample}
+\begin{sampans}
+    Writing the given differential equation in standard form, we have \[\der{y}{x} + \bp{\frac3x}y = 5x.\] The integrating factor is hence \[\IF = \e^{\int 3/x \d x} = \e^{3\ln x} = x^3.\] Multiplying the integrating factor through the DE, we see that \[\der{}{x} \bp{x^3 y} = x^3 \der{y}{x} + 3x^2 y = 5x^4.\] Integrating the extreme left and right sides with respect to $x$, we get\[x^3 y = \int 5x^4 \d x = x^5 + C.\] Thus, the general solution is $y = x^2 + Cx^{-3}$.
+\end{sampans}
 
 \subsection{Second-Order Linear Differential Equations with Constant Coefficients}
 
@@ -103,29 +113,29 @@ Before looking at the methods to solve second-order DEs, we introduce two import
 \end{proof}
 
 \begin{definition}
-    Two functions $y_1$ and $y_2$ are \vocab{linearly independent} if the only solution to \[A y_1 + B y_2 = 0\] is the trivial solution $A = B = 0$. If there exists non-zero solutions to $A$ and $B$, then the two functions are \vocab{linearly dependent}.
+    Two functions $y_1$ and $y_2$ are \vocab{linearly independent} if the only solution to $A y_1 + B y_2 = 0$ is the trivial solution $A = B = 0$. If there exists non-zero solutions to $A$ and $B$, then the two functions are \vocab{linearly dependent}.
 \end{definition}
 
 We are now ready to solve second-order DEs.
 
 \subsubsection{Homogeneous Second-Order Linear Differential Equations with Constant Coefficients}
 
-Consider a homogeneous first-order linear differential equation with constant coefficients which has the form \[a \der{y}{x} + by = 0.\] Using the method of integrating factor, we can show that the general solution is of the form \[y = C \e^{-bx/a}.\]
+A homogeneous \emph{first}-order linear differential equation with constant coefficients \[a \der{y}{x} + by = 0\] has the general solution $y = C \e^{-bx/a}$.
 
-We can extend this to the second-order case, i.e. \[a \der[2]{y}{x} + b \der{y}{x} + cy = 0\] by looking for solutions of the form $y= \e^{mx}$, where $m$ is a constant to be determined. Substituting $y = \e^{mx}$ into the differential equation, we get \[am^2 \e^{mx} + bm \e^{mx} + c\e^{mx} = 0.\] Dividing by $\e^{mx}$, we get the quadratic \[am^2 + bm + c = 0.\] This is known as the \vocab{characteristic equation} of the DE.
+This motivates us to look for exponential solutions to the second-order case. That is, we suppose that $y= \e^{mx}$ is a solution to \[a \der[2]{y}{x} + b \der{y}{x} + cy = 0,\] where $m$ is a constant to be determined. Substituting $y = \e^{mx}$ into the differential equation, we get $am^2 \e^{mx} + bm \e^{mx} + c\e^{mx} = 0$. Dividing by $\e^{mx}$, we get the quadratic $am^2 + bm + c = 0$. This is known as the \vocab{characteristic equation} of the DE.
 
-If we can solve for $m$ in the characteristic equation, we can find the solution $y = \e^{mx}$. Since the characteristic equation is quadratic, it has, in general, two roots, say $m_1$ and $m_2$. We thus have the following three scenarios to consider:
+By solving the characteristic equation for $m$, we can recover the solutions to the differential equation. Since the characteristic equation is quadratic, it has, in general, two roots, say $m_1$ and $m_2$. We then have the following three scenarios to consider:
 \begin{itemize}
     \item The roots are real and distinct.
     \item The roots are real and equal.
     \item The roots are complex conjugates.
 \end{itemize}
 
-\paragraph{Real and Distinct Roots.} If $m_1$ and $m_2$ are real and distinct, $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ will both be solutions to the DE. Hence, by the superposition principle, the general solution is \[y = A \e^{m_1 x} + B \e^{m_2 x},\] where $A$ and $B$ are constants.
+\paragraph{Real and Distinct Roots.} If $m_1$ and $m_2$ are real and distinct, both $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ are solutions to the DE. Hence, by the superposition principle, the general solution is $y = A \e^{m_1 x} + B \e^{m_2 x}$, where $A$ and $B$ are constants.
 
-\paragraph{Real and Equal Roots.} If the two roots are equal, i.e. $m_1 = m_2 = m$, then $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ are no longer linearly independent. Hence, we effectively only get one solution $y_1 = \e^{mx}$. To obtain the general solution, we have to find another solution that is not a constant multiple of $\e^{mx}$. By intelligently guessing a solution, we see that $y_2 = x \e^{mx}$ satisfies the DE. Hence, by the superposition principle, the general solution is \[y = A \e^{mx} + Bx \e^{mx} = (A + Bx) \e^{mx}.\]
+\paragraph{Real and Equal Roots.} If the two roots are equal, i.e. $m_1 = m_2 = m$, then $y_1 = \e^{m_1 x}$ and $y_2 = \e^{m_2 x}$ are no longer linearly independent. That is, we only recover one solution $y_1 = \e^{mx}$. We thus have to find another solution that is not a constant multiple of $\e^{mx}$. By intelligently guessing a solution, we see that $y_2 = x \e^{mx}$ satisfies the DE. Hence, by the superposition principle, the general solution is $y = A \e^{mx} + Bx \e^{mx} = (A + Bx) \e^{mx}$.
 
-\paragraph{Complex Roots.} If the two roots are complex, then they are conjugates, and we can write them as \[m_1 = p + \i q \quad \tand \quad m_2 = p - \i q.\] Hence, \[y_1 = \e^{(p + \i q)x} = \e^{px} \bp{\cos qx + \i \sin qx}\] and \[y_2 = \e^{(p -\i q) x} = \e^{px} \bp{\cos qx - \i \sin qx}.\] By the superposition principle, we get the general solution
+\paragraph{Complex Roots.} If the two roots are complex, then they are conjugates, and we can write them as $m_1 = p + \i q$ and $m_2 = p - \i q$. Then \[y_1 = \e^{(p + \i q)x} = \e^{px} \bp{\cos qx + \i \sin qx} \quad \tand \quad y_2 = \e^{(p -\i q) x} = \e^{px} \bp{\cos qx - \i \sin qx}.\] By the superposition principle, we get the general solution
 \begin{align*}
     y &= C\e^{px} \bp{\cos qx + \i \sin qx} + D\e^{px} \bp{\cos qx - \i \sin qx}\\
     &= \e^{px} \bp{A \cos qx + B \sin qx},
@@ -140,9 +150,9 @@ In summary,
         \item Form the characteristic equation $am^2 + bm + c = 0$.
         \item Find the roots $m_1$ and $m_2$ of this characteristic equation.
         \item \begin{itemize}
-            \item If $m_1$ and $m_2$ are real and distinct, then \[y = A \e^{m_1 x} + B \e^{m_2 x}.\]
-            \item If $m_1$ and $m_2$ are real and equal, i.e. $m_1 = m_2 = m$, then \[y = (A + Bx) \e^{m x}.\]
-            \item If $m_1$ and $m_2$ are complex, i.e. $m_1 = p + \i q$ and $m_2 = p - \i q$, then \[y = \e^{px} \bp{A \cos qx + B \sin qx}.\]
+            \item If $m_1$ and $m_2$ are real and distinct, then $y = A \e^{m_1 x} + B \e^{m_2 x}$.
+            \item If $m_1$ and $m_2$ are real and equal, i.e. $m_1 = m_2 = m$, then $y = (A + Bx) \e^{m x}$.
+            \item If $m_1$ and $m_2$ are complex, i.e. $m_1 = p + \i q$ and $m_2 = p - \i q$, then $y = \e^{px} \bp{A \cos qx + B \sin qx}$.
         \end{itemize}
     \end{enumerate}    
     \renewcommand{\theenumi}{(\alph{enumi})}
@@ -153,23 +163,20 @@ In summary,
 We now consider the non-homogeneous second-order linear DE with constant coefficients, which takes the form \[a \der[2]{y}{x} + b \der{y}{x} + c y = f(x).\] In order to solve this DE, we apply the following result:
 
 \begin{theorem}
-    If $y_c$ is the general solution of \[a \der[2]{y}{x} + b \der{y}{x} + c y = 0\] and $y_p$ is a particular solution of \[a \der[2]{y}{x} + b \der{y}{x} + c y = f(x),\] then \[y = y_c + y_p\] is the general solution to \[a \der[2]{y}{x} + b \der{y}{x} + c y = f(x).\]
+    The general solution to \[a \der[2]{y}{x} + b \der{y}{x} + c y = f(x) \tag{$\ast$}\] is $y = y_c + y_p$, where $y_p$ is a particular solution to ($\ast$), and $y_c$ is the general solution to the associated differential equation \[a \der[2]{y}{x} + b \der{y}{x} + c y = 0.\]
 \end{theorem}
 \begin{proof}
-    We want to solve \[ay'' + by' + cy = f(x). \tag{1}\] Let $y_c$ be the solution to $ay'' + by' + cy = 0$. Then \[a y_c'' + by_c' + cy_c = 0.\] Let $y_p$ be a particular solution to (1). Then \[ay_p'' + by_p' + cy_p = f(x).\] Substituting $y = y_c + y_p$ into (1), we get
-    \begin{align*}
-        &a\bp{y_c'' + y_p''} + b\bp{y_c' + y_p'} + c\bp{y_c + y_p}\\
-        &\hspace{3em}= \bp{a y_c'' + by_c' + cy_c} + \bp{ay_p'' + by_p' + cy_p}\\
-        &\hspace{3em}= 0 + f(x) = f(x).
-    \end{align*}
+    Since $y_p$ is a particular solution to ($\ast$), we have \[a \der[2]{y}{x} + b \der{y}{x} + c y = f(x) \quad \tand \quad a \der[2]{y_p}{x} + b \der{y_p}{x} + c y_p = f(x).\] Subtracting, we see that \[a \der[2]{}{x} \bp{y - y_p} + b \der{}{x} \bp{y - y_p} + c\bp{y - y_p} = 0.\] That is, $y - y_p$ is a solution to the associated differential equation. Thus, $y - y_p = y_c$, giving $y = y_c + y_p$ as desired.
 \end{proof}
 
-Note that $y_c$ is called the \vocab{complementary function} while $y_p$ is called the \vocab{particular integral} or \vocab{particular solution}.
+Note that $y_c$ is called the \vocab{complementary solution} while $y_p$ is called the \vocab{particular integral} or \vocab{particular solution}.
 
-We know how to solve the homogeneous DE, so getting $y_c$ is easy. The hard part is getting a particular solution $y_p$. However, if we make some intelligent guesses, we can determine the general form of $y_p$. This is called the \vocab{method of undetermined coefficients}. We demonstrate this method with the following example:
+As we know how to solve the homogeneous DE, obtaining $y_c$ is easy. The hard part is finding a particular solution $y_p$. However, if we make some intelligent guesses, we can determine the general form of $y_p$. This is called the \vocab{method of undetermined coefficients}. We demonstrate this method with the following example:
 
 \begin{example}[Method of Undetermined Coefficients]
-    Consider the differential equation \[\der[2]{y}{x} + 3\der{y}{x} - 4y = 3 + 8x^2.\] $y_c$ can easily be obtained: \[y_c = A\e^x + B\e^{-4x}.\] Now, observe that $f(x) = 3 + 8x^2$ is a polynomial of degree 2. Thus, we guess that $y_p$ is also a polynomial of degree 2, i.e. $y_p = Cx^2 + Dx + E$, where $C$, $D$ and $E$ are coefficients to be determined (hence the name ``method of undetermined coefficients''). Substituting this into the DE yields \[\bp{2C} + 3\bp{2Cx + D} - 4\bp{Cx^2 + Dx + E} = 3 + 8x^2.\] Comparing coefficients, we get the system \[\systeme[CDE]{-4C = 8,6C-4D = 0,2C + 3D - 4E = 3},\] whence $C = -2$, $D = -3$ and $E = -4$. Thus, the particular solution is \[y_p = -2x^2 - 3x - 4\] and the general solution is \[y = y_c + y_p = A\e^x + B\e^{-4x} - 2x^2 - 3x - 4.\]
+    Consider the differential equation \[\der[2]{y}{x} + 3\der{y}{x} - 4y = 3 + 8x^2.\] The complementary solution $y_c$ is easily found to be $y_c = A\e^x + B\e^{-4x}$.
+    
+    Observing $3 + 8x^2$ to be a polynomial of degree 2, we guess that the particular solution  $y_p$ is also a polynomial of degree 2, i.e. $y_p = Cx^2 + Dx + E$, for some coefficients $C$, $D$ and $E$ to be determined (hence the name ``method of undetermined coefficients''). Substituting this into the differential equation yields \[\bp{2C} + 3\bp{2Cx + D} - 4\bp{Cx^2 + Dx + E} = 3 + 8x^2.\] Comparing coefficients, we get the system \[\systeme[CDE]{-4C = 8,6C-4D = 0,2C + 3D - 4E = 3},\] whence $C = -2$, $D = -3$ and $E = -4$. Thus, the particular solution is $y_p = -2x^2 - 3x - 4$ and the general solution is $y = y_c + y_p = A\e^x + B\e^{-4x} - 2x^2 - 3x - 4$.
 \end{example}
 
 In our syllabus, we are only required to solve non-homogeneous DEs where $f(x)$ is a polynomial of degree $n$ (as above), of the form $p\e^{kx}$, or of the form $p\cos kx + q\sin kx$. The ``guess'' for $y_p$ in each of the three cases is tabulated below:
@@ -185,7 +192,7 @@ In our syllabus, we are only required to solve non-homogeneous DEs where $f(x)$ 
     \end{tabular}
 \end{table}
 
-In the event where our ``guess'' for $y_p$ appears in the complementary function $y_c$, we need to make some adjustments to our ``guess'' (similar to the case where $m_1 = m_2$ when solving a homogeneous DE). Typically, we multiply the guess by powers $x$ until the guess no longer appears in the complementary function.
+In the event where our ``guess'' for $y_p$ appears in the complementary function $y_c$, we need to make some adjustments to our ``guess'' (similar to the case where $m_1 = m_2$ when solving a homogeneous differential equation). Typically, we multiply the guess by powers $x$ until the guess no longer appears in the complementary function.
 
 \begin{example}[Adjusting $y_p$]
     \phantom{.}
@@ -215,7 +222,7 @@ Sometimes, we are given a DE that is not of the forms described in this section.
     By using the substitution $y = ux^2$, find the general solution of the differential equation \[x^2 \der{y}{x} - 2xy = y^2, \quad x > 0.\]
 \end{sample}
 \begin{sampans}
-    From $y = ux^2$, we see that \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the original DE, \[x^2 \bp{2ux + x^2 \der{u}{x}} - 2x \bp{ux^2} = \bp{ux^2}^2.\] Simplifying, we get the separable DE \[\der{u}{x} = u^2,\] which we can easily solve: \[\int \frac1{u^2} \d u = \int 1 \d x \implies -\frac1{u} = x + C.\] Re-substituting $y$ back in, we have the general solution \[-\frac{x^2}{y} = x + C.\]
+    From $y = ux^2$, we see that \[\der{y}{x} = 2ux + x^2 \der{u}{x}.\] Substituting this into the original DE, \[x^2 \bp{2ux + x^2 \der{u}{x}} - 2x \bp{ux^2} = \bp{ux^2}^2.\] Simplifying, we get the separable DE \[\der{u}{x} = u^2,\] which we can easily solve: \[-\frac1u = \int \frac1{u^2} \d u = \int 1 \d x = x + C.\] Re-substituting $y$ back in, we have the general solution \[-\frac{x^2}{y} = x + C.\]
 \end{sampans}
 
 \section{Family of Solution Curves}
@@ -234,7 +241,7 @@ When sketching a family of curves, we choose values of the arbitrary constant th
         \begin{tikzpicture}[trim axis left, trim axis right]
             \begin{axis}[
                 domain = -3:3,
-                restrict y to domain =-10:10,
+                restrict y to domain =-7:7,
                 samples = 101,
                 axis y line=middle,
                 axis x line=middle,
@@ -249,14 +256,9 @@ When sketching a family of curves, we choose values of the arbitrary constant th
                         node [anchor=north east] {$O$};
                     }
                 ]
-                \addplot[plotRed] {e^(x^2)};
-                \addlegendentry{$A = 1$};
-
-                \addplot[plotGreen] {0};
-                \addlegendentry{$A = 0$};
-
-                \addplot[plotBlue] {-e^(x^2)};    
-                \addlegendentry{$A = -1$};
+                \addplot[very thick] {e^(x^2)} node[pos=0.65, below right] {$A = 1$};
+                \addplot[very thick] {0} node[pos=0.1, above] {$A = 0$};
+                \addplot[very thick] {-e^(x^2)} node[pos=0.65, above right] {$A = -1$};
                 \end{axis}
         \end{tikzpicture}
         \caption{}
@@ -269,7 +271,7 @@ When sketching a family of curves, we choose values of the arbitrary constant th
 
 Most of the time, a first-order differential equation of the general form $\derx{y}{x} = f(x, y)$ cannot be solved exactly and explicitly by analytical methods like those discussed in the earlier sections. In such cases, we can use numerical methods to approximate solutions to differential equations.
 
-Different methods can be used to approximate solutions to a differential equation. A sequence of values $y_1, y_2, \dots$ is generated to approximate the exact solutions at the points $x_1, x_2, \dots$. It must be emphasized that the numerical methods do not generate a formula for the solution to the differential equation. Rather, they generate a sequence of approximations to the actual solution at the specified points.
+Different methods can be used to approximate solutions to a differential equation. A sequence of values $\bc{y_i}$ is generated to approximate the exact solutions at the points $\bc{x_i}$. It must be emphasized that the numerical methods do not generate a formula for the solution to the differential equation. Rather, they generate a sequence of approximations to the actual solution at the specified points.
 
 In this section, we look at Euler's Method, as well as the improved Euler's Method.
 
@@ -277,9 +279,9 @@ In this section, we look at Euler's Method, as well as the improved Euler's Meth
 
 The key principle in Euler's method is the use of a linear approximation for the tangent line to the actual solution curve $y(t)$ to approximate a solution.
 
-\subsubsection{Derivation}
-
-Given an initial value problem \[\der{y}{t} = f(t, y), \quad y(t_0) = y_0,\] we start at $(t_0, y_0)$ on the solution curve as shown in the figure below. By the point-slope formula, the equation of the tangent line through $(t_0, y_0)$ is given as \[y - y_0 = \evalder{\der{y}{t}}{t=t_0} (t - t_0) = f(t_0, y_0) (t - t_0) \tag{1}.\] If we choose a step size of $\D t$ on the $t$-axis, then $t_1 = t_0 + \D t$. Using (1) at $t = t_1$, we can obtain an approximate value $y_1$ from \[y_1 = y_0 + (t_1 - t_0) f(t_0, y_0) \tag{2}.\] 
+\begin{recipe}[Euler's Method]
+    Given an initial value problem \[\der{y}{t} = f(t, y), \quad y(t_0) = y_0,\] Euler's method,  with step size $\D t$, uses the recurrence relation $y_{n} = y_{n-1} + \D t \, f(t_{n-1}, y_{n-1})$ to approximate $y(t_n) \approx y_n$.
+\end{recipe}
 
 \begin{figure}[H]\tikzsetnextfilename{371}
     \centering
@@ -298,11 +300,10 @@ Given an initial value problem \[\der{y}{t} = f(t, y), \quad y(t_0) = y_0,\] we 
             legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
+                    node [anchor=east] {$O$};
                 }
             ]
-            \addplot[plotRed] {x + sin(pi * \x r) - 0.5};
-            \addlegendentry{actual solution curve};
+            \addplot[very thick] {x + sin(pi * \x r) - 0.5} node[pos=0.1, right] {$y(t)$};
 
             \addplot[dashed] {0.609 + 2.847 * (x - 0.3)};
             \draw[dashed] (0.3, 0) -- (0.3, 0.609);
@@ -315,16 +316,10 @@ Given an initial value problem \[\der{y}{t} = f(t, y), \quad y(t_0) = y_0,\] we 
     \caption{}
 \end{figure}
 
-The point $(t_1, y_1)$ on the tangent line is an approximation to the point $(t_1, y(t_1))$ on the actual solution curve. That is, $y_1 \approx y(t_1)$. From the above figure, it is observed that the accuracy of the approximation depends heavily on the size of $\D t$. Hence, we must choose an increment $\D t$ which is ``reasonably small''.
-
-We can extend (2) further. In general, at $t = t_{n+1}$, it follows that \[y_{n+1} = y_n + (t_{n+1} - t_n) f(t_n, y_n).\]
-
-\begin{recipe}[Euler's Method]
-    Euler's method, with step size $\D t$, gives the approximation \[y(t_n) \approx y_{n+1} = y_n + (t_{n+1} - t_n) f(t_n, y_n).\]
-\end{recipe}
+To derive Euler's method, we begin at $(t_0, y_0)$ on the solution curve. Here, the gradient of the curve is $f(t_0, y_0)$. Hence, by the point-slope formula, the equation of the tangent line through $(t_0, y_0)$ is $y - y_0 = (t - t_0) f(t_0, y_0)$. For values of $t$ near $t_0$, the tangent line approximates the solution curve. In particular, choosing $t = t_1 = t_0 + \D t$, we have that $y(t_1) \approx y_1 = y_0 + \D t \, f(t_0, y_0)$. Repeating this process, we have in general that $y_{n} = y_{n-1} + \D t \, f(t_{n-1}, y_{n-1})$. This is Euler's method.
 
 \begin{example}[Euler's Method]\label{eg:Eulers-Method}
-    Consider the initial value problem \[\der{y}{t} = 2y - 1, \quad y(0) = \frac32,\] which can be verified to have solution $y = e^{2t} + 1/2$. Suppose we wish to approximate the value of $y(0.3)$ (which we know to be $\e^{2(0.3)} + 1/2 = 2.322$). Using Euler's method with step size $\D t = 0.1$, we get
+    Consider the initial value problem \[\der{y}{t} = 2y - 1, \quad y(0) = \frac32,\] which can be verified to have solution $y = \e^{2t} + 1/2$. Suppose we wish to approximate the value of $y(0.3)$ (which we know to be $\e^{2(0.3)} + 1/2 = 2.322$). Using Euler's method with step size $\D t = 0.1$, we get
     \begin{align*}
         y_1 &= y_0 + \D t \bp{2y_0 - 1} = 1.5 + 0.1 \bs{2(1.5) - 1} = 1.7\\
         y_2 &= y_1 + \D t \bp{2y_1 - 1} = 1.7 + 0.1 \bs{2(1.7) - 1} = 1.94\\
@@ -347,18 +342,25 @@ Also note that the smaller the step size $\D t$, the better the approximations. 
 
 In the previous section, we saw how Euler's method over- or under-estimates the actual solution curve due to the curve's concavity. The improved Euler's method address this.
 
-\subsubsection{Derivation}
+\begin{recipe}[Improved Euler's Method]
+    Given an initial value problem \[\der{y}{t} = f(t, y), \quad y(t_0) = y_0,\] the improved Euler's method, with step size $\D t$, uses the recurrence relation \[y_{n} = y_{n-1} + \D t \bs{\frac{f(t_{n-1}, y_{n-1}) + f(t_{n}, \wt{y}_{n})}{2}},\] where $\wt{y}_{n} = y_{n-1} + \D t \, f(t_{n-1}, y_{n-1})$, to approximate $y(t_n) \approx y_n$.
+\end{recipe}
 
-Suppose the actual solution curve is concave upward. Let $T_0$ and $T_1$ be the tangent lines at $t = t_0$ and $t = t_1$ respectively. Let the gradients of $T_0$ and $T_1$ be $m_0$ and $m_1$ respectively. We wish to find the optimal gradient $m$ such that the line with gradient $m$ passing through $(t_0, y(t_0))$ also passes through $(t_1, y(t_1))$.
+\begin{definition}
+    $\wt{y}_{n}$ is called the \vocab{predictor}, while $y_{n}$ is called the \vocab{corrector}.
+\end{definition}
 
-Since the actual solution curve is concave upward, both $T_0$ and $T_1$ lie below the actual solution curve for all $t \in [t_0, t_1]$. This is depicted in the diagram below.
+We now derive the improved Euler's method. Suppose the actual solution curve is concave upward (the concave downward case is derived identically). Let $T_0$ and $T_1$ be the tangent lines at $t = t_0$ and $t = t_1$, with gradients $m_0$ and $m_1$, respectively. Let $m$ be the gradient of the line passing through both $(t_0, y(t_0))$ and $(t_1, y(t_1))$. We aim to find an approximation to $m$ using only the information we know.
 
+\begin{minipage}{0.49\textwidth}
 \begin{figure}[H]\tikzsetnextfilename{372}
     \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
+    \begin{tikzpicture}[trim axis left, trim axis right, scale=0.7]
         \begin{axis}[
+            every axis/.append style={font=\Large},
             domain = 0:0.8,
             samples = 101,
+            ymax=1.06,
             axis y line=middle,
             axis x line=middle,
             xtick = {0.2, 0.6},
@@ -368,9 +370,12 @@ Since the actual solution curve is concave upward, both $T_0$ and $T_1$ lie belo
             ylabel = {$y$},
             legend cell align={left},
             legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=east] {$O$};
+                }
             ]
-            \addplot[plotRed] {x^2 + 0.3};
-            \addlegendentry{actual solution curve};
+            \addplot[very thick] {x^2 + 0.3} node[pos=0.9, above left] {\Large$y(t)$};
 
             \addplot[dashed] {0.34 + (x - 0.2) * 0.4};
             \addplot[dashed] {0.66 + (x - 0.6) * 1.2};
@@ -379,25 +384,26 @@ Since the actual solution curve is concave upward, both $T_0$ and $T_1$ lie belo
             \draw[dashed] (0.6, 0) -- (0.6, 0.66);
 
             \fill (0.2, 0.34) circle[radius=2.5pt];
-            \fill (0.6, 0.66) circle[radius=2.5pt] node[anchor=south east] {$(t_1, y(t_1))$};
+            \fill (0.6, 0.66) circle[radius=2.5pt] node[anchor=south east] {\Large$(t_1, y(t_1))$};
 
-            \node[anchor=south] at (0.17, 0.34) {$(t_0, y(t_0))$};
+            \node[anchor=south] at (0.15, 0.34) {\Large$(t_0, y(t_0))$};
 
-            \node at (0.73, 0.72) {$T_1$};
-            \node at (0.73, 0.47) {$T_0$};
+            \node at (0.73, 0.72) {\Large$T_1$};
+            \node at (0.73, 0.47) {\Large$T_0$};
             \end{axis}
     \end{tikzpicture}
-    \caption{}
+    \caption{\label{fig:de-1}}
 \end{figure}
-
-Now, observe what happens when we translate $T_1$ such that it passes through $(t_0, y(t_0))$:
-
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
 \begin{figure}[H]\tikzsetnextfilename{373}
     \centering
-    \begin{tikzpicture}[trim axis left, trim axis right]
+    \begin{tikzpicture}[trim axis left, trim axis right, scale=0.7]
         \begin{axis}[
+            every axis/.append style={font=\Large},
             domain = 0:0.8,
             samples = 101,
+            ymin=-0.06,
             axis y line=middle,
             axis x line=middle,
             xtick = {0.2, 0.6},
@@ -407,9 +413,12 @@ Now, observe what happens when we translate $T_1$ such that it passes through $(
             ylabel = {$y$},
             legend cell align={left},
             legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=east] {$O$};
+                }
             ]
-            \addplot[plotRed] {x^2 + 0.3};
-            \addlegendentry{actual solution curve};
+            \addplot[very thick] {x^2 + 0.3} node[pos=0.8, below right] {\Large$y(t)$};
 
             \addplot[dashed] {0.34 + (x - 0.2) * 0.4};
             \addplot[dashed] {0.34 + (x - 0.2) * 1.2};
@@ -417,30 +426,25 @@ Now, observe what happens when we translate $T_1$ such that it passes through $(
             \draw[dashed] (0.2, 0) -- (0.2, 0.34);
             \draw[dashed] (0.6, 0) -- (0.6, 0.66);
 
-            \fill (0.2, 0.34) circle[radius=2.5pt] node[anchor=north west] {$(t_0, y(t_0))$};
-            \fill (0.6, 0.66) circle[radius=2.5pt] node[anchor=north west] {$(t_1, y(t_1))$};
+            \fill (0.2, 0.34) circle[radius=2.5pt] node[anchor=north west] {\Large$(t_0, y(t_0))$};
+            \fill (0.6, 0.66) circle[radius=2.5pt] node[anchor=south east] {\Large$(t_1, y(t_1))$};
             \end{axis}
     \end{tikzpicture}
-    \caption{}
+    \caption{\label{fig:de-2}}
 \end{figure}
+\end{minipage}
 
-The translated $T_1$ is now overestimating the actual solution curve at $t = t_1$! Hence, the optimal gradient $m$ is somewhere between $m_0$ and $m_1$. This motivates us to approximate $m$ by taking the average of $m_0$ and $m_1$: \[m \approx \frac{m_0 + m_1}{2}.\]
+\medskip
 
-We now find $m_0$ and $m_1$. Note that \[m_0 = f(t_0, y(t_0)) \quad \tand \quad m_1 = f(t_1, y(t_1)).\] This poses a problem, as the value of $y(t_1)$ is not known to us. However, we can estimate it using the Euler method: \[y(t_1) \approx \wt{y}_1 = y_0 + \D t f(t_0, y_0).\] Note that we denote this approximation as $\wt{y}_1$. We thus have \[m \approx \frac{m_0 + m_1}{2} = \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}.\]
+Since the actual solution curve is concave upward, both tangents $T_0$ and $T_1$ lie below the actual solution curve for all $t_0 \leq t \leq t_1$, as shown in Figure~\ref{fig:de-1}. In particular, $T_0$ underestimates the actual solution curve at $t = t_1$.
 
-We are now ready to approximate $y(t_1)$. By the point-slope formula, the line with gradient $m$ passing through $(t_0, y_0)$ has equation \[y - y_0 = m (t - t_0) \approx \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2} (t - t_0).\] When $t = t_1$, we get \[y(t_1) \approx y_1 = y_0 + \D t \bs{\frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}}. \tag{1}\]
+However, when we translate $T_1$ such that it passes through $(t_0, y(t_0))$, as illustrated in Figure~\ref{fig:de-2}, we see that the resulting line overestimates the actual solution curve at $t = t_1$.
 
-A similar derivation can be obtained when the actual solution curve is concave downwards.
+It follows that $m$ lies somewhere between $m_0$ and $m_1$. We can hence approximate $m$ by taking the average of $m_0$ and $m_1$: \[m \approx \frac{m_0 + m_1}{2}.\]
 
-Extending (1), we get the usual statement of the improved Euler's method:
+We now find $m_0$ and $m_1$. Computing $m_0$ is easy, since $m_0 = f(t_0, y(t_0))$. However, determining $m_1 = f(t_1, y(t_1))$ is a problem, as the value of $y(t_1)$ is not known to us. We thus approximate it using the Euler method as $y(t_1) \approx \wt{y}_1 = y_0 + \D t \, f(t_0, y_0)$. Putting everything together, we may rewrite our approximation for $m$ as \[m \approx \frac{m_0 + m_1}{2} = \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}, \quad \text{ where }\wt{y}_1 = y_0 + \D t \, f(t_0, y_0).\]
 
-\begin{recipe}[Improved Euler's Method]
-    The improved Euler's method, with step size $\D t$, gives the approximation \[y_{n+1} = y_n + \D t \bs{\frac{f(t_n, y_n) + f(t_{n+1}, \wt{y}_{n+1})}{2}},\] where \[\wt{y}_{n+1} = y_n + \D t f(t_n, y_n).\]
-\end{recipe}
-
-\begin{definition}
-    $\wt{y}_{n + 1}$ is called the \vocab{predictor}, while $y_{n+1}$ is called the \vocab{corrector}.
-\end{definition}
+We are now ready to approximate $y(t_1)$. By the point-slope formula, the line with gradient $m$ passing through $(t_0, y_0)$ has equation \[y - y_0 = m (t - t_0) \approx \frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2} (t - t_0).\] Since this tangent line was defined to pass through $(t_1, y(t_1))$, taking $t = t_1$ in our approximation gives us \[y(t_1) \approx y_1 = y_0 + \D t \bs{\frac{f(t_0, y_0) + f(t_1, \wt{y}_1)}{2}}.\] Repeating this process, we have in general that \[y(t_n) \approx y_{n} = y_{n-1} + \D t \bs{\frac{f(t_{n-1}, y_{n-1}) + f(t_{n}, \wt{y}_{n})}{2}}.\] This is the improved Euler's method.
 
 \begin{example}[Improved Euler's Method]
     Consider the initial value problem \[\der{y}{t} = 2y - 1, \quad y(0) = \frac32,\] which we previously saw in Example~\ref{eg:Eulers-Method}. Suppose we wish to approximate the value of $y(0.3)$. Using the improved Euler's method with step size $\D t = 0.1$,
@@ -459,11 +463,11 @@ Extending (1), we get the usual statement of the improved Euler's method:
 
 Recall that solving differential equations analytically required us to integrate. It is thus no surprise that approximating solutions to differential equations is related to approximating the values of definite integrals. As we will see, the Euler method is akin to approximating definite integrals using a Riemann sum, while the improved Euler method is akin to using the trapezium rule.
 
-Consider the differential equation $\derx{y}{t} = f(t, y)$. By the fundamental theorem of calculus, the area under the graph of $f(t, y)$ from $t = t_0$ to $t = t_1$ is given by \[\int_{t_0}^{t_1} f(t, y) \d t = \int_{t_0}^{t_1} \der{y}{t} \d t = y(t_1) - y(t_0) \tag{1}.\] Note that we know $y(t_0)$. Hence, the better the approximation of the integral, the better the approximation of $y(t_1)$, which is what we want.
+Consider the differential equation $\derx{y}{t} = f(t, y)$. By the fundamental theorem of calculus, the area under the graph of $f(t, y)$ from $t = t_0$ to $t = t_1$ is given by \[\int_{t_0}^{t_1} f(t, y) \d t = \int_{t_0}^{t_1} \der{y}{t} \d t = y(t_1) - y(t_0) \tag{$\ast$}.\] Note that we know $y(t_0)$. Hence, the better the approximation of the integral, the better the approximation of $y(t_1)$, which is what we want.
 
-We can approximate this integral using a Riemann sum with one rectangle. Note that this rectangle has width $\D t$ and height $f(t_0, y_0)$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t f(t_0, y_0).\] Rewriting, we get the statement of the Euler method: \[y(t_1) \approx y(t_0) + \D t f(t_0, y_0).\]
+We can approximate this integral using a Riemann sum with one rectangle. Note that this rectangle has width $\D t$ and height $f(t_0, y_0)$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t \, f(t_0, y_0).\] Rewriting, we get the statement of the Euler method: \[y(t_1) \approx y(t_0) + \D t \, f(t_0, y_0).\]
 
-We now approximate the integral in (1) using the trapezium rule with 2 ordinates. Note that the area of this trapezium is given by $(1/2) \D t \bs{f(t_0, y_0) + f(t_1, y_1)}$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\] Rewriting, we (almost) get the statement of the improved Euler method: \[y(t_1) \approx y(t_0) + \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\]
+We now approximate the integral in ($\ast$) using the trapezium rule with 2 ordinates. Note that the area of this trapezium is given by $(1/2) \D t \bs{f(t_0, y_0) + f(t_1, y_1)}$. Hence, \[\int_{t_0}^{t_1} f(t, y) \d t = y(t_1) - y(t_0) \approx \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\] Rewriting, we (almost) get the statement of the improved Euler method: \[y(t_1) \approx y(t_0) + \D t \bs{\frac{f(t_0, y_0) +f(t_1, y_1)}{2}}.\]
 
 Recall that generally, the trapezium rule is a much better approximation than a Riemann sum. Correspondingly, it follows that the improved Euler method is a much better approximation than the Euler method.
 
@@ -481,7 +485,7 @@ In this section, we will look at two common population growth models, namely the
 
 A biological population with plenty of food, space to grow, and no threat from predators, tend to grow at a rate that is proportional to the population. That is, in each unit of time, a certain percentage of the individuals produce new individuals (similar for death too). If reproduction (and death) takes place more or less continuously, then the growth rate is represented by \[\der{P}{t} = kP,\] where $k$ is the \vocab{proportionality constant}.
 
-We know that all solutions of this differential equation have the form \[P(t) = p_0 \e^{k t}.\] As such, this model is known as the \vocab{exponential growth model}. Depending on the value of $k$, the model results in either an exponential growth, decay, or constant value function as seen in the diagram below.
+We know that all solutions of this differential equation have the form $P(t) = p_0 \e^{k t}$. As such, this model is known as the \vocab{exponential growth model}. Depending on the value of $k$, the model results in either an exponential growth, decay, or constant value function as seen in the figure below.
 
 \begin{figure}[H]\tikzsetnextfilename{374}
     \centering
@@ -493,7 +497,8 @@ We know that all solutions of this differential equation have the form \[P(t) = 
             axis y line=middle,
             axis x line=middle,
             xtick = \empty,
-            ytick = \empty,
+            ytick = {1},
+            yticklabels = {$p_0$},
             xlabel = {$t$},
             ylabel = {$P(t)$},
             legend cell align={left},
@@ -503,14 +508,11 @@ We know that all solutions of this differential equation have the form \[P(t) = 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed] {e^(x)};
-            \addlegendentry{$k > 0$};
+            \addplot[very thick, domain=0:2] {e^(x)} node[pos=0.4, below right] {$k > 0$};
 
-            \addplot[plotGreen] {1};
-            \addlegendentry{$k = 0$};
+            \addplot[very thick] {1} node[pos=0.8, above] {$k = 0$};
 
-            \addplot[plotBlue] {e^(-x)};    
-            \addlegendentry{$k < 0$};
+            \addplot[very thick] {e^(-x)} node[pos=0.6, above right] {$k < 0$};
             \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -520,7 +522,11 @@ While the cases where $k \leq 0$ are possible to happen in real life, the case w
 
 \subsection{Logistic Growth Model}
 
-The following figure shows two possible courses for growth of a population. The red curve follows the exponential model, while the blue curve is constrained so that the population is always less than some number $N$. When the population is small relative to $N$, the two curves are identical. However, for the blue curve, when $P$ gets closer to $N$, the growth rate drops to 0.
+To make the exponential model more realistic when $k > 0$, we can cap the population at some constant $N$. That is, when the population is small relative to $N$, the population grows exponentially, but as it approaches the population cap $N$, its growth rate approaches 0.
+
+We may account for the growth rate declining to 0 by including a factor of $1 - P/N$ in the exponential model. This is because $1 - P/N$ is close to 1 (i.e. no effect) when $P \ll N$, and close to 0 when $P \approx N$. The resulting model \[\der{P}{t} = kP\bp{1 - \frac{P}{N}},\] is called the \vocab{logistic growth model}. $k$ is called the \vocab{intrinsic growth rate}, while $N$ is called the \vocab{carrying capacity}.
+
+Given the initial condition $P(0) = p_0$, the solution of the logistic equation is \[P(t) = \frac{p_0 N}{p_0 + (N-p_0) \e^{-kt}}.\]
 
 \begin{figure}[H]\tikzsetnextfilename{375}
     \centering
@@ -533,8 +539,9 @@ The following figure shows two possible courses for growth of a population. The 
             axis x line=middle,
             ymin = 0,
             xtick = \empty,
-            ytick = {4},
-            yticklabels = {$N$},
+            ytick = {4, 1},
+            yticklabels = {$N$, $p_0$},
+            ymax = 6,
             xlabel = {$t$},
             ylabel = {$P(t)$},
             legend cell align={left},
@@ -544,25 +551,16 @@ The following figure shows two possible courses for growth of a population. The 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed] {e^(x)};
-            \addlegendentry{exponential model};
-
-            \addplot[plotBlue] {4/(1 + 3 * e^(-x))};
-            \addlegendentry{logistic model}
-
+            \addplot[very thick] {4/(1 + 3 * e^(-x))};
             \addplot[dashed] {4};
             \end{axis}
     \end{tikzpicture}
     \caption{}
 \end{figure}
 
-We may account for the growth rate declining to 0 by including in the model a factor $1 - P/N$, which is close to 1 (i.e. no effect) when $P$ is much smaller than $N$, and close to 0 when $P$ is close to $N$. The resulting model \[\der{P}{t} = kP\bp{1 - \frac{P}{N}},\] is called the \vocab{logistic growth model}. $k$ is called the \vocab{intrinsic growth rate}, while $N$ is called the \vocab{carrying capacity}.
-
-Given the initial condition $P(0) = p_0$, the solution of the logistic equation is \[P(t) = \frac{p_0 N}{p_0 + (N-p_0) \e^{-kt}}.\]
-
 \subsubsection{Long-Term Behaviour}
 
-We now analyse the long-term behaviour of the model, which is determined by the value of $P_0$.
+We now analyse the long-term behaviour of the model, which is determined by the value of $p_0$.
 
 Notice that the derivative of the logistic growth model, $\derx{P}{t} = kP(1 - P/N)$, is 0 at $P = 0$ and $P = N$. Also notice that these are also solutions to the differential equation. These two values are the \vocab{equilibrium points} since they are constant solutions to the differential equation.
 
@@ -574,11 +572,11 @@ Consider the case where $k > 0$.
         \begin{axis}[
             domain = 0:8,
             restrict y to domain=-4:11.5,
+            xmax=8.5,
             samples = 101,
             axis y line=middle,
             axis x line=middle,
-            xtick = {6},
-            xticklabels = {$N$},
+            xtick = \empty,
             ytick = \empty,
             ymax = 11.5,
             xlabel = {$P$},
@@ -587,12 +585,13 @@ Consider the case where $k > 0$.
             legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
-                    node [anchor=north west] {$O$};
+                    node [anchor=east] {$O$};
                 }
             ]
-            \addplot[plotRed] {x * (6 - x)};
+            \addplot[very thick] {x * (6 - x)};
+            \node[anchor=north east] at (6, 0) {$N$};
 
-            \fill (3, 9) circle[radius=2.5pt] node[anchor=south] {$(\frac12 N, \frac14 k N)$};
+            \fill (3, 9) circle[radius=2.5pt] node[anchor=south] {$(N/, k N/4)$};
             \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -600,8 +599,8 @@ Consider the case where $k > 0$.
 
 From the above diagram, we observe that
 \begin{itemize}
-    \item if $0 < P_0 < N$, then $P$ will increase towards $N$ since $\derx{P}{t} > 0$.
-    \item if $P_0 > N$, then $P$ will decrease towards $N$ since $\derx{P}{t} < 0$.
+    \item if $0 < p_0 < N$, then $P$ will increase towards $N$ since $\derx{P}{t} > 0$.
+    \item if $p_0 > N$, then $P$ will decrease towards $N$ since $\derx{P}{t} < 0$.
 \end{itemize}
 
 Since any population value in the neighbourhood of 0 will move away from 0, the equilibrium point at $P = 0$ is known as an \vocab{unstable equilibrium point}. On the contrary, since any population value in the neighbourhood of $N$ will move towards $N$, the equilibrium point at $P = N$ is known as a \vocab{stable equilibrium point}.
@@ -613,12 +612,12 @@ Now consider the case where $k < 0$.
     \begin{tikzpicture}[trim axis left, trim axis right]
         \begin{axis}[
             domain = 0:8,
+            xmax=8.5,
             restrict y to domain=-11.5:4,
             samples = 101,
             axis y line=middle,
             axis x line=middle,
-            xtick = {6},
-            xticklabels = {$N$},
+            xtick = \empty,
             ytick = \empty,
             ymin = -11.5,
             xlabel = {$P$},
@@ -627,12 +626,13 @@ Now consider the case where $k < 0$.
             legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
-                    node [anchor=north east] {$O$};
+                    node [anchor=east] {$O$};
                 }
             ]
-            \addplot[plotRed] {-x * (6 - x)};
+            \addplot[very thick] {-x * (6 - x)};
+            \node[anchor=north west] at (6, 0) {$N$};
 
-            \fill (3, -9) circle[radius=2.5pt] node[anchor=north] {$(\frac12 N, \frac14 k N)$};
+            \fill (3, -9) circle[radius=2.5pt] node[anchor=north] {$(N/2, k N/4)$};
             \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -646,7 +646,7 @@ From the above diagram, we observe that
 
 In this case, the equilibrium point at $P = 0$ is stable, while the equilibrium point at $P = N$ is unstable.
 
-Thus, we see that what happens to the population in the long-run depends very much on the value of the initial population, $P_0$.
+Thus, we see that what happens to the population in the long-run depends very much on the value of the initial population, $p_0$.
 
 \subsection{Harvesting}
 
@@ -656,7 +656,7 @@ There are many single population systems for which harvesting takes place. \voca
 
 The most direct way of harvesting is to use a strategy where a constant number, $H \geq 0$, of individuals are removed during each time period. For this situation, the logistic equation gets modified to the form \[\der{P}{t} = kP\bp{1 - \frac{P}{N}} - H,\] where $H$ is known as the \vocab{harvesting rate}.
 
-Observe that the equilibrium solutions to this modified logistic equation are: \[\der{P}{t} = kP\bp{1 - \frac{P}{N}} - H = 0 \implies P = \frac{N}{2} \pm \sqrt{\frac{N^2}{4} - \frac{NH}{k}}.\] With the equilibrium solutions, we can do the same analysis above to determine the long-term behaviour of the model.
+Observe that the equilibrium solutions to this modified logistic equation are: \[P = \frac{N}{2} \pm \sqrt{\frac{N^2}{4} - \frac{NH}{k}}.\] With the equilibrium solutions, we can do the same analysis as we did with the logistic model to determine the long-term behaviour of this model.
 
 \subsubsection{Variable Harvesting}
 

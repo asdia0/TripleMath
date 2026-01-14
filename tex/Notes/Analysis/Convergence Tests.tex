@@ -7,11 +7,11 @@
 \end{theorem}
 In the following proof, we take $\bc{u_n}$ to be increasing. The case where $u_n$ is decreasing is entirely analogous.
 \begin{proof}
-    ($\implies$) Suppose $\bc{u_n}$ converges to $L$. By the definition of the limit of a sequence, for all $\ve > 0$, there exists some natural number $N$ such that \[\abs{u_n - L} < \ve \implies u_n < L + \ve\] for all $n \geq N$. Because the sequence is increasing, we also have $u_i \leq u_N < L + \ve$ for all $1 \leq i < N$. Thus, the sequence is bounded above by $L + \ve$.
+    ($\implies$) Suppose $\bc{u_n}$ converges to $L$. By the definition of the limit of a sequence, for all $\ve > 0$, there exists some natural number $N$ such that for all integers $n \geq N$, we have $\abs{u_n - L} < \ve$. Equivalently, for all $n \geq N$, we have $u_N < L + \ve$. Since the sequence is increasing, we also have for all $1 \leq i < N$ that $u_i \leq u_N < L + \ve$. Thus, $u_j < L + \ve$ for all positive integers $j$, whence the sequence is bounded above by $L + \ve$.
     
     ($\impliedby$) Suppose $\bc{u_n}$ is bounded above. By the completeness of the real numbers, $L = \sup \bc{u_n}$ exists. We now show that $L$ is the limit of $\bc{u_n}$.
     
-    Fix $\ve > 0$. There exists some index $N$ such that $u_N > L - \ve$ (lest $L - \ve$ be an upper bound, contradicting the minimality of $L$). Since $\bc{u_n}$ is increasing, we have $u_n \geq u_N > L - \ve$ for all $n \geq N$. Further, we must have $u_n < L$ by definition of the supremum. Putting everything together, we obtain \[\abs{u_n - L} < \ve\] for all $n \geq N$, whence $L$ is the limit of $\bc{u_n}$ and the sequence converges.
+    Fix $\ve > 0$. Since $L$ is the lowest upper bound, there must exist some index $N$ such that $u_N > L - \ve$. Since $\bc{u_n}$ is increasing, for all $n \geq N$, we have $u_n \geq u_N > L - \ve$. Further, we must have $u_n < L$ by definition of the supremum. Putting everything together, we have for all $n \geq N$ that $\abs{u_n - L} < \ve$, whence $L$ is the limit of $\bc{u_n}$ and the sequence converges.
 \end{proof}
 
 \section{Tests for Series}\label{sec:convergence-series}
@@ -47,7 +47,7 @@ Note that the converse is not true (consider $\sum_{n = 1}^\infty 1/n$).
     If $\sum_{n = 1}^\infty \abs{u_n}$ converges, then $S_n$ converges.
 \end{theorem}
 \begin{proof}
-    Observe that \[0 \leq u_n + \abs{u_n} \leq 2 \abs{u_n}\] for all $n$, so $\sum_{n = 1}^\infty (u_n + \abs{u_n})$ converges by the comparison test. Hence, \[S_n = \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty (u_n + \abs{u_n}) - \sum_{n = 1}^\infty \abs{u_n}\] is convergent.
+    Observe that $0 \leq u_n + \abs{u_n} \leq 2 \abs{u_n}$ for all $n$, so $\sum_{n = 1}^\infty (u_n + \abs{u_n})$ converges by the comparison test. Hence, \[S_n = \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty (u_n + \abs{u_n}) - \sum_{n = 1}^\infty \abs{u_n}\] is convergent.
 \end{proof}
 
 \section{Tests for Definite Integrals}

@@ -2,24 +2,30 @@
 
 \section{Indefinite Integration}
 
-In the previous chapters, we learnt about differentiation, which can be thought as finding the derivative $f'(x)$ from a function $f(x)$. Reversing this, we define integration as the process of finding the function $f(x)$ from its derivative $f'(x)$. Simply put, integration ``undoes'' differentiation and vice versa.
+In previous chapters, we learnt about differentiation, which can be thought as finding the derivative $f'(x)$ from a function $f(x)$. Reversing this, we define integration as the process of finding the function $f(x)$ from its derivative $f'(x)$. Simply put, integration ``undoes'' differentiation and vice versa.
 
-\subsection{Notation and Terminology}
+\subsection{Indefinite Integration}
 
 \begin{definition}
-    We write the \vocab{indefinite integral} with respect to $x$ of a function $f(x)$ as \[\int f(x) \d x.\] Here, $f(x)$ is called the \vocab{integrand}.
+    The \vocab{primitive} of a function $f(x)$ is a function $F(x)$ such that $F'(x) = f(x)$.
 \end{definition}
 
-Let the derivative of $F(x)$ be $f(x)$, and let $c$ be an arbitrary constant. Since the derivative of a constant is zero, the function $F(x) + C$ will always have the same derivative: $f(x)$. Thus, when we integrate $f(x)$, we don't get back a single function $F(x)$. Instead, we get back a family of functions of the form $F(x) + C$. We call $F(x)$ the \vocab{primitive} of $f(x)$, and $c$ the \vocab{constant of integration}.
+Note that a function may have multiple primitives. For instance, both $2\sin[2]{x}$ and $-\cos{2x}$ are primitives of $4\sin{x}\cos{x}$.
 
-With our notation, we can write down the notion of integration ``undoing'' differentiation mathematically: \[\int \der{}{x} \bs{f(x)} \d x = f(x) + C, \qquad \der{}{x} \bs{\int f(x) \d x} = f(x).\]
+\begin{definition}
+    The \vocab{indefinite integral} of a function $f(x)$, denoted $\int f(x) \d x$, is the class of functions $F(x) + C$, where $F(x)$ is a primitive of $f(x)$ and $C$ is a \vocab{constant of integration}. Here, $f(x)$ is called the \vocab{integrand}.
+\end{definition}
+
+Informally, the indefinite integral of $f(x)$ represents \emph{all} functions whose derivative is $f(x)$. The presence of $C$ is due to the fact that the derivative of a constant is 0.\footnote{More technically, we can view differentiation as a linear transformation $\mathrm{D}$ between vector spaces of functions. In performing integration, we are seeking all functions $F$ such that $\mathrm{D}F = f$. Since the kernel of $\mathrm{D}$ is the set of all constants $C$, the general solution is $F_p + C$, where $F_p$ is a particular solution (primitive).}
+
+With our notation, we can write down the notion of integration ``undoing'' differentiation mathematically: \[\int \der{}{x} \bs{f(x)} \d x = f(x) + C \quad \tand \quad \der{}{x} \bs{\int f(x) \d x} = f(x).\]
 
 \subsection{Basic Rules}
 
 \begin{fact}[Properties of Indefinite Integrals]
-    Let $f(x)$ and $g(x)$ be any two functions, and let $k$ be a constant.
+    Let $f(x)$ and $g(x)$ be any two functions, and let $k$ be a constant. 
     \begin{itemize}
-        \item (linearity) $\displaystyle\int \bs{f(x) + g(x)} \d x = \int f(x) \d x + \int g(x) \d x$.
+        \item $\displaystyle\int \bs{f(x) + g(x)} \d x = \int f(x) \d x + \int g(x) \d x$.
         \item $\displaystyle\int k f(x) \d x = k \int f(x) \d x$.
     \end{itemize}
 \end{fact}
@@ -27,7 +33,7 @@ With our notation, we can write down the notion of integration ``undoing'' diffe
 \section{Definite Integration}
 
 \begin{definition}
-    Suppose $f$ is a continuous function defined on the interval $[a, b]$ and $\int f(x) \d x = F(x) + C$. Then, the \vocab{definite integral} of $f(x)$ from $a$ to $b$ with respect to $x$ is denoted by \[\int_a^b f(x) \d x = \evalint{F(x)}{a}{b} = F(b) - F(a).\] We call $a$ the \vocab{lower limit} and $b$ the \vocab{upper limit} of the integral.
+    Suppose $f$ is a continuous function defined on the interval $[a, b]$ and $F(x)$ is a primitive of $f(x)$. Then, the \vocab{definite integral} of $f(x)$ from $a$ to $b$ with respect to $x$ is denoted by \[\int_a^b f(x) \d x = \evalint{F(x)}{a}{b} = F(b) - F(a).\] We call $a$ the \vocab{lower limit} and $b$ the \vocab{upper limit} of the integral.
 \end{definition}
 
 Note that the indefinite integral $\int f(x) \d x$ is a function in $x$, while the definite integral $\int_a^b f(x) \d x$ is a numerical value. Also note that $x$ is a \vocab{dummy variable} as it does not appear in the final expression of the definite integral; it can be replaced by any symbol.
@@ -35,13 +41,13 @@ Note that the indefinite integral $\int f(x) \d x$ is a function in $x$, while t
 \begin{fact}[Properties of Definite Integrals]
     Let $f(x)$ and $g(x)$ be any two functions. Let $k$ and $c$ be constants.
     \begin{itemize}
-        \item (linearity) $\displaystyle\int_a^b \bs{f(x) + g(x)} \d x = \int_a^b f(x) \d x + \int g(x) \d x$.
+        \item $\displaystyle\int_a^b \bs{f(x) + g(x)} \d x = \int_a^b f(x) \d x + \int g(x) \d x$.
         \item $\displaystyle\int_a^b k f(x) \d x = k \int_a^b f(x) \d x$.
         \item $\displaystyle\int_a^b f(x) \d x = \int_a^c f(x) \d x + \int_c^b f(x) \d x$.
     \end{itemize}
 \end{fact}
 
-Note that from the last property, we can deduce the following properties: \[\int_a^a f(x) \d x = 0 \quad \tand \quad \int_a^b f(x) \d x = -\int_b^a f(x) \d x.\]
+Note that from the last property, we deduce that \[\int_a^a f(x) \d x = 0 \quad \tand \quad \int_a^b f(x) \d x = -\int_b^a f(x) \d x.\]
 
 \section{Integration Techniques}
 
@@ -63,15 +69,15 @@ Note that from the last property, we can deduce the following properties: \[\int
     \end{alignat*}
 \end{proposition}
 
-Equivalently, \[\int \sec x \d x = \ln \abs{\sec x + \tan x} \quad \tand \quad \int \csc x \d x = -\ln \abs{\csc x + \cot x}.\]
+Equivalently, \[\int \sec x \d x = \ln \abs{\sec x + \tan x} + C \quad \tand \quad \int \csc x \d x = -\ln \abs{\csc x + \cot x} + C.\]
 
-Products of trigonometric functions can be easily integrated using the following identities:
+Integrands involving products of trigonometric functions can be simplified with the following identities:
 \begin{alignat*}{3}
     \sin P + \sin Q &= 2 \sin \frac{P + Q}{2} \cos \frac{P - Q}{2}, \qquad & \sin P - \sin Q &= 2 \sin \frac{P - Q}{2} \cos \frac{P + Q}{2},\\
     \cos P + \cos Q &= 2 \cos \frac{P + Q}{2} \cos \frac{P - Q}{2}, \qquad & \cos P - \cos Q &= 2 \sin \frac{P - Q}{2} \sin \frac{P + Q}{2}.
 \end{alignat*}
 
-Powers of trigonometric functions can also be integrated using the following identities:
+Integrands involving powers of trigonometric functions can also be simplified with the following identities:
 \begin{alignat*}{3}
     \sin^2 x &= \frac{1 - \cos 2x}{2}, \qquad & \cos^2 x &= \frac{1 + \cos 2x}{2},\\
     \sin^3 x &= \frac{3\sin x - \sin 3x}{4}, \qquad & \cos^3 x &= \frac{3\cos x + \cos 3x}{4}.
@@ -87,7 +93,7 @@ Powers of trigonometric functions can also be integrated using the following ide
 
 \subsection{Integration by Substitution}
 
-If the given integrand is not in one of the standard forms, it may be possible to reduce it to a standard form by a change of variable. This method is called \vocab{integration by substitution}, and it ``undoes the chain rule''.
+If the given integrand is not in one of the standard forms, it may be possible to reduce it to a standard form by a change of variable. This method is called \vocab{integration by substitution}, and it ``undoes'' the chain rule.
 
 \begin{proposition}[Integration by Substitution]
     Let $F' = f$. Then \[\int f(g(x)) g'(x) \d x = F(g(x)) + C.\]
@@ -99,16 +105,22 @@ If the given integrand is not in one of the standard forms, it may be possible t
 A simpler way to interpret the above formula is as follows:
 
 \begin{recipe}[Integration by Substitution]
-    Given an integral $\int f(x) \d x$ and a substitution $x = g(u)$, convert all instances of $x$ in terms of $u$. This includes replacing $\d x$ with $\d u$, which can be found by ``splitting'' $\derx{x}{u}$: \[\der{x}{u} = g'(u) \implies \d x = g'(u) \d u.\] If the integral is definite, the bounds should also be converted to their corresponding $u$ values. Once the integral has been evaluated, all instances of $u$ should be converted back to $x$.
+    Given an integral $\int f(x) \d x$ and a substitution $x = g(u)$, convert all instances of $x$ in terms of $u$. This includes replacing $\d x$ with $g'(u) \d u$. If the integral is definite, the bounds should also be converted to their corresponding $u$ values. If the integral is indefinite, once the integral is evaluated in terms of $u$, all instances of $u$ should be converted back to $x$.
 \end{recipe}
 
-\begin{example}[Definite Integration by Substitution]
-    Consider the definite integral \[\int_{2/\sqrt3}^2 \frac1{x\sqrt{x^2 - 1}} \d x.\] Under the substitution $x = 1/u$, we have \[\der{x}{u} = -\frac1{u^2} \implies \d x = -\frac1{u^2} \d u.\] When $x = 2/\sqrt 3$, $u = \sqrt3/2$. When $x = 2$, $u = 1/2$. Thus, the integral becomes \[\int_{\sqrt3 / 2}^{1/2} \frac{u}{\sqrt{u^{-2} - 1}} \frac1{u^2} \d u = \int_{1/2}^{\sqrt3 /2} \frac1{\sqrt{1 - u^2}} \d u = \evalint{\arcsin u}{1/2}{\sqrt3 /2} = \frac\pi6.\]
-\end{example}
+\begin{sample}[Definite Integration by Substitution]
+    Evaluate the definite integral \[\int_{2/\sqrt3}^2 \frac1{x\sqrt{x^2 - 1}} \d x.\]
+\end{sample}
+\begin{sampans}
+    Under the substitution $x = 1/u$, we have \[\der{x}{u} = -\frac1{u^2},\] so $\d x = -u^{-2} \d u$. When $x = 2/\sqrt 3$, the corresponding $u$-value is $u = \sqrt3/2$. When $x = 2$, the corresponding $u$-value is $u = 1/2$. Thus, the integral becomes \[\int_{\sqrt3 / 2}^{1/2} \frac{u}{\sqrt{u^{-2} - 1}} \frac1{u^2} \d u = \int_{1/2}^{\sqrt3 /2} \frac1{\sqrt{1 - u^2}} \d u = \evalint{\arcsin u}{1/2}{\sqrt3 /2} = \frac\pi6.\]
+\end{sampans}
 
-\begin{example}[Indefinite Integration by Substitution]
-    Consider the indefinite integral \[\int \frac1{x\sqrt{x^2 - 1}} \d x.\] Following the same substitution as above ($x = 1/u$), we get \[\int \frac1{x\sqrt{x^2 - 1}} \d x = \int \frac1{\sqrt{1 - u^2}} \d u = \arcsin u + C = \arcsin \frac1x + C.\] 
-\end{example}
+\begin{sample}[Indefinite Integration by Substitution]
+    Evaluate the indefinite integral \[\int \frac1{x\sqrt{x^2 - 1}} \d x.\]
+\end{sample}
+\begin{sampans}
+    Under the substitution $x = 1/u$, we get \[\int \frac1{x\sqrt{x^2 - 1}} \d x = \int \frac1{\sqrt{1 - u^2}} \d u = \arcsin u + C.\] Recasting this answer back in terms of $x$, we have \[\int \frac1{x\sqrt{x^2 - 1}} \d x = \arcsin \frac1x + C.\] 
+\end{sampans}
 
 \subsection{Integration by Parts}
 
@@ -118,7 +130,7 @@ Just like integration by substitution ``undoes'' the chain rule, \vocab{integrat
     Let $u$ and $v$ be functions of $x$. Then \[\int u v' \d x = uv - \int v u' \d x.\] For definite integrals, \[\int_a^b u v' \d x = \evalint{uv}{a}{b} - \int_a^b v u' \d x.\]
 \end{proposition}
 \begin{proof}
-    By the product rule, \[(uv)' = uv' + u'v.\] Integrating both sides and rearranging yields the desired result.
+    By the product rule, $(uv)' = uv' + u'v$. Integrating both sides and rearranging yields the desired result.
 \end{proof}
 
 The statement is also sometimes written as \[\int u \d v = uv - \int v \d u.\] As we just learnt in the previous section, the two forms are perfectly equivalent under substitution (simply substitute $x$ for $u$ and $v$ in the integrands).
@@ -136,17 +148,23 @@ Care must be exercised in the choice of the factor $u$. The aim is to ensure tha
     \end{itemize}
 \end{recipe}
 
-\begin{example}[Integration by Parts]
-    Consider the integral $\int \ln x \d x$. Picking $u = \ln x$ and $v' = 1$, we get \[\int \ln x \d x = uv - \int u' v \d x = (\ln x)(x) - \int \bp{\frac1x} (x) \d x = x\ln x - x + C.\]
-\end{example}
+\begin{sample}[Integration by Parts]
+    Evaluate \[\int \ln x \d x.\]
+\end{sample}
+\begin{sampans}
+    Picking $u = \ln x$ and $v' = 1$, we get \[\int \ln x \d x = uv - \int u' v \d x = (\ln x)(x) - \int \bp{\frac1x} (x) \d x = x\ln x - x + C.\]
+\end{sampans}
 
-The astute reader would have noticed that we actually dropped an arbitrary constant when integrating $v$ in the above example. We picked $v' = 1$ but only got $v = x$, instead of the expected $v = x + C$. However, including the arbitrary constant does not matter: if we replace $v$ with $v + C$ into the integration by parts formula, we get \[\int u \d v = u(v + C) - \int (v + C) \d u = uv + Cu - \bp{\int v \d u + Cu} = uv - \int v \d u,\] which is what we would have got had we not included the arbitrary constant $C$.
+The astute reader would have noticed that we actually dropped an arbitrary constant when integrating $v$ in the above example. From $v' = 1$ we took $v = x$ instead of the expected $v = x + C$. However, including the arbitrary constant does not matter: if we replace $v$ with $v + C$ into the integration by parts formula, we get \[\int u \d v = u(v + C) - \int (v + C) \d u = uv + Cu - \bp{\int v \d u + Cu} = uv - \int v \d u,\] which is what we would have got had we not included the arbitrary constant $C$.
 
 However, this is not to say that we should always drop the arbitrary constant. In certain situations, including it might actually prove more useful, as demonstrated in the following example.
 
-\begin{example}[Including Arbitrary Constant]
-    Consider the integral $\int \ln{x + 1} \d x$. Picking $u = \ln{x+1}$ and $v' = 1$ (which implies $v = x + C$), we get \[\int \ln{x+1} \d x = uv - \int u' v \d x = (x + C) \ln{x+1} - \int \frac{x+C}{x+1} \d x.\] Here, a convenient choice for $C$ would be 1, as the integral on the RHS would simplify to $\int 1 \d x$, which we can easily integrate. Thus, \[\int \ln{x+1} \d x = (x+1) \ln{x+1} - x + C.\]
-\end{example}
+\begin{sample}[Including Arbitrary Constant]
+    Evaluate \[\int \ln{x + 1} \d x.\]
+\end{sample}
+\begin{sampans}
+    Picking $u = \ln{x+1}$ and $v' = 1$ (which implies $v = x + C$), we get \[\int \ln{x+1} \d x = uv - \int u' v \d x = (x + C) \ln{x+1} - \int \frac{x+C}{x+1} \d x.\] Here, a convenient choice for $C$ would be 1, as the integral on the RHS would simplify to $\int 1 \d x$, which we can easily integrate. Thus, \[\int \ln{x+1} \d x = (x+1) \ln{x+1} - x + C.\]
+\end{sampans}
 
 If evaluating an integral requires doing multiple integration by parts in succession, the DI method is more convenient.
 
@@ -162,7 +180,7 @@ If evaluating an integral requires doing multiple integration by parts in succes
         \pm & u^{(n)} & v^{(-n)}\\\bottomrule
     \end{array}
     \]
-    In other words, keep differentiating the middle column ($u$) and keep integrating the right column ($v$), while alternating the sign in the left column. This sign is ``attached'' to the $u$ terms.
+    In other words, keep differentiating the middle column ($D$) and keep integrating the right column ($I$), while alternating the sign in the left column. This sign is ``attached'' to the $u$ terms.
 
     Next, draw diagonal arrows from the middle column to the right column one row below. For instance, $u$ is arrowed to $v^{(-1)}$, while $u'$ is arrowed to $v^{(-2)}$ and so on. Multiply the terms connected by an arrow, keeping in mind the sign of the $u$ terms. Add these terms up, and add the integral of the product of the last row (i.e. $\int u^{(n)} v^{(-n)} \d x$).
 \end{recipe}

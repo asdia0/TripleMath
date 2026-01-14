@@ -10,7 +10,7 @@ In this chapter, we will learn how to determine the power series of a given func
 
 \section{Deriving the Maclaurin Series}
 
-Suppose we can express a function $f(x)$ as a power series with centre $c = 0$. That is, we wish to find constant coefficients such that \[f(x) = \sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots. \tag{1}\] Notice that we can obtain $a_0$ right away: substituting $x = 0$ into (1) gives \[f(0) = a_0 + a_1 (0) + a_2 (0)^2 + \dots = a_0.\] Now, observe that if we differentiate (1), we get \[f'(x) = a_1 + 2a_2 x + 3a_3 x^2 + \dots. \tag{2}\] Once again, we can obtain $a_1$ using the same trick: substituting $x = 0$ into (2) yields \[f'(0) = a_1 + 2a_2 (0) + 3a_3 (0)^2 + \dots = a_1.\] If we continue this process of differentiating and substituting $x = 0$ into the resulting formula, we can obtain any coefficient we so desire. In general, \[f^{(n)}(0) = \der[n]{}{x} (a_n x^n). \tag{3}\] However, by repeatedly applying the power rule, we clearly have \[\der[n]{}{x} x^n = \der[n-1]{}{x} nx^{n-1} = \der[n-2]{}{x} n(n-1)x^{n-2} = \dots = n(n-1)(n-2)\dots(3)(2)(1) = n!.\] Thus, a simple rearrangement of (3) gives \[a_n = \frac{f^{(n)}(0)}{n!}.\] We thus arrive at the formula for the Maclaurin series of $f(x)$:
+Suppose we can express a function $f(x)$ as a power series with centre $c = 0$. That is, we wish to find constant coefficients such that \[f(x) = \sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots. \tag{1}\] We can obtain $a_0$ right away: substituting $x = 0$ into (1) gives \[f(0) = a_0 + a_1 (0) + a_2 (0)^2 + \dots = a_0.\] Next, differentiating (1) gives \[f'(x) = a_1 + 2a_2 x + 3a_3 x^2 + \dots. \tag{2}\] Once again, we can obtain $a_1$ using the same trick: substituting $x = 0$ into (2) yields \[f'(0) = a_1 + 2a_2 (0) + 3a_3 (0)^2 + \dots = a_1.\] If we continue this process of differentiating and substituting $x = 0$ into the resulting formula, we can obtain any coefficient we so desire. In general, \[f^{(n)}(0) = \der[n]{}{x} (a_n x^n) = a_n \der[n]{}{x} x^n = n! \, a_n,\] Thus, the coefficients are given by \[a_n = \frac{f^{(n)}(0)}{n!},\] giving us the formula for the Maclaurin series of $f(x)$:
 
 \begin{definition}
     The \vocab{Maclaurin series} of $f(x)$ is given by \[f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!} x^n = f(0) + f'(0) x + \frac{f''(0)}{2!} x^2 + \frac{f^{(3)}(0)}{3!} x^3 + \dots.\]
@@ -25,18 +25,18 @@ There are a few caveats, though:
 \section{Binomial Series}
 
 \begin{proposition}[Binomial Series Expansion]
-    Let $n \in \QQ \setminus \ZZ^+$. Then \[(1+x)^n = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k,\] with validity range $\abs{x} < 1$.
+    Let $n$ be a rational number. Then the Maclaurin series of $(1+x)^n$ is \[(1+x)^n = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k,\] with validity range $\abs{x} < 1$.
 \end{proposition}
 \begin{proof}
-    Consider $f(x) = (1 + x)^n$, where $n \in \QQ \setminus \ZZ^+$. By repeatedly differentiating $f(x)$, it is not too hard to see that \[f^{(k)}(x) = n(n-1)(n-2)\dots(n-k+1) \, (1 + x)^{n-k}.\] Hence, \[f^{(k)}(0) = n(n-1)(n-2)\dots(n-k+1).\] Substituting this into the formula for the Maclaurin series, we have \[f(x) = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k.\]
+    Consider $f(x) = (1 + x)^n$. By repeatedly differentiating $f(x)$, it is not too hard to see that \[f^{(k)}(x) = n(n-1)(n-2)\dots(n-k+1) \, (1 + x)^{n-k}.\] Hence, \[f^{(k)}(0) = n(n-1)(n-2)\dots(n-k+1).\] Substituting this into the formula for the Maclaurin series, we have \[f(x) = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k.\]
 
     We now consider the range of validity. If $\abs{x} \geq 1$, then $x^k$ diverges to $\infty$ as $k \to \infty$. Meanwhile, if $\abs{x} < 1$, then $x_k$ converges to 0 as $k \to \infty$. Hence, the range of validity is $\abs{x} < 1$.
 \end{proof}
 
-Note that the binomial theorem is similar to the above result: taking $n \in \ZZ^+$, we see that \[\frac{n(n-1)(n-2)\dots(n-k+1)}{k!} = \begin{cases}
+Note that the binomial theorem is a specialization of the above result; when $n$ is a positive integer, we see that \[\frac{n(n-1)(n-2)\dots(n-k+1)}{k!} = \begin{cases}
     \binom{n}{k} & k \leq n,\\
     0 & k > n,
-\end{cases}\] whence \[(1+x)^n = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k = \sum_{k = 0}^n \binom{n}{k} x^n,\] which is exactly the binomial theorem. The only difference between the two results is that the range of validity is $\RR$ when $n$ is a positive integer. This is because the series is finite (all terms $k > n$ vanish), hence it will always converge.
+\end{cases}\] whence we recover the binomial theorem \[(1+x)^n = \sum_{k = 0}^\infty \frac{n(n-1)(n-2)\dots(n-k+1)}{k!} x^k = \sum_{k = 0}^n \binom{n}{k} x^n.\] The only difference between the two results is that the range of validity is $\RR$ when $n$ is a positive integer. This is because the series is finite (all terms $k > n$ vanish), hence it will always converge.
 
 \section{Methods to Find Maclaurin Series}
 
@@ -75,12 +75,16 @@ For complicated functions, it is more efficient to repeatedly implicitly differe
 \begin{example}[Repeated Implicit Differentiation]
     Suppose we wish to find the first three terms of the Maclaurin series of $y = \ln{1 + \cos x}$. Rewriting, we get $\e^y = 1 + \cos x$. Implicitly differentiating repeatedly with respect to $x$,
     \begin{align*}
-        \e^y y' &= -\sin x\\
-        \e^y \bs{\bp{y'}^2 + y''} &= -\cos x\\
-        \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} &= \sin x \\
+        \e^y y' &= -\sin x,\\
+        \e^y \bs{\bp{y'}^2 + y''} &= -\cos x,\\
+        \e^y \bs{\bp{y'}^3 + 3y'y'' + y'''} &= \sin x, \\
         \e^y \bs{\bp{y'}^4 + 3\bp{y''}^2 + 6\bp{y'}^2 y'' + 4y'y''' + y^{(4)}} &= \cos x.
     \end{align*}
-    Evaluating the above at $x = 0$, we get \[y(0) = \ln 2, \quad y'(0) = 0, \quad y''(0) = -\frac12, \quad y'''(0) = 0, \quad y^{(4)}(0) = -\frac14.\] Thus, \[\ln{1 + \cos x} = \ln 2 + \frac{-1/2}{2!} x^2 + \frac{-1/4}{4!} x^4 + \cdots = \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots.\]
+    Evaluating the above at $x = 0$, we get \[y(0) = \ln 2, \quad y'(0) = 0, \quad y''(0) = -\frac12, \quad y'''(0) = 0, \quad y^{(4)}(0) = -\frac14.\] Thus,
+    \begin{align*}
+        \ln{1 + \cos x} &= \ln 2 + \frac{-1/2}{2!} x^2 + \frac{-1/4}{4!} x^4 + \cdots\\
+        &= \ln 2 - \frac14 x^2 - \frac1{96}x^4 + \cdots.
+    \end{align*}
 \end{example}
 
 \section{Approximations using Maclaurin series}
@@ -92,7 +96,7 @@ Maclaurin series can be used to approximate a function $f(x)$ near $x = 0$.
 \end{example}
 
 \begin{example}[Approximating Constants]
-    For small $x$, \[\sin x \approx x - \frac{x^3}{3!}.\] Since $\sin{\pi/4} = 1/\sqrt{2}$, the numerical value of $1/\sqrt{2}$ can be approximated by substituting $x = \pi/4$ into the above equation: \[\frac1{\sqrt2} = \sin \frac{\pi}4 \approx \frac{\pi}4 - \frac{(\pi/4)^3}{3} = 0.70465.\] This is close to the actual value of $1/\sqrt{2} \approx 0.70711$.
+    For small $x$, $\sin x \approx x - x^3/6$. Since $\sin{\pi/4} = 1/\sqrt{2}$, the numerical value of $1/\sqrt{2}$ can be approximated by substituting $x = \pi/4$ into the above equation: \[\frac1{\sqrt2} = \sin \frac{\pi}4 \approx \frac{\pi}4 - \frac{(\pi/4)^3}{6} = 0.70465.\] This is close to the actual value of $1/\sqrt{2} \approx 0.70711$.
 \end{example}
 
 To improve the approximation, we can 
@@ -100,10 +104,6 @@ To improve the approximation, we can
     \item choose an $x$-value closer to 0;
     \item use more terms of the series.
 \end{itemize}
-
-\begin{example}[Improving Approximations]
-    Continuing on from the previous example, we note that $\sin{3\pi/4}$ is also equal to $1/\sqrt2$. If we substitute $x = 3\pi/4$ into $\sin x \approx x - x^3/3!$, we get \[\frac1{\sqrt2} = \sin \frac{3\pi}4 \approx \frac{3\pi}4 - \frac{(3\pi/4)^3}{3} = 0.17607,\] which is a worse approximation than if we had used $x = \pi/4$. This is because $\abs{\pi/4} < \abs{3\pi/4}$.
-\end{example}
 
 \section{Small Angle Approximation}
 

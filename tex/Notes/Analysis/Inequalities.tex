@@ -3,13 +3,13 @@
 \section{Triangle Inequality}
 
 \begin{theorem}[Triangle Inequality]
-    For all $a, b \in \RR$, we have \[\abs{a + b} \leq \abs{a} + \abs{b}.\] Equality occurs if and only if $a$ and $b$ have the same sign.
+    For all $a, b \in \RR$, we have $\abs{a + b} \leq \abs{a} + \abs{b}$. Equality occurs if and only if $a$ and $b$ have the same sign.
 \end{theorem}
 \begin{proof}
-    We have \[-\abs{a} \leq a \leq a \quad \tand \quad -\abs{b} \leq b \leq b.\] Adding both inequalities, we get \[-\bp{\abs{a} + \abs{b}} \leq a + b \leq \abs{a} + \abs{b},\] so $\abs{a + b} \leq \abs{a} + \abs{b}$ as desired.
+    We have $-\abs{a} \leq a \leq \abs{a}$ and $-\abs{b} \leq b \leq \abs{b}$. Adding both inequalities, we get $-\bp{\abs{a} + \abs{b}} \leq a + b \leq \abs{a} + \abs{b}$, so $\abs{a + b} \leq \abs{a} + \abs{b}$ as desired.
 \end{proof}
 
-The triangle inequality gets its name from the fact that the sum of any two sides in a triangle is always larger than the remaining side. In general, given a vector space $V$, the vectors $\vec u$, $\vec v$ and $\vec u + \vec v$ form the sides of a triangle, so \[\abs{\vec u + \vec v} \leq \abs{\vec u} + \abs{\vec v}.\]
+The triangle inequality gets its name from the fact that the sum of any two sides in a triangle is always larger than the remaining side. In general, given a vector space $V$, the vectors $\vec u$, $\vec v$ and $\vec u + \vec v$ form the sides of a triangle, so $\abs{\vec u + \vec v} \leq \abs{\vec u} + \abs{\vec v}$.
 
 The triangle inequality can be used to give bounds on series and integrals.
 
@@ -26,7 +26,7 @@ The triangle inequality can be used to give bounds on series and integrals.
 
 \section{Jensen's Inequality}
 
-Recall that a function $f$ is said to be convex on an interval $I$ if for any two points $x_1, x_2 \in I$ and weights $t_1, t_2 > 0$ with $t_1 + t_2 = 1$, we have \[f(t_1 x_1 + t_2 x_2) \leq t_1 f(x_1) + t_2 f(x_2).\] We can easily generalize this result to the case with $n$ points and $n$ weights.
+Recall that a function $f$ is said to be convex on an interval $I$ if for any two points $x_1, x_2 \in I$ and weights $t_1, t_2 > 0$ with $t_1 + t_2 = 1$, we have $f(t_1 x_1 + t_2 x_2) \leq t_1 f(x_1) + t_2 f(x_2)$. We can easily generalize this result to the case with $n$ points and $n$ weights.
 
 \begin{theorem}[Jensen's Inequality (Convex)]
     Let $f$ be convex on $I$. Given $x_i \in I$ and $t_i > 0$ for $i = 1, \dots, n$ with $\sum_{t = 1}^n t_i = 1$, we have \[f\!\bp{\sum_{i = 1}^n t_i x_i} \leq \sum_{i = 1}^n t_i f(x_i).\] Equality occurs if and only if $x_1 = \dots = x_n$ or $f$ is linear on the convex hull of $\bc{x_i}$.
@@ -73,19 +73,11 @@ If $f$ is concave, we get an analogous result.
 
 \section{Cauchy-Schwarz Inequality}
 
-The general form of the Cauchy-Schwarz inequality relates the magnitude of an inner product to the product of norms.
-
-\begin{theorem}[Cauchy-Schwarz Inequality]
-    Let $V$ be a vector space with an inner product $\ba{\cdot, \cdot}$. Then for any vectors $\vec u, \vec v \in V$, we have \[\abs{\ba{\vec u, \vec v}}^2 \leq \norm{\vec u} \norm{\vec v},\] where $\norm{\cdot}$ is the norm induced by the inner product. Equality holds if and only if $\vec u$ and $\vec v$ are linearly dependent.
-\end{theorem}
-
-The more familiar Cauchy-Schwarz inequality is recovered when $V$ is the Euclidean $n$-space $\RR^n$ with the dot product as the inner product.
-
-\begin{proposition}[Cauchy-Schwarz Inequality ($\RR^n$)]
+\begin{proposition}[Cauchy-Schwarz Inequality]
     For real numbers $a_1, \dots, a_n$ and $b_1, \dots, b_n$, \[\bp{\sum_{i = 1}^n a_i^2} \bp{\sum_{i = 1}^n b_i^2} \geq \bp{\sum_{i =1}^n a_i b_i}^2\] with equality if and only if $a_i = 0$, $b_i = 0$, or $a_i = \l b_i$ for some constant $\l$.
 \end{proposition}
 \begin{proof}[Proof 1 (Dot Product).]
-    For any two vectors $\vec a, \vec b \in \RR^n$, we have \[\vec a \dotp \vec b = \abs{\vec a} \abs{\vec b} \cos \t \leq \abs{\vec a} \abs{\vec b}.\] Letting $\vec a = \cvecivx{a_1}{a_2}{\dots}{a_n}$ and $\vec b = \cvecivx{b_1}{b_2}{\dots}{b_n}$, we get the Cauchy-Schwarz inequality. Equality holds when the two vectors are parallel, i.e. $a_i = \l b_i$ for constant $\l$, or when either vector is the zero vector.
+    For any two vectors $\vec a, \vec b \in \RR^n$, we have $\vec a \dotp \vec b = \abs{\vec a} \abs{\vec b} \cos \t \leq \abs{\vec a} \abs{\vec b}$. Letting $\vec a = \cvecivx{a_1}{a_2}{\dots}{a_n}$ and $\vec b = \cvecivx{b_1}{b_2}{\dots}{b_n}$, we get the Cauchy-Schwarz inequality. Equality holds when the two vectors are parallel, i.e. $a_i = \l b_i$ for constant $\l$, or when either vector is the zero vector.
 \end{proof}
 \begin{proof}[Proof 2 (Discriminant).]
     Let $t$ be an arbitrary real number. Observe that $\sum (a_i t - b_i)^2$ is non-negative. Expanding, we get a quadratic in $t$: \[\sum_{i = 1}^n (a_i t - b)^2 = \bp{\sum_{i = 1}^n a_i^2} t^2 - \bp{2\sum_{i = 1}^n a_i b_i} t + \sum_{i = 1}^n b^2.\] For at most one root, the discriminant must thus be non-positive, so \[\bp{2\sum_{i = 1}^n a_i b_i}^2 - 4\bp{\sum_{i = 1}^n a_i^2}\bp{\sum_{i = 1}^n b_i^2} \leq 0.\] Rearranging, we get the Cauchy-Schwarz inequality.

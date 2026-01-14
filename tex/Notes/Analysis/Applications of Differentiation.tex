@@ -3,40 +3,104 @@
 \section{Monotonicity}
 
 \begin{definition}
-    Let $f$ be a function, and let $I \subseteq \dom f$ be an interval. Let $x_1$ and $x_2$ be distinct elements in $I$.
+    Given a function $f$ and an interval $I \subseteq \dom f$, we say
     \begin{itemize}
-        \item $f$ is \vocab{strictly increasing} if $x_1 < x_2 \implies f(x_1) < f(x_2)$.
-        \item $f$ is \vocab{strictly decreasing} if  $x_1 < x_2 \implies f(x_1) > f(x_2)$
+        \item $f$ is \vocab{strictly increasing on $I$} if for all $x_1, x_2 \in I$ with $x_1 < x_2$, we have $f(x_1) < f(x_2)$.
+        \item $f$ is \vocab{strictly decreasing on $I$} if for all $x_1, x_2 \in I$ with $x_1 < x_2$, we have $f(x_1) > f(x_2)$.
     \end{itemize}
 \end{definition}
 
+When $I = \dom f$, we simply say that $f$ is strictly increasing/decreasing.
+
+\begin{figure}[H]\tikzsetnextfilename{549}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = -5:5,
+            restrict y to domain =0:25,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=north] {$O$};
+                }
+            ]
+            \addplot[thick] {x^2} node[pos=0.7, anchor=south east] {$y = x^2$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{$f(x) = x^2$ is strictly increasing on $(0, \infty)$, and strictly decreasing on $(-\infty, 0)$.}
+\end{figure}
+
 \begin{proposition}[Sign of $f'(x)$ Describes Monotonicity]
-    If $f'(x) > 0$ for all $x \in I$, then $f$ is strictly increasing on $I$. Similarly, if $f'(x) < 0$ for all $x \in I$, then $f$ is strictly decreasing on $I$.
+    Suppose $f$ is continuous and differentiable on an interval $I \subseteq \dom f$.
+    \begin{itemize}
+        \item If $f'(x) > 0$ for all $x \in I$, then $f$ is strictly increasing on $I$. 
+        \item If $f'(x) < 0$ for all $x \in I$, then $f$ is strictly decreasing on $I$.
+    \end{itemize}
 \end{proposition}
+We prove the first statement as the proof of the second statement is identical.
 \begin{proof}
-    Suppose $f'(x) > 0$ for all $x \in I$. By the Mean Value Theorem, there exists some $c \in I$ such that \[f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}.\] Since $f'(c) > 0$ and $x_1 < x_2$, it follows that $f(x_1) < f(x_2)$, whence $f$ is strictly increasing. The proof of the second statement is similar.
+    Suppose $f'(x) > 0$ for all $x \in I$. Pick $x_1, x_2 \in I$ such that $x_1 < x_2$. Since $f$ is continuous on $[x_1, x_2] \subseteq I$ and differentiable on $(x_1, x_2) \subseteq I$, by the Mean Value Theorem, there exists some $c \in (x_1, x_2)$ such that \[f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}.\] Since $f'(c) > 0$ and $x_1 < x_2$, we have $f(x_1) < f(x_2)$. Since $x_1$ and $x_2$ were chosen arbitrarily, it follows that $f$ is strictly increasing on $I$.
 \end{proof}
 
-Note that the converse of the above results is not true. Consider the function $f(x) = x^{1/3}$. Clearly, $f(x)$ is increasing on $\RR$, yet $f'(x) = x^{-2/3}/3$ is undefined at $x = 0$.
+Note that the converse of the above results is not true. For instance, $f(x) = x^3$ is strictly increasing on $\RR$, but $f'(0) = 0 \not> 0$.
 
 \section{Convexity and Concavity}
 
 \begin{definition}
-    Let $f$ be a function, and let $I \subseteq \dom f$ be an interval. 
+    Suppose $f$ is twice-differentiable on an interval $I \subseteq \dom f$. We say
     \begin{itemize}
         \item $f$ is \vocab{convex} (or \vocab{concave upwards}) on $I$ if $f''(x) \geq 0$ for all $x \in I$.
         \item $f$ is \vocab{concave} (or \vocab{concave downwards}) on $I$ if $f''(x) \leq 0$ for all $x \in I$.
     \end{itemize}
 \end{definition}
 
-Algebraically, $f$ is convex on $I$ if for any two points $x_1, x_2 \in I$ and weights $t_1, t_2 > 0$ with $t_1 + t_2 = 1$, we have \[f(t_1x_1 + t_2 x_2) \leq t_1 f(x_1) + t_2 f(x_2).\] Note that equality holds when $x_1 = x_2$. If the equality is strict, then $f$ is said to be \vocab{strictly convex}. If instead $f$ is concave on $I$, the inequality is flipped.
+If the equality is strict, then $f$ is said to be \vocab{strictly convex/concave}.
 
-Geometrically, $f$ is concave upwards if the graph of $y = f(x)$, $x \in I$ lies above its tangents. Likewise, $f$ is concave downwards if the graph lies below its tangents.
+Algebraically, $f$ is convex on $I$ if for any two points $x_1, x_2 \in I$ and weights $t_1, t_2 > 0$ with $t_1 + t_2 = 1$, we have $f(t_1x_1 + t_2 x_2) \leq t_1 f(x_1) + t_2 f(x_2)$. Equality holds when $x_1 = x_2$.  If instead $f$ is concave on $I$, the inequality is flipped.
+
+Geometrically, $f$ is concave upwards if the graph of $y = f(x)$ over $I$ lies above its tangents. Likewise, $f$ is concave downwards if the graph lies below its tangents.
+
+\begin{figure}[H]\tikzsetnextfilename{550}
+    \centering
+    \begin{tikzpicture}[trim axis left, trim axis right]
+        \begin{axis}[
+            domain = 0:2*pi,
+            ymin=-1.1,
+            ymax=1.1,
+            samples = 101,
+            axis y line=middle,
+            axis x line=middle,
+            xtick = \empty,
+            ytick = \empty,
+            xlabel = {$x$},
+            ylabel = {$y$},
+            legend cell align={left},
+            legend pos=outer north east,
+            after end axis/.code={
+                \path (axis cs:0,0) 
+                    node [anchor=east] {$O$};
+                }
+            ]
+            \addplot[thick] {sin(\x r)} node[pos=0.4, anchor=south west] {$y = \sin{x}$};
+            \node[anchor=north east] at (3.14, 0) {$\pi$};
+            \node[anchor=north east] at (6.24, 0) {$2\pi$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{$f(x) = \sin{x}$ is concave on $(0, \pi)$, and convex on $(\pi, 2\pi)$}
+\end{figure}
 
 \section{Stationary Points}
 
 \begin{definition}
-    A \vocab{stationary point} on a curve $y = f(x)$ is a point where $f'(x) = 0$.
+    A \vocab{stationary point} is a point on a curve $y = f(x)$ where $f'(x) = 0$.
 \end{definition}
 
 \begin{figure}[H]\tikzsetnextfilename{362}
@@ -80,8 +144,8 @@ Geometrically, $f$ is concave upwards if the graph of $y = f(x)$, $x \in I$ lies
 
 There are two types of stationary points:
 \begin{itemize}
-    \item turning points: maximum points ($A$) and minimum points ($B$)
-    \item stationary points of inflexion: $C$
+    \item turning points, which are further classified into maximum points ($A$) and minimum points ($B$); and
+    \item stationary points of inflexion ($C$).
 \end{itemize}
 
 \begin{definition}
@@ -90,17 +154,11 @@ There are two types of stationary points:
 
 Note that a point of inflexion is not necessarily stationary; points $D$ and $E$ in the above figure are \vocab{non-stationary points of inflexion}. 
 
-\subsection{Turning Points}
+\subsection{Turning Points} In the neighbourhood of turning points, the gradient of the curve, $f'(x)$, changes sign.
 
-In the neighbourhood of turning points, the gradient of the curve, $f'(x)$, changes sign.
+\paragraph{Maximum Points.} In the neighbourhood of a maximum turning point $A$, the gradient $f'(x)$ decreases from positive values, through zero at $A$, to negative values. The $y$-coordinate of $A$ is known as the \vocab{maximum value} of $y$.
 
-\subsubsection{Maximum Points}
-
-In the neighbourhood of a maximum turning point $A$, the gradient $f'(x)$ decreases from positive values, through zero at $A$, to negative values. The $y$-coordinate of $A$ is known as the \vocab{maximum value} of $y$.
-
-\subsubsection{Minimum Points}
-
-In the neighbourhood of a minimum turning point $B$, the gradient $f'(x)$ increases from negative values, through zero at $B$, to positive values. The $y$-coordinate of $B$ is known as the \vocab{minimum value} of $y$.
+\paragraph{Minimum Points.} In the neighbourhood of a minimum turning point $B$, the gradient $f'(x)$ increases from negative values, through zero at $B$, to positive values. The $y$-coordinate of $B$ is known as the \vocab{minimum value} of $y$.
 
 \subsection{Stationary Points of inflexion}
 
@@ -121,6 +179,7 @@ Suppose $y = f(x)$ has stationary point at $x = a$.
              & & & & & & & \hspace{1.5em} $-$ve & \hspace{1em} 0 & $-$ve \\ \hline
             Nature & \multicolumn{3}{c|}{Maximum point} & \multicolumn{3}{c|}{Minimum point} & \multicolumn{3}{c|}{Stationary point of inflexion}\\ \hline
         \end{tabular}
+        \caption{}
       \end{table}
 \end{recipe}
 
@@ -133,6 +192,7 @@ Suppose $y = f(x)$ has stationary point at $x = a$.
         $x$ & $0^-$ & $0$ & $0^+$ \\ \hline
         $f'(x)$ & $-$ve & 0 & +ve \\ \hline
         \end{tabular}
+        \caption{}
     \end{table}
     Thus, by the first derivative test, the stationary point at $x = 0$ is a minimum point.
 \end{example}
@@ -146,7 +206,12 @@ Suppose $y = f(x)$ has stationary point at $x = a$.
     \end{itemize}
 \end{proposition}
 \begin{proof}
-    At $x = a$, the function $f(x)$ is given by the Taylor series \[f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n = f(a) + f'(a) (x-a) + \frac{f''(a)}{2} (x-a)^2 + \cdots.\] When $x$ is arbitrarily close to $a$, the terms $(x-a)^3$, $(x-a)^4$, $\dots$ become negligibly small, whence $f(x)$ is well-approximated by \[f(x) \approx f(a) + f'(a) (x-a) + \frac{f''(a)}{2} (x-a)^2.\] Since $x = a$ is a stationary point, $f'(a) = 0$, whence \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2.\] Now observe that $(x-a)^2/2$ is non-negative. Hence, the sign of $f''(a) (x-a)^2/2$ depends solely on the sign of $f''(a)$: if $f''(a)$ is positive, the entire term is positive and \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2 > f(a),\] whence $f(a)$ is a minimum (since $f(a) < f(x)$ for all $x$ in the neighbourhood of $a$). Similarly, if $f''(a)$ is negative, the entire term is negative and \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2 < f(a),\] whence $f(a)$ is a maximum. If $f''(a)$ is zero, we cannot say anything about $f(x)$ around $f(a)$ and the test is inconclusive.
+    At $x = a$, the function $f(x)$ is given by the Taylor series \[f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n = f(a) + f'(a) (x-a) + \frac{f''(a)}{2} (x-a)^2 + \cdots.\] When $x$ is arbitrarily close to $a$, the terms $(x-a)^3$, $(x-a)^4$, $\dots$ become negligibly small, whence $f(x)$ is well-approximated by \[f(x) \approx f(a) + f'(a) (x-a) + \frac{f''(a)}{2} (x-a)^2.\] Since $x = a$ is a stationary point, $f'(a) = 0$, whence \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2.\] Since $(x-a)^2/2$ is non-negative, the sign of $f''(a) (x-a)^2/2$ depends solely on the sign of $f''(a)$.
+    \begin{itemize}
+        \item If $f''(a)$ is positive, the entire term is positive and \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2 > f(a),\] for all $x$ in the neighbourhood of $a$. Thus, $f(a)$ is a minimum.
+        \item If $f''(a)$ is negative, the entire term is negative and \[f(x) \approx f(a) + \frac{f''(a)}{2} (x-a)^2 < f(a),\] so $f(a)$ is a maximum.
+        \item If $f''(a)$ is zero, we cannot say anything about $f(x)$ around $f(a)$ and the test is inconclusive.
+    \end{itemize}
 \end{proof}
 
 \begin{example}[Second Derivative Test]
@@ -159,18 +224,18 @@ The table below shows the relationships between the graphs of $y = f(x)$ and $y 
 
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|l|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
-        \hline
-         & Graph of $y = f(x)$ & Graph of $y = f'(x)$ \\ \hline
-        1a & vertical asymptote $x = a$ & vertical asymptote $x = a$ \\ \hline
-        1b & horizontal asymptote $y = b$ & horizontal asymptote $y = 0$ \\ \hline
-        1c & oblique asymptote $y = mx + c$ & horizontal asymptote $y = b$ \\ \hline
-        2 & stationary point at $x = a$ & $x= a$ is the $x$-intercept \\ \hline
-        3a & $f$ is strictly increasing & curve above the $x$-axis \\ \hline
-        3b & $f$ is strictly decreasing & curve below the $y$-axis \\ \hline 
-        4a & $f$ is concave upward & curve is increasing \\ \hline
-        4b & $f$ is concave downward & curve is decreasing \\ \hline
-        5 & point of inflexion at $x = a$ & maximum or minimum point at $x = a$ \\ \hline
+    \begin{tabularx}{\textwidth}{r|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+        \cline{2-3}
+        & \bd{Graph of $y = f(x)$} & \bd{Graph of $y = f'(x)$} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{3}{*}{1}} & vertical asymptote $x = a$ & vertical asymptote $x = a$ \\ \cline{2-3}
+        \multicolumn{1}{|c|}{} & horizontal asymptote $y = b$ & horizontal asymptote $y = 0$ \\ \cline{2-3}
+        \multicolumn{1}{|c|}{} & oblique asymptote $y = mx + c$ & horizontal asymptote $y = b$ \\ \hline
+        \multicolumn{1}{|c|}{2} & stationary point at $x = a$ & $x= a$ is the $x$-intercept \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{3}} & $f$ is strictly increasing & curve above the $x$-axis \\ \cline{2-3}
+        \multicolumn{1}{|c|}{} & $f$ is strictly decreasing & curve below the $y$-axis \\ \hline 
+        \multicolumn{1}{|c|}{\multirow{2}{*}{4}} & $f$ is concave upward & curve is increasing \\ \cline{2-3}
+        \multicolumn{1}{|c|}{} & $f$ is concave downward & curve is decreasing \\ \hline
+        \multicolumn{1}{|c|}{5} & point of inflexion at $x = a$ & maximum or minimum point at $x = a$ \\ \hline
     \end{tabularx}
 \end{table}
 
@@ -197,28 +262,25 @@ Let $P(k, f(k))$ be a point on the graph of $y = f(x)$.
             xlabel = {$x$},
             ylabel = {$y$},
             axis equal image,
-            legend cell align={left},
-            legend pos=outer north east,
             after end axis/.code={
                 \path (axis cs:0,0) 
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed, very thick] {(x-2)/3 + 1.0986};
-            \addlegendentry{tangent};
-            \addplot[plotBlue, very thick] {-3*(x-2) + 1.0986};
-            \addlegendentry{normal};
+            \addplot[plotRed, very thick] {(x-2)/3 + 1.0986} node[pos=0.9, above left, red] {tangent};
+            \addplot[plotBlue, very thick] {-3*(x-2) + 1.0986} node[pos=0.3, above right, blue] {normal};
 
-            \addplot[black] {ln(x+1)};
+            \addplot[black, very thick] {ln(x+1)} node[pos=0.2, below right] {$y = f(x)$};
 
             \node at (1.91, 0.9) {$P$};
-            \fill (2, 1.0986) circle[radius=2.5pt];
 
             \coordinate (A) at (2, 1.0986);
             \coordinate (B) at (3, 1.4319);
             \coordinate (C) at (0.5, 5.5986);
 
             \draw pic [draw, angle radius=3mm] {right angle = B--A--C};
+
+            \fill (2, 1.0986) circle[radius=2.5pt];
         \end{axis}
     \end{tikzpicture}
     \caption{}
@@ -228,7 +290,7 @@ The gradient of the tangent to the curve at $P$ is $f'(k)$, while the gradient o
 
 \section{Optimization Problems}
 
-Many real-life situations require that some quantity be minimized (e.g. cost of manufacture) or maximized (e.g. profit on sales). We can use differentiation to solve many of these problems.
+Many real-life situations require that some quantity be minimized (e.g. cost of manufacture) or maximized (e.g. profit on sales). We can use differentiation to solve these problems.
 
 \begin{recipe}
     Suppose we have a dependent variable $y$ that we wish to maximize. We first express $y$ in terms of a single independent variable, say $x$. We then differentiate $y$ with respect to $x$ and solve for stationary points. Lastly, we determine the nature of the stationary points to obtain the maximum point.
@@ -274,7 +336,7 @@ With Cauchy's mean value theorem, we easily deduce the more famous mean value th
 \end{proof}
 
 \begin{sample}
-    Let $f$ be a differentiable function on $\RR$ such that $f'(x) \neq 1$ for all $x \in \RR$. Show that $f$ has at most one fixed point.
+    Let $f$ be a continuous and differentiable function on $\RR$ such that $f'(x) \neq 1$ for all $x \in \RR$. Show that $f$ has at most one fixed point.
 \end{sample}
 \begin{sampans}
     Seeking a contradiction, suppose $f$ has at least two fixed points, say $\a$ and $\b$, so $f(\a) = \a$ and $f(\b) = \b$. By Lagrange's mean value theorem, there exists some $c \in (\a, \b)$ such that \[f'(c) = \frac{f(\a) - f(\b)}{\a - \b} = \frac{\a - \b}{\a - \b} = 1,\] a contradiction. Thus, $f$ has at most one fixed point.

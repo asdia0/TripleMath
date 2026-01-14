@@ -3,12 +3,19 @@
 \section{Limits for Sequences}
 
 \begin{definition}
-    We say $x$ is the \vocab{limit} of a sequence $\bc{x_n}$ if for all $\ve > 0$, there exists some natural number $N$ such that $\abs{x_n - x} < \ve$ for all $n \geq N$. We write $\displaystyle\lim_{n \to \infty} x_n = x$.
+    We say $x$ is the \vocab{limit} of a sequence $\bc{x_n}$ if for all $\ve > 0$, there exists some natural number $N$ such that $\abs{x_n - x} < \ve$ for all integers $n \geq N$. We write \[\lim_{n \to \infty} x_n = x.\]
 \end{definition}
 
 Intuitively, if $x$ is the limit of the sequence $\bc{x_n}$, then we can make $x_n$ as close as we want to $x$, just by choosing a sufficiently large enough value of $n$.
 
 If the limit exists, we say $\bc{x_n}$ \vocab{converges}, else it \vocab{diverges}.
+
+\begin{sample}
+    Let $x_n = 1/n$ for integers $n \geq 1$. Show that $\lim_{n \to \infty} x_n = 0$.
+\end{sample}
+\begin{sampans}
+    Fix $\ve > 0$, and choose $N = \ceil{1/\ve} + 1$. For all integers $n \geq N$, we have \[\abs{x_n - 0} = \abs{\frac1n - 0} = \frac1n \leq \frac1{N} = \frac1{\ceil{1/\ve} + 1} < \frac1{1/\ve} = \ve.\] Thus, by definition, $\lim_{n \to \infty} x_n = 0$.
+\end{sampans}
 
 \subsection{Operations on Limits}
 
@@ -21,20 +28,13 @@ If the limit exists, we say $\bc{x_n}$ \vocab{converges}, else it \vocab{diverge
     \end{itemize}
 \end{fact}
 
-\begin{sample}
-    Compute $\lim_{n \to \infty} (7n^5 - n^2)/(n^5 + 4)$.
-\end{sample}
-\begin{sampans}
-    We have \[\lim_{n \to \infty} \frac{7n^5 - n^2}{n^5 + 4} = \lim_{n \to \infty} \frac{7 - n^{-3}}{1 + 4n^{-5}} = \frac{7 - \lim_{n \to \infty} n^{-3}}{1 + 4\lim_{n \to \infty} n^{-5}} = \frac{7 - 0}{1 + 0} = 7.\]
-\end{sampans}
-
 \subsection{Limits with Inequalities}
 
 \begin{proposition}
     Suppose $\bc{x_n}$ and $\bc{y_n}$ are convergent sequences with $x_n \leq y_n$ for each $n \in \NN$. Let $x$ and $y$ denote their respective limits. Then $x \leq y$.
 \end{proposition}
 \begin{proof}
-    Seeking a contradiction, suppose $x > y$. Fix $\ve = (x-y)/2 > 0$. By definition, there exist natural numbers $N_1$ and $N_2$ such that $\abs{x_n - x} < \ve$ for all $n \geq N_1$ and $\abs{y_n - y} < \ve$ for all $n \geq N_2$. Let $N = \max{N_1, N_2}$. We hence have, for all $n \geq N$, \[\abs{x_n - x} < \ve \implies x_n > x - \ve \quad \tand \quad \abs{y_n - y} < \ve \implies y_n < y + \ve.\] Observe that \[x - y = 2\ve \implies x - \ve = y + \ve.\] Thus, we have \[y + \ve = x - \ve < x_n \leq y_n < y + \ve,\] a clear contradiction. Thus, $x \geq y$.
+    Seeking a contradiction, suppose $x > y$. Fix $\ve = (x-y)/2 > 0$. By definition, there exist natural numbers $N_1$ and $N_2$ such that $\abs{x_n - x} < \ve$ for all $n \geq N_1$ and $\abs{y_n - y} < \ve$ for all $n \geq N_2$. Let $N = \max{N_1, N_2}$. Then for all $n \geq N$, we have $x - \ve < x_n \leq y_n < y + \ve$. Rearranging the leftmost and rightmost terms, we obtain \[\frac{x-y}{2} = \ve > \frac{x-y}{2},\] a contradiction. Thus, $x \geq y$.
 \end{proof}
 
 \begin{theorem}[Squeeze Theorem]
@@ -47,7 +47,7 @@ If the limit exists, we say $\bc{x_n}$ \vocab{converges}, else it \vocab{diverge
 \section{Limits for Functions}
 
 \begin{definition}
-    We say $f(x)$ has a \vocab{limit} $L$ at $a$, written $\displaystyle \lim_{x \to a} f(x) = L$, if for every $\ve > 0$ there exists a $\de > 0$ such that \[\abs{x - a} < \de \implies \abs{f(x) - L} < \ve.\]
+    We say $f(x)$ has a \vocab{limit} $L$ at $a$ if for every $\ve > 0$ there exists a $\de > 0$ so that, for all $x \in \dom f$ with $0 < \abs{x - a} < \de$, we have $\abs{f(x) - L} < \ve$. We write \[\lim_{x \to a} f(x) = L.\]
 \end{definition}
 
 Intuitively, no matter how small a ``tolerance'' $\ve$ we choose, we can always find an open interval containing $a$ such that for all $x$ in this interval, the value of $f(x)$ stays within $\ve$ of $L$.
@@ -71,8 +71,7 @@ Intuitively, no matter how small a ``tolerance'' $\ve$ we choose, we can always 
         legend cell align={left},
         legend pos=outer north east,
         ]
-        \addplot[plotRed, very thick] {x + sin(\x r)};
-        \addlegendentry{$y = f(x)$};
+        \addplot[very thick] {x + sin(\x r)} node[pos=0.7, above left] {$y = f(x)$};
         \addplot[dotted] {3};
         \addplot[dotted] {2};
         \draw[dotted] (1.20, 0) -- (1.20, 4);
@@ -90,16 +89,16 @@ Intuitively, no matter how small a ``tolerance'' $\ve$ we choose, we can always 
     Fix $\ve > 0$. Choose $\de = \min{1/2, 2\ve}$. If $\abs{x - 9} < \de$, then \[\abs{\sqrt{x-5} - 2} = \frac{\abs{(x - 5) - 2^2}}{\sqrt{x-5} + 2} \leq \frac{\abs{x-9}}{2} < \frac{2\ve}{2} = \ve.\] Thus, $\lim_{x \to 0} \sqrt{x-5} = 2$.
 \end{sampans}
 
-Note that the limit of $f(x)$ at $a$ does not necessarily have to be $f(a)$. For instance, consider the function \[f(x) = \begin{cases}x^2, & x \neq 0, \\ 3, & x = 0.\end{cases}.\] The limit at $x = 0$ is 0, but $f(0) = 3$.
+Note that the limit of $f(x)$ at $a$ does not necessarily have to be $f(a)$. For example, consider the function \[f(x) = \begin{cases}x^2, & x \neq 0, \\ 3, & x = 0.\end{cases}\] The limit at $x = 0$ is 0, but $f(0) = 3$.
 
 \subsection{One-Sided Limits}
 
-In the definition of a limit, we consider the behaviour of $f(x)$ as $x$ approaches $a$ from both sides within the open interval $(a-\de, a+\de)$. In certain situations, however, we may wish to analyse the behaviour of $f(x)$ as $x$ approaches $a$ from one side only. To do so, we introduce the notion of right- and left-sided limits.
+In the definition of a limit, we consider the behaviour of $f(x)$ as $x$ approaches $a$ from both sides within the interval $(a-\de, a+\de)$. In certain situations, however, we may wish to analyse the behaviour of $f(x)$ as $x$ approaches $a$ from one side only. To do so, we introduce the notion of right- and left-sided limits.
 
 \begin{definition}
-    Suppose the domain of $f$ contains the open interval $(a, b)$. We say $f(x)$ has a \vocab{right-sided limit} $L$ at $a$, written $\displaystyle\lim_{x \to a^+} f(x) = L$, if for every $\ve > 0$ there exists a $\de > 0$ such that \[a < x < a + \de \implies \abs{f(x) - L} < \ve.\]
+    Suppose the domain of $f$ contains the open interval $(a, b)$. We say $f(x)$ has a \vocab{right-sided limit} $L$ at $a$ if for every $\ve > 0$ there exists a $\de > 0$ so that, for all $x \in \dom f$ with $a < x < a + \de$, we have $\abs{f(x) - L} < \ve$. We write \[\lim_{x \to a^+} f(x) = L.\]
 
-    Similarly, suppose the domain of $f$ contains the open interval $(c, a)$. We say $f(x)$ has a \vocab{left-sided limit} $L$ at $a$, written $\displaystyle\lim_{x \to a^-} f(x) = L$, if for every $\ve > 0$ there exists a $\de > 0$ such that \[a - \de < x < a \implies \abs{f(x) - L} < \ve.\]
+    Similarly, suppose the domain of $f$ contains the open interval $(c, a)$. We say $f(x)$ has a \vocab{left-sided limit} $L$ at $a$ if for every $\ve > 0$ there exists a $\de > 0$ so that, for all $x \in \dom f$ with $a - \de < x < a$, we have $\abs{f(x) - L} < \ve$. We write \[\lim_{x \to a^-} f(x) = L.\]
 \end{definition}
 
 \begin{example}[One-Sided Limits]
@@ -109,24 +108,28 @@ In the definition of a limit, we consider the behaviour of $f(x)$ as $x$ approac
 \begin{proposition}
     The limit of $f(x)$ at $x = a$ exists if and only if the right- and left-sided limits of $f(x)$ at $a$ exist and agree.
 \end{proposition}
+\begin{proof}
+    Trivial.
+\end{proof}
 
 Using the above example, we see that the limit of $f(x)$ does not exist at $x = 0$, since the right- and left-limits are different ($0 \neq 2$).
 
 \subsection{Limits at Infinity}
 
 \begin{definition}
-    We say that $f(x)$ has a \vocab{limit at positive infinity}, written $\displaystyle\lim_{x \to \infty} f(x) = L$, if for every $\ve > 0$ there exists a real number $M$ such that for all $x$ in the domain of $f$, we have \[x \geq M \implies \abs{f(x) - L} < \ve.\]
+    We say that $f(x)$ has a \vocab{limit at positive infinity} if for every $\ve > 0$ there exists a real number $M$ such that, for all $x \in \dom f$ with $x \geq M$, we have $\abs{f(x) - L} < \ve$. We write \[\lim_{x \to \infty} f(x) = L.\]
     
-    Similarly, $f(x)$ has a \vocab{limit at negative infinity}, written $\displaystyle\lim_{x \to -\infty} f(x) = L$, if for every $\ve > 0$ there exists a real number $M$ such that for all $x$ in the domain of $f$, we have \[x \leq M \implies \abs{f(x) - L} < \ve.\]
+    Similarly, $f(x)$ has a \vocab{limit at negative infinity} if for every $\ve > 0$ there exists a real number $M$ such that, for all $x \in \dom f$ with $x \leq M$, we have $\abs{f(x) - L} < \ve$. We write \[\lim_{x \to -\infty} f(x) = L.\]
 \end{definition}
 
 \begin{sample}
     Prove that $\lim_{x \to \infty} 1/x^2 = 0$.
 \end{sample}
 \begin{sampans}
-    Fix $\ve > 0$. Choose $M = 1/\sqrt{\ve} + 1$. Whenever $x \leq M > 1/\sqrt{\ve}$, we have \[\abs{\frac1{x^2} - 0} < \abs{\frac1{\bp{1/\sqrt{\ve}}^2}} = \ve.\] Thus, $\lim_{x \to \infty} 1/x^2 = 0$.
+    Fix $\ve > 0$ and choose $M = 1/\sqrt{\ve} + 1$. For all $x \geq M > 1/\sqrt{\ve}$, we have \[\abs{\frac1{x^2} - 0} < \abs{\frac1{\bp{1/\sqrt{\ve}}^2}} = \ve.\] Thus, by definition, $\lim_{x \to \infty} 1/x^2 = 0$.
 \end{sampans}
 
+\clearpage
 \subsection{Operations on Limits}
 
 \begin{fact}
@@ -141,14 +144,14 @@ Using the above example, we see that the limit of $f(x)$ does not exist at $x = 
 \subsection{Limits with Inequalities}
 
 \begin{proposition}
-    Let $f$ and $g$ be defined on a domain $D$. Suppose $\lim_{x \to a} f(x) = F$ and $\lim_{x \to a} g(x) = G$ both exist for some $c \in D$, and that $f(x) \leq g(x)$ for all $x \in D$. Then $F \leq G$.
+    Let $f$ and $g$ be defined on a domain $D$. Suppose $\lim_{x \to a} f(x) = F$ and $\lim_{x \to a} g(x) = G$ both exist for some $a \in D$, and that $f(x) \leq g(x)$ for all $x \in D$. Then $F \leq G$.
 \end{proposition}
 \begin{proof}
-    Seeking a contradiction, suppose $F > G$. Fix $\ve = (F-G)/2 > 0$. By definition, there exist positive $\de_x$ and $\de_y$ such that \[\abs{x-a} < \de_x \implies \abs{f(x) - F} < \frac{F-G}{2} \quad \tand \quad \abs{x-a} < \de_y \implies \abs{g(x) - G} < \frac{F-G}{2}.\] Pick $x$ such that $\abs{x - a} < \min{\de_x, \de_y}$. Using the two implications above, we see that \[f(x) > F - \frac{F-G}{2} = \frac{F+G}{2} = G + \frac{F-G}{2} > g(x),\] a contradiction. Thus, $F \leq G$.
+    Seeking a contradiction, suppose $F > G$. Fix $\ve = (F-G)/2 > 0$. By definition, there exists $\de_x > 0$ so that, for all $x \in D$ with $0 < \abs{x-a} < \de_x$, we have \[\abs{f(x) - F} < \frac{F-G}{2}.\] Similarly, there exists $\de_y > 0$ so that, for all $x \in D$ with $0 < \abs{x-a} < \de_y$, we have \[\abs{g(x) - G} < \frac{F-G}{2}.\] Picking $x \in D$ with $0 < \abs{x - a} < \min{\de_x, \de_y}$, we see that \[f(x) > F - \frac{F-G}{2} = \frac{F+G}{2} = G + \frac{F-G}{2} > g(x),\] a contradiction. Thus, $F \leq G$.
 \end{proof}
 
 \begin{theorem}[Squeeze Theorem]
-    Let $f$, $g$ and $h$ be defined on a domain $D$. Suppose the limits of $f$, $g$ and $h$ at $c \in D$ exist. Denote them by $F$, $G$ and $H$ respectively. If $f(x) \leq g(x) \leq h(x)$ for all $x \in D$, then $F \leq G \leq H$.
+    Let $f$, $g$ and $h$ be defined on a domain $D$. Suppose the limits of $f$, $g$ and $h$ at $a \in D$ exist. If $f(x) \leq g(x) \leq h(x)$ for all $x \in D$, then \[\lim_{x \to a} f(x) \leq \lim_{x \to a} g(x) \leq \lim_{x \to a} h(x).\]
 \end{theorem}
 \begin{proof}
     Apply the above result to get $F \leq G$ and $G \leq H$.
@@ -193,7 +196,7 @@ Examples of indeterminate forms include \[\frac{0}{0}, \quad \frac{\infty}{\inft
     A function $f$ is \vocab{continuous at $a$} if $\lim_{x \to a} f(x) = f(a)$. If $f$ is continuous for all $x$ in its domain, then $f$ is said to be a \vocab{continuous function}.
 \end{definition}
 
-Intuitively, a function $f$ is continuous if we can draw the graph of $y = f(x)$ without lifting the pen off the paper. That is, if the graph of $y = f(x)$ has ``breaks'', then $f$ is not continuous.
+Intuitively, a function $f$ is continuous if we can draw the graph of $y = f(x)$ without lifting the pen off the paper. That is, $f$ is continuous if the graph of $y = f(x)$ does not have any ``breaks'' or ``holes''.
 
 Examples of continuous functions include polynomials, trigonometric functions and exponentials.
 
@@ -222,4 +225,4 @@ Note that the continuity of a function depends on its domain. For instance, $f :
     \end{itemize}
 \end{definition}
 
-Between common functions, we have the ordering \[\ln x \ll x^p \ll \e^x \ll x^x,\] where $p$ is a positive constant.
+Between common functions, we have the ordering $\ln x \ll x^p \ll \e^x \ll x^x$, where $p$ is a positive constant.
