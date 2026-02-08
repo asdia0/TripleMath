@@ -51,10 +51,16 @@ The gradient of the chord $AB$, denoted $m_{AB}$ is given by \[m_{AB} = \frac{f(
 
 \section{Differentiation Rules}
 
+\begin{proposition}[Differentiation is Linear]\label{prop:diff-linear}
+    Let $k \in \RR$ and suppose $f$ and $g$ are functions of $x$. Then $(f+g)' = f' + g'$ and $(kf)' = kf'$.
+\end{proposition}
+\begin{proof}
+    Apply first principles.
+\end{proof}
+
 \begin{proposition}[Differentiation Rules]
-    Let $k \in \RR$ and suppose $u$ and $v$ are functions of $x$. Then
+    Let $u$ and $v$ be functions of $x$.
     \begin{itemize}
-        \item (Sum/Difference Rule) If $y = u \pm v$ then $y' = u' \pm v'$.
         \item (Product Rule) If $y = uv$, then $y' = u' v + u v'$.
         \item (Quotient Rule) If $y = u/v$, then \[y' = \frac{u' v - u v'}{v^2}.\]
         \item (Chain Rule) If $y = f(x)$ and $x = g(t)$, then \[\der{y}{t} = \der{y}{x} \der{x}{t}.\]
@@ -88,7 +94,7 @@ Note that this property does not generalize to higher derivatives. For example, 
 
 Let $a \neq 1$ be a positive constant.
 
-\begin{minipage}{0.3\textwidth}
+\noindent\begin{minipage}{0.33\textwidth}
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|}
@@ -100,8 +106,8 @@ Let $a \neq 1$ be a positive constant.
         \end{tabular}
         \caption{}
     \end{table}
-\end{minipage}\hspace{0.015\textwidth}
-\begin{minipage}{0.3\textwidth}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|}
@@ -113,8 +119,8 @@ Let $a \neq 1$ be a positive constant.
         \end{tabular}
         \caption{}
     \end{table}
-\end{minipage}\hspace{0.015\textwidth}
-\begin{minipage}{0.3\textwidth}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
     \begin{table}[H]
         \centering
         \begin{tabular}{|c|c|}

@@ -83,7 +83,7 @@ Examples of cylinders include the graphs of $x^2 + z^2 = 1$ and $z = y^2$, which
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}[t]{.5\textwidth}\tikzsetnextfilename{379}
+    \noindent\begin{minipage}[t]{.5\textwidth}\tikzsetnextfilename{379}
       \centering
       \begin{tikzpicture}[trim axis left, trim axis right, scale=0.7]
         \begin{axis}[
@@ -124,9 +124,7 @@ Another common surface is a quadric surface, which is a 3D generalization of 2D 
     A \vocab{quadric surface} has the form \[Ax^2 + By^2 + Cz^2 + Dxy + Eyz + Fzx + Gx + Hy + Iz + J = 0,\] where $A, B, \dots, J \in \RR$ and at least one of $A$, $B$ and $C$ is non-zero.
 \end{definition}
 
-When $a = b = c = r$, we get the equation $x^2 + y^2 + z^2 = r^2$, which represents a sphere centred at the origin with radius $r$. Observe the similarity between the equation of a circle ($x^2 + y^2 = r^2$) and the equation of a sphere.
-
-Another example of a quadric surface is the ellipsoid, which is a generalization of an ellipse, and has equation \[\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1.\]
+An example of a quadric surface is the ellipsoid, which is a generalization of an ellipse, and has equation \[\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1.\]
 
 \begin{figure}[H]\tikzsetnextfilename{381}
     \centering
@@ -145,8 +143,10 @@ Another example of a quadric surface is the ellipsoid, which is a generalization
         domain y=0:360] ({sin(y)*sqrt(1-x^2)},{2*cos(y)*sqrt(1-x^2)},{x});
         \end{axis}
     \end{tikzpicture}
-    \caption{An ellipsoid.}
+    \caption{An ellipsoid with $a = 1$, $y = 2$ and $z = 1$.}
 \end{figure}
+
+When $a = b = c = r$, we get the equation $x^2 + y^2 + z^2 = r^2$, which represents a sphere centred at the origin with radius $r$. Observe the similarity between the equation of a circle ($x^2 + y^2 = r^2$) and the equation of a sphere.
 
 \section{Partial Derivatives}
 
@@ -432,13 +432,13 @@ One important application of calculus is the optimization of functions which hav
 
 To find stationary points of a univariate function, we equate its gradient to 0. Similarly, for functions of two variables $f(x, y)$, if we want to find stationary points, we look for points where its gradient, $\nabla f$, is the zero vector, i.e. \[\nabla f = \cvecii{f_x}{f_y} = \cvecii00.\]
 
-In functions of two variables, the stationary points we often come across are maxima, minima and saddle points (so named because it looks like a horse saddle).
+For functions of two variables, the stationary points we often come across are maxima, minima and saddle points (so named because it looks like a horse saddle).
 
 \begin{figure}[H]
     \captionsetup{singlelinecheck=false, aboveskip=7pt, belowskip=0pt,justification=centering}
     \setcapindent{0pt}
     \centering
-    \begin{minipage}[t]{.3\textwidth}\tikzsetnextfilename{383}
+    \noindent\begin{minipage}[t]{.33\textwidth}\tikzsetnextfilename{383}
       \centering
       \begin{tikzpicture}[scale=0.5,trim axis left, trim axis right]
         \begin{axis}[
@@ -452,7 +452,7 @@ In functions of two variables, the stationary points we often come across are ma
         \end{tikzpicture}
       \captionof{figure}{\\A minimum point.}
     \end{minipage}%
-    \begin{minipage}[t]{.3\textwidth}\tikzsetnextfilename{384}
+    \begin{minipage}[t]{.33\textwidth}\tikzsetnextfilename{384}
       \centering
       \begin{tikzpicture}[scale=0.5,trim axis left, trim axis right]
         \begin{axis}[
@@ -466,7 +466,7 @@ In functions of two variables, the stationary points we often come across are ma
         \end{tikzpicture}
         \captionof{figure}{\\A maximum point.}
     \end{minipage}%
-    \begin{minipage}[t]{.3\textwidth}\tikzsetnextfilename{385}
+    \begin{minipage}[t]{.33\textwidth}\tikzsetnextfilename{385}
       \centering
         \begin{tikzpicture}[scale=0.5,trim axis left, trim axis right]
             \begin{axis}[
@@ -509,7 +509,7 @@ Unlike local extrema, global extrema need not be attained at stationary points. 
             \fill (2, -2, 8) circle[radius=2.5pt];
         \end{axis}
     \end{tikzpicture}
-    \caption{The graph of $z = f(x, y)$ with global maxima indicated.}
+    \caption{The graph of $z = f(x, y)$. Points where the global maximum is attained are indicated.}
 \end{figure}
 \end{example}
 

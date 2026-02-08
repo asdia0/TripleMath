@@ -16,38 +16,40 @@ In the following proof, we take $\bc{u_n}$ to be increasing. The case where $u_n
 
 \section{Tests for Series}\label{sec:convergence-series}
 
-\begin{theorem}
+In this section, let $\bc{u_n}$ be a sequence and $S_n$ its $n$th partial sum.
+
+\begin{proposition}
     If $u_n \not\to 0$ as $n \to \infty$, then $S_n$ diverges.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     We work with the contrapositive. Suppose $S_k$ converges to $S_{\infty}$. Then \[\lim_{n \to \infty} u_n = \lim_{n \to \infty} \bp{S_{n} - S_{n-1}} = S_{\infty} - S_{\infty} = 0,\] so $u_n \to 0$.
 \end{proof}
 
 Note that the converse is not true (consider $\sum_{n = 1}^\infty 1/n$).
 
-\begin{theorem}
+\begin{proposition}
     Suppose $u_n \geq 0$ for all $n$. Then $S_n$ converges if and only if its sequence of partial sums is bounded above.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Follows readily from the monotone convergence theorem.
 \end{proof}
 
-\begin{theorem}[Comparison Tests]
+\begin{proposition}[Comparison Tests]
     Suppose there is a positive integer $N$ for which $0 \leq u_n \leq v_n$ for all $n \geq N$. Let $U_n$ and $V_n$ denote the $n$th partial sums of $\bc{u_n}$ and $\bc{v_n}$ respectively.
     \begin{itemize}
         \item If $V_n$ converges, then $U_n$ converges.
         \item If $U_n$ diverges, then $V_n$ diverges.
     \end{itemize}
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Follows readily from the monotone convergence theorem.
 \end{proof}
 
-\begin{theorem}[Absolute Convergence]
+\begin{proposition}[Absolute Convergence]
     If $\sum_{n = 1}^\infty \abs{u_n}$ converges, then $S_n$ converges.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Observe that $0 \leq u_n + \abs{u_n} \leq 2 \abs{u_n}$ for all $n$, so $\sum_{n = 1}^\infty (u_n + \abs{u_n})$ converges by the comparison test. Hence, \[S_n = \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty (u_n + \abs{u_n}) - \sum_{n = 1}^\infty \abs{u_n}\] is convergent.
+    Observe that $0 \leq u_n + \abs{u_n} \leq 2 \abs{u_n}$ for all $n$. Define \[T_N = \sum_{n = 1}^N (u_n + \abs{u_n}).\] Since each summand $u_n + \abs{u_n}$ is positive and \[0 \leq T_N \leq \sum_{n = 1}^N 2\abs{u_n} \leq 2\sum_{n=1}^\infty \abs{u_n},\] we have that $T_N$ is monotone and bounded, so $T_n$ converges by the monotone convergence theorem. Since \[S_N = \sum_{n = 1}^N u_n = \sum_{n = 1}^N \bs{\bp{u_n + \abs{u_n}} - \abs{u_n}} = T_N - \sum_{n = 1}^N \abs{u_n}\] is the difference of convergent series, it follows that $S_n$ also converges.
 \end{proof}
 
 \section{Tests for Definite Integrals}

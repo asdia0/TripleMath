@@ -86,7 +86,7 @@ Intuitively, no matter how small a ``tolerance'' $\ve$ we choose, we can always 
     Prove that $\lim_{x \to 9} \sqrt{x-5} = 2$.
 \end{sample}
 \begin{sampans}
-    Fix $\ve > 0$. Choose $\de = \min{1/2, 2\ve}$. If $\abs{x - 9} < \de$, then \[\abs{\sqrt{x-5} - 2} = \frac{\abs{(x - 5) - 2^2}}{\sqrt{x-5} + 2} \leq \frac{\abs{x-9}}{2} < \frac{2\ve}{2} = \ve.\] Thus, $\lim_{x \to 0} \sqrt{x-5} = 2$.
+    Fix $\ve > 0$ and choose $\de = 2\ve$. If $\abs{x - 9} < \de$, then \[\abs{\sqrt{x-5} - 2} = \frac{\abs{(x - 5) - 2^2}}{\sqrt{x-5} + 2} \leq \frac{\abs{x-9}}{2} < \frac{2\ve}{2} = \ve.\] Thus, $\lim_{x \to 9} \sqrt{x-5} = 2$.
 \end{sampans}
 
 Note that the limit of $f(x)$ at $a$ does not necessarily have to be $f(a)$. For example, consider the function \[f(x) = \begin{cases}x^2, & x \neq 0, \\ 3, & x = 0.\end{cases}\] The limit at $x = 0$ is 0, but $f(0) = 3$.

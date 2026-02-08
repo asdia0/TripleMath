@@ -143,12 +143,7 @@
     \begin{enumerate}
         \item Given that the function $f$ is bijective, find $\inv f$ in a similar form.
         \item By expressing $fg(x)$ and $gf(x)$ in a similar form, solve $fg(x) > gf(x)$.
-    \end{enumerate}
-
-    Given the greatest integer function $h : \RR \to \ZZ$ such that $h(x) = \floor{x}$,
-    \begin{enumerate}
-        \setcounter{enumi}{2}
-        \item Show that for $n \in \ZZ^+$, \[\int_{-\infty}^n hg(x) \d x = a \ln b - \ln{b!} + \frac{n(n-c)}{2},\] where $a$, $b$ and $c$ are integers to be determined.
+        \item Show that for $n \in \ZZ^+$, \[\int_{-\infty}^n \floor{g(x)} \d x = a \ln b - \ln{b!} + \frac{n(n-c)}{2},\] where $a$, $b$ and $c$ are integers to be determined.
     \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -167,7 +162,7 @@
         Thus, we conclude that $fg(x) > gf(x)$ has no solutions.
     \end{ppart}
     \begin{ppart}
-        We have \[\int_{-\infty}^n hg(x) \d x = \int_{-\infty}^0 hg(x) \d x + \int_{0}^n hg(x) \d x = \underbrace{\int_{-\infty}^0 \floor{2014 \e^x} \d x}_{I_1} + \underbrace{\int_0^n \floor{x-1} \d x}_{I_2}.\] We first consider $I_2$. Observe that $\floor{x-1} = k-1$ when $k \leq x < k-1$. Thus, \[I_2 = \sum_{k = 0}^{n-1} (k-1) = \frac{n(n-1)}{2} - n = \frac{n(n-3)}{2}.\] We now consider $I_1$. Under the transformation $x \mapsto -x$, we obtain \[I_1 = \int_0^\infty \floor{2014\e^{-x}}\d x.\] Observe that $\floor{2014\e^{-x}} = k$ when \[\ln \frac{2014}{k+1} \leq x < \ln \frac{2014}{k}.\] Thus, \[I_1 = \sum_{k=1}^{2013} \int_{\ln(2014/k+1)}^{\ln(2014/k)} k \d x = \sum_{k=1}^{2013} k \bp{\ln \frac{2014}{k} - \ln \frac{2014}{k+1}} = \sum_{k=1}^{2013} k \bs{\ln{k+1} - \ln k}.\] Expanding this sum, we quickly see that it telescopes:
+        We have \[\int_{-\infty}^n \floor{g(x)} \d x = \int_{-\infty}^0 \floor{g(x)} \d x + \int_{0}^n \floor{g(x)} \d x = \underbrace{\int_{-\infty}^0 \floor{2014 \e^x} \d x}_{I_1} + \underbrace{\int_0^n \floor{x-1} \d x}_{I_2}.\] We first consider $I_2$. Observe that $\floor{x-1} = k-1$ when $k \leq x < k+1$. Thus, \[I_2 = \sum_{k = 0}^{n-1} (k-1) = \frac{n(n-1)}{2} - n = \frac{n(n-3)}{2}.\] We now consider $I_1$. Under the transformation $x \mapsto -x$, we obtain \[I_1 = \int_0^\infty \floor{2014\e^{-x}}\d x.\] Observe that $\floor{2014\e^{-x}} = k$ when \[\ln \frac{2014}{k+1} \leq x < \ln \frac{2014}{k}.\] Thus, \[I_1 = \sum_{k=1}^{2013} \int_{\ln(2014/k+1)}^{\ln(2014/k)} k \d x = \sum_{k=1}^{2013} k \bp{\ln \frac{2014}{k} - \ln \frac{2014}{k+1}} = \sum_{k=1}^{2013} k \bs{\ln{k+1} - \ln k}.\] Expanding this sum, we quickly see that it telescopes:
         \begin{align*}
             I_1 &= \bp{\ln 2 - \ln 1} + 2\bp{\ln 3 - \ln 2} + 3 \bp{\ln 4 - \ln 3} + \dots + 2013 \bp{\ln 2014 - \ln 2013}\\
             &= 2013 \ln 2014 -\bp{\ln 1 + \ln 2 + \ln 3 + \dots + \ln 2013}\\
@@ -175,6 +170,6 @@
         \end{align*}
         Note that we can also write $I_1$ as $2014 \ln 2014 - \ln 2014!$. 
         
-        Putting everything together, we see that \[\int_{-\infty}^n hg(x) \d x = 2014 \ln 2014 - \ln 2014! + \frac{n(n-3)}{2},\] whence $a = 2014$, $b = 2014$ and $c = 3$.
+        Putting everything together, we see that \[\int_{-\infty}^n \floor{g(x)} \d x = 2014 \ln 2014 - \ln 2014! + \frac{n(n-3)}{2},\] whence $a = 2014$, $b = 2014$ and $c = 3$.
     \end{ppart}
 \end{solution}

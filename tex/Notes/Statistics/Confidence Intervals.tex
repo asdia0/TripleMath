@@ -68,7 +68,7 @@ In this section, we explore interval estimates for the population mean $\m$.
 
 Recall that for a significance level of $\a$, we wish to find an interval $(a, b)$ such that $\P{a < \m < b} = 1 - \a$. To make our lives easier, we impose the condition that the confidence interval be symmetric about $\m$, that is, the interval should be of the form $(\m - E, \m + E)$, where $E$ is the \vocab{margin of error}. However, we obviously do not know $\m$, so we replace $\m$ with its unbiased estimator $\ol{x}$ to get an interval of the form $\bp{\ol{x} - E, \, \ol{x} + E}$. Our goal is thus to find the value of $E$ such that \[\P{\ol{x} - E < \m < \ol{x} + E} = 1 - \a. \tag{$\ast$}\] Depending on the distribution of $\ol{x}$, the margin of error $E$ will differ accordingly.
 
-There are four cases we will consider, with their respectively subsection numbers labelled in the table below:
+There are four cases we will consider. Their respective section numbers are provided in the following table.
 
 \begin{table}[H]
     \centering
@@ -151,7 +151,7 @@ In the case where the sample size is large ($n \geq 30$), we can invoke the Cent
 
 \subsection{Large Sample Size from Any Population with Unknown Variance}\label{S::CI:3}
 
-In most practical situations, it is likely that both the mean and variance are unknown. Provided that the sample size is large ($n \geq 30$), by the Central Limit Theorem, we can say that the distribution of $\ol{X}$ is approximately normal. In place of the unknown population variance $\s^2$, we use $s^2$, the unbiased estimate of the population variance as an approximation. Hence, \[\ol{X} \sim \Normal{\m}{\frac{s^2}{n}} \text{ approximately}.\] Just like before, we get the following result:
+In most practical situations, both the mean and variance are unknown. Provided that the sample size is large ($n \geq 30$), by the Central Limit Theorem, we can say that the distribution of $\ol{X}$ is approximately normal. We can approximate the unknown population variance $\s^2$ with $s^2$, the unbiased estimate of the population variance. That is, \[\ol{X} \sim \Normal{\m}{\frac{s^2}{n}} \text{ approximately}.\] Just like before, we get the following result:
 
 \begin{proposition}
     If $X$ has unknown variance, but the sample size is large ($n \geq 30$), then the symmetric $100(1-\a)$\% confidence interval for $\m$ is given by \[\bp{\ol{x} - z_{1 - \a/2} \frac{s}{\sqrt{n}}, \, \ol{x} + z_{1 - \a/2} \frac{s}{\sqrt{n}}} \text{ approximately}.\]
@@ -159,15 +159,17 @@ In most practical situations, it is likely that both the mean and variance are u
 
 \subsection{The $t$-distribution and Degrees of Freedom}
 
-Before looking at confidence intervals of $\m$ when the sample size is small, we first introduce the Student's $t$-distribution.
+We now consider the case where the population variance $\s$ is unknown and the sample size is small.
 
-The crucial statistic in the construction of a confidence interval for the mean of a normal distribution is $Z$, given by \[Z = \frac{\ol{X} - \m}{\s/\sqrt{n}}.\] In \SS\ref{S::CI:3}, when $\s$ was unknown, we were able to substitute the $\s$ with its unbiased estimator $s$ by virtue of the large sample size, which allowed us to approximate $\ol{X}$ with a normal distribution.
+The crucial statistic in the construction of a confidence interval for the mean of a normal distribution is $Z$, given by \[Z = \frac{\ol{X} - \m}{\s/\sqrt{n}}.\] In \SS\ref{S::CI:3}, though $\s$ was unknown, we were able to approximate $Z$ with the standard normal due to the large sample size.
 
-However, in the present case where the sample size is small, we do not have such a luxury. More precisely, the test statistic \[T = \frac{\ol{X} - \m}{S / \sqrt{n}}\] is no longer well-approximated by a normal distribution. Here, $T$ depends on two random variables: namely $\ol{X}$ and $S$ (the random variable corresponding to $s$).
+However, in the present case where the sample size is small, we do not have such a luxury. More precisely, the test statistic \[T = \frac{\ol{X} - \m}{S / \sqrt{n}}\] is no longer well-approximated by the standard normal distribution. Our only choice is thus to use its exact distribution, which we call the Student's $t$-distribution.
 
 \begin{definition}
     The \vocab{Student's $t$-distribution} with $n-1$ degrees of freedom is defined as the distribution of the test statistic \[T = \frac{\ol{X} - \m}{S / \sqrt{n}},\] where $X_i$ are independent and identical normal distributions. We write $T \sim \StudentT{n - 1}$.
 \end{definition}
+
+The test statistic $T$ depends on two random variables: $\ol{X}$ and $S$ (the random variable corresponding to $s$).
 
 \begin{figure}[H]\tikzsetnextfilename{476}
     \centering

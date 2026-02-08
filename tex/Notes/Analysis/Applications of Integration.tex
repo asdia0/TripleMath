@@ -2,11 +2,13 @@
 
 \section{Area}\label{sec:Applications-of-Integration:Area}
 
-\subsection{The Riemann Sum and Integral}
+\subsection{The Riemann Sum and Riemann Integral}
 
-Suppose we wish to find exact area bounded by the graph of $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$, where $a \leq b$ and $f(x) \geq 0$ for $a \leq x \leq b$. 
+\begin{definition}
+    Let $f$ be a non-negative function defined on the interval $[a, b]$ and let $\D x = (b-a)/n$. The \vocab{Riemann sum} of $f$ is defined as \[\sum_{k = 0}^{n-1} f(x_k) \D x,\] where $x_k = a + k \D x$.
+\end{definition}
 
-We can approximate this area by drawing $n$ rectangles of equal width, as shown in the figure below:
+Geometrically, each term $f(x_k) \D x$ represents the area of a rectangle with width $\D x$ and height $f(x_k)$. A Riemann sum can thus be seen as the total area of $n$ rectangles spanning the interval $[a, b]$.
 
 \begin{figure}[H]\tikzsetnextfilename{364}
     \centering
@@ -32,33 +34,44 @@ We can approximate this area by drawing $n$ rectangles of equal width, as shown 
             \addplot[very thick] {x + sin(pi * \x r)};
             \node[anchor=south] at (0.6, 1.551) {$y = f(x)$};
 
-            \draw[pattern=north east lines, pattern color=black!30] (0.1, 0) rectangle (0.2, 0.788);
-            \draw[pattern=north east lines, pattern color=black!30] (0.2, 0) rectangle (0.3, 1.11);
-            \draw[pattern=north east lines, pattern color=black!30] (0.3, 0) rectangle (0.4, 1.35);
-            \draw[pattern=north east lines, pattern color=black!30] (0.4, 0) rectangle (0.5, 1.5);
-            \draw[pattern=north east lines, pattern color=black!30] (0.5, 0) rectangle (0.6, 1.551);
-            \draw[pattern=north east lines, pattern color=black!30] (0.6, 0) rectangle (0.7, 1.509);
-            \draw[pattern=north east lines, pattern color=black!30] (0.7, 0) rectangle (0.8, 1.388);
-            \draw[pattern=north east lines, pattern color=black!30] (0.8, 0) rectangle (0.9, 1.21);
-            \draw[pattern=north east lines, pattern color=black!30] (0.9, 0) rectangle (1, 1);
+            \draw[pattern=north east lines, pattern color=black!30] (0.1, 0) rectangle (0.2, 0.409);
+            \draw[pattern=north east lines, pattern color=black!30] (0.2, 0) rectangle (0.3, 0.788);
+            \draw[pattern=north east lines, pattern color=black!30] (0.3, 0) rectangle (0.4, 1.11);
+            \draw[pattern=north east lines, pattern color=black!30] (0.4, 0) rectangle (0.5, 1.35);
+            \draw[pattern=north east lines, pattern color=black!30] (0.5, 0) rectangle (0.6, 1.5);
+            \draw[pattern=north east lines, pattern color=black!30] (0.6, 0) rectangle (0.7, 1.551);
+            \draw[pattern=north east lines, pattern color=black!30] (0.7, 0) rectangle (0.8, 1.509);
+            \draw[pattern=north east lines, pattern color=black!30] (0.8, 0) rectangle (0.9, 1.388);
+            \draw[pattern=north east lines, pattern color=black!30] (0.9, 0) rectangle (1, 1.21);
         \end{axis}
     \end{tikzpicture}
     \caption{}
 \end{figure}
 
-Observe that the $k$th rectangle has width $\D x = (b-a)/n$ and height $f(a + k \D x)$. The total area of the rectangles is hence \[\sum_{k = 1}^n f(a + k \D x) \D x.\] This is known as the \vocab{Riemann sum} of $f$ over $[a, b]$.
+From the above figure, we see that a Riemann sum provides a rudimentary approximation to the area bounded by the graph of $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$. As the number of rectangles increases, the width $\D x$ of the rectangles approaches 0, and the total area of rectangles approaches the actual area under the curve. In other words, \[A(b) = \lim_{n \to \infty} \sum_{k = 0}^{n-1} f(x_k) \D x,\] where $A(t)$ is the area bounded by the graph of $y = f(x)$, the $x$-axis, and the lines $x = a$ and $x = t$.
 
-As the number of rectangles increases, the width $\D x$ of the rectangles approaches 0, and the total area of rectangles approaches the actual area under the curve. In other words, \[\area = \lim_{\D x \to 0} \sum_{k = 1}^n f(a + k \D x) \D x.\] In the limit, the Riemann sum becomes the \vocab{Riemann integral}, which is conventionally written as the definite integral \[\int_a^b f(x) \d x.\]
+We now show that $A(x)$ can be expressed as an integral, which we call a \vocab{Riemann integral}.
 
-Note that this is where the notation for integration comes from: in the limit, $\sum \to \int$ and $\D x \to \d x$.
+\begin{proposition}
+    Let $f$ be a non-negative function defined on the interval $[a, b]$. Then the area bounded by the graph of $y = f(x)$, the $x$-axis, and the lines $x = a$ and $x = t$ is given by \[A(t) = \int_a^t f(x) \d x.\]
+\end{proposition}
+\begin{proof}
+    Fix $t \in [a, b]$. For a small increment $\D t > 0$, let $\D A$ denote the area under the graph of $y = f(x)$ from $x = t$ to $x = t + \D t$.
+    
+    Approximating this region by a rectangle with width $\D t$ and height $f(t)$, we obtain $\D A \approx f(t) \D t$. Hence, \[A(t + \D t) = A(t) + \D A \approx A(t) + f(t) \D t.\] Rearranging, we find that \[\frac{A(t + \D t) - A(t)}{\D t} \approx f(t).\] As $\D t \to 0$, our rectangular approximation $f(t) \D t$ approaches the true area $\D A$, so we get the equality \[\lim_{\D t \to 0} \frac{A(t + \D t) - A(t)}{\D t} = f(t).\] Recognizing the LHS as the definition of a derivative, we have therefore that $f(t) = A'(t)$, so $A(t)$ is a primitive of $f(t)$. Since $A(a) = 0$, it follows that \[A(t) = \int_a^t f(x) \d x\] as desired.
+\end{proof}
+
+The area bounded by the graph of $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ can thus be found by evaluating the definite integral $\int_a^b f(x) \d x$.
 
 \subsection{Cartesian Form}
+
+The above discussion applies to functions that are non-negative over the interval $[a, b]$. More generally, we can find the area between the graph of $y = f(x)$ and the $x$-axis by considering the modulus $y = \abs{f(x)}$ instead, which is always non-negative.
 
 \begin{proposition}[Area between a Curve and the $x$-axis]
     The region bounded by the curve $y = f(x)$, the $x$-axis, and the lines $x = a$ and $x = b$ has area \[\int_a^b \abs{y} \d x = \int_a^b \abs{f(x)} \d x.\]
 \end{proposition}
 
-More generally, we have the following result.
+We can further extend this result to find the area bounded between any two curves.
 
 \begin{proposition}[Area between Two Curves with respect to the $x$-axis]
     The region bounded by the curves $y = f(x)$ and $y = g(x)$, and the lines $x = a$ and $x = b$ has area \[\int_a^b \abs{f(x) - g(x)} \d x.\]
@@ -83,9 +96,9 @@ More generally, we have the following result.
                 node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[very thick, name path=F,plotRed,domain={-4:4}] {-(1/6)*x^2+2} node[pos=0.45, above left, red]{$y = f(x)$};
+            \addplot[very thick, name path=F,domain={-4:4}] {-(1/6)*x^2+2} node[pos=0.45, above left]{$y = f(x)$};
 
-            \addplot[very thick, name path=G,plotBlue,domain={-4:4}] {0.25*x^2} node[pos=0.9, above left, blue]{$y = g(x)$};
+            \addplot[very thick, name path=G,domain={-4:4}] {0.25*x^2} node[pos=0.9, above left]{$y = g(x)$};
 
             \addplot[pattern=north east lines, pattern color=black!30]fill between[of=F and G, soft clip={domain=-2.19:2.19}];
 
@@ -108,14 +121,16 @@ Similar results hold when integrating with respect to the $y$-axis instead.
 
 \subsection{Parametric Form}
 
+When $x$ and $y$ are parameterized in terms of $t$, we can use a $u$-substitution to rewrite the above results in a more parametric-friendly form.
+
 \begin{proposition}[Area between a Parametric Curve and the $x$-axis]
-    Let $C$ be the curve with parametric equations $x = f(t)$ and $y = g(t)$. Then the region bounded by $C$, the $x$-axis, and the lines $x = a$ and $x = b$ has area \[\int_a^b \abs{y} \d x = \int_{t_1}^{t_2} \abs{g(t)} \der{x}{t} \d t,\] where $t_1$ and $t_2$ are the values of $t$ when $x = a$ and $b$ respectively.
+    Let $C$ be the curve with parametric equations $x = f(t)$ and $y = g(t)$. Then the region bounded by $C$, the $x$-axis, and the lines $x = a$ and $x = b$ has area \[\int_a^b \abs{y} \d x = \int_{t_A}^{t_B} \abs{g(t)} \der{x}{t} \d t,\] where $t_A$ and $t_B$ are the values of $t$ when $x = a$ and $b$ respectively.
 \end{proposition}
 
 An analogous formula holds for the area between $C$ and the $y$-axis.
 
 \begin{proposition}[Area between a Parametric Curve and the $y$-axis]
-    Let $C$ be the curve with parametric equations $x = f(t)$ and $y = g(t)$. Then the region bounded by $C$, the $y$-axis, and the lines $y = a$ and $y = b$ has area \[\int_a^b \abs{x} \d y = \int_{t_1}^{t_2} \abs{f(t)} \der{y}{t} \d t,\] where $t_1$ and $t_2$ are the values of $t$ when $y = a$ and $b$ respectively.
+    Let $C$ be the curve with parametric equations $x = f(t)$ and $y = g(t)$. Then the region bounded by $C$, the $y$-axis, and the lines $y = a$ and $y = b$ has area \[\int_a^b \abs{x} \d y = \int_{t_A}^{t_B} \abs{f(t)} \der{y}{t} \d t,\] where $t_A$ and $t_B$ are the values of $t$ when $y = a$ and $b$ respectively.
 \end{proposition}
 
 \subsection{Polar Form}
@@ -183,7 +198,7 @@ An analogous formula holds for the area between $C$ and the $y$-axis.
     \caption{An example where the region $A$ has been divided into 5 sectors each with interior angle $\pi/14$. Here, $\a = \pi/14$ and $\b = 6\pi/14$.}
 \end{figure}
 \begin{proof}
-    Divide the enclosed region $A$ into $n$ sectors with the same interior angle $\D \t$. The area of each sector can be approximated by a sector of a circle, so \[\D A \approx \frac12 r^2 \D \t.\] Summing up these approximations, we see that \[A \approx \sum_{\t = \a}^{\t = \b} \frac12 r^2 \D \t.\] This approximation will improve as the number of sectors increases, i.e. $\D \t \to 0$. Hence, \[\area A = \lim_{\D \t \to 0} \sum_{\t = \a}^{\t = \b} \frac12 r^2 \D \t = \frac12 \int_{\a}^{\b} r^2 \d \t.\]
+    Divide the enclosed region $A$ into $n$ sectors with the same interior angle $\D \t = (\b - \a)/n$. Let $\t_k = \a + k \D t$. The area of the $k$th sector can be approximated by a sector of a circle with area \[\D A \approx \frac12 \bs{r(\t_k)}^2 \D \t.\] Summing these approximations up, we find that the area of $A$ can be approximated with the Riemann sum \[A \approx \sum_{k = 0}^{n-1} \frac12 \bs{r(\t_k)}^2 \D \t.\] This approximation becomes exact as $n \to \infty$. Hence, \[\area A = \lim_{n \to \infty} \sum_{k = 0}^{n-1} \frac12 \bs{r(\t_k)}^2 \D \t = \frac12 \int_{\a}^{\b} r^2 \d \t.\]
 \end{proof}
 
 \section{Volume}
@@ -197,7 +212,7 @@ The line about which rotation takes place is always an axis of symmetry for the 
 \subsection{Disc Method}
 
 \begin{proposition}[Disc Method about $x$-axis]
-    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ radians about the $x$-axis, the volume of the solid of revolution generated is given by \[V = \pi \int_a^b y^2 \d x = \pi \int_a^b \bs{f(x)}^2 \d x.\]
+    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ radians about the $x$-axis, the volume of the solid of revolution generated is given by \[V = \pi \int_a^b \bs{f(x)}^2 \d x.\]
 \end{proposition}
 \begin{figure}[H]\tikzsetnextfilename{365}
     \centering
@@ -220,8 +235,6 @@ The line about which rotation takes place is always an axis of symmetry for the 
             \draw[thick,black] (1.2, -2.44) arc(-90:90:0.17 and 2.44);
             \draw[thick,black] (0.2, 0) ellipse [x radius=0.05,y radius=1.04];
 
-            \fill (1, 2) circle[radius=2.5pt] node[anchor=south east] {$P(x, y)$};
-
             \draw[->] (0.8, -1.22) -- (1.04, -1.22);
             \draw[->] (1.64, -1.22) -- (1.4, -1.22);
             \node[anchor=west] at (1.63, -1.22) {$\D x$};
@@ -230,21 +243,19 @@ The line about which rotation takes place is always an axis of symmetry for the 
     \caption{}
 \end{figure}
 \begin{proof}
-    To calculate the volume of the solid of revolution, we can cut it into thin slices (or discs) of thickness $\D x$. Each disc is approximately a cylinder and the approximate volume of the solid can be found by summing the volumes of these cylinders. The smaller $\D x$ is, the better the approximation.
-
-    Consider a typical disc formed by a one cut through the point $P(x, y)$ and the other cut distant $\D x$ from the first. The volume of this disc is approximately \[\D V \approx \pi y^2 \D x.\] Summing over all discs, \[V \approx \sum_{x = a}^{b} \pi y^2 \D x.\] As more cuts are made, $\D x \to 0$, whence \[V = \lim_{\D x \to 0} \sum_{x = a}^{b} \pi y^2 \D x = \pi \int_a^b y^2 \d x.\]
+    To calculate the volume of the solid of revolution, we can cut it into thin slices (or discs) each of thickness $\D x = (b-a)/n$. Each disc is approximately a cylinder, so the volume of the $k$th disc is approximately \[\D V \approx \pi \bs{f(x_k)}^2 \D x.\] Summing these approximations, we find that the total volume of revolution can be approximated by the Riemann sum \[V \approx \sum_{k = 0}^{n-1} \pi \bs{f(x_k)}^2 \D x.\] As more cuts are made, this approximation becomes exact. That is, \[V = \lim_{\D x \to 0} \sum_{k = 0}^{n-1} \pi \bs{f(x_k)}^2 \D x = \pi \int_a^b \bs{f(x)}^2 \d x.\]
 \end{proof}
 
 A similar result holds when the axis of rotation is the $y$-axis.
 
 \begin{proposition}[Disc Method about $y$-axis]
-    When the region bound by the curve $x = g(y)$, the $y$-axis and the lines $y = a$ and $y = b$ is rotated $2\pi$ radians about the $y$-axis, the volume of the solid of revolution generated is given by \[V = \pi \int_a^b x^2 \d y = \pi \int_a^b \bs{g(y)}^2 \d y.\]
+    When the region bound by the curve $x = g(y)$, the $y$-axis and the lines $y = a$ and $y = b$ is rotated $2\pi$ radians about the $y$-axis, the volume of the solid of revolution generated is given by \[V = \pi \int_a^b \bs{g(y)}^2 \d y.\]
 \end{proposition}
 
 \subsection{Shell Method}
 
 \begin{proposition}[Shell Method about $y$-axis]
-    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ radians about the $y$-axis, the volume of the solid of revolution is given by \[V = 2\pi \int_a^b xy \d x.\]
+    When the region bound by the curve $y = f(x)$, the $x$-axis and the lines $x = a$ and $x = b$ is rotated $2\pi$ radians about the $y$-axis, the volume of the solid of revolution is given by \[V = 2\pi \int_a^b x \, f(x) \d x.\]
 \end{proposition}
 \begin{figure}[H]\tikzsetnextfilename{553}
     \centering
@@ -252,7 +263,7 @@ A similar result holds when the axis of rotation is the $y$-axis.
         \begin{axis}[thick,ticks=none,
             scale only axis,
             axis lines=middle,
-            ymin=-0.2,
+            ymin=-0.25,
             ymax=3,
             xmin=-1.3,
             xmax=1.3,
@@ -273,6 +284,8 @@ A similar result holds when the axis of rotation is the $y$-axis.
             \draw[thick,black] (-0.8, 1.25) arc(180:360:0.8 and 0.2);
             \draw[thick,dashed] (0.8, 1.25) arc(0:180:0.8 and 0.15);
 
+            \draw[thick,black] (-0.8, 0) arc(180:360:0.8 and 0.2);
+
             \draw[dashed,black] (-0.6, 1.25) arc(180:360:0.6 and 0.1);
             \draw[dashed,black] (0.6, 1.25) arc(0:180:0.6 and 0.075);
 
@@ -284,27 +297,27 @@ A similar result holds when the axis of rotation is the $y$-axis.
     \caption{}
 \end{figure}
 \begin{proof}
-    Consider a typical vertical strip in the bounded region with height $y$ and thickness $\D x$. When rotated about the $y$-axis, it will form a cylindrical shell with inner radius $x$, outer radius $x + \D x$ and height $y$, contributing a volume of
+    Slice the region under $y = f(x)$ into $n$ vertical slips, each with thickness $\D x = (b-a)/n$. When the $k$th vertical strip is rotated about the $y$-axis, it will form a cylindrical shell with inner radius $x_k$, outer radius $x_k + \D x$, and height $f(x_k)$, where $x_k = a + k \D x$, contributing a volume of
     \begin{align*}
-        \D V &= \pi (x + \D x)^2 y - \pi x^2 y\\
-        &= 2 \pi xy \D x + \pi \D x^2 y\\
-        &\approx 2 \pi xy \D x.
+        \D V &= \pi \bp{x_k + \D x}^2 f(x_k) - \pi x_k^2 f(x_k)\\
+        &= 2 \pi x_k f(x_k) \D x + \pi (\D x)^2 f(x_k)\\
+        &\approx 2 \pi x_k f(x_k) \D x,
     \end{align*}
-    Summing all of these contributions, the volume of revolution is approximated by \[V \approx \sum_{x = a}^b 2 \pi xy \D x.\] As more strips are considered, $\D x \to 0$, whence \[V = \lim_{\D x \to 0} \sum_{x = a}^b 2 \pi xy \D x = 2\pi \int_a^b xy \d x.\]
+    where $(\D x)^2 \approx 0$ is negligible. Summing all of these approximations, the volume of revolution can be approximated by the Riemann sum \[V \approx \sum_{k = 0}^{n-1} 2 \pi x_k f(x_k) \D x.\] As more strips are considered, the approximation becomes exact, so \[V = \lim_{n \to \infty} \sum_{k = 0}^{n-1} 2 \pi x_k f(x_k) \D x = 2\pi \int_a^b xf(x) \d x.\]
 \end{proof}
 
 A similar result holds when the axis of rotation is the $x$-axis.
 
 \begin{proposition}[Shell Method about $x$-axis]
-    When the region bound by the curve $x = g(y)$, the $y$-axis and the lines $y = a$ and $y = b$ is rotated $2\pi$ radians about the $x$-axis, the volume of the solid of revolution is given by \[V = 2\pi \int_a^b xy \d y.\]
+    When the region bound by the curve $x = g(y)$, the $y$-axis and the lines $y = a$ and $y = b$ is rotated $2\pi$ radians about the $x$-axis, the volume of the solid of revolution is given by \[V = 2\pi \int_a^b y \, g(y) \d y.\]
 \end{proposition}
 
 \section{Arc Length}
 
 \subsection{Parametric Form}
 
-\begin{proposition}[Arc Length of Parametric Curve]
-    Let $A(t_1)$ and $B(t_2)$ be points on the parametric curve with equations $x = f(t)$ and $y = g(t)$. The arc length of the curve from $A$ to $B$ is \[\int_{t_1}^{t_2} \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.\]
+\begin{proposition}[Arc Length of Parametric Curve]\label{prop:arc-length}
+    Let $A(t_A)$ and $B(t_B)$ be points on the parametric curve with equations $x = f(t)$ and $y = g(t)$. The arc length of the curve from $A$ to $B$ is \[\int_{t_A}^{t_B} \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.\]
 \end{proposition}
 \begin{figure}[H]\tikzsetnextfilename{554}
 \centering
@@ -344,11 +357,7 @@ A similar result holds when the axis of rotation is the $x$-axis.
 \caption{}
 \end{figure}
 \begin{proof}
-    Let $s$ be the arc length of the curve from $A$ to $B$. Consider splitting $AB$ into many tiny curve segments, where each endpoint has parameters differing by $\D t$. Consider one such curve segment $PQ$, where $P$ and $Q$ have parameters $t$ and $t + \D t$ respectively. The arc length from $P$ to $Q$ can be approximated by the straight line distance between $P$ and $Q$. By the Pythagorean theorem, we have \[\D s \approx \sqrt{\bs{f(t + \D t) - f(t)}^2 + \bs{g(t + \D t) - g(t)}^2}.\] Summing $\D s$ over each tiny curve segment, the arc length from $A$ to $B$ is approximated by \[s \approx \sum_{t = t_1}^{t_2} \sqrt{\bs{f(t + \D t) - f(t)}^2 + \bs{g(t + \D t) - g(t)}^2}.\] Factorizing a $\D t$ out of the surd, we see that \[s \approx \sum_{t = t_1}^{t_2} \sqrt{\bs{\frac{f(t + \D t) - f(t)}{\D t}}^2 + \bs{\frac{g(t + \D t) - g(t)}{\D t}}^2} \D t.\] As more and more curve segments are considered, $\D t \to 0$, whence
-    \begin{align*}
-        s &= \lim_{\D t \to 0} \sum_{t = t_1}^{t_2} \sqrt{\bs{\frac{f(t + \D t) - f(t)}{\D t}}^2 + \bs{\frac{g(t + \D t) - g(t)}{\D t}}^2} \D t\\
-        &= \int_{t_1}^{t_2} \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.
-    \end{align*}
+    Let $s$ be the arc length of the curve from $A$ to $B$. Split the curve segment $AB$ into $n$ tiny curve segments, where each endpoint has parameters differing by $\D t = (t_B - t_A)/n$. Consider the $k$th such curve segment $PQ$, where $P(t_k)$ and $Q(t_k + \D t)$ are consecutive endpoints, where $t_k = t + k \D t$. Since $P$ and $Q$ are close to each other, the arc length from $P$ to $Q$ can be approximated by the straight line distance between $P$ and $Q$. By the Pythagorean theorem, we have \[\D s \approx \sqrt{\bs{f(t_k + \D t) - f(t_k)}^2 + \bs{g(t_k + \D t) - g(t_k)}^2}.\] Factorizing a $\D t$ out of the surd, we have \[\D s \approx \sqrt{\bs{\frac{f(t_k + \D t) - f(t_k)}{\D t}}^2 + \bs{\frac{g(t_k + \D t) - g(t_k)}{\D t}}^2} \D t.\] For small $\D t$, the squared terms inside the surd can be approximated by $f'(t_k)$ and $g'(t_k)$ respectively, to give \[\D s \approx \sqrt{\bs{f'(t_k)}^2 + \bs{g'(t_k)^2}}.\] The total arc length from $A$ to $B$ can thus be approximated by the Riemann sum \[s = \sum_{k = 0}^{n-1} \sqrt{\bs{f'(t_k)}^2 + \bs{g'(t_k)^2}}.\] As more curve segments are considered, the approximation becomes exact, whence \[s = \lim_{n \to \infty} \sum_{k = 0}^{n-1} \sqrt{\bs{f'(t_k)}^2 + \bs{g'(t_k)^2}} = \int_{t_A}^{t_B} \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.\]
 \end{proof}
 
 \subsection{Cartesian Form}
@@ -356,16 +365,16 @@ A similar result holds when the axis of rotation is the $x$-axis.
 Taking $t = x$ or $t = y$, we get the following formulas involving $\derx{y}{x}$ and $\derx{x}{y}$, which is suitable for Cartesian curves.
 
 \begin{proposition}[Arc Length of Cartesian Curve]
-    Let $A(x_1, y_1)$ and $B(x_2, y_2)$ lie on the Cartesian curve $y = f(x)$ or $x = g(y)$. The arc length of the curve from $A$ to $B$ is given by \[\int_{x_1}^{x_2} \sqrt{1 + \bs{f'(x)}^2} \d x = \int_{y_1}^{y_2} \sqrt{\bs{g'(y)}^2 + 1} \d y.\]
+    Let $A(x_A, y_A)$ and $B(x_B, y_B)$ lie on the Cartesian curve $y = f(x)$ or $x = g(y)$. The arc length of the curve from $A$ to $B$ is given by \[\int_{x_A}^{x_B} \sqrt{1 + \bs{f'(x)}^2} \d x = \int_{y_A}^{y_B} \sqrt{\bs{g'(y)}^2 + 1} \d y.\]
 \end{proposition}
 
 \subsection{Polar Form}
 
 \begin{proposition}
-    Let $A(r_1, \t_1)$ and $B(r_2, \t_2)$ be points on the polar curve $r = f(\t)$. Then the arc length of the curve from $A$ to $B$ is given by \[\int_{\t_1}^{\t_2} \sqrt{\bs{r(\t)}^2 + \bs{r'(\t)}^2} \d \t.\]
+    Let $A(r_A, \t_A)$ and $B(r_B, \t_B)$ be points on the polar curve $r = f(\t)$. Then the arc length of the curve from $A$ to $B$ is given by \[\int_{\t_A}^{\t_B} \sqrt{\bs{r(\t)}^2 + \bs{r'(\t)}^2} \d \t.\]
 \end{proposition}
 \begin{proof}
-    Recall that $x = r\cos \t$ and $y = r\sin \t$. Hence, \[\der{x}{\t} = \cos \t \der{r}{\t} - r \sin \t \quad \tand \quad \der{y}{\t} = \sin \t \der{r}{t} + r \cos \t.\] It follows that \[\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2 = \bp{\cos^2 \t + \sin^2 \t} \bs{r^2 + \bp{\der{r}{\t}}^2} = r^2 + \bp{\der{r}{\t}}^2.\] Taking $t = \t$, the arc length from $A$ to $B$ is \[\int_{\t_1}^{\t_2} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = \int_{\t_1}^{\t_2} \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t.\]
+    Recall that $x = r\cos \t$ and $y = r\sin \t$. Hence, \[\der{x}{\t} = \cos \t \der{r}{\t} - r \sin \t \quad \tand \quad \der{y}{\t} = \sin \t \der{r}{t} + r \cos \t.\] It follows that \[\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2 = \bp{\cos^2 \t + \sin^2 \t} \bs{r^2 + \bp{\der{r}{\t}}^2} = r^2 + \bp{\der{r}{\t}}^2.\] Taking $t = \t$, the arc length from $A$ to $B$ is \[\int_{\t_A}^{\t_B} \sqrt{\bp{\der{x}{\t}}^2 + \bp{\der{y}{\t}}^2} \d \t = \int_{\t_A}^{\t_B} \sqrt{r^2 + \bp{\der{r}{\t}}^2} \d \t.\]
 \end{proof}
 
 \section{Surface Area of Revolution}
@@ -375,7 +384,7 @@ Taking $t = x$ or $t = y$, we get the following formulas involving $\derx{y}{x}$
 \end{definition}
 
 \begin{proposition}[Surface Area of Revolution of Parametric Curve]
-    Let $A(t_1)$ and $B(t_2)$ be points on the parametric curve with equations $x = f(t)$ and $y = g(t)$. The surface area of revolution about the $x$-axis of arc $AB$ is given by \[A_x = 2\pi \int_{t_1}^{t_2} y \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t,\] while the surface area of revolution about the $y$-axis is given by \[A_y = 2\pi \int_{t_1}^{t_2} x \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.\]
+    Let $A(t_A)$ and $B(t_B)$ be points on the parametric curve with equations $x = f(t)$ and $y = g(t)$. The surface area of revolution about the $x$-axis of arc $AB$ is given by \[A_x = 2\pi \int_{t_A}^{t_B} g(t) \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t,\] while the surface area of revolution about the $y$-axis is given by \[A_y = 2\pi \int_{t_A}^{t_B} f(t) \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.\]
 \end{proposition}
 We prove only the formula for a revolution about the $x$-axis. The proof of the $y$-axis case is identical.
 
@@ -422,20 +431,11 @@ We prove only the formula for a revolution about the $x$-axis. The proof of the 
     \caption{}
 \end{figure}
 \begin{proof}
-    Let $s$ be the arc length of the curve from $A$ to $B$. Consider splitting $AB$ into many tiny curve segments, where each endpoint has parameters differing by $\D t$. Consider one such curve segment $PQ$, where $P$ and $Q$ have parameters $t$ and $t + \D t$ respectively. Recall that the arc length between $P$ and $Q$ is approximately \[\D s \approx \sqrt{\bs{f(t + \D t) - f(t)}^2 + \bs{g(t + \D t) - g(t)}^2}.\]
+    Let $s$ be the arc length of the curve from $A$ to $B$. Split the curve segment $AB$ into $n$ tiny curve segments, where each endpoint has parameters differing by $\D t = (t_B - t_A)/n$. Consider the $k$th such curve segment $PQ$, where $P(t_k)$ and $Q(t_k + \D t)$ are consecutive endpoints, where $t_k = t + k \D t$. Recall from the proof of Proposition~\ref{prop:arc-length} that the arc length between $P$ and $Q$ is approximately \[\D s \approx \sqrt{\bs{f'(t_k)}^2 + \bs{g'(t_k)^2}}.\]
 
-    Now consider the surface area of revolution about the $x$-axis of arc $PQ$. For small $\D s$, the solid of revolution is approximately a disc with radius $y$ and width $\D s$. The surface area of this disc can be approximated by \[\D A_x \approx 2 \pi y \D s = 2 \pi y \sqrt{\bs{f(t + \D t) - f(t)}^2 + \bs{g(t + \D t) - g(t)}^2}.\]
+    Now consider the surface area of revolution about the $x$-axis of arc $PQ$. For small $\D s$, the solid of revolution is approximately a disc with radius $g(t_k)$ and width $\D s$. The surface area of this disc can be approximated by \[\D A_x \approx 2 \pi g(t_k) \D s = 2 \pi g(t_k) \sqrt{\bs{f'(t_k)}^2 + \bs{g'(t_k)^2}}.\]
 
-    Summing $\D A_x$ over each curve segment, $A_x$ is approximated by
-    \begin{align*}
-        A_x &\approx \sum_{t = t_1}^{t_2} 2 \pi y \sqrt{\bs{f(t + \D t) - f(t)}^2 + \bs{g(t + \D t) - g(t)}^2}\\
-        &= \sum_{t = t_1}^{t_2} 2 \pi y \sqrt{\bs{\frac{f(t + \D t) - f(t)}{\D t}}^2 + \bs{\frac{g(t + \D t) - g(t)}{\D t}}^2} \D t.
-    \end{align*}
-    As more and more curve segments are considered, $\D t \to 0$, whence
-    \begin{align*}
-        A_x &= \lim_{\D t \to 0} 2 \pi y \sqrt{\bs{\frac{f(t + \D t) - f(t)}{\D t}}^2 + \bs{\frac{g(t + \D t) - g(t)}{\D t}}^2} \D t\\
-        &= \int_{t_1}^{t_2} 2\pi y \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.
-    \end{align*}
+    Summing $\D A_x$ over each curve segment, $A_x$ can be approximated by the Riemann sum \[A_x \approx \sum_{k = 0}^{n-1} 2 \pi g(t_k) \sqrt{\bs{f'(t_k)}^2 + \bs{g'(t_k)^2}}.\] As more and more curve segments are considered, this approximation becomes exact, so \[A_x = \lim_{n \to \infty} \sum_{k = 0}^{n-1} 2 \pi g(t_k) \sqrt{\bs{f'(t_k)}^2 + \bs{g'(t_k)^2}} = 2\pi \int_{t_A}^{t_B} g(t) \sqrt{\bs{f'(t)}^2 + \bs{g'(t)}^2} \d t.\]
 \end{proof}
 
 \section{Approximating Definite Integrals}
@@ -515,7 +515,7 @@ The errors in the trapezium rule are influenced by the concavity of the curve.
     \item If the curve is concave downward, the secant lines lie below the curve. Hence, the trapezium rule will give an underestimate.
 \end{itemize}
 
-\begin{minipage}{0.49\textwidth}
+\noindent\begin{minipage}{0.5\textwidth}
 \begin{figure}[H]\tikzsetnextfilename{367}
     \centering
     \begin{tikzpicture}[trim axis left, trim axis right, scale=0.7]
@@ -550,7 +550,7 @@ The errors in the trapezium rule are influenced by the concavity of the curve.
     \caption{An overestimate.}
 \end{figure}
 \end{minipage}
-\begin{minipage}{0.49\textwidth}
+\begin{minipage}{0.5\textwidth}
 \begin{figure}[H]\tikzsetnextfilename{368}
     \centering
     \begin{tikzpicture}[trim axis left, trim axis right, scale=0.7]
@@ -629,7 +629,7 @@ To deduce the area under the parabola, we consider the case where $y = f(x)$ is 
             \fill (0.4, 1.788) circle[radius=2.5pt];
 
             \node[anchor=west] at (-0.4, 0.2) {$y_0$};
-            \node[anchor=west] at (0, 0.2) {$y_0$};
+            \node[anchor=west] at (0, 0.2) {$y_1$};
             \node[anchor=west] at (0.4, 0.2) {$y_2$};
         \end{axis}
     \end{tikzpicture}
@@ -664,7 +664,7 @@ We hence arrive at Simpson's rule with 2 strips: \[\int_a^b f(x) \d x \approx \f
         \int_0^2 \ln{x + 2} \d x &\approx \frac{1}{3} \cdot \frac{2 - 0}{4} \Big[f(0) + 4f(0.5) + 2f(1) + 4f(1.5) + f(2)\Big] \\
         &= 2.15881 \todp{5}.
     \end{align*}
-    As previously mentioned in Sample Problem~\ref{samp:Trapezium-Rule} the actual value of the integral is $2.15888 \todp{5}$. Hence, the percentage error is \[\abs{\frac{2.15888 - 2.15881}{2.15888}} = 0.00324\%.\]
+    As previously mentioned in Sample Problem~\ref{samp:Trapezium-Rule}, the actual value of the integral is $2.15888 \todp{5}$. Hence, the percentage error is \[\abs{\frac{2.15888 - 2.15881}{2.15888}} = 0.00324\%.\]
 \end{sampans}
 
 In the previous example, the trapezium rule gave an estimate of $2.15369 \todp{5}$, which has an error of 0.240\%. In the case of Simpson's rule, the error is 0.00324\%, vastly better than that of the trapezium rule's.

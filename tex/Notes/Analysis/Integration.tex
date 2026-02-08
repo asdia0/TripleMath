@@ -1,4 +1,4 @@
-\chapter{Integration}
+\chapter{Integration}\label{sec:integration}
 
 \section{Indefinite Integration}
 
@@ -16,7 +16,7 @@ Note that a function may have multiple primitives. For instance, both $2\sin[2]{
     The \vocab{indefinite integral} of a function $f(x)$, denoted $\int f(x) \d x$, is the class of functions $F(x) + C$, where $F(x)$ is a primitive of $f(x)$ and $C$ is a \vocab{constant of integration}. Here, $f(x)$ is called the \vocab{integrand}.
 \end{definition}
 
-Informally, the indefinite integral of $f(x)$ represents \emph{all} functions whose derivative is $f(x)$. The presence of $C$ is due to the fact that the derivative of a constant is 0.\footnote{More technically, we can view differentiation as a linear transformation $\mathrm{D}$ between vector spaces of functions. In performing integration, we are seeking all functions $F$ such that $\mathrm{D}F = f$. Since the kernel of $\mathrm{D}$ is the set of all constants $C$, the general solution is $F_p + C$, where $F_p$ is a particular solution (primitive).}
+Informally, the indefinite integral of $f(x)$ represents \emph{all} functions whose derivative is $f(x)$. The presence of $C$ is due to the fact that the derivative of a constant is 0.
 
 With our notation, we can write down the notion of integration ``undoing'' differentiation mathematically: \[\int \der{}{x} \bs{f(x)} \d x = f(x) + C \quad \tand \quad \der{}{x} \bs{\int f(x) \d x} = f(x).\]
 

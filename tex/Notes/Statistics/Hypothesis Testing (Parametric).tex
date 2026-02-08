@@ -4,11 +4,11 @@ Hypothesis testing is a statistical procedure used to determine if the data supp
 
 \section{An Introductory Example}
 
-To begin, we look at a simple example. The manufacturer of a beverage claims that each bottle they produce contains 500 ml of beverage on average. However, we believe that the mean volume is actually smaller than claimed. To investigate this, we take a random sample of 30 bottles and finds that the mean volume of beverage in these 30 bottles is 498 ml. The sample mean is certainly lower than the manufacturer's claim, but how low is too low? To answer this, we perform a hypothesis test.
+To begin, let us look at a simple example. The manufacturer of a beverage claims that each bottle they produce contains 500 ml of beverage on average. However, we believe that the mean volume is actually smaller than claimed. To investigate this, we take a random sample of 30 bottles and find that the mean volume of beverage in these 30 bottles is 498 ml. The sample mean is certainly lower than the manufacturer's claim, but is it \emph{too} too low? To answer this, we perform a hypothesis test.
 
 Let $X$ ml the volume of beverage in each bottle, and let the mean of $X$ be $\m$, where $\m$ is unknown. Assume that the standard deviation $\s = 5$, so that $X \sim \Normal{\m}{25}$.
 
-First, a hypothesis is made that $\m = 500$ ml. This is known as the \vocab{null hypothesis}, \nullhyp, and is written $\nullhyp: \m = 500$. Since it is suspected that the mean volume is \emph{lower than} the claimed 500 ml, we establish an \vocab{alternative hypothesis}, \althyp, that the mean is \emph{smaller than} 500 ml. This is written $\althyp: \m < 500$.
+First, we formalize the manufacturer's claim that the true mean $\m$ is equal to the purported mean $\m_0 = 500$ ml. This is our \vocab{null hypothesis}, and we write $\nullhyp: \m = 500$. Next, we formalize our claim that the true mean $\m$ is less than the purported $\m_0$. This is our \vocab{alternative hypothesis}, and we write $\althyp: \m < 500$.
 
 The hypothesis test starts by assuming the null hypothesis \nullhyp{} to be true. We then find the distribution of our \vocab{test statistic} $\ol{X}$. Under \nullhyp, we have that $\ol{X} \sim \Normal{500}{25/30}$. Next, we determine if our observation, the sample mean $\ol{x}$, is close to the purported mean of 500. Quantitatively, we look at the \vocab{probability value} (also called \vocab{$p$-value}) associated with the test statistic $\ol{X}$, which measures the probability of getting a test statistic value $\ol{X}$ as extreme as our observed value $\ol{x}$. The lower the $p$-value, the more unlikely it is that the observed value $\ol{x}$ comes from a distribution with purported mean $\m = 500$.
 
@@ -101,7 +101,7 @@ In a 2-tail test, \althyp: $\m \neq \m_0$. The critical region and the $p$-value
 \end{align*}
 while the $p$-value is given by \[\text{$p$-value} = \begin{cases}2\P(\ol{X} \leq \ol{x}), & \text{if $\ol{x} \leq \m_0$}, \\ 2\P(\ol{X} \geq \ol{x}), & \text{if $\ol{x} > \m_0$}.\end{cases}\]
 
-\begin{minipage}{0.3\textwidth}
+\noindent\begin{minipage}{0.33\textwidth}
     \begin{figure}[H]\tikzsetnextfilename{489}
         \centering
         \captionsetup{singlelinecheck=false, aboveskip=7pt, belowskip=0pt,justification=centering}
@@ -131,8 +131,8 @@ while the $p$-value is given by \[\text{$p$-value} = \begin{cases}2\P(\ol{X} \le
         \end{tikzpicture}
         \caption{\\The critical region for a\\right tail test.}
     \end{figure}
-\end{minipage}\hspace{0.03\textwidth}
-\begin{minipage}{0.3\textwidth}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
     \begin{figure}[H]\tikzsetnextfilename{490}
         \centering
         \captionsetup{singlelinecheck=false, aboveskip=7pt, belowskip=0pt,justification=centering}
@@ -162,8 +162,8 @@ while the $p$-value is given by \[\text{$p$-value} = \begin{cases}2\P(\ol{X} \le
         \end{tikzpicture}
         \caption{\\The critical region for a\\left tail test.}
     \end{figure}
-\end{minipage}\hspace{0.03\textwidth}
-\begin{minipage}{0.3\textwidth}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
     \begin{figure}[H]\tikzsetnextfilename{491}
         \centering
         \captionsetup{singlelinecheck=false, aboveskip=7pt, belowskip=0pt,justification=centering}

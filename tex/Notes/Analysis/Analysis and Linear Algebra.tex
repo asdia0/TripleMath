@@ -1,0 +1,113 @@
+\chapter{Bonus: Analysis and Linear Algebra}
+
+In this chapter, we study analysis from a linear-algebraic perspective.
+
+\section{Function Spaces}
+
+\begin{definition}
+    For any set $X$, let $F_X$ be the set of all functions $X \to \RR$. The \vocab{function space on $X$}, denoted $\Fc_X$, is the set $F_X$ equipped with pointwise addition and scalar multiplication. That is, for all $f, g \in F_X$ and $k \in \RR$, we define $(f+g)(x) = f(x) + g(x)$ and $(k \dotp f)(x) = k \, f(x)$.
+\end{definition}
+
+\begin{proposition}
+    For any set $X$, the function space $\Fc_X$ is a vector space.
+\end{proposition}
+\begin{proof}
+    Trivial.
+\end{proof}
+
+\begin{definition}
+    An \vocab{analytic function} is a function that is locally given by a convergent power series.
+\end{definition}
+
+Examples of analytic functions include polynomials, exponentials, logarithms, and trigonometric functions. The sum, product and composition of analytic functions is also analytic.
+
+Henceforth, we restrict $F_X$ to contain only analytic functions.\footnote{This restriction ensures that what we discuss in subsequent sections is well-defined. However, it is a very strict restriction; much of what we discuss still holds even with ``looser'' definitions of $F$. For instance, Proposition~\ref{prop:diff-lin-trans} still holds when we loosen our definition of $F$ to contain only smooth (infinitely differentiable) functions.} One can verify that $\Fc_X$ still remains a vector space.
+
+Given a function $f \in F_X$, we can always find coefficients $\bc{a_i}$ such that \[f(x) = \sum_{i = 0}^\infty a_i x^i\] for all $x \in X$. Thus, a natural basis for $\Fc_X$ is the infinite set of monomials $\bc{1, x, x^2, x^3, \dots}$.
+
+\begin{definition}
+    For non-negative integers $i$, define the \vocab{$i$th monomial basis vector} $\vec e_i$ to be the infinite-dimensional column vector with 1 in its ($i+1$)th row and 0 elsewhere. \[\vec e_i = (\underbrace{0, \dots, 0}_{\text{$i$ zeroes}}, 1, 0, 0, \dots)\trp.\] We call the infinite set $\bc{\vec e_i \mid i \in \ZZ_0^+}$ the \vocab{monomial basis}.
+\end{definition}
+
+With the monomial basis, we can formally define the vector representation of a function and vice versa.
+
+\begin{definition}[Function-Vector Correspondence]
+    Define $\vec x = \cvecivx{1}{x}{x^2}{\dots}$. Then a function $f \in F_X$ corresponds to a vector $\vec f \in \Fc_X$ if $f(x) = \vec x \dotp \vec f$.
+\end{definition}
+
+That is, $f(x) = \sum_{i = 0}^\infty a_i x^i$ corresponds to $\vec f = \sum_{i = 0}^\infty a_i \vec e_i$.
+
+\begin{example}
+    Let $f(x) = \e^x \in F_{\RR}$, which is analytic on $\RR$. Since \[f(x) = \sum_{i = 0}^\infty \frac{x^i}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \dots = \begin{pmatrix}1  \\ x \\ x^2 \\ x^3 \\ x^4 \\ \vdots\end{pmatrix} \dotp \begin{pmatrix}1\\1\\1/2\\1/6\\1/24\\\vdots\end{pmatrix},\] its corresponding vector is \[\vec f = \sum_{i = 0}^\infty \frac{1}{n!} \vec e_i = \begin{pmatrix}1\\1\\1/2\\1/6\\1/24\\\vdots\end{pmatrix}.\]
+\end{example}
+
+\section{Differentiation as a Linear Transformation}
+
+In Proposition~\ref{prop:diff-linear}, we saw how the derivative acts linearly on functions. That is, for differentiable functions $f$ and $g$, and a constant $k \in \RR$, we have $(f+g)' = f' + g'$ and $(kf)' = kg'$. We can restate this result in the language of linear algebra.
+
+\begin{proposition}\label{prop:diff-lin-trans}
+    Differentiation is a linear transformation from $\Fc_X$ to $\Fc_X$.
+\end{proposition}
+
+In Proposition~\ref{prop:matrix-mult-lin-trans}, we showed that every linear transformation between finite-dimensional vector spaces has a unique matrix representation. Under certain conditions, we can extend this result to infinite-dimensional vector spaces as long as we accept our ``matrix'' to  have an infinite number of rows and columns. For instance, under the monomial basis, we can represent the differentiation operator as an infinitely-large square ``matrix''.
+
+\begin{proposition}[Differentiation as a ``Matrix'']\label{prop:diff-matr}
+    The differentiation operator is represented by the ``matrix'' \[\mat D = \begin{pmatrix}0 & 1 & 0 & 0 & 0 & \dots & \\ 0 & 0 & 2 & 0 & 0 & \dots \\ 0 & 0 & 0 & 3 & 0 & \dots \\ 0 & 0 & 0 & 0 & 4 & \dots \\ \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \end{pmatrix}.\] That is to say, given a function $f \in F_X$, \[\der{}{x} f = \vec x \dotp \bp{\mat D \vec f}.\]
+\end{proposition}
+\begin{proof}
+    Write $f(x) = \sum_{i = 0}^\infty a_i x^i$. Differentiating this with respect to $x$, we have \[\der{}{x} f(x) = \sum_{i = 0}^\infty i a_i x^{i-1} = \sum_{i = 0}^\infty \bp{i+1} a_{i+1} x^i,\tag{$\heartsuit$}\] which converges for all $x \in X$ since $f$ is analytic.
+
+    We now consider $\vec x \dotp \bp{\mat D \vec f}$. Note that $f$ corresponds to the vector $\vec f = \sum_{i = 0}^\infty a_i \vec e_i$. Additionally, for non-negative integers $i$, the $i$th row vector of $\mat D$, denoted $\vec r_i$, is given by $\vec r_i = \bp{i+1} \vec e_{i+1}$. Thus, by matrix multiplication rules,
+    \begin{align*}
+        \mat D \vec f &= \sum_{i = 0}^\infty \bp{\vec r_i \dotp \vec f} \vec e_i\\
+        &= \sum_{i = 0}^\infty \bs{\bp{i+1} \vec e_{i+1} \dotp (a_0, a_1, a_2, \dots)\trp} \vec e_i\\
+        &= \sum_{i = 0}^\infty \bp{i+1} a_{i+1} \vec e_{i}
+    \end{align*}
+    It immediately follows that \[\vec x \dotp \bp{\mat D \vec f} = \sum_{i = 0}^\infty \bp{i + 1} a_{i+1} x^i. \tag{$\diamondsuit$}\]
+
+    Equating ($\heartsuit$) and ($\diamondsuit$), we see that $\derx{f}{x} = \vec x \dotp \bp{\mat D \vec f}$ as desired.
+\end{proof}
+
+\clearpage
+\begin{sample}
+    Find the derivative of $x^3 + 3x^2 + 3x + 1$ with respect to $x$.
+\end{sample}
+\begin{sampans}
+    Let $f(x) = x^3 + 3x^2 + 3x + 2$, which is clearly analytic on $\RR$ and corresponds to the vector $\vec f = (2, 3, 3, 1, 0, \dots)$. The derivative of $f$ can thus be found by \[\der{}{x} f(x) = \vec x \dotp \bp{\mat D \vec f} = \vec x \dotp \bs{\begin{pmatrix}0 & 1 & 0 & 0 & 0 & \dots & \\ 0 & 0 & 2 & 0 & 0 & \dots \\ 0 & 0 & 0 & 3 & 0 & \dots \\ 0 & 0 & 0 & 0 & 4 & \dots \\ \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \end{pmatrix} \begin{pmatrix}2 \\ 3 \\ 3 \\ 1 \\ 0 \\ \vdots\end{pmatrix}} = \begin{pmatrix}1 \\ x \\ x^2 \\ x^3 \\ x^4 \\ \vdots\end{pmatrix} \dotp \begin{pmatrix}3 \\ 6 \\ 3 \\ 0 \\ 0 \\ \vdots\end{pmatrix} = 3 + 6x + 3x^2.\]
+\end{sampans}
+
+We now prove that $\derx{f}{x}$ is identically 0 if and only if $f$ is a constant function.
+
+\begin{proposition}
+    The kernel of $\mat D$ is $\bc{(C, 0, \dots)\trp \mid C \in \RR}$.
+\end{proposition}
+By definition, this is equivalent to the statement that $\mat D \vec f = \vec 0$ if and only if $\vec f = (C, 0, \dots)\trp$ for some $c \in \RR$. Since that the backwards direction is trivial,  we only prove the forwards direction.
+\begin{proof}
+    Suppose $\mat D \vec f = \vec 0$. As derived in the proof of Proposition~\ref{prop:diff-matr}, \[\mat D \vec f = \sum_{i = 0}^\infty \bp{i+1} a_{i+1} \vec e_{i}.\] Since this is the zero vector, we require $a_{i+1} = 0$ for all non-negative integers $i$. That is, $a_1 = a_2 = \dots = 0$. There is, however, no restriction on $a_0$. Thus, $\vec f$ has the form $(C, 0, 0, \dots)\trp$ for some $C \in \RR$.
+\end{proof}
+
+\section{Integration and the Arbitrary Constant}
+
+In \SS\ref{sec:integration}, we introduced integration as the inverse operation of differentiation. That is, given a function $f$, we seek all functions $F$ satisfying $\derx{F}{x} = f$. From a linear-algebraic perspective, this problem can be rewritten into the vector $\mat D \vec F = \vec f$, where we now wish to find the solution set of $\vec F$.
+
+By Proposition~\ref{prop:lin-alg-solution-space}, once a particular solution $\vec F_p$ to this vector equation is known, the full solution set is obtained by adding the kernel of $\mat D$. That is, \[\vec F \in \vec F_p + \Ker \mat D = \vec F_p + \bc{(C, 0, 0)\trp \mid C \in \RR},\] where we used our earlier result that $\Ker \mat D = \bc{(C, 0, 0)\trp \mid C \in \RR}$.
+
+Translating this back into the language of functions, we see that the family of functions satisfying $\derx{F}{x} = f$ are of the form $F = F_p + C$, where $F_p$ is a particular primitive of $f$ and $C \in \RR$ is a constant. This is why the indefinite integral of $f$ is written with an arbitrary constant of integration $C$.\footnote{Using a similar line of reasoning, one can argue that the general solution to an $n$th order linear differential equation has $n$ arbitrary constants of integration.}
+
+
+\section{Solving Differential Equations}
+
+In this section, we explore how linear differential equations can be solved with techniques from linear algebra.
+
+\subsection{Homogeneous Linear Differential Equation}
+
+Consider an $n$th order homogeneous linear differential equation, which has the general form \[\sum_{i = 0}^n a_i \der[i]{y}{x} = 0\] for some coefficients $\bc{a_i}$. Using our ``matrix'' representation of the differential operator, we can rewrite our differential equation as the vector equation \[\bp{\sum_{i = 0}^n a_i \mat D^i} \vec y = \vec 0.\] Let $\c(x) = \sum_{i = 0}^n a_i x^i$ be the characteristic polynomial of the differential equation. Treating $\c(\mat D) = \sum_{i = 0}^n a_i \mat D^i$ as a degree $n$ polynomial in $\mat D$,\footnote{We take the $i=0$th term to mean $a_0 \mat I$, where $\mat I$ is the identity matrix of the same ``size'' as $\mat D$.} we may factorize it as \[\c(\mat D) = a_n \prod_{i = 0}^n \bp{\mat D - \a_i},\] where $\bc{\a_i}$ are the roots to the characteristic equation $\c(x) = 0$. Our differential equation now reads \[\bp{\prod_{i = 1}^n \bp{\mat D - \a_i}} \vec y = 0.\]
+
+We are now ready to solve the differential equation. Note that solving for the general solution $y$ amounts to finding the functional kernel of $\prod_{i = 1}^n \bp{\mat D - \a_i}$. To do so, we apply the following result.
+
+\begin{proposition}
+    The functional kernel of $\mat D - \l \mat I$ is $\bc{C \e^{\l x} \mid C \in \RR}$.
+\end{proposition}
+\begin{proof}
+    Rewriting $(\mat D - \l) \vec y = \vec 0$ in terms of functions, we get $y' - \l y = 0$. Rearranging, we get $y'/y = \l$. Integrating both sides with respect to $x$, we get $\ln y = \l x + C$, so $y = C\e^{\l x}$.
+\end{proof}

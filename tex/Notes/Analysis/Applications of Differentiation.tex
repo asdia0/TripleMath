@@ -268,8 +268,8 @@ Let $P(k, f(k))$ be a point on the graph of $y = f(x)$.
                     node [anchor=north east] {$O$};
                 }
             ]
-            \addplot[plotRed, very thick] {(x-2)/3 + 1.0986} node[pos=0.9, above left, red] {tangent};
-            \addplot[plotBlue, very thick] {-3*(x-2) + 1.0986} node[pos=0.3, above right, blue] {normal};
+            \addplot[dashed, very thick] {(x-2)/3 + 1.0986} node[pos=0.9, above left] {tangent};
+            \addplot[dashed, very thick] {-3*(x-2) + 1.0986} node[pos=0.3, above right] {normal};
 
             \addplot[black, very thick] {ln(x+1)} node[pos=0.2, below right] {$y = f(x)$};
 

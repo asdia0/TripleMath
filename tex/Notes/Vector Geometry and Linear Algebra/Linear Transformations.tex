@@ -50,7 +50,7 @@ Observe that the transformation $T$ in the above example may also be written as 
 
 Surprisingly, there are no other examples of linear transformations from $\RR^n$ to $\RR^m$; matrix multiplication is the only kind of linear transformation there is for functions between finite-dimensional spaces:
 
-\begin{proposition}
+\begin{proposition}\label{prop:matrix-mult-lin-trans}
     Let $T : \RR^n \to \RR^m$ be a linear transformation. Then there exists a unique $m \times n$ matrix $\mat A$ such that $T(\vec x) = \mat A \vec x$ for all $\vec x \in \RR^n$.
 \end{proposition}
 \begin{proof}
@@ -99,7 +99,7 @@ Surprisingly, there are no other examples of linear transformations from $\RR^n$
 
 One can think of a linear space as an Abelian group (under addition, Axioms 1-5) with the added structure of ``scalar multiplication'' (Axioms 6-10).
 
-\subsection{Examples of Linear Spaces}
+\subsection{Examples of Linear Spaces}\label{subsec:linear-space-eg}
 
 \begin{definition}
     The \vocab{Euclidean $n$-space}, $\RR^n = \bc{(u_1, \dots, u_n) \mid u_1, \dots, u_n \in \RR}$, is the set of all $n$-vectors (ordered $n$-tuples) of real numbers.
@@ -117,8 +117,8 @@ $\RR^n$ is the quintessential example of a linear space, and is the linear space
 
 There are also more abstract examples of linear spaces.
 
-\begin{proposition}
-    The set of all polynomials with real coefficients of at most degree $n \geq 0$, forms a linear space under the usual addition and multiplication operations.
+\begin{proposition}\label{prop:linear-space-finite-func}
+    The set of all polynomials with real coefficients of at most degree $n \geq 0$ forms a linear space under the usual addition and multiplication operations.
 \end{proposition}
 
 Lastly, there is the zero (or trivial) vector space.
@@ -286,7 +286,7 @@ We can use the following strategy to test if a set of vectors is linearly indepe
 
 In $\RR^2$, two vectors $\vec u$ and $\vec v$ are linearly dependent if and only if they lie on the same line (with their initial points at the origin).
 
-\begin{minipage}{0.5 \textwidth}
+\noindent\begin{minipage}{0.5\textwidth}
     \begin{figure}[H]\tikzsetnextfilename{449}
     \centering
     \begin{tikzpicture}[scale=2]
@@ -297,7 +297,7 @@ In $\RR^2$, two vectors $\vec u$ and $\vec v$ are linearly dependent if and only
     \caption{Linearly independent vectors.}
     \end{figure}
 \end{minipage}
-\begin{minipage}{0.5 \textwidth}
+\begin{minipage}{0.5\textwidth}
     \begin{figure}[H]\tikzsetnextfilename{450}
     \centering
     \begin{tikzpicture}[scale=2]
@@ -308,6 +308,9 @@ In $\RR^2$, two vectors $\vec u$ and $\vec v$ are linearly dependent if and only
     \caption{Linearly dependent vectors.}
     \end{figure}
 \end{minipage}
+
+\medskip
+
 In $\RR^3$, three vectors $\vec u$, $\vec v$ and $\vec w$ are linearly dependent if and only if they lie on the same line or plane (with their initial points at the origin).
 
 \section{Basis and Dimension}
@@ -576,6 +579,8 @@ We will prove the equivalent statement $\mat A \vec x = \vec b \iff \vec x \in S
 
     ($\impliedby$) Suppose $\vec x \in S$. That is, there exists some $\vec x_h \in K$ such that $\vec x = \vec x_p + \vec x_h$. Applying $\mat A$ on both sides of the equation, we get \[\mat A \vec x = \mat A \bp{\vec x_p + \vec x_h} = \mat A \vec x_p + \mat A \vec x_h = \vec b + \vec 0 = \vec b.\]
 \end{proof}
+
+Geometrically, the solution set $S$ is obtained by translating the null space of $\mat A$ by $\vec x_p$. That is, $S = \vec x_p + \Ker \mat A$.
 
 \section{Rank and Nullity for Linear Transformations}
 
