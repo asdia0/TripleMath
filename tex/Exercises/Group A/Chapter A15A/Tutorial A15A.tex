@@ -205,7 +205,7 @@
         Let $l$ be the lower quartile of $X$. Then $\P{X < l} = 1/4$. By inspection, $0 \leq l \leq 2$. Hence, \[\P{X < l} = \frac{l^3}{20} = \frac14,\] so $l = \sqrt[3]{5}$.
     \end{ppart}
     \begin{ppart}
-        We have \[\P{\sqrt[3]{5} < X < 2.2} = F(2.2) - F\of{\sqrt[3]{5}} = 0.264 \tosf{3}.\]
+        We have \[\P{\sqrt[3]{5} < X < 2.2} = F(2.2) - F\bp{\sqrt[3]{5}} = 0.264 \tosf{3}.\]
     \end{ppart}
     \begin{ppart}
         By definition, the probability that an observation of $X$ is less than the median value is 1/2. Hence, the required probability is \[\comb{3}{1} \P{X > 2.2} \bp{\frac12}^2 = \comb{3}{1} \bs{1 - \P{X < 2.2}} \bp{\frac12}^2 = 0.365 \tosf{3}.\]
@@ -228,7 +228,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Since $F$ is continuous, we have $F(2) = F\of{2^+}$, i.e. \[k \bp{4(2) - \frac{2^3}3 + \frac{16}3} = 1,\] which gives $k = 3/32$.
+        Since $F$ is continuous, we have $F(2) = F\bp{2^+}$, i.e. \[k \bp{4(2) - \frac{2^3}3 + \frac{16}3} = 1,\] which gives $k = 3/32$.
     \end{ppart}
     \begin{ppart}
         Note that \[\der{}{x} \bs{\frac3{32}\bp{4x - \frac{x^3}3 + \frac{16}{3}}} = \frac{3}{32} \bp{4 - x^2}.\] Hence, \[f(x) = \begin{cases}
@@ -449,7 +449,7 @@
         \begin{align*}
             \P{10 < Y < 20} &= \P{10 < 4X^3 < 20}\\
             &= \P{\sqrt[3]{5/2} < X < \sqrt[3]{5}}\\
-            &= F\of{\sqrt[3]{5}} - F\of{\sqrt[3]{5/2}}\\
+            &= F\bp{\sqrt[3]{5}} - F\bp{\sqrt[3]{5/2}}\\
             &= 0.304 \tosf{3}.
         \end{align*}
     \end{ppart}

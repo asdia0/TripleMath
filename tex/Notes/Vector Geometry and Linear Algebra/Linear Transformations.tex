@@ -264,7 +264,7 @@ We can use the following strategy to test if a set of vectors is linearly indepe
     \case{2} If $r \leq n$, we find $\vec x = \cveciiix{x_1}{\dots}{x_r}$ such that $\mat A \vec x = \vec 0$ where $\mat A = \begin{pmatrix}\vec v_1 & \dots & \vec v_r\end{pmatrix}$ is an $n \times r$ matrix. Whether the $r$ vectors are linearly dependent becomes a question of whether the equation $\mat A \vec x = \vec 0$ has only the trivial solution $\vec x = \vec 0$. To answer this question we can
     \begin{itemize}
         \item (in general) use row operations to reduce $\mat A$ to REF. If there are exactly $r$ non-zero rows, then $\mat A \vec x = \vec 0$ has only the trivial solution.
-        \item (if $r = n$) compute the determinant of $\mat A$. If $\det \mat A \neq 0$, then $\mat A \vec x = \vec 0$ has only the trivial solution.
+        \item (if $r = n$) compute the determinant of $\mat A$. If $\Det \mat A \neq 0$, then $\mat A \vec x = \vec 0$ has only the trivial solution.
     \end{itemize}
 \end{recipe}
 

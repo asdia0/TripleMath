@@ -101,7 +101,7 @@
             $f(1/n) \in \Im f = \ZZ$.
         \end{psubpart}
         \begin{psubpart}
-            Suppose $f(1) \neq 0$. Then there exists a prime $p$ such that $p \nmid f(1)$. Then \[f(1) = f\of{p \cdot \frac1p} = p f\of{\frac1p}.\] Rearranging, we get $f(1/p) = f(1)/p$. Since $p \nmid f(1)$, it follows that $f(1/p)$ is not an integer. However, this contradicts (a)(i). Hence, our assumption that $f(1) \neq 0$ is false, i.e. $f(1) = 0$.
+            Suppose $f(1) \neq 0$. Then there exists a prime $p$ such that $p \nmid f(1)$. Then \[f(1) = f\bp{p \cdot \frac1p} = p f\bp{\frac1p}.\] Rearranging, we get $f(1/p) = f(1)/p$. Since $p \nmid f(1)$, it follows that $f(1/p)$ is not an integer. However, this contradicts (a)(i). Hence, our assumption that $f(1) \neq 0$ is false, i.e. $f(1) = 0$.
         \end{psubpart}
     \end{ppart}
     \begin{ppart}
@@ -133,7 +133,7 @@
             For $n \in \NN_0$, we have \[f(nx) = f(\underbrace{x + x + \dots + x}_{\text{$n$ times}}) = \underbrace{f(x) + f(x) + \dots + f(x)}_{\text{$n$ times}} = nf(x).\] Now, observe that $0 = f(0) = f(nx + (-nx)) = f(nx) + f(-nx)$, so $f(-nx) = -f(nx) = -nf(x)$. Thus, $f(nx) = nf(x)$ for all $n \in \ZZ$.
         \end{psubpart}
         \begin{psubpart}
-            Let $b$ be a non-zero integer. Then \[f(x) = f\Big(\underbrace{\frac{x}{b} + \dots + \frac{x}{b}}_{\text{$b$ times}}\Big) = \underbrace{f\of{\frac{x}{b}} + \dots + f\of{\frac{x}{b}}}_{\text{$b$ times}} = b f\of{\frac{x}{b}}.\] Thus, $f(x/b) = f(x)/b$. Let $r \in \QQ$. Without loss of generality, write $r = a/b$, where $a, b \in \ZZ$ and $b \geq 1$. Then \[f(rx) = f\of{\frac{ax}{b}} = a f\of{\frac{x}{b}} = \frac{a}{b} f(x) = rf(x).\]
+            Let $b$ be a non-zero integer. Then \[f(x) = f\Big(\underbrace{\frac{x}{b} + \dots + \frac{x}{b}}_{\text{$b$ times}}\Big) = \underbrace{f\bp{\frac{x}{b}} + \dots + f\bp{\frac{x}{b}}}_{\text{$b$ times}} = b f\bp{\frac{x}{b}}.\] Thus, $f(x/b) = f(x)/b$. Let $r \in \QQ$. Without loss of generality, write $r = a/b$, where $a, b \in \ZZ$ and $b \geq 1$. Then \[f(rx) = f\bp{\frac{ax}{b}} = a f\bp{\frac{x}{b}} = \frac{a}{b} f(x) = rf(x).\]
         \end{psubpart}
         \begin{psubpart}
             Since $\QQ$ is dense in $\RR$, it follows that we have $f(rx) = rf(x)$ for all $r, x \in \RR$.

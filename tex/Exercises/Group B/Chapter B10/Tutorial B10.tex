@@ -10,7 +10,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $f(\t) = 1/(1 + \cos\t)$. \[\int_{-\pi/2}^0 \frac1{1 + \cos\t} \d \t \approx \frac12 \cdot \frac{0 - (-\pi/2)}{3-1} \bs{f\of{-\frac\pi2} + 2f\of{-\frac\pi4} + f(0)} = 1.05.\]
+        Let $f(\t) = 1/(1 + \cos\t)$. \[\int_{-\pi/2}^0 \frac1{1 + \cos\t} \d \t \approx \frac12 \cdot \frac{0 - (-\pi/2)}{3-1} \bs{f\bp{-\frac\pi2} + 2f\bp{-\frac\pi4} + f(0)} = 1.05.\]
     \end{ppart}
     \begin{ppart}
         Let $f(x) = (x^2 - 4x + 1)/(4x - 4)$. \[\int_{-0.4}^{0.2} \frac{x^2 - 4x + 1}{4x - 4} \d x \approx \frac12 \cdot \frac{0.2 - (-0.4)}{4 - 1} \Big[f(-0.4) + 2\big[f(-0.2) + f(0)\big] + f(0.2)\Big] = -0.183.\]
@@ -36,7 +36,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $f(\t) = 1/(1+\cos\t)$. \[\int_{-\pi/2}^0 \frac1{1 + \cos\t} \d \t \approx \frac13 \cdot \frac{0 - (-\pi/2)}{3 - 1} \bs{f\of{-\frac\pi2} + 4f\of{-\frac\pi4} + f(0)} = 1.01.\]
+        Let $f(\t) = 1/(1+\cos\t)$. \[\int_{-\pi/2}^0 \frac1{1 + \cos\t} \d \t \approx \frac13 \cdot \frac{0 - (-\pi/2)}{3 - 1} \bs{f\bp{-\frac\pi2} + 4f\bp{-\frac\pi4} + f(0)} = 1.01.\]
     \end{ppart}
     \begin{ppart}
         Let $f(x) = \sqrt{1 - x^2}$. \[\int_0^{0.4} \sqrt{1 - x^2} \d x \approx \frac13 \cdot \frac{0.4 - 0}{5 - 1} \Big[f(0) + 4f(0.1) + 2f(0.2) + 4f(0.3) + f(0.4)\Big] = 0.389.\]
@@ -142,7 +142,7 @@
     \begin{enumerate}
         \item Using the trapezium rule, with four trapezia of equal width, obtain an approximation $I_1$ to the value of $I$, giving 3 decimal places in your answer.
         \item Explain, with the aid of a sketch, why $I < I_1$.
-        \item Evaluate $I_2$, where \[I_2 = \frac13 \sum_{r = 1}^3 f\of{\frac13 r},\] giving 3 decimal places in your answer, and use the sketch in (b) to justify the inequality $I > I_2$.
+        \item Evaluate $I_2$, where \[I_2 = \frac13 \sum_{r = 1}^3 f\bp{\frac13 r},\] giving 3 decimal places in your answer, and use the sketch in (b) to justify the inequality $I > I_2$.
         \item By means of a substitution $\sqrt{x} = u -1$, show that the value of $I$ is $4(2 - \sqrt2)/3$.
     \end{enumerate}
 \end{problem}
@@ -191,7 +191,7 @@
         $I$ is the area under the curve $y = f(x)$, while $I_1$ is the sum of the areas of the trapeziums. Hence, from the sketch, $I_1 > I$.
     \end{ppart}
     \begin{ppart}
-        \[I_2 = \frac13 \sum_{r=1}^3 f\of{\frac13 r} = \frac13 \bs{f\of{\frac13} + f\of{\frac23} + f(1)} = 0.748 \todp{3}.\]
+        \[I_2 = \frac13 \sum_{r=1}^3 f\bp{\frac13 r} = \frac13 \bs{f\bp{\frac13} + f\bp{\frac23} + f(1)} = 0.748 \todp{3}.\]
 
         \begin{center}\tikzsetnextfilename{206}
             \begin{tikzpicture}[trim axis left, trim axis right]
@@ -249,7 +249,7 @@
             &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\ln \sin x} \abs{\frac1{\sin x}} \d x\\
             &= 2\pi \int_{\pi/4}^{\pi/2} \abs{\frac{\ln \sin x}{\sin x}} \d x.
         \end{align*}
-        Let $f(x) = \abs{\ln{\sin x}/\sin x}$. Using Simpson's rule, \[S \approx \frac{2\pi}3 \cdot \frac{\pi/4}{4} \bs{f\of{\frac{4\pi}{16}} + 4f\of{\frac{5\pi}{16}} + 2f\of{\frac{6\pi}{16}} + 4f\of{\frac{7\pi}{16}} + f\of{\frac{8\pi}{16}}} = 0.670 \todp{3}.\]
+        Let $f(x) = \abs{\ln{\sin x}/\sin x}$. Using Simpson's rule, \[S \approx \frac{2\pi}3 \cdot \frac{\pi/4}{4} \bs{f\bp{\frac{4\pi}{16}} + 4f\bp{\frac{5\pi}{16}} + 2f\bp{\frac{6\pi}{16}} + 4f\bp{\frac{7\pi}{16}} + f\bp{\frac{8\pi}{16}}} = 0.670 \todp{3}.\]
 \end{solution}
 
 \begin{problem}
@@ -303,7 +303,7 @@
     \begin{ppart}
         Since $\derx{y}{x} = -x^{-2}$, the equation of the tangent at $x = r$ is given by \[y - \frac1r = -\frac1{r^2} (x - r).\] Rearranging, we get \[y = -\frac{x}{r^2} + \frac2r.\] The area of the trapezium centred at $r$ is hence given by \[\int_{r-1/2}^{r + 1/2} \bp{-\frac{x}{r^2} + \frac2r} \d x = \evalint{-\frac1{r^2} \bp{\frac{x^2}2} + \frac{2x}r}{r-1/2}{r + 1/2} = \frac1r \units[2].\]
 
-        Observe that the area of the trapezium centred at $r$ is less than the area under the curve $y = 1/x$ from $r - 1/2$ to $r + 1/2$. That is, \[\frac1r < \int_{r - 1/2}^{r + 1/2} \frac1x \d x = \ln\of{r + \frac12} - \ln\of{r - \frac12}.\]
+        Observe that the area of the trapezium centred at $r$ is less than the area under the curve $y = 1/x$ from $r - 1/2$ to $r + 1/2$. That is, \[\frac1r < \int_{r - 1/2}^{r + 1/2} \frac1x \d x = \ln\bp{r + \frac12} - \ln\bp{r - \frac12}.\]
 
         Summing from $r = 2$ to $n-1$, \[\sum_{r = 2}^{n-1} \frac1r < \sum_{r=2}^{n-1} \bs{\ln{r + \frac12} - \ln{r - \frac12}} = \ln{n - \frac12} - \ln{2 - \frac12} = \ln{\frac{2n - 1}{3}}.\]
     \end{ppart}

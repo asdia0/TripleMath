@@ -213,45 +213,45 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        $\det \mat A = (0)(2) - (-1)(4) = 4$.
+        $\Det \mat A = (0)(2) - (-1)(4) = 4$.
     \end{ppart}
     \begin{ppart}
-        \[\det \mat B = 2 \begin{vmatrix}[rr]-3 & 1 \\ 2 & 1\end{vmatrix} - (-1) \begin{vmatrix}[rr]4 & 1 \\ 1 & 1\end{vmatrix} + 4 \begin{vmatrix}[rr]4 & -3 \\ 1 & 2\end{vmatrix} = 2(-5) - (-1)(3) + 4(11) = 37.\]
+        \[\Det \mat B = 2 \begin{vmatrix}[rr]-3 & 1 \\ 2 & 1\end{vmatrix} - (-1) \begin{vmatrix}[rr]4 & 1 \\ 1 & 1\end{vmatrix} + 4 \begin{vmatrix}[rr]4 & -3 \\ 1 & 2\end{vmatrix} = 2(-5) - (-1)(3) + 4(11) = 37.\]
     \end{ppart}
     \begin{ppart}
-        \[\det \mat C = \det \begin{vmatrix}[rr]2 & 0 \\ 4 & -3\end{vmatrix} = -6.\]
+        \[\Det \mat C = \Det \begin{vmatrix}[rr]2 & 0 \\ 4 & -3\end{vmatrix} = -6.\]
     \end{ppart}
     \begin{ppart}
-        Note that $\mat D$ is simply $\mat B$ where the third row has been multiplied by 3. Thus, $\det \mat D = 3 \det \mat B = 111$.
+        Note that $\mat D$ is simply $\mat B$ where the third row has been multiplied by 3. Thus, $\Det \mat D = 3 \Det \mat B = 111$.
     \end{ppart}
 \end{solution}
 
 \begin{problem}
     For the case where \[\mat A = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 2 & -1 \\ 0 & 1 & 3 \end{pmatrix} \quad \tand \quad \mat B = \begin{pmatrix} 1 & 0 & 2 \\ 2 & 1 & 0 \\ -1 & 1 & -1 \end{pmatrix},\] verify the results
     \begin{enumerate}
-        \item $\det{\mat A \mat B} = \det{\mat A} \det{\mat B}$,
-        \item $\det{\inv{\mat A}} = 1/\det{\mat A}$.
+        \item $\Det{\mat A \mat B} = \Det{\mat A} \Det{\mat B}$,
+        \item $\Det{\inv{\mat A}} = 1/\Det{\mat A}$.
     \end{enumerate}
     Determine also if
     \begin{enumerate}
         \setcounter{enumi}{2}
-        \item $\det{\mat A + \mat B} = \det{\mat A} + \det{\mat B}$,
-        \item $\det{\mat A} = \det{\mat A\trp}$.
+        \item $\Det{\mat A + \mat B} = \Det{\mat A} + \Det{\mat B}$,
+        \item $\Det{\mat A} = \Det{\mat A\trp}$.
     \end{enumerate}
 \end{problem}
 \begin{solution}
-    Note that $\det A = -3$ and $\det B = 5$.
+    Note that $\Det A = -3$ and $\Det B = 5$.
     \begin{ppart}
-        Using G.C., \[\mat A \mat B = \begin{pmatrix}[rrr]2 & 1 & 0 \\ 6 & 1 & 3 \\ -1 & 4 & -3\end{pmatrix}.\] Hence, $\det{\mat A \mat B} = -15 = (-3)(5) = \det{\mat A} \det{\mat B}$.
+        Using G.C., \[\mat A \mat B = \begin{pmatrix}[rrr]2 & 1 & 0 \\ 6 & 1 & 3 \\ -1 & 4 & -3\end{pmatrix}.\] Hence, $\Det{\mat A \mat B} = -15 = (-3)(5) = \Det{\mat A} \Det{\mat B}$.
     \end{ppart}
     \begin{ppart}
-        Using G.C., \[\inv{\mat A} = \frac13 \begin{pmatrix}[rrr]-7 & 3 & 1 \\ 3 & 0 & 0 \\ -1 & 0 & 1\end{pmatrix}.\] Hence, $\det{\inv{\mat A}} = -1/3 = 1/(-3) = 1/\det \mat A$.
+        Using G.C., \[\inv{\mat A} = \frac13 \begin{pmatrix}[rrr]-7 & 3 & 1 \\ 3 & 0 & 0 \\ -1 & 0 & 1\end{pmatrix}.\] Hence, $\Det{\inv{\mat A}} = -1/3 = 1/(-3) = 1/\Det \mat A$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\mat A + \mat B = \begin{pmatrix}[rrr]1 & 1 & 2 \\ 3 & 3 & -1 \\ -1 & 2 & 2\end{pmatrix}.\] Hence, $\det{\mat A + \mat B} = 21 \neq -3 + 5 = \det \mat A + \det \mat B$.
+        Note that \[\mat A + \mat B = \begin{pmatrix}[rrr]1 & 1 & 2 \\ 3 & 3 & -1 \\ -1 & 2 & 2\end{pmatrix}.\] Hence, $\Det{\mat A + \mat B} = 21 \neq -3 + 5 = \Det \mat A + \Det \mat B$.
     \end{ppart}
     \begin{ppart}
-        Note that \[\mat A \trp = \begin{pmatrix}[rrr] 0 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & -1 & 3\end{pmatrix}.\] Hence, $\det \mat A\trp = -3 = \det \mat A$.
+        Note that \[\mat A \trp = \begin{pmatrix}[rrr] 0 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & -1 & 3\end{pmatrix}.\] Hence, $\Det \mat A\trp = -3 = \Det \mat A$.
     \end{ppart}
 \end{solution}
 
@@ -268,7 +268,7 @@
 \begin{solution}
     Performing row operations on $\begin{pmatrix}[c|c]\mat A & \mat I\end{pmatrix}$, we have \[\begin{pmatrix}[rrr|rrr]2 & 1 & 3 & 1 & 0 & 0 \\ -1 & 0 & 4 & 0 & 1 & 0\\ 3 & 1 & 0 & 0 & 0 & 1\end{pmatrix} \rightarrow \begin{matrix}[r]\scriptstyle -4 R_1 + 3R_2 + 4R_3 \\ \scriptstyle 12R_1 -9 R_2 - 11R_3 \\ \scriptstyle -R_1 + R_2 + R_3 \end{matrix}\begin{pmatrix}[rrr|rrr]1 & 0 & 0 & -4 & 3 & 4 \\ 0 & 1 & 0 & 12 & -9 & -11 \\ 0 & 0 & 1 & -1 & 1 & 1\end{pmatrix}.\] Thus, \[\inv{\mat A} = \begin{pmatrix}[rrr]-4 & 3 & 4 \\ 12 & -9 & -11 \\ -1 & 1 & 1\end{pmatrix}.\]
 
-    Note that \[\det \mat B = 3\begin{vmatrix}[rr]-1 & 1 \\ 3 & 1\end{vmatrix} - 12 \begin{vmatrix}[rr]2 & 1 \\ 3 & 1\end{vmatrix} = 0.\] Hence, $\inv{\mat B}$ does not exist.
+    Note that \[\Det \mat B = 3\begin{vmatrix}[rr]-1 & 1 \\ 3 & 1\end{vmatrix} - 12 \begin{vmatrix}[rr]2 & 1 \\ 3 & 1\end{vmatrix} = 0.\] Hence, $\inv{\mat B}$ does not exist.
 
     \begin{ppart}
         Since $\mat A$ is invertible, we can pre-multiply $\inv{\mat A}$ on both sides of the equation $\mat A \vec x = \cveciiix41a$, yielding \[\vec x = \begin{pmatrix}[rrr]-4 & 3 & 4 \\ 12 & -9 & -11 \\ -1 & 1 & 1\end{pmatrix} \cveciii41a = \begin{pmatrix}-13 + 4a \\ 39 - 11 a \\ -3 + a\end{pmatrix}.\]
@@ -284,13 +284,13 @@
     Let $\mat A \vec x = \vec 0$ be a homogeneous system of $n$ linear equations in $n$ unknowns that has only the trivial solution. Show that if $k$ is any positive integer, then the system $\mat A^k \vec x = \vec 0$ also has only the trivial solution.
 \end{problem}
 \begin{solution}
-    Since $\mat A \vec x = \vec 0$ has only the trivial solution, $\det{\mat A} \neq 0$. Thus, $\det{\mat A^k} = \det{\mat A}^k \neq 0$, whence $\mat A^k \vec x = \vec 0$ has a unique solution, which must clearly be the trivial solution.
+    Since $\mat A \vec x = \vec 0$ has only the trivial solution, $\Det{\mat A} \neq 0$. Thus, $\Det{\mat A^k} = \Det{\mat A}^k \neq 0$, whence $\mat A^k \vec x = \vec 0$ has a unique solution, which must clearly be the trivial solution.
 \end{solution}
 
 \clearpage
 \begin{problem}
     \begin{enumerate}
-        \item Let $\mat A$ be a non-zero square matrix such that $\mat A^2 = \mat A$. Determine all possible values of $\det{\mat A}$. Determine if the following statements are true. Justify your answer.
+        \item Let $\mat A$ be a non-zero square matrix such that $\mat A^2 = \mat A$. Determine all possible values of $\Det{\mat A}$. Determine if the following statements are true. Justify your answer.
         \begin{enumerate}
             \item $\mat I - \mat A$ is always invertible.
             \item $\mat I + \mat A$ is always invertible.
@@ -300,7 +300,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Taking determinants on both sides of the given equation, we have $\det{\mat A^2} = \det \mat A$. Since $\det{\mat A^2} = \bp{\det \mat A}^2$, we see that the only possible values of $\det \mat A $ are 0 and 1. An example of $\mat A$ with determinant 0 is \[\mat A = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\] while an example of $\mat A$ with determinant 1 is simply $\mat I$.
+        Taking determinants on both sides of the given equation, we have $\Det{\mat A^2} = \Det \mat A$. Since $\Det{\mat A^2} = \bp{\Det \mat A}^2$, we see that the only possible values of $\Det \mat A $ are 0 and 1. An example of $\mat A$ with determinant 0 is \[\mat A = \begin{pmatrix}1 & 0 \\ 0 & 0\end{pmatrix},\] while an example of $\mat A$ with determinant 1 is simply $\mat I$.
 
         In fact, $\mat I$ is the only such matrix that has determinant 1; if $\mat A$ is invertible, we can pre-multiply its inverse to the equation $\mat A^2 = \mat A$ to get $\inv{\mat A} \mat A^2 = \inv{\mat A} \mat A$, which simplifies to give $\mat A = \mat I$.
         

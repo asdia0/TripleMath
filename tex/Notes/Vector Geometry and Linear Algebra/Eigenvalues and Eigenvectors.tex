@@ -52,27 +52,27 @@ Let $\vec x$ be an eigenvector of $\mat A$ with eigenvalue $\l$. Geometrically, 
 \subsection{Finding Eigenvalues and Eigenvectors}
 
 \begin{definition}
-    The \vocab{characteristic polynomial} $\c(\l)$ of an $n \times n$ matrix $\mat A$ is the $n$ degree polynomial in $\l$ given by $\c(\l) = \det{\mat A - \l \mat I}$. The \vocab{characteristic equation} of $\mat A$ is $\c(\l) = 0$.
+    The \vocab{characteristic polynomial} $\c(\l)$ of an $n \times n$ matrix $\mat A$ is the $n$ degree polynomial in $\l$ given by $\c(\l) = \Det{\mat A - \l \mat I}$. The \vocab{characteristic equation} of $\mat A$ is $\c(\l) = 0$.
 \end{definition}
 
 \begin{proposition}
     $\l$ is an eigenvalue of $\mat A$ if and only if it satisfies the characteristic equation of $\mat A$.
 \end{proposition}
 \begin{proof}
-    Since $\l$ is an eigenvalue of $\mat A$, we have $\mat A \vec x = \l \vec x$ for some non-zero vector $\vec x$. Manipulating this equation, we see that $\bp{\mat A - \l \mat I} \vec x = 0$. Since $\vec x$ is non-zero, the null space of $\mat A - \l \mat I$ is non-trivial. Thus, $\mat A - \l \mat I$ is singular, so $\c(\l) = \det{\mat A - \l \mat I} = 0$.  That is, $\l$ satisfies the characteristic equation of $\mat A$.
+    Since $\l$ is an eigenvalue of $\mat A$, we have $\mat A \vec x = \l \vec x$ for some non-zero vector $\vec x$. Manipulating this equation, we see that $\bp{\mat A - \l \mat I} \vec x = 0$. Since $\vec x$ is non-zero, the null space of $\mat A - \l \mat I$ is non-trivial. Thus, $\mat A - \l \mat I$ is singular, so $\c(\l) = \Det{\mat A - \l \mat I} = 0$.  That is, $\l$ satisfies the characteristic equation of $\mat A$.
 \end{proof}
 
 Since the characteristic equation can be easily solved, we have a straightforward way of finding eigenvalues and eigenvectors.
 
 \begin{recipe}[Finding Eigenvalues and Eigenvectors]
-    We solve the characteristic equation $\c(\l) = \det{\mat A - \l \mat I} = 0$ to find possible eigenvalues $\l$. For each $\l$ found, we find its associated eigenvector(s) by finding the basis of the null space of $\mat A - \l \mat I$.
+    We solve the characteristic equation $\c(\l) = \Det{\mat A - \l \mat I} = 0$ to find possible eigenvalues $\l$. For each $\l$ found, we find its associated eigenvector(s) by finding the basis of the null space of $\mat A - \l \mat I$.
 \end{recipe}
 
 \begin{sample}
     Find the eigenvalues and eigenvectors of the matrix \[\mat A = \begin{pmatrix}1 & 2 \\ 5 & 4\end{pmatrix}.\]
 \end{sample}
 \begin{sample}
-    The characteristic polynomial is \[\c(\l) = \det{\mat A - \l \mat I} = \det \begin{pmatrix}1 - \l & 2 \\ 5 & 4-\l\end{pmatrix} = \l^2 - 5\l -6 = (\l - 6)(\l + 1).\] Thus, the solutions to the characteristic equation $\c(\l) = 0$ are $\l = 6$ and $\l = -1$.
+    The characteristic polynomial is \[\c(\l) = \Det{\mat A - \l \mat I} = \Det \begin{pmatrix}1 - \l & 2 \\ 5 & 4-\l\end{pmatrix} = \l^2 - 5\l -6 = (\l - 6)(\l + 1).\] Thus, the solutions to the characteristic equation $\c(\l) = 0$ are $\l = 6$ and $\l = -1$.
 
     Let $\vec x = \cveciix{x}{y}$ be a non-zero vector with $\mat A \vec x = \l \vec x.$
 
@@ -107,7 +107,7 @@ Also, one eigenvalue may have multiple corresponding eigenvectors. For instance,
     If $\mat A$ is a triangular matrix, then the eigenvalues of $\mat A$ are the entries on the principal diagonal of $\mat A$.
 \end{proposition}
 \begin{proof}
-    Recall that the determinant of a triangular matrix is the product of its principal diagonal entries. Thus, \[\c(\l) = \det{\mat A - \l \mat I} = \bp{a_{11} - \l}\bp{\a_{22} - \l} \dots \bp{a_{nn} - \l},\] whence the roots are $\l = a_{11}, a_{22}, \dots, a_{nn}$.
+    Recall that the determinant of a triangular matrix is the product of its principal diagonal entries. Thus, \[\c(\l) = \Det{\mat A - \l \mat I} = \bp{a_{11} - \l}\bp{\a_{22} - \l} \dots \bp{a_{nn} - \l},\] whence the roots are $\l = a_{11}, a_{22}, \dots, a_{nn}$.
 \end{proof}
 
 \begin{proposition}
@@ -179,7 +179,7 @@ For a proof, see this \href{https://boonsuan.github.io/misc/cauchy_binet.pdf}{no
 \begin{corollary}
     If $\mat A$ is an $n \times n$ matrix,
     \begin{itemize}
-        \item The sum of the $n$ eigenvalues of $\mat A$ (counting multiplicity) is equal to the trace of $\mat A$.
+        \item The sum of the $n$ eigenvalues of $\mat A$ (counting multiplicity) is equal to the sum of the diagonal entries of $\mat A$.
         \item The product of the $n$ eigenvalues of $\mat A$ (counting multiplicity) is equal to the determinant of $\mat A$.
     \end{itemize}
 \end{corollary}
@@ -191,8 +191,8 @@ For a proof, see this \href{https://boonsuan.github.io/misc/cauchy_binet.pdf}{no
 
 Recall that a diagonal matrix $\mat D$ is a square matrix where all off-diagonal entries are zero. Diagonal matrices have nice properties that make computations involving them simple and convenient:
 \begin{itemize}
-    \item $\det \mat D$ is the product of its diagonal entries.
-    \item If $\det \mat D \neq 0$, then $\mat D^{-1}$ is a diagonal matrix with the corresponding reciprocals in the diagonal.
+    \item $\Det \mat D$ is the product of its diagonal entries.
+    \item If $\Det \mat D \neq 0$, then $\mat D^{-1}$ is a diagonal matrix with the corresponding reciprocals in the diagonal.
     \item $\mat D^{n}$ is a diagonal matrix with the corresponding powers in the diagonal.
 \end{itemize}
 For instance, if \[\mat D = \begin{pmatrix}1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3\end{pmatrix},\] then \[\mat D^{100} = \begin{pmatrix}1^{100} & 0 & 0 \\ 0 & 2^{100} & 0 \\ 0 & 0 & 3^{100}\end{pmatrix} \quad \tand \quad \mat D^{-100} = \begin{pmatrix}1^{-100} & 0 & 0 \\ 0 & 2^{-100} & 0 \\ 0 & 0 & 3^{-100}\end{pmatrix}.\]

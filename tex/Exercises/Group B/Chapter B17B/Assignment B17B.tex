@@ -8,7 +8,7 @@
 \begin{solution}
     Let $T : \RR^2 \to \RR^2$ such that \[T\cvecii{x}{y} = \cvecii{x + my}{y}.\] Let $\a, \b \in \RR$. Observe that
     \begin{align*}
-        T\of{\a \cvecii{x_1}{y_1} + \b \cvecii{x_2}{y_2}} &= T\cvecii{\a x_1 + \b x_2}{\a y_1 + \b y_2}\\
+        T\bp{\a \cvecii{x_1}{y_1} + \b \cvecii{x_2}{y_2}} &= T\cvecii{\a x_1 + \b x_2}{\a y_1 + \b y_2}\\
         &= \cvecii{\a x_1 + \b x_2 + m \a y_1 + m \b y_2}{\a y_1 + \b y_2}\\
         &= \a \cvecii{x_1 + m y_1}{y_1} + \b \cvecii{x_2 + m y_2}{y_2}\\
         &= \a T\cvecii{x_1}{y_1} + \b T\cvecii{x_2}{y_2}.
@@ -22,7 +22,7 @@
     Given that \[\bc{\cveciii1ab, \cveciii{b}1a, \cveciii{a}{b}1}\] is not a basis for $\RR^3$, prove that $a^3 - 3ab + b^3 + 1 = 0$.
 \end{problem}
 \begin{solution}
-    Since the vectors do not form a basis of $\RR^3$, they must be linearly dependent. Thus, there exist $x_1, x_2, x_3 \in \RR$ that are not all 0 such that \[x_1 \cveciii1ab + x_2 \cveciii{b}1a + x_3 \cveciii{a}{b}{1} = \vec 0,\] which is equivalent to the matrix equation \[\begin{pmatrix}1 & b & a \\ a & 1 & b \\ b & a & 1\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \vec 0.\] Thus, the above matrix has a non-trivial kernel, whence its determinant is 0. Thus, \[0 = \det \begin{pmatrix}1 & b & a \\ a & 1 & b \\ b & a & 1\end{pmatrix} = 1 \begin{vmatrix}1 & b \\ a & 1 \end{vmatrix} - a \begin{vmatrix}b & a \\ a & 1\end{vmatrix} + b \begin{vmatrix}b & a \\ 1 & b\end{vmatrix} = a^3 - 3ab + b^3 + 1.\]
+    Since the vectors do not form a basis of $\RR^3$, they must be linearly dependent. Thus, there exist $x_1, x_2, x_3 \in \RR$ that are not all 0 such that \[x_1 \cveciii1ab + x_2 \cveciii{b}1a + x_3 \cveciii{a}{b}{1} = \vec 0,\] which is equivalent to the matrix equation \[\begin{pmatrix}1 & b & a \\ a & 1 & b \\ b & a & 1\end{pmatrix} \cveciii{x_1}{x_2}{x_3} = \vec 0.\] Thus, the above matrix has a non-trivial kernel, whence its determinant is 0. Thus, \[0 = \Det \begin{pmatrix}1 & b & a \\ a & 1 & b \\ b & a & 1\end{pmatrix} = 1 \begin{vmatrix}1 & b \\ a & 1 \end{vmatrix} - a \begin{vmatrix}b & a \\ a & 1\end{vmatrix} + b \begin{vmatrix}b & a \\ 1 & b\end{vmatrix} = a^3 - 3ab + b^3 + 1.\]
 \end{solution}
 
 \begin{problem}
@@ -80,7 +80,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $\mat B = \begin{pmatrix}\vec x_1 & \vec x_2 & \vec x_3 & \vec x_4\end{pmatrix}$. In full, \[\mat B = \begin{pmatrix}1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] Observe that $\det \mat B = 1 \neq 0$. Thus, the column space of $\mat B$ (i.e. the span of $\vec x_1, \dots, \vec x_4$) is $\RR^4$. Also, the columns of $\mat B$ are linearly independent. Thus, $\vec x_1, \dots, \vec x_4$ form a basis of $\RR^4$.
+        Let $\mat B = \begin{pmatrix}\vec x_1 & \vec x_2 & \vec x_3 & \vec x_4\end{pmatrix}$. In full, \[\mat B = \begin{pmatrix}1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1\end{pmatrix}.\] Observe that $\Det \mat B = 1 \neq 0$. Thus, the column space of $\mat B$ (i.e. the span of $\vec x_1, \dots, \vec x_4$) is $\RR^4$. Also, the columns of $\mat B$ are linearly independent. Thus, $\vec x_1, \dots, \vec x_4$ form a basis of $\RR^4$.
     \end{ppart}
     \begin{ppart}
         Note that $\mat A$ has RREF \[\begin{pmatrix}1 & 0 & -1 & 2 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{pmatrix}.\] Thus, the dimension of the column space of $\mat A$ is $\Rank \mat A = 2$. By the rank-nullity theorem, the dimension of the null space of $\mat A$ is $4- 2 = 2$.

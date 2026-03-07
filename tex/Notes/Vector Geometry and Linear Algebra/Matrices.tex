@@ -330,7 +330,7 @@ In practice, however, we will perform the left-multiplications on an augmented m
 The previous section showed the importance of invertibility and uses elementary row operations to help us determine if a matrix is invertible. Here, we introduce the idea of the determinant of a matrix and how this number tells us if a matrix is invertible.
 
 \begin{definition}
-    The \vocab{determinant} of an $n \times n$ matrix $\mat A$, denoted by \[\abs{\mat A} = \det{\mat A} = \begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{vmatrix},\] is the minimal polynomial (in the entries of $\mat A$, i.e. $a_{11}$, $a_{12}$, etc.) that is 0 if and only if $\mat A$ is singular.
+    The \vocab{determinant} of an $n \times n$ matrix $\mat A$, denoted by \[\abs{\mat A} = \Det{\mat A} = \begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{vmatrix},\] is the minimal polynomial (in the entries of $\mat A$, i.e. $a_{11}$, $a_{12}$, etc.) that is 0 if and only if $\mat A$ is singular.
 \end{definition}
 
 \subsection{The \texorpdfstring{$1 \times 1$}{1 x 1} and \texorpdfstring{$2 \times 2$}{2 x 2} Determinant}
@@ -344,16 +344,16 @@ For $2 \times 2$ matrices, recall that \[\begin{pmatrix}a & b \\ c & d\end{pmatr
 Beyond the $2 \times 2$ matrix, the closed form of an $n \times n$ determinant becomes much more unwieldy to remember and use. Luckily, there is a general procedure that we can use to calculate the determinant of any $n \times n$ matrix.
 
 \begin{proposition}[Cofactor Expansion]\label{prop:cofactor}
-    Suppose we have an $n \times n$ matrix $\mat A = (a_{ij})$. Let $\mat M_{ij}$ be the $(n-1) \times (n-1)$ matrix obtained from $\mat A$ by deleting the $i$th row and the $j$th column. Then the determinant of $\mat A$ is given by \[\det{\mat A} = \begin{cases}
+    Suppose we have an $n \times n$ matrix $\mat A = (a_{ij})$. Let $\mat M_{ij}$ be the $(n-1) \times (n-1)$ matrix obtained from $\mat A$ by deleting the $i$th row and the $j$th column. Then the determinant of $\mat A$ is given by \[\Det{\mat A} = \begin{cases}
         a_{11}, & n = 1,\\
         a_{11} A_{11} + a_{12} A_{12} + \dots + a_{1n} A_{1n}, & n > 1
-    \end{cases},\] where $A_{ij} = (-1)^{i+j} \det{\mat M_{ij}}$ is the \vocab{cofactor} of entry $a_{ij}$.
+    \end{cases},\] where $A_{ij} = (-1)^{i+j} \Det{\mat M_{ij}}$ is the \vocab{cofactor} of entry $a_{ij}$.
 \end{proposition}
 
 Note that the term $(-1)^{i+j}$ has value 1 when the sum of $i$ and $j$ is even, and $-1$ when the sum is odd. This may be viewed as a ``signed'' array as follows: \[\begin{pmatrix}+ & - & + & \cdots \\ - & + & - & \cdots \\ + & - & + & \cdots \\ \vdots & \vdots & \vdots & \ddots \end{pmatrix}.\]
 
 \begin{example}[Cofactor Expansion]
-    Using the method of cofactor expansion along the first row, the determinant of a $3 \times 3$ matrix \[\mat A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix}\] is given by \[\det{\mat A} = a_{11} \begin{vmatrix}a_{22} & a_{23} \\ a_{32} & a_{33}\end{vmatrix} - a_{12} \begin{vmatrix}a_{21} & a_{23} \\ a_{31} & a_{33}\end{vmatrix} + a_{13} \begin{vmatrix}a_{21} & a_{22} \\ a_{31} & a_{32}\end{vmatrix}.\]
+    Using the method of cofactor expansion along the first row, the determinant of a $3 \times 3$ matrix \[\mat A = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{pmatrix}\] is given by \[\Det{\mat A} = a_{11} \begin{vmatrix}a_{22} & a_{23} \\ a_{32} & a_{33}\end{vmatrix} - a_{12} \begin{vmatrix}a_{21} & a_{23} \\ a_{31} & a_{33}\end{vmatrix} + a_{13} \begin{vmatrix}a_{21} & a_{22} \\ a_{31} & a_{32}\end{vmatrix}.\]
 \end{example}
 
 The formula given by Proposition~\ref{prop:cofactor} is not unique: we can expand cofactors along any row or column of the matrix to get the determinant. By choosing a convenient row/column (e.g. one that has many zeroes), our computation of the determinant can be greatly simplified.
@@ -365,24 +365,24 @@ We now look at the properties of determinants.
 \begin{fact}[Properties of Determinants]
     Let $\mat A$ and $\mat B$ be square matrices of order $n$.
     \begin{itemize}
-        \item $\det{\mat A} = \det{\mat A \trp}$.
-        \item $\det{\mat A + \mat B} \neq \det{\mat A} + \det{\mat B}$ in general.
-        \item $\det{c \mat A} = c^n \det{\mat A}$, where $c$ is a scalar.
-        \item $\det{\mat A \mat B} = \det{\mat A} \det{\mat B}$.
-        \item If $\mat A$ is a triangular matrix, then $\det{\mat A}$ is the product of the diagonal entries of $\mat A$.
-        \item $\mat A$ is invertible if and only if $\det{\mat A} \neq 0$.
-        \item If $\mat A$ is invertible, then $\det{\mat A^{-1}} = 1/\det{\mat A}$.
-        \item If $\mat A$ has a row or column of zeroes, then $\det{\mat A} = 0$.
+        \item $\Det{\mat A} = \Det{\mat A \trp}$.
+        \item $\Det{\mat A + \mat B} \neq \Det{\mat A} + \Det{\mat B}$ in general.
+        \item $\Det{c \mat A} = c^n \Det{\mat A}$, where $c$ is a scalar.
+        \item $\Det{\mat A \mat B} = \Det{\mat A} \Det{\mat B}$.
+        \item If $\mat A$ is a triangular matrix, then $\Det{\mat A}$ is the product of the diagonal entries of $\mat A$.
+        \item $\mat A$ is invertible if and only if $\Det{\mat A} \neq 0$.
+        \item If $\mat A$ is invertible, then $\Det{\mat A^{-1}} = 1/\Det{\mat A}$.
+        \item If $\mat A$ has a row or column of zeroes, then $\Det{\mat A} = 0$.
     \end{itemize}
 \end{fact}
 
-Using the fact that $\det{\mat E \mat A} = \det{\mat E}\det{\mat A}$, where $\mat E$ is an elementary matrix, we obtain the following results.
+Using the fact that $\Det{\mat E \mat A} = \Det{\mat E}\Det{\mat A}$, where $\mat E$ is an elementary matrix, we obtain the following results.
 
 \begin{fact}[Effects of Elementary Row/Column Operations on Determinant]
     \phantom{.}
     \begin{itemize}
-        \item If $\mat B$ is the matrix that results when a row/column of $\mat A$ is multiplied by a scalar $k$, then $\det{\mat B} = k \det{\mat A}$.
-        \item If $\mat B$ is the matrix that results when two rows/columns of $\mat A$ are interchanged, then $\det{\mat B} = -\det{\mat A}$.
-        \item If $\mat B$ is the matrix that results when a multiple of one row/column of $\mat A$ is added to another row/column, then $\det{\mat B} = \det{\mat A}$.
+        \item If $\mat B$ is the matrix that results when a row/column of $\mat A$ is multiplied by a scalar $k$, then $\Det{\mat B} = k \Det{\mat A}$.
+        \item If $\mat B$ is the matrix that results when two rows/columns of $\mat A$ are interchanged, then $\Det{\mat B} = -\Det{\mat A}$.
+        \item If $\mat B$ is the matrix that results when a multiple of one row/column of $\mat A$ is added to another row/column, then $\Det{\mat B} = \Det{\mat A}$.
     \end{itemize}
 \end{fact}

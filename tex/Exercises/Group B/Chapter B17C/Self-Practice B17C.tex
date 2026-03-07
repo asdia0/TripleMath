@@ -114,7 +114,7 @@
 \end{problem}
 \begin{solution}
     \begin{ppart}
-        Let $\a$ be a complex eigenvalue. Then $\a$ is a root to the characteristic polynomial $\c(\l)$ of $\mat L$. Since $\c(\l)$ has real coefficients, by the conjugate root theorem, $\a\conj$ is also a solution to $\c(\l)$ and is hence an eigenvalue too. Let $\b$ be the remaining eigenvalue. Since the product of eigenvalues is equal to the determinant of $\mat L$, we have $\a \a \conj \b = \det \mat L = f_2 s_0 s_1$. But $\a \a\conj = \abs{\a}^2$, so \[\b = \frac{f_2 s_0 s_1}{\abs{\a}^2},\] which is clearly a positive number (since we are given $f_2, s_0, s_1 > 0$).
+        Let $\a$ be a complex eigenvalue. Then $\a$ is a root to the characteristic polynomial $\c(\l)$ of $\mat L$. Since $\c(\l)$ has real coefficients, by the conjugate root theorem, $\a\conj$ is also a solution to $\c(\l)$ and is hence an eigenvalue too. Let $\b$ be the remaining eigenvalue. Since the product of eigenvalues is equal to the determinant of $\mat L$, we have $\a \a \conj \b = \Det \mat L = f_2 s_0 s_1$. But $\a \a\conj = \abs{\a}^2$, so \[\b = \frac{f_2 s_0 s_1}{\abs{\a}^2},\] which is clearly a positive number (since we are given $f_2, s_0, s_1 > 0$).
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
@@ -141,7 +141,7 @@
     \end{ppart}
     \begin{ppart}
         \begin{psubpart}
-            Note that \[\det{\mat A - \l \mat I} = \begin{vmatrix}1 - \l & 4 \\ 0.5 & -\l\end{vmatrix} = \l^2 - \l - 2,\] so the eigenvalues of $\mat A$ are $\l = -1, 2$.
+            Note that \[\Det{\mat A - \l \mat I} = \begin{vmatrix}1 - \l & 4 \\ 0.5 & -\l\end{vmatrix} = \l^2 - \l - 2,\] so the eigenvalues of $\mat A$ are $\l = -1, 2$.
 
             \case{1}[$\l = -1$] Let $\vec x = \cveciix{x}{y}$ be an eigenvector. Then \[\begin{pmatrix}1-(-1) & 4 \\ 0.5 & -(-1)\end{pmatrix} \cvecii{x}{y} = \cvecii00.\] Using G.C., $\vec x = -2\l$ and $\vec y = \l$, where $\l \in \RR$, so we take $\vec x = \cveciix{-2}{1}$ to be the corresponding eigenvector.
 
