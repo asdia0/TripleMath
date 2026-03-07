@@ -29,17 +29,17 @@ The triangle inequality can be used to give bounds on series and integrals.
 Recall that a function $f$ is said to be convex on an interval $I$ if for any two points $x_1, x_2 \in I$ and weights $t_1, t_2 > 0$ with $t_1 + t_2 = 1$, we have $f(t_1 x_1 + t_2 x_2) \leq t_1 f(x_1) + t_2 f(x_2)$. We can easily generalize this result to the case with $n$ points and $n$ weights.
 
 \begin{theorem}[Jensen's Inequality (Convex)]
-    Let $f$ be convex on $I$. Given $x_i \in I$ and $t_i > 0$ for $i = 1, \dots, n$ with $\sum_{t = 1}^n t_i = 1$, we have \[f\!\bp{\sum_{i = 1}^n t_i x_i} \leq \sum_{i = 1}^n t_i f(x_i).\] Equality occurs if and only if $x_1 = \dots = x_n$ or $f$ is linear on the convex hull of $\bc{x_i}$.
+    Let $f$ be convex on $I$. Given $x_i \in I$ and $t_i > 0$ for $i = 1, \dots, n$ with $\sum_{t = 1}^n t_i = 1$, we have \[f\bp{\sum_{i = 1}^n t_i x_i} \leq \sum_{i = 1}^n t_i f(x_i).\] Equality occurs if and only if $x_1 = \dots = x_n$ or $f$ is linear on the convex hull of $\bc{x_i}$.
 \end{theorem}
 \begin{proof}
     We induct on $n$. Note that the $n = 1$ is trivial and the $n = 2$ case is true by definition. Now suppose our result holds for some $n \in \NN$. Then
     \begin{align*}
-        f\!\bp{\sum_{i = 1}^{n+1} t_i x_i} &= f\!\bp{t_{n+1}x_{n+1} + (1-t_{n+1}) \sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} x_i}\\
-        &\leq t_{n+1} f(x_{n+1}) + (1-t_{n+1}) f\!\bp{\sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} x_i}
+        f\bp{\sum_{i = 1}^{n+1} t_i x_i} &= f\bp{t_{n+1}x_{n+1} + (1-t_{n+1}) \sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} x_i}\\
+        &\leq t_{n+1} f(x_{n+1}) + (1-t_{n+1}) f\bp{\sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} x_i}
     \end{align*}
     where we used the $n = 2$ case in the second line. Since \[\sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} = \frac{1 - t_{n+1}}{1 - t_{n+1}} = 1,\] by our induction hypothesis, we have
     \begin{align*}
-        t_{n+1} f(x_{n+1}) + (1-t_{n+1}) f\!\bp{\sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} x_i} &\leq t_{n+1} x_{n+1} + (1-t_{n+1}) \sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} f(x_i)\\
+        t_{n+1} f(x_{n+1}) + (1-t_{n+1}) f\bp{\sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} x_i} &\leq t_{n+1} x_{n+1} + (1-t_{n+1}) \sum_{i = 1}^n \frac{t_i}{1 - t_{n+1}} f(x_i)\\
         &= \sum_{i = 1}^{n+1} t_i f(x_i).
     \end{align*}
     This closes the induction and we are done.
@@ -48,7 +48,7 @@ Recall that a function $f$ is said to be convex on an interval $I$ if for any tw
 If $f$ is concave, we get an analogous result.
 
 \begin{theorem}[Jensen's Inequality (Concave)]
-    Let $f$ be concave on $I$. Given $x_i \in I$ and $t_i > 0$ for $i = 1, \dots, n$ with $\sum_{t = 1}^n t_i = 1$, we have \[f\!\bp{\sum_{i = 1}^n t_i x_i} \geq \sum_{i = 1}^n t_i f(x_i).\] Equality occurs if and only if $x_1 = \dots = x_n$ or $f$ is linear on the convex hull of $\bc{x_n}$.
+    Let $f$ be concave on $I$. Given $x_i \in I$ and $t_i > 0$ for $i = 1, \dots, n$ with $\sum_{t = 1}^n t_i = 1$, we have \[f\bp{\sum_{i = 1}^n t_i x_i} \geq \sum_{i = 1}^n t_i f(x_i).\] Equality occurs if and only if $x_1 = \dots = x_n$ or $f$ is linear on the convex hull of $\bc{x_n}$.
 \end{theorem}
 
 \section{AM-GM Inequality}

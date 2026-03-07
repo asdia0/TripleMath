@@ -87,7 +87,7 @@
     Use Simpson's composite rule with 4 strips to obtain an estimate of \[\int_{2}^{3} \cos{x - 2} \ln x \d x,\] giving your answer to 5 decimal places.
 \end{problem}
 \begin{solution}
-    Let $c = (b-a)/2$. Define \[g(x) = f\!\bp{x + \frac{a+b}{2}}.\] Then \[g(-c) = f(a), \quad g(0) = f\!\bp{\frac{a+b}{2}}, \quad g(c) = f(b).\]
+    Let $c = (b-a)/2$. Define \[g(x) = f\bp{x + \frac{a+b}{2}}.\] Then \[g(-c) = f(a), \quad g(0) = f\bp{\frac{a+b}{2}}, \quad g(c) = f(b).\]
 
     Let $h(x) = \a x^2 + \b x + \g$ be the quadratic such that $h(x) = g(x)$ at $x = -c, 0, c$. Then 
     \begin{align*}
@@ -103,7 +103,7 @@
         &= \frac{2c}{3} \bp{\a c^2 + 3\g}\\
         &= \frac{2(b-a)/2}{3} \bs{\frac{g(c) + g(-c)}{2} - g(0) + 3g(0)}\\
         &= \frac{b-a}{6} \bs{g(-c) + 4g(0) + g(c)}\\
-        &= \frac{b-a}{6} \bs{f(a) + 4f\!\bp{\frac{a+b}{2}} + f(b)},
+        &= \frac{b-a}{6} \bs{f(a) + 4f\bp{\frac{a+b}{2}} + f(b)},
     \end{align*}
     which is precisely Simpson's rule for two strips.
 
